@@ -1,0 +1,19 @@
+.container{
+  fa-icon {
+    color: white;
+  }
+  background-color: black;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 5px;
+  margin: 5px;
+  input {
+    color: aliceblue;
+    background-color: black;
+    margin-left: 5px;
+    border: none;
+    &:focus{
+      outline: none;
+    }
+  }
+}

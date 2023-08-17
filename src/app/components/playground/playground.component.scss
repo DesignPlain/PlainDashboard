@@ -1,0 +1,44 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.TypicalCard {
+  background-color: #4c4c4c;
+  opacity: 0.8;
+  background-image: radial-gradient(#353535 0.5px, #ffffff 0.5px);
+  background-size: 10px 10px;
+  display: flex;
+  border: 1px solid black;
+  padding: 20px 0;
+  max-width: 200px;
+  min-width: 200px;
+  margin: 1px;
+  border-radius: 6px;
+  color: rgb(0, 0, 0);
+  justify-content: space-between;
+  text-justify: auto;
+
+  .name {
+    opacity: .9;
+  }
+
+  button {
+    border-radius: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    transition: 0.5s;
+
+    &:hover {
+      background-color: rgb(75, 94, 94);
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<ng-container *ngFor="let item of items; let i = index">
+  <div class="TypicalCard" cdkDragBoundary=".right" cdkDrag>
+    <button>+</button>
+    <span class="name">{{item}}</span>
+    <div (click)="trashShit(i)"><fa-icon [icon]="faTrash"/></div>
+    <button>+</button></div>
+</ng-container>

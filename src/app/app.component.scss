@@ -1,0 +1,30 @@
+:host {
+  .container {
+    display: flex;
+    min-height: 100vh;
+
+    .left {
+      border-right: 1px solid black;
+      max-width: 250px;
+      min-width: 250px;
+      min-height: 100%;
+      background-color: #e5e5f7;
+      opacity: 0.8;
+      background-image: radial-gradient(#000000 0.2px, #e5e5f7 0.2px);
+      background-size: 4px 4px;
+    }
+
+    .right {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      max-width: calc(100% - 250px);
+      background-color: #e5e5f7;
+      opacity: 0.8;
+      background-image: radial-gradient(#ffffff 0.5px, #000000 0.5px);
+      background-size: 10px 10px;
+    }
+  }
+}
