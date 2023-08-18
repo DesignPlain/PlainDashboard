@@ -8,9 +8,16 @@
   overflow: hidden;
   min-width: 100%;
   min-height: 100%;
+  position: relative;
+
+  canvas{
+    position: absolute;
+  }
 }
 
 .TypicalCard {
+  z-index: 1;
+  position: relative;
   background-color: #4c4c4c;
   opacity: 0.8;
   background-image: radial-gradient(#353535 0.5px, #ffffff 0.5px);
@@ -23,11 +30,12 @@
   margin: 1px;
   border-radius: 6px;
   color: rgb(0, 0, 0);
-  justify-content: space-between;
+  justify-content: center;
   text-justify: auto;
 
   .name {
     opacity: .9;
+    margin-right: 5px;
   }
 
   button {
@@ -37,8 +45,22 @@
     background-color: rgb(255, 255, 255);
     transition: 0.5s;
 
+    &.firstButton{
+      position: absolute;
+      left: -5%;
+    }
+
+    &.secondButton{
+      position: absolute;
+      right: -5%;
+    }
+
     &:hover {
       background-color: rgb(75, 94, 94);
+    }
+
+    &:disabled:hover{
+      background-color: rgb(255, 255, 255);
     }
   }
 }

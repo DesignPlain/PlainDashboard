@@ -1,7 +1,8 @@
 <ng-container *ngFor="let item of items; let i = index">
   <div class="TypicalCard" cdkDragBoundary=".right" cdkDrag>
-    <button>+</button>
+    <button class="firstButton" (click)="endConnection($event,i)">+</button>
     <span class="name">{{item}}</span>
     <div (click)="trashShit(i)"><fa-icon [icon]="faTrash"/></div>
-    <button>+</button></div>
+    <button class="secondButton" (click)="startConnection($event,i)">+</button></div>
 </ng-container>
+<canvas #lineCanvas class="line-canvas"></canvas>
