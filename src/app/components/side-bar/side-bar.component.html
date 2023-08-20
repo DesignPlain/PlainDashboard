@@ -1,0 +1,28 @@
+<h2> Config Editor</h2>
+<ng-container *ngFor="let item of config | keyvalue">
+  <div [ngSwitch]="item.value">
+    <div *ngSwitchCase="inputType.String">
+      <span>{{item.key}}</span>
+      <br>
+      <input type="text">
+      <br><br>
+    </div>
+    <div *ngSwitchCase="inputType.Number">
+      <span>{{item.key}}</span>
+      <br>
+      <input type="number">
+      <br><br>
+    </div>
+    <div *ngSwitchCase="inputType.File">
+      <span>{{item.key}}</span>
+      <br>
+      <input type="file" id="input" multiple />
+      <br><br>
+    </div>
+    <div *ngSwitchCase="inputType.CheckBox">
+      <span>{{item.key}}</span>
+      <input type="checkbox" id="checkbox">
+      <br><br>
+    </div>
+  </div>
+</ng-container>

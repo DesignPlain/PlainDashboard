@@ -13,6 +13,15 @@
   canvas{
     position: absolute;
   }
+
+  .sidebar{
+    background-color: #ffffff;
+    width: 406px;
+    height: 100%;
+    position: absolute;
+    z-index: 567;
+    right: 0;
+  }
 }
 
 .TypicalCard {
@@ -62,5 +71,9 @@
     &:disabled:hover{
       background-color: rgb(255, 255, 255);
     }
+  }
+
+  fa-icon{
+    margin: 0 5px;
   }
 }

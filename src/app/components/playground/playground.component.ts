@@ -1,5 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { faTractor } from '@fortawesome/free-solid-svg-icons';
+import { faTractor, faGear } from '@fortawesome/free-solid-svg-icons';
+import { CloudResource } from 'src/app/Models/CloudResource';
+import { ResourceProperties } from 'src/app/Models/ResourceProperties';
+import { InputType } from 'src/app/enum/InputType';
+import { ResourceType } from 'src/app/enum/ResourceType';
 import { AddComponentService } from 'src/app/services/add-component.service';
 import { DrawLineService } from 'src/app/services/draw-line.service';
 
@@ -11,15 +15,23 @@ import { DrawLineService } from 'src/app/services/draw-line.service';
 export class PlaygroundComponent implements OnInit{
   @ViewChild('lineCanvas', { static: true }) lineCanvas: ElementRef | undefined;
   endButtonDisabled = true;
+  showSideBar = false;
   currentIndex = 0
   firstX = 0
   firstY=0
   faTrash = faTractor;
+  faGear = faGear;
+  currentConfig = new Map<string, InputType>();
   constructor(private _addComponentService: AddComponentService, private _lineService: DrawLineService) {}
-  public items:string[] = ["Lambda"]
+  public items:CloudResource[] = []
+
   ngOnInit(): void {
-    this._addComponentService.components.subscribe((componentName: string) => {
-      this.items.push(componentName)
+    this._addComponentService.components.subscribe((componentName: ResourceType) => {
+      const item = new CloudResource();
+      item.resourceType = componentName;
+      item.name = ResourceType[componentName]
+      item.configuration = ResourceProperties.propertiesMap.get(componentName) as Map<string, InputType>;
+      this.items.push(item)
     })
     this._lineService.initialize(this.lineCanvas?.nativeElement as HTMLCanvasElement);
   }
@@ -27,6 +39,11 @@ export class PlaygroundComponent implements OnInit{
   trashShit(i: number): void {
     console.log(i)
     this.items.splice(i, 1);
+  }
+
+  toggleSidebar(i: number, item: CloudResource): void {
+    this.currentConfig = item.configuration;
+    this.showSideBar = !this.showSideBar;
   }
 
   startConnection(event:MouseEvent, i: number): void {

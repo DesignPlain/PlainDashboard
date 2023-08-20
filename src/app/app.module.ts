@@ -7,13 +7,15 @@ import { PlaygroundComponent } from './components/playground/playground.componen
 import { InputSearchComponent } from './components/input-search/input-search.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {CdkDrag} from '@angular/cdk/drag-drop';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ResourceListComponent,
     PlaygroundComponent,
-    InputSearchComponent
+    InputSearchComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,
