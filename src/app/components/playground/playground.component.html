@@ -1,12 +1,30 @@
 <ng-container *ngFor="let item of items; let i = index">
-  <div class="TypicalCard" cdkDragBoundary=".right" cdkDrag>
-    <button class="firstButton" (click)="endConnection($event,i)">+</button>
-    <span class="name">{{item.name}}</span>
-    <div (click)="trashShit(i)"><fa-icon [icon]="faTrash"/></div>
-    <div (click)="toggleSidebar(i, item)"><fa-icon [icon]="faGear"/></div>
-    <button class="secondButton" (click)="startConnection($event,i)">+</button></div>
+  <div [ngSwitch]="item.resourceType">
+    <div *ngSwitchCase="resourceType.GCP_VPC">
+      <div class="TypicalCard group" cdkDragBoundary=".right" [cdkDragFreeDragPosition]="item.position"
+        (cdkDragEnded)="dragEnd($event, i)" cdkDrag>
+        <button class="firstButton" (click)="endConnection($event,i)">+</button>
+        <span class="name">{{item.name}}</span>
+        <div (click)="trashShit(i)"><fa-icon class="i1"  [icon]="faTrash" /></div>
+        <div (click)="toggleSidebar(i, item)"><fa-icon class="i2" [icon]="faGear" /></div>
+        <button class="secondButton" (click)="startConnection($event,i)">+</button>
+        <div cdkDropList class="box">
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchDefault>
+      <div class="TypicalCard" cdkDragBoundary=".right" [id]="i" [cdkDragFreeDragPosition]="item.position"
+        (cdkDragEnded)="dragEnd($event, i)" cdkDrag>
+        <button class="firstButton" (click)="endConnection($event,i)">+</button>
+        <span class="name">{{item.name}}</span>
+        <div (click)="trashShit(i)"><fa-icon class="i1" [icon]="faTrash" /></div>
+        <div (click)="toggleSidebar(i, item)"><fa-icon class="i2" [icon]="faGear" /></div>
+        <button class="secondButton" (click)="startConnection($event,i)">+</button>
+      </div>
+    </div>
+  </div>
 </ng-container>
 
-<app-side-bar [config]="currentConfig"  class="sidebar" *ngIf="showSideBar"/>
+<app-side-bar [config]="currentConfig" class="sidebar" *ngIf="showSideBar" />
 
 <canvas #lineCanvas class="line-canvas"></canvas>

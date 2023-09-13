@@ -1,21 +1,16 @@
 :host {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  flex-grow: 1;
-  flex-wrap: wrap;
-  flex-direction: column;
   overflow: hidden;
   min-width: 100%;
   min-height: 100%;
   position: relative;
 
-  canvas{
+  canvas {
     position: absolute;
   }
 
-  .sidebar{
-    background-color: #ffffff;
+  .sidebar {
+    background-image: radial-gradient(#000000 0.2px, #5D7B6F 0.2px);
     width: 406px;
     height: 100%;
     position: absolute;
@@ -24,27 +19,66 @@
   }
 }
 
+.box {
+  min-width: 98%;
+  min-height: 95%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  opacity: 1;
+  background-image: radial-gradient(#ffffff 0.4px, #4d5d4b 0.4px);
+  margin: 5px;
+  margin-top: 23px;
+  padding: 10px;
+  position: absolute;
+
+  &.preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    background-color: white;
+  }
+}
+
 .TypicalCard {
-  z-index: 1;
-  position: relative;
-  background-color: #4c4c4c;
-  opacity: 0.8;
-  background-image: radial-gradient(#353535 0.5px, #ffffff 0.5px);
-  background-size: 10px 10px;
+  align-items: stretch;
+  top: 0px;
+  left: 0px;
+  flex-flow: row wrap;
+  z-index: 10;
+  position: absolute;
+  opacity: 0.9;
+  background-image: radial-gradient(#ffffff 0.3px, #ffffff 0.5px);
   display: flex;
-  border: 1px solid black;
-  padding: 20px 0;
+  border: 0.2px solid rgb(79, 79, 79);
+  padding: 10px;
   max-width: 200px;
-  min-width: 200px;
+  min-width: 190px;
+  min-height: 20px;
   margin: 1px;
   border-radius: 6px;
   color: rgb(0, 0, 0);
-  justify-content: center;
   text-justify: auto;
+  justify-content: center;
+  opacity: 0.9;
+
+  &.group {
+    z-index: 1;
+    max-width: 2400px;
+    min-width: 1000px;
+
+    max-height: 1800px;
+    min-height: 800px;
+  }
 
   .name {
-    opacity: .9;
-    margin-right: 5px;
+    font-weight: bolder;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    left: 15px;
+    color: #264653;
+    border-radius: 100%;
+    opacity: 10;
   }
 
   button {
@@ -54,26 +88,42 @@
     background-color: rgb(255, 255, 255);
     transition: 0.5s;
 
-    &.firstButton{
+    &.firstButton {
       position: absolute;
-      left: -5%;
+      left: -8%;
+      top: 30%;
+      opacity: 0.7;
     }
 
-    &.secondButton{
+    &.secondButton {
       position: absolute;
-      right: -5%;
+      right: -8%;
+      top: 30%;
+      opacity: 0.7;
     }
 
     &:hover {
       background-color: rgb(75, 94, 94);
     }
 
-    &:disabled:hover{
+    &:disabled:hover {
       background-color: rgb(255, 255, 255);
     }
   }
 
-  fa-icon{
+  fa-icon {
     margin: 0 5px;
+    max-width: 20px;
+    max-height: 20px;
+    position: absolute;
+    right: 0;
+
+    &.i1 {
+      right: 10px;
+    }
+
+    &.i2 {
+      right: 30px;
+    }
   }
 }

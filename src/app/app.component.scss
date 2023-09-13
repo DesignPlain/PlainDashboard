@@ -2,7 +2,7 @@
   .container {
     display: flex;
     min-height: 100vh;
-
+    opacity: 1;
     .left {
       border-right: 1px solid black;
       max-width: 250px;
@@ -10,11 +10,12 @@
       min-height: 100%;
       background-color: #e5e5f7;
       opacity: 0.8;
-      background-image: radial-gradient(#000000 0.2px, #e5e5f7 0.2px);
+      background-image: radial-gradient(#000000 0.2px, #5D7B6F 0.2px);
       background-size: 4px 4px;
     }
 
     .right {
+      z-index: 10000;
       display: flex;
       flex-grow: 1;
       justify-content: center;
@@ -22,9 +23,13 @@
       overflow: hidden;
       max-width: calc(100% - 250px);
       background-color: #e5e5f7;
-      opacity: 0.8;
-      background-image: radial-gradient(#ffffff 0.5px, #000000 0.5px);
-      background-size: 10px 10px;
+      opacity: .9;
+      background-image: radial-gradient(#ffffff 0.2px, #000000 0.44px);
+      background-color: #a6a6a6;
+      opacity: 0.6;
+      background-image:  linear-gradient(#43503f 3.4000000000000004px, transparent 3.4000000000000004px), linear-gradient(90deg, #43503f 3.4000000000000004px, transparent 3.4000000000000004px), linear-gradient(#43503f 1.7000000000000002px, transparent 1.7000000000000002px), linear-gradient(90deg, #43503f 1.7000000000000002px, #a6a6a6 1.7000000000000002px);
+      background-size: 85px 85px, 85px 85px, 17px 17px, 17px 17px;
+      background-position: -3.4000000000000004px -3.4000000000000004px, -3.4000000000000004px -3.4000000000000004px, -1.7000000000000002px -1.7000000000000002px, -1.7000000000000002px -1.7000000000000002px;
     }
   }
 }

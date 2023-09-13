@@ -7,4 +7,5 @@ export class CloudResource {
   public linkedToResources: CloudResource[] = [];
   public linkedFromResources: CloudResource[] = [];
   public configuration: Map<string, InputType> = new Map();
+  public position = {x: 0, y: 0};
 }

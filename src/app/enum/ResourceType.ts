@@ -6,4 +6,5 @@ export enum ResourceType {
   SQS,
   LoadBalancer,
   AppGateway,
+  GCP_VPC
 }
