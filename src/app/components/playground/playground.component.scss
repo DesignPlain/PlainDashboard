@@ -20,12 +20,12 @@
 }
 
 .box {
-  min-width: 98%;
-  min-height: 95%;
+  min-width: 99%;
+  min-height: 90%;
   box-sizing: border-box;
   border-radius: 4px;
-  opacity: 1;
-  background-image: radial-gradient(#ffffff 0.4px, #4d5d4b 0.4px);
+  opacity: 0.98;
+  background-image: radial-gradient(#ffffff 0.4px, #dce0dc 0.4px);
   margin: 5px;
   margin-top: 23px;
   padding: 10px;
@@ -41,23 +41,20 @@
 }
 
 .TypicalCard {
-  align-items: stretch;
   top: 0px;
   left: 0px;
-  flex-flow: row wrap;
   z-index: 10;
   position: absolute;
   opacity: 0.9;
   background-image: radial-gradient(#ffffff 0.3px, #ffffff 0.5px);
   display: flex;
-  border: 0.2px solid rgb(79, 79, 79);
+  border: 0.05px solid rgb(79, 79, 79, 0.5);
   padding: 10px;
   max-width: 200px;
-  min-width: 190px;
+  min-width: 130px;
   min-height: 20px;
   margin: 1px;
-  border-radius: 6px;
-  color: rgb(0, 0, 0);
+  border-radius: 5px;
   text-justify: auto;
   justify-content: center;
   opacity: 0.9;
@@ -69,16 +66,23 @@
 
     max-height: 1800px;
     min-height: 800px;
+    opacity: 0.8;
+
+    background-image: radial-gradient(#ffffff00 0.3px, #e1d1d177 0.5px);
+
+    border: 2px dashed rgb(82, 82, 82, 1);
+
+    border-radius: 2%;
   }
 
   .name {
     font-weight: bolder;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     position: absolute;
     left: 15px;
     color: #264653;
     border-radius: 100%;
-    opacity: 10;
+    opacity: 0.80;
   }
 
   button {
@@ -126,4 +130,14 @@
       right: 30px;
     }
   }
+}
+
+.listIcon {
+  position: relative;
+  position: absolute;
+  left: 5px;
+  margin: 0 5px;
+  max-width: 20px;
+  max-height: 20px;
+  border-radius: 25%;
 }
