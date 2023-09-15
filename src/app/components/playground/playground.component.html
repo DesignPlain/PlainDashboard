@@ -1,20 +1,33 @@
 <ng-container *ngFor="let item of items; let i = index">
   <div [ngSwitch]="item.resourceType">
     <div *ngSwitchCase="resourceType.Virtual_Private_Cloud">
-      <div class="TypicalCard group" cdkDragBoundary=".right" [cdkDragFreeDragPosition]="item.position"
-        (cdkDragEnded)="dragEnd($event, i)" cdkDrag>
+      <div id="Card" class="TypicalCard group" cdkDragBoundary=".right" [cdkDragFreeDragPosition]="item.position"
+        (cdkDragEnded)="dragEnd($event, i)" cdkDrag resizeObserver (resize)="onResize($event, i)" [style.width.px]="item.width" [style.height.px]="item.height">
         <button class="firstButton" (click)="endConnection($event,i)">+</button>
-        <img class="listIcon" src="../../../assets/Arch_Amazon-{{item.name}}_64.png" title={{item.name}}>
-        <div (click)="trashShit(i)"><fa-icon class="i1"  [icon]="faTrash" /></div>
+        <input #box class="name" type="text" value={{item.title}}  (focusout)="onEnter(box.value, i)" placeholder={{item.title}}>
+        <img class="listIcon" src="../../../assets/Arch_Amazon-{{item.name}}_64.png" title={{item.name}} cdkDragHandle>
+        <div (click)="trashShit(i)"><fa-icon class="i1" [icon]="faTrash" /></div>
+        <div (click)="toggleSidebar(i, item)"><fa-icon class="i2" [icon]="faGear" /></div>
+        <button class="secondButton" (click)="startConnection($event,i)">+</button>
+      </div>
+    </div>
+    <div *ngSwitchCase="resourceType.Subnet">
+      <div class="TypicalCard rectangle" cdkDragBoundary=".right" [cdkDragFreeDragPosition]="item.position"
+        (cdkDragEnded)="dragEnd($event, i)" cdkDrag resizeObserver (resize)="onResize($event, i)" [style.width.px]="item.width" [style.height.px]="item.height">
+        <button class="firstButton" (click)="endConnection($event,i)">+</button>
+        <input #box class="name" type="text" value={{item.title}} (focusout)="onEnter(box.value, i)" placeholder={{item.title}}>
+        <img class="listIcon" src="../../../assets/Arch_Amazon-{{item.name}}_64.png" title={{item.name}} cdkDragHandle>
+        <div (click)="trashShit(i)"><fa-icon class="i1" [icon]="faTrash" /></div>
         <div (click)="toggleSidebar(i, item)"><fa-icon class="i2" [icon]="faGear" /></div>
         <button class="secondButton" (click)="startConnection($event,i)">+</button>
       </div>
     </div>
     <div *ngSwitchDefault>
       <div class="TypicalCard" cdkDragBoundary=".right" [id]="i" [cdkDragFreeDragPosition]="item.position"
-        (cdkDragEnded)="dragEnd($event, i)" cdkDrag>
+        (cdkDragEnded)="dragEnd($event, i)" cdkDrag resizeObserver (resize)="onResize($event, i)" [style.width.px]="item.width" [style.height.px]="item.height">
         <button class="firstButton" (click)="endConnection($event,i)">+</button>
-        <img class="listIcon" src="../../../assets/Arch_Amazon-{{item.name}}_64.png" title={{item.name}}>
+        <input #box class="name" type="text" value={{item.title}}  (focusout)="onEnter(box.value, i)" placeholder={{item.title}}>
+        <img class="listIcon" src="../../../assets/Arch_Amazon-{{item.name}}_64.png" title={{item.name}} cdkDragHandle>
         <div (click)="trashShit(i)"><fa-icon class="i1" [icon]="faTrash" /></div>
         <div (click)="toggleSidebar(i, item)"><fa-icon class="i2" [icon]="faGear" /></div>
         <button class="secondButton" (click)="startConnection($event,i)">+</button>
