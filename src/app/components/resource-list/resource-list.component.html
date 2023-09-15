@@ -1,8 +1,20 @@
 <app-input-search></app-input-search>
-<div class="card" (click)="addComponent(resourceType.Lambda)">Lambda Function</div>
-<div class="card" (click)="addComponent(resourceType.Database)">Database</div>
-<div class="card" (click)="addComponent(resourceType.EC2)">EC2</div>
-<div class="card" (click)="addComponent(resourceType.S3Bucket)">S3 Bucket</div>
-<div class="card" (click)="addComponent(resourceType.GCP_VPC)">GCP VPC</div>
-<div class="card" (click)="addComponent(resourceType.LoadBalancer)">LoadBalancer</div>
-<div class="card" (click)="addComponent(resourceType.AppGateway)">App Gateway</div>
+<div class="card" (click)="addComponent(resourceType.Lambda)">Lambda Function
+    <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.Lambda]}}_64.png" title={{resourceType[resourceType.Lambda]}}></div>
+<div class="card" (click)="addComponent(resourceType.DynamoDB)">Dynamo DB
+    <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.DynamoDB]}}_64.png" title={{resourceType[resourceType.DynamoDB]}}></div>
+<div class="card" (click)="addComponent(resourceType.EC2)">EC2
+    <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.EC2]}}_64.png" title={{resourceType[resourceType.EC2]}}>
+</div>
+<div class="card" (click)="addComponent(resourceType.Simple_Storage_Service)">S3 Bucket
+    <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.Simple_Storage_Service]}}_64.png" title={{resourceType[resourceType.Simple_Storage_Service]}}>
+</div>
+<div class="card" (click)="addComponent(resourceType.Virtual_Private_Cloud)">Virtual Private Cloud
+    <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.Virtual_Private_Cloud]}}_64.png" title={{resourceType[resourceType.Virtual_Private_Cloud]}}>
+</div>
+<div class="card" (click)="addComponent(resourceType.Elastic_Load_Balancer)">LoadBalancer
+    <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.Elastic_Load_Balancer]}}_64.png" title={{resourceType[resourceType.Elastic_Load_Balancer]}}>
+</div>
+<div class="card" (click)="addComponent(resourceType.APIGateway)">API Gateway
+    <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.APIGateway]}}_64.png" title={{resourceType[resourceType.APIGateway]}}>
+</div>

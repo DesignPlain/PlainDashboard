@@ -17,7 +17,7 @@ export class ResourceProperties {
         ]),
       ],
       [
-        ResourceType.LoadBalancer,
+        ResourceType.Elastic_Load_Balancer,
         new Map([
           ['IP', InputType.String],
           ['Code', InputType.String],

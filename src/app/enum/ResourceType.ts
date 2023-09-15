@@ -2,9 +2,10 @@ export enum ResourceType {
   Lambda,
   Database,
   EC2,
-  S3Bucket,
+  Simple_Storage_Service,
   SQS,
-  LoadBalancer,
-  AppGateway,
-  GCP_VPC
+  Elastic_Load_Balancer,
+  APIGateway,
+  Virtual_Private_Cloud,
+  DynamoDB,
 }
