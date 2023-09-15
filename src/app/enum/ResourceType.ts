@@ -7,5 +7,6 @@ export enum ResourceType {
   Elastic_Load_Balancer,
   APIGateway,
   Virtual_Private_Cloud,
+  Subnet, 
   DynamoDB,
 }

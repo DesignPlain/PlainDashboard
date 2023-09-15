@@ -6,8 +6,22 @@ import { ResourceListComponent } from './components/resource-list/resource-list.
 import { PlaygroundComponent } from './components/playground/playground.component';
 import { InputSearchComponent } from './components/input-search/input-search.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {CdkDrag, CdkDropList, CdkDragDrop} from '@angular/cdk/drag-drop';
+import { CdkDrag, CdkDropList, CdkDragHandle } from '@angular/cdk/drag-drop';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import { ResizeObserverDirective } from './resize-observer.directive';
+
+import {
+  CdkMenu,
+  CdkMenuItem,
+  CdkMenuItemRadio,
+  CdkMenuGroup,
+  CdkMenuItemCheckbox,
+  CdkMenuTrigger,
+  CdkContextMenuTrigger,
+} from '@angular/cdk/menu';
 
 @NgModule({
   declarations: [
@@ -15,13 +29,18 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     ResourceListComponent,
     PlaygroundComponent,
     InputSearchComponent,
-    SideBarComponent
+    SideBarComponent,
+    ResizeObserverDirective
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     CdkDrag,
     CdkDropList,
+    CdkDragHandle,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
