@@ -1,14 +1,21 @@
-import { InputType } from '../enum/InputType';
-import { ResourceType } from '../enum/ResourceType';
+import { ProviderType, ResourceType } from "../enum/ResourceType";
 
 export class CloudResource {
   public name: string = '';
   public title: string = 'Description';
   public resourceType: ResourceType = 0;
-  public linkedToResources: CloudResource[] = [];
-  public linkedFromResources: CloudResource[] = [];
-  public configuration: Map<string, InputType> = new Map();
+  public providerType: ProviderType = 0;
+  public resourceConfig: Resource | undefined = new DefaultResource;
   public position = { x: 0, y: 0 };
-  public width = 130;
-  public height = 40;
+  public shape = { width: 130, height: 40 };
+}
+
+export abstract class Resource {
+  constructor(
+    public Name: string,
+    public PlatformType: string) { }
+}
+
+export class DefaultResource extends Resource {
+  constructor() { super("Def", "None") }
 }
