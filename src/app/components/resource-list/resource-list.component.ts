@@ -10,9 +10,17 @@ import { ResourceProperties } from 'src/app/Models/ResourceProperties';
 })
 export class ResourceListComponent {
   resourceType = ResourceType;
+  viewAWS = false;
+  viewGCP = false;
+  
+
   constructor(private _addComponentService: AddComponentService) {}
   addComponent(componentName: ResourceType) {
     console.log(componentName);
     this._addComponentService.components.next(componentName);
+  }
+
+  toggleAWS(){
+    this.viewAWS = !this.viewAWS;
   }
 }

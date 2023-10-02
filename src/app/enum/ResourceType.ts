@@ -7,6 +7,12 @@ export enum ResourceType {
   Elastic_Load_Balancer,
   APIGateway,
   Virtual_Private_Cloud,
-  Subnet, 
+  Subnet,
   DynamoDB,
+}
+
+export enum ProviderType {
+  GCP,
+  AWS,
+  AZURE,
 }

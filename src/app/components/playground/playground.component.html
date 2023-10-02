@@ -2,9 +2,11 @@
   <div [ngSwitch]="item.resourceType">
     <div *ngSwitchCase="resourceType.Virtual_Private_Cloud">
       <div id="Card" class="TypicalCard group" cdkDragBoundary=".right" [cdkDragFreeDragPosition]="item.position"
-        (cdkDragEnded)="dragEnd($event, i)" cdkDrag resizeObserver (resize)="onResize($event, i)" [style.width.px]="item.width" [style.height.px]="item.height">
+        (cdkDragEnded)="dragEnd($event, i)" cdkDrag resizeObserver (resize)="onResize($event, i)"
+        [style.width.px]="item.shape.width" [style.height.px]="item.shape.height">
         <button class="firstButton" (click)="endConnection($event,i)">+</button>
-        <input #box class="name" type="text" value={{item.title}}  (focusout)="onEnter(box.value, i)" placeholder={{item.title}}>
+        <input #box class="name" type="text" value={{item.title}} (focusout)="onEnter(box.value, i)"
+          placeholder={{item.title}}>
         <img class="listIcon" src="../../../assets/Arch_Amazon-{{item.name}}_64.png" title={{item.name}} cdkDragHandle>
         <div (click)="trashShit(i)"><fa-icon class="i1" [icon]="faTrash" /></div>
         <div (click)="toggleSidebar(i, item)"><fa-icon class="i2" [icon]="faGear" /></div>
@@ -13,9 +15,11 @@
     </div>
     <div *ngSwitchCase="resourceType.Subnet">
       <div class="TypicalCard rectangle" cdkDragBoundary=".right" [cdkDragFreeDragPosition]="item.position"
-        (cdkDragEnded)="dragEnd($event, i)" cdkDrag resizeObserver (resize)="onResize($event, i)" [style.width.px]="item.width" [style.height.px]="item.height">
+        (cdkDragEnded)="dragEnd($event, i)" cdkDrag resizeObserver (resize)="onResize($event, i)"
+        [style.width.px]="item.shape.width" [style.height.px]="item.shape.height">
         <button class="firstButton" (click)="endConnection($event,i)">+</button>
-        <input #box class="name" type="text" value={{item.title}} (focusout)="onEnter(box.value, i)" placeholder={{item.title}}>
+        <input #box class="name" type="text" value={{item.title}} (focusout)="onEnter(box.value, i)"
+          placeholder={{item.title}}>
         <img class="listIcon" src="../../../assets/Arch_Amazon-{{item.name}}_64.png" title={{item.name}} cdkDragHandle>
         <div (click)="trashShit(i)"><fa-icon class="i1" [icon]="faTrash" /></div>
         <div (click)="toggleSidebar(i, item)"><fa-icon class="i2" [icon]="faGear" /></div>
@@ -24,9 +28,11 @@
     </div>
     <div *ngSwitchDefault>
       <div class="TypicalCard" cdkDragBoundary=".right" [id]="i" [cdkDragFreeDragPosition]="item.position"
-        (cdkDragEnded)="dragEnd($event, i)" cdkDrag resizeObserver (resize)="onResize($event, i)" [style.width.px]="item.width" [style.height.px]="item.height">
+        (cdkDragEnded)="dragEnd($event, i)" cdkDrag resizeObserver (resize)="onResize($event, i)"
+        [style.width.px]="item.shape.width" [style.height.px]="item.shape.height">
         <button class="firstButton" (click)="endConnection($event,i)">+</button>
-        <input #box class="name" type="text" value={{item.title}}  (focusout)="onEnter(box.value, i)" placeholder={{item.title}}>
+        <input #box class="name" type="text" value={{item.title}} (focusout)="onEnter(box.value, i)"
+          placeholder={{item.title}}>
         <img class="listIcon" src="../../../assets/Arch_Amazon-{{item.name}}_64.png" title={{item.name}} cdkDragHandle>
         <div (click)="trashShit(i)"><fa-icon class="i1" [icon]="faTrash" /></div>
         <div (click)="toggleSidebar(i, item)"><fa-icon class="i2" [icon]="faGear" /></div>
@@ -35,7 +41,13 @@
     </div>
   </div>
 </ng-container>
+<div class="controls">
+  <div class="apply" (click)="deploy()">Deploy</div>
+  <div class="apply bid1">Preview</div>
+  <div class="apply bid2" (click)="destroy()">Destroy</div>
+</div>
 
-<app-side-bar [config]="currentConfig" class="sidebar" *ngIf="showSideBar" />
+<app-side-bar [config]="currentConfig" [currentResource]="currentResourceType" [currentIndex]="currentIndex"
+  class="sidebar" (ConfigUpdateEvent)="updateConfig($event.id, $event.res)" *ngIf="showSideBar" />
 
 <canvas #lineCanvas class="line-canvas"></canvas>

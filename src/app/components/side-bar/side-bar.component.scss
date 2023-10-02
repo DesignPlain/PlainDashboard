@@ -1,4 +1,38 @@
-:host{
-  margin-top: 10px;
-  padding: 5px;
+:host {
+  padding: 10px;
+  padding-left: 20px;
+  position: absolute;
+  font-weight: small;
+}
+
+.header {
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #ffffff;
+  font-size: x-large;
+}
+
+.apply {
+  left: 20%;
+  position: relative;
+  margin: 10px;
+  padding: 7px;
+  border-radius: 4%;
+  max-height: 30px;
+  min-height: 20px;
+  min-width: 100px;
+  max-width: 100px;
+  text-align: center;
+  background-image: radial-gradient(#000000 0.2px, #85da3f 0.2px);
+  color: #0c600c;
+  font-size: medium;
+  font-weight: bold;
+  font-family: sans-serif;
+  box-shadow: 2px 2px rgba(255, 255, 255, 0.363);
+
+  &:hover {
+    cursor: pointer;
+    background-image: radial-gradient(#000000 0.2px, #76c337 0.2px);
+    color: #ffffff;
+  }
 }
