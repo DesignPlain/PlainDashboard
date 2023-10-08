@@ -7,6 +7,7 @@
 
   canvas {
     position: absolute;
+    z-index: -10;
   }
 
   .sidebar {
@@ -49,7 +50,7 @@
 .controls {
   display: flex;
   flex-wrap: nowrap;
-  
+
   .apply {
     left: 40%;
     position: relative;
@@ -114,7 +115,7 @@
   display: inline-block;
 
   &.group {
-    z-index: 1;
+    z-index: 0;
     max-width: 4000px;
     min-width: 500px;
 
@@ -179,7 +180,6 @@
     border: none;
     background-color: rgb(255, 255, 255);
     transition: 0.5s;
-    visibility: hidden;
 
     &.firstButton {
       position: absolute;
