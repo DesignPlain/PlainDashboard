@@ -5,16 +5,10 @@ import {
   ViewChild,
   Renderer2,
 } from '@angular/core';
-import {
-  CdkDragDrop,
-  CdkDragEnd,
-  CdkDrag,
-  moveItemInArray,
-} from '@angular/cdk/drag-drop';
-import { faTrash, faGear } from '@fortawesome/free-solid-svg-icons';
+import { CdkDragEnd } from '@angular/cdk/drag-drop';
+import { faTrash, faGear, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import {
   CloudResource,
-  DefaultResource,
   Resource,
   lineCoordinates,
 } from 'src/app/Models/CloudResource';
@@ -27,9 +21,10 @@ import { InputType } from 'src/app/enum/InputType';
 import { ProviderType, ResourceType } from 'src/app/enum/ResourceType';
 import { AddComponentService } from 'src/app/services/add-component.service';
 import { DrawLineService } from 'src/app/services/draw-line.service';
-import { ResizeObserverDirective } from '../../resize-observer.directive';
 import { HttpClient } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
+import { take } from 'rxjs/operators';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { ApplicationStateService } from 'src/app/services/application-state.service';
 
 export interface Item {
   id: number;
@@ -43,30 +38,31 @@ export interface Item {
 })
 export class PlaygroundComponent implements OnInit {
   @ViewChild('lineCanvas', { static: true }) lineCanvas: ElementRef | undefined;
-  endButtonDisabled = true;
-  showSideBar = false;
-  currentIndex = 0;
-  firstX = 0;
-  firstY = 0;
-  faTrash = faTrash;
-  faGear = faGear;
-  currentConfig = new Map<string, { type: InputType; val: any }>();
-  currentResourceType: ResourceType | undefined;
-  currentInlet: number;
+  public showSideBar: boolean = false;
+  public currentIndex: number = 0;
+  public currentConfig: Map<string, { type: InputType; val: any }> = new Map<string, { type: InputType; val: any }>();
+  public currentResourceType: ResourceType | undefined;
+  public items: CloudResource[] = [];
+  public resourceType = ResourceType;
+
+  // Initializing font awesome icons
+  public faTrash: IconDefinition = faTrash;
+  public faGear: IconDefinition = faGear;
+  private currentInlet: number;
 
   constructor(
-    private host: ElementRef,
-    private http: HttpClient,
+    private _applicationStateService: ApplicationStateService,
     private _addComponentService: AddComponentService,
     private _lineService: DrawLineService,
-    private renderer: Renderer2
+    private _renderer: Renderer2,
+    private _localStorageService: LocalStorageService,
+    private _http: HttpClient
   ) {}
-  public items: CloudResource[] = [];
-  resourceType = ResourceType;
-  a = 'sd';
 
   ngOnInit(): void {
     this.getState();
+
+    // Subcribe for component addition
     this._addComponentService.components.subscribe(
       (componentName: ResourceType) => {
         const item = new CloudResource();
@@ -80,18 +76,10 @@ export class PlaygroundComponent implements OnInit {
       }
     );
 
+    // Initializing canvas
     this._lineService.initialize(
       this.lineCanvas?.nativeElement as HTMLCanvasElement
     );
-
-    const observer = new ResizeObserver((entries) => {
-      console.log(entries);
-    });
-
-    const container = document.getElementById('Card');
-    if (container != null) {
-      observer.observe(container);
-    }
   }
 
   onEnter(value: string, id: number) {
@@ -100,7 +88,7 @@ export class PlaygroundComponent implements OnInit {
   }
 
   deploy() {
-    this.http
+    this._http
       .post('http://localhost:8080/deploy', JSON.stringify(this.items), {
         responseType: 'text',
       })
@@ -108,16 +96,16 @@ export class PlaygroundComponent implements OnInit {
   }
 
   destroy() {
-    this.http
+    this._http
       .get('http://localhost:8080/stack')
       .subscribe((res) => console.log(res));
   }
 
   getState() {
-    this.http.get('http://localhost:8080/state').subscribe({
+    this._applicationStateService.getState().pipe(take(1)).subscribe({
       next: (res) => (this.items = JSON.parse(JSON.stringify(res))),
       error: (_) => {
-        let data = localStorage.getItem('data');
+        let data = this._localStorageService.getLocalState();
         if (data != null) {
           this.items = JSON.parse(data);
           this.items.forEach((item) => {
@@ -136,18 +124,16 @@ export class PlaygroundComponent implements OnInit {
   }
 
   saveState() {
-    this.http
-      .post('http://localhost:8080/state', JSON.stringify(this.items), {
-        responseType: 'text',
-      })
+    this._applicationStateService.saveState(this.items)
+      .pipe(take(1))
       .subscribe({
         next: (data) => this.processResponse(data),
         error: (_) => {
           this.items.forEach((item) => {
-              item.inletMapString = JSON.stringify([...item.inletMap]);
-              item.outletMapString = JSON.stringify([...item.outletMap]);
+            item.inletMapString = JSON.stringify([...item.inletMap]);
+            item.outletMapString = JSON.stringify([...item.outletMap]);
           });
-          localStorage.setItem('data', JSON.stringify(this.items));
+          this._localStorageService.setLocalState(this.items)
         },
         complete: () => console.info('SaveState Completed'),
       });
@@ -175,16 +161,21 @@ export class PlaygroundComponent implements OnInit {
     currentItem.outlets.forEach((element) => {
       if (this.items[element]?.inletMap) {
         this.items[element].inletMap?.delete(id);
-        this.items[element].inlets?.splice(this.items[element].inlets?.indexOf(id), 1);
+        this.items[element].inlets?.splice(
+          this.items[element].inlets?.indexOf(id),
+          1
+        );
       }
     });
     currentItem.inlets.forEach((element) => {
       if (this.items[element]?.outletMap) {
         this.items[element].outletMap?.delete(id);
-        this.items[element].outlets?.splice(this.items[element].outlets?.indexOf(id), 1);
+        this.items[element].outlets?.splice(
+          this.items[element].outlets?.indexOf(id),
+          1
+        );
       }
     });
-
 
     this.items.splice(id, 1);
     this.redrawCanvas();
@@ -242,9 +233,7 @@ export class PlaygroundComponent implements OnInit {
   }
 
   startConnection(event: MouseEvent, i: number): void {
-    console.log(i);
     this.currentIndex = i;
-    this.endButtonDisabled = false;
     const lineCanvas = this.lineCanvas?.nativeElement as HTMLCanvasElement;
     const canvasRect = lineCanvas.getBoundingClientRect();
     const canvasX = canvasRect.left;
@@ -258,7 +247,6 @@ export class PlaygroundComponent implements OnInit {
 
   endConnection(event: MouseEvent, i: number): void {
     this.currentIndex = i;
-    this.endButtonDisabled = false;
     const lineCanvas = this.lineCanvas?.nativeElement as HTMLCanvasElement;
     const canvasRect = lineCanvas.getBoundingClientRect();
     const canvasX = canvasRect.left;
@@ -267,12 +255,13 @@ export class PlaygroundComponent implements OnInit {
     this._lineService.drawLine();
     this.updateLineState(i);
     this.saveState();
-    //this._lineService.reset();
   }
 
   dragEnd($event: CdkDragEnd, id: number) {
     let pos = $event.source.getFreeDragPosition();
     let currentItem = this.items[id];
+
+    // TODO: VPC group drag logic
     // if (currentItem.resourceType == ResourceType.Virtual_Private_Cloud) {
     //   let x = pos.x - currentItem.position.x;
     //   let y = pos.y - currentItem.position.y;
@@ -342,8 +331,8 @@ export class PlaygroundComponent implements OnInit {
   }
 
   onResize(ev: ResizeObserverEntry, id: number) {
-    this.renderer.setStyle(ev.target, 'width', ev.contentRect.width);
-    this.renderer.setStyle(ev.target, 'height', ev.contentRect.height);
+    this._renderer.setStyle(ev.target, 'width', ev.contentRect.width);
+    this._renderer.setStyle(ev.target, 'height', ev.contentRect.height);
     this.items[id].shape.width = ev.contentRect.width;
     this.items[id].shape.height = ev.contentRect.height;
     this.saveState();
