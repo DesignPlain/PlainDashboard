@@ -24,6 +24,7 @@ import {
   CdkMenuTrigger,
   CdkContextMenuTrigger,
 } from '@angular/cdk/menu';
+import { LineComponent } from './components/line/line.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {
     PlaygroundComponent,
     InputSearchComponent,
     SideBarComponent,
-    ResizeObserverDirective
+    ResizeObserverDirective,
+    LineComponent
   ],
   imports: [
     BrowserModule,

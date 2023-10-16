@@ -1,12 +1,10 @@
-import {
-  Component,
-  ElementRef,
-  OnInit,
-  ViewChild,
-  Renderer2,
-} from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
-import { faTrash, faGear, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import {
+  faTrash,
+  faGear,
+  IconDefinition,
+} from '@fortawesome/free-solid-svg-icons';
 import {
   CloudResource,
   Resource,
@@ -21,15 +19,12 @@ import { InputType } from 'src/app/enum/InputType';
 import { ProviderType, ResourceType } from 'src/app/enum/ResourceType';
 import { AddComponentService } from 'src/app/services/add-component.service';
 import { DrawLineService } from 'src/app/services/draw-line.service';
-import { HttpClient } from '@angular/common/http';
 import { take } from 'rxjs/operators';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { ApplicationStateService } from 'src/app/services/application-state.service';
-
-export interface Item {
-  id: number;
-  name: string;
-}
+import { LineOptions } from '../line/line.component';
+import { StackService } from 'src/app/services/stack.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-playground',
@@ -37,13 +32,17 @@ export interface Item {
   styleUrls: ['./playground.component.scss'],
 })
 export class PlaygroundComponent implements OnInit {
-  @ViewChild('lineCanvas', { static: true }) lineCanvas: ElementRef | undefined;
   public showSideBar: boolean = false;
   public currentIndex: number = 0;
-  public currentConfig: Map<string, { type: InputType; val: any }> = new Map<string, { type: InputType; val: any }>();
+  public currentConfig: Map<string, { type: InputType; val: any }> = new Map<
+    string,
+    { type: InputType; val: any }
+  >();
   public currentResourceType: ResourceType | undefined;
   public items: CloudResource[] = [];
   public resourceType = ResourceType;
+  public hideline: boolean = true;
+  public lineOptions: LineOptions;
 
   // Initializing font awesome icons
   public faTrash: IconDefinition = faTrash;
@@ -56,11 +55,11 @@ export class PlaygroundComponent implements OnInit {
     private _lineService: DrawLineService,
     private _renderer: Renderer2,
     private _localStorageService: LocalStorageService,
-    private _http: HttpClient
+    private _stackService: StackService
   ) {}
 
   ngOnInit(): void {
-    this.getState();
+    this._getState();
 
     // Subcribe for component addition
     this._addComponentService.components.subscribe(
@@ -72,90 +71,31 @@ export class PlaygroundComponent implements OnInit {
         item.providerType = ProviderType.GCP;
         item.resourceConfig = undefined;
         this.items.push(item);
-        this.saveState();
+        this._saveState();
       }
     );
-
-    // Initializing canvas
-    this._lineService.initialize(
-      this.lineCanvas?.nativeElement as HTMLCanvasElement
-    );
   }
 
-  onEnter(value: string, id: number) {
+  public onEnter(value: string, id: number): void {
     this.items[id].title = value;
-    this.saveState();
+    this._saveState();
   }
 
-  deploy() {
-    this._http
-      .post('http://localhost:8080/deploy', JSON.stringify(this.items), {
-        responseType: 'text',
-      })
-      .subscribe((res) => this.processResponse(res));
+  public deploy(): void {
+    this._stackService
+      .deploy(this.items)
+      .pipe(take(1))
+      .subscribe((res) => this._processResponse(res));
   }
 
-  destroy() {
-    this._http
-      .get('http://localhost:8080/stack')
+  public destroy(): void {
+    this._stackService
+      .getStack()
+      .pipe(take(1))
       .subscribe((res) => console.log(res));
   }
 
-  getState() {
-    this._applicationStateService.getState().pipe(take(1)).subscribe({
-      next: (res) => (this.items = JSON.parse(JSON.stringify(res))),
-      error: (_) => {
-        let data = this._localStorageService.getLocalState();
-        if (data != null) {
-          this.items = JSON.parse(data);
-          this.items.forEach((item) => {
-            item.inletMap = new Map<number, lineCoordinates>(
-              JSON.parse(item.inletMapString)
-            );
-            item.outletMap = new Map<number, lineCoordinates>(
-              JSON.parse(item.outletMapString)
-            );
-          });
-          this.redrawCanvas();
-        }
-      },
-      complete: () => console.info('GetState completed'),
-    });
-  }
-
-  saveState() {
-    this._applicationStateService.saveState(this.items)
-      .pipe(take(1))
-      .subscribe({
-        next: (data) => this.processResponse(data),
-        error: (_) => {
-          this.items.forEach((item) => {
-            item.inletMapString = JSON.stringify([...item.inletMap]);
-            item.outletMapString = JSON.stringify([...item.outletMap]);
-          });
-          this._localStorageService.setLocalState(this.items)
-        },
-        complete: () => console.info('SaveState Completed'),
-      });
-  }
-
-  processResponse(val: string) {
-    var data = JSON.parse(val);
-    console.log(data['message']);
-  }
-
-  ngAfterViewInit() {
-    if (this.lineCanvas) {
-      const parentWidth =
-        this.lineCanvas?.nativeElement.parentElement.clientWidth;
-      const parentHeight =
-        this.lineCanvas?.nativeElement.parentElement.clientHeight;
-      this.lineCanvas.nativeElement.width = parentWidth;
-      this.lineCanvas.nativeElement.height = parentHeight;
-    }
-  }
-
-  trashShit(id: number): void {
+  public trashShit(id: number): void {
     console.log(id);
     let currentItem = this.items[id];
     currentItem.outlets.forEach((element) => {
@@ -178,11 +118,10 @@ export class PlaygroundComponent implements OnInit {
     });
 
     this.items.splice(id, 1);
-    this.redrawCanvas();
-    this.saveState();
+    this._saveState();
   }
 
-  toggleSidebar(i: number, item: CloudResource): void {
+  public toggleSidebar(i: number, item: CloudResource): void {
     if (!this.showSideBar) {
       if (item.resourceConfig != undefined) {
         switch (item.resourceType) {
@@ -232,32 +171,32 @@ export class PlaygroundComponent implements OnInit {
     this.showSideBar = !this.showSideBar;
   }
 
-  startConnection(event: MouseEvent, i: number): void {
+  public startConnection(event: MouseEvent, i: number): void {
     this.currentIndex = i;
-    const lineCanvas = this.lineCanvas?.nativeElement as HTMLCanvasElement;
-    const canvasRect = lineCanvas.getBoundingClientRect();
-    const canvasX = canvasRect.left;
-    const canvasy = canvasRect.top;
-    this._lineService.setStart(
-      event.clientX - canvasX,
-      event.clientY - canvasy
-    );
+    this._lineService.setStart(event.clientX -240, event.clientY);
     this.currentInlet = i;
   }
 
-  endConnection(event: MouseEvent, i: number): void {
+  public endConnection(event: MouseEvent, i: number): void {
     this.currentIndex = i;
-    const lineCanvas = this.lineCanvas?.nativeElement as HTMLCanvasElement;
-    const canvasRect = lineCanvas.getBoundingClientRect();
-    const canvasX = canvasRect.left;
-    const canvasy = canvasRect.top;
-    this._lineService.setEnd(event.clientX - canvasX, event.clientY - canvasy);
-    this._lineService.drawLine();
-    this.updateLineState(i);
-    this.saveState();
+    this._lineService.setEnd(event.clientX - 240, event.clientY);
+    this._updateLineState(i);
+    this._saveState();
+    let cords = this._lineService.getCoordinates();
+    this.lineOptions = {
+      isNew: false,
+      selected: false,
+      position: {
+        x1: cords.startx,
+        y1: cords.starty,
+        x2: cords.endx,
+        y2: cords.endy,
+      },
+    };
+    this.hideline = false;
   }
 
-  dragEnd($event: CdkDragEnd, id: number) {
+  public dragEnd($event: CdkDragEnd, id: number): void {
     let pos = $event.source.getFreeDragPosition();
     let currentItem = this.items[id];
 
@@ -268,7 +207,7 @@ export class PlaygroundComponent implements OnInit {
 
     //   let index = 0;
     //   this.items.forEach((element) => {
-    //     this.UpdateLine(element, index, pos);
+    //     this._updateLine(element, index, pos);
     //     let nx = element.position.x + x;
     //     let ny = element.position.y + y;
     //     element.position = { x: nx, y: ny };
@@ -276,32 +215,105 @@ export class PlaygroundComponent implements OnInit {
     //   });
     // }
 
-    this.UpdateLine(currentItem, id, pos);
+    this._updateLine(currentItem, id, pos);
 
     currentItem.position.x = pos.x;
     currentItem.position.y = pos.y;
     console.log(pos);
-    this.saveState();
+    this._saveState();
+    this.items = _.cloneDeep(this.items);
   }
 
-  UpdateLine(currentItem: CloudResource, id: number, pos: any) {
+  public onResize(ev: ResizeObserverEntry, id: number): void {
+    this._renderer.setStyle(ev.target, 'width', ev.contentRect.width);
+    this._renderer.setStyle(ev.target, 'height', ev.contentRect.height);
+    this.items[id].shape.width = ev.contentRect.width;
+    this.items[id].shape.height = ev.contentRect.height;
+    this._saveState();
+  }
+
+  public updateConfig(id: number, res: Resource): void {
+    this.items[id].resourceConfig = res;
+    this._saveState();
+  }
+
+  public getLineOptions(item: CloudResource, outlet: number): LineOptions {
+    return {
+      selected: false,
+      isNew: false,
+      position: {
+        x1: item.outletMap.get(outlet)?.x1 as number,
+        y1: item.outletMap.get(outlet)?.y1 as number,
+        x2: item.outletMap.get(outlet)?.x2 as number,
+        y2: item.outletMap.get(outlet)?.y2 as number,
+      },
+    };
+  }
+
+  private _getState(): void {
+    this._applicationStateService
+      .getState()
+      .pipe(take(1))
+      .subscribe({
+        next: (res) => (this.items = JSON.parse(JSON.stringify(res))),
+        error: (_) => {
+          let data = this._localStorageService.getLocalState();
+          if (data != null) {
+            this.items = JSON.parse(data);
+            this.items.forEach((item) => {
+              item.inletMap = new Map<number, lineCoordinates>(
+                JSON.parse(item.inletMapString)
+              );
+              item.outletMap = new Map<number, lineCoordinates>(
+                JSON.parse(item.outletMapString)
+              );
+            });
+          }
+        },
+        complete: () => console.info('GetState completed'),
+      });
+  }
+
+  private _saveState(): void {
+    this._applicationStateService
+      .saveState(this.items)
+      .pipe(take(1))
+      .subscribe({
+        next: (data) => this._processResponse(data),
+        error: (_) => {
+          this.items.forEach((item) => {
+            item.inletMapString = JSON.stringify([...item.inletMap]);
+            item.outletMapString = JSON.stringify([...item.outletMap]);
+          });
+          this._localStorageService.setLocalState(this.items);
+        },
+        complete: () => console.info('SaveState Completed'),
+      });
+  }
+
+  private _processResponse(val: string): void {
+    var data = JSON.parse(val);
+    console.log(data['message']);
+  }
+
+  private _updateLine(currentItem: CloudResource, id: number, pos: any) {
     let translateX = pos.x - currentItem.position.x;
     let translateY = pos.y - currentItem.position.y;
     if (currentItem.inlets.length > 0) {
       currentItem.inlets.forEach((element) => {
         let inlet = currentItem.inletMap.get(element);
         currentItem.inletMap.set(element, {
-          x: (inlet?.x as number) + translateX,
-          y: (inlet?.y as number) + translateY,
+          x1: (inlet?.x1 as number) + translateX,
+          y1: (inlet?.y1 as number) + translateY,
           x2: inlet?.x2 as number,
           y2: inlet?.y2 as number,
         });
         let outlet = this.items[element].outletMap.get(id);
         this.items[element].outletMap.set(id, {
-          x: outlet?.x as number,
-          y: outlet?.y as number,
-          x2: (inlet?.x as number) + translateX,
-          y2: (inlet?.y as number) + translateY,
+          x1: outlet?.x1 as number,
+          y1: outlet?.y1 as number,
+          x2: (inlet?.x1 as number) + translateX,
+          y2: (inlet?.y1 as number) + translateY,
         });
       });
     }
@@ -310,76 +322,40 @@ export class PlaygroundComponent implements OnInit {
       currentItem.outlets.forEach((element) => {
         let outlet = currentItem.outletMap.get(element);
         currentItem.outletMap.set(element, {
-          x: (outlet?.x as number) + translateX,
-          y: (outlet?.y as number) + translateY,
+          x1: (outlet?.x1 as number) + translateX,
+          y1: (outlet?.y1 as number) + translateY,
           x2: outlet?.x2 as number,
           y2: outlet?.y2 as number,
         });
         let inlet = this.items[element].inletMap.get(id);
         this.items[element].inletMap.set(id, {
-          x: inlet?.x as number,
-          y: inlet?.y as number,
-          x2: (inlet?.x as number) + translateX,
-          y2: (inlet?.y as number) + translateY,
+          x1: inlet?.x1 as number,
+          y1: inlet?.y1 as number,
+          x2: (inlet?.x1 as number) + translateX,
+          y2: (inlet?.y1 as number) + translateY,
         });
       });
     }
-
-    if (currentItem.inlets.length > 0 || currentItem.outlets.length > 0) {
-      this.redrawCanvas();
-    }
   }
 
-  onResize(ev: ResizeObserverEntry, id: number) {
-    this._renderer.setStyle(ev.target, 'width', ev.contentRect.width);
-    this._renderer.setStyle(ev.target, 'height', ev.contentRect.height);
-    this.items[id].shape.width = ev.contentRect.width;
-    this.items[id].shape.height = ev.contentRect.height;
-    this.saveState();
-  }
-
-  updateConfig(id: number, res: Resource) {
-    this.items[id].resourceConfig = res;
-    this.saveState();
-  }
-
-  updateLineState(id: number) {
+  private _updateLineState(id: number): void {
     let outLetItem = this.items[this.currentInlet];
     let inLetItem = this.items[id];
     outLetItem.outlets.push(id);
     inLetItem.inlets.push(this.currentInlet);
     let coordinates = this._lineService.getCoordinates();
     outLetItem.outletMap.set(id, {
-      x: coordinates.startx,
-      y: coordinates.starty,
+      x1: coordinates.startx,
+      y1: coordinates.starty,
       x2: coordinates.endx,
       y2: coordinates.endy,
     });
     inLetItem.inletMap.set(this.currentInlet, {
-      x: coordinates.endx,
-      y: coordinates.endy,
+      x1: coordinates.endx,
+      y1: coordinates.endy,
       x2: coordinates.startx,
       y2: coordinates.starty,
     });
     console.log(this.items);
-  }
-
-  redrawCanvas() {
-    this._lineService.clearLine();
-    this.items.forEach((item) => {
-      if (item.outlets.length > 0) {
-        item.outlets.forEach((outlet) => {
-          this._lineService.setStart(
-            item.outletMap.get(outlet)?.x as number,
-            item.outletMap.get(outlet)?.y as number
-          );
-          this._lineService.setEnd(
-            item.outletMap.get(outlet)?.x2 as number,
-            item.outletMap.get(outlet)?.y2 as number
-          );
-          this._lineService.drawLine();
-        });
-      }
-    });
   }
 }

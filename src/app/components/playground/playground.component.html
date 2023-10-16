@@ -40,6 +40,11 @@
       </div>
     </div>
   </div>
+  <ng-container *ngIf="item.outlets.length > 0">
+    <div *ngFor="let outlet of item.outlets">
+      <line [LineOptions]="getLineOptions(item,outlet)"></line>
+    </div>
+  </ng-container>
 </ng-container>
 <div class="controls">
   <div class="apply" (click)="deploy()">Deploy</div>
@@ -49,5 +54,3 @@
 
 <app-side-bar [config]="currentConfig" [currentResource]="currentResourceType" [currentIndex]="currentIndex"
   class="sidebar" (ConfigUpdateEvent)="updateConfig($event.id, $event.res)" *ngIf="showSideBar" />
-
-<canvas #lineCanvas class="line-canvas"></canvas>

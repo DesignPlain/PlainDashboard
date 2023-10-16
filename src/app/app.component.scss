@@ -6,7 +6,7 @@
 
     .left {
       border-right: 1px solid rgba(255, 255, 255, 0.507);
-      max-width: 250px;
+      max-width: 240px;
       min-width: 240px;
       min-height: 100%;
       background-color: #e5e5f7;
@@ -22,7 +22,6 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      //max-width: calc(100% - 250px);
       background-color: #e5e5f7;
       opacity: .9;
       background-image: radial-gradient(#ffffff 0.2px, #000000 0.44px);
