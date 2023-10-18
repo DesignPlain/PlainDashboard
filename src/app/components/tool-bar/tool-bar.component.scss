@@ -1,0 +1,31 @@
+:host {
+  .controls {
+    display: flex;
+    flex-wrap: nowrap;
+
+    .apply {
+      left: 40%;
+      position: relative;
+      margin: 10px;
+      padding: 7px;
+      border-radius: 4%;
+      max-height: 30px;
+      min-height: 15px;
+      min-width: 50px;
+      max-width: 80px;
+      text-align: center;
+      background-image: radial-gradient(#000000 0.2px, #85da3f 0.2px);
+      color: #0c600c;
+      font-size: small;
+      font-weight: bold;
+      font-family: sans-serif;
+      box-shadow: 3px 3px rgba(60, 116, 58, 0.363);
+
+      &:hover {
+        cursor: pointer;
+        background-image: radial-gradient(#000000 0.2px, #5b972a 0.2px);
+        color: #1fe71f;
+      }
+    }
+  }
+}
