@@ -154,6 +154,16 @@
     }
   }
 
+  .listIcon {
+    position: relative;
+    position: absolute;
+    left: 5px;
+    margin: 0 5px;
+    max-width: 20px;
+    max-height: 20px;
+    border-radius: 25%;
+  }
+
   .name {
     font-weight: bolder;
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -222,17 +232,6 @@
     }
   }
 }
-
-.listIcon {
-  position: relative;
-  position: absolute;
-  left: 5px;
-  margin: 0 5px;
-  max-width: 20px;
-  max-height: 20px;
-  border-radius: 25%;
-}
-
 
 // menu css
 

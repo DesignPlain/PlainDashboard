@@ -26,6 +26,7 @@ import {
 } from '@angular/cdk/menu';
 import { LineComponent } from './components/line/line.component';
 import { ToolBarComponent } from './components/tool-bar/tool-bar.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ToolBarComponent } from './components/tool-bar/tool-bar.component';
     SideBarComponent,
     ResizeObserverDirective,
     LineComponent,
-    ToolBarComponent
+    ToolBarComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

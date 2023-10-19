@@ -25,6 +25,7 @@ import { ApplicationStateService } from 'src/app/services/application-state.serv
 import { LineOptions } from '../line/line.component';
 import { StackService } from 'src/app/services/stack.service';
 import * as _ from 'lodash';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-playground',
@@ -55,12 +56,12 @@ export class PlaygroundComponent implements OnInit {
     private _lineService: DrawLineService,
     private _renderer: Renderer2,
     private _localStorageService: LocalStorageService,
-    private _stackService: StackService
+    private _stackService: StackService,
+    private _dataService: DataService
   ) {}
 
   ngOnInit(): void {
     this._getState();
-
     // Subcribe for component addition
     this._addComponentService.components.subscribe(
       (componentName: ResourceType) => {
@@ -255,7 +256,10 @@ export class PlaygroundComponent implements OnInit {
       .getState()
       .pipe(take(1))
       .subscribe({
-        next: (res) => (this.items = JSON.parse(JSON.stringify(res))),
+        next: (res) => {
+          this.items = JSON.parse(JSON.stringify(res))
+          this._dataService.currentList = this.items;
+        },
         error: (_) => {
           let data = this._localStorageService.getLocalState();
           if (data != null) {
@@ -268,6 +272,7 @@ export class PlaygroundComponent implements OnInit {
                 JSON.parse(item.outletMapString)
               );
             });
+            this._dataService.currentList = this.items;
           }
         },
         complete: () => console.info('GetState completed'),
@@ -275,6 +280,7 @@ export class PlaygroundComponent implements OnInit {
   }
 
   private _saveState(): void {
+    this._dataService.currentList = this.items;
     this._applicationStateService
       .saveState(this.items)
       .pipe(take(1))
