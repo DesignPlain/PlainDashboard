@@ -27,6 +27,8 @@ import {
 import { LineComponent } from './components/line/line.component';
 import { ToolBarComponent } from './components/tool-bar/tool-bar.component';
 import { CardComponent } from './components/card/card.component';
+import { ConfigModalComponent } from './components/config-modal/config-modal.component';
+import { ConfigOptionsComponent } from './config-options/config-options.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { CardComponent } from './components/card/card.component';
     ResizeObserverDirective,
     LineComponent,
     ToolBarComponent,
-    CardComponent
+    CardComponent,
+    ConfigModalComponent,
+    ConfigOptionsComponent
   ],
   imports: [
     BrowserModule,

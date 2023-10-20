@@ -1,0 +1,14 @@
+:host{
+  .container{
+    position: relative;
+    min-width: 200px;
+    min-height: 200px;
+    background-color: white;
+    .close{
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+    }
+  }
+}

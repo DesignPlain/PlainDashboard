@@ -1,3 +1,4 @@
+<app-config-options class="configuration"></app-config-options>
 <ng-container *ngFor="let item of items; let i = index">
     <div>
       <app-card [item]="item" (dragEnded)="dragEnd($event, i)" (resized)="onResize($event, i)" (endConnectionClicked)="endConnection($event,i)"
