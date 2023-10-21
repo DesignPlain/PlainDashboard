@@ -54,12 +54,29 @@ export class PlaygroundComponent implements OnInit {
 
   @HostListener('document:mouseup', ['$event'])
   onMouseUp(e: any) {
+    if(this.currentInput != null && this.currentOutput){
+      let inputItem = this.items.find((x) => x.id == this.currentInput?.id);
+      let outputItem = this.items.find((x) => x.id == this.currentOutput?.id);
+      inputItem?.inlets.push(outputItem?.id as string);
+      outputItem?.outlets.push(inputItem?.id as string);
+      inputItem?.inletMap.set(outputItem?.id as string, {
+        x1: this.currentOutput.x,
+        y1: this.currentOutput.y,
+        x2: this.currentInput.x,
+        y2: this.currentInput.y
+      });
+      outputItem?.outletMap.set(inputItem?.id as string, {
+        x1: this.currentInput.x,
+        y1: this.currentInput.y,
+        x2: this.currentOutput.x,
+        y2: this.currentOutput.y
+      })
+    }
     this.currentOutput = null;
     this.currentInput = null;
     this.newLine = false;
   }
   public newLine: boolean = false;
-  public newLineOptions: LineOptions;
   public showSideBar: boolean = false;
   public currentIndex: number = 0;
   public currentConfig: Map<string, { type: InputType; val: any }> = new Map<
@@ -87,8 +104,7 @@ export class PlaygroundComponent implements OnInit {
     private _renderer: Renderer2,
     private _localStorageService: LocalStorageService,
     private _stackService: StackService,
-    private _dataService: DataService,
-    private _cdr: ChangeDetectorRef
+    private _dataService: DataService
   ) {}
 
   ngOnInit(): void {
@@ -107,9 +123,6 @@ export class PlaygroundComponent implements OnInit {
         this._saveState();
       }
     );
-    this._lineService.newLine.subscribe((lineOptions: LineOptions) => {
-      this.newLineOptions = lineOptions;
-    });
   }
 
   public onEnter(value: string, id: number): void {
@@ -134,24 +147,24 @@ export class PlaygroundComponent implements OnInit {
   public trashShit(id: number): void {
     console.log(id);
     let currentItem = this.items[id];
-    currentItem.outlets.forEach((element) => {
-      if (this.items[element]?.inletMap) {
-        this.items[element].inletMap?.delete(id);
-        this.items[element].inlets?.splice(
-          this.items[element].inlets?.indexOf(id),
-          1
-        );
-      }
-    });
-    currentItem.inlets.forEach((element) => {
-      if (this.items[element]?.outletMap) {
-        this.items[element].outletMap?.delete(id);
-        this.items[element].outlets?.splice(
-          this.items[element].outlets?.indexOf(id),
-          1
-        );
-      }
-    });
+    // currentItem.outlets.forEach((element) => {
+    //   if (this.items[element]?.inletMap) {
+    //     this.items[element].inletMap?.delete(id);
+    //     this.items[element].inlets?.splice(
+    //       this.items[element].inlets?.indexOf(id),
+    //       1
+    //     );
+    //   }
+    // });
+    // currentItem.inlets.forEach((element) => {
+    //   if (this.items[element]?.outletMap) {
+    //     this.items[element].outletMap?.delete(id);
+    //     this.items[element].outlets?.splice(
+    //       this.items[element].outlets?.indexOf(id),
+    //       1
+    //     );
+    //   }
+    // });
 
     this.items.splice(id, 1);
     this._saveState();
@@ -256,7 +269,7 @@ this.currentOutput = {
     //   });
     // }
 
-    this._updateLine(currentItem, id, pos);
+    // this._updateLine(currentItem, id, pos);
 
     currentItem.position.x = pos.x;
     currentItem.position.y = pos.y;
@@ -278,15 +291,15 @@ this.currentOutput = {
     this._saveState();
   }
 
-  public getLineOptions(item: CloudResource, outlet: number): LineOptions {
+  public getLineOptions(item: CloudResource, outlet: string): LineOptions {
     return {
       selected: false,
       isNew: false,
       position: {
-        x1: item.outletMap.get(outlet)?.x1 as number,
-        y1: item.outletMap.get(outlet)?.y1 as number,
-        x2: item.outletMap.get(outlet)?.x2 as number,
-        y2: item.outletMap.get(outlet)?.y2 as number,
+        x1: item.outletMap.get(outlet)?.x2 as number,
+        y1: item.outletMap.get(outlet)?.y2 as number,
+        x2: item.outletMap.get(outlet)?.x1 as number,
+        y2: item.outletMap.get(outlet)?.y1 as number,
       },
     };
   }
@@ -305,10 +318,10 @@ this.currentOutput = {
           if (data != null) {
             this.items = JSON.parse(data);
             this.items.forEach((item) => {
-              item.inletMap = new Map<number, lineCoordinates>(
+              item.inletMap = new Map<string, lineCoordinates>(
                 JSON.parse(item.inletMapString)
               );
-              item.outletMap = new Map<number, lineCoordinates>(
+              item.outletMap = new Map<string, lineCoordinates>(
                 JSON.parse(item.outletMapString)
               );
             });
@@ -342,66 +355,66 @@ this.currentOutput = {
     console.log(data['message']);
   }
 
-  private _updateLine(currentItem: CloudResource, id: number, pos: any) {
-    let translateX = pos.x - currentItem.position.x;
-    let translateY = pos.y - currentItem.position.y;
-    if (currentItem.inlets.length > 0) {
-      currentItem.inlets.forEach((element) => {
-        let inlet = currentItem.inletMap.get(element);
-        currentItem.inletMap.set(element, {
-          x1: (inlet?.x1 as number) + translateX,
-          y1: (inlet?.y1 as number) + translateY,
-          x2: inlet?.x2 as number,
-          y2: inlet?.y2 as number,
-        });
-        let outlet = this.items[element].outletMap.get(id);
-        this.items[element].outletMap.set(id, {
-          x1: outlet?.x1 as number,
-          y1: outlet?.y1 as number,
-          x2: (inlet?.x1 as number) + translateX,
-          y2: (inlet?.y1 as number) + translateY,
-        });
-      });
-    }
+  // private _updateLine(currentItem: CloudResource, id: number, pos: any) {
+  //   let translateX = pos.x - currentItem.position.x;
+  //   let translateY = pos.y - currentItem.position.y;
+  //   if (currentItem.inlets.length > 0) {
+  //     currentItem.inlets.forEach((element) => {
+  //       let inlet = currentItem.inletMap.get(element);
+  //       currentItem.inletMap.set(element, {
+  //         x1: (inlet?.x1 as number) + translateX,
+  //         y1: (inlet?.y1 as number) + translateY,
+  //         x2: inlet?.x2 as number,
+  //         y2: inlet?.y2 as number,
+  //       });
+  //       let outlet = this.items[element].outletMap.get(id);
+  //       this.items[element].outletMap.set(id, {
+  //         x1: outlet?.x1 as number,
+  //         y1: outlet?.y1 as number,
+  //         x2: (inlet?.x1 as number) + translateX,
+  //         y2: (inlet?.y1 as number) + translateY,
+  //       });
+  //     });
+  //   }
 
-    if (currentItem.outlets.length > 0) {
-      currentItem.outlets.forEach((element) => {
-        let outlet = currentItem.outletMap.get(element);
-        currentItem.outletMap.set(element, {
-          x1: (outlet?.x1 as number) + translateX,
-          y1: (outlet?.y1 as number) + translateY,
-          x2: outlet?.x2 as number,
-          y2: outlet?.y2 as number,
-        });
-        let inlet = this.items[element].inletMap.get(id);
-        this.items[element].inletMap.set(id, {
-          x1: inlet?.x1 as number,
-          y1: inlet?.y1 as number,
-          x2: (inlet?.x1 as number) + translateX,
-          y2: (inlet?.y1 as number) + translateY,
-        });
-      });
-    }
-  }
+  //   if (currentItem.outlets.length > 0) {
+  //     currentItem.outlets.forEach((element) => {
+  //       let outlet = currentItem.outletMap.get(element);
+  //       currentItem.outletMap.set(element, {
+  //         x1: (outlet?.x1 as number) + translateX,
+  //         y1: (outlet?.y1 as number) + translateY,
+  //         x2: outlet?.x2 as number,
+  //         y2: outlet?.y2 as number,
+  //       });
+  //       let inlet = this.items[element].inletMap.get(id);
+  //       this.items[element].inletMap.set(id, {
+  //         x1: inlet?.x1 as number,
+  //         y1: inlet?.y1 as number,
+  //         x2: (inlet?.x1 as number) + translateX,
+  //         y2: (inlet?.y1 as number) + translateY,
+  //       });
+  //     });
+  //   }
+  // }
 
-  private _updateLineState(id: number): void {
-    let outLetItem = this.items[this.currentInlet];
-    let inLetItem = this.items[id];
-    outLetItem.outlets.push(id);
-    inLetItem.inlets.push(this.currentInlet);
-    let coordinates = this._lineService.getCoordinates();
-    outLetItem.outletMap.set(id, {
-      x1: coordinates.startx,
-      y1: coordinates.starty,
-      x2: coordinates.endx,
-      y2: coordinates.endy,
-    });
-    inLetItem.inletMap.set(this.currentInlet, {
-      x1: coordinates.endx,
-      y1: coordinates.endy,
-      x2: coordinates.startx,
-      y2: coordinates.starty,
-    });
-    console.log(this.items);
-  }
+  // private _updateLineState(id: number): void {
+  //   let outLetItem = this.items[this.currentInlet];
+  //   let inLetItem = this.items[id];
+  //   outLetItem.outlets.push(id);
+  //   inLetItem.inlets.push(this.currentInlet);
+  //   let coordinates = this._lineService.getCoordinates();
+  //   outLetItem.outletMap.set(id, {
+  //     x1: coordinates.startx,
+  //     y1: coordinates.starty,
+  //     x2: coordinates.endx,
+  //     y2: coordinates.endy,
+  //   });
+  //   inLetItem.inletMap.set(this.currentInlet, {
+  //     x1: coordinates.endx,
+  //     y1: coordinates.endy,
+  //     x2: coordinates.startx,
+  //     y2: coordinates.starty,
+  //   });
+  //   console.log(this.items);
+  // }
 }
