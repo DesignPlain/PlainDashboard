@@ -22,9 +22,10 @@ export class CardComponent {
   @Output()
   public toggleSidebarClicked = new EventEmitter();
   @Output()
-  public startConnectionClicked = new EventEmitter<MouseEvent>();
-  @Output()
-  public endConnectionClicked = new EventEmitter<MouseEvent>();
+  public startConnectionClicked = new EventEmitter<{
+    outputPositionX: number;
+    outputPositionY: number;
+  }>();
   @Output()
   public dragEnded = new EventEmitter<CdkDragEnd>();
   @Output()
@@ -37,20 +38,32 @@ export class CardComponent {
   public faTrash: IconDefinition = faTrash;
   public faGear: IconDefinition = faGear;
 
+  public handleMouseDown(event: any, ref: HTMLElement): void {
+    event.stopPropagation();
+    const centerX =
+      ref.getBoundingClientRect().left +
+      Math.abs(
+        ref.getBoundingClientRect().right - ref.getBoundingClientRect().left
+      ) /
+        2;
+    const centerY =
+      ref.getBoundingClientRect().top +
+      Math.abs(
+        ref.getBoundingClientRect().bottom - ref.getBoundingClientRect().top
+      ) /
+        2;
+        this.startConnectionClicked.emit({
+          outputPositionX: centerX,
+          outputPositionY: centerY
+        })
+  }
+
   public trashShit(): void {
     this.trashShitClicked.emit();
   }
 
   public toggleSidebar(): void {
     this.toggleSidebarClicked.emit();
-  }
-
-  public startConnection(event: MouseEvent): void {
-    this.startConnectionClicked.emit(event);
-  }
-
-  public endConnection(event: MouseEvent): void {
-    this.endConnectionClicked.emit(event);
   }
 
   public dragEnd($event: CdkDragEnd): void {

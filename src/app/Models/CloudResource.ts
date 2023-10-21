@@ -1,6 +1,7 @@
 import { ProviderType, ResourceType } from "../enum/ResourceType";
 
 export class CloudResource {
+  public id: string = '';
   public name: string = '';
   public title: string = 'Description';
   public resourceType: ResourceType = 0;

@@ -1,5 +1,5 @@
-<svg class="wrapper">
+<svg *ngIf="lineReady" class="wrapper">
   <path
-  [ngClass]="{'edgeNew': LineOptions.isNew, 'selected': LineOptions.selected, 'edge': !LineOptions.selected}"
+  [ngClass]="{'edgeNew': isNew, 'selected': selected, 'edge': !selected}"
   [attr.d]=path></path>
 </svg>

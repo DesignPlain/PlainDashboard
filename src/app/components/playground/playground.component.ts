@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import {
   faTrash,
@@ -26,6 +26,8 @@ import { LineOptions } from '../line/line.component';
 import { StackService } from 'src/app/services/stack.service';
 import * as _ from 'lodash';
 import { DataService } from 'src/app/services/data.service';
+import { RESOURCE_LIST_WIDTH } from 'src/app/constants/board-constants';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-playground',
@@ -33,6 +35,24 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./playground.component.scss'],
 })
 export class PlaygroundComponent implements OnInit {
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(e: any) {
+    if(this.currentOutput){
+      this.edgeObserver.next({
+        isNew: false,
+        selected: false,
+        position: {
+          x1: this.currentOutput.x,
+          y1: this.currentOutput.y,
+          x2: e.clientX - RESOURCE_LIST_WIDTH,
+          y2: e.clientY
+        }
+      })
+      this.newLine = true;
+    }
+  }
+  public newLine: boolean = false;
+  public newLineOptions: LineOptions;
   public showSideBar: boolean = false;
   public currentIndex: number = 0;
   public currentConfig: Map<string, { type: InputType; val: any }> = new Map<
@@ -48,6 +68,8 @@ export class PlaygroundComponent implements OnInit {
   // Initializing font awesome icons
   public faTrash: IconDefinition = faTrash;
   public faGear: IconDefinition = faGear;
+  public currentOutput: { x: number, y: number, id: string} | null = null;
+  public edgeObserver: Subject<LineOptions> = new Subject<LineOptions>();
   private currentInlet: number;
 
   constructor(
@@ -57,7 +79,8 @@ export class PlaygroundComponent implements OnInit {
     private _renderer: Renderer2,
     private _localStorageService: LocalStorageService,
     private _stackService: StackService,
-    private _dataService: DataService
+    private _dataService: DataService,
+    private _cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -66,6 +89,7 @@ export class PlaygroundComponent implements OnInit {
     this._addComponentService.components.subscribe(
       (componentName: ResourceType) => {
         const item = new CloudResource();
+        item.id = _.uniqueId('Resource');
         item.resourceType = componentName;
         item.name = ResourceType[componentName];
         item.title = item.name.toString();
@@ -75,6 +99,9 @@ export class PlaygroundComponent implements OnInit {
         this._saveState();
       }
     );
+    this._lineService.newLine.subscribe((lineOptions: LineOptions) => {
+      this.newLineOptions = lineOptions;
+    });
   }
 
   public onEnter(value: string, id: number): void {
@@ -172,10 +199,18 @@ export class PlaygroundComponent implements OnInit {
     this.showSideBar = !this.showSideBar;
   }
 
-  public startConnection(event: MouseEvent, i: number): void {
-    this.currentIndex = i;
-    this._lineService.setStart(event.clientX -240, event.clientY);
-    this.currentInlet = i;
+  public startConnection(
+    startPosition: {
+      outputPositionX: number;
+      outputPositionY: number;
+    },
+    outPutId: string
+  ): void {
+this.currentOutput = {
+  id: outPutId,
+  x: startPosition.outputPositionX - RESOURCE_LIST_WIDTH,
+  y: startPosition.outputPositionY
+};
   }
 
   public endConnection(event: MouseEvent, i: number): void {
@@ -257,7 +292,7 @@ export class PlaygroundComponent implements OnInit {
       .pipe(take(1))
       .subscribe({
         next: (res) => {
-          this.items = JSON.parse(JSON.stringify(res))
+          this.items = JSON.parse(JSON.stringify(res));
           this._dataService.currentList = this.items;
         },
         error: (_) => {

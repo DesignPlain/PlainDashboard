@@ -1,10 +1,10 @@
 <div class="TypicalCard" [ngClass]="{'rectangle': item.resourceType == resourceType.Subnet, 'group': item.resourceType == resourceType.Virtual_Private_Cloud}" cdkDragBoundary=".right" [cdkDragFreeDragPosition]="item.position"
   (cdkDragEnded)="dragEnd($event)" cdkDrag resizeObserver (resize)="onResize($event)"
   [style.width.px]="item.shape.width" [style.height.px]="item.shape.height">
-  <button class="firstButton" (click)="endConnection($event)">+</button>
+  <button class="firstButton">+</button>
   <input #box class="name" type="text" value={{item.title}} (focusout)="onEnter(box.value)" placeholder={{item.title}}>
   <img class="listIcon" src="../../../assets/Arch_Amazon-{{item.name}}_64.png" title={{item.name}} cdkDragHandle>
   <div (click)="trashShit()"><fa-icon class="i1" [icon]="faTrash" /></div>
   <div (click)="toggleSidebar()"><fa-icon class="i2" [icon]="faGear" /></div>
-  <button class="secondButton" (click)="startConnection($event)">+</button>
+  <button #buttonRef class="secondButton" (mousedown)="handleMouseDown($event, buttonRef)">+</button>
 </div>

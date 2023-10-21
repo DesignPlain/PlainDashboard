@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { LineOptions } from '../components/line/line.component';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DrawLineService {
+  public newLine: Subject<LineOptions> = new Subject<LineOptions>();
   private startx: number = 0;
   private starty: number = 0;
   private endx: number = 0;
