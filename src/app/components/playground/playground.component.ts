@@ -39,7 +39,7 @@ export class PlaygroundComponent implements OnInit {
   onMouseMove(e: any) {
     if(this.currentOutput){
       this.edgeObserver.next({
-        isNew: false,
+        isNew: true,
         selected: false,
         position: {
           x1: this.currentOutput.x,
@@ -50,6 +50,13 @@ export class PlaygroundComponent implements OnInit {
       })
       this.newLine = true;
     }
+  }
+
+  @HostListener('document:mouseup', ['$event'])
+  onMouseUp(e: any) {
+    this.currentOutput = null;
+    this.currentInput = null;
+    this.newLine = false;
   }
   public newLine: boolean = false;
   public newLineOptions: LineOptions;
@@ -69,6 +76,7 @@ export class PlaygroundComponent implements OnInit {
   public faTrash: IconDefinition = faTrash;
   public faGear: IconDefinition = faGear;
   public currentOutput: { x: number, y: number, id: string} | null = null;
+  public currentInput: { x: number, y: number, id: string} | null = null;
   public edgeObserver: Subject<LineOptions> = new Subject<LineOptions>();
   private currentInlet: number;
 
@@ -213,23 +221,20 @@ this.currentOutput = {
 };
   }
 
-  public endConnection(event: MouseEvent, i: number): void {
-    this.currentIndex = i;
-    this._lineService.setEnd(event.clientX - 240, event.clientY);
-    this._updateLineState(i);
-    this._saveState();
-    let cords = this._lineService.getCoordinates();
-    this.lineOptions = {
-      isNew: false,
-      selected: false,
-      position: {
-        x1: cords.startx,
-        y1: cords.starty,
-        x2: cords.endx,
-        y2: cords.endy,
-      },
+  public mouseEntered(endPosition: {
+    inputPositionX: number;
+    inputPositionY: number;
+  },
+  inputId: string): void {
+    this.currentInput = {
+      id: inputId,
+      x: endPosition.inputPositionX - RESOURCE_LIST_WIDTH,
+      y: endPosition.inputPositionY
     };
-    this.hideline = false;
+  }
+
+  public mouseLeft(): void {
+
   }
 
   public dragEnd($event: CdkDragEnd, id: number): void {

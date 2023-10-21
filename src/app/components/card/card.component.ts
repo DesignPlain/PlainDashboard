@@ -32,6 +32,13 @@ export class CardComponent {
   public resized = new EventEmitter<ResizeObserverEntry>();
   @Output()
   public onValueEntered = new EventEmitter<string>();
+  @Output()
+  public mouseEntered = new EventEmitter<{
+    inputPositionX: number;
+    inputPositionY: number;
+  }>();
+  @Output()
+  public mouseLeft = new EventEmitter();
 
   public resourceType = ResourceType;
   // Initializing font awesome icons
@@ -52,10 +59,35 @@ export class CardComponent {
         ref.getBoundingClientRect().bottom - ref.getBoundingClientRect().top
       ) /
         2;
-        this.startConnectionClicked.emit({
-          outputPositionX: centerX,
-          outputPositionY: centerY
-        })
+    this.startConnectionClicked.emit({
+      outputPositionX: centerX,
+      outputPositionY: centerY,
+    });
+  }
+
+  public handleMouseEnter(event: any, ref: HTMLElement) {
+    event.stopPropagation();
+
+    const centerX =
+      ref.getBoundingClientRect().left +
+      Math.abs(
+        ref.getBoundingClientRect().right - ref.getBoundingClientRect().left
+      ) /
+        2;
+    const centerY =
+      ref.getBoundingClientRect().top +
+      Math.abs(
+        ref.getBoundingClientRect().bottom - ref.getBoundingClientRect().top
+      ) /
+        2;
+    this.mouseEntered.emit({
+      inputPositionX: centerX,
+      inputPositionY: centerY,
+    });
+  }
+
+  public handleMouseLeave() {
+    this.mouseLeft.emit();
   }
 
   public trashShit(): void {
