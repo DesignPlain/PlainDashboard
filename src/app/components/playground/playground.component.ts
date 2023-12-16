@@ -34,6 +34,7 @@ import * as _ from 'lodash';
 import { DataService } from 'src/app/services/data.service';
 import { RESOURCE_LIST_WIDTH } from 'src/app/constants/board-constants';
 import { Subject } from 'rxjs';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-playground',
@@ -105,6 +106,7 @@ export class PlaygroundComponent implements OnInit {
   public resourceType = ResourceType;
   public hideline: boolean = true;
   public lineOptions: LineOptions;
+  public currentDraggingCard: CloudResource | undefined;
 
   // Initializing font awesome icons
   public faTrash: IconDefinition = faTrash;
@@ -112,7 +114,6 @@ export class PlaygroundComponent implements OnInit {
   public currentOutput: { x: number; y: number; id: string } | null = null;
   public currentInput: { x: number; y: number; id: string } | null = null;
   public edgeObserver: Subject<LineOptions> = new Subject<LineOptions>();
-  private currentInlet: number;
 
   constructor(
     private _applicationStateService: ApplicationStateService,
@@ -130,7 +131,7 @@ export class PlaygroundComponent implements OnInit {
     this._addComponentService.components.subscribe(
       (componentName: ResourceType) => {
         const item = new CloudResource();
-        item.id = _.uniqueId('Resource');
+        item.id = uuidv4();
         item.resourceType = componentName;
         item.name = ResourceType[componentName];
         item.title = item.name.toString();

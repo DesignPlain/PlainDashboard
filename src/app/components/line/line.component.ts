@@ -26,6 +26,9 @@ public isNew: boolean;
 public selected: boolean;
 public lineReady: boolean = false;
 
+// Adjust to change the curvature behavior
+private readonly curveAdjuster = 0.3;
+
 ngOnInit(): void {
   this.edgeObserver.subscribe((value) => {
     this.isNew = value.isNew;
@@ -34,7 +37,7 @@ ngOnInit(): void {
     this.y1 = value.position.y1;
     this.x2 = value.position.x2;
     this.y2 = value.position.y2;
-    this.path = `M${this.x1} ${this.y1} C ${this.x1 + Math.abs(this.x2 - this.x1)} ${this.y1}, ${this.x2 - Math.abs(this.x2 - this.x1)} ${this.y2}, ${this.x2} ${this.y2}`
+    this.path = `M${this.x1} ${this.y1} C ${this.x1 + Math.abs(this.x2 - this.x1) * this.curveAdjuster} ${this.y1}, ${this.x2 - Math.abs(this.x2 - this.x1) * this.curveAdjuster} ${this.y2}, ${this.x2} ${this.y2}`;
     this.lineReady = true;
   })
   if(this.LineOptions){
@@ -44,7 +47,9 @@ ngOnInit(): void {
     this.y1 = this.LineOptions.position.y1;
     this.x2 = this.LineOptions.position.x2;
     this.y2 = this.LineOptions.position.y2;
-    this.path = `M${this.x1} ${this.y1} C ${this.x1 + Math.abs(this.x2 - this.x1)} ${this.y1}, ${this.x2 - Math.abs(this.x2 - this.x1)} ${this.y2}, ${this.x2} ${this.y2}`
+    // this.path = `M${this.x1} ${this.y1} C ${this.x1 + Math.abs(this.x2 - this.x1)} ${this.y1}, ${this.x2 - Math.abs(this.x2 - this.x1)} ${this.y2}, ${this.x2} ${this.y2}`
+    this.path = `M${this.x1} ${this.y1} C ${this.x1 + Math.abs(this.x2 - this.x1) * this.curveAdjuster} ${this.y1}, ${this.x2 - Math.abs(this.x2 - this.x1) * this.curveAdjuster} ${this.y2}, ${this.x2} ${this.y2}`;
+
     this.lineReady = true;
   }
 }
