@@ -1,7 +1,7 @@
 <app-config-options class="configuration"></app-config-options>
 <ng-container *ngFor="let item of items; let i = index">
   <div>
-    <app-card [item]="item" (dragEnded)="dragEnd($event, i)" (resized)="onResize($event, i)"
+    <app-card [item]="item" (dragEnded)="dragEnd($event, item.id)" (resized)="onResize($event, i)"
       (onValueEntered)="onEnter($event,i)" (trashShitClicked)="trashShit(i)"
       (toggleSidebarClicked)="toggleSidebar(i, item)"
       (startConnectionClicked)="startConnection($event, item.id)" (mouseEntered)="mouseEntered($event, item.id)" (mouseLeft)="mouseLeft()"></app-card>

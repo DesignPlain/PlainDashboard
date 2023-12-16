@@ -1,4 +1,10 @@
-import { ChangeDetectorRef, Component, HostListener, OnInit, Renderer2 } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  HostListener,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import {
   faTrash,
@@ -37,7 +43,7 @@ import { Subject } from 'rxjs';
 export class PlaygroundComponent implements OnInit {
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: any) {
-    if(this.currentOutput){
+    if (this.currentOutput) {
       this.edgeObserver.next({
         isNew: true,
         selected: false,
@@ -45,32 +51,43 @@ export class PlaygroundComponent implements OnInit {
           x1: this.currentOutput.x,
           y1: this.currentOutput.y,
           x2: e.clientX - RESOURCE_LIST_WIDTH,
-          y2: e.clientY
-        }
-      })
+          y2: e.clientY,
+        },
+      });
       this.newLine = true;
     }
   }
 
   @HostListener('document:mouseup', ['$event'])
   onMouseUp(e: any) {
-    if(this.currentInput != null && this.currentOutput){
+    if (this.currentInput != null && this.currentOutput) {
       let inputItem = this.items.find((x) => x.id == this.currentInput?.id);
       let outputItem = this.items.find((x) => x.id == this.currentOutput?.id);
+
+      if (
+        inputItem?.inlets.find((x) => x == outputItem?.id) ||
+        outputItem?.outlets.find((x) => x == inputItem?.id)
+      ) {
+        this.currentOutput = null;
+        this.currentInput = null;
+        this.newLine = false;
+        return;
+      }
       inputItem?.inlets.push(outputItem?.id as string);
       outputItem?.outlets.push(inputItem?.id as string);
+
       inputItem?.inletMap.set(outputItem?.id as string, {
         x1: this.currentOutput.x,
         y1: this.currentOutput.y,
         x2: this.currentInput.x,
-        y2: this.currentInput.y
+        y2: this.currentInput.y,
       });
       outputItem?.outletMap.set(inputItem?.id as string, {
         x1: this.currentInput.x,
         y1: this.currentInput.y,
         x2: this.currentOutput.x,
-        y2: this.currentOutput.y
-      })
+        y2: this.currentOutput.y,
+      });
     }
     this.currentOutput = null;
     this.currentInput = null;
@@ -92,8 +109,8 @@ export class PlaygroundComponent implements OnInit {
   // Initializing font awesome icons
   public faTrash: IconDefinition = faTrash;
   public faGear: IconDefinition = faGear;
-  public currentOutput: { x: number, y: number, id: string} | null = null;
-  public currentInput: { x: number, y: number, id: string} | null = null;
+  public currentOutput: { x: number; y: number; id: string } | null = null;
+  public currentInput: { x: number; y: number; id: string } | null = null;
   public edgeObserver: Subject<LineOptions> = new Subject<LineOptions>();
   private currentInlet: number;
 
@@ -227,32 +244,68 @@ export class PlaygroundComponent implements OnInit {
     },
     outPutId: string
   ): void {
-this.currentOutput = {
-  id: outPutId,
-  x: startPosition.outputPositionX - RESOURCE_LIST_WIDTH,
-  y: startPosition.outputPositionY
-};
-  }
-
-  public mouseEntered(endPosition: {
-    inputPositionX: number;
-    inputPositionY: number;
-  },
-  inputId: string): void {
-    this.currentInput = {
-      id: inputId,
-      x: endPosition.inputPositionX - RESOURCE_LIST_WIDTH,
-      y: endPosition.inputPositionY
+    this.currentOutput = {
+      id: outPutId,
+      x: startPosition.outputPositionX - RESOURCE_LIST_WIDTH,
+      y: startPosition.outputPositionY,
     };
   }
 
-  public mouseLeft(): void {
-
+  public mouseEntered(
+    endPosition: {
+      inputPositionX: number;
+      inputPositionY: number;
+    },
+    inputId: string
+  ): void {
+    this.currentInput = {
+      id: inputId,
+      x: endPosition.inputPositionX - RESOURCE_LIST_WIDTH,
+      y: endPosition.inputPositionY,
+    };
   }
 
-  public dragEnd($event: CdkDragEnd, id: number): void {
+  public mouseLeft(): void {}
+
+  public dragEnd($event: CdkDragEnd, id: string): void {
     let pos = $event.source.getFreeDragPosition();
-    let currentItem = this.items[id];
+    let currentItem = this.items.find((x) => x.id == id);
+    if (currentItem != null) {
+      let differenceinX = pos.x - currentItem.position.x;
+      let differenceinY = pos.y - currentItem.position.y;
+      if (currentItem.inlets.length > 0) {
+        currentItem.inlets.forEach((element) => {
+          let tempInlet = this.items.find((x) => x.id == element);
+          if (tempInlet) {
+            let existingCords = tempInlet.outletMap.get(id);
+            if (existingCords) {
+              tempInlet.outletMap.set(id, {
+                x1: existingCords?.x1 + differenceinX,
+                y1: existingCords?.y1 + differenceinY,
+                x2: existingCords?.x2,
+                y2: existingCords?.y2,
+              });
+            }
+          }
+        });
+        currentItem.inletMap.forEach((value: lineCoordinates, key: string) => {
+          value.x1 += differenceinX;
+          value.y1 += differenceinY;
+        });
+      }
+
+      if (currentItem.outlets.length > 0) {
+        currentItem.outletMap.forEach((value: lineCoordinates, key: string) => {
+          value.x2 += differenceinX;
+          value.y2 += differenceinY;
+        });
+      }
+      currentItem.position.x = pos.x;
+      currentItem.position.y = pos.y;
+      console.log(pos);
+      this._saveState();
+      this.items = _.cloneDeep(this.items);
+    }
 
     // TODO: VPC group drag logic
     // if (currentItem.resourceType == ResourceType.Virtual_Private_Cloud) {
@@ -270,12 +323,6 @@ this.currentOutput = {
     // }
 
     // this._updateLine(currentItem, id, pos);
-
-    currentItem.position.x = pos.x;
-    currentItem.position.y = pos.y;
-    console.log(pos);
-    this._saveState();
-    this.items = _.cloneDeep(this.items);
   }
 
   public onResize(ev: ResizeObserverEntry, id: number): void {
