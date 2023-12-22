@@ -12,6 +12,7 @@ export class ResourceListComponent {
   resourceType = ResourceType;
   viewAWS = false;
   viewGCP = false;
+  viewOnPremise = false;
   
 
   constructor(private _addComponentService: AddComponentService) {}
