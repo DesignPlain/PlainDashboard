@@ -162,29 +162,28 @@ export class PlaygroundComponent implements OnInit {
       .subscribe((res) => console.log(res));
   }
 
-  public trashShit(id: number): void {
-    console.log(id);
-    let currentItem = this.items[id];
-    // currentItem.outlets.forEach((element) => {
-    //   if (this.items[element]?.inletMap) {
-    //     this.items[element].inletMap?.delete(id);
-    //     this.items[element].inlets?.splice(
-    //       this.items[element].inlets?.indexOf(id),
-    //       1
-    //     );
-    //   }
-    // });
-    // currentItem.inlets.forEach((element) => {
-    //   if (this.items[element]?.outletMap) {
-    //     this.items[element].outletMap?.delete(id);
-    //     this.items[element].outlets?.splice(
-    //       this.items[element].outlets?.indexOf(id),
-    //       1
-    //     );
-    //   }
-    // });
+  public trashShit(index:number, id: string): void {
+    let currentItem = this.items.find((x) => x.id == id);
+    if(currentItem){
+      currentItem.inlets.forEach((element: string) => {
+        let tempItem = this.items.find((x)=> x.id == element);
+        if(tempItem){
+          tempItem.outletMap.delete(id);
+          tempItem.outlets?.splice(tempItem.outlets?.indexOf(id), 1);
+        }
+      });
 
-    this.items.splice(id, 1);
+      currentItem.outlets.forEach((element: string) => {
+        let tempItem = this.items.find((x)=> x.id == element);
+        if(tempItem){
+          tempItem.inletMap.delete(id);
+          tempItem.inlets?.splice(tempItem.inlets?.indexOf(id), 1);
+        }
+      });
+    }
+
+
+    this.items.splice(index, 1);
     this._saveState();
   }
 

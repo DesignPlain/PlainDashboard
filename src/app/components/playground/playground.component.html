@@ -2,7 +2,7 @@
 <ng-container *ngFor="let item of items; let i = index">
   <div>
     <app-card [item]="item" (dragEnded)="dragEnd($event, item.id)" (resized)="onResize($event, i)"
-      (onValueEntered)="onEnter($event,i)" (trashShitClicked)="trashShit(i)"
+      (onValueEntered)="onEnter($event,i)" (trashShitClicked)="trashShit(i, item.id)"
       (toggleSidebarClicked)="toggleSidebar(i, item)"
       (startConnectionClicked)="startConnection($event, item.id)" (mouseEntered)="mouseEntered($event, item.id)" (mouseLeft)="mouseLeft()"></app-card>
   </div>
