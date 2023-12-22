@@ -1,5 +1,23 @@
 <div class="container">
-<div class="close">
-  <span><fa-icon [icon]="faClose" (click)="closeModal()"></fa-icon></span>
-</div>
+  <div class="menu">
+    <span>Settings Menu</span>
+    <div class="menu-item">Configure Access Credentials</div>
+    <div class="menu-item">General Settings</div>
+  </div>
+  <div class="content">
+    <span>Content</span>
+    <div class="header">
+      <div>AWS</div>
+      <div>AZURE</div>
+      <div>GCP</div>
+    </div>
+    <div class="sub-content">
+      <span>Key file: </span>
+      <input type="file">
+    </div>
+    <div class="apply">Save</div>
+  </div>
+  <div class="close">
+    <span><fa-icon [icon]="faClose" (click)="closeModal()"></fa-icon></span>
+  </div>
 </div>

@@ -19,3 +19,5 @@
 <app-tool-bar (deployClicked)="deploy()" (destroyClicked)="destroy()"></app-tool-bar>
 <app-side-bar [config]="currentConfig" [currentResource]="currentResourceType" [currentIndex]="currentIndex"
   class="sidebar" (ConfigUpdateEvent)="updateConfig($event.id, $event.res)" *ngIf="showSideBar" />
+
+<span class="product-watermark">DesignSphere</span>

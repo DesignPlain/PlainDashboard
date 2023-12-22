@@ -280,3 +280,16 @@ hr {
 .example-menu-item:active {
   background-color: rgb(170, 170, 170);
 }
+
+.product-watermark{
+  position: absolute;
+  top: 95.3%;
+  left: 90%;
+  font-size: larger;
+  font-weight: bold;
+  font-family: "Geneva", Verdana, sans-serif;
+  background-color: rgba(198, 152, 152, 0.085);
+  padding: 5px;
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.139);
+}
