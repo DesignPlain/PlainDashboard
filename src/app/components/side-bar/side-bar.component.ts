@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { DefaultResource, Resource } from 'src/app/Models/CloudResource';
+import { DefaultResource, Resource, outputs } from 'src/app/Models/CloudResource';
 import { GCP_ComputeEngine, GCP_StorageBucket, ResourceProperties } from 'src/app/Models/ResourceProperties';
 import { InputType } from 'src/app/enum/InputType';
 import { ResourceType } from 'src/app/enum/ResourceType';
@@ -13,8 +13,8 @@ export class SideBarComponent implements OnInit {
   @Input() currentResource: ResourceType | undefined;
   @Input() currentIndex: number = -1;
   @Input() resConfig: Resource = new DefaultResource();
-  @Input() config: Map<string, {type: InputType, val: string}> = new Map;
-
+  @Input() config: Map<string, { type: InputType, val: string }> = new Map;
+  @Input() currentOutput: outputs[] = [];
   inputType = InputType
 
   ngOnInit(): void { }
@@ -50,9 +50,9 @@ export class SideBarComponent implements OnInit {
 
             this.resConfig = new GCP_StorageBucket(
               this.listMap.get(inputList[0]),
-               this.listMap.get(inputList[1]), 
-               this.listMap.get(inputList[2]), 
-               this.listMap.get(inputList[3]));
+              this.listMap.get(inputList[1]),
+              this.listMap.get(inputList[2]),
+              this.listMap.get(inputList[3]));
             break;
           }
         case ResourceType.EC2:
@@ -62,13 +62,13 @@ export class SideBarComponent implements OnInit {
 
             this.resConfig = new GCP_ComputeEngine(
               this.listMap.get(inputList[0]),
-               this.listMap.get(inputList[1]), 
-               this.listMap.get(inputList[2]), 
-               this.listMap.get(inputList[3]),
-               this.listMap.get(inputList[4]), 
-               this.listMap.get(inputList[5]),
-               this.listMap.get(inputList[6]),
-               this.listMap.get(inputList[7]));
+              this.listMap.get(inputList[1]),
+              this.listMap.get(inputList[2]),
+              this.listMap.get(inputList[3]),
+              this.listMap.get(inputList[4]),
+              this.listMap.get(inputList[5]),
+              this.listMap.get(inputList[6]),
+              this.listMap.get(inputList[7]));
             break;
           }
       };

@@ -10,6 +10,7 @@
   font-family: sans-serif;
   color: #ffffff;
   font-size: x-large;
+  text-decoration: underline;
 }
 
 .apply {
@@ -35,4 +36,28 @@
     background-image: radial-gradient(#000000 0.2px, #76c337 0.2px);
     color: #ffffff;
   }
+}
+
+.outputBox {
+  border: 1px solid rgba(211, 247, 211, 0.375);
+  padding: 5px;
+  margin: 5px;
+  position: relative;
+  border-radius: 2%;
+}
+
+.outlabel {
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+  font-family: sans-serif;
+  color: #ffffff;
+  font-size: small;
+  position: relative;
+}
+
+.outvalue {
+  margin-top: 3px ;
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+  color: #f7e2e2;
+  font-size: 12px;
+  position: relative;
 }
