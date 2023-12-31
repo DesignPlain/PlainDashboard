@@ -21,6 +21,7 @@ import {
   GCP_StorageBucket,
   ResourceProperties,
 } from 'src/app/Models/ResourceProperties';
+
 import { InputType } from 'src/app/enum/InputType';
 import { ProviderType, ResourceType } from 'src/app/enum/ResourceType';
 import { AddComponentService } from 'src/app/services/add-component.service';
@@ -358,6 +359,14 @@ export class PlaygroundComponent implements OnInit {
       .subscribe({
         next: (res) => {
           this.items = JSON.parse(JSON.stringify(res));
+          this.items.forEach((item) => {
+            item.inletMap = new Map<string, lineCoordinates>(
+              JSON.parse(item.inletMapString)
+            );
+            item.outletMap = new Map<string, lineCoordinates>(
+              JSON.parse(item.outletMapString)
+            );
+          });
           this._dataService.currentList = this.items;
         },
         error: (_) => {
@@ -381,16 +390,16 @@ export class PlaygroundComponent implements OnInit {
 
   private _saveState(): void {
     this._dataService.currentList = this.items;
+    this.items.forEach((item) => {
+      item.inletMapString = JSON.stringify([...item.inletMap]);
+      item.outletMapString = JSON.stringify([...item.outletMap]);
+    });
     this._applicationStateService
       .saveState(this.items)
       .pipe(take(1))
       .subscribe({
         next: (data) => this._processResponse(data),
         error: (_) => {
-          this.items.forEach((item) => {
-            item.inletMapString = JSON.stringify([...item.inletMap]);
-            item.outletMapString = JSON.stringify([...item.outletMap]);
-          });
           this._localStorageService.setLocalState(this.items);
         },
         complete: () => console.info('SaveState Completed'),
