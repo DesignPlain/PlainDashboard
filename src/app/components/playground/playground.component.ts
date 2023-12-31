@@ -14,6 +14,7 @@ import {
 import {
   CloudResource,
   Resource,
+  outputs,
   lineCoordinates,
 } from 'src/app/Models/CloudResource';
 import {
@@ -103,6 +104,7 @@ export class PlaygroundComponent implements OnInit {
     { type: InputType; val: any }
   >();
   public currentResourceType: ResourceType | undefined;
+  public currentOut: outputs[] = []
   public items: CloudResource[] = [];
   public resourceType = ResourceType;
   public hideline: boolean = true;
@@ -124,7 +126,7 @@ export class PlaygroundComponent implements OnInit {
     private _localStorageService: LocalStorageService,
     private _stackService: StackService,
     private _dataService: DataService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this._getState();
@@ -163,20 +165,20 @@ export class PlaygroundComponent implements OnInit {
       .subscribe((res) => console.log(res));
   }
 
-  public trashShit(index:number, id: string): void {
+  public trashShit(index: number, id: string): void {
     let currentItem = this.items.find((x) => x.id == id);
-    if(currentItem){
+    if (currentItem) {
       currentItem.inlets.forEach((element: string) => {
-        let tempItem = this.items.find((x)=> x.id == element);
-        if(tempItem){
+        let tempItem = this.items.find((x) => x.id == element);
+        if (tempItem) {
           tempItem.outletMap.delete(id);
           tempItem.outlets?.splice(tempItem.outlets?.indexOf(id), 1);
         }
       });
 
       currentItem.outlets.forEach((element: string) => {
-        let tempItem = this.items.find((x)=> x.id == element);
-        if(tempItem){
+        let tempItem = this.items.find((x) => x.id == element);
+        if (tempItem) {
           tempItem.inletMap.delete(id);
           tempItem.inlets?.splice(tempItem.inlets?.indexOf(id), 1);
         }
@@ -229,8 +231,11 @@ export class PlaygroundComponent implements OnInit {
           });
       }
       this.currentResourceType = item.resourceType;
+      this.currentOut = item.resOutputs.sort((a, b) => (a.name > b.name) ? 1 : -1);
       this.currentIndex = i;
-    } else {
+    }
+    else if (i == this.currentIndex) {
+      this.currentOut = [];
       this.currentResourceType = undefined;
       this.currentIndex = -1;
       this.currentConfig = new Map<string, { type: InputType; val: string }>();
@@ -266,7 +271,7 @@ export class PlaygroundComponent implements OnInit {
     };
   }
 
-  public mouseLeft(): void {}
+  public mouseLeft(): void { }
 
   public dragEnd($event: CdkDragEnd, id: string): void {
     let pos = $event.source.getFreeDragPosition();

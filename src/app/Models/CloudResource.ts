@@ -1,4 +1,6 @@
+import { map } from "rxjs";
 import { ProviderType, ResourceType } from "../enum/ResourceType";
+
 
 export class CloudResource {
   public id: string = '';
@@ -9,12 +11,13 @@ export class CloudResource {
   public resourceConfig: Resource | undefined = new DefaultResource;
   public position = { x: 0, y: 0 };
   public shape = { width: 130, height: 40 };
-  public inlets:string[] = [];
-  public outlets:string[] = [];
-  public inletMap: Map<string, lineCoordinates> = new Map<string, {x1:number, y1:number, x2:number, y2: number}>();
+  public inlets: string[] = [];
+  public outlets: string[] = [];
+  public inletMap: Map<string, lineCoordinates> = new Map<string, { x1: number, y1: number, x2: number, y2: number }>();
   public inletMapString: string;
   public outletMapString: string;
-  public outletMap: Map<string, lineCoordinates> = new Map<string, {x1:number, y1:number, x2:number, y2: number}>();
+  public outletMap: Map<string, lineCoordinates> = new Map<string, { x1: number, y1: number, x2: number, y2: number }>();
+  public resOutputs: outputs[] = [];
 }
 
 export abstract class lineCoordinates {
@@ -23,6 +26,12 @@ export abstract class lineCoordinates {
   public x2: number = 0;
   public y2: number = 0;
 }
+
+export class outputs {
+  public name: string = '';
+  public value: string = '';
+}
+
 export abstract class Resource {
   constructor(
     public Name: string,
