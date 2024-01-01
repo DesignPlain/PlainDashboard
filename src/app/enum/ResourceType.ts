@@ -12,7 +12,8 @@ export enum ResourceType {
 }
 
 export enum ProviderType {
-  GCP,
-  AWS,
-  AZURE,
+  UNKNOWN = 0,
+  GCP = 1,
+  AWS = 2,
+  AZURE = 4,
 }
