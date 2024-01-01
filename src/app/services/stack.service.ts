@@ -8,16 +8,27 @@ import { CloudResource } from '../Models/CloudResource';
 })
 export class StackService {
 
-  constructor( private _http: HttpClient) { }
+  constructor(private _http: HttpClient) { }
 
   public deploy(items: CloudResource[]): Observable<string> {
     return this._http
-    .post('http://localhost:8080/deploy', JSON.stringify(items), {
-      responseType: 'text',
-    })
+      .post(
+        'http://localhost:8080/deploy',
+        JSON.stringify(items),
+        {
+          responseType: 'text',
+        }
+      )
   }
 
   public getStack(): Observable<object> {
     return this._http.get('http://localhost:8080/stack');
+  }
+
+  public uploadfile(file: File, projectName: string) {
+    let formParams = new FormData();
+    formParams.append('file', file)
+    formParams.append("projectName", projectName)
+    return this._http.post('http://localhost:8080/uploadProjectConfig', formParams)
   }
 }
