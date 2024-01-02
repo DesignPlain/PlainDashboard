@@ -22,6 +22,7 @@ export class SideBarComponent implements OnInit {
   @Output()
   ConfigUpdateEvent = new EventEmitter<{ id: number, res: Resource }>();
 
+  set = false
   listMap = new Map<string, any>();
   check = false;
   addToMap(name: string, data: any, type: InputType) {
@@ -34,7 +35,7 @@ export class SideBarComponent implements OnInit {
         this.listMap.set(name, data as number);
         break;
       case InputType.CheckBox:
-        this.listMap.set(name, data == "on" ? true : false);
+        this.listMap.set(name, data == "false" ? "false" : "");
         break;
     }
 
@@ -49,10 +50,10 @@ export class SideBarComponent implements OnInit {
             ResourceProperties.propertiesMap.get(ResourceType.Simple_Storage_Service)?.forEach((z, f) => inputList.push(f));
 
             this.resConfig = new GCP_StorageBucket(
-              this.listMap.get(inputList[0]),
-              this.listMap.get(inputList[1]),
-              this.listMap.get(inputList[2]),
-              this.listMap.get(inputList[3]));
+              this.GetResourceInput(inputList[0]),
+              this.GetResourceInput(inputList[1]),
+              this.GetResourceInput(inputList[2]),
+              this.GetResourceInput(inputList[3]));
             break;
           }
         case ResourceType.EC2:
@@ -61,19 +62,23 @@ export class SideBarComponent implements OnInit {
             ResourceProperties.propertiesMap.get(ResourceType.EC2)?.forEach((z, f) => inputList.push(f));
 
             this.resConfig = new GCP_ComputeEngine(
-              this.listMap.get(inputList[0]),
-              this.listMap.get(inputList[1]),
-              this.listMap.get(inputList[2]),
-              this.listMap.get(inputList[3]),
-              this.listMap.get(inputList[4]),
-              this.listMap.get(inputList[5]),
-              this.listMap.get(inputList[6]),
-              this.listMap.get(inputList[7]));
+              this.GetResourceInput(inputList[0]),
+              this.GetResourceInput(inputList[1]),
+              this.GetResourceInput(inputList[2]),
+              this.GetResourceInput(inputList[3]),
+              this.GetResourceInput(inputList[4]),
+              this.GetResourceInput(inputList[5]),
+              this.GetResourceInput(inputList[6]),
+              this.GetResourceInput(inputList[7]));
             break;
           }
       };
 
       this.ConfigUpdateEvent.emit({ id: this.currentIndex, res: this.resConfig });
     }
+  }
+
+  GetResourceInput(arg: string): any {
+    return this.listMap.get(arg) ?? this.config.get(arg)?.val
   }
 }
