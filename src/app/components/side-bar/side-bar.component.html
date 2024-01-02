@@ -6,28 +6,28 @@
       <div *ngSwitchCase="inputType.String">
         <span>{{item.key}}</span>
         <br>
-        <input #box type="text" placeholder="{{item.value.val}}"
+        <input #box type="text" placeholder="{{item.value.val}}" value="{{item.value.val}}"
           (focusout)="addToMap(item.key, box.value, item.value.type)">
         <br><br>
       </div>
       <div *ngSwitchCase="inputType.Number">
         <span>{{item.key}}</span>
         <br>
-        <input #box type="number" placeholder="{{item.value.val}}"
+        <input #box type="number" placeholder="{{item.value.val}}" value="{{item.value.val}}"
           (focusout)="addToMap(item.key, box.value, item.value.type)">
         <br><br>
       </div>
       <div *ngSwitchCase="inputType.File">
         <span>{{item.key}}</span>
         <br>
-        <input #box type="file" id="input" placeholder="{{item.value.val}}"
+        <input #box type="file" id="input" placeholder="{{item.value.val}}" value="{{item.value.val}}"
           (focusout)="addToMap(item.key, box.value, item.value.type)">
         <br><br>
       </div>
       <div *ngSwitchCase="inputType.CheckBox">
         <span>{{item.key}}</span>
-        <input #box type="checkbox" id="checkbox" placeholder="{{item.value.val}}"
-          (focusout)="addToMap(item.key, box.value, item.value.type)">
+        <input #box type="checkbox" id="checkbox" value="{{item.value.val}}" placeholder="{{item.value.val}}"
+          value="{{item.value.val}}" (focusout)="addToMap(item.key, box.value, item.value.type)">
         <br><br>
       </div>
     </div>
