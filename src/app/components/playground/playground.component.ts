@@ -20,6 +20,8 @@ import {
 import {
   GCP_ComputeEngine,
   GCP_StorageBucket,
+  GCP_SubNetwork,
+  GCP_VPCNetwork,
   ResourceProperties,
 } from 'src/app/Models/ResourceProperties';
 
@@ -190,51 +192,45 @@ export class PlaygroundComponent implements OnInit {
     this._saveState();
   }
 
-  public toggleSidebar(i: number, item: CloudResource): void {
+  public toggleSidebar(resourceIndex: number, item: CloudResource): void {
+    this.currentConfig = new Map<string, { type: InputType; val: string }>();
     if (!this.showSideBar) {
       if (item.resourceConfig != undefined) {
         switch (item.resourceType) {
           case ResourceType.Simple_Storage_Service: {
             let res = item.resourceConfig as GCP_StorageBucket;
-            let objMap = new Map(Object.entries(res));
-            ResourceProperties.propertiesMap
-              .get(item.resourceType)
-              ?.forEach((k, v) => {
-                this.currentConfig.set(v, { type: k, val: objMap.get(v) });
-              });
+            this.loadResourceConfig(res, item.resourceType);
             break;
           }
           case ResourceType.EC2: {
             let res = item.resourceConfig as GCP_ComputeEngine;
-            let objMap = new Map(Object.entries(res));
-            ResourceProperties.propertiesMap
-              .get(item.resourceType)
-              ?.forEach((k, v) => {
-                this.currentConfig.set(v, { type: k, val: objMap.get(v) });
-              });
+            this.loadResourceConfig(res, item.resourceType);
+            break;
+          }
+          case ResourceType.Virtual_Private_Cloud: {
+            let res = item.resourceConfig as GCP_VPCNetwork;
+            this.loadResourceConfig(res, item.resourceType);
+            break;
+          }
+          case ResourceType.Subnet: {
+            let res = item.resourceConfig as GCP_SubNetwork;
+            this.loadResourceConfig(res, item.resourceType);
             break;
           }
           default: {
-            ResourceProperties.propertiesMap
-              .get(item.resourceType)
-              ?.forEach((k, v) => {
-                this.currentConfig.set(v, { type: k, val: '' });
-              });
+            this.setDefaultResourceConfig(item);
             break;
           }
         }
       } else {
-        ResourceProperties.propertiesMap
-          .get(item.resourceType)
-          ?.forEach((k, v) => {
-            this.currentConfig.set(v, { type: k, val: '' });
-          });
+        this.setDefaultResourceConfig(item);
       }
+
       this.currentResourceType = item.resourceType;
       this.currentOut = item.resOutputs.sort((a, b) => (a.name > b.name) ? 1 : -1);
-      this.currentIndex = i;
+      this.currentIndex = resourceIndex;
     }
-    else if (i == this.currentIndex) {
+    else if (resourceIndex == this.currentIndex) {
       this.currentOut = [];
       this.currentResourceType = undefined;
       this.currentIndex = -1;
@@ -242,6 +238,27 @@ export class PlaygroundComponent implements OnInit {
     }
     this.showSideBar = !this.showSideBar;
   }
+
+  //#region [ResourceConfig methods]
+
+  private setDefaultResourceConfig(item: CloudResource) {
+    ResourceProperties.propertiesMap
+      .get(item.resourceType)
+      ?.forEach((k, v) => {
+        this.currentConfig.set(v, { type: k, val: '' });
+      });
+  }
+
+  private loadResourceConfig(res: Resource, resourceType: ResourceType) {
+    let objMap = new Map(Object.entries(res));
+    ResourceProperties.propertiesMap
+      .get(resourceType)
+      ?.forEach((k, v) => {
+        this.currentConfig.set(v, { type: k, val: objMap.get(v) });
+      });
+  }
+
+  //#endregion [ResourceConfig methods]
 
   public startConnection(
     startPosition: {
