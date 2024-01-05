@@ -3,4 +3,5 @@ export enum InputType {
   Number,
   File,
   CheckBox,
+  DropDown,
 }

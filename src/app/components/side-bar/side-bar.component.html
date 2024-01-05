@@ -30,6 +30,9 @@
           value="{{item.value.val}}" (focusout)="addToMap(item.key, box.value, item.value.type)">
         <br><br>
       </div>
+      <div *ngSwitchCase="inputType.DropDown">
+        <app-select></app-select>
+      </div>
     </div>
   </div>
   <div class="apply" (click)="submit()">Save</div>

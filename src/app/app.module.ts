@@ -8,12 +8,11 @@ import { InputSearchComponent } from './components/input-search/input-search.com
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CdkDrag, CdkDropList, CdkDragHandle } from '@angular/cdk/drag-drop';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 import { ResizeObserverDirective } from './resize-observer.directive';
 import { HttpClientModule } from '@angular/common/http';
-
 
 import {
   CdkMenu,
@@ -29,6 +28,8 @@ import { ToolBarComponent } from './components/tool-bar/tool-bar.component';
 import { CardComponent } from './components/card/card.component';
 import { ConfigModalComponent } from './components/config-modal/config-modal.component';
 import { ConfigOptionsComponent } from './config-options/config-options.component';
+import { SelectComponent } from './utilityComponents/select/select.component';
+import { SelectModule } from './utilityComponents/select/select.component.module';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { ConfigOptionsComponent } from './config-options/config-options.componen
     ToolBarComponent,
     CardComponent,
     ConfigModalComponent,
-    ConfigOptionsComponent
+    ConfigOptionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,8 +55,9 @@ import { ConfigOptionsComponent } from './config-options/config-options.componen
     MatIconModule,
     MatButtonModule,
     HttpClientModule,
+    SelectModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

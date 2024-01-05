@@ -1,10 +1,4 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  HostListener,
-  OnInit,
-  Renderer2,
-} from '@angular/core';
+import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import {
   faTrash,
@@ -106,7 +100,7 @@ export class PlaygroundComponent implements OnInit {
     { type: InputType; val: any }
   >();
   public currentResourceType: ResourceType | undefined;
-  public currentOut: outputs[] = []
+  public currentOut: outputs[] = [];
   public items: CloudResource[] = [];
   public resourceType = ResourceType;
   public hideline: boolean = true;
@@ -128,7 +122,7 @@ export class PlaygroundComponent implements OnInit {
     private _localStorageService: LocalStorageService,
     private _stackService: StackService,
     private _dataService: DataService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this._getState();
@@ -187,7 +181,6 @@ export class PlaygroundComponent implements OnInit {
       });
     }
 
-
     this.items.splice(index, 1);
     this._saveState();
   }
@@ -227,10 +220,11 @@ export class PlaygroundComponent implements OnInit {
       }
 
       this.currentResourceType = item.resourceType;
-      this.currentOut = item.resOutputs.sort((a, b) => (a.name > b.name) ? 1 : -1);
+      this.currentOut = item.resOutputs.sort((a, b) =>
+        a.name > b.name ? 1 : -1
+      );
       this.currentIndex = resourceIndex;
-    }
-    else if (resourceIndex == this.currentIndex) {
+    } else if (resourceIndex == this.currentIndex) {
       this.currentOut = [];
       this.currentResourceType = undefined;
       this.currentIndex = -1;
@@ -242,20 +236,16 @@ export class PlaygroundComponent implements OnInit {
   //#region [ResourceConfig methods]
 
   private setDefaultResourceConfig(item: CloudResource) {
-    ResourceProperties.propertiesMap
-      .get(item.resourceType)
-      ?.forEach((k, v) => {
-        this.currentConfig.set(v, { type: k, val: '' });
-      });
+    ResourceProperties.propertiesMap.get(item.resourceType)?.forEach((k, v) => {
+      this.currentConfig.set(v, { type: k, val: '' });
+    });
   }
 
   private loadResourceConfig(res: Resource, resourceType: ResourceType) {
     let objMap = new Map(Object.entries(res));
-    ResourceProperties.propertiesMap
-      .get(resourceType)
-      ?.forEach((k, v) => {
-        this.currentConfig.set(v, { type: k, val: objMap.get(v) });
-      });
+    ResourceProperties.propertiesMap.get(resourceType)?.forEach((k, v) => {
+      this.currentConfig.set(v, { type: k, val: objMap.get(v) });
+    });
   }
 
   //#endregion [ResourceConfig methods]
@@ -288,7 +278,7 @@ export class PlaygroundComponent implements OnInit {
     };
   }
 
-  public mouseLeft(): void { }
+  public mouseLeft(): void {}
 
   public dragEnd($event: CdkDragEnd, id: string): void {
     let pos = $event.source.getFreeDragPosition();

@@ -1,0 +1,40 @@
+:host{
+  .wrapper{
+    position: relative;
+  }
+  .container{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    display: flex;
+    max-height: 20px;
+    padding: 5px;
+    max-width: 200px;
+    min-width: 200px;
+    justify-content: space-between;
+    &:hover{
+      background-color: rgb(185, 180, 180);
+      transition: all 250ms linear;
+    }
+  }
+  .option-container{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    z-index: 1000;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    max-width: 200px;
+    color: black;
+    border-radius: 0 0 5px 5px;
+    padding: 5px;
+    .option{
+      border-bottom: 1px solid black;
+      &:last-child{
+        border-bottom: unset;
+      }
+      &:hover{
+        background-color: rgba(87, 87, 240, 0.466);
+      }
+    }
+  }
+}
