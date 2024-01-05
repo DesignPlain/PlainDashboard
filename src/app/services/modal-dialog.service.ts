@@ -14,41 +14,16 @@ export class ModalDialogService {
     positionStrategy = positionStrategy.centerHorizontally();
     positionStrategy = positionStrategy.centerVertically();
 
-    const overlayRef = this._overlay.create(new OverlayConfig({
-      positionStrategy,
-      hasBackdrop: true,
-      disposeOnNavigation: true,
-
-    }));
+    const overlayRef = this._overlay.create(
+      new OverlayConfig({
+        positionStrategy,
+        hasBackdrop: true,
+        disposeOnNavigation: true,
+      })
+    );
     this.ActiveModal = overlayRef;
     const userProfilePortal = new ComponentPortal(ConfigModalComponent);
     overlayRef.attach(userProfilePortal);
+    overlayRef.backdropClick().subscribe(() => overlayRef.dispose());
   }
-
-//   private _getOverlayConfig(modalOptions: ModalOptions): OverlayConfig {
-//     let positionStrategy = this._overlay.position().global();
-
-//     if (modalOptions.horizontal) {
-//         positionStrategy = positionStrategy.centerHorizontally();
-//     }
-
-//     if (modalOptions.vertical) {
-//         positionStrategy = positionStrategy.centerVertically();
-//     }
-
-//     if (modalOptions.bottom) {
-//         positionStrategy.bottom();
-//     }
-
-//     return new OverlayConfig({
-//       height: modalOptions.height,
-//       width: modalOptions.width,
-//         positionStrategy,
-//         scrollStrategy: this._overlay.scrollStrategies.block(),
-//         hasBackdrop: true,
-//         backdropClass: modalOptions.background ? 'cdk-overlay-dark-backdrop' : 'transparent',
-//         panelClass: modalOptions.panelClass,
-//         disposeOnNavigation: modalOptions.disposeOnNavigation,
-//     });
-// }
 }

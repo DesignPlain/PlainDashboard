@@ -103,10 +103,9 @@
       }
 
       .apply {
-        left: 80%;
-        top: 80%;
+        right: 2%;
+        bottom: 2%;
         position: absolute;
-        margin-right: 10px;
         padding: 10px;
         border-radius: 4%;
         max-height: 30px;
@@ -127,15 +126,14 @@
           color: #1fe71f;
         }
       }
-
-      .close {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 10px;
-        background-color: white;
-        border-radius: 100%;
-      }
+    }
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      background-color: white;
+      border-radius: 100%;
     }
   }
 }
