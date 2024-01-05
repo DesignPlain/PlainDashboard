@@ -187,7 +187,7 @@ export class PlaygroundComponent implements OnInit {
 
   public toggleSidebar(resourceIndex: number, item: CloudResource): void {
     this.currentConfig = new Map<string, { type: InputType; val: string }>();
-    if (!this.showSideBar) {
+    if (!this.showSideBar || resourceIndex !== this.currentIndex) {
       if (item.resourceConfig != undefined) {
         switch (item.resourceType) {
           case ResourceType.Simple_Storage_Service: {
@@ -224,13 +224,14 @@ export class PlaygroundComponent implements OnInit {
         a.name > b.name ? 1 : -1
       );
       this.currentIndex = resourceIndex;
+      this.showSideBar = true;
     } else if (resourceIndex == this.currentIndex) {
       this.currentOut = [];
       this.currentResourceType = undefined;
       this.currentIndex = -1;
       this.currentConfig = new Map<string, { type: InputType; val: string }>();
+      this.showSideBar = false;
     }
-    this.showSideBar = !this.showSideBar;
   }
 
   //#region [ResourceConfig methods]
