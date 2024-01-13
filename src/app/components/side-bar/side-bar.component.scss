@@ -1,63 +1,88 @@
 :host {
   padding: 10px;
   padding-left: 20px;
-  position: absolute;
   font-weight: small;
-}
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
-.header {
-  font-weight: bold;
-  font-family: sans-serif;
-  color: #ffffff;
-  font-size: x-large;
-  text-decoration: underline;
-}
+  .container {
+    position: relative;
+    min-width: 75rem;
+    min-height: 50rem;
+    background-color: white;
+    padding: 30px;
+    padding-left: 50px;
+    border-radius: 0.5%;
+    display: flexbox;
+    font-size: smaller;
 
-.apply {
-  left: 20%;
-  position: relative;
-  margin: 10px;
-  padding: 7px;
-  border-radius: 4%;
-  max-height: 30px;
-  min-height: 20px;
-  min-width: 100px;
-  max-width: 100px;
-  text-align: center;
-  background-image: radial-gradient(#000000 0.2px, #85da3f 0.2px);
-  color: #0c600c;
-  font-size: medium;
-  font-weight: bold;
-  font-family: sans-serif;
-  box-shadow: 2px 2px rgba(255, 255, 255, 0.363);
+    .header {
+      font-weight: bold;
+      color: #1e4b25;
+      font-size: x-large;
+      text-decoration: underline;
+      align-content: space-around;
+      flex: auto;
+      align-self: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: stretch;
+    }
 
-  &:hover {
-    cursor: pointer;
-    background-image: radial-gradient(#000000 0.2px, #76c337 0.2px);
-    color: #ffffff;
+    .apply {
+      right: 3%;
+      bottom: 3%;
+      position: absolute;
+      padding: 10px;
+      border-radius: 4%;
+      max-height: 30px;
+      min-height: 25px;
+      min-width: 80px;
+      max-width: 80px;
+      text-align: center;
+      background-image: radial-gradient(#000000 0.2px, #85da3f 0.2px);
+      color: #0c600c;
+      font-size: large;
+      font-weight: bold;
+      font-family: sans-serif;
+      box-shadow: 3px 3px rgba(60, 116, 58, 0.363);
+
+      &:hover {
+        cursor: pointer;
+        background-image: radial-gradient(#000000 0.2px, #5b972a 0.2px);
+        color: #1fe71f;
+      }
+    }
+
+    .outputBox {
+      border: 1px solid rgba(211, 247, 211, 0.375);
+      padding: 5px;
+      margin: 5px;
+      position: relative;
+      border-radius: 2%;
+    }
+
+    .outlabel {
+      color: #ffffff;
+      font-size: small;
+      position: relative;
+      font-weight: bolder;
+    }
+
+    .outvalue {
+      margin-top: 3px;
+      color: #f7e2e2;
+      font-size: 12px;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      background-color: white;
+      border-radius: 100%;
+    }
   }
-}
-
-.outputBox {
-  border: 1px solid rgba(211, 247, 211, 0.375);
-  padding: 5px;
-  margin: 5px;
-  position: relative;
-  border-radius: 2%;
-}
-
-.outlabel {
-  font-family: Calibri, 'Trebuchet MS', sans-serif;
-  font-family: sans-serif;
-  color: #ffffff;
-  font-size: small;
-  position: relative;
-}
-
-.outvalue {
-  margin-top: 3px ;
-  font-family: Calibri, 'Trebuchet MS', sans-serif;
-  color: #f7e2e2;
-  font-size: 12px;
-  position: relative;
 }

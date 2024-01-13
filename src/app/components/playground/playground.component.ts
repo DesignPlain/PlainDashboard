@@ -33,6 +33,7 @@ import { DataService } from 'src/app/services/data.service';
 import { RESOURCE_LIST_WIDTH } from 'src/app/constants/board-constants';
 import { Subject } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
+import { ModalDialogService } from 'src/app/services/modal-dialog.service';
 
 @Component({
   selector: 'app-playground',
@@ -40,6 +41,7 @@ import { v4 as uuidv4 } from 'uuid';
   styleUrls: ['./playground.component.scss'],
 })
 export class PlaygroundComponent implements OnInit {
+
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: any) {
     if (this.currentOutput) {
@@ -121,8 +123,9 @@ export class PlaygroundComponent implements OnInit {
     private _renderer: Renderer2,
     private _localStorageService: LocalStorageService,
     private _stackService: StackService,
-    private _dataService: DataService
-  ) {}
+    private _dataService: DataService,
+    private _modalService: ModalDialogService
+  ) { }
 
   ngOnInit(): void {
     this._getState();
@@ -187,51 +190,52 @@ export class PlaygroundComponent implements OnInit {
 
   public toggleSidebar(resourceIndex: number, item: CloudResource): void {
     this.currentConfig = new Map<string, { type: InputType; val: string }>();
-    if (!this.showSideBar || resourceIndex !== this.currentIndex) {
-      if (item.resourceConfig != undefined) {
-        switch (item.resourceType) {
-          case ResourceType.Simple_Storage_Service: {
-            let res = item.resourceConfig as GCP_StorageBucket;
-            this.loadResourceConfig(res, item.resourceType);
-            break;
-          }
-          case ResourceType.EC2: {
-            let res = item.resourceConfig as GCP_ComputeEngine;
-            this.loadResourceConfig(res, item.resourceType);
-            break;
-          }
-          case ResourceType.Virtual_Private_Cloud: {
-            let res = item.resourceConfig as GCP_VPCNetwork;
-            this.loadResourceConfig(res, item.resourceType);
-            break;
-          }
-          case ResourceType.Subnet: {
-            let res = item.resourceConfig as GCP_SubNetwork;
-            this.loadResourceConfig(res, item.resourceType);
-            break;
-          }
-          default: {
-            this.setDefaultResourceConfig(item);
-            break;
-          }
-        }
-      } else {
-        this.setDefaultResourceConfig(item);
-      }
 
-      this.currentResourceType = item.resourceType;
-      this.currentOut = item.resOutputs.sort((a, b) =>
-        a.name > b.name ? 1 : -1
-      );
-      this.currentIndex = resourceIndex;
-      this.showSideBar = true;
-    } else if (resourceIndex == this.currentIndex) {
-      this.currentOut = [];
-      this.currentResourceType = undefined;
-      this.currentIndex = -1;
-      this.currentConfig = new Map<string, { type: InputType; val: string }>();
-      this.showSideBar = false;
+    if (item.resourceConfig != undefined) {
+      switch (item.resourceType) {
+        case ResourceType.Simple_Storage_Service: {
+          let res = item.resourceConfig as GCP_StorageBucket;
+          this.loadResourceConfig(res, item.resourceType);
+          break;
+        }
+        case ResourceType.EC2: {
+          let res = item.resourceConfig as GCP_ComputeEngine;
+          this.loadResourceConfig(res, item.resourceType);
+          break;
+        }
+        case ResourceType.Virtual_Private_Cloud: {
+          let res = item.resourceConfig as GCP_VPCNetwork;
+          this.loadResourceConfig(res, item.resourceType);
+          break;
+        }
+        case ResourceType.Subnet: {
+          let res = item.resourceConfig as GCP_SubNetwork;
+          this.loadResourceConfig(res, item.resourceType);
+          break;
+        }
+        default: {
+          this.setDefaultResourceConfig(item);
+          break;
+        }
+      }
+    } else {
+      this.setDefaultResourceConfig(item);
     }
+
+    this.currentResourceType = item.resourceType;
+    this.currentOut = item.resOutputs.sort((a, b) =>
+      a.name > b.name ? 1 : -1
+    );
+    this.currentIndex = resourceIndex;
+    this.showSideBar = true;
+
+    this._modalService.openComponentModal(
+      this.currentIndex,
+      this.currentResourceType,
+      this.currentConfig,
+      this.currentOut,
+      this
+    );
   }
 
   //#region [ResourceConfig methods]
@@ -279,7 +283,7 @@ export class PlaygroundComponent implements OnInit {
     };
   }
 
-  public mouseLeft(): void {}
+  public mouseLeft(): void { }
 
   public dragEnd($event: CdkDragEnd, id: string): void {
     let pos = $event.source.getFreeDragPosition();

@@ -7,6 +7,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { ResourceType } from 'src/app/enum/ResourceType';
+import { ModalDialogService } from 'src/app/services/modal-dialog.service';
+import { OverlayConfig } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-card',
@@ -14,6 +16,8 @@ import { ResourceType } from 'src/app/enum/ResourceType';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
+  constructor(private _modalService: ModalDialogService) { }
+
   @Input()
   public item: CloudResource;
 
@@ -52,13 +56,13 @@ export class CardComponent {
       Math.abs(
         ref.getBoundingClientRect().right - ref.getBoundingClientRect().left
       ) /
-        2;
+      2;
     const centerY =
       ref.getBoundingClientRect().top +
       Math.abs(
         ref.getBoundingClientRect().bottom - ref.getBoundingClientRect().top
       ) /
-        2;
+      2;
     this.startConnectionClicked.emit({
       outputPositionX: centerX,
       outputPositionY: centerY,
@@ -73,13 +77,13 @@ export class CardComponent {
       Math.abs(
         ref.getBoundingClientRect().right - ref.getBoundingClientRect().left
       ) /
-        2;
+      2;
     const centerY =
       ref.getBoundingClientRect().top +
       Math.abs(
         ref.getBoundingClientRect().bottom - ref.getBoundingClientRect().top
       ) /
-        2;
+      2;
     this.mouseEntered.emit({
       inputPositionX: centerX,
       inputPositionY: centerY,
@@ -108,5 +112,11 @@ export class CardComponent {
 
   public onEnter(value: string): void {
     this.onValueEntered.emit(value);
+  }
+
+  public modalConfig: OverlayConfig;
+
+  public openConfigPopup() {
+    this.toggleSidebarClicked.emit();
   }
 }

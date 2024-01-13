@@ -1,8 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { DefaultResource, Resource, outputs } from 'src/app/Models/CloudResource';
 import { GCP_ComputeEngine, GCP_StorageBucket, GCP_SubNetwork, GCP_VPCNetwork, ResourceProperties } from 'src/app/Models/ResourceProperties';
 import { InputType } from 'src/app/enum/InputType';
 import { ResourceType } from 'src/app/enum/ResourceType';
+import { ModalDialogService } from 'src/app/services/modal-dialog.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -10,19 +13,29 @@ import { ResourceType } from 'src/app/enum/ResourceType';
   styleUrls: ['./side-bar.component.scss'],
 })
 export class SideBarComponent implements OnInit {
-  @Input() currentResource: ResourceType | undefined;
+  constructor(
+    private _modalDialogService: ModalDialogService) {
+  }
+  public faClose: IconDefinition = faClose;
+
+  public closeModal() {
+    this._modalDialogService.ActiveModal.dispose();
+  }
+
+  @Input() currentResource: ResourceType;
   @Input() currentIndex: number = -1;
-  @Input() resConfig: Resource = new DefaultResource();
+  resConfig: Resource = new DefaultResource();
   @Input() config: Map<string, { type: InputType, val: string }> = new Map;
   @Input() currentOutput: outputs[] = [];
   inputType = InputType
+  resourceType = ResourceType
 
   ngOnInit(): void {
     console.log(this.config);
   }
 
   @Output()
-  ConfigUpdateEvent = new EventEmitter<{ id: number, res: Resource }>();
+  configUpdateEvent = new EventEmitter<{ id: number, res: Resource }>();
 
   set = false
   listMap = new Map<string, any>();
@@ -107,7 +120,7 @@ export class SideBarComponent implements OnInit {
           }
       };
 
-      this.ConfigUpdateEvent.emit({ id: this.currentIndex, res: this.resConfig });
+      this.configUpdateEvent.emit({ id: this.currentIndex, res: this.resConfig });
     }
   }
 

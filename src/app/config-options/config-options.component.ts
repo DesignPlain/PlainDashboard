@@ -8,7 +8,7 @@ import { CloseScrollStrategy, GlobalPositionStrategy, OverlayConfig, ScrollStrat
   templateUrl: './config-options.component.html',
   styleUrls: ['./config-options.component.scss']
 })
-export class ConfigOptionsComponent implements OnInit{
+export class ConfigOptionsComponent implements OnInit {
 
   constructor(private _modalService: ModalDialogService) { }
 
@@ -19,6 +19,6 @@ export class ConfigOptionsComponent implements OnInit{
   public modalConfig: OverlayConfig;
 
   public openConfigPopup() {
-    this._modalService.openModal();
+    this._modalService.openConfigModal();
   }
 }

@@ -3,8 +3,8 @@
   <div>
     <app-card [item]="item" (dragEnded)="dragEnd($event, item.id)" (resized)="onResize($event, i)"
       (onValueEntered)="onEnter($event,i)" (trashShitClicked)="trashShit(i, item.id)"
-      (toggleSidebarClicked)="toggleSidebar(i, item)"
-      (startConnectionClicked)="startConnection($event, item.id)" (mouseEntered)="mouseEntered($event, item.id)" (mouseLeft)="mouseLeft()"></app-card>
+      (toggleSidebarClicked)="toggleSidebar(i, item)" (startConnectionClicked)="startConnection($event, item.id)"
+      (mouseEntered)="mouseEntered($event, item.id)" (mouseLeft)="mouseLeft()"></app-card>
   </div>
   <ng-container *ngIf="item.outlets.length > 0">
     <div *ngFor="let outlet of item.outlets">
@@ -17,8 +17,13 @@
 </ng-container>
 
 <app-tool-bar (deployClicked)="deploy()" (destroyClicked)="destroy()"></app-tool-bar>
-<app-side-bar [config]="currentConfig" [currentOutput]="currentOut" [currentResource]="currentResourceType"
-  [currentIndex]="currentIndex" class="sidebar" (ConfigUpdateEvent)="updateConfig($event.id, $event.res)"
-  *ngIf="showSideBar" />
+<!-- <app-side-bar 
+  [config]="currentConfig" 
+  [currentOutput]="currentOut" 
+  [currentResource]="currentResourceType"
+  [currentIndex]="currentIndex" 
+  class="sidebar" 
+  (ConfigUpdateEvent)="updateConfig($event.id, $event.res)"
+  *ngIf="showSideBar" /> -->
 
 <span class="product-watermark">DesignSphere</span>
