@@ -1,5 +1,5 @@
-<ng-container>
-  <h2 class="header"> Config Editor</h2>
+<div class="container">
+  <h2 class="header"> Configure {{ resourceType[currentResource] }}</h2>
   <br>
   <div *ngFor="let item of config | keyvalue">
     <div [ngSwitch]="item.value.type">
@@ -45,5 +45,7 @@
       <span>{{item.value}}</span>
     </div>
   </div>
-
-</ng-container>
+  <div class="close">
+    <span><fa-icon [icon]="faClose" (click)="closeModal()"></fa-icon></span>
+  </div>
+</div>
