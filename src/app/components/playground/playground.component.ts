@@ -8,8 +8,8 @@ import {
 import {
   CloudResource,
   Resource,
-  outputs,
-  lineCoordinates,
+  Outputs,
+  LineCoordinates,
 } from 'src/app/Models/CloudResource';
 import {
   GCP_ComputeEngine,
@@ -102,7 +102,7 @@ export class PlaygroundComponent implements OnInit {
     { type: InputType; val: any }
   >();
   public currentResourceType: ResourceType | undefined;
-  public currentOut: outputs[] = [];
+  public currentOut: Outputs[] = [];
   public items: CloudResource[] = [];
   public resourceType = ResourceType;
   public hideline: boolean = true;
@@ -188,7 +188,7 @@ export class PlaygroundComponent implements OnInit {
     this._saveState();
   }
 
-  public toggleSidebar(resourceIndex: number, item: CloudResource): void {
+  public SetResourceConfig(resourceIndex: number, item: CloudResource): void {
     this.currentConfig = new Map<string, { type: InputType; val: string }>();
 
     if (item.resourceConfig != undefined) {
@@ -306,14 +306,14 @@ export class PlaygroundComponent implements OnInit {
             }
           }
         });
-        currentItem.inletMap.forEach((value: lineCoordinates, key: string) => {
+        currentItem.inletMap.forEach((value: LineCoordinates, key: string) => {
           value.x1 += differenceinX;
           value.y1 += differenceinY;
         });
       }
 
       if (currentItem.outlets.length > 0) {
-        currentItem.outletMap.forEach((value: lineCoordinates, key: string) => {
+        currentItem.outletMap.forEach((value: LineCoordinates, key: string) => {
           value.x2 += differenceinX;
           value.y2 += differenceinY;
         });
@@ -377,10 +377,10 @@ export class PlaygroundComponent implements OnInit {
         next: (res) => {
           this.items = JSON.parse(JSON.stringify(res));
           this.items.forEach((item) => {
-            item.inletMap = new Map<string, lineCoordinates>(
+            item.inletMap = new Map<string, LineCoordinates>(
               JSON.parse(item.inletMapString)
             );
-            item.outletMap = new Map<string, lineCoordinates>(
+            item.outletMap = new Map<string, LineCoordinates>(
               JSON.parse(item.outletMapString)
             );
           });
@@ -391,10 +391,10 @@ export class PlaygroundComponent implements OnInit {
           if (data != null) {
             this.items = JSON.parse(data);
             this.items.forEach((item) => {
-              item.inletMap = new Map<string, lineCoordinates>(
+              item.inletMap = new Map<string, LineCoordinates>(
                 JSON.parse(item.inletMapString)
               );
-              item.outletMap = new Map<string, lineCoordinates>(
+              item.outletMap = new Map<string, LineCoordinates>(
                 JSON.parse(item.outletMapString)
               );
             });

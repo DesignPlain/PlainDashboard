@@ -1,18 +1,18 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
-import { DefaultResource, Resource, outputs } from 'src/app/Models/CloudResource';
+import { DefaultResource, Resource, Outputs } from 'src/app/Models/CloudResource';
 import { GCP_ComputeEngine, GCP_StorageBucket, GCP_SubNetwork, GCP_VPCNetwork, ResourceProperties } from 'src/app/Models/ResourceProperties';
 import { InputType } from 'src/app/enum/InputType';
 import { ResourceType } from 'src/app/enum/ResourceType';
 import { ModalDialogService } from 'src/app/services/modal-dialog.service';
 
 @Component({
-  selector: 'app-side-bar',
-  templateUrl: './side-bar.component.html',
-  styleUrls: ['./side-bar.component.scss'],
+  selector: 'app-resource-config',
+  templateUrl: './resource-config.component.html',
+  styleUrls: ['./resource-config.component.scss'],
 })
-export class SideBarComponent implements OnInit {
+export class ResourceConfigComponent implements OnInit {
   constructor(
     private _modalDialogService: ModalDialogService) {
   }
@@ -26,7 +26,7 @@ export class SideBarComponent implements OnInit {
   @Input() currentIndex: number = -1;
   resConfig: Resource = new DefaultResource();
   @Input() config: Map<string, { type: InputType, val: string }> = new Map;
-  @Input() currentOutput: outputs[] = [];
+  @Input() currentOutput: Outputs[] = [];
   inputType = InputType
   resourceType = ResourceType
 

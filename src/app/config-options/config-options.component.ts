@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IconDefinition, faGear } from '@fortawesome/free-solid-svg-icons';
 import { ModalDialogService } from '../services/modal-dialog.service';
-import { CloseScrollStrategy, GlobalPositionStrategy, OverlayConfig, ScrollStrategyOptions } from '@angular/cdk/overlay';
+import { OverlayConfig } from '@angular/cdk/overlay';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { faGear } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-config-options',

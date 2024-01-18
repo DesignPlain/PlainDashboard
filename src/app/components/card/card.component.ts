@@ -16,7 +16,7 @@ import { OverlayConfig } from '@angular/cdk/overlay';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  constructor(private _modalService: ModalDialogService) { }
+  constructor() { }
 
   @Input()
   public item: CloudResource;
@@ -24,7 +24,7 @@ export class CardComponent {
   @Output()
   public trashShitClicked = new EventEmitter();
   @Output()
-  public toggleSidebarClicked = new EventEmitter();
+  public openResourceConfigClicked = new EventEmitter();
   @Output()
   public startConnectionClicked = new EventEmitter<{
     outputPositionX: number;
@@ -98,10 +98,6 @@ export class CardComponent {
     this.trashShitClicked.emit();
   }
 
-  public toggleSidebar(): void {
-    this.toggleSidebarClicked.emit();
-  }
-
   public dragEnd($event: CdkDragEnd): void {
     this.dragEnded.emit($event);
   }
@@ -117,6 +113,6 @@ export class CardComponent {
   public modalConfig: OverlayConfig;
 
   public openConfigPopup() {
-    this.toggleSidebarClicked.emit();
+    this.openResourceConfigClicked.emit();
   }
 }

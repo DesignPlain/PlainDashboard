@@ -15,24 +15,25 @@
   </div>
   <div class="content">
     <div class="sub-content">
-      <div class="gcp" *ngIf="toggleProvider==provType.AWS">
+      <div *ngIf="toggleProvider==provType.AWS">
 
         <div class="header">AWS Configuration</div>
         <br>
       </div>
-      <div class="gcp" *ngIf="toggleProvider==provType.AZURE">
+      <div *ngIf="toggleProvider==provType.AZURE">
 
         <div class="header">AZURE Configuration</div>
         <br>
       </div>
-      <div class="gcp" *ngIf="toggleProvider==provType.GCP">
+      <div *ngIf="toggleProvider==provType.GCP">
 
         <div class="header">GCP Configuration</div>
         <br>
-        <label for="formFile" class="form-label">Upload Key file: </label>
-        <input (change)="this.onFilechange($event)" class="form-control" type="file" id="formFile"><br><br>
         <label class="form-label">Project Name: </label>
         <input #box type="text" (change)="projectName=box.value">
+        <br><br>
+        <label for="formFile" class="form-label">Upload Key file: </label>
+        <input (change)="this.onFilechange($event)" class="form-control" type="file" id="formFile">
 
       </div>
     </div>

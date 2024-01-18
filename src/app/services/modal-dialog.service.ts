@@ -2,9 +2,9 @@ import { Overlay, OverlayConfig } from '@angular/cdk/overlay';
 import { Injectable, Injector } from '@angular/core';
 import { ConfigModalComponent } from '../components/config-modal/config-modal.component';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { SideBarComponent } from '../components/side-bar/side-bar.component';
+import { ResourceConfigComponent } from '../components/resource-config/resource-config.component';
 import { ResourceType } from '../enum/ResourceType';
-import { Resource, outputs } from '../Models/CloudResource';
+import { Outputs } from '../Models/CloudResource';
 import { InputType } from '../enum/InputType';
 import { PlaygroundComponent } from '../components/playground/playground.component';
 
@@ -36,7 +36,7 @@ export class ModalDialogService {
     currentIndex: number,
     currentResource: ResourceType,
     config: Map<string, { type: InputType, val: string }>,
-    currentOutput: outputs[],
+    currentOutput: Outputs[],
     comp: PlaygroundComponent) {
     let positionStrategy = this._overlay.position().global();
     positionStrategy = positionStrategy.centerHorizontally();
@@ -50,7 +50,7 @@ export class ModalDialogService {
       })
     );
     this.ActiveModal = overlayRef;
-    const userProfilePortal = new ComponentPortal(SideBarComponent);
+    const userProfilePortal = new ComponentPortal(ResourceConfigComponent);
 
     let cmpRef = overlayRef.attach(userProfilePortal);
 

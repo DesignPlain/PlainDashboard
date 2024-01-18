@@ -67,19 +67,20 @@
         margin-left: 20px;
         color: #264653;
         opacity: 0.9;
-        background-color: #f1f1f1;
+        background-color: #f1f1f17f;
         font-weight: bold;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         font-size: smaller;
         background-size: 10px 10px;
         padding: 10px 10px 10px 10px;
         border-radius: 3px;
-        margin-top: 15px;
+        margin-top: 1px;
         max-width: 80%;
         display: flex;
         justify-content: space-evenly;
         align-self: center;
         justify-self: stretch;
+        border-radius: 0.5%;
       }
 
       .sub-content {
@@ -127,6 +128,7 @@
         }
       }
     }
+
     .close {
       position: absolute;
       top: 0;
