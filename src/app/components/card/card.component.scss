@@ -66,7 +66,6 @@
       opacity: 0.8;
 
       background-image: radial-gradient(#ffffff00 0.3px, #c6d0c499 0.5px);
-      //background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='4' stroke-dasharray='15%2c 21%2c 6%2c 7' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
       border: 2.5px dashed rgba(83, 53, 53, 0.39);
 
       border-radius: 1%;
@@ -108,7 +107,7 @@
 
     button {
       border-radius: 100%;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+      box-shadow: rgba(50, 50, 93, 0.703) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
       border: none;
       background-color: rgb(255, 255, 255);
       transition: 0.5s;
@@ -116,15 +115,19 @@
       &.firstButton {
         position: absolute;
         left: -8%;
-        top: 30%;
-        opacity: 0.7;
+        top: 37%;
+        opacity: 0.9;
+        width: 15px;
+        height: 10px;
       }
 
       &.secondButton {
         position: absolute;
         right: -8%;
-        top: 30%;
-        opacity: 0.7;
+        top: 37%;
+        opacity: 0.9;
+        width: 15px;
+        height: 10px;
       }
 
       &:hover {
