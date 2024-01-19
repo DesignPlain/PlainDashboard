@@ -37,9 +37,10 @@
   stroke-linecap: round;
 
   &:hover {
-    stroke: rgb(242, 0, 255);
-    stroke-width: 2.1;
+    stroke: rgba(242, 0, 255, 0.722);
+    stroke-width: 3;
     z-index: 10000;
+    stroke-linecap: round;
   }
 }
 
