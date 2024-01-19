@@ -15,6 +15,5 @@ Run `npm server` for a dev server. Navigate to `http://localhost:4200/`. The app
 Backend code resides at [DesignSphere_Backend](https://github.com/nmbr7/DesignSphere_Backend). The UI state management will works even if the backend is not running using browser local storage.
 
 ## UI Demo
-![image](https://github.com/shaheennamboori/DesignSphereUI/assets/32611543/7b41233a-05e9-471f-844c-674ba2e6e73d)
-
+![image](https://github.com/DesignPlain/PlainDashboard/assets/19748270/7a49f545-4d57-4274-966a-4edbad4d182f)
 
