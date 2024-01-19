@@ -22,6 +22,7 @@
     resize: both;
     overflow: hidden;
 
+
     &:hover {
       z-index: 1000;
       background-image: radial-gradient(#ffffff 0.3px, #f0cece 0.5px);
@@ -46,13 +47,16 @@
       opacity: 0.8;
 
       background-image: radial-gradient(#ffffff00 0.3px, #e2e2e299 0.5px);
-      //background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='4' stroke-dasharray='15%2c 21%2c 6%2c 7' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
       border: 2.5px dashed rgba(81, 81, 81, 0.39);
 
       border-radius: 1%;
 
       &:hover {
         background-image: radial-gradient(#ffffff 0.3px, #f0cecece 0.5px);
+      }
+
+      button {
+        visibility: hidden;
       }
     }
 
@@ -72,6 +76,10 @@
 
       &:hover {
         background-image: radial-gradient(#ffffff 0.3px, #f0cecece 0.5px);
+      }
+
+      button {
+        visibility: hidden;
       }
     }
 
@@ -106,32 +114,37 @@
     }
 
     button {
+      z-index: 10000;
       border-radius: 100%;
-      box-shadow: rgba(50, 50, 93, 0.703) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
       border: none;
-      background-color: rgb(255, 255, 255);
-      transition: 0.5s;
+      background-color: rgba(50, 50, 50, 0.506);
+      transition: 0.2s;
 
       &.firstButton {
         position: absolute;
-        left: -8%;
-        top: 37%;
-        opacity: 0.9;
-        width: 15px;
+        left: -7px;
+        top: 22px;
+        opacity: 0.8;
+        width: 10px;
         height: 10px;
       }
 
       &.secondButton {
         position: absolute;
-        right: -8%;
-        top: 37%;
-        opacity: 0.9;
-        width: 15px;
+        right: -7px;
+        top: 22px;
+        opacity: 0.8;
+        width: 10px;
         height: 10px;
       }
 
       &:hover {
-        background-color: rgb(75, 94, 94);
+        background-color: rgb(242, 0, 255);
+        top: 32%;
+        width: 14px;
+        height: 14px;
+        opacity: 1;
+        overflow: hidden;
       }
 
       &:disabled:hover {
@@ -147,6 +160,10 @@
       right: 0;
       opacity: 0.5;
       visibility: hidden;
+
+      &:hover {
+        opacity: 0.8;
+      }
 
       &.i1 {
         right: 10px;

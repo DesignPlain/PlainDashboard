@@ -9,10 +9,10 @@
       max-width: 240px;
       min-width: 240px;
       min-height: 100%;
-      background-color: #e5e5f7;
       opacity: 0.8;
       background-image: radial-gradient(#000000 0.2px, #5d7b6fcb 0.2px);
       background-size: 4px 4px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     }
 
     .right {
@@ -22,12 +22,6 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      background-color: #e5e5f7;
-      opacity: .9;
-      background-image: radial-gradient(#ffffff 0.2px, #000000 0.44px);
-      background-color: #a6a6a6;
-      opacity: 0.6;
-      background-color: #e5e5f7;
       opacity: 1;
       background-image: linear-gradient(#d6d4d4d0 2.8000000000000003px, transparent 2.8000000000000003px), linear-gradient(90deg, #d6d4d4d0 2.8000000000000003px, transparent 2.8000000000000003px), linear-gradient(#d6d4d4d0 1.4000000000000001px, transparent 1.4000000000000001px), linear-gradient(90deg, #d6d4d4d0 1.4000000000000001px, #e5e5f7d0 1.4000000000000001px);
       background-size: 70px 70px, 70px 70px, 14px 14px, 14px 14px;
