@@ -6,40 +6,41 @@
         Configure Access Credentials
       </div>
       <div class="sub-menu" *ngIf="toggleCred">
-        <div class="menu-item" (click)="toggleProvider=provType.AWS">AWS</div>
-        <div class="menu-item" (click)="toggleProvider=provType.AZURE">AZURE</div>
-        <div class="menu-item" (click)="toggleProvider=provType.GCP">GCP</div>
+        <div class="menu-item" (click)="toggleProvider = provType.AWS">AWS</div>
+        <div class="menu-item" (click)="toggleProvider = provType.AZURE">
+          AZURE
+        </div>
+        <div class="menu-item" (click)="toggleProvider = provType.GCP">GCP</div>
       </div>
     </div>
     <div class="menu-item">General Settings</div>
   </div>
   <div class="content">
     <div class="sub-content">
-      <div *ngIf="toggleProvider==provType.AWS">
-
+      <div *ngIf="toggleProvider == provType.AWS">
         <div class="header">AWS Configuration</div>
-        <br>
+        <br />
       </div>
-      <div *ngIf="toggleProvider==provType.AZURE">
-
+      <div *ngIf="toggleProvider == provType.AZURE">
         <div class="header">AZURE Configuration</div>
-        <br>
+        <br />
       </div>
-      <div *ngIf="toggleProvider==provType.GCP">
-
+      <div *ngIf="toggleProvider == provType.GCP">
         <div class="header">GCP Configuration</div>
-        <br>
+        <br />
         <label class="form-label">Project Name: </label>
-        <input #box type="text" (change)="projectName=box.value">
-        <br><br>
+        <input #box type="text" (change)="projectName = box.value" />
+        <br /><br />
         <label for="formFile" class="form-label">Upload Key file: </label>
-        <input (change)="this.onFilechange($event)" class="form-control" type="file" id="formFile">
-
+        <input
+          (change)="this.onFilechange($event)"
+          class="form-control"
+          type="file"
+          id="formFile"
+        />
       </div>
     </div>
     <div (click)="this.upload()" class="apply">Save</div>
   </div>
-  <div class="close">
-    <span><fa-icon [icon]="faClose" (click)="closeModal()"></fa-icon></span>
-  </div>
+  <button class="close interactive-close-btn" (click)="closeModal()"></button>
 </div>
