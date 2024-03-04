@@ -1,40 +1,48 @@
 <!-- <app-input-search></app-input-search> -->
 <span class="title">Cloud Resources</span>
 
-<div *ngIf="false" class="cardfamily" (click)="viewAWS = !viewAWS">AWS</div>
+<div class="cardfamily" (click)="viewAWS = !viewAWS">AWS</div>
 <div class="cardgroup" *ngIf="viewAWS">
-    <div class="card" (click)="addComponent(resourceType.Lambda)">Lambda Function
+    <div class="card" (click)="addComponent(resourceType.Lambda)">
+        <span> Lambda Function</span>
         <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.Lambda]}}_64.png"
             title={{resourceType[resourceType.Lambda]}}>
     </div>
-    <div class="card" (click)="addComponent(resourceType.DynamoDB)">Dynamo DB
+    <div class="card" (click)="addComponent(resourceType.DynamoDB)">
+        <span> Dynamo DB</span>
         <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.DynamoDB]}}_64.png"
             title={{resourceType[resourceType.DynamoDB]}}>
     </div>
-    <div class="card" (click)="addComponent(resourceType.EC2)">EC2
+    <div class="card" (click)="addComponent(resourceType.EC2)">
+        <span> EC2</span>
         <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.EC2]}}_64.png"
             title={{resourceType[resourceType.EC2]}}>
     </div>
-    <div class="card" (click)="addComponent(resourceType.Simple_Storage_Service)">S3 Bucket
+    <div class="card" (click)="addComponent(resourceType.Simple_Storage_Service)">
+        <span> S3 Bucket</span>
         <img class="listIcon"
             src="../../../assets/Arch_Amazon-{{resourceType[resourceType.Simple_Storage_Service]}}_64.png"
             title={{resourceType[resourceType.Simple_Storage_Service]}}>
     </div>
-    <div class="card" (click)="addComponent(resourceType.Virtual_Private_Cloud)">Virtual Private Cloud
+    <div class="card" (click)="addComponent(resourceType.Virtual_Private_Cloud)">
+        <span> Virtual Private Cloud</span>
         <img class="listIcon"
             src="../../../assets/Arch_Amazon-{{resourceType[resourceType.Virtual_Private_Cloud]}}_64.png"
             title={{resourceType[resourceType.Virtual_Private_Cloud]}}>
     </div>
-    <div class="card" (click)="addComponent(resourceType.Elastic_Load_Balancer)">Elastic Load Balancer
+    <div class="card" (click)="addComponent(resourceType.Elastic_Load_Balancer)">
+        <span> Load Balancer</span>
         <img class="listIcon"
             src="../../../assets/Arch_Amazon-{{resourceType[resourceType.Elastic_Load_Balancer]}}_64.png"
             title={{resourceType[resourceType.Elastic_Load_Balancer]}}>
     </div>
-    <div class="card" (click)="addComponent(resourceType.APIGateway)">API Gateway
+    <div class="card" (click)="addComponent(resourceType.APIGateway)">
+        <span> API Gateway</span>
         <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.APIGateway]}}_64.png"
             title={{resourceType[resourceType.APIGateway]}}>
     </div>
-    <div class="card" (click)="addComponent(resourceType.Subnet)">Subnet
+    <div class="card" (click)="addComponent(resourceType.Subnet)">
+        <span> Subnet </span>
         <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.Subnet]}}_64.png"
             title={{resourceType[resourceType.Subnet]}}>
     </div>

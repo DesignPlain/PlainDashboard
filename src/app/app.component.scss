@@ -2,17 +2,37 @@
   .container {
     display: flex;
     min-height: 100vh;
+    min-width: 100%;
     opacity: 1;
+    max-width: 100vh;
+    max-height: 100vh;
 
     .left {
       border-right: 1px solid rgba(255, 255, 255, 0.507);
       max-width: 240px;
       min-width: 240px;
       min-height: 100%;
+      max-height: 100%;
+      padding-bottom: 10px;
       opacity: 0.8;
-      background-image: radial-gradient(#000000 0.2px, #5d7b6fcb 0.2px);
-      background-size: 4px 4px;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      -webkit-box-shadow: 11.5px 0.5px 5px -4.5px #dddddd;
+      -moz-box-shadow: 11.5px 0.5px 5px -4.5px #dddddd;
+      box-shadow: 11.5px 0.5px 5px -4.5px #dddddd;
+      background: #b466c1;
+      background: -webkit-linear-gradient(11deg, #b466c1 0%, #e69999 50%, #ffffff 100%);
+      background: linear-gradient(11deg, #b466c1 0%, #e69999 50%, #ffffff 100%);
+      overflow: scroll;
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+
     }
 
     .right {
@@ -21,7 +41,7 @@
       flex-grow: 1;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
+      overflow: scroll;
       opacity: 1;
       background-image: linear-gradient(#d6d4d4d0 2.8000000000000003px, transparent 2.8000000000000003px), linear-gradient(90deg, #d6d4d4d0 2.8000000000000003px, transparent 2.8000000000000003px), linear-gradient(#d6d4d4d0 1.4000000000000001px, transparent 1.4000000000000001px), linear-gradient(90deg, #d6d4d4d0 1.4000000000000001px, #e5e5f7d0 1.4000000000000001px);
       background-size: 70px 70px, 70px 70px, 14px 14px, 14px 14px;

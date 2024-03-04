@@ -1,7 +1,7 @@
 import { Directive, ElementRef, EventEmitter, Output, Input, OnDestroy } from '@angular/core';
 // import ResizeObserver from 'resize-observer-polyfill'; //not needed really since > Chrome 64
 
-const entriesMap = new WeakMap();
+const entriesMap = new Map();
 
 const ro = new ResizeObserver(entries => {
   for (const entry of entries) {

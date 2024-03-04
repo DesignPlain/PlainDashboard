@@ -5,7 +5,7 @@ import {
   faGear,
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
-import { CdkDragEnd } from '@angular/cdk/drag-drop';
+import { CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';
 import { ResourceType } from 'src/app/enum/ResourceType';
 import { ModalDialogService } from 'src/app/services/modal-dialog.service';
 import { OverlayConfig } from '@angular/cdk/overlay';
@@ -23,24 +23,34 @@ export class CardComponent {
 
   @Output()
   public trashShitClicked = new EventEmitter();
+
   @Output()
   public openResourceConfigClicked = new EventEmitter();
+
   @Output()
   public startConnectionClicked = new EventEmitter<{
     outputPositionX: number;
     outputPositionY: number;
   }>();
+
   @Output()
   public dragEnded = new EventEmitter<CdkDragEnd>();
+
+  @Output()
+  public dragMoved = new EventEmitter<CdkDragMove>();
+
   @Output()
   public resized = new EventEmitter<ResizeObserverEntry>();
+
   @Output()
   public onValueEntered = new EventEmitter<string>();
+
   @Output()
   public mouseEntered = new EventEmitter<{
     inputPositionX: number;
     inputPositionY: number;
   }>();
+
   @Output()
   public mouseLeft = new EventEmitter();
 
@@ -100,6 +110,10 @@ export class CardComponent {
 
   public dragEnd($event: CdkDragEnd): void {
     this.dragEnded.emit($event);
+  }
+
+  public dragMove($event: CdkDragMove): void {
+    this.dragMoved.emit($event);
   }
 
   public onResize(ev: ResizeObserverEntry): void {

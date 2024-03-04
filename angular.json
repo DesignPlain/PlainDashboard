@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "DesignSphere:build:production"
+              "buildTarget": "DesignSphere:build:production"
             },
             "development": {
-              "browserTarget": "DesignSphere:build:development"
+              "buildTarget": "DesignSphere:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "DesignSphere:build"
+            "buildTarget": "DesignSphere:build"
           }
         },
         "test": {

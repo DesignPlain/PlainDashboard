@@ -1,10 +1,11 @@
 <app-config-options class="configuration"></app-config-options>
 <ng-container *ngFor="let item of items; let i = index">
   <div>
-    <app-card [item]="item" (dragEnded)="dragEnd($event, item.id)" (resized)="onResize($event, i)"
-      (onValueEntered)="onEnter($event,i)" (trashShitClicked)="trashShit(i, item.id)"
-      (openResourceConfigClicked)="SetResourceConfig(i, item)" (startConnectionClicked)="startConnection($event, item.id)"
-      (mouseEntered)="mouseEntered($event, item.id)" (mouseLeft)="mouseLeft()"></app-card>
+    <app-card [item]="item" (dragEnded)="dragEnd($event, item.id)" (dragMoved)="dragMove($event, item.id)"
+      (resized)="onResize($event, i)" (onValueEntered)="onEnter($event,i)" (trashShitClicked)="trashShit(i, item.id)"
+      (openResourceConfigClicked)="SetResourceConfig(i, item)"
+      (startConnectionClicked)="startConnection($event, item.id)" (mouseEntered)="mouseEntered($event, item.id)"
+      (mouseLeft)="mouseLeft()"></app-card>
   </div>
   <ng-container *ngIf="item.outlets.length > 0">
     <div *ngFor="let outlet of item.outlets">

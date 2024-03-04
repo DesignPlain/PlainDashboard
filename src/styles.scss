@@ -1,42 +1,49 @@
 @import "@angular/cdk/overlay-prebuilt.css";
+
 /* You can add global styles to this file, and also import other style files */
 // Use <button class="interactive-close-btn"></button> to style any button as interactive close button
-body {
-  margin: 0;
-  min-height: 100vh;
-  .interactive-close-btn {
-    overflow: hidden;
-    position: relative;
-    border: none;
-    padding: 0;
-    width: 1.5em;
-    height: 1.5em;
-    border-radius: 50%;
-    background: transparent;
-    font: inherit;
-    text-indent: 100%;
-    cursor: pointer;
-    transition: all 0.2s ease-in;
+/* Reset CSS */
+@layer reset {
+  body {
+    margin: 0;
+    min-height: 100vh;
 
-    &:hover {
-      background: rgba(136, 145, 143, 0.116);
-    }
+    .interactive-close-btn {
+      overflow: hidden;
+      position: relative;
+      border: none;
+      padding: 0;
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      background: transparent;
+      font: inherit;
+      text-indent: 100%;
+      cursor: pointer;
+      transition: all 0.2s ease-in;
 
-    &:before,
-    &:after {
-      position: absolute;
-      top: 15%;
-      left: calc(50% - 0.0625em);
-      width: 0.125em;
-      height: 70%;
-      border-radius: 0.125em;
-      transform: rotate(45deg);
-      background: currentcolor;
-      content: "";
-    }
+      &:hover {
+        background: rgba(136, 145, 143, 0.116);
+      }
 
-    &:after {
-      transform: rotate(-45deg);
+      &:before,
+      &:after {
+        position: absolute;
+        top: 15%;
+        left: calc(50% - 0.0625em);
+        width: 0.125em;
+        height: 70%;
+        border-radius: 0.125em;
+        transform: rotate(45deg);
+        background: currentcolor;
+        content: "";
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
     }
   }
 }
+
+@layer primeng, reset;
