@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
-import { CdkDragEnd } from '@angular/cdk/drag-drop';
+import { CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';
 import {
   faTrash,
   faGear,
@@ -151,10 +151,12 @@ export class PlaygroundComponent implements OnInit {
   }
 
   public deploy(): void {
-    this._stackService
-      .deploy(this.items)
-      .pipe(take(1))
-      .subscribe((res) => this._processResponse(res));
+    // this._stackService
+    //   .deploy(this.items)
+    //   .pipe(take(1))
+    //   .subscribe((res) => this._processResponse(res));
+
+
   }
 
   public destroy(): void {
@@ -285,7 +287,51 @@ export class PlaygroundComponent implements OnInit {
 
   public mouseLeft(): void { }
 
+  public dragMove($event: CdkDragMove, id: string): void {
+    // let pos = $event.pointerPosition;
+    // let count = 0;
+    // let currentItem = this.items.find((x) => { count += 1; x.id == id });
+    // if (currentItem != null) {
+    //   let differenceinX = $event.delta.x * $event.distance.x;
+    //   let differenceinY = $event.delta.y * $event.distance.y;
+    //   if (currentItem.inlets.length > 0) {
+    //     currentItem.inlets.forEach((element) => {
+    //       let tempInlet = this.items.find((x) => x.id == element);
+    //       if (tempInlet) {
+    //         let existingCords = tempInlet.outletMap.get(id);
+    //         if (existingCords) {
+    //           tempInlet.outletMap.set(id, {
+    //             x1: existingCords?.x1 + differenceinX,
+    //             y1: existingCords?.y1 + differenceinY,
+    //             x2: existingCords?.x2,
+    //             y2: existingCords?.y2,
+    //           });
+    //         }
+    //       }
+    //     });
+    //     currentItem.inletMap.forEach((value: LineCoordinates, key: string) => {
+    //       value.x1 += differenceinX;
+    //       value.y1 += differenceinY;
+    //     });
+    //   }
+
+    //   if (currentItem.outlets.length > 0) {
+    //     currentItem.outletMap.forEach((value: LineCoordinates, key: string) => {
+    //       value.x2 += differenceinX;
+    //       value.y2 += differenceinY;
+    //     });
+    //   }
+    //   currentItem.position.x += $event.delta.x * $event.distance.x;
+    //   currentItem.position.y += $event.delta.y * $event.distance.y;
+    //   console.log('Position:', pos);
+    //   //this.items[count] = currentItem;
+    //   //this._saveState();
+    //   //this.items = _.cloneDeep(this.items);
+    //}
+  }
+
   public dragEnd($event: CdkDragEnd, id: string): void {
+    console.log("ended")
     let pos = $event.source.getFreeDragPosition();
     let currentItem = this.items.find((x) => x.id == id);
     if (currentItem != null) {

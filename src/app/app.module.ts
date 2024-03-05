@@ -20,6 +20,11 @@ import { CardComponent } from './components/card/card.component';
 import { ConfigModalComponent } from './components/config-modal/config-modal.component';
 import { ConfigOptionsComponent } from './config-options/config-options.component';
 import { SelectModule } from './utilityComponents/select/select.component.module';
+import { InputGroupModule } from 'primeng/inputgroup';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { InputTextModule } from 'primeng/inputtext';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -46,6 +51,11 @@ import { SelectModule } from './utilityComponents/select/select.component.module
     MatButtonModule,
     HttpClientModule,
     SelectModule,
+    InputGroupModule,
+    InputGroupAddonModule,
+    InputTextModule,
+    FloatLabelModule,
+    ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

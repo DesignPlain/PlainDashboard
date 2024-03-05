@@ -1,19 +1,19 @@
 <div class="container">
   <h2 class="header"> Configure {{ resourceType[currentResource] }}</h2>
   <br>
-  <div *ngFor="let item of config | keyvalue">
-    <div [ngSwitch]="item.value.type">
+  <div class="inputform">
+    <div *ngFor="let item of config | keyvalue" [ngSwitch]="item.value.type">
       <div *ngSwitchCase="inputType.String">
         <span>{{item.key}}</span>
         <br>
-        <input #box type="text" placeholder="{{item.value.val}}" value="{{item.value.val}}"
+        <input #box type="text" class="input" placeholder="{{item.value.val}}" value="{{item.value.val}}"
           (focusout)="addToMap(item.key, box.value, item.value.type)">
         <br><br>
       </div>
       <div *ngSwitchCase="inputType.Number">
         <span>{{item.key}}</span>
         <br>
-        <input #box type="number" placeholder="{{item.value.val}}" value="{{item.value.val}}"
+        <input #box type="number" class="input" placeholder="{{item.value.val}}" value="{{item.value.val}}"
           (focusout)="addToMap(item.key, box.value, item.value.type)">
         <br><br>
       </div>
