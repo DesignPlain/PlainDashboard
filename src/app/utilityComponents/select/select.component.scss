@@ -1,39 +1,58 @@
-:host{
-  .wrapper{
+:host {
+  .wrapper {
+    margin-bottom: 7px;
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 20px;
     position: relative;
+    color: #264653;
+    font-size: small;
   }
-  .container{
+  .container {
     cursor: pointer;
-    background-color: white;
-    color: black;
     display: flex;
     max-height: 20px;
-    padding: 5px;
+    padding: 7px;
+    border-radius: 5px;
     max-width: 200px;
     min-width: 200px;
     justify-content: space-between;
-    &:hover{
-      background-color: rgb(185, 180, 180);
+
+    border: 0.5px solid transparent;
+    outline: none;
+    overflow: hidden;
+    border-color: #a3a2a2;
+    border-radius: 3px;
+    transition: all 0.1s;
+
+    &:hover,
+    &:focus {
+      border: 1px solid #4a9dec;
+      box-shadow: 0px 0px 0px 1px rgb(74, 157, 236, 20%);
+      background-color: white;
       transition: all 250ms linear;
     }
   }
-  .option-container{
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  .option-container {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 0px 0px,
+      rgba(0, 0, 0, 0.12) 1px 3px 0px, rgba(0, 0, 0, 0.12) 0px 4px 6px;
+
     z-index: 1000;
     position: absolute;
     background-color: white;
     min-width: 200px;
     max-width: 200px;
-    color: black;
     border-radius: 0 0 5px 5px;
     padding: 5px;
-    .option{
-      border-bottom: 1px solid black;
-      &:last-child{
+    .option {
+      padding: 5px;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.158);
+      &:last-child {
         border-bottom: unset;
       }
-      &:hover{
-        background-color: rgba(87, 87, 240, 0.466);
+      &:hover {
+        border-radius: 0 0 5px 5px;
+        background-color: #4a9eec94;
       }
     }
   }

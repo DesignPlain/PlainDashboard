@@ -12,7 +12,7 @@ import { PlaygroundComponent } from '../components/playground/playground.compone
   providedIn: 'root',
 })
 export class ModalDialogService {
-  constructor(private _overlay: Overlay, private _injector: Injector) { }
+  constructor(private _overlay: Overlay, private _injector: Injector) {}
   public ActiveModal: any;
   public openConfigModal() {
     let positionStrategy = this._overlay.position().global();
@@ -35,9 +35,10 @@ export class ModalDialogService {
   public openComponentModal(
     currentIndex: number,
     currentResource: ResourceType,
-    config: Map<string, { type: InputType, val: string }>,
+    config: Map<string, { type: InputType; val: string }>,
     currentOutput: Outputs[],
-    comp: PlaygroundComponent) {
+    comp: PlaygroundComponent
+  ) {
     let positionStrategy = this._overlay.position().global();
     positionStrategy = positionStrategy.centerHorizontally();
     positionStrategy = positionStrategy.centerVertically();
