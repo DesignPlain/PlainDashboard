@@ -1,12 +1,10 @@
-import { extension } from 'mime';
 import { InputType } from '../enum/InputType';
 import { ResourceType } from '../enum/ResourceType';
 import { Resource } from './CloudResource';
-import { extend } from 'lodash';
 
 // TODO: Currently the class member name and the UI display name is same, we need to change the logic \
 //       so that we can have space in display name. Might need some changes related to the dynamic    \
-//       input field rendering logic 
+//       input field rendering logic
 export class ResourceProperties {
   public static propertiesMap: Map<ResourceType, Map<string, InputType>> =
     new Map([
@@ -14,15 +12,15 @@ export class ResourceProperties {
         ResourceType.EC2,
         new Map([
           ['Hostname', InputType.String],
-          ['MachineType', InputType.String],
+          ['MachineType', InputType.DropDown],
           ['vCPU', InputType.Number],
           ['Memory', InputType.Number],
           ['BootDiskImage', InputType.String],
-          ['Network', InputType.String],
-          ['SubNetwork', InputType.String],
-          ['Zone', InputType.String],
+          ['Network', InputType.DropDown],
+          ['SubNetwork', InputType.DropDown],
+          ['Zone', InputType.DropDown],
           ['MetadataStartupScript', InputType.String],
-          ['ServiceAccountEmail', InputType.String],
+          ['ServiceAccountEmail', InputType.DropDown],
           ['ServiceAccountScope', InputType.String],
         ]),
       ],
@@ -38,7 +36,7 @@ export class ResourceProperties {
         new Map([
           ['Location', InputType.String],
           ['UniformBucketLevelAccess', InputType.CheckBox],
-          ['Role', InputType.String],
+          ['Role', InputType.DropDown],
           ['Members', InputType.String],
         ]),
       ],
@@ -46,7 +44,7 @@ export class ResourceProperties {
         ResourceType.Virtual_Private_Cloud,
         new Map([
           ['AutoCreateSubNetwork', InputType.CheckBox],
-          ['RoutingMode', InputType.String],
+          ['RoutingMode', InputType.DropDown],
           ['MTU', InputType.Number],
           ['DeleteDefaultRoutesOnCreate', InputType.CheckBox],
           ['NetworkFirewallPolicyEnforcementOrder', InputType.String],
@@ -65,18 +63,17 @@ export class ResourceProperties {
 }
 
 export class GCP_StorageBucket extends Resource {
-
   constructor(
     public Location: string,
     public UniformBucketLevelAccess: boolean,
     public Role: string,
-    public Members: string[]) {
-    super("StorageBucket", "GCP")
+    public Members: string[]
+  ) {
+    super('StorageBucket', 'GCP');
   }
 }
 
 export class GCP_ComputeEngine extends Resource {
-
   constructor(
     public Hostname: string,
     public MachineType: string,
@@ -88,34 +85,31 @@ export class GCP_ComputeEngine extends Resource {
     public Zone: string,
     public MetadataStartupScript: string,
     public ServiceAccountEmail: string,
-    public ServiceAccountScope: string) {
-    super("ComputeEngine", "GCP")
+    public ServiceAccountScope: string
+  ) {
+    super('ComputeEngine', 'GCP');
   }
 }
 
 export class GCP_VPCNetwork extends Resource {
-
   constructor(
     public AutoCreateSubNetwork: boolean,
     public RoutingMode: string,
     public MTU: number,
     public DeleteDefaultRoutesOnCreate: boolean,
-    public NetworkFirewallPolicyEnforcementOrder: string,
-
+    public NetworkFirewallPolicyEnforcementOrder: string
   ) {
-    super("VPC", "GCP")
+    super('VPC', 'GCP');
   }
 }
 
 export class GCP_SubNetwork extends Resource {
-
   constructor(
     public IpCidrRange: string,
     public Region: string,
     public Purpose: string,
-    public Network: string,
-
+    public Network: string
   ) {
-    super("Subnet", "GCP")
+    super('Subnet', 'GCP');
   }
 }

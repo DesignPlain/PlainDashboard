@@ -14,7 +14,7 @@
   opacity: 0.9;
   background: #ecffc1;
   background: -webkit-linear-gradient(0deg, #ecffc1 0%, #ffe6cc 50%, #dfbaf7 100%);
-  background: linear-gradient(0deg, #ecffc1 0%, #ffe6cc 50%, #dfbaf7 100%);
+  background: linear-gradient(0deg, #ecffc184 0%, #ecffc184 50%, #ecffc184 100%);
   margin: 5px 10px 0px 10px;
   padding: 1px 1px;
   border-radius: 5px;
@@ -22,8 +22,7 @@
 
 .cardfamily {
   color: #000000;
-  opacity: 1;
-  background: #db55ed9b;
+  background: #8e597c7d;
   font-weight: bolder;
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin: 10px 10px 0px 10px;
@@ -44,7 +43,7 @@
 .card {
   color: #000000;
   opacity: 0.9;
-  background: #69585847;
+  background: #2b1c1c47;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

@@ -10,7 +10,7 @@ export class SelectComponent {
   @Input()
   public selected: string = 'Please select';
   @Input()
-  public items: string[] = ['Item 1', 'Item 2', 'Item 3'];
+  public items: string[] = ['jhbhjkbhj', 'knjkn', 'jknjknj',"ohkjhkj"];
   public expand: boolean = false;
 
   public expandOptions() {

@@ -41,7 +41,6 @@ import { ModalDialogService } from 'src/app/services/modal-dialog.service';
   styleUrls: ['./playground.component.scss'],
 })
 export class PlaygroundComponent implements OnInit {
-
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: any) {
     if (this.currentOutput) {
@@ -125,7 +124,7 @@ export class PlaygroundComponent implements OnInit {
     private _stackService: StackService,
     private _dataService: DataService,
     private _modalService: ModalDialogService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this._getState();
@@ -137,7 +136,7 @@ export class PlaygroundComponent implements OnInit {
         item.resourceType = componentName;
         item.name = ResourceType[componentName];
         item.title = item.name.toString();
-        item.providerType = ProviderType.GCP;
+        item.providerType = ProviderType.AWS;
         item.resourceConfig = undefined;
         this.items.push(item);
         this._saveState();
@@ -151,12 +150,10 @@ export class PlaygroundComponent implements OnInit {
   }
 
   public deploy(): void {
-    // this._stackService
-    //   .deploy(this.items)
-    //   .pipe(take(1))
-    //   .subscribe((res) => this._processResponse(res));
-
-
+    this._stackService
+      .deploy(this.items)
+      .pipe(take(1))
+      .subscribe((res) => this._processResponse(res));
   }
 
   public destroy(): void {
@@ -285,7 +282,7 @@ export class PlaygroundComponent implements OnInit {
     };
   }
 
-  public mouseLeft(): void { }
+  public mouseLeft(): void {}
 
   public dragMove($event: CdkDragMove, id: string): void {
     // let pos = $event.pointerPosition;
@@ -314,7 +311,6 @@ export class PlaygroundComponent implements OnInit {
     //       value.y1 += differenceinY;
     //     });
     //   }
-
     //   if (currentItem.outlets.length > 0) {
     //     currentItem.outletMap.forEach((value: LineCoordinates, key: string) => {
     //       value.x2 += differenceinX;
@@ -331,7 +327,7 @@ export class PlaygroundComponent implements OnInit {
   }
 
   public dragEnd($event: CdkDragEnd, id: string): void {
-    console.log("ended")
+    console.log('ended');
     let pos = $event.source.getFreeDragPosition();
     let currentItem = this.items.find((x) => x.id == id);
     if (currentItem != null) {

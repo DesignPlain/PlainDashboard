@@ -5,7 +5,8 @@
   padding: 10px;
   padding-left: 20px;
   font-weight: small;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
   .container {
     position: relative;
@@ -14,7 +15,7 @@
     max-width: 75rem;
     max-height: 50rem;
     background-color: white;
-    padding: 30px;
+    padding: 15px;
     padding-left: 50px;
     border-radius: 10px;
     font-size: smaller;
@@ -34,42 +35,61 @@
     }
 
     .inputform {
-      margin-left: 5rem;
-      max-width: 75rem;
-      max-height: 40rem;
+      margin-left: 4rem;
+      max-width: 60rem;
+      max-height: 38rem;
+      min-height: 38rem;
       display: flex;
       flex-direction: column;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       align-content: flex-start;
       justify-content: flex-start;
-      align-items: center;
+      align-items: flex-start;
+      overflow: scroll;
+      //border: 0.5px solid transparent;
+      //border-color: #a3a2a2;
+      
+      .in {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        align-content: space-evenly;
+        align-items: center;
+      }
 
       span {
+        width: 20em;
+        margin-right: 5px;
         color: #264653;
       }
 
+      .checkbox {
+        width: 1.5em;
+        height: 1.5em;
+        align-self: flex-end;
+      }
+
       .input {
-        margin-top: 7px;
-        margin-right: 15rem;
+        margin-right: 10rem;
         border: 0.5px solid transparent;
-        width: 18em;
-        height: 2.5em;
+        width: 16em;
+        height: 2em;
         padding-left: 0.8em;
         outline: none;
-        overflow: hidden;
+        overflow: scroll;
         border-color: #a3a2a2;
         border-radius: 3px;
         transition: all 0.1s;
 
         &:hover,
         &:focus {
-          border: 1px solid #4A9DEC;
+          border: 1px solid #4a9dec;
           box-shadow: 0px 0px 0px 1px rgb(74, 157, 236, 20%);
           background-color: white;
         }
       }
     }
-
 
     .apply {
       right: 4%;
