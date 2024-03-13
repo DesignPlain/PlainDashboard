@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DrawLineService } from './draw-line.service';
+import { ComponentMoveService } from './component-move.service';
 
-describe('DrawLineService', () => {
-  let service: DrawLineService;
+describe('ComponentMoveService', () => {
+  let service: ComponentMoveService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DrawLineService);
+    service = TestBed.inject(ComponentMoveService);
   });
 
   it('should be created', () => {
