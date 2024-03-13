@@ -15,28 +15,27 @@
     max-width: 75rem;
     max-height: 50rem;
     background-color: white;
-    padding: 15px;
+    padding: 20px;
     padding-left: 50px;
     border-radius: 10px;
     font-size: smaller;
 
     .header {
+      margin-top: 2rem;
+      margin-left: 2rem;
       font-weight: bold;
-      color: #1e4b25;
-      font-size: x-large;
-      text-decoration: underline;
-      align-content: space-around;
-      flex: auto;
+      color: #0000007e;
+      font-size: large;
       align-self: center;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: stretch;
     }
 
     .inputform {
-      margin-left: 4rem;
-      max-width: 60rem;
+      padding-top: 2rem;
+      padding-left: 2rem;
+      border-top: 2px double transparent;
+      border-top-color: #00000027;
+      margin-left: 2rem;
+      max-width: 91%;
       max-height: 38rem;
       min-height: 38rem;
       display: flex;
@@ -46,9 +45,7 @@
       justify-content: flex-start;
       align-items: flex-start;
       overflow: scroll;
-      //border: 0.5px solid transparent;
-      //border-color: #a3a2a2;
-      
+
       .in {
         margin-top: 15px;
         display: flex;

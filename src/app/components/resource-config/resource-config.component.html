@@ -1,6 +1,5 @@
 <div class="container">
-  <h2 class="header">Configure {{ resourceType[currentResource] }}</h2>
-  <br />
+  <h2 class="header">{{ resourceType[currentResource] }}</h2>
   <div class="inputform">
     <div *ngFor="let item of config | keyvalue" [ngSwitch]="item.value.type">
       <div *ngSwitchCase="inputType.String" class="in">
