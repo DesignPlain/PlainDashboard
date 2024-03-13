@@ -22,14 +22,12 @@ import {
 import { InputType } from 'src/app/enum/InputType';
 import { ProviderType, ResourceType } from 'src/app/enum/ResourceType';
 import { AddComponentService } from 'src/app/services/add-component.service';
-import { DrawLineService } from 'src/app/services/draw-line.service';
 import { take } from 'rxjs/operators';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { ApplicationStateService } from 'src/app/services/application-state.service';
 import { LineOptions } from '../line/line.component';
 import { StackService } from 'src/app/services/stack.service';
 import * as _ from 'lodash';
-import { DataService } from 'src/app/services/data.service';
 import { RESOURCE_LIST_WIDTH } from 'src/app/constants/board-constants';
 import { Subject } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
@@ -88,6 +86,7 @@ export class PlaygroundComponent implements OnInit {
         x2: this.currentOutput.x,
         y2: this.currentOutput.y,
       });
+      this._processLineData();
     }
     this.currentOutput = null;
     this.currentInput = null;
@@ -105,7 +104,7 @@ export class PlaygroundComponent implements OnInit {
   public items: CloudResource[] = [];
   public resourceType = ResourceType;
   public hideline: boolean = true;
-  public lineOptions: LineOptions;
+  public lineOptions: LineOptions[] = [];
   public currentDraggingCard: CloudResource | undefined;
 
   // Initializing font awesome icons
@@ -118,11 +117,9 @@ export class PlaygroundComponent implements OnInit {
   constructor(
     private _applicationStateService: ApplicationStateService,
     private _addComponentService: AddComponentService,
-    private _lineService: DrawLineService,
     private _renderer: Renderer2,
     private _localStorageService: LocalStorageService,
     private _stackService: StackService,
-    private _dataService: DataService,
     private _modalService: ModalDialogService
   ) {}
 
@@ -184,6 +181,7 @@ export class PlaygroundComponent implements OnInit {
     }
 
     this.items.splice(index, 1);
+    this._processLineData();
     this._saveState();
   }
 
@@ -285,6 +283,7 @@ export class PlaygroundComponent implements OnInit {
   public mouseLeft(): void {}
 
   public dragMove($event: CdkDragMove, id: string): void {
+    console.log($event);
     // let pos = $event.pointerPosition;
     // let count = 0;
     // let currentItem = this.items.find((x) => { count += 1; x.id == id });
@@ -365,6 +364,7 @@ export class PlaygroundComponent implements OnInit {
       console.log(pos);
       this._saveState();
       this.items = _.cloneDeep(this.items);
+      this._processLineData();
     }
 
     // TODO: VPC group drag logic
@@ -426,7 +426,7 @@ export class PlaygroundComponent implements OnInit {
               JSON.parse(item.outletMapString)
             );
           });
-          this._dataService.currentList = this.items;
+          this._processLineData();
         },
         error: (_) => {
           let data = this._localStorageService.getLocalState();
@@ -440,7 +440,7 @@ export class PlaygroundComponent implements OnInit {
                 JSON.parse(item.outletMapString)
               );
             });
-            this._dataService.currentList = this.items;
+            this._processLineData();
           }
         },
         complete: () => console.info('GetState completed'),
@@ -448,7 +448,6 @@ export class PlaygroundComponent implements OnInit {
   }
 
   private _saveState(): void {
-    this._dataService.currentList = this.items;
     this.items.forEach((item) => {
       item.inletMapString = JSON.stringify([...item.inletMap]);
       item.outletMapString = JSON.stringify([...item.outletMap]);
@@ -468,6 +467,18 @@ export class PlaygroundComponent implements OnInit {
   private _processResponse(val: string): void {
     var data = JSON.parse(val);
     console.log(data['message']);
+  }
+
+  private _processLineData() {
+    this.lineOptions = [];
+    this.items.forEach((data) => {
+      if (data.outlets.length > 0) {
+        data.outlets.forEach((outlet) => {
+          this.lineOptions.push(this.getLineOptions(data, outlet));
+        });
+      }
+    });
+    this.lineOptions = _.cloneDeep(this.lineOptions);
   }
 
   // private _updateLine(currentItem: CloudResource, id: number, pos: any) {
