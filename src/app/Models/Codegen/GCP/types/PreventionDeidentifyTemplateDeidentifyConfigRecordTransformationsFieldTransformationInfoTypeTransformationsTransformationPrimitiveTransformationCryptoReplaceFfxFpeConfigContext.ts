@@ -1,0 +1,4 @@
+export interface PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigContext {
+  // Name describing the field.
+  Name?: string;
+}

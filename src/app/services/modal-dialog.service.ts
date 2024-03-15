@@ -2,11 +2,13 @@ import { Overlay, OverlayConfig } from '@angular/cdk/overlay';
 import { Injectable, Injector } from '@angular/core';
 import { ConfigModalComponent } from '../components/config-modal/config-modal.component';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { ResourceConfigComponent } from '../components/resource-config/resource-config.component';
-import { ResourceType } from '../enum/ResourceType';
+import {
+  DynamicUIProps,
+  ResourceConfigComponent,
+} from '../components/resource-config/resource-config.component';
 import { Outputs } from '../Models/CloudResource';
-import { InputType } from '../enum/InputType';
 import { PlaygroundComponent } from '../components/playground/playground.component';
+import { ResourceType } from '../Models/Codegen/GCP/ResourceType';
 
 @Injectable({
   providedIn: 'root',
@@ -35,7 +37,7 @@ export class ModalDialogService {
   public openComponentModal(
     currentIndex: number,
     currentResource: ResourceType,
-    config: Map<string, { type: InputType; val: string }>,
+    config: Map<string, DynamicUIProps>,
     currentOutput: Outputs[],
     comp: PlaygroundComponent
   ) {

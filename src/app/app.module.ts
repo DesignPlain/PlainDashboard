@@ -25,6 +25,7 @@ import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { ButtonModule } from 'primeng/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { ButtonModule } from 'primeng/button';
     InputTextModule,
     FloatLabelModule,
     ButtonModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

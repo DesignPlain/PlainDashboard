@@ -1,0 +1,10 @@
+import { DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesGatewayServiceMesh } from "./DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesGatewayServiceMesh";
+import { DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesServiceNetworking } from "./DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesServiceNetworking";
+
+export interface DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetes {
+  // Kubernetes Gateway API service mesh configuration.
+  GatewayServiceMesh?: DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesGatewayServiceMesh;
+
+  // Kubernetes Service networking configuration.
+  ServiceNetworking?: DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesServiceNetworking;
+}

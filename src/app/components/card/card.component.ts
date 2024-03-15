@@ -6,9 +6,8 @@ import {
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
 import { CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';
-import { ResourceType } from 'src/app/enum/ResourceType';
-import { ModalDialogService } from 'src/app/services/modal-dialog.service';
 import { OverlayConfig } from '@angular/cdk/overlay';
+import { ResourceType } from 'src/app/Models/Codegen/GCP/ResourceType';
 
 @Component({
   selector: 'app-card',
@@ -16,7 +15,7 @@ import { OverlayConfig } from '@angular/cdk/overlay';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  constructor() { }
+  constructor() {}
 
   @Input()
   public item: CloudResource;
@@ -66,13 +65,13 @@ export class CardComponent {
       Math.abs(
         ref.getBoundingClientRect().right - ref.getBoundingClientRect().left
       ) /
-      2;
+        2;
     const centerY =
       ref.getBoundingClientRect().top +
       Math.abs(
         ref.getBoundingClientRect().bottom - ref.getBoundingClientRect().top
       ) /
-      2;
+        2;
     this.startConnectionClicked.emit({
       outputPositionX: centerX,
       outputPositionY: centerY,
@@ -87,13 +86,13 @@ export class CardComponent {
       Math.abs(
         ref.getBoundingClientRect().right - ref.getBoundingClientRect().left
       ) /
-      2;
+        2;
     const centerY =
       ref.getBoundingClientRect().top +
       Math.abs(
         ref.getBoundingClientRect().bottom - ref.getBoundingClientRect().top
       ) /
-      2;
+        2;
     this.mouseEntered.emit({
       inputPositionX: centerX,
       inputPositionY: centerY,

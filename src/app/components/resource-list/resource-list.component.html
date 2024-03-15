@@ -3,111 +3,38 @@
 
 <div class="cardfamily" (click)="viewAWS = !viewAWS">AWS</div>
 <div class="cardgroup" *ngIf="viewAWS">
-    <div class="card" (click)="addComponent(resourceType.Lambda)">
-        <span> Lambda Function</span>
-        <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.Lambda]}}_64.png"
-            title={{resourceType[resourceType.Lambda]}}>
+  <ng-container
+    *ngFor="let res of VisualResources.get(providerType.AWS); let i = index"
+  >
+    <div class="card" (click)="addComponent(res)">
+      <span>{{ res.Titile }}</span>
+      <img class="listIcon" src="{{ res.IconSrc }}" title="{{ res.Titile }}" />
     </div>
-    <div class="card" (click)="addComponent(resourceType.DynamoDB)">
-        <span> Dynamo DB</span>
-        <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.DynamoDB]}}_64.png"
-            title={{resourceType[resourceType.DynamoDB]}}>
-    </div>
-    <div class="card" (click)="addComponent(resourceType.EC2)">
-        <span> EC2</span>
-        <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.EC2]}}_64.png"
-            title={{resourceType[resourceType.EC2]}}>
-    </div>
-    <div class="card" (click)="addComponent(resourceType.Simple_Storage_Service)">
-        <span> S3 Bucket</span>
-        <img class="listIcon"
-            src="../../../assets/Arch_Amazon-{{resourceType[resourceType.Simple_Storage_Service]}}_64.png"
-            title={{resourceType[resourceType.Simple_Storage_Service]}}>
-    </div>
-    <div class="card" (click)="addComponent(resourceType.Virtual_Private_Cloud)">
-        <span> Virtual Private Cloud</span>
-        <img class="listIcon"
-            src="../../../assets/Arch_Amazon-{{resourceType[resourceType.Virtual_Private_Cloud]}}_64.png"
-            title={{resourceType[resourceType.Virtual_Private_Cloud]}}>
-    </div>
-    <div class="card" (click)="addComponent(resourceType.Elastic_Load_Balancer)">
-        <span> Load Balancer</span>
-        <img class="listIcon"
-            src="../../../assets/Arch_Amazon-{{resourceType[resourceType.Elastic_Load_Balancer]}}_64.png"
-            title={{resourceType[resourceType.Elastic_Load_Balancer]}}>
-    </div>
-    <div class="card" (click)="addComponent(resourceType.APIGateway)">
-        <span> API Gateway</span>
-        <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.APIGateway]}}_64.png"
-            title={{resourceType[resourceType.APIGateway]}}>
-    </div>
-    <div class="card" (click)="addComponent(resourceType.Subnet)">
-        <span> Subnet </span>
-        <img class="listIcon" src="../../../assets/Arch_Amazon-{{resourceType[resourceType.Subnet]}}_64.png"
-            title={{resourceType[resourceType.Subnet]}}>
-    </div>
+  </ng-container>
 </div>
 
 <div class="cardfamily" (click)="viewGCP = !viewGCP">GCP</div>
 <div class="cardgroup" *ngIf="viewGCP">
-    <div class="card" (click)="addComponent(resourceType.Lambda)">Cloud Functions
-        <img class="listIcon" src="../../../assets/GCPIcons/cloud_functions.png"
-            title={{resourceType[resourceType.Lambda]}}>
+  <ng-container
+    *ngFor="let res of VisualResources.get(providerType.GCP); let i = index"
+  >
+    <div class="card" (click)="addComponent(res)">
+      <span>{{ res.Titile }}</span>
+      <img class="listIcon" src="{{ res.IconSrc }}" title="{{ res.Titile }}" />
     </div>
-    <div class="card" (click)="addComponent(resourceType.DynamoDB)">Cloud SQL
-        <img class="listIcon" src="../../../assets/GCPIcons/datastore.png"
-            title={{resourceType[resourceType.DynamoDB]}}>
-    </div>
-    <div class="card" (click)="addComponent(resourceType.EC2)">Compute Engine
-        <img class="listIcon" src="../../../assets/GCPIcons/compute_engine.png"
-            title={{resourceType[resourceType.EC2]}}>
-    </div>
-    <div class="card" (click)="addComponent(resourceType.Simple_Storage_Service)">Cloud Storage
-        <img class="listIcon" src="../../../assets/GCPIcons/cloud_storage.png"
-            title={{resourceType[resourceType.Simple_Storage_Service]}}>
-    </div>
-    <div class="card" (click)="addComponent(resourceType.Virtual_Private_Cloud)">Virtual Private Cloud
-        <img class="listIcon" src="../../../assets/GCPIcons/virtual_private_cloud.png"
-            title={{resourceType[resourceType.Virtual_Private_Cloud]}}>
-    </div>
-    <div class="card" (click)="addComponent(resourceType.Elastic_Load_Balancer)">Cloud Load Balancer
-        <img class="listIcon" src="../../../assets/GCPIcons/cloud_load_balancing.png"
-            title={{resourceType[resourceType.Elastic_Load_Balancer]}}>
-    </div>
-    <div class="card" (click)="addComponent(resourceType.APIGateway)">Cloud Pub/Sub
-        <img class="listIcon" src="../../../assets/GCPIcons/cloud_sql.png"
-            title={{resourceType[resourceType.APIGateway]}}>
-    </div>
-    <div class="card" (click)="addComponent(resourceType.Subnet)">Subnet
-        <img class="listIcon" src="../../../assets/GCPIcons/cloud_network.png"
-            title={{resourceType[resourceType.Subnet]}}>
-    </div>
+  </ng-container>
 </div>
 
-<div *ngIf="false" class="cardfamily" (click)="viewOnPremise = !viewOnPremise">Self Hosted</div>
+<div *ngIf="false" class="cardfamily" (click)="viewOnPremise = !viewOnPremise">
+  Self Hosted
+</div>
 <div class="cardgroup" *ngIf="viewOnPremise">
-    <div class="card" (click)="addComponent(resourceType.Lambda)">Message Queue
-        <img class="listIcon" src="../../../assets/GCPIcons/cloud_functions.png"
-            title={{resourceType[resourceType.Lambda]}}>
+  <ng-container
+    *ngFor="let res of VisualResources.get(providerType.GCP); let i = index"
+  >
+    <div class="card" (click)="addComponent(res)">
+      <span>{{ res.Titile }}</span>
+      <img class="listIcon" src="{{ res.IconSrc }}" title="{{ res.Titile }}" />
     </div>
-    <div class="card" (click)="addComponent(resourceType.DynamoDB)">Database
-        <img class="listIcon" src="../../../assets/GCPIcons/datastore.png"
-            title={{resourceType[resourceType.DynamoDB]}}>
-    </div>
-    <div class="card" (click)="addComponent(resourceType.EC2)">Virtual Machine
-        <img class="listIcon" src="../../../assets/GCPIcons/compute_engine.png"
-            title={{resourceType[resourceType.EC2]}}>
-    </div>
-    <div class="card" (click)="addComponent(resourceType.Virtual_Private_Cloud)">Kubernetes
-        <img class="listIcon" src="../../../assets/GCPIcons/virtual_private_cloud.png"
-            title={{resourceType[resourceType.Virtual_Private_Cloud]}}>
-    </div>
-    <div class="card" (click)="addComponent(resourceType.Elastic_Load_Balancer)">Load Balancer
-        <img class="listIcon" src="../../../assets/GCPIcons/cloud_load_balancing.png"
-            title={{resourceType[resourceType.Elastic_Load_Balancer]}}>
-    </div>
-    <div class="card" (click)="addComponent(resourceType.Subnet)">Telemetry
-        <img class="listIcon" src="../../../assets/GCPIcons/cloud_network.png"
-            title={{resourceType[resourceType.Subnet]}}>
-    </div>
+  </ng-container>
 </div>

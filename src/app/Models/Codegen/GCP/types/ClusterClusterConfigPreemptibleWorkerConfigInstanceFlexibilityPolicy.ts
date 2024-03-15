@@ -1,0 +1,10 @@
+import { ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionList } from "./ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionList";
+import { ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionResult } from "./ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionResult";
+
+export interface ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy {
+  // A list of instance selection results in the group.
+  InstanceSelectionResults?: Array<ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionResult>;
+
+  // List of instance selection options that the group will use when creating new VMs.
+  InstanceSelectionLists?: Array<ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionList>;
+}

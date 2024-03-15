@@ -1,0 +1,9 @@
+import { CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig } from "./CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig";
+
+export interface CertificateIssuanceConfigCertificateAuthorityConfig {
+  /*
+Defines a CertificateAuthorityServiceConfig.
+Structure is documented below.
+*/
+  CertificateAuthorityServiceConfig?: CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig;
+}

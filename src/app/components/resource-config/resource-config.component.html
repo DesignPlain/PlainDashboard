@@ -3,7 +3,18 @@
   <div class="inputform">
     <div *ngFor="let item of config | keyvalue" [ngSwitch]="item.value.type">
       <div *ngSwitchCase="inputType.String" class="in">
-        <span>{{ item.key }}</span>
+        <div class="span">
+          <span>{{ item.key }}</span
+          ><fa-icon
+            (mouseenter)="show = item.key"
+            (mouseleave)="show = ''"
+            class="i1"
+            [icon]="faInfo"
+          />
+          <div *ngIf="show == item.key" class="tool-tip">
+            {{ item.value.description }}
+          </div>
+        </div>
         <input
           #box
           type="text"
@@ -14,7 +25,18 @@
         />
       </div>
       <div *ngSwitchCase="inputType.Number" class="in">
-        <span>{{ item.key }}</span>
+        <div class="span">
+          <span>{{ item.key }}</span
+          ><fa-icon
+            (mouseenter)="show = item.key"
+            (mouseleave)="show = ''"
+            class="i1"
+            [icon]="faInfo"
+          />
+          <div *ngIf="show == item.key" class="tool-tip">
+            {{ item.value.description }}
+          </div>
+        </div>
         <input
           #box
           type="number"
@@ -25,7 +47,18 @@
         />
       </div>
       <div *ngSwitchCase="inputType.File" class="in">
-        <span>{{ item.key }}</span>
+        <div class="span">
+          <span>{{ item.key }}</span
+          ><fa-icon
+            (mouseenter)="show = item.key"
+            (mouseleave)="show = ''"
+            class="i1"
+            [icon]="faInfo"
+          />
+          <div *ngIf="show == item.key" class="tool-tip">
+            {{ item.value.description }}
+          </div>
+        </div>
         <input
           #box
           type="file"
@@ -36,7 +69,18 @@
         />
       </div>
       <div *ngSwitchCase="inputType.CheckBox" class="in">
-        <span>{{ item.key }}</span>
+        <div class="span">
+          <span>{{ item.key }}</span
+          ><fa-icon
+            (mouseenter)="show = item.key"
+            (mouseleave)="show = ''"
+            class="i1"
+            [icon]="faInfo"
+          />
+          <div *ngIf="show == item.key" class="tool-tip">
+            {{ item.value.description }}
+          </div>
+        </div>
         <input
           #box
           type="checkbox"
@@ -48,7 +92,18 @@
         />
       </div>
       <div *ngSwitchCase="inputType.DropDown" class="in">
-        <span>{{ item.key }}</span>
+        <div class="span">
+          <span>{{ item.key }}</span
+          ><fa-icon
+            (mouseenter)="show = item.key"
+            (mouseleave)="show = ''"
+            class="i1"
+            [icon]="faInfo"
+          />
+          <div *ngIf="show == item.key" class="tool-tip">
+            {{ item.value.description }}
+          </div>
+        </div>
         <app-select></app-select>
       </div>
     </div>

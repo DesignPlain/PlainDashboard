@@ -7,14 +7,12 @@ import { faGear } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-config-options',
   templateUrl: './config-options.component.html',
-  styleUrls: ['./config-options.component.scss']
+  styleUrls: ['./config-options.component.scss'],
 })
 export class ConfigOptionsComponent implements OnInit {
+  constructor(private _modalService: ModalDialogService) {}
 
-  constructor(private _modalService: ModalDialogService) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public faGear: IconDefinition = faGear;
   public modalConfig: OverlayConfig;
