@@ -1,0 +1,10 @@
+export interface PatchDeploymentPatchConfigPostStepLinuxExecStepConfigGcsObject {
+  // Generation number of the Cloud Storage object. This is used to ensure that the ExecStep specified by this PatchJob does not change.
+  GenerationNumber?: string;
+
+  // Name of the Cloud Storage object.
+  Object?: string;
+
+  // Bucket of the Cloud Storage object.
+  Bucket?: string;
+}

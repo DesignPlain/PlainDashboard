@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { ResourceType } from '../enum/ResourceType';
+import { VisualResource } from '../components/resource-list/VisualResource';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AddComponentService {
-
-  public components: Subject<ResourceType> = new Subject<ResourceType>();
+  public components: Subject<VisualResource> = new Subject<VisualResource>();
 }

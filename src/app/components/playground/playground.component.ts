@@ -11,16 +11,9 @@ import {
   Outputs,
   LineCoordinates,
 } from 'src/app/Models/CloudResource';
-import {
-  GCP_ComputeEngine,
-  GCP_StorageBucket,
-  GCP_SubNetwork,
-  GCP_VPCNetwork,
-  ResourceProperties,
-} from 'src/app/Models/ResourceProperties';
+import { ResourceProperties } from 'src/app/Models/Codegen/GCP/ResourceProperties';
 
-import { InputType } from 'src/app/enum/InputType';
-import { ProviderType, ResourceType } from 'src/app/enum/ResourceType';
+import { ProviderType } from 'src/app/enum/ProviderType';
 import { AddComponentService } from 'src/app/services/add-component.service';
 import { take } from 'rxjs/operators';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
@@ -32,6 +25,9 @@ import { RESOURCE_LIST_WIDTH } from 'src/app/constants/board-constants';
 import { Subject } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 import { ModalDialogService } from 'src/app/services/modal-dialog.service';
+import { DynamicUIProps } from '../resource-config/resource-config.component';
+import { VisualResource } from '../resource-list/VisualResource';
+import { ResourceType } from 'src/app/Models/Codegen/GCP/ResourceType';
 
 @Component({
   selector: 'app-playground',
@@ -95,9 +91,9 @@ export class PlaygroundComponent implements OnInit {
   public newLine: boolean = false;
   public showSideBar: boolean = false;
   public currentIndex: number = 0;
-  public currentConfig: Map<string, { type: InputType; val: any }> = new Map<
+  public currentConfig: Map<string, DynamicUIProps> = new Map<
     string,
-    { type: InputType; val: any }
+    DynamicUIProps
   >();
   public currentResourceType: ResourceType | undefined;
   public currentOut: Outputs[] = [];
@@ -127,14 +123,18 @@ export class PlaygroundComponent implements OnInit {
     this._getState();
     // Subcribe for component addition
     this._addComponentService.components.subscribe(
-      (componentName: ResourceType) => {
+      (resource: VisualResource) => {
         const item = new CloudResource();
         item.id = uuidv4();
-        item.resourceType = componentName;
-        item.name = ResourceType[componentName];
+        item.resourceType = resource.ResourceType;
+        item.name = ResourceType[resource.ResourceType];
         item.title = item.name.toString();
         item.providerType = ProviderType.AWS;
-        item.resourceConfig = undefined;
+        item.resourceConfig = ResourceProperties.GetResourceObject(
+          resource.ResourceType
+        );
+
+        item.IconSrc = resource.IconSrc;
         this.items.push(item);
         this._saveState();
       }
@@ -186,35 +186,10 @@ export class PlaygroundComponent implements OnInit {
   }
 
   public SetResourceConfig(resourceIndex: number, item: CloudResource): void {
-    this.currentConfig = new Map<string, { type: InputType; val: string }>();
+    this.currentConfig = new Map<string, DynamicUIProps>();
 
     if (item.resourceConfig != undefined) {
-      switch (item.resourceType) {
-        case ResourceType.Simple_Storage_Service: {
-          let res = item.resourceConfig as GCP_StorageBucket;
-          this.loadResourceConfig(res, item.resourceType);
-          break;
-        }
-        case ResourceType.EC2: {
-          let res = item.resourceConfig as GCP_ComputeEngine;
-          this.loadResourceConfig(res, item.resourceType);
-          break;
-        }
-        case ResourceType.Virtual_Private_Cloud: {
-          let res = item.resourceConfig as GCP_VPCNetwork;
-          this.loadResourceConfig(res, item.resourceType);
-          break;
-        }
-        case ResourceType.Subnet: {
-          let res = item.resourceConfig as GCP_SubNetwork;
-          this.loadResourceConfig(res, item.resourceType);
-          break;
-        }
-        default: {
-          this.setDefaultResourceConfig(item);
-          break;
-        }
-      }
+      this.loadResourceConfig(item.resourceConfig, item.resourceType);
     } else {
       this.setDefaultResourceConfig(item);
     }
@@ -238,15 +213,18 @@ export class PlaygroundComponent implements OnInit {
   //#region [ResourceConfig methods]
 
   private setDefaultResourceConfig(item: CloudResource) {
-    ResourceProperties.propertiesMap.get(item.resourceType)?.forEach((k, v) => {
-      this.currentConfig.set(v, { type: k, val: '' });
+    ResourceProperties.propertiesMap.get(item.resourceType)?.forEach((val) => {
+      this.currentConfig.set(val.val, new DynamicUIProps(val.type, '', ''));
     });
   }
 
   private loadResourceConfig(res: Resource, resourceType: ResourceType) {
     let objMap = new Map(Object.entries(res));
-    ResourceProperties.propertiesMap.get(resourceType)?.forEach((k, v) => {
-      this.currentConfig.set(v, { type: k, val: objMap.get(v) });
+    ResourceProperties.propertiesMap.get(resourceType)?.forEach((val) => {
+      this.currentConfig.set(
+        val.val,
+        new DynamicUIProps(val.type, objMap.get(val.val), val.description)
+      );
     });
   }
 
@@ -283,7 +261,7 @@ export class PlaygroundComponent implements OnInit {
   public mouseLeft(): void {}
 
   public dragMove($event: CdkDragMove, id: string): void {
-    console.log($event);
+    //console.log($event);
     // let pos = $event.pointerPosition;
     // let count = 0;
     // let currentItem = this.items.find((x) => { count += 1; x.id == id });
@@ -326,7 +304,7 @@ export class PlaygroundComponent implements OnInit {
   }
 
   public dragEnd($event: CdkDragEnd, id: string): void {
-    console.log('ended');
+    //console.log('ended');
     let pos = $event.source.getFreeDragPosition();
     let currentItem = this.items.find((x) => x.id == id);
     if (currentItem != null) {
@@ -361,7 +339,7 @@ export class PlaygroundComponent implements OnInit {
       }
       currentItem.position.x = pos.x;
       currentItem.position.y = pos.y;
-      console.log(pos);
+      //console.log(pos);
       this._saveState();
       this.items = _.cloneDeep(this.items);
       this._processLineData();
@@ -466,7 +444,7 @@ export class PlaygroundComponent implements OnInit {
 
   private _processResponse(val: string): void {
     var data = JSON.parse(val);
-    console.log(data['message']);
+    //console.log(data['message']);
   }
 
   private _processLineData() {

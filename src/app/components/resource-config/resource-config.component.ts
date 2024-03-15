@@ -1,22 +1,35 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { faClose } from '@fortawesome/free-solid-svg-icons';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
+import { Icon, IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import {
+  faClose,
+  faGear,
+  faInfoCircle,
+  faInfo,
+} from '@fortawesome/free-solid-svg-icons';
 import {
   DefaultResource,
   Resource,
   Outputs,
 } from 'src/app/Models/CloudResource';
-import {
-  GCP_ComputeEngine,
-  GCP_StorageBucket,
-  GCP_SubNetwork,
-  GCP_VPCNetwork,
-  ResourceProperties,
-} from 'src/app/Models/ResourceProperties';
 import { InputType } from 'src/app/enum/InputType';
-import { ResourceType } from 'src/app/enum/ResourceType';
 import { ModalDialogService } from 'src/app/services/modal-dialog.service';
-import { UpdateResourceConfig } from './UpdateResourceConfig';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { ResourceType } from 'src/app/Models/Codegen/GCP/ResourceType';
+
+export class DynamicUIProps {
+  constructor(
+    public type: InputType,
+    public val: string,
+    public description: string
+  ) {}
+}
 
 @Component({
   selector: 'app-resource-config',
@@ -27,20 +40,23 @@ export class ResourceConfigComponent implements OnInit {
   constructor(private _modalDialogService: ModalDialogService) {}
   public faClose: IconDefinition = faClose;
 
+  public faInfo: IconDefinition = faInfoCircle;
+  public faGear: IconDefinition = faGear;
   public closeModal() {
     this._modalDialogService.ActiveModal.dispose();
   }
 
+  public show = '';
   @Input() currentResource: ResourceType;
   @Input() currentIndex: number = -1;
   resConfig: Resource = new DefaultResource();
-  @Input() config: Map<string, { type: InputType; val: string }> = new Map();
+  @Input() config: Map<string, DynamicUIProps> = new Map();
   @Input() currentOutput: Outputs[] = [];
   inputType = InputType;
   resourceType = ResourceType;
 
   ngOnInit(): void {
-    console.log(this.config);
+    //console.log(this.config);
   }
 
   @Output()
@@ -67,9 +83,15 @@ export class ResourceConfigComponent implements OnInit {
 
   submit() {
     if (this.check && this.currentResource != null) {
-      this.resConfig =
-        UpdateResourceConfig(this.currentResource, this.listMap, this.config) ??
-        this.resConfig;
+      let currentConfig = new Map<string, any>();
+      this.config.forEach((k, v) => {
+        if (this.listMap.get(v) == undefined) {
+          currentConfig.set(v, k.val);
+        }
+      });
+
+      let resMap = new Map([...this.listMap, ...currentConfig]);
+      this.resConfig = Object.fromEntries(resMap.entries()) as Resource;
 
       this.configUpdateEvent.emit({
         id: this.currentIndex,

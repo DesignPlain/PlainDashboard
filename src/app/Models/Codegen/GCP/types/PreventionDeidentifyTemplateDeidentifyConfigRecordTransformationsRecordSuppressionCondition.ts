@@ -1,0 +1,9 @@
+import { PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressions } from "./PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressions";
+
+export interface PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionCondition {
+  /*
+An expression, consisting of an operator and conditions.
+Structure is documented below.
+*/
+  Expressions?: PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressions;
+}

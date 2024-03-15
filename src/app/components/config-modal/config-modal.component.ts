@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IconDefinition, faClose } from '@fortawesome/free-solid-svg-icons';
-import { ProviderType } from 'src/app/enum/ResourceType';
+import { ProviderType } from "src/app/enum/ProviderType";
 import { ModalDialogService } from 'src/app/services/modal-dialog.service';
 import { StackService } from 'src/app/services/stack.service';
 
@@ -31,7 +31,7 @@ export class ConfigModalComponent {
 
 
   onFilechange(event: any) {
-    console.log(event.target.files[0])
+    //console.log(event.target.files[0])
     this.file = event.target.files[0]
   }
 

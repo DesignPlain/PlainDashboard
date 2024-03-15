@@ -24,7 +24,7 @@ export class ResizeObserverDirective implements OnDestroy {
   }
   
   _resizeCallback(entry: ResizeObserverEntry) {
-    console.log(entry.contentRect);
+    //console.log(entry.contentRect);
     this.resize.emit(entry);
   }
   
