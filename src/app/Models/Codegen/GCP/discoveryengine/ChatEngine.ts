@@ -1,13 +1,40 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { ChatEngineChatEngineConfig } from "../types/ChatEngineChatEngineConfig";
-import { ChatEngineCommonConfig } from "../types/ChatEngineCommonConfig";
-import { ChatEngineChatEngineMetadata } from "../types/ChatEngineChatEngineMetadata";
+import {
+  Discoveryengine_ChatEngineCommonConfig,
+  Discoveryengine_ChatEngineCommonConfig_GetTypes,
+} from "../types/Discoveryengine_ChatEngineCommonConfig";
+import {
+  Discoveryengine_ChatEngineChatEngineConfig,
+  Discoveryengine_ChatEngineChatEngineConfig_GetTypes,
+} from "../types/Discoveryengine_ChatEngineChatEngineConfig";
+import {
+  Discoveryengine_ChatEngineChatEngineMetadata,
+  Discoveryengine_ChatEngineChatEngineMetadata_GetTypes,
+} from "../types/Discoveryengine_ChatEngineChatEngineMetadata";
 
 export interface ChatEngineArgs {
-  // The data stores associated with this engine. Multiple DataStores in the same Collection can be associated here. All listed DataStores must be `SOLUTION_TYPE_CHAT`. Adding or removing data stores will force recreation.
-  DataStoreIds?: Array<string>;
+  /*
+Common config spec that specifies the metadata of the engine.
+Structure is documented below.
+*/
+  CommonConfig?: Discoveryengine_ChatEngineCommonConfig;
+
+  /*
+The industry vertical that the chat engine registers. Vertical on Engine has to match vertical of the DataStore linked to the engine.
+Default value is `GENERIC`.
+Possible values are: `GENERIC`.
+*/
+  IndustryVertical?: string;
+
+  // Location.
+  Location?: string;
 
   /*
 The ID of the project in which the resource belongs.
@@ -19,19 +46,10 @@ If it is not provided, the provider project is used.
 Configurations for a chat Engine.
 Structure is documented below.
 */
-  ChatEngineConfig?: ChatEngineChatEngineConfig;
+  ChatEngineConfig?: Discoveryengine_ChatEngineChatEngineConfig;
 
-  // The collection ID.
-  CollectionId?: string;
-
-  /*
-Common config spec that specifies the metadata of the engine.
-Structure is documented below.
-*/
-  CommonConfig?: ChatEngineCommonConfig;
-
-  // Location.
-  Location?: string;
+  // The data stores associated with this engine. Multiple DataStores in the same Collection can be associated here. All listed DataStores must be `SOLUTION_TYPE_CHAT`. Adding or removing data stores will force recreation.
+  DataStoreIds?: Array<string>;
 
   // The display name of the engine. Should be human readable. UTF-8 encoded string with limit of 1024 characters.
   DisplayName?: string;
@@ -39,20 +57,40 @@ Structure is documented below.
   // The ID to use for chat engine.
   EngineId?: string;
 
-  /*
-The industry vertical that the chat engine registers. Vertical on Engine has to match vertical of the DataStore linked to the engine.
-Default value is `GENERIC`.
-Possible values are: `GENERIC`.
-*/
-  IndustryVertical?: string;
+  // The collection ID.
+  CollectionId?: string;
 }
 export class ChatEngine extends Resource {
+  // The ID to use for chat engine.
+  public EngineId?: string;
+
   /*
 The industry vertical that the chat engine registers. Vertical on Engine has to match vertical of the DataStore linked to the engine.
 Default value is `GENERIC`.
 Possible values are: `GENERIC`.
 */
   public IndustryVertical?: string;
+
+  // Timestamp the Engine was last updated.
+  public UpdateTime?: string;
+
+  /*
+Configurations for a chat Engine.
+Structure is documented below.
+*/
+  public ChatEngineConfig?: Discoveryengine_ChatEngineChatEngineConfig;
+
+  /*
+Additional information of the Chat Engine.
+Structure is documented below.
+*/
+  public ChatEngineMetadatas?: Array<Discoveryengine_ChatEngineChatEngineMetadata>;
+
+  // Timestamp the Engine was created at.
+  public CreateTime?: string;
+
+  // The display name of the engine. Should be human readable. UTF-8 encoded string with limit of 1024 characters.
+  public DisplayName?: string;
 
   // Location.
   public Location?: string;
@@ -66,34 +104,10 @@ characters.
   public Name?: string;
 
   /*
-Configurations for a chat Engine.
-Structure is documented below.
-*/
-  public ChatEngineConfig?: ChatEngineChatEngineConfig;
-
-  // The data stores associated with this engine. Multiple DataStores in the same Collection can be associated here. All listed DataStores must be `SOLUTION_TYPE_CHAT`. Adding or removing data stores will force recreation.
-  public DataStoreIds?: Array<string>;
-
-  // The display name of the engine. Should be human readable. UTF-8 encoded string with limit of 1024 characters.
-  public DisplayName?: string;
-
-  // The ID to use for chat engine.
-  public EngineId?: string;
-
-  /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
   public Project?: string;
-
-  // Timestamp the Engine was last updated.
-  public UpdateTime?: string;
-
-  /*
-Additional information of the Chat Engine.
-Structure is documented below.
-*/
-  public ChatEngineMetadatas?: Array<ChatEngineChatEngineMetadata>;
 
   // The collection ID.
   public CollectionId?: string;
@@ -102,53 +116,84 @@ Structure is documented below.
 Common config spec that specifies the metadata of the engine.
 Structure is documented below.
 */
-  public CommonConfig?: ChatEngineCommonConfig;
+  public CommonConfig?: Discoveryengine_ChatEngineCommonConfig;
 
-  // Timestamp the Engine was created at.
-  public CreateTime?: string;
+  // The data stores associated with this engine. Multiple DataStores in the same Collection can be associated here. All listed DataStores must be `SOLUTION_TYPE_CHAT`. Adding or removing data stores will force recreation.
+  public DataStoreIds?: Array<string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "CommonConfig",
-        "Common config spec that specifies the metadata of the engine.\nStructure is documented below.",
-      ),
-      new DynamicUIProps(InputType.String, "Location", "Location."),
-      new DynamicUIProps(
-        InputType.String,
-        "DisplayName",
-        "The display name of the engine. Should be human readable. UTF-8 encoded string with limit of 1024 characters.",
-      ),
-      new DynamicUIProps(
-        InputType.DropDown,
-        "DataStoreIds",
-        "The data stores associated with this engine. Multiple DataStores in the same Collection can be associated here. All listed DataStores must be `SOLUTION_TYPE_CHAT`. Adding or removing data stores will force recreation.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ChatEngineConfig",
-        "Configurations for a chat Engine.\nStructure is documented below.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "CollectionId",
-        "The collection ID.",
+        "Location",
+        "Location.",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "EngineId",
         "The ID to use for chat engine.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "CollectionId",
+        "The collection ID.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "CommonConfig",
+        "Common config spec that specifies the metadata of the engine.\nStructure is documented below.",
+        Discoveryengine_ChatEngineCommonConfig_GetTypes(),
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "IndustryVertical",
         "The industry vertical that the chat engine registers. Vertical on Engine has to match vertical of the DataStore linked to the engine.\nDefault value is `GENERIC`.\nPossible values are: `GENERIC`.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "ChatEngineConfig",
+        "Configurations for a chat Engine.\nStructure is documented below.",
+        Discoveryengine_ChatEngineChatEngineConfig_GetTypes(),
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "DataStoreIds",
+        "The data stores associated with this engine. Multiple DataStores in the same Collection can be associated here. All listed DataStores must be `SOLUTION_TYPE_CHAT`. Adding or removing data stores will force recreation.",
+        InputType_String_GetTypes(),
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "DisplayName",
+        "The display name of the engine. Should be human readable. UTF-8 encoded string with limit of 1024 characters.",
+        [],
+        true,
+        false,
       ),
     ];
   }

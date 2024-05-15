@@ -1,8 +1,16 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface EntryGroupArgs {
+  // Entry group description, which can consist of several sentences or paragraphs that describe entry group contents.
+  Description?: string;
+
   // A short name to identify the entry group, for example, "analytics data - jan 2011".
   DisplayName?: string;
 
@@ -23,9 +31,6 @@ If it is not provided, the provider project is used.
 
   // EntryGroup location region.
   Region?: string;
-
-  // Entry group description, which can consist of several sentences or paragraphs that describe entry group contents.
-  Description?: string;
 }
 export class EntryGroup extends Resource {
   // Entry group description, which can consist of several sentences or paragraphs that describe entry group contents.
@@ -59,28 +64,43 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "EntryGroupId",
-        "The id of the entry group to create. The id must begin with a letter or underscore,\ncontain only English letters, numbers and underscores, and be at most 64 characters.\n\n\n- - -",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Region",
-        "EntryGroup location region.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
         "Description",
         "Entry group description, which can consist of several sentences or paragraphs that describe entry group contents.",
+        [],
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "DisplayName",
         'A short name to identify the entry group, for example, "analytics data - jan 2011".',
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "EntryGroupId",
+        "The id of the entry group to create. The id must begin with a letter or underscore,\ncontain only English letters, numbers and underscores, and be at most 64 characters.\n\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Region",
+        "EntryGroup location region.",
+        [],
+        false,
+        true,
       ),
     ];
   }

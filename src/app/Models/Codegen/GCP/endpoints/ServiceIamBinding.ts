@@ -1,18 +1,26 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { ServiceIAMBindingCondition } from "../types/ServiceIAMBindingCondition";
+import {
+  Endpoints_ServiceIamBindingCondition,
+  Endpoints_ServiceIamBindingCondition_GetTypes,
+} from "../types/Endpoints_ServiceIamBindingCondition";
 
-export interface ServiceIAMBindingArgs {
+export interface ServiceIamBindingArgs {
   //
-  Condition?: ServiceIAMBindingCondition;
+  Condition?: Endpoints_ServiceIamBindingCondition;
 
   //
   Members?: Array<string>;
 
   /*
 The role that should be applied. Only one
-`gcp.endpoints.ServiceIAMBinding` can be used per role. Note that custom roles must be of the format
+`gcp.endpoints.ServiceIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
   Role?: string;
@@ -20,10 +28,7 @@ The role that should be applied. Only one
   //
   ServiceName?: string;
 }
-export class ServiceIAMBinding extends Resource {
-  //
-  public Condition?: ServiceIAMBindingCondition;
-
+export class ServiceIamBinding extends Resource {
   // (Computed) The etag of the IAM policy.
   public Etag?: string;
 
@@ -32,7 +37,7 @@ export class ServiceIAMBinding extends Resource {
 
   /*
 The role that should be applied. Only one
-`gcp.endpoints.ServiceIAMBinding` can be used per role. Note that custom roles must be of the format
+`gcp.endpoints.ServiceIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
   public Role?: string;
@@ -40,16 +45,36 @@ The role that should be applied. Only one
   //
   public ServiceName?: string;
 
+  //
+  public Condition?: Endpoints_ServiceIamBindingCondition;
+
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Condition", ""),
-      new DynamicUIProps(InputType.DropDown, "Members", ""),
       new DynamicUIProps(
         InputType.String,
         "Role",
-        "The role that should be applied. Only one\n`gcp.endpoints.ServiceIAMBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
+        "The role that should be applied. Only one\n`gcp.endpoints.ServiceIamBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
+        [],
+        true,
+        true,
       ),
-      new DynamicUIProps(InputType.String, "ServiceName", ""),
+      new DynamicUIProps(InputType.String, "ServiceName", "", [], true, true),
+      new DynamicUIProps(
+        InputType.Object,
+        "Condition",
+        "",
+        Endpoints_ServiceIamBindingCondition_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "Members",
+        "",
+        InputType_String_GetTypes(),
+        true,
+        false,
+      ),
     ];
   }
 }

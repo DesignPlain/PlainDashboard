@@ -1,0 +1,25 @@
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
+import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+
+export interface Container_getClusterNodePoolNodeConfigAdvancedMachineFeature {
+  // The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
+  ThreadsPerCore?: number;
+}
+
+export function Container_getClusterNodePoolNodeConfigAdvancedMachineFeature_GetTypes(): DynamicUIProps[] {
+  return [
+    new DynamicUIProps(
+      InputType.Number,
+      "ThreadsPerCore",
+      "The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.",
+      [],
+      true,
+      false,
+    ),
+  ];
+}

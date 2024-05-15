@@ -1,23 +1,22 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { OrganizationCustomModuleCustomConfig } from "../types/OrganizationCustomModuleCustomConfig";
+import {
+  Securitycenter_OrganizationCustomModuleCustomConfig,
+  Securitycenter_OrganizationCustomModuleCustomConfig_GetTypes,
+} from "../types/Securitycenter_OrganizationCustomModuleCustomConfig";
 
 export interface OrganizationCustomModuleArgs {
-  /*
-The enablement state of the custom module.
-Possible values are: `ENABLED`, `DISABLED`.
-*/
-  EnablementState?: string;
-
-  // Numerical ID of the parent organization.
-  Organization?: string;
-
   /*
 The user specified custom configuration for the module.
 Structure is documented below.
 */
-  CustomConfig?: OrganizationCustomModuleCustomConfig;
+  CustomConfig?: Securitycenter_OrganizationCustomModuleCustomConfig;
 
   /*
 The display name of the Security Health Analytics custom module. This
@@ -27,6 +26,15 @@ returned by this custom module. The display name must be between 1 and
 characters or underscores only.
 */
   DisplayName?: string;
+
+  /*
+The enablement state of the custom module.
+Possible values are: `ENABLED`, `DISABLED`.
+*/
+  EnablementState?: string;
+
+  // Numerical ID of the parent organization.
+  Organization?: string;
 }
 export class OrganizationCustomModule extends Resource {
   // The editor that last updated the custom module.
@@ -56,7 +64,7 @@ specifies the organization or folder from which the custom module is inherited.
 The user specified custom configuration for the module.
 Structure is documented below.
 */
-  public CustomConfig?: OrganizationCustomModuleCustomConfig;
+  public CustomConfig?: Securitycenter_OrganizationCustomModuleCustomConfig;
 
   /*
 The display name of the Security Health Analytics custom module. This
@@ -79,21 +87,33 @@ Possible values are: `ENABLED`, `DISABLED`.
         InputType.String,
         "DisplayName",
         "The display name of the Security Health Analytics custom module. This\ndisplay name becomes the finding category for all findings that are\nreturned by this custom module. The display name must be between 1 and\n128 characters, start with a lowercase letter, and contain alphanumeric\ncharacters or underscores only.",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "EnablementState",
         "The enablement state of the custom module.\nPossible values are: `ENABLED`, `DISABLED`.",
+        [],
+        true,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Organization",
         "Numerical ID of the parent organization.",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
-        InputType.String,
+        InputType.Object,
         "CustomConfig",
         "The user specified custom configuration for the module.\nStructure is documented below.",
+        Securitycenter_OrganizationCustomModuleCustomConfig_GetTypes(),
+        true,
+        false,
       ),
     ];
   }

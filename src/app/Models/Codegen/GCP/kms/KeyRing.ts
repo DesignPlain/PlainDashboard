@@ -1,8 +1,19 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface KeyRingArgs {
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  Project?: string;
+
   /*
 The location for the KeyRing.
 A full list of valid locations can be found by running `gcloud kms locations list`.
@@ -14,12 +25,6 @@ A full list of valid locations can be found by running `gcloud kms locations lis
 
   // The resource name for the KeyRing.
   Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
 }
 export class KeyRing extends Resource {
   /*
@@ -44,18 +49,27 @@ A full list of valid locations can be found by running `gcloud kms locations lis
     return [
       new DynamicUIProps(
         InputType.String,
-        "Name",
-        "The resource name for the KeyRing.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
         "Project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Location",
         "The location for the KeyRing.\nA full list of valid locations can be found by running `gcloud kms locations list`.\n\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Name",
+        "The resource name for the KeyRing.",
+        [],
+        false,
+        true,
       ),
     ];
   }

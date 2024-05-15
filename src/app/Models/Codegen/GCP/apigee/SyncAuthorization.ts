@@ -1,4 +1,9 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
@@ -45,14 +50,20 @@ Name of the Apigee organization.
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.DropDown,
+        InputType.Array,
         "Identities",
         "Array of service accounts to grant access to control plane resources, each specified using the following format: `serviceAccount:service-account-name`.\nThe `service-account-name` is formatted like an email address. For example: my-synchronizer-manager-serviceAccount@my_project_id.iam.gserviceaccount.com\nYou might specify multiple service accounts, for example, if you have multiple environments and wish to assign a unique service account to each one.\nThe service accounts must have **Apigee Synchronizer Manager** role. See also [Create service accounts](https://cloud.google.com/apigee/docs/hybrid/v1.8/sa-about#create-the-service-accounts).",
+        InputType_String_GetTypes(),
+        true,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Name",
         "Name of the Apigee organization.\n\n\n- - -",
+        [],
+        false,
+        true,
       ),
     ];
   }

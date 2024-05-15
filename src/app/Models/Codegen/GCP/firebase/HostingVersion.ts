@@ -1,14 +1,22 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { HostingVersionConfig } from "../types/HostingVersionConfig";
+import {
+  Firebase_HostingVersionConfig,
+  Firebase_HostingVersionConfig_GetTypes,
+} from "../types/Firebase_HostingVersionConfig";
 
 export interface HostingVersionArgs {
   /*
 The configuration for the behavior of the site. This configuration exists in the `firebase.json` file.
 Structure is documented below.
 */
-  Config?: HostingVersionConfig;
+  Config?: Firebase_HostingVersionConfig;
 
   /*
 Required. The ID of the site in which to create this Version.
@@ -23,7 +31,7 @@ export class HostingVersion extends Resource {
 The configuration for the behavior of the site. This configuration exists in the `firebase.json` file.
 Structure is documented below.
 */
-  public Config?: HostingVersionConfig;
+  public Config?: Firebase_HostingVersionConfig;
 
   /*
 The fully-qualified resource name for the version, in the format:
@@ -45,14 +53,20 @@ Required. The ID of the site in which to create this Version.
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
+        InputType.Object,
         "Config",
         "The configuration for the behavior of the site. This configuration exists in the `firebase.json` file.\nStructure is documented below.",
+        Firebase_HostingVersionConfig_GetTypes(),
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "SiteId",
         "Required. The ID of the site in which to create this Version.\n\n\n- - -",
+        [],
+        true,
+        true,
       ),
     ];
   }

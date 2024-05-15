@@ -24,6 +24,7 @@
     border-color: #a3a2a2;
     border-radius: 3px;
     transition: all 0.1s;
+    color: rgb(80, 79, 79);
 
     &:hover,
     &:focus {
@@ -43,15 +44,18 @@
     min-width: 200px;
     max-width: 200px;
     border-radius: 0 0 5px 5px;
-    padding: 5px;
+    padding: 7px;
     .option {
       padding: 5px;
+      padding-top: 10px;
+      padding-bottom: 10px;
       border-bottom: 1px solid rgba(153, 153, 153, 0.158);
       &:last-child {
         border-bottom: unset;
       }
       &:hover {
-        border-radius: 0 0 5px 5px;
+        padding-left: 10px;
+        border-radius: 0 0 1px 1px;
         background-color: #4a9eec94;
       }
     }

@@ -1,0 +1,36 @@
+<div class="sub-input-object">
+  <div class="add-title">
+    <div class="add">
+      <span><fa-icon [icon]="faAdd" (click)="AddValue()"></fa-icon></span>
+    </div>
+    <span>Add entry</span>
+  </div>
+  <div
+    class="sub-entry-object"
+    #res
+    *ngFor="let item of configValues; let i = index"
+    [attr.data-index]="i"
+  >
+    <div>
+      <div #res class="entry" [attr.data]="true">
+        <div>
+          <span *ngIf="!show(res)"
+            ><fa-icon [icon]="faDown" (click)="toggle(res)"></fa-icon
+          ></span>
+          <span *ngIf="show(res)"
+            ><fa-icon [icon]="faUp" (click)="toggle(res)"></fa-icon
+          ></span>
+        </div>
+        <span class="span">Entry {{ i + 1 }}</span>
+      </div>
+
+      <app-resource-config-fields
+        *ngIf="show(res)"
+        [config]="item"
+      ></app-resource-config-fields>
+    </div>
+    <div class="close">
+      <span><fa-icon [icon]="faClose" (click)="deleteValue(i)"></fa-icon></span>
+    </div>
+  </div>
+</div>

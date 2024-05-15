@@ -1,6 +1,0 @@
-import { WorkflowTemplatePlacementManagedClusterConfigSecurityConfigKerberosConfig } from "./WorkflowTemplatePlacementManagedClusterConfigSecurityConfigKerberosConfig";
-
-export interface WorkflowTemplatePlacementManagedClusterConfigSecurityConfig {
-  // Kerberos related configuration.
-  KerberosConfig?: WorkflowTemplatePlacementManagedClusterConfigSecurityConfigKerberosConfig;
-}

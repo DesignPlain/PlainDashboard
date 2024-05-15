@@ -1,20 +1,13 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface ConsumerQuotaOverrideArgs {
-  // The overriding quota limit value. Can be any nonnegative integer, or -1 (unlimited quota).
-  OverrideValue?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  // The service that the metrics belong to, e.g. `compute.googleapis.com`.
-  Service?: string;
-
   // If this map is nonempty, then this override applies only to specific values for dimensions defined in the limit unit.
   Dimensions?: Map<string, string>;
 
@@ -36,8 +29,23 @@ E.g. use `/project/user` instead of `1/{project}/{user}`.
 
   // The metric that should be limited, e.g. `compute.googleapis.com/cpus`.
   Metric?: string;
+
+  // The overriding quota limit value. Can be any nonnegative integer, or -1 (unlimited quota).
+  OverrideValue?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  Project?: string;
+
+  // The service that the metrics belong to, e.g. `compute.googleapis.com`.
+  Service?: string;
 }
 export class ConsumerQuotaOverride extends Resource {
+  // The service that the metrics belong to, e.g. `compute.googleapis.com`.
+  public Service?: string;
+
   // If this map is nonempty, then this override applies only to specific values for dimensions defined in the limit unit.
   public Dimensions?: Map<string, string>;
 
@@ -72,45 +80,63 @@ If it is not provided, the provider project is used.
 */
   public Project?: string;
 
-  // The service that the metrics belong to, e.g. `compute.googleapis.com`.
-  public Service?: string;
-
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Service",
-        "The service that the metrics belong to, e.g. `compute.googleapis.com`.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Dimensions",
-        "If this map is nonempty, then this override applies only to specific values for dimensions defined in the limit unit.",
-      ),
-      new DynamicUIProps(
-        InputType.CheckBox,
-        "Force",
-        "If the new quota would decrease the existing quota by more than 10%!,(MISSING) the request is rejected.\nIf `force` is `true`, that safety check is ignored.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Limit",
-        "The limit on the metric, e.g. `/project/region`.\n> Make sure that `limit` is in a format that doesn't start with `1/` or contain curly braces.\nE.g. use `/project/user` instead of `1/{project}/{user}`.\n\n\n- - -",
-      ),
-      new DynamicUIProps(
-        InputType.String,
         "Metric",
         "The metric that should be limited, e.g. `compute.googleapis.com/cpus`.",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "OverrideValue",
         "The overriding quota limit value. Can be any nonnegative integer, or -1 (unlimited quota).",
+        [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Service",
+        "The service that the metrics belong to, e.g. `compute.googleapis.com`.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Map,
+        "Dimensions",
+        "If this map is nonempty, then this override applies only to specific values for dimensions defined in the limit unit.",
+        InputType_Map_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "Force",
+        "If the new quota would decrease the existing quota by more than 10%!,(MISSING) the request is rejected.\nIf `force` is `true`, that safety check is ignored.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Limit",
+        "The limit on the metric, e.g. `/project/region`.\n> Make sure that `limit` is in a format that doesn't start with `1/` or contain curly braces.\nE.g. use `/project/user` instead of `1/{project}/{user}`.\n\n\n- - -",
+        [],
+        true,
+        true,
       ),
     ];
   }

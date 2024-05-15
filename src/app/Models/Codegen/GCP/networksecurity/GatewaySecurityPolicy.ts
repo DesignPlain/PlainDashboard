@@ -1,8 +1,22 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface GatewaySecurityPolicyArgs {
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  Project?: string;
+
+  // Name of a TlsInspectionPolicy resource that defines how TLS inspection is performed for any rule that enables it.
+  TlsInspectionPolicy?: string;
+
   // A free-text description of the resource. Max length 1024 characters.
   Description?: string;
 
@@ -20,17 +34,23 @@ gatewaySecurityPolicy should match the pattern:(^a-z?$).
 - - -
 */
   Name?: string;
+}
+export class GatewaySecurityPolicy extends Resource {
+  /*
+Name of the resource. Name is of the form projects/{project}/locations/{location}/gatewaySecurityPolicies/{gatewaySecurityPolicy}
+gatewaySecurityPolicy should match the pattern:(^a-z?$).
+
+
+- - -
+*/
+  public Name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  public Project?: string;
 
-  // Name of a TlsInspectionPolicy resource that defines how TLS inspection is performed for any rule that enables it.
-  TlsInspectionPolicy?: string;
-}
-export class GatewaySecurityPolicy extends Resource {
   // Server-defined URL of this resource.
   public SelfLink?: string;
 
@@ -60,47 +80,47 @@ The default value is `global`.
 */
   public Location?: string;
 
-  /*
-Name of the resource. Name is of the form projects/{project}/locations/{location}/gatewaySecurityPolicies/{gatewaySecurityPolicy}
-gatewaySecurityPolicy should match the pattern:(^a-z?$).
-
-
-- - -
-*/
-  public Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Description",
-        "A free-text description of the resource. Max length 1024 characters.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Location",
-        "The location of the gateway security policy.\nThe default value is `global`.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
         "Name",
         "Name of the resource. Name is of the form projects/{project}/locations/{location}/gatewaySecurityPolicies/{gatewaySecurityPolicy}\ngatewaySecurityPolicy should match the pattern:(^a-z?$).\n\n\n- - -",
+        [],
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "TlsInspectionPolicy",
         "Name of a TlsInspectionPolicy resource that defines how TLS inspection is performed for any rule that enables it.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Description",
+        "A free-text description of the resource. Max length 1024 characters.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Location",
+        "The location of the gateway security policy.\nThe default value is `global`.",
+        [],
+        false,
+        false,
       ),
     ];
   }

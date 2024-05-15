@@ -1,14 +1,22 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { FolderCustomModuleCustomConfig } from "../types/FolderCustomModuleCustomConfig";
+import {
+  Securitycenter_FolderCustomModuleCustomConfig,
+  Securitycenter_FolderCustomModuleCustomConfig_GetTypes,
+} from "../types/Securitycenter_FolderCustomModuleCustomConfig";
 
 export interface FolderCustomModuleArgs {
   /*
 The user specified custom configuration for the module.
 Structure is documented below.
 */
-  CustomConfig?: FolderCustomModuleCustomConfig;
+  CustomConfig?: Securitycenter_FolderCustomModuleCustomConfig;
 
   /*
 The display name of the Security Health Analytics custom module. This
@@ -29,6 +37,21 @@ Possible values are: `ENABLED`, `DISABLED`.
   Folder?: string;
 }
 export class FolderCustomModule extends Resource {
+  /*
+The display name of the Security Health Analytics custom module. This
+display name becomes the finding category for all findings that are
+returned by this custom module. The display name must be between 1 and
+128 characters, start with a lowercase letter, and contain alphanumeric
+characters or underscores only.
+*/
+  public DisplayName?: string;
+
+  /*
+The enablement state of the custom module.
+Possible values are: `ENABLED`, `DISABLED`.
+*/
+  public EnablementState?: string;
+
   // Numerical ID of the parent folder.
   public Folder?: string;
 
@@ -56,44 +79,41 @@ specifies the organization or folder from which the custom module is inherited.
 The user specified custom configuration for the module.
 Structure is documented below.
 */
-  public CustomConfig?: FolderCustomModuleCustomConfig;
-
-  /*
-The display name of the Security Health Analytics custom module. This
-display name becomes the finding category for all findings that are
-returned by this custom module. The display name must be between 1 and
-128 characters, start with a lowercase letter, and contain alphanumeric
-characters or underscores only.
-*/
-  public DisplayName?: string;
-
-  /*
-The enablement state of the custom module.
-Possible values are: `ENABLED`, `DISABLED`.
-*/
-  public EnablementState?: string;
+  public CustomConfig?: Securitycenter_FolderCustomModuleCustomConfig;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
-        "The display name of the Security Health Analytics custom module. This\ndisplay name becomes the finding category for all findings that are\nreturned by this custom module. The display name must be between 1 and\n128 characters, start with a lowercase letter, and contain alphanumeric\ncharacters or underscores only.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
         "EnablementState",
         "The enablement state of the custom module.\nPossible values are: `ENABLED`, `DISABLED`.",
+        [],
+        true,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Folder",
         "Numerical ID of the parent folder.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "CustomConfig",
+        "The user specified custom configuration for the module.\nStructure is documented below.",
+        Securitycenter_FolderCustomModuleCustomConfig_GetTypes(),
+        true,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "CustomConfig",
-        "The user specified custom configuration for the module.\nStructure is documented below.",
+        "DisplayName",
+        "The display name of the Security Health Analytics custom module. This\ndisplay name becomes the finding category for all findings that are\nreturned by this custom module. The display name must be between 1 and\n128 characters, start with a lowercase letter, and contain alphanumeric\ncharacters or underscores only.",
+        [],
+        true,
+        true,
       ),
     ];
   }

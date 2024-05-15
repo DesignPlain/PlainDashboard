@@ -26,6 +26,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { ButtonModule } from 'primeng/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ResourceConfigFieldsComponent } from './components/resource-config-fields/resource-config-fields.component';
+import { KeyValueArrayComponent } from './utilityComponents/key-value-array/key-value-array.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +36,14 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     PlaygroundComponent,
     InputSearchComponent,
     ResourceConfigComponent,
+    ResourceConfigFieldsComponent,
     ResizeObserverDirective,
     LineComponent,
     ToolBarComponent,
     CardComponent,
     ConfigModalComponent,
     ConfigOptionsComponent,
+    KeyValueArrayComponent,
   ],
   imports: [
     BrowserModule,

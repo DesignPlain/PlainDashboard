@@ -1,4 +1,9 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
@@ -42,11 +47,17 @@ If it is not provided, the provider project is used.
         InputType.String,
         "BillingAccount",
         'The ID of the billing account associated with the project, if\nany. Set to empty string to disable billing for the project.\nFor example, `"012345-567890-ABCDEF"` or `""`.\n\n\n- - -',
+        [],
+        true,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
     ];
   }

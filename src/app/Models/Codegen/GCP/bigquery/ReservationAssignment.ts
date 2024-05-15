@@ -1,17 +1,13 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface ReservationAssignmentArgs {
-  /*
-The reservation for the resource
-
-
-
-- - -
-*/
-  Reservation?: string;
-
   // The resource which will use the reservation. E.g. projects/myproject, folders/123, organizations/456.
   Assignee?: string;
 
@@ -23,6 +19,15 @@ The reservation for the resource
 
   // The project for the resource
   Project?: string;
+
+  /*
+The reservation for the resource
+
+
+
+- - -
+*/
+  Reservation?: string;
 }
 export class ReservationAssignment extends Resource {
   // Output only. The resource name of the assignment.
@@ -56,28 +61,43 @@ The reservation for the resource
     return [
       new DynamicUIProps(
         InputType.String,
-        "Reservation",
-        "The reservation for the resource\n\n\n\n- - -",
-      ),
-      new DynamicUIProps(
-        InputType.String,
         "Assignee",
         "The resource which will use the reservation. E.g. projects/myproject, folders/123, organizations/456.",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "JobType",
         "Types of job, which could be specified when using the reservation. Possible values: JOB_TYPE_UNSPECIFIED, PIPELINE, QUERY",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Location",
         "The location for the resource",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The project for the resource",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Reservation",
+        "The reservation for the resource\n\n\n\n- - -",
+        [],
+        true,
+        true,
       ),
     ];
   }

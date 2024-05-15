@@ -1,10 +1,24 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { EnvironmentVmImage } from "../types/EnvironmentVmImage";
-import { EnvironmentContainerImage } from "../types/EnvironmentContainerImage";
+import {
+  Notebooks_EnvironmentVmImage,
+  Notebooks_EnvironmentVmImage_GetTypes,
+} from "../types/Notebooks_EnvironmentVmImage";
+import {
+  Notebooks_EnvironmentContainerImage,
+  Notebooks_EnvironmentContainerImage_GetTypes,
+} from "../types/Notebooks_EnvironmentContainerImage";
 
 export interface EnvironmentArgs {
+  // Display name of this environment for the UI.
+  DisplayName?: string;
+
   /*
 A reference to the zone where the machine resides.
 
@@ -35,44 +49,20 @@ If it is not provided, the provider project is used.
 Use a Compute Engine VM image to start the notebook instance.
 Structure is documented below.
 */
-  VmImage?: EnvironmentVmImage;
+  VmImage?: Notebooks_EnvironmentVmImage;
 
   /*
 Use a container image to start the notebook instance.
 Structure is documented below.
 */
-  ContainerImage?: EnvironmentContainerImage;
+  ContainerImage?: Notebooks_EnvironmentContainerImage;
 
   // A brief description of this environment.
   Description?: string;
-
-  // Display name of this environment for the UI.
-  DisplayName?: string;
 }
 export class Environment extends Resource {
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  /*
-Use a Compute Engine VM image to start the notebook instance.
-Structure is documented below.
-*/
-  public VmImage?: EnvironmentVmImage;
-
-  // Instance creation time
-  public CreateTime?: string;
-
-  /*
-The name specified for the Environment instance.
-Format: projects/{project_id}/locations/{location}/environments/{environmentId}
-*/
-  public Name?: string;
-
-  // Display name of this environment for the UI.
-  public DisplayName?: string;
+  // A brief description of this environment.
+  public Description?: string;
 
   /*
 A reference to the zone where the machine resides.
@@ -83,61 +73,106 @@ A reference to the zone where the machine resides.
   public Location?: string;
 
   /*
-Path to a Bash script that automatically runs after a notebook instance fully boots up.
-The path must be a URL or Cloud Storage path. Example: "gs://path-to-file/file-name"
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 */
-  public PostStartupScript?: string;
+  public Project?: string;
+
+  /*
+Use a Compute Engine VM image to start the notebook instance.
+Structure is documented below.
+*/
+  public VmImage?: Notebooks_EnvironmentVmImage;
 
   /*
 Use a container image to start the notebook instance.
 Structure is documented below.
 */
-  public ContainerImage?: EnvironmentContainerImage;
+  public ContainerImage?: Notebooks_EnvironmentContainerImage;
 
-  // A brief description of this environment.
-  public Description?: string;
+  // Instance creation time
+  public CreateTime?: string;
+
+  // Display name of this environment for the UI.
+  public DisplayName?: string;
+
+  /*
+The name specified for the Environment instance.
+Format: projects/{project_id}/locations/{location}/environments/{environmentId}
+*/
+  public Name?: string;
+
+  /*
+Path to a Bash script that automatically runs after a notebook instance fully boots up.
+The path must be a URL or Cloud Storage path. Example: "gs://path-to-file/file-name"
+*/
+  public PostStartupScript?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
+        InputType.Object,
         "VmImage",
         "Use a Compute Engine VM image to start the notebook instance.\nStructure is documented below.",
+        Notebooks_EnvironmentVmImage_GetTypes(),
+        false,
+        false,
       ),
       new DynamicUIProps(
-        InputType.String,
+        InputType.Object,
         "ContainerImage",
         "Use a container image to start the notebook instance.\nStructure is documented below.",
+        Notebooks_EnvironmentContainerImage_GetTypes(),
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Description",
         "A brief description of this environment.",
+        [],
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "DisplayName",
         "Display name of this environment for the UI.",
+        [],
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Location",
         "A reference to the zone where the machine resides.\n\n\n- - -",
+        [],
+        true,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Name",
         "The name specified for the Environment instance.\nFormat: projects/{project_id}/locations/{location}/environments/{environmentId}",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "PostStartupScript",
         'Path to a Bash script that automatically runs after a notebook instance fully boots up.\nThe path must be a URL or Cloud Storage path. Example: "gs://path-to-file/file-name"',
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
     ];
   }

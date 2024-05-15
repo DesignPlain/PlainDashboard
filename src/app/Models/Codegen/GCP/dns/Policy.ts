@@ -1,8 +1,19 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { PolicyAlternativeNameServerConfig } from "../types/PolicyAlternativeNameServerConfig";
-import { PolicyNetwork } from "../types/PolicyNetwork";
+import {
+  Dns_PolicyAlternativeNameServerConfig,
+  Dns_PolicyAlternativeNameServerConfig_GetTypes,
+} from "../types/Dns_PolicyAlternativeNameServerConfig";
+import {
+  Dns_PolicyNetwork,
+  Dns_PolicyNetwork_GetTypes,
+} from "../types/Dns_PolicyNetwork";
 
 export interface PolicyArgs {
   /*
@@ -17,7 +28,7 @@ When specified, all DNS queries are forwarded to a name server that you choose.
 Names such as .internal are not available when an alternative name server is specified.
 Structure is documented below.
 */
-  AlternativeNameServerConfig?: PolicyAlternativeNameServerConfig;
+  AlternativeNameServerConfig?: Dns_PolicyAlternativeNameServerConfig;
 
   // A textual description field. Defaults to 'Managed by Pulumi'.
   Description?: string;
@@ -48,12 +59,9 @@ User assigned name for this policy.
 List of network names specifying networks to which this policy is applied.
 Structure is documented below.
 */
-  Networks?: Array<PolicyNetwork>;
+  Networks?: Array<Dns_PolicyNetwork>;
 }
 export class Policy extends Resource {
-  // A textual description field. Defaults to 'Managed by Pulumi'.
-  public Description?: string;
-
   /*
 Allows networks bound to this policy to receive DNS queries sent
 by VMs or applications over VPN connections. When enabled, a
@@ -80,7 +88,7 @@ User assigned name for this policy.
 List of network names specifying networks to which this policy is applied.
 Structure is documented below.
 */
-  public Networks?: Array<PolicyNetwork>;
+  public Networks?: Array<Dns_PolicyNetwork>;
 
   /*
 The ID of the project in which the resource belongs.
@@ -94,44 +102,68 @@ When specified, all DNS queries are forwarded to a name server that you choose.
 Names such as .internal are not available when an alternative name server is specified.
 Structure is documented below.
 */
-  public AlternativeNameServerConfig?: PolicyAlternativeNameServerConfig;
+  public AlternativeNameServerConfig?: Dns_PolicyAlternativeNameServerConfig;
+
+  // A textual description field. Defaults to 'Managed by Pulumi'.
+  public Description?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.CheckBox,
-        "EnableInboundForwarding",
-        "Allows networks bound to this policy to receive DNS queries sent\nby VMs or applications over VPN connections. When enabled, a\nvirtual IP address will be allocated from each of the sub-networks\nthat are bound to this policy.",
-      ),
-      new DynamicUIProps(
-        InputType.CheckBox,
-        "EnableLogging",
-        "Controls whether logging is enabled for the networks bound to this policy.\nDefaults to no logging if not set.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "User assigned name for this policy.\n\n\n- - -",
-      ),
-      new DynamicUIProps(
-        InputType.DropDown,
-        "Networks",
-        "List of network names specifying networks to which this policy is applied.\nStructure is documented below.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
+        InputType.Object,
         "AlternativeNameServerConfig",
         "Sets an alternative name server for the associated networks.\nWhen specified, all DNS queries are forwarded to a name server that you choose.\nNames such as .internal are not available when an alternative name server is specified.\nStructure is documented below.",
+        Dns_PolicyAlternativeNameServerConfig_GetTypes(),
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Description",
         "A textual description field. Defaults to 'Managed by Pulumi'.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "EnableInboundForwarding",
+        "Allows networks bound to this policy to receive DNS queries sent\nby VMs or applications over VPN connections. When enabled, a\nvirtual IP address will be allocated from each of the sub-networks\nthat are bound to this policy.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "EnableLogging",
+        "Controls whether logging is enabled for the networks bound to this policy.\nDefaults to no logging if not set.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Name",
+        "User assigned name for this policy.\n\n\n- - -",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "Networks",
+        "List of network names specifying networks to which this policy is applied.\nStructure is documented below.",
+        Dns_PolicyNetwork_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
     ];
   }

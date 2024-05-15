@@ -1,16 +1,13 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface SshPublicKeyArgs {
-  /*
-The user email.
-
-
-- - -
-*/
-  User?: string;
-
   // An expiration time in microseconds since epoch.
   ExpirationTimeUsec?: string;
 
@@ -19,6 +16,14 @@ The user email.
 
   // The project ID of the Google Cloud Platform project.
   Project?: string;
+
+  /*
+The user email.
+
+
+- - -
+*/
+  User?: string;
 }
 export class SshPublicKey extends Resource {
   // An expiration time in microseconds since epoch.
@@ -45,23 +50,35 @@ The user email.
     return [
       new DynamicUIProps(
         InputType.String,
-        "User",
-        "The user email.\n\n\n- - -",
-      ),
-      new DynamicUIProps(
-        InputType.String,
         "ExpirationTimeUsec",
         "An expiration time in microseconds since epoch.",
+        [],
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Key",
         "Public key text in SSH format, defined by RFC4253 section 6.6.",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The project ID of the Google Cloud Platform project.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "User",
+        "The user email.\n\n\n- - -",
+        [],
+        true,
+        true,
       ),
     ];
   }

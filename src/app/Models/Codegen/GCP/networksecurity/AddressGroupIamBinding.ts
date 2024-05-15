@@ -1,9 +1,23 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { AddressGroupIAMBindingCondition } from "../types/AddressGroupIAMBindingCondition";
+import {
+  Networksecurity_AddressGroupIamBindingCondition,
+  Networksecurity_AddressGroupIamBindingCondition_GetTypes,
+} from "../types/Networksecurity_AddressGroupIamBindingCondition";
 
-export interface AddressGroupIAMBindingArgs {
+export interface AddressGroupIamBindingArgs {
+  //
+  Role?: string;
+
+  //
+  Condition?: Networksecurity_AddressGroupIamBindingCondition;
+
   //
   Location?: string;
 
@@ -15,14 +29,17 @@ export interface AddressGroupIAMBindingArgs {
 
   //
   Project?: string;
-
-  //
-  Role?: string;
-
-  //
-  Condition?: AddressGroupIAMBindingCondition;
 }
-export class AddressGroupIAMBinding extends Resource {
+export class AddressGroupIamBinding extends Resource {
+  //
+  public Condition?: Networksecurity_AddressGroupIamBindingCondition;
+
+  //
+  public Etag?: string;
+
+  //
+  public Location?: string;
+
   //
   public Members?: Array<string>;
 
@@ -35,23 +52,28 @@ export class AddressGroupIAMBinding extends Resource {
   //
   public Role?: string;
 
-  //
-  public Condition?: AddressGroupIAMBindingCondition;
-
-  //
-  public Etag?: string;
-
-  //
-  public Location?: string;
-
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Location", ""),
-      new DynamicUIProps(InputType.DropDown, "Members", ""),
-      new DynamicUIProps(InputType.String, "Name", ""),
-      new DynamicUIProps(InputType.String, "Project", ""),
-      new DynamicUIProps(InputType.String, "Role", ""),
-      new DynamicUIProps(InputType.String, "Condition", ""),
+      new DynamicUIProps(
+        InputType.Object,
+        "Condition",
+        "",
+        Networksecurity_AddressGroupIamBindingCondition_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(InputType.String, "Location", "", [], false, true),
+      new DynamicUIProps(
+        InputType.Array,
+        "Members",
+        "",
+        InputType_String_GetTypes(),
+        true,
+        false,
+      ),
+      new DynamicUIProps(InputType.String, "Name", "", [], false, true),
+      new DynamicUIProps(InputType.String, "Project", "", [], false, true),
+      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
     ];
   }
 }

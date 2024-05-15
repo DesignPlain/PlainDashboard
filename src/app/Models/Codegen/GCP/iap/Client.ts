@@ -1,4 +1,9 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
@@ -45,11 +50,17 @@ Output only. Client secret of the OAuth client.
         InputType.String,
         "Brand",
         "Identifier of the brand to which this client\nis attached to. The format is\n`projects/{project_number}/brands/{brand_id}/identityAwareProxyClients/{client_id}`.\n\n\n- - -",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "DisplayName",
         "Human-friendly name given to the OAuth client.",
+        [],
+        true,
+        true,
       ),
     ];
   }

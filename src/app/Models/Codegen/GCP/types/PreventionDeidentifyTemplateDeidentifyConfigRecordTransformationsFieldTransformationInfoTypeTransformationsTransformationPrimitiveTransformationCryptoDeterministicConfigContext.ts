@@ -1,4 +1,0 @@
-export interface PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigContext {
-  // Name describing the field.
-  Name?: string;
-}

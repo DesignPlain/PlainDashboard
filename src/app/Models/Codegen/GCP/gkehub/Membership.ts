@@ -1,36 +1,26 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { MembershipAuthority } from "../types/MembershipAuthority";
-import { MembershipEndpoint } from "../types/MembershipEndpoint";
+import {
+  Gkehub_MembershipEndpoint,
+  Gkehub_MembershipEndpoint_GetTypes,
+} from "../types/Gkehub_MembershipEndpoint";
+import {
+  Gkehub_MembershipAuthority,
+  Gkehub_MembershipAuthority_GetTypes,
+} from "../types/Gkehub_MembershipAuthority";
 
 export interface MembershipArgs {
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  /*
-Authority encodes how Google will recognize identities from this Membership.
-See the workload identity documentation for more details:
-https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity
-Structure is documented below.
-*/
-  Authority?: MembershipAuthority;
-
-  /*
-The name of this entity type to be displayed on the console. This field is unavailable in v1 of the API.
-
-> --Warning:-- `description` is deprecated and will be removed in a future major release.
-*/
-  Description?: string;
-
   /*
 If this Membership is a Kubernetes API server hosted on GKE, this is a self link to its GCP resource.
 Structure is documented below.
 */
-  Endpoint?: MembershipEndpoint;
+  Endpoint?: Gkehub_MembershipEndpoint;
 
   /*
 Labels to apply to this membership.
@@ -53,21 +43,39 @@ The client-provided identifier of the membership.
 - - -
 */
   MembershipId?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  Project?: string;
+
+  /*
+Authority encodes how Google will recognize identities from this Membership.
+See the workload identity documentation for more details:
+https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity
+Structure is documented below.
+*/
+  Authority?: Gkehub_MembershipAuthority;
+
+  /*
+The name of this entity type to be displayed on the console. This field is unavailable in v1 of the API.
+
+> --Warning:-- `description` is deprecated and will be removed in a future major release.
+*/
+  Description?: string;
 }
 export class Membership extends Resource {
   /*
-If this Membership is a Kubernetes API server hosted on GKE, this is a self link to its GCP resource.
-Structure is documented below.
-*/
-  public Endpoint?: MembershipEndpoint;
+The client-provided identifier of the membership.
 
-  /*
-Labels to apply to this membership.
 
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
+- - -
 */
-  public Labels?: Map<string, string>;
+  public MembershipId?: string;
+
+  // The unique identifier of the membership.
+  public Name?: string;
 
   /*
 The ID of the project in which the resource belongs.
@@ -81,26 +89,30 @@ and default labels configured on the provider.
 */
   public PulumiLabels?: Map<string, string>;
 
-  // The unique identifier of the membership.
-  public Name?: string;
-
   /*
 Authority encodes how Google will recognize identities from this Membership.
 See the workload identity documentation for more details:
 https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity
 Structure is documented below.
 */
-  public Authority?: MembershipAuthority;
-
-  /*
-The name of this entity type to be displayed on the console. This field is unavailable in v1 of the API.
-
-> --Warning:-- `description` is deprecated and will be removed in a future major release.
-*/
-  public Description?: string;
+  public Authority?: Gkehub_MembershipAuthority;
 
   // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
   public EffectiveLabels?: Map<string, string>;
+
+  /*
+If this Membership is a Kubernetes API server hosted on GKE, this is a self link to its GCP resource.
+Structure is documented below.
+*/
+  public Endpoint?: Gkehub_MembershipEndpoint;
+
+  /*
+Labels to apply to this membership.
+
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public Labels?: Map<string, string>;
 
   /*
 Location of the membership.
@@ -109,49 +121,69 @@ The default value is `global`.
   public Location?: string;
 
   /*
-The client-provided identifier of the membership.
+The name of this entity type to be displayed on the console. This field is unavailable in v1 of the API.
 
-
-- - -
+> --Warning:-- `description` is deprecated and will be removed in a future major release.
 */
-  public MembershipId?: string;
+  public Description?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Authority",
-        "Authority encodes how Google will recognize identities from this Membership.\nSee the workload identity documentation for more details:\nhttps://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity\nStructure is documented below.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "The name of this entity type to be displayed on the console. This field is unavailable in v1 of the API.\n\n> **Warning:** `description` is deprecated and will be removed in a future major release.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Endpoint",
-        "If this Membership is a Kubernetes API server hosted on GKE, this is a self link to its GCP resource.\nStructure is documented below.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Labels",
-        "Labels to apply to this membership.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
         "Location",
         "Location of the membership.\nThe default value is `global`.",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "MembershipId",
         "The client-provided identifier of the membership.\n\n\n- - -",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "Authority",
+        "Authority encodes how Google will recognize identities from this Membership.\nSee the workload identity documentation for more details:\nhttps://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity\nStructure is documented below.",
+        Gkehub_MembershipAuthority_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Description",
+        "The name of this entity type to be displayed on the console. This field is unavailable in v1 of the API.\n\n> **Warning:** `description` is deprecated and will be removed in a future major release.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "Endpoint",
+        "If this Membership is a Kubernetes API server hosted on GKE, this is a self link to its GCP resource.\nStructure is documented below.",
+        Gkehub_MembershipEndpoint_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Map,
+        "Labels",
+        "Labels to apply to this membership.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        InputType_Map_GetTypes(),
+        false,
+        false,
       ),
     ];
   }

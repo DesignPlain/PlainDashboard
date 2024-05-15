@@ -1,6 +1,0 @@
-import { WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget } from "./WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget";
-
-export interface WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfig {
-  // A target for the deployment.
-  NamespacedGkeDeploymentTarget?: WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget;
-}

@@ -25,7 +25,10 @@ import { RESOURCE_LIST_WIDTH } from 'src/app/constants/board-constants';
 import { Subject } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 import { ModalDialogService } from 'src/app/services/modal-dialog.service';
-import { DynamicUIProps } from '../resource-config/resource-config.component';
+import {
+  DynamicUIPropState,
+  DynamicUIProps,
+} from '../resource-config/resource-config.component';
 import { VisualResource } from '../resource-list/VisualResource';
 import { ResourceType } from 'src/app/Models/Codegen/GCP/ResourceType';
 
@@ -91,9 +94,9 @@ export class PlaygroundComponent implements OnInit {
   public newLine: boolean = false;
   public showSideBar: boolean = false;
   public currentIndex: number = 0;
-  public currentConfig: Map<string, DynamicUIProps> = new Map<
+  public currentConfig: Map<string, DynamicUIPropState> = new Map<
     string,
-    DynamicUIProps
+    DynamicUIPropState
   >();
   public currentResourceType: ResourceType | undefined;
   public currentOut: Outputs[] = [];
@@ -186,10 +189,14 @@ export class PlaygroundComponent implements OnInit {
   }
 
   public SetResourceConfig(resourceIndex: number, item: CloudResource): void {
-    this.currentConfig = new Map<string, DynamicUIProps>();
+    this.currentConfig = new Map<string, DynamicUIPropState>();
 
     if (item.resourceConfig != undefined) {
-      this.loadResourceConfig(item.resourceConfig, item.resourceType);
+      this.loadResourceConfig(
+        item.title,
+        item.resourceConfig,
+        item.resourceType
+      );
     } else {
       this.setDefaultResourceConfig(item);
     }
@@ -214,18 +221,63 @@ export class PlaygroundComponent implements OnInit {
 
   private setDefaultResourceConfig(item: CloudResource) {
     ResourceProperties.propertiesMap.get(item.resourceType)?.forEach((val) => {
-      this.currentConfig.set(val.val, new DynamicUIProps(val.type, '', ''));
+      const map = new Map();
+      val.members.forEach((obj) => {
+        map.set(obj.val, new DynamicUIPropState(obj.type, '', '', undefined));
+      });
+
+      this.currentConfig.set(
+        val.val,
+        new DynamicUIPropState(val.type, '', '', map)
+      );
     });
   }
 
-  private loadResourceConfig(res: Resource, resourceType: ResourceType) {
+  private loadResourceConfig(
+    name: string,
+    res: Resource,
+    resourceType: ResourceType
+  ) {
     let objMap = new Map(Object.entries(res));
     ResourceProperties.propertiesMap.get(resourceType)?.forEach((val) => {
+      const map = new Map();
+      setDynamicUIMembers(val, map);
+
+      objMap.set('Name', name);
+
       this.currentConfig.set(
         val.val,
-        new DynamicUIProps(val.type, objMap.get(val.val), val.description)
+        new DynamicUIPropState(
+          val.type,
+          objMap.get(val.val),
+          val.description,
+          map,
+          val.isRequired,
+          val.willReplaceOnChanges
+        )
       );
+
+      console.log(this.currentConfig);
     });
+
+    function setDynamicUIMembers(val: DynamicUIProps, map: Map<any, any>) {
+      val.members.forEach((obj) => {
+        const lmap = new Map();
+        setDynamicUIMembers(obj, lmap);
+
+        map.set(
+          obj.val,
+          new DynamicUIPropState(
+            obj.type,
+            objMap.get(val.val)?.get(obj.val),
+            obj.description,
+            lmap,
+            obj.isRequired,
+            obj.willReplaceOnChanges
+          )
+        );
+      });
+    }
   }
 
   //#endregion [ResourceConfig methods]

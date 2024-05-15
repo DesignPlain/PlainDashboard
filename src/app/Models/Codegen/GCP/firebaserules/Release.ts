@@ -1,4 +1,9 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
@@ -19,6 +24,9 @@ Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist fo
   RulesetName?: string;
 }
 export class Release extends Resource {
+  // Output only. Time the release was updated.
+  public UpdateTime?: string;
+
   // Output only. Time the release was created.
   public CreateTime?: string;
 
@@ -40,25 +48,31 @@ Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist fo
 */
   public RulesetName?: string;
 
-  // Output only. Time the release was updated.
-  public UpdateTime?: string;
-
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Name",
-        "Format: `projects/{project_id}/releases/{release_id}`\\Firestore Rules Releases will **always** have the name 'cloud.firestore'",
-      ),
-      new DynamicUIProps(
-        InputType.String,
         "Project",
         "The project for the resource",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "RulesetName",
         "Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist for the `Release` to be created.\n\n\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Name",
+        "Format: `projects/{project_id}/releases/{release_id}`\\Firestore Rules Releases will **always** have the name 'cloud.firestore'",
+        [],
+        false,
+        true,
       ),
     ];
   }

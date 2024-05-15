@@ -1,7 +1,15 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { SharedflowMetaData } from "../types/SharedflowMetaData";
+import {
+  Apigee_SharedflowMetaData,
+  Apigee_SharedflowMetaData_GetTypes,
+} from "../types/Apigee_SharedflowMetaData";
 
 export interface SharedflowArgs {
   /*
@@ -24,12 +32,6 @@ will trigger an update.
   OrgId?: string;
 }
 export class Sharedflow extends Resource {
-  // The ID of the shared flow.
-  public Name?: string;
-
-  // The Apigee Organization name associated with the Apigee instance.
-  public OrgId?: string;
-
   // A list of revisions of this shared flow.
   public Revisions?: Array<string>;
 
@@ -56,7 +58,13 @@ will trigger an update.
 Metadata describing the shared flow.
 Structure is documented below.
 */
-  public MetaDatas?: Array<SharedflowMetaData>;
+  public MetaDatas?: Array<Apigee_SharedflowMetaData>;
+
+  // The ID of the shared flow.
+  public Name?: string;
+
+  // The Apigee Organization name associated with the Apigee instance.
+  public OrgId?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
@@ -64,21 +72,33 @@ Structure is documented below.
         InputType.String,
         "ConfigBundle",
         "Path to the config zip bundle.\n\n- - -",
+        [],
+        true,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "DetectMd5hash",
         "A hash of local config bundle in string, user needs to use a Terraform Hash function of their choice. A change in hash\nwill trigger an update.",
+        [],
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Name",
         "The ID of the shared flow.",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "OrgId",
         "The Apigee Organization name associated with the Apigee instance.",
+        [],
+        true,
+        true,
       ),
     ];
   }

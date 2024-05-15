@@ -1,18 +1,26 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { NamespaceIAMMemberCondition } from "../types/NamespaceIAMMemberCondition";
+import {
+  Servicedirectory_NamespaceIamMemberCondition,
+  Servicedirectory_NamespaceIamMemberCondition_GetTypes,
+} from "../types/Servicedirectory_NamespaceIamMemberCondition";
 
-export interface NamespaceIAMMemberArgs {
+export interface NamespaceIamMemberArgs {
   /*
 The role that should be applied. Only one
-`gcp.servicedirectory.NamespaceIAMBinding` can be used per role. Note that custom roles must be of the format
+`gcp.servicedirectory.NamespaceIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
   Role?: string;
 
   //
-  Condition?: NamespaceIAMMemberCondition;
+  Condition?: Servicedirectory_NamespaceIamMemberCondition;
 
   //
   Member?: string;
@@ -34,16 +42,7 @@ Each entry can have one of the following values:
 */
   Name?: string;
 }
-export class NamespaceIAMMember extends Resource {
-  //
-  public Condition?: NamespaceIAMMemberCondition;
-
-  // (Computed) The etag of the IAM policy.
-  public Etag?: string;
-
-  //
-  public Member?: string;
-
+export class NamespaceIamMember extends Resource {
   /*
 Used to find the parent resource to bind the IAM policy to
 
@@ -63,24 +62,46 @@ Each entry can have one of the following values:
 
   /*
 The role that should be applied. Only one
-`gcp.servicedirectory.NamespaceIAMBinding` can be used per role. Note that custom roles must be of the format
+`gcp.servicedirectory.NamespaceIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
   public Role?: string;
+
+  //
+  public Condition?: Servicedirectory_NamespaceIamMemberCondition;
+
+  // (Computed) The etag of the IAM policy.
+  public Etag?: string;
+
+  //
+  public Member?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
         "Role",
-        "The role that should be applied. Only one\n`gcp.servicedirectory.NamespaceIAMBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
+        "The role that should be applied. Only one\n`gcp.servicedirectory.NamespaceIamBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
+        [],
+        true,
+        true,
       ),
-      new DynamicUIProps(InputType.String, "Condition", ""),
-      new DynamicUIProps(InputType.String, "Member", ""),
+      new DynamicUIProps(
+        InputType.Object,
+        "Condition",
+        "",
+        Servicedirectory_NamespaceIamMemberCondition_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
       new DynamicUIProps(
         InputType.String,
         "Name",
         'Used to find the parent resource to bind the IAM policy to\n\n* `member/members` - (Required) Identities that will be granted the privilege in `role`.\nEach entry can have one of the following values:\n* **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.\n* **allAuthenticatedUsers**: A special identifier that represents anyone who is authenticated with a Google account or a service account.\n* **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.\n* **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.\n* **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.\n* **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.\n* **projectOwner:projectid**: Owners of the given project. For example, "projectOwner:my-example-project"\n* **projectEditor:projectid**: Editors of the given project. For example, "projectEditor:my-example-project"\n* **projectViewer:projectid**: Viewers of the given project. For example, "projectViewer:my-example-project"',
+        [],
+        false,
+        true,
       ),
     ];
   }

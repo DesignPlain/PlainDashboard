@@ -1,6 +1,0 @@
-import { FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibrary } from "./FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibrary";
-
-export interface FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContent {
-  // Configures the installation of the Template Library. Structure is documented below.
-  TemplateLibrary?: FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibrary;
-}

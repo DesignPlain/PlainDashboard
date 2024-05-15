@@ -1,8 +1,16 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface FirewallPolicyAssociationArgs {
+  // The target that the firewall policy is attached to.
+  AttachmentTarget?: string;
+
   // The firewall policy ID of the association.
   FirewallPolicy?: string;
 
@@ -14,9 +22,6 @@ The name for an association.
 - - -
 */
   Name?: string;
-
-  // The target that the firewall policy is attached to.
-  AttachmentTarget?: string;
 }
 export class FirewallPolicyAssociation extends Resource {
   // The target that the firewall policy is attached to.
@@ -41,18 +46,27 @@ The name for an association.
     return [
       new DynamicUIProps(
         InputType.String,
-        "FirewallPolicy",
-        "The firewall policy ID of the association.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
         "Name",
         "The name for an association.\n\n\n\n- - -",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "AttachmentTarget",
         "The target that the firewall policy is attached to.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "FirewallPolicy",
+        "The firewall policy ID of the association.",
+        [],
+        true,
+        true,
       ),
     ];
   }

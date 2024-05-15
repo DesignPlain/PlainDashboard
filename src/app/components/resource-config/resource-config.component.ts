@@ -27,7 +27,20 @@ export class DynamicUIProps {
   constructor(
     public type: InputType,
     public val: string,
-    public description: string
+    public description: string,
+    public members: DynamicUIProps[] = [],
+    public isRequired: boolean = false,
+    public willReplaceOnChanges: boolean = false
+  ) {}
+}
+export class DynamicUIPropState {
+  constructor(
+    public type: InputType,
+    public val: string,
+    public description: string,
+    public members: Map<string, DynamicUIPropState> = new Map(),
+    public isRequired: boolean = false,
+    public willReplaceOnChanges: boolean = false
   ) {}
 }
 
@@ -38,10 +51,11 @@ export class DynamicUIProps {
 })
 export class ResourceConfigComponent implements OnInit {
   constructor(private _modalDialogService: ModalDialogService) {}
-  public faClose: IconDefinition = faClose;
 
+  public faClose: IconDefinition = faClose;
   public faInfo: IconDefinition = faInfoCircle;
   public faGear: IconDefinition = faGear;
+
   public closeModal() {
     this._modalDialogService.ActiveModal.dispose();
   }
@@ -50,7 +64,7 @@ export class ResourceConfigComponent implements OnInit {
   @Input() currentResource: ResourceType;
   @Input() currentIndex: number = -1;
   resConfig: Resource = new DefaultResource();
-  @Input() config: Map<string, DynamicUIProps> = new Map();
+  @Input() config: Map<string, DynamicUIPropState> = new Map();
   @Input() currentOutput: Outputs[] = [];
   inputType = InputType;
   resourceType = ResourceType;
@@ -65,6 +79,7 @@ export class ResourceConfigComponent implements OnInit {
   set = false;
   listMap = new Map<string, any>();
   check = false;
+
   addToMap(name: string, data: any, type: InputType) {
     this.check = true;
     switch (type) {
@@ -75,7 +90,7 @@ export class ResourceConfigComponent implements OnInit {
         this.listMap.set(name, data as number);
         break;
       // TODO: Fix this checkbox logic
-      case InputType.CheckBox:
+      case InputType.Bool:
         this.listMap.set(name, data == 'false' ? 'false' : '');
         break;
     }

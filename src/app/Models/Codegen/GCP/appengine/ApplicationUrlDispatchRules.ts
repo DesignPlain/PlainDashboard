@@ -1,14 +1,22 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { ApplicationUrlDispatchRulesDispatchRule } from "../types/ApplicationUrlDispatchRulesDispatchRule";
+import {
+  Appengine_ApplicationUrlDispatchRulesDispatchRule,
+  Appengine_ApplicationUrlDispatchRulesDispatchRule_GetTypes,
+} from "../types/Appengine_ApplicationUrlDispatchRulesDispatchRule";
 
 export interface ApplicationUrlDispatchRulesArgs {
   /*
 Rules to match an HTTP request and dispatch that request to a service.
 Structure is documented below.
 */
-  DispatchRules?: Array<ApplicationUrlDispatchRulesDispatchRule>;
+  DispatchRules?: Array<Appengine_ApplicationUrlDispatchRulesDispatchRule>;
 
   /*
 The ID of the project in which the resource belongs.
@@ -21,7 +29,7 @@ export class ApplicationUrlDispatchRules extends Resource {
 Rules to match an HTTP request and dispatch that request to a service.
 Structure is documented below.
 */
-  public DispatchRules?: Array<ApplicationUrlDispatchRulesDispatchRule>;
+  public DispatchRules?: Array<Appengine_ApplicationUrlDispatchRulesDispatchRule>;
 
   /*
 The ID of the project in which the resource belongs.
@@ -32,14 +40,20 @@ If it is not provided, the provider project is used.
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.DropDown,
+        InputType.Array,
         "DispatchRules",
         "Rules to match an HTTP request and dispatch that request to a service.\nStructure is documented below.",
+        Appengine_ApplicationUrlDispatchRulesDispatchRule_GetTypes(),
+        true,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
     ];
   }

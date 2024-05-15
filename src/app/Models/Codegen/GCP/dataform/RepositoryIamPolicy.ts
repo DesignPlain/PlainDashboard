@@ -1,19 +1,24 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface RepositoryIamPolicyArgs {
   //
-  PolicyData?: string;
-
-  //
-  Project?: string;
-
-  //
   Region?: string;
 
   //
   Repository?: string;
+
+  //
+  PolicyData?: string;
+
+  //
+  Project?: string;
 }
 export class RepositoryIamPolicy extends Resource {
   //
@@ -33,10 +38,10 @@ export class RepositoryIamPolicy extends Resource {
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Region", ""),
-      new DynamicUIProps(InputType.String, "Repository", ""),
-      new DynamicUIProps(InputType.String, "PolicyData", ""),
-      new DynamicUIProps(InputType.String, "Project", ""),
+      new DynamicUIProps(InputType.String, "Region", "", [], false, true),
+      new DynamicUIProps(InputType.String, "Repository", "", [], true, true),
+      new DynamicUIProps(InputType.String, "PolicyData", "", [], true, false),
+      new DynamicUIProps(InputType.String, "Project", "", [], false, true),
     ];
   }
 }
