@@ -36,7 +36,7 @@ export class DynamicUIProps {
 export class DynamicUIPropState {
   constructor(
     public type: InputType,
-    public val: string,
+    public val: any,
     public description: string,
     public members: Map<string, DynamicUIPropState> = new Map(),
     public isRequired: boolean = false,
@@ -96,8 +96,17 @@ export class ResourceConfigComponent implements OnInit {
     }
   }
 
+  public UpdateResourceConfig(it: Map<string, any>): void {
+    it.forEach((v, k) => {
+      console.log(k, v);
+      this.listMap.set(k, v);
+    });
+
+    console.log(this.listMap);
+  }
+
   submit() {
-    if (this.check && this.currentResource != null) {
+    if (this.currentResource != null) {
       let currentConfig = new Map<string, any>();
       this.config.forEach((k, v) => {
         if (this.listMap.get(v) == undefined) {
@@ -108,6 +117,7 @@ export class ResourceConfigComponent implements OnInit {
       let resMap = new Map([...this.listMap, ...currentConfig]);
       this.resConfig = Object.fromEntries(resMap.entries()) as Resource;
 
+      console.log('Final submit', this.resConfig);
       this.configUpdateEvent.emit({
         id: this.currentIndex,
         res: this.resConfig,

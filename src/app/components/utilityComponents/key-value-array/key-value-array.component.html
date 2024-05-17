@@ -3,12 +3,12 @@
     <div class="add">
       <span><fa-icon [icon]="faAdd" (click)="AddValue()"></fa-icon></span>
     </div>
-    <span>Add entry</span>
+    <span>Add {{ parentRes.substring(0, parentRes.length - 1) }}</span>
   </div>
   <div
     class="sub-entry-object"
     #res
-    *ngFor="let item of configValues; let i = index"
+    *ngFor="let item of listMap; let i = index"
     [attr.data-index]="i"
   >
     <div>
@@ -21,12 +21,16 @@
             ><fa-icon [icon]="faUp" (click)="toggle(res)"></fa-icon
           ></span>
         </div>
-        <span class="span">Entry {{ i + 1 }}</span>
+        <span class="span"
+          >{{ parentRes.substring(0, parentRes.length - 1) }} {{ i + 1 }}</span
+        >
       </div>
 
       <app-resource-config-fields
+        [parent]="parentRes"
         *ngIf="show(res)"
-        [config]="item"
+        [config]="getConfig(i)"
+        (configUpdateEvent)="UpdateResourceConfig($event, i)"
       ></app-resource-config-fields>
     </div>
     <div class="close">

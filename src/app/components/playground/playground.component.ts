@@ -16,7 +16,11 @@ import { ResourceProperties } from 'src/app/Models/Codegen/GCP/ResourcePropertie
 import { ProviderType } from 'src/app/enum/ProviderType';
 import { AddComponentService } from 'src/app/services/add-component.service';
 import { take } from 'rxjs/operators';
-import { LocalStorageService } from 'src/app/services/local-storage.service';
+import {
+  LocalStorageService,
+  replacer,
+  reviver,
+} from 'src/app/services/local-storage.service';
 import { ApplicationStateService } from 'src/app/services/application-state.service';
 import { LineOptions } from '../line/line.component';
 import { StackService } from 'src/app/services/stack.service';
@@ -31,6 +35,8 @@ import {
 } from '../resource-config/resource-config.component';
 import { VisualResource } from '../resource-list/VisualResource';
 import { ResourceType } from 'src/app/Models/Codegen/GCP/ResourceType';
+import { InputType } from 'src/app/enum/InputType';
+import { Bucket } from 'src/app/Models/Codegen/GCP/storage/Bucket';
 
 @Component({
   selector: 'app-playground',
@@ -238,10 +244,19 @@ export class PlaygroundComponent implements OnInit {
     res: Resource,
     resourceType: ResourceType
   ) {
+    //(res as Bucket).Labels = new Map([["Key","8"]])
     let objMap = new Map(Object.entries(res));
     ResourceProperties.propertiesMap.get(resourceType)?.forEach((val) => {
       const map = new Map();
-      setDynamicUIMembers(val, map);
+
+      // console.log('\n*****Call depth: ', 0);
+      // console.log('ObjMap: ', objMap);
+      // console.log('Value', val.val);
+      // console.log('Value type', InputType[val.type]);
+
+      console.log('\n\n', val.val, objMap);
+      let sen = objMap.get(val.val);
+      setDynamicUIMembers(sen, objMap.get(val.val), val, map, 1);
 
       objMap.set('Name', name);
 
@@ -260,22 +275,46 @@ export class PlaygroundComponent implements OnInit {
       console.log(this.currentConfig);
     });
 
-    function setDynamicUIMembers(val: DynamicUIProps, map: Map<any, any>) {
+    function setDynamicUIMembers(
+      sen: any,
+      objMap: Map<string, any>,
+      val: DynamicUIProps,
+      map: Map<any, any>,
+      depth: number
+    ) {
       val.members.forEach((obj) => {
         const lmap = new Map();
-        setDynamicUIMembers(obj, lmap);
+        let objVal = undefined;
+
+        console.log('\n*****Call depth: ', depth);
+        console.log('ObjMap: ', objMap);
+        console.log('obj', obj);
+        console.log('Value type', InputType[obj.type]);
+        if (val.type == InputType.Array || val.type == InputType.Map) {
+          objVal = objMap;
+          sen = null;
+        } else {
+          if (sen != null) {
+            objVal = objMap?.get(obj.val);
+          }
+        }
+        setDynamicUIMembers(sen, objVal, obj, lmap, depth + 1);
+
+        console.log('Parent:', val.val, obj.val, objVal);
 
         map.set(
           obj.val,
           new DynamicUIPropState(
             obj.type,
-            objMap.get(val.val)?.get(obj.val),
+            objVal,
             obj.description,
             lmap,
             obj.isRequired,
             obj.willReplaceOnChanges
           )
         );
+
+        console.log(map);
       });
     }
   }
@@ -447,13 +486,13 @@ export class PlaygroundComponent implements OnInit {
       .pipe(take(1))
       .subscribe({
         next: (res) => {
-          this.items = JSON.parse(JSON.stringify(res));
+          this.items = JSON.parse(JSON.stringify(res, replacer), reviver);
           this.items.forEach((item) => {
             item.inletMap = new Map<string, LineCoordinates>(
-              JSON.parse(item.inletMapString)
+              JSON.parse(item.inletMapString, reviver)
             );
             item.outletMap = new Map<string, LineCoordinates>(
-              JSON.parse(item.outletMapString)
+              JSON.parse(item.outletMapString, reviver)
             );
           });
           this._processLineData();
@@ -461,13 +500,13 @@ export class PlaygroundComponent implements OnInit {
         error: (_) => {
           let data = this._localStorageService.getLocalState();
           if (data != null) {
-            this.items = JSON.parse(data);
+            this.items = JSON.parse(data, reviver);
             this.items.forEach((item) => {
               item.inletMap = new Map<string, LineCoordinates>(
-                JSON.parse(item.inletMapString)
+                JSON.parse(item.inletMapString, reviver)
               );
               item.outletMap = new Map<string, LineCoordinates>(
-                JSON.parse(item.outletMapString)
+                JSON.parse(item.outletMapString, reviver)
               );
             });
             this._processLineData();
@@ -495,7 +534,7 @@ export class PlaygroundComponent implements OnInit {
   }
 
   private _processResponse(val: string): void {
-    var data = JSON.parse(val);
+    var data = JSON.parse(val, reviver);
     //console.log(data['message']);
   }
 

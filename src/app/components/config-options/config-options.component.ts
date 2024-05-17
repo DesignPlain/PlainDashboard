@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalDialogService } from '../services/modal-dialog.service';
 import { OverlayConfig } from '@angular/cdk/overlay';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faGear } from '@fortawesome/free-solid-svg-icons';
+import { ModalDialogService } from 'src/app/services/modal-dialog.service';
 
 @Component({
   selector: 'app-config-options',

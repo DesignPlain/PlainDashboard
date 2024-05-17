@@ -1,7 +1,11 @@
 <div class="container">
   <h2 class="header">{{ resourceType[currentResource] }}</h2>
   <div class="inputform">
-    <app-resource-config-fields class="subform" [config]="config">
+    <app-resource-config-fields
+      class="subform"
+      [config]="config"
+      (configUpdateEvent)="UpdateResourceConfig($event)"
+    >
     </app-resource-config-fields>
   </div>
   <div class="apply" (click)="submit()">Save</div>
