@@ -1,29 +1,74 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { InstanceFromTemplateBootDisk } from "../types/InstanceFromTemplateBootDisk";
-import { InstanceFromTemplateNetworkInterface } from "../types/InstanceFromTemplateNetworkInterface";
-import { InstanceFromTemplateAttachedDisk } from "../types/InstanceFromTemplateAttachedDisk";
-import { InstanceFromTemplateParams } from "../types/InstanceFromTemplateParams";
-import { InstanceFromTemplateGuestAccelerator } from "../types/InstanceFromTemplateGuestAccelerator";
-import { InstanceFromTemplateConfidentialInstanceConfig } from "../types/InstanceFromTemplateConfidentialInstanceConfig";
-import { InstanceFromTemplateServiceAccount } from "../types/InstanceFromTemplateServiceAccount";
-import { InstanceFromTemplateShieldedInstanceConfig } from "../types/InstanceFromTemplateShieldedInstanceConfig";
-import { InstanceFromTemplateNetworkPerformanceConfig } from "../types/InstanceFromTemplateNetworkPerformanceConfig";
-import { InstanceFromTemplateReservationAffinity } from "../types/InstanceFromTemplateReservationAffinity";
-import { InstanceFromTemplateScratchDisk } from "../types/InstanceFromTemplateScratchDisk";
-import { InstanceFromTemplateScheduling } from "../types/InstanceFromTemplateScheduling";
-import { InstanceFromTemplateAdvancedMachineFeatures } from "../types/InstanceFromTemplateAdvancedMachineFeatures";
+import {
+  Compute_InstanceFromTemplateGuestAccelerator,
+  Compute_InstanceFromTemplateGuestAccelerator_GetTypes,
+} from "../types/Compute_InstanceFromTemplateGuestAccelerator";
+import {
+  Compute_InstanceFromTemplateScheduling,
+  Compute_InstanceFromTemplateScheduling_GetTypes,
+} from "../types/Compute_InstanceFromTemplateScheduling";
+import {
+  Compute_InstanceFromTemplateAdvancedMachineFeatures,
+  Compute_InstanceFromTemplateAdvancedMachineFeatures_GetTypes,
+} from "../types/Compute_InstanceFromTemplateAdvancedMachineFeatures";
+import {
+  Compute_InstanceFromTemplateConfidentialInstanceConfig,
+  Compute_InstanceFromTemplateConfidentialInstanceConfig_GetTypes,
+} from "../types/Compute_InstanceFromTemplateConfidentialInstanceConfig";
+import {
+  Compute_InstanceFromTemplateNetworkInterface,
+  Compute_InstanceFromTemplateNetworkInterface_GetTypes,
+} from "../types/Compute_InstanceFromTemplateNetworkInterface";
+import {
+  Compute_InstanceFromTemplateNetworkPerformanceConfig,
+  Compute_InstanceFromTemplateNetworkPerformanceConfig_GetTypes,
+} from "../types/Compute_InstanceFromTemplateNetworkPerformanceConfig";
+import {
+  Compute_InstanceFromTemplateReservationAffinity,
+  Compute_InstanceFromTemplateReservationAffinity_GetTypes,
+} from "../types/Compute_InstanceFromTemplateReservationAffinity";
+import {
+  Compute_InstanceFromTemplateBootDisk,
+  Compute_InstanceFromTemplateBootDisk_GetTypes,
+} from "../types/Compute_InstanceFromTemplateBootDisk";
+import {
+  Compute_InstanceFromTemplateShieldedInstanceConfig,
+  Compute_InstanceFromTemplateShieldedInstanceConfig_GetTypes,
+} from "../types/Compute_InstanceFromTemplateShieldedInstanceConfig";
+import {
+  Compute_InstanceFromTemplateAttachedDisk,
+  Compute_InstanceFromTemplateAttachedDisk_GetTypes,
+} from "../types/Compute_InstanceFromTemplateAttachedDisk";
+import {
+  Compute_InstanceFromTemplateScratchDisk,
+  Compute_InstanceFromTemplateScratchDisk_GetTypes,
+} from "../types/Compute_InstanceFromTemplateScratchDisk";
+import {
+  Compute_InstanceFromTemplateServiceAccount,
+  Compute_InstanceFromTemplateServiceAccount_GetTypes,
+} from "../types/Compute_InstanceFromTemplateServiceAccount";
+import {
+  Compute_InstanceFromTemplateParams,
+  Compute_InstanceFromTemplateParams_GetTypes,
+} from "../types/Compute_InstanceFromTemplateParams";
 
 export interface InstanceFromTemplateArgs {
-  // Metadata key/value pairs made available within the instance.
-  Metadata?: Map<string, string>;
-
   /*
-A unique name for the resource, required by GCE.
-Changing this forces a new resource to be created.
+A set of key/value label pairs assigned to the instance. --Note--: This field is non-authoritative, and will only manage
+the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on
+the resource.
 */
-  Name?: string;
+  Labels?: Map<string, string>;
+
+  // The machine type to create.
+  MachineType?: string;
 
   /*
 Name or self link of an instance
@@ -34,51 +79,53 @@ instance templates through their unique id (`self_link_unique` attribute).
 */
   SourceInstanceTemplate?: string;
 
-  /*
-A set of key/value label pairs assigned to the instance. --Note--: This field is non-authoritative, and will only manage
-the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on
-the resource.
-*/
-  Labels?: Map<string, string>;
-
-  // The scheduling strategy being used by the instance.
-  Scheduling?: InstanceFromTemplateScheduling;
-
-  /*
-The Confidential VM config being used by the instance. on_host_maintenance has to be set to TERMINATE or this will fail
-to create.
-*/
-  ConfidentialInstanceConfig?: InstanceFromTemplateConfidentialInstanceConfig;
-
-  // A brief description of the resource.
-  Description?: string;
+  // Whether deletion protection is enabled on this instance.
+  DeletionProtection?: boolean;
 
   // Desired status of the instance. Either "RUNNING" or "TERMINATED".
   DesiredStatus?: string;
 
+  /*
+Configures network performance settings for the instance. If not specified, the instance will be created with its
+default network performance configuration.
+*/
+  NetworkPerformanceConfig?: Compute_InstanceFromTemplateNetworkPerformanceConfig;
+
+  // Metadata key/value pairs made available within the instance.
+  Metadata?: Map<string, string>;
+
+  // Stores additional params passed with the request, but not persisted as part of resource payload.
+  Params?: Compute_InstanceFromTemplateParams;
+
+  // Specifies the reservations that this instance can consume from.
+  ReservationAffinity?: Compute_InstanceFromTemplateReservationAffinity;
+
   // A list of self_links of resource policies to attach to the instance. Currently a max of 1 resource policy is supported.
   ResourcePolicies?: string;
 
-  // Controls for advanced machine-related behavior features.
-  AdvancedMachineFeatures?: InstanceFromTemplateAdvancedMachineFeatures;
+  // The boot disk for the instance.
+  BootDisk?: Compute_InstanceFromTemplateBootDisk;
+
+  // List of the type and count of accelerator cards attached to the instance.
+  GuestAccelerators?: Array<Compute_InstanceFromTemplateGuestAccelerator>;
+
+  // Metadata startup scripts made available within the instance.
+  MetadataStartupScript?: string;
+
+  /*
+A unique name for the resource, required by GCE.
+Changing this forces a new resource to be created.
+*/
+  Name?: string;
+
+  // The scheduling strategy being used by the instance.
+  Scheduling?: Compute_InstanceFromTemplateScheduling;
+
+  // The list of tags attached to the instance.
+  Tags?: Array<string>;
 
   // Whether sending and receiving of packets with non-matching source or destination IPs is allowed.
   CanIpForward?: boolean;
-
-  // The minimum CPU platform specified for the VM instance.
-  MinCpuPlatform?: string;
-
-  // The service account to attach to the instance.
-  ServiceAccount?: InstanceFromTemplateServiceAccount;
-
-  // The shielded vm config being used by the instance.
-  ShieldedInstanceConfig?: InstanceFromTemplateShieldedInstanceConfig;
-
-  /*
-If true, allows Terraform to stop the instance to update its properties. If you try to update a property that requires
-stopping the instance without setting this field, the update will fail.
-*/
-  AllowStoppingForUpdate?: boolean;
 
   /*
 A custom hostname for the instance. Must be a fully qualified DNS name and RFC-1035-valid. Valid format is a series of
@@ -87,29 +134,20 @@ entire hostname must not exceed 253 characters. Changing this forces a new resou
 */
   Hostname?: string;
 
+  // The shielded vm config being used by the instance.
+  ShieldedInstanceConfig?: Compute_InstanceFromTemplateShieldedInstanceConfig;
+
+  // Controls for advanced machine-related behavior features.
+  AdvancedMachineFeatures?: Compute_InstanceFromTemplateAdvancedMachineFeatures;
+
   /*
-Configures network performance settings for the instance. If not specified, the instance will be created with its
-default network performance configuration.
+The Confidential VM config being used by the instance. on_host_maintenance has to be set to TERMINATE or this will fail
+to create.
 */
-  NetworkPerformanceConfig?: InstanceFromTemplateNetworkPerformanceConfig;
-
-  // Specifies the reservations that this instance can consume from.
-  ReservationAffinity?: InstanceFromTemplateReservationAffinity;
-
-  // The boot disk for the instance.
-  BootDisk?: InstanceFromTemplateBootDisk;
+  ConfidentialInstanceConfig?: Compute_InstanceFromTemplateConfidentialInstanceConfig;
 
   // Whether the instance has virtual displays enabled.
   EnableDisplay?: boolean;
-
-  // The networks attached to the instance.
-  NetworkInterfaces?: Array<InstanceFromTemplateNetworkInterface>;
-
-  // List of disks attached to the instance
-  AttachedDisks?: Array<InstanceFromTemplateAttachedDisk>;
-
-  // Stores additional params passed with the request, but not persisted as part of resource payload.
-  Params?: InstanceFromTemplateParams;
 
   /*
 The ID of the project in which the resource belongs. If self_link is provided, this value is ignored. If neither
@@ -117,14 +155,20 @@ self_link nor project are provided, the provider project is used.
 */
   Project?: string;
 
-  // Whether deletion protection is enabled on this instance.
-  DeletionProtection?: boolean;
+  // List of disks attached to the instance
+  AttachedDisks?: Array<Compute_InstanceFromTemplateAttachedDisk>;
 
-  // The machine type to create.
-  MachineType?: string;
+  // A brief description of the resource.
+  Description?: string;
 
-  // Metadata startup scripts made available within the instance.
-  MetadataStartupScript?: string;
+  // The networks attached to the instance.
+  NetworkInterfaces?: Array<Compute_InstanceFromTemplateNetworkInterface>;
+
+  // The scratch disks attached to the instance.
+  ScratchDisks?: Array<Compute_InstanceFromTemplateScratchDisk>;
+
+  // The service account to attach to the instance.
+  ServiceAccount?: Compute_InstanceFromTemplateServiceAccount;
 
   /*
 The zone that the machine should be created in. If not
@@ -136,53 +180,79 @@ from `gcp.compute.Instance` are likewise exported here.
 */
   Zone?: string;
 
-  // List of the type and count of accelerator cards attached to the instance.
-  GuestAccelerators?: Array<InstanceFromTemplateGuestAccelerator>;
+  /*
+If true, allows Terraform to stop the instance to update its properties. If you try to update a property that requires
+stopping the instance without setting this field, the update will fail.
+*/
+  AllowStoppingForUpdate?: boolean;
 
-  // The scratch disks attached to the instance.
-  ScratchDisks?: Array<InstanceFromTemplateScratchDisk>;
-
-  // The list of tags attached to the instance.
-  Tags?: Array<string>;
+  // The minimum CPU platform specified for the VM instance.
+  MinCpuPlatform?: string;
 }
 export class InstanceFromTemplate extends Resource {
-  // The server-assigned unique identifier of this instance.
-  public InstanceId?: string;
+  // Whether sending and receiving of packets with non-matching source or destination IPs is allowed.
+  public CanIpForward?: boolean;
 
   /*
-A set of key/value label pairs assigned to the instance. --Note--: This field is non-authoritative, and will only manage
-the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on
-the resource.
+A custom hostname for the instance. Must be a fully qualified DNS name and RFC-1035-valid. Valid format is a series of
+labels 1-63 characters long matching the regular expression [a-z]([-a-z0-9]-[a-z0-9]), concatenated with periods. The
+entire hostname must not exceed 253 characters. Changing this forces a new resource to be created.
 */
-  public Labels?: Map<string, string>;
+  public Hostname?: string;
 
-  // Stores additional params passed with the request, but not persisted as part of resource payload.
-  public Params?: InstanceFromTemplateParams;
+  // The unique fingerprint of the labels.
+  public LabelFingerprint?: string;
 
-  // Controls for advanced machine-related behavior features.
-  public AdvancedMachineFeatures?: InstanceFromTemplateAdvancedMachineFeatures;
+  // The scheduling strategy being used by the instance.
+  public Scheduling?: Compute_InstanceFromTemplateScheduling;
 
-  /*
-The Confidential VM config being used by the instance. on_host_maintenance has to be set to TERMINATE or this will fail
-to create.
-*/
-  public ConfidentialInstanceConfig?: InstanceFromTemplateConfidentialInstanceConfig;
-
-  /*
-Current status of the instance. This could be one of the following values: PROVISIONING, STAGING, RUNNING, STOPPING,
-SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see [Instance
-life cycle](https://cloud.google.com/compute/docs/instances/instance-life-cycle).
-*/
-  public CurrentStatus?: string;
-
-  /*
-The ID of the project in which the resource belongs. If self_link is provided, this value is ignored. If neither
-self_link nor project are provided, the provider project is used.
-*/
-  public Project?: string;
+  // The machine type to create.
+  public MachineType?: string;
 
   // The scratch disks attached to the instance.
-  public ScratchDisks?: Array<InstanceFromTemplateScratchDisk>;
+  public ScratchDisks?: Array<Compute_InstanceFromTemplateScratchDisk>;
+
+  // The unique fingerprint of the tags.
+  public TagsFingerprint?: string;
+
+  // Controls for advanced machine-related behavior features.
+  public AdvancedMachineFeatures?: Compute_InstanceFromTemplateAdvancedMachineFeatures;
+
+  /*
+If true, allows Terraform to stop the instance to update its properties. If you try to update a property that requires
+stopping the instance without setting this field, the update will fail.
+*/
+  public AllowStoppingForUpdate?: boolean;
+
+  // Metadata startup scripts made available within the instance.
+  public MetadataStartupScript?: string;
+
+  // The networks attached to the instance.
+  public NetworkInterfaces?: Array<Compute_InstanceFromTemplateNetworkInterface>;
+
+  // The URI of the created resource.
+  public SelfLink?: string;
+
+  // A brief description of the resource.
+  public Description?: string;
+
+  /*
+All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Terraform, other
+clients and services.
+*/
+  public EffectiveLabels?: Map<string, string>;
+
+  // Whether the instance has virtual displays enabled.
+  public EnableDisplay?: boolean;
+
+  /*
+A unique name for the resource, required by GCE.
+Changing this forces a new resource to be created.
+*/
+  public Name?: string;
+
+  // Specifies the reservations that this instance can consume from.
+  public ReservationAffinity?: Compute_InstanceFromTemplateReservationAffinity;
 
   /*
 The zone that the machine should be created in. If not
@@ -195,86 +265,66 @@ from `gcp.compute.Instance` are likewise exported here.
   public Zone?: string;
 
   /*
-All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Terraform, other
-clients and services.
+Current status of the instance. This could be one of the following values: PROVISIONING, STAGING, RUNNING, STOPPING,
+SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see [Instance
+life cycle](https://cloud.google.com/compute/docs/instances/instance-life-cycle).
 */
-  public EffectiveLabels?: Map<string, string>;
+  public CurrentStatus?: string;
+
+  // The server-assigned unique identifier of this instance.
+  public InstanceId?: string;
 
   /*
-A custom hostname for the instance. Must be a fully qualified DNS name and RFC-1035-valid. Valid format is a series of
-labels 1-63 characters long matching the regular expression [a-z]([-a-z0-9]-[a-z0-9]), concatenated with periods. The
-entire hostname must not exceed 253 characters. Changing this forces a new resource to be created.
+A set of key/value label pairs assigned to the instance. --Note--: This field is non-authoritative, and will only manage
+the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on
+the resource.
 */
-  public Hostname?: string;
-
-  // The unique fingerprint of the labels.
-  public LabelFingerprint?: string;
-
-  // A list of self_links of resource policies to attach to the instance. Currently a max of 1 resource policy is supported.
-  public ResourcePolicies?: string;
-
-  // The list of tags attached to the instance.
-  public Tags?: Array<string>;
-
-  // List of the type and count of accelerator cards attached to the instance.
-  public GuestAccelerators?: Array<InstanceFromTemplateGuestAccelerator>;
+  public Labels?: Map<string, string>;
 
   // Metadata key/value pairs made available within the instance.
   public Metadata?: Map<string, string>;
 
-  // Metadata startup scripts made available within the instance.
-  public MetadataStartupScript?: string;
-
-  /*
-A unique name for the resource, required by GCE.
-Changing this forces a new resource to be created.
-*/
-  public Name?: string;
-
-  // The combination of labels configured directly on the resource and default labels configured on the provider.
-  public PulumiLabels?: Map<string, string>;
-
-  // Specifies the reservations that this instance can consume from.
-  public ReservationAffinity?: InstanceFromTemplateReservationAffinity;
-
-  // Desired status of the instance. Either "RUNNING" or "TERMINATED".
-  public DesiredStatus?: string;
-
   // The service account to attach to the instance.
-  public ServiceAccount?: InstanceFromTemplateServiceAccount;
+  public ServiceAccount?: Compute_InstanceFromTemplateServiceAccount;
 
-  // The unique fingerprint of the tags.
-  public TagsFingerprint?: string;
-
-  /*
-If true, allows Terraform to stop the instance to update its properties. If you try to update a property that requires
-stopping the instance without setting this field, the update will fail.
-*/
-  public AllowStoppingForUpdate?: boolean;
+  // The list of tags attached to the instance.
+  public Tags?: Array<string>;
 
   // List of disks attached to the instance
-  public AttachedDisks?: Array<InstanceFromTemplateAttachedDisk>;
+  public AttachedDisks?: Array<Compute_InstanceFromTemplateAttachedDisk>;
 
-  // The boot disk for the instance.
-  public BootDisk?: InstanceFromTemplateBootDisk;
-
-  // Whether deletion protection is enabled on this instance.
-  public DeletionProtection?: boolean;
-
-  // A brief description of the resource.
-  public Description?: string;
-
-  // The networks attached to the instance.
-  public NetworkInterfaces?: Array<InstanceFromTemplateNetworkInterface>;
-
-  // The URI of the created resource.
-  public SelfLink?: string;
+  /*
+The Confidential VM config being used by the instance. on_host_maintenance has to be set to TERMINATE or this will fail
+to create.
+*/
+  public ConfidentialInstanceConfig?: Compute_InstanceFromTemplateConfidentialInstanceConfig;
 
   // The CPU platform used by this instance.
   public CpuPlatform?: string;
 
   // The unique fingerprint of the metadata.
   public MetadataFingerprint?: string;
+
+  /*
+The ID of the project in which the resource belongs. If self_link is provided, this value is ignored. If neither
+self_link nor project are provided, the provider project is used.
+*/
+  public Project?: string;
+
+  // The boot disk for the instance.
+  public BootDisk?: Compute_InstanceFromTemplateBootDisk;
+
+  // Whether deletion protection is enabled on this instance.
+  public DeletionProtection?: boolean;
+
+  // The combination of labels configured directly on the resource and default labels configured on the provider.
+  public PulumiLabels?: Map<string, string>;
+
+  // A list of self_links of resource policies to attach to the instance. Currently a max of 1 resource policy is supported.
+  public ResourcePolicies?: string;
+
+  // The shielded vm config being used by the instance.
+  public ShieldedInstanceConfig?: Compute_InstanceFromTemplateShieldedInstanceConfig;
 
   /*
 Name or self link of an instance
@@ -285,14 +335,11 @@ instance templates through their unique id (`self_link_unique` attribute).
 */
   public SourceInstanceTemplate?: string;
 
-  // Whether sending and receiving of packets with non-matching source or destination IPs is allowed.
-  public CanIpForward?: boolean;
+  // Desired status of the instance. Either "RUNNING" or "TERMINATED".
+  public DesiredStatus?: string;
 
-  // Whether the instance has virtual displays enabled.
-  public EnableDisplay?: boolean;
-
-  // The machine type to create.
-  public MachineType?: string;
+  // List of the type and count of accelerator cards attached to the instance.
+  public GuestAccelerators?: Array<Compute_InstanceFromTemplateGuestAccelerator>;
 
   // The minimum CPU platform specified for the VM instance.
   public MinCpuPlatform?: string;
@@ -301,170 +348,260 @@ instance templates through their unique id (`self_link_unique` attribute).
 Configures network performance settings for the instance. If not specified, the instance will be created with its
 default network performance configuration.
 */
-  public NetworkPerformanceConfig?: InstanceFromTemplateNetworkPerformanceConfig;
+  public NetworkPerformanceConfig?: Compute_InstanceFromTemplateNetworkPerformanceConfig;
 
-  // The scheduling strategy being used by the instance.
-  public Scheduling?: InstanceFromTemplateScheduling;
-
-  // The shielded vm config being used by the instance.
-  public ShieldedInstanceConfig?: InstanceFromTemplateShieldedInstanceConfig;
+  // Stores additional params passed with the request, but not persisted as part of resource payload.
+  public Params?: Compute_InstanceFromTemplateParams;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "ConfidentialInstanceConfig",
-        "The Confidential VM config being used by the instance. on_host_maintenance has to be set to TERMINATE or this will fail\nto create.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "MetadataStartupScript",
-        "Metadata startup scripts made available within the instance.",
-      ),
-      new DynamicUIProps(
-        InputType.DropDown,
-        "GuestAccelerators",
-        "List of the type and count of accelerator cards attached to the instance.",
-      ),
-      new DynamicUIProps(
-        InputType.DropDown,
-        "Tags",
-        "The list of tags attached to the instance.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
+        InputType.Map,
         "Labels",
         "A set of key/value label pairs assigned to the instance. **Note**: This field is non-authoritative, and will only manage\nthe labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on\nthe resource.",
+        InputType_Map_GetTypes(),
+        false,
+        false,
       ),
       new DynamicUIProps(
-        InputType.String,
-        "MinCpuPlatform",
-        "The minimum CPU platform specified for the VM instance.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
+        InputType.Object,
         "ServiceAccount",
         "The service account to attach to the instance.",
+        Compute_InstanceFromTemplateServiceAccount_GetTypes(),
+        false,
+        false,
       ),
       new DynamicUIProps(
-        InputType.DropDown,
-        "AttachedDisks",
-        "List of disks attached to the instance",
+        InputType.Object,
+        "NetworkPerformanceConfig",
+        "Configures network performance settings for the instance. If not specified, the instance will be created with its\ndefault network performance configuration.",
+        Compute_InstanceFromTemplateNetworkPerformanceConfig_GetTypes(),
+        false,
+        true,
       ),
       new DynamicUIProps(
-        InputType.String,
-        "MachineType",
-        "The machine type to create.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "DesiredStatus",
-        'Desired status of the instance. Either "RUNNING" or "TERMINATED".',
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ResourcePolicies",
-        "A list of self_links of resource policies to attach to the instance. Currently a max of 1 resource policy is supported.",
-      ),
-      new DynamicUIProps(
-        InputType.CheckBox,
-        "AllowStoppingForUpdate",
-        "If true, allows Terraform to stop the instance to update its properties. If you try to update a property that requires\nstopping the instance without setting this field, the update will fail.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ShieldedInstanceConfig",
-        "The shielded vm config being used by the instance.",
-      ),
-      new DynamicUIProps(
-        InputType.CheckBox,
-        "EnableDisplay",
-        "Whether the instance has virtual displays enabled.",
-      ),
-      new DynamicUIProps(
-        InputType.DropDown,
-        "ScratchDisks",
-        "The scratch disks attached to the instance.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
+        InputType.Map,
         "Metadata",
         "Metadata key/value pairs made available within the instance.",
+        InputType_Map_GetTypes(),
+        false,
+        false,
       ),
       new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "A unique name for the resource, required by GCE.\nChanging this forces a new resource to be created.",
-      ),
-      new DynamicUIProps(
-        InputType.CheckBox,
-        "CanIpForward",
-        "Whether sending and receiving of packets with non-matching source or destination IPs is allowed.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
+        InputType.Object,
         "BootDisk",
         "The boot disk for the instance.",
-      ),
-      new DynamicUIProps(
-        InputType.CheckBox,
-        "DeletionProtection",
-        "Whether deletion protection is enabled on this instance.",
+        Compute_InstanceFromTemplateBootDisk_GetTypes(),
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Description",
         "A brief description of the resource.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "NetworkPerformanceConfig",
-        "Configures network performance settings for the instance. If not specified, the instance will be created with its\ndefault network performance configuration.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ReservationAffinity",
-        "Specifies the reservations that this instance can consume from.",
-      ),
-      new DynamicUIProps(
-        InputType.DropDown,
-        "NetworkInterfaces",
-        "The networks attached to the instance.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "SourceInstanceTemplate",
-        "Name or self link of an instance\ntemplate to create the instance based on. It is recommended to reference\ninstance templates through their unique id (`self_link_unique` attribute).\n\n- - -",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "AdvancedMachineFeatures",
-        "Controls for advanced machine-related behavior features.",
+        [],
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The ID of the project in which the resource belongs. If self_link is provided, this value is ignored. If neither\nself_link nor project are provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "ScratchDisks",
+        "The scratch disks attached to the instance.",
+        Compute_InstanceFromTemplateScratchDisk_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "Params",
+        "Stores additional params passed with the request, but not persisted as part of resource payload.",
+        Compute_InstanceFromTemplateParams_GetTypes(),
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Scheduling",
-        "The scheduling strategy being used by the instance.",
+        "ResourcePolicies",
+        "A list of self_links of resource policies to attach to the instance. Currently a max of 1 resource policy is supported.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "Tags",
+        "The list of tags attached to the instance.",
+        InputType_String_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "EnableDisplay",
+        "Whether the instance has virtual displays enabled.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "SourceInstanceTemplate",
+        "Name or self link of an instance\ntemplate to create the instance based on. It is recommended to reference\ninstance templates through their unique id (`self_link_unique` attribute).\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "DeletionProtection",
+        "Whether deletion protection is enabled on this instance.",
+        [],
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Hostname",
         "A custom hostname for the instance. Must be a fully qualified DNS name and RFC-1035-valid. Valid format is a series of\nlabels 1-63 characters long matching the regular expression [a-z]([-a-z0-9]*[a-z0-9]), concatenated with periods. The\nentire hostname must not exceed 253 characters. Changing this forces a new resource to be created.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "AdvancedMachineFeatures",
+        "Controls for advanced machine-related behavior features.",
+        Compute_InstanceFromTemplateAdvancedMachineFeatures_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "ReservationAffinity",
+        "Specifies the reservations that this instance can consume from.",
+        Compute_InstanceFromTemplateReservationAffinity_GetTypes(),
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Params",
-        "Stores additional params passed with the request, but not persisted as part of resource payload.",
+        "Name",
+        "A unique name for the resource, required by GCE.\nChanging this forces a new resource to be created.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "ShieldedInstanceConfig",
+        "The shielded vm config being used by the instance.",
+        Compute_InstanceFromTemplateShieldedInstanceConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "AllowStoppingForUpdate",
+        "If true, allows Terraform to stop the instance to update its properties. If you try to update a property that requires\nstopping the instance without setting this field, the update will fail.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "MachineType",
+        "The machine type to create.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "DesiredStatus",
+        'Desired status of the instance. Either "RUNNING" or "TERMINATED".',
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "MetadataStartupScript",
+        "Metadata startup scripts made available within the instance.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "MinCpuPlatform",
+        "The minimum CPU platform specified for the VM instance.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "GuestAccelerators",
+        "List of the type and count of accelerator cards attached to the instance.",
+        Compute_InstanceFromTemplateGuestAccelerator_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "CanIpForward",
+        "Whether sending and receiving of packets with non-matching source or destination IPs is allowed.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "ConfidentialInstanceConfig",
+        "The Confidential VM config being used by the instance. on_host_maintenance has to be set to TERMINATE or this will fail\nto create.",
+        Compute_InstanceFromTemplateConfidentialInstanceConfig_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "AttachedDisks",
+        "List of disks attached to the instance",
+        Compute_InstanceFromTemplateAttachedDisk_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "Scheduling",
+        "The scheduling strategy being used by the instance.",
+        Compute_InstanceFromTemplateScheduling_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "NetworkInterfaces",
+        "The networks attached to the instance.",
+        Compute_InstanceFromTemplateNetworkInterface_GetTypes(),
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Zone",
         "The zone that the machine should be created in. If not\nset, the provider zone is used.\n\nIn addition to these, all arguments from `gcp.compute.Instance` are supported\nas a way to override the properties in the template. All exported attributes\nfrom `gcp.compute.Instance` are likewise exported here.",
+        [],
+        false,
+        true,
       ),
     ];
   }

@@ -1,9 +1,0 @@
-import { PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressions } from "./PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressions";
-
-export interface PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationCondition {
-  /*
-An expression, consisting of an operator and conditions.
-Structure is documented below.
-*/
-  Expressions?: PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressions;
-}

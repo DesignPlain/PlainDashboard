@@ -1,27 +1,46 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { NodePoolManagement } from "../types/NodePoolManagement";
-import { NodePoolNetworkConfig } from "../types/NodePoolNetworkConfig";
-import { NodePoolNodeConfig } from "../types/NodePoolNodeConfig";
-import { NodePoolQueuedProvisioning } from "../types/NodePoolQueuedProvisioning";
-import { NodePoolUpgradeSettings } from "../types/NodePoolUpgradeSettings";
-import { NodePoolPlacementPolicy } from "../types/NodePoolPlacementPolicy";
-import { NodePoolAutoscaling } from "../types/NodePoolAutoscaling";
+import {
+  Container_NodePoolAutoscaling,
+  Container_NodePoolAutoscaling_GetTypes,
+} from "../types/Container_NodePoolAutoscaling";
+import {
+  Container_NodePoolUpgradeSettings,
+  Container_NodePoolUpgradeSettings_GetTypes,
+} from "../types/Container_NodePoolUpgradeSettings";
+import {
+  Container_NodePoolPlacementPolicy,
+  Container_NodePoolPlacementPolicy_GetTypes,
+} from "../types/Container_NodePoolPlacementPolicy";
+import {
+  Container_NodePoolQueuedProvisioning,
+  Container_NodePoolQueuedProvisioning_GetTypes,
+} from "../types/Container_NodePoolQueuedProvisioning";
+import {
+  Container_NodePoolNetworkConfig,
+  Container_NodePoolNetworkConfig_GetTypes,
+} from "../types/Container_NodePoolNetworkConfig";
+import {
+  Container_NodePoolNodeConfig,
+  Container_NodePoolNodeConfig_GetTypes,
+} from "../types/Container_NodePoolNodeConfig";
+import {
+  Container_NodePoolManagement,
+  Container_NodePoolManagement_GetTypes,
+} from "../types/Container_NodePoolManagement";
 
 export interface NodePoolArgs {
   /*
-The network configuration of the pool. Such as
-configuration for [Adding Pod IP address ranges](https://cloud.google.com/kubernetes-engine/docs/how-to/multi-pod-cidr)) to the node pool. Or enabling private nodes. Structure is
-documented below
+Specifies a custom placement policy for the
+nodes.
 */
-  NetworkConfig?: NodePoolNetworkConfig;
-
-  /*
-Parameters used in creating the node pool. See
-gcp.container.Cluster for schema.
-*/
-  NodeConfig?: NodePoolNodeConfig;
+  PlacementPolicy?: Container_NodePoolPlacementPolicy;
 
   /*
 Specifies node pool-level settings of queued provisioning.
@@ -29,14 +48,7 @@ Structure is documented below.
 
 <a name="nested_autoscaling"></a>The `autoscaling` block supports (either total or per zone limits are required):
 */
-  QueuedProvisioning?: NodePoolQueuedProvisioning;
-
-  /*
-The cluster to create the node pool for. Cluster must be present in `location` provided for clusters. May be specified in the format `projects/{{project}}/locations/{{location}}/clusters/{{cluster}}` or as just the name of the cluster.
-
-- - -
-*/
-  Cluster?: string;
+  QueuedProvisioning?: Container_NodePoolQueuedProvisioning;
 
   /*
 The initial number of nodes for the pool. In
@@ -59,23 +71,23 @@ for more information.
   MaxPodsPerNode?: number;
 
   /*
-The name of the node pool. If left blank, the provider will
-auto-generate a unique name.
+Creates a unique name for the node pool beginning
+with the specified prefix. Conflicts with `name`.
 */
-  Name?: string;
+  NamePrefix?: string;
 
   /*
-The location (region or zone) of the cluster.
-
-- - -
+The network configuration of the pool. Such as
+configuration for [Adding Pod IP address ranges](https://cloud.google.com/kubernetes-engine/docs/how-to/multi-pod-cidr)) to the node pool. Or enabling private nodes. Structure is
+documented below
 */
-  Location?: string;
+  NetworkConfig?: Container_NodePoolNetworkConfig;
 
   /*
-Specify node upgrade settings to change how GKE upgrades nodes.
-The maximum number of nodes upgraded simultaneously is limited to 20. Structure is documented below.
+Parameters used in creating the node pool. See
+gcp.container.Cluster for schema.
 */
-  UpgradeSettings?: NodePoolUpgradeSettings;
+  NodeConfig?: Container_NodePoolNodeConfig;
 
   /*
 The Kubernetes version for the nodes in this pool. Note that if this field
@@ -88,10 +100,29 @@ when fuzzy versions are used. See the `gcp.container.getEngineVersions` data sou
   Version?: string;
 
   /*
-Specifies a custom placement policy for the
-nodes.
+The location (region or zone) of the cluster.
+
+- - -
 */
-  PlacementPolicy?: NodePoolPlacementPolicy;
+  Location?: string;
+
+  /*
+Node management configuration, wherein auto-repair and
+auto-upgrade is configured. Structure is documented below.
+*/
+  Management?: Container_NodePoolManagement;
+
+  /*
+The name of the node pool. If left blank, the provider will
+auto-generate a unique name.
+*/
+  Name?: string;
+
+  /*
+The number of nodes per instance group. This field can be used to
+update the number of nodes per instance group but should not be used alongside `autoscaling`.
+*/
+  NodeCount?: number;
 
   /*
 The ID of the project in which to create the node pool. If blank,
@@ -103,25 +134,7 @@ the provider-configured project will be used.
 Configuration required by cluster autoscaler to adjust
 the size of the node pool to the current cluster usage. Structure is documented below.
 */
-  Autoscaling?: NodePoolAutoscaling;
-
-  /*
-Node management configuration, wherein auto-repair and
-auto-upgrade is configured. Structure is documented below.
-*/
-  Management?: NodePoolManagement;
-
-  /*
-Creates a unique name for the node pool beginning
-with the specified prefix. Conflicts with `name`.
-*/
-  NamePrefix?: string;
-
-  /*
-The number of nodes per instance group. This field can be used to
-update the number of nodes per instance group but should not be used alongside `autoscaling`.
-*/
-  NodeCount?: number;
+  Autoscaling?: Container_NodePoolAutoscaling;
 
   /*
 The list of zones in which the node pool's nodes should be located. Nodes must
@@ -134,39 +147,26 @@ upon being unset. You must manually reconcile the list of zones with your
 cluster.
 */
   NodeLocations?: Array<string>;
+
+  /*
+The cluster to create the node pool for. Cluster must be present in `location` provided for clusters. May be specified in the format `projects/{{project}}/locations/{{location}}/clusters/{{cluster}}` or as just the name of the cluster.
+
+- - -
+*/
+  Cluster?: string;
+
+  /*
+Specify node upgrade settings to change how GKE upgrades nodes.
+The maximum number of nodes upgraded simultaneously is limited to 20. Structure is documented below.
+*/
+  UpgradeSettings?: Container_NodePoolUpgradeSettings;
 }
 export class NodePool extends Resource {
   /*
-Configuration required by cluster autoscaler to adjust
-the size of the node pool to the current cluster usage. Structure is documented below.
+Specify node upgrade settings to change how GKE upgrades nodes.
+The maximum number of nodes upgraded simultaneously is limited to 20. Structure is documented below.
 */
-  public Autoscaling?: NodePoolAutoscaling;
-
-  /*
-Node management configuration, wherein auto-repair and
-auto-upgrade is configured. Structure is documented below.
-*/
-  public Management?: NodePoolManagement;
-
-  /*
-Creates a unique name for the node pool beginning
-with the specified prefix. Conflicts with `name`.
-*/
-  public NamePrefix?: string;
-
-  /*
-The name of the node pool. If left blank, the provider will
-auto-generate a unique name.
-*/
-  public Name?: string;
-
-  /*
-Specifies node pool-level settings of queued provisioning.
-Structure is documented below.
-
-<a name="nested_autoscaling"></a>The `autoscaling` block supports (either total or per zone limits are required):
-*/
-  public QueuedProvisioning?: NodePoolQueuedProvisioning;
+  public UpgradeSettings?: Container_NodePoolUpgradeSettings;
 
   /*
 The Kubernetes version for the nodes in this pool. Note that if this field
@@ -179,6 +179,12 @@ when fuzzy versions are used. See the `gcp.container.getEngineVersions` data sou
   public Version?: string;
 
   /*
+Configuration required by cluster autoscaler to adjust
+the size of the node pool to the current cluster usage. Structure is documented below.
+*/
+  public Autoscaling?: Container_NodePoolAutoscaling;
+
+  /*
 The initial number of nodes for the pool. In
 regional or multi-zonal clusters, this is the number of nodes per zone. Changing
 this will force recreation of the resource. WARNING: Resizing your node pool manually
@@ -189,24 +195,20 @@ ignore subsqeuent changes to this field.
 */
   public InitialNodeCount?: number;
 
-  // The resource URLs of the managed instance groups associated with this node pool.
-  public InstanceGroupUrls?: Array<string>;
+  /*
+The maximum number of pods per node in this node pool.
+Note that this does not work on node pools which are "route-based" - that is, node
+pools belonging to clusters that do not have IP Aliasing enabled.
+See the [official documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr)
+for more information.
+*/
+  public MaxPodsPerNode?: number;
 
   /*
-The location (region or zone) of the cluster.
-
-- - -
+Creates a unique name for the node pool beginning
+with the specified prefix. Conflicts with `name`.
 */
-  public Location?: string;
-
-  // List of instance group URLs which have been assigned to this node pool.
-  public ManagedInstanceGroupUrls?: Array<string>;
-
-  /*
-Specify node upgrade settings to change how GKE upgrades nodes.
-The maximum number of nodes upgraded simultaneously is limited to 20. Structure is documented below.
-*/
-  public UpgradeSettings?: NodePoolUpgradeSettings;
+  public NamePrefix?: string;
 
   /*
 The cluster to create the node pool for. Cluster must be present in `location` provided for clusters. May be specified in the format `projects/{{project}}/locations/{{location}}/clusters/{{cluster}}` or as just the name of the cluster.
@@ -215,11 +217,55 @@ The cluster to create the node pool for. Cluster must be present in `location` p
 */
   public Cluster?: string;
 
+  // The resource URLs of the managed instance groups associated with this node pool.
+  public InstanceGroupUrls?: Array<string>;
+
+  // List of instance group URLs which have been assigned to this node pool.
+  public ManagedInstanceGroupUrls?: Array<string>;
+
+  /*
+Node management configuration, wherein auto-repair and
+auto-upgrade is configured. Structure is documented below.
+*/
+  public Management?: Container_NodePoolManagement;
+
   /*
 Parameters used in creating the node pool. See
 gcp.container.Cluster for schema.
 */
-  public NodeConfig?: NodePoolNodeConfig;
+  public NodeConfig?: Container_NodePoolNodeConfig;
+
+  /*
+The ID of the project in which to create the node pool. If blank,
+the provider-configured project will be used.
+*/
+  public Project?: string;
+
+  /*
+The location (region or zone) of the cluster.
+
+- - -
+*/
+  public Location?: string;
+
+  /*
+The name of the node pool. If left blank, the provider will
+auto-generate a unique name.
+*/
+  public Name?: string;
+
+  /*
+The network configuration of the pool. Such as
+configuration for [Adding Pod IP address ranges](https://cloud.google.com/kubernetes-engine/docs/how-to/multi-pod-cidr)) to the node pool. Or enabling private nodes. Structure is
+documented below
+*/
+  public NetworkConfig?: Container_NodePoolNetworkConfig;
+
+  /*
+The number of nodes per instance group. This field can be used to
+update the number of nodes per instance group but should not be used alongside `autoscaling`.
+*/
+  public NodeCount?: number;
 
   /*
 The list of zones in which the node pool's nodes should be located. Nodes must
@@ -233,129 +279,160 @@ cluster.
 */
   public NodeLocations?: Array<string>;
 
-  /*
-The ID of the project in which to create the node pool. If blank,
-the provider-configured project will be used.
-*/
-  public Project?: string;
+  //
+  public Operation?: string;
 
   /*
 Specifies a custom placement policy for the
 nodes.
 */
-  public PlacementPolicy?: NodePoolPlacementPolicy;
+  public PlacementPolicy?: Container_NodePoolPlacementPolicy;
 
   /*
-The maximum number of pods per node in this node pool.
-Note that this does not work on node pools which are "route-based" - that is, node
-pools belonging to clusters that do not have IP Aliasing enabled.
-See the [official documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr)
-for more information.
-*/
-  public MaxPodsPerNode?: number;
+Specifies node pool-level settings of queued provisioning.
+Structure is documented below.
 
-  /*
-The network configuration of the pool. Such as
-configuration for [Adding Pod IP address ranges](https://cloud.google.com/kubernetes-engine/docs/how-to/multi-pod-cidr)) to the node pool. Or enabling private nodes. Structure is
-documented below
+<a name="nested_autoscaling"></a>The `autoscaling` block supports (either total or per zone limits are required):
 */
-  public NetworkConfig?: NodePoolNetworkConfig;
-
-  /*
-The number of nodes per instance group. This field can be used to
-update the number of nodes per instance group but should not be used alongside `autoscaling`.
-*/
-  public NodeCount?: number;
-
-  //
-  public Operation?: string;
+  public QueuedProvisioning?: Container_NodePoolQueuedProvisioning;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
+        InputType.Object,
+        "PlacementPolicy",
+        "Specifies a custom placement policy for the\nnodes.",
+        Container_NodePoolPlacementPolicy_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "Management",
+        "Node management configuration, wherein auto-repair and\nauto-upgrade is configured. Structure is documented below.",
+        Container_NodePoolManagement_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "Autoscaling",
+        "Configuration required by cluster autoscaler to adjust\nthe size of the node pool to the current cluster usage. Structure is documented below.",
+        Container_NodePoolAutoscaling_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "NodeLocations",
+        "The list of zones in which the node pool's nodes should be located. Nodes must\nbe in the region of their regional cluster or in the same region as their\ncluster's zone for zonal clusters. If unspecified, the cluster-level\n`node_locations` will be used.\n\n> Note: `node_locations` will not revert to the cluster's default set of zones\nupon being unset. You must manually reconcile the list of zones with your\ncluster.",
+        InputType_String_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
         InputType.Number,
         "MaxPodsPerNode",
         'The maximum number of pods per node in this node pool.\nNote that this does not work on node pools which are "route-based" - that is, node\npools belonging to clusters that do not have IP Aliasing enabled.\nSee the [official documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr)\nfor more information.',
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
-        InputType.String,
-        "PlacementPolicy",
-        "Specifies a custom placement policy for the\nnodes.",
-      ),
-      new DynamicUIProps(
-        InputType.Number,
-        "InitialNodeCount",
-        "The initial number of nodes for the pool. In\nregional or multi-zonal clusters, this is the number of nodes per zone. Changing\nthis will force recreation of the resource. WARNING: Resizing your node pool manually\nmay change this value in your existing cluster, which will trigger destruction\nand recreation on the next provider run (to rectify the discrepancy).  If you don't\nneed this value, don't set it.  If you do need it, you can use a lifecycle block to\nignore subsqeuent changes to this field.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "QueuedProvisioning",
-        'Specifies node pool-level settings of queued provisioning.\nStructure is documented below.\n\n<a name="nested_autoscaling"></a>The `autoscaling` block supports (either total or per zone limits are required):',
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "The name of the node pool. If left blank, the provider will\nauto-generate a unique name.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Location",
-        "The location (region or zone) of the cluster.\n\n- - -",
+        InputType.Object,
+        "NodeConfig",
+        "Parameters used in creating the node pool. See\ngcp.container.Cluster for schema.",
+        Container_NodePoolNodeConfig_GetTypes(),
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Version",
         "The Kubernetes version for the nodes in this pool. Note that if this field\nand `auto_upgrade` are both specified, they will fight each other for what the node version should\nbe, so setting both is highly discouraged. While a fuzzy version can be specified, it's\nrecommended that you specify explicit versions as the provider will see spurious diffs\nwhen fuzzy versions are used. See the `gcp.container.getEngineVersions` data source's\n`version_prefix` field to approximate fuzzy versions in a provider-compatible way.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which to create the node pool. If blank,\nthe provider-configured project will be used.",
+        [],
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.Number,
         "NodeCount",
         "The number of nodes per instance group. This field can be used to\nupdate the number of nodes per instance group but should not be used alongside `autoscaling`.",
+        [],
+        false,
+        false,
       ),
       new DynamicUIProps(
-        InputType.String,
-        "NetworkConfig",
-        "The network configuration of the pool. Such as\nconfiguration for [Adding Pod IP address ranges](https://cloud.google.com/kubernetes-engine/docs/how-to/multi-pod-cidr)) to the node pool. Or enabling private nodes. Structure is\ndocumented below",
+        InputType.Object,
+        "QueuedProvisioning",
+        'Specifies node pool-level settings of queued provisioning.\nStructure is documented below.\n\n<a name="nested_autoscaling"></a>The `autoscaling` block supports (either total or per zone limits are required):',
+        Container_NodePoolQueuedProvisioning_GetTypes(),
+        false,
+        true,
       ),
       new DynamicUIProps(
-        InputType.String,
-        "Cluster",
-        "The cluster to create the node pool for. Cluster must be present in `location` provided for clusters. May be specified in the format `projects/{{project}}/locations/{{location}}/clusters/{{cluster}}` or as just the name of the cluster.\n\n- - -",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Autoscaling",
-        "Configuration required by cluster autoscaler to adjust\nthe size of the node pool to the current cluster usage. Structure is documented below.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Management",
-        "Node management configuration, wherein auto-repair and\nauto-upgrade is configured. Structure is documented below.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "NodeConfig",
-        "Parameters used in creating the node pool. See\ngcp.container.Cluster for schema.",
+        InputType.Number,
+        "InitialNodeCount",
+        "The initial number of nodes for the pool. In\nregional or multi-zonal clusters, this is the number of nodes per zone. Changing\nthis will force recreation of the resource. WARNING: Resizing your node pool manually\nmay change this value in your existing cluster, which will trigger destruction\nand recreation on the next provider run (to rectify the discrepancy).  If you don't\nneed this value, don't set it.  If you do need it, you can use a lifecycle block to\nignore subsqeuent changes to this field.",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "NamePrefix",
         "Creates a unique name for the node pool beginning\nwith the specified prefix. Conflicts with `name`.",
-      ),
-      new DynamicUIProps(
-        InputType.DropDown,
-        "NodeLocations",
-        "The list of zones in which the node pool's nodes should be located. Nodes must\nbe in the region of their regional cluster or in the same region as their\ncluster's zone for zonal clusters. If unspecified, the cluster-level\n`node_locations` will be used.\n\n> Note: `node_locations` will not revert to the cluster's default set of zones\nupon being unset. You must manually reconcile the list of zones with your\ncluster.",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
+        "Cluster",
+        "The cluster to create the node pool for. Cluster must be present in `location` provided for clusters. May be specified in the format `projects/{{project}}/locations/{{location}}/clusters/{{cluster}}` or as just the name of the cluster.\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "NetworkConfig",
+        "The network configuration of the pool. Such as\nconfiguration for [Adding Pod IP address ranges](https://cloud.google.com/kubernetes-engine/docs/how-to/multi-pod-cidr)) to the node pool. Or enabling private nodes. Structure is\ndocumented below",
+        Container_NodePoolNetworkConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Location",
+        "The location (region or zone) of the cluster.\n\n- - -",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Name",
+        "The name of the node pool. If left blank, the provider will\nauto-generate a unique name.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Project",
+        "The ID of the project in which to create the node pool. If blank,\nthe provider-configured project will be used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
         "UpgradeSettings",
         "Specify node upgrade settings to change how GKE upgrades nodes.\nThe maximum number of nodes upgraded simultaneously is limited to 20. Structure is documented below.",
+        Container_NodePoolUpgradeSettings_GetTypes(),
+        false,
+        false,
       ),
     ];
   }

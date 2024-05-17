@@ -1,112 +1,12 @@
 <div class="container">
   <h2 class="header">{{ resourceType[currentResource] }}</h2>
   <div class="inputform">
-    <div *ngFor="let item of config | keyvalue" [ngSwitch]="item.value.type">
-      <div *ngSwitchCase="inputType.String" class="in">
-        <div class="span">
-          <span>{{ item.key }}</span
-          ><fa-icon
-            (mouseenter)="show = item.key"
-            (mouseleave)="show = ''"
-            class="i1"
-            [icon]="faInfo"
-          />
-          <div *ngIf="show == item.key" class="tool-tip">
-            {{ item.value.description }}
-          </div>
-        </div>
-        <input
-          #box
-          type="text"
-          class="input"
-          placeholder="{{ item.value.val }}"
-          value="{{ item.value.val }}"
-          (focusout)="addToMap(item.key, box.value, item.value.type)"
-        />
-      </div>
-      <div *ngSwitchCase="inputType.Number" class="in">
-        <div class="span">
-          <span>{{ item.key }}</span
-          ><fa-icon
-            (mouseenter)="show = item.key"
-            (mouseleave)="show = ''"
-            class="i1"
-            [icon]="faInfo"
-          />
-          <div *ngIf="show == item.key" class="tool-tip">
-            {{ item.value.description }}
-          </div>
-        </div>
-        <input
-          #box
-          type="number"
-          class="input"
-          placeholder="{{ item.value.val }}"
-          value="{{ item.value.val }}"
-          (focusout)="addToMap(item.key, box.value, item.value.type)"
-        />
-      </div>
-      <div *ngSwitchCase="inputType.File" class="in">
-        <div class="span">
-          <span>{{ item.key }}</span
-          ><fa-icon
-            (mouseenter)="show = item.key"
-            (mouseleave)="show = ''"
-            class="i1"
-            [icon]="faInfo"
-          />
-          <div *ngIf="show == item.key" class="tool-tip">
-            {{ item.value.description }}
-          </div>
-        </div>
-        <input
-          #box
-          type="file"
-          class="input"
-          placeholder="{{ item.value.val }}"
-          value="{{ item.value.val }}"
-          (focusout)="addToMap(item.key, box.value, item.value.type)"
-        />
-      </div>
-      <div *ngSwitchCase="inputType.CheckBox" class="in">
-        <div class="span">
-          <span>{{ item.key }}</span
-          ><fa-icon
-            (mouseenter)="show = item.key"
-            (mouseleave)="show = ''"
-            class="i1"
-            [icon]="faInfo"
-          />
-          <div *ngIf="show == item.key" class="tool-tip">
-            {{ item.value.description }}
-          </div>
-        </div>
-        <input
-          #box
-          type="checkbox"
-          class="checkbox"
-          value="{{ item.value.val }}"
-          placeholder="{{ item.value.val }}"
-          value="{{ item.value.val }}"
-          (focusout)="addToMap(item.key, box.value, item.value.type)"
-        />
-      </div>
-      <div *ngSwitchCase="inputType.DropDown" class="in">
-        <div class="span">
-          <span>{{ item.key }}</span
-          ><fa-icon
-            (mouseenter)="show = item.key"
-            (mouseleave)="show = ''"
-            class="i1"
-            [icon]="faInfo"
-          />
-          <div *ngIf="show == item.key" class="tool-tip">
-            {{ item.value.description }}
-          </div>
-        </div>
-        <app-select></app-select>
-      </div>
-    </div>
+    <app-resource-config-fields
+      class="subform"
+      [config]="config"
+      (configUpdateEvent)="UpdateResourceConfig($event)"
+    >
+    </app-resource-config-fields>
   </div>
   <div class="apply" (click)="submit()">Save</div>
   <br />

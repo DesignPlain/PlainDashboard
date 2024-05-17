@@ -1,7 +1,15 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { ClusterNodeTypeConfig } from "../types/ClusterNodeTypeConfig";
+import {
+  Vmwareengine_ClusterNodeTypeConfig,
+  Vmwareengine_ClusterNodeTypeConfig_GetTypes,
+} from "../types/Vmwareengine_ClusterNodeTypeConfig";
 
 export interface ClusterArgs {
   /*
@@ -17,7 +25,7 @@ The map of cluster node types in this cluster,
 where the key is canonical identifier of the node type (corresponds to the NodeType).
 Structure is documented below.
 */
-  NodeTypeConfigs?: Array<ClusterNodeTypeConfig>;
+  NodeTypeConfigs?: Array<Vmwareengine_ClusterNodeTypeConfig>;
 
   /*
 The resource name of the private cloud to create a new cluster in.
@@ -59,24 +67,33 @@ The map of cluster node types in this cluster,
 where the key is canonical identifier of the node type (corresponds to the NodeType).
 Structure is documented below.
 */
-  public NodeTypeConfigs?: Array<ClusterNodeTypeConfig>;
+  public NodeTypeConfigs?: Array<Vmwareengine_ClusterNodeTypeConfig>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.DropDown,
+        InputType.String,
+        "Name",
+        "The ID of the Cluster.\n\n\n- - -",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
         "NodeTypeConfigs",
         "The map of cluster node types in this cluster,\nwhere the key is canonical identifier of the node type (corresponds to the NodeType).\nStructure is documented below.",
+        Vmwareengine_ClusterNodeTypeConfig_GetTypes(),
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Parent",
         "The resource name of the private cloud to create a new cluster in.\nResource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.\nFor example: projects/my-project/locations/us-west1-a/privateClouds/my-cloud",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "The ID of the Cluster.\n\n\n- - -",
+        [],
+        true,
+        true,
       ),
     ];
   }

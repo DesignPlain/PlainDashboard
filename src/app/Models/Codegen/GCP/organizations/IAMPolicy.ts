@@ -1,4 +1,9 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
@@ -41,13 +46,19 @@ organization-level access.
     return [
       new DynamicUIProps(
         InputType.String,
-        "PolicyData",
-        "The `gcp.organizations.getIAMPolicy` data source that represents\nthe IAM policy that will be applied to the organization. The policy will be\nmerged with any existing policy applied to the organization.\n\nChanging this updates the policy.\n\nDeleting this removes all policies from the organization, locking out users without\norganization-level access.",
+        "OrgId",
+        "The organization id of the target organization.",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "OrgId",
-        "The organization id of the target organization.",
+        "PolicyData",
+        "The `gcp.organizations.getIAMPolicy` data source that represents\nthe IAM policy that will be applied to the organization. The policy will be\nmerged with any existing policy applied to the organization.\n\nChanging this updates the policy.\n\nDeleting this removes all policies from the organization, locking out users without\norganization-level access.",
+        [],
+        true,
+        false,
       ),
     ];
   }

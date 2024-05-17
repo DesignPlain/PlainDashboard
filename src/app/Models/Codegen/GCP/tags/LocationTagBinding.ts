@@ -1,4 +1,9 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
@@ -39,16 +44,25 @@ Location of the target resource.
         InputType.String,
         "Location",
         "Location of the target resource.\n\n- - -",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Parent",
         "The full resource name of the resource the TagValue is bound to. E.g. //cloudresourcemanager.googleapis.com/projects/123",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "TagValue",
         "The TagValue of the TagBinding. Must be of the form tagValues/456.",
+        [],
+        true,
+        true,
       ),
     ];
   }

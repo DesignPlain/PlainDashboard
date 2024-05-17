@@ -1,7 +1,15 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { DenyPolicyRule } from "../types/DenyPolicyRule";
+import {
+  Iam_DenyPolicyRule,
+  Iam_DenyPolicyRule_GetTypes,
+} from "../types/Iam_DenyPolicyRule";
 
 export interface DenyPolicyArgs {
   // The display name of the rule.
@@ -17,12 +25,9 @@ export interface DenyPolicyArgs {
 Rules to be applied.
 Structure is documented below.
 */
-  Rules?: Array<DenyPolicyRule>;
+  Rules?: Array<Iam_DenyPolicyRule>;
 }
 export class DenyPolicy extends Resource {
-  // The display name of the rule.
-  public DisplayName?: string;
-
   // The hash of the resource. Used internally during updates.
   public Etag?: string;
 
@@ -36,25 +41,44 @@ export class DenyPolicy extends Resource {
 Rules to be applied.
 Structure is documented below.
 */
-  public Rules?: Array<DenyPolicyRule>;
+  public Rules?: Array<Iam_DenyPolicyRule>;
+
+  // The display name of the rule.
+  public DisplayName?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.DropDown,
-        "Rules",
-        "Rules to be applied.\nStructure is documented below.",
-      ),
-      new DynamicUIProps(
         InputType.String,
         "DisplayName",
         "The display name of the rule.",
+        [],
+        false,
+        false,
       ),
-      new DynamicUIProps(InputType.String, "Name", "The name of the policy."),
+      new DynamicUIProps(
+        InputType.String,
+        "Name",
+        "The name of the policy.",
+        [],
+        false,
+        true,
+      ),
       new DynamicUIProps(
         InputType.String,
         "Parent",
         "The attachment point is identified by its URL-encoded full resource name.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "Rules",
+        "Rules to be applied.\nStructure is documented below.",
+        Iam_DenyPolicyRule_GetTypes(),
+        true,
+        false,
       ),
     ];
   }

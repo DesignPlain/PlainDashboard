@@ -18,14 +18,16 @@ import { LineComponent } from './components/line/line.component';
 import { ToolBarComponent } from './components/tool-bar/tool-bar.component';
 import { CardComponent } from './components/card/card.component';
 import { ConfigModalComponent } from './components/config-modal/config-modal.component';
-import { ConfigOptionsComponent } from './config-options/config-options.component';
-import { SelectModule } from './utilityComponents/select/select.component.module';
+import { ConfigOptionsComponent } from './components/config-options/config-options.component';
+import { SelectModule } from './components/utilityComponents/select/select.component.module';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { ButtonModule } from 'primeng/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ResourceConfigFieldsComponent } from './components/resource-config-fields/resource-config-fields.component';
+import { KeyValueArrayComponent } from './components/utilityComponents/key-value-array/key-value-array.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +36,14 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     PlaygroundComponent,
     InputSearchComponent,
     ResourceConfigComponent,
+    ResourceConfigFieldsComponent,
     ResizeObserverDirective,
     LineComponent,
     ToolBarComponent,
     CardComponent,
     ConfigModalComponent,
     ConfigOptionsComponent,
+    KeyValueArrayComponent,
   ],
   imports: [
     BrowserModule,

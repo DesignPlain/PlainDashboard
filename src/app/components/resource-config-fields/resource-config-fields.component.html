@@ -1,0 +1,229 @@
+<div *ngFor="let item of config | keyvalue" [ngSwitch]="item.value.type">
+  <div *ngSwitchCase="inputType.String" class="in">
+    <div class="span" *ngIf="item.value.description != 'GenericType'">
+      <span>{{ item.key }}</span>
+      <span *ngIf="item.value.isRequired" class="req_icon">*</span>
+      <fa-icon
+        (mouseenter)="show = item.key"
+        (mouseleave)="show = ''"
+        [icon]="faInfo"
+      />
+      <div *ngIf="show == item.key" class="tool-tip">
+        {{ item.value.description }}
+      </div>
+      <fa-icon
+        (mouseenter)="show = item.key"
+        (mouseleave)="show = ''"
+        class="restart-icon"
+        [icon]="faRotate"
+        *ngIf="item.value.willReplaceOnChanges"
+      />
+    </div>
+
+    <input
+      #box
+      type="text"
+      class="input"
+      placeholder="{{
+        item.value.val != undefined ? item.value.val : 'Enter ' + item.key
+      }}"
+      value="{{ item.value.val }}"
+      (focusout)="addToMap(item.key, box.value, item.value.type)"
+    />
+  </div>
+
+  <div *ngSwitchCase="inputType.Object" class="in-sub">
+    <div class="span">
+      <span>{{ item.key }}</span>
+      <span *ngIf="item.value.isRequired" class="req_icon">*</span>
+      <fa-icon
+        (mouseenter)="show = item.key"
+        (mouseleave)="show = ''"
+        class="i1"
+        [icon]="faInfo"
+      />
+      <div *ngIf="show == item.key" class="tool-tip">
+        {{ item.value.description }}
+      </div>
+      <fa-icon
+        (mouseenter)="show = item.key"
+        (mouseleave)="show = ''"
+        class="restart-icon"
+        [icon]="faRotate"
+        *ngIf="item.value.willReplaceOnChanges"
+      />
+    </div>
+
+    <div class="sub-input-object">
+      <app-resource-config-fields
+        [parent]="item.key"
+        [config]="item.value.members"
+        (configUpdateEvent)="UpdateResourceConfig($event)"
+      ></app-resource-config-fields>
+    </div>
+  </div>
+
+  <div *ngSwitchCase="inputType.Number" class="in">
+    <div class="span" *ngIf="item.value.description != 'GenericType'">
+      <span>{{ item.key }}</span>
+      <span *ngIf="item.value.willReplaceOnChanges" class="req_icon">*</span>
+      <fa-icon
+        (mouseenter)="show = item.key"
+        (mouseleave)="show = ''"
+        class="i1"
+        [icon]="faInfo"
+      />
+      <div *ngIf="show == item.key" class="tool-tip">
+        {{ item.value.description }}
+      </div>
+      <fa-icon
+        (mouseenter)="show = item.key"
+        (mouseleave)="show = ''"
+        class="restart-icon"
+        [icon]="faRotate"
+        *ngIf="item.value.willReplaceOnChanges"
+      />
+    </div>
+
+    <input
+      #box
+      type="number"
+      class="input"
+      placeholder="{{
+        item.value.val != undefined ? item.value.val : 'Enter ' + item.key
+      }}"
+      value="{{ item.value.val }}"
+      (focusout)="addToMap(item.key, box.value, item.value.type)"
+    />
+  </div>
+
+  <div *ngSwitchCase="inputType.File" class="in">
+    <div class="span">
+      <span>{{ item.key }}</span>
+      <span *ngIf="item.value.isRequired" class="req_icon">*</span>
+      <fa-icon
+        (mouseenter)="show = item.key"
+        (mouseleave)="show = ''"
+        class="i1"
+        [icon]="faInfo"
+      />
+      <div *ngIf="show == item.key" class="tool-tip">
+        {{ item.value.description }}
+      </div>
+      <fa-icon
+        (mouseenter)="show = item.key"
+        (mouseleave)="show = ''"
+        class="restart-icon"
+        [icon]="faRotate"
+        *ngIf="item.value.willReplaceOnChanges"
+      />
+    </div>
+
+    <input
+      #box
+      type="file"
+      class="input"
+      placeholder="{{
+        item.value.val != undefined ? item.value.val : 'Enter ' + item.key
+      }}"
+      value="{{ item.value.val }}"
+      (focusout)="addToMap(item.key, box.value, item.value.type)"
+    />
+  </div>
+
+  <div *ngSwitchCase="inputType.Bool" class="in-check">
+    <div class="span-check">
+      <span>{{ item.key }}</span>
+      <span *ngIf="item.value.isRequired" class="req_icon">*</span>
+      <fa-icon
+        (mouseenter)="show = item.key"
+        (mouseleave)="show = ''"
+        class="i1"
+        [icon]="faInfo"
+      />
+      <div *ngIf="show == item.key" class="tool-tip">
+        {{ item.value.description }}
+      </div>
+      <fa-icon
+        (mouseenter)="show = item.key"
+        (mouseleave)="show = ''"
+        class="restart-icon"
+        [icon]="faRotate"
+        *ngIf="item.value.willReplaceOnChanges"
+      />
+    </div>
+    <input
+      #box
+      type="checkbox"
+      class="checkbox"
+      value="{{ item.value.val }}"
+      placeholder="{{
+        item.value.val != undefined ? item.value.val : 'Enter ' + item.key
+      }}"
+      value="{{ item.value.val }}"
+      (focusout)="addToMap(item.key, box.value, item.value.type)"
+    />
+  </div>
+
+  <div *ngSwitchCase="inputType.Array" class="in">
+    <div class="span">
+      <span>{{ item.key }}</span>
+      <span *ngIf="item.value.isRequired" class="req_icon">*</span>
+      <fa-icon
+        (mouseenter)="show = item.key"
+        (mouseleave)="show = ''"
+        class="i1"
+        [icon]="faInfo"
+      />
+      <div *ngIf="show == item.key" class="tool-tip">
+        {{ item.value.description }}
+      </div>
+      <fa-icon
+        (mouseenter)="show = item.key"
+        (mouseleave)="show = ''"
+        class="restart-icon"
+        [icon]="faRotate"
+        *ngIf="item.value.willReplaceOnChanges"
+      />
+    </div>
+    <key-value-array
+      [mode]="Mode.Array"
+      [data]="item.value.val"
+      class="arr-class"
+      [config]="item.value.members"
+      [parentRes]="item.key"
+      (configUpdateEvent)="UpdateResourceConfig($event)"
+    ></key-value-array>
+  </div>
+
+  <div *ngSwitchCase="inputType.Map" class="in">
+    <div class="span">
+      <span>{{ item.key }}</span>
+      <span *ngIf="item.value.isRequired" class="req_icon">*</span>
+      <fa-icon
+        (mouseenter)="show = item.key"
+        (mouseleave)="show = ''"
+        class="i1"
+        [icon]="faInfo"
+      />
+      <div *ngIf="show == item.key" class="tool-tip">
+        {{ item.value.description }}
+      </div>
+      <fa-icon
+        (mouseenter)="show = item.key"
+        (mouseleave)="show = ''"
+        class="restart-icon"
+        [icon]="faRotate"
+        *ngIf="item.value.willReplaceOnChanges"
+      />
+    </div>
+    <key-value-array
+      [mode]="Mode.Map"
+      class="arr-class"
+      [config]="item.value.members"
+      [data]="get_map_data(item.value.val)"
+      [parentRes]="item.key"
+      (configUpdateEvent)="UpdateResourceConfig($event)"
+    ></key-value-array>
+  </div>
+</div>

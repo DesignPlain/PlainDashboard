@@ -1,11 +1,19 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { TableIAMBindingCondition } from "../types/TableIAMBindingCondition";
+import {
+  Bigtable_TableIamBindingCondition,
+  Bigtable_TableIamBindingCondition_GetTypes,
+} from "../types/Bigtable_TableIamBindingCondition";
 
-export interface TableIAMBindingArgs {
+export interface TableIamBindingArgs {
   //
-  Condition?: TableIAMBindingCondition;
+  Condition?: Bigtable_TableIamBindingCondition;
 
   // The name or relative resource id of the instance that owns the table.
   Instance?: string;
@@ -21,7 +29,7 @@ is not provided, this provider will use the provider default.
 
   /*
 The role that should be applied. Only one
-`gcp.bigtable.TableIAMBinding` can be used per role. Note that custom roles must be of the format
+`gcp.bigtable.TableIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`. Read more about roles [here](https://cloud.google.com/bigtable/docs/access-control#roles).
 
 `gcp.bigtable.TableIamPolicy` only:
@@ -31,7 +39,7 @@ The role that should be applied. Only one
   /*
 The name or relative resource id of the table to manage IAM policies for.
 
-For `gcp.bigtable.TableIAMMember` or `gcp.bigtable.TableIAMBinding`:
+For `gcp.bigtable.TableIamMember` or `gcp.bigtable.TableIamBinding`:
 
 - `member/members` - (Required) Identities that will be granted the privilege in `role`.
 Each entry can have one of the following values:
@@ -44,10 +52,10 @@ Each entry can have one of the following values:
 */
   Table?: string;
 }
-export class TableIAMBinding extends Resource {
+export class TableIamBinding extends Resource {
   /*
 The role that should be applied. Only one
-`gcp.bigtable.TableIAMBinding` can be used per role. Note that custom roles must be of the format
+`gcp.bigtable.TableIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`. Read more about roles [here](https://cloud.google.com/bigtable/docs/access-control#roles).
 
 `gcp.bigtable.TableIamPolicy` only:
@@ -57,7 +65,7 @@ The role that should be applied. Only one
   /*
 The name or relative resource id of the table to manage IAM policies for.
 
-For `gcp.bigtable.TableIAMMember` or `gcp.bigtable.TableIAMBinding`:
+For `gcp.bigtable.TableIamMember` or `gcp.bigtable.TableIamBinding`:
 
 - `member/members` - (Required) Identities that will be granted the privilege in `role`.
 Each entry can have one of the following values:
@@ -71,7 +79,7 @@ Each entry can have one of the following values:
   public Table?: string;
 
   //
-  public Condition?: TableIAMBindingCondition;
+  public Condition?: Bigtable_TableIamBindingCondition;
 
   // (Computed) The etag of the tables's IAM policy.
   public Etag?: string;
@@ -91,27 +99,53 @@ is not provided, this provider will use the provider default.
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
+        InputType.Object,
+        "Condition",
+        "",
+        Bigtable_TableIamBindingCondition_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
         InputType.String,
         "Instance",
         "The name or relative resource id of the instance that owns the table.",
+        [],
+        true,
+        true,
       ),
-      new DynamicUIProps(InputType.DropDown, "Members", ""),
+      new DynamicUIProps(
+        InputType.Array,
+        "Members",
+        "",
+        InputType_String_GetTypes(),
+        true,
+        false,
+      ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The project in which the table belongs. If it\nis not provided, this provider will use the provider default.",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Role",
-        "The role that should be applied. Only one\n`gcp.bigtable.TableIAMBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`. Read more about roles [here](https://cloud.google.com/bigtable/docs/access-control#roles).\n\n`gcp.bigtable.TableIamPolicy` only:",
+        "The role that should be applied. Only one\n`gcp.bigtable.TableIamBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`. Read more about roles [here](https://cloud.google.com/bigtable/docs/access-control#roles).\n\n`gcp.bigtable.TableIamPolicy` only:",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Table",
-        "The name or relative resource id of the table to manage IAM policies for.\n\nFor `gcp.bigtable.TableIAMMember` or `gcp.bigtable.TableIAMBinding`:\n\n* `member/members` - (Required) Identities that will be granted the privilege in `role`.\nEach entry can have one of the following values:\n* **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.\n* **allAuthenticatedUsers**: A special identifier that represents anyone who is authenticated with a Google account or a service account.\n* **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.\n* **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.\n* **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.\n* **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.",
+        "The name or relative resource id of the table to manage IAM policies for.\n\nFor `gcp.bigtable.TableIamMember` or `gcp.bigtable.TableIamBinding`:\n\n* `member/members` - (Required) Identities that will be granted the privilege in `role`.\nEach entry can have one of the following values:\n* **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.\n* **allAuthenticatedUsers**: A special identifier that represents anyone who is authenticated with a Google account or a service account.\n* **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.\n* **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.\n* **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.\n* **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.",
+        [],
+        true,
+        true,
       ),
-      new DynamicUIProps(InputType.String, "Condition", ""),
     ];
   }
 }

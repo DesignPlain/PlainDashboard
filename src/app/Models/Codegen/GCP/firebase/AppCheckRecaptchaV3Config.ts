@@ -1,15 +1,13 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface AppCheckRecaptchaV3ConfigArgs {
-  /*
-Specifies the duration for which App Check tokens exchanged from reCAPTCHA V3 artifacts will be valid.
-If unset, a default value of 1 hour is assumed. Must be between 30 minutes and 7 days, inclusive.
-A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
-*/
-  TokenTtl?: string;
-
   /*
 The ID of an
 [Web App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.webApps#WebApp.FIELDS.app_id).
@@ -31,6 +29,13 @@ For security reasons, this field will never be populated in any response.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
   SiteSecret?: string;
+
+  /*
+Specifies the duration for which App Check tokens exchanged from reCAPTCHA V3 artifacts will be valid.
+If unset, a default value of 1 hour is assumed. Must be between 30 minutes and 7 days, inclusive.
+A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
+*/
+  TokenTtl?: string;
 }
 export class AppCheckRecaptchaV3Config extends Resource {
   /*
@@ -72,23 +77,35 @@ A duration in seconds with up to nine fractional digits, ending with 's'. Exampl
     return [
       new DynamicUIProps(
         InputType.String,
-        "TokenTtl",
-        "Specifies the duration for which App Check tokens exchanged from reCAPTCHA V3 artifacts will be valid.\nIf unset, a default value of 1 hour is assumed. Must be between 30 minutes and 7 days, inclusive.\nA duration in seconds with up to nine fractional digits, ending with 's'. Example: \"3.5s\".",
-      ),
-      new DynamicUIProps(
-        InputType.String,
         "AppId",
         "The ID of an\n[Web App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.webApps#WebApp.FIELDS.app_id).\n\n\n- - -",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "SiteSecret",
         "The site secret used to identify your service for reCAPTCHA v3 verification.\nFor security reasons, this field will never be populated in any response.\n**Note**: This property is sensitive and will not be displayed in the plan.",
+        [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "TokenTtl",
+        "Specifies the duration for which App Check tokens exchanged from reCAPTCHA V3 artifacts will be valid.\nIf unset, a default value of 1 hour is assumed. Must be between 30 minutes and 7 days, inclusive.\nA duration in seconds with up to nine fractional digits, ending with 's'. Example: \"3.5s\".",
+        [],
+        false,
+        false,
       ),
     ];
   }

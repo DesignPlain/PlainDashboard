@@ -1,23 +1,13 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface VariableArgs {
-  //
-  Value?: string;
-
-  /*
-The name of the variable to manage. Note that variable
-names can be hierarchical using slashes (e.g. "prod-variables/hostname").
-*/
-  Name?: string;
-
-  /*
-The name of the RuntimeConfig resource containing this
-variable.
-*/
-  Parent?: string;
-
   /*
 The ID of the project in which the resource belongs. If it
 is not provided, the provider project is used.
@@ -33,11 +23,23 @@ is specified, it must be base64 encoded and less than 4096 bytes in length.
 - - -
 */
   Text?: string;
+
+  //
+  Value?: string;
+
+  /*
+The name of the variable to manage. Note that variable
+names can be hierarchical using slashes (e.g. "prod-variables/hostname").
+*/
+  Name?: string;
+
+  /*
+The name of the RuntimeConfig resource containing this
+variable.
+*/
+  Parent?: string;
 }
 export class Variable extends Resource {
-  //
-  public Value?: string;
-
   /*
 The name of the variable to manage. Note that variable
 names can be hierarchical using slashes (e.g. "prod-variables/hostname").
@@ -73,28 +75,43 @@ Example: "2016-10-09T12:33:37.578138407Z".
 */
   public UpdateTime?: string;
 
+  //
+  public Value?: string;
+
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Value", ""),
+      new DynamicUIProps(
+        InputType.String,
+        "Text",
+        "or `value` - (Required) The content to associate with the variable.\nExactly one of `text` or `variable` must be specified. If `text` is specified,\nit must be a valid UTF-8 string and less than 4096 bytes in length. If `value`\nis specified, it must be base64 encoded and less than 4096 bytes in length.\n\n- - -",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(InputType.String, "Value", "", [], false, false),
       new DynamicUIProps(
         InputType.String,
         "Name",
         'The name of the variable to manage. Note that variable\nnames can be hierarchical using slashes (e.g. "prod-variables/hostname").',
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Parent",
         "The name of the RuntimeConfig resource containing this\nvariable.",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Text",
-        "or `value` - (Required) The content to associate with the variable.\nExactly one of `text` or `variable` must be specified. If `text` is specified,\nit must be a valid UTF-8 string and less than 4096 bytes in length. If `value`\nis specified, it must be base64 encoded and less than 4096 bytes in length.\n\n- - -",
+        [],
+        false,
+        true,
       ),
     ];
   }

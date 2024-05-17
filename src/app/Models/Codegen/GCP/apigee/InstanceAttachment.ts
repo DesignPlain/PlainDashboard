@@ -1,4 +1,9 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
@@ -37,11 +42,17 @@ in the format `organizations/{{org_name}}/instances/{{instance_name}}`.
         InputType.String,
         "Environment",
         "The resource ID of the environment.",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "InstanceId",
         "The Apigee instance associated with the Apigee environment,\nin the format `organizations/{{org_name}}/instances/{{instance_name}}`.\n\n\n- - -",
+        [],
+        true,
+        true,
       ),
     ];
   }

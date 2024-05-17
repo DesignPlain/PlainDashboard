@@ -1,16 +1,21 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { FulfillmentFeature } from "../types/FulfillmentFeature";
-import { FulfillmentGenericWebService } from "../types/FulfillmentGenericWebService";
+import {
+  Diagflow_FulfillmentFeature,
+  Diagflow_FulfillmentFeature_GetTypes,
+} from "../types/Diagflow_FulfillmentFeature";
+import {
+  Diagflow_FulfillmentGenericWebService,
+  Diagflow_FulfillmentGenericWebService_GetTypes,
+} from "../types/Diagflow_FulfillmentGenericWebService";
 
 export interface FulfillmentArgs {
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
   /*
 The human-readable name of the fulfillment, unique within the agent.
 
@@ -26,15 +31,27 @@ The human-readable name of the fulfillment, unique within the agent.
 The field defines whether the fulfillment is enabled for certain features.
 Structure is documented below.
 */
-  Features?: Array<FulfillmentFeature>;
+  Features?: Array<Diagflow_FulfillmentFeature>;
 
   /*
 Represents configuration for a generic web service. Dialogflow supports two mechanisms for authentications: - Basic authentication with username and password. - Authentication with additional authentication headers.
 Structure is documented below.
 */
-  GenericWebService?: FulfillmentGenericWebService;
+  GenericWebService?: Diagflow_FulfillmentGenericWebService;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  Project?: string;
 }
 export class Fulfillment extends Resource {
+  /*
+The unique identifier of the fulfillment.
+Format: projects/<Project ID>/agent/fulfillment - projects/<Project ID>/locations/<Location ID>/agent/fulfillment
+*/
+  public Name?: string;
+
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
@@ -56,19 +73,13 @@ The human-readable name of the fulfillment, unique within the agent.
 The field defines whether the fulfillment is enabled for certain features.
 Structure is documented below.
 */
-  public Features?: Array<FulfillmentFeature>;
+  public Features?: Array<Diagflow_FulfillmentFeature>;
 
   /*
 Represents configuration for a generic web service. Dialogflow supports two mechanisms for authentications: - Basic authentication with username and password. - Authentication with additional authentication headers.
 Structure is documented below.
 */
-  public GenericWebService?: FulfillmentGenericWebService;
-
-  /*
-The unique identifier of the fulfillment.
-Format: projects/<Project ID>/agent/fulfillment - projects/<Project ID>/locations/<Location ID>/agent/fulfillment
-*/
-  public Name?: string;
+  public GenericWebService?: Diagflow_FulfillmentGenericWebService;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
@@ -76,26 +87,41 @@ Format: projects/<Project ID>/agent/fulfillment - projects/<Project ID>/location
         InputType.String,
         "Project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "DisplayName",
         "The human-readable name of the fulfillment, unique within the agent.\n\n\n- - -",
+        [],
+        true,
+        false,
       ),
       new DynamicUIProps(
-        InputType.CheckBox,
+        InputType.Bool,
         "Enabled",
         "Whether fulfillment is enabled.",
+        [],
+        false,
+        false,
       ),
       new DynamicUIProps(
-        InputType.DropDown,
+        InputType.Array,
         "Features",
         "The field defines whether the fulfillment is enabled for certain features.\nStructure is documented below.",
+        Diagflow_FulfillmentFeature_GetTypes(),
+        false,
+        false,
       ),
       new DynamicUIProps(
-        InputType.String,
+        InputType.Object,
         "GenericWebService",
         "Represents configuration for a generic web service. Dialogflow supports two mechanisms for authentications: - Basic authentication with username and password. - Authentication with additional authentication headers.\nStructure is documented below.",
+        Diagflow_FulfillmentGenericWebService_GetTypes(),
+        false,
+        false,
       ),
     ];
   }

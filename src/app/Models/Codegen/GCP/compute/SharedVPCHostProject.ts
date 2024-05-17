@@ -1,4 +1,9 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
@@ -16,6 +21,9 @@ export class SharedVPCHostProject extends Resource {
         InputType.String,
         "Project",
         "The ID of the project that will serve as a Shared VPC host project",
+        [],
+        true,
+        true,
       ),
     ];
   }

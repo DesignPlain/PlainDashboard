@@ -48,14 +48,40 @@ export class ResourceListComponent {
       ProviderType.GCP,
       [
         new VisualResource(
-          'Compute instance',
+          'Compute Instance',
           ResourceType.COMPUTE_INSTANCE,
           '../../../assets/GCPIcons/compute_engine.png'
         ),
+
         new VisualResource(
           'VPC',
           ResourceType.COMPUTE_NETWORK,
           '../../../assets/GCPIcons/virtual_private_cloud.png'
+        ),
+        new VisualResource(
+          'Compute Subnet',
+          ResourceType.COMPUTE_SUBNETWORK,
+          '../../../assets/GCPIcons/network_topology.png'
+        ),
+        new VisualResource(
+          'Cloud Storage',
+          ResourceType.STORAGE_BUCKET,
+          '../../../assets/GCPIcons/cloud_storage.png'
+        ),
+        new VisualResource(
+          'Cloud Function',
+          ResourceType.CLOUDFUNCTIONS_FUNCTION,
+          '../../../assets/GCPIcons/cloud_functions.png'
+        ),
+        new VisualResource(
+          'Cloud SQL',
+          ResourceType.SQL_DATABASEINSTANCE,
+          '../../../assets/GCPIcons/cloud_sql.png'
+        ),
+        new VisualResource(
+          'Load Balancer',
+          ResourceType.COMPUTE_FORWARDINGRULE,
+          '../../../assets/GCPIcons/cloud_load_balancing.png'
         ),
       ],
     ],

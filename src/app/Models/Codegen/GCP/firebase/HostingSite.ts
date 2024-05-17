@@ -1,4 +1,9 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
@@ -62,16 +67,25 @@ domain name label.
         InputType.String,
         "AppId",
         "Optional. The [ID of a Web App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.webApps#WebApp.FIELDS.app_id)\nassociated with the Hosting site.",
+        [],
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "SiteId",
         "Required. Immutable. A globally unique identifier for the Hosting site. This identifier is\nused to construct the Firebase-provisioned subdomains for the site, so it must also be a valid\ndomain name label.",
+        [],
+        false,
+        true,
       ),
     ];
   }

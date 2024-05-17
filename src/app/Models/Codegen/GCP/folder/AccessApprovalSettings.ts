@@ -1,9 +1,27 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { AccessApprovalSettingsEnrolledService } from "../types/AccessApprovalSettingsEnrolledService";
+import {
+  Folder_AccessApprovalSettingsEnrolledService,
+  Folder_AccessApprovalSettingsEnrolledService_GetTypes,
+} from "../types/Folder_AccessApprovalSettingsEnrolledService";
 
 export interface AccessApprovalSettingsArgs {
+  // ID of the folder of the access approval settings.
+  FolderId?: string;
+
+  /*
+A list of email addresses to which notifications relating to approval requests should be sent.
+Notifications relating to a resource will be sent to all emails in the settings of ancestor
+resources of that resource. A maximum of 50 email addresses are allowed.
+*/
+  NotificationEmails?: Array<string>;
+
   /*
 The asymmetric crypto key version to use for signing approval requests.
 Empty active_key_version indicates that a Google-managed key should be used for signing.
@@ -18,19 +36,21 @@ to have explicit approval. Enrollment can only be done on an all or nothing basi
 A maximum of 10 enrolled services will be enforced, to be expanded as the set of supported services is expanded.
 Structure is documented below.
 */
-  EnrolledServices?: Array<AccessApprovalSettingsEnrolledService>;
-
-  // ID of the folder of the access approval settings.
-  FolderId?: string;
-
-  /*
-A list of email addresses to which notifications relating to approval requests should be sent.
-Notifications relating to a resource will be sent to all emails in the settings of ancestor
-resources of that resource. A maximum of 50 email addresses are allowed.
-*/
-  NotificationEmails?: Array<string>;
+  EnrolledServices?: Array<Folder_AccessApprovalSettingsEnrolledService>;
 }
 export class AccessApprovalSettings extends Resource {
+  // If the field is true, that indicates that at least one service is enrolled for Access Approval in one or more ancestors of the Folder.
+  public EnrolledAncestor?: boolean;
+
+  /*
+A list of Google Cloud Services for which the given resource has Access Approval enrolled.
+Access requests for the resource given by name against any of these services contained here will be required
+to have explicit approval. Enrollment can only be done on an all or nothing basis.
+A maximum of 10 enrolled services will be enforced, to be expanded as the set of supported services is expanded.
+Structure is documented below.
+*/
+  public EnrolledServices?: Array<Folder_AccessApprovalSettingsEnrolledService>;
+
   // ID of the folder of the access approval settings.
   public FolderId?: string;
 
@@ -62,39 +82,39 @@ This property will be ignored if set by an ancestor of the resource, and new non
   // If the field is true, that indicates that an ancestor of this Folder has set active_key_version.
   public AncestorHasActiveKeyVersion?: boolean;
 
-  // If the field is true, that indicates that at least one service is enrolled for Access Approval in one or more ancestors of the Folder.
-  public EnrolledAncestor?: boolean;
-
-  /*
-A list of Google Cloud Services for which the given resource has Access Approval enrolled.
-Access requests for the resource given by name against any of these services contained here will be required
-to have explicit approval. Enrollment can only be done on an all or nothing basis.
-A maximum of 10 enrolled services will be enforced, to be expanded as the set of supported services is expanded.
-Structure is documented below.
-*/
-  public EnrolledServices?: Array<AccessApprovalSettingsEnrolledService>;
-
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(
-        InputType.DropDown,
-        "NotificationEmails",
-        "A list of email addresses to which notifications relating to approval requests should be sent.\nNotifications relating to a resource will be sent to all emails in the settings of ancestor\nresources of that resource. A maximum of 50 email addresses are allowed.",
-      ),
       new DynamicUIProps(
         InputType.String,
         "ActiveKeyVersion",
         "The asymmetric crypto key version to use for signing approval requests.\nEmpty active_key_version indicates that a Google-managed key should be used for signing.\nThis property will be ignored if set by an ancestor of the resource, and new non-empty values may not be set.",
+        [],
+        false,
+        false,
       ),
       new DynamicUIProps(
-        InputType.DropDown,
+        InputType.Array,
         "EnrolledServices",
         "A list of Google Cloud Services for which the given resource has Access Approval enrolled.\nAccess requests for the resource given by name against any of these services contained here will be required\nto have explicit approval. Enrollment can only be done on an all or nothing basis.\nA maximum of 10 enrolled services will be enforced, to be expanded as the set of supported services is expanded.\nStructure is documented below.",
+        Folder_AccessApprovalSettingsEnrolledService_GetTypes(),
+        true,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "FolderId",
         "ID of the folder of the access approval settings.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "NotificationEmails",
+        "A list of email addresses to which notifications relating to approval requests should be sent.\nNotifications relating to a resource will be sent to all emails in the settings of ancestor\nresources of that resource. A maximum of 50 email addresses are allowed.",
+        InputType_String_GetTypes(),
+        false,
+        false,
       ),
     ];
   }

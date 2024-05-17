@@ -1,14 +1,22 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { ProjectCustomModuleCustomConfig } from "../types/ProjectCustomModuleCustomConfig";
+import {
+  Securitycenter_ProjectCustomModuleCustomConfig,
+  Securitycenter_ProjectCustomModuleCustomConfig_GetTypes,
+} from "../types/Securitycenter_ProjectCustomModuleCustomConfig";
 
 export interface ProjectCustomModuleArgs {
   /*
 The user specified custom configuration for the module.
 Structure is documented below.
 */
-  CustomConfig?: ProjectCustomModuleCustomConfig;
+  CustomConfig?: Securitycenter_ProjectCustomModuleCustomConfig;
 
   /*
 The display name of the Security Health Analytics custom module. This
@@ -32,6 +40,21 @@ If it is not provided, the provider project is used.
   Project?: string;
 }
 export class ProjectCustomModule extends Resource {
+  /*
+The user specified custom configuration for the module.
+Structure is documented below.
+*/
+  public CustomConfig?: Securitycenter_ProjectCustomModuleCustomConfig;
+
+  /*
+The display name of the Security Health Analytics custom module. This
+display name becomes the finding category for all findings that are
+returned by this custom module. The display name must be between 1 and
+128 characters, start with a lowercase letter, and contain alphanumeric
+characters or underscores only.
+*/
+  public DisplayName?: string;
+
   /*
 The enablement state of the custom module.
 Possible values are: `ENABLED`, `DISABLED`.
@@ -64,42 +87,39 @@ specifies the organization or folder from which the custom module is inherited.
 */
   public AncestorModule?: string;
 
-  /*
-The user specified custom configuration for the module.
-Structure is documented below.
-*/
-  public CustomConfig?: ProjectCustomModuleCustomConfig;
-
-  /*
-The display name of the Security Health Analytics custom module. This
-display name becomes the finding category for all findings that are
-returned by this custom module. The display name must be between 1 and
-128 characters, start with a lowercase letter, and contain alphanumeric
-characters or underscores only.
-*/
-  public DisplayName?: string;
-
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
+        "Project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
         "CustomConfig",
         "The user specified custom configuration for the module.\nStructure is documented below.",
+        Securitycenter_ProjectCustomModuleCustomConfig_GetTypes(),
+        true,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "DisplayName",
         "The display name of the Security Health Analytics custom module. This\ndisplay name becomes the finding category for all findings that are\nreturned by this custom module. The display name must be between 1 and\n128 characters, start with a lowercase letter, and contain alphanumeric\ncharacters or underscores only.",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "EnablementState",
         "The enablement state of the custom module.\nPossible values are: `ENABLED`, `DISABLED`.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        true,
+        false,
       ),
     ];
   }

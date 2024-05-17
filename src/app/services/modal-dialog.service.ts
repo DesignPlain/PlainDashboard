@@ -3,6 +3,7 @@ import { Injectable, Injector } from '@angular/core';
 import { ConfigModalComponent } from '../components/config-modal/config-modal.component';
 import { ComponentPortal } from '@angular/cdk/portal';
 import {
+  DynamicUIPropState,
   DynamicUIProps,
   ResourceConfigComponent,
 } from '../components/resource-config/resource-config.component';
@@ -37,7 +38,7 @@ export class ModalDialogService {
   public openComponentModal(
     currentIndex: number,
     currentResource: ResourceType,
-    config: Map<string, DynamicUIProps>,
+    config: Map<string, DynamicUIPropState>,
     currentOutput: Outputs[],
     comp: PlaygroundComponent
   ) {

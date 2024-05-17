@@ -1,0 +1,113 @@
+.add-title {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: small;
+}
+.add {
+  position: relative;
+  padding: 0px 2px 0px 2px;
+  align-items: center;
+  align-content: center;
+  color: black;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 100px;
+  left: -20px;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+
+  &:hover {
+    color: rgba(0, 161, 8, 0.814);
+  }
+}
+
+.close {
+  position: relative;
+  padding: 0px 2px 0px 2px;
+  align-items: center;
+  align-content: center;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  border-radius: 100px;
+
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+
+  left: 1.6em;
+  top: -0.6em;
+  margin-right: 10px;
+
+  &:hover {
+    color: rgba(190, 0, 0, 0.814);
+  }
+}
+
+.sub-input-object {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 7px;
+
+  border-radius: 3px;
+  padding: 30px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  min-width: 10em;
+  overflow: unset;
+
+  align-content: flex-start;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 5px;
+  box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1),
+    0px 0px 3px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffffd5;
+}
+
+.sub-entry-object {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  gap: 2px;
+
+  border-radius: 3px;
+  padding-left: 40px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  min-width: 10em;
+
+  overflow: unset;
+
+  align-content: flex-start;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 5px;
+  box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1), 0px 0px 3px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffffd5;
+
+  .entry {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    flex-direction: row;
+    align-items: center;
+    min-width: 10em;
+    font-size: small;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+    text-decoration: underline;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    left: -20px;
+  }
+}

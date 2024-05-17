@@ -1,4 +1,9 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
@@ -28,16 +33,25 @@ export class UsageExportBucket extends Resource {
         InputType.String,
         "BucketName",
         "The bucket to store reports in.",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Prefix",
         "A prefix for the reports, for instance, the project name.",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The project to set the export bucket on. If it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
     ];
   }

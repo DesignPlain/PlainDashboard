@@ -1,10 +1,36 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { AccessLevelConditionDevicePolicy } from "../types/AccessLevelConditionDevicePolicy";
-import { AccessLevelConditionVpcNetworkSource } from "../types/AccessLevelConditionVpcNetworkSource";
+import {
+  Accesscontextmanager_AccessLevelConditionDevicePolicy,
+  Accesscontextmanager_AccessLevelConditionDevicePolicy_GetTypes,
+} from "../types/Accesscontextmanager_AccessLevelConditionDevicePolicy";
+import {
+  Accesscontextmanager_AccessLevelConditionVpcNetworkSource,
+  Accesscontextmanager_AccessLevelConditionVpcNetworkSource_GetTypes,
+} from "../types/Accesscontextmanager_AccessLevelConditionVpcNetworkSource";
 
 export interface AccessLevelConditionArgs {
+  /*
+A list of other access levels defined in the same Policy,
+referenced by resource name. Referencing an AccessLevel which
+does not exist is an error. All access levels listed must be
+granted for the Condition to be true.
+Format: accessPolicies/{policy_id}/accessLevels/{short_name}
+*/
+  RequiredAccessLevels?: Array<string>;
+
+  /*
+The request must originate from one of the provided VPC networks in Google Cloud. Cannot specify this field together with `ip_subnetworks`.
+Structure is documented below.
+*/
+  VpcNetworkSources?: Array<Accesscontextmanager_AccessLevelConditionVpcNetworkSource>;
+
   /*
 The name of the Access Level to add this condition to.
 
@@ -19,7 +45,7 @@ the Condition to be true. If not specified, all devices are
 allowed.
 Structure is documented below.
 */
-  DevicePolicy?: AccessLevelConditionDevicePolicy;
+  DevicePolicy?: Accesscontextmanager_AccessLevelConditionDevicePolicy;
 
   /*
 A list of CIDR block IP subnetwork specification. May be IPv4
@@ -59,7 +85,8 @@ countries/regions.
 Format: A valid ISO 3166-1 alpha-2 code.
 */
   Regions?: Array<string>;
-
+}
+export class AccessLevelCondition extends Resource {
   /*
 A list of other access levels defined in the same Policy,
 referenced by resource name. Referencing an AccessLevel which
@@ -67,20 +94,13 @@ does not exist is an error. All access levels listed must be
 granted for the Condition to be true.
 Format: accessPolicies/{policy_id}/accessLevels/{short_name}
 */
-  RequiredAccessLevels?: Array<string>;
+  public RequiredAccessLevels?: Array<string>;
 
   /*
 The request must originate from one of the provided VPC networks in Google Cloud. Cannot specify this field together with `ip_subnetworks`.
 Structure is documented below.
 */
-  VpcNetworkSources?: Array<AccessLevelConditionVpcNetworkSource>;
-}
-export class AccessLevelCondition extends Resource {
-  /*
-The request must originate from one of the provided VPC networks in Google Cloud. Cannot specify this field together with `ip_subnetworks`.
-Structure is documented below.
-*/
-  public VpcNetworkSources?: Array<AccessLevelConditionVpcNetworkSource>;
+  public VpcNetworkSources?: Array<Accesscontextmanager_AccessLevelConditionVpcNetworkSource>;
 
   /*
 The name of the Access Level to add this condition to.
@@ -96,7 +116,7 @@ the Condition to be true. If not specified, all devices are
 allowed.
 Structure is documented below.
 */
-  public DevicePolicy?: AccessLevelConditionDevicePolicy;
+  public DevicePolicy?: Accesscontextmanager_AccessLevelConditionDevicePolicy;
 
   /*
 A list of CIDR block IP subnetwork specification. May be IPv4
@@ -137,56 +157,71 @@ Format: A valid ISO 3166-1 alpha-2 code.
 */
   public Regions?: Array<string>;
 
-  /*
-A list of other access levels defined in the same Policy,
-referenced by resource name. Referencing an AccessLevel which
-does not exist is an error. All access levels listed must be
-granted for the Condition to be true.
-Format: accessPolicies/{policy_id}/accessLevels/{short_name}
-*/
-  public RequiredAccessLevels?: Array<string>;
-
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.DropDown,
-        "Members",
-        "An allowed list of members (users, service accounts).\nUsing groups is not supported yet.\nThe signed-in user originating the request must be a part of one\nof the provided members. If not specified, a request may come\nfrom any user (logged in/not logged in, not present in any\ngroups, etc.).\nFormats: `user:{emailid}`, `serviceAccount:{emailid}`",
-      ),
-      new DynamicUIProps(
-        InputType.CheckBox,
-        "Negate",
-        "Whether to negate the Condition. If true, the Condition becomes\na NAND over its non-empty fields, each field must be false for\nthe Condition overall to be satisfied. Defaults to false.",
-      ),
-      new DynamicUIProps(
-        InputType.DropDown,
+        InputType.Array,
         "Regions",
         "The request must originate from one of the provided\ncountries/regions.\nFormat: A valid ISO 3166-1 alpha-2 code.",
+        InputType_String_GetTypes(),
+        false,
+        true,
       ),
       new DynamicUIProps(
-        InputType.DropDown,
+        InputType.Array,
         "RequiredAccessLevels",
         "A list of other access levels defined in the same Policy,\nreferenced by resource name. Referencing an AccessLevel which\ndoes not exist is an error. All access levels listed must be\ngranted for the Condition to be true.\nFormat: accessPolicies/{policy_id}/accessLevels/{short_name}",
+        InputType_String_GetTypes(),
+        false,
+        true,
       ),
       new DynamicUIProps(
-        InputType.DropDown,
+        InputType.Array,
         "VpcNetworkSources",
         "The request must originate from one of the provided VPC networks in Google Cloud. Cannot specify this field together with `ip_subnetworks`.\nStructure is documented below.",
+        Accesscontextmanager_AccessLevelConditionVpcNetworkSource_GetTypes(),
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "AccessLevel",
         "The name of the Access Level to add this condition to.\n\n\n- - -",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
-        InputType.String,
+        InputType.Object,
         "DevicePolicy",
         "Device specific restrictions, all restrictions must hold for\nthe Condition to be true. If not specified, all devices are\nallowed.\nStructure is documented below.",
+        Accesscontextmanager_AccessLevelConditionDevicePolicy_GetTypes(),
+        false,
+        true,
       ),
       new DynamicUIProps(
-        InputType.DropDown,
+        InputType.Array,
         "IpSubnetworks",
         'A list of CIDR block IP subnetwork specification. May be IPv4\nor IPv6.\nNote that for a CIDR IP address block, the specified IP address\nportion must be properly truncated (i.e. all the host bits must\nbe zero) or the input is considered malformed. For example,\n"192.0.2.0/24" is accepted but "192.0.2.1/24" is not. Similarly,\nfor IPv6, "2001:db8::/32" is accepted whereas "2001:db8::1/32"\nis not. The originating IP of a request must be in one of the\nlisted subnets in order for this Condition to be true.\nIf empty, all IP addresses are allowed.',
+        InputType_String_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "Members",
+        "An allowed list of members (users, service accounts).\nUsing groups is not supported yet.\nThe signed-in user originating the request must be a part of one\nof the provided members. If not specified, a request may come\nfrom any user (logged in/not logged in, not present in any\ngroups, etc.).\nFormats: `user:{emailid}`, `serviceAccount:{emailid}`",
+        InputType_String_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "Negate",
+        "Whether to negate the Condition. If true, the Condition becomes\na NAND over its non-empty fields, each field must be false for\nthe Condition overall to be satisfied. Defaults to false.",
+        [],
+        false,
+        true,
       ),
     ];
   }

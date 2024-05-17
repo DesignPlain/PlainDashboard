@@ -1,8 +1,22 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface VPNGatewayArgs {
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  Project?: string;
+
+  // The region this gateway should sit in.
+  Region?: string;
+
   // An optional description of this resource.
   Description?: string;
 
@@ -24,15 +38,6 @@ The network this VPN gateway is accepting traffic for.
 - - -
 */
   Network?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  // The region this gateway should sit in.
-  Region?: string;
 }
 export class VPNGateway extends Resource {
   /*
@@ -79,28 +84,43 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "Description",
-        "An optional description of this resource.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035.  Specifically, the name must be 1-63 characters long and\nmatch the regular expression `a-z?` which means\nthe first character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
         "Network",
         "The network this VPN gateway is accepting traffic for.\n\n\n- - -",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Region",
         "The region this gateway should sit in.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Description",
+        "An optional description of this resource.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Name",
+        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035.  Specifically, the name must be 1-63 characters long and\nmatch the regular expression `a-z?` which means\nthe first character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.",
+        [],
+        false,
+        true,
       ),
     ];
   }

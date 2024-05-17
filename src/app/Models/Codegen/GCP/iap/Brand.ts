@@ -1,8 +1,22 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface BrandArgs {
+  /*
+Support email displayed on the OAuth consent screen. Can be either a
+user or group email. When a user email is specified, the caller must
+be the user with the associated email address. When a group email is
+specified, the caller can be either a user or a service account which
+is an owner of the specified group in Cloud Identity.
+*/
+  SupportEmail?: string;
+
   /*
 Application name displayed on OAuth consent screen.
 
@@ -16,7 +30,8 @@ The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
   Project?: string;
-
+}
+export class Brand extends Resource {
   /*
 Support email displayed on the OAuth consent screen. Can be either a
 user or group email. When a user email is specified, the caller must
@@ -24,9 +39,8 @@ be the user with the associated email address. When a group email is
 specified, the caller can be either a user or a service account which
 is an owner of the specified group in Cloud Identity.
 */
-  SupportEmail?: string;
-}
-export class Brand extends Resource {
+  public SupportEmail?: string;
+
   /*
 Application name displayed on OAuth consent screen.
 
@@ -52,31 +66,31 @@ If it is not provided, the provider project is used.
 */
   public Project?: string;
 
-  /*
-Support email displayed on the OAuth consent screen. Can be either a
-user or group email. When a user email is specified, the caller must
-be the user with the associated email address. When a group email is
-specified, the caller can be either a user or a service account which
-is an owner of the specified group in Cloud Identity.
-*/
-  public SupportEmail?: string;
-
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
         "SupportEmail",
         "Support email displayed on the OAuth consent screen. Can be either a\nuser or group email. When a user email is specified, the caller must\nbe the user with the associated email address. When a group email is\nspecified, the caller can be either a user or a service account which\nis an owner of the specified group in Cloud Identity.",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "ApplicationTitle",
         "Application name displayed on OAuth consent screen.\n\n\n- - -",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
     ];
   }

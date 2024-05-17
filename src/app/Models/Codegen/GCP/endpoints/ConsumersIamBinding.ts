@@ -1,11 +1,19 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { ConsumersIAMBindingCondition } from "../types/ConsumersIAMBindingCondition";
+import {
+  Endpoints_ConsumersIamBindingCondition,
+  Endpoints_ConsumersIamBindingCondition_GetTypes,
+} from "../types/Endpoints_ConsumersIamBindingCondition";
 
-export interface ConsumersIAMBindingArgs {
+export interface ConsumersIamBindingArgs {
   //
-  Condition?: ConsumersIAMBindingCondition;
+  Condition?: Endpoints_ConsumersIamBindingCondition;
 
   //
   ConsumerProject?: string;
@@ -15,7 +23,7 @@ export interface ConsumersIAMBindingArgs {
 
   /*
 The role that should be applied. Only one
-`gcp.endpoints.ConsumersIAMBinding` can be used per role. Note that custom roles must be of the format
+`gcp.endpoints.ConsumersIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
   Role?: string;
@@ -23,12 +31,22 @@ The role that should be applied. Only one
   //
   ServiceName?: string;
 }
-export class ConsumersIAMBinding extends Resource {
+export class ConsumersIamBinding extends Resource {
+  //
+  public Members?: Array<string>;
+
+  /*
+The role that should be applied. Only one
+`gcp.endpoints.ConsumersIamBinding` can be used per role. Note that custom roles must be of the format
+`[projects|organizations]/{parent-name}/roles/{role-name}`.
+*/
+  public Role?: string;
+
   //
   public ServiceName?: string;
 
   //
-  public Condition?: ConsumersIAMBindingCondition;
+  public Condition?: Endpoints_ConsumersIamBindingCondition;
 
   //
   public ConsumerProject?: string;
@@ -36,27 +54,41 @@ export class ConsumersIAMBinding extends Resource {
   // (Computed) The etag of the IAM policy.
   public Etag?: string;
 
-  //
-  public Members?: Array<string>;
-
-  /*
-The role that should be applied. Only one
-`gcp.endpoints.ConsumersIAMBinding` can be used per role. Note that custom roles must be of the format
-`[projects|organizations]/{parent-name}/roles/{role-name}`.
-*/
-  public Role?: string;
-
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Condition", ""),
-      new DynamicUIProps(InputType.String, "ConsumerProject", ""),
-      new DynamicUIProps(InputType.DropDown, "Members", ""),
+      new DynamicUIProps(
+        InputType.String,
+        "ConsumerProject",
+        "",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "Members",
+        "",
+        InputType_String_GetTypes(),
+        true,
+        false,
+      ),
       new DynamicUIProps(
         InputType.String,
         "Role",
-        "The role that should be applied. Only one\n`gcp.endpoints.ConsumersIAMBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
+        "The role that should be applied. Only one\n`gcp.endpoints.ConsumersIamBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
+        [],
+        true,
+        true,
       ),
-      new DynamicUIProps(InputType.String, "ServiceName", ""),
+      new DynamicUIProps(InputType.String, "ServiceName", "", [], true, true),
+      new DynamicUIProps(
+        InputType.Object,
+        "Condition",
+        "",
+        Endpoints_ConsumersIamBindingCondition_GetTypes(),
+        false,
+        true,
+      ),
     ];
   }
 }

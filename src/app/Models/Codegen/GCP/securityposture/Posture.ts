@@ -1,14 +1,25 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { PosturePolicySet } from "../types/PosturePolicySet";
+import {
+  Securityposture_PosturePolicySet,
+  Securityposture_PosturePolicySet_GetTypes,
+} from "../types/Securityposture_PosturePolicySet";
 
 export interface PostureArgs {
+  // The parent of the resource, an organization. Format should be `organizations/{organization_id}`.
+  Parent?: string;
+
   /*
 List of policy sets for the posture.
 Structure is documented below.
 */
-  PolicySets?: Array<PosturePolicySet>;
+  PolicySets?: Array<Securityposture_PosturePolicySet>;
 
   // Id of the posture. It is an immutable field.
   PostureId?: string;
@@ -25,28 +36,25 @@ Possible values are: `DEPRECATED`, `DRAFT`, `ACTIVE`.
 
   // Location of the resource, eg: global.
   Location?: string;
-
-  // The parent of the resource, an organization. Format should be `organizations/{organization_id}`.
-  Parent?: string;
 }
 export class Posture extends Resource {
   // Description of the expression
   public Description?: string;
 
-  // Immutable. The name of the custom constraint. This is unique within the organization.
-  public Name?: string;
+  // Location of the resource, eg: global.
+  public Location?: string;
+
+  // The parent of the resource, an organization. Format should be `organizations/{organization_id}`.
+  public Parent?: string;
 
   /*
 List of policy sets for the posture.
 Structure is documented below.
 */
-  public PolicySets?: Array<PosturePolicySet>;
+  public PolicySets?: Array<Securityposture_PosturePolicySet>;
 
   // Id of the posture. It is an immutable field.
   public PostureId?: string;
-
-  // Revision_id of the posture.
-  public RevisionId?: string;
 
   // Time the Posture was updated in UTC.
   public UpdateTime?: string;
@@ -57,14 +65,14 @@ Structure is documented below.
   // For Resource freshness validation (https://google.aip.dev/154)
   public Etag?: string;
 
-  // Location of the resource, eg: global.
-  public Location?: string;
-
-  // The parent of the resource, an organization. Format should be `organizations/{organization_id}`.
-  public Parent?: string;
+  // Immutable. The name of the custom constraint. This is unique within the organization.
+  public Name?: string;
 
   // If set, there are currently changes in flight to the posture.
   public Reconciling?: boolean;
+
+  // Revision_id of the posture.
+  public RevisionId?: string;
 
   /*
 State of the posture. Update to state field should not be triggered along with
@@ -77,33 +85,51 @@ Possible values are: `DEPRECATED`, `DRAFT`, `ACTIVE`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "Location",
-        "Location of the resource, eg: global.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
         "Parent",
         "The parent of the resource, an organization. Format should be `organizations/{organization_id}`.",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
-        InputType.DropDown,
+        InputType.Array,
         "PolicySets",
         "List of policy sets for the posture.\nStructure is documented below.",
+        Securityposture_PosturePolicySet_GetTypes(),
+        true,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "PostureId",
         "Id of the posture. It is an immutable field.",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "State",
         "State of the posture. Update to state field should not be triggered along with\nwith other field updates.\nPossible values are: `DEPRECATED`, `DRAFT`, `ACTIVE`.",
+        [],
+        true,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Description",
         "Description of the expression",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Location",
+        "Location of the resource, eg: global.",
+        [],
+        true,
+        true,
       ),
     ];
   }

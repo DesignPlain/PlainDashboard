@@ -1,9 +1,17 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { SourceIAMMemberCondition } from "../types/SourceIAMMemberCondition";
+import {
+  Securitycenter_SourceIamMemberCondition,
+  Securitycenter_SourceIamMemberCondition_GetTypes,
+} from "../types/Securitycenter_SourceIamMemberCondition";
 
-export interface SourceIAMMemberArgs {
+export interface SourceIamMemberArgs {
   /*
 The organization whose Cloud Security Command Center the Source
 lives in.
@@ -20,21 +28,12 @@ lives in.
   Source?: string;
 
   //
-  Condition?: SourceIAMMemberCondition;
+  Condition?: Securitycenter_SourceIamMemberCondition;
 
   //
   Member?: string;
 }
-export class SourceIAMMember extends Resource {
-  //
-  public Source?: string;
-
-  //
-  public Condition?: SourceIAMMemberCondition;
-
-  //
-  public Etag?: string;
-
+export class SourceIamMember extends Resource {
   //
   public Member?: string;
 
@@ -50,17 +49,36 @@ lives in.
   //
   public Role?: string;
 
+  //
+  public Source?: string;
+
+  //
+  public Condition?: Securitycenter_SourceIamMemberCondition;
+
+  //
+  public Etag?: string;
+
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
         "Organization",
         "The organization whose Cloud Security Command Center the Source\nlives in.\n\n\n- - -",
+        [],
+        true,
+        true,
       ),
-      new DynamicUIProps(InputType.String, "Role", ""),
-      new DynamicUIProps(InputType.String, "Source", ""),
-      new DynamicUIProps(InputType.String, "Condition", ""),
-      new DynamicUIProps(InputType.String, "Member", ""),
+      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
+      new DynamicUIProps(InputType.String, "Source", "", [], true, true),
+      new DynamicUIProps(
+        InputType.Object,
+        "Condition",
+        "",
+        Securitycenter_SourceIamMemberCondition_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
     ];
   }
 }

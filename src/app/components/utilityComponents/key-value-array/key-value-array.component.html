@@ -1,0 +1,40 @@
+<div class="sub-input-object">
+  <div class="add-title">
+    <div class="add">
+      <span><fa-icon [icon]="faAdd" (click)="AddValue()"></fa-icon></span>
+    </div>
+    <span>Add {{ parentRes.substring(0, parentRes.length - 1) }}</span>
+  </div>
+  <div
+    class="sub-entry-object"
+    #res
+    *ngFor="let item of listMap; let i = index"
+    [attr.data-index]="i"
+  >
+    <div>
+      <div #res class="entry" [attr.data]="true">
+        <div>
+          <span *ngIf="!show(res)"
+            ><fa-icon [icon]="faDown" (click)="toggle(res)"></fa-icon
+          ></span>
+          <span *ngIf="show(res)"
+            ><fa-icon [icon]="faUp" (click)="toggle(res)"></fa-icon
+          ></span>
+        </div>
+        <span class="span"
+          >{{ parentRes.substring(0, parentRes.length - 1) }} {{ i + 1 }}</span
+        >
+      </div>
+
+      <app-resource-config-fields
+        [parent]="parentRes"
+        *ngIf="show(res)"
+        [config]="getConfig(i)"
+        (configUpdateEvent)="UpdateResourceConfig($event, i)"
+      ></app-resource-config-fields>
+    </div>
+    <div class="close">
+      <span><fa-icon [icon]="faClose" (click)="deleteValue(i)"></fa-icon></span>
+    </div>
+  </div>
+</div>

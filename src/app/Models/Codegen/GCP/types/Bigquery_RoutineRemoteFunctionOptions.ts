@@ -1,0 +1,74 @@
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
+import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+
+export interface Bigquery_RoutineRemoteFunctionOptions {
+  /*
+User-defined context as a set of key/value pairs, which will be sent as function
+invocation context together with batched arguments in the requests to the remote
+service. The total number of bytes of keys and values must be less than 8KB.
+An object containing a list of "key": value pairs. Example:
+`{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
+*/
+  UserDefinedContext?: Map<string, string>;
+
+  /*
+Fully qualified name of the user-provided connection object which holds
+the authentication information to send requests to the remote service.
+Format: "projects/{projectId}/locations/{locationId}/connections/{connectionId}"
+*/
+  Connection?: string;
+
+  /*
+Endpoint of the user-provided remote service, e.g.
+`https://us-east1-my_gcf_project.cloudfunctions.net/remote_add`
+*/
+  Endpoint?: string;
+
+  /*
+Max number of rows in each batch sent to the remote service. If absent or if 0,
+BigQuery dynamically decides the number of rows in a batch.
+*/
+  MaxBatchingRows?: string;
+}
+
+export function Bigquery_RoutineRemoteFunctionOptions_GetTypes(): DynamicUIProps[] {
+  return [
+    new DynamicUIProps(
+      InputType.Map,
+      "UserDefinedContext",
+      'User-defined context as a set of key/value pairs, which will be sent as function\ninvocation context together with batched arguments in the requests to the remote\nservice. The total number of bytes of keys and values must be less than 8KB.\nAn object containing a list of "key": value pairs. Example:\n`{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.',
+      InputType_Map_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "Connection",
+      'Fully qualified name of the user-provided connection object which holds\nthe authentication information to send requests to the remote service.\nFormat: "projects/{projectId}/locations/{locationId}/connections/{connectionId}"',
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "Endpoint",
+      "Endpoint of the user-provided remote service, e.g.\n`https://us-east1-my_gcf_project.cloudfunctions.net/remote_add`",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "MaxBatchingRows",
+      "Max number of rows in each batch sent to the remote service. If absent or if 0,\nBigQuery dynamically decides the number of rows in a batch.",
+      [],
+      false,
+      false,
+    ),
+  ];
+}

@@ -14,11 +14,12 @@
     min-height: 50rem;
     max-width: 75rem;
     max-height: 50rem;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding: 20px;
     padding-left: 50px;
     border-radius: 10px;
     font-size: smaller;
+    overflow: visible;
 
     .header {
       margin-top: 2rem;
@@ -37,7 +38,7 @@
 
       margin-left: 2rem;
       max-width: 91%;
-      max-height: 38rem;
+      max-height: 48rem;
       min-height: 38rem;
       display: flex;
       flex-direction: column;
@@ -46,79 +47,14 @@
       justify-content: flex-start;
       align-items: flex-start;
       overflow: scroll;
-      padding-bottom: 10rem;
+      padding-bottom: 8rem;
       scroll-behavior: smooth;
+    }
 
-      .in {
-        margin-top: 15px;
-        display: flex;
-        justify-content: space-evenly;
-        flex-direction: row;
-        align-content: space-evenly;
-        align-items: center;
-      }
-
-      .span {
-        position: relative;
-        width: 25em;
-        margin-right: 5px;
-        color: #264653;
-      }
-
-      span {
-        width: 20em;
-        margin-right: 5px;
-        color: #264653;
-      }
-
-      .tool-tip {
-        overflow: auto;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 0px 0px,
-          rgba(0, 0, 0, 0.12) 1px 3px 0px, rgba(0, 0, 0, 0.12) 0px 4px 6px;
-        position: absolute;
-        max-width: 200%;
-        min-width: 20px;
-        background-color: rgba(0, 0, 0, 0.844);
-        border-radius: 5px;
-        color: #ffffff;
-        font-family: "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
-          sans-serif;
-        padding: 7px;
-        font-size: 12px;
-        margin-top: 5px;
-        transform: translateX(10%);
-        z-index: 1000000;
-        align-self: center;
-        align-items: center;
-        text-align: center;
-        transition: all 0.1s;
-      }
-
-      .checkbox {
-        width: 1.5em;
-        height: 1.5em;
-        align-self: flex-end;
-      }
-
-      .input {
-        margin-right: 10rem;
-        border: 0.5px solid transparent;
-        width: 16em;
-        height: 2em;
-        padding-left: 0.8em;
-        outline: none;
-        overflow: scroll;
-        border-color: #a3a2a2;
-        border-radius: 3px;
-        transition: all 0.1s;
-
-        &:hover,
-        &:focus {
-          border: 1px solid #4a9dec;
-          box-shadow: 0px 0px 0px 1px rgb(74, 157, 236, 20%);
-          background-color: white;
-        }
-      }
+    .subform {
+      height: 100%;
+      padding-bottom: 8rem;
+      overflow: scroll;
     }
 
     .apply {
@@ -175,11 +111,13 @@
 
     .close {
       position: absolute;
-      top: 0;
-      right: 0;
-      padding: 10px;
-      background-color: white;
+      padding: 6px 10px 6px 10px;
+      top: -12px;
+      right: -12px;
+      background-color: rgb(255, 232, 232);
       border-radius: 100%;
+      width: 30px;
+      height: 30px;
     }
   }
 }

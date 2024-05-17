@@ -1,7 +1,15 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { NetworkEndpointListNetworkEndpoint } from "../types/NetworkEndpointListNetworkEndpoint";
+import {
+  Compute_NetworkEndpointListNetworkEndpoint,
+  Compute_NetworkEndpointListNetworkEndpoint_GetTypes,
+} from "../types/Compute_NetworkEndpointListNetworkEndpoint";
 
 export interface NetworkEndpointListArgs {
   /*
@@ -18,7 +26,7 @@ The network endpoints to be added to the enclosing network endpoint group
 additional information depending on the NEG type.
 Structure is documented below.
 */
-  NetworkEndpoints?: Array<NetworkEndpointListNetworkEndpoint>;
+  NetworkEndpoints?: Array<Compute_NetworkEndpointListNetworkEndpoint>;
 
   /*
 The ID of the project in which the resource belongs.
@@ -44,7 +52,7 @@ The network endpoints to be added to the enclosing network endpoint group
 additional information depending on the NEG type.
 Structure is documented below.
 */
-  public NetworkEndpoints?: Array<NetworkEndpointListNetworkEndpoint>;
+  public NetworkEndpoints?: Array<Compute_NetworkEndpointListNetworkEndpoint>;
 
   /*
 The ID of the project in which the resource belongs.
@@ -61,21 +69,33 @@ If it is not provided, the provider project is used.
         InputType.String,
         "NetworkEndpointGroup",
         "The network endpoint group these endpoints are part of.\n\n\n- - -",
+        [],
+        true,
+        false,
       ),
       new DynamicUIProps(
-        InputType.DropDown,
+        InputType.Array,
         "NetworkEndpoints",
         "The network endpoints to be added to the enclosing network endpoint group\n(NEG). Each endpoint specifies an IP address and port, along with\nadditional information depending on the NEG type.\nStructure is documented below.",
+        Compute_NetworkEndpointListNetworkEndpoint_GetTypes(),
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Zone",
         "Zone where the containing network endpoint group is located.",
+        [],
+        false,
+        false,
       ),
     ];
   }

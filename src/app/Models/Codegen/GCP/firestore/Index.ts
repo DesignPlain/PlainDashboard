@@ -1,9 +1,24 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { IndexField } from "../types/IndexField";
+import {
+  Firestore_IndexField,
+  Firestore_IndexField_GetTypes,
+} from "../types/Firestore_IndexField";
 
 export interface IndexArgs {
+  /*
+The scope at which a query is run.
+Default value is `COLLECTION`.
+Possible values are: `COLLECTION`, `COLLECTION_GROUP`, `COLLECTION_RECURSIVE`.
+*/
+  QueryScope?: string;
+
   /*
 The API scope at which a query is run.
 Default value is `ANY_API`.
@@ -26,22 +41,18 @@ in a composite index is not directional, the `__name__` will be
 ordered `"ASCENDING"` (unless explicitly specified otherwise).
 Structure is documented below.
 */
-  Fields?: Array<IndexField>;
+  Fields?: Array<Firestore_IndexField>;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
   Project?: string;
-
-  /*
-The scope at which a query is run.
-Default value is `COLLECTION`.
-Possible values are: `COLLECTION`, `COLLECTION_GROUP`, `COLLECTION_RECURSIVE`.
-*/
-  QueryScope?: string;
 }
 export class Index extends Resource {
+  // The Firestore database id. Defaults to `"(default)"`.
+  public Database?: string;
+
   /*
 The fields supported by this index. The last field entry is always for
 the field path `__name__`. If, on creation, `__name__` was not
@@ -51,7 +62,7 @@ in a composite index is not directional, the `__name__` will be
 ordered `"ASCENDING"` (unless explicitly specified otherwise).
 Structure is documented below.
 */
-  public Fields?: Array<IndexField>;
+  public Fields?: Array<Firestore_IndexField>;
 
   /*
 A server defined name for this index. Format:
@@ -82,40 +93,55 @@ Possible values are: `ANY_API`, `DATASTORE_MODE_API`.
   // The collection being indexed.
   public Collection?: string;
 
-  // The Firestore database id. Defaults to `"(default)"`.
-  public Database?: string;
-
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "QueryScope",
-        "The scope at which a query is run.\nDefault value is `COLLECTION`.\nPossible values are: `COLLECTION`, `COLLECTION_GROUP`, `COLLECTION_RECURSIVE`.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ApiScope",
-        "The API scope at which a query is run.\nDefault value is `ANY_API`.\nPossible values are: `ANY_API`, `DATASTORE_MODE_API`.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
         "Collection",
         "The collection being indexed.",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Database",
         'The Firestore database id. Defaults to `"(default)"`.',
+        [],
+        false,
+        true,
       ),
       new DynamicUIProps(
-        InputType.DropDown,
+        InputType.Array,
         "Fields",
         'The fields supported by this index. The last field entry is always for\nthe field path `__name__`. If, on creation, `__name__` was not\nspecified as the last field, it will be added automatically with the\nsame direction as that of the last field defined. If the final field\nin a composite index is not directional, the `__name__` will be\nordered `"ASCENDING"` (unless explicitly specified otherwise).\nStructure is documented below.',
+        Firestore_IndexField_GetTypes(),
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "QueryScope",
+        "The scope at which a query is run.\nDefault value is `COLLECTION`.\nPossible values are: `COLLECTION`, `COLLECTION_GROUP`, `COLLECTION_RECURSIVE`.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "ApiScope",
+        "The API scope at which a query is run.\nDefault value is `ANY_API`.\nPossible values are: `ANY_API`, `DATASTORE_MODE_API`.",
+        [],
+        false,
+        true,
       ),
     ];
   }

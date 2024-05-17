@@ -1,4 +1,9 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
@@ -32,11 +37,17 @@ The name of the Service Perimeter to add this resource to.
         InputType.String,
         "IngressPolicyName",
         "The name of the Service Perimeter to add this resource to.\n\n\n- - -",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
         "Resource",
         "A GCP resource that is inside of the service perimeter.",
+        [],
+        true,
+        true,
       ),
     ];
   }

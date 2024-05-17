@@ -1,21 +1,114 @@
-import { InputType } from "src/app/enum/InputType";
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
-import { VMwareClusterAntiAffinityGroups } from "../types/VMwareClusterAntiAffinityGroups";
-import { VMwareClusterAutoRepairConfig } from "../types/VMwareClusterAutoRepairConfig";
-import { VMwareClusterUpgradePolicy } from "../types/VMwareClusterUpgradePolicy";
-import { VMwareClusterLoadBalancer } from "../types/VMwareClusterLoadBalancer";
-import { VMwareClusterStatus } from "../types/VMwareClusterStatus";
-import { VMwareClusterStorage } from "../types/VMwareClusterStorage";
-import { VMwareClusterNetworkConfig } from "../types/VMwareClusterNetworkConfig";
-import { VMwareClusterVcenter } from "../types/VMwareClusterVcenter";
-import { VMwareClusterControlPlaneNode } from "../types/VMwareClusterControlPlaneNode";
-import { VMwareClusterDataplaneV2 } from "../types/VMwareClusterDataplaneV2";
-import { VMwareClusterFleet } from "../types/VMwareClusterFleet";
-import { VMwareClusterValidationCheck } from "../types/VMwareClusterValidationCheck";
-import { VMwareClusterAuthorization } from "../types/VMwareClusterAuthorization";
+import {
+  Gkeonprem_VMwareClusterAntiAffinityGroups,
+  Gkeonprem_VMwareClusterAntiAffinityGroups_GetTypes,
+} from "../types/Gkeonprem_VMwareClusterAntiAffinityGroups";
+import {
+  Gkeonprem_VMwareClusterControlPlaneNode,
+  Gkeonprem_VMwareClusterControlPlaneNode_GetTypes,
+} from "../types/Gkeonprem_VMwareClusterControlPlaneNode";
+import {
+  Gkeonprem_VMwareClusterAutoRepairConfig,
+  Gkeonprem_VMwareClusterAutoRepairConfig_GetTypes,
+} from "../types/Gkeonprem_VMwareClusterAutoRepairConfig";
+import {
+  Gkeonprem_VMwareClusterDataplaneV2,
+  Gkeonprem_VMwareClusterDataplaneV2_GetTypes,
+} from "../types/Gkeonprem_VMwareClusterDataplaneV2";
+import {
+  Gkeonprem_VMwareClusterFleet,
+  Gkeonprem_VMwareClusterFleet_GetTypes,
+} from "../types/Gkeonprem_VMwareClusterFleet";
+import {
+  Gkeonprem_VMwareClusterLoadBalancer,
+  Gkeonprem_VMwareClusterLoadBalancer_GetTypes,
+} from "../types/Gkeonprem_VMwareClusterLoadBalancer";
+import {
+  Gkeonprem_VMwareClusterNetworkConfig,
+  Gkeonprem_VMwareClusterNetworkConfig_GetTypes,
+} from "../types/Gkeonprem_VMwareClusterNetworkConfig";
+import {
+  Gkeonprem_VMwareClusterStorage,
+  Gkeonprem_VMwareClusterStorage_GetTypes,
+} from "../types/Gkeonprem_VMwareClusterStorage";
+import {
+  Gkeonprem_VMwareClusterUpgradePolicy,
+  Gkeonprem_VMwareClusterUpgradePolicy_GetTypes,
+} from "../types/Gkeonprem_VMwareClusterUpgradePolicy";
+import {
+  Gkeonprem_VMwareClusterAuthorization,
+  Gkeonprem_VMwareClusterAuthorization_GetTypes,
+} from "../types/Gkeonprem_VMwareClusterAuthorization";
+import {
+  Gkeonprem_VMwareClusterVcenter,
+  Gkeonprem_VMwareClusterVcenter_GetTypes,
+} from "../types/Gkeonprem_VMwareClusterVcenter";
+import {
+  Gkeonprem_VMwareClusterStatus,
+  Gkeonprem_VMwareClusterStatus_GetTypes,
+} from "../types/Gkeonprem_VMwareClusterStatus";
+import {
+  Gkeonprem_VMwareClusterValidationCheck,
+  Gkeonprem_VMwareClusterValidationCheck_GetTypes,
+} from "../types/Gkeonprem_VMwareClusterValidationCheck";
 
 export interface VMwareClusterArgs {
+  // Enable control plane V2. Default to false.
+  EnableControlPlaneV2?: boolean;
+
+  // The location of the resource.
+  Location?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  Project?: string;
+
+  /*
+AAGConfig specifies whether to spread VMware User Cluster nodes across at
+least three physical hosts in the datacenter.
+Structure is documented below.
+*/
+  AntiAffinityGroups?: Gkeonprem_VMwareClusterAntiAffinityGroups;
+
+  // A human readable description of this VMware User Cluster.
+  Description?: string;
+
+  /*
+Load Balancer configuration.
+Structure is documented below.
+*/
+  LoadBalancer?: Gkeonprem_VMwareClusterLoadBalancer;
+
+  /*
+The VMware User Cluster network configuration.
+Structure is documented below.
+*/
+  NetworkConfig?: Gkeonprem_VMwareClusterNetworkConfig;
+
+  // The Anthos clusters on the VMware version for your user cluster.
+  OnPremVersion?: string;
+
+  /*
+Storage configuration.
+Structure is documented below.
+*/
+  Storage?: Gkeonprem_VMwareClusterStorage;
+
+  /*
+Specifies upgrade policy for the cluster.
+Structure is documented below.
+*/
+  UpgradePolicy?: Gkeonprem_VMwareClusterUpgradePolicy;
+
   /*
 Annotations on the VMware User Cluster.
 This field has the same restrictions as Kubernetes annotations.
@@ -35,28 +128,19 @@ Please refer to the field `effective_annotations` for all of the annotations pre
 RBAC policy that will be applied and managed by GKE On-Prem.
 Structure is documented below.
 */
-  Authorization?: VMwareClusterAuthorization;
+  Authorization?: Gkeonprem_VMwareClusterAuthorization;
+
+  /*
+VMware User Cluster control plane nodes must have either 1 or 3 replicas.
+Structure is documented below.
+*/
+  ControlPlaneNode?: Gkeonprem_VMwareClusterControlPlaneNode;
 
   // The VMware cluster name.
   Name?: string;
 
-  // The Anthos clusters on the VMware version for your user cluster.
-  OnPremVersion?: string;
-
-  /*
-Storage configuration.
-Structure is documented below.
-*/
-  Storage?: VMwareClusterStorage;
-
-  // The location of the resource.
-  Location?: string;
-
-  /*
-The VMware User Cluster network configuration.
-Structure is documented below.
-*/
-  NetworkConfig?: VMwareClusterNetworkConfig;
+  // Enable VM tracking.
+  VmTrackingEnabled?: boolean;
 
   /*
 The admin cluster this VMware User Cluster belongs to.
@@ -67,79 +151,68 @@ admin clusters are modeled as their own resources.
   AdminClusterMembership?: string;
 
   /*
-AAGConfig specifies whether to spread VMware User Cluster nodes across at
-least three physical hosts in the datacenter.
-Structure is documented below.
-*/
-  AntiAffinityGroups?: VMwareClusterAntiAffinityGroups;
-
-  /*
 Configuration for auto repairing.
 Structure is documented below.
 */
-  AutoRepairConfig?: VMwareClusterAutoRepairConfig;
-
-  // A human readable description of this VMware User Cluster.
-  Description?: string;
-
-  // Enable control plane V2. Default to false.
-  EnableControlPlaneV2?: boolean;
+  AutoRepairConfig?: Gkeonprem_VMwareClusterAutoRepairConfig;
 
   /*
-Specifies upgrade policy for the cluster.
+VmwareDataplaneV2Config specifies configuration for Dataplane V2.
 Structure is documented below.
 */
-  UpgradePolicy?: VMwareClusterUpgradePolicy;
+  DataplaneV2?: Gkeonprem_VMwareClusterDataplaneV2;
 
   /*
 VmwareVCenterConfig specifies vCenter config for the user cluster.
 Inherited from the admin cluster.
 Structure is documented below.
 */
-  Vcenters?: Array<VMwareClusterVcenter>;
-
-  // Enable VM tracking.
-  VmTrackingEnabled?: boolean;
-
+  Vcenters?: Array<Gkeonprem_VMwareClusterVcenter>;
+}
+export class VMwareCluster extends Resource {
   /*
-VMware User Cluster control plane nodes must have either 1 or 3 replicas.
+Load Balancer configuration.
 Structure is documented below.
 */
-  ControlPlaneNode?: VMwareClusterControlPlaneNode;
+  public LoadBalancer?: Gkeonprem_VMwareClusterLoadBalancer;
+
+  /*
+(Output)
+Specifies the detailed validation check status
+Structure is documented below.
+*/
+  public Statuses?: Array<Gkeonprem_VMwareClusterStatus>;
+
+  /*
+AAGConfig specifies whether to spread VMware User Cluster nodes across at
+least three physical hosts in the datacenter.
+Structure is documented below.
+*/
+  public AntiAffinityGroups?: Gkeonprem_VMwareClusterAntiAffinityGroups;
+
+  /*
+Configuration for auto repairing.
+Structure is documented below.
+*/
+  public AutoRepairConfig?: Gkeonprem_VMwareClusterAutoRepairConfig;
+
+  /*
+Fleet configuration for the cluster.
+Structure is documented below.
+*/
+  public Fleets?: Array<Gkeonprem_VMwareClusterFleet>;
+
+  /*
+Specifies upgrade policy for the cluster.
+Structure is documented below.
+*/
+  public UpgradePolicy?: Gkeonprem_VMwareClusterUpgradePolicy;
 
   /*
 VmwareDataplaneV2Config specifies configuration for Dataplane V2.
 Structure is documented below.
 */
-  DataplaneV2?: VMwareClusterDataplaneV2;
-
-  /*
-Load Balancer configuration.
-Structure is documented below.
-*/
-  LoadBalancer?: VMwareClusterLoadBalancer;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-}
-export class VMwareCluster extends Resource {
-  // A human readable description of this VMware User Cluster.
-  public Description?: string;
-
-  // Enable control plane V2. Default to false.
-  public EnableControlPlaneV2?: boolean;
-
-  /*
-This checksum is computed by the server based on the value of other
-fields, and may be sent on update and delete requests to ensure the
-client has an up-to-date value before proceeding.
-Allows clients to perform consistent read-modify-writes
-through optimistic concurrency control.
-*/
-  public Etag?: string;
+  public DataplaneV2?: Gkeonprem_VMwareClusterDataplaneV2;
 
   /*
 (Output)
@@ -147,24 +220,16 @@ The lifecycle state of the condition.
 */
   public State?: string;
 
-  /*
-Storage configuration.
-Structure is documented below.
-*/
-  public Storage?: VMwareClusterStorage;
+  // Enable VM tracking.
+  public VmTrackingEnabled?: boolean;
 
   /*
-Specifies upgrade policy for the cluster.
-Structure is documented below.
+The admin cluster this VMware User Cluster belongs to.
+This is the full resource name of the admin cluster's hub membership.
+In the future, references to other resource types might be allowed if
+admin clusters are modeled as their own resources.
 */
-  public UpgradePolicy?: VMwareClusterUpgradePolicy;
-
-  /*
-VmwareVCenterConfig specifies vCenter config for the user cluster.
-Inherited from the admin cluster.
-Structure is documented below.
-*/
-  public Vcenters?: Array<VMwareClusterVcenter>;
+  public AdminClusterMembership?: string;
 
   /*
 Annotations on the VMware User Cluster.
@@ -181,95 +246,44 @@ Please refer to the field `effective_annotations` for all of the annotations pre
 */
   public Annotations?: Map<string, string>;
 
-  /*
-Fleet configuration for the cluster.
-Structure is documented below.
-*/
-  public Fleets?: Array<VMwareClusterFleet>;
+  // The time at which VMware User Cluster was created.
+  public CreateTime?: string;
 
   // The location of the resource.
   public Location?: string;
+
+  // The unique identifier of the VMware User Cluster.
+  public Uid?: string;
 
   /*
 RBAC policy that will be applied and managed by GKE On-Prem.
 Structure is documented below.
 */
-  public Authorization?: VMwareClusterAuthorization;
+  public Authorization?: Gkeonprem_VMwareClusterAuthorization;
+
+  // A human readable description of this VMware User Cluster.
+  public Description?: string;
+
+  // Enable control plane V2. Default to false.
+  public EnableControlPlaneV2?: boolean;
 
   /*
-Load Balancer configuration.
-Structure is documented below.
+This checksum is computed by the server based on the value of other
+fields, and may be sent on update and delete requests to ensure the
+client has an up-to-date value before proceeding.
+Allows clients to perform consistent read-modify-writes
+through optimistic concurrency control.
 */
-  public LoadBalancer?: VMwareClusterLoadBalancer;
-
-  // The Anthos clusters on the VMware version for your user cluster.
-  public OnPremVersion?: string;
-
-  /*
-The admin cluster this VMware User Cluster belongs to.
-This is the full resource name of the admin cluster's hub membership.
-In the future, references to other resource types might be allowed if
-admin clusters are modeled as their own resources.
-*/
-  public AdminClusterMembership?: string;
-
-  /*
-Configuration for auto repairing.
-Structure is documented below.
-*/
-  public AutoRepairConfig?: VMwareClusterAutoRepairConfig;
-
-  // If set, there are currently changes in flight to the VMware User Cluster.
-  public Reconciling?: boolean;
-
-  // Enable VM tracking.
-  public VmTrackingEnabled?: boolean;
-
-  /*
-VMware User Cluster control plane nodes must have either 1 or 3 replicas.
-Structure is documented below.
-*/
-  public ControlPlaneNode?: VMwareClusterControlPlaneNode;
-
-  // The time at which VMware User Cluster was created.
-  public CreateTime?: string;
-
-  /*
-VmwareDataplaneV2Config specifies configuration for Dataplane V2.
-Structure is documented below.
-*/
-  public DataplaneV2?: VMwareClusterDataplaneV2;
-
-  // The VMware cluster name.
-  public Name?: string;
-
-  /*
-The VMware User Cluster network configuration.
-Structure is documented below.
-*/
-  public NetworkConfig?: VMwareClusterNetworkConfig;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
+  public Etag?: string;
 
   // The time at which VMware User Cluster was last updated.
   public UpdateTime?: string;
 
   /*
-AAGConfig specifies whether to spread VMware User Cluster nodes across at
-least three physical hosts in the datacenter.
+ValidationCheck represents the result of the preflight check job.
 Structure is documented below.
 */
-  public AntiAffinityGroups?: VMwareClusterAntiAffinityGroups;
-
-  // The time at which VMware User Cluster was deleted.
-  public DeleteTime?: string;
-
-  // The DNS name of VMware User Cluster's API server.
-  public Endpoint?: string;
+  public ValidationChecks?: Array<Gkeonprem_VMwareClusterValidationCheck>;
 
   /*
 The object name of the VMware OnPremUserCluster custom resource on the
@@ -285,8 +299,38 @@ cluster controller logs.
 */
   public LocalName?: string;
 
-  // The unique identifier of the VMware User Cluster.
-  public Uid?: string;
+  // The Anthos clusters on the VMware version for your user cluster.
+  public OnPremVersion?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public Project?: string;
+
+  /*
+The VMware User Cluster network configuration.
+Structure is documented below.
+*/
+  public NetworkConfig?: Gkeonprem_VMwareClusterNetworkConfig;
+
+  // If set, there are currently changes in flight to the VMware User Cluster.
+  public Reconciling?: boolean;
+
+  /*
+Storage configuration.
+Structure is documented below.
+*/
+  public Storage?: Gkeonprem_VMwareClusterStorage;
+
+  /*
+VMware User Cluster control plane nodes must have either 1 or 3 replicas.
+Structure is documented below.
+*/
+  public ControlPlaneNode?: Gkeonprem_VMwareClusterControlPlaneNode;
+
+  // The time at which VMware User Cluster was deleted.
+  public DeleteTime?: string;
 
   /*
 All of annotations (key/value pairs) present on the resource in GCP, including the annotations configured through
@@ -294,111 +338,172 @@ Terraform, other clients and services.
 */
   public EffectiveAnnotations?: Map<string, string>;
 
-  /*
-(Output)
-Specifies the detailed validation check status
-Structure is documented below.
-*/
-  public Statuses?: Array<VMwareClusterStatus>;
+  // The DNS name of VMware User Cluster's API server.
+  public Endpoint?: string;
+
+  // The VMware cluster name.
+  public Name?: string;
 
   /*
-ValidationCheck represents the result of the preflight check job.
+VmwareVCenterConfig specifies vCenter config for the user cluster.
+Inherited from the admin cluster.
 Structure is documented below.
 */
-  public ValidationChecks?: Array<VMwareClusterValidationCheck>;
+  public Vcenters?: Array<Gkeonprem_VMwareClusterVcenter>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "Authorization",
-        "RBAC policy that will be applied and managed by GKE On-Prem.\nStructure is documented below.",
-      ),
-      new DynamicUIProps(
-        InputType.CheckBox,
-        "EnableControlPlaneV2",
-        "Enable control plane V2. Default to false.",
-      ),
-      new DynamicUIProps(
-        InputType.DropDown,
-        "Vcenters",
-        "VmwareVCenterConfig specifies vCenter config for the user cluster.\nInherited from the admin cluster.\nStructure is documented below.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "LoadBalancer",
-        "Load Balancer configuration.\nStructure is documented below.",
-      ),
-      new DynamicUIProps(
-        InputType.CheckBox,
+        InputType.Bool,
         "VmTrackingEnabled",
         "Enable VM tracking.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "DataplaneV2",
-        "VmwareDataplaneV2Config specifies configuration for Dataplane V2.\nStructure is documented below.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Annotations",
-        "Annotations on the VMware User Cluster.\nThis field has the same restrictions as Kubernetes annotations.\nThe total size of all keys and values combined is limited to 256k.\nKey can have 2 segments: prefix (optional) and name (required),\nseparated by a slash (/).\nPrefix must be a DNS subdomain.\nName must be 63 characters or less, begin and end with alphanumerics,\nwith dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Storage",
-        "Storage configuration.\nStructure is documented below.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Location",
-        "The location of the resource.",
+        [],
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "AdminClusterMembership",
         "The admin cluster this VMware User Cluster belongs to.\nThis is the full resource name of the admin cluster's hub membership.\nIn the future, references to other resource types might be allowed if\nadmin clusters are modeled as their own resources.",
+        [],
+        true,
+        true,
       ),
       new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "A human readable description of this VMware User Cluster.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "UpgradePolicy",
-        "Specifies upgrade policy for the cluster.\nStructure is documented below.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "NetworkConfig",
-        "The VMware User Cluster network configuration.\nStructure is documented below.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
+        InputType.Object,
         "AutoRepairConfig",
         "Configuration for auto repairing.\nStructure is documented below.",
-      ),
-      new DynamicUIProps(InputType.String, "Name", "The VMware cluster name."),
-      new DynamicUIProps(
-        InputType.String,
-        "OnPremVersion",
-        "The Anthos clusters on the VMware version for your user cluster.",
+        Gkeonprem_VMwareClusterAutoRepairConfig_GetTypes(),
+        false,
+        false,
       ),
       new DynamicUIProps(
-        InputType.String,
-        "AntiAffinityGroups",
-        "AAGConfig specifies whether to spread VMware User Cluster nodes across at\nleast three physical hosts in the datacenter.\nStructure is documented below.",
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ControlPlaneNode",
-        "VMware User Cluster control plane nodes must have either 1 or 3 replicas.\nStructure is documented below.",
+        InputType.Object,
+        "DataplaneV2",
+        "VmwareDataplaneV2Config specifies configuration for Dataplane V2.\nStructure is documented below.",
+        Gkeonprem_VMwareClusterDataplaneV2_GetTypes(),
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
         "Project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "UpgradePolicy",
+        "Specifies upgrade policy for the cluster.\nStructure is documented below.",
+        Gkeonprem_VMwareClusterUpgradePolicy_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Map,
+        "Annotations",
+        "Annotations on the VMware User Cluster.\nThis field has the same restrictions as Kubernetes annotations.\nThe total size of all keys and values combined is limited to 256k.\nKey can have 2 segments: prefix (optional) and name (required),\nseparated by a slash (/).\nPrefix must be a DNS subdomain.\nName must be 63 characters or less, begin and end with alphanumerics,\nwith dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
+        InputType_Map_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Name",
+        "The VMware cluster name.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "AntiAffinityGroups",
+        "AAGConfig specifies whether to spread VMware User Cluster nodes across at\nleast three physical hosts in the datacenter.\nStructure is documented below.",
+        Gkeonprem_VMwareClusterAntiAffinityGroups_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "NetworkConfig",
+        "The VMware User Cluster network configuration.\nStructure is documented below.",
+        Gkeonprem_VMwareClusterNetworkConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "EnableControlPlaneV2",
+        "Enable control plane V2. Default to false.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "Storage",
+        "Storage configuration.\nStructure is documented below.",
+        Gkeonprem_VMwareClusterStorage_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "Authorization",
+        "RBAC policy that will be applied and managed by GKE On-Prem.\nStructure is documented below.",
+        Gkeonprem_VMwareClusterAuthorization_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "ControlPlaneNode",
+        "VMware User Cluster control plane nodes must have either 1 or 3 replicas.\nStructure is documented below.",
+        Gkeonprem_VMwareClusterControlPlaneNode_GetTypes(),
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "Vcenters",
+        "VmwareVCenterConfig specifies vCenter config for the user cluster.\nInherited from the admin cluster.\nStructure is documented below.",
+        Gkeonprem_VMwareClusterVcenter_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Location",
+        "The location of the resource.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "Description",
+        "A human readable description of this VMware User Cluster.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "LoadBalancer",
+        "Load Balancer configuration.\nStructure is documented below.",
+        Gkeonprem_VMwareClusterLoadBalancer_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "OnPremVersion",
+        "The Anthos clusters on the VMware version for your user cluster.",
+        [],
+        true,
+        false,
       ),
     ];
   }
