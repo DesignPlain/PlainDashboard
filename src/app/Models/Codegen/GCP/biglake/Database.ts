@@ -7,57 +7,34 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Biglake_DatabaseHiveOptions,
-  Biglake_DatabaseHiveOptions_GetTypes,
-} from "../types/Biglake_DatabaseHiveOptions";
+  biglake_DatabaseHiveOptions,
+  biglake_DatabaseHiveOptions_GetTypes,
+} from "../types/biglake_DatabaseHiveOptions";
 
 export interface DatabaseArgs {
   // The parent catalog.
-  Catalog?: string;
+  catalog?: string;
 
   /*
 Options of a Hive database.
 Structure is documented below.
 */
-  HiveOptions?: Biglake_DatabaseHiveOptions;
+  hiveOptions?: biglake_DatabaseHiveOptions;
 
   // The name of the database.
-  Name?: string;
+  name?: string;
 
   // The database type.
-  Type?: string;
+  type?: string;
 }
 export class Database extends Resource {
-  /*
-Options of a Hive database.
-Structure is documented below.
-*/
-  public HiveOptions?: Biglake_DatabaseHiveOptions;
-
-  // The name of the database.
-  public Name?: string;
-
-  // The database type.
-  public Type?: string;
-
-  /*
-Output only. The last modification time of the database. A timestamp in
-RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine
-fractional digits. Examples: "2014-10-02T15:01:23Z" and
-"2014-10-02T15:01:23.045123456Z".
-*/
-  public UpdateTime?: string;
-
-  // The parent catalog.
-  public Catalog?: string;
-
   /*
 Output only. The creation time of the database. A timestamp in RFC3339
 UTC "Zulu" format, with nanosecond resolution and up to nine fractional
 digits. Examples: "2014-10-02T15:01:23Z" and
 "2014-10-02T15:01:23.045123456Z".
 */
-  public CreateTime?: string;
+  public createTime?: string;
 
   /*
 Output only. The deletion time of the database. Only set after the
@@ -65,7 +42,7 @@ database is deleted. A timestamp in RFC3339 UTC "Zulu" format, with
 nanosecond resolution and up to nine fractional digits. Examples:
 "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  public DeleteTime?: string;
+  public deleteTime?: string;
 
   /*
 Output only. The time when this database is considered expired. Only set
@@ -73,13 +50,36 @@ after the database is deleted. A timestamp in RFC3339 UTC "Zulu" format,
 with nanosecond resolution and up to nine fractional digits. Examples:
 "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  public ExpireTime?: string;
+  public expireTime?: string;
+
+  /*
+Options of a Hive database.
+Structure is documented below.
+*/
+  public hiveOptions?: biglake_DatabaseHiveOptions;
+
+  // The name of the database.
+  public name?: string;
+
+  // The database type.
+  public type?: string;
+
+  /*
+Output only. The last modification time of the database. A timestamp in
+RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine
+fractional digits. Examples: "2014-10-02T15:01:23Z" and
+"2014-10-02T15:01:23.045123456Z".
+*/
+  public updateTime?: string;
+
+  // The parent catalog.
+  public catalog?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Catalog",
+        "catalog",
         "The parent catalog.",
         [],
         true,
@@ -87,15 +87,15 @@ with nanosecond resolution and up to nine fractional digits. Examples:
       ),
       new DynamicUIProps(
         InputType.Object,
-        "HiveOptions",
+        "hiveOptions",
         "Options of a Hive database.\nStructure is documented below.",
-        Biglake_DatabaseHiveOptions_GetTypes(),
+        biglake_DatabaseHiveOptions_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name of the database.",
         [],
         false,
@@ -103,7 +103,7 @@ with nanosecond resolution and up to nine fractional digits. Examples:
       ),
       new DynamicUIProps(
         InputType.String,
-        "Type",
+        "type",
         "The database type.",
         [],
         true,

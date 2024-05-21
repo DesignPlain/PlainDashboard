@@ -7,22 +7,22 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_InstanceSettingsMetadata,
-  Compute_InstanceSettingsMetadata_GetTypes,
-} from "../types/Compute_InstanceSettingsMetadata";
+  compute_InstanceSettingsMetadata,
+  compute_InstanceSettingsMetadata_GetTypes,
+} from "../types/compute_InstanceSettingsMetadata";
 
 export interface InstanceSettingsArgs {
   /*
 The metadata key/value pairs assigned to all the instances in the corresponding scope.
 Structure is documented below.
 */
-  Metadata?: Compute_InstanceSettingsMetadata;
+  metadata?: compute_InstanceSettingsMetadata;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 A reference to the zone where the machine resides.
@@ -30,26 +30,26 @@ A reference to the zone where the machine resides.
 
 - - -
 */
-  Zone?: string;
+  zone?: string;
 }
 export class InstanceSettings extends Resource {
   /*
 The fingerprint used for optimistic locking of this resource.  Used
 internally during updates.
 */
-  public Fingerprint?: string;
+  public fingerprint?: string;
 
   /*
 The metadata key/value pairs assigned to all the instances in the corresponding scope.
 Structure is documented below.
 */
-  public Metadata?: Compute_InstanceSettingsMetadata;
+  public metadata?: compute_InstanceSettingsMetadata;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 A reference to the zone where the machine resides.
@@ -57,21 +57,13 @@ A reference to the zone where the machine resides.
 
 - - -
 */
-  public Zone?: string;
+  public zone?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Object,
-        "Metadata",
-        "The metadata key/value pairs assigned to all the instances in the corresponding scope.\nStructure is documented below.",
-        Compute_InstanceSettingsMetadata_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -79,10 +71,18 @@ A reference to the zone where the machine resides.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Zone",
+        "zone",
         "A reference to the zone where the machine resides.\n\n\n- - -",
         [],
         true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "metadata",
+        "The metadata key/value pairs assigned to all the instances in the corresponding scope.\nStructure is documented below.",
+        compute_InstanceSettingsMetadata_GetTypes(),
+        false,
         false,
       ),
     ];

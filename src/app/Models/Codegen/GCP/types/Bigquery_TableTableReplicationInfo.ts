@@ -6,41 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_TableTableReplicationInfo {
+export interface bigquery_TableTableReplicationInfo {
   // The interval at which the source materialized view is polled for updates. The default is 300000.
-  ReplicationIntervalMs?: number;
+  replicationIntervalMs?: number;
 
   // The ID of the source dataset.
-  SourceDatasetId?: string;
+  sourceDatasetId?: string;
 
   // The ID of the source project.
-  SourceProjectId?: string;
+  sourceProjectId?: string;
 
   // The ID of the source materialized view.
-  SourceTableId?: string;
+  sourceTableId?: string;
 }
 
-export function Bigquery_TableTableReplicationInfo_GetTypes(): DynamicUIProps[] {
+export function bigquery_TableTableReplicationInfo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "ReplicationIntervalMs",
-      "The interval at which the source materialized view is polled for updates. The default is 300000.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "SourceDatasetId",
-      "The ID of the source dataset.",
-      [],
-      true,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "SourceProjectId",
+      "sourceProjectId",
       "The ID of the source project.",
       [],
       true,
@@ -48,8 +32,24 @@ export function Bigquery_TableTableReplicationInfo_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.String,
-      "SourceTableId",
+      "sourceTableId",
       "The ID of the source materialized view.",
+      [],
+      true,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "replicationIntervalMs",
+      "The interval at which the source materialized view is polled for updates. The default is 300000.",
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "sourceDatasetId",
+      "The ID of the source dataset.",
       [],
       true,
       true,

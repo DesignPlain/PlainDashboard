@@ -7,79 +7,71 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datacatalog_TagTemplateField,
-  Datacatalog_TagTemplateField_GetTypes,
-} from "../types/Datacatalog_TagTemplateField";
+  datacatalog_TagTemplateField,
+  datacatalog_TagTemplateField_GetTypes,
+} from "../types/datacatalog_TagTemplateField";
 
 export interface TagTemplateArgs {
-  /*
-Set of tag template field IDs and the settings for the field. This set is an exhaustive list of the allowed fields. This set must contain at least one field and at most 500 fields. The change of field_id will be resulting in re-creating of field. The change of primitive_type will be resulting in re-creating of field, however if the field is a required, you cannot update it.
-Structure is documented below.
-*/
-  Fields?: Array<Datacatalog_TagTemplateField>;
-
   // This confirms the deletion of any possible tags using this template. Must be set to true in order to delete the tag template.
-  ForceDelete?: boolean;
+  forceDelete?: boolean;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // Template location region.
-  Region?: string;
+  region?: string;
 
   // The id of the tag template to create.
-  TagTemplateId?: string;
+  tagTemplateId?: string;
 
   // The display name for this template.
-  DisplayName?: string;
-}
-export class TagTemplate extends Resource {
+  displayName?: string;
+
   /*
 Set of tag template field IDs and the settings for the field. This set is an exhaustive list of the allowed fields. This set must contain at least one field and at most 500 fields. The change of field_id will be resulting in re-creating of field. The change of primitive_type will be resulting in re-creating of field, however if the field is a required, you cannot update it.
 Structure is documented below.
 */
-  public Fields?: Array<Datacatalog_TagTemplateField>;
+  fields?: Array<datacatalog_TagTemplateField>;
+}
+export class TagTemplate extends Resource {
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  // Template location region.
+  public region?: string;
+
+  // The id of the tag template to create.
+  public tagTemplateId?: string;
+
+  // The display name for this template.
+  public displayName?: string;
+
+  /*
+Set of tag template field IDs and the settings for the field. This set is an exhaustive list of the allowed fields. This set must contain at least one field and at most 500 fields. The change of field_id will be resulting in re-creating of field. The change of primitive_type will be resulting in re-creating of field, however if the field is a required, you cannot update it.
+Structure is documented below.
+*/
+  public fields?: Array<datacatalog_TagTemplateField>;
 
   // This confirms the deletion of any possible tags using this template. Must be set to true in order to delete the tag template.
-  public ForceDelete?: boolean;
+  public forceDelete?: boolean;
 
   /*
 (Output)
 The resource name of the tag template field in URL format. Example: projects/{project_id}/locations/{location}/tagTemplates/{tagTemplateId}/fields/{field}
 */
-  public Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  // Template location region.
-  public Region?: string;
-
-  // The id of the tag template to create.
-  public TagTemplateId?: string;
-
-  // The display name for this template.
-  public DisplayName?: string;
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Region",
+        "region",
         "Template location region.",
         [],
         false,
@@ -87,7 +79,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "TagTemplateId",
+        "tagTemplateId",
         "The id of the tag template to create.",
         [],
         true,
@@ -95,7 +87,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "The display name for this template.",
         [],
         false,
@@ -103,19 +95,27 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "Fields",
+        "fields",
         "Set of tag template field IDs and the settings for the field. This set is an exhaustive list of the allowed fields. This set must contain at least one field and at most 500 fields. The change of field_id will be resulting in re-creating of field. The change of primitive_type will be resulting in re-creating of field, however if the field is a required, you cannot update it.\nStructure is documented below.",
-        Datacatalog_TagTemplateField_GetTypes(),
+        datacatalog_TagTemplateField_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "ForceDelete",
+        "forceDelete",
         "This confirms the deletion of any possible tags using this template. Must be set to true in order to delete the tag template.",
         [],
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
     ];
   }

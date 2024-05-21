@@ -6,12 +6,12 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_ClusterClusterConfigInitializationAction {
+export interface dataproc_ClusterClusterConfigInitializationAction {
   /*
 The script to be executed during initialization of the cluster.
 The script must be a GCS file with a gs:// prefix.
 */
-  Script?: string;
+  script?: string;
 
   /*
 The maximum duration (in seconds) which `script` is
@@ -20,14 +20,14 @@ computed value if not set (currently 300).
 
 - - -
 */
-  TimeoutSec?: number;
+  timeoutSec?: number;
 }
 
-export function Dataproc_ClusterClusterConfigInitializationAction_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterClusterConfigInitializationAction_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Script",
+      "script",
       "The script to be executed during initialization of the cluster.\nThe script must be a GCS file with a gs:// prefix.",
       [],
       true,
@@ -35,7 +35,7 @@ export function Dataproc_ClusterClusterConfigInitializationAction_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Number,
-      "TimeoutSec",
+      "timeoutSec",
       "The maximum duration (in seconds) which `script` is\nallowed to take to execute its action. GCP will default to a predetermined\ncomputed value if not set (currently 300).\n\n- - -",
       [],
       false,

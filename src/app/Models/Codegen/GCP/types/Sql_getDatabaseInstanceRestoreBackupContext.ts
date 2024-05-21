@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstanceRestoreBackupContext {
-  // The ID of the project in which the resource belongs.
-  Project?: string;
-
+export interface sql_getDatabaseInstanceRestoreBackupContext {
   // The ID of the backup run to restore from.
-  BackupRunId?: number;
+  backupRunId?: number;
 
   // The ID of the instance that the backup was taken from.
-  InstanceId?: string;
+  instanceId?: string;
+
+  // The ID of the project in which the resource belongs.
+  project?: string;
 }
 
-export function Sql_getDatabaseInstanceRestoreBackupContext_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstanceRestoreBackupContext_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "InstanceId",
+      "instanceId",
       "The ID of the instance that the backup was taken from.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Sql_getDatabaseInstanceRestoreBackupContext_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "Project",
+      "project",
       "The ID of the project in which the resource belongs.",
       [],
       true,
@@ -37,7 +37,7 @@ export function Sql_getDatabaseInstanceRestoreBackupContext_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Number,
-      "BackupRunId",
+      "backupRunId",
       "The ID of the backup run to restore from.",
       [],
       true,

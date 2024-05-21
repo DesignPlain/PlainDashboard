@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_StandardAppVersionLibrary {
-  // Name of the library. Example "django".
-  Name?: string;
-
+export interface appengine_StandardAppVersionLibrary {
   // Version of the library to select, or "latest".
-  Version?: string;
+  version?: string;
+
+  // Name of the library. Example "django".
+  name?: string;
 }
 
-export function Appengine_StandardAppVersionLibrary_GetTypes(): DynamicUIProps[] {
+export function appengine_StandardAppVersionLibrary_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Version",
+      "version",
       'Version of the library to select, or "latest".',
       [],
       false,
@@ -26,7 +26,7 @@ export function Appengine_StandardAppVersionLibrary_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       'Name of the library. Example "django".',
       [],
       false,

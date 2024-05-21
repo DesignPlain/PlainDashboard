@@ -8,68 +8,75 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface AppleAppArgs {
+  // The user-assigned display name of the App.
+  displayName?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  // The Apple Developer Team ID associated with the App in the App Store.
+  teamId?: string;
+
+  /*
+The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the AppleApp.
+If apiKeyId is not set during creation, then Firebase automatically associates an apiKeyId with the AppleApp.
+This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned.
+*/
+  apiKeyId?: string;
+
+  // The automatically generated Apple ID assigned to the Apple app by Apple in the Apple App Store.
+  appStoreId?: string;
+
   /*
 The canonical bundle ID of the Apple app as it would appear in the Apple AppStore.
 
 
 - - -
 */
-  BundleId?: string;
+  bundleId?: string;
 
   /*
 (Optional) Set to 'ABANDON' to allow the Apple to be untracked from terraform state rather than deleted upon 'terraform
 destroy'. This is useful because the Apple may be serving traffic. Set to 'DELETE' to delete the Apple. Defaults to
 'DELETE'.
 */
-  DeletionPolicy?: string;
-
-  // The user-assigned display name of the App.
-  DisplayName?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  // The Apple Developer Team ID associated with the App in the App Store.
-  TeamId?: string;
-
-  /*
-The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the AppleApp.
-If apiKeyId is not set during creation, then Firebase automatically associates an apiKeyId with the AppleApp.
-This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned.
-*/
-  ApiKeyId?: string;
-
-  // The automatically generated Apple ID assigned to the Apple app by Apple in the Apple App Store.
-  AppStoreId?: string;
+  deletionPolicy?: string;
 }
 export class AppleApp extends Resource {
-  // The user-assigned display name of the App.
-  public DisplayName?: string;
+  // The automatically generated Apple ID assigned to the Apple app by Apple in the Apple App Store.
+  public appStoreId?: string;
+
+  /*
+(Optional) Set to 'ABANDON' to allow the Apple to be untracked from terraform state rather than deleted upon 'terraform
+destroy'. This is useful because the Apple may be serving traffic. Set to 'DELETE' to delete the Apple. Defaults to
+'DELETE'.
+*/
+  public deletionPolicy?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
+
+  // The Apple Developer Team ID associated with the App in the App Store.
+  public teamId?: string;
 
   /*
 The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the AppleApp.
 If apiKeyId is not set during creation, then Firebase automatically associates an apiKeyId with the AppleApp.
 This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned.
 */
-  public ApiKeyId?: string;
+  public apiKeyId?: string;
 
   /*
 The globally unique, Firebase-assigned identifier of the App.
 This identifier should be treated as an opaque token, as the data format is not specified.
 */
-  public AppId?: string;
-
-  // The automatically generated Apple ID assigned to the Apple app by Apple in the Apple App Store.
-  public AppStoreId?: string;
+  public appId?: string;
 
   /*
 The canonical bundle ID of the Apple app as it would appear in the Apple AppStore.
@@ -77,29 +84,22 @@ The canonical bundle ID of the Apple app as it would appear in the Apple AppStor
 
 - - -
 */
-  public BundleId?: string;
+  public bundleId?: string;
 
-  /*
-(Optional) Set to 'ABANDON' to allow the Apple to be untracked from terraform state rather than deleted upon 'terraform
-destroy'. This is useful because the Apple may be serving traffic. Set to 'DELETE' to delete the Apple. Defaults to
-'DELETE'.
-*/
-  public DeletionPolicy?: string;
+  // The user-assigned display name of the App.
+  public displayName?: string;
 
   /*
 The fully qualified resource name of the App, for example:
 projects/projectId/iosApps/appId
 */
-  public Name?: string;
-
-  // The Apple Developer Team ID associated with the App in the App Store.
-  public TeamId?: string;
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "The user-assigned display name of the App.",
         [],
         true,
@@ -107,7 +107,7 @@ projects/projectId/iosApps/appId
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -115,7 +115,7 @@ projects/projectId/iosApps/appId
       ),
       new DynamicUIProps(
         InputType.String,
-        "TeamId",
+        "teamId",
         "The Apple Developer Team ID associated with the App in the App Store.",
         [],
         false,
@@ -123,7 +123,7 @@ projects/projectId/iosApps/appId
       ),
       new DynamicUIProps(
         InputType.String,
-        "ApiKeyId",
+        "apiKeyId",
         "The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the AppleApp.\nIf apiKeyId is not set during creation, then Firebase automatically associates an apiKeyId with the AppleApp.\nThis auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned.",
         [],
         false,
@@ -131,7 +131,7 @@ projects/projectId/iosApps/appId
       ),
       new DynamicUIProps(
         InputType.String,
-        "AppStoreId",
+        "appStoreId",
         "The automatically generated Apple ID assigned to the Apple app by Apple in the Apple App Store.",
         [],
         false,
@@ -139,7 +139,7 @@ projects/projectId/iosApps/appId
       ),
       new DynamicUIProps(
         InputType.String,
-        "BundleId",
+        "bundleId",
         "The canonical bundle ID of the Apple app as it would appear in the Apple AppStore.\n\n\n- - -",
         [],
         true,
@@ -147,7 +147,7 @@ projects/projectId/iosApps/appId
       ),
       new DynamicUIProps(
         InputType.String,
-        "DeletionPolicy",
+        "deletionPolicy",
         "(Optional) Set to 'ABANDON' to allow the Apple to be untracked from terraform state rather than deleted upon 'terraform\ndestroy'. This is useful because the Apple may be serving traffic. Set to 'DELETE' to delete the Apple. Defaults to\n'DELETE'.",
         [],
         false,

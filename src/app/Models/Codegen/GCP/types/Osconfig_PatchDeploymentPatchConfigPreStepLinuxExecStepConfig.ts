@@ -6,52 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfigGcsObject,
-  Osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfigGcsObject_GetTypes,
-} from "./Osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfigGcsObject";
+  osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfigGcsObject,
+  osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfigGcsObject_GetTypes,
+} from "./osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfigGcsObject";
 
-export interface Osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfig {
-  // Defaults to [0]. A list of possible return values that the execution can return to indicate a success.
-  AllowedSuccessCodes?: Array<number>;
-
-  /*
-A Cloud Storage object containing the executable.
-Structure is documented below.
-*/
-  GcsObject?: Osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfigGcsObject;
-
+export interface osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfig {
   /*
 The script interpreter to use to run the script. If no interpreter is specified the script will
 be executed directly, which will likely only succeed for scripts with shebang lines.
 Possible values are: `SHELL`, `POWERSHELL`.
 */
-  Interpreter?: string;
+  interpreter?: string;
 
   // An absolute path to the executable on the VM.
-  LocalPath?: string;
+  localPath?: string;
+
+  // Defaults to [0]. A list of possible return values that the execution can return to indicate a success.
+  allowedSuccessCodes?: Array<number>;
+
+  /*
+A Cloud Storage object containing the executable.
+Structure is documented below.
+*/
+  gcsObject?: osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfigGcsObject;
 }
 
-export function Osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfig_GetTypes(): DynamicUIProps[] {
+export function osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "AllowedSuccessCodes",
-      "Defaults to [0]. A list of possible return values that the execution can return to indicate a success.",
-      InputType_Number_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "GcsObject",
-      "A Cloud Storage object containing the executable.\nStructure is documented below.",
-      Osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfigGcsObject_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Interpreter",
+      "interpreter",
       "The script interpreter to use to run the script. If no interpreter is specified the script will\nbe executed directly, which will likely only succeed for scripts with shebang lines.\nPossible values are: `SHELL`, `POWERSHELL`.",
       [],
       false,
@@ -59,9 +43,25 @@ export function Osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfig_Ge
     ),
     new DynamicUIProps(
       InputType.String,
-      "LocalPath",
+      "localPath",
       "An absolute path to the executable on the VM.",
       [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "allowedSuccessCodes",
+      "Defaults to [0]. A list of possible return values that the execution can return to indicate a success.",
+      InputType_Number_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "gcsObject",
+      "A Cloud Storage object containing the executable.\nStructure is documented below.",
+      osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfigGcsObject_GetTypes(),
       false,
       true,
     ),

@@ -6,108 +6,108 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_getBucketLifecycleRuleCondition {
-  // Creation date of an object in RFC 3339 (e.g. 2017-06-13) to satisfy this condition.
-  CreatedBefore?: string;
+export interface storage_getBucketLifecycleRuleCondition {
+  // Storage Class of objects to satisfy this condition. Supported values include: MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE, STANDARD, DURABLE_REDUCED_AVAILABILITY.
+  matchesStorageClasses?: Array<string>;
 
-  // Creation date of an object in RFC 3339 (e.g. 2017-06-13) to satisfy this condition.
-  CustomTimeBefore?: string;
-
-  // Number of days elapsed since the user-specified timestamp set on an object.
-  DaysSinceCustomTime?: number;
-
-  // One or more matching name prefixes to satisfy this condition.
-  MatchesPrefixes?: Array<string>;
+  // One or more matching name suffixes to satisfy this condition.
+  matchesSuffixes?: Array<string>;
 
   // Relevant only for versioned objects. The number of newer versions of an object to satisfy this condition.
-  NumNewerVersions?: number;
+  numNewerVersions?: number;
 
   // Minimum age of an object in days to satisfy this condition.
-  Age?: number;
+  age?: number;
+
+  // Creation date of an object in RFC 3339 (e.g. 2017-06-13) to satisfy this condition.
+  createdBefore?: string;
+
+  // Creation date of an object in RFC 3339 (e.g. 2017-06-13) to satisfy this condition.
+  customTimeBefore?: string;
+
+  // Number of days elapsed since the user-specified timestamp set on an object.
+  daysSinceCustomTime?: number;
+
+  // One or more matching name prefixes to satisfy this condition.
+  matchesPrefixes?: Array<string>;
+
+  // Match to live and/or archived objects. Unversioned buckets have only live objects. Supported values include: "LIVE", "ARCHIVED", "ANY".
+  withState?: string;
 
   /*
 Number of days elapsed since the noncurrent timestamp of an object. This
 										condition is relevant only for versioned objects.
 */
-  DaysSinceNoncurrentTime?: number;
-
-  // Storage Class of objects to satisfy this condition. Supported values include: MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE, STANDARD, DURABLE_REDUCED_AVAILABILITY.
-  MatchesStorageClasses?: Array<string>;
-
-  // One or more matching name suffixes to satisfy this condition.
-  MatchesSuffixes?: Array<string>;
+  daysSinceNoncurrentTime?: number;
 
   // While set true, age value will be omitted.Required to set true when age is unset in the config file.
-  NoAge?: boolean;
+  noAge?: boolean;
 
   // Creation date of an object in RFC 3339 (e.g. 2017-06-13) to satisfy this condition.
-  NoncurrentTimeBefore?: string;
-
-  // Match to live and/or archived objects. Unversioned buckets have only live objects. Supported values include: "LIVE", "ARCHIVED", "ANY".
-  WithState?: string;
+  noncurrentTimeBefore?: string;
 }
 
-export function Storage_getBucketLifecycleRuleCondition_GetTypes(): DynamicUIProps[] {
+export function storage_getBucketLifecycleRuleCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CustomTimeBefore",
+      "createdBefore",
       "Creation date of an object in RFC 3339 (e.g. 2017-06-13) to satisfy this condition.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
+      InputType.String,
+      "customTimeBefore",
+      "Creation date of an object in RFC 3339 (e.g. 2017-06-13) to satisfy this condition.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "withState",
+      'Match to live and/or archived objects. Unversioned buckets have only live objects. Supported values include: "LIVE", "ARCHIVED", "ANY".',
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Number,
-      "DaysSinceNoncurrentTime",
+      "daysSinceNoncurrentTime",
       "Number of days elapsed since the noncurrent timestamp of an object. This\n\t\t\t\t\t\t\t\t\t\tcondition is relevant only for versioned objects.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
+      InputType.String,
+      "noncurrentTimeBefore",
+      "Creation date of an object in RFC 3339 (e.g. 2017-06-13) to satisfy this condition.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Array,
-      "MatchesSuffixes",
+      "matchesStorageClasses",
+      "Storage Class of objects to satisfy this condition. Supported values include: MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE, STANDARD, DURABLE_REDUCED_AVAILABILITY.",
+      InputType_String_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "matchesSuffixes",
       "One or more matching name suffixes to satisfy this condition.",
       InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "NoncurrentTimeBefore",
-      "Creation date of an object in RFC 3339 (e.g. 2017-06-13) to satisfy this condition.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "CreatedBefore",
-      "Creation date of an object in RFC 3339 (e.g. 2017-06-13) to satisfy this condition.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "DaysSinceCustomTime",
-      "Number of days elapsed since the user-specified timestamp set on an object.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "MatchesPrefixes",
-      "One or more matching name prefixes to satisfy this condition.",
-      InputType_String_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "NumNewerVersions",
+      "numNewerVersions",
       "Relevant only for versioned objects. The number of newer versions of an object to satisfy this condition.",
       [],
       true,
@@ -115,32 +115,32 @@ export function Storage_getBucketLifecycleRuleCondition_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Age",
+      "age",
       "Minimum age of an object in days to satisfy this condition.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
+      InputType.Number,
+      "daysSinceCustomTime",
+      "Number of days elapsed since the user-specified timestamp set on an object.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Array,
-      "MatchesStorageClasses",
-      "Storage Class of objects to satisfy this condition. Supported values include: MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE, STANDARD, DURABLE_REDUCED_AVAILABILITY.",
+      "matchesPrefixes",
+      "One or more matching name prefixes to satisfy this condition.",
       InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "NoAge",
+      "noAge",
       "While set true, age value will be omitted.Required to set true when age is unset in the config file.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "WithState",
-      'Match to live and/or archived objects. Unversioned buckets have only live objects. Supported values include: "LIVE", "ARCHIVED", "ANY".',
       [],
       true,
       false,

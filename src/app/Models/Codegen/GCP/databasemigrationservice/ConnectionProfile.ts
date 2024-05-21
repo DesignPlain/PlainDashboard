@@ -7,57 +7,48 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Databasemigrationservice_ConnectionProfileAlloydb,
-  Databasemigrationservice_ConnectionProfileAlloydb_GetTypes,
-} from "../types/Databasemigrationservice_ConnectionProfileAlloydb";
+  databasemigrationservice_ConnectionProfileCloudsql,
+  databasemigrationservice_ConnectionProfileCloudsql_GetTypes,
+} from "../types/databasemigrationservice_ConnectionProfileCloudsql";
 import {
-  Databasemigrationservice_ConnectionProfileCloudsql,
-  Databasemigrationservice_ConnectionProfileCloudsql_GetTypes,
-} from "../types/Databasemigrationservice_ConnectionProfileCloudsql";
+  databasemigrationservice_ConnectionProfileOracle,
+  databasemigrationservice_ConnectionProfileOracle_GetTypes,
+} from "../types/databasemigrationservice_ConnectionProfileOracle";
 import {
-  Databasemigrationservice_ConnectionProfileMysql,
-  Databasemigrationservice_ConnectionProfileMysql_GetTypes,
-} from "../types/Databasemigrationservice_ConnectionProfileMysql";
+  databasemigrationservice_ConnectionProfileMysql,
+  databasemigrationservice_ConnectionProfileMysql_GetTypes,
+} from "../types/databasemigrationservice_ConnectionProfileMysql";
 import {
-  Databasemigrationservice_ConnectionProfilePostgresql,
-  Databasemigrationservice_ConnectionProfilePostgresql_GetTypes,
-} from "../types/Databasemigrationservice_ConnectionProfilePostgresql";
+  databasemigrationservice_ConnectionProfileError,
+  databasemigrationservice_ConnectionProfileError_GetTypes,
+} from "../types/databasemigrationservice_ConnectionProfileError";
 import {
-  Databasemigrationservice_ConnectionProfileOracle,
-  Databasemigrationservice_ConnectionProfileOracle_GetTypes,
-} from "../types/Databasemigrationservice_ConnectionProfileOracle";
+  databasemigrationservice_ConnectionProfilePostgresql,
+  databasemigrationservice_ConnectionProfilePostgresql_GetTypes,
+} from "../types/databasemigrationservice_ConnectionProfilePostgresql";
 import {
-  Databasemigrationservice_ConnectionProfileError,
-  Databasemigrationservice_ConnectionProfileError_GetTypes,
-} from "../types/Databasemigrationservice_ConnectionProfileError";
+  databasemigrationservice_ConnectionProfileAlloydb,
+  databasemigrationservice_ConnectionProfileAlloydb_GetTypes,
+} from "../types/databasemigrationservice_ConnectionProfileAlloydb";
 
 export interface ConnectionProfileArgs {
+  /*
+Specifies connection parameters required specifically for PostgreSQL databases.
+Structure is documented below.
+*/
+  postgresql?: databasemigrationservice_ConnectionProfilePostgresql;
+
   /*
 Specifies required connection parameters, and the parameters required to create an AlloyDB destination cluster.
 Structure is documented below.
 */
-  Alloydb?: Databasemigrationservice_ConnectionProfileAlloydb;
+  alloydb?: databasemigrationservice_ConnectionProfileAlloydb;
 
   /*
 Specifies required connection parameters, and, optionally, the parameters required to create a Cloud SQL destination database instance.
 Structure is documented below.
 */
-  Cloudsql?: Databasemigrationservice_ConnectionProfileCloudsql;
-
-  // The connection profile display name.
-  DisplayName?: string;
-
-  /*
-Specifies connection parameters required specifically for MySQL databases.
-Structure is documented below.
-*/
-  Mysql?: Databasemigrationservice_ConnectionProfileMysql;
-
-  /*
-Specifies connection parameters required specifically for PostgreSQL databases.
-Structure is documented below.
-*/
-  Postgresql?: Databasemigrationservice_ConnectionProfilePostgresql;
+  cloudsql?: databasemigrationservice_ConnectionProfileCloudsql;
 
   /*
 The ID of the connection profile.
@@ -65,7 +56,16 @@ The ID of the connection profile.
 
 - - -
 */
-  ConnectionProfileId?: string;
+  connectionProfileId?: string;
+
+  // The connection profile display name.
+  displayName?: string;
+
+  /*
+Specifies connection parameters required specifically for Oracle databases.
+Structure is documented below.
+*/
+  oracle?: databasemigrationservice_ConnectionProfileOracle;
 
   /*
 The resource labels for connection profile to use to annotate any related underlying resources such as Compute Engine VMs.
@@ -73,79 +73,97 @@ The resource labels for connection profile to use to annotate any related underl
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   // The location where the connection profile should reside.
-  Location?: string;
-
-  /*
-Specifies connection parameters required specifically for Oracle databases.
-Structure is documented below.
-*/
-  Oracle?: Databasemigrationservice_ConnectionProfileOracle;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-}
-export class ConnectionProfile extends Resource {
-  /*
-Specifies connection parameters required specifically for PostgreSQL databases.
-Structure is documented below.
-*/
-  public Postgresql?: Databasemigrationservice_ConnectionProfilePostgresql;
-
-  // The location where the connection profile should reside.
-  public Location?: string;
+  location?: string;
 
   /*
 Specifies connection parameters required specifically for MySQL databases.
 Structure is documented below.
 */
-  public Mysql?: Databasemigrationservice_ConnectionProfileMysql;
+  mysql?: databasemigrationservice_ConnectionProfileMysql;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+}
+export class ConnectionProfile extends Resource {
+  /*
+Output only. The error details in case of state FAILED.
+Structure is documented below.
+*/
+  public errors?: Array<databasemigrationservice_ConnectionProfileError>;
+
+  /*
+The resource labels for connection profile to use to annotate any related underlying resources such as Compute Engine VMs.
+
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
+
+  // The location where the connection profile should reside.
+  public location?: string;
+
+  /*
+Specifies connection parameters required specifically for Oracle databases.
+Structure is documented below.
+*/
+  public oracle?: databasemigrationservice_ConnectionProfileOracle;
+
+  /*
+Specifies required connection parameters, and, optionally, the parameters required to create a Cloud SQL destination database instance.
+Structure is documented below.
+*/
+  public cloudsql?: databasemigrationservice_ConnectionProfileCloudsql;
+
+  // The connection profile display name.
+  public displayName?: string;
+
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
+
+  /*
+Specifies connection parameters required specifically for MySQL databases.
+Structure is documented below.
+*/
+  public mysql?: databasemigrationservice_ConnectionProfileMysql;
+
+  // The name of this connection profile resource in the form of projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}.
+  public name?: string;
+
+  /*
+Specifies connection parameters required specifically for PostgreSQL databases.
+Structure is documented below.
+*/
+  public postgresql?: databasemigrationservice_ConnectionProfilePostgresql;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
+  public pulumiLabels?: Map<string, string>;
 
   /*
-Specifies required connection parameters, and, optionally, the parameters required to create a Cloud SQL destination database instance.
+Specifies required connection parameters, and the parameters required to create an AlloyDB destination cluster.
 Structure is documented below.
 */
-  public Cloudsql?: Databasemigrationservice_ConnectionProfileCloudsql;
+  public alloydb?: databasemigrationservice_ConnectionProfileAlloydb;
+
+  // Output only. The timestamp when the resource was created. A timestamp in RFC3339 UTC 'Zulu' format, accurate to nanoseconds. Example: '2014-10-02T15:01:23.045123456Z'.
+  public createTime?: string;
 
   /*
-Output only. The error details in case of state FAILED.
-Structure is documented below.
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 */
-  public Errors?: Array<Databasemigrationservice_ConnectionProfileError>;
-
-  // The database provider.
-  public Dbprovider?: string;
-
-  /*
-The resource labels for connection profile to use to annotate any related underlying resources such as Compute Engine VMs.
-
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  public Labels?: Map<string, string>;
-
-  // The name of this connection profile resource in the form of projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}.
-  public Name?: string;
-
-  /*
-Specifies connection parameters required specifically for Oracle databases.
-Structure is documented below.
-*/
-  public Oracle?: Databasemigrationservice_ConnectionProfileOracle;
+  public project?: string;
 
   // The current connection profile state.
-  public State?: string;
+  public state?: string;
 
   /*
 The ID of the connection profile.
@@ -153,50 +171,16 @@ The ID of the connection profile.
 
 - - -
 */
-  public ConnectionProfileId?: string;
+  public connectionProfileId?: string;
 
-  // Output only. The timestamp when the resource was created. A timestamp in RFC3339 UTC 'Zulu' format, accurate to nanoseconds. Example: '2014-10-02T15:01:23.045123456Z'.
-  public CreateTime?: string;
-
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  /*
-Specifies required connection parameters, and the parameters required to create an AlloyDB destination cluster.
-Structure is documented below.
-*/
-  public Alloydb?: Databasemigrationservice_ConnectionProfileAlloydb;
-
-  // The connection profile display name.
-  public DisplayName?: string;
+  // The database provider.
+  public dbprovider?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
-        "The connection profile display name.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "Postgresql",
-        "Specifies connection parameters required specifically for PostgreSQL databases.\nStructure is documented below.",
-        Databasemigrationservice_ConnectionProfilePostgresql_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -204,39 +188,39 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Cloudsql",
-        "Specifies required connection parameters, and, optionally, the parameters required to create a Cloud SQL destination database instance.\nStructure is documented below.",
-        Databasemigrationservice_ConnectionProfileCloudsql_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "Mysql",
-        "Specifies connection parameters required specifically for MySQL databases.\nStructure is documented below.",
-        Databasemigrationservice_ConnectionProfileMysql_GetTypes(),
+        "alloydb",
+        "Specifies required connection parameters, and the parameters required to create an AlloyDB destination cluster.\nStructure is documented below.",
+        databasemigrationservice_ConnectionProfileAlloydb_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ConnectionProfileId",
-        "The ID of the connection profile.\n\n\n- - -",
+        "displayName",
+        "The connection profile display name.",
         [],
-        true,
-        true,
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "The resource labels for connection profile to use to annotate any related underlying resources such as Compute Engine VMs.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
+        InputType.Object,
+        "oracle",
+        "Specifies connection parameters required specifically for Oracle databases.\nStructure is documented below.",
+        databasemigrationservice_ConnectionProfileOracle_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location where the connection profile should reside.",
         [],
         false,
@@ -244,19 +228,35 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Oracle",
-        "Specifies connection parameters required specifically for Oracle databases.\nStructure is documented below.",
-        Databasemigrationservice_ConnectionProfileOracle_GetTypes(),
+        "mysql",
+        "Specifies connection parameters required specifically for MySQL databases.\nStructure is documented below.",
+        databasemigrationservice_ConnectionProfileMysql_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Alloydb",
-        "Specifies required connection parameters, and the parameters required to create an AlloyDB destination cluster.\nStructure is documented below.",
-        Databasemigrationservice_ConnectionProfileAlloydb_GetTypes(),
+        "postgresql",
+        "Specifies connection parameters required specifically for PostgreSQL databases.\nStructure is documented below.",
+        databasemigrationservice_ConnectionProfilePostgresql_GetTypes(),
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "cloudsql",
+        "Specifies required connection parameters, and, optionally, the parameters required to create a Cloud SQL destination database instance.\nStructure is documented below.",
+        databasemigrationservice_ConnectionProfileCloudsql_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "connectionProfileId",
+        "The ID of the connection profile.\n\n\n- - -",
+        [],
+        true,
+        true,
       ),
     ];
   }

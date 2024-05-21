@@ -6,40 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataplex_DatascanExecutionSpecTriggerOnDemand,
-  Dataplex_DatascanExecutionSpecTriggerOnDemand_GetTypes,
-} from "./Dataplex_DatascanExecutionSpecTriggerOnDemand";
+  dataplex_DatascanExecutionSpecTriggerOnDemand,
+  dataplex_DatascanExecutionSpecTriggerOnDemand_GetTypes,
+} from "./dataplex_DatascanExecutionSpecTriggerOnDemand";
 import {
-  Dataplex_DatascanExecutionSpecTriggerSchedule,
-  Dataplex_DatascanExecutionSpecTriggerSchedule_GetTypes,
-} from "./Dataplex_DatascanExecutionSpecTriggerSchedule";
+  dataplex_DatascanExecutionSpecTriggerSchedule,
+  dataplex_DatascanExecutionSpecTriggerSchedule_GetTypes,
+} from "./dataplex_DatascanExecutionSpecTriggerSchedule";
 
-export interface Dataplex_DatascanExecutionSpecTrigger {
+export interface dataplex_DatascanExecutionSpecTrigger {
   // The scan runs once via dataScans.run API.
-  OnDemand?: Dataplex_DatascanExecutionSpecTriggerOnDemand;
+  onDemand?: dataplex_DatascanExecutionSpecTriggerOnDemand;
 
   /*
 The scan is scheduled to run periodically.
 Structure is documented below.
 */
-  Schedule?: Dataplex_DatascanExecutionSpecTriggerSchedule;
+  schedule?: dataplex_DatascanExecutionSpecTriggerSchedule;
 }
 
-export function Dataplex_DatascanExecutionSpecTrigger_GetTypes(): DynamicUIProps[] {
+export function dataplex_DatascanExecutionSpecTrigger_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "OnDemand",
+      "onDemand",
       "The scan runs once via dataScans.run API.",
-      Dataplex_DatascanExecutionSpecTriggerOnDemand_GetTypes(),
+      dataplex_DatascanExecutionSpecTriggerOnDemand_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Schedule",
+      "schedule",
       "The scan is scheduled to run periodically.\nStructure is documented below.",
-      Dataplex_DatascanExecutionSpecTriggerSchedule_GetTypes(),
+      dataplex_DatascanExecutionSpecTriggerSchedule_GetTypes(),
       false,
       false,
     ),

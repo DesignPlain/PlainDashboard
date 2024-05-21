@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Firebaserules_RulesetSourceFile,
-  Firebaserules_RulesetSourceFile_GetTypes,
-} from "./Firebaserules_RulesetSourceFile";
+  firebaserules_RulesetSourceFile,
+  firebaserules_RulesetSourceFile_GetTypes,
+} from "./firebaserules_RulesetSourceFile";
 
-export interface Firebaserules_RulesetSource {
+export interface firebaserules_RulesetSource {
   // `File` set constituting the `Source` bundle.
-  Files?: Array<Firebaserules_RulesetSourceFile>;
+  files?: Array<firebaserules_RulesetSourceFile>;
 
   // `Language` of the `Source` bundle. If unspecified, the language will default to `FIREBASE_RULES`. Possible values: LANGUAGE_UNSPECIFIED, FIREBASE_RULES, EVENT_FLOW_TRIGGERS
-  Language?: string;
+  language?: string;
 }
 
-export function Firebaserules_RulesetSource_GetTypes(): DynamicUIProps[] {
+export function firebaserules_RulesetSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Files",
+      "files",
       "`File` set constituting the `Source` bundle.",
-      Firebaserules_RulesetSourceFile_GetTypes(),
+      firebaserules_RulesetSourceFile_GetTypes(),
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Language",
+      "language",
       "`Language` of the `Source` bundle. If unspecified, the language will default to `FIREBASE_RULES`. Possible values: LANGUAGE_UNSPECIFIED, FIREBASE_RULES, EVENT_FLOW_TRIGGERS",
       [],
       false,

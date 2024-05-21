@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Alloydb_ClusterContinuousBackupInfoEncryptionInfo {
+export interface alloydb_ClusterContinuousBackupInfoEncryptionInfo {
   /*
 (Output)
 Output only. Type of encryption.
 */
-  EncryptionType?: string;
+  encryptionType?: string;
 
   /*
 (Output)
 Output only. Cloud KMS key versions that are being used to protect the database or the backup.
 */
-  KmsKeyVersions?: Array<string>;
+  kmsKeyVersions?: Array<string>;
 }
 
-export function Alloydb_ClusterContinuousBackupInfoEncryptionInfo_GetTypes(): DynamicUIProps[] {
+export function alloydb_ClusterContinuousBackupInfoEncryptionInfo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "EncryptionType",
+      "encryptionType",
       "(Output)\nOutput only. Type of encryption.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Alloydb_ClusterContinuousBackupInfoEncryptionInfo_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "KmsKeyVersions",
+      "kmsKeyVersions",
       "(Output)\nOutput only. Cloud KMS key versions that are being used to protect the database or the backup.",
       InputType_String_GetTypes(),
       false,

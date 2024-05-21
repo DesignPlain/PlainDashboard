@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterDnsConfig {
+export interface container_getClusterDnsConfig {
   // Which in-cluster DNS provider should be used.
-  ClusterDns?: string;
+  clusterDns?: string;
 
   // The suffix used for all cluster service records.
-  ClusterDnsDomain?: string;
+  clusterDnsDomain?: string;
 
   // The scope of access to cluster DNS records.
-  ClusterDnsScope?: string;
+  clusterDnsScope?: string;
 }
 
-export function Container_getClusterDnsConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterDnsConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ClusterDnsScope",
-      "The scope of access to cluster DNS records.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ClusterDns",
+      "clusterDns",
       "Which in-cluster DNS provider should be used.",
       [],
       true,
@@ -37,8 +29,16 @@ export function Container_getClusterDnsConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ClusterDnsDomain",
+      "clusterDnsDomain",
       "The suffix used for all cluster service records.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "clusterDnsScope",
+      "The scope of access to cluster DNS records.",
       [],
       true,
       false,

@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_GrpcRouteRuleMatchMethod {
+export interface networkservices_GrpcRouteRuleMatchMethod {
   // Specifies that matches are case sensitive. The default value is true.
-  CaseSensitive?: boolean;
+  caseSensitive?: boolean;
 
   // Required. Name of the method to match against.
-  GrpcMethod?: string;
+  grpcMethod?: string;
 
   // Required. Name of the service to match against.
-  GrpcService?: string;
+  grpcService?: string;
 }
 
-export function Networkservices_GrpcRouteRuleMatchMethod_GetTypes(): DynamicUIProps[] {
+export function networkservices_GrpcRouteRuleMatchMethod_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "CaseSensitive",
+      "caseSensitive",
       "Specifies that matches are case sensitive. The default value is true.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Networkservices_GrpcRouteRuleMatchMethod_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "GrpcMethod",
+      "grpcMethod",
       "Required. Name of the method to match against.",
       [],
       true,
@@ -37,7 +37,7 @@ export function Networkservices_GrpcRouteRuleMatchMethod_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "GrpcService",
+      "grpcService",
       "Required. Name of the service to match against.",
       [],
       true,

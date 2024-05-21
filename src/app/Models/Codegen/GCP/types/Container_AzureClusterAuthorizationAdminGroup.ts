@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AzureClusterAuthorizationAdminGroup {
+export interface container_AzureClusterAuthorizationAdminGroup {
   // The name of the group, e.g. `my-group@domain.com`.
-  Group?: string;
+  group?: string;
 }
 
-export function Container_AzureClusterAuthorizationAdminGroup_GetTypes(): DynamicUIProps[] {
+export function container_AzureClusterAuthorizationAdminGroup_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Group",
+      "group",
       "The name of the group, e.g. `my-group@domain.com`.",
       [],
       true,

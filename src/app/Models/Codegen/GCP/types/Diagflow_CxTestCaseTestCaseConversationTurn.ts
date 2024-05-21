@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxTestCaseTestCaseConversationTurnUserInput,
-  Diagflow_CxTestCaseTestCaseConversationTurnUserInput_GetTypes,
-} from "./Diagflow_CxTestCaseTestCaseConversationTurnUserInput";
+  diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutput,
+  diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutput_GetTypes,
+} from "./diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutput";
 import {
-  Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutput,
-  Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutput_GetTypes,
-} from "./Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutput";
+  diagflow_CxTestCaseTestCaseConversationTurnUserInput,
+  diagflow_CxTestCaseTestCaseConversationTurnUserInput_GetTypes,
+} from "./diagflow_CxTestCaseTestCaseConversationTurnUserInput";
 
-export interface Diagflow_CxTestCaseTestCaseConversationTurn {
+export interface diagflow_CxTestCaseTestCaseConversationTurn {
   /*
 The user input.
 Structure is documented below.
 */
-  UserInput?: Diagflow_CxTestCaseTestCaseConversationTurnUserInput;
+  userInput?: diagflow_CxTestCaseTestCaseConversationTurnUserInput;
 
   /*
 The virtual agent output.
 Structure is documented below.
 */
-  VirtualAgentOutput?: Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutput;
+  virtualAgentOutput?: diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutput;
 }
 
-export function Diagflow_CxTestCaseTestCaseConversationTurn_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxTestCaseTestCaseConversationTurn_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "UserInput",
+      "userInput",
       "The user input.\nStructure is documented below.",
-      Diagflow_CxTestCaseTestCaseConversationTurnUserInput_GetTypes(),
+      diagflow_CxTestCaseTestCaseConversationTurnUserInput_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "VirtualAgentOutput",
+      "virtualAgentOutput",
       "The virtual agent output.\nStructure is documented below.",
-      Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutput_GetTypes(),
+      diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutput_GetTypes(),
       false,
       false,
     ),

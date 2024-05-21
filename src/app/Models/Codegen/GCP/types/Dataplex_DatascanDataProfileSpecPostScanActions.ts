@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataplex_DatascanDataProfileSpecPostScanActionsBigqueryExport,
-  Dataplex_DatascanDataProfileSpecPostScanActionsBigqueryExport_GetTypes,
-} from "./Dataplex_DatascanDataProfileSpecPostScanActionsBigqueryExport";
+  dataplex_DatascanDataProfileSpecPostScanActionsBigqueryExport,
+  dataplex_DatascanDataProfileSpecPostScanActionsBigqueryExport_GetTypes,
+} from "./dataplex_DatascanDataProfileSpecPostScanActionsBigqueryExport";
 
-export interface Dataplex_DatascanDataProfileSpecPostScanActions {
+export interface dataplex_DatascanDataProfileSpecPostScanActions {
   /*
 If set, results will be exported to the provided BigQuery table.
 Structure is documented below.
 */
-  BigqueryExport?: Dataplex_DatascanDataProfileSpecPostScanActionsBigqueryExport;
+  bigqueryExport?: dataplex_DatascanDataProfileSpecPostScanActionsBigqueryExport;
 }
 
-export function Dataplex_DatascanDataProfileSpecPostScanActions_GetTypes(): DynamicUIProps[] {
+export function dataplex_DatascanDataProfileSpecPostScanActions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "BigqueryExport",
+      "bigqueryExport",
       "If set, results will be exported to the provided BigQuery table.\nStructure is documented below.",
-      Dataplex_DatascanDataProfileSpecPostScanActionsBigqueryExport_GetTypes(),
+      dataplex_DatascanDataProfileSpecPostScanActionsBigqueryExport_GetTypes(),
       false,
       false,
     ),

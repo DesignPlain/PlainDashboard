@@ -6,32 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudbuild_getTriggerBuildArtifactPythonPackage,
-  Cloudbuild_getTriggerBuildArtifactPythonPackage_GetTypes,
-} from "./Cloudbuild_getTriggerBuildArtifactPythonPackage";
+  cloudbuild_getTriggerBuildArtifactObject,
+  cloudbuild_getTriggerBuildArtifactObject_GetTypes,
+} from "./cloudbuild_getTriggerBuildArtifactObject";
 import {
-  Cloudbuild_getTriggerBuildArtifactMavenArtifact,
-  Cloudbuild_getTriggerBuildArtifactMavenArtifact_GetTypes,
-} from "./Cloudbuild_getTriggerBuildArtifactMavenArtifact";
+  cloudbuild_getTriggerBuildArtifactPythonPackage,
+  cloudbuild_getTriggerBuildArtifactPythonPackage_GetTypes,
+} from "./cloudbuild_getTriggerBuildArtifactPythonPackage";
 import {
-  Cloudbuild_getTriggerBuildArtifactNpmPackage,
-  Cloudbuild_getTriggerBuildArtifactNpmPackage_GetTypes,
-} from "./Cloudbuild_getTriggerBuildArtifactNpmPackage";
+  cloudbuild_getTriggerBuildArtifactMavenArtifact,
+  cloudbuild_getTriggerBuildArtifactMavenArtifact_GetTypes,
+} from "./cloudbuild_getTriggerBuildArtifactMavenArtifact";
 import {
-  Cloudbuild_getTriggerBuildArtifactObject,
-  Cloudbuild_getTriggerBuildArtifactObject_GetTypes,
-} from "./Cloudbuild_getTriggerBuildArtifactObject";
+  cloudbuild_getTriggerBuildArtifactNpmPackage,
+  cloudbuild_getTriggerBuildArtifactNpmPackage_GetTypes,
+} from "./cloudbuild_getTriggerBuildArtifactNpmPackage";
 
-export interface Cloudbuild_getTriggerBuildArtifact {
-  /*
-Python package to upload to Artifact Registry upon successful completion of all build steps. A package can encapsulate multiple objects to be uploaded to a single repository.
-
-The location and generation of the uploaded objects will be stored in the Build resource's results field.
-
-If any objects fail to be pushed, the build is marked FAILURE.
-*/
-  PythonPackages?: Array<Cloudbuild_getTriggerBuildArtifactPythonPackage>;
-
+export interface cloudbuild_getTriggerBuildArtifact {
   /*
 A list of images to be pushed upon the successful completion of all build steps.
 
@@ -41,7 +32,7 @@ The digests of the pushed images will be stored in the Build resource's results 
 
 If any of the images fail to be pushed, the build is marked FAILURE.
 */
-  Images?: Array<string>;
+  images?: Array<string>;
 
   /*
 A Maven artifact to upload to Artifact Registry upon successful completion of all build steps.
@@ -50,7 +41,7 @@ The location and generation of the uploaded objects will be stored in the Build 
 
 If any objects fail to be pushed, the build is marked FAILURE.
 */
-  MavenArtifacts?: Array<Cloudbuild_getTriggerBuildArtifactMavenArtifact>;
+  mavenArtifacts?: Array<cloudbuild_getTriggerBuildArtifactMavenArtifact>;
 
   /*
 Npm package to upload to Artifact Registry upon successful completion of all build steps.
@@ -59,7 +50,7 @@ The location and generation of the uploaded objects will be stored in the Build 
 
 If any objects fail to be pushed, the build is marked FAILURE.
 */
-  NpmPackages?: Array<Cloudbuild_getTriggerBuildArtifactNpmPackage>;
+  npmPackages?: Array<cloudbuild_getTriggerBuildArtifactNpmPackage>;
 
   /*
 A list of objects to be uploaded to Cloud Storage upon successful completion of all build steps.
@@ -71,22 +62,23 @@ The location and generation of the uploaded objects will be stored in the Build 
 
 If any objects fail to be pushed, the build is marked FAILURE.
 */
-  Objects?: Array<Cloudbuild_getTriggerBuildArtifactObject>;
+  objects?: Array<cloudbuild_getTriggerBuildArtifactObject>;
+
+  /*
+Python package to upload to Artifact Registry upon successful completion of all build steps. A package can encapsulate multiple objects to be uploaded to a single repository.
+
+The location and generation of the uploaded objects will be stored in the Build resource's results field.
+
+If any objects fail to be pushed, the build is marked FAILURE.
+*/
+  pythonPackages?: Array<cloudbuild_getTriggerBuildArtifactPythonPackage>;
 }
 
-export function Cloudbuild_getTriggerBuildArtifact_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_getTriggerBuildArtifact_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "PythonPackages",
-      "Python package to upload to Artifact Registry upon successful completion of all build steps. A package can encapsulate multiple objects to be uploaded to a single repository.\n\nThe location and generation of the uploaded objects will be stored in the Build resource's results field.\n\nIf any objects fail to be pushed, the build is marked FAILURE.",
-      Cloudbuild_getTriggerBuildArtifactPythonPackage_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Images",
+      "images",
       "A list of images to be pushed upon the successful completion of all build steps.\n\nThe images will be pushed using the builder service account's credentials.\n\nThe digests of the pushed images will be stored in the Build resource's results field.\n\nIf any of the images fail to be pushed, the build is marked FAILURE.",
       InputType_String_GetTypes(),
       true,
@@ -94,25 +86,33 @@ export function Cloudbuild_getTriggerBuildArtifact_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "MavenArtifacts",
+      "mavenArtifacts",
       "A Maven artifact to upload to Artifact Registry upon successful completion of all build steps.\n\nThe location and generation of the uploaded objects will be stored in the Build resource's results field.\n\nIf any objects fail to be pushed, the build is marked FAILURE.",
-      Cloudbuild_getTriggerBuildArtifactMavenArtifact_GetTypes(),
+      cloudbuild_getTriggerBuildArtifactMavenArtifact_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "NpmPackages",
+      "npmPackages",
       "Npm package to upload to Artifact Registry upon successful completion of all build steps.\n\nThe location and generation of the uploaded objects will be stored in the Build resource's results field.\n\nIf any objects fail to be pushed, the build is marked FAILURE.",
-      Cloudbuild_getTriggerBuildArtifactNpmPackage_GetTypes(),
+      cloudbuild_getTriggerBuildArtifactNpmPackage_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Objects",
+      "objects",
       "A list of objects to be uploaded to Cloud Storage upon successful completion of all build steps.\n\nFiles in the workspace matching specified paths globs will be uploaded to the\nCloud Storage location using the builder service account's credentials.\n\nThe location and generation of the uploaded objects will be stored in the Build resource's results field.\n\nIf any objects fail to be pushed, the build is marked FAILURE.",
-      Cloudbuild_getTriggerBuildArtifactObject_GetTypes(),
+      cloudbuild_getTriggerBuildArtifactObject_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "pythonPackages",
+      "Python package to upload to Artifact Registry upon successful completion of all build steps. A package can encapsulate multiple objects to be uploaded to a single repository.\n\nThe location and generation of the uploaded objects will be stored in the Build resource's results field.\n\nIf any objects fail to be pushed, the build is marked FAILURE.",
+      cloudbuild_getTriggerBuildArtifactPythonPackage_GetTypes(),
       true,
       false,
     ),

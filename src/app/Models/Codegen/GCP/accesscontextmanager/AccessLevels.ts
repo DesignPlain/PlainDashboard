@@ -7,16 +7,16 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Accesscontextmanager_AccessLevelsAccessLevel,
-  Accesscontextmanager_AccessLevelsAccessLevel_GetTypes,
-} from "../types/Accesscontextmanager_AccessLevelsAccessLevel";
+  accesscontextmanager_AccessLevelsAccessLevel,
+  accesscontextmanager_AccessLevelsAccessLevel_GetTypes,
+} from "../types/accesscontextmanager_AccessLevelsAccessLevel";
 
 export interface AccessLevelsArgs {
   /*
 The desired Access Levels that should replace all existing Access Levels in the Access Policy.
 Structure is documented below.
 */
-  AccessLevels?: Array<Accesscontextmanager_AccessLevelsAccessLevel>;
+  accessLevels?: Array<accesscontextmanager_AccessLevelsAccessLevel>;
 
   /*
 The AccessPolicy this AccessLevel lives in.
@@ -25,14 +25,14 @@ Format: accessPolicies/{policy_id}
 
 - - -
 */
-  Parent?: string;
+  parent?: string;
 }
 export class AccessLevels extends Resource {
   /*
 The desired Access Levels that should replace all existing Access Levels in the Access Policy.
 Structure is documented below.
 */
-  public AccessLevels?: Array<Accesscontextmanager_AccessLevelsAccessLevel>;
+  public accessLevels?: Array<accesscontextmanager_AccessLevelsAccessLevel>;
 
   /*
 The AccessPolicy this AccessLevel lives in.
@@ -41,21 +41,21 @@ Format: accessPolicies/{policy_id}
 
 - - -
 */
-  public Parent?: string;
+  public parent?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "AccessLevels",
+        "accessLevels",
         "The desired Access Levels that should replace all existing Access Levels in the Access Policy.\nStructure is documented below.",
-        Accesscontextmanager_AccessLevelsAccessLevel_GetTypes(),
+        accesscontextmanager_AccessLevelsAccessLevel_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Parent",
+        "parent",
         "The AccessPolicy this AccessLevel lives in.\nFormat: accessPolicies/{policy_id}\n\n\n- - -",
         [],
         true,

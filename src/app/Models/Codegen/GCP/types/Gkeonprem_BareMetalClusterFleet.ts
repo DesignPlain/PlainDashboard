@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterFleet {
+export interface gkeonprem_BareMetalClusterFleet {
   /*
 (Output)
 The name of the managed Hub Membership resource associated to this cluster.
 Membership names are formatted as
 `projects/<project-number>/locations/<location>/memberships/<cluster-id>`.
 */
-  Membership?: string;
+  membership?: string;
 }
 
-export function Gkeonprem_BareMetalClusterFleet_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterFleet_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Membership",
+      "membership",
       "(Output)\nThe name of the managed Hub Membership resource associated to this cluster.\nMembership names are formatted as\n`projects/<project-number>/locations/<location>/memberships/<cluster-id>`.",
       [],
       false,

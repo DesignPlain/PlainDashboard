@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Accesscontextmanager_ServicePerimeterStatusVpcAccessibleServices {
+export interface accesscontextmanager_ServicePerimeterStatusVpcAccessibleServices {
   /*
 The list of APIs usable within the Service Perimeter.
 Must be empty unless `enableRestriction` is True.
 */
-  AllowedServices?: Array<string>;
+  allowedServices?: Array<string>;
 
   /*
 Whether to restrict API calls within the Service Perimeter to the
 list of APIs specified in 'allowedServices'.
 */
-  EnableRestriction?: boolean;
+  enableRestriction?: boolean;
 }
 
-export function Accesscontextmanager_ServicePerimeterStatusVpcAccessibleServices_GetTypes(): DynamicUIProps[] {
+export function accesscontextmanager_ServicePerimeterStatusVpcAccessibleServices_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AllowedServices",
+      "allowedServices",
       "The list of APIs usable within the Service Perimeter.\nMust be empty unless `enableRestriction` is True.",
       InputType_String_GetTypes(),
       false,
@@ -32,7 +32,7 @@ export function Accesscontextmanager_ServicePerimeterStatusVpcAccessibleServices
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableRestriction",
+      "enableRestriction",
       "Whether to restrict API calls within the Service Perimeter to the\nlist of APIs specified in 'allowedServices'.",
       [],
       false,

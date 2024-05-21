@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Pubsub_SchemaIamBindingCondition {
+export interface pubsub_SchemaIamBindingCondition {
   //
-  Description?: string;
+  description?: string;
 
   //
-  Expression?: string;
+  expression?: string;
 
   //
-  Title?: string;
+  title?: string;
 }
 
-export function Pubsub_SchemaIamBindingCondition_GetTypes(): DynamicUIProps[] {
+export function pubsub_SchemaIamBindingCondition_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Description", "", [], false, true),
-    new DynamicUIProps(InputType.String, "Expression", "", [], true, true),
-    new DynamicUIProps(InputType.String, "Title", "", [], true, true),
+    new DynamicUIProps(InputType.String, "description", "", [], false, true),
+    new DynamicUIProps(InputType.String, "expression", "", [], true, true),
+    new DynamicUIProps(InputType.String, "title", "", [], true, true),
   ];
 }

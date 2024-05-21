@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Secretmanager_getSecretsSecretRotation {
+export interface secretmanager_getSecretsSecretRotation {
   // Timestamp in UTC at which the Secret is scheduled to rotate.
-  NextRotationTime?: string;
+  nextRotationTime?: string;
 
   // The Duration between rotation notifications.
-  RotationPeriod?: string;
+  rotationPeriod?: string;
 }
 
-export function Secretmanager_getSecretsSecretRotation_GetTypes(): DynamicUIProps[] {
+export function secretmanager_getSecretsSecretRotation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "RotationPeriod",
-      "The Duration between rotation notifications.",
+      "nextRotationTime",
+      "Timestamp in UTC at which the Secret is scheduled to rotate.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "NextRotationTime",
-      "Timestamp in UTC at which the Secret is scheduled to rotate.",
+      "rotationPeriod",
+      "The Duration between rotation notifications.",
       [],
       true,
       false,

@@ -6,42 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_ServiceTrafficStatus {
-  /*
-The allocation type for this traffic target.
-Possible values are: `TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST`, `TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION`.
-*/
-  Type?: string;
-
+export interface cloudrunv2_ServiceTrafficStatus {
   /*
 (Output)
 Displays the target URI.
 */
-  Uri?: string;
+  uri?: string;
 
   // Specifies percent of the traffic to this Revision. This defaults to zero if unspecified.
-  Percent?: number;
+  percent?: number;
 
   // The unique name for the revision. If this field is omitted, it will be automatically generated based on the Service name.
-  Revision?: string;
+  revision?: string;
 
   // Indicates a string to be part of the URI to exclusively reference this target.
-  Tag?: string;
+  tag?: string;
+
+  /*
+The allocation type for this traffic target.
+Possible values are: `TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST`, `TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION`.
+*/
+  type?: string;
 }
 
-export function Cloudrunv2_ServiceTrafficStatus_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_ServiceTrafficStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Tag",
-      "Indicates a string to be part of the URI to exclusively reference this target.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Type",
+      "type",
       "The allocation type for this traffic target.\nPossible values are: `TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST`, `TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION`.",
       [],
       false,
@@ -49,7 +41,7 @@ export function Cloudrunv2_ServiceTrafficStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Uri",
+      "uri",
       "(Output)\nDisplays the target URI.",
       [],
       false,
@@ -57,7 +49,7 @@ export function Cloudrunv2_ServiceTrafficStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Percent",
+      "percent",
       "Specifies percent of the traffic to this Revision. This defaults to zero if unspecified.",
       [],
       false,
@@ -65,8 +57,16 @@ export function Cloudrunv2_ServiceTrafficStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Revision",
+      "revision",
       "The unique name for the revision. If this field is omitted, it will be automatically generated based on the Service name.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "tag",
+      "Indicates a string to be part of the URI to exclusively reference this target.",
       [],
       false,
       false,

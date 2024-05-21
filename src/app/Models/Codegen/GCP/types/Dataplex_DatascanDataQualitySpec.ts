@@ -6,51 +6,51 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataplex_DatascanDataQualitySpecPostScanActions,
-  Dataplex_DatascanDataQualitySpecPostScanActions_GetTypes,
-} from "./Dataplex_DatascanDataQualitySpecPostScanActions";
+  dataplex_DatascanDataQualitySpecPostScanActions,
+  dataplex_DatascanDataQualitySpecPostScanActions_GetTypes,
+} from "./dataplex_DatascanDataQualitySpecPostScanActions";
 import {
-  Dataplex_DatascanDataQualitySpecRule,
-  Dataplex_DatascanDataQualitySpecRule_GetTypes,
-} from "./Dataplex_DatascanDataQualitySpecRule";
+  dataplex_DatascanDataQualitySpecRule,
+  dataplex_DatascanDataQualitySpecRule_GetTypes,
+} from "./dataplex_DatascanDataQualitySpecRule";
 
-export interface Dataplex_DatascanDataQualitySpec {
+export interface dataplex_DatascanDataQualitySpec {
   /*
 Actions to take upon job completion.
 Structure is documented below.
 */
-  PostScanActions?: Dataplex_DatascanDataQualitySpecPostScanActions;
+  postScanActions?: dataplex_DatascanDataQualitySpecPostScanActions;
 
   // A filter applied to all rows in a single DataScan job. The filter needs to be a valid SQL expression for a WHERE clause in BigQuery standard SQL syntax. Example: col1 >= 0 AND col2 < 10
-  RowFilter?: string;
+  rowFilter?: string;
 
   /*
 The list of rules to evaluate against a data source. At least one rule is required.
 Structure is documented below.
 */
-  Rules?: Array<Dataplex_DatascanDataQualitySpecRule>;
+  rules?: Array<dataplex_DatascanDataQualitySpecRule>;
 
   /*
 The percentage of the records to be selected from the dataset for DataScan.
 Value can range between 0.0 and 100.0 with up to 3 significant decimal digits.
 Sampling is not applied if `sampling_percent` is not specified, 0 or 100.
 */
-  SamplingPercent?: number;
+  samplingPercent?: number;
 }
 
-export function Dataplex_DatascanDataQualitySpec_GetTypes(): DynamicUIProps[] {
+export function dataplex_DatascanDataQualitySpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "PostScanActions",
+      "postScanActions",
       "Actions to take upon job completion.\nStructure is documented below.",
-      Dataplex_DatascanDataQualitySpecPostScanActions_GetTypes(),
+      dataplex_DatascanDataQualitySpecPostScanActions_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "RowFilter",
+      "rowFilter",
       "A filter applied to all rows in a single DataScan job. The filter needs to be a valid SQL expression for a WHERE clause in BigQuery standard SQL syntax. Example: col1 >= 0 AND col2 < 10",
       [],
       false,
@@ -58,15 +58,15 @@ export function Dataplex_DatascanDataQualitySpec_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Rules",
+      "rules",
       "The list of rules to evaluate against a data source. At least one rule is required.\nStructure is documented below.",
-      Dataplex_DatascanDataQualitySpecRule_GetTypes(),
+      dataplex_DatascanDataQualitySpecRule_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "SamplingPercent",
+      "samplingPercent",
       "The percentage of the records to be selected from the dataset for DataScan.\nValue can range between 0.0 and 100.0 with up to 3 significant decimal digits.\nSampling is not applied if `sampling_percent` is not specified, 0 or 100.",
       [],
       false,

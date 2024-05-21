@@ -6,8 +6,8 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionTextTypeOptions {}
+export interface essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionTextTypeOptions {}
 
-export function Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionTextTypeOptions_GetTypes(): DynamicUIProps[] {
+export function essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionTextTypeOptions_GetTypes(): DynamicUIProps[] {
   return [];
 }

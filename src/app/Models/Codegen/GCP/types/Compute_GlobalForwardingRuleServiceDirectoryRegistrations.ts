@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_GlobalForwardingRuleServiceDirectoryRegistrations {
+export interface compute_GlobalForwardingRuleServiceDirectoryRegistrations {
+  // Service Directory namespace to register the forwarding rule under.
+  namespace?: string;
+
   /*
 [Optional] Service Directory region to register this global forwarding rule under.
 Default to "us-central1". Only used for PSC for Google APIs. All PSC for
 Google APIs Forwarding Rules on the same network should use the same Service
 Directory region.
 */
-  ServiceDirectoryRegion?: string;
-
-  // Service Directory namespace to register the forwarding rule under.
-  Namespace?: string;
+  serviceDirectoryRegion?: string;
 }
 
-export function Compute_GlobalForwardingRuleServiceDirectoryRegistrations_GetTypes(): DynamicUIProps[] {
+export function compute_GlobalForwardingRuleServiceDirectoryRegistrations_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ServiceDirectoryRegion",
-      '[Optional] Service Directory region to register this global forwarding rule under.\nDefault to "us-central1". Only used for PSC for Google APIs. All PSC for\nGoogle APIs Forwarding Rules on the same network should use the same Service\nDirectory region.',
+      "namespace",
+      "Service Directory namespace to register the forwarding rule under.",
       [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Namespace",
-      "Service Directory namespace to register the forwarding rule under.",
+      "serviceDirectoryRegion",
+      '[Optional] Service Directory region to register this global forwarding rule under.\nDefault to "us-central1". Only used for PSC for Google APIs. All PSC for\nGoogle APIs Forwarding Rules on the same network should use the same Service\nDirectory region.',
       [],
       false,
       true,

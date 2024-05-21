@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Integrationconnectors_ConnectionSslConfigClientPrivateKeyPass {
+export interface integrationconnectors_ConnectionSslConfigClientPrivateKeyPass {
   // Secret version of Secret Value for Config variable.
-  SecretVersion?: string;
+  secretVersion?: string;
 }
 
-export function Integrationconnectors_ConnectionSslConfigClientPrivateKeyPass_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionSslConfigClientPrivateKeyPass_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SecretVersion",
+      "secretVersion",
       "Secret version of Secret Value for Config variable.",
       [],
       true,

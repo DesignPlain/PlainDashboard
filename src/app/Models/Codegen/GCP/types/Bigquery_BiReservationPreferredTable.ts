@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_BiReservationPreferredTable {
+export interface bigquery_BiReservationPreferredTable {
+  // The ID of the table in the above dataset.
+  tableId?: string;
+
   // The ID of the dataset in the above project.
-  DatasetId?: string;
+  datasetId?: string;
 
   // The assigned project ID of the project.
-  ProjectId?: string;
-
-  // The ID of the table in the above dataset.
-  TableId?: string;
+  projectId?: string;
 }
 
-export function Bigquery_BiReservationPreferredTable_GetTypes(): DynamicUIProps[] {
+export function bigquery_BiReservationPreferredTable_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DatasetId",
+      "tableId",
+      "The ID of the table in the above dataset.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "datasetId",
       "The ID of the dataset in the above project.",
       [],
       false,
@@ -29,16 +37,8 @@ export function Bigquery_BiReservationPreferredTable_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProjectId",
+      "projectId",
       "The assigned project ID of the project.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "TableId",
-      "The ID of the table in the above dataset.",
       [],
       false,
       false,

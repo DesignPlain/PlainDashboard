@@ -7,67 +7,59 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxEnvironmentVersionConfig,
-  Diagflow_CxEnvironmentVersionConfig_GetTypes,
-} from "../types/Diagflow_CxEnvironmentVersionConfig";
+  diagflow_CxEnvironmentVersionConfig,
+  diagflow_CxEnvironmentVersionConfig_GetTypes,
+} from "../types/diagflow_CxEnvironmentVersionConfig";
 
 export interface CxEnvironmentArgs {
-  /*
-A list of configurations for flow versions. You should include version configs for all flows that are reachable from [Start Flow][Agent.start_flow] in the agent. Otherwise, an error will be returned.
-Structure is documented below.
-*/
-  VersionConfigs?: Array<Diagflow_CxEnvironmentVersionConfig>;
-
   // The human-readable description of the environment. The maximum length is 500 characters. If exceeded, the request is rejected.
-  Description?: string;
+  description?: string;
 
   // The human-readable name of the environment (unique in an agent). Limit of 64 characters.
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 The Agent to create an Environment for.
 Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>.
 */
-  Parent?: string;
+  parent?: string;
+
+  /*
+A list of configurations for flow versions. You should include version configs for all flows that are reachable from [Start Flow][Agent.start_flow] in the agent. Otherwise, an error will be returned.
+Structure is documented below.
+*/
+  versionConfigs?: Array<diagflow_CxEnvironmentVersionConfig>;
 }
 export class CxEnvironment extends Resource {
+  // The human-readable description of the environment. The maximum length is 500 characters. If exceeded, the request is rejected.
+  public description?: string;
+
+  // The human-readable name of the environment (unique in an agent). Limit of 64 characters.
+  public displayName?: string;
+
+  // The name of the environment.
+  public name?: string;
+
   /*
 The Agent to create an Environment for.
 Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>.
 */
-  public Parent?: string;
+  public parent?: string;
 
   // Update time of this environment. A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
-  public UpdateTime?: string;
+  public updateTime?: string;
 
   /*
 A list of configurations for flow versions. You should include version configs for all flows that are reachable from [Start Flow][Agent.start_flow] in the agent. Otherwise, an error will be returned.
 Structure is documented below.
 */
-  public VersionConfigs?: Array<Diagflow_CxEnvironmentVersionConfig>;
-
-  // The human-readable description of the environment. The maximum length is 500 characters. If exceeded, the request is rejected.
-  public Description?: string;
-
-  // The human-readable name of the environment (unique in an agent). Limit of 64 characters.
-  public DisplayName?: string;
-
-  // The name of the environment.
-  public Name?: string;
+  public versionConfigs?: Array<diagflow_CxEnvironmentVersionConfig>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Array,
-        "VersionConfigs",
-        "A list of configurations for flow versions. You should include version configs for all flows that are reachable from [Start Flow][Agent.start_flow] in the agent. Otherwise, an error will be returned.\nStructure is documented below.",
-        Diagflow_CxEnvironmentVersionConfig_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "The human-readable description of the environment. The maximum length is 500 characters. If exceeded, the request is rejected.",
         [],
         false,
@@ -75,7 +67,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "The human-readable name of the environment (unique in an agent). Limit of 64 characters.",
         [],
         true,
@@ -83,11 +75,19 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Parent",
+        "parent",
         "The Agent to create an Environment for.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>.",
         [],
         false,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "versionConfigs",
+        "A list of configurations for flow versions. You should include version configs for all flows that are reachable from [Start Flow][Agent.start_flow] in the agent. Otherwise, an error will be returned.\nStructure is documented below.",
+        diagflow_CxEnvironmentVersionConfig_GetTypes(),
+        true,
+        false,
       ),
     ];
   }

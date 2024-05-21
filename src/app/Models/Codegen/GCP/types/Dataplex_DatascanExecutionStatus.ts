@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataplex_DatascanExecutionStatus {
+export interface dataplex_DatascanExecutionStatus {
   /*
 (Output)
 The time when the latest DataScanJob started.
 */
-  LatestJobEndTime?: string;
+  latestJobEndTime?: string;
 
   /*
 (Output)
 The time when the latest DataScanJob ended.
 */
-  LatestJobStartTime?: string;
+  latestJobStartTime?: string;
 }
 
-export function Dataplex_DatascanExecutionStatus_GetTypes(): DynamicUIProps[] {
+export function dataplex_DatascanExecutionStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "LatestJobEndTime",
-      "(Output)\nThe time when the latest DataScanJob started.",
+      "latestJobStartTime",
+      "(Output)\nThe time when the latest DataScanJob ended.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "LatestJobStartTime",
-      "(Output)\nThe time when the latest DataScanJob ended.",
+      "latestJobEndTime",
+      "(Output)\nThe time when the latest DataScanJob started.",
       [],
       false,
       false,

@@ -6,75 +6,91 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects,
-  Datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects_GetTypes,
-} from "./Datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects";
+  datastream_StreamSourceConfigOracleSourceConfigDropLargeObjects,
+  datastream_StreamSourceConfigOracleSourceConfigDropLargeObjects_GetTypes,
+} from "./datastream_StreamSourceConfigOracleSourceConfigDropLargeObjects";
 import {
-  Datastream_StreamSourceConfigOracleSourceConfigDropLargeObjects,
-  Datastream_StreamSourceConfigOracleSourceConfigDropLargeObjects_GetTypes,
-} from "./Datastream_StreamSourceConfigOracleSourceConfigDropLargeObjects";
+  datastream_StreamSourceConfigOracleSourceConfigExcludeObjects,
+  datastream_StreamSourceConfigOracleSourceConfigExcludeObjects_GetTypes,
+} from "./datastream_StreamSourceConfigOracleSourceConfigExcludeObjects";
 import {
-  Datastream_StreamSourceConfigOracleSourceConfigExcludeObjects,
-  Datastream_StreamSourceConfigOracleSourceConfigExcludeObjects_GetTypes,
-} from "./Datastream_StreamSourceConfigOracleSourceConfigExcludeObjects";
+  datastream_StreamSourceConfigOracleSourceConfigIncludeObjects,
+  datastream_StreamSourceConfigOracleSourceConfigIncludeObjects_GetTypes,
+} from "./datastream_StreamSourceConfigOracleSourceConfigIncludeObjects";
 import {
-  Datastream_StreamSourceConfigOracleSourceConfigIncludeObjects,
-  Datastream_StreamSourceConfigOracleSourceConfigIncludeObjects_GetTypes,
-} from "./Datastream_StreamSourceConfigOracleSourceConfigIncludeObjects";
+  datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects,
+  datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects_GetTypes,
+} from "./datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects";
 
-export interface Datastream_StreamSourceConfigOracleSourceConfig {
-  /*
-Maximum number of concurrent CDC tasks. The number should be non negative.
-If not set (or set to 0), the system's default value will be used.
-*/
-  MaxConcurrentCdcTasks?: number;
-
+export interface datastream_StreamSourceConfigOracleSourceConfig {
   // Configuration to drop large object values.
-  StreamLargeObjects?: Datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects;
-
-  // Configuration to drop large object values.
-  DropLargeObjects?: Datastream_StreamSourceConfigOracleSourceConfigDropLargeObjects;
+  dropLargeObjects?: datastream_StreamSourceConfigOracleSourceConfigDropLargeObjects;
 
   /*
 Oracle objects to exclude from the stream.
 Structure is documented below.
 */
-  ExcludeObjects?: Datastream_StreamSourceConfigOracleSourceConfigExcludeObjects;
+  excludeObjects?: datastream_StreamSourceConfigOracleSourceConfigExcludeObjects;
 
   /*
 Oracle objects to retrieve from the source.
 Structure is documented below.
 */
-  IncludeObjects?: Datastream_StreamSourceConfigOracleSourceConfigIncludeObjects;
+  includeObjects?: datastream_StreamSourceConfigOracleSourceConfigIncludeObjects;
 
   /*
 Maximum number of concurrent backfill tasks. The number should be non negative.
 If not set (or set to 0), the system's default value will be used.
 */
-  MaxConcurrentBackfillTasks?: number;
+  maxConcurrentBackfillTasks?: number;
+
+  /*
+Maximum number of concurrent CDC tasks. The number should be non negative.
+If not set (or set to 0), the system's default value will be used.
+*/
+  maxConcurrentCdcTasks?: number;
+
+  // Configuration to drop large object values.
+  streamLargeObjects?: datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects;
 }
 
-export function Datastream_StreamSourceConfigOracleSourceConfig_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamSourceConfigOracleSourceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ExcludeObjects",
-      "Oracle objects to exclude from the stream.\nStructure is documented below.",
-      Datastream_StreamSourceConfigOracleSourceConfigExcludeObjects_GetTypes(),
+      "streamLargeObjects",
+      "Configuration to drop large object values.",
+      datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "IncludeObjects",
+      "dropLargeObjects",
+      "Configuration to drop large object values.",
+      datastream_StreamSourceConfigOracleSourceConfigDropLargeObjects_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "excludeObjects",
+      "Oracle objects to exclude from the stream.\nStructure is documented below.",
+      datastream_StreamSourceConfigOracleSourceConfigExcludeObjects_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "includeObjects",
       "Oracle objects to retrieve from the source.\nStructure is documented below.",
-      Datastream_StreamSourceConfigOracleSourceConfigIncludeObjects_GetTypes(),
+      datastream_StreamSourceConfigOracleSourceConfigIncludeObjects_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxConcurrentBackfillTasks",
+      "maxConcurrentBackfillTasks",
       "Maximum number of concurrent backfill tasks. The number should be non negative.\nIf not set (or set to 0), the system's default value will be used.",
       [],
       false,
@@ -82,25 +98,9 @@ export function Datastream_StreamSourceConfigOracleSourceConfig_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxConcurrentCdcTasks",
+      "maxConcurrentCdcTasks",
       "Maximum number of concurrent CDC tasks. The number should be non negative.\nIf not set (or set to 0), the system's default value will be used.",
       [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "StreamLargeObjects",
-      "Configuration to drop large object values.",
-      Datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "DropLargeObjects",
-      "Configuration to drop large object values.",
-      Datastream_StreamSourceConfigOracleSourceConfigDropLargeObjects_GetTypes(),
       false,
       false,
     ),

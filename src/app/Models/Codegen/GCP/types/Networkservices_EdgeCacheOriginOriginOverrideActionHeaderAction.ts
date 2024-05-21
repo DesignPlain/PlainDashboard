@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd,
-  Networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd_GetTypes,
-} from "./Networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd";
+  networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd,
+  networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd_GetTypes,
+} from "./networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd";
 
-export interface Networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction {
+export interface networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction {
   /*
 Describes a header to add.
 You may add a maximum of 25 request headers.
 Structure is documented below.
 */
-  RequestHeadersToAdds?: Array<Networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd>;
+  requestHeadersToAdds?: Array<networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd>;
 }
 
-export function Networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction_GetTypes(): DynamicUIProps[] {
+export function networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "RequestHeadersToAdds",
+      "requestHeadersToAdds",
       "Describes a header to add.\nYou may add a maximum of 25 request headers.\nStructure is documented below.",
-      Networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd_GetTypes(),
+      networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd_GetTypes(),
       false,
       false,
     ),

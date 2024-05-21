@@ -7,18 +7,32 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkehub_NamespaceState,
-  Gkehub_NamespaceState_GetTypes,
-} from "../types/Gkehub_NamespaceState";
+  gkehub_NamespaceState,
+  gkehub_NamespaceState_GetTypes,
+} from "../types/gkehub_NamespaceState";
 
 export interface NamespaceArgs {
+  // The name of the Scope instance.
+  scope?: string;
+
+  /*
+Id of the scope
+
+
+- - -
+*/
+  scopeId?: string;
+
+  // The client-provided identifier of the namespace.
+  scopeNamespaceId?: string;
+
   /*
 Labels for this Namespace.
 
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   /*
 Namespace-level cluster namespace labels. These labels are applied
@@ -27,66 +41,29 @@ Scope. Scope-level labels (`namespace_labels` in the Fleet Scope
 resource) take precedence over Namespace-level labels if they share
 a key. Keys and values must be Kubernetes-conformant.
 */
-  NamespaceLabels?: Map<string, string>;
+  namespaceLabels?: Map<string, string>;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
-
-  // The name of the Scope instance.
-  Scope?: string;
-
-  /*
-Id of the scope
-
-
-- - -
-*/
-  ScopeId?: string;
-
-  // The client-provided identifier of the namespace.
-  ScopeNamespaceId?: string;
+  project?: string;
 }
 export class Namespace extends Resource {
-  /*
-The combination of labels configured directly on the resource
-and default labels configured on the provider.
-*/
-  public PulumiLabels?: Map<string, string>;
+  // Time the Namespace was deleted in UTC.
+  public deleteTime?: string;
 
-  // Google-generated UUID for this resource.
-  public Uid?: string;
+  // The name of the Scope instance.
+  public scope?: string;
 
-  /*
-Labels for this Namespace.
-
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  public Labels?: Map<string, string>;
-
-  // The resource name for the namespace
-  public Name?: string;
+  // The client-provided identifier of the namespace.
+  public scopeNamespaceId?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
-
-  // The client-provided identifier of the namespace.
-  public ScopeNamespaceId?: string;
-
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
-
-  // Time the Namespace was deleted in UTC.
-  public DeleteTime?: string;
-
-  // The name of the Scope instance.
-  public Scope?: string;
+  public project?: string;
 
   /*
 Id of the scope
@@ -94,19 +71,22 @@ Id of the scope
 
 - - -
 */
-  public ScopeId?: string;
+  public scopeId?: string;
+
+  // Google-generated UUID for this resource.
+  public uid?: string;
 
   /*
 State of the namespace resource.
 Structure is documented below.
 */
-  public States?: Array<Gkehub_NamespaceState>;
-
-  // Time the Namespace was created in UTC.
-  public CreateTime?: string;
+  public states?: Array<gkehub_NamespaceState>;
 
   // Time the Namespace was updated in UTC.
-  public UpdateTime?: string;
+  public updateTime?: string;
+
+  // The resource name for the namespace
+  public name?: string;
 
   /*
 Namespace-level cluster namespace labels. These labels are applied
@@ -115,13 +95,41 @@ Scope. Scope-level labels (`namespace_labels` in the Fleet Scope
 resource) take precedence over Namespace-level labels if they share
 a key. Keys and values must be Kubernetes-conformant.
 */
-  public NamespaceLabels?: Map<string, string>;
+  public namespaceLabels?: Map<string, string>;
+
+  /*
+The combination of labels configured directly on the resource
+and default labels configured on the provider.
+*/
+  public pulumiLabels?: Map<string, string>;
+
+  // Time the Namespace was created in UTC.
+  public createTime?: string;
+
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
+
+  /*
+Labels for this Namespace.
+
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "ScopeNamespaceId",
+        "scopeId",
+        "Id of the scope\n\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "scopeNamespaceId",
         "The client-provided identifier of the namespace.",
         [],
         true,
@@ -129,7 +137,7 @@ a key. Keys and values must be Kubernetes-conformant.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "Labels for this Namespace.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
@@ -137,7 +145,7 @@ a key. Keys and values must be Kubernetes-conformant.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "NamespaceLabels",
+        "namespaceLabels",
         "Namespace-level cluster namespace labels. These labels are applied\nto the related namespace of the member clusters bound to the parent\nScope. Scope-level labels (`namespace_labels` in the Fleet Scope\nresource) take precedence over Namespace-level labels if they share\na key. Keys and values must be Kubernetes-conformant.",
         InputType_Map_GetTypes(),
         false,
@@ -145,7 +153,7 @@ a key. Keys and values must be Kubernetes-conformant.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -153,16 +161,8 @@ a key. Keys and values must be Kubernetes-conformant.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Scope",
+        "scope",
         "The name of the Scope instance.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ScopeId",
-        "Id of the scope\n\n\n- - -",
         [],
         true,
         true,

@@ -6,50 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_ConnectionProfileForwardSshConnectivity {
+export interface datastream_ConnectionProfileForwardSshConnectivity {
+  /*
+SSH private key.
+--Note--: This property is sensitive and will not be displayed in the plan.
+*/
+  privateKey?: string;
+
+  // Username for the SSH tunnel.
+  username?: string;
+
   // Hostname for the SSH tunnel.
-  Hostname?: string;
+  hostname?: string;
 
   /*
 SSH password.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  Password?: string;
+  password?: string;
 
   // Port for the SSH tunnel.
-  Port?: number;
-
-  /*
-SSH private key.
---Note--: This property is sensitive and will not be displayed in the plan.
-*/
-  PrivateKey?: string;
-
-  // Username for the SSH tunnel.
-  Username?: string;
+  port?: number;
 }
 
-export function Datastream_ConnectionProfileForwardSshConnectivity_GetTypes(): DynamicUIProps[] {
+export function datastream_ConnectionProfileForwardSshConnectivity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "Port",
-      "Port for the SSH tunnel.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "PrivateKey",
-      "SSH private key.\n**Note**: This property is sensitive and will not be displayed in the plan.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Username",
+      "username",
       "Username for the SSH tunnel.",
       [],
       true,
@@ -57,7 +41,7 @@ export function Datastream_ConnectionProfileForwardSshConnectivity_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.String,
-      "Hostname",
+      "hostname",
       "Hostname for the SSH tunnel.",
       [],
       true,
@@ -65,8 +49,24 @@ export function Datastream_ConnectionProfileForwardSshConnectivity_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.String,
-      "Password",
+      "password",
       "SSH password.\n**Note**: This property is sensitive and will not be displayed in the plan.",
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "port",
+      "Port for the SSH tunnel.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "privateKey",
+      "SSH private key.\n**Note**: This property is sensitive and will not be displayed in the plan.",
       [],
       false,
       true,

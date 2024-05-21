@@ -8,11 +8,8 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface SecurityProfileGroupArgs {
-  // Reference to a SecurityProfile with the threat prevention configuration for the SecurityProfileGroup.
-  ThreatPreventionProfile?: string;
-
   // An optional description of the profile. The Max length is 512 characters.
-  Description?: string;
+  description?: string;
 
   /*
 A map of key/value label pairs to assign to the resource.
@@ -20,13 +17,13 @@ A map of key/value label pairs to assign to the resource.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   /*
 The location of the security profile group.
 The default value is `global`.
 */
-  Location?: string;
+  location?: string;
 
   /*
 The name of the security profile group resource.
@@ -34,76 +31,87 @@ The name of the security profile group resource.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   /*
 The name of the parent this security profile group belongs to.
 Format: organizations/{organization_id}.
 */
-  Parent?: string;
+  parent?: string;
+
+  // Reference to a SecurityProfile with the threat prevention configuration for the SecurityProfileGroup.
+  threatPreventionProfile?: string;
 }
 export class SecurityProfileGroup extends Resource {
-  // Time the security profile group was created in UTC.
-  public CreateTime?: string;
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
+
+  /*
+A map of key/value label pairs to assign to the resource.
+
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
+
+  /*
+The name of the parent this security profile group belongs to.
+Format: organizations/{organization_id}.
+*/
+  public parent?: string;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
+  public pulumiLabels?: Map<string, string>;
+
+  // Time the security profile group was created in UTC.
+  public createTime?: string;
 
   // An optional description of the profile. The Max length is 512 characters.
-  public Description?: string;
+  public description?: string;
 
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
+  /*
+The name of the security profile group resource.
+
+
+- - -
+*/
+  public name?: string;
+
+  // Reference to a SecurityProfile with the threat prevention configuration for the SecurityProfileGroup.
+  public threatPreventionProfile?: string;
+
+  // Time the security profile group was updated in UTC.
+  public updateTime?: string;
 
   /*
 This checksum is computed by the server based on the value of other fields,
 and may be sent on update and delete requests to ensure the client has an up-to-date
 value before proceeding.
 */
-  public Etag?: string;
-
-  /*
-A map of key/value label pairs to assign to the resource.
-
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  public Labels?: Map<string, string>;
+  public etag?: string;
 
   /*
 The location of the security profile group.
 The default value is `global`.
 */
-  public Location?: string;
-
-  /*
-The name of the security profile group resource.
-
-
-- - -
-*/
-  public Name?: string;
-
-  /*
-The name of the parent this security profile group belongs to.
-Format: organizations/{organization_id}.
-*/
-  public Parent?: string;
-
-  // Reference to a SecurityProfile with the threat prevention configuration for the SecurityProfileGroup.
-  public ThreatPreventionProfile?: string;
-
-  // Time the security profile group was updated in UTC.
-  public UpdateTime?: string;
+  public location?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "ThreatPreventionProfile",
+        "parent",
+        "The name of the parent this security profile group belongs to.\nFormat: organizations/{organization_id}.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "threatPreventionProfile",
         "Reference to a SecurityProfile with the threat prevention configuration for the SecurityProfileGroup.",
         [],
         false,
@@ -111,7 +119,7 @@ Format: organizations/{organization_id}.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "An optional description of the profile. The Max length is 512 characters.",
         [],
         false,
@@ -119,7 +127,7 @@ Format: organizations/{organization_id}.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "A map of key/value label pairs to assign to the resource.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
@@ -127,7 +135,7 @@ Format: organizations/{organization_id}.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location of the security profile group.\nThe default value is `global`.",
         [],
         false,
@@ -135,16 +143,8 @@ Format: organizations/{organization_id}.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name of the security profile group resource.\n\n\n- - -",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Parent",
-        "The name of the parent this security profile group belongs to.\nFormat: organizations/{organization_id}.",
         [],
         false,
         true,

@@ -6,26 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrunv2_getServiceTemplateVpcAccessNetworkInterface,
-  Cloudrunv2_getServiceTemplateVpcAccessNetworkInterface_GetTypes,
-} from "./Cloudrunv2_getServiceTemplateVpcAccessNetworkInterface";
+  cloudrunv2_getServiceTemplateVpcAccessNetworkInterface,
+  cloudrunv2_getServiceTemplateVpcAccessNetworkInterface_GetTypes,
+} from "./cloudrunv2_getServiceTemplateVpcAccessNetworkInterface";
 
-export interface Cloudrunv2_getServiceTemplateVpcAccess {
+export interface cloudrunv2_getServiceTemplateVpcAccess {
+  // VPC Access connector name. Format: projects/{project}/locations/{location}/connectors/{connector}, where {project} can be project id or number.
+  connector?: string;
+
   // Traffic VPC egress settings. Possible values: ["ALL_TRAFFIC", "PRIVATE_RANGES_ONLY"]
-  Egress?: string;
+  egress?: string;
 
   // Direct VPC egress settings. Currently only single network interface is supported.
-  NetworkInterfaces?: Array<Cloudrunv2_getServiceTemplateVpcAccessNetworkInterface>;
-
-  // VPC Access connector name. Format: projects/{project}/locations/{location}/connectors/{connector}, where {project} can be project id or number.
-  Connector?: string;
+  networkInterfaces?: Array<cloudrunv2_getServiceTemplateVpcAccessNetworkInterface>;
 }
 
-export function Cloudrunv2_getServiceTemplateVpcAccess_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_getServiceTemplateVpcAccess_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Egress",
+      "connector",
+      "VPC Access connector name. Format: projects/{project}/locations/{location}/connectors/{connector}, where {project} can be project id or number.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "egress",
       'Traffic VPC egress settings. Possible values: ["ALL_TRAFFIC", "PRIVATE_RANGES_ONLY"]',
       [],
       true,
@@ -33,17 +41,9 @@ export function Cloudrunv2_getServiceTemplateVpcAccess_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Array,
-      "NetworkInterfaces",
+      "networkInterfaces",
       "Direct VPC egress settings. Currently only single network interface is supported.",
-      Cloudrunv2_getServiceTemplateVpcAccessNetworkInterface_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Connector",
-      "VPC Access connector name. Format: projects/{project}/locations/{location}/connectors/{connector}, where {project} can be project id or number.",
-      [],
+      cloudrunv2_getServiceTemplateVpcAccessNetworkInterface_GetTypes(),
       true,
       false,
     ),

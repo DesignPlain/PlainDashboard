@@ -6,29 +6,13 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfigConfig {
-  /*
-Whether the nodes are created as preemptible VM instances. 
-Preemptible nodes cannot be used in a node pool with the CONTROLLER role or in the DEFAULT node pool if the
-CONTROLLER role is not assigned (the DEFAULT node pool will assume the CONTROLLER role).
-*/
-  Preemptible?: boolean;
-
-  // Spot flag for enabling Spot VM, which is a rebrand of the existing preemptible flag.
-  Spot?: boolean;
-
-  /*
-The number of local SSD disks to attach to the node, 
-which is limited by the maximum number of disks allowable per zone.
-*/
-  LocalSsdCount?: number;
-
+export interface dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfigConfig {
   /*
 The name of a Google Compute Engine machine type
 to create for the node group. If not specified, GCP will default to a predetermined
 computed value (currently `n1-standard-4`).
 */
-  MachineType?: string;
+  machineType?: string;
 
   /*
 The name of a minimum generation of CPU family
@@ -36,22 +20,30 @@ for the node group. If not specified, GCP will default to a predetermined comput
 for each zone. See [the guide](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
 for details about which CPU families are available (and defaulted) for each zone.
 */
-  MinCpuPlatform?: string;
+  minCpuPlatform?: string;
+
+  /*
+Whether the nodes are created as preemptible VM instances. 
+Preemptible nodes cannot be used in a node pool with the CONTROLLER role or in the DEFAULT node pool if the
+CONTROLLER role is not assigned (the DEFAULT node pool will assume the CONTROLLER role).
+*/
+  preemptible?: boolean;
+
+  // Spot flag for enabling Spot VM, which is a rebrand of the existing preemptible flag.
+  spot?: boolean;
+
+  /*
+The number of local SSD disks to attach to the node, 
+which is limited by the maximum number of disks allowable per zone.
+*/
+  localSsdCount?: number;
 }
 
-export function Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfigConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfigConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Preemptible",
-      "Whether the nodes are created as preemptible VM instances. \nPreemptible nodes cannot be used in a node pool with the CONTROLLER role or in the DEFAULT node pool if the\nCONTROLLER role is not assigned (the DEFAULT node pool will assume the CONTROLLER role).",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "Spot",
+      "spot",
       "Spot flag for enabling Spot VM, which is a rebrand of the existing preemptible flag.",
       [],
       false,
@@ -59,7 +51,7 @@ export function Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeCl
     ),
     new DynamicUIProps(
       InputType.Number,
-      "LocalSsdCount",
+      "localSsdCount",
       "The number of local SSD disks to attach to the node, \nwhich is limited by the maximum number of disks allowable per zone.",
       [],
       false,
@@ -67,7 +59,7 @@ export function Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeCl
     ),
     new DynamicUIProps(
       InputType.String,
-      "MachineType",
+      "machineType",
       "The name of a Google Compute Engine machine type\nto create for the node group. If not specified, GCP will default to a predetermined\ncomputed value (currently `n1-standard-4`).",
       [],
       false,
@@ -75,8 +67,16 @@ export function Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeCl
     ),
     new DynamicUIProps(
       InputType.String,
-      "MinCpuPlatform",
+      "minCpuPlatform",
       "The name of a minimum generation of CPU family\nfor the node group. If not specified, GCP will default to a predetermined computed value\nfor each zone. See [the guide](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)\nfor details about which CPU families are available (and defaulted) for each zone.",
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "preemptible",
+      "Whether the nodes are created as preemptible VM instances. \nPreemptible nodes cannot be used in a node pool with the CONTROLLER role or in the DEFAULT node pool if the\nCONTROLLER role is not assigned (the DEFAULT node pool will assume the CONTROLLER role).",
       [],
       false,
       true,

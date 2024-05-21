@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterClusterAutoscalingAutoProvisioningDefaultManagementUpgradeOption {
+export interface container_getClusterClusterAutoscalingAutoProvisioningDefaultManagementUpgradeOption {
   // This field is set when upgrades are about to commence with the approximate start time for the upgrades, in RFC3339 text format.
-  AutoUpgradeStartTime?: string;
+  autoUpgradeStartTime?: string;
 
   // This field is set when upgrades are about to commence with the description of the upgrade.
-  Description?: string;
+  description?: string;
 }
 
-export function Container_getClusterClusterAutoscalingAutoProvisioningDefaultManagementUpgradeOption_GetTypes(): DynamicUIProps[] {
+export function container_getClusterClusterAutoscalingAutoProvisioningDefaultManagementUpgradeOption_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "AutoUpgradeStartTime",
+      "autoUpgradeStartTime",
       "This field is set when upgrades are about to commence with the approximate start time for the upgrades, in RFC3339 text format.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Container_getClusterClusterAutoscalingAutoProvisioningDefaultMan
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "This field is set when upgrades are about to commence with the description of the upgrade.",
       [],
       true,

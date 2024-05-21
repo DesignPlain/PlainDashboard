@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Firestore_FieldTtlConfig {
+export interface firestore_FieldTtlConfig {
   /*
 (Output)
 The state of TTL (time-to-live) configuration for documents that have this Field set.
 */
-  State?: string;
+  state?: string;
 }
 
-export function Firestore_FieldTtlConfig_GetTypes(): DynamicUIProps[] {
+export function firestore_FieldTtlConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "(Output)\nThe state of TTL (time-to-live) configuration for documents that have this Field set.",
       [],
       false,

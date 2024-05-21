@@ -6,58 +6,42 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfig,
-  Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfig_GetTypes,
-} from "./Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfig";
+  securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfig,
+  securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfig_GetTypes,
+} from "./securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfig";
 
-export interface Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule {
+export interface securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule {
+  /*
+(Output)
+A server generated id of custom module.
+*/
+  id?: string;
+
+  /*
+The state of enablement for the module at its level of the resource hierarchy.
+Possible values are: `ENABLEMENT_STATE_UNSPECIFIED`, `ENABLED`, `DISABLED`.
+*/
+  moduleEnablementState?: string;
+
   /*
 Custom module details.
 Structure is documented below.
 */
-  Config?: Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfig;
+  config?: securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfig;
 
   /*
 The display name of the Security Health Analytics custom module. This
 display name becomes the finding category for all findings that are
 returned by this custom module.
 */
-  DisplayName?: string;
-
-  /*
-(Output)
-A server generated id of custom module.
-*/
-  Id?: string;
-
-  /*
-The state of enablement for the module at its level of the resource hierarchy.
-Possible values are: `ENABLEMENT_STATE_UNSPECIFIED`, `ENABLED`, `DISABLED`.
-*/
-  ModuleEnablementState?: string;
+  displayName?: string;
 }
 
-export function Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule_GetTypes(): DynamicUIProps[] {
+export function securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "Config",
-      "Custom module details.\nStructure is documented below.",
-      Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "DisplayName",
-      "The display name of the Security Health Analytics custom module. This\ndisplay name becomes the finding category for all findings that are\nreturned by this custom module.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Id",
+      "id",
       "(Output)\nA server generated id of custom module.",
       [],
       false,
@@ -65,8 +49,24 @@ export function Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAn
     ),
     new DynamicUIProps(
       InputType.String,
-      "ModuleEnablementState",
+      "moduleEnablementState",
       "The state of enablement for the module at its level of the resource hierarchy.\nPossible values are: `ENABLEMENT_STATE_UNSPECIFIED`, `ENABLED`, `DISABLED`.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "config",
+      "Custom module details.\nStructure is documented below.",
+      securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "displayName",
+      "The display name of the Security Health Analytics custom module. This\ndisplay name becomes the finding category for all findings that are\nreturned by this custom module.",
       [],
       false,
       false,

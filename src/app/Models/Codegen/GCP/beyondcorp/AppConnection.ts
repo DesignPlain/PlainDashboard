@@ -7,42 +7,51 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Beyondcorp_AppConnectionApplicationEndpoint,
-  Beyondcorp_AppConnectionApplicationEndpoint_GetTypes,
-} from "../types/Beyondcorp_AppConnectionApplicationEndpoint";
+  beyondcorp_AppConnectionApplicationEndpoint,
+  beyondcorp_AppConnectionApplicationEndpoint_GetTypes,
+} from "../types/beyondcorp_AppConnectionApplicationEndpoint";
 import {
-  Beyondcorp_AppConnectionGateway,
-  Beyondcorp_AppConnectionGateway_GetTypes,
-} from "../types/Beyondcorp_AppConnectionGateway";
+  beyondcorp_AppConnectionGateway,
+  beyondcorp_AppConnectionGateway_GetTypes,
+} from "../types/beyondcorp_AppConnectionGateway";
 
 export interface AppConnectionArgs {
-  /*
-Address of the remote application endpoint for the BeyondCorp AppConnection.
-Structure is documented below.
-*/
-  ApplicationEndpoint?: Beyondcorp_AppConnectionApplicationEndpoint;
-
   // The region of the AppConnection.
-  Region?: string;
+  region?: string;
 
   /*
 The type of network connectivity used by the AppConnection. Refer to
 https://cloud.google.com/beyondcorp/docs/reference/rest/v1/projects.locations.appConnections#type
 for a list of possible values.
 */
-  Type?: string;
+  type?: string;
+
+  // ID of the AppConnection.
+  name?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  /*
+Address of the remote application endpoint for the BeyondCorp AppConnection.
+Structure is documented below.
+*/
+  applicationEndpoint?: beyondcorp_AppConnectionApplicationEndpoint;
 
   // List of AppConnectors that are authorised to be associated with this AppConnection
-  Connectors?: Array<string>;
+  connectors?: Array<string>;
 
   // An arbitrary user-provided name for the AppConnection.
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 Gateway used by the AppConnection.
 Structure is documented below.
 */
-  Gateway?: Beyondcorp_AppConnectionGateway;
+  gateway?: beyondcorp_AppConnectionGateway;
 
   /*
 Resource labels to represent user provided metadata.
@@ -50,60 +59,35 @@ Resource labels to represent user provided metadata.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
-
-  // ID of the AppConnection.
-  Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
+  labels?: Map<string, string>;
 }
 export class AppConnection extends Resource {
-  // An arbitrary user-provided name for the AppConnection.
-  public DisplayName?: string;
+  // ID of the AppConnection.
+  public name?: string;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
+  public pulumiLabels?: Map<string, string>;
 
   // The region of the AppConnection.
-  public Region?: string;
-
-  /*
-The type of network connectivity used by the AppConnection. Refer to
-https://cloud.google.com/beyondcorp/docs/reference/rest/v1/projects.locations.appConnections#type
-for a list of possible values.
-*/
-  public Type?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  /*
-Address of the remote application endpoint for the BeyondCorp AppConnection.
-Structure is documented below.
-*/
-  public ApplicationEndpoint?: Beyondcorp_AppConnectionApplicationEndpoint;
+  public region?: string;
 
   // List of AppConnectors that are authorised to be associated with this AppConnection
-  public Connectors?: Array<string>;
+  public connectors?: Array<string>;
+
+  // An arbitrary user-provided name for the AppConnection.
+  public displayName?: string;
 
   // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
+  public effectiveLabels?: Map<string, string>;
 
   /*
 Gateway used by the AppConnection.
 Structure is documented below.
 */
-  public Gateway?: Beyondcorp_AppConnectionGateway;
+  public gateway?: beyondcorp_AppConnectionGateway;
 
   /*
 Resource labels to represent user provided metadata.
@@ -111,24 +95,32 @@ Resource labels to represent user provided metadata.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  public Labels?: Map<string, string>;
+  public labels?: Map<string, string>;
 
-  // ID of the AppConnection.
-  public Name?: string;
+  /*
+Address of the remote application endpoint for the BeyondCorp AppConnection.
+Structure is documented below.
+*/
+  public applicationEndpoint?: beyondcorp_AppConnectionApplicationEndpoint;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  /*
+The type of network connectivity used by the AppConnection. Refer to
+https://cloud.google.com/beyondcorp/docs/reference/rest/v1/projects.locations.appConnections#type
+for a list of possible values.
+*/
+  public type?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Object,
-        "ApplicationEndpoint",
-        "Address of the remote application endpoint for the BeyondCorp AppConnection.\nStructure is documented below.",
-        Beyondcorp_AppConnectionApplicationEndpoint_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "The region of the AppConnection.",
         [],
         false,
@@ -136,7 +128,39 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "Type",
+        "name",
+        "ID of the AppConnection.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "applicationEndpoint",
+        "Address of the remote application endpoint for the BeyondCorp AppConnection.\nStructure is documented below.",
+        beyondcorp_AppConnectionApplicationEndpoint_GetTypes(),
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "gateway",
+        "Gateway used by the AppConnection.\nStructure is documented below.",
+        beyondcorp_AppConnectionGateway_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Map,
+        "labels",
+        "Resource labels to represent user provided metadata.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        InputType_Map_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "type",
         "The type of network connectivity used by the AppConnection. Refer to\nhttps://cloud.google.com/beyondcorp/docs/reference/rest/v1/projects.locations.appConnections#type\nfor a list of possible values.",
         [],
         false,
@@ -144,15 +168,7 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
-        "ID of the AppConnection.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -160,7 +176,7 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.Array,
-        "Connectors",
+        "connectors",
         "List of AppConnectors that are authorised to be associated with this AppConnection",
         InputType_String_GetTypes(),
         false,
@@ -168,25 +184,9 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "An arbitrary user-provided name for the AppConnection.",
         [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "Gateway",
-        "Gateway used by the AppConnection.\nStructure is documented below.",
-        Beyondcorp_AppConnectionGateway_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Map,
-        "Labels",
-        "Resource labels to represent user provided metadata.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
-        InputType_Map_GetTypes(),
         false,
         false,
       ),

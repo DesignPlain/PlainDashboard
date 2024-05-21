@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getRouterNatLogConfig {
+export interface compute_getRouterNatLogConfig {
   // Indicates whether or not to export logs.
-  Enable?: boolean;
+  enable?: boolean;
 
   // Specifies the desired filtering of logs on this NAT. Possible values: ["ERRORS_ONLY", "TRANSLATIONS_ONLY", "ALL"]
-  Filter?: string;
+  filter?: string;
 }
 
-export function Compute_getRouterNatLogConfig_GetTypes(): DynamicUIProps[] {
+export function compute_getRouterNatLogConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enable",
+      "enable",
       "Indicates whether or not to export logs.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Compute_getRouterNatLogConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Filter",
+      "filter",
       'Specifies the desired filtering of logs on this NAT. Possible values: ["ERRORS_ONLY", "TRANSLATIONS_ONLY", "ALL"]',
       [],
       true,

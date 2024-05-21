@@ -7,46 +7,38 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Organizations_IamAuditConfigAuditLogConfig,
-  Organizations_IamAuditConfigAuditLogConfig_GetTypes,
-} from "../types/Organizations_IamAuditConfigAuditLogConfig";
+  organizations_IamAuditConfigAuditLogConfig,
+  organizations_IamAuditConfigAuditLogConfig_GetTypes,
+} from "../types/organizations_IamAuditConfigAuditLogConfig";
 
 export interface IamAuditConfigArgs {
-  // The configuration for logging of each type of permission.  This can be specified multiple times.  Structure is documented below.
-  AuditLogConfigs?: Array<Organizations_IamAuditConfigAuditLogConfig>;
-
   // The numeric ID of the organization in which you want to manage the audit logging config.
-  OrgId?: string;
+  orgId?: string;
 
   // Service which will be enabled for audit logging.  The special value `allServices` covers all services.  Note that if there are google\_organization\_iam\_audit\_config resources covering both `allServices` and a specific service then the union of the two AuditConfigs is used for that service: the `log_types` specified in each `audit_log_config` are enabled, and the `exempted_members` in each `audit_log_config` are exempted.
-  Service?: string;
+  service?: string;
+
+  // The configuration for logging of each type of permission.  This can be specified multiple times.  Structure is documented below.
+  auditLogConfigs?: Array<organizations_IamAuditConfigAuditLogConfig>;
 }
 export class IamAuditConfig extends Resource {
-  // The numeric ID of the organization in which you want to manage the audit logging config.
-  public OrgId?: string;
-
-  // Service which will be enabled for audit logging.  The special value `allServices` covers all services.  Note that if there are google\_organization\_iam\_audit\_config resources covering both `allServices` and a specific service then the union of the two AuditConfigs is used for that service: the `log_types` specified in each `audit_log_config` are enabled, and the `exempted_members` in each `audit_log_config` are exempted.
-  public Service?: string;
-
   // The configuration for logging of each type of permission.  This can be specified multiple times.  Structure is documented below.
-  public AuditLogConfigs?: Array<Organizations_IamAuditConfigAuditLogConfig>;
+  public auditLogConfigs?: Array<organizations_IamAuditConfigAuditLogConfig>;
 
   // The etag of iam policy
-  public Etag?: string;
+  public etag?: string;
+
+  // The numeric ID of the organization in which you want to manage the audit logging config.
+  public orgId?: string;
+
+  // Service which will be enabled for audit logging.  The special value `allServices` covers all services.  Note that if there are google\_organization\_iam\_audit\_config resources covering both `allServices` and a specific service then the union of the two AuditConfigs is used for that service: the `log_types` specified in each `audit_log_config` are enabled, and the `exempted_members` in each `audit_log_config` are exempted.
+  public service?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Array,
-        "AuditLogConfigs",
-        "The configuration for logging of each type of permission.  This can be specified multiple times.  Structure is documented below.",
-        Organizations_IamAuditConfigAuditLogConfig_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "OrgId",
+        "orgId",
         "The numeric ID of the organization in which you want to manage the audit logging config.",
         [],
         true,
@@ -54,9 +46,17 @@ export class IamAuditConfig extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "Service",
+        "service",
         "Service which will be enabled for audit logging.  The special value `allServices` covers all services.  Note that if there are google\\_organization\\_iam\\_audit\\_config resources covering both `allServices` and a specific service then the union of the two AuditConfigs is used for that service: the `log_types` specified in each `audit_log_config` are enabled, and the `exempted_members` in each `audit_log_config` are exempted.",
         [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "auditLogConfigs",
+        "The configuration for logging of each type of permission.  This can be specified multiple times.  Structure is documented below.",
+        organizations_IamAuditConfigAuditLogConfig_GetTypes(),
         true,
         false,
       ),

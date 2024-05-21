@@ -6,21 +6,18 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getBackendServiceCdnPolicyCacheKeyPolicy {
-  // If true requests to different hosts will be cached separately.
-  IncludeHost?: boolean;
-
+export interface compute_getBackendServiceCdnPolicyCacheKeyPolicy {
   /*
 Allows HTTP request headers (by name) to be used in the
 cache key.
 */
-  IncludeHttpHeaders?: Array<string>;
+  includeHttpHeaders?: Array<string>;
 
   // Names of cookies to include in cache keys.
-  IncludeNamedCookies?: Array<string>;
+  includeNamedCookies?: Array<string>;
 
   // If true, http and https requests will be cached separately.
-  IncludeProtocol?: boolean;
+  includeProtocol?: boolean;
 
   /*
 If true, include query string parameters in the cache key
@@ -31,7 +28,7 @@ string will be included.
 If false, the query string will be excluded from the cache
 key entirely.
 */
-  IncludeQueryString?: boolean;
+  includeQueryString?: boolean;
 
   /*
 Names of query string parameters to exclude in cache keys.
@@ -41,7 +38,7 @@ query_string_whitelist or query_string_blacklist, not both.
 '&' and '=' will be percent encoded and not treated as
 delimiters.
 */
-  QueryStringBlacklists?: Array<string>;
+  queryStringBlacklists?: Array<string>;
 
   /*
 Names of query string parameters to include in cache keys.
@@ -51,22 +48,17 @@ query_string_whitelist or query_string_blacklist, not both.
 '&' and '=' will be percent encoded and not treated as
 delimiters.
 */
-  QueryStringWhitelists?: Array<string>;
+  queryStringWhitelists?: Array<string>;
+
+  // If true requests to different hosts will be cached separately.
+  includeHost?: boolean;
 }
 
-export function Compute_getBackendServiceCdnPolicyCacheKeyPolicy_GetTypes(): DynamicUIProps[] {
+export function compute_getBackendServiceCdnPolicyCacheKeyPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Bool,
-      "IncludeHost",
-      "If true requests to different hosts will be cached separately.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "IncludeHttpHeaders",
+      "includeHttpHeaders",
       "Allows HTTP request headers (by name) to be used in the\ncache key.",
       InputType_String_GetTypes(),
       true,
@@ -74,7 +66,7 @@ export function Compute_getBackendServiceCdnPolicyCacheKeyPolicy_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Array,
-      "IncludeNamedCookies",
+      "includeNamedCookies",
       "Names of cookies to include in cache keys.",
       InputType_String_GetTypes(),
       true,
@@ -82,7 +74,7 @@ export function Compute_getBackendServiceCdnPolicyCacheKeyPolicy_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IncludeProtocol",
+      "includeProtocol",
       "If true, http and https requests will be cached separately.",
       [],
       true,
@@ -90,7 +82,7 @@ export function Compute_getBackendServiceCdnPolicyCacheKeyPolicy_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IncludeQueryString",
+      "includeQueryString",
       "If true, include query string parameters in the cache key\naccording to query_string_whitelist and\nquery_string_blacklist. If neither is set, the entire query\nstring will be included.\n\nIf false, the query string will be excluded from the cache\nkey entirely.",
       [],
       true,
@@ -98,7 +90,7 @@ export function Compute_getBackendServiceCdnPolicyCacheKeyPolicy_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Array,
-      "QueryStringBlacklists",
+      "queryStringBlacklists",
       "Names of query string parameters to exclude in cache keys.\n\nAll other parameters will be included. Either specify\nquery_string_whitelist or query_string_blacklist, not both.\n'&' and '=' will be percent encoded and not treated as\ndelimiters.",
       InputType_String_GetTypes(),
       true,
@@ -106,9 +98,17 @@ export function Compute_getBackendServiceCdnPolicyCacheKeyPolicy_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Array,
-      "QueryStringWhitelists",
+      "queryStringWhitelists",
       "Names of query string parameters to include in cache keys.\n\nAll other parameters will be excluded. Either specify\nquery_string_whitelist or query_string_blacklist, not both.\n'&' and '=' will be percent encoded and not treated as\ndelimiters.",
       InputType_String_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "includeHost",
+      "If true requests to different hosts will be cached separately.",
+      [],
       true,
       false,
     ),

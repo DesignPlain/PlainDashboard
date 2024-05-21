@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Projects_AccessApprovalSettingsEnrolledService {
+export interface projects_AccessApprovalSettingsEnrolledService {
   /*
 The product for which Access Approval will be enrolled. Allowed values are listed (case-sensitive):
 all
@@ -20,7 +20,7 @@ iam.googleapis.com
 pubsub.googleapis.com
 storage.googleapis.com
 */
-  CloudProduct?: string;
+  cloudProduct?: string;
 
   /*
 The enrollment level of the service.
@@ -29,25 +29,25 @@ Possible values are: `BLOCK_ALL`.
 
 - - -
 */
-  EnrollmentLevel?: string;
+  enrollmentLevel?: string;
 }
 
-export function Projects_AccessApprovalSettingsEnrolledService_GetTypes(): DynamicUIProps[] {
+export function projects_AccessApprovalSettingsEnrolledService_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "EnrollmentLevel",
-      "The enrollment level of the service.\nDefault value is `BLOCK_ALL`.\nPossible values are: `BLOCK_ALL`.\n\n- - -",
+      "cloudProduct",
+      "The product for which Access Approval will be enrolled. Allowed values are listed (case-sensitive):\nall\nappengine.googleapis.com\nbigquery.googleapis.com\nbigtable.googleapis.com\ncloudkms.googleapis.com\ncompute.googleapis.com\ndataflow.googleapis.com\niam.googleapis.com\npubsub.googleapis.com\nstorage.googleapis.com",
       [],
-      false,
+      true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "CloudProduct",
-      "The product for which Access Approval will be enrolled. Allowed values are listed (case-sensitive):\nall\nappengine.googleapis.com\nbigquery.googleapis.com\nbigtable.googleapis.com\ncloudkms.googleapis.com\ncompute.googleapis.com\ndataflow.googleapis.com\niam.googleapis.com\npubsub.googleapis.com\nstorage.googleapis.com",
+      "enrollmentLevel",
+      "The enrollment level of the service.\nDefault value is `BLOCK_ALL`.\nPossible values are: `BLOCK_ALL`.\n\n- - -",
       [],
-      true,
+      false,
       false,
     ),
   ];

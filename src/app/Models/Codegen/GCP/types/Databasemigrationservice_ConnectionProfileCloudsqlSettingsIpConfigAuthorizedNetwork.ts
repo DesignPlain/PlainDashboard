@@ -6,33 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetwork {
+export interface databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetwork {
+  // The time when this access control entry expires in RFC 3339 format.
+  expireTime?: string;
+
   // A label to identify this entry.
-  Label?: string;
+  label?: string;
 
   // Input only. The time-to-leave of this access control entry.
-  Ttl?: string;
+  ttl?: string;
 
   // The allowlisted value for the access control list.
-  Value?: string;
-
-  // The time when this access control entry expires in RFC 3339 format.
-  ExpireTime?: string;
+  value?: string;
 }
 
-export function Databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetwork_GetTypes(): DynamicUIProps[] {
+export function databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetwork_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Value",
-      "The allowlisted value for the access control list.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ExpireTime",
+      "expireTime",
       "The time when this access control entry expires in RFC 3339 format.",
       [],
       false,
@@ -40,7 +32,7 @@ export function Databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConf
     ),
     new DynamicUIProps(
       InputType.String,
-      "Label",
+      "label",
       "A label to identify this entry.",
       [],
       false,
@@ -48,11 +40,19 @@ export function Databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConf
     ),
     new DynamicUIProps(
       InputType.String,
-      "Ttl",
+      "ttl",
       "Input only. The time-to-leave of this access control entry.",
       [],
       false,
       true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "value",
+      "The allowlisted value for the access control list.",
+      [],
+      true,
+      false,
     ),
   ];
 }

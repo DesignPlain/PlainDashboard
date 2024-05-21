@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RouterBgpAdvertisedIpRange {
+export interface compute_RouterBgpAdvertisedIpRange {
   // User-specified description for the IP range.
-  Description?: string;
+  description?: string;
 
   /*
 The IP range to advertise. The value must be a
 CIDR-formatted string.
 */
-  Range?: string;
+  range?: string;
 }
 
-export function Compute_RouterBgpAdvertisedIpRange_GetTypes(): DynamicUIProps[] {
+export function compute_RouterBgpAdvertisedIpRange_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "User-specified description for the IP range.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Compute_RouterBgpAdvertisedIpRange_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.String,
-      "Range",
+      "range",
       "The IP range to advertise. The value must be a\nCIDR-formatted string.",
       [],
       true,

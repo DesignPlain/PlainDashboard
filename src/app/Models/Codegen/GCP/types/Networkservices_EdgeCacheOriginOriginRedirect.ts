@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_EdgeCacheOriginOriginRedirect {
+export interface networkservices_EdgeCacheOriginOriginRedirect {
   /*
 The set of redirect response codes that the CDN
 follows. Values of
 [RedirectConditions](https://cloud.google.com/media-cdn/docs/reference/rest/v1/projects.locations.edgeCacheOrigins#redirectconditions)
 are accepted.
 */
-  RedirectConditions?: Array<string>;
+  redirectConditions?: Array<string>;
 }
 
-export function Networkservices_EdgeCacheOriginOriginRedirect_GetTypes(): DynamicUIProps[] {
+export function networkservices_EdgeCacheOriginOriginRedirect_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "RedirectConditions",
+      "redirectConditions",
       "The set of redirect response codes that the CDN\nfollows. Values of\n[RedirectConditions](https://cloud.google.com/media-cdn/docs/reference/rest/v1/projects.locations.edgeCacheOrigins#redirectconditions)\nare accepted.",
       InputType_String_GetTypes(),
       false,

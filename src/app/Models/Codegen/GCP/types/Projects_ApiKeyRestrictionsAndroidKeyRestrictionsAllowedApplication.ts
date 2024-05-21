@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Projects_ApiKeyRestrictionsAndroidKeyRestrictionsAllowedApplication {
+export interface projects_ApiKeyRestrictionsAndroidKeyRestrictionsAllowedApplication {
   // The package name of the application.
-  PackageName?: string;
+  packageName?: string;
 
   /*
 The SHA1 fingerprint of the application. For example, both sha1 formats are acceptable : DA:39:A3:EE:5E:6B:4B:0D:32:55:BF:EF:95:60:18:90:AF:D8:07:09 or DA39A3EE5E6B4B0D3255BFEF95601890AFD80709. Output format is the latter.
 
 - - -
 */
-  Sha1Fingerprint?: string;
+  sha1Fingerprint?: string;
 }
 
-export function Projects_ApiKeyRestrictionsAndroidKeyRestrictionsAllowedApplication_GetTypes(): DynamicUIProps[] {
+export function projects_ApiKeyRestrictionsAndroidKeyRestrictionsAllowedApplication_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PackageName",
+      "packageName",
       "The package name of the application.",
       [],
       true,
@@ -30,7 +30,7 @@ export function Projects_ApiKeyRestrictionsAndroidKeyRestrictionsAllowedApplicat
     ),
     new DynamicUIProps(
       InputType.String,
-      "Sha1Fingerprint",
+      "sha1Fingerprint",
       "The SHA1 fingerprint of the application. For example, both sha1 formats are acceptable : DA:39:A3:EE:5E:6B:4B:0D:32:55:BF:EF:95:60:18:90:AF:D8:07:09 or DA39A3EE5E6B4B0D3255BFEF95601890AFD80709. Output format is the latter.\n\n- - -",
       [],
       true,

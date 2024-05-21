@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo {
+export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo {
   // The url of the repository.
-  Url?: string;
+  url?: string;
 
   // The name of the repository.
-  Name?: string;
+  name?: string;
 }
 
-export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
-      "The name of the repository.",
+      "url",
+      "The url of the repository.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Url",
-      "The url of the repository.",
+      "name",
+      "The name of the repository.",
       [],
       true,
       false,

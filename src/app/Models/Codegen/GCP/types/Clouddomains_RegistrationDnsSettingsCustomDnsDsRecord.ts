@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Clouddomains_RegistrationDnsSettingsCustomDnsDsRecord {
+export interface clouddomains_RegistrationDnsSettingsCustomDnsDsRecord {
   // The algorithm used to generate the referenced DNSKEY.
-  Algorithm?: string;
+  algorithm?: string;
 
   // The digest generated from the referenced DNSKEY.
-  Digest?: string;
+  digest?: string;
 
   // The hash function used to generate the digest of the referenced DNSKEY.
-  DigestType?: string;
+  digestType?: string;
 
   // The key tag of the record. Must be set in range 0 -- 65535.
-  KeyTag?: number;
+  keyTag?: number;
 }
 
-export function Clouddomains_RegistrationDnsSettingsCustomDnsDsRecord_GetTypes(): DynamicUIProps[] {
+export function clouddomains_RegistrationDnsSettingsCustomDnsDsRecord_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Algorithm",
+      "algorithm",
       "The algorithm used to generate the referenced DNSKEY.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Clouddomains_RegistrationDnsSettingsCustomDnsDsRecord_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "Digest",
+      "digest",
       "The digest generated from the referenced DNSKEY.",
       [],
       false,
@@ -40,7 +40,7 @@ export function Clouddomains_RegistrationDnsSettingsCustomDnsDsRecord_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "DigestType",
+      "digestType",
       "The hash function used to generate the digest of the referenced DNSKEY.",
       [],
       false,
@@ -48,7 +48,7 @@ export function Clouddomains_RegistrationDnsSettingsCustomDnsDsRecord_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Number,
-      "KeyTag",
+      "keyTag",
       "The key tag of the record. Must be set in range 0 -- 65535.",
       [],
       false,

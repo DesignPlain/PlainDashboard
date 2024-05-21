@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Composer_EnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig,
-  Composer_EnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig_GetTypes,
-} from "./Composer_EnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig";
+  composer_EnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig,
+  composer_EnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig_GetTypes,
+} from "./composer_EnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig";
 
-export interface Composer_EnvironmentConfigDataRetentionConfig {
+export interface composer_EnvironmentConfigDataRetentionConfig {
   // Optional. The configuration setting for Task Logs.
-  TaskLogsRetentionConfigs?: Array<Composer_EnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig>;
+  taskLogsRetentionConfigs?: Array<composer_EnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig>;
 }
 
-export function Composer_EnvironmentConfigDataRetentionConfig_GetTypes(): DynamicUIProps[] {
+export function composer_EnvironmentConfigDataRetentionConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "TaskLogsRetentionConfigs",
+      "taskLogsRetentionConfigs",
       "Optional. The configuration setting for Task Logs.",
-      Composer_EnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig_GetTypes(),
+      composer_EnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig_GetTypes(),
       true,
       false,
     ),

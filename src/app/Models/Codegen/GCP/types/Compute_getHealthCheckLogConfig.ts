@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getHealthCheckLogConfig {
+export interface compute_getHealthCheckLogConfig {
   /*
 Indicates whether or not to export logs. This is false by default,
 which means no health check logging will be done.
 */
-  Enable?: boolean;
+  enable?: boolean;
 }
 
-export function Compute_getHealthCheckLogConfig_GetTypes(): DynamicUIProps[] {
+export function compute_getHealthCheckLogConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enable",
+      "enable",
       "Indicates whether or not to export logs. This is false by default,\nwhich means no health check logging will be done.",
       [],
       true,

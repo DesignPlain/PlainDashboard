@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterMonitoringConfigAdvancedDatapathObservabilityConfig {
-  // Whether or not the advanced datapath metrics are enabled.
-  EnableMetrics?: boolean;
-
+export interface container_getClusterMonitoringConfigAdvancedDatapathObservabilityConfig {
   // Whether or not Relay is enabled.
-  EnableRelay?: boolean;
+  enableRelay?: boolean;
 
   // Mode used to make Relay available.
-  RelayMode?: string;
+  relayMode?: string;
+
+  // Whether or not the advanced datapath metrics are enabled.
+  enableMetrics?: boolean;
 }
 
-export function Container_getClusterMonitoringConfigAdvancedDatapathObservabilityConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterMonitoringConfigAdvancedDatapathObservabilityConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "RelayMode",
-      "Mode used to make Relay available.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "EnableMetrics",
+      "enableMetrics",
       "Whether or not the advanced datapath metrics are enabled.",
       [],
       true,
@@ -37,8 +29,16 @@ export function Container_getClusterMonitoringConfigAdvancedDatapathObservabilit
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableRelay",
+      "enableRelay",
       "Whether or not Relay is enabled.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "relayMode",
+      "Mode used to make Relay available.",
       [],
       true,
       false,

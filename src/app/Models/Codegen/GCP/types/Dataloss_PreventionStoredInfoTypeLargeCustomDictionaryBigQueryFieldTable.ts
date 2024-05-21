@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable {
+export interface dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable {
   // The dataset ID of the table.
-  DatasetId?: string;
+  datasetId?: string;
 
   // The Google Cloud Platform project ID of the project containing the table.
-  ProjectId?: string;
+  projectId?: string;
 
   // The name of the table.
-  TableId?: string;
+  tableId?: string;
 }
 
-export function Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "TableId",
-      "The name of the table.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "DatasetId",
+      "datasetId",
       "The dataset ID of the table.",
       [],
       true,
@@ -37,8 +29,16 @@ export function Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFi
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProjectId",
+      "projectId",
       "The Google Cloud Platform project ID of the project containing the table.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "tableId",
+      "The name of the table.",
       [],
       true,
       false,

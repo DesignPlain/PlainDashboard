@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionList {
+export interface dataproc_ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionList {
   // Full machine-type names, e.g. `"n1-standard-16"`.
-  MachineTypes?: Array<string>;
+  machineTypes?: Array<string>;
 
   /*
 Preference of this instance selection. A lower number means higher preference. Dataproc will first try to create a VM based on the machine-type with priority rank and fallback to next rank based on availability. Machine types and instance selections with the same priority have the same preference.
 
 - - -
 */
-  Rank?: number;
+  rank?: number;
 }
 
-export function Dataproc_ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionList_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionList_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "MachineTypes",
-      'Full machine-type names, e.g. `"n1-standard-16"`.',
-      InputType_String_GetTypes(),
+      InputType.Number,
+      "rank",
+      "Preference of this instance selection. A lower number means higher preference. Dataproc will first try to create a VM based on the machine-type with priority rank and fallback to next rank based on availability. Machine types and instance selections with the same priority have the same preference.\n\n- - -",
+      [],
       false,
       true,
     ),
     new DynamicUIProps(
-      InputType.Number,
-      "Rank",
-      "Preference of this instance selection. A lower number means higher preference. Dataproc will first try to create a VM based on the machine-type with priority rank and fallback to next rank based on availability. Machine types and instance selections with the same priority have the same preference.\n\n- - -",
-      [],
+      InputType.Array,
+      "machineTypes",
+      'Full machine-type names, e.g. `"n1-standard-16"`.',
+      InputType_String_GetTypes(),
       false,
       true,
     ),

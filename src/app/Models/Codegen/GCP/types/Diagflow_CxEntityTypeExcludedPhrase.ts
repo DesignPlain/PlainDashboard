@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxEntityTypeExcludedPhrase {
+export interface diagflow_CxEntityTypeExcludedPhrase {
   // The word or phrase to be excluded.
-  Value?: string;
+  value?: string;
 }
 
-export function Diagflow_CxEntityTypeExcludedPhrase_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxEntityTypeExcludedPhrase_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "The word or phrase to be excluded.",
       [],
       false,

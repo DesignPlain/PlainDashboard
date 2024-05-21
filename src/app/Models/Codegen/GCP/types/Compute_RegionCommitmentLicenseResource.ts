@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionCommitmentLicenseResource {
-  // The number of licenses purchased.
-  Amount?: string;
-
+export interface compute_RegionCommitmentLicenseResource {
   // Specifies the core range of the instance for which this license applies.
-  CoresPerLicense?: string;
+  coresPerLicense?: string;
 
   // Any applicable license URI.
-  License?: string;
+  license?: string;
+
+  // The number of licenses purchased.
+  amount?: string;
 }
 
-export function Compute_RegionCommitmentLicenseResource_GetTypes(): DynamicUIProps[] {
+export function compute_RegionCommitmentLicenseResource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Amount",
+      "amount",
       "The number of licenses purchased.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Compute_RegionCommitmentLicenseResource_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "CoresPerLicense",
+      "coresPerLicense",
       "Specifies the core range of the instance for which this license applies.",
       [],
       false,
@@ -37,7 +37,7 @@ export function Compute_RegionCommitmentLicenseResource_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "License",
+      "license",
       "Any applicable license URI.",
       [],
       true,

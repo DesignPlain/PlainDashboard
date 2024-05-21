@@ -7,14 +7,11 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Storage_ObjectAccessControlProjectTeam,
-  Storage_ObjectAccessControlProjectTeam_GetTypes,
-} from "../types/Storage_ObjectAccessControlProjectTeam";
+  storage_ObjectAccessControlProjectTeam,
+  storage_ObjectAccessControlProjectTeam_GetTypes,
+} from "../types/storage_ObjectAccessControlProjectTeam";
 
 export interface ObjectAccessControlArgs {
-  // The name of the bucket.
-  Bucket?: string;
-
   /*
 The entity holding the permission, in one of the following forms:
 - user-{{userId}}
@@ -26,10 +23,10 @@ The entity holding the permission, in one of the following forms:
 - allUsers
 - allAuthenticatedUsers
 */
-  Entity?: string;
+  entity?: string;
 
   // The name of the object to apply the access control to.
-  Object?: string;
+  object?: string;
 
   /*
 The access permission for the entity.
@@ -38,68 +35,63 @@ Possible values are: `OWNER`, `READER`.
 
 - - -
 */
-  Role?: string;
+  role?: string;
+
+  // The name of the bucket.
+  bucket?: string;
 }
 export class ObjectAccessControl extends Resource {
-  // The name of the object to apply the access control to.
-  public Object?: string;
-
-  /*
-The access permission for the entity.
-Possible values are: `OWNER`, `READER`.
-
-
-- - -
-*/
-  public Role?: string;
-
-  // The name of the bucket.
-  public Bucket?: string;
-
-  // The domain associated with the entity.
-  public Domain?: string;
-
-  // The email address associated with the entity.
-  public Email?: string;
-
-  /*
-The entity holding the permission, in one of the following forms:
-- user-{{userId}}
-- user-{{email}} (such as "user-liz@example.com")
-- group-{{groupId}}
-- group-{{email}} (such as "group-example@googlegroups.com")
-- domain-{{domain}} (such as "domain-example.com")
-- project-team-{{projectId}}
-- allUsers
-- allAuthenticatedUsers
-*/
-  public Entity?: string;
-
   // The ID for the entity
-  public EntityId?: string;
+  public entityId?: string;
 
-  // The content generation of the object, if applied to an object.
-  public Generation?: number;
+  // The name of the object to apply the access control to.
+  public object?: string;
 
   /*
 The project team associated with the entity
 Structure is documented below.
 */
-  public ProjectTeams?: Array<Storage_ObjectAccessControlProjectTeam>;
+  public projectTeams?: Array<storage_ObjectAccessControlProjectTeam>;
+
+  /*
+The access permission for the entity.
+Possible values are: `OWNER`, `READER`.
+
+
+- - -
+*/
+  public role?: string;
+
+  // The name of the bucket.
+  public bucket?: string;
+
+  // The domain associated with the entity.
+  public domain?: string;
+
+  // The content generation of the object, if applied to an object.
+  public generation?: number;
+
+  // The email address associated with the entity.
+  public email?: string;
+
+  /*
+The entity holding the permission, in one of the following forms:
+- user-{{userId}}
+- user-{{email}} (such as "user-liz@example.com")
+- group-{{groupId}}
+- group-{{email}} (such as "group-example@googlegroups.com")
+- domain-{{domain}} (such as "domain-example.com")
+- project-team-{{projectId}}
+- allUsers
+- allAuthenticatedUsers
+*/
+  public entity?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Bucket",
-        "The name of the bucket.",
-        [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Entity",
+        "entity",
         'The entity holding the permission, in one of the following forms:\n* user-{{userId}}\n* user-{{email}} (such as "user-liz@example.com")\n* group-{{groupId}}\n* group-{{email}} (such as "group-example@googlegroups.com")\n* domain-{{domain}} (such as "domain-example.com")\n* project-team-{{projectId}}\n* allUsers\n* allAuthenticatedUsers',
         [],
         true,
@@ -107,7 +99,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Object",
+        "object",
         "The name of the object to apply the access control to.",
         [],
         true,
@@ -115,8 +107,16 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Role",
+        "role",
         "The access permission for the entity.\nPossible values are: `OWNER`, `READER`.\n\n\n- - -",
+        [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "bucket",
+        "The name of the bucket.",
         [],
         true,
         false,

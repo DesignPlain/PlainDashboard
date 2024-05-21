@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxFlowTransitionRouteTriggerFulfillmentMessageOutputAudioText {
+export interface diagflow_CxFlowTransitionRouteTriggerFulfillmentMessageOutputAudioText {
   // The SSML text to be synthesized. For more information, see SSML.
-  Ssml?: string;
+  ssml?: string;
 
   // The raw text to be synthesized.
-  Text?: string;
+  text?: string;
 
   /*
 (Output)
 Whether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.
 */
-  AllowPlaybackInterruption?: boolean;
+  allowPlaybackInterruption?: boolean;
 }
 
-export function Diagflow_CxFlowTransitionRouteTriggerFulfillmentMessageOutputAudioText_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxFlowTransitionRouteTriggerFulfillmentMessageOutputAudioText_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Ssml",
+      "ssml",
       "The SSML text to be synthesized. For more information, see SSML.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Diagflow_CxFlowTransitionRouteTriggerFulfillmentMessageOutputAud
     ),
     new DynamicUIProps(
       InputType.String,
-      "Text",
+      "text",
       "The raw text to be synthesized.",
       [],
       false,
@@ -40,7 +40,7 @@ export function Diagflow_CxFlowTransitionRouteTriggerFulfillmentMessageOutputAud
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "AllowPlaybackInterruption",
+      "allowPlaybackInterruption",
       "(Output)\nWhether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.",
       [],
       false,

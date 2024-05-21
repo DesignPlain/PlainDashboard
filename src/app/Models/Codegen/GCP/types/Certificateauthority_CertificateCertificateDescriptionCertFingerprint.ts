@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificateauthority_CertificateCertificateDescriptionCertFingerprint {
+export interface certificateauthority_CertificateCertificateDescriptionCertFingerprint {
   /*
 (Output)
 The SHA 256 hash, encoded in hexadecimal, of the DER x509 certificate.
 */
-  Sha256Hash?: string;
+  sha256Hash?: string;
 }
 
-export function Certificateauthority_CertificateCertificateDescriptionCertFingerprint_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CertificateCertificateDescriptionCertFingerprint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Sha256Hash",
+      "sha256Hash",
       "(Output)\nThe SHA 256 hash, encoded in hexadecimal, of the DER x509 certificate.",
       [],
       false,

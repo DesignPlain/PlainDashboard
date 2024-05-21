@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_GenericServiceBasicService {
+export interface monitoring_GenericServiceBasicService {
   /*
 Labels that specify the resource that emits the monitoring data
 which is used for SLO reporting of this `Service`.
 */
-  ServiceLabels?: Map<string, string>;
+  serviceLabels?: Map<string, string>;
 
   /*
 The type of service that this basic service defines, e.g.
 APP_ENGINE service type
 */
-  ServiceType?: string;
+  serviceType?: string;
 }
 
-export function Monitoring_GenericServiceBasicService_GetTypes(): DynamicUIProps[] {
+export function monitoring_GenericServiceBasicService_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Map,
-      "ServiceLabels",
+      "serviceLabels",
       "Labels that specify the resource that emits the monitoring data\nwhich is used for SLO reporting of this `Service`.",
       InputType_Map_GetTypes(),
       false,
@@ -32,7 +32,7 @@ export function Monitoring_GenericServiceBasicService_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "ServiceType",
+      "serviceType",
       "The type of service that this basic service defines, e.g.\nAPP_ENGINE service type",
       [],
       false,

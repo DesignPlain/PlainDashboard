@@ -6,46 +6,54 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_AzureNodePoolConfigRootVolume,
-  Container_AzureNodePoolConfigRootVolume_GetTypes,
-} from "./Container_AzureNodePoolConfigRootVolume";
+  container_AzureNodePoolConfigProxyConfig,
+  container_AzureNodePoolConfigProxyConfig_GetTypes,
+} from "./container_AzureNodePoolConfigProxyConfig";
 import {
-  Container_AzureNodePoolConfigSshConfig,
-  Container_AzureNodePoolConfigSshConfig_GetTypes,
-} from "./Container_AzureNodePoolConfigSshConfig";
+  container_AzureNodePoolConfigRootVolume,
+  container_AzureNodePoolConfigRootVolume_GetTypes,
+} from "./container_AzureNodePoolConfigRootVolume";
 import {
-  Container_AzureNodePoolConfigProxyConfig,
-  Container_AzureNodePoolConfigProxyConfig_GetTypes,
-} from "./Container_AzureNodePoolConfigProxyConfig";
+  container_AzureNodePoolConfigSshConfig,
+  container_AzureNodePoolConfigSshConfig_GetTypes,
+} from "./container_AzureNodePoolConfigSshConfig";
 
-export interface Container_AzureNodePoolConfig {
+export interface container_AzureNodePoolConfig {
   // The OS image type to use on node pool instances.
-  ImageType?: string;
+  imageType?: string;
 
   // Optional. The initial labels assigned to nodes of this node pool. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   // Proxy configuration for outbound HTTP(S) traffic.
-  ProxyConfig?: Container_AzureNodePoolConfigProxyConfig;
+  proxyConfig?: container_AzureNodePoolConfigProxyConfig;
 
   // Optional. Configuration related to the root volume provisioned for each node pool machine. When unspecified, it defaults to a 32-GiB Azure Disk.
-  RootVolume?: Container_AzureNodePoolConfigRootVolume;
+  rootVolume?: container_AzureNodePoolConfigRootVolume;
 
   // SSH configuration for how to access the node pool machines.
-  SshConfig?: Container_AzureNodePoolConfigSshConfig;
+  sshConfig?: container_AzureNodePoolConfigSshConfig;
 
   // Optional. A set of tags to apply to all underlying Azure resources for this node pool. This currently only includes Virtual Machine Scale Sets. Specify at most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:@/). Keys can be up to 127 Unicode characters. Values can be up to 255 Unicode characters.
-  Tags?: Map<string, string>;
+  tags?: Map<string, string>;
 
   // Optional. The Azure VM size name. Example: `Standard_DS2_v2`. See (/anthos/clusters/docs/azure/reference/supported-vms) for options. When unspecified, it defaults to `Standard_DS2_v2`.
-  VmSize?: string;
+  vmSize?: string;
 }
 
-export function Container_AzureNodePoolConfig_GetTypes(): DynamicUIProps[] {
+export function container_AzureNodePoolConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Map,
+      "tags",
+      "Optional. A set of tags to apply to all underlying Azure resources for this node pool. This currently only includes Virtual Machine Scale Sets. Specify at most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:@/). Keys can be up to 127 Unicode characters. Values can be up to 255 Unicode characters.",
+      InputType_Map_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "VmSize",
+      "vmSize",
       "Optional. The Azure VM size name. Example: `Standard_DS2_v2`. See (/anthos/clusters/docs/azure/reference/supported-vms) for options. When unspecified, it defaults to `Standard_DS2_v2`.",
       [],
       false,
@@ -53,7 +61,7 @@ export function Container_AzureNodePoolConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ImageType",
+      "imageType",
       "The OS image type to use on node pool instances.",
       [],
       false,
@@ -61,7 +69,7 @@ export function Container_AzureNodePoolConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Labels",
+      "labels",
       'Optional. The initial labels assigned to nodes of this node pool. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.',
       InputType_Map_GetTypes(),
       false,
@@ -69,35 +77,27 @@ export function Container_AzureNodePoolConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ProxyConfig",
+      "proxyConfig",
       "Proxy configuration for outbound HTTP(S) traffic.",
-      Container_AzureNodePoolConfigProxyConfig_GetTypes(),
+      container_AzureNodePoolConfigProxyConfig_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "RootVolume",
+      "rootVolume",
       "Optional. Configuration related to the root volume provisioned for each node pool machine. When unspecified, it defaults to a 32-GiB Azure Disk.",
-      Container_AzureNodePoolConfigRootVolume_GetTypes(),
+      container_AzureNodePoolConfigRootVolume_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "SshConfig",
+      "sshConfig",
       "SSH configuration for how to access the node pool machines.",
-      Container_AzureNodePoolConfigSshConfig_GetTypes(),
+      container_AzureNodePoolConfigSshConfig_GetTypes(),
       true,
       false,
-    ),
-    new DynamicUIProps(
-      InputType.Map,
-      "Tags",
-      "Optional. A set of tags to apply to all underlying Azure resources for this node pool. This currently only includes Virtual Machine Scale Sets. Specify at most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:@/). Keys can be up to 127 Unicode characters. Values can be up to 255 Unicode characters.",
-      InputType_Map_GetTypes(),
-      false,
-      true,
     ),
   ];
 }

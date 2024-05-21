@@ -14,34 +14,34 @@ This field can take the following values: `PREMIUM` or `STANDARD`.
 
 - - -
 */
-  NetworkTier?: string;
+  networkTier?: string;
 
   /*
 The ID of the project in which the resource belongs. If it
 is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 }
 export class ProjectDefaultNetworkTier extends Resource {
-  /*
-The ID of the project in which the resource belongs. If it
-is not provided, the provider project is used.
-*/
-  public Project?: string;
-
   /*
 The default network tier to be configured for the project.
 This field can take the following values: `PREMIUM` or `STANDARD`.
 
 - - -
 */
-  public NetworkTier?: string;
+  public networkTier?: string;
+
+  /*
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
+*/
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "NetworkTier",
+        "networkTier",
         "The default network tier to be configured for the project.\nThis field can take the following values: `PREMIUM` or `STANDARD`.\n\n- - -",
         [],
         true,
@@ -49,7 +49,7 @@ This field can take the following values: `PREMIUM` or `STANDARD`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
         [],
         false,

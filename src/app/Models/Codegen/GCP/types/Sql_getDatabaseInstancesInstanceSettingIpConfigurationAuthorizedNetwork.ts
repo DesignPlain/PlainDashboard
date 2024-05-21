@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstancesInstanceSettingIpConfigurationAuthorizedNetwork {
+export interface sql_getDatabaseInstancesInstanceSettingIpConfigurationAuthorizedNetwork {
   //
-  ExpirationTime?: string;
+  expirationTime?: string;
 
   //
-  Name?: string;
+  name?: string;
 
   //
-  Value?: string;
+  value?: string;
 }
 
-export function Sql_getDatabaseInstancesInstanceSettingIpConfigurationAuthorizedNetwork_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstancesInstanceSettingIpConfigurationAuthorizedNetwork_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "ExpirationTime", "", [], true, false),
-    new DynamicUIProps(InputType.String, "Name", "", [], true, false),
-    new DynamicUIProps(InputType.String, "Value", "", [], true, false),
+    new DynamicUIProps(InputType.String, "expirationTime", "", [], true, false),
+    new DynamicUIProps(InputType.String, "name", "", [], true, false),
+    new DynamicUIProps(InputType.String, "value", "", [], true, false),
   ];
 }

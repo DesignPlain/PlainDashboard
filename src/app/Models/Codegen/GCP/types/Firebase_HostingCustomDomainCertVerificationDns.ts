@@ -6,36 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Firebase_HostingCustomDomainCertVerificationDnsDesired,
-  Firebase_HostingCustomDomainCertVerificationDnsDesired_GetTypes,
-} from "./Firebase_HostingCustomDomainCertVerificationDnsDesired";
+  firebase_HostingCustomDomainCertVerificationDnsDesired,
+  firebase_HostingCustomDomainCertVerificationDnsDesired_GetTypes,
+} from "./firebase_HostingCustomDomainCertVerificationDnsDesired";
 import {
-  Firebase_HostingCustomDomainCertVerificationDnsDiscovered,
-  Firebase_HostingCustomDomainCertVerificationDnsDiscovered_GetTypes,
-} from "./Firebase_HostingCustomDomainCertVerificationDnsDiscovered";
+  firebase_HostingCustomDomainCertVerificationDnsDiscovered,
+  firebase_HostingCustomDomainCertVerificationDnsDiscovered_GetTypes,
+} from "./firebase_HostingCustomDomainCertVerificationDnsDiscovered";
 
-export interface Firebase_HostingCustomDomainCertVerificationDns {
+export interface firebase_HostingCustomDomainCertVerificationDns {
   /*
 (Output)
 The last time Hosting checked your CustomDomain's DNS records.
 */
-  CheckTime?: string;
+  checkTime?: string;
 
   // A text string to serve at the path.
-  Desireds?: Array<Firebase_HostingCustomDomainCertVerificationDnsDesired>;
+  desireds?: Array<firebase_HostingCustomDomainCertVerificationDnsDesired>;
 
   /*
 Whether Hosting was able to find the required file contents on the
 specified path during its last check.
 */
-  Discovereds?: Array<Firebase_HostingCustomDomainCertVerificationDnsDiscovered>;
+  discovereds?: Array<firebase_HostingCustomDomainCertVerificationDnsDiscovered>;
 }
 
-export function Firebase_HostingCustomDomainCertVerificationDns_GetTypes(): DynamicUIProps[] {
+export function firebase_HostingCustomDomainCertVerificationDns_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CheckTime",
+      "checkTime",
       "(Output)\nThe last time Hosting checked your CustomDomain's DNS records.",
       [],
       false,
@@ -43,17 +43,17 @@ export function Firebase_HostingCustomDomainCertVerificationDns_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Desireds",
+      "desireds",
       "A text string to serve at the path.",
-      Firebase_HostingCustomDomainCertVerificationDnsDesired_GetTypes(),
+      firebase_HostingCustomDomainCertVerificationDnsDesired_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Discovereds",
+      "discovereds",
       "Whether Hosting was able to find the required file contents on the\nspecified path during its last check.",
-      Firebase_HostingCustomDomainCertVerificationDnsDiscovered_GetTypes(),
+      firebase_HostingCustomDomainCertVerificationDnsDiscovered_GetTypes(),
       false,
       false,
     ),

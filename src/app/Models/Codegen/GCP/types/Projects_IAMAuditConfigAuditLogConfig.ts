@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Projects_IAMAuditConfigAuditLogConfig {
+export interface projects_IAMAuditConfigAuditLogConfig {
   // Identities that do not cause logging for this type of permission.  The format is the same as that for `members`.
-  ExemptedMembers?: Array<string>;
+  exemptedMembers?: Array<string>;
 
   // Permission type for which logging is to be configured.  Must be one of `DATA_READ`, `DATA_WRITE`, or `ADMIN_READ`.
-  LogType?: string;
+  logType?: string;
 }
 
-export function Projects_IAMAuditConfigAuditLogConfig_GetTypes(): DynamicUIProps[] {
+export function projects_IAMAuditConfigAuditLogConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "ExemptedMembers",
-      "Identities that do not cause logging for this type of permission.  The format is the same as that for `members`.",
-      InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "LogType",
+      "logType",
       "Permission type for which logging is to be configured.  Must be one of `DATA_READ`, `DATA_WRITE`, or `ADMIN_READ`.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "exemptedMembers",
+      "Identities that do not cause logging for this type of permission.  The format is the same as that for `members`.",
+      InputType_String_GetTypes(),
+      false,
       false,
     ),
   ];

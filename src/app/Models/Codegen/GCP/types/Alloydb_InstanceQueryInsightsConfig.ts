@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Alloydb_InstanceQueryInsightsConfig {
+export interface alloydb_InstanceQueryInsightsConfig {
+  // Number of query execution plans captured by Insights per minute for all queries combined. The default value is 5. Any integer between 0 and 20 is considered valid.
+  queryPlansPerMinute?: number;
+
   // Query string length. The default value is 1024. Any integer between 256 and 4500 is considered valid.
-  QueryStringLength?: number;
+  queryStringLength?: number;
 
   // Record application tags for an instance. This flag is turned "on" by default.
-  RecordApplicationTags?: boolean;
+  recordApplicationTags?: boolean;
 
   // Record client address for an instance. Client address is PII information. This flag is turned "on" by default.
-  RecordClientAddress?: boolean;
-
-  // Number of query execution plans captured by Insights per minute for all queries combined. The default value is 5. Any integer between 0 and 20 is considered valid.
-  QueryPlansPerMinute?: number;
+  recordClientAddress?: boolean;
 }
 
-export function Alloydb_InstanceQueryInsightsConfig_GetTypes(): DynamicUIProps[] {
+export function alloydb_InstanceQueryInsightsConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "QueryStringLength",
+      "queryPlansPerMinute",
+      "Number of query execution plans captured by Insights per minute for all queries combined. The default value is 5. Any integer between 0 and 20 is considered valid.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "queryStringLength",
       "Query string length. The default value is 1024. Any integer between 256 and 4500 is considered valid.",
       [],
       false,
@@ -32,7 +40,7 @@ export function Alloydb_InstanceQueryInsightsConfig_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "RecordApplicationTags",
+      "recordApplicationTags",
       'Record application tags for an instance. This flag is turned "on" by default.',
       [],
       false,
@@ -40,16 +48,8 @@ export function Alloydb_InstanceQueryInsightsConfig_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "RecordClientAddress",
+      "recordClientAddress",
       'Record client address for an instance. Client address is PII information. This flag is turned "on" by default.',
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "QueryPlansPerMinute",
-      "Number of query execution plans captured by Insights per minute for all queries combined. The default value is 5. Any integer between 0 and 20 is considered valid.",
       [],
       false,
       false,

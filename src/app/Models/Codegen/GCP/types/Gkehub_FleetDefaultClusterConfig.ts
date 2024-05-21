@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig,
-  Gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig_GetTypes,
-} from "./Gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig";
+  gkehub_FleetDefaultClusterConfigSecurityPostureConfig,
+  gkehub_FleetDefaultClusterConfigSecurityPostureConfig_GetTypes,
+} from "./gkehub_FleetDefaultClusterConfigSecurityPostureConfig";
 import {
-  Gkehub_FleetDefaultClusterConfigSecurityPostureConfig,
-  Gkehub_FleetDefaultClusterConfigSecurityPostureConfig_GetTypes,
-} from "./Gkehub_FleetDefaultClusterConfigSecurityPostureConfig";
+  gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig,
+  gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig_GetTypes,
+} from "./gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig";
 
-export interface Gkehub_FleetDefaultClusterConfig {
+export interface gkehub_FleetDefaultClusterConfig {
   /*
 Enable/Disable binary authorization features for the cluster.
 Structure is documented below.
 */
-  BinaryAuthorizationConfig?: Gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig;
+  binaryAuthorizationConfig?: gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig;
 
   /*
 Enable/Disable Security Posture features for the cluster.
 Structure is documented below.
 */
-  SecurityPostureConfig?: Gkehub_FleetDefaultClusterConfigSecurityPostureConfig;
+  securityPostureConfig?: gkehub_FleetDefaultClusterConfigSecurityPostureConfig;
 }
 
-export function Gkehub_FleetDefaultClusterConfig_GetTypes(): DynamicUIProps[] {
+export function gkehub_FleetDefaultClusterConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "BinaryAuthorizationConfig",
+      "binaryAuthorizationConfig",
       "Enable/Disable binary authorization features for the cluster.\nStructure is documented below.",
-      Gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig_GetTypes(),
+      gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "SecurityPostureConfig",
+      "securityPostureConfig",
       "Enable/Disable Security Posture features for the cluster.\nStructure is documented below.",
-      Gkehub_FleetDefaultClusterConfigSecurityPostureConfig_GetTypes(),
+      gkehub_FleetDefaultClusterConfigSecurityPostureConfig_GetTypes(),
       false,
       false,
     ),

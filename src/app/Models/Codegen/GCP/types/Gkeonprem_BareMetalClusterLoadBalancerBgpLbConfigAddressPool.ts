@@ -6,44 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterLoadBalancerBgpLbConfigAddressPool {
+export interface gkeonprem_BareMetalClusterLoadBalancerBgpLbConfigAddressPool {
   // The addresses that are part of this pool. Each address must be either in the CIDR form (1.2.3.0/24) or range form (1.2.3.1-1.2.3.5).
-  Addresses?: Array<string>;
+  addresses?: Array<string>;
 
   /*
 If true, avoid using IPs ending in .0 or .255.
 This avoids buggy consumer devices mistakenly dropping IPv4 traffic for those special IP addresses.
 */
-  AvoidBuggyIps?: boolean;
+  avoidBuggyIps?: boolean;
 
   // If true, prevent IP addresses from being automatically assigned.
-  ManualAssign?: string;
+  manualAssign?: string;
 
   // The name of the address pool.
-  Pool?: string;
+  pool?: string;
 }
 
-export function Gkeonprem_BareMetalClusterLoadBalancerBgpLbConfigAddressPool_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterLoadBalancerBgpLbConfigAddressPool_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "ManualAssign",
-      "If true, prevent IP addresses from being automatically assigned.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Pool",
-      "The name of the address pool.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "Addresses",
+      "addresses",
       "The addresses that are part of this pool. Each address must be either in the CIDR form (1.2.3.0/24) or range form (1.2.3.1-1.2.3.5).",
       InputType_String_GetTypes(),
       true,
@@ -51,10 +35,26 @@ export function Gkeonprem_BareMetalClusterLoadBalancerBgpLbConfigAddressPool_Get
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "AvoidBuggyIps",
+      "avoidBuggyIps",
       "If true, avoid using IPs ending in .0 or .255.\nThis avoids buggy consumer devices mistakenly dropping IPv4 traffic for those special IP addresses.",
       [],
       false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "manualAssign",
+      "If true, prevent IP addresses from being automatically assigned.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "pool",
+      "The name of the address pool.",
+      [],
+      true,
       false,
     ),
   ];

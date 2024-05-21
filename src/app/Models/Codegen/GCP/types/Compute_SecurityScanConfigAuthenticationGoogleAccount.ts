@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_SecurityScanConfigAuthenticationGoogleAccount {
+export interface compute_SecurityScanConfigAuthenticationGoogleAccount {
   /*
 The password of the Google account. The credential is stored encrypted
 in GCP.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  Password?: string;
+  password?: string;
 
   // The user name of the Google account.
-  Username?: string;
+  username?: string;
 }
 
-export function Compute_SecurityScanConfigAuthenticationGoogleAccount_GetTypes(): DynamicUIProps[] {
+export function compute_SecurityScanConfigAuthenticationGoogleAccount_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Password",
+      "password",
       "The password of the Google account. The credential is stored encrypted\nin GCP.\n**Note**: This property is sensitive and will not be displayed in the plan.",
       [],
       true,
@@ -30,7 +30,7 @@ export function Compute_SecurityScanConfigAuthenticationGoogleAccount_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "Username",
+      "username",
       "The user name of the Google account.",
       [],
       true,

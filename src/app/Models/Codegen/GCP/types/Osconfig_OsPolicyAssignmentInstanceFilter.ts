@@ -6,24 +6,39 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Osconfig_OsPolicyAssignmentInstanceFilterInventory,
-  Osconfig_OsPolicyAssignmentInstanceFilterInventory_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentInstanceFilterInventory";
+  osconfig_OsPolicyAssignmentInstanceFilterInventory,
+  osconfig_OsPolicyAssignmentInstanceFilterInventory_GetTypes,
+} from "./osconfig_OsPolicyAssignmentInstanceFilterInventory";
 import {
-  Osconfig_OsPolicyAssignmentInstanceFilterExclusionLabel,
-  Osconfig_OsPolicyAssignmentInstanceFilterExclusionLabel_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentInstanceFilterExclusionLabel";
+  osconfig_OsPolicyAssignmentInstanceFilterExclusionLabel,
+  osconfig_OsPolicyAssignmentInstanceFilterExclusionLabel_GetTypes,
+} from "./osconfig_OsPolicyAssignmentInstanceFilterExclusionLabel";
 import {
-  Osconfig_OsPolicyAssignmentInstanceFilterInclusionLabel,
-  Osconfig_OsPolicyAssignmentInstanceFilterInclusionLabel_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentInstanceFilterInclusionLabel";
+  osconfig_OsPolicyAssignmentInstanceFilterInclusionLabel,
+  osconfig_OsPolicyAssignmentInstanceFilterInclusionLabel_GetTypes,
+} from "./osconfig_OsPolicyAssignmentInstanceFilterInclusionLabel";
 
-export interface Osconfig_OsPolicyAssignmentInstanceFilter {
+export interface osconfig_OsPolicyAssignmentInstanceFilter {
+  /*
+List of label sets used for VM inclusion. If
+the list has more than one `LabelSet`, the VM is included if any of the
+label sets are applicable for the VM. Structure is
+documented below.
+*/
+  inclusionLabels?: Array<osconfig_OsPolicyAssignmentInstanceFilterInclusionLabel>;
+
+  /*
+List of inventories to select VMs. A VM is
+selected if its inventory data matches at least one of the following
+inventories. Structure is documented below.
+*/
+  inventories?: Array<osconfig_OsPolicyAssignmentInstanceFilterInventory>;
+
   /*
 Target all VMs in the project. If true, no other criteria
 is permitted.
 */
-  All?: boolean;
+  all?: boolean;
 
   /*
 List of label sets used for VM exclusion. If
@@ -31,29 +46,14 @@ the list has more than one label set, the VM is excluded if any of the label
 sets are applicable for the VM. Structure is
 documented below.
 */
-  ExclusionLabels?: Array<Osconfig_OsPolicyAssignmentInstanceFilterExclusionLabel>;
-
-  /*
-List of label sets used for VM inclusion. If
-the list has more than one `LabelSet`, the VM is included if any of the
-label sets are applicable for the VM. Structure is
-documented below.
-*/
-  InclusionLabels?: Array<Osconfig_OsPolicyAssignmentInstanceFilterInclusionLabel>;
-
-  /*
-List of inventories to select VMs. A VM is
-selected if its inventory data matches at least one of the following
-inventories. Structure is documented below.
-*/
-  Inventories?: Array<Osconfig_OsPolicyAssignmentInstanceFilterInventory>;
+  exclusionLabels?: Array<osconfig_OsPolicyAssignmentInstanceFilterExclusionLabel>;
 }
 
-export function Osconfig_OsPolicyAssignmentInstanceFilter_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentInstanceFilter_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "All",
+      "all",
       "Target all VMs in the project. If true, no other criteria\nis permitted.",
       [],
       false,
@@ -61,25 +61,25 @@ export function Osconfig_OsPolicyAssignmentInstanceFilter_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ExclusionLabels",
+      "exclusionLabels",
       "List of label sets used for VM exclusion. If\nthe list has more than one label set, the VM is excluded if any of the label\nsets are applicable for the VM. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentInstanceFilterExclusionLabel_GetTypes(),
+      osconfig_OsPolicyAssignmentInstanceFilterExclusionLabel_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "InclusionLabels",
+      "inclusionLabels",
       "List of label sets used for VM inclusion. If\nthe list has more than one `LabelSet`, the VM is included if any of the\nlabel sets are applicable for the VM. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentInstanceFilterInclusionLabel_GetTypes(),
+      osconfig_OsPolicyAssignmentInstanceFilterInclusionLabel_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Inventories",
+      "inventories",
       "List of inventories to select VMs. A VM is\nselected if its inventory data matches at least one of the following\ninventories. Structure is documented below.",
-      Osconfig_OsPolicyAssignmentInstanceFilterInventory_GetTypes(),
+      osconfig_OsPolicyAssignmentInstanceFilterInventory_GetTypes(),
       false,
       false,
     ),

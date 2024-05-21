@@ -6,17 +6,17 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperation,
-  Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperation_GetTypes,
-} from "./Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperation";
+  accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperation,
+  accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperation_GetTypes,
+} from "./accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperation";
 
-export interface Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressTo {
+export interface accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressTo {
   /*
 A list of `ApiOperations` the sources specified in corresponding `IngressFrom`
 are allowed to perform in this `ServicePerimeter`.
 Structure is documented below.
 */
-  Operations?: Array<Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperation>;
+  operations?: Array<accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperation>;
 
   /*
 A list of resources, currently only projects in the form
@@ -28,22 +28,22 @@ then this `IngressTo` rule will authorize access to all
 resources inside the perimeter, provided that the request
 also matches the `operations` field.
 */
-  Resources?: Array<string>;
+  resources?: Array<string>;
 }
 
-export function Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressTo_GetTypes(): DynamicUIProps[] {
+export function accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressTo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Operations",
+      "operations",
       "A list of `ApiOperations` the sources specified in corresponding `IngressFrom`\nare allowed to perform in this `ServicePerimeter`.\nStructure is documented below.",
-      Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperation_GetTypes(),
+      accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperation_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Resources",
+      "resources",
       "A list of resources, currently only projects in the form\n`projects/<projectnumber>`, protected by this `ServicePerimeter`\nthat are allowed to be accessed by sources defined in the\ncorresponding `IngressFrom`. A request matches if it contains\na resource in this list. If `*` is specified for resources,\nthen this `IngressTo` rule will authorize access to all\nresources inside the perimeter, provided that the request\nalso matches the `operations` field.",
       InputType_String_GetTypes(),
       false,

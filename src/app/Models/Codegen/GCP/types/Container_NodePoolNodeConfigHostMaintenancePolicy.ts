@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_NodePoolNodeConfigHostMaintenancePolicy {
+export interface container_NodePoolNodeConfigHostMaintenancePolicy {
   // .
-  MaintenanceInterval?: string;
+  maintenanceInterval?: string;
 }
 
-export function Container_NodePoolNodeConfigHostMaintenancePolicy_GetTypes(): DynamicUIProps[] {
+export function container_NodePoolNodeConfigHostMaintenancePolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "MaintenanceInterval",
+      "maintenanceInterval",
       ".",
       [],
       true,

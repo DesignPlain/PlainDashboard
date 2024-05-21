@@ -6,36 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Integrationconnectors_ConnectionEventingConfigAuthConfigUserPasswordPassword,
-  Integrationconnectors_ConnectionEventingConfigAuthConfigUserPasswordPassword_GetTypes,
-} from "./Integrationconnectors_ConnectionEventingConfigAuthConfigUserPasswordPassword";
+  integrationconnectors_ConnectionEventingConfigAuthConfigUserPasswordPassword,
+  integrationconnectors_ConnectionEventingConfigAuthConfigUserPasswordPassword_GetTypes,
+} from "./integrationconnectors_ConnectionEventingConfigAuthConfigUserPasswordPassword";
 
-export interface Integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword {
-  // Username for Authentication.
-  Username?: string;
-
+export interface integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword {
   /*
 Password for Authentication.
 Structure is documented below.
 */
-  Password?: Integrationconnectors_ConnectionEventingConfigAuthConfigUserPasswordPassword;
+  password?: integrationconnectors_ConnectionEventingConfigAuthConfigUserPasswordPassword;
+
+  // Username for Authentication.
+  username?: string;
 }
 
-export function Integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "Username",
-      "Username for Authentication.",
-      [],
+      InputType.Object,
+      "password",
+      "Password for Authentication.\nStructure is documented below.",
+      integrationconnectors_ConnectionEventingConfigAuthConfigUserPasswordPassword_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "Password",
-      "Password for Authentication.\nStructure is documented below.",
-      Integrationconnectors_ConnectionEventingConfigAuthConfigUserPasswordPassword_GetTypes(),
+      InputType.String,
+      "username",
+      "Username for Authentication.",
+      [],
       false,
       false,
     ),

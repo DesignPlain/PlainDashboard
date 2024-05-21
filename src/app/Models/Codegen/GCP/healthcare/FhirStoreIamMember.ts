@@ -7,23 +7,23 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Healthcare_FhirStoreIamMemberCondition,
-  Healthcare_FhirStoreIamMemberCondition_GetTypes,
-} from "../types/Healthcare_FhirStoreIamMemberCondition";
+  healthcare_FhirStoreIamMemberCondition,
+  healthcare_FhirStoreIamMemberCondition_GetTypes,
+} from "../types/healthcare_FhirStoreIamMemberCondition";
 
 export interface FhirStoreIamMemberArgs {
   //
-  Member?: string;
+  member?: string;
 
   /*
 The role that should be applied. Only one
 `gcp.healthcare.FhirStoreIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
-  Role?: string;
+  role?: string;
 
   //
-  Condition?: Healthcare_FhirStoreIamMemberCondition;
+  condition?: healthcare_FhirStoreIamMemberCondition;
 
   /*
 The FHIR store ID, in the form
@@ -40,14 +40,24 @@ Each entry can have one of the following values:
 - --group:{emailid}--: An email address that represents a Google group. For example, admins@example.com.
 - --domain:{domain}--: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
 */
-  FhirStoreId?: string;
+  fhirStoreId?: string;
 }
 export class FhirStoreIamMember extends Resource {
   //
-  public Condition?: Healthcare_FhirStoreIamMemberCondition;
+  public member?: string;
+
+  /*
+The role that should be applied. Only one
+`gcp.healthcare.FhirStoreIamBinding` can be used per role. Note that custom roles must be of the format
+`[projects|organizations]/{parent-name}/roles/{role-name}`.
+*/
+  public role?: string;
+
+  //
+  public condition?: healthcare_FhirStoreIamMemberCondition;
 
   // (Computed) The etag of the FHIR store's IAM policy.
-  public Etag?: string;
+  public etag?: string;
 
   /*
 The FHIR store ID, in the form
@@ -64,24 +74,14 @@ Each entry can have one of the following values:
 - --group:{emailid}--: An email address that represents a Google group. For example, admins@example.com.
 - --domain:{domain}--: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
 */
-  public FhirStoreId?: string;
-
-  //
-  public Member?: string;
-
-  /*
-The role that should be applied. Only one
-`gcp.healthcare.FhirStoreIamBinding` can be used per role. Note that custom roles must be of the format
-`[projects|organizations]/{parent-name}/roles/{role-name}`.
-*/
-  public Role?: string;
+  public fhirStoreId?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
+      new DynamicUIProps(InputType.String, "member", "", [], true, true),
       new DynamicUIProps(
         InputType.String,
-        "Role",
+        "role",
         "The role that should be applied. Only one\n`gcp.healthcare.FhirStoreIamBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
         [],
         true,
@@ -89,15 +89,15 @@ The role that should be applied. Only one
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Healthcare_FhirStoreIamMemberCondition_GetTypes(),
+        healthcare_FhirStoreIamMemberCondition_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "FhirStoreId",
+        "fhirStoreId",
         "The FHIR store ID, in the form\n`{project_id}/{location_name}/{dataset_name}/{fhir_store_name}` or\n`{location_name}/{dataset_name}/{fhir_store_name}`. In the second form, the provider's\nproject setting will be used as a fallback.\n\n* `member/members` - (Required) Identities that will be granted the privilege in `role`.\nEach entry can have one of the following values:\n* **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.\n* **allAuthenticatedUsers**: A special identifier that represents anyone who is authenticated with a Google account or a service account.\n* **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.\n* **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.\n* **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.\n* **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.",
         [],
         true,

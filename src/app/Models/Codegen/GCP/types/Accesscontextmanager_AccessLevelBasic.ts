@@ -6,11 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Accesscontextmanager_AccessLevelBasicCondition,
-  Accesscontextmanager_AccessLevelBasicCondition_GetTypes,
-} from "./Accesscontextmanager_AccessLevelBasicCondition";
+  accesscontextmanager_AccessLevelBasicCondition,
+  accesscontextmanager_AccessLevelBasicCondition_GetTypes,
+} from "./accesscontextmanager_AccessLevelBasicCondition";
 
-export interface Accesscontextmanager_AccessLevelBasic {
+export interface accesscontextmanager_AccessLevelBasic {
   /*
 How the conditions list should be combined to determine if a request
 is granted this AccessLevel. If AND is used, each Condition in
@@ -20,20 +20,20 @@ for the AccessLevel to be applied.
 Default value is `AND`.
 Possible values are: `AND`, `OR`.
 */
-  CombiningFunction?: string;
+  combiningFunction?: string;
 
   /*
 A set of requirements for the AccessLevel to be granted.
 Structure is documented below.
 */
-  Conditions?: Array<Accesscontextmanager_AccessLevelBasicCondition>;
+  conditions?: Array<accesscontextmanager_AccessLevelBasicCondition>;
 }
 
-export function Accesscontextmanager_AccessLevelBasic_GetTypes(): DynamicUIProps[] {
+export function accesscontextmanager_AccessLevelBasic_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CombiningFunction",
+      "combiningFunction",
       "How the conditions list should be combined to determine if a request\nis granted this AccessLevel. If AND is used, each Condition in\nconditions must be satisfied for the AccessLevel to be applied. If\nOR is used, at least one Condition in conditions must be satisfied\nfor the AccessLevel to be applied.\nDefault value is `AND`.\nPossible values are: `AND`, `OR`.",
       [],
       false,
@@ -41,9 +41,9 @@ export function Accesscontextmanager_AccessLevelBasic_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Conditions",
+      "conditions",
       "A set of requirements for the AccessLevel to be granted.\nStructure is documented below.",
-      Accesscontextmanager_AccessLevelBasicCondition_GetTypes(),
+      accesscontextmanager_AccessLevelBasicCondition_GetTypes(),
       true,
       false,
     ),

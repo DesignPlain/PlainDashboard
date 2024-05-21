@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_GuestPoliciesRecipeInstallStepMsiInstallation {
+export interface osconfig_GuestPoliciesRecipeInstallStepMsiInstallation {
   // Return codes that indicate that the software installed or updated successfully. Behaviour defaults to [0]
-  AllowedExitCodes?: Array<number>;
+  allowedExitCodes?: Array<number>;
 
   // The id of the relevant artifact in the recipe.
-  ArtifactId?: string;
+  artifactId?: string;
 
   // The flags to use when installing the MSI. Defaults to the install flag.
-  Flags?: Array<string>;
+  flags?: Array<string>;
 }
 
-export function Osconfig_GuestPoliciesRecipeInstallStepMsiInstallation_GetTypes(): DynamicUIProps[] {
+export function osconfig_GuestPoliciesRecipeInstallStepMsiInstallation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AllowedExitCodes",
+      "allowedExitCodes",
       "Return codes that indicate that the software installed or updated successfully. Behaviour defaults to [0]",
       InputType_Number_GetTypes(),
       false,
@@ -29,7 +29,7 @@ export function Osconfig_GuestPoliciesRecipeInstallStepMsiInstallation_GetTypes(
     ),
     new DynamicUIProps(
       InputType.String,
-      "ArtifactId",
+      "artifactId",
       "The id of the relevant artifact in the recipe.",
       [],
       true,
@@ -37,7 +37,7 @@ export function Osconfig_GuestPoliciesRecipeInstallStepMsiInstallation_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Flags",
+      "flags",
       "The flags to use when installing the MSI. Defaults to the install flag.",
       InputType_String_GetTypes(),
       false,

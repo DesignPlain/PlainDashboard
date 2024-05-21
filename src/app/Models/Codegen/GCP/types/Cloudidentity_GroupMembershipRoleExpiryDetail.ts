@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudidentity_GroupMembershipRoleExpiryDetail {
+export interface cloudidentity_GroupMembershipRoleExpiryDetail {
   /*
 The time at which the MembershipRole will expire.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond
@@ -15,14 +15,14 @@ Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 
 - - -
 */
-  ExpireTime?: string;
+  expireTime?: string;
 }
 
-export function Cloudidentity_GroupMembershipRoleExpiryDetail_GetTypes(): DynamicUIProps[] {
+export function cloudidentity_GroupMembershipRoleExpiryDetail_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ExpireTime",
+      "expireTime",
       'The time at which the MembershipRole will expire.\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond\nresolution and up to nine fractional digits.\nExamples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".\n\n- - -',
       [],
       true,

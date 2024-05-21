@@ -6,8 +6,8 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionMapTypeOptions {}
+export interface essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionMapTypeOptions {}
 
-export function Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionMapTypeOptions_GetTypes(): DynamicUIProps[] {
+export function essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionMapTypeOptions_GetTypes(): DynamicUIProps[] {
   return [];
 }

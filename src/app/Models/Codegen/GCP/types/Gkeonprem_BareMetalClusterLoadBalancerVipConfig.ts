@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterLoadBalancerVipConfig {
+export interface gkeonprem_BareMetalClusterLoadBalancerVipConfig {
   // The VIP which you previously set aside for the Kubernetes API of this Bare Metal User Cluster.
-  ControlPlaneVip?: string;
+  controlPlaneVip?: string;
 
   // The VIP which you previously set aside for ingress traffic into this Bare Metal User Cluster.
-  IngressVip?: string;
+  ingressVip?: string;
 }
 
-export function Gkeonprem_BareMetalClusterLoadBalancerVipConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterLoadBalancerVipConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ControlPlaneVip",
+      "controlPlaneVip",
       "The VIP which you previously set aside for the Kubernetes API of this Bare Metal User Cluster.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Gkeonprem_BareMetalClusterLoadBalancerVipConfig_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.String,
-      "IngressVip",
+      "ingressVip",
       "The VIP which you previously set aside for ingress traffic into this Bare Metal User Cluster.",
       [],
       true,

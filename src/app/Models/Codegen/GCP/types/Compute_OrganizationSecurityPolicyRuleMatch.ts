@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_OrganizationSecurityPolicyRuleMatchConfig,
-  Compute_OrganizationSecurityPolicyRuleMatchConfig_GetTypes,
-} from "./Compute_OrganizationSecurityPolicyRuleMatchConfig";
+  compute_OrganizationSecurityPolicyRuleMatchConfig,
+  compute_OrganizationSecurityPolicyRuleMatchConfig_GetTypes,
+} from "./compute_OrganizationSecurityPolicyRuleMatchConfig";
 
-export interface Compute_OrganizationSecurityPolicyRuleMatch {
+export interface compute_OrganizationSecurityPolicyRuleMatch {
   /*
 The configuration options for matching the rule.
 Structure is documented below.
 */
-  Config?: Compute_OrganizationSecurityPolicyRuleMatchConfig;
+  config?: compute_OrganizationSecurityPolicyRuleMatchConfig;
 
   // A description of the rule.
-  Description?: string;
+  description?: string;
 
   /*
 Preconfigured versioned expression. For organization security policy rules,
@@ -26,22 +26,22 @@ the only supported type is "FIREWALL".
 Default value is `FIREWALL`.
 Possible values are: `FIREWALL`.
 */
-  VersionedExpr?: string;
+  versionedExpr?: string;
 }
 
-export function Compute_OrganizationSecurityPolicyRuleMatch_GetTypes(): DynamicUIProps[] {
+export function compute_OrganizationSecurityPolicyRuleMatch_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Config",
+      "config",
       "The configuration options for matching the rule.\nStructure is documented below.",
-      Compute_OrganizationSecurityPolicyRuleMatchConfig_GetTypes(),
+      compute_OrganizationSecurityPolicyRuleMatchConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "A description of the rule.",
       [],
       false,
@@ -49,7 +49,7 @@ export function Compute_OrganizationSecurityPolicyRuleMatch_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "VersionedExpr",
+      "versionedExpr",
       'Preconfigured versioned expression. For organization security policy rules,\nthe only supported type is "FIREWALL".\nDefault value is `FIREWALL`.\nPossible values are: `FIREWALL`.',
       [],
       false,

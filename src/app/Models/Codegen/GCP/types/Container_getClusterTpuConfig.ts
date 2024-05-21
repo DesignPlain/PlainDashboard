@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterTpuConfig {
-  // Whether to use service networking for Cloud TPU or not
-  UseServiceNetworking?: boolean;
-
+export interface container_getClusterTpuConfig {
   // Whether Cloud TPU integration is enabled or not
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // IPv4 CIDR block reserved for Cloud TPU in the VPC.
-  Ipv4CidrBlock?: string;
+  ipv4CidrBlock?: string;
+
+  // Whether to use service networking for Cloud TPU or not
+  useServiceNetworking?: boolean;
 }
 
-export function Container_getClusterTpuConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterTpuConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "UseServiceNetworking",
-      "Whether to use service networking for Cloud TPU or not",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether Cloud TPU integration is enabled or not",
       [],
       true,
@@ -37,8 +29,16 @@ export function Container_getClusterTpuConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Ipv4CidrBlock",
+      "ipv4CidrBlock",
       "IPv4 CIDR block reserved for Cloud TPU in the VPC.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "useServiceNetworking",
+      "Whether to use service networking for Cloud TPU or not",
       [],
       true,
       false,

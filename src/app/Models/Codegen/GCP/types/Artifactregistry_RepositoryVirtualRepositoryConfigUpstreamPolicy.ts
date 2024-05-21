@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Artifactregistry_RepositoryVirtualRepositoryConfigUpstreamPolicy {
+export interface artifactregistry_RepositoryVirtualRepositoryConfigUpstreamPolicy {
+  // The user-provided ID of the upstream policy.
+  id?: string;
+
   // Entries with a greater priority value take precedence in the pull order.
-  Priority?: number;
+  priority?: number;
 
   /*
 A reference to the repository resource, for example:
 "projects/p1/locations/us-central1/repository/repo1".
 */
-  Repository?: string;
-
-  // The user-provided ID of the upstream policy.
-  Id?: string;
+  repository?: string;
 }
 
-export function Artifactregistry_RepositoryVirtualRepositoryConfigUpstreamPolicy_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_RepositoryVirtualRepositoryConfigUpstreamPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "id",
+      "The user-provided ID of the upstream policy.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Number,
-      "Priority",
+      "priority",
       "Entries with a greater priority value take precedence in the pull order.",
       [],
       false,
@@ -32,16 +40,8 @@ export function Artifactregistry_RepositoryVirtualRepositoryConfigUpstreamPolicy
     ),
     new DynamicUIProps(
       InputType.String,
-      "Repository",
+      "repository",
       'A reference to the repository resource, for example:\n"projects/p1/locations/us-central1/repository/repo1".',
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Id",
-      "The user-provided ID of the upstream policy.",
       [],
       false,
       false,

@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Blockchainnodeengine_BlockchainNodesEthereumDetailsGethDetails {
+export interface blockchainnodeengine_BlockchainNodesEthereumDetailsGethDetails {
   /*
 Blockchain garbage collection modes. Only applicable when NodeType is FULL or ARCHIVE.
 Possible values are: `FULL`, `ARCHIVE`.
 
 <a name="nested_additional_endpoints"></a>The `additional_endpoints` block contains:
 */
-  GarbageCollectionMode?: string;
+  garbageCollectionMode?: string;
 }
 
-export function Blockchainnodeengine_BlockchainNodesEthereumDetailsGethDetails_GetTypes(): DynamicUIProps[] {
+export function blockchainnodeengine_BlockchainNodesEthereumDetailsGethDetails_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "GarbageCollectionMode",
+      "garbageCollectionMode",
       'Blockchain garbage collection modes. Only applicable when NodeType is FULL or ARCHIVE.\nPossible values are: `FULL`, `ARCHIVE`.\n\n<a name="nested_additional_endpoints"></a>The `additional_endpoints` block contains:',
       [],
       false,

@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Spanner_InstanceAutoscalingConfigAutoscalingTargets,
-  Spanner_InstanceAutoscalingConfigAutoscalingTargets_GetTypes,
-} from "./Spanner_InstanceAutoscalingConfigAutoscalingTargets";
+  spanner_InstanceAutoscalingConfigAutoscalingTargets,
+  spanner_InstanceAutoscalingConfigAutoscalingTargets_GetTypes,
+} from "./spanner_InstanceAutoscalingConfigAutoscalingTargets";
 import {
-  Spanner_InstanceAutoscalingConfigAutoscalingLimits,
-  Spanner_InstanceAutoscalingConfigAutoscalingLimits_GetTypes,
-} from "./Spanner_InstanceAutoscalingConfigAutoscalingLimits";
+  spanner_InstanceAutoscalingConfigAutoscalingLimits,
+  spanner_InstanceAutoscalingConfigAutoscalingLimits_GetTypes,
+} from "./spanner_InstanceAutoscalingConfigAutoscalingLimits";
 
-export interface Spanner_InstanceAutoscalingConfig {
+export interface spanner_InstanceAutoscalingConfig {
   /*
 Defines scale in controls to reduce the risk of response latency
 and outages due to abrupt scale-in events
 Structure is documented below.
 */
-  AutoscalingTargets?: Spanner_InstanceAutoscalingConfigAutoscalingTargets;
+  autoscalingTargets?: spanner_InstanceAutoscalingConfigAutoscalingTargets;
 
   /*
 Defines scale in controls to reduce the risk of response latency
@@ -31,24 +31,24 @@ units to specify the limits, but should use the same unit to set both the
 min_limit and max_limit.
 Structure is documented below.
 */
-  AutoscalingLimits?: Spanner_InstanceAutoscalingConfigAutoscalingLimits;
+  autoscalingLimits?: spanner_InstanceAutoscalingConfigAutoscalingLimits;
 }
 
-export function Spanner_InstanceAutoscalingConfig_GetTypes(): DynamicUIProps[] {
+export function spanner_InstanceAutoscalingConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "AutoscalingTargets",
+      "autoscalingTargets",
       "Defines scale in controls to reduce the risk of response latency\nand outages due to abrupt scale-in events\nStructure is documented below.",
-      Spanner_InstanceAutoscalingConfigAutoscalingTargets_GetTypes(),
+      spanner_InstanceAutoscalingConfigAutoscalingTargets_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "AutoscalingLimits",
+      "autoscalingLimits",
       "Defines scale in controls to reduce the risk of response latency\nand outages due to abrupt scale-in events. Users can define the minimum and\nmaximum compute capacity allocated to the instance, and the autoscaler will\nonly scale within that range. Users can either use nodes or processing\nunits to specify the limits, but should use the same unit to set both the\nmin_limit and max_limit.\nStructure is documented below.",
-      Spanner_InstanceAutoscalingConfigAutoscalingLimits_GetTypes(),
+      spanner_InstanceAutoscalingConfigAutoscalingLimits_GetTypes(),
       false,
       false,
     ),

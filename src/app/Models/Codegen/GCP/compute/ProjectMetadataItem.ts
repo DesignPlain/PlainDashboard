@@ -8,44 +8,44 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface ProjectMetadataItemArgs {
-  /*
-The value to set for the given metadata key.
-
-- - -
-*/
-  Value?: string;
-
   // The metadata key to set.
-  Key?: string;
+  key?: string;
 
   /*
 The ID of the project in which the resource belongs. If it
 is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
+
+  /*
+The value to set for the given metadata key.
+
+- - -
+*/
+  value?: string;
 }
 export class ProjectMetadataItem extends Resource {
   /*
 The ID of the project in which the resource belongs. If it
 is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 The value to set for the given metadata key.
 
 - - -
 */
-  public Value?: string;
+  public value?: string;
 
   // The metadata key to set.
-  public Key?: string;
+  public key?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Key",
+        "key",
         "The metadata key to set.",
         [],
         true,
@@ -53,7 +53,7 @@ The value to set for the given metadata key.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
         [],
         false,
@@ -61,7 +61,7 @@ The value to set for the given metadata key.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Value",
+        "value",
         "The value to set for the given metadata key.\n\n- - -",
         [],
         true,

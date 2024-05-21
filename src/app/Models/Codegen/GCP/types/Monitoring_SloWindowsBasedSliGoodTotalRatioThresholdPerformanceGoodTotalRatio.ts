@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceGoodTotalRatio {
+export interface monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceGoodTotalRatio {
   /*
 A TimeSeries [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
 quantifying bad service provided, either demanded service that
@@ -17,7 +17,7 @@ good + bad = total is assumed)
 Must have ValueType = DOUBLE or ValueType = INT64 and
 must have MetricKind = DELTA or MetricKind = CUMULATIVE.
 */
-  BadServiceFilter?: string;
+  badServiceFilter?: string;
 
   /*
 A TimeSeries [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
@@ -27,7 +27,7 @@ good + bad = total is assumed)
 Must have ValueType = DOUBLE or ValueType = INT64 and
 must have MetricKind = DELTA or MetricKind = CUMULATIVE.
 */
-  GoodServiceFilter?: string;
+  goodServiceFilter?: string;
 
   /*
 A TimeSeries [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
@@ -37,14 +37,14 @@ good + bad = total is assumed)
 Must have ValueType = DOUBLE or ValueType = INT64 and
 must have MetricKind = DELTA or MetricKind = CUMULATIVE.
 */
-  TotalServiceFilter?: string;
+  totalServiceFilter?: string;
 }
 
-export function Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceGoodTotalRatio_GetTypes(): DynamicUIProps[] {
+export function monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceGoodTotalRatio_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "BadServiceFilter",
+      "badServiceFilter",
       "A TimeSeries [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)\nquantifying bad service provided, either demanded service that\nwas not provided or demanded service that was of inadequate\nquality. Exactly two of\ngood, bad, or total service filter must be defined (where\ngood + bad = total is assumed)\nMust have ValueType = DOUBLE or ValueType = INT64 and\nmust have MetricKind = DELTA or MetricKind = CUMULATIVE.",
       [],
       false,
@@ -52,7 +52,7 @@ export function Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceG
     ),
     new DynamicUIProps(
       InputType.String,
-      "GoodServiceFilter",
+      "goodServiceFilter",
       "A TimeSeries [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)\nquantifying good service provided. Exactly two of\ngood, bad, or total service filter must be defined (where\ngood + bad = total is assumed)\nMust have ValueType = DOUBLE or ValueType = INT64 and\nmust have MetricKind = DELTA or MetricKind = CUMULATIVE.",
       [],
       false,
@@ -60,7 +60,7 @@ export function Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceG
     ),
     new DynamicUIProps(
       InputType.String,
-      "TotalServiceFilter",
+      "totalServiceFilter",
       "A TimeSeries [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)\nquantifying total demanded service. Exactly two of\ngood, bad, or total service filter must be defined (where\ngood + bad = total is assumed)\nMust have ValueType = DOUBLE or ValueType = INT64 and\nmust have MetricKind = DELTA or MetricKind = CUMULATIVE.",
       [],
       false,

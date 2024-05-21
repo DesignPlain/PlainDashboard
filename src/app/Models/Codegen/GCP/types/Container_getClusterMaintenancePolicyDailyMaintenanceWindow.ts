@@ -6,17 +6,17 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterMaintenancePolicyDailyMaintenanceWindow {
+export interface container_getClusterMaintenancePolicyDailyMaintenanceWindow {
   //
-  Duration?: string;
+  duration?: string;
 
   //
-  StartTime?: string;
+  startTime?: string;
 }
 
-export function Container_getClusterMaintenancePolicyDailyMaintenanceWindow_GetTypes(): DynamicUIProps[] {
+export function container_getClusterMaintenancePolicyDailyMaintenanceWindow_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Duration", "", [], true, false),
-    new DynamicUIProps(InputType.String, "StartTime", "", [], true, false),
+    new DynamicUIProps(InputType.String, "duration", "", [], true, false),
+    new DynamicUIProps(InputType.String, "startTime", "", [], true, false),
   ];
 }

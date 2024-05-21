@@ -6,8 +6,8 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_StreamDestinationConfigGcsDestinationConfigAvroFileFormat {}
+export interface datastream_StreamDestinationConfigGcsDestinationConfigAvroFileFormat {}
 
-export function Datastream_StreamDestinationConfigGcsDestinationConfigAvroFileFormat_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamDestinationConfigGcsDestinationConfigAvroFileFormat_GetTypes(): DynamicUIProps[] {
   return [];
 }

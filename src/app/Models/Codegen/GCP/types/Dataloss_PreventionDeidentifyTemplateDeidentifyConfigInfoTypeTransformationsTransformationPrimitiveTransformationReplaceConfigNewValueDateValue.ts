@@ -6,26 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueDateValue {
+export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueDateValue {
+  // Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+  month?: number;
+
+  // Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+  year?: number;
+
   /*
 Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
 
 - - -
 */
-  Day?: number;
-
-  // Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
-  Month?: number;
-
-  // Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
-  Year?: number;
+  day?: number;
 }
 
-export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueDateValue_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueDateValue_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Year",
+      "month",
+      "Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "year",
       "Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.",
       [],
       false,
@@ -33,16 +41,8 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTra
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Day",
+      "day",
       "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.\n\n- - -",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Month",
-      "Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.",
       [],
       false,
       false,

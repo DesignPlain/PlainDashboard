@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Apigateway_ApiConfigGatewayConfigBackendConfig,
-  Apigateway_ApiConfigGatewayConfigBackendConfig_GetTypes,
-} from "./Apigateway_ApiConfigGatewayConfigBackendConfig";
+  apigateway_ApiConfigGatewayConfigBackendConfig,
+  apigateway_ApiConfigGatewayConfigBackendConfig_GetTypes,
+} from "./apigateway_ApiConfigGatewayConfigBackendConfig";
 
-export interface Apigateway_ApiConfigGatewayConfig {
+export interface apigateway_ApiConfigGatewayConfig {
   /*
 Backend settings that are applied to all backends of the Gateway.
 Structure is documented below.
 */
-  BackendConfig?: Apigateway_ApiConfigGatewayConfigBackendConfig;
+  backendConfig?: apigateway_ApiConfigGatewayConfigBackendConfig;
 }
 
-export function Apigateway_ApiConfigGatewayConfig_GetTypes(): DynamicUIProps[] {
+export function apigateway_ApiConfigGatewayConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "BackendConfig",
+      "backendConfig",
       "Backend settings that are applied to all backends of the Gateway.\nStructure is documented below.",
-      Apigateway_ApiConfigGatewayConfigBackendConfig_GetTypes(),
+      apigateway_ApiConfigGatewayConfigBackendConfig_GetTypes(),
       true,
       false,
     ),

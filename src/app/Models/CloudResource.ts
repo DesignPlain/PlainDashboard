@@ -10,7 +10,7 @@ export class CloudResource {
   public resourceConfig: Resource | undefined = new DefaultResource();
   public position = { x: 0, y: 0 };
   public shape = { width: 130, height: 40 };
-  public IconSrc: string = '';
+  public iconSrc: string = '';
   public inlets: string[] = [];
   public outlets: string[] = [];
   public inletMap: Map<string, LineCoordinates> = new Map<

@@ -7,62 +7,79 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Securitycenter_InstanceIamBindingCondition,
-  Securitycenter_InstanceIamBindingCondition_GetTypes,
-} from "../types/Securitycenter_InstanceIamBindingCondition";
+  securitycenter_InstanceIamBindingCondition,
+  securitycenter_InstanceIamBindingCondition_GetTypes,
+} from "../types/securitycenter_InstanceIamBindingCondition";
 
 export interface InstanceIamBindingArgs {
+  //
+  condition?: securitycenter_InstanceIamBindingCondition;
+
+  //
+  members?: Array<string>;
+
+  // The ID of the instance or a fully qualified identifier for the instance.
+  name?: string;
+
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // The region of the Data Fusion instance.
-  Region?: string;
+  region?: string;
 
   //
-  Role?: string;
-
-  //
-  Condition?: Securitycenter_InstanceIamBindingCondition;
-
-  //
-  Members?: Array<string>;
-
-  // The ID of the instance or a fully qualified identifier for the instance.
-  Name?: string;
+  role?: string;
 }
 export class InstanceIamBinding extends Resource {
   //
-  public Condition?: Securitycenter_InstanceIamBindingCondition;
+  public etag?: string;
 
   //
-  public Etag?: string;
-
-  //
-  public Members?: Array<string>;
+  public members?: Array<string>;
 
   // The ID of the instance or a fully qualified identifier for the instance.
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // The region of the Data Fusion instance.
-  public Region?: string;
+  public region?: string;
 
   //
-  public Role?: string;
+  public role?: string;
+
+  //
+  public condition?: securitycenter_InstanceIamBindingCondition;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
+      new DynamicUIProps(InputType.String, "role", "", [], true, true),
+      new DynamicUIProps(
+        InputType.Object,
+        "condition",
+        "",
+        securitycenter_InstanceIamBindingCondition_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "members",
+        "",
+        InputType_String_GetTypes(),
+        true,
+        false,
+      ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The ID of the instance or a fully qualified identifier for the instance.",
         [],
         false,
@@ -70,7 +87,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -78,28 +95,11 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "The region of the Data Fusion instance.",
         [],
         false,
         true,
-      ),
-      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
-      new DynamicUIProps(
-        InputType.Object,
-        "Condition",
-        "",
-        Securitycenter_InstanceIamBindingCondition_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Array,
-        "Members",
-        "",
-        InputType_String_GetTypes(),
-        true,
-        false,
       ),
     ];
   }

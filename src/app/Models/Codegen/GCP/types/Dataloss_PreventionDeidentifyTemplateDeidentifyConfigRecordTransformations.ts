@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression";
 
-export interface Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations {
+export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations {
   /*
 Transform the record by applying various field transformations.
 Structure is documented below.
 */
-  FieldTransformations?: Array<Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation>;
+  fieldTransformations?: Array<dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation>;
 
   /*
 Configuration defining which records get suppressed entirely. Records that match any suppression rule are omitted from the output.
 Structure is documented below.
 */
-  RecordSuppressions?: Array<Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression>;
+  recordSuppressions?: Array<dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression>;
 }
 
-export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "FieldTransformations",
+      "fieldTransformations",
       "Transform the record by applying various field transformations.\nStructure is documented below.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation_GetTypes(),
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "RecordSuppressions",
+      "recordSuppressions",
       "Configuration defining which records get suppressed entirely. Records that match any suppression rule are omitted from the output.\nStructure is documented below.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression_GetTypes(),
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression_GetTypes(),
       false,
       false,
     ),

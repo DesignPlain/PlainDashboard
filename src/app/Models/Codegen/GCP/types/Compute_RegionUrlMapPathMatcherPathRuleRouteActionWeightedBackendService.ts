@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderAction,
-  Compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderAction_GetTypes,
-} from "./Compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderAction";
+  compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderAction,
+  compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderAction_GetTypes,
+} from "./compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderAction";
 
-export interface Compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendService {
+export interface compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendService {
   /*
 Specifies the fraction of traffic sent to a backend service, computed as weight / (sum of all weightedBackendService weights in routeAction) .
 The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backend service, subsequent requests are sent to the same backend service as determined by the backend service's session affinity policy.
 The value must be from 0 to 1000.
 */
-  Weight?: number;
+  weight?: number;
 
   // The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the load balancer applies any relevant headerActions specified as part of this backendServiceWeight.
-  BackendService?: string;
+  backendService?: string;
 
   /*
 Specifies changes to request and response headers that need to take effect for the selected backendService.
@@ -28,14 +28,14 @@ headerAction is not supported for load balancers that have their loadBalancingSc
 Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
 Structure is documented below.
 */
-  HeaderAction?: Compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderAction;
+  headerAction?: compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderAction;
 }
 
-export function Compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendService_GetTypes(): DynamicUIProps[] {
+export function compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendService_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Weight",
+      "weight",
       "Specifies the fraction of traffic sent to a backend service, computed as weight / (sum of all weightedBackendService weights in routeAction) .\nThe selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backend service, subsequent requests are sent to the same backend service as determined by the backend service's session affinity policy.\nThe value must be from 0 to 1000.",
       [],
       true,
@@ -43,7 +43,7 @@ export function Compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBacken
     ),
     new DynamicUIProps(
       InputType.String,
-      "BackendService",
+      "backendService",
       "The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the load balancer applies any relevant headerActions specified as part of this backendServiceWeight.",
       [],
       true,
@@ -51,9 +51,9 @@ export function Compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBacken
     ),
     new DynamicUIProps(
       InputType.Object,
-      "HeaderAction",
+      "headerAction",
       "Specifies changes to request and response headers that need to take effect for the selected backendService.\nheaderAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap.\nheaderAction is not supported for load balancers that have their loadBalancingScheme set to EXTERNAL.\nNot supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.\nStructure is documented below.",
-      Compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderAction_GetTypes(),
+      compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderAction_GetTypes(),
       false,
       false,
     ),

@@ -6,97 +6,49 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumn {
-  /*
-(Output)
-Column length.
-*/
-  Length?: number;
-
+export interface datastream_StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumn {
   // Whether or not the column can accept a null value.
-  Nullable?: boolean;
+  nullable?: boolean;
 
   // The ordinal position of the column in the table.
-  OrdinalPosition?: number;
+  ordinalPosition?: number;
 
   /*
 (Output)
 Column precision.
 */
-  Precision?: number;
+  precision?: number;
 
   // Whether or not the column represents a primary key.
-  PrimaryKey?: boolean;
+  primaryKey?: boolean;
 
   /*
 (Output)
 Column scale.
 */
-  Scale?: number;
+  scale?: number;
 
   // Column name.
-  Column?: string;
+  column?: string;
 
   /*
 The PostgreSQL data type. Full data types list can be found here:
 https://www.postgresql.org/docs/current/datatype.html
 */
-  DataType?: string;
+  dataType?: string;
+
+  /*
+(Output)
+Column length.
+*/
+  length?: number;
 }
 
-export function Datastream_StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumn_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumn_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "DataType",
-      "The PostgreSQL data type. Full data types list can be found here:\nhttps://www.postgresql.org/docs/current/datatype.html",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "Length",
-      "(Output)\nColumn length.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "Nullable",
-      "Whether or not the column can accept a null value.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "OrdinalPosition",
-      "The ordinal position of the column in the table.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Precision",
-      "(Output)\nColumn precision.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "PrimaryKey",
-      "Whether or not the column represents a primary key.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Scale",
+      "scale",
       "(Output)\nColumn scale.",
       [],
       false,
@@ -104,8 +56,56 @@ export function Datastream_StreamSourceConfigPostgresqlSourceConfigIncludeObject
     ),
     new DynamicUIProps(
       InputType.String,
-      "Column",
+      "column",
       "Column name.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "dataType",
+      "The PostgreSQL data type. Full data types list can be found here:\nhttps://www.postgresql.org/docs/current/datatype.html",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "length",
+      "(Output)\nColumn length.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "nullable",
+      "Whether or not the column can accept a null value.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "ordinalPosition",
+      "The ordinal position of the column in the table.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "precision",
+      "(Output)\nColumn precision.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "primaryKey",
+      "Whether or not the column represents a primary key.",
       [],
       false,
       false,

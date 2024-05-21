@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryCloudStoragePath,
-  Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryCloudStoragePath_GetTypes,
-} from "./Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryCloudStoragePath";
+  dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryCloudStoragePath,
+  dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryCloudStoragePath_GetTypes,
+} from "./dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryCloudStoragePath";
 import {
-  Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryWordList,
-  Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryWordList_GetTypes,
-} from "./Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryWordList";
+  dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryWordList,
+  dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryWordList_GetTypes,
+} from "./dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryWordList";
 
-export interface Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionary {
+export interface dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionary {
   /*
 Newline-delimited file of words in Cloud Storage. Only a single file is accepted.
 Structure is documented below.
 */
-  CloudStoragePath?: Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryCloudStoragePath;
+  cloudStoragePath?: dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryCloudStoragePath;
 
   /*
 List of words or phrases to search for.
 Structure is documented below.
 */
-  WordList?: Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryWordList;
+  wordList?: dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryWordList;
 }
 
-export function Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionary_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionary_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "CloudStoragePath",
-      "Newline-delimited file of words in Cloud Storage. Only a single file is accepted.\nStructure is documented below.",
-      Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryCloudStoragePath_GetTypes(),
+      "wordList",
+      "List of words or phrases to search for.\nStructure is documented below.",
+      dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryWordList_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "WordList",
-      "List of words or phrases to search for.\nStructure is documented below.",
-      Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryWordList_GetTypes(),
+      "cloudStoragePath",
+      "Newline-delimited file of words in Cloud Storage. Only a single file is accepted.\nStructure is documented below.",
+      dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryCloudStoragePath_GetTypes(),
       false,
       false,
     ),

@@ -6,62 +6,38 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataform_RepositoryWorkflowConfigInvocationConfigIncludedTarget,
-  Dataform_RepositoryWorkflowConfigInvocationConfigIncludedTarget_GetTypes,
-} from "./Dataform_RepositoryWorkflowConfigInvocationConfigIncludedTarget";
+  dataform_RepositoryWorkflowConfigInvocationConfigIncludedTarget,
+  dataform_RepositoryWorkflowConfigInvocationConfigIncludedTarget_GetTypes,
+} from "./dataform_RepositoryWorkflowConfigInvocationConfigIncludedTarget";
 
-export interface Dataform_RepositoryWorkflowConfigInvocationConfig {
+export interface dataform_RepositoryWorkflowConfigInvocationConfig {
   // Optional. When set to true, transitive dependents of included actions will be executed.
-  TransitiveDependentsIncluded?: boolean;
+  transitiveDependentsIncluded?: boolean;
 
   // Optional. When set to true, any incremental tables will be fully refreshed.
-  FullyRefreshIncrementalTablesEnabled?: boolean;
+  fullyRefreshIncrementalTablesEnabled?: boolean;
 
   // Optional. The set of tags to include.
-  IncludedTags?: Array<string>;
+  includedTags?: Array<string>;
 
   /*
 Optional. The set of action identifiers to include.
 Structure is documented below.
 */
-  IncludedTargets?: Array<Dataform_RepositoryWorkflowConfigInvocationConfigIncludedTarget>;
+  includedTargets?: Array<dataform_RepositoryWorkflowConfigInvocationConfigIncludedTarget>;
 
   // Optional. The service account to run workflow invocations under.
-  ServiceAccount?: string;
+  serviceAccount?: string;
 
   // Optional. When set to true, transitive dependencies of included actions will be executed.
-  TransitiveDependenciesIncluded?: boolean;
+  transitiveDependenciesIncluded?: boolean;
 }
 
-export function Dataform_RepositoryWorkflowConfigInvocationConfig_GetTypes(): DynamicUIProps[] {
+export function dataform_RepositoryWorkflowConfigInvocationConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "ServiceAccount",
-      "Optional. The service account to run workflow invocations under.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "TransitiveDependenciesIncluded",
-      "Optional. When set to true, transitive dependencies of included actions will be executed.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "TransitiveDependentsIncluded",
-      "Optional. When set to true, transitive dependents of included actions will be executed.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "FullyRefreshIncrementalTablesEnabled",
+      "fullyRefreshIncrementalTablesEnabled",
       "Optional. When set to true, any incremental tables will be fully refreshed.",
       [],
       false,
@@ -69,7 +45,7 @@ export function Dataform_RepositoryWorkflowConfigInvocationConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "IncludedTags",
+      "includedTags",
       "Optional. The set of tags to include.",
       InputType_String_GetTypes(),
       false,
@@ -77,9 +53,33 @@ export function Dataform_RepositoryWorkflowConfigInvocationConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "IncludedTargets",
+      "includedTargets",
       "Optional. The set of action identifiers to include.\nStructure is documented below.",
-      Dataform_RepositoryWorkflowConfigInvocationConfigIncludedTarget_GetTypes(),
+      dataform_RepositoryWorkflowConfigInvocationConfigIncludedTarget_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "serviceAccount",
+      "Optional. The service account to run workflow invocations under.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "transitiveDependenciesIncluded",
+      "Optional. When set to true, transitive dependencies of included actions will be executed.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "transitiveDependentsIncluded",
+      "Optional. When set to true, transitive dependents of included actions will be executed.",
+      [],
       false,
       false,
     ),

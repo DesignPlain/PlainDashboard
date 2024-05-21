@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterNodePoolNodeConfigGuestAcceleratorGpuSharingConfig {
+export interface container_ClusterNodePoolNodeConfigGuestAcceleratorGpuSharingConfig {
   /*
 The type of GPU sharing strategy to enable on the GPU node.
 Accepted values are:
 - `"TIME_SHARING"`: Allow multiple containers to have [time-shared](https://cloud.google.com/kubernetes-engine/docs/concepts/timesharing-gpus) access to a single GPU device.
 */
-  GpuSharingStrategy?: string;
+  gpuSharingStrategy?: string;
 
   // The maximum number of containers that can share a GPU.
-  MaxSharedClientsPerGpu?: number;
+  maxSharedClientsPerGpu?: number;
 }
 
-export function Container_ClusterNodePoolNodeConfigGuestAcceleratorGpuSharingConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterNodePoolNodeConfigGuestAcceleratorGpuSharingConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "GpuSharingStrategy",
+      "gpuSharingStrategy",
       'The type of GPU sharing strategy to enable on the GPU node.\nAccepted values are:\n* `"TIME_SHARING"`: Allow multiple containers to have [time-shared](https://cloud.google.com/kubernetes-engine/docs/concepts/timesharing-gpus) access to a single GPU device.',
       [],
       true,
@@ -30,7 +30,7 @@ export function Container_ClusterNodePoolNodeConfigGuestAcceleratorGpuSharingCon
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxSharedClientsPerGpu",
+      "maxSharedClientsPerGpu",
       "The maximum number of containers that can share a GPU.",
       [],
       true,

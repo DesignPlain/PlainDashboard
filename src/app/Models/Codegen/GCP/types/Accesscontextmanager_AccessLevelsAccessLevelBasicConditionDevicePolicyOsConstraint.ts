@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Accesscontextmanager_AccessLevelsAccessLevelBasicConditionDevicePolicyOsConstraint {
+export interface accesscontextmanager_AccessLevelsAccessLevelBasicConditionDevicePolicyOsConstraint {
   /*
 The minimum allowed OS version. If not set, any version
 of this OS satisfies the constraint.
 Format: "major.minor.patch" such as "10.5.301", "9.2.1".
 */
-  MinimumVersion?: string;
+  minimumVersion?: string;
 
   /*
 The operating system type of the device.
 Possible values are: `OS_UNSPECIFIED`, `DESKTOP_MAC`, `DESKTOP_WINDOWS`, `DESKTOP_LINUX`, `DESKTOP_CHROME_OS`, `ANDROID`, `IOS`.
 */
-  OsType?: string;
+  osType?: string;
 }
 
-export function Accesscontextmanager_AccessLevelsAccessLevelBasicConditionDevicePolicyOsConstraint_GetTypes(): DynamicUIProps[] {
+export function accesscontextmanager_AccessLevelsAccessLevelBasicConditionDevicePolicyOsConstraint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "MinimumVersion",
-      'The minimum allowed OS version. If not set, any version\nof this OS satisfies the constraint.\nFormat: "major.minor.patch" such as "10.5.301", "9.2.1".',
+      "osType",
+      "The operating system type of the device.\nPossible values are: `OS_UNSPECIFIED`, `DESKTOP_MAC`, `DESKTOP_WINDOWS`, `DESKTOP_LINUX`, `DESKTOP_CHROME_OS`, `ANDROID`, `IOS`.",
       [],
-      false,
+      true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "OsType",
-      "The operating system type of the device.\nPossible values are: `OS_UNSPECIFIED`, `DESKTOP_MAC`, `DESKTOP_WINDOWS`, `DESKTOP_LINUX`, `DESKTOP_CHROME_OS`, `ANDROID`, `IOS`.",
+      "minimumVersion",
+      'The minimum allowed OS version. If not set, any version\nof this OS satisfies the constraint.\nFormat: "major.minor.patch" such as "10.5.301", "9.2.1".',
       [],
-      true,
+      false,
       false,
     ),
   ];

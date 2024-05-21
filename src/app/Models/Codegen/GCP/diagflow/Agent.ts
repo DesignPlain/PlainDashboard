@@ -9,6 +9,27 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface AgentArgs {
   /*
+The default language of the agent as a language tag. [See Language Support](https://cloud.google.com/dialogflow/docs/reference/language)
+for a list of the currently supported language codes. This field cannot be updated after creation.
+*/
+  defaultLanguageCode?: string;
+
+  // The description of this agent. The maximum length is 500 characters. If exceeded, the request is rejected.
+  description?: string;
+
+  // The name of this agent.
+  displayName?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  // The list of all languages supported by this agent (except for the defaultLanguageCode).
+  supportedLanguageCodes?: Array<string>;
+
+  /*
 API version displayed in Dialogflow console. If not specified, V2 API is assumed. Clients are free to query
 different service endpoints for different API versions. However, bots connectors and webhook calls will follow
 the specified API version.
@@ -17,17 +38,16 @@ the specified API version.
 - API_VERSION_V2_BETA_1: V2beta1 API.
 Possible values are: `API_VERSION_V1`, `API_VERSION_V2`, `API_VERSION_V2_BETA_1`.
 */
-  ApiVersion?: string;
+  apiVersion?: string;
 
   /*
-The URI of the agent's avatar, which are used throughout the Dialogflow console. When an image URL is entered
-into this field, the Dialogflow will save the image in the backend. The address of the backend image returned
-from the API will be shown in the [avatarUriBackend] field.
+To filter out false positive results and still get variety in matched natural language inputs for your agent,
+you can tune the machine learning classification threshold. If the returned score value is less than the threshold
+value, then a fallback intent will be triggered or, if there are no fallback intents defined, no intent will be
+triggered. The score values range from 0.0 (completely uncertain) to 1.0 (completely certain). If set to 0.0, the
+default of 0.3 is used.
 */
-  AvatarUri?: string;
-
-  // Determines whether this agent should log conversation queries.
-  EnableLogging?: boolean;
+  classificationThreshold?: number;
 
   /*
 Determines how intents are detected from user queries.
@@ -37,37 +57,7 @@ syntax and composite entities.
 using @sys.any or very large developer entities.
 Possible values are: `MATCH_MODE_HYBRID`, `MATCH_MODE_ML_ONLY`.
 */
-  MatchMode?: string;
-
-  /*
-To filter out false positive results and still get variety in matched natural language inputs for your agent,
-you can tune the machine learning classification threshold. If the returned score value is less than the threshold
-value, then a fallback intent will be triggered or, if there are no fallback intents defined, no intent will be
-triggered. The score values range from 0.0 (completely uncertain) to 1.0 (completely certain). If set to 0.0, the
-default of 0.3 is used.
-*/
-  ClassificationThreshold?: number;
-
-  /*
-The default language of the agent as a language tag. [See Language Support](https://cloud.google.com/dialogflow/docs/reference/language)
-for a list of the currently supported language codes. This field cannot be updated after creation.
-*/
-  DefaultLanguageCode?: string;
-
-  // The description of this agent. The maximum length is 500 characters. If exceeded, the request is rejected.
-  Description?: string;
-
-  // The name of this agent.
-  DisplayName?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  // The list of all languages supported by this agent (except for the defaultLanguageCode).
-  SupportedLanguageCodes?: Array<string>;
+  matchMode?: string;
 
   /*
 The agent tier. If not specified, TIER_STANDARD is assumed.
@@ -77,7 +67,7 @@ The agent tier. If not specified, TIER_STANDARD is assumed.
 NOTE: Due to consistency issues, the provider will not read this field from the API. Drift is possible between
 the the provider state and Dialogflow if the agent tier is changed outside of the provider.
 */
-  Tier?: string;
+  tier?: string;
 
   /*
 The time zone of this agent from the [time zone database](https://www.iana.org/time-zones), e.g., America/New_York,
@@ -86,84 +76,88 @@ Europe/Paris.
 
 - - -
 */
-  TimeZone?: string;
-}
-export class Agent extends Resource {
-  // The name of this agent.
-  public DisplayName?: string;
-
-  /*
-The agent tier. If not specified, TIER_STANDARD is assumed.
-- TIER_STANDARD: Standard tier.
-- TIER_ENTERPRISE: Enterprise tier (Essentials).
-- TIER_ENTERPRISE_PLUS: Enterprise tier (Plus).
-NOTE: Due to consistency issues, the provider will not read this field from the API. Drift is possible between
-the the provider state and Dialogflow if the agent tier is changed outside of the provider.
-*/
-  public Tier?: string;
-
-  /*
-API version displayed in Dialogflow console. If not specified, V2 API is assumed. Clients are free to query
-different service endpoints for different API versions. However, bots connectors and webhook calls will follow
-the specified API version.
-- API_VERSION_V1: Legacy V1 API.
-- API_VERSION_V2: V2 API.
-- API_VERSION_V2_BETA_1: V2beta1 API.
-Possible values are: `API_VERSION_V1`, `API_VERSION_V2`, `API_VERSION_V2_BETA_1`.
-*/
-  public ApiVersion?: string;
-
-  /*
-To filter out false positive results and still get variety in matched natural language inputs for your agent,
-you can tune the machine learning classification threshold. If the returned score value is less than the threshold
-value, then a fallback intent will be triggered or, if there are no fallback intents defined, no intent will be
-triggered. The score values range from 0.0 (completely uncertain) to 1.0 (completely certain). If set to 0.0, the
-default of 0.3 is used.
-*/
-  public ClassificationThreshold?: number;
-
-  /*
-The default language of the agent as a language tag. [See Language Support](https://cloud.google.com/dialogflow/docs/reference/language)
-for a list of the currently supported language codes. This field cannot be updated after creation.
-*/
-  public DefaultLanguageCode?: string;
-
-  // The description of this agent. The maximum length is 500 characters. If exceeded, the request is rejected.
-  public Description?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  // The list of all languages supported by this agent (except for the defaultLanguageCode).
-  public SupportedLanguageCodes?: Array<string>;
-
-  /*
-The time zone of this agent from the [time zone database](https://www.iana.org/time-zones), e.g., America/New_York,
-Europe/Paris.
-
-
-- - -
-*/
-  public TimeZone?: string;
+  timeZone?: string;
 
   /*
 The URI of the agent's avatar, which are used throughout the Dialogflow console. When an image URL is entered
 into this field, the Dialogflow will save the image in the backend. The address of the backend image returned
 from the API will be shown in the [avatarUriBackend] field.
 */
-  public AvatarUri?: string;
+  avatarUri?: string;
 
+  // Determines whether this agent should log conversation queries.
+  enableLogging?: boolean;
+}
+export class Agent extends Resource {
   /*
 The URI of the agent's avatar as returned from the API. Output only. To provide an image URL for the agent avatar,
 the [avatarUri] field can be used.
 */
-  public AvatarUriBackend?: string;
+  public avatarUriBackend?: string;
+
+  // The name of this agent.
+  public displayName?: string;
 
   // Determines whether this agent should log conversation queries.
-  public EnableLogging?: boolean;
+  public enableLogging?: boolean;
+
+  // The list of all languages supported by this agent (except for the defaultLanguageCode).
+  public supportedLanguageCodes?: Array<string>;
+
+  /*
+The agent tier. If not specified, TIER_STANDARD is assumed.
+- TIER_STANDARD: Standard tier.
+- TIER_ENTERPRISE: Enterprise tier (Essentials).
+- TIER_ENTERPRISE_PLUS: Enterprise tier (Plus).
+NOTE: Due to consistency issues, the provider will not read this field from the API. Drift is possible between
+the the provider state and Dialogflow if the agent tier is changed outside of the provider.
+*/
+  public tier?: string;
+
+  /*
+The time zone of this agent from the [time zone database](https://www.iana.org/time-zones), e.g., America/New_York,
+Europe/Paris.
+
+
+- - -
+*/
+  public timeZone?: string;
+
+  /*
+API version displayed in Dialogflow console. If not specified, V2 API is assumed. Clients are free to query
+different service endpoints for different API versions. However, bots connectors and webhook calls will follow
+the specified API version.
+- API_VERSION_V1: Legacy V1 API.
+- API_VERSION_V2: V2 API.
+- API_VERSION_V2_BETA_1: V2beta1 API.
+Possible values are: `API_VERSION_V1`, `API_VERSION_V2`, `API_VERSION_V2_BETA_1`.
+*/
+  public apiVersion?: string;
+
+  /*
+The URI of the agent's avatar, which are used throughout the Dialogflow console. When an image URL is entered
+into this field, the Dialogflow will save the image in the backend. The address of the backend image returned
+from the API will be shown in the [avatarUriBackend] field.
+*/
+  public avatarUri?: string;
+
+  /*
+To filter out false positive results and still get variety in matched natural language inputs for your agent,
+you can tune the machine learning classification threshold. If the returned score value is less than the threshold
+value, then a fallback intent will be triggered or, if there are no fallback intents defined, no intent will be
+triggered. The score values range from 0.0 (completely uncertain) to 1.0 (completely certain). If set to 0.0, the
+default of 0.3 is used.
+*/
+  public classificationThreshold?: number;
+
+  /*
+The default language of the agent as a language tag. [See Language Support](https://cloud.google.com/dialogflow/docs/reference/language)
+for a list of the currently supported language codes. This field cannot be updated after creation.
+*/
+  public defaultLanguageCode?: string;
+
+  // The description of this agent. The maximum length is 500 characters. If exceeded, the request is rejected.
+  public description?: string;
 
   /*
 Determines how intents are detected from user queries.
@@ -173,53 +167,19 @@ syntax and composite entities.
 using @sys.any or very large developer entities.
 Possible values are: `MATCH_MODE_HYBRID`, `MATCH_MODE_ML_ONLY`.
 */
-  public MatchMode?: string;
+  public matchMode?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "DefaultLanguageCode",
-        "The default language of the agent as a language tag. [See Language Support](https://cloud.google.com/dialogflow/docs/reference/language)\nfor a list of the currently supported language codes. This field cannot be updated after creation.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "DisplayName",
-        "The name of this agent.",
-        [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Array,
-        "SupportedLanguageCodes",
-        "The list of all languages supported by this agent (except for the defaultLanguageCode).",
-        InputType_String_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ApiVersion",
-        "API version displayed in Dialogflow console. If not specified, V2 API is assumed. Clients are free to query\ndifferent service endpoints for different API versions. However, bots connectors and webhook calls will follow\nthe specified API version.\n* API_VERSION_V1: Legacy V1 API.\n* API_VERSION_V2: V2 API.\n* API_VERSION_V2_BETA_1: V2beta1 API.\nPossible values are: `API_VERSION_V1`, `API_VERSION_V2`, `API_VERSION_V2_BETA_1`.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "MatchMode",
-        "Determines how intents are detected from user queries.\n* MATCH_MODE_HYBRID: Best for agents with a small number of examples in intents and/or wide use of templates\nsyntax and composite entities.\n* MATCH_MODE_ML_ONLY: Can be used for agents with a large number of examples in intents, especially the ones\nusing @sys.any or very large developer entities.\nPossible values are: `MATCH_MODE_HYBRID`, `MATCH_MODE_ML_ONLY`.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.Number,
-        "ClassificationThreshold",
+        "classificationThreshold",
         "To filter out false positive results and still get variety in matched natural language inputs for your agent,\nyou can tune the machine learning classification threshold. If the returned score value is less than the threshold\nvalue, then a fallback intent will be triggered or, if there are no fallback intents defined, no intent will be\ntriggered. The score values range from 0.0 (completely uncertain) to 1.0 (completely certain). If set to 0.0, the\ndefault of 0.3 is used.",
         [],
         false,
@@ -227,23 +187,7 @@ Possible values are: `MATCH_MODE_HYBRID`, `MATCH_MODE_ML_ONLY`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Tier",
-        "The agent tier. If not specified, TIER_STANDARD is assumed.\n* TIER_STANDARD: Standard tier.\n* TIER_ENTERPRISE: Enterprise tier (Essentials).\n* TIER_ENTERPRISE_PLUS: Enterprise tier (Plus).\nNOTE: Due to consistency issues, the provider will not read this field from the API. Drift is possible between\nthe the provider state and Dialogflow if the agent tier is changed outside of the provider.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "TimeZone",
+        "timeZone",
         "The time zone of this agent from the [time zone database](https://www.iana.org/time-zones), e.g., America/New_York,\nEurope/Paris.\n\n\n- - -",
         [],
         true,
@@ -251,7 +195,71 @@ Possible values are: `MATCH_MODE_HYBRID`, `MATCH_MODE_ML_ONLY`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "AvatarUri",
+        "defaultLanguageCode",
+        "The default language of the agent as a language tag. [See Language Support](https://cloud.google.com/dialogflow/docs/reference/language)\nfor a list of the currently supported language codes. This field cannot be updated after creation.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "The description of this agent. The maximum length is 500 characters. If exceeded, the request is rejected.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "displayName",
+        "The name of this agent.",
+        [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "supportedLanguageCodes",
+        "The list of all languages supported by this agent (except for the defaultLanguageCode).",
+        InputType_String_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "apiVersion",
+        "API version displayed in Dialogflow console. If not specified, V2 API is assumed. Clients are free to query\ndifferent service endpoints for different API versions. However, bots connectors and webhook calls will follow\nthe specified API version.\n* API_VERSION_V1: Legacy V1 API.\n* API_VERSION_V2: V2 API.\n* API_VERSION_V2_BETA_1: V2beta1 API.\nPossible values are: `API_VERSION_V1`, `API_VERSION_V2`, `API_VERSION_V2_BETA_1`.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "matchMode",
+        "Determines how intents are detected from user queries.\n* MATCH_MODE_HYBRID: Best for agents with a small number of examples in intents and/or wide use of templates\nsyntax and composite entities.\n* MATCH_MODE_ML_ONLY: Can be used for agents with a large number of examples in intents, especially the ones\nusing @sys.any or very large developer entities.\nPossible values are: `MATCH_MODE_HYBRID`, `MATCH_MODE_ML_ONLY`.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "tier",
+        "The agent tier. If not specified, TIER_STANDARD is assumed.\n* TIER_STANDARD: Standard tier.\n* TIER_ENTERPRISE: Enterprise tier (Essentials).\n* TIER_ENTERPRISE_PLUS: Enterprise tier (Plus).\nNOTE: Due to consistency issues, the provider will not read this field from the API. Drift is possible between\nthe the provider state and Dialogflow if the agent tier is changed outside of the provider.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "avatarUri",
         "The URI of the agent's avatar, which are used throughout the Dialogflow console. When an image URL is entered\ninto this field, the Dialogflow will save the image in the backend. The address of the backend image returned\nfrom the API will be shown in the [avatarUriBackend] field.",
         [],
         false,
@@ -259,16 +267,8 @@ Possible values are: `MATCH_MODE_HYBRID`, `MATCH_MODE_ML_ONLY`.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "EnableLogging",
+        "enableLogging",
         "Determines whether this agent should log conversation queries.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "The description of this agent. The maximum length is 500 characters. If exceeded, the request is rejected.",
         [],
         false,
         false,

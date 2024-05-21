@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Looker_InstanceMaintenanceWindowStartTime {
+export interface looker_InstanceMaintenanceWindowStartTime {
   // Seconds of minutes of the time. Must normally be from 0 to 59.
-  Seconds?: number;
+  seconds?: number;
 
   // Hours of day in 24 hour format. Should be from 0 to 23.
-  Hours?: number;
+  hours?: number;
 
   // Minutes of hour of day. Must be from 0 to 59.
-  Minutes?: number;
+  minutes?: number;
 
   // Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
-  Nanos?: number;
+  nanos?: number;
 }
 
-export function Looker_InstanceMaintenanceWindowStartTime_GetTypes(): DynamicUIProps[] {
+export function looker_InstanceMaintenanceWindowStartTime_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Seconds",
+      "nanos",
+      "Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "seconds",
       "Seconds of minutes of the time. Must normally be from 0 to 59.",
       [],
       false,
@@ -32,7 +40,7 @@ export function Looker_InstanceMaintenanceWindowStartTime_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Hours",
+      "hours",
       "Hours of day in 24 hour format. Should be from 0 to 23.",
       [],
       false,
@@ -40,16 +48,8 @@ export function Looker_InstanceMaintenanceWindowStartTime_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Minutes",
+      "minutes",
       "Minutes of hour of day. Must be from 0 to 59.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Nanos",
-      "Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.",
       [],
       false,
       false,

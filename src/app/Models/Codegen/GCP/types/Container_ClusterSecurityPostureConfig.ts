@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterSecurityPostureConfig {
+export interface container_ClusterSecurityPostureConfig {
   // Sets the mode of the Kubernetes security posture API's off-cluster features. Available options include `DISABLED` and `BASIC`.
-  Mode?: string;
+  mode?: string;
 
   // Sets the mode of the Kubernetes security posture API's workload vulnerability scanning. Available options include `VULNERABILITY_DISABLED`, `VULNERABILITY_BASIC` and `VULNERABILITY_ENTERPRISE`.
-  VulnerabilityMode?: string;
+  vulnerabilityMode?: string;
 }
 
-export function Container_ClusterSecurityPostureConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterSecurityPostureConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Mode",
+      "mode",
       "Sets the mode of the Kubernetes security posture API's off-cluster features. Available options include `DISABLED` and `BASIC`.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Container_ClusterSecurityPostureConfig_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "VulnerabilityMode",
+      "vulnerabilityMode",
       "Sets the mode of the Kubernetes security posture API's workload vulnerability scanning. Available options include `VULNERABILITY_DISABLED`, `VULNERABILITY_BASIC` and `VULNERABILITY_ENTERPRISE`.",
       [],
       false,

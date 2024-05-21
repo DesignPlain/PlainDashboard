@@ -6,53 +6,45 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Integrationconnectors_ConnectionConfigVariableEncryptionKeyValue,
-  Integrationconnectors_ConnectionConfigVariableEncryptionKeyValue_GetTypes,
-} from "./Integrationconnectors_ConnectionConfigVariableEncryptionKeyValue";
+  integrationconnectors_ConnectionConfigVariableSecretValue,
+  integrationconnectors_ConnectionConfigVariableSecretValue_GetTypes,
+} from "./integrationconnectors_ConnectionConfigVariableSecretValue";
 import {
-  Integrationconnectors_ConnectionConfigVariableSecretValue,
-  Integrationconnectors_ConnectionConfigVariableSecretValue_GetTypes,
-} from "./Integrationconnectors_ConnectionConfigVariableSecretValue";
+  integrationconnectors_ConnectionConfigVariableEncryptionKeyValue,
+  integrationconnectors_ConnectionConfigVariableEncryptionKeyValue_GetTypes,
+} from "./integrationconnectors_ConnectionConfigVariableEncryptionKeyValue";
 
-export interface Integrationconnectors_ConnectionConfigVariable {
+export interface integrationconnectors_ConnectionConfigVariable {
+  /*
+Secret value of configVariable.
+Structure is documented below.
+*/
+  secretValue?: integrationconnectors_ConnectionConfigVariableSecretValue;
+
+  // String Value of configVariabley
+  stringValue?: string;
+
   // Boolean Value of configVariable
-  BooleanValue?: boolean;
+  booleanValue?: boolean;
 
   /*
 Encription key value of configVariable.
 Structure is documented below.
 */
-  EncryptionKeyValue?: Integrationconnectors_ConnectionConfigVariableEncryptionKeyValue;
+  encryptionKeyValue?: integrationconnectors_ConnectionConfigVariableEncryptionKeyValue;
 
   // Integer Value of configVariable
-  IntegerValue?: number;
+  integerValue?: number;
 
   // Key for the configVariable
-  Key?: string;
-
-  /*
-Secret value of configVariable.
-Structure is documented below.
-*/
-  SecretValue?: Integrationconnectors_ConnectionConfigVariableSecretValue;
-
-  // String Value of configVariabley
-  StringValue?: string;
+  key?: string;
 }
 
-export function Integrationconnectors_ConnectionConfigVariable_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionConfigVariable_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "SecretValue",
-      "Secret value of configVariable.\nStructure is documented below.",
-      Integrationconnectors_ConnectionConfigVariableSecretValue_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "StringValue",
+      "stringValue",
       "String Value of configVariabley",
       [],
       false,
@@ -60,7 +52,7 @@ export function Integrationconnectors_ConnectionConfigVariable_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "BooleanValue",
+      "booleanValue",
       "Boolean Value of configVariable",
       [],
       false,
@@ -68,15 +60,15 @@ export function Integrationconnectors_ConnectionConfigVariable_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Object,
-      "EncryptionKeyValue",
+      "encryptionKeyValue",
       "Encription key value of configVariable.\nStructure is documented below.",
-      Integrationconnectors_ConnectionConfigVariableEncryptionKeyValue_GetTypes(),
+      integrationconnectors_ConnectionConfigVariableEncryptionKeyValue_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "IntegerValue",
+      "integerValue",
       "Integer Value of configVariable",
       [],
       false,
@@ -84,10 +76,18 @@ export function Integrationconnectors_ConnectionConfigVariable_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "key",
       "Key for the configVariable",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "secretValue",
+      "Secret value of configVariable.\nStructure is documented below.",
+      integrationconnectors_ConnectionConfigVariableSecretValue_GetTypes(),
+      false,
       false,
     ),
   ];

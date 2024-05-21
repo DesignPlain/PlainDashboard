@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_SecurityScanConfigAuthenticationCustomAccount {
+export interface compute_SecurityScanConfigAuthenticationCustomAccount {
   // The login form URL of the website.
-  LoginUrl?: string;
+  loginUrl?: string;
 
   /*
 The password of the custom account. The credential is stored encrypted
 in GCP.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  Password?: string;
+  password?: string;
 
   // The user name of the custom account.
-  Username?: string;
+  username?: string;
 }
 
-export function Compute_SecurityScanConfigAuthenticationCustomAccount_GetTypes(): DynamicUIProps[] {
+export function compute_SecurityScanConfigAuthenticationCustomAccount_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "LoginUrl",
+      "loginUrl",
       "The login form URL of the website.",
       [],
       true,
@@ -33,7 +33,7 @@ export function Compute_SecurityScanConfigAuthenticationCustomAccount_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "Password",
+      "password",
       "The password of the custom account. The credential is stored encrypted\nin GCP.\n**Note**: This property is sensitive and will not be displayed in the plan.",
       [],
       true,
@@ -41,7 +41,7 @@ export function Compute_SecurityScanConfigAuthenticationCustomAccount_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "Username",
+      "username",
       "The user name of the custom account.",
       [],
       true,

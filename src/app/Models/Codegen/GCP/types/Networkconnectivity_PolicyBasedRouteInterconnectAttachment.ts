@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkconnectivity_PolicyBasedRouteInterconnectAttachment {
+export interface networkconnectivity_PolicyBasedRouteInterconnectAttachment {
   // Cloud region to install this policy-based route on for Interconnect attachments. Use `all` to install it on all Interconnect attachments.
-  Region?: string;
+  region?: string;
 }
 
-export function Networkconnectivity_PolicyBasedRouteInterconnectAttachment_GetTypes(): DynamicUIProps[] {
+export function networkconnectivity_PolicyBasedRouteInterconnectAttachment_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Region",
+      "region",
       "Cloud region to install this policy-based route on for Interconnect attachments. Use `all` to install it on all Interconnect attachments.",
       [],
       true,

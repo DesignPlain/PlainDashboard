@@ -8,27 +8,27 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface RegistryArgs {
-  // The location of the registry. One of `ASIA`, `EU`, `US` or not specified. See [the official documentation](https://cloud.google.com/container-registry/docs/pushing-and-pulling#pushing_an_image_to_a_registry) for more information on registry locations.
-  Location?: string;
-
   // The ID of the project in which the resource belongs. If it is not provided, the provider project is used.
-  Project?: string;
+  project?: string;
+
+  // The location of the registry. One of `ASIA`, `EU`, `US` or not specified. See [the official documentation](https://cloud.google.com/container-registry/docs/pushing-and-pulling#pushing_an_image_to_a_registry) for more information on registry locations.
+  location?: string;
 }
 export class Registry extends Resource {
   // The URI of the created resource.
-  public BucketSelfLink?: string;
+  public bucketSelfLink?: string;
 
   // The location of the registry. One of `ASIA`, `EU`, `US` or not specified. See [the official documentation](https://cloud.google.com/container-registry/docs/pushing-and-pulling#pushing_an_image_to_a_registry) for more information on registry locations.
-  public Location?: string;
+  public location?: string;
 
   // The ID of the project in which the resource belongs. If it is not provided, the provider project is used.
-  public Project?: string;
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs. If it is not provided, the provider project is used.",
         [],
         false,
@@ -36,7 +36,7 @@ export class Registry extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location of the registry. One of `ASIA`, `EU`, `US` or not specified. See [the official documentation](https://cloud.google.com/container-registry/docs/pushing-and-pulling#pushing_an_image_to_a_registry) for more information on registry locations.",
         [],
         false,

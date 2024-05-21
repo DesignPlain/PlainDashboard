@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Netapp_VolumeRestoreParameters {
+export interface netapp_VolumeRestoreParameters {
   /*
 Full name of the snapshot to use for creating this volume.
 `source_snapshot` and `source_backup` cannot be used simultaneously.
 Format: `projects/{{project}}/locations/{{location}}/backupVaults/{{backupVaultId}}/backups/{{backup}}`.
 */
-  SourceBackup?: string;
+  sourceBackup?: string;
 
   /*
 Full name of the snapshot to use for creating this volume.
 `source_snapshot` and `source_backup` cannot be used simultaneously.
 Format: `projects/{{project}}/locations/{{location}}/volumes/{{volume}}/snapshots/{{snapshot}}`.
 */
-  SourceSnapshot?: string;
+  sourceSnapshot?: string;
 }
 
-export function Netapp_VolumeRestoreParameters_GetTypes(): DynamicUIProps[] {
+export function netapp_VolumeRestoreParameters_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SourceBackup",
+      "sourceBackup",
       "Full name of the snapshot to use for creating this volume.\n`source_snapshot` and `source_backup` cannot be used simultaneously.\nFormat: `projects/{{project}}/locations/{{location}}/backupVaults/{{backupVaultId}}/backups/{{backup}}`.",
       [],
       false,
@@ -34,7 +34,7 @@ export function Netapp_VolumeRestoreParameters_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "SourceSnapshot",
+      "sourceSnapshot",
       "Full name of the snapshot to use for creating this volume.\n`source_snapshot` and `source_backup` cannot be used simultaneously.\nFormat: `projects/{{project}}/locations/{{location}}/volumes/{{volume}}/snapshots/{{snapshot}}`.",
       [],
       false,

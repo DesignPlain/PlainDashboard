@@ -6,36 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceAvailability,
-  Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceAvailability_GetTypes,
-} from "./Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceAvailability";
+  monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceAvailability,
+  monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceAvailability_GetTypes,
+} from "./monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceAvailability";
 import {
-  Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatency,
-  Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatency_GetTypes,
-} from "./Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatency";
+  monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatency,
+  monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatency_GetTypes,
+} from "./monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatency";
 
-export interface Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance {
-  /*
-The set of API versions to which this SLI is relevant.
-Telemetry from other API versions will not be used to
-calculate performance for this SLI. If omitted,
-this SLI applies to all API versions. For service types
-that don't support breaking down by version, setting this
-field will result in an error.
-*/
-  Versions?: Array<string>;
-
+export interface monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance {
   /*
 Availability based SLI, dervied from count of requests made to this service that return successfully.
 Structure is documented below.
 */
-  Availability?: Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceAvailability;
+  availability?: monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceAvailability;
 
   /*
 Parameters for a latency threshold SLI.
 Structure is documented below.
 */
-  Latency?: Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatency;
+  latency?: monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatency;
 
   /*
 An optional set of locations to which this SLI is relevant.
@@ -45,7 +35,7 @@ locations in which the Service has activity. For service types
 that don't support breaking down by location, setting this
 field will result in an error.
 */
-  Locations?: Array<string>;
+  locations?: Array<string>;
 
   /*
 An optional set of RPCs to which this SLI is relevant.
@@ -55,30 +45,40 @@ the Service's methods. For service types that don't support
 breaking down by method, setting this field will result in an
 error.
 */
-  Methods?: Array<string>;
+  methods?: Array<string>;
+
+  /*
+The set of API versions to which this SLI is relevant.
+Telemetry from other API versions will not be used to
+calculate performance for this SLI. If omitted,
+this SLI applies to all API versions. For service types
+that don't support breaking down by version, setting this
+field will result in an error.
+*/
+  versions?: Array<string>;
 }
 
-export function Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance_GetTypes(): DynamicUIProps[] {
+export function monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Availability",
+      "availability",
       "Availability based SLI, dervied from count of requests made to this service that return successfully.\nStructure is documented below.",
-      Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceAvailability_GetTypes(),
+      monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceAvailability_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Latency",
+      "latency",
       "Parameters for a latency threshold SLI.\nStructure is documented below.",
-      Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatency_GetTypes(),
+      monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatency_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Locations",
+      "locations",
       "An optional set of locations to which this SLI is relevant.\nTelemetry from other locations will not be used to calculate\nperformance for this SLI. If omitted, this SLI applies to all\nlocations in which the Service has activity. For service types\nthat don't support breaking down by location, setting this\nfield will result in an error.",
       InputType_String_GetTypes(),
       false,
@@ -86,7 +86,7 @@ export function Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerf
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Methods",
+      "methods",
       "An optional set of RPCs to which this SLI is relevant.\nTelemetry from other methods will not be used to calculate\nperformance for this SLI. If omitted, this SLI applies to all\nthe Service's methods. For service types that don't support\nbreaking down by method, setting this field will result in an\nerror.",
       InputType_String_GetTypes(),
       false,
@@ -94,7 +94,7 @@ export function Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerf
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Versions",
+      "versions",
       "The set of API versions to which this SLI is relevant.\nTelemetry from other API versions will not be used to\ncalculate performance for this SLI. If omitted,\nthis SLI applies to all API versions. For service types\nthat don't support breaking down by version, setting this\nfield will result in an error.",
       InputType_String_GetTypes(),
       false,

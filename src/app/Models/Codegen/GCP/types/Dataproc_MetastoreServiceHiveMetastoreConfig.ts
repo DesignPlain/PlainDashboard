@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_MetastoreServiceHiveMetastoreConfigKerberosConfig,
-  Dataproc_MetastoreServiceHiveMetastoreConfigKerberosConfig_GetTypes,
-} from "./Dataproc_MetastoreServiceHiveMetastoreConfigKerberosConfig";
+  dataproc_MetastoreServiceHiveMetastoreConfigKerberosConfig,
+  dataproc_MetastoreServiceHiveMetastoreConfigKerberosConfig_GetTypes,
+} from "./dataproc_MetastoreServiceHiveMetastoreConfigKerberosConfig";
 import {
-  Dataproc_MetastoreServiceHiveMetastoreConfigAuxiliaryVersion,
-  Dataproc_MetastoreServiceHiveMetastoreConfigAuxiliaryVersion_GetTypes,
-} from "./Dataproc_MetastoreServiceHiveMetastoreConfigAuxiliaryVersion";
+  dataproc_MetastoreServiceHiveMetastoreConfigAuxiliaryVersion,
+  dataproc_MetastoreServiceHiveMetastoreConfigAuxiliaryVersion_GetTypes,
+} from "./dataproc_MetastoreServiceHiveMetastoreConfigAuxiliaryVersion";
 
-export interface Dataproc_MetastoreServiceHiveMetastoreConfig {
+export interface dataproc_MetastoreServiceHiveMetastoreConfig {
   /*
 Information used to configure the Hive metastore service as a service principal in a Kerberos realm.
 Structure is documented below.
 */
-  KerberosConfig?: Dataproc_MetastoreServiceHiveMetastoreConfigKerberosConfig;
+  kerberosConfig?: dataproc_MetastoreServiceHiveMetastoreConfigKerberosConfig;
 
   // The Hive metastore schema version.
-  Version?: string;
+  version?: string;
 
   /*
 A mapping of Hive metastore version to the auxiliary version configuration.
@@ -32,35 +32,35 @@ The key is the auxiliary service name and it must match the regular expression a
 This means that the first character must be a lowercase letter, and all the following characters must be hyphens, lowercase letters, or digits, except the last character, which cannot be a hyphen.
 Structure is documented below.
 */
-  AuxiliaryVersions?: Array<Dataproc_MetastoreServiceHiveMetastoreConfigAuxiliaryVersion>;
+  auxiliaryVersions?: Array<dataproc_MetastoreServiceHiveMetastoreConfigAuxiliaryVersion>;
 
   /*
 A mapping of Hive metastore configuration key-value pairs to apply to the Hive metastore (configured in hive-site.xml).
 The mappings override system defaults (some keys cannot be overridden)
 */
-  ConfigOverrides?: Map<string, string>;
+  configOverrides?: Map<string, string>;
 
   /*
 The protocol to use for the metastore service endpoint. If unspecified, defaults to `THRIFT`.
 Default value is `THRIFT`.
 Possible values are: `THRIFT`, `GRPC`.
 */
-  EndpointProtocol?: string;
+  endpointProtocol?: string;
 }
 
-export function Dataproc_MetastoreServiceHiveMetastoreConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_MetastoreServiceHiveMetastoreConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "KerberosConfig",
+      "kerberosConfig",
       "Information used to configure the Hive metastore service as a service principal in a Kerberos realm.\nStructure is documented below.",
-      Dataproc_MetastoreServiceHiveMetastoreConfigKerberosConfig_GetTypes(),
+      dataproc_MetastoreServiceHiveMetastoreConfigKerberosConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Version",
+      "version",
       "The Hive metastore schema version.",
       [],
       true,
@@ -68,15 +68,15 @@ export function Dataproc_MetastoreServiceHiveMetastoreConfig_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AuxiliaryVersions",
+      "auxiliaryVersions",
       "A mapping of Hive metastore version to the auxiliary version configuration.\nWhen specified, a secondary Hive metastore service is created along with the primary service.\nAll auxiliary versions must be less than the service's primary version.\nThe key is the auxiliary service name and it must match the regular expression a-z?.\nThis means that the first character must be a lowercase letter, and all the following characters must be hyphens, lowercase letters, or digits, except the last character, which cannot be a hyphen.\nStructure is documented below.",
-      Dataproc_MetastoreServiceHiveMetastoreConfigAuxiliaryVersion_GetTypes(),
+      dataproc_MetastoreServiceHiveMetastoreConfigAuxiliaryVersion_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "ConfigOverrides",
+      "configOverrides",
       "A mapping of Hive metastore configuration key-value pairs to apply to the Hive metastore (configured in hive-site.xml).\nThe mappings override system defaults (some keys cannot be overridden)",
       InputType_Map_GetTypes(),
       false,
@@ -84,7 +84,7 @@ export function Dataproc_MetastoreServiceHiveMetastoreConfig_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "EndpointProtocol",
+      "endpointProtocol",
       "The protocol to use for the metastore service endpoint. If unspecified, defaults to `THRIFT`.\nDefault value is `THRIFT`.\nPossible values are: `THRIFT`, `GRPC`.",
       [],
       false,

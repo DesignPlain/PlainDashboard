@@ -6,97 +6,97 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptions,
-  Dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptions_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptions";
+  dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptions,
+  dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptions_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptions";
 import {
-  Dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions,
-  Dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions";
+  dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfig,
+  dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfig_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfig";
 import {
-  Dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptions,
-  Dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptions_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptions";
+  dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptions,
+  dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptions_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptions";
 import {
-  Dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptions,
-  Dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptions_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptions";
+  dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions,
+  dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions";
 import {
-  Dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfig,
-  Dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfig_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfig";
+  dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptions,
+  dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptions_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptions";
 
-export interface Dataloss_PreventionJobTriggerInspectJobStorageConfig {
-  /*
-Options defining BigQuery table and row identifiers.
-Structure is documented below.
-*/
-  BigQueryOptions?: Dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptions;
-
-  /*
-Options defining a file or a set of files within a Google Cloud Storage bucket.
-Structure is documented below.
-*/
-  CloudStorageOptions?: Dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions;
-
-  /*
-Options defining a data set within Google Cloud Datastore.
-Structure is documented below.
-*/
-  DatastoreOptions?: Dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptions;
-
+export interface dataloss_PreventionJobTriggerInspectJobStorageConfig {
   /*
 Configuration to control jobs where the content being inspected is outside of Google Cloud Platform.
 Structure is documented below.
 */
-  HybridOptions?: Dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptions;
+  hybridOptions?: dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptions;
 
   /*
 Configuration of the timespan of the items to include in scanning
 Structure is documented below.
 */
-  TimespanConfig?: Dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfig;
+  timespanConfig?: dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfig;
+
+  /*
+Options defining BigQuery table and row identifiers.
+Structure is documented below.
+*/
+  bigQueryOptions?: dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptions;
+
+  /*
+Options defining a file or a set of files within a Google Cloud Storage bucket.
+Structure is documented below.
+*/
+  cloudStorageOptions?: dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions;
+
+  /*
+Options defining a data set within Google Cloud Datastore.
+Structure is documented below.
+*/
+  datastoreOptions?: dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptions;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJobStorageConfig_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobStorageConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "CloudStorageOptions",
-      "Options defining a file or a set of files within a Google Cloud Storage bucket.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "DatastoreOptions",
-      "Options defining a data set within Google Cloud Datastore.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptions_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "HybridOptions",
+      "hybridOptions",
       "Configuration to control jobs where the content being inspected is outside of Google Cloud Platform.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptions_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptions_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "TimespanConfig",
+      "timespanConfig",
       "Configuration of the timespan of the items to include in scanning\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfig_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "BigQueryOptions",
+      "bigQueryOptions",
       "Options defining BigQuery table and row identifiers.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptions_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptions_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "cloudStorageOptions",
+      "Options defining a file or a set of files within a Google Cloud Storage bucket.\nStructure is documented below.",
+      dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "datastoreOptions",
+      "Options defining a data set within Google Cloud Datastore.\nStructure is documented below.",
+      dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptions_GetTypes(),
       false,
       false,
     ),

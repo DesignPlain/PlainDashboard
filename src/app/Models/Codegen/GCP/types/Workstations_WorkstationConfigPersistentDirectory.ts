@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Workstations_WorkstationConfigPersistentDirectoryGcePd,
-  Workstations_WorkstationConfigPersistentDirectoryGcePd_GetTypes,
-} from "./Workstations_WorkstationConfigPersistentDirectoryGcePd";
+  workstations_WorkstationConfigPersistentDirectoryGcePd,
+  workstations_WorkstationConfigPersistentDirectoryGcePd_GetTypes,
+} from "./workstations_WorkstationConfigPersistentDirectoryGcePd";
 
-export interface Workstations_WorkstationConfigPersistentDirectory {
+export interface workstations_WorkstationConfigPersistentDirectory {
   /*
 A directory to persist across workstation sessions, backed by a Compute Engine regional persistent disk. Can only be updated if not empty during creation.
 Structure is documented below.
 */
-  GcePd?: Workstations_WorkstationConfigPersistentDirectoryGcePd;
+  gcePd?: workstations_WorkstationConfigPersistentDirectoryGcePd;
 
   // Location of this directory in the running workstation.
-  MountPath?: string;
+  mountPath?: string;
 }
 
-export function Workstations_WorkstationConfigPersistentDirectory_GetTypes(): DynamicUIProps[] {
+export function workstations_WorkstationConfigPersistentDirectory_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "GcePd",
+      "gcePd",
       "A directory to persist across workstation sessions, backed by a Compute Engine regional persistent disk. Can only be updated if not empty during creation.\nStructure is documented below.",
-      Workstations_WorkstationConfigPersistentDirectoryGcePd_GetTypes(),
+      workstations_WorkstationConfigPersistentDirectoryGcePd_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "MountPath",
+      "mountPath",
       "Location of this directory in the running workstation.",
       [],
       false,

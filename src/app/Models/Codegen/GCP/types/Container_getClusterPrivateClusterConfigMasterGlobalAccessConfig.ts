@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterPrivateClusterConfigMasterGlobalAccessConfig {
+export interface container_getClusterPrivateClusterConfigMasterGlobalAccessConfig {
   // Whether the cluster master is accessible globally or not.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_getClusterPrivateClusterConfigMasterGlobalAccessConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterPrivateClusterConfigMasterGlobalAccessConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether the cluster master is accessible globally or not.",
       [],
       true,

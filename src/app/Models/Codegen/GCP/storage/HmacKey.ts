@@ -12,7 +12,7 @@ export interface HmacKeyArgs {
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 The email address of the key's associated service account.
@@ -20,43 +20,30 @@ The email address of the key's associated service account.
 
 - - -
 */
-  ServiceAccountEmail?: string;
+  serviceAccountEmail?: string;
 
   /*
 The state of the key. Can be set to one of ACTIVE, INACTIVE.
 Default value is `ACTIVE`.
 Possible values are: `ACTIVE`, `INACTIVE`.
 */
-  State?: string;
+  state?: string;
 }
 export class HmacKey extends Resource {
-  /*
-The state of the key. Can be set to one of ACTIVE, INACTIVE.
-Default value is `ACTIVE`.
-Possible values are: `ACTIVE`, `INACTIVE`.
-*/
-  public State?: string;
-
-  // 'The creation time of the HMAC key in RFC 3339 format. '
-  public TimeCreated?: string;
-
-  // 'The last modification time of the HMAC key metadata in RFC 3339 format.'
-  public Updated?: string;
-
   // The access ID of the HMAC Key.
-  public AccessId?: string;
+  public accessId?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 HMAC secret key material.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  public Secret?: string;
+  public secret?: string;
 
   /*
 The email address of the key's associated service account.
@@ -64,13 +51,26 @@ The email address of the key's associated service account.
 
 - - -
 */
-  public ServiceAccountEmail?: string;
+  public serviceAccountEmail?: string;
+
+  /*
+The state of the key. Can be set to one of ACTIVE, INACTIVE.
+Default value is `ACTIVE`.
+Possible values are: `ACTIVE`, `INACTIVE`.
+*/
+  public state?: string;
+
+  // 'The creation time of the HMAC key in RFC 3339 format. '
+  public timeCreated?: string;
+
+  // 'The last modification time of the HMAC key metadata in RFC 3339 format.'
+  public updated?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -78,7 +78,7 @@ The email address of the key's associated service account.
       ),
       new DynamicUIProps(
         InputType.String,
-        "ServiceAccountEmail",
+        "serviceAccountEmail",
         "The email address of the key's associated service account.\n\n\n- - -",
         [],
         true,
@@ -86,7 +86,7 @@ The email address of the key's associated service account.
       ),
       new DynamicUIProps(
         InputType.String,
-        "State",
+        "state",
         "The state of the key. Can be set to one of ACTIVE, INACTIVE.\nDefault value is `ACTIVE`.\nPossible values are: `ACTIVE`, `INACTIVE`.",
         [],
         false,

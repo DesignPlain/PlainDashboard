@@ -6,49 +6,49 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrun_ServiceTemplateSpecContainerLivenessProbeHttpGetHttpHeader,
-  Cloudrun_ServiceTemplateSpecContainerLivenessProbeHttpGetHttpHeader_GetTypes,
-} from "./Cloudrun_ServiceTemplateSpecContainerLivenessProbeHttpGetHttpHeader";
+  cloudrun_ServiceTemplateSpecContainerLivenessProbeHttpGetHttpHeader,
+  cloudrun_ServiceTemplateSpecContainerLivenessProbeHttpGetHttpHeader_GetTypes,
+} from "./cloudrun_ServiceTemplateSpecContainerLivenessProbeHttpGetHttpHeader";
 
-export interface Cloudrun_ServiceTemplateSpecContainerLivenessProbeHttpGet {
-  /*
-Custom headers to set in the request. HTTP allows repeated headers.
-Structure is documented below.
-*/
-  HttpHeaders?: Array<Cloudrun_ServiceTemplateSpecContainerLivenessProbeHttpGetHttpHeader>;
-
+export interface cloudrun_ServiceTemplateSpecContainerLivenessProbeHttpGet {
   // Path to access on the HTTP server. If set, it should not be empty string.
-  Path?: string;
+  path?: string;
 
   /*
 Port number to access on the container. Number must be in the range 1 to 65535.
 If not specified, defaults to the same value as container.ports[0].containerPort.
 */
-  Port?: number;
+  port?: number;
+
+  /*
+Custom headers to set in the request. HTTP allows repeated headers.
+Structure is documented below.
+*/
+  httpHeaders?: Array<cloudrun_ServiceTemplateSpecContainerLivenessProbeHttpGetHttpHeader>;
 }
 
-export function Cloudrun_ServiceTemplateSpecContainerLivenessProbeHttpGet_GetTypes(): DynamicUIProps[] {
+export function cloudrun_ServiceTemplateSpecContainerLivenessProbeHttpGet_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "HttpHeaders",
-      "Custom headers to set in the request. HTTP allows repeated headers.\nStructure is documented below.",
-      Cloudrun_ServiceTemplateSpecContainerLivenessProbeHttpGetHttpHeader_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Path",
-      "Path to access on the HTTP server. If set, it should not be empty string.",
+      InputType.Number,
+      "port",
+      "Port number to access on the container. Number must be in the range 1 to 65535.\nIf not specified, defaults to the same value as container.ports[0].containerPort.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Number,
-      "Port",
-      "Port number to access on the container. Number must be in the range 1 to 65535.\nIf not specified, defaults to the same value as container.ports[0].containerPort.",
+      InputType.Array,
+      "httpHeaders",
+      "Custom headers to set in the request. HTTP allows repeated headers.\nStructure is documented below.",
+      cloudrun_ServiceTemplateSpecContainerLivenessProbeHttpGetHttpHeader_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "path",
+      "Path to access on the HTTP server. If set, it should not be empty string.",
       [],
       false,
       false,

@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrunv2_getJobTemplateTemplateContainerEnvValueSourceSecretKeyRef,
-  Cloudrunv2_getJobTemplateTemplateContainerEnvValueSourceSecretKeyRef_GetTypes,
-} from "./Cloudrunv2_getJobTemplateTemplateContainerEnvValueSourceSecretKeyRef";
+  cloudrunv2_getJobTemplateTemplateContainerEnvValueSourceSecretKeyRef,
+  cloudrunv2_getJobTemplateTemplateContainerEnvValueSourceSecretKeyRef_GetTypes,
+} from "./cloudrunv2_getJobTemplateTemplateContainerEnvValueSourceSecretKeyRef";
 
-export interface Cloudrunv2_getJobTemplateTemplateContainerEnvValueSource {
+export interface cloudrunv2_getJobTemplateTemplateContainerEnvValueSource {
   // Selects a secret and a specific version from Cloud Secret Manager.
-  SecretKeyReves?: Array<Cloudrunv2_getJobTemplateTemplateContainerEnvValueSourceSecretKeyRef>;
+  secretKeyReves?: Array<cloudrunv2_getJobTemplateTemplateContainerEnvValueSourceSecretKeyRef>;
 }
 
-export function Cloudrunv2_getJobTemplateTemplateContainerEnvValueSource_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_getJobTemplateTemplateContainerEnvValueSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "SecretKeyReves",
+      "secretKeyReves",
       "Selects a secret and a specific version from Cloud Secret Manager.",
-      Cloudrunv2_getJobTemplateTemplateContainerEnvValueSourceSecretKeyRef_GetTypes(),
+      cloudrunv2_getJobTemplateTemplateContainerEnvValueSourceSecretKeyRef_GetTypes(),
       true,
       false,
     ),

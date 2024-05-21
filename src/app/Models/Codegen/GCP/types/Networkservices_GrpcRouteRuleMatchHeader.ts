@@ -6,34 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_GrpcRouteRuleMatchHeader {
+export interface networkservices_GrpcRouteRuleMatchHeader {
   // Required. The key of the header.
-  Key?: string;
+  key?: string;
 
   /*
 The type of match.
 Default value is `EXACT`.
 Possible values are: `TYPE_UNSPECIFIED`, `EXACT`, `REGULAR_EXPRESSION`.
 */
-  Type?: string;
+  type?: string;
 
   // Required. The value of the header.
-  Value?: string;
+  value?: string;
 }
 
-export function Networkservices_GrpcRouteRuleMatchHeader_GetTypes(): DynamicUIProps[] {
+export function networkservices_GrpcRouteRuleMatchHeader_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Key",
-      "Required. The key of the header.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Type",
+      "type",
       "The type of match.\nDefault value is `EXACT`.\nPossible values are: `TYPE_UNSPECIFIED`, `EXACT`, `REGULAR_EXPRESSION`.",
       [],
       false,
@@ -41,8 +33,16 @@ export function Networkservices_GrpcRouteRuleMatchHeader_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "Required. The value of the header.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "key",
+      "Required. The key of the header.",
       [],
       true,
       false,

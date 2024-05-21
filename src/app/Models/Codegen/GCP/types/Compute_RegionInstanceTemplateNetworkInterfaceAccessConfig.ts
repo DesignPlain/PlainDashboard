@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionInstanceTemplateNetworkInterfaceAccessConfig {
+export interface compute_RegionInstanceTemplateNetworkInterfaceAccessConfig {
   /*
 The IP address that will be 1:1 mapped to the instance's
 network ip. If not given, one will be generated.
 */
-  NatIp?: string;
+  natIp?: string;
 
   /*
 The service-level to be provided for IPv6 traffic when the
 subnet has an external subnet. Only PREMIUM and STANDARD tier is valid for IPv6.
 */
-  NetworkTier?: string;
+  networkTier?: string;
 
   // The DNS domain name for the public PTR record.The DNS domain name for the public PTR record.
-  PublicPtrDomainName?: string;
+  publicPtrDomainName?: string;
 }
 
-export function Compute_RegionInstanceTemplateNetworkInterfaceAccessConfig_GetTypes(): DynamicUIProps[] {
+export function compute_RegionInstanceTemplateNetworkInterfaceAccessConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "NatIp",
+      "natIp",
       "The IP address that will be 1:1 mapped to the instance's\nnetwork ip. If not given, one will be generated.",
       [],
       false,
@@ -35,7 +35,7 @@ export function Compute_RegionInstanceTemplateNetworkInterfaceAccessConfig_GetTy
     ),
     new DynamicUIProps(
       InputType.String,
-      "NetworkTier",
+      "networkTier",
       "The service-level to be provided for IPv6 traffic when the\nsubnet has an external subnet. Only PREMIUM and STANDARD tier is valid for IPv6.",
       [],
       false,
@@ -43,7 +43,7 @@ export function Compute_RegionInstanceTemplateNetworkInterfaceAccessConfig_GetTy
     ),
     new DynamicUIProps(
       InputType.String,
-      "PublicPtrDomainName",
+      "publicPtrDomainName",
       "The DNS domain name for the public PTR record.The DNS domain name for the public PTR record.",
       [],
       false,

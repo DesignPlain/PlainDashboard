@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterDnsConfig {
+export interface container_ClusterDnsConfig {
   // Which in-cluster DNS provider should be used. `PROVIDER_UNSPECIFIED` (default) or `PLATFORM_DEFAULT` or `CLOUD_DNS`.
-  ClusterDns?: string;
+  clusterDns?: string;
 
   // The suffix used for all cluster service records.
-  ClusterDnsDomain?: string;
+  clusterDnsDomain?: string;
 
   // The scope of access to cluster DNS records. `DNS_SCOPE_UNSPECIFIED` (default) or `CLUSTER_SCOPE` or `VPC_SCOPE`.
-  ClusterDnsScope?: string;
+  clusterDnsScope?: string;
 }
 
-export function Container_ClusterDnsConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterDnsConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ClusterDns",
+      "clusterDns",
       "Which in-cluster DNS provider should be used. `PROVIDER_UNSPECIFIED` (default) or `PLATFORM_DEFAULT` or `CLOUD_DNS`.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Container_ClusterDnsConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ClusterDnsDomain",
+      "clusterDnsDomain",
       "The suffix used for all cluster service records.",
       [],
       false,
@@ -37,7 +37,7 @@ export function Container_ClusterDnsConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ClusterDnsScope",
+      "clusterDnsScope",
       "The scope of access to cluster DNS records. `DNS_SCOPE_UNSPECIFIED` (default) or `CLUSTER_SCOPE` or `VPC_SCOPE`.",
       [],
       false,

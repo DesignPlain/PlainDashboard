@@ -6,48 +6,48 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterMonitoringConfigAdvancedDatapathObservabilityConfig,
-  Container_getClusterMonitoringConfigAdvancedDatapathObservabilityConfig_GetTypes,
-} from "./Container_getClusterMonitoringConfigAdvancedDatapathObservabilityConfig";
+  container_getClusterMonitoringConfigManagedPrometheus,
+  container_getClusterMonitoringConfigManagedPrometheus_GetTypes,
+} from "./container_getClusterMonitoringConfigManagedPrometheus";
 import {
-  Container_getClusterMonitoringConfigManagedPrometheus,
-  Container_getClusterMonitoringConfigManagedPrometheus_GetTypes,
-} from "./Container_getClusterMonitoringConfigManagedPrometheus";
+  container_getClusterMonitoringConfigAdvancedDatapathObservabilityConfig,
+  container_getClusterMonitoringConfigAdvancedDatapathObservabilityConfig_GetTypes,
+} from "./container_getClusterMonitoringConfigAdvancedDatapathObservabilityConfig";
 
-export interface Container_getClusterMonitoringConfig {
+export interface container_getClusterMonitoringConfig {
+  // Configuration for Google Cloud Managed Services for Prometheus.
+  managedPrometheuses?: Array<container_getClusterMonitoringConfigManagedPrometheus>;
+
   // Configuration of Advanced Datapath Observability features.
-  AdvancedDatapathObservabilityConfigs?: Array<Container_getClusterMonitoringConfigAdvancedDatapathObservabilityConfig>;
+  advancedDatapathObservabilityConfigs?: Array<container_getClusterMonitoringConfigAdvancedDatapathObservabilityConfig>;
 
   // GKE components exposing metrics. Valid values include SYSTEM_COMPONENTS, APISERVER, SCHEDULER, CONTROLLER_MANAGER, STORAGE, HPA, POD, DAEMONSET, DEPLOYMENT, STATEFULSET and WORKLOADS.
-  EnableComponents?: Array<string>;
-
-  // Configuration for Google Cloud Managed Services for Prometheus.
-  ManagedPrometheuses?: Array<Container_getClusterMonitoringConfigManagedPrometheus>;
+  enableComponents?: Array<string>;
 }
 
-export function Container_getClusterMonitoringConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterMonitoringConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "EnableComponents",
+      "managedPrometheuses",
+      "Configuration for Google Cloud Managed Services for Prometheus.",
+      container_getClusterMonitoringConfigManagedPrometheus_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "advancedDatapathObservabilityConfigs",
+      "Configuration of Advanced Datapath Observability features.",
+      container_getClusterMonitoringConfigAdvancedDatapathObservabilityConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "enableComponents",
       "GKE components exposing metrics. Valid values include SYSTEM_COMPONENTS, APISERVER, SCHEDULER, CONTROLLER_MANAGER, STORAGE, HPA, POD, DAEMONSET, DEPLOYMENT, STATEFULSET and WORKLOADS.",
       InputType_String_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "ManagedPrometheuses",
-      "Configuration for Google Cloud Managed Services for Prometheus.",
-      Container_getClusterMonitoringConfigManagedPrometheus_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "AdvancedDatapathObservabilityConfigs",
-      "Configuration of Advanced Datapath Observability features.",
-      Container_getClusterMonitoringConfigAdvancedDatapathObservabilityConfig_GetTypes(),
       true,
       false,
     ),

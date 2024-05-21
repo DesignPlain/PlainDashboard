@@ -6,38 +6,38 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_ClusterMonitoringConfigManagedPrometheus,
-  Container_ClusterMonitoringConfigManagedPrometheus_GetTypes,
-} from "./Container_ClusterMonitoringConfigManagedPrometheus";
+  container_ClusterMonitoringConfigAdvancedDatapathObservabilityConfig,
+  container_ClusterMonitoringConfigAdvancedDatapathObservabilityConfig_GetTypes,
+} from "./container_ClusterMonitoringConfigAdvancedDatapathObservabilityConfig";
 import {
-  Container_ClusterMonitoringConfigAdvancedDatapathObservabilityConfig,
-  Container_ClusterMonitoringConfigAdvancedDatapathObservabilityConfig_GetTypes,
-} from "./Container_ClusterMonitoringConfigAdvancedDatapathObservabilityConfig";
+  container_ClusterMonitoringConfigManagedPrometheus,
+  container_ClusterMonitoringConfigManagedPrometheus_GetTypes,
+} from "./container_ClusterMonitoringConfigManagedPrometheus";
 
-export interface Container_ClusterMonitoringConfig {
+export interface container_ClusterMonitoringConfig {
   // Configuration for Advanced Datapath Monitoring. Structure is documented below.
-  AdvancedDatapathObservabilityConfigs?: Array<Container_ClusterMonitoringConfigAdvancedDatapathObservabilityConfig>;
+  advancedDatapathObservabilityConfigs?: Array<container_ClusterMonitoringConfigAdvancedDatapathObservabilityConfig>;
 
   // The GKE components exposing metrics. Supported values include: `SYSTEM_COMPONENTS`, `APISERVER`, `SCHEDULER`, `CONTROLLER_MANAGER`, `STORAGE`, `HPA`, `POD`, `DAEMONSET`, `DEPLOYMENT` and `STATEFULSET`. In beta provider, `WORKLOADS` is supported on top of those 10 values. (`WORKLOADS` is deprecated and removed in GKE 1.24.)
-  EnableComponents?: Array<string>;
+  enableComponents?: Array<string>;
 
   // Configuration for Managed Service for Prometheus. Structure is documented below.
-  ManagedPrometheus?: Container_ClusterMonitoringConfigManagedPrometheus;
+  managedPrometheus?: container_ClusterMonitoringConfigManagedPrometheus;
 }
 
-export function Container_ClusterMonitoringConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterMonitoringConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AdvancedDatapathObservabilityConfigs",
+      "advancedDatapathObservabilityConfigs",
       "Configuration for Advanced Datapath Monitoring. Structure is documented below.",
-      Container_ClusterMonitoringConfigAdvancedDatapathObservabilityConfig_GetTypes(),
+      container_ClusterMonitoringConfigAdvancedDatapathObservabilityConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "EnableComponents",
+      "enableComponents",
       "The GKE components exposing metrics. Supported values include: `SYSTEM_COMPONENTS`, `APISERVER`, `SCHEDULER`, `CONTROLLER_MANAGER`, `STORAGE`, `HPA`, `POD`, `DAEMONSET`, `DEPLOYMENT` and `STATEFULSET`. In beta provider, `WORKLOADS` is supported on top of those 10 values. (`WORKLOADS` is deprecated and removed in GKE 1.24.)",
       InputType_String_GetTypes(),
       false,
@@ -45,9 +45,9 @@ export function Container_ClusterMonitoringConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ManagedPrometheus",
+      "managedPrometheus",
       "Configuration for Managed Service for Prometheus. Structure is documented below.",
-      Container_ClusterMonitoringConfigManagedPrometheus_GetTypes(),
+      container_ClusterMonitoringConfigManagedPrometheus_GetTypes(),
       false,
       false,
     ),

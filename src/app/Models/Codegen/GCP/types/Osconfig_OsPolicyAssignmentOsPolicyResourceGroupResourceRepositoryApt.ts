@@ -6,61 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt {
-  /*
-URI of the key file for this repository. The agent
-maintains a keyring at `/etc/apt/trusted.gpg.d/osconfig_agent_managed.gpg`.
-*/
-  GpgKey?: string;
-
-  // URI for this repository.
-  Uri?: string;
-
+export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt {
   /*
 Type of archive files in this repository.
 Possible values are: `ARCHIVE_TYPE_UNSPECIFIED`, `DEB`, `DEB_SRC`.
 */
-  ArchiveType?: string;
+  archiveType?: string;
 
   /*
 List of components for this repository. Must
 contain at least one item.
 */
-  Components?: Array<string>;
+  components?: Array<string>;
 
   // Distribution of this repository.
-  Distribution?: string;
+  distribution?: string;
+
+  /*
+URI of the key file for this repository. The agent
+maintains a keyring at `/etc/apt/trusted.gpg.d/osconfig_agent_managed.gpg`.
+*/
+  gpgKey?: string;
+
+  // URI for this repository.
+  uri?: string;
 }
 
-export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "GpgKey",
-      "URI of the key file for this repository. The agent\nmaintains a keyring at `/etc/apt/trusted.gpg.d/osconfig_agent_managed.gpg`.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Uri",
-      "URI for this repository.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ArchiveType",
-      "Type of archive files in this repository.\nPossible values are: `ARCHIVE_TYPE_UNSPECIFIED`, `DEB`, `DEB_SRC`.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "Components",
+      "components",
       "List of components for this repository. Must\ncontain at least one item.",
       InputType_String_GetTypes(),
       true,
@@ -68,8 +44,32 @@ export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceReposito
     ),
     new DynamicUIProps(
       InputType.String,
-      "Distribution",
+      "distribution",
       "Distribution of this repository.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "gpgKey",
+      "URI of the key file for this repository. The agent\nmaintains a keyring at `/etc/apt/trusted.gpg.d/osconfig_agent_managed.gpg`.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "uri",
+      "URI for this repository.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "archiveType",
+      "Type of archive files in this repository.\nPossible values are: `ARCHIVE_TYPE_UNSPECIFIED`, `DEB`, `DEB_SRC`.",
       [],
       true,
       false,

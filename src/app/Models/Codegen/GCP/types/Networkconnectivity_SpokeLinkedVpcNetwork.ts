@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkconnectivity_SpokeLinkedVpcNetwork {
+export interface networkconnectivity_SpokeLinkedVpcNetwork {
   // IP ranges encompassing the subnets to be excluded from peering.
-  ExcludeExportRanges?: Array<string>;
+  excludeExportRanges?: Array<string>;
 
   // The URI of the VPC network resource.
-  Uri?: string;
+  uri?: string;
 }
 
-export function Networkconnectivity_SpokeLinkedVpcNetwork_GetTypes(): DynamicUIProps[] {
+export function networkconnectivity_SpokeLinkedVpcNetwork_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ExcludeExportRanges",
+      "excludeExportRanges",
       "IP ranges encompassing the subnets to be excluded from peering.",
       InputType_String_GetTypes(),
       false,
@@ -26,7 +26,7 @@ export function Networkconnectivity_SpokeLinkedVpcNetwork_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "Uri",
+      "uri",
       "The URI of the VPC network resource.",
       [],
       true,

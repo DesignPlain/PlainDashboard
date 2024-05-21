@@ -6,12 +6,12 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_MetastoreServiceNetworkConfigConsumer {
+export interface dataproc_MetastoreServiceNetworkConfigConsumer {
   /*
 (Output)
 The URI of the endpoint used to access the metastore service.
 */
-  EndpointUri?: string;
+  endpointUri?: string;
 
   /*
 The subnetwork of the customer project from which an IP address is reserved and used as the Dataproc Metastore service's endpoint.
@@ -19,14 +19,14 @@ It is accessible to hosts in the subnet and to all hosts in a subnet in the same
 There must be at least one IP address available in the subnet's primary range. The subnet is specified in the following form:
 `projects/{projectNumber}/regions/{region_id}/subnetworks/{subnetwork_id}
 */
-  Subnetwork?: string;
+  subnetwork?: string;
 }
 
-export function Dataproc_MetastoreServiceNetworkConfigConsumer_GetTypes(): DynamicUIProps[] {
+export function dataproc_MetastoreServiceNetworkConfigConsumer_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "EndpointUri",
+      "endpointUri",
       "(Output)\nThe URI of the endpoint used to access the metastore service.",
       [],
       false,
@@ -34,7 +34,7 @@ export function Dataproc_MetastoreServiceNetworkConfigConsumer_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "Subnetwork",
+      "subnetwork",
       "The subnetwork of the customer project from which an IP address is reserved and used as the Dataproc Metastore service's endpoint.\nIt is accessible to hosts in the subnet and to all hosts in a subnet in the same region and same network.\nThere must be at least one IP address available in the subnet's primary range. The subnet is specified in the following form:\n`projects/{projectNumber}/regions/{region_id}/subnetworks/{subnetwork_id}",
       [],
       true,

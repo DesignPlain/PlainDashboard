@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceGroupManagerStatefulDisk {
+export interface compute_InstanceGroupManagerStatefulDisk {
   // , A value that prescribes what should happen to the stateful disk when the VM instance is deleted. The available options are `NEVER` and `ON_PERMANENT_INSTANCE_DELETION`. `NEVER` - detach the disk when the VM is deleted, but do not delete the disk. `ON_PERMANENT_INSTANCE_DELETION` will delete the stateful disk when the VM is permanently deleted from the instance group. The default is `NEVER`.
-  DeleteRule?: string;
+  deleteRule?: string;
 
   // , The device name of the disk to be attached.
-  DeviceName?: string;
+  deviceName?: string;
 }
 
-export function Compute_InstanceGroupManagerStatefulDisk_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceGroupManagerStatefulDisk_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DeleteRule",
+      "deleteRule",
       ", A value that prescribes what should happen to the stateful disk when the VM instance is deleted. The available options are `NEVER` and `ON_PERMANENT_INSTANCE_DELETION`. `NEVER` - detach the disk when the VM is deleted, but do not delete the disk. `ON_PERMANENT_INSTANCE_DELETION` will delete the stateful disk when the VM is permanently deleted from the instance group. The default is `NEVER`.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Compute_InstanceGroupManagerStatefulDisk_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "DeviceName",
+      "deviceName",
       ", The device name of the disk to be attached.",
       [],
       true,

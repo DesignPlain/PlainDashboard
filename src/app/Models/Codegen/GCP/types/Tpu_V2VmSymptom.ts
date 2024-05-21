@@ -6,37 +6,45 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Tpu_V2VmSymptom {
+export interface tpu_V2VmSymptom {
   /*
 (Output)
 Timestamp when the Symptom is created.
 */
-  CreateTime?: string;
+  createTime?: string;
 
   /*
 (Output)
 Detailed information of the current Symptom.
 */
-  Details?: string;
+  details?: string;
 
   /*
 (Output)
 Type of the Symptom.
 */
-  SymptomType?: string;
+  symptomType?: string;
 
   /*
 (Output)
 A string used to uniquely distinguish a worker within a TPU node.
 */
-  WorkerId?: string;
+  workerId?: string;
 }
 
-export function Tpu_V2VmSymptom_GetTypes(): DynamicUIProps[] {
+export function tpu_V2VmSymptom_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SymptomType",
+      "details",
+      "(Output)\nDetailed information of the current Symptom.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "symptomType",
       "(Output)\nType of the Symptom.",
       [],
       false,
@@ -44,7 +52,7 @@ export function Tpu_V2VmSymptom_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "WorkerId",
+      "workerId",
       "(Output)\nA string used to uniquely distinguish a worker within a TPU node.",
       [],
       false,
@@ -52,16 +60,8 @@ export function Tpu_V2VmSymptom_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "CreateTime",
+      "createTime",
       "(Output)\nTimestamp when the Symptom is created.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Details",
-      "(Output)\nDetailed information of the current Symptom.",
       [],
       false,
       false,

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterMaintenancePolicyMaintenanceExclusionExclusionOption {
+export interface container_getClusterMaintenancePolicyMaintenanceExclusionExclusionOption {
   // The scope of automatic upgrades to restrict in the exclusion window.
-  Scope?: string;
+  scope?: string;
 }
 
-export function Container_getClusterMaintenancePolicyMaintenanceExclusionExclusionOption_GetTypes(): DynamicUIProps[] {
+export function container_getClusterMaintenancePolicyMaintenanceExclusionExclusionOption_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Scope",
+      "scope",
       "The scope of automatic upgrades to restrict in the exclusion window.",
       [],
       true,

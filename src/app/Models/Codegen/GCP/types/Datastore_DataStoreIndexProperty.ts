@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastore_DataStoreIndexProperty {
+export interface datastore_DataStoreIndexProperty {
   /*
 The direction the index should optimize for sorting.
 Possible values are: `ASCENDING`, `DESCENDING`.
 */
-  Direction?: string;
+  direction?: string;
 
   // The property name to index.
-  Name?: string;
+  name?: string;
 }
 
-export function Datastore_DataStoreIndexProperty_GetTypes(): DynamicUIProps[] {
+export function datastore_DataStoreIndexProperty_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Direction",
+      "direction",
       "The direction the index should optimize for sorting.\nPossible values are: `ASCENDING`, `DESCENDING`.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Datastore_DataStoreIndexProperty_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The property name to index.",
       [],
       true,

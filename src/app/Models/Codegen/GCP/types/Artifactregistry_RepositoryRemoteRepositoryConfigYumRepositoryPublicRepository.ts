@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Artifactregistry_RepositoryRemoteRepositoryConfigYumRepositoryPublicRepository {
-  // Specific repository from the base, e.g. `"centos/8-stream/BaseOS/x86_64/os"`
-  RepositoryPath?: string;
-
+export interface artifactregistry_RepositoryRemoteRepositoryConfigYumRepositoryPublicRepository {
   /*
 A common public repository base for Yum.
 Possible values are: `CENTOS`, `CENTOS_DEBUG`, `CENTOS_VAULT`, `CENTOS_STREAM`, `ROCKY`, `EPEL`.
 */
-  RepositoryBase?: string;
+  repositoryBase?: string;
+
+  // Specific repository from the base, e.g. `"centos/8-stream/BaseOS/x86_64/os"`
+  repositoryPath?: string;
 }
 
-export function Artifactregistry_RepositoryRemoteRepositoryConfigYumRepositoryPublicRepository_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_RepositoryRemoteRepositoryConfigYumRepositoryPublicRepository_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "RepositoryPath",
-      'Specific repository from the base, e.g. `"centos/8-stream/BaseOS/x86_64/os"`',
+      "repositoryBase",
+      "A common public repository base for Yum.\nPossible values are: `CENTOS`, `CENTOS_DEBUG`, `CENTOS_VAULT`, `CENTOS_STREAM`, `ROCKY`, `EPEL`.",
       [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "RepositoryBase",
-      "A common public repository base for Yum.\nPossible values are: `CENTOS`, `CENTOS_DEBUG`, `CENTOS_VAULT`, `CENTOS_STREAM`, `ROCKY`, `EPEL`.",
+      "repositoryPath",
+      'Specific repository from the base, e.g. `"centos/8-stream/BaseOS/x86_64/os"`',
       [],
       true,
       true,

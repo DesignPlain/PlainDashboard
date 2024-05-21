@@ -6,61 +6,45 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_URLMapHeaderActionResponseHeadersToAdd,
-  Compute_URLMapHeaderActionResponseHeadersToAdd_GetTypes,
-} from "./Compute_URLMapHeaderActionResponseHeadersToAdd";
+  compute_URLMapHeaderActionRequestHeadersToAdd,
+  compute_URLMapHeaderActionRequestHeadersToAdd_GetTypes,
+} from "./compute_URLMapHeaderActionRequestHeadersToAdd";
 import {
-  Compute_URLMapHeaderActionRequestHeadersToAdd,
-  Compute_URLMapHeaderActionRequestHeadersToAdd_GetTypes,
-} from "./Compute_URLMapHeaderActionRequestHeadersToAdd";
+  compute_URLMapHeaderActionResponseHeadersToAdd,
+  compute_URLMapHeaderActionResponseHeadersToAdd_GetTypes,
+} from "./compute_URLMapHeaderActionResponseHeadersToAdd";
 
-export interface Compute_URLMapHeaderAction {
+export interface compute_URLMapHeaderAction {
+  /*
+Headers to add to a matching request prior to forwarding the request to the backendService.
+Structure is documented below.
+*/
+  requestHeadersToAdds?: Array<compute_URLMapHeaderActionRequestHeadersToAdd>;
+
   /*
 A list of header names for headers that need to be removed from the request prior to
 forwarding the request to the backendService.
 */
-  RequestHeadersToRemoves?: Array<string>;
+  requestHeadersToRemoves?: Array<string>;
 
   /*
 Headers to add the response prior to sending the response back to the client.
 Structure is documented below.
 */
-  ResponseHeadersToAdds?: Array<Compute_URLMapHeaderActionResponseHeadersToAdd>;
+  responseHeadersToAdds?: Array<compute_URLMapHeaderActionResponseHeadersToAdd>;
 
   /*
 A list of header names for headers that need to be removed from the response prior to sending the
 response back to the client.
 */
-  ResponseHeadersToRemoves?: Array<string>;
-
-  /*
-Headers to add to a matching request prior to forwarding the request to the backendService.
-Structure is documented below.
-*/
-  RequestHeadersToAdds?: Array<Compute_URLMapHeaderActionRequestHeadersToAdd>;
+  responseHeadersToRemoves?: Array<string>;
 }
 
-export function Compute_URLMapHeaderAction_GetTypes(): DynamicUIProps[] {
+export function compute_URLMapHeaderAction_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "RequestHeadersToRemoves",
-      "A list of header names for headers that need to be removed from the request prior to\nforwarding the request to the backendService.",
-      InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "ResponseHeadersToAdds",
-      "Headers to add the response prior to sending the response back to the client.\nStructure is documented below.",
-      Compute_URLMapHeaderActionResponseHeadersToAdd_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "ResponseHeadersToRemoves",
+      "responseHeadersToRemoves",
       "A list of header names for headers that need to be removed from the response prior to sending the\nresponse back to the client.",
       InputType_String_GetTypes(),
       false,
@@ -68,9 +52,25 @@ export function Compute_URLMapHeaderAction_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "RequestHeadersToAdds",
+      "requestHeadersToAdds",
       "Headers to add to a matching request prior to forwarding the request to the backendService.\nStructure is documented below.",
-      Compute_URLMapHeaderActionRequestHeadersToAdd_GetTypes(),
+      compute_URLMapHeaderActionRequestHeadersToAdd_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "requestHeadersToRemoves",
+      "A list of header names for headers that need to be removed from the request prior to\nforwarding the request to the backendService.",
+      InputType_String_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "responseHeadersToAdds",
+      "Headers to add the response prior to sending the response back to the client.\nStructure is documented below.",
+      compute_URLMapHeaderActionResponseHeadersToAdd_GetTypes(),
       false,
       false,
     ),

@@ -6,33 +6,41 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Clouddeploy_DeliveryPipelineSerialPipelineStageStrategy,
-  Clouddeploy_DeliveryPipelineSerialPipelineStageStrategy_GetTypes,
-} from "./Clouddeploy_DeliveryPipelineSerialPipelineStageStrategy";
+  clouddeploy_DeliveryPipelineSerialPipelineStageDeployParameter,
+  clouddeploy_DeliveryPipelineSerialPipelineStageDeployParameter_GetTypes,
+} from "./clouddeploy_DeliveryPipelineSerialPipelineStageDeployParameter";
 import {
-  Clouddeploy_DeliveryPipelineSerialPipelineStageDeployParameter,
-  Clouddeploy_DeliveryPipelineSerialPipelineStageDeployParameter_GetTypes,
-} from "./Clouddeploy_DeliveryPipelineSerialPipelineStageDeployParameter";
+  clouddeploy_DeliveryPipelineSerialPipelineStageStrategy,
+  clouddeploy_DeliveryPipelineSerialPipelineStageStrategy_GetTypes,
+} from "./clouddeploy_DeliveryPipelineSerialPipelineStageStrategy";
 
-export interface Clouddeploy_DeliveryPipelineSerialPipelineStage {
+export interface clouddeploy_DeliveryPipelineSerialPipelineStage {
+  // Optional. The deploy parameters to use for the target in this stage.
+  deployParameters?: Array<clouddeploy_DeliveryPipelineSerialPipelineStageDeployParameter>;
+
   // Skaffold profiles to use when rendering the manifest for this stage's `Target`.
-  Profiles?: Array<string>;
+  profiles?: Array<string>;
 
   // Optional. The strategy to use for a `Rollout` to this stage.
-  Strategy?: Clouddeploy_DeliveryPipelineSerialPipelineStageStrategy;
+  strategy?: clouddeploy_DeliveryPipelineSerialPipelineStageStrategy;
 
   // The target_id to which this stage points. This field refers exclusively to the last segment of a target name. For example, this field would just be `my-target` (rather than `projects/project/locations/location/targets/my-target`). The location of the `Target` is inferred to be the same as the location of the `DeliveryPipeline` that contains this `Stage`.
-  TargetId?: string;
-
-  // Optional. The deploy parameters to use for the target in this stage.
-  DeployParameters?: Array<Clouddeploy_DeliveryPipelineSerialPipelineStageDeployParameter>;
+  targetId?: string;
 }
 
-export function Clouddeploy_DeliveryPipelineSerialPipelineStage_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_DeliveryPipelineSerialPipelineStage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Profiles",
+      "deployParameters",
+      "Optional. The deploy parameters to use for the target in this stage.",
+      clouddeploy_DeliveryPipelineSerialPipelineStageDeployParameter_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "profiles",
       "Skaffold profiles to use when rendering the manifest for this stage's `Target`.",
       InputType_String_GetTypes(),
       false,
@@ -40,25 +48,17 @@ export function Clouddeploy_DeliveryPipelineSerialPipelineStage_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Strategy",
+      "strategy",
       "Optional. The strategy to use for a `Rollout` to this stage.",
-      Clouddeploy_DeliveryPipelineSerialPipelineStageStrategy_GetTypes(),
+      clouddeploy_DeliveryPipelineSerialPipelineStageStrategy_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "TargetId",
+      "targetId",
       "The target_id to which this stage points. This field refers exclusively to the last segment of a target name. For example, this field would just be `my-target` (rather than `projects/project/locations/location/targets/my-target`). The location of the `Target` is inferred to be the same as the location of the `DeliveryPipeline` that contains this `Stage`.",
       [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "DeployParameters",
-      "Optional. The deploy parameters to use for the target in this stage.",
-      Clouddeploy_DeliveryPipelineSerialPipelineStageDeployParameter_GetTypes(),
       false,
       false,
     ),

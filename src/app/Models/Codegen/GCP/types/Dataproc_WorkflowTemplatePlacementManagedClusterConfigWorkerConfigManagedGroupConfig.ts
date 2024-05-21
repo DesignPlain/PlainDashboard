@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_WorkflowTemplatePlacementManagedClusterConfigWorkerConfigManagedGroupConfig {
+export interface dataproc_WorkflowTemplatePlacementManagedClusterConfigWorkerConfigManagedGroupConfig {
   // Output only. The name of the Instance Group Manager for this group.
-  InstanceGroupManagerName?: string;
+  instanceGroupManagerName?: string;
 
   // Output only. The name of the Instance Template used for the Managed Instance Group.
-  InstanceTemplateName?: string;
+  instanceTemplateName?: string;
 }
 
-export function Dataproc_WorkflowTemplatePlacementManagedClusterConfigWorkerConfigManagedGroupConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplatePlacementManagedClusterConfigWorkerConfigManagedGroupConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "InstanceGroupManagerName",
+      "instanceGroupManagerName",
       "Output only. The name of the Instance Group Manager for this group.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Dataproc_WorkflowTemplatePlacementManagedClusterConfigWorkerConf
     ),
     new DynamicUIProps(
       InputType.String,
-      "InstanceTemplateName",
+      "instanceTemplateName",
       "Output only. The name of the Instance Template used for the Managed Instance Group.",
       [],
       false,

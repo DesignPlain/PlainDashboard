@@ -6,35 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataplex_TaskExecutionSpec {
+export interface dataplex_TaskExecutionSpec {
   // The arguments to pass to the task. The args can use placeholders of the format ${placeholder} as part of key/value string. These will be interpolated before passing the args to the driver. Currently supported placeholders: - ${taskId} - ${job_time} To pass positional args, set the key as TASK_ARGS. The value should be a comma-separated string of all the positional arguments. To use a delimiter other than comma, refer to https://cloud.google.com/sdk/gcloud/reference/topic/escaping. In case of other keys being present in the args, then TASK_ARGS will be passed as the last argument. An object containing a list of 'key': value pairs. Example: { 'name': 'wrench', 'mass': '1.3kg', 'count': '3' }.
-  Args?: Map<string, string>;
+  args?: Map<string, string>;
 
   /*
 The Cloud KMS key to use for encryption, of the form: projects/{project_number}/locations/{locationId}/keyRings/{key-ring-name}/cryptoKeys/{key-name}.
 
 - - -
 */
-  KmsKey?: string;
+  kmsKey?: string;
 
   // The maximum duration after which the job execution is expired. A duration in seconds with up to nine fractional digits, ending with 's'. Example: '3.5s'.
-  MaxJobExecutionLifetime?: string;
+  maxJobExecutionLifetime?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // Service account to use to execute a task. If not provided, the default Compute service account for the project is used.
-  ServiceAccount?: string;
+  serviceAccount?: string;
 }
 
-export function Dataplex_TaskExecutionSpec_GetTypes(): DynamicUIProps[] {
+export function dataplex_TaskExecutionSpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Map,
+      "args",
+      "The arguments to pass to the task. The args can use placeholders of the format ${placeholder} as part of key/value string. These will be interpolated before passing the args to the driver. Currently supported placeholders: - ${taskId} - ${job_time} To pass positional args, set the key as TASK_ARGS. The value should be a comma-separated string of all the positional arguments. To use a delimiter other than comma, refer to https://cloud.google.com/sdk/gcloud/reference/topic/escaping. In case of other keys being present in the args, then TASK_ARGS will be passed as the last argument. An object containing a list of 'key': value pairs. Example: { 'name': 'wrench', 'mass': '1.3kg', 'count': '3' }.",
+      InputType_Map_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "KmsKey",
+      "kmsKey",
       "The Cloud KMS key to use for encryption, of the form: projects/{project_number}/locations/{locationId}/keyRings/{key-ring-name}/cryptoKeys/{key-name}.\n\n- - -",
       [],
       false,
@@ -42,7 +50,7 @@ export function Dataplex_TaskExecutionSpec_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "MaxJobExecutionLifetime",
+      "maxJobExecutionLifetime",
       "The maximum duration after which the job execution is expired. A duration in seconds with up to nine fractional digits, ending with 's'. Example: '3.5s'.",
       [],
       false,
@@ -50,7 +58,7 @@ export function Dataplex_TaskExecutionSpec_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Project",
+      "project",
       "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
       [],
       false,
@@ -58,18 +66,10 @@ export function Dataplex_TaskExecutionSpec_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ServiceAccount",
+      "serviceAccount",
       "Service account to use to execute a task. If not provided, the default Compute service account for the project is used.",
       [],
       true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Map,
-      "Args",
-      "The arguments to pass to the task. The args can use placeholders of the format ${placeholder} as part of key/value string. These will be interpolated before passing the args to the driver. Currently supported placeholders: - ${taskId} - ${job_time} To pass positional args, set the key as TASK_ARGS. The value should be a comma-separated string of all the positional arguments. To use a delimiter other than comma, refer to https://cloud.google.com/sdk/gcloud/reference/topic/escaping. In case of other keys being present in the args, then TASK_ARGS will be passed as the last argument. An object containing a list of 'key': value pairs. Example: { 'name': 'wrench', 'mass': '1.3kg', 'count': '3' }.",
-      InputType_Map_GetTypes(),
-      false,
       false,
     ),
   ];

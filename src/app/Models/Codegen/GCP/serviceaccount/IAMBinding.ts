@@ -7,26 +7,26 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Serviceaccount_IAMBindingCondition,
-  Serviceaccount_IAMBindingCondition_GetTypes,
-} from "../types/Serviceaccount_IAMBindingCondition";
+  serviceaccount_IAMBindingCondition,
+  serviceaccount_IAMBindingCondition_GetTypes,
+} from "../types/serviceaccount_IAMBindingCondition";
 
 export interface IAMBindingArgs {
   /*
 An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
 */
-  Condition?: Serviceaccount_IAMBindingCondition;
+  condition?: serviceaccount_IAMBindingCondition;
 
   //
-  Members?: Array<string>;
+  members?: Array<string>;
 
   /*
 The role that should be applied. Only one
 `gcp.serviceaccount.IAMBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
-  Role?: string;
+  role?: string;
 
   /*
 The fully-qualified name of the service account to apply policy to.
@@ -40,47 +40,63 @@ Each entry can have one of the following values:
 - --group:{emailid}--: An email address that represents a Google group. For example, admins@example.com.
 - --domain:{domain}--: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
 */
-  ServiceAccountId?: string;
+  serviceAccountId?: string;
 }
 export class IAMBinding extends Resource {
+  /*
+The role that should be applied. Only one
+`gcp.serviceaccount.IAMBinding` can be used per role. Note that custom roles must be of the format
+`[projects|organizations]/{parent-name}/roles/{role-name}`.
+*/
+  public role?: string;
+
+  /*
+The fully-qualified name of the service account to apply policy to.
+
+- `member/members` - (Required) Identities that will be granted the privilege in `role`.
+Each entry can have one of the following values:
+- --allUsers--: A special identifier that represents anyone who is on the internet; with or without a Google account.
+- --allAuthenticatedUsers--: A special identifier that represents anyone who is authenticated with a Google account or a service account.
+- --user:{emailid}--: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.
+- --serviceAccount:{emailid}--: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.
+- --group:{emailid}--: An email address that represents a Google group. For example, admins@example.com.
+- --domain:{domain}--: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
+*/
+  public serviceAccountId?: string;
+
   /*
 An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
 */
-  public Condition?: Serviceaccount_IAMBindingCondition;
+  public condition?: serviceaccount_IAMBindingCondition;
 
   // (Computed) The etag of the service account IAM policy.
-  public Etag?: string;
+  public etag?: string;
 
   //
-  public Members?: Array<string>;
-
-  /*
-The role that should be applied. Only one
-`gcp.serviceaccount.IAMBinding` can be used per role. Note that custom roles must be of the format
-`[projects|organizations]/{parent-name}/roles/{role-name}`.
-*/
-  public Role?: string;
-
-  /*
-The fully-qualified name of the service account to apply policy to.
-
-- `member/members` - (Required) Identities that will be granted the privilege in `role`.
-Each entry can have one of the following values:
-- --allUsers--: A special identifier that represents anyone who is on the internet; with or without a Google account.
-- --allAuthenticatedUsers--: A special identifier that represents anyone who is authenticated with a Google account or a service account.
-- --user:{emailid}--: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.
-- --serviceAccount:{emailid}--: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.
-- --group:{emailid}--: An email address that represents a Google group. For example, admins@example.com.
-- --domain:{domain}--: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
-*/
-  public ServiceAccountId?: string;
+  public members?: Array<string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
+        InputType.Object,
+        "condition",
+        "An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.\nStructure is documented below.",
+        serviceaccount_IAMBindingCondition_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "members",
+        "",
+        InputType_String_GetTypes(),
+        true,
+        false,
+      ),
+      new DynamicUIProps(
         InputType.String,
-        "Role",
+        "role",
         "The role that should be applied. Only one\n`gcp.serviceaccount.IAMBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
         [],
         true,
@@ -88,27 +104,11 @@ Each entry can have one of the following values:
       ),
       new DynamicUIProps(
         InputType.String,
-        "ServiceAccountId",
+        "serviceAccountId",
         "The fully-qualified name of the service account to apply policy to.\n\n* `member/members` - (Required) Identities that will be granted the privilege in `role`.\nEach entry can have one of the following values:\n* **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.\n* **allAuthenticatedUsers**: A special identifier that represents anyone who is authenticated with a Google account or a service account.\n* **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.\n* **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.\n* **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.\n* **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.",
         [],
         true,
         true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "Condition",
-        "An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.\nStructure is documented below.",
-        Serviceaccount_IAMBindingCondition_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Array,
-        "Members",
-        "",
-        InputType_String_GetTypes(),
-        true,
-        false,
       ),
     ];
   }

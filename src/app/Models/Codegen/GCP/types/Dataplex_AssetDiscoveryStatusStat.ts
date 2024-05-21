@@ -6,41 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataplex_AssetDiscoveryStatusStat {
+export interface dataplex_AssetDiscoveryStatusStat {
+  // The count of table entities within the referenced resource.
+  tables?: number;
+
   // The count of data items within the referenced resource.
-  DataItems?: number;
+  dataItems?: number;
 
   // The number of stored data bytes within the referenced resource.
-  DataSize?: number;
+  dataSize?: number;
 
   // The count of fileset entities within the referenced resource.
-  Filesets?: number;
-
-  // The count of table entities within the referenced resource.
-  Tables?: number;
+  filesets?: number;
 }
 
-export function Dataplex_AssetDiscoveryStatusStat_GetTypes(): DynamicUIProps[] {
+export function dataplex_AssetDiscoveryStatusStat_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Tables",
-      "The count of table entities within the referenced resource.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "DataItems",
-      "The count of data items within the referenced resource.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "DataSize",
+      "dataSize",
       "The number of stored data bytes within the referenced resource.",
       [],
       false,
@@ -48,8 +32,24 @@ export function Dataplex_AssetDiscoveryStatusStat_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Filesets",
+      "filesets",
       "The count of fileset entities within the referenced resource.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "tables",
+      "The count of table entities within the referenced resource.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "dataItems",
+      "The count of data items within the referenced resource.",
       [],
       false,
       false,

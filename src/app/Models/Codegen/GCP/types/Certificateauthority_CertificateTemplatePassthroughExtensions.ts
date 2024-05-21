@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificateauthority_CertificateTemplatePassthroughExtensionsAdditionalExtension,
-  Certificateauthority_CertificateTemplatePassthroughExtensionsAdditionalExtension_GetTypes,
-} from "./Certificateauthority_CertificateTemplatePassthroughExtensionsAdditionalExtension";
+  certificateauthority_CertificateTemplatePassthroughExtensionsAdditionalExtension,
+  certificateauthority_CertificateTemplatePassthroughExtensionsAdditionalExtension_GetTypes,
+} from "./certificateauthority_CertificateTemplatePassthroughExtensionsAdditionalExtension";
 
-export interface Certificateauthority_CertificateTemplatePassthroughExtensions {
+export interface certificateauthority_CertificateTemplatePassthroughExtensions {
   // Optional. A set of ObjectIds identifying custom X.509 extensions. Will be combined with known_extensions to determine the full set of X.509 extensions.
-  AdditionalExtensions?: Array<Certificateauthority_CertificateTemplatePassthroughExtensionsAdditionalExtension>;
+  additionalExtensions?: Array<certificateauthority_CertificateTemplatePassthroughExtensionsAdditionalExtension>;
 
   // Optional. A set of named X.509 extensions. Will be combined with additional_extensions to determine the full set of X.509 extensions.
-  KnownExtensions?: Array<string>;
+  knownExtensions?: Array<string>;
 }
 
-export function Certificateauthority_CertificateTemplatePassthroughExtensions_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CertificateTemplatePassthroughExtensions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "KnownExtensions",
-      "Optional. A set of named X.509 extensions. Will be combined with additional_extensions to determine the full set of X.509 extensions.",
-      InputType_String_GetTypes(),
+      "additionalExtensions",
+      "Optional. A set of ObjectIds identifying custom X.509 extensions. Will be combined with known_extensions to determine the full set of X.509 extensions.",
+      certificateauthority_CertificateTemplatePassthroughExtensionsAdditionalExtension_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AdditionalExtensions",
-      "Optional. A set of ObjectIds identifying custom X.509 extensions. Will be combined with known_extensions to determine the full set of X.509 extensions.",
-      Certificateauthority_CertificateTemplatePassthroughExtensionsAdditionalExtension_GetTypes(),
+      "knownExtensions",
+      "Optional. A set of named X.509 extensions. Will be combined with additional_extensions to determine the full set of X.509 extensions.",
+      InputType_String_GetTypes(),
       false,
       false,
     ),

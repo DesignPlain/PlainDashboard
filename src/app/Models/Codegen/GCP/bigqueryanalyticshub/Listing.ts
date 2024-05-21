@@ -7,216 +7,168 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Bigqueryanalyticshub_ListingRestrictedExportConfig,
-  Bigqueryanalyticshub_ListingRestrictedExportConfig_GetTypes,
-} from "../types/Bigqueryanalyticshub_ListingRestrictedExportConfig";
+  bigqueryanalyticshub_ListingBigqueryDataset,
+  bigqueryanalyticshub_ListingBigqueryDataset_GetTypes,
+} from "../types/bigqueryanalyticshub_ListingBigqueryDataset";
 import {
-  Bigqueryanalyticshub_ListingBigqueryDataset,
-  Bigqueryanalyticshub_ListingBigqueryDataset_GetTypes,
-} from "../types/Bigqueryanalyticshub_ListingBigqueryDataset";
+  bigqueryanalyticshub_ListingPublisher,
+  bigqueryanalyticshub_ListingPublisher_GetTypes,
+} from "../types/bigqueryanalyticshub_ListingPublisher";
 import {
-  Bigqueryanalyticshub_ListingDataProvider,
-  Bigqueryanalyticshub_ListingDataProvider_GetTypes,
-} from "../types/Bigqueryanalyticshub_ListingDataProvider";
+  bigqueryanalyticshub_ListingDataProvider,
+  bigqueryanalyticshub_ListingDataProvider_GetTypes,
+} from "../types/bigqueryanalyticshub_ListingDataProvider";
 import {
-  Bigqueryanalyticshub_ListingPublisher,
-  Bigqueryanalyticshub_ListingPublisher_GetTypes,
-} from "../types/Bigqueryanalyticshub_ListingPublisher";
+  bigqueryanalyticshub_ListingRestrictedExportConfig,
+  bigqueryanalyticshub_ListingRestrictedExportConfig_GetTypes,
+} from "../types/bigqueryanalyticshub_ListingRestrictedExportConfig";
 
 export interface ListingArgs {
+  // The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.
+  dataExchangeId?: string;
+
   // Short description of the listing. The description must not contain Unicode non-characters and C0 and C1 control codes except tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF).
-  Description?: string;
+  description?: string;
 
   // Documentation describing the listing.
-  Documentation?: string;
-
-  /*
-If set, restricted export configuration will be propagated and enforced on the linked dataset.
-Structure is documented below.
-*/
-  RestrictedExportConfig?: Bigqueryanalyticshub_ListingRestrictedExportConfig;
-
-  // Categories of the listing. Up to two categories are allowed.
-  Categories?: Array<string>;
-
-  // The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.
-  DataExchangeId?: string;
-
-  // Base64 encoded image representing the listing.
-  Icon?: string;
-
-  // The name of the location this data exchange listing.
-  Location?: string;
-
-  /*
-Shared dataset i.e. BigQuery dataset source.
-Structure is documented below.
-*/
-  BigqueryDataset?: Bigqueryanalyticshub_ListingBigqueryDataset;
-
-  /*
-Details of the data provider who owns the source data.
-Structure is documented below.
-*/
-  DataProvider?: Bigqueryanalyticshub_ListingDataProvider;
-
-  // The ID of the listing. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.
-  ListingId?: string;
+  documentation?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
-
-  // Human-readable display name of the listing. The display name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), ampersands (&) and can't start or end with spaces.
-  DisplayName?: string;
-
-  // Email or URL of the primary point of contact of the listing.
-  PrimaryContact?: string;
+  project?: string;
 
   /*
 Details of the publisher who owns the listing and who can share the source data.
 Structure is documented below.
 */
-  Publisher?: Bigqueryanalyticshub_ListingPublisher;
+  publisher?: bigqueryanalyticshub_ListingPublisher;
+
+  // Categories of the listing. Up to two categories are allowed.
+  categories?: Array<string>;
 
   // Email or URL of the request access of the listing. Subscribers can use this reference to request access.
-  RequestAccess?: string;
+  requestAccess?: string;
+
+  /*
+Details of the data provider who owns the source data.
+Structure is documented below.
+*/
+  dataProvider?: bigqueryanalyticshub_ListingDataProvider;
+
+  // The ID of the listing. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.
+  listingId?: string;
+
+  /*
+If set, restricted export configuration will be propagated and enforced on the linked dataset.
+Structure is documented below.
+*/
+  restrictedExportConfig?: bigqueryanalyticshub_ListingRestrictedExportConfig;
+
+  /*
+Shared dataset i.e. BigQuery dataset source.
+Structure is documented below.
+*/
+  bigqueryDataset?: bigqueryanalyticshub_ListingBigqueryDataset;
+
+  // Human-readable display name of the listing. The display name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), ampersands (&) and can't start or end with spaces.
+  displayName?: string;
+
+  // Base64 encoded image representing the listing.
+  icon?: string;
+
+  // The name of the location this data exchange listing.
+  location?: string;
+
+  // Email or URL of the primary point of contact of the listing.
+  primaryContact?: string;
 }
 export class Listing extends Resource {
-  /*
-Details of the data provider who owns the source data.
-Structure is documented below.
-*/
-  public DataProvider?: Bigqueryanalyticshub_ListingDataProvider;
+  // Documentation describing the listing.
+  public documentation?: string;
 
   // Base64 encoded image representing the listing.
-  public Icon?: string;
-
-  // Email or URL of the primary point of contact of the listing.
-  public PrimaryContact?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
+  public icon?: string;
 
   /*
 If set, restricted export configuration will be propagated and enforced on the linked dataset.
 Structure is documented below.
 */
-  public RestrictedExportConfig?: Bigqueryanalyticshub_ListingRestrictedExportConfig;
-
-  // Documentation describing the listing.
-  public Documentation?: string;
-
-  // The name of the location this data exchange listing.
-  public Location?: string;
-
-  /*
-Details of the publisher who owns the listing and who can share the source data.
-Structure is documented below.
-*/
-  public Publisher?: Bigqueryanalyticshub_ListingPublisher;
-
-  // Short description of the listing. The description must not contain Unicode non-characters and C0 and C1 control codes except tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF).
-  public Description?: string;
-
-  // Human-readable display name of the listing. The display name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), ampersands (&) and can't start or end with spaces.
-  public DisplayName?: string;
-
-  // The ID of the listing. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.
-  public ListingId?: string;
+  public restrictedExportConfig?: bigqueryanalyticshub_ListingRestrictedExportConfig;
 
   /*
 Shared dataset i.e. BigQuery dataset source.
 Structure is documented below.
 */
-  public BigqueryDataset?: Bigqueryanalyticshub_ListingBigqueryDataset;
-
-  // Categories of the listing. Up to two categories are allowed.
-  public Categories?: Array<string>;
+  public bigqueryDataset?: bigqueryanalyticshub_ListingBigqueryDataset;
 
   // The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.
-  public DataExchangeId?: string;
+  public dataExchangeId?: string;
+
+  // Human-readable display name of the listing. The display name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), ampersands (&) and can't start or end with spaces.
+  public displayName?: string;
+
+  // The ID of the listing. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.
+  public listingId?: string;
+
+  /*
+Details of the publisher who owns the listing and who can share the source data.
+Structure is documented below.
+*/
+  public publisher?: bigqueryanalyticshub_ListingPublisher;
+
+  /*
+Details of the data provider who owns the source data.
+Structure is documented below.
+*/
+  public dataProvider?: bigqueryanalyticshub_ListingDataProvider;
+
+  // Short description of the listing. The description must not contain Unicode non-characters and C0 and C1 control codes except tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF).
+  public description?: string;
+
+  // The name of the location this data exchange listing.
+  public location?: string;
 
   // Name of the data provider.
-  public Name?: string;
+  public name?: string;
+
+  // Categories of the listing. Up to two categories are allowed.
+  public categories?: Array<string>;
+
+  // Email or URL of the primary point of contact of the listing.
+  public primaryContact?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   // Email or URL of the request access of the listing. Subscribers can use this reference to request access.
-  public RequestAccess?: string;
+  public requestAccess?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "PrimaryContact",
-        "Email or URL of the primary point of contact of the listing.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.Object,
-        "Publisher",
-        "Details of the publisher who owns the listing and who can share the source data.\nStructure is documented below.",
-        Bigqueryanalyticshub_ListingPublisher_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Array,
-        "Categories",
-        "Categories of the listing. Up to two categories are allowed.",
-        InputType_String_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Icon",
-        "Base64 encoded image representing the listing.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Location",
-        "The name of the location this data exchange listing.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ListingId",
-        "The ID of the listing. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Documentation",
-        "Documentation describing the listing.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "DataProvider",
+        "dataProvider",
         "Details of the data provider who owns the source data.\nStructure is documented below.",
-        Bigqueryanalyticshub_ListingDataProvider_GetTypes(),
+        bigqueryanalyticshub_ListingDataProvider_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "restrictedExportConfig",
+        "If set, restricted export configuration will be propagated and enforced on the linked dataset.\nStructure is documented below.",
+        bigqueryanalyticshub_ListingRestrictedExportConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "Human-readable display name of the listing. The display name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), ampersands (&) and can't start or end with spaces.",
         [],
         true,
@@ -224,7 +176,63 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "dataExchangeId",
+        "The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "documentation",
+        "Documentation describing the listing.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "publisher",
+        "Details of the publisher who owns the listing and who can share the source data.\nStructure is documented below.",
+        bigqueryanalyticshub_ListingPublisher_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "icon",
+        "Base64 encoded image representing the listing.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "categories",
+        "Categories of the listing. Up to two categories are allowed.",
+        InputType_String_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "requestAccess",
+        "Email or URL of the request access of the listing. Subscribers can use this reference to request access.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
         "Short description of the listing. The description must not contain Unicode non-characters and C0 and C1 control codes except tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF).",
         [],
         false,
@@ -232,43 +240,35 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "RequestAccess",
-        "Email or URL of the request access of the listing. Subscribers can use this reference to request access.",
+        "location",
+        "The name of the location this data exchange listing.",
         [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "RestrictedExportConfig",
-        "If set, restricted export configuration will be propagated and enforced on the linked dataset.\nStructure is documented below.",
-        Bigqueryanalyticshub_ListingRestrictedExportConfig_GetTypes(),
-        false,
-        false,
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "DataExchangeId",
-        "The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.",
+        "listingId",
+        "The ID of the listing. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.",
         [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "BigqueryDataset",
+        "bigqueryDataset",
         "Shared dataset i.e. BigQuery dataset source.\nStructure is documented below.",
-        Bigqueryanalyticshub_ListingBigqueryDataset_GetTypes(),
+        bigqueryanalyticshub_ListingBigqueryDataset_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        "primaryContact",
+        "Email or URL of the primary point of contact of the listing.",
         [],
         false,
-        true,
+        false,
       ),
     ];
   }

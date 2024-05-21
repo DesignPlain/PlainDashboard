@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_JobExtractSourceTable {
+export interface bigquery_JobExtractSourceTable {
   // The ID of the dataset containing this table.
-  DatasetId?: string;
+  datasetId?: string;
 
   // The ID of the project containing this table.
-  ProjectId?: string;
+  projectId?: string;
 
   /*
 The table. Can be specified `{{table_id}}` if `project_id` and `dataset_id` are also set,
 or of the form `projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}}` if not.
 */
-  TableId?: string;
+  tableId?: string;
 }
 
-export function Bigquery_JobExtractSourceTable_GetTypes(): DynamicUIProps[] {
+export function bigquery_JobExtractSourceTable_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DatasetId",
+      "tableId",
+      "The table. Can be specified `{{table_id}}` if `project_id` and `dataset_id` are also set,\nor of the form `projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}}` if not.",
+      [],
+      true,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "datasetId",
       "The ID of the dataset containing this table.",
       [],
       false,
@@ -32,18 +40,10 @@ export function Bigquery_JobExtractSourceTable_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProjectId",
+      "projectId",
       "The ID of the project containing this table.",
       [],
       false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "TableId",
-      "The table. Can be specified `{{table_id}}` if `project_id` and `dataset_id` are also set,\nor of the form `projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}}` if not.",
-      [],
-      true,
       true,
     ),
   ];

@@ -6,11 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Containeranalysis_NoteAttestationAuthorityHint,
-  Containeranalysis_NoteAttestationAuthorityHint_GetTypes,
-} from "./Containeranalysis_NoteAttestationAuthorityHint";
+  containeranalysis_NoteAttestationAuthorityHint,
+  containeranalysis_NoteAttestationAuthorityHint_GetTypes,
+} from "./containeranalysis_NoteAttestationAuthorityHint";
 
-export interface Containeranalysis_NoteAttestationAuthority {
+export interface containeranalysis_NoteAttestationAuthority {
   /*
 This submessage provides human-readable hints about the purpose of
 the AttestationAuthority. Because the name of a Note acts as its
@@ -22,16 +22,16 @@ in security sensitive contexts, such as when looking up
 Attestations to verify.
 Structure is documented below.
 */
-  Hint?: Containeranalysis_NoteAttestationAuthorityHint;
+  hint?: containeranalysis_NoteAttestationAuthorityHint;
 }
 
-export function Containeranalysis_NoteAttestationAuthority_GetTypes(): DynamicUIProps[] {
+export function containeranalysis_NoteAttestationAuthority_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Hint",
+      "hint",
       'This submessage provides human-readable hints about the purpose of\nthe AttestationAuthority. Because the name of a Note acts as its\nresource reference, it is important to disambiguate the canonical\nname of the Note (which might be a UUID for security purposes)\nfrom "readable" names more suitable for debug output. Note that\nthese hints should NOT be used to look up AttestationAuthorities\nin security sensitive contexts, such as when looking up\nAttestations to verify.\nStructure is documented below.',
-      Containeranalysis_NoteAttestationAuthorityHint_GetTypes(),
+      containeranalysis_NoteAttestationAuthorityHint_GetTypes(),
       true,
       false,
     ),

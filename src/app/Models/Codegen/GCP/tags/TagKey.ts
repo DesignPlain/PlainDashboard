@@ -9,23 +9,23 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface TagKeyArgs {
   // User-assigned description of the TagKey. Must not exceed 256 characters.
-  Description?: string;
+  description?: string;
 
   // Input only. The resource name of the new TagKey's parent. Must be of the form organizations/{org_id} or projects/{project_id_or_number}.
-  Parent?: string;
+  parent?: string;
 
   /*
 Optional. A purpose cannot be changed once set.
 A purpose denotes that this Tag is intended for use in policies of a specific policy engine, and will involve that policy engine in management operations involving this Tag.
 Possible values are: `GCE_FIREWALL`.
 */
-  Purpose?: string;
+  purpose?: string;
 
   /*
 Optional. Purpose data cannot be changed once set.
 Purpose data corresponds to the policy system that the tag is intended for. For example, the GCE_FIREWALL purpose expects data in the following format: `network = "<project-name>/<vpc-name>"`.
 */
-  PurposeData?: Map<string, string>;
+  purposeData?: Map<string, string>;
 
   /*
 Input only. The user friendly name for a TagKey. The short name should be unique for TagKeys within the same tag namespace.
@@ -34,84 +34,60 @@ The short name must be 1-63 characters, beginning and ending with an alphanumeri
 
 - - -
 */
-  ShortName?: string;
+  shortName?: string;
 }
 export class TagKey extends Resource {
   // User-assigned description of the TagKey. Must not exceed 256 characters.
-  public Description?: string;
+  public description?: string;
 
   // Output only. Namespaced name of the TagKey.
-  public NamespacedName?: string;
+  public namespacedName?: string;
 
   /*
-Optional. Purpose data cannot be changed once set.
-Purpose data corresponds to the policy system that the tag is intended for. For example, the GCE_FIREWALL purpose expects data in the following format: `network = "<project-name>/<vpc-name>"`.
-*/
-  public PurposeData?: Map<string, string>;
+Input only. The user friendly name for a TagKey. The short name should be unique for TagKeys within the same tag namespace.
+The short name must be 1-63 characters, beginning and ending with an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and alphanumerics between.
 
-  /*
-Output only. Update time.
-A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
+
+- - -
 */
-  public UpdateTime?: string;
+  public shortName?: string;
 
   /*
 Output only. Creation time.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  public CreateTime?: string;
+  public createTime?: string;
 
   // The generated numeric id for the TagKey.
-  public Name?: string;
+  public name?: string;
 
   // Input only. The resource name of the new TagKey's parent. Must be of the form organizations/{org_id} or projects/{project_id_or_number}.
-  public Parent?: string;
+  public parent?: string;
 
   /*
 Optional. A purpose cannot be changed once set.
 A purpose denotes that this Tag is intended for use in policies of a specific policy engine, and will involve that policy engine in management operations involving this Tag.
 Possible values are: `GCE_FIREWALL`.
 */
-  public Purpose?: string;
+  public purpose?: string;
 
   /*
-Input only. The user friendly name for a TagKey. The short name should be unique for TagKeys within the same tag namespace.
-The short name must be 1-63 characters, beginning and ending with an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and alphanumerics between.
-
-
-- - -
+Optional. Purpose data cannot be changed once set.
+Purpose data corresponds to the policy system that the tag is intended for. For example, the GCE_FIREWALL purpose expects data in the following format: `network = "<project-name>/<vpc-name>"`.
 */
-  public ShortName?: string;
+  public purposeData?: Map<string, string>;
+
+  /*
+Output only. Update time.
+A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
+*/
+  public updateTime?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "User-assigned description of the TagKey. Must not exceed 256 characters.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Parent",
-        "Input only. The resource name of the new TagKey's parent. Must be of the form organizations/{org_id} or projects/{project_id_or_number}.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Purpose",
-        "Optional. A purpose cannot be changed once set.\nA purpose denotes that this Tag is intended for use in policies of a specific policy engine, and will involve that policy engine in management operations involving this Tag.\nPossible values are: `GCE_FIREWALL`.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.Map,
-        "PurposeData",
+        "purposeData",
         'Optional. Purpose data cannot be changed once set.\nPurpose data corresponds to the policy system that the tag is intended for. For example, the GCE_FIREWALL purpose expects data in the following format: `network = "<project-name>/<vpc-name>"`.',
         InputType_Map_GetTypes(),
         false,
@@ -119,10 +95,34 @@ The short name must be 1-63 characters, beginning and ending with an alphanumeri
       ),
       new DynamicUIProps(
         InputType.String,
-        "ShortName",
+        "shortName",
         "Input only. The user friendly name for a TagKey. The short name should be unique for TagKeys within the same tag namespace.\nThe short name must be 1-63 characters, beginning and ending with an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n\n- - -",
         [],
         true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "User-assigned description of the TagKey. Must not exceed 256 characters.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "parent",
+        "Input only. The resource name of the new TagKey's parent. Must be of the form organizations/{org_id} or projects/{project_id_or_number}.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "purpose",
+        "Optional. A purpose cannot be changed once set.\nA purpose denotes that this Tag is intended for use in policies of a specific policy engine, and will involve that policy engine in management operations involving this Tag.\nPossible values are: `GCE_FIREWALL`.",
+        [],
+        false,
         true,
       ),
     ];

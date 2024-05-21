@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_VMwareClusterNetworkConfigHostConfig {
+export interface gkeonprem_VMwareClusterNetworkConfigHostConfig {
   /*
 DNS search domains.
 
 <a name="nested_control_plane_v2_config"></a>The `control_plane_v2_config` block supports:
 */
-  DnsSearchDomains?: Array<string>;
+  dnsSearchDomains?: Array<string>;
 
   // DNS servers.
-  DnsServers?: Array<string>;
+  dnsServers?: Array<string>;
 
   // NTP servers.
-  NtpServers?: Array<string>;
+  ntpServers?: Array<string>;
 }
 
-export function Gkeonprem_VMwareClusterNetworkConfigHostConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterNetworkConfigHostConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "DnsSearchDomains",
+      "dnsSearchDomains",
       'DNS search domains.\n\n<a name="nested_control_plane_v2_config"></a>The `control_plane_v2_config` block supports:',
       InputType_String_GetTypes(),
       false,
@@ -33,7 +33,7 @@ export function Gkeonprem_VMwareClusterNetworkConfigHostConfig_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Array,
-      "DnsServers",
+      "dnsServers",
       "DNS servers.",
       InputType_String_GetTypes(),
       false,
@@ -41,7 +41,7 @@ export function Gkeonprem_VMwareClusterNetworkConfigHostConfig_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Array,
-      "NtpServers",
+      "ntpServers",
       "NTP servers.",
       InputType_String_GetTypes(),
       false,

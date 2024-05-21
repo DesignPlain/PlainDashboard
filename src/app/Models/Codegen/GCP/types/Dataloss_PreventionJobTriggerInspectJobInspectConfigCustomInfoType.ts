@@ -6,71 +6,63 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSensitivityScore,
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSensitivityScore_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSensitivityScore";
+  dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoType,
+  dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoType_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoType";
 import {
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredType,
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredType_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredType";
+  dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeRegex,
+  dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeRegex_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeRegex";
 import {
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSurrogateType,
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSurrogateType_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSurrogateType";
+  dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSensitivityScore,
+  dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSensitivityScore_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSensitivityScore";
 import {
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionary,
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionary_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionary";
+  dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredType,
+  dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredType_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredType";
 import {
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoType,
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoType_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoType";
+  dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSurrogateType,
+  dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSurrogateType_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSurrogateType";
 import {
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeRegex,
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeRegex_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeRegex";
+  dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionary,
+  dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionary_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionary";
 
-export interface Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoType {
-  /*
-Likelihood to return for this CustomInfoType. This base value can be altered by a detection rule if the finding meets the criteria
-specified by the rule.
-Default value is `VERY_LIKELY`.
-Possible values are: `VERY_UNLIKELY`, `UNLIKELY`, `POSSIBLE`, `LIKELY`, `VERY_LIKELY`.
-*/
-  Likelihood?: string;
-
+export interface dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoType {
   /*
 Regular expression which defines the rule.
 Structure is documented below.
 */
-  Regex?: Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeRegex;
+  regex?: dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeRegex;
 
   /*
 Optional custom sensitivity for this InfoType. This only applies to data profiling.
 Structure is documented below.
 */
-  SensitivityScore?: Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSensitivityScore;
+  sensitivityScore?: dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSensitivityScore;
 
   /*
 A reference to a StoredInfoType to use with scanning.
 Structure is documented below.
 */
-  StoredType?: Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredType;
+  storedType?: dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredType;
 
   // Message for detecting output from deidentification transformations that support reversing.
-  SurrogateType?: Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSurrogateType;
+  surrogateType?: dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSurrogateType;
 
   /*
 Dictionary which defines the rule.
 Structure is documented below.
 */
-  Dictionary?: Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionary;
+  dictionary?: dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionary;
 
   /*
 If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding to be returned. It still can be used for rules matching.
 Possible values are: `EXCLUSION_TYPE_EXCLUDE`.
 */
-  ExclusionType?: string;
+  exclusionType?: string;
 
   /*
 CustomInfoType can either be a new infoType, or an extension of built-in infoType, when the name matches one of existing
@@ -79,46 +71,54 @@ one detected by the system. If built-in info type is not specified in `info_type
 treated as a custom info type.
 Structure is documented below.
 */
-  InfoType?: Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoType;
+  infoType?: dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoType;
+
+  /*
+Likelihood to return for this CustomInfoType. This base value can be altered by a detection rule if the finding meets the criteria
+specified by the rule.
+Default value is `VERY_LIKELY`.
+Possible values are: `VERY_UNLIKELY`, `UNLIKELY`, `POSSIBLE`, `LIKELY`, `VERY_LIKELY`.
+*/
+  likelihood?: string;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoType_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoType_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "SensitivityScore",
+      "sensitivityScore",
       "Optional custom sensitivity for this InfoType. This only applies to data profiling.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSensitivityScore_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSensitivityScore_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "StoredType",
+      "storedType",
       "A reference to a StoredInfoType to use with scanning.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredType_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredType_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "SurrogateType",
+      "surrogateType",
       "Message for detecting output from deidentification transformations that support reversing.",
-      Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSurrogateType_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSurrogateType_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Dictionary",
+      "dictionary",
       "Dictionary which defines the rule.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionary_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionary_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ExclusionType",
+      "exclusionType",
       "If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding to be returned. It still can be used for rules matching.\nPossible values are: `EXCLUSION_TYPE_EXCLUDE`.",
       [],
       false,
@@ -126,15 +126,15 @@ export function Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "InfoType",
+      "infoType",
       "CustomInfoType can either be a new infoType, or an extension of built-in infoType, when the name matches one of existing\ninfoTypes and that infoType is specified in `info_types` field. Specifying the latter adds findings to the\none detected by the system. If built-in info type is not specified in `info_types` list then the name is\ntreated as a custom info type.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoType_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoType_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Likelihood",
+      "likelihood",
       "Likelihood to return for this CustomInfoType. This base value can be altered by a detection rule if the finding meets the criteria\nspecified by the rule.\nDefault value is `VERY_LIKELY`.\nPossible values are: `VERY_UNLIKELY`, `UNLIKELY`, `POSSIBLE`, `LIKELY`, `VERY_LIKELY`.",
       [],
       false,
@@ -142,9 +142,9 @@ export function Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Regex",
+      "regex",
       "Regular expression which defines the rule.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeRegex_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeRegex_GetTypes(),
       false,
       false,
     ),

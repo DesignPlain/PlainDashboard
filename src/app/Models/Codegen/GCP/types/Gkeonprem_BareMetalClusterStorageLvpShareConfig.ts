@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_BareMetalClusterStorageLvpShareConfigLvpConfig,
-  Gkeonprem_BareMetalClusterStorageLvpShareConfigLvpConfig_GetTypes,
-} from "./Gkeonprem_BareMetalClusterStorageLvpShareConfigLvpConfig";
+  gkeonprem_BareMetalClusterStorageLvpShareConfigLvpConfig,
+  gkeonprem_BareMetalClusterStorageLvpShareConfigLvpConfig_GetTypes,
+} from "./gkeonprem_BareMetalClusterStorageLvpShareConfigLvpConfig";
 
-export interface Gkeonprem_BareMetalClusterStorageLvpShareConfig {
+export interface gkeonprem_BareMetalClusterStorageLvpShareConfig {
   /*
 Defines the machine path and storage class for the LVP Share.
 Structure is documented below.
 */
-  LvpConfig?: Gkeonprem_BareMetalClusterStorageLvpShareConfigLvpConfig;
+  lvpConfig?: gkeonprem_BareMetalClusterStorageLvpShareConfigLvpConfig;
 
   // The number of subdirectories to create under path.
-  SharedPathPvCount?: number;
+  sharedPathPvCount?: number;
 }
 
-export function Gkeonprem_BareMetalClusterStorageLvpShareConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterStorageLvpShareConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "LvpConfig",
+      "lvpConfig",
       "Defines the machine path and storage class for the LVP Share.\nStructure is documented below.",
-      Gkeonprem_BareMetalClusterStorageLvpShareConfigLvpConfig_GetTypes(),
+      gkeonprem_BareMetalClusterStorageLvpShareConfigLvpConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "SharedPathPvCount",
+      "sharedPathPvCount",
       "The number of subdirectories to create under path.",
       [],
       false,

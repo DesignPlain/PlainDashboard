@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Integrationconnectors_ConnectionAuthConfigUserPasswordPassword,
-  Integrationconnectors_ConnectionAuthConfigUserPasswordPassword_GetTypes,
-} from "./Integrationconnectors_ConnectionAuthConfigUserPasswordPassword";
+  integrationconnectors_ConnectionAuthConfigUserPasswordPassword,
+  integrationconnectors_ConnectionAuthConfigUserPasswordPassword_GetTypes,
+} from "./integrationconnectors_ConnectionAuthConfigUserPasswordPassword";
 
-export interface Integrationconnectors_ConnectionAuthConfigUserPassword {
-  // Username for Authentication.
-  Username?: string;
-
+export interface integrationconnectors_ConnectionAuthConfigUserPassword {
   /*
 Password for Authentication.
 Structure is documented below.
 */
-  Password?: Integrationconnectors_ConnectionAuthConfigUserPasswordPassword;
+  password?: integrationconnectors_ConnectionAuthConfigUserPasswordPassword;
+
+  // Username for Authentication.
+  username?: string;
 }
 
-export function Integrationconnectors_ConnectionAuthConfigUserPassword_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionAuthConfigUserPassword_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "Username",
-      "Username for Authentication.",
-      [],
-      true,
+      InputType.Object,
+      "password",
+      "Password for Authentication.\nStructure is documented below.",
+      integrationconnectors_ConnectionAuthConfigUserPasswordPassword_GetTypes(),
+      false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "Password",
-      "Password for Authentication.\nStructure is documented below.",
-      Integrationconnectors_ConnectionAuthConfigUserPasswordPassword_GetTypes(),
-      false,
+      InputType.String,
+      "username",
+      "Username for Authentication.",
+      [],
+      true,
       false,
     ),
   ];

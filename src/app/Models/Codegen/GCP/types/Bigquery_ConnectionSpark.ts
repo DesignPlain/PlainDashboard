@@ -6,57 +6,57 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Bigquery_ConnectionSparkSparkHistoryServerConfig,
-  Bigquery_ConnectionSparkSparkHistoryServerConfig_GetTypes,
-} from "./Bigquery_ConnectionSparkSparkHistoryServerConfig";
+  bigquery_ConnectionSparkMetastoreServiceConfig,
+  bigquery_ConnectionSparkMetastoreServiceConfig_GetTypes,
+} from "./bigquery_ConnectionSparkMetastoreServiceConfig";
 import {
-  Bigquery_ConnectionSparkMetastoreServiceConfig,
-  Bigquery_ConnectionSparkMetastoreServiceConfig_GetTypes,
-} from "./Bigquery_ConnectionSparkMetastoreServiceConfig";
+  bigquery_ConnectionSparkSparkHistoryServerConfig,
+  bigquery_ConnectionSparkSparkHistoryServerConfig_GetTypes,
+} from "./bigquery_ConnectionSparkSparkHistoryServerConfig";
 
-export interface Bigquery_ConnectionSpark {
-  /*
-Spark History Server configuration for the connection.
-Structure is documented below.
-*/
-  SparkHistoryServerConfig?: Bigquery_ConnectionSparkSparkHistoryServerConfig;
-
+export interface bigquery_ConnectionSpark {
   /*
 Dataproc Metastore Service configuration for the connection.
 Structure is documented below.
 */
-  MetastoreServiceConfig?: Bigquery_ConnectionSparkMetastoreServiceConfig;
+  metastoreServiceConfig?: bigquery_ConnectionSparkMetastoreServiceConfig;
 
   /*
 (Output)
 The account ID of the service created for the purpose of this connection.
 */
-  ServiceAccountId?: string;
+  serviceAccountId?: string;
+
+  /*
+Spark History Server configuration for the connection.
+Structure is documented below.
+*/
+  sparkHistoryServerConfig?: bigquery_ConnectionSparkSparkHistoryServerConfig;
 }
 
-export function Bigquery_ConnectionSpark_GetTypes(): DynamicUIProps[] {
+export function bigquery_ConnectionSpark_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "SparkHistoryServerConfig",
-      "Spark History Server configuration for the connection.\nStructure is documented below.",
-      Bigquery_ConnectionSparkSparkHistoryServerConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "MetastoreServiceConfig",
+      "metastoreServiceConfig",
       "Dataproc Metastore Service configuration for the connection.\nStructure is documented below.",
-      Bigquery_ConnectionSparkMetastoreServiceConfig_GetTypes(),
+      bigquery_ConnectionSparkMetastoreServiceConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ServiceAccountId",
+      "serviceAccountId",
       "(Output)\nThe account ID of the service created for the purpose of this connection.",
       [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "sparkHistoryServerConfig",
+      "Spark History Server configuration for the connection.\nStructure is documented below.",
+      bigquery_ConnectionSparkSparkHistoryServerConfig_GetTypes(),
       false,
       false,
     ),

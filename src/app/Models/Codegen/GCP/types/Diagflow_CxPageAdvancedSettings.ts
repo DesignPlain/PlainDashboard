@@ -6,11 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxPageAdvancedSettingsDtmfSettings,
-  Diagflow_CxPageAdvancedSettingsDtmfSettings_GetTypes,
-} from "./Diagflow_CxPageAdvancedSettingsDtmfSettings";
+  diagflow_CxPageAdvancedSettingsDtmfSettings,
+  diagflow_CxPageAdvancedSettingsDtmfSettings_GetTypes,
+} from "./diagflow_CxPageAdvancedSettingsDtmfSettings";
 
-export interface Diagflow_CxPageAdvancedSettings {
+export interface diagflow_CxPageAdvancedSettings {
   /*
 Define behaviors for DTMF (dual tone multi frequency). DTMF settings does not override each other. DTMF settings set at different levels define DTMF detections running in parallel. Exposed at the following levels:
 - Agent level
@@ -19,16 +19,16 @@ Define behaviors for DTMF (dual tone multi frequency). DTMF settings does not ov
 - Parameter level
 Structure is documented below.
 */
-  DtmfSettings?: Diagflow_CxPageAdvancedSettingsDtmfSettings;
+  dtmfSettings?: diagflow_CxPageAdvancedSettingsDtmfSettings;
 }
 
-export function Diagflow_CxPageAdvancedSettings_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxPageAdvancedSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "DtmfSettings",
+      "dtmfSettings",
       "Define behaviors for DTMF (dual tone multi frequency). DTMF settings does not override each other. DTMF settings set at different levels define DTMF detections running in parallel. Exposed at the following levels:\n* Agent level\n* Flow level\n* Page level\n* Parameter level\nStructure is documented below.",
-      Diagflow_CxPageAdvancedSettingsDtmfSettings_GetTypes(),
+      diagflow_CxPageAdvancedSettingsDtmfSettings_GetTypes(),
       false,
       false,
     ),

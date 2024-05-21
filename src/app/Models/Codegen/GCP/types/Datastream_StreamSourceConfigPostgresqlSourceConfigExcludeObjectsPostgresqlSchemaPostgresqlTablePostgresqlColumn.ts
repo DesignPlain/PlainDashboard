@@ -6,89 +6,49 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumn {
+export interface datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumn {
   // The ordinal position of the column in the table.
-  OrdinalPosition?: number;
+  ordinalPosition?: number;
 
   /*
 (Output)
 Column precision.
 */
-  Precision?: number;
+  precision?: number;
 
   // Whether or not the column represents a primary key.
-  PrimaryKey?: boolean;
+  primaryKey?: boolean;
 
   /*
 (Output)
 Column scale.
 */
-  Scale?: number;
+  scale?: number;
 
   // Column name.
-  Column?: string;
+  column?: string;
 
   /*
 The PostgreSQL data type. Full data types list can be found here:
 https://www.postgresql.org/docs/current/datatype.html
 */
-  DataType?: string;
+  dataType?: string;
 
   /*
 (Output)
 Column length.
 */
-  Length?: number;
+  length?: number;
 
   // Whether or not the column can accept a null value.
-  Nullable?: boolean;
+  nullable?: boolean;
 }
 
-export function Datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumn_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumn_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Precision",
-      "(Output)\nColumn precision.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "PrimaryKey",
-      "Whether or not the column represents a primary key.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Scale",
-      "(Output)\nColumn scale.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Column",
-      "Column name.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "DataType",
-      "The PostgreSQL data type. Full data types list can be found here:\nhttps://www.postgresql.org/docs/current/datatype.html",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Length",
+      "length",
       "(Output)\nColumn length.",
       [],
       false,
@@ -96,7 +56,7 @@ export function Datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObject
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Nullable",
+      "nullable",
       "Whether or not the column can accept a null value.",
       [],
       false,
@@ -104,8 +64,48 @@ export function Datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObject
     ),
     new DynamicUIProps(
       InputType.Number,
-      "OrdinalPosition",
+      "ordinalPosition",
       "The ordinal position of the column in the table.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "precision",
+      "(Output)\nColumn precision.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "primaryKey",
+      "Whether or not the column represents a primary key.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "scale",
+      "(Output)\nColumn scale.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "column",
+      "Column name.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "dataType",
+      "The PostgreSQL data type. Full data types list can be found here:\nhttps://www.postgresql.org/docs/current/datatype.html",
       [],
       false,
       false,

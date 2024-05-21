@@ -8,11 +8,17 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface OauthIdpConfigArgs {
+  // For OIDC Idps, the issuer identifier.
+  issuer?: string;
+
+  // The name of the OauthIdpConfig. Must start with `oidc.`.
+  name?: string;
+
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 The client id of an OAuth client.
@@ -20,98 +26,52 @@ The client id of an OAuth client.
 
 - - -
 */
-  ClientId?: string;
+  clientId?: string;
 
   // The client secret of the OAuth client, to enable OIDC code flow.
-  ClientSecret?: string;
+  clientSecret?: string;
 
   // Human friendly display name.
-  DisplayName?: string;
+  displayName?: string;
 
   // If this config allows users to sign in with the provider.
-  Enabled?: boolean;
-
-  // For OIDC Idps, the issuer identifier.
-  Issuer?: string;
-
-  // The name of the OauthIdpConfig. Must start with `oidc.`.
-  Name?: string;
+  enabled?: boolean;
 }
 export class OauthIdpConfig extends Resource {
-  // If this config allows users to sign in with the provider.
-  public Enabled?: boolean;
-
-  // For OIDC Idps, the issuer identifier.
-  public Issuer?: string;
-
-  // The name of the OauthIdpConfig. Must start with `oidc.`.
-  public Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
   /*
 The client id of an OAuth client.
 
 
 - - -
 */
-  public ClientId?: string;
+  public clientId?: string;
 
   // The client secret of the OAuth client, to enable OIDC code flow.
-  public ClientSecret?: string;
+  public clientSecret?: string;
 
   // Human friendly display name.
-  public DisplayName?: string;
+  public displayName?: string;
+
+  // If this config allows users to sign in with the provider.
+  public enabled?: boolean;
+
+  // For OIDC Idps, the issuer identifier.
+  public issuer?: string;
+
+  // The name of the OauthIdpConfig. Must start with `oidc.`.
+  public name?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Bool,
-        "Enabled",
-        "If this config allows users to sign in with the provider.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Issuer",
-        "For OIDC Idps, the issuer identifier.",
-        [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "The name of the OauthIdpConfig. Must start with `oidc.`.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ClientId",
-        "The client id of an OAuth client.\n\n\n- - -",
-        [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ClientSecret",
+        "clientSecret",
         "The client secret of the OAuth client, to enable OIDC code flow.",
         [],
         false,
@@ -119,10 +79,50 @@ The client id of an OAuth client.
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "Human friendly display name.",
         [],
         false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "enabled",
+        "If this config allows users to sign in with the provider.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "issuer",
+        "For OIDC Idps, the issuer identifier.",
+        [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "The name of the OauthIdpConfig. Must start with `oidc.`.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "clientId",
+        "The client id of an OAuth client.\n\n\n- - -",
+        [],
+        true,
         false,
       ),
     ];

@@ -9,7 +9,7 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface SourceArgs {
   // The description of the source (max of 1024 characters).
-  Description?: string;
+  description?: string;
 
   /*
 The source’s display name. A source’s display name must be unique
@@ -18,7 +18,7 @@ can't share the same display name. The display name must start and end
 with a letter or digit, may contain letters, digits, spaces, hyphens,
 and underscores, and can be no longer than 32 characters.
 */
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 The organization whose Cloud Security Command Center the Source
@@ -27,11 +27,11 @@ lives in.
 
 - - -
 */
-  Organization?: string;
+  organization?: string;
 }
 export class Source extends Resource {
   // The description of the source (max of 1024 characters).
-  public Description?: string;
+  public description?: string;
 
   /*
 The source’s display name. A source’s display name must be unique
@@ -40,13 +40,13 @@ can't share the same display name. The display name must start and end
 with a letter or digit, may contain letters, digits, spaces, hyphens,
 and underscores, and can be no longer than 32 characters.
 */
-  public DisplayName?: string;
+  public displayName?: string;
 
   /*
 The resource name of this source, in the format
 `organizations/{{organization}}/sources/{{source}}`.
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The organization whose Cloud Security Command Center the Source
@@ -55,21 +55,13 @@ lives in.
 
 - - -
 */
-  public Organization?: string;
+  public organization?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Organization",
-        "The organization whose Cloud Security Command Center the Source\nlives in.\n\n\n- - -",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
+        "description",
         "The description of the source (max of 1024 characters).",
         [],
         false,
@@ -77,11 +69,19 @@ lives in.
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "The source’s display name. A source’s display name must be unique\namongst its siblings, for example, two sources with the same parent\ncan't share the same display name. The display name must start and end\nwith a letter or digit, may contain letters, digits, spaces, hyphens,\nand underscores, and can be no longer than 32 characters.",
         [],
         true,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "organization",
+        "The organization whose Cloud Security Command Center the Source\nlives in.\n\n\n- - -",
+        [],
+        true,
+        true,
       ),
     ];
   }

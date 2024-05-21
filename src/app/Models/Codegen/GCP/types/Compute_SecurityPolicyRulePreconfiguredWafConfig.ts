@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_SecurityPolicyRulePreconfiguredWafConfigExclusion,
-  Compute_SecurityPolicyRulePreconfiguredWafConfigExclusion_GetTypes,
-} from "./Compute_SecurityPolicyRulePreconfiguredWafConfigExclusion";
+  compute_SecurityPolicyRulePreconfiguredWafConfigExclusion,
+  compute_SecurityPolicyRulePreconfiguredWafConfigExclusion_GetTypes,
+} from "./compute_SecurityPolicyRulePreconfiguredWafConfigExclusion";
 
-export interface Compute_SecurityPolicyRulePreconfiguredWafConfig {
+export interface compute_SecurityPolicyRulePreconfiguredWafConfig {
   // An exclusion to apply during preconfigured WAF evaluation. Structure is documented below.
-  Exclusions?: Array<Compute_SecurityPolicyRulePreconfiguredWafConfigExclusion>;
+  exclusions?: Array<compute_SecurityPolicyRulePreconfiguredWafConfigExclusion>;
 }
 
-export function Compute_SecurityPolicyRulePreconfiguredWafConfig_GetTypes(): DynamicUIProps[] {
+export function compute_SecurityPolicyRulePreconfiguredWafConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Exclusions",
+      "exclusions",
       "An exclusion to apply during preconfigured WAF evaluation. Structure is documented below.",
-      Compute_SecurityPolicyRulePreconfiguredWafConfigExclusion_GetTypes(),
+      compute_SecurityPolicyRulePreconfiguredWafConfigExclusion_GetTypes(),
       false,
       false,
     ),

@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Iam_AccessBoundaryPolicyRuleAccessBoundaryRule,
-  Iam_AccessBoundaryPolicyRuleAccessBoundaryRule_GetTypes,
-} from "./Iam_AccessBoundaryPolicyRuleAccessBoundaryRule";
+  iam_AccessBoundaryPolicyRuleAccessBoundaryRule,
+  iam_AccessBoundaryPolicyRuleAccessBoundaryRule_GetTypes,
+} from "./iam_AccessBoundaryPolicyRuleAccessBoundaryRule";
 
-export interface Iam_AccessBoundaryPolicyRule {
+export interface iam_AccessBoundaryPolicyRule {
   /*
 An access boundary rule in an IAM policy.
 Structure is documented below.
 */
-  AccessBoundaryRule?: Iam_AccessBoundaryPolicyRuleAccessBoundaryRule;
+  accessBoundaryRule?: iam_AccessBoundaryPolicyRuleAccessBoundaryRule;
 
   // The description of the rule.
-  Description?: string;
+  description?: string;
 }
 
-export function Iam_AccessBoundaryPolicyRule_GetTypes(): DynamicUIProps[] {
+export function iam_AccessBoundaryPolicyRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "AccessBoundaryRule",
+      "accessBoundaryRule",
       "An access boundary rule in an IAM policy.\nStructure is documented below.",
-      Iam_AccessBoundaryPolicyRuleAccessBoundaryRule_GetTypes(),
+      iam_AccessBoundaryPolicyRuleAccessBoundaryRule_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "The description of the rule.",
       [],
       false,

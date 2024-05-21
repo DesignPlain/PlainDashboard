@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy,
-  Container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy_GetTypes,
-} from "./Container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy";
+  container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy,
+  container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy_GetTypes,
+} from "./container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy";
 
-export interface Container_getClusterNodePoolUpgradeSettingBlueGreenSetting {
+export interface container_getClusterNodePoolUpgradeSettingBlueGreenSetting {
   // Time needed after draining entire blue pool. After this period, blue pool will be cleaned up.
-  NodePoolSoakDuration?: string;
+  nodePoolSoakDuration?: string;
 
   // Standard rollout policy is the default policy for blue-green.
-  StandardRolloutPolicies?: Array<Container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy>;
+  standardRolloutPolicies?: Array<container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy>;
 }
 
-export function Container_getClusterNodePoolUpgradeSettingBlueGreenSetting_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolUpgradeSettingBlueGreenSetting_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "NodePoolSoakDuration",
+      "nodePoolSoakDuration",
       "Time needed after draining entire blue pool. After this period, blue pool will be cleaned up.",
       [],
       true,
@@ -30,9 +30,9 @@ export function Container_getClusterNodePoolUpgradeSettingBlueGreenSetting_GetTy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "StandardRolloutPolicies",
+      "standardRolloutPolicies",
       "Standard rollout policy is the default policy for blue-green.",
-      Container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy_GetTypes(),
+      container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy_GetTypes(),
       true,
       false,
     ),

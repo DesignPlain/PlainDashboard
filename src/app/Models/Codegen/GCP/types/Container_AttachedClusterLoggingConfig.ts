@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_AttachedClusterLoggingConfigComponentConfig,
-  Container_AttachedClusterLoggingConfigComponentConfig_GetTypes,
-} from "./Container_AttachedClusterLoggingConfigComponentConfig";
+  container_AttachedClusterLoggingConfigComponentConfig,
+  container_AttachedClusterLoggingConfigComponentConfig_GetTypes,
+} from "./container_AttachedClusterLoggingConfigComponentConfig";
 
-export interface Container_AttachedClusterLoggingConfig {
+export interface container_AttachedClusterLoggingConfig {
   /*
 The configuration of the logging components
 Structure is documented below.
 */
-  ComponentConfig?: Container_AttachedClusterLoggingConfigComponentConfig;
+  componentConfig?: container_AttachedClusterLoggingConfigComponentConfig;
 }
 
-export function Container_AttachedClusterLoggingConfig_GetTypes(): DynamicUIProps[] {
+export function container_AttachedClusterLoggingConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ComponentConfig",
+      "componentConfig",
       "The configuration of the logging components\nStructure is documented below.",
-      Container_AttachedClusterLoggingConfigComponentConfig_GetTypes(),
+      container_AttachedClusterLoggingConfigComponentConfig_GetTypes(),
       false,
       false,
     ),

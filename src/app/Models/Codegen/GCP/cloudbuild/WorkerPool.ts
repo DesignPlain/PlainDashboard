@@ -7,20 +7,17 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudbuild_WorkerPoolNetworkConfig,
-  Cloudbuild_WorkerPoolNetworkConfig_GetTypes,
-} from "../types/Cloudbuild_WorkerPoolNetworkConfig";
+  cloudbuild_WorkerPoolNetworkConfig,
+  cloudbuild_WorkerPoolNetworkConfig_GetTypes,
+} from "../types/cloudbuild_WorkerPoolNetworkConfig";
 import {
-  Cloudbuild_WorkerPoolWorkerConfig,
-  Cloudbuild_WorkerPoolWorkerConfig_GetTypes,
-} from "../types/Cloudbuild_WorkerPoolWorkerConfig";
+  cloudbuild_WorkerPoolWorkerConfig,
+  cloudbuild_WorkerPoolWorkerConfig_GetTypes,
+} from "../types/cloudbuild_WorkerPoolWorkerConfig";
 
 export interface WorkerPoolArgs {
-  // A user-specified, human-readable name for the `WorkerPool`. If provided, this value must be 1-63 characters.
-  DisplayName?: string;
-
   // The location for the resource
-  Location?: string;
+  location?: string;
 
   /*
 User-defined name of the `WorkerPool`.
@@ -28,81 +25,84 @@ User-defined name of the `WorkerPool`.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   // Network configuration for the `WorkerPool`. Structure is documented below.
-  NetworkConfig?: Cloudbuild_WorkerPoolNetworkConfig;
+  networkConfig?: cloudbuild_WorkerPoolNetworkConfig;
 
   // The project for the resource
-  Project?: string;
+  project?: string;
 
   // Configuration to be used for a creating workers in the `WorkerPool`. Structure is documented below.
-  WorkerConfig?: Cloudbuild_WorkerPoolWorkerConfig;
+  workerConfig?: cloudbuild_WorkerPoolWorkerConfig;
 
   /*
 User specified annotations. See https://google.aip.dev/128#annotations for more details such as format and size
 limitations. --Note--: This field is non-authoritative, and will only manage the annotations present in your
 configuration. Please refer to the field `effective_annotations` for all of the annotations present on the resource.
 */
-  Annotations?: Map<string, string>;
+  annotations?: Map<string, string>;
+
+  // A user-specified, human-readable name for the `WorkerPool`. If provided, this value must be 1-63 characters.
+  displayName?: string;
 }
 export class WorkerPool extends Resource {
   // The location for the resource
-  public Location?: string;
-
-  /*
-User-defined name of the `WorkerPool`.
-
-
-- - -
-*/
-  public Name?: string;
+  public location?: string;
 
   // Network configuration for the `WorkerPool`. Structure is documented below.
-  public NetworkConfig?: Cloudbuild_WorkerPoolNetworkConfig;
+  public networkConfig?: cloudbuild_WorkerPoolNetworkConfig;
 
-  // The project for the resource
-  public Project?: string;
+  // Output only. A unique identifier for the `WorkerPool`.
+  public uid?: string;
 
-  // Output only. WorkerPool state. Possible values: STATE_UNSPECIFIED, PENDING, APPROVED, REJECTED, CANCELLED
-  public State?: string;
-
-  // Output only. Time at which the request to update the `WorkerPool` was received.
-  public UpdateTime?: string;
+  /*
+User specified annotations. See https://google.aip.dev/128#annotations for more details such as format and size
+limitations. --Note--: This field is non-authoritative, and will only manage the annotations present in your
+configuration. Please refer to the field `effective_annotations` for all of the annotations present on the resource.
+*/
+  public annotations?: Map<string, string>;
 
   // Output only. Time at which the request to create the `WorkerPool` was received.
-  public CreateTime?: string;
+  public createTime?: string;
+
+  // Output only. Time at which the request to delete the `WorkerPool` was received.
+  public deleteTime?: string;
 
   // A user-specified, human-readable name for the `WorkerPool`. If provided, this value must be 1-63 characters.
-  public DisplayName?: string;
+  public displayName?: string;
 
   /*
 All of annotations (key/value pairs) present on the resource in GCP, including the annotations configured through
 Terraform, other clients and services.
 */
-  public EffectiveAnnotations?: Map<string, InputType.String>;
+  public effectiveAnnotations?: Map<string, string>;
 
-  // Output only. A unique identifier for the `WorkerPool`.
-  public Uid?: string;
+  // Output only. Time at which the request to update the `WorkerPool` was received.
+  public updateTime?: string;
 
   // Configuration to be used for a creating workers in the `WorkerPool`. Structure is documented below.
-  public WorkerConfig?: Cloudbuild_WorkerPoolWorkerConfig;
+  public workerConfig?: cloudbuild_WorkerPoolWorkerConfig;
 
   /*
-User specified annotations. See https://google.aip.dev/128#annotations for more details such as format and size
-limitations. --Note--: This field is non-authoritative, and will only manage the annotations present in your
-configuration. Please refer to the field `effective_annotations` for all of the annotations present on the resource.
-*/
-  public Annotations?: Map<string, string>;
+User-defined name of the `WorkerPool`.
 
-  // Output only. Time at which the request to delete the `WorkerPool` was received.
-  public DeleteTime?: string;
+
+- - -
+*/
+  public name?: string;
+
+  // The project for the resource
+  public project?: string;
+
+  // Output only. WorkerPool state. Possible values: STATE_UNSPECIFIED, PENDING, APPROVED, REJECTED, CANCELLED
+  public state?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location for the resource",
         [],
         true,
@@ -110,7 +110,7 @@ configuration. Please refer to the field `effective_annotations` for all of the 
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "User-defined name of the `WorkerPool`.\n\n\n- - -",
         [],
         false,
@@ -118,15 +118,15 @@ configuration. Please refer to the field `effective_annotations` for all of the 
       ),
       new DynamicUIProps(
         InputType.Object,
-        "NetworkConfig",
+        "networkConfig",
         "Network configuration for the `WorkerPool`. Structure is documented below.",
-        Cloudbuild_WorkerPoolNetworkConfig_GetTypes(),
+        cloudbuild_WorkerPoolNetworkConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The project for the resource",
         [],
         false,
@@ -134,15 +134,15 @@ configuration. Please refer to the field `effective_annotations` for all of the 
       ),
       new DynamicUIProps(
         InputType.Object,
-        "WorkerConfig",
+        "workerConfig",
         "Configuration to be used for a creating workers in the `WorkerPool`. Structure is documented below.",
-        Cloudbuild_WorkerPoolWorkerConfig_GetTypes(),
+        cloudbuild_WorkerPoolWorkerConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Annotations",
+        "annotations",
         "User specified annotations. See https://google.aip.dev/128#annotations for more details such as format and size\nlimitations. **Note**: This field is non-authoritative, and will only manage the annotations present in your\nconfiguration. Please refer to the field `effective_annotations` for all of the annotations present on the resource.",
         InputType_Map_GetTypes(),
         false,
@@ -150,7 +150,7 @@ configuration. Please refer to the field `effective_annotations` for all of the 
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "A user-specified, human-readable name for the `WorkerPool`. If provided, this value must be 1-63 characters.",
         [],
         false,

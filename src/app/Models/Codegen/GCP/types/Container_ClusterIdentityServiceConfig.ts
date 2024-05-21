@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterIdentityServiceConfig {
+export interface container_ClusterIdentityServiceConfig {
   // Whether to enable the Identity Service component. It is disabled by default. Set `enabled=true` to enable.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_ClusterIdentityServiceConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterIdentityServiceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether to enable the Identity Service component. It is disabled by default. Set `enabled=true` to enable.",
       [],
       false,

@@ -7,26 +7,17 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Pubsub_SubscriptionIAMBindingCondition,
-  Pubsub_SubscriptionIAMBindingCondition_GetTypes,
-} from "../types/Pubsub_SubscriptionIAMBindingCondition";
+  pubsub_SubscriptionIAMBindingCondition,
+  pubsub_SubscriptionIAMBindingCondition_GetTypes,
+} from "../types/pubsub_SubscriptionIAMBindingCondition";
 
 export interface SubscriptionIAMBindingArgs {
-  //
-  Members?: Array<string>;
-
-  /*
-The project in which the resource belongs. If it
-is not provided, the provider project is used.
-*/
-  Project?: string;
-
   /*
 The role that should be applied. Only one
 `gcp.pubsub.SubscriptionIAMBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
-  Role?: string;
+  role?: string;
 
   /*
 The subscription name or id to bind to attach IAM policy to.
@@ -40,27 +31,42 @@ Each entry can have one of the following values:
 - --group:{emailid}--: An email address that represents a Google group. For example, admins@example.com.
 - --domain:{domain}--: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
 */
-  Subscription?: string;
+  subscription?: string;
 
   //
-  Condition?: Pubsub_SubscriptionIAMBindingCondition;
+  condition?: pubsub_SubscriptionIAMBindingCondition;
+
+  //
+  members?: Array<string>;
+
+  /*
+The project in which the resource belongs. If it
+is not provided, the provider project is used.
+*/
+  project?: string;
 }
 export class SubscriptionIAMBinding extends Resource {
   //
-  public Members?: Array<string>;
+  public condition?: pubsub_SubscriptionIAMBindingCondition;
+
+  // (Computed) The etag of the subscription's IAM policy.
+  public etag?: string;
+
+  //
+  public members?: Array<string>;
 
   /*
 The project in which the resource belongs. If it
 is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 The role that should be applied. Only one
 `gcp.pubsub.SubscriptionIAMBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
-  public Role?: string;
+  public role?: string;
 
   /*
 The subscription name or id to bind to attach IAM policy to.
@@ -74,27 +80,13 @@ Each entry can have one of the following values:
 - --group:{emailid}--: An email address that represents a Google group. For example, admins@example.com.
 - --domain:{domain}--: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
 */
-  public Subscription?: string;
-
-  //
-  public Condition?: Pubsub_SubscriptionIAMBindingCondition;
-
-  // (Computed) The etag of the subscription's IAM policy.
-  public Etag?: string;
+  public subscription?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Array,
-        "Members",
-        "",
-        InputType_String_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The project in which the resource belongs. If it\nis not provided, the provider project is used.",
         [],
         false,
@@ -102,7 +94,7 @@ Each entry can have one of the following values:
       ),
       new DynamicUIProps(
         InputType.String,
-        "Role",
+        "role",
         "The role that should be applied. Only one\n`gcp.pubsub.SubscriptionIAMBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
         [],
         true,
@@ -110,7 +102,7 @@ Each entry can have one of the following values:
       ),
       new DynamicUIProps(
         InputType.String,
-        "Subscription",
+        "subscription",
         "The subscription name or id to bind to attach IAM policy to.\n\n* `member/members` - (Required) Identities that will be granted the privilege in `role`.\nEach entry can have one of the following values:\n* **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.\n* **allAuthenticatedUsers**: A special identifier that represents anyone who is authenticated with a Google account or a service account.\n* **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.\n* **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.\n* **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.\n* **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.",
         [],
         true,
@@ -118,11 +110,19 @@ Each entry can have one of the following values:
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Pubsub_SubscriptionIAMBindingCondition_GetTypes(),
+        pubsub_SubscriptionIAMBindingCondition_GetTypes(),
         false,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "members",
+        "",
+        InputType_String_GetTypes(),
+        true,
+        false,
       ),
     ];
   }

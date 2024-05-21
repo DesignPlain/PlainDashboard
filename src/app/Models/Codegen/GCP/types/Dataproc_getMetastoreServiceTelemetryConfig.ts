@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_getMetastoreServiceTelemetryConfig {
+export interface dataproc_getMetastoreServiceTelemetryConfig {
   // The output format of the Dataproc Metastore service's logs. Default value: "JSON" Possible values: ["LEGACY", "JSON"]
-  LogFormat?: string;
+  logFormat?: string;
 }
 
-export function Dataproc_getMetastoreServiceTelemetryConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_getMetastoreServiceTelemetryConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "LogFormat",
+      "logFormat",
       'The output format of the Dataproc Metastore service\'s logs. Default value: "JSON" Possible values: ["LEGACY", "JSON"]',
       [],
       true,

@@ -6,24 +6,24 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceFromTemplateSchedulingNodeAffinity {
+export interface compute_InstanceFromTemplateSchedulingNodeAffinity {
   //
-  Key?: string;
+  key?: string;
 
   //
-  Operator?: string;
+  operator?: string;
 
   //
-  Values?: Array<string>;
+  values?: Array<string>;
 }
 
-export function Compute_InstanceFromTemplateSchedulingNodeAffinity_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceFromTemplateSchedulingNodeAffinity_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Key", "", [], true, false),
-    new DynamicUIProps(InputType.String, "Operator", "", [], true, false),
+    new DynamicUIProps(InputType.String, "key", "", [], true, false),
+    new DynamicUIProps(InputType.String, "operator", "", [], true, false),
     new DynamicUIProps(
       InputType.Array,
-      "Values",
+      "values",
       "",
       InputType_String_GetTypes(),
       true,

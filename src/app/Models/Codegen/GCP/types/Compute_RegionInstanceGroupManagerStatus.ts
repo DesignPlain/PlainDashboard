@@ -6,65 +6,65 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionInstanceGroupManagerStatusAllInstancesConfig,
-  Compute_RegionInstanceGroupManagerStatusAllInstancesConfig_GetTypes,
-} from "./Compute_RegionInstanceGroupManagerStatusAllInstancesConfig";
+  compute_RegionInstanceGroupManagerStatusAllInstancesConfig,
+  compute_RegionInstanceGroupManagerStatusAllInstancesConfig_GetTypes,
+} from "./compute_RegionInstanceGroupManagerStatusAllInstancesConfig";
 import {
-  Compute_RegionInstanceGroupManagerStatusStateful,
-  Compute_RegionInstanceGroupManagerStatusStateful_GetTypes,
-} from "./Compute_RegionInstanceGroupManagerStatusStateful";
+  compute_RegionInstanceGroupManagerStatusStateful,
+  compute_RegionInstanceGroupManagerStatusStateful_GetTypes,
+} from "./compute_RegionInstanceGroupManagerStatusStateful";
 import {
-  Compute_RegionInstanceGroupManagerStatusVersionTarget,
-  Compute_RegionInstanceGroupManagerStatusVersionTarget_GetTypes,
-} from "./Compute_RegionInstanceGroupManagerStatusVersionTarget";
+  compute_RegionInstanceGroupManagerStatusVersionTarget,
+  compute_RegionInstanceGroupManagerStatusVersionTarget_GetTypes,
+} from "./compute_RegionInstanceGroupManagerStatusVersionTarget";
 
-export interface Compute_RegionInstanceGroupManagerStatus {
+export interface compute_RegionInstanceGroupManagerStatus {
   /*
 Properties to set on all instances in the group. After setting
 allInstancesConfig on the group, you must update the group's instances to
 apply the configuration.
 */
-  AllInstancesConfigs?: Array<Compute_RegionInstanceGroupManagerStatusAllInstancesConfig>;
+  allInstancesConfigs?: Array<compute_RegionInstanceGroupManagerStatusAllInstancesConfig>;
 
   // A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
-  IsStable?: boolean;
+  isStable?: boolean;
 
   // Stateful status of the given Instance Group Manager.
-  Statefuls?: Array<Compute_RegionInstanceGroupManagerStatusStateful>;
+  statefuls?: Array<compute_RegionInstanceGroupManagerStatusStateful>;
 
   // A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
-  VersionTargets?: Array<Compute_RegionInstanceGroupManagerStatusVersionTarget>;
+  versionTargets?: Array<compute_RegionInstanceGroupManagerStatusVersionTarget>;
 }
 
-export function Compute_RegionInstanceGroupManagerStatus_GetTypes(): DynamicUIProps[] {
+export function compute_RegionInstanceGroupManagerStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Statefuls",
+      "statefuls",
       "Stateful status of the given Instance Group Manager.",
-      Compute_RegionInstanceGroupManagerStatusStateful_GetTypes(),
+      compute_RegionInstanceGroupManagerStatusStateful_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "VersionTargets",
+      "versionTargets",
       "A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.",
-      Compute_RegionInstanceGroupManagerStatusVersionTarget_GetTypes(),
+      compute_RegionInstanceGroupManagerStatusVersionTarget_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AllInstancesConfigs",
+      "allInstancesConfigs",
       "Properties to set on all instances in the group. After setting\nallInstancesConfig on the group, you must update the group's instances to\napply the configuration.",
-      Compute_RegionInstanceGroupManagerStatusAllInstancesConfig_GetTypes(),
+      compute_RegionInstanceGroupManagerStatusAllInstancesConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IsStable",
+      "isStable",
       "A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.",
       [],
       false,

@@ -7,58 +7,75 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_MetastoreServiceMetadataIntegration,
-  Dataproc_MetastoreServiceMetadataIntegration_GetTypes,
-} from "../types/Dataproc_MetastoreServiceMetadataIntegration";
+  dataproc_MetastoreServiceTelemetryConfig,
+  dataproc_MetastoreServiceTelemetryConfig_GetTypes,
+} from "../types/dataproc_MetastoreServiceTelemetryConfig";
 import {
-  Dataproc_MetastoreServiceHiveMetastoreConfig,
-  Dataproc_MetastoreServiceHiveMetastoreConfig_GetTypes,
-} from "../types/Dataproc_MetastoreServiceHiveMetastoreConfig";
+  dataproc_MetastoreServiceEncryptionConfig,
+  dataproc_MetastoreServiceEncryptionConfig_GetTypes,
+} from "../types/dataproc_MetastoreServiceEncryptionConfig";
 import {
-  Dataproc_MetastoreServiceNetworkConfig,
-  Dataproc_MetastoreServiceNetworkConfig_GetTypes,
-} from "../types/Dataproc_MetastoreServiceNetworkConfig";
+  dataproc_MetastoreServiceNetworkConfig,
+  dataproc_MetastoreServiceNetworkConfig_GetTypes,
+} from "../types/dataproc_MetastoreServiceNetworkConfig";
 import {
-  Dataproc_MetastoreServiceMaintenanceWindow,
-  Dataproc_MetastoreServiceMaintenanceWindow_GetTypes,
-} from "../types/Dataproc_MetastoreServiceMaintenanceWindow";
+  dataproc_MetastoreServiceHiveMetastoreConfig,
+  dataproc_MetastoreServiceHiveMetastoreConfig_GetTypes,
+} from "../types/dataproc_MetastoreServiceHiveMetastoreConfig";
 import {
-  Dataproc_MetastoreServiceTelemetryConfig,
-  Dataproc_MetastoreServiceTelemetryConfig_GetTypes,
-} from "../types/Dataproc_MetastoreServiceTelemetryConfig";
+  dataproc_MetastoreServiceMaintenanceWindow,
+  dataproc_MetastoreServiceMaintenanceWindow_GetTypes,
+} from "../types/dataproc_MetastoreServiceMaintenanceWindow";
 import {
-  Dataproc_MetastoreServiceEncryptionConfig,
-  Dataproc_MetastoreServiceEncryptionConfig_GetTypes,
-} from "../types/Dataproc_MetastoreServiceEncryptionConfig";
+  dataproc_MetastoreServiceMetadataIntegration,
+  dataproc_MetastoreServiceMetadataIntegration_GetTypes,
+} from "../types/dataproc_MetastoreServiceMetadataIntegration";
 import {
-  Dataproc_MetastoreServiceScalingConfig,
-  Dataproc_MetastoreServiceScalingConfig_GetTypes,
-} from "../types/Dataproc_MetastoreServiceScalingConfig";
+  dataproc_MetastoreServiceScalingConfig,
+  dataproc_MetastoreServiceScalingConfig_GetTypes,
+} from "../types/dataproc_MetastoreServiceScalingConfig";
 
 export interface MetastoreServiceArgs {
+  /*
+The configuration specifying the network settings for the Dataproc Metastore service.
+Structure is documented below.
+*/
+  networkConfig?: dataproc_MetastoreServiceNetworkConfig;
+
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
-The tier of the service.
-Possible values are: `DEVELOPER`, `ENTERPRISE`.
+The release channel of the service. If unspecified, defaults to `STABLE`.
+Default value is `STABLE`.
+Possible values are: `CANARY`, `STABLE`.
 */
-  Tier?: string;
+  releaseChannel?: string;
 
   /*
 Configuration information specific to running Hive metastore software as the metastore service.
 Structure is documented below.
 */
-  HiveMetastoreConfig?: Dataproc_MetastoreServiceHiveMetastoreConfig;
+  hiveMetastoreConfig?: dataproc_MetastoreServiceHiveMetastoreConfig;
 
   /*
-The configuration specifying the network settings for the Dataproc Metastore service.
-Structure is documented below.
+User-defined labels for the metastore service.
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  NetworkConfig?: Dataproc_MetastoreServiceNetworkConfig;
+  labels?: Map<string, string>;
+
+  // The TCP port at which the metastore service is reached. Default: 9083.
+  port?: number;
+
+  /*
+The tier of the service.
+Possible values are: `DEVELOPER`, `ENTERPRISE`.
+*/
+  tier?: string;
 
   /*
 The one hour maintenance window of the metastore service.
@@ -66,110 +83,143 @@ This specifies when the service can be restarted for maintenance purposes in UTC
 Maintenance window is not needed for services with the `SPANNER` database type.
 Structure is documented below.
 */
-  MaintenanceWindow?: Dataproc_MetastoreServiceMaintenanceWindow;
+  maintenanceWindow?: dataproc_MetastoreServiceMaintenanceWindow;
 
   /*
-The release channel of the service. If unspecified, defaults to `STABLE`.
-Default value is `STABLE`.
-Possible values are: `CANARY`, `STABLE`.
+The setting that defines how metastore metadata should be integrated with external services and systems.
+Structure is documented below.
 */
-  ReleaseChannel?: string;
+  metadataIntegration?: dataproc_MetastoreServiceMetadataIntegration;
+
+  /*
+The ID of the metastore service. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_),
+and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between
+3 and 63 characters.
+
+
+- - -
+*/
+  serviceId?: string;
+
+  /*
+The location where the metastore service should reside.
+The default value is `global`.
+*/
+  location?: string;
+
+  /*
+The relative resource name of the VPC network on which the instance can be accessed. It is specified in the following form:
+"projects/{projectNumber}/global/networks/{network_id}".
+*/
+  network?: string;
+
+  /*
+Represents the scaling configuration of a metastore service.
+Structure is documented below.
+*/
+  scalingConfig?: dataproc_MetastoreServiceScalingConfig;
 
   /*
 The configuration specifying telemetry settings for the Dataproc Metastore service. If unspecified defaults to JSON.
 Structure is documented below.
 */
-  TelemetryConfig?: Dataproc_MetastoreServiceTelemetryConfig;
+  telemetryConfig?: dataproc_MetastoreServiceTelemetryConfig;
 
   /*
 The database type that the Metastore service stores its data.
 Default value is `MYSQL`.
 Possible values are: `MYSQL`, `SPANNER`.
 */
-  DatabaseType?: string;
+  databaseType?: string;
 
   /*
 Information used to configure the Dataproc Metastore service to encrypt
 customer data at rest.
 Structure is documented below.
 */
-  EncryptionConfig?: Dataproc_MetastoreServiceEncryptionConfig;
-
-  /*
-Represents the scaling configuration of a metastore service.
-Structure is documented below.
-*/
-  ScalingConfig?: Dataproc_MetastoreServiceScalingConfig;
-
-  /*
-The ID of the metastore service. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_),
-and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between
-3 and 63 characters.
-
-
-- - -
-*/
-  ServiceId?: string;
-
-  /*
-User-defined labels for the metastore service.
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  Labels?: Map<string, string>;
-
-  // The TCP port at which the metastore service is reached. Default: 9083.
-  Port?: number;
-
-  /*
-The relative resource name of the VPC network on which the instance can be accessed. It is specified in the following form:
-"projects/{projectNumber}/global/networks/{network_id}".
-*/
-  Network?: string;
-
-  /*
-The location where the metastore service should reside.
-The default value is `global`.
-*/
-  Location?: string;
-
-  /*
-The setting that defines how metastore metadata should be integrated with external services and systems.
-Structure is documented below.
-*/
-  MetadataIntegration?: Dataproc_MetastoreServiceMetadataIntegration;
+  encryptionConfig?: dataproc_MetastoreServiceEncryptionConfig;
 }
 export class MetastoreService extends Resource {
-  // The TCP port at which the metastore service is reached. Default: 9083.
-  public Port?: number;
-
   /*
-The ID of the metastore service. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_),
-and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between
-3 and 63 characters.
-
-
-- - -
+The configuration specifying telemetry settings for the Dataproc Metastore service. If unspecified defaults to JSON.
+Structure is documented below.
 */
-  public ServiceId?: string;
+  public telemetryConfig?: dataproc_MetastoreServiceTelemetryConfig;
 
-  // Additional information about the current state of the metastore service, if available.
-  public StateMessage?: string;
-
-  /*
-The tier of the service.
-Possible values are: `DEVELOPER`, `ENTERPRISE`.
-*/
-  public Tier?: string;
-
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
+  // A Cloud Storage URI (starting with gs://) that specifies where artifacts related to the metastore service are stored.
+  public artifactGcsUri?: string;
 
   /*
 (Output)
 The URI of the endpoint used to access the metastore service.
 */
-  public EndpointUri?: string;
+  public endpointUri?: string;
+
+  /*
+User-defined labels for the metastore service.
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
+
+  /*
+The location where the metastore service should reside.
+The default value is `global`.
+*/
+  public location?: string;
+
+  /*
+The relative resource name of the VPC network on which the instance can be accessed. It is specified in the following form:
+"projects/{projectNumber}/global/networks/{network_id}".
+*/
+  public network?: string;
+
+  /*
+The configuration specifying the network settings for the Dataproc Metastore service.
+Structure is documented below.
+*/
+  public networkConfig?: dataproc_MetastoreServiceNetworkConfig;
+
+  // The TCP port at which the metastore service is reached. Default: 9083.
+  public port?: number;
+
+  /*
+The tier of the service.
+Possible values are: `DEVELOPER`, `ENTERPRISE`.
+*/
+  public tier?: string;
+
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
+
+  /*
+Information used to configure the Dataproc Metastore service to encrypt
+customer data at rest.
+Structure is documented below.
+*/
+  public encryptionConfig?: dataproc_MetastoreServiceEncryptionConfig;
+
+  // The current state of the metastore service.
+  public state?: string;
+
+  // Additional information about the current state of the metastore service, if available.
+  public stateMessage?: string;
+
+  // The globally unique resource identifier of the metastore service.
+  public uid?: string;
+
+  /*
+The database type that the Metastore service stores its data.
+Default value is `MYSQL`.
+Possible values are: `MYSQL`, `SPANNER`.
+*/
+  public databaseType?: string;
+
+  /*
+Configuration information specific to running Hive metastore software as the metastore service.
+Structure is documented below.
+*/
+  public hiveMetastoreConfig?: dataproc_MetastoreServiceHiveMetastoreConfig;
 
   /*
 The one hour maintenance window of the metastore service.
@@ -177,179 +227,57 @@ This specifies when the service can be restarted for maintenance purposes in UTC
 Maintenance window is not needed for services with the `SPANNER` database type.
 Structure is documented below.
 */
-  public MaintenanceWindow?: Dataproc_MetastoreServiceMaintenanceWindow;
-
-  /*
-The configuration specifying the network settings for the Dataproc Metastore service.
-Structure is documented below.
-*/
-  public NetworkConfig?: Dataproc_MetastoreServiceNetworkConfig;
-
-  // A Cloud Storage URI (starting with gs://) that specifies where artifacts related to the metastore service are stored.
-  public ArtifactGcsUri?: string;
-
-  /*
-The setting that defines how metastore metadata should be integrated with external services and systems.
-Structure is documented below.
-*/
-  public MetadataIntegration?: Dataproc_MetastoreServiceMetadataIntegration;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
+  public maintenanceWindow?: dataproc_MetastoreServiceMaintenanceWindow;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
-
-  /*
-The relative resource name of the VPC network on which the instance can be accessed. It is specified in the following form:
-"projects/{projectNumber}/global/networks/{network_id}".
-*/
-  public Network?: string;
+  public pulumiLabels?: Map<string, string>;
 
   /*
 The release channel of the service. If unspecified, defaults to `STABLE`.
 Default value is `STABLE`.
 Possible values are: `CANARY`, `STABLE`.
 */
-  public ReleaseChannel?: string;
+  public releaseChannel?: string;
+
+  /*
+The ID of the metastore service. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_),
+and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between
+3 and 63 characters.
+
+
+- - -
+*/
+  public serviceId?: string;
+
+  /*
+The setting that defines how metastore metadata should be integrated with external services and systems.
+Structure is documented below.
+*/
+  public metadataIntegration?: dataproc_MetastoreServiceMetadataIntegration;
+
+  // The relative resource name of the metastore service.
+  public name?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   /*
 Represents the scaling configuration of a metastore service.
 Structure is documented below.
 */
-  public ScalingConfig?: Dataproc_MetastoreServiceScalingConfig;
-
-  // The current state of the metastore service.
-  public State?: string;
-
-  /*
-The database type that the Metastore service stores its data.
-Default value is `MYSQL`.
-Possible values are: `MYSQL`, `SPANNER`.
-*/
-  public DatabaseType?: string;
-
-  /*
-Information used to configure the Dataproc Metastore service to encrypt
-customer data at rest.
-Structure is documented below.
-*/
-  public EncryptionConfig?: Dataproc_MetastoreServiceEncryptionConfig;
-
-  /*
-The location where the metastore service should reside.
-The default value is `global`.
-*/
-  public Location?: string;
-
-  // The relative resource name of the metastore service.
-  public Name?: string;
-
-  // The globally unique resource identifier of the metastore service.
-  public Uid?: string;
-
-  /*
-Configuration information specific to running Hive metastore software as the metastore service.
-Structure is documented below.
-*/
-  public HiveMetastoreConfig?: Dataproc_MetastoreServiceHiveMetastoreConfig;
-
-  /*
-User-defined labels for the metastore service.
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  public Labels?: Map<string, string>;
-
-  /*
-The configuration specifying telemetry settings for the Dataproc Metastore service. If unspecified defaults to JSON.
-Structure is documented below.
-*/
-  public TelemetryConfig?: Dataproc_MetastoreServiceTelemetryConfig;
+  public scalingConfig?: dataproc_MetastoreServiceScalingConfig;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Map,
-        "Labels",
-        "User-defined labels for the metastore service.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
-        InputType_Map_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Number,
-        "Port",
-        "The TCP port at which the metastore service is reached. Default: 9083.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "MetadataIntegration",
-        "The setting that defines how metastore metadata should be integrated with external services and systems.\nStructure is documented below.",
-        Dataproc_MetastoreServiceMetadataIntegration_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "EncryptionConfig",
-        "Information used to configure the Dataproc Metastore service to encrypt\ncustomer data at rest.\nStructure is documented below.",
-        Dataproc_MetastoreServiceEncryptionConfig_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "NetworkConfig",
-        "The configuration specifying the network settings for the Dataproc Metastore service.\nStructure is documented below.",
-        Dataproc_MetastoreServiceNetworkConfig_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "DatabaseType",
-        "The database type that the Metastore service stores its data.\nDefault value is `MYSQL`.\nPossible values are: `MYSQL`, `SPANNER`.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Location",
-        "The location where the metastore service should reside.\nThe default value is `global`.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "MaintenanceWindow",
-        "The one hour maintenance window of the metastore service.\nThis specifies when the service can be restarted for maintenance purposes in UTC time.\nMaintenance window is not needed for services with the `SPANNER` database type.\nStructure is documented below.",
-        Dataproc_MetastoreServiceMaintenanceWindow_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ServiceId",
+        "serviceId",
         "The ID of the metastore service. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_),\nand hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between\n3 and 63 characters.\n\n\n- - -",
         [],
         true,
@@ -357,15 +285,55 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Network",
-        'The relative resource name of the VPC network on which the instance can be accessed. It is specified in the following form:\n"projects/{projectNumber}/global/networks/{network_id}".',
+        "databaseType",
+        "The database type that the Metastore service stores its data.\nDefault value is `MYSQL`.\nPossible values are: `MYSQL`, `SPANNER`.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "networkConfig",
+        "The configuration specifying the network settings for the Dataproc Metastore service.\nStructure is documented below.",
+        dataproc_MetastoreServiceNetworkConfig_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Number,
+        "port",
+        "The TCP port at which the metastore service is reached. Default: 9083.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "maintenanceWindow",
+        "The one hour maintenance window of the metastore service.\nThis specifies when the service can be restarted for maintenance purposes in UTC time.\nMaintenance window is not needed for services with the `SPANNER` database type.\nStructure is documented below.",
+        dataproc_MetastoreServiceMaintenanceWindow_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "encryptionConfig",
+        "Information used to configure the Dataproc Metastore service to encrypt\ncustomer data at rest.\nStructure is documented below.",
+        dataproc_MetastoreServiceEncryptionConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "releaseChannel",
+        "The release channel of the service. If unspecified, defaults to `STABLE`.\nDefault value is `STABLE`.\nPossible values are: `CANARY`, `STABLE`.",
         [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Tier",
+        "tier",
         "The tier of the service.\nPossible values are: `DEVELOPER`, `ENTERPRISE`.",
         [],
         false,
@@ -373,33 +341,65 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "ReleaseChannel",
-        "The release channel of the service. If unspecified, defaults to `STABLE`.\nDefault value is `STABLE`.\nPossible values are: `CANARY`, `STABLE`.",
+        "network",
+        'The relative resource name of the VPC network on which the instance can be accessed. It is specified in the following form:\n"projects/{projectNumber}/global/networks/{network_id}".',
         [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "TelemetryConfig",
-        "The configuration specifying telemetry settings for the Dataproc Metastore service. If unspecified defaults to JSON.\nStructure is documented below.",
-        Dataproc_MetastoreServiceTelemetryConfig_GetTypes(),
+        "metadataIntegration",
+        "The setting that defines how metastore metadata should be integrated with external services and systems.\nStructure is documented below.",
+        dataproc_MetastoreServiceMetadataIntegration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
+        InputType.String,
+        "location",
+        "The location where the metastore service should reside.\nThe default value is `global`.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
         InputType.Object,
-        "ScalingConfig",
+        "scalingConfig",
         "Represents the scaling configuration of a metastore service.\nStructure is documented below.",
-        Dataproc_MetastoreServiceScalingConfig_GetTypes(),
+        dataproc_MetastoreServiceScalingConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "HiveMetastoreConfig",
+        "telemetryConfig",
+        "The configuration specifying telemetry settings for the Dataproc Metastore service. If unspecified defaults to JSON.\nStructure is documented below.",
+        dataproc_MetastoreServiceTelemetryConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "hiveMetastoreConfig",
         "Configuration information specific to running Hive metastore software as the metastore service.\nStructure is documented below.",
-        Dataproc_MetastoreServiceHiveMetastoreConfig_GetTypes(),
+        dataproc_MetastoreServiceHiveMetastoreConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Map,
+        "labels",
+        "User-defined labels for the metastore service.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        InputType_Map_GetTypes(),
         false,
         false,
       ),

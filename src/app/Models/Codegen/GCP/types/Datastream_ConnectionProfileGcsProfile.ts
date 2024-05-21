@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_ConnectionProfileGcsProfile {
+export interface datastream_ConnectionProfileGcsProfile {
   // The Cloud Storage bucket name.
-  Bucket?: string;
+  bucket?: string;
 
   // The root path inside the Cloud Storage bucket.
-  RootPath?: string;
+  rootPath?: string;
 }
 
-export function Datastream_ConnectionProfileGcsProfile_GetTypes(): DynamicUIProps[] {
+export function datastream_ConnectionProfileGcsProfile_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "RootPath",
-      "The root path inside the Cloud Storage bucket.",
+      "bucket",
+      "The Cloud Storage bucket name.",
       [],
-      false,
+      true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Bucket",
-      "The Cloud Storage bucket name.",
+      "rootPath",
+      "The root path inside the Cloud Storage bucket.",
       [],
-      true,
+      false,
       false,
     ),
   ];

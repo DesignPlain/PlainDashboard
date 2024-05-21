@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dns_RecordSetRoutingPolicyGeoHealthCheckedTargets,
-  Dns_RecordSetRoutingPolicyGeoHealthCheckedTargets_GetTypes,
-} from "./Dns_RecordSetRoutingPolicyGeoHealthCheckedTargets";
+  dns_RecordSetRoutingPolicyGeoHealthCheckedTargets,
+  dns_RecordSetRoutingPolicyGeoHealthCheckedTargets_GetTypes,
+} from "./dns_RecordSetRoutingPolicyGeoHealthCheckedTargets";
 
-export interface Dns_RecordSetRoutingPolicyGeo {
+export interface dns_RecordSetRoutingPolicyGeo {
   /*
 For A and AAAA types only. The list of targets to be health checked. These can be specified along with `rrdatas` within this item.
 Structure is document below.
 */
-  HealthCheckedTargets?: Dns_RecordSetRoutingPolicyGeoHealthCheckedTargets;
+  healthCheckedTargets?: dns_RecordSetRoutingPolicyGeoHealthCheckedTargets;
 
   // The location name defined in Google Cloud.
-  Location?: string;
+  location?: string;
 
   // Same as `rrdatas` above.
-  Rrdatas?: Array<string>;
+  rrdatas?: Array<string>;
 }
 
-export function Dns_RecordSetRoutingPolicyGeo_GetTypes(): DynamicUIProps[] {
+export function dns_RecordSetRoutingPolicyGeo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "HealthCheckedTargets",
+      "healthCheckedTargets",
       "For A and AAAA types only. The list of targets to be health checked. These can be specified along with `rrdatas` within this item.\nStructure is document below.",
-      Dns_RecordSetRoutingPolicyGeoHealthCheckedTargets_GetTypes(),
+      dns_RecordSetRoutingPolicyGeoHealthCheckedTargets_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       "The location name defined in Google Cloud.",
       [],
       true,
@@ -44,7 +44,7 @@ export function Dns_RecordSetRoutingPolicyGeo_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Rrdatas",
+      "rrdatas",
       "Same as `rrdatas` above.",
       InputType_String_GetTypes(),
       false,

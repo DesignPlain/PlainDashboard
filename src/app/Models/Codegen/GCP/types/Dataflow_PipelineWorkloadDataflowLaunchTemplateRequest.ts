@@ -6,60 +6,44 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataflow_PipelineWorkloadDataflowLaunchTemplateRequestLaunchParameters,
-  Dataflow_PipelineWorkloadDataflowLaunchTemplateRequestLaunchParameters_GetTypes,
-} from "./Dataflow_PipelineWorkloadDataflowLaunchTemplateRequestLaunchParameters";
+  dataflow_PipelineWorkloadDataflowLaunchTemplateRequestLaunchParameters,
+  dataflow_PipelineWorkloadDataflowLaunchTemplateRequestLaunchParameters_GetTypes,
+} from "./dataflow_PipelineWorkloadDataflowLaunchTemplateRequestLaunchParameters";
 
-export interface Dataflow_PipelineWorkloadDataflowLaunchTemplateRequest {
-  // (Optional)
-  ValidateOnly?: boolean;
-
-  // A Cloud Storage path to the template from which to create the job. Must be a valid Cloud Storage URL, beginning with 'gs://'.
-  GcsPath?: string;
-
+export interface dataflow_PipelineWorkloadDataflowLaunchTemplateRequest {
   /*
 The parameters of the template to launch. This should be part of the body of the POST request.
 https://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#launchtemplateparameters
 Structure is documented below.
 */
-  LaunchParameters?: Dataflow_PipelineWorkloadDataflowLaunchTemplateRequestLaunchParameters;
+  launchParameters?: dataflow_PipelineWorkloadDataflowLaunchTemplateRequestLaunchParameters;
 
   // The regional endpoint to which to direct the request.
-  Location?: string;
+  location?: string;
 
   // The ID of the Cloud Platform project that the job belongs to.
-  ProjectId?: string;
+  projectId?: string;
+
+  // (Optional)
+  validateOnly?: boolean;
+
+  // A Cloud Storage path to the template from which to create the job. Must be a valid Cloud Storage URL, beginning with 'gs://'.
+  gcsPath?: string;
 }
 
-export function Dataflow_PipelineWorkloadDataflowLaunchTemplateRequest_GetTypes(): DynamicUIProps[] {
+export function dataflow_PipelineWorkloadDataflowLaunchTemplateRequest_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Bool,
-      "ValidateOnly",
-      "(Optional)",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "GcsPath",
-      "A Cloud Storage path to the template from which to create the job. Must be a valid Cloud Storage URL, beginning with 'gs://'.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Object,
-      "LaunchParameters",
+      "launchParameters",
       "The parameters of the template to launch. This should be part of the body of the POST request.\nhttps://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#launchtemplateparameters\nStructure is documented below.",
-      Dataflow_PipelineWorkloadDataflowLaunchTemplateRequestLaunchParameters_GetTypes(),
+      dataflow_PipelineWorkloadDataflowLaunchTemplateRequestLaunchParameters_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       "The regional endpoint to which to direct the request.",
       [],
       false,
@@ -67,10 +51,26 @@ export function Dataflow_PipelineWorkloadDataflowLaunchTemplateRequest_GetTypes(
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProjectId",
+      "projectId",
       "The ID of the Cloud Platform project that the job belongs to.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "validateOnly",
+      "(Optional)",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "gcsPath",
+      "A Cloud Storage path to the template from which to create the job. Must be a valid Cloud Storage URL, beginning with 'gs://'.",
+      [],
+      false,
       false,
     ),
   ];

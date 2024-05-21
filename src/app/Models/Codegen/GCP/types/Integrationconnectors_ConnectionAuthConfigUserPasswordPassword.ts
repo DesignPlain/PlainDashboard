@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Integrationconnectors_ConnectionAuthConfigUserPasswordPassword {
+export interface integrationconnectors_ConnectionAuthConfigUserPasswordPassword {
   /*
 The resource name of the secret version in the format,
 format as: projects/-/secrets/-/versions/-.
 */
-  SecretVersion?: string;
+  secretVersion?: string;
 }
 
-export function Integrationconnectors_ConnectionAuthConfigUserPasswordPassword_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionAuthConfigUserPasswordPassword_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SecretVersion",
+      "secretVersion",
       "The resource name of the secret version in the format,\nformat as: projects/*/secrets/*/versions/*.",
       [],
       true,

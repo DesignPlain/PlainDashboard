@@ -6,17 +6,17 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Accesscontextmanager_ServicePerimeterIngressPolicyIngressFromSource,
-  Accesscontextmanager_ServicePerimeterIngressPolicyIngressFromSource_GetTypes,
-} from "./Accesscontextmanager_ServicePerimeterIngressPolicyIngressFromSource";
+  accesscontextmanager_ServicePerimeterIngressPolicyIngressFromSource,
+  accesscontextmanager_ServicePerimeterIngressPolicyIngressFromSource_GetTypes,
+} from "./accesscontextmanager_ServicePerimeterIngressPolicyIngressFromSource";
 
-export interface Accesscontextmanager_ServicePerimeterIngressPolicyIngressFrom {
+export interface accesscontextmanager_ServicePerimeterIngressPolicyIngressFrom {
   /*
 A list of identities that are allowed access through this ingress policy.
 Should be in the format of email address. The email address should represent
 individual user or service account only.
 */
-  Identities?: Array<string>;
+  identities?: Array<string>;
 
   /*
 Specifies the type of identities that are allowed access from outside the
@@ -24,20 +24,20 @@ perimeter. If left unspecified, then members of `identities` field will be
 allowed access.
 Possible values are: `ANY_IDENTITY`, `ANY_USER_ACCOUNT`, `ANY_SERVICE_ACCOUNT`.
 */
-  IdentityType?: string;
+  identityType?: string;
 
   /*
 Sources that this `IngressPolicy` authorizes access from.
 Structure is documented below.
 */
-  Sources?: Array<Accesscontextmanager_ServicePerimeterIngressPolicyIngressFromSource>;
+  sources?: Array<accesscontextmanager_ServicePerimeterIngressPolicyIngressFromSource>;
 }
 
-export function Accesscontextmanager_ServicePerimeterIngressPolicyIngressFrom_GetTypes(): DynamicUIProps[] {
+export function accesscontextmanager_ServicePerimeterIngressPolicyIngressFrom_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Identities",
+      "identities",
       "A list of identities that are allowed access through this ingress policy.\nShould be in the format of email address. The email address should represent\nindividual user or service account only.",
       InputType_String_GetTypes(),
       false,
@@ -45,7 +45,7 @@ export function Accesscontextmanager_ServicePerimeterIngressPolicyIngressFrom_Ge
     ),
     new DynamicUIProps(
       InputType.String,
-      "IdentityType",
+      "identityType",
       "Specifies the type of identities that are allowed access from outside the\nperimeter. If left unspecified, then members of `identities` field will be\nallowed access.\nPossible values are: `ANY_IDENTITY`, `ANY_USER_ACCOUNT`, `ANY_SERVICE_ACCOUNT`.",
       [],
       false,
@@ -53,9 +53,9 @@ export function Accesscontextmanager_ServicePerimeterIngressPolicyIngressFrom_Ge
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Sources",
+      "sources",
       "Sources that this `IngressPolicy` authorizes access from.\nStructure is documented below.",
-      Accesscontextmanager_ServicePerimeterIngressPolicyIngressFromSource_GetTypes(),
+      accesscontextmanager_ServicePerimeterIngressPolicyIngressFromSource_GetTypes(),
       false,
       false,
     ),

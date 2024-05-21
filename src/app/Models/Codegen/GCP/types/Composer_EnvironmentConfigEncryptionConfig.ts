@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Composer_EnvironmentConfigEncryptionConfig {
+export interface composer_EnvironmentConfigEncryptionConfig {
   // Optional. Customer-managed Encryption Key available through Google's Key Management Service. Cannot be updated.
-  KmsKeyName?: string;
+  kmsKeyName?: string;
 }
 
-export function Composer_EnvironmentConfigEncryptionConfig_GetTypes(): DynamicUIProps[] {
+export function composer_EnvironmentConfigEncryptionConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyName",
+      "kmsKeyName",
       "Optional. Customer-managed Encryption Key available through Google's Key Management Service. Cannot be updated.",
       [],
       true,

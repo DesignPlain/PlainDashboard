@@ -6,40 +6,32 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuild_TriggerPubsubConfig {
-  /*
-(Output)
-Output only. Name of the subscription.
-*/
-  Subscription?: string;
-
-  // The name of the topic from which this subscription is receiving messages.
-  Topic?: string;
-
+export interface cloudbuild_TriggerPubsubConfig {
   // Service account that will make the push request.
-  ServiceAccountEmail?: string;
+  serviceAccountEmail?: string;
 
   /*
 (Output)
 Potential issues with the underlying Pub/Sub subscription configuration.
 Only populated on get requests.
 */
-  State?: string;
+  state?: string;
+
+  /*
+(Output)
+Output only. Name of the subscription.
+*/
+  subscription?: string;
+
+  // The name of the topic from which this subscription is receiving messages.
+  topic?: string;
 }
 
-export function Cloudbuild_TriggerPubsubConfig_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_TriggerPubsubConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Subscription",
-      "(Output)\nOutput only. Name of the subscription.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Topic",
+      "topic",
       "The name of the topic from which this subscription is receiving messages.",
       [],
       true,
@@ -47,7 +39,7 @@ export function Cloudbuild_TriggerPubsubConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ServiceAccountEmail",
+      "serviceAccountEmail",
       "Service account that will make the push request.",
       [],
       false,
@@ -55,8 +47,16 @@ export function Cloudbuild_TriggerPubsubConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "(Output)\nPotential issues with the underlying Pub/Sub subscription configuration.\nOnly populated on get requests.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "subscription",
+      "(Output)\nOutput only. Name of the subscription.",
       [],
       false,
       false,

@@ -7,11 +7,27 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Containeranalysis_OccurenceAttestation,
-  Containeranalysis_OccurenceAttestation_GetTypes,
-} from "../types/Containeranalysis_OccurenceAttestation";
+  containeranalysis_OccurenceAttestation,
+  containeranalysis_OccurenceAttestation_GetTypes,
+} from "../types/containeranalysis_OccurenceAttestation";
 
 export interface OccurenceArgs {
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  // A description of actions that can be taken to remedy the note.
+  remediation?: string;
+
+  /*
+Required. Immutable. A URI that represents the resource for which
+the occurrence applies. For example,
+https://gcr.io/project/image@sha256:123abc for a Docker image.
+*/
+  resourceUri?: string;
+
   /*
 Occurrence that represents a single "attestation". The authenticity
 of an attestation can be verified using the attached signature.
@@ -23,63 +39,45 @@ know the authority and artifact to be verified) and intent (for
 which authority this attestation was intended to sign.
 Structure is documented below.
 */
-  Attestation?: Containeranalysis_OccurenceAttestation;
+  attestation?: containeranalysis_OccurenceAttestation;
 
   /*
 The analysis note associated with this occurrence, in the form of
 projects/[PROJECT]/notes/[NOTE_ID]. This field can be used as a
 filter in list requests.
 */
-  NoteName?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  // A description of actions that can be taken to remedy the note.
-  Remediation?: string;
-
-  /*
-Required. Immutable. A URI that represents the resource for which
-the occurrence applies. For example,
-https://gcr.io/project/image@sha256:123abc for a Docker image.
-*/
-  ResourceUri?: string;
+  noteName?: string;
 }
 export class Occurence extends Resource {
-  // The name of the occurrence.
-  public Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  // A description of actions that can be taken to remedy the note.
-  public Remediation?: string;
-
-  // The time when the repository was created.
-  public CreateTime?: string;
-
   /*
 The note kind which explicitly denotes which of the occurrence
 details are specified. This field can be used as a filter in list
 requests.
 */
-  public Kind?: string;
+  public kind?: string;
+
+  /*
+The analysis note associated with this occurrence, in the form of
+projects/[PROJECT]/notes/[NOTE_ID]. This field can be used as a
+filter in list requests.
+*/
+  public noteName?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   /*
 Required. Immutable. A URI that represents the resource for which
 the occurrence applies. For example,
 https://gcr.io/project/image@sha256:123abc for a Docker image.
 */
-  public ResourceUri?: string;
+  public resourceUri?: string;
 
   // The time when the repository was last updated.
-  public UpdateTime?: string;
+  public updateTime?: string;
 
   /*
 Occurrence that represents a single "attestation". The authenticity
@@ -92,28 +90,38 @@ know the authority and artifact to be verified) and intent (for
 which authority this attestation was intended to sign.
 Structure is documented below.
 */
-  public Attestation?: Containeranalysis_OccurenceAttestation;
+  public attestation?: containeranalysis_OccurenceAttestation;
 
-  /*
-The analysis note associated with this occurrence, in the form of
-projects/[PROJECT]/notes/[NOTE_ID]. This field can be used as a
-filter in list requests.
-*/
-  public NoteName?: string;
+  // The time when the repository was created.
+  public createTime?: string;
+
+  // The name of the occurrence.
+  public name?: string;
+
+  // A description of actions that can be taken to remedy the note.
+  public remediation?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
+        InputType.String,
+        "resourceUri",
+        "Required. Immutable. A URI that represents the resource for which\nthe occurrence applies. For example,\nhttps://gcr.io/project/image@sha256:123abc for a Docker image.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
         InputType.Object,
-        "Attestation",
+        "attestation",
         'Occurrence that represents a single "attestation". The authenticity\nof an attestation can be verified using the attached signature.\nIf the verifier trusts the public key of the signer, then verifying\nthe signature is sufficient to establish trust. In this circumstance,\nthe authority to which this attestation is attached is primarily\nuseful for lookup (how to find this attestation if you already\nknow the authority and artifact to be verified) and intent (for\nwhich authority this attestation was intended to sign.\nStructure is documented below.',
-        Containeranalysis_OccurenceAttestation_GetTypes(),
+        containeranalysis_OccurenceAttestation_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "NoteName",
+        "noteName",
         "The analysis note associated with this occurrence, in the form of\nprojects/[PROJECT]/notes/[NOTE_ID]. This field can be used as a\nfilter in list requests.",
         [],
         true,
@@ -121,7 +129,7 @@ filter in list requests.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -129,19 +137,11 @@ filter in list requests.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Remediation",
+        "remediation",
         "A description of actions that can be taken to remedy the note.",
         [],
         false,
         false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ResourceUri",
-        "Required. Immutable. A URI that represents the resource for which\nthe occurrence applies. For example,\nhttps://gcr.io/project/image@sha256:123abc for a Docker image.",
-        [],
-        true,
-        true,
       ),
     ];
   }

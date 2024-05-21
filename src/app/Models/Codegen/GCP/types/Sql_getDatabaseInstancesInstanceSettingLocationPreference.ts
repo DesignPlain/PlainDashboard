@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstancesInstanceSettingLocationPreference {
+export interface sql_getDatabaseInstancesInstanceSettingLocationPreference {
   // A Google App Engine application whose zone to remain in. Must be in the same region as this instance.
-  FollowGaeApplication?: string;
+  followGaeApplication?: string;
 
   // The preferred Compute Engine zone for the secondary/failover
-  SecondaryZone?: string;
+  secondaryZone?: string;
 
   // To filter out the Cloud SQL instances which are located in the specified zone. This zone refers to the Compute Engine zone that the instance is currently serving from.
-  Zone?: string;
+  zone?: string;
 }
 
-export function Sql_getDatabaseInstancesInstanceSettingLocationPreference_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstancesInstanceSettingLocationPreference_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "FollowGaeApplication",
+      "zone",
+      "To filter out the Cloud SQL instances which are located in the specified zone. This zone refers to the Compute Engine zone that the instance is currently serving from.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "followGaeApplication",
       "A Google App Engine application whose zone to remain in. Must be in the same region as this instance.",
       [],
       true,
@@ -29,16 +37,8 @@ export function Sql_getDatabaseInstancesInstanceSettingLocationPreference_GetTyp
     ),
     new DynamicUIProps(
       InputType.String,
-      "SecondaryZone",
+      "secondaryZone",
       "The preferred Compute Engine zone for the secondary/failover",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Zone",
-      "To filter out the Cloud SQL instances which are located in the specified zone. This zone refers to the Compute Engine zone that the instance is currently serving from.",
       [],
       true,
       false,

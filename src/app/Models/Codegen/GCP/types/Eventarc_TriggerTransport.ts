@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Eventarc_TriggerTransportPubsub,
-  Eventarc_TriggerTransportPubsub_GetTypes,
-} from "./Eventarc_TriggerTransportPubsub";
+  eventarc_TriggerTransportPubsub,
+  eventarc_TriggerTransportPubsub_GetTypes,
+} from "./eventarc_TriggerTransportPubsub";
 
-export interface Eventarc_TriggerTransport {
+export interface eventarc_TriggerTransport {
   // The Pub/Sub topic and subscription used by Eventarc as delivery intermediary.
-  Pubsub?: Eventarc_TriggerTransportPubsub;
+  pubsub?: eventarc_TriggerTransportPubsub;
 }
 
-export function Eventarc_TriggerTransport_GetTypes(): DynamicUIProps[] {
+export function eventarc_TriggerTransport_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Pubsub",
+      "pubsub",
       "The Pub/Sub topic and subscription used by Eventarc as delivery intermediary.",
-      Eventarc_TriggerTransportPubsub_GetTypes(),
+      eventarc_TriggerTransportPubsub_GetTypes(),
       false,
       true,
     ),

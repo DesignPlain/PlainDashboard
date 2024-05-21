@@ -9,10 +9,10 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface ReleaseArgs {
   // Format: `projects/{project_id}/releases/{release_id}`\Firestore Rules Releases will --always-- have the name 'cloud.firestore'
-  Name?: string;
+  name?: string;
 
   // The project for the resource
-  Project?: string;
+  project?: string;
 
   /*
 Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist for the `Release` to be created.
@@ -21,23 +21,17 @@ Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist fo
 
 - - -
 */
-  RulesetName?: string;
+  rulesetName?: string;
 }
 export class Release extends Resource {
-  // Output only. Time the release was updated.
-  public UpdateTime?: string;
-
-  // Output only. Time the release was created.
-  public CreateTime?: string;
-
   // Disable the release to keep it from being served. The response code of NOT_FOUND will be given for executables generated from this Release.
-  public Disabled?: boolean;
+  public disabled?: boolean;
 
   // Format: `projects/{project_id}/releases/{release_id}`\Firestore Rules Releases will --always-- have the name 'cloud.firestore'
-  public Name?: string;
+  public name?: string;
 
   // The project for the resource
-  public Project?: string;
+  public project?: string;
 
   /*
 Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist for the `Release` to be created.
@@ -46,13 +40,19 @@ Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist fo
 
 - - -
 */
-  public RulesetName?: string;
+  public rulesetName?: string;
+
+  // Output only. Time the release was updated.
+  public updateTime?: string;
+
+  // Output only. Time the release was created.
+  public createTime?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The project for the resource",
         [],
         false,
@@ -60,7 +60,7 @@ Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist fo
       ),
       new DynamicUIProps(
         InputType.String,
-        "RulesetName",
+        "rulesetName",
         "Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist for the `Release` to be created.\n\n\n\n- - -",
         [],
         true,
@@ -68,7 +68,7 @@ Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist fo
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Format: `projects/{project_id}/releases/{release_id}`\\Firestore Rules Releases will **always** have the name 'cloud.firestore'",
         [],
         false,

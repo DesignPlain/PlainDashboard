@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher,
-  Monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher_GetTypes,
-} from "./Monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher";
+  monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher,
+  monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher_GetTypes,
+} from "./monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher";
 
-export interface Monitoring_UptimeCheckConfigContentMatcher {
+export interface monitoring_UptimeCheckConfigContentMatcher {
   // String or regex content to match (max 1024 bytes)
-  Content?: string;
+  content?: string;
 
   /*
 Information needed to perform a JSONPath content match. Used for `ContentMatcherOption::MATCHES_JSON_PATH` and `ContentMatcherOption::NOT_MATCHES_JSON_PATH`.
 Structure is documented below.
 */
-  JsonPathMatcher?: Monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher;
+  jsonPathMatcher?: monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher;
 
   /*
 The type of content matcher that will be applied to the server output, compared to the content string when the check is run.
 Default value is `CONTAINS_STRING`.
 Possible values are: `CONTAINS_STRING`, `NOT_CONTAINS_STRING`, `MATCHES_REGEX`, `NOT_MATCHES_REGEX`, `MATCHES_JSON_PATH`, `NOT_MATCHES_JSON_PATH`.
 */
-  Matcher?: string;
+  matcher?: string;
 }
 
-export function Monitoring_UptimeCheckConfigContentMatcher_GetTypes(): DynamicUIProps[] {
+export function monitoring_UptimeCheckConfigContentMatcher_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Content",
+      "content",
       "String or regex content to match (max 1024 bytes)",
       [],
       true,
@@ -40,15 +40,15 @@ export function Monitoring_UptimeCheckConfigContentMatcher_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Object,
-      "JsonPathMatcher",
+      "jsonPathMatcher",
       "Information needed to perform a JSONPath content match. Used for `ContentMatcherOption::MATCHES_JSON_PATH` and `ContentMatcherOption::NOT_MATCHES_JSON_PATH`.\nStructure is documented below.",
-      Monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher_GetTypes(),
+      monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Matcher",
+      "matcher",
       "The type of content matcher that will be applied to the server output, compared to the content string when the check is run.\nDefault value is `CONTAINS_STRING`.\nPossible values are: `CONTAINS_STRING`, `NOT_CONTAINS_STRING`, `MATCHES_REGEX`, `NOT_MATCHES_REGEX`, `MATCHES_JSON_PATH`, `NOT_MATCHES_JSON_PATH`.",
       [],
       false,

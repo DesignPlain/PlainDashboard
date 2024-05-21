@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_InsightsReportConfigCsvOptions {
-  // The delimiter used to separate the fields in the inventory report CSV file.
-  Delimiter?: string;
-
+export interface storage_InsightsReportConfigCsvOptions {
   /*
 The boolean that indicates whether or not headers are included in the inventory report CSV file.
 
 - - -
 */
-  HeaderRequired?: boolean;
+  headerRequired?: boolean;
 
   // The character used to separate the records in the inventory report CSV file.
-  RecordSeparator?: string;
+  recordSeparator?: string;
+
+  // The delimiter used to separate the fields in the inventory report CSV file.
+  delimiter?: string;
 }
 
-export function Storage_InsightsReportConfigCsvOptions_GetTypes(): DynamicUIProps[] {
+export function storage_InsightsReportConfigCsvOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Delimiter",
+      "delimiter",
       "The delimiter used to separate the fields in the inventory report CSV file.",
       [],
       false,
@@ -33,7 +33,7 @@ export function Storage_InsightsReportConfigCsvOptions_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "HeaderRequired",
+      "headerRequired",
       "The boolean that indicates whether or not headers are included in the inventory report CSV file.\n\n- - -",
       [],
       false,
@@ -41,7 +41,7 @@ export function Storage_InsightsReportConfigCsvOptions_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "RecordSeparator",
+      "recordSeparator",
       "The character used to separate the records in the inventory report CSV file.",
       [],
       false,

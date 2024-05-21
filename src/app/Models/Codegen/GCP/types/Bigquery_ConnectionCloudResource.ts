@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_ConnectionCloudResource {
+export interface bigquery_ConnectionCloudResource {
   /*
 (Output)
 The account ID of the service created for the purpose of this connection.
 */
-  ServiceAccountId?: string;
+  serviceAccountId?: string;
 }
 
-export function Bigquery_ConnectionCloudResource_GetTypes(): DynamicUIProps[] {
+export function bigquery_ConnectionCloudResource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ServiceAccountId",
+      "serviceAccountId",
       "(Output)\nThe account ID of the service created for the purpose of this connection.",
       [],
       false,

@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrunv2_getJobTemplateTemplateVolumeSecretItem,
-  Cloudrunv2_getJobTemplateTemplateVolumeSecretItem_GetTypes,
-} from "./Cloudrunv2_getJobTemplateTemplateVolumeSecretItem";
+  cloudrunv2_getJobTemplateTemplateVolumeSecretItem,
+  cloudrunv2_getJobTemplateTemplateVolumeSecretItem_GetTypes,
+} from "./cloudrunv2_getJobTemplateTemplateVolumeSecretItem";
 
-export interface Cloudrunv2_getJobTemplateTemplateVolumeSecret {
-  // Integer representation of mode bits to use on created files by default. Must be a value between 0000 and 0777 (octal), defaulting to 0444. Directories within the path are not affected by this setting.
-  DefaultMode?: number;
-
+export interface cloudrunv2_getJobTemplateTemplateVolumeSecret {
   // If unspecified, the volume will expose a file whose name is the secret, relative to VolumeMount.mount_path. If specified, the key will be used as the version to fetch from Cloud Secret Manager and the path will be the name of the file exposed in the volume. When items are defined, they must specify a path and a version.
-  Items?: Array<Cloudrunv2_getJobTemplateTemplateVolumeSecretItem>;
+  items?: Array<cloudrunv2_getJobTemplateTemplateVolumeSecretItem>;
 
   // The name of the secret in Cloud Secret Manager. Format: {secret} if the secret is in the same project. projects/{project}/secrets/{secret} if the secret is in a different project.
-  Secret?: string;
+  secret?: string;
+
+  // Integer representation of mode bits to use on created files by default. Must be a value between 0000 and 0777 (octal), defaulting to 0444. Directories within the path are not affected by this setting.
+  defaultMode?: number;
 }
 
-export function Cloudrunv2_getJobTemplateTemplateVolumeSecret_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_getJobTemplateTemplateVolumeSecret_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "DefaultMode",
+      "defaultMode",
       "Integer representation of mode bits to use on created files by default. Must be a value between 0000 and 0777 (octal), defaulting to 0444. Directories within the path are not affected by this setting.",
       [],
       true,
@@ -33,15 +33,15 @@ export function Cloudrunv2_getJobTemplateTemplateVolumeSecret_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Items",
+      "items",
       "If unspecified, the volume will expose a file whose name is the secret, relative to VolumeMount.mount_path. If specified, the key will be used as the version to fetch from Cloud Secret Manager and the path will be the name of the file exposed in the volume. When items are defined, they must specify a path and a version.",
-      Cloudrunv2_getJobTemplateTemplateVolumeSecretItem_GetTypes(),
+      cloudrunv2_getJobTemplateTemplateVolumeSecretItem_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Secret",
+      "secret",
       "The name of the secret in Cloud Secret Manager. Format: {secret} if the secret is in the same project. projects/{project}/secrets/{secret} if the secret is in a different project.",
       [],
       true,

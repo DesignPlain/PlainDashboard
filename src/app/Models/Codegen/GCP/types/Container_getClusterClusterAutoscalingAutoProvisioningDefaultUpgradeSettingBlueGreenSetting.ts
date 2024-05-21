@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSettingStandardRolloutPolicy,
-  Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSettingStandardRolloutPolicy_GetTypes,
-} from "./Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSettingStandardRolloutPolicy";
+  container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSettingStandardRolloutPolicy,
+  container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSettingStandardRolloutPolicy_GetTypes,
+} from "./container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSettingStandardRolloutPolicy";
 
-export interface Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSetting {
+export interface container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSetting {
   /*
 Time needed after draining entire blue pool. After this period, blue pool will be cleaned up.
 
 																A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
 */
-  NodePoolSoakDuration?: string;
+  nodePoolSoakDuration?: string;
 
   // Standard policy for the blue-green upgrade.
-  StandardRolloutPolicies?: Array<Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSettingStandardRolloutPolicy>;
+  standardRolloutPolicies?: Array<container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSettingStandardRolloutPolicy>;
 }
 
-export function Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSetting_GetTypes(): DynamicUIProps[] {
+export function container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSetting_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "NodePoolSoakDuration",
+      "nodePoolSoakDuration",
       "Time needed after draining entire blue pool. After this period, blue pool will be cleaned up.\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tA duration in seconds with up to nine fractional digits, ending with 's'. Example: \"3.5s\".",
       [],
       true,
@@ -34,9 +34,9 @@ export function Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpg
     ),
     new DynamicUIProps(
       InputType.Array,
-      "StandardRolloutPolicies",
+      "standardRolloutPolicies",
       "Standard policy for the blue-green upgrade.",
-      Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSettingStandardRolloutPolicy_GetTypes(),
+      container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSettingStandardRolloutPolicy_GetTypes(),
       true,
       false,
     ),

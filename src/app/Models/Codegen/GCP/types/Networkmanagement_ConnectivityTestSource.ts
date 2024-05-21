@@ -6,28 +6,12 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkmanagement_ConnectivityTestSource {
-  /*
-The IP address of the endpoint, which can be an external or
-internal IP. An IPv6 address is only allowed when the test's
-destination is a global load balancer VIP.
-*/
-  IpAddress?: string;
-
-  // A Compute Engine network URI.
-  Network?: string;
-
-  /*
-Type of the network where the endpoint is located.
-Possible values are: `GCP_NETWORK`, `NON_GCP_NETWORK`.
-*/
-  NetworkType?: string;
-
+export interface networkmanagement_ConnectivityTestSource {
   /*
 The IP protocol port of the endpoint. Only applicable when
 protocol is TCP or UDP.
 */
-  Port?: number;
+  port?: number;
 
   /*
 Project ID where the endpoint is located. The Project ID can be
@@ -40,49 +24,33 @@ that you provide is from the service project. In this case,
 the network that the IP address resides in is defined in the
 host project.
 */
-  ProjectId?: string;
+  projectId?: string;
 
   // A Compute Engine instance URI.
-  Instance?: string;
+  instance?: string;
+
+  /*
+The IP address of the endpoint, which can be an external or
+internal IP. An IPv6 address is only allowed when the test's
+destination is a global load balancer VIP.
+*/
+  ipAddress?: string;
+
+  // A Compute Engine network URI.
+  network?: string;
+
+  /*
+Type of the network where the endpoint is located.
+Possible values are: `GCP_NETWORK`, `NON_GCP_NETWORK`.
+*/
+  networkType?: string;
 }
 
-export function Networkmanagement_ConnectivityTestSource_GetTypes(): DynamicUIProps[] {
+export function networkmanagement_ConnectivityTestSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "IpAddress",
-      "The IP address of the endpoint, which can be an external or\ninternal IP. An IPv6 address is only allowed when the test's\ndestination is a global load balancer VIP.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Network",
-      "A Compute Engine network URI.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "NetworkType",
-      "Type of the network where the endpoint is located.\nPossible values are: `GCP_NETWORK`, `NON_GCP_NETWORK`.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Port",
-      "The IP protocol port of the endpoint. Only applicable when\nprotocol is TCP or UDP.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ProjectId",
+      "projectId",
       "Project ID where the endpoint is located. The Project ID can be\nderived from the URI if you provide a VM instance or network URI.\nThe following are two cases where you must provide the project ID:\n1. Only the IP address is specified, and the IP address is\nwithin a GCP project.\n2. When you are using Shared VPC and the IP address\nthat you provide is from the service project. In this case,\nthe network that the IP address resides in is defined in the\nhost project.",
       [],
       false,
@@ -90,8 +58,40 @@ export function Networkmanagement_ConnectivityTestSource_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "Instance",
+      "instance",
       "A Compute Engine instance URI.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "ipAddress",
+      "The IP address of the endpoint, which can be an external or\ninternal IP. An IPv6 address is only allowed when the test's\ndestination is a global load balancer VIP.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "network",
+      "A Compute Engine network URI.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "networkType",
+      "Type of the network where the endpoint is located.\nPossible values are: `GCP_NETWORK`, `NON_GCP_NETWORK`.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "port",
+      "The IP protocol port of the endpoint. Only applicable when\nprotocol is TCP or UDP.",
       [],
       false,
       false,

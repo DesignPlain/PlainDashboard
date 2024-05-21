@@ -7,16 +7,13 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datacatalog_PolicyTagIamMemberCondition,
-  Datacatalog_PolicyTagIamMemberCondition_GetTypes,
-} from "../types/Datacatalog_PolicyTagIamMemberCondition";
+  datacatalog_PolicyTagIamMemberCondition,
+  datacatalog_PolicyTagIamMemberCondition_GetTypes,
+} from "../types/datacatalog_PolicyTagIamMemberCondition";
 
 export interface PolicyTagIamMemberArgs {
   //
-  Condition?: Datacatalog_PolicyTagIamMemberCondition;
-
-  //
-  Member?: string;
+  member?: string;
 
   /*
 Used to find the parent resource to bind the IAM policy to
@@ -33,24 +30,27 @@ Each entry can have one of the following values:
 - --projectEditor:projectid--: Editors of the given project. For example, "projectEditor:my-example-project"
 - --projectViewer:projectid--: Viewers of the given project. For example, "projectViewer:my-example-project"
 */
-  PolicyTag?: string;
+  policyTag?: string;
 
   /*
 The role that should be applied. Only one
 `gcp.datacatalog.PolicyTagIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
-  Role?: string;
+  role?: string;
+
+  //
+  condition?: datacatalog_PolicyTagIamMemberCondition;
 }
 export class PolicyTagIamMember extends Resource {
   //
-  public Condition?: Datacatalog_PolicyTagIamMemberCondition;
+  public condition?: datacatalog_PolicyTagIamMemberCondition;
 
   // (Computed) The etag of the IAM policy.
-  public Etag?: string;
+  public etag?: string;
 
   //
-  public Member?: string;
+  public member?: string;
 
   /*
 Used to find the parent resource to bind the IAM policy to
@@ -67,29 +67,21 @@ Each entry can have one of the following values:
 - --projectEditor:projectid--: Editors of the given project. For example, "projectEditor:my-example-project"
 - --projectViewer:projectid--: Viewers of the given project. For example, "projectViewer:my-example-project"
 */
-  public PolicyTag?: string;
+  public policyTag?: string;
 
   /*
 The role that should be applied. Only one
 `gcp.datacatalog.PolicyTagIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
-  public Role?: string;
+  public role?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(
-        InputType.Object,
-        "Condition",
-        "",
-        Datacatalog_PolicyTagIamMemberCondition_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
+      new DynamicUIProps(InputType.String, "member", "", [], true, true),
       new DynamicUIProps(
         InputType.String,
-        "PolicyTag",
+        "policyTag",
         'Used to find the parent resource to bind the IAM policy to\n\n* `member/members` - (Required) Identities that will be granted the privilege in `role`.\nEach entry can have one of the following values:\n* **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.\n* **allAuthenticatedUsers**: A special identifier that represents anyone who is authenticated with a Google account or a service account.\n* **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.\n* **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.\n* **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.\n* **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.\n* **projectOwner:projectid**: Owners of the given project. For example, "projectOwner:my-example-project"\n* **projectEditor:projectid**: Editors of the given project. For example, "projectEditor:my-example-project"\n* **projectViewer:projectid**: Viewers of the given project. For example, "projectViewer:my-example-project"',
         [],
         true,
@@ -97,10 +89,18 @@ The role that should be applied. Only one
       ),
       new DynamicUIProps(
         InputType.String,
-        "Role",
+        "role",
         "The role that should be applied. Only one\n`gcp.datacatalog.PolicyTagIamBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
         [],
         true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "condition",
+        "",
+        datacatalog_PolicyTagIamMemberCondition_GetTypes(),
+        false,
         true,
       ),
     ];

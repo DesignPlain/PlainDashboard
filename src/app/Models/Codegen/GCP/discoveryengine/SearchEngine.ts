@@ -7,86 +7,61 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Discoveryengine_SearchEngineCommonConfig,
-  Discoveryengine_SearchEngineCommonConfig_GetTypes,
-} from "../types/Discoveryengine_SearchEngineCommonConfig";
+  discoveryengine_SearchEngineCommonConfig,
+  discoveryengine_SearchEngineCommonConfig_GetTypes,
+} from "../types/discoveryengine_SearchEngineCommonConfig";
 import {
-  Discoveryengine_SearchEngineSearchEngineConfig,
-  Discoveryengine_SearchEngineSearchEngineConfig_GetTypes,
-} from "../types/Discoveryengine_SearchEngineSearchEngineConfig";
+  discoveryengine_SearchEngineSearchEngineConfig,
+  discoveryengine_SearchEngineSearchEngineConfig_GetTypes,
+} from "../types/discoveryengine_SearchEngineSearchEngineConfig";
 
 export interface SearchEngineArgs {
-  /*
-Common config spec that specifies the metadata of the engine.
-Structure is documented below.
-*/
-  CommonConfig?: Discoveryengine_SearchEngineCommonConfig;
+  // The collection ID.
+  collectionId?: string;
 
-  // Unique ID to use for Search Engine App.
-  EngineId?: string;
+  // The data stores associated with this engine. For SOLUTION_TYPE_SEARCH type of engines, they can only associate with at most one data store.
+  dataStoreIds?: Array<string>;
 
   /*
 The industry vertical that the engine registers. The restriction of the Engine industry vertical is based on DataStore: If unspecified, default to GENERIC. Vertical on Engine has to match vertical of the DataStore liniked to the engine.
 Default value is `GENERIC`.
 Possible values are: `GENERIC`, `MEDIA`.
 */
-  IndustryVertical?: string;
+  industryVertical?: string;
 
   // Location.
-  Location?: string;
+  location?: string;
+
+  /*
+Common config spec that specifies the metadata of the engine.
+Structure is documented below.
+*/
+  commonConfig?: discoveryengine_SearchEngineCommonConfig;
+
+  // Required. The display name of the engine. Should be human readable. UTF-8 encoded string with limit of 1024 characters.
+  displayName?: string;
+
+  // Unique ID to use for Search Engine App.
+  engineId?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
-
-  // The collection ID.
-  CollectionId?: string;
-
-  // The data stores associated with this engine. For SOLUTION_TYPE_SEARCH type of engines, they can only associate with at most one data store.
-  DataStoreIds?: Array<string>;
-
-  // Required. The display name of the engine. Should be human readable. UTF-8 encoded string with limit of 1024 characters.
-  DisplayName?: string;
+  project?: string;
 
   /*
 Configurations for a Search Engine.
 Structure is documented below.
 */
-  SearchEngineConfig?: Discoveryengine_SearchEngineSearchEngineConfig;
+  searchEngineConfig?: discoveryengine_SearchEngineSearchEngineConfig;
 }
 export class SearchEngine extends Resource {
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  // Timestamp the Engine was last updated.
-  public UpdateTime?: string;
-
   /*
 Common config spec that specifies the metadata of the engine.
 Structure is documented below.
 */
-  public CommonConfig?: Discoveryengine_SearchEngineCommonConfig;
-
-  // Unique ID to use for Search Engine App.
-  public EngineId?: string;
-
-  // Location.
-  public Location?: string;
-
-  // Required. The display name of the engine. Should be human readable. UTF-8 encoded string with limit of 1024 characters.
-  public DisplayName?: string;
-
-  /*
-The industry vertical that the engine registers. The restriction of the Engine industry vertical is based on DataStore: If unspecified, default to GENERIC. Vertical on Engine has to match vertical of the DataStore liniked to the engine.
-Default value is `GENERIC`.
-Possible values are: `GENERIC`, `MEDIA`.
-*/
-  public IndustryVertical?: string;
+  public commonConfig?: discoveryengine_SearchEngineCommonConfig;
 
   /*
 The unique full resource name of the search engine. Values are of the format
@@ -94,52 +69,61 @@ The unique full resource name of the search engine. Values are of the format
 This field must be a UTF-8 encoded string with a length limit of 1024
 characters.
 */
-  public Name?: string;
+  public name?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   /*
 Configurations for a Search Engine.
 Structure is documented below.
 */
-  public SearchEngineConfig?: Discoveryengine_SearchEngineSearchEngineConfig;
+  public searchEngineConfig?: discoveryengine_SearchEngineSearchEngineConfig;
+
+  // Timestamp the Engine was last updated.
+  public updateTime?: string;
 
   // The collection ID.
-  public CollectionId?: string;
-
-  // Timestamp the Engine was created at.
-  public CreateTime?: string;
+  public collectionId?: string;
 
   // The data stores associated with this engine. For SOLUTION_TYPE_SEARCH type of engines, they can only associate with at most one data store.
-  public DataStoreIds?: Array<string>;
+  public dataStoreIds?: Array<string>;
+
+  // Required. The display name of the engine. Should be human readable. UTF-8 encoded string with limit of 1024 characters.
+  public displayName?: string;
+
+  // Unique ID to use for Search Engine App.
+  public engineId?: string;
+
+  /*
+The industry vertical that the engine registers. The restriction of the Engine industry vertical is based on DataStore: If unspecified, default to GENERIC. Vertical on Engine has to match vertical of the DataStore liniked to the engine.
+Default value is `GENERIC`.
+Possible values are: `GENERIC`, `MEDIA`.
+*/
+  public industryVertical?: string;
+
+  // Location.
+  public location?: string;
+
+  // Timestamp the Engine was created at.
+  public createTime?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "CollectionId",
-        "The collection ID.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Array,
-        "DataStoreIds",
-        "The data stores associated with this engine. For SOLUTION_TYPE_SEARCH type of engines, they can only associate with at most one data store.",
-        InputType_String_GetTypes(),
-        true,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.Object,
-        "CommonConfig",
+        "commonConfig",
         "Common config spec that specifies the metadata of the engine.\nStructure is documented below.",
-        Discoveryengine_SearchEngineCommonConfig_GetTypes(),
+        discoveryengine_SearchEngineCommonConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "EngineId",
+        "engineId",
         "Unique ID to use for Search Engine App.",
         [],
         true,
@@ -147,23 +131,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "IndustryVertical",
-        "The industry vertical that the engine registers. The restriction of the Engine industry vertical is based on DataStore: If unspecified, default to GENERIC. Vertical on Engine has to match vertical of the DataStore liniked to the engine.\nDefault value is `GENERIC`.\nPossible values are: `GENERIC`, `MEDIA`.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Location",
-        "Location.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -171,7 +139,39 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "collectionId",
+        "The collection ID.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "dataStoreIds",
+        "The data stores associated with this engine. For SOLUTION_TYPE_SEARCH type of engines, they can only associate with at most one data store.",
+        InputType_String_GetTypes(),
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "industryVertical",
+        "The industry vertical that the engine registers. The restriction of the Engine industry vertical is based on DataStore: If unspecified, default to GENERIC. Vertical on Engine has to match vertical of the DataStore liniked to the engine.\nDefault value is `GENERIC`.\nPossible values are: `GENERIC`, `MEDIA`.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "location",
+        "Location.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "displayName",
         "Required. The display name of the engine. Should be human readable. UTF-8 encoded string with limit of 1024 characters.",
         [],
         true,
@@ -179,9 +179,9 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "SearchEngineConfig",
+        "searchEngineConfig",
         "Configurations for a Search Engine.\nStructure is documented below.",
-        Discoveryengine_SearchEngineSearchEngineConfig_GetTypes(),
+        discoveryengine_SearchEngineSearchEngineConfig_GetTypes(),
         true,
         false,
       ),

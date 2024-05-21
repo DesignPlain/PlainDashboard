@@ -6,53 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_URLMapPathMatcherDefaultRouteAction,
-  Compute_URLMapPathMatcherDefaultRouteAction_GetTypes,
-} from "./Compute_URLMapPathMatcherDefaultRouteAction";
+  compute_URLMapPathMatcherDefaultUrlRedirect,
+  compute_URLMapPathMatcherDefaultUrlRedirect_GetTypes,
+} from "./compute_URLMapPathMatcherDefaultUrlRedirect";
 import {
-  Compute_URLMapPathMatcherDefaultUrlRedirect,
-  Compute_URLMapPathMatcherDefaultUrlRedirect_GetTypes,
-} from "./Compute_URLMapPathMatcherDefaultUrlRedirect";
+  compute_URLMapPathMatcherHeaderAction,
+  compute_URLMapPathMatcherHeaderAction_GetTypes,
+} from "./compute_URLMapPathMatcherHeaderAction";
 import {
-  Compute_URLMapPathMatcherHeaderAction,
-  Compute_URLMapPathMatcherHeaderAction_GetTypes,
-} from "./Compute_URLMapPathMatcherHeaderAction";
+  compute_URLMapPathMatcherPathRule,
+  compute_URLMapPathMatcherPathRule_GetTypes,
+} from "./compute_URLMapPathMatcherPathRule";
 import {
-  Compute_URLMapPathMatcherPathRule,
-  Compute_URLMapPathMatcherPathRule_GetTypes,
-} from "./Compute_URLMapPathMatcherPathRule";
+  compute_URLMapPathMatcherRouteRule,
+  compute_URLMapPathMatcherRouteRule_GetTypes,
+} from "./compute_URLMapPathMatcherRouteRule";
 import {
-  Compute_URLMapPathMatcherRouteRule,
-  Compute_URLMapPathMatcherRouteRule_GetTypes,
-} from "./Compute_URLMapPathMatcherRouteRule";
+  compute_URLMapPathMatcherDefaultRouteAction,
+  compute_URLMapPathMatcherDefaultRouteAction_GetTypes,
+} from "./compute_URLMapPathMatcherDefaultRouteAction";
 
-export interface Compute_URLMapPathMatcher {
-  /*
-defaultRouteAction takes effect when none of the pathRules or routeRules match. The load balancer performs
-advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request
-to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set.
-Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices.
-Only one of defaultRouteAction or defaultUrlRedirect must be set.
-Structure is documented below.
-*/
-  DefaultRouteAction?: Compute_URLMapPathMatcherDefaultRouteAction;
-
-  // The backend service or backend bucket to use when none of the given paths match.
-  DefaultService?: string;
-
+export interface compute_URLMapPathMatcher {
   /*
 When none of the specified hostRules match, the request is redirected to a URL specified
 by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or
 defaultRouteAction must not be set.
 Structure is documented below.
 */
-  DefaultUrlRedirect?: Compute_URLMapPathMatcherDefaultUrlRedirect;
+  defaultUrlRedirect?: compute_URLMapPathMatcherDefaultUrlRedirect;
 
   /*
 An optional description of this resource. Provide this property when you create
 the resource.
 */
-  Description?: string;
+  description?: string;
 
   /*
 Specifies changes to request and response headers that need to take effect for
@@ -60,10 +47,10 @@ the selected backendService. HeaderAction specified here are applied after the
 matching HttpRouteRule HeaderAction and before the HeaderAction in the UrlMap
 Structure is documented below.
 */
-  HeaderAction?: Compute_URLMapPathMatcherHeaderAction;
+  headerAction?: compute_URLMapPathMatcherHeaderAction;
 
   // The name to which this PathMatcher is referred by the HostRule.
-  Name?: string;
+  name?: string;
 
   /*
 The list of path rules. Use this list instead of routeRules when routing based
@@ -74,7 +61,7 @@ irrespective of the order in which those paths appear in this list. Within a
 given pathMatcher, only one of pathRules or routeRules must be set.
 Structure is documented below.
 */
-  PathRules?: Array<Compute_URLMapPathMatcherPathRule>;
+  pathRules?: Array<compute_URLMapPathMatcherPathRule>;
 
   /*
 The list of ordered HTTP route rules. Use this list instead of pathRules when
@@ -85,30 +72,27 @@ routeRules must be set. routeRules are not supported in UrlMaps intended for
 External load balancers.
 Structure is documented below.
 */
-  RouteRules?: Array<Compute_URLMapPathMatcherRouteRule>;
+  routeRules?: Array<compute_URLMapPathMatcherRouteRule>;
+
+  /*
+defaultRouteAction takes effect when none of the pathRules or routeRules match. The load balancer performs
+advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request
+to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set.
+Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices.
+Only one of defaultRouteAction or defaultUrlRedirect must be set.
+Structure is documented below.
+*/
+  defaultRouteAction?: compute_URLMapPathMatcherDefaultRouteAction;
+
+  // The backend service or backend bucket to use when none of the given paths match.
+  defaultService?: string;
 }
 
-export function Compute_URLMapPathMatcher_GetTypes(): DynamicUIProps[] {
+export function compute_URLMapPathMatcher_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "RouteRules",
-      "The list of ordered HTTP route rules. Use this list instead of pathRules when\nadvanced route matching and routing actions are desired. The order of specifying\nrouteRules matters: the first rule that matches will cause its specified routing\naction to take effect. Within a given pathMatcher, only one of pathRules or\nrouteRules must be set. routeRules are not supported in UrlMaps intended for\nExternal load balancers.\nStructure is documented below.",
-      Compute_URLMapPathMatcherRouteRule_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "DefaultRouteAction",
-      "defaultRouteAction takes effect when none of the pathRules or routeRules match. The load balancer performs\nadvanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request\nto the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set.\nConversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices.\nOnly one of defaultRouteAction or defaultUrlRedirect must be set.\nStructure is documented below.",
-      Compute_URLMapPathMatcherDefaultRouteAction_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "DefaultService",
+      "defaultService",
       "The backend service or backend bucket to use when none of the given paths match.",
       [],
       false,
@@ -116,15 +100,15 @@ export function Compute_URLMapPathMatcher_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "DefaultUrlRedirect",
+      "defaultUrlRedirect",
       "When none of the specified hostRules match, the request is redirected to a URL specified\nby defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or\ndefaultRouteAction must not be set.\nStructure is documented below.",
-      Compute_URLMapPathMatcherDefaultUrlRedirect_GetTypes(),
+      compute_URLMapPathMatcherDefaultUrlRedirect_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "An optional description of this resource. Provide this property when you create\nthe resource.",
       [],
       false,
@@ -132,15 +116,15 @@ export function Compute_URLMapPathMatcher_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "HeaderAction",
+      "headerAction",
       "Specifies changes to request and response headers that need to take effect for\nthe selected backendService. HeaderAction specified here are applied after the\nmatching HttpRouteRule HeaderAction and before the HeaderAction in the UrlMap\nStructure is documented below.",
-      Compute_URLMapPathMatcherHeaderAction_GetTypes(),
+      compute_URLMapPathMatcherHeaderAction_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name to which this PathMatcher is referred by the HostRule.",
       [],
       true,
@@ -148,9 +132,25 @@ export function Compute_URLMapPathMatcher_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "PathRules",
+      "pathRules",
       "The list of path rules. Use this list instead of routeRules when routing based\non simple path matching is all that's required. The order by which path rules\nare specified does not matter. Matches are always done on the longest-path-first\nbasis. For example: a pathRule with a path /a/b/c/* will match before /a/b/*\nirrespective of the order in which those paths appear in this list. Within a\ngiven pathMatcher, only one of pathRules or routeRules must be set.\nStructure is documented below.",
-      Compute_URLMapPathMatcherPathRule_GetTypes(),
+      compute_URLMapPathMatcherPathRule_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "routeRules",
+      "The list of ordered HTTP route rules. Use this list instead of pathRules when\nadvanced route matching and routing actions are desired. The order of specifying\nrouteRules matters: the first rule that matches will cause its specified routing\naction to take effect. Within a given pathMatcher, only one of pathRules or\nrouteRules must be set. routeRules are not supported in UrlMaps intended for\nExternal load balancers.\nStructure is documented below.",
+      compute_URLMapPathMatcherRouteRule_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "defaultRouteAction",
+      "defaultRouteAction takes effect when none of the pathRules or routeRules match. The load balancer performs\nadvanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request\nto the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set.\nConversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices.\nOnly one of defaultRouteAction or defaultUrlRedirect must be set.\nStructure is documented below.",
+      compute_URLMapPathMatcherDefaultRouteAction_GetTypes(),
       false,
       false,
     ),

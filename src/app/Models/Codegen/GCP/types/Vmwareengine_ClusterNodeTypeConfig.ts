@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vmwareengine_ClusterNodeTypeConfig {
-  // The identifier for this object. Format specified above.
-  NodeTypeId?: string;
-
+export interface vmwareengine_ClusterNodeTypeConfig {
   /*
 Customized number of cores available to each node of the type.
 This number must always be one of `nodeType.availableCustomCoreCounts`.
 If zero is provided max value from `nodeType.availableCustomCoreCounts` will be used.
 Once the customer is created then corecount cannot be changed.
 */
-  CustomCoreCount?: number;
+  customCoreCount?: number;
 
   // The number of nodes of this type in the cluster.
-  NodeCount?: number;
+  nodeCount?: number;
+
+  // The identifier for this object. Format specified above.
+  nodeTypeId?: string;
 }
 
-export function Vmwareengine_ClusterNodeTypeConfig_GetTypes(): DynamicUIProps[] {
+export function vmwareengine_ClusterNodeTypeConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "NodeTypeId",
+      "nodeTypeId",
       "The identifier for this object. Format specified above.",
       [],
       true,
@@ -34,7 +34,7 @@ export function Vmwareengine_ClusterNodeTypeConfig_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Number,
-      "CustomCoreCount",
+      "customCoreCount",
       "Customized number of cores available to each node of the type.\nThis number must always be one of `nodeType.availableCustomCoreCounts`.\nIf zero is provided max value from `nodeType.availableCustomCoreCounts` will be used.\nOnce the customer is created then corecount cannot be changed.",
       [],
       false,
@@ -42,7 +42,7 @@ export function Vmwareengine_ClusterNodeTypeConfig_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Number,
-      "NodeCount",
+      "nodeCount",
       "The number of nodes of this type in the cluster.",
       [],
       true,

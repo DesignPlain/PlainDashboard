@@ -6,41 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getTiersTier {
-  // The maximum ram usage of this tier in bytes.
-  Ram?: number;
-
-  // The applicable regions for this tier.
-  Regions?: Array<string>;
-
+export interface sql_getTiersTier {
   // An identifier for the machine type, for example, db-custom-1-3840.
-  Tier?: string;
+  tier?: string;
 
   // The maximum disk size of this tier in bytes.
-  DiskQuota?: number;
+  diskQuota?: number;
+
+  // The maximum ram usage of this tier in bytes.
+  ram?: number;
+
+  // The applicable regions for this tier.
+  regions?: Array<string>;
 }
 
-export function Sql_getTiersTier_GetTypes(): DynamicUIProps[] {
+export function sql_getTiersTier_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "Ram",
-      "The maximum ram usage of this tier in bytes.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Regions",
-      "The applicable regions for this tier.",
-      InputType_String_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Tier",
+      "tier",
       "An identifier for the machine type, for example, db-custom-1-3840.",
       [],
       true,
@@ -48,9 +32,25 @@ export function Sql_getTiersTier_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "DiskQuota",
+      "diskQuota",
       "The maximum disk size of this tier in bytes.",
       [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "ram",
+      "The maximum ram usage of this tier in bytes.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "regions",
+      "The applicable regions for this tier.",
+      InputType_String_GetTypes(),
       true,
       false,
     ),

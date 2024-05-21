@@ -6,47 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_ConnectionProfilePostgresqlProfile {
-  // Port for the PostgreSQL connection.
-  Port?: number;
-
+export interface datastream_ConnectionProfilePostgresqlProfile {
   // Username for the PostgreSQL connection.
-  Username?: string;
+  username?: string;
 
   // Database for the PostgreSQL connection.
-  Database?: string;
+  database?: string;
 
   // Hostname for the PostgreSQL connection.
-  Hostname?: string;
+  hostname?: string;
 
   /*
 Password for the PostgreSQL connection.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  Password?: string;
+  password?: string;
+
+  // Port for the PostgreSQL connection.
+  port?: number;
 }
 
-export function Datastream_ConnectionProfilePostgresqlProfile_GetTypes(): DynamicUIProps[] {
+export function datastream_ConnectionProfilePostgresqlProfile_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "Port",
-      "Port for the PostgreSQL connection.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Username",
-      "Username for the PostgreSQL connection.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Database",
+      "database",
       "Database for the PostgreSQL connection.",
       [],
       true,
@@ -54,7 +38,7 @@ export function Datastream_ConnectionProfilePostgresqlProfile_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "Hostname",
+      "hostname",
       "Hostname for the PostgreSQL connection.",
       [],
       true,
@@ -62,8 +46,24 @@ export function Datastream_ConnectionProfilePostgresqlProfile_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "Password",
+      "password",
       "Password for the PostgreSQL connection.\n**Note**: This property is sensitive and will not be displayed in the plan.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "port",
+      "Port for the PostgreSQL connection.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "username",
+      "Username for the PostgreSQL connection.",
       [],
       true,
       false,

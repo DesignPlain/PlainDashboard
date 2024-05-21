@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Storage_getBucketLifecycleRuleAction,
-  Storage_getBucketLifecycleRuleAction_GetTypes,
-} from "./Storage_getBucketLifecycleRuleAction";
+  storage_getBucketLifecycleRuleAction,
+  storage_getBucketLifecycleRuleAction_GetTypes,
+} from "./storage_getBucketLifecycleRuleAction";
 import {
-  Storage_getBucketLifecycleRuleCondition,
-  Storage_getBucketLifecycleRuleCondition_GetTypes,
-} from "./Storage_getBucketLifecycleRuleCondition";
+  storage_getBucketLifecycleRuleCondition,
+  storage_getBucketLifecycleRuleCondition_GetTypes,
+} from "./storage_getBucketLifecycleRuleCondition";
 
-export interface Storage_getBucketLifecycleRule {
+export interface storage_getBucketLifecycleRule {
   // The Lifecycle Rule's action configuration. A single block of this type is supported.
-  Actions?: Array<Storage_getBucketLifecycleRuleAction>;
+  actions?: Array<storage_getBucketLifecycleRuleAction>;
 
   // The Lifecycle Rule's condition configuration.
-  Conditions?: Array<Storage_getBucketLifecycleRuleCondition>;
+  conditions?: Array<storage_getBucketLifecycleRuleCondition>;
 }
 
-export function Storage_getBucketLifecycleRule_GetTypes(): DynamicUIProps[] {
+export function storage_getBucketLifecycleRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Actions",
+      "actions",
       "The Lifecycle Rule's action configuration. A single block of this type is supported.",
-      Storage_getBucketLifecycleRuleAction_GetTypes(),
+      storage_getBucketLifecycleRuleAction_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Conditions",
+      "conditions",
       "The Lifecycle Rule's condition configuration.",
-      Storage_getBucketLifecycleRuleCondition_GetTypes(),
+      storage_getBucketLifecycleRuleCondition_GetTypes(),
       true,
       false,
     ),

@@ -6,31 +6,39 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuildv2_ConnectionInstallationState {
+export interface cloudbuildv2_ConnectionInstallationState {
   /*
 (Output)
 Output only. Link to follow for next action. Empty string if the installation is already complete.
 */
-  ActionUri?: string;
+  actionUri?: string;
 
   /*
 (Output)
 Output only. Message of what the user should do next to continue the installation. Empty string if the installation is already complete.
 */
-  Message?: string;
+  message?: string;
 
   /*
 (Output)
 Output only. Current step of the installation process.
 */
-  Stage?: string;
+  stage?: string;
 }
 
-export function Cloudbuildv2_ConnectionInstallationState_GetTypes(): DynamicUIProps[] {
+export function cloudbuildv2_ConnectionInstallationState_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Message",
+      "actionUri",
+      "(Output)\nOutput only. Link to follow for next action. Empty string if the installation is already complete.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "message",
       "(Output)\nOutput only. Message of what the user should do next to continue the installation. Empty string if the installation is already complete.",
       [],
       false,
@@ -38,16 +46,8 @@ export function Cloudbuildv2_ConnectionInstallationState_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "Stage",
+      "stage",
       "(Output)\nOutput only. Current step of the installation process.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ActionUri",
-      "(Output)\nOutput only. Link to follow for next action. Empty string if the installation is already complete.",
       [],
       false,
       false,

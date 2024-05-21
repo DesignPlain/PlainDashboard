@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstanceSettingAdvancedMachineFeature {
+export interface sql_getDatabaseInstanceSettingAdvancedMachineFeature {
   // The number of threads per physical core. Can be 1 or 2.
-  ThreadsPerCore?: number;
+  threadsPerCore?: number;
 }
 
-export function Sql_getDatabaseInstanceSettingAdvancedMachineFeature_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstanceSettingAdvancedMachineFeature_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "ThreadsPerCore",
+      "threadsPerCore",
       "The number of threads per physical core. Can be 1 or 2.",
       [],
       true,

@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Artifactregistry_getRepositoryRemoteRepositoryConfigUpstreamCredentialUsernamePasswordCredential,
-  Artifactregistry_getRepositoryRemoteRepositoryConfigUpstreamCredentialUsernamePasswordCredential_GetTypes,
-} from "./Artifactregistry_getRepositoryRemoteRepositoryConfigUpstreamCredentialUsernamePasswordCredential";
+  artifactregistry_getRepositoryRemoteRepositoryConfigUpstreamCredentialUsernamePasswordCredential,
+  artifactregistry_getRepositoryRemoteRepositoryConfigUpstreamCredentialUsernamePasswordCredential_GetTypes,
+} from "./artifactregistry_getRepositoryRemoteRepositoryConfigUpstreamCredentialUsernamePasswordCredential";
 
-export interface Artifactregistry_getRepositoryRemoteRepositoryConfigUpstreamCredential {
+export interface artifactregistry_getRepositoryRemoteRepositoryConfigUpstreamCredential {
   // Use username and password to access the remote repository.
-  UsernamePasswordCredentials?: Array<Artifactregistry_getRepositoryRemoteRepositoryConfigUpstreamCredentialUsernamePasswordCredential>;
+  usernamePasswordCredentials?: Array<artifactregistry_getRepositoryRemoteRepositoryConfigUpstreamCredentialUsernamePasswordCredential>;
 }
 
-export function Artifactregistry_getRepositoryRemoteRepositoryConfigUpstreamCredential_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_getRepositoryRemoteRepositoryConfigUpstreamCredential_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "UsernamePasswordCredentials",
+      "usernamePasswordCredentials",
       "Use username and password to access the remote repository.",
-      Artifactregistry_getRepositoryRemoteRepositoryConfigUpstreamCredentialUsernamePasswordCredential_GetTypes(),
+      artifactregistry_getRepositoryRemoteRepositoryConfigUpstreamCredentialUsernamePasswordCredential_GetTypes(),
       true,
       false,
     ),

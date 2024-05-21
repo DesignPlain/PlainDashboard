@@ -6,44 +6,44 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networkservices_TcpRouteRuleAction,
-  Networkservices_TcpRouteRuleAction_GetTypes,
-} from "./Networkservices_TcpRouteRuleAction";
+  networkservices_TcpRouteRuleAction,
+  networkservices_TcpRouteRuleAction_GetTypes,
+} from "./networkservices_TcpRouteRuleAction";
 import {
-  Networkservices_TcpRouteRuleMatch,
-  Networkservices_TcpRouteRuleMatch_GetTypes,
-} from "./Networkservices_TcpRouteRuleMatch";
+  networkservices_TcpRouteRuleMatch,
+  networkservices_TcpRouteRuleMatch_GetTypes,
+} from "./networkservices_TcpRouteRuleMatch";
 
-export interface Networkservices_TcpRouteRule {
+export interface networkservices_TcpRouteRule {
   /*
 A detailed rule defining how to route traffic.
 Structure is documented below.
 */
-  Action?: Networkservices_TcpRouteRuleAction;
+  action?: networkservices_TcpRouteRuleAction;
 
   /*
 RouteMatch defines the predicate used to match requests to a given action. Multiple match types are "OR"ed for evaluation.
 If no routeMatch field is specified, this rule will unconditionally match traffic.
 Structure is documented below.
 */
-  Matches?: Array<Networkservices_TcpRouteRuleMatch>;
+  matches?: Array<networkservices_TcpRouteRuleMatch>;
 }
 
-export function Networkservices_TcpRouteRule_GetTypes(): DynamicUIProps[] {
+export function networkservices_TcpRouteRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Action",
+      "action",
       "A detailed rule defining how to route traffic.\nStructure is documented below.",
-      Networkservices_TcpRouteRuleAction_GetTypes(),
+      networkservices_TcpRouteRuleAction_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Matches",
+      "matches",
       'RouteMatch defines the predicate used to match requests to a given action. Multiple match types are "OR"ed for evaluation.\nIf no routeMatch field is specified, this rule will unconditionally match traffic.\nStructure is documented below.',
-      Networkservices_TcpRouteRuleMatch_GetTypes(),
+      networkservices_TcpRouteRuleMatch_GetTypes(),
       false,
       false,
     ),

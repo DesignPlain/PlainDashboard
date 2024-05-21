@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Pubsub_LiteTopicPartitionConfigCapacity,
-  Pubsub_LiteTopicPartitionConfigCapacity_GetTypes,
-} from "./Pubsub_LiteTopicPartitionConfigCapacity";
+  pubsub_LiteTopicPartitionConfigCapacity,
+  pubsub_LiteTopicPartitionConfigCapacity_GetTypes,
+} from "./pubsub_LiteTopicPartitionConfigCapacity";
 
-export interface Pubsub_LiteTopicPartitionConfig {
+export interface pubsub_LiteTopicPartitionConfig {
   /*
 The capacity configuration.
 Structure is documented below.
 */
-  Capacity?: Pubsub_LiteTopicPartitionConfigCapacity;
+  capacity?: pubsub_LiteTopicPartitionConfigCapacity;
 
   // The number of partitions in the topic. Must be at least 1.
-  Count?: number;
+  count?: number;
 }
 
-export function Pubsub_LiteTopicPartitionConfig_GetTypes(): DynamicUIProps[] {
+export function pubsub_LiteTopicPartitionConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Capacity",
+      "capacity",
       "The capacity configuration.\nStructure is documented below.",
-      Pubsub_LiteTopicPartitionConfigCapacity_GetTypes(),
+      pubsub_LiteTopicPartitionConfigCapacity_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Count",
+      "count",
       "The number of partitions in the topic. Must be at least 1.",
       [],
       true,

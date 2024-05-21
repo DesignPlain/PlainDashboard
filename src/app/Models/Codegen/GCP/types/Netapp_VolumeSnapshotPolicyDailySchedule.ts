@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Netapp_VolumeSnapshotPolicyDailySchedule {
+export interface netapp_VolumeSnapshotPolicyDailySchedule {
   // Set the hour to create the snapshot (0-23), defaults to midnight (0).
-  Hour?: number;
+  hour?: number;
 
   // Set the minute of the hour to create the snapshot (0-59), defaults to the top of the hour (0).
-  Minute?: number;
+  minute?: number;
 
   // The maximum number of snapshots to keep for the daily schedule.
-  SnapshotsToKeep?: number;
+  snapshotsToKeep?: number;
 }
 
-export function Netapp_VolumeSnapshotPolicyDailySchedule_GetTypes(): DynamicUIProps[] {
+export function netapp_VolumeSnapshotPolicyDailySchedule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Hour",
+      "hour",
       "Set the hour to create the snapshot (0-23), defaults to midnight (0).",
       [],
       false,
@@ -29,7 +29,7 @@ export function Netapp_VolumeSnapshotPolicyDailySchedule_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Minute",
+      "minute",
       "Set the minute of the hour to create the snapshot (0-59), defaults to the top of the hour (0).",
       [],
       false,
@@ -37,7 +37,7 @@ export function Netapp_VolumeSnapshotPolicyDailySchedule_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Number,
-      "SnapshotsToKeep",
+      "snapshotsToKeep",
       "The maximum number of snapshots to keep for the daily schedule.",
       [],
       true,

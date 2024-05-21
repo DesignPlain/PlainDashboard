@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AttachedClusterError {
+export interface container_AttachedClusterError {
   // Human-friendly description of the error.
-  Message?: string;
+  message?: string;
 }
 
-export function Container_AttachedClusterError_GetTypes(): DynamicUIProps[] {
+export function container_AttachedClusterError_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Message",
+      "message",
       "Human-friendly description of the error.",
       [],
       false,

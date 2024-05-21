@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodePoolNetworkConfigAdditionalNodeNetworkConfig {
-  // Name of the subnetwork where the additional interface belongs.
-  Subnetwork?: string;
-
+export interface container_getClusterNodePoolNetworkConfigAdditionalNodeNetworkConfig {
   // Name of the VPC where the additional interface belongs.
-  Network?: string;
+  network?: string;
+
+  // Name of the subnetwork where the additional interface belongs.
+  subnetwork?: string;
 }
 
-export function Container_getClusterNodePoolNetworkConfigAdditionalNodeNetworkConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolNetworkConfigAdditionalNodeNetworkConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Subnetwork",
-      "Name of the subnetwork where the additional interface belongs.",
+      "network",
+      "Name of the VPC where the additional interface belongs.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Network",
-      "Name of the VPC where the additional interface belongs.",
+      "subnetwork",
+      "Name of the subnetwork where the additional interface belongs.",
       [],
       true,
       false,

@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule {
+export interface securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule {
   /*
 The state of enablement for the module at its level of the resource hierarchy.
 Possible values are: `ENABLEMENT_STATE_UNSPECIFIED`, `ENABLED`, `DISABLED`.
 */
-  ModuleEnablementState?: string;
+  moduleEnablementState?: string;
 
   // The name of the module eg: BIGQUERY_TABLE_CMEK_DISABLED.
-  ModuleName?: string;
+  moduleName?: string;
 }
 
-export function Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule_GetTypes(): DynamicUIProps[] {
+export function securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ModuleEnablementState",
+      "moduleEnablementState",
       "The state of enablement for the module at its level of the resource hierarchy.\nPossible values are: `ENABLEMENT_STATE_UNSPECIFIED`, `ENABLED`, `DISABLED`.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAn
     ),
     new DynamicUIProps(
       InputType.String,
-      "ModuleName",
+      "moduleName",
       "The name of the module eg: BIGQUERY_TABLE_CMEK_DISABLED.",
       [],
       true,

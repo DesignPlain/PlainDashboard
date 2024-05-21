@@ -6,16 +6,13 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Firestore_IndexField {
-  // Name of the field.
-  FieldPath?: string;
-
+export interface firestore_IndexField {
   /*
 Indicates that this field supports ordering by the specified order or comparing using =, <, <=, >, >=.
 Only one of `order` and `arrayConfig` can be specified.
 Possible values are: `ASCENDING`, `DESCENDING`.
 */
-  Order?: string;
+  order?: string;
 
   /*
 Indicates that this field supports operations on arrayValues. Only one of `order` and `arrayConfig` can
@@ -24,22 +21,17 @@ Possible values are: `CONTAINS`.
 
 - - -
 */
-  ArrayConfig?: string;
+  arrayConfig?: string;
+
+  // Name of the field.
+  fieldPath?: string;
 }
 
-export function Firestore_IndexField_GetTypes(): DynamicUIProps[] {
+export function firestore_IndexField_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "FieldPath",
-      "Name of the field.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Order",
+      "order",
       "Indicates that this field supports ordering by the specified order or comparing using =, <, <=, >, >=.\nOnly one of `order` and `arrayConfig` can be specified.\nPossible values are: `ASCENDING`, `DESCENDING`.",
       [],
       false,
@@ -47,8 +39,16 @@ export function Firestore_IndexField_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ArrayConfig",
+      "arrayConfig",
       "Indicates that this field supports operations on arrayValues. Only one of `order` and `arrayConfig` can\nbe specified.\nPossible values are: `CONTAINS`.\n\n- - -",
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "fieldPath",
+      "Name of the field.",
       [],
       false,
       true,

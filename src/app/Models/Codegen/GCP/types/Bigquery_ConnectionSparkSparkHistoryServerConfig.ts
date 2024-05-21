@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_ConnectionSparkSparkHistoryServerConfig {
+export interface bigquery_ConnectionSparkSparkHistoryServerConfig {
   // Resource name of an existing Dataproc Cluster to act as a Spark History Server for the connection if the form of projects/[projectId]/regions/[region]/clusters/[cluster_name].
-  DataprocCluster?: string;
+  dataprocCluster?: string;
 }
 
-export function Bigquery_ConnectionSparkSparkHistoryServerConfig_GetTypes(): DynamicUIProps[] {
+export function bigquery_ConnectionSparkSparkHistoryServerConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DataprocCluster",
+      "dataprocCluster",
       "Resource name of an existing Dataproc Cluster to act as a Spark History Server for the connection if the form of projects/[projectId]/regions/[region]/clusters/[cluster_name].",
       [],
       false,

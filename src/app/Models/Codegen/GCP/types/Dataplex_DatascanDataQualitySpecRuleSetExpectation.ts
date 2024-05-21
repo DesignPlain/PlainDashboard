@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataplex_DatascanDataQualitySpecRuleSetExpectation {
+export interface dataplex_DatascanDataQualitySpecRuleSetExpectation {
   // Expected values for the column value.
-  Values?: Array<string>;
+  values?: Array<string>;
 }
 
-export function Dataplex_DatascanDataQualitySpecRuleSetExpectation_GetTypes(): DynamicUIProps[] {
+export function dataplex_DatascanDataQualitySpecRuleSetExpectation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Values",
+      "values",
       "Expected values for the column value.",
       InputType_String_GetTypes(),
       true,

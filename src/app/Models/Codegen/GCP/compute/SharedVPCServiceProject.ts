@@ -9,29 +9,29 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface SharedVPCServiceProjectArgs {
   // The deletion policy for the shared VPC service. Setting ABANDON allows the resource to be abandoned rather than deleted. Possible values are: "ABANDON".
-  DeletionPolicy?: string;
+  deletionPolicy?: string;
 
   // The ID of a host project to associate.
-  HostProject?: string;
+  hostProject?: string;
 
   // The ID of the project that will serve as a Shared VPC service project.
-  ServiceProject?: string;
+  serviceProject?: string;
 }
 export class SharedVPCServiceProject extends Resource {
+  // The deletion policy for the shared VPC service. Setting ABANDON allows the resource to be abandoned rather than deleted. Possible values are: "ABANDON".
+  public deletionPolicy?: string;
+
   // The ID of a host project to associate.
-  public HostProject?: string;
+  public hostProject?: string;
 
   // The ID of the project that will serve as a Shared VPC service project.
-  public ServiceProject?: string;
-
-  // The deletion policy for the shared VPC service. Setting ABANDON allows the resource to be abandoned rather than deleted. Possible values are: "ABANDON".
-  public DeletionPolicy?: string;
+  public serviceProject?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "DeletionPolicy",
+        "deletionPolicy",
         'The deletion policy for the shared VPC service. Setting ABANDON allows the resource to be abandoned rather than deleted. Possible values are: "ABANDON".',
         [],
         false,
@@ -39,7 +39,7 @@ export class SharedVPCServiceProject extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "HostProject",
+        "hostProject",
         "The ID of a host project to associate.",
         [],
         true,
@@ -47,7 +47,7 @@ export class SharedVPCServiceProject extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "ServiceProject",
+        "serviceProject",
         "The ID of the project that will serve as a Shared VPC service project.",
         [],
         true,

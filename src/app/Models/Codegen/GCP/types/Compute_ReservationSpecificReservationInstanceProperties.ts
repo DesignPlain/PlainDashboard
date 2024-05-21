@@ -6,61 +6,53 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_ReservationSpecificReservationInstancePropertiesGuestAccelerator,
-  Compute_ReservationSpecificReservationInstancePropertiesGuestAccelerator_GetTypes,
-} from "./Compute_ReservationSpecificReservationInstancePropertiesGuestAccelerator";
+  compute_ReservationSpecificReservationInstancePropertiesLocalSsd,
+  compute_ReservationSpecificReservationInstancePropertiesLocalSsd_GetTypes,
+} from "./compute_ReservationSpecificReservationInstancePropertiesLocalSsd";
 import {
-  Compute_ReservationSpecificReservationInstancePropertiesLocalSsd,
-  Compute_ReservationSpecificReservationInstancePropertiesLocalSsd_GetTypes,
-} from "./Compute_ReservationSpecificReservationInstancePropertiesLocalSsd";
+  compute_ReservationSpecificReservationInstancePropertiesGuestAccelerator,
+  compute_ReservationSpecificReservationInstancePropertiesGuestAccelerator_GetTypes,
+} from "./compute_ReservationSpecificReservationInstancePropertiesGuestAccelerator";
 
-export interface Compute_ReservationSpecificReservationInstanceProperties {
+export interface compute_ReservationSpecificReservationInstanceProperties {
+  /*
+The amount of local ssd to reserve with each instance. This
+reserves disks of type `local-ssd`.
+Structure is documented below.
+*/
+  localSsds?: Array<compute_ReservationSpecificReservationInstancePropertiesLocalSsd>;
+
+  // The name of the machine type to reserve.
+  machineType?: string;
+
   /*
 The minimum CPU platform for the reservation. For example,
 `"Intel Skylake"`. See
 the CPU platform availability reference](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform#availablezones)
 for information on available CPU platforms.
 */
-  MinCpuPlatform?: string;
+  minCpuPlatform?: string;
 
   /*
 Guest accelerator type and count.
 Structure is documented below.
 */
-  GuestAccelerators?: Array<Compute_ReservationSpecificReservationInstancePropertiesGuestAccelerator>;
-
-  /*
-The amount of local ssd to reserve with each instance. This
-reserves disks of type `local-ssd`.
-Structure is documented below.
-*/
-  LocalSsds?: Array<Compute_ReservationSpecificReservationInstancePropertiesLocalSsd>;
-
-  // The name of the machine type to reserve.
-  MachineType?: string;
+  guestAccelerators?: Array<compute_ReservationSpecificReservationInstancePropertiesGuestAccelerator>;
 }
 
-export function Compute_ReservationSpecificReservationInstanceProperties_GetTypes(): DynamicUIProps[] {
+export function compute_ReservationSpecificReservationInstanceProperties_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "GuestAccelerators",
-      "Guest accelerator type and count.\nStructure is documented below.",
-      Compute_ReservationSpecificReservationInstancePropertiesGuestAccelerator_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "LocalSsds",
+      "localSsds",
       "The amount of local ssd to reserve with each instance. This\nreserves disks of type `local-ssd`.\nStructure is documented below.",
-      Compute_ReservationSpecificReservationInstancePropertiesLocalSsd_GetTypes(),
+      compute_ReservationSpecificReservationInstancePropertiesLocalSsd_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "MachineType",
+      "machineType",
       "The name of the machine type to reserve.",
       [],
       true,
@@ -68,9 +60,17 @@ export function Compute_ReservationSpecificReservationInstanceProperties_GetType
     ),
     new DynamicUIProps(
       InputType.String,
-      "MinCpuPlatform",
+      "minCpuPlatform",
       'The minimum CPU platform for the reservation. For example,\n`"Intel Skylake"`. See\nthe CPU platform availability reference](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform#availablezones)\nfor information on available CPU platforms.',
       [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "guestAccelerators",
+      "Guest accelerator type and count.\nStructure is documented below.",
+      compute_ReservationSpecificReservationInstancePropertiesGuestAccelerator_GetTypes(),
       false,
       true,
     ),

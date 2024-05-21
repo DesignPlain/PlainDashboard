@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Securitycenter_OrganizationCustomModuleCustomConfigCustomOutputPropertyValueExpression,
-  Securitycenter_OrganizationCustomModuleCustomConfigCustomOutputPropertyValueExpression_GetTypes,
-} from "./Securitycenter_OrganizationCustomModuleCustomConfigCustomOutputPropertyValueExpression";
+  securitycenter_OrganizationCustomModuleCustomConfigCustomOutputPropertyValueExpression,
+  securitycenter_OrganizationCustomModuleCustomConfigCustomOutputPropertyValueExpression_GetTypes,
+} from "./securitycenter_OrganizationCustomModuleCustomConfigCustomOutputPropertyValueExpression";
 
-export interface Securitycenter_OrganizationCustomModuleCustomConfigCustomOutputProperty {
+export interface securitycenter_OrganizationCustomModuleCustomConfigCustomOutputProperty {
   // Name of the property for the custom output.
-  Name?: string;
+  name?: string;
 
   /*
 The CEL expression for the custom output. A resource property can be specified
 to return the value of the property or a text string enclosed in quotation marks.
 Structure is documented below.
 */
-  ValueExpression?: Securitycenter_OrganizationCustomModuleCustomConfigCustomOutputPropertyValueExpression;
+  valueExpression?: securitycenter_OrganizationCustomModuleCustomConfigCustomOutputPropertyValueExpression;
 }
 
-export function Securitycenter_OrganizationCustomModuleCustomConfigCustomOutputProperty_GetTypes(): DynamicUIProps[] {
+export function securitycenter_OrganizationCustomModuleCustomConfigCustomOutputProperty_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "ValueExpression",
-      "The CEL expression for the custom output. A resource property can be specified\nto return the value of the property or a text string enclosed in quotation marks.\nStructure is documented below.",
-      Securitycenter_OrganizationCustomModuleCustomConfigCustomOutputPropertyValueExpression_GetTypes(),
+      InputType.String,
+      "name",
+      "Name of the property for the custom output.",
+      [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "Name",
-      "Name of the property for the custom output.",
-      [],
+      InputType.Object,
+      "valueExpression",
+      "The CEL expression for the custom output. A resource property can be specified\nto return the value of the property or a text string enclosed in quotation marks.\nStructure is documented below.",
+      securitycenter_OrganizationCustomModuleCustomConfigCustomOutputPropertyValueExpression_GetTypes(),
       false,
       false,
     ),

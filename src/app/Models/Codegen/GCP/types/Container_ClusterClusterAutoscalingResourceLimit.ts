@@ -6,26 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterClusterAutoscalingResourceLimit {
+export interface container_ClusterClusterAutoscalingResourceLimit {
   // Maximum amount of the resource in the cluster.
-  Maximum?: number;
+  maximum?: number;
 
   // Minimum amount of the resource in the cluster.
-  Minimum?: number;
+  minimum?: number;
 
   /*
 The type of the resource. For example, `cpu` and
 `memory`.  See the [guide to using Node Auto-Provisioning](https://cloud.google.com/kubernetes-engine/docs/how-to/node-auto-provisioning)
 for a list of types.
 */
-  ResourceType?: string;
+  resourceType?: string;
 }
 
-export function Container_ClusterClusterAutoscalingResourceLimit_GetTypes(): DynamicUIProps[] {
+export function container_ClusterClusterAutoscalingResourceLimit_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "resourceType",
+      "The type of the resource. For example, `cpu` and\n`memory`.  See the [guide to using Node Auto-Provisioning](https://cloud.google.com/kubernetes-engine/docs/how-to/node-auto-provisioning)\nfor a list of types.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Number,
-      "Maximum",
+      "maximum",
       "Maximum amount of the resource in the cluster.",
       [],
       false,
@@ -33,18 +41,10 @@ export function Container_ClusterClusterAutoscalingResourceLimit_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Minimum",
+      "minimum",
       "Minimum amount of the resource in the cluster.",
       [],
       false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ResourceType",
-      "The type of the resource. For example, `cpu` and\n`memory`.  See the [guide to using Node Auto-Provisioning](https://cloud.google.com/kubernetes-engine/docs/how-to/node-auto-provisioning)\nfor a list of types.",
-      [],
-      true,
       false,
     ),
   ];

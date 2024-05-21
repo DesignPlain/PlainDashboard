@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuild_getTriggerGithubPullRequest {
-  // If true, branches that do NOT match the git_ref will trigger a build.
-  InvertRegex?: boolean;
-
+export interface cloudbuild_getTriggerGithubPullRequest {
   // Regex of branches to match.
-  Branch?: string;
+  branch?: string;
 
   // Whether to block builds on a "/gcbrun" comment from a repository owner or collaborator. Possible values: ["COMMENTS_DISABLED", "COMMENTS_ENABLED", "COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY"]
-  CommentControl?: string;
+  commentControl?: string;
+
+  // If true, branches that do NOT match the git_ref will trigger a build.
+  invertRegex?: boolean;
 }
 
-export function Cloudbuild_getTriggerGithubPullRequest_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_getTriggerGithubPullRequest_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Bool,
-      "InvertRegex",
-      "If true, branches that do NOT match the git_ref will trigger a build.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Branch",
+      "branch",
       "Regex of branches to match.",
       [],
       true,
@@ -37,8 +29,16 @@ export function Cloudbuild_getTriggerGithubPullRequest_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "CommentControl",
+      "commentControl",
       'Whether to block builds on a "/gcbrun" comment from a repository owner or collaborator. Possible values: ["COMMENTS_DISABLED", "COMMENTS_ENABLED", "COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY"]',
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "invertRegex",
+      "If true, branches that do NOT match the git_ref will trigger a build.",
       [],
       true,
       false,

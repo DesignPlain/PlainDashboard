@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AwsNodePoolAutoscaling {
+export interface container_AwsNodePoolAutoscaling {
   // Maximum number of nodes in the NodePool. Must be >= min_node_count.
-  MaxNodeCount?: number;
+  maxNodeCount?: number;
 
   // Minimum number of nodes in the NodePool. Must be >= 1 and <= max_node_count.
-  MinNodeCount?: number;
+  minNodeCount?: number;
 }
 
-export function Container_AwsNodePoolAutoscaling_GetTypes(): DynamicUIProps[] {
+export function container_AwsNodePoolAutoscaling_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "MaxNodeCount",
+      "maxNodeCount",
       "Maximum number of nodes in the NodePool. Must be >= min_node_count.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Container_AwsNodePoolAutoscaling_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MinNodeCount",
+      "minNodeCount",
       "Minimum number of nodes in the NodePool. Must be >= 1 and <= max_node_count.",
       [],
       true,

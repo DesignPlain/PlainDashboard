@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Identityplatform_ConfigSignInPhoneNumber {
+export interface identityplatform_ConfigSignInPhoneNumber {
   // Whether phone number auth is enabled for the project or not.
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // A map of <test phone number, fake code> that can be used for phone auth testing.
-  TestPhoneNumbers?: Map<string, string>;
+  testPhoneNumbers?: Map<string, string>;
 }
 
-export function Identityplatform_ConfigSignInPhoneNumber_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ConfigSignInPhoneNumber_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Map,
-      "TestPhoneNumbers",
-      "A map of <test phone number, fake code> that can be used for phone auth testing.",
-      InputType_Map_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether phone number auth is enabled for the project or not.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Map,
+      "testPhoneNumbers",
+      "A map of <test phone number, fake code> that can be used for phone auth testing.",
+      InputType_Map_GetTypes(),
+      false,
       false,
     ),
   ];

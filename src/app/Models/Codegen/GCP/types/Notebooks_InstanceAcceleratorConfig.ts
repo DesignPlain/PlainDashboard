@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Notebooks_InstanceAcceleratorConfig {
+export interface notebooks_InstanceAcceleratorConfig {
   // Count of cores of this accelerator.
-  CoreCount?: number;
+  coreCount?: number;
 
   /*
 Type of this accelerator.
 Possible values are: `ACCELERATOR_TYPE_UNSPECIFIED`, `NVIDIA_TESLA_K80`, `NVIDIA_TESLA_P100`, `NVIDIA_TESLA_V100`, `NVIDIA_TESLA_P4`, `NVIDIA_TESLA_T4`, `NVIDIA_TESLA_T4_VWS`, `NVIDIA_TESLA_P100_VWS`, `NVIDIA_TESLA_P4_VWS`, `NVIDIA_TESLA_A100`, `TPU_V2`, `TPU_V3`.
 */
-  Type?: string;
+  type?: string;
 }
 
-export function Notebooks_InstanceAcceleratorConfig_GetTypes(): DynamicUIProps[] {
+export function notebooks_InstanceAcceleratorConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "CoreCount",
+      "coreCount",
       "Count of cores of this accelerator.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Notebooks_InstanceAcceleratorConfig_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "Type of this accelerator.\nPossible values are: `ACCELERATOR_TYPE_UNSPECIFIED`, `NVIDIA_TESLA_K80`, `NVIDIA_TESLA_P100`, `NVIDIA_TESLA_V100`, `NVIDIA_TESLA_P4`, `NVIDIA_TESLA_T4`, `NVIDIA_TESLA_T4_VWS`, `NVIDIA_TESLA_P100_VWS`, `NVIDIA_TESLA_P4_VWS`, `NVIDIA_TESLA_A100`, `TPU_V2`, `TPU_V3`.",
       [],
       true,

@@ -9,28 +9,22 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface AccountArgs {
   /*
-A text description of the service account.
-Must be less than or equal to 256 UTF-8 bytes.
-*/
-  Description?: string;
-
-  /*
 Whether a service account is disabled or not. Defaults to `false`. This field has no effect during creation.
 Must be set after creation to disable a service account.
 */
-  Disabled?: boolean;
+  disabled?: boolean;
 
   /*
 The display name for the service account.
 Can be updated without creating a new resource.
 */
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 The ID of the project that the service account will be created in.
 Defaults to the provider project configuration.
 */
-  Project?: string;
+  project?: string;
 
   /*
 The account id that is used to generate the service
@@ -38,23 +32,38 @@ account email address and a stable unique id. It is unique within a project,
 must be 6-30 characters long, and match the regular expression `a-z`
 to comply with RFC1035. Changing this forces a new service account to be created.
 */
-  AccountId?: string;
+  accountId?: string;
 
   // If set to true, skip service account creation if a service account with the same email already exists.
-  CreateIgnoreAlreadyExists?: boolean;
+  createIgnoreAlreadyExists?: boolean;
+
+  /*
+A text description of the service account.
+Must be less than or equal to 256 UTF-8 bytes.
+*/
+  description?: string;
 }
 export class Account extends Resource {
-  // The Identity of the service account in the form `serviceAccount:{email}`. This value is often used to refer to the service account in order to grant IAM permissions.
-  public Member?: string;
+  /*
+A text description of the service account.
+Must be less than or equal to 256 UTF-8 bytes.
+*/
+  public description?: string;
 
   /*
-The ID of the project that the service account will be created in.
-Defaults to the provider project configuration.
+Whether a service account is disabled or not. Defaults to `false`. This field has no effect during creation.
+Must be set after creation to disable a service account.
 */
-  public Project?: string;
+  public disabled?: boolean;
+
+  /*
+The display name for the service account.
+Can be updated without creating a new resource.
+*/
+  public displayName?: string;
 
   // The unique id of the service account.
-  public UniqueId?: string;
+  public uniqueId?: string;
 
   /*
 The account id that is used to generate the service
@@ -62,44 +71,43 @@ account email address and a stable unique id. It is unique within a project,
 must be 6-30 characters long, and match the regular expression `a-z`
 to comply with RFC1035. Changing this forces a new service account to be created.
 */
-  public AccountId?: string;
-
-  /*
-Whether a service account is disabled or not. Defaults to `false`. This field has no effect during creation.
-Must be set after creation to disable a service account.
-*/
-  public Disabled?: boolean;
-
-  /*
-The display name for the service account.
-Can be updated without creating a new resource.
-*/
-  public DisplayName?: string;
-
-  // The fully-qualified name of the service account.
-  public Name?: string;
+  public accountId?: string;
 
   // If set to true, skip service account creation if a service account with the same email already exists.
-  public CreateIgnoreAlreadyExists?: boolean;
-
-  /*
-A text description of the service account.
-Must be less than or equal to 256 UTF-8 bytes.
-*/
-  public Description?: string;
+  public createIgnoreAlreadyExists?: boolean;
 
   /*
 The e-mail address of the service account. This value
 should be referenced from any `gcp.organizations.getIAMPolicy` data sources
 that would grant the service account privileges.
 */
-  public Email?: string;
+  public email?: string;
+
+  // The Identity of the service account in the form `serviceAccount:{email}`. This value is often used to refer to the service account in order to grant IAM permissions.
+  public member?: string;
+
+  // The fully-qualified name of the service account.
+  public name?: string;
+
+  /*
+The ID of the project that the service account will be created in.
+Defaults to the provider project configuration.
+*/
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
+        InputType.Bool,
+        "createIgnoreAlreadyExists",
+        "If set to true, skip service account creation if a service account with the same email already exists.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "A text description of the service account.\nMust be less than or equal to 256 UTF-8 bytes.",
         [],
         false,
@@ -107,7 +115,7 @@ that would grant the service account privileges.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "Disabled",
+        "disabled",
         "Whether a service account is disabled or not. Defaults to `false`. This field has no effect during creation.\nMust be set after creation to disable a service account.",
         [],
         false,
@@ -115,7 +123,7 @@ that would grant the service account privileges.
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "The display name for the service account.\nCan be updated without creating a new resource.",
         [],
         false,
@@ -123,7 +131,7 @@ that would grant the service account privileges.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project that the service account will be created in.\nDefaults to the provider project configuration.",
         [],
         false,
@@ -131,19 +139,11 @@ that would grant the service account privileges.
       ),
       new DynamicUIProps(
         InputType.String,
-        "AccountId",
+        "accountId",
         "The account id that is used to generate the service\naccount email address and a stable unique id. It is unique within a project,\nmust be 6-30 characters long, and match the regular expression `a-z`\nto comply with RFC1035. Changing this forces a new service account to be created.",
         [],
         true,
         true,
-      ),
-      new DynamicUIProps(
-        InputType.Bool,
-        "CreateIgnoreAlreadyExists",
-        "If set to true, skip service account creation if a service account with the same email already exists.",
-        [],
-        false,
-        false,
       ),
     ];
   }

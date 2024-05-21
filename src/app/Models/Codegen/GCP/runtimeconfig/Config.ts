@@ -12,54 +12,46 @@ export interface ConfigArgs {
 The description to associate with the runtime
 config.
 */
-  Description?: string;
+  description?: string;
 
   /*
 The name of the runtime config.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs. If it
 is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 }
 export class Config extends Resource {
+  /*
+The name of the runtime config.
+
+- - -
+*/
+  public name?: string;
+
+  /*
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
+*/
+  public project?: string;
+
   /*
 The description to associate with the runtime
 config.
 */
-  public Description?: string;
-
-  /*
-The name of the runtime config.
-
-- - -
-*/
-  public Name?: string;
-
-  /*
-The ID of the project in which the resource belongs. If it
-is not provided, the provider project is used.
-*/
-  public Project?: string;
+  public description?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Description",
-        "The description to associate with the runtime\nconfig.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
+        "name",
         "The name of the runtime config.\n\n- - -",
         [],
         false,
@@ -67,11 +59,19 @@ is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
         [],
         false,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "The description to associate with the runtime\nconfig.",
+        [],
+        false,
+        false,
       ),
     ];
   }

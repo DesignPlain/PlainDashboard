@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionNetworkFirewallPolicyRuleTargetSecureTag {
-  // [Output Only] State of the secure tag, either `EFFECTIVE` or `INEFFECTIVE`. A secure tag is `INEFFECTIVE` when it is deleted or its network is deleted.
-  State?: string;
-
+export interface compute_RegionNetworkFirewallPolicyRuleTargetSecureTag {
   // Name of the secure tag, created with TagManager's TagValue API. @pattern tagValues/[0-9]+
-  Name?: string;
+  name?: string;
+
+  // [Output Only] State of the secure tag, either `EFFECTIVE` or `INEFFECTIVE`. A secure tag is `INEFFECTIVE` when it is deleted or its network is deleted.
+  state?: string;
 }
 
-export function Compute_RegionNetworkFirewallPolicyRuleTargetSecureTag_GetTypes(): DynamicUIProps[] {
+export function compute_RegionNetworkFirewallPolicyRuleTargetSecureTag_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "State",
-      "[Output Only] State of the secure tag, either `EFFECTIVE` or `INEFFECTIVE`. A secure tag is `INEFFECTIVE` when it is deleted or its network is deleted.",
+      "name",
+      "Name of the secure tag, created with TagManager's TagValue API. @pattern tagValues/[0-9]+",
       [],
-      false,
+      true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
-      "Name of the secure tag, created with TagManager's TagValue API. @pattern tagValues/[0-9]+",
+      "state",
+      "[Output Only] State of the secure tag, either `EFFECTIVE` or `INEFFECTIVE`. A secure tag is `INEFFECTIVE` when it is deleted or its network is deleted.",
       [],
-      true,
+      false,
       false,
     ),
   ];

@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Integrationconnectors_ConnectionStatus {
+export interface integrationconnectors_ConnectionStatus {
   // An arbitrary description for the Conection.
-  Description?: string;
+  description?: string;
 
   /*
 (Output)
 State of the Eventing
 */
-  State?: string;
+  state?: string;
 
   /*
 (Output)
 Current status of eventing.
 Structure is documented below.
 */
-  Status?: string;
+  status?: string;
 }
 
-export function Integrationconnectors_ConnectionStatus_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "An arbitrary description for the Conection.",
       [],
       false,
@@ -36,7 +36,7 @@ export function Integrationconnectors_ConnectionStatus_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "(Output)\nState of the Eventing",
       [],
       false,
@@ -44,7 +44,7 @@ export function Integrationconnectors_ConnectionStatus_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "Status",
+      "status",
       "(Output)\nCurrent status of eventing.\nStructure is documented below.",
       [],
       false,

@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride {
-  /*
-Severity level to match.
-Possible values are: `CRITICAL`, `HIGH`, `INFORMATIONAL`, `LOW`, `MEDIUM`.
-*/
-  Severity?: string;
-
+export interface networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride {
   /*
 Threat action override.
 Possible values are: `ALERT`, `ALLOW`, `DEFAULT_ACTION`, `DENY`.
 */
-  Action?: string;
+  action?: string;
+
+  /*
+Severity level to match.
+Possible values are: `CRITICAL`, `HIGH`, `INFORMATIONAL`, `LOW`, `MEDIUM`.
+*/
+  severity?: string;
 }
 
-export function Networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride_GetTypes(): DynamicUIProps[] {
+export function networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Severity",
-      "Severity level to match.\nPossible values are: `CRITICAL`, `HIGH`, `INFORMATIONAL`, `LOW`, `MEDIUM`.",
+      "action",
+      "Threat action override.\nPossible values are: `ALERT`, `ALLOW`, `DEFAULT_ACTION`, `DENY`.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Action",
-      "Threat action override.\nPossible values are: `ALERT`, `ALLOW`, `DEFAULT_ACTION`, `DENY`.",
+      "severity",
+      "Severity level to match.\nPossible values are: `CRITICAL`, `HIGH`, `INFORMATIONAL`, `LOW`, `MEDIUM`.",
       [],
       true,
       false,

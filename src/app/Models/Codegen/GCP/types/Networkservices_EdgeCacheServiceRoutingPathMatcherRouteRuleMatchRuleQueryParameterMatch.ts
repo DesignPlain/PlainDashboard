@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleQueryParameterMatch {
+export interface networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleQueryParameterMatch {
   // The queryParameterMatch matches if the value of the parameter exactly matches the contents of exactMatch.
-  ExactMatch?: string;
+  exactMatch?: string;
 
   // The name of the query parameter to match. The query parameter must exist in the request, in the absence of which the request match fails.
-  Name?: string;
+  name?: string;
 
   // Specifies that the queryParameterMatch matches if the request contains the query parameter, irrespective of whether the parameter has a value or not.
-  PresentMatch?: boolean;
+  presentMatch?: boolean;
 }
 
-export function Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleQueryParameterMatch_GetTypes(): DynamicUIProps[] {
+export function networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleQueryParameterMatch_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ExactMatch",
+      "exactMatch",
       "The queryParameterMatch matches if the value of the parameter exactly matches the contents of exactMatch.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleMatch
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of the query parameter to match. The query parameter must exist in the request, in the absence of which the request match fails.",
       [],
       true,
@@ -37,7 +37,7 @@ export function Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleMatch
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "PresentMatch",
+      "presentMatch",
       "Specifies that the queryParameterMatch matches if the request contains the query parameter, irrespective of whether the parameter has a value or not.",
       [],
       false,

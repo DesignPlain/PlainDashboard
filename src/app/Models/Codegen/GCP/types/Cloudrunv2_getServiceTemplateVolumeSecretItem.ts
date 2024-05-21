@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_getServiceTemplateVolumeSecretItem {
+export interface cloudrunv2_getServiceTemplateVolumeSecretItem {
   // Integer octal mode bits to use on this file, must be a value between 01 and 0777 (octal). If 0 or not set, the Volume's default mode will be used.
-  Mode?: number;
+  mode?: number;
 
   // The relative path of the secret in the container.
-  Path?: string;
+  path?: string;
 
   // The Cloud Secret Manager secret version. Can be 'latest' for the latest value or an integer for a specific version
-  Version?: string;
+  version?: string;
 }
 
-export function Cloudrunv2_getServiceTemplateVolumeSecretItem_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_getServiceTemplateVolumeSecretItem_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Mode",
+      "mode",
       "Integer octal mode bits to use on this file, must be a value between 01 and 0777 (octal). If 0 or not set, the Volume's default mode will be used.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Cloudrunv2_getServiceTemplateVolumeSecretItem_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "Path",
+      "path",
       "The relative path of the secret in the container.",
       [],
       true,
@@ -37,7 +37,7 @@ export function Cloudrunv2_getServiceTemplateVolumeSecretItem_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "Version",
+      "version",
       "The Cloud Secret Manager secret version. Can be 'latest' for the latest value or an integer for a specific version",
       [],
       true,

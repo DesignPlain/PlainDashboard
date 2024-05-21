@@ -6,9 +6,15 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Firebase_HostingCustomDomainRequiredDnsUpdateDiscoveredRecord {
+export interface firebase_HostingCustomDomainRequiredDnsUpdateDiscoveredRecord {
+  // Indicates the a required action for this record.
+  requiredAction?: string;
+
+  // The record's type, which determines what data the record contains.
+  type?: string;
+
   // The domain name the record pertains to, e.g. `foo.bar.com.`.
-  DomainName?: string;
+  domainName?: string;
 
   /*
 The data of the record. The meaning of the value depends on record type:
@@ -19,36 +25,14 @@ uses TXT records to determine a which Firebase Projects have
 permission to act on the domain name's behalf.
 - CAA: The record's flags, tag, and value, e.g. `0 issue "pki.goog"`.
 */
-  Rdata?: string;
-
-  // Indicates the a required action for this record.
-  RequiredAction?: string;
-
-  // The record's type, which determines what data the record contains.
-  Type?: string;
+  rdata?: string;
 }
 
-export function Firebase_HostingCustomDomainRequiredDnsUpdateDiscoveredRecord_GetTypes(): DynamicUIProps[] {
+export function firebase_HostingCustomDomainRequiredDnsUpdateDiscoveredRecord_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DomainName",
-      "The domain name the record pertains to, e.g. `foo.bar.com.`.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Rdata",
-      "The data of the record. The meaning of the value depends on record type:\n- A and AAAA: IP addresses for the domain name.\n- CNAME: Another domain to check for records.\n- TXT: Arbitrary text strings associated with the domain name. Hosting\nuses TXT records to determine a which Firebase Projects have\npermission to act on the domain name's behalf.\n- CAA: The record's flags, tag, and value, e.g. `0 issue \"pki.goog\"`.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "RequiredAction",
+      "requiredAction",
       "Indicates the a required action for this record.",
       [],
       false,
@@ -56,8 +40,24 @@ export function Firebase_HostingCustomDomainRequiredDnsUpdateDiscoveredRecord_Ge
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "The record's type, which determines what data the record contains.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "domainName",
+      "The domain name the record pertains to, e.g. `foo.bar.com.`.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "rdata",
+      "The data of the record. The meaning of the value depends on record type:\n- A and AAAA: IP addresses for the domain name.\n- CNAME: Another domain to check for records.\n- TXT: Arbitrary text strings associated with the domain name. Hosting\nuses TXT records to determine a which Firebase Projects have\npermission to act on the domain name's behalf.\n- CAA: The record's flags, tag, and value, e.g. `0 issue \"pki.goog\"`.",
       [],
       false,
       false,

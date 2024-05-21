@@ -9,10 +9,10 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface FirewallPolicyAssociationArgs {
   // The target that the firewall policy is attached to.
-  AttachmentTarget?: string;
+  attachmentTarget?: string;
 
   // The firewall policy ID of the association.
-  FirewallPolicy?: string;
+  firewallPolicy?: string;
 
   /*
 The name for an association.
@@ -21,14 +21,17 @@ The name for an association.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 }
 export class FirewallPolicyAssociation extends Resource {
+  // The short name of the firewall policy of the association.
+  public shortName?: string;
+
   // The target that the firewall policy is attached to.
-  public AttachmentTarget?: string;
+  public attachmentTarget?: string;
 
   // The firewall policy ID of the association.
-  public FirewallPolicy?: string;
+  public firewallPolicy?: string;
 
   /*
 The name for an association.
@@ -37,24 +40,13 @@ The name for an association.
 
 - - -
 */
-  public Name?: string;
-
-  // The short name of the firewall policy of the association.
-  public ShortName?: string;
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Name",
-        "The name for an association.\n\n\n\n- - -",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "AttachmentTarget",
+        "attachmentTarget",
         "The target that the firewall policy is attached to.",
         [],
         true,
@@ -62,10 +54,18 @@ The name for an association.
       ),
       new DynamicUIProps(
         InputType.String,
-        "FirewallPolicy",
+        "firewallPolicy",
         "The firewall policy ID of the association.",
         [],
         true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "The name for an association.\n\n\n\n- - -",
+        [],
+        false,
         true,
       ),
     ];

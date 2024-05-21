@@ -8,6 +8,15 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface TargetInstanceArgs {
+  // The resource URL for the security policy associated with this target instance.
+  securityPolicy?: string;
+
+  // URL of the zone where the target instance resides.
+  zone?: string;
+
+  // An optional description of this resource.
+  description?: string;
+
   /*
 The Compute instance VM handling traffic for this target instance.
 Accepts the instance self-link, relative path
@@ -19,7 +28,7 @@ provider-level project.
 
 - - -
 */
-  Instance?: string;
+  instance?: string;
 
   /*
 Name of the resource. Provided by the client when the resource is
@@ -30,7 +39,7 @@ first character must be a lowercase letter, and all following
 characters must be a dash, lowercase letter, or digit, except the last
 character, which cannot be a dash.
 */
-  Name?: string;
+  name?: string;
 
   /*
 NAT option controlling how IPs are NAT'ed to the instance.
@@ -38,49 +47,40 @@ Currently only NO_NAT (default value) is supported.
 Default value is `NO_NAT`.
 Possible values are: `NO_NAT`.
 */
-  NatPolicy?: string;
+  natPolicy?: string;
 
   // The URL of the network this target instance uses to forward traffic. If not specified, the traffic will be forwarded to the network that the default network interface belongs to.
-  Network?: string;
+  network?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
-
-  // The resource URL for the security policy associated with this target instance.
-  SecurityPolicy?: string;
-
-  // URL of the zone where the target instance resides.
-  Zone?: string;
-
-  // An optional description of this resource.
-  Description?: string;
+  project?: string;
 }
 export class TargetInstance extends Resource {
   // An optional description of this resource.
-  public Description?: string;
+  public description?: string;
 
   /*
-Name of the resource. Provided by the client when the resource is
-created. The name must be 1-63 characters long, and comply with
-RFC1035. Specifically, the name must be 1-63 characters long and match
-the regular expression `a-z?` which means the
-first character must be a lowercase letter, and all following
-characters must be a dash, lowercase letter, or digit, except the last
-character, which cannot be a dash.
+NAT option controlling how IPs are NAT'ed to the instance.
+Currently only NO_NAT (default value) is supported.
+Default value is `NO_NAT`.
+Possible values are: `NO_NAT`.
 */
-  public Name?: string;
+  public natPolicy?: string;
 
-  // The URL of the network this target instance uses to forward traffic. If not specified, the traffic will be forwarded to the network that the default network interface belongs to.
-  public Network?: string;
+  // The resource URL for the security policy associated with this target instance.
+  public securityPolicy?: string;
+
+  // The URI of the created resource.
+  public selfLink?: string;
 
   // URL of the zone where the target instance resides.
-  public Zone?: string;
+  public zone?: string;
 
   // Creation timestamp in RFC3339 text format.
-  public CreationTimestamp?: string;
+  public creationTimestamp?: string;
 
   /*
 The Compute instance VM handling traffic for this target instance.
@@ -93,65 +93,33 @@ provider-level project.
 
 - - -
 */
-  public Instance?: string;
+  public instance?: string;
 
   /*
-NAT option controlling how IPs are NAT'ed to the instance.
-Currently only NO_NAT (default value) is supported.
-Default value is `NO_NAT`.
-Possible values are: `NO_NAT`.
+Name of the resource. Provided by the client when the resource is
+created. The name must be 1-63 characters long, and comply with
+RFC1035. Specifically, the name must be 1-63 characters long and match
+the regular expression `a-z?` which means the
+first character must be a lowercase letter, and all following
+characters must be a dash, lowercase letter, or digit, except the last
+character, which cannot be a dash.
 */
-  public NatPolicy?: string;
+  public name?: string;
+
+  // The URL of the network this target instance uses to forward traffic. If not specified, the traffic will be forwarded to the network that the default network interface belongs to.
+  public network?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
-
-  // The resource URL for the security policy associated with this target instance.
-  public SecurityPolicy?: string;
-
-  // The URI of the created resource.
-  public SelfLink?: string;
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Zone",
-        "URL of the zone where the target instance resides.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "An optional description of this resource.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Instance",
-        "The Compute instance VM handling traffic for this target instance.\nAccepts the instance self-link, relative path\n(e.g. `projects/project/zones/zone/instances/instance`) or name. If\nname is given, the zone will default to the given zone or\nthe provider-default zone and the project will default to the\nprovider-level project.\n\n\n- - -",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "NatPolicy",
+        "natPolicy",
         "NAT option controlling how IPs are NAT'ed to the instance.\nCurrently only NO_NAT (default value) is supported.\nDefault value is `NO_NAT`.\nPossible values are: `NO_NAT`.",
         [],
         false,
@@ -159,7 +127,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Network",
+        "network",
         "The URL of the network this target instance uses to forward traffic. If not specified, the traffic will be forwarded to the network that the default network interface belongs to.",
         [],
         false,
@@ -167,7 +135,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -175,11 +143,43 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "SecurityPolicy",
+        "securityPolicy",
         "The resource URL for the security policy associated with this target instance.",
         [],
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "zone",
+        "URL of the zone where the target instance resides.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "An optional description of this resource.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "instance",
+        "The Compute instance VM handling traffic for this target instance.\nAccepts the instance self-link, relative path\n(e.g. `projects/project/zones/zone/instances/instance`) or name. If\nname is given, the zone will default to the given zone or\nthe provider-default zone and the project will default to the\nprovider-level project.\n\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.",
+        [],
+        false,
+        true,
       ),
     ];
   }

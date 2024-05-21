@@ -6,81 +6,57 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_BucketLifecycleRuleCondition {
-  // Days since the date set in the `customTime` metadata for the object. This condition is satisfied when the current date and time is at least the specified number of days after the `customTime`.
-  DaysSinceCustomTime?: number;
-
-  // One or more matching name prefixes to satisfy this condition.
-  MatchesPrefixes?: Array<string>;
-
-  // [Storage Class](https://cloud.google.com/storage/docs/storage-classes) of objects to satisfy this condition. Supported values include: `STANDARD`, `MULTI_REGIONAL`, `REGIONAL`, `NEARLINE`, `COLDLINE`, `ARCHIVE`, `DURABLE_REDUCED_AVAILABILITY`.
-  MatchesStorageClasses?: Array<string>;
-
+export interface storage_BucketLifecycleRuleCondition {
   // Relevant only for versioned objects. The date in RFC 3339 (e.g. `2017-06-13`) when the object became nonconcurrent.
-  NoncurrentTimeBefore?: string;
-
-  // Match to live and/or archived objects. Unversioned buckets have only live objects. Supported values include: `"LIVE"`, `"ARCHIVED"`, `"ANY"`.
-  WithState?: string;
-
-  // Minimum age of an object in days to satisfy this condition.
-  Age?: number;
-
-  // A date in the RFC 3339 format YYYY-MM-DD. This condition is satisfied when the customTime metadata for the object is set to an earlier date than the date used in this lifecycle condition.
-  CustomTimeBefore?: string;
-
-  // Relevant only for versioned objects. Number of days elapsed since the noncurrent timestamp of an object.
-  DaysSinceNoncurrentTime?: number;
-
-  // One or more matching name suffixes to satisfy this condition.
-  MatchesSuffixes?: Array<string>;
-
-  // While set `true`, `age` value will be omitted. --Note-- Required to set `true` when `age` is unset in the config file.
-  NoAge?: boolean;
+  noncurrentTimeBefore?: string;
 
   // Relevant only for versioned objects. The number of newer versions of an object to satisfy this condition.
-  NumNewerVersions?: number;
+  numNewerVersions?: number;
+
+  // Match to live and/or archived objects. Unversioned buckets have only live objects. Supported values include: `"LIVE"`, `"ARCHIVED"`, `"ANY"`.
+  withState?: string;
+
+  // Days since the date set in the `customTime` metadata for the object. This condition is satisfied when the current date and time is at least the specified number of days after the `customTime`.
+  daysSinceCustomTime?: number;
+
+  // Relevant only for versioned objects. Number of days elapsed since the noncurrent timestamp of an object.
+  daysSinceNoncurrentTime?: number;
+
+  // One or more matching name prefixes to satisfy this condition.
+  matchesPrefixes?: Array<string>;
+
+  // One or more matching name suffixes to satisfy this condition.
+  matchesSuffixes?: Array<string>;
+
+  // While set `true`, `age` value will be omitted. --Note-- Required to set `true` when `age` is unset in the config file.
+  noAge?: boolean;
+
+  // Minimum age of an object in days to satisfy this condition.
+  age?: number;
 
   // A date in the RFC 3339 format YYYY-MM-DD. This condition is satisfied when an object is created before midnight of the specified date in UTC.
-  CreatedBefore?: string;
+  createdBefore?: string;
+
+  // A date in the RFC 3339 format YYYY-MM-DD. This condition is satisfied when the customTime metadata for the object is set to an earlier date than the date used in this lifecycle condition.
+  customTimeBefore?: string;
+
+  // [Storage Class](https://cloud.google.com/storage/docs/storage-classes) of objects to satisfy this condition. Supported values include: `STANDARD`, `MULTI_REGIONAL`, `REGIONAL`, `NEARLINE`, `COLDLINE`, `ARCHIVE`, `DURABLE_REDUCED_AVAILABILITY`.
+  matchesStorageClasses?: Array<string>;
 }
 
-export function Storage_BucketLifecycleRuleCondition_GetTypes(): DynamicUIProps[] {
+export function storage_BucketLifecycleRuleCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "DaysSinceCustomTime",
-      "Days since the date set in the `customTime` metadata for the object. This condition is satisfied when the current date and time is at least the specified number of days after the `customTime`.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "WithState",
-      'Match to live and/or archived objects. Unversioned buckets have only live objects. Supported values include: `"LIVE"`, `"ARCHIVED"`, `"ANY"`.',
+      "numNewerVersions",
+      "Relevant only for versioned objects. The number of newer versions of an object to satisfy this condition.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Age",
-      "Minimum age of an object in days to satisfy this condition.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "CustomTimeBefore",
-      "A date in the RFC 3339 format YYYY-MM-DD. This condition is satisfied when the customTime metadata for the object is set to an earlier date than the date used in this lifecycle condition.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "DaysSinceNoncurrentTime",
+      "daysSinceNoncurrentTime",
       "Relevant only for versioned objects. Number of days elapsed since the noncurrent timestamp of an object.",
       [],
       false,
@@ -88,57 +64,81 @@ export function Storage_BucketLifecycleRuleCondition_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Array,
-      "MatchesSuffixes",
-      "One or more matching name suffixes to satisfy this condition.",
-      InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "MatchesPrefixes",
+      "matchesPrefixes",
       "One or more matching name prefixes to satisfy this condition.",
       InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "MatchesStorageClasses",
-      "[Storage Class](https://cloud.google.com/storage/docs/storage-classes) of objects to satisfy this condition. Supported values include: `STANDARD`, `MULTI_REGIONAL`, `REGIONAL`, `NEARLINE`, `COLDLINE`, `ARCHIVE`, `DURABLE_REDUCED_AVAILABILITY`.",
-      InputType_String_GetTypes(),
+      InputType.Number,
+      "age",
+      "Minimum age of an object in days to satisfy this condition.",
+      [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "NoncurrentTimeBefore",
+      "customTimeBefore",
+      "A date in the RFC 3339 format YYYY-MM-DD. This condition is satisfied when the customTime metadata for the object is set to an earlier date than the date used in this lifecycle condition.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "noncurrentTimeBefore",
       "Relevant only for versioned objects. The date in RFC 3339 (e.g. `2017-06-13`) when the object became nonconcurrent.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Bool,
-      "NoAge",
-      "While set `true`, `age` value will be omitted. **Note** Required to set `true` when `age` is unset in the config file.",
+      InputType.String,
+      "withState",
+      'Match to live and/or archived objects. Unversioned buckets have only live objects. Supported values include: `"LIVE"`, `"ARCHIVED"`, `"ANY"`.',
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "NumNewerVersions",
-      "Relevant only for versioned objects. The number of newer versions of an object to satisfy this condition.",
+      "daysSinceCustomTime",
+      "Days since the date set in the `customTime` metadata for the object. This condition is satisfied when the current date and time is at least the specified number of days after the `customTime`.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "matchesSuffixes",
+      "One or more matching name suffixes to satisfy this condition.",
+      InputType_String_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "noAge",
+      "While set `true`, `age` value will be omitted. **Note** Required to set `true` when `age` is unset in the config file.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "CreatedBefore",
+      "createdBefore",
       "A date in the RFC 3339 format YYYY-MM-DD. This condition is satisfied when an object is created before midnight of the specified date in UTC.",
       [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "matchesStorageClasses",
+      "[Storage Class](https://cloud.google.com/storage/docs/storage-classes) of objects to satisfy this condition. Supported values include: `STANDARD`, `MULTI_REGIONAL`, `REGIONAL`, `NEARLINE`, `COLDLINE`, `ARCHIVE`, `DURABLE_REDUCED_AVAILABILITY`.",
+      InputType_String_GetTypes(),
       false,
       false,
     ),

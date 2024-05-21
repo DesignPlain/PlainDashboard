@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterDatabaseEncryption {
+export interface container_ClusterDatabaseEncryption {
   /*
 the key to use to encrypt/decrypt secrets.  See the [DatabaseEncryption definition](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters#Cluster.DatabaseEncryption) for more information.
 
 <a name="nested_enable_k8s_beta_apis"></a>The `enable_k8s_beta_apis` block supports:
 */
-  KeyName?: string;
+  keyName?: string;
 
   // `ENCRYPTED` or `DECRYPTED`
-  State?: string;
+  state?: string;
 }
 
-export function Container_ClusterDatabaseEncryption_GetTypes(): DynamicUIProps[] {
+export function container_ClusterDatabaseEncryption_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "State",
-      "`ENCRYPTED` or `DECRYPTED`",
+      "keyName",
+      'the key to use to encrypt/decrypt secrets.  See the [DatabaseEncryption definition](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters#Cluster.DatabaseEncryption) for more information.\n\n<a name="nested_enable_k8s_beta_apis"></a>The `enable_k8s_beta_apis` block supports:',
       [],
-      true,
+      false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "KeyName",
-      'the key to use to encrypt/decrypt secrets.  See the [DatabaseEncryption definition](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters#Cluster.DatabaseEncryption) for more information.\n\n<a name="nested_enable_k8s_beta_apis"></a>The `enable_k8s_beta_apis` block supports:',
+      "state",
+      "`ENCRYPTED` or `DECRYPTED`",
       [],
-      false,
+      true,
       false,
     ),
   ];

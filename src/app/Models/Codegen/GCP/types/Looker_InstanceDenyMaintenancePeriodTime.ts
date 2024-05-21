@@ -6,41 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Looker_InstanceDenyMaintenancePeriodTime {
+export interface looker_InstanceDenyMaintenancePeriodTime {
+  // Seconds of minutes of the time. Must normally be from 0 to 59.
+  seconds?: number;
+
   // Hours of day in 24 hour format. Should be from 0 to 23.
-  Hours?: number;
+  hours?: number;
 
   // Minutes of hour of day. Must be from 0 to 59.
-  Minutes?: number;
+  minutes?: number;
 
   // Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
-  Nanos?: number;
-
-  // Seconds of minutes of the time. Must normally be from 0 to 59.
-  Seconds?: number;
+  nanos?: number;
 }
 
-export function Looker_InstanceDenyMaintenancePeriodTime_GetTypes(): DynamicUIProps[] {
+export function looker_InstanceDenyMaintenancePeriodTime_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Minutes",
-      "Minutes of hour of day. Must be from 0 to 59.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Nanos",
-      "Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Seconds",
+      "seconds",
       "Seconds of minutes of the time. Must normally be from 0 to 59.",
       [],
       false,
@@ -48,8 +32,24 @@ export function Looker_InstanceDenyMaintenancePeriodTime_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Hours",
+      "hours",
       "Hours of day in 24 hour format. Should be from 0 to 23.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "minutes",
+      "Minutes of hour of day. Must be from 0 to 59.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "nanos",
+      "Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.",
       [],
       false,
       false,

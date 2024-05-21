@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuild_BitbucketServerConfigConnectedRepository {
+export interface cloudbuild_BitbucketServerConfigConnectedRepository {
   // Identifier for the project storing the repository.
-  ProjectKey?: string;
+  projectKey?: string;
 
   // Identifier for the repository.
-  RepoSlug?: string;
+  repoSlug?: string;
 }
 
-export function Cloudbuild_BitbucketServerConfigConnectedRepository_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_BitbucketServerConfigConnectedRepository_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ProjectKey",
+      "projectKey",
       "Identifier for the project storing the repository.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Cloudbuild_BitbucketServerConfigConnectedRepository_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "RepoSlug",
+      "repoSlug",
       "Identifier for the repository.",
       [],
       true,

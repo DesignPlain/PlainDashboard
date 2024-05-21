@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterNodeConfigSandboxConfig {
+export interface container_ClusterNodeConfigSandboxConfig {
   /*
 Which sandbox to use for pods in the node pool.
 Accepted values are:
 
 - `"gvisor"`: Pods run within a gVisor sandbox.
 */
-  SandboxType?: string;
+  sandboxType?: string;
 }
 
-export function Container_ClusterNodeConfigSandboxConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterNodeConfigSandboxConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SandboxType",
+      "sandboxType",
       'Which sandbox to use for pods in the node pool.\nAccepted values are:\n\n* `"gvisor"`: Pods run within a gVisor sandbox.',
       [],
       true,

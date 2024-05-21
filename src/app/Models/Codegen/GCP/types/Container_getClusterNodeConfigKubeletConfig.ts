@@ -6,41 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodeConfigKubeletConfig {
-  // Enable CPU CFS quota enforcement for containers that specify CPU limits.
-  CpuCfsQuota?: boolean;
-
-  // Set the CPU CFS quota period value 'cpu.cfs_period_us'.
-  CpuCfsQuotaPeriod?: string;
-
+export interface container_getClusterNodeConfigKubeletConfig {
   // Control the CPU management policy on the node.
-  CpuManagerPolicy?: string;
+  cpuManagerPolicy?: string;
 
   // Controls the maximum number of processes allowed to run in a pod.
-  PodPidsLimit?: number;
+  podPidsLimit?: number;
+
+  // Enable CPU CFS quota enforcement for containers that specify CPU limits.
+  cpuCfsQuota?: boolean;
+
+  // Set the CPU CFS quota period value 'cpu.cfs_period_us'.
+  cpuCfsQuotaPeriod?: string;
 }
 
-export function Container_getClusterNodeConfigKubeletConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodeConfigKubeletConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Bool,
-      "CpuCfsQuota",
-      "Enable CPU CFS quota enforcement for containers that specify CPU limits.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "CpuCfsQuotaPeriod",
-      "Set the CPU CFS quota period value 'cpu.cfs_period_us'.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "CpuManagerPolicy",
+      "cpuManagerPolicy",
       "Control the CPU management policy on the node.",
       [],
       true,
@@ -48,8 +32,24 @@ export function Container_getClusterNodeConfigKubeletConfig_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Number,
-      "PodPidsLimit",
+      "podPidsLimit",
       "Controls the maximum number of processes allowed to run in a pod.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "cpuCfsQuota",
+      "Enable CPU CFS quota enforcement for containers that specify CPU limits.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "cpuCfsQuotaPeriod",
+      "Set the CPU CFS quota period value 'cpu.cfs_period_us'.",
       [],
       true,
       false,

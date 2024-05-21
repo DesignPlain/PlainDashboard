@@ -6,44 +6,44 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Identityplatform_ConfigBlockingFunctionsForwardInboundCredentials,
-  Identityplatform_ConfigBlockingFunctionsForwardInboundCredentials_GetTypes,
-} from "./Identityplatform_ConfigBlockingFunctionsForwardInboundCredentials";
+  identityplatform_ConfigBlockingFunctionsTrigger,
+  identityplatform_ConfigBlockingFunctionsTrigger_GetTypes,
+} from "./identityplatform_ConfigBlockingFunctionsTrigger";
 import {
-  Identityplatform_ConfigBlockingFunctionsTrigger,
-  Identityplatform_ConfigBlockingFunctionsTrigger_GetTypes,
-} from "./Identityplatform_ConfigBlockingFunctionsTrigger";
+  identityplatform_ConfigBlockingFunctionsForwardInboundCredentials,
+  identityplatform_ConfigBlockingFunctionsForwardInboundCredentials_GetTypes,
+} from "./identityplatform_ConfigBlockingFunctionsForwardInboundCredentials";
 
-export interface Identityplatform_ConfigBlockingFunctions {
-  /*
-The user credentials to include in the JWT payload that is sent to the registered Blocking Functions.
-Structure is documented below.
-*/
-  ForwardInboundCredentials?: Identityplatform_ConfigBlockingFunctionsForwardInboundCredentials;
-
+export interface identityplatform_ConfigBlockingFunctions {
   /*
 Map of Trigger to event type. Key should be one of the supported event types: "beforeCreate", "beforeSignIn".
 Structure is documented below.
 */
-  Triggers?: Array<Identityplatform_ConfigBlockingFunctionsTrigger>;
+  triggers?: Array<identityplatform_ConfigBlockingFunctionsTrigger>;
+
+  /*
+The user credentials to include in the JWT payload that is sent to the registered Blocking Functions.
+Structure is documented below.
+*/
+  forwardInboundCredentials?: identityplatform_ConfigBlockingFunctionsForwardInboundCredentials;
 }
 
-export function Identityplatform_ConfigBlockingFunctions_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ConfigBlockingFunctions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "ForwardInboundCredentials",
-      "The user credentials to include in the JWT payload that is sent to the registered Blocking Functions.\nStructure is documented below.",
-      Identityplatform_ConfigBlockingFunctionsForwardInboundCredentials_GetTypes(),
-      false,
+      InputType.Array,
+      "triggers",
+      'Map of Trigger to event type. Key should be one of the supported event types: "beforeCreate", "beforeSignIn".\nStructure is documented below.',
+      identityplatform_ConfigBlockingFunctionsTrigger_GetTypes(),
+      true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "Triggers",
-      'Map of Trigger to event type. Key should be one of the supported event types: "beforeCreate", "beforeSignIn".\nStructure is documented below.',
-      Identityplatform_ConfigBlockingFunctionsTrigger_GetTypes(),
-      true,
+      InputType.Object,
+      "forwardInboundCredentials",
+      "The user credentials to include in the JWT payload that is sent to the registered Blocking Functions.\nStructure is documented below.",
+      identityplatform_ConfigBlockingFunctionsForwardInboundCredentials_GetTypes(),
+      false,
       false,
     ),
   ];

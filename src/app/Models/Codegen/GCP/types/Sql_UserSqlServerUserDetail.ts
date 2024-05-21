@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_UserSqlServerUserDetail {
+export interface sql_UserSqlServerUserDetail {
   // If the user has been disabled.
-  Disabled?: boolean;
+  disabled?: boolean;
 
   // The server roles for this user in the database.
-  ServerRoles?: Array<string>;
+  serverRoles?: Array<string>;
 }
 
-export function Sql_UserSqlServerUserDetail_GetTypes(): DynamicUIProps[] {
+export function sql_UserSqlServerUserDetail_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Disabled",
+      "disabled",
       "If the user has been disabled.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Sql_UserSqlServerUserDetail_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ServerRoles",
+      "serverRoles",
       "The server roles for this user in the database.",
       InputType_String_GetTypes(),
       false,

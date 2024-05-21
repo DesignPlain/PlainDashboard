@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Artifactregistry_getRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository,
-  Artifactregistry_getRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository_GetTypes,
-} from "./Artifactregistry_getRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository";
+  artifactregistry_getRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository,
+  artifactregistry_getRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository_GetTypes,
+} from "./artifactregistry_getRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository";
 
-export interface Artifactregistry_getRepositoryRemoteRepositoryConfigAptRepository {
+export interface artifactregistry_getRepositoryRemoteRepositoryConfigAptRepository {
   // One of the publicly available Apt repositories supported by Artifact Registry.
-  PublicRepositories?: Array<Artifactregistry_getRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository>;
+  publicRepositories?: Array<artifactregistry_getRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository>;
 }
 
-export function Artifactregistry_getRepositoryRemoteRepositoryConfigAptRepository_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_getRepositoryRemoteRepositoryConfigAptRepository_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "PublicRepositories",
+      "publicRepositories",
       "One of the publicly available Apt repositories supported by Artifact Registry.",
-      Artifactregistry_getRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository_GetTypes(),
+      artifactregistry_getRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository_GetTypes(),
       true,
       false,
     ),

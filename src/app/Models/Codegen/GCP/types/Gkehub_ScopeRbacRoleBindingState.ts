@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_ScopeRbacRoleBindingState {
+export interface gkehub_ScopeRbacRoleBindingState {
   /*
 (Output)
 Code describes the state of a RBAC Role Binding resource.
 */
-  Code?: string;
+  code?: string;
 }
 
-export function Gkehub_ScopeRbacRoleBindingState_GetTypes(): DynamicUIProps[] {
+export function gkehub_ScopeRbacRoleBindingState_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Code",
+      "code",
       "(Output)\nCode describes the state of a RBAC Role Binding resource.",
       [],
       false,

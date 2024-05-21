@@ -6,52 +6,60 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_getBackendServiceCircuitBreakerConnectTimeout,
-  Compute_getBackendServiceCircuitBreakerConnectTimeout_GetTypes,
-} from "./Compute_getBackendServiceCircuitBreakerConnectTimeout";
+  compute_getBackendServiceCircuitBreakerConnectTimeout,
+  compute_getBackendServiceCircuitBreakerConnectTimeout_GetTypes,
+} from "./compute_getBackendServiceCircuitBreakerConnectTimeout";
 
-export interface Compute_getBackendServiceCircuitBreaker {
+export interface compute_getBackendServiceCircuitBreaker {
+  // The timeout for new network connections to hosts.
+  connectTimeouts?: Array<compute_getBackendServiceCircuitBreakerConnectTimeout>;
+
+  /*
+The maximum number of connections to the backend cluster.
+Defaults to 1024.
+*/
+  maxConnections?: number;
+
+  /*
+The maximum number of pending requests to the backend cluster.
+Defaults to 1024.
+*/
+  maxPendingRequests?: number;
+
+  /*
+The maximum number of parallel requests to the backend cluster.
+Defaults to 1024.
+*/
+  maxRequests?: number;
+
   /*
 Maximum requests for a single backend connection. This parameter
 is respected by both the HTTP/1.1 and HTTP/2 implementations. If
 not specified, there is no limit. Setting this parameter to 1
 will effectively disable keep alive.
 */
-  MaxRequestsPerConnection?: number;
+  maxRequestsPerConnection?: number;
 
   /*
 The maximum number of parallel retries to the backend cluster.
 Defaults to 3.
 */
-  MaxRetries?: number;
-
-  // The timeout for new network connections to hosts.
-  ConnectTimeouts?: Array<Compute_getBackendServiceCircuitBreakerConnectTimeout>;
-
-  /*
-The maximum number of connections to the backend cluster.
-Defaults to 1024.
-*/
-  MaxConnections?: number;
-
-  /*
-The maximum number of pending requests to the backend cluster.
-Defaults to 1024.
-*/
-  MaxPendingRequests?: number;
-
-  /*
-The maximum number of parallel requests to the backend cluster.
-Defaults to 1024.
-*/
-  MaxRequests?: number;
+  maxRetries?: number;
 }
 
-export function Compute_getBackendServiceCircuitBreaker_GetTypes(): DynamicUIProps[] {
+export function compute_getBackendServiceCircuitBreaker_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "MaxRequestsPerConnection",
+      "maxRequests",
+      "The maximum number of parallel requests to the backend cluster.\nDefaults to 1024.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "maxRequestsPerConnection",
       "Maximum requests for a single backend connection. This parameter\nis respected by both the HTTP/1.1 and HTTP/2 implementations. If\nnot specified, there is no limit. Setting this parameter to 1\nwill effectively disable keep alive.",
       [],
       true,
@@ -59,7 +67,7 @@ export function Compute_getBackendServiceCircuitBreaker_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxRetries",
+      "maxRetries",
       "The maximum number of parallel retries to the backend cluster.\nDefaults to 3.",
       [],
       true,
@@ -67,15 +75,15 @@ export function Compute_getBackendServiceCircuitBreaker_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ConnectTimeouts",
+      "connectTimeouts",
       "The timeout for new network connections to hosts.",
-      Compute_getBackendServiceCircuitBreakerConnectTimeout_GetTypes(),
+      compute_getBackendServiceCircuitBreakerConnectTimeout_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxConnections",
+      "maxConnections",
       "The maximum number of connections to the backend cluster.\nDefaults to 1024.",
       [],
       true,
@@ -83,16 +91,8 @@ export function Compute_getBackendServiceCircuitBreaker_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxPendingRequests",
+      "maxPendingRequests",
       "The maximum number of pending requests to the backend cluster.\nDefaults to 1024.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "MaxRequests",
-      "The maximum number of parallel requests to the backend cluster.\nDefaults to 1024.",
       [],
       true,
       false,

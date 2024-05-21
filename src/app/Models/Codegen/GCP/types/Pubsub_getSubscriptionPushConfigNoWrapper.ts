@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Pubsub_getSubscriptionPushConfigNoWrapper {
+export interface pubsub_getSubscriptionPushConfigNoWrapper {
   /*
 When true, writes the Pub/Sub message metadata to
 'x-goog-pubsub-<KEY>:<VAL>' headers of the HTTP request. Writes the
 Pub/Sub message attributes to '<KEY>:<VAL>' headers of the HTTP request.
 */
-  WriteMetadata?: boolean;
+  writeMetadata?: boolean;
 }
 
-export function Pubsub_getSubscriptionPushConfigNoWrapper_GetTypes(): DynamicUIProps[] {
+export function pubsub_getSubscriptionPushConfigNoWrapper_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "WriteMetadata",
+      "writeMetadata",
       "When true, writes the Pub/Sub message metadata to\n'x-goog-pubsub-<KEY>:<VAL>' headers of the HTTP request. Writes the\nPub/Sub message attributes to '<KEY>:<VAL>' headers of the HTTP request.",
       [],
       true,

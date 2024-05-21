@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_UptimeCheckConfigSyntheticMonitorCloudFunctionV2 {
+export interface monitoring_UptimeCheckConfigSyntheticMonitorCloudFunctionV2 {
   // The fully qualified name of the cloud function resource.
-  Name?: string;
+  name?: string;
 }
 
-export function Monitoring_UptimeCheckConfigSyntheticMonitorCloudFunctionV2_GetTypes(): DynamicUIProps[] {
+export function monitoring_UptimeCheckConfigSyntheticMonitorCloudFunctionV2_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The fully qualified name of the cloud function resource.",
       [],
       true,

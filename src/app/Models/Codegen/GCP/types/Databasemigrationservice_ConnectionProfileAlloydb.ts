@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Databasemigrationservice_ConnectionProfileAlloydbSettings,
-  Databasemigrationservice_ConnectionProfileAlloydbSettings_GetTypes,
-} from "./Databasemigrationservice_ConnectionProfileAlloydbSettings";
+  databasemigrationservice_ConnectionProfileAlloydbSettings,
+  databasemigrationservice_ConnectionProfileAlloydbSettings_GetTypes,
+} from "./databasemigrationservice_ConnectionProfileAlloydbSettings";
 
-export interface Databasemigrationservice_ConnectionProfileAlloydb {
+export interface databasemigrationservice_ConnectionProfileAlloydb {
   // Required. The AlloyDB cluster ID that this connection profile is associated with.
-  ClusterId?: string;
+  clusterId?: string;
 
   /*
 Immutable. Metadata used to create the destination AlloyDB cluster.
 Structure is documented below.
 */
-  Settings?: Databasemigrationservice_ConnectionProfileAlloydbSettings;
+  settings?: databasemigrationservice_ConnectionProfileAlloydbSettings;
 }
 
-export function Databasemigrationservice_ConnectionProfileAlloydb_GetTypes(): DynamicUIProps[] {
+export function databasemigrationservice_ConnectionProfileAlloydb_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ClusterId",
+      "clusterId",
       "Required. The AlloyDB cluster ID that this connection profile is associated with.",
       [],
       true,
@@ -33,9 +33,9 @@ export function Databasemigrationservice_ConnectionProfileAlloydb_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Settings",
+      "settings",
       "Immutable. Metadata used to create the destination AlloyDB cluster.\nStructure is documented below.",
-      Databasemigrationservice_ConnectionProfileAlloydbSettings_GetTypes(),
+      databasemigrationservice_ConnectionProfileAlloydbSettings_GetTypes(),
       false,
       true,
     ),

@@ -7,73 +7,73 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Workbench_InstanceIamBindingCondition,
-  Workbench_InstanceIamBindingCondition_GetTypes,
-} from "../types/Workbench_InstanceIamBindingCondition";
+  workbench_InstanceIamBindingCondition,
+  workbench_InstanceIamBindingCondition_GetTypes,
+} from "../types/workbench_InstanceIamBindingCondition";
 
 export interface InstanceIamBindingArgs {
   //
-  Condition?: Workbench_InstanceIamBindingCondition;
+  condition?: workbench_InstanceIamBindingCondition;
 
   //
-  Location?: string;
+  location?: string;
 
   //
-  Members?: Array<string>;
+  members?: Array<string>;
 
   //
-  Name?: string;
+  name?: string;
 
   //
-  Project?: string;
+  project?: string;
 
   //
-  Role?: string;
+  role?: string;
 }
 export class InstanceIamBinding extends Resource {
   //
-  public Members?: Array<string>;
+  public location?: string;
 
   //
-  public Name?: string;
+  public members?: Array<string>;
 
   //
-  public Project?: string;
+  public name?: string;
 
   //
-  public Role?: string;
+  public project?: string;
 
   //
-  public Condition?: Workbench_InstanceIamBindingCondition;
+  public role?: string;
 
   //
-  public Etag?: string;
+  public condition?: workbench_InstanceIamBindingCondition;
 
   //
-  public Location?: string;
+  public etag?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Location", "", [], false, true),
+      new DynamicUIProps(
+        InputType.Object,
+        "condition",
+        "",
+        workbench_InstanceIamBindingCondition_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(InputType.String, "location", "", [], false, true),
       new DynamicUIProps(
         InputType.Array,
-        "Members",
+        "members",
         "",
         InputType_String_GetTypes(),
         true,
         false,
       ),
-      new DynamicUIProps(InputType.String, "Name", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Project", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
-      new DynamicUIProps(
-        InputType.Object,
-        "Condition",
-        "",
-        Workbench_InstanceIamBindingCondition_GetTypes(),
-        false,
-        true,
-      ),
+      new DynamicUIProps(InputType.String, "name", "", [], false, true),
+      new DynamicUIProps(InputType.String, "project", "", [], false, true),
+      new DynamicUIProps(InputType.String, "role", "", [], true, true),
     ];
   }
 }

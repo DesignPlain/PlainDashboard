@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_AlertPolicyCreationRecord {
+export interface monitoring_AlertPolicyCreationRecord {
   /*
 (Output)
 When the change occurred.
 */
-  MutateTime?: string;
+  mutateTime?: string;
 
   /*
 (Output)
 The email address of the user making the change.
 */
-  MutatedBy?: string;
+  mutatedBy?: string;
 }
 
-export function Monitoring_AlertPolicyCreationRecord_GetTypes(): DynamicUIProps[] {
+export function monitoring_AlertPolicyCreationRecord_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "MutateTime",
+      "mutateTime",
       "(Output)\nWhen the change occurred.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Monitoring_AlertPolicyCreationRecord_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "MutatedBy",
+      "mutatedBy",
       "(Output)\nThe email address of the user making the change.",
       [],
       false,

@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Identityplatform_ConfigQuotaSignUpQuotaConfig {
+export interface identityplatform_ConfigQuotaSignUpQuotaConfig {
   // A sign up APIs quota that customers can override temporarily.
-  Quota?: number;
+  quota?: number;
 
   // How long this quota will be active for. It is measurred in seconds, e.g., Example: "9.615s".
-  QuotaDuration?: string;
+  quotaDuration?: string;
 
   // When this quota will take affect.
-  StartTime?: string;
+  startTime?: string;
 }
 
-export function Identityplatform_ConfigQuotaSignUpQuotaConfig_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ConfigQuotaSignUpQuotaConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Quota",
+      "quota",
       "A sign up APIs quota that customers can override temporarily.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Identityplatform_ConfigQuotaSignUpQuotaConfig_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "QuotaDuration",
+      "quotaDuration",
       'How long this quota will be active for. It is measurred in seconds, e.g., Example: "9.615s".',
       [],
       false,
@@ -37,7 +37,7 @@ export function Identityplatform_ConfigQuotaSignUpQuotaConfig_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "StartTime",
+      "startTime",
       "When this quota will take affect.",
       [],
       false,

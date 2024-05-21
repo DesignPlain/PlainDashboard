@@ -6,93 +6,93 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrunv2_getServiceTemplateVolumeGc,
-  Cloudrunv2_getServiceTemplateVolumeGc_GetTypes,
-} from "./Cloudrunv2_getServiceTemplateVolumeGc";
+  cloudrunv2_getServiceTemplateVolumeNf,
+  cloudrunv2_getServiceTemplateVolumeNf_GetTypes,
+} from "./cloudrunv2_getServiceTemplateVolumeNf";
 import {
-  Cloudrunv2_getServiceTemplateVolumeNf,
-  Cloudrunv2_getServiceTemplateVolumeNf_GetTypes,
-} from "./Cloudrunv2_getServiceTemplateVolumeNf";
+  cloudrunv2_getServiceTemplateVolumeSecret,
+  cloudrunv2_getServiceTemplateVolumeSecret_GetTypes,
+} from "./cloudrunv2_getServiceTemplateVolumeSecret";
 import {
-  Cloudrunv2_getServiceTemplateVolumeSecret,
-  Cloudrunv2_getServiceTemplateVolumeSecret_GetTypes,
-} from "./Cloudrunv2_getServiceTemplateVolumeSecret";
+  cloudrunv2_getServiceTemplateVolumeCloudSqlInstance,
+  cloudrunv2_getServiceTemplateVolumeCloudSqlInstance_GetTypes,
+} from "./cloudrunv2_getServiceTemplateVolumeCloudSqlInstance";
 import {
-  Cloudrunv2_getServiceTemplateVolumeCloudSqlInstance,
-  Cloudrunv2_getServiceTemplateVolumeCloudSqlInstance_GetTypes,
-} from "./Cloudrunv2_getServiceTemplateVolumeCloudSqlInstance";
+  cloudrunv2_getServiceTemplateVolumeEmptyDir,
+  cloudrunv2_getServiceTemplateVolumeEmptyDir_GetTypes,
+} from "./cloudrunv2_getServiceTemplateVolumeEmptyDir";
 import {
-  Cloudrunv2_getServiceTemplateVolumeEmptyDir,
-  Cloudrunv2_getServiceTemplateVolumeEmptyDir_GetTypes,
-} from "./Cloudrunv2_getServiceTemplateVolumeEmptyDir";
+  cloudrunv2_getServiceTemplateVolumeGc,
+  cloudrunv2_getServiceTemplateVolumeGc_GetTypes,
+} from "./cloudrunv2_getServiceTemplateVolumeGc";
 
-export interface Cloudrunv2_getServiceTemplateVolume {
-  // For Cloud SQL volumes, contains the specific instances that should be mounted. Visit https://cloud.google.com/sql/docs/mysql/connect-run for more information on how to connect Cloud SQL and Cloud Run.
-  CloudSqlInstances?: Array<Cloudrunv2_getServiceTemplateVolumeCloudSqlInstance>;
-
-  // Ephemeral storage used as a shared volume.
-  EmptyDirs?: Array<Cloudrunv2_getServiceTemplateVolumeEmptyDir>;
-
-  // Represents a GCS Bucket mounted as a volume.
-  Gcs?: Array<Cloudrunv2_getServiceTemplateVolumeGc>;
-
-  // The name of the Cloud Run v2 Service.
-  Name?: string;
-
+export interface cloudrunv2_getServiceTemplateVolume {
   // Represents an NFS mount.
-  Nfs?: Array<Cloudrunv2_getServiceTemplateVolumeNf>;
+  nfs?: Array<cloudrunv2_getServiceTemplateVolumeNf>;
 
   // Secret represents a secret that should populate this volume. More info: https://kubernetes.io/docs/concepts/storage/volumes#secret
-  Secrets?: Array<Cloudrunv2_getServiceTemplateVolumeSecret>;
+  secrets?: Array<cloudrunv2_getServiceTemplateVolumeSecret>;
+
+  // For Cloud SQL volumes, contains the specific instances that should be mounted. Visit https://cloud.google.com/sql/docs/mysql/connect-run for more information on how to connect Cloud SQL and Cloud Run.
+  cloudSqlInstances?: Array<cloudrunv2_getServiceTemplateVolumeCloudSqlInstance>;
+
+  // Ephemeral storage used as a shared volume.
+  emptyDirs?: Array<cloudrunv2_getServiceTemplateVolumeEmptyDir>;
+
+  // Represents a GCS Bucket mounted as a volume.
+  gcs?: Array<cloudrunv2_getServiceTemplateVolumeGc>;
+
+  // The name of the Cloud Run v2 Service.
+  name?: string;
 }
 
-export function Cloudrunv2_getServiceTemplateVolume_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_getServiceTemplateVolume_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Secrets",
+      "nfs",
+      "Represents an NFS mount.",
+      cloudrunv2_getServiceTemplateVolumeNf_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "secrets",
       "Secret represents a secret that should populate this volume. More info: https://kubernetes.io/docs/concepts/storage/volumes#secret",
-      Cloudrunv2_getServiceTemplateVolumeSecret_GetTypes(),
+      cloudrunv2_getServiceTemplateVolumeSecret_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "CloudSqlInstances",
+      "cloudSqlInstances",
       "For Cloud SQL volumes, contains the specific instances that should be mounted. Visit https://cloud.google.com/sql/docs/mysql/connect-run for more information on how to connect Cloud SQL and Cloud Run.",
-      Cloudrunv2_getServiceTemplateVolumeCloudSqlInstance_GetTypes(),
+      cloudrunv2_getServiceTemplateVolumeCloudSqlInstance_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "EmptyDirs",
+      "emptyDirs",
       "Ephemeral storage used as a shared volume.",
-      Cloudrunv2_getServiceTemplateVolumeEmptyDir_GetTypes(),
+      cloudrunv2_getServiceTemplateVolumeEmptyDir_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Gcs",
+      "gcs",
       "Represents a GCS Bucket mounted as a volume.",
-      Cloudrunv2_getServiceTemplateVolumeGc_GetTypes(),
+      cloudrunv2_getServiceTemplateVolumeGc_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of the Cloud Run v2 Service.",
       [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Nfs",
-      "Represents an NFS mount.",
-      Cloudrunv2_getServiceTemplateVolumeNf_GetTypes(),
       true,
       false,
     ),

@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrunv2_getJobTemplateTemplateContainerEnvValueSource,
-  Cloudrunv2_getJobTemplateTemplateContainerEnvValueSource_GetTypes,
-} from "./Cloudrunv2_getJobTemplateTemplateContainerEnvValueSource";
+  cloudrunv2_getJobTemplateTemplateContainerEnvValueSource,
+  cloudrunv2_getJobTemplateTemplateContainerEnvValueSource_GetTypes,
+} from "./cloudrunv2_getJobTemplateTemplateContainerEnvValueSource";
 
-export interface Cloudrunv2_getJobTemplateTemplateContainerEnv {
+export interface cloudrunv2_getJobTemplateTemplateContainerEnv {
   // The name of the Cloud Run v2 Job.
-  Name?: string;
+  name?: string;
 
   // Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any route environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "", and the maximum length is 32768 bytes
-  Value?: string;
+  value?: string;
 
   // Source for the environment variable's value.
-  ValueSources?: Array<Cloudrunv2_getJobTemplateTemplateContainerEnvValueSource>;
+  valueSources?: Array<cloudrunv2_getJobTemplateTemplateContainerEnvValueSource>;
 }
 
-export function Cloudrunv2_getJobTemplateTemplateContainerEnv_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_getJobTemplateTemplateContainerEnv_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of the Cloud Run v2 Job.",
       [],
       true,
@@ -33,7 +33,7 @@ export function Cloudrunv2_getJobTemplateTemplateContainerEnv_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       'Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any route environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "", and the maximum length is 32768 bytes',
       [],
       true,
@@ -41,9 +41,9 @@ export function Cloudrunv2_getJobTemplateTemplateContainerEnv_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ValueSources",
+      "valueSources",
       "Source for the environment variable's value.",
-      Cloudrunv2_getJobTemplateTemplateContainerEnvValueSource_GetTypes(),
+      cloudrunv2_getJobTemplateTemplateContainerEnvValueSource_GetTypes(),
       true,
       false,
     ),

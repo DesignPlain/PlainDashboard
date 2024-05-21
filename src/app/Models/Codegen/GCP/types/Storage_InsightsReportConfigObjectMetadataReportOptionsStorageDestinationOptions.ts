@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_InsightsReportConfigObjectMetadataReportOptionsStorageDestinationOptions {
+export interface storage_InsightsReportConfigObjectMetadataReportOptionsStorageDestinationOptions {
   // The destination bucket that stores the generated inventory reports.
-  Bucket?: string;
+  bucket?: string;
 
   // The path within the destination bucket to store generated inventory reports.
-  DestinationPath?: string;
+  destinationPath?: string;
 }
 
-export function Storage_InsightsReportConfigObjectMetadataReportOptionsStorageDestinationOptions_GetTypes(): DynamicUIProps[] {
+export function storage_InsightsReportConfigObjectMetadataReportOptionsStorageDestinationOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Bucket",
+      "bucket",
       "The destination bucket that stores the generated inventory reports.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Storage_InsightsReportConfigObjectMetadataReportOptionsStorageDe
     ),
     new DynamicUIProps(
       InputType.String,
-      "DestinationPath",
+      "destinationPath",
       "The path within the destination bucket to store generated inventory reports.",
       [],
       false,

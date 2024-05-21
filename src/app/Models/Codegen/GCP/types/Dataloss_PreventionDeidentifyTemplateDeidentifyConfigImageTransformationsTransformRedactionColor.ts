@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColor {
+export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColor {
   // The amount of blue in the color as a value in the interval [0, 1].
-  Blue?: number;
+  blue?: number;
 
   // The amount of green in the color as a value in the interval [0, 1].
-  Green?: number;
+  green?: number;
 
   // The amount of red in the color as a value in the interval [0, 1].
-  Red?: number;
+  red?: number;
 }
 
-export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColor_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColor_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Blue",
+      "blue",
       "The amount of blue in the color as a value in the interval [0, 1].",
       [],
       false,
@@ -29,7 +29,7 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransf
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Green",
+      "green",
       "The amount of green in the color as a value in the interval [0, 1].",
       [],
       false,
@@ -37,7 +37,7 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransf
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Red",
+      "red",
       "The amount of red in the color as a value in the interval [0, 1].",
       [],
       false,

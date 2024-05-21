@@ -6,265 +6,129 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Composer_EnvironmentConfigPrivateEnvironmentConfig,
-  Composer_EnvironmentConfigPrivateEnvironmentConfig_GetTypes,
-} from "./Composer_EnvironmentConfigPrivateEnvironmentConfig";
+  composer_EnvironmentConfigEncryptionConfig,
+  composer_EnvironmentConfigEncryptionConfig_GetTypes,
+} from "./composer_EnvironmentConfigEncryptionConfig";
 import {
-  Composer_EnvironmentConfigWebServerNetworkAccessControl,
-  Composer_EnvironmentConfigWebServerNetworkAccessControl_GetTypes,
-} from "./Composer_EnvironmentConfigWebServerNetworkAccessControl";
+  composer_EnvironmentConfigMasterAuthorizedNetworksConfig,
+  composer_EnvironmentConfigMasterAuthorizedNetworksConfig_GetTypes,
+} from "./composer_EnvironmentConfigMasterAuthorizedNetworksConfig";
 import {
-  Composer_EnvironmentConfigMaintenanceWindow,
-  Composer_EnvironmentConfigMaintenanceWindow_GetTypes,
-} from "./Composer_EnvironmentConfigMaintenanceWindow";
+  composer_EnvironmentConfigDatabaseConfig,
+  composer_EnvironmentConfigDatabaseConfig_GetTypes,
+} from "./composer_EnvironmentConfigDatabaseConfig";
 import {
-  Composer_EnvironmentConfigRecoveryConfig,
-  Composer_EnvironmentConfigRecoveryConfig_GetTypes,
-} from "./Composer_EnvironmentConfigRecoveryConfig";
+  composer_EnvironmentConfigPrivateEnvironmentConfig,
+  composer_EnvironmentConfigPrivateEnvironmentConfig_GetTypes,
+} from "./composer_EnvironmentConfigPrivateEnvironmentConfig";
 import {
-  Composer_EnvironmentConfigWebServerConfig,
-  Composer_EnvironmentConfigWebServerConfig_GetTypes,
-} from "./Composer_EnvironmentConfigWebServerConfig";
+  composer_EnvironmentConfigRecoveryConfig,
+  composer_EnvironmentConfigRecoveryConfig_GetTypes,
+} from "./composer_EnvironmentConfigRecoveryConfig";
 import {
-  Composer_EnvironmentConfigNodeConfig,
-  Composer_EnvironmentConfigNodeConfig_GetTypes,
-} from "./Composer_EnvironmentConfigNodeConfig";
+  composer_EnvironmentConfigWebServerNetworkAccessControl,
+  composer_EnvironmentConfigWebServerNetworkAccessControl_GetTypes,
+} from "./composer_EnvironmentConfigWebServerNetworkAccessControl";
 import {
-  Composer_EnvironmentConfigWorkloadsConfig,
-  Composer_EnvironmentConfigWorkloadsConfig_GetTypes,
-} from "./Composer_EnvironmentConfigWorkloadsConfig";
+  composer_EnvironmentConfigWorkloadsConfig,
+  composer_EnvironmentConfigWorkloadsConfig_GetTypes,
+} from "./composer_EnvironmentConfigWorkloadsConfig";
 import {
-  Composer_EnvironmentConfigMasterAuthorizedNetworksConfig,
-  Composer_EnvironmentConfigMasterAuthorizedNetworksConfig_GetTypes,
-} from "./Composer_EnvironmentConfigMasterAuthorizedNetworksConfig";
+  composer_EnvironmentConfigSoftwareConfig,
+  composer_EnvironmentConfigSoftwareConfig_GetTypes,
+} from "./composer_EnvironmentConfigSoftwareConfig";
 import {
-  Composer_EnvironmentConfigDatabaseConfig,
-  Composer_EnvironmentConfigDatabaseConfig_GetTypes,
-} from "./Composer_EnvironmentConfigDatabaseConfig";
+  composer_EnvironmentConfigWebServerConfig,
+  composer_EnvironmentConfigWebServerConfig_GetTypes,
+} from "./composer_EnvironmentConfigWebServerConfig";
 import {
-  Composer_EnvironmentConfigEncryptionConfig,
-  Composer_EnvironmentConfigEncryptionConfig_GetTypes,
-} from "./Composer_EnvironmentConfigEncryptionConfig";
+  composer_EnvironmentConfigMaintenanceWindow,
+  composer_EnvironmentConfigMaintenanceWindow_GetTypes,
+} from "./composer_EnvironmentConfigMaintenanceWindow";
 import {
-  Composer_EnvironmentConfigSoftwareConfig,
-  Composer_EnvironmentConfigSoftwareConfig_GetTypes,
-} from "./Composer_EnvironmentConfigSoftwareConfig";
+  composer_EnvironmentConfigDataRetentionConfig,
+  composer_EnvironmentConfigDataRetentionConfig_GetTypes,
+} from "./composer_EnvironmentConfigDataRetentionConfig";
 import {
-  Composer_EnvironmentConfigDataRetentionConfig,
-  Composer_EnvironmentConfigDataRetentionConfig_GetTypes,
-} from "./Composer_EnvironmentConfigDataRetentionConfig";
+  composer_EnvironmentConfigNodeConfig,
+  composer_EnvironmentConfigNodeConfig_GetTypes,
+} from "./composer_EnvironmentConfigNodeConfig";
 
-export interface Composer_EnvironmentConfig {
-  // The configuration of Cloud SQL instance that is used by the Apache Airflow software. This field is supported for Cloud Composer environments in versions composer-1.-.--airflow--.-.-.
-  DatabaseConfig?: Composer_EnvironmentConfigDatabaseConfig;
-
-  // The encryption options for the Composer environment and its dependencies.
-  EncryptionConfig?: Composer_EnvironmentConfigEncryptionConfig;
-
+export interface composer_EnvironmentConfig {
   // The URI of the Apache Airflow Web UI hosted within this environment.
-  AirflowUri?: string;
-
-  // The configuration for Cloud Composer maintenance window.
-  MaintenanceWindow?: Composer_EnvironmentConfigMaintenanceWindow;
-
-  // The number of nodes in the Kubernetes Engine cluster that will be used to run this environment. This field is supported for Cloud Composer environments in versions composer-1.-.--airflow--.-.-.
-  NodeCount?: number;
-
-  // The recovery configuration settings for the Cloud Composer environment
-  RecoveryConfig?: Composer_EnvironmentConfigRecoveryConfig;
-
-  // The configuration settings for software inside the environment.
-  SoftwareConfig?: Composer_EnvironmentConfigSoftwareConfig;
-
-  // The configuration setting for Airflow data retention mechanism. This field is supported for Cloud Composer environments in versions composer-2.0.32-airflow-2.1.4. or newer
-  DataRetentionConfig?: Composer_EnvironmentConfigDataRetentionConfig;
+  airflowUri?: string;
 
   // Optional. If true, builds performed during operations that install Python packages have only private connectivity to Google services. If false, the builds also have access to the internet.
-  EnablePrivateBuildsOnly?: boolean;
+  enablePrivateBuildsOnly?: boolean;
 
   // The size of the Cloud Composer environment. This field is supported for Cloud Composer environments in versions composer-2.-.--airflow--.-.- and newer.
-  EnvironmentSize?: string;
+  environmentSize?: string;
 
   // The Kubernetes Engine cluster used to run this environment.
-  GkeCluster?: string;
+  gkeCluster?: string;
 
   // Whether high resilience is enabled or not. This field is supported for Cloud Composer environments in versions composer-2.1.15-airflow--.-.- and newer.
-  ResilienceMode?: string;
+  resilienceMode?: string;
 
-  // The configuration settings for the Airflow web server App Engine instance. This field is supported for Cloud Composer environments in versions composer-1.-.--airflow--.-.-.
-  WebServerConfig?: Composer_EnvironmentConfigWebServerConfig;
+  // The configuration for Cloud Composer maintenance window.
+  maintenanceWindow?: composer_EnvironmentConfigMaintenanceWindow;
 
-  // The workloads configuration settings for the GKE cluster associated with the Cloud Composer environment. Supported for Cloud Composer environments in versions composer-2.-.--airflow--.-.- and newer.
-  WorkloadsConfig?: Composer_EnvironmentConfigWorkloadsConfig;
+  // The number of nodes in the Kubernetes Engine cluster that will be used to run this environment. This field is supported for Cloud Composer environments in versions composer-1.-.--airflow--.-.-.
+  nodeCount?: number;
 
-  // The Cloud Storage prefix of the DAGs for this environment. Although Cloud Storage objects reside in a flat namespace, a hierarchical file tree can be simulated using '/'-delimited object name prefixes. DAG objects for this environment reside in a simulated directory with this prefix.
-  DagGcsPrefix?: string;
-
-  // Optional. If true, a private Composer environment will be created.
-  EnablePrivateEnvironment?: boolean;
-
-  // Configuration options for the master authorized networks feature. Enabled master authorized networks will disallow all external traffic to access Kubernetes master through HTTPS except traffic from the given CIDR blocks, Google Compute Engine Public IPs and Google Prod IPs.
-  MasterAuthorizedNetworksConfig?: Composer_EnvironmentConfigMasterAuthorizedNetworksConfig;
-
-  // The configuration used for the Kubernetes Engine cluster.
-  NodeConfig?: Composer_EnvironmentConfigNodeConfig;
-
-  // The configuration used for the Private IP Cloud Composer environment.
-  PrivateEnvironmentConfig?: Composer_EnvironmentConfigPrivateEnvironmentConfig;
+  // The recovery configuration settings for the Cloud Composer environment
+  recoveryConfig?: composer_EnvironmentConfigRecoveryConfig;
 
   // Network-level access control policy for the Airflow web server.
-  WebServerNetworkAccessControl?: Composer_EnvironmentConfigWebServerNetworkAccessControl;
+  webServerNetworkAccessControl?: composer_EnvironmentConfigWebServerNetworkAccessControl;
+
+  // The workloads configuration settings for the GKE cluster associated with the Cloud Composer environment. Supported for Cloud Composer environments in versions composer-2.-.--airflow--.-.- and newer.
+  workloadsConfig?: composer_EnvironmentConfigWorkloadsConfig;
+
+  // The configuration setting for Airflow data retention mechanism. This field is supported for Cloud Composer environments in versions composer-2.0.32-airflow-2.1.4. or newer
+  dataRetentionConfig?: composer_EnvironmentConfigDataRetentionConfig;
+
+  // The encryption options for the Composer environment and its dependencies.
+  encryptionConfig?: composer_EnvironmentConfigEncryptionConfig;
+
+  // Configuration options for the master authorized networks feature. Enabled master authorized networks will disallow all external traffic to access Kubernetes master through HTTPS except traffic from the given CIDR blocks, Google Compute Engine Public IPs and Google Prod IPs.
+  masterAuthorizedNetworksConfig?: composer_EnvironmentConfigMasterAuthorizedNetworksConfig;
+
+  // The configuration used for the Kubernetes Engine cluster.
+  nodeConfig?: composer_EnvironmentConfigNodeConfig;
+
+  // The configuration settings for software inside the environment.
+  softwareConfig?: composer_EnvironmentConfigSoftwareConfig;
+
+  // The Cloud Storage prefix of the DAGs for this environment. Although Cloud Storage objects reside in a flat namespace, a hierarchical file tree can be simulated using '/'-delimited object name prefixes. DAG objects for this environment reside in a simulated directory with this prefix.
+  dagGcsPrefix?: string;
+
+  // The configuration of Cloud SQL instance that is used by the Apache Airflow software. This field is supported for Cloud Composer environments in versions composer-1.-.--airflow--.-.-.
+  databaseConfig?: composer_EnvironmentConfigDatabaseConfig;
+
+  // Optional. If true, a private Composer environment will be created.
+  enablePrivateEnvironment?: boolean;
+
+  // The configuration used for the Private IP Cloud Composer environment.
+  privateEnvironmentConfig?: composer_EnvironmentConfigPrivateEnvironmentConfig;
+
+  // The configuration settings for the Airflow web server App Engine instance. This field is supported for Cloud Composer environments in versions composer-1.-.--airflow--.-.-.
+  webServerConfig?: composer_EnvironmentConfigWebServerConfig;
 }
 
-export function Composer_EnvironmentConfig_GetTypes(): DynamicUIProps[] {
+export function composer_EnvironmentConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DagGcsPrefix",
-      "The Cloud Storage prefix of the DAGs for this environment. Although Cloud Storage objects reside in a flat namespace, a hierarchical file tree can be simulated using '/'-delimited object name prefixes. DAG objects for this environment reside in a simulated directory with this prefix.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "EnablePrivateEnvironment",
-      "Optional. If true, a private Composer environment will be created.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "NodeConfig",
-      "The configuration used for the Kubernetes Engine cluster.",
-      Composer_EnvironmentConfigNodeConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "WebServerNetworkAccessControl",
-      "Network-level access control policy for the Airflow web server.",
-      Composer_EnvironmentConfigWebServerNetworkAccessControl_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "EncryptionConfig",
-      "The encryption options for the Composer environment and its dependencies.",
-      Composer_EnvironmentConfigEncryptionConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "WebServerConfig",
-      "The configuration settings for the Airflow web server App Engine instance. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.",
-      Composer_EnvironmentConfigWebServerConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "DataRetentionConfig",
-      "The configuration setting for Airflow data retention mechanism. This field is supported for Cloud Composer environments in versions composer-2.0.32-airflow-2.1.4. or newer",
-      Composer_EnvironmentConfigDataRetentionConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "EnvironmentSize",
-      "The size of the Cloud Composer environment. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "GkeCluster",
+      "gkeCluster",
       "The Kubernetes Engine cluster used to run this environment.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "WorkloadsConfig",
-      "The workloads configuration settings for the GKE cluster associated with the Cloud Composer environment. Supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.",
-      Composer_EnvironmentConfigWorkloadsConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "AirflowUri",
-      "The URI of the Apache Airflow Web UI hosted within this environment.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "RecoveryConfig",
-      "The recovery configuration settings for the Cloud Composer environment",
-      Composer_EnvironmentConfigRecoveryConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "EnablePrivateBuildsOnly",
-      "Optional. If true, builds performed during operations that install Python packages have only private connectivity to Google services. If false, the builds also have access to the internet.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ResilienceMode",
-      "Whether high resilience is enabled or not. This field is supported for Cloud Composer environments in versions composer-2.1.15-airflow-*.*.* and newer.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "MasterAuthorizedNetworksConfig",
-      "Configuration options for the master authorized networks feature. Enabled master authorized networks will disallow all external traffic to access Kubernetes master through HTTPS except traffic from the given CIDR blocks, Google Compute Engine Public IPs and Google Prod IPs.",
-      Composer_EnvironmentConfigMasterAuthorizedNetworksConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "PrivateEnvironmentConfig",
-      "The configuration used for the Private IP Cloud Composer environment.",
-      Composer_EnvironmentConfigPrivateEnvironmentConfig_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "DatabaseConfig",
-      "The configuration of Cloud SQL instance that is used by the Apache Airflow software. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.",
-      Composer_EnvironmentConfigDatabaseConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "MaintenanceWindow",
-      "The configuration for Cloud Composer maintenance window.",
-      Composer_EnvironmentConfigMaintenanceWindow_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "NodeCount",
+      "nodeCount",
       "The number of nodes in the Kubernetes Engine cluster that will be used to run this environment. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.",
       [],
       false,
@@ -272,9 +136,145 @@ export function Composer_EnvironmentConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "SoftwareConfig",
+      "webServerNetworkAccessControl",
+      "Network-level access control policy for the Airflow web server.",
+      composer_EnvironmentConfigWebServerNetworkAccessControl_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "enablePrivateBuildsOnly",
+      "Optional. If true, builds performed during operations that install Python packages have only private connectivity to Google services. If false, the builds also have access to the internet.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "dataRetentionConfig",
+      "The configuration setting for Airflow data retention mechanism. This field is supported for Cloud Composer environments in versions composer-2.0.32-airflow-2.1.4. or newer",
+      composer_EnvironmentConfigDataRetentionConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "encryptionConfig",
+      "The encryption options for the Composer environment and its dependencies.",
+      composer_EnvironmentConfigEncryptionConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "airflowUri",
+      "The URI of the Apache Airflow Web UI hosted within this environment.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "nodeConfig",
+      "The configuration used for the Kubernetes Engine cluster.",
+      composer_EnvironmentConfigNodeConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "dagGcsPrefix",
+      "The Cloud Storage prefix of the DAGs for this environment. Although Cloud Storage objects reside in a flat namespace, a hierarchical file tree can be simulated using '/'-delimited object name prefixes. DAG objects for this environment reside in a simulated directory with this prefix.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "databaseConfig",
+      "The configuration of Cloud SQL instance that is used by the Apache Airflow software. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.",
+      composer_EnvironmentConfigDatabaseConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "enablePrivateEnvironment",
+      "Optional. If true, a private Composer environment will be created.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "softwareConfig",
       "The configuration settings for software inside the environment.",
-      Composer_EnvironmentConfigSoftwareConfig_GetTypes(),
+      composer_EnvironmentConfigSoftwareConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "privateEnvironmentConfig",
+      "The configuration used for the Private IP Cloud Composer environment.",
+      composer_EnvironmentConfigPrivateEnvironmentConfig_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "environmentSize",
+      "The size of the Cloud Composer environment. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "resilienceMode",
+      "Whether high resilience is enabled or not. This field is supported for Cloud Composer environments in versions composer-2.1.15-airflow-*.*.* and newer.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "maintenanceWindow",
+      "The configuration for Cloud Composer maintenance window.",
+      composer_EnvironmentConfigMaintenanceWindow_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "recoveryConfig",
+      "The recovery configuration settings for the Cloud Composer environment",
+      composer_EnvironmentConfigRecoveryConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "workloadsConfig",
+      "The workloads configuration settings for the GKE cluster associated with the Cloud Composer environment. Supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.",
+      composer_EnvironmentConfigWorkloadsConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "masterAuthorizedNetworksConfig",
+      "Configuration options for the master authorized networks feature. Enabled master authorized networks will disallow all external traffic to access Kubernetes master through HTTPS except traffic from the given CIDR blocks, Google Compute Engine Public IPs and Google Prod IPs.",
+      composer_EnvironmentConfigMasterAuthorizedNetworksConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "webServerConfig",
+      "The configuration settings for the Airflow web server App Engine instance. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.",
+      composer_EnvironmentConfigWebServerConfig_GetTypes(),
       false,
       false,
     ),

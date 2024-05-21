@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Edgecontainer_ClusterMaintenancePolicyWindowRecurringWindowWindow {
+export interface edgecontainer_ClusterMaintenancePolicyWindowRecurringWindowWindow {
   /*
 The time that the window ends. The end time must take place after the
 start time.
 */
-  EndTime?: string;
+  endTime?: string;
 
   // The time that the window first starts.
-  StartTime?: string;
+  startTime?: string;
 }
 
-export function Edgecontainer_ClusterMaintenancePolicyWindowRecurringWindowWindow_GetTypes(): DynamicUIProps[] {
+export function edgecontainer_ClusterMaintenancePolicyWindowRecurringWindowWindow_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "EndTime",
+      "endTime",
       "The time that the window ends. The end time must take place after the\nstart time.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Edgecontainer_ClusterMaintenancePolicyWindowRecurringWindowWindo
     ),
     new DynamicUIProps(
       InputType.String,
-      "StartTime",
+      "startTime",
       "The time that the window first starts.",
       [],
       false,

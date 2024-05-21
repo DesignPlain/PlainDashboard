@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Identityplatform_ConfigClientPermissions {
-  // When true, end users cannot sign up for a new account on the associated project through any of our API methods
-  DisabledUserSignup?: boolean;
-
+export interface identityplatform_ConfigClientPermissions {
   // When true, end users cannot delete their account on the associated project through any of our API methods
-  DisabledUserDeletion?: boolean;
+  disabledUserDeletion?: boolean;
+
+  // When true, end users cannot sign up for a new account on the associated project through any of our API methods
+  disabledUserSignup?: boolean;
 }
 
-export function Identityplatform_ConfigClientPermissions_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ConfigClientPermissions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "DisabledUserSignup",
-      "When true, end users cannot sign up for a new account on the associated project through any of our API methods",
+      "disabledUserDeletion",
+      "When true, end users cannot delete their account on the associated project through any of our API methods",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "DisabledUserDeletion",
-      "When true, end users cannot delete their account on the associated project through any of our API methods",
+      "disabledUserSignup",
+      "When true, end users cannot sign up for a new account on the associated project through any of our API methods",
       [],
       false,
       false,

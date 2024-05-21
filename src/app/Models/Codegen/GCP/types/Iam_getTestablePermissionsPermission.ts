@@ -6,52 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Iam_getTestablePermissionsPermission {
+export interface iam_getTestablePermissionsPermission {
   // Whether the corresponding API has been enabled for the resource.
-  ApiDisabled?: boolean;
+  apiDisabled?: boolean;
 
   // The level of support for custom roles. Can be one of `"NOT_SUPPORTED"`, `"SUPPORTED"`, `"TESTING"`. Default is `"SUPPORTED"`
-  CustomSupportLevel?: string;
+  customSupportLevel?: string;
 
   // Name of the permission.
-  Name?: string;
+  name?: string;
 
   // Release stage of the permission.
-  Stage?: string;
+  stage?: string;
 
   // Human readable title of the permission.
-  Title?: string;
+  title?: string;
 }
 
-export function Iam_getTestablePermissionsPermission_GetTypes(): DynamicUIProps[] {
+export function iam_getTestablePermissionsPermission_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Bool,
-      "ApiDisabled",
-      "Whether the corresponding API has been enabled for the resource.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "CustomSupportLevel",
-      'The level of support for custom roles. Can be one of `"NOT_SUPPORTED"`, `"SUPPORTED"`, `"TESTING"`. Default is `"SUPPORTED"`',
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Name",
-      "Name of the permission.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Stage",
+      "stage",
       "Release stage of the permission.",
       [],
       true,
@@ -59,8 +35,32 @@ export function Iam_getTestablePermissionsPermission_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "Title",
+      "title",
       "Human readable title of the permission.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "apiDisabled",
+      "Whether the corresponding API has been enabled for the resource.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "customSupportLevel",
+      'The level of support for custom roles. Can be one of `"NOT_SUPPORTED"`, `"SUPPORTED"`, `"TESTING"`. Default is `"SUPPORTED"`',
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "name",
+      "Name of the permission.",
       [],
       true,
       false,

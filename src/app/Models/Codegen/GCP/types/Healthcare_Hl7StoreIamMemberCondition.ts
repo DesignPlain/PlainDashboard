@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Healthcare_Hl7StoreIamMemberCondition {
+export interface healthcare_Hl7StoreIamMemberCondition {
   //
-  Description?: string;
+  title?: string;
 
   //
-  Expression?: string;
+  description?: string;
 
   //
-  Title?: string;
+  expression?: string;
 }
 
-export function Healthcare_Hl7StoreIamMemberCondition_GetTypes(): DynamicUIProps[] {
+export function healthcare_Hl7StoreIamMemberCondition_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Description", "", [], false, true),
-    new DynamicUIProps(InputType.String, "Expression", "", [], true, true),
-    new DynamicUIProps(InputType.String, "Title", "", [], true, true),
+    new DynamicUIProps(InputType.String, "description", "", [], false, true),
+    new DynamicUIProps(InputType.String, "expression", "", [], true, true),
+    new DynamicUIProps(InputType.String, "title", "", [], true, true),
   ];
 }

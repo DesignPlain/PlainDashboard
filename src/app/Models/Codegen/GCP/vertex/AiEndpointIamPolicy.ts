@@ -9,39 +9,39 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface AiEndpointIamPolicyArgs {
   //
-  Endpoint?: string;
+  endpoint?: string;
 
   //
-  Location?: string;
+  location?: string;
 
   //
-  PolicyData?: string;
+  policyData?: string;
 
   //
-  Project?: string;
+  project?: string;
 }
 export class AiEndpointIamPolicy extends Resource {
   //
-  public Etag?: string;
+  public etag?: string;
 
   //
-  public Location?: string;
+  public location?: string;
 
   //
-  public PolicyData?: string;
+  public policyData?: string;
 
   //
-  public Project?: string;
+  public project?: string;
 
   //
-  public Endpoint?: string;
+  public endpoint?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Location", "", [], false, true),
-      new DynamicUIProps(InputType.String, "PolicyData", "", [], true, false),
-      new DynamicUIProps(InputType.String, "Project", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Endpoint", "", [], true, true),
+      new DynamicUIProps(InputType.String, "endpoint", "", [], true, true),
+      new DynamicUIProps(InputType.String, "location", "", [], false, true),
+      new DynamicUIProps(InputType.String, "policyData", "", [], true, false),
+      new DynamicUIProps(InputType.String, "project", "", [], false, true),
     ];
   }
 }

@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity {
-  // List of node affinity label values as strings.
-  Values?: Array<string>;
-
+export interface container_ClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity {
   // The default or custom node affinity label key name.
-  Key?: string;
+  key?: string;
 
   // Specifies affinity or anti-affinity. Accepted values are `"IN"` or `"NOT_IN"`
-  Operator?: string;
+  operator?: string;
+
+  // List of node affinity label values as strings.
+  values?: Array<string>;
 }
 
-export function Container_ClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity_GetTypes(): DynamicUIProps[] {
+export function container_ClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "operator",
+      'Specifies affinity or anti-affinity. Accepted values are `"IN"` or `"NOT_IN"`',
+      [],
+      true,
+      true,
+    ),
+    new DynamicUIProps(
       InputType.Array,
-      "Values",
+      "values",
       "List of node affinity label values as strings.",
       InputType_String_GetTypes(),
       true,
@@ -29,16 +37,8 @@ export function Container_ClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity_
     ),
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "key",
       "The default or custom node affinity label key name.",
-      [],
-      true,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Operator",
-      'Specifies affinity or anti-affinity. Accepted values are `"IN"` or `"NOT_IN"`',
       [],
       true,
       true,

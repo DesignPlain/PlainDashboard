@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_DatabaseInstanceIpAddress {
+export interface sql_DatabaseInstanceIpAddress {
   //
-  TimeToRetire?: string;
+  ipAddress?: string;
 
   //
-  Type?: string;
+  timeToRetire?: string;
 
   //
-  IpAddress?: string;
+  type?: string;
 }
 
-export function Sql_DatabaseInstanceIpAddress_GetTypes(): DynamicUIProps[] {
+export function sql_DatabaseInstanceIpAddress_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "TimeToRetire", "", [], false, false),
-    new DynamicUIProps(InputType.String, "Type", "", [], false, false),
-    new DynamicUIProps(InputType.String, "IpAddress", "", [], false, false),
+    new DynamicUIProps(InputType.String, "ipAddress", "", [], false, false),
+    new DynamicUIProps(InputType.String, "timeToRetire", "", [], false, false),
+    new DynamicUIProps(InputType.String, "type", "", [], false, false),
   ];
 }

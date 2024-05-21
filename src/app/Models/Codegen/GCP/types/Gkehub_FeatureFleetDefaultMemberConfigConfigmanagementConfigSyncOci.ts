@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOci {
+export interface gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOci {
   // The Google Cloud Service Account Email used for auth when secretType is gcpServiceAccount
-  GcpServiceAccountEmail?: string;
+  gcpServiceAccountEmail?: string;
 
   // The absolute path of the directory that contains the local resources. Default: the root directory of the image
-  PolicyDir?: string;
+  policyDir?: string;
 
   // Type of secret configured for access to the Git repo
-  SecretType?: string;
+  secretType?: string;
 
   // The OCI image repository URL for the package to sync from
-  SyncRepo?: string;
+  syncRepo?: string;
 
   // Period in seconds between consecutive syncs. Default: 15
-  SyncWaitSecs?: string;
+  syncWaitSecs?: string;
 
   /*
 (Optional, Deprecated)
@@ -28,14 +28,22 @@ Version of ACM installed
 
 > --Warning:-- The `configmanagement.config_sync.oci.version` field is deprecated and will be removed in a future major release. Please use `configmanagement.version` field to specify the version of ACM installed instead.
 */
-  Version?: string;
+  version?: string;
 }
 
-export function Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOci_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOci_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PolicyDir",
+      "gcpServiceAccountEmail",
+      "The Google Cloud Service Account Email used for auth when secretType is gcpServiceAccount",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "policyDir",
       "The absolute path of the directory that contains the local resources. Default: the root directory of the image",
       [],
       false,
@@ -43,7 +51,7 @@ export function Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSync
     ),
     new DynamicUIProps(
       InputType.String,
-      "SecretType",
+      "secretType",
       "Type of secret configured for access to the Git repo",
       [],
       true,
@@ -51,7 +59,7 @@ export function Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSync
     ),
     new DynamicUIProps(
       InputType.String,
-      "SyncRepo",
+      "syncRepo",
       "The OCI image repository URL for the package to sync from",
       [],
       false,
@@ -59,7 +67,7 @@ export function Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSync
     ),
     new DynamicUIProps(
       InputType.String,
-      "SyncWaitSecs",
+      "syncWaitSecs",
       "Period in seconds between consecutive syncs. Default: 15",
       [],
       false,
@@ -67,16 +75,8 @@ export function Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSync
     ),
     new DynamicUIProps(
       InputType.String,
-      "Version",
+      "version",
       "(Optional, Deprecated)\nVersion of ACM installed\n\n> **Warning:** The `configmanagement.config_sync.oci.version` field is deprecated and will be removed in a future major release. Please use `configmanagement.version` field to specify the version of ACM installed instead.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "GcpServiceAccountEmail",
-      "The Google Cloud Service Account Email used for auth when secretType is gcpServiceAccount",
       [],
       false,
       false,

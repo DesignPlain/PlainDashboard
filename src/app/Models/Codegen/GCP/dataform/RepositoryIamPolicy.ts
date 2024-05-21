@@ -9,39 +9,39 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface RepositoryIamPolicyArgs {
   //
-  Region?: string;
+  region?: string;
 
   //
-  Repository?: string;
+  repository?: string;
 
   //
-  PolicyData?: string;
+  policyData?: string;
 
   //
-  Project?: string;
+  project?: string;
 }
 export class RepositoryIamPolicy extends Resource {
   //
-  public Etag?: string;
+  public etag?: string;
 
   //
-  public PolicyData?: string;
+  public policyData?: string;
 
   //
-  public Project?: string;
+  public project?: string;
 
   //
-  public Region?: string;
+  public region?: string;
 
   //
-  public Repository?: string;
+  public repository?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Region", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Repository", "", [], true, true),
-      new DynamicUIProps(InputType.String, "PolicyData", "", [], true, false),
-      new DynamicUIProps(InputType.String, "Project", "", [], false, true),
+      new DynamicUIProps(InputType.String, "region", "", [], false, true),
+      new DynamicUIProps(InputType.String, "repository", "", [], true, true),
+      new DynamicUIProps(InputType.String, "policyData", "", [], true, false),
+      new DynamicUIProps(InputType.String, "project", "", [], false, true),
     ];
   }
 }

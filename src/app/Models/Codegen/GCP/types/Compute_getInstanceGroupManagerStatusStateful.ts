@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_getInstanceGroupManagerStatusStatefulPerInstanceConfig,
-  Compute_getInstanceGroupManagerStatusStatefulPerInstanceConfig_GetTypes,
-} from "./Compute_getInstanceGroupManagerStatusStatefulPerInstanceConfig";
+  compute_getInstanceGroupManagerStatusStatefulPerInstanceConfig,
+  compute_getInstanceGroupManagerStatusStatefulPerInstanceConfig_GetTypes,
+} from "./compute_getInstanceGroupManagerStatusStatefulPerInstanceConfig";
 
-export interface Compute_getInstanceGroupManagerStatusStateful {
+export interface compute_getInstanceGroupManagerStatusStateful {
   // A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.
-  HasStatefulConfig?: boolean;
+  hasStatefulConfig?: boolean;
 
   // Status of per-instance configs on the instance.
-  PerInstanceConfigs?: Array<Compute_getInstanceGroupManagerStatusStatefulPerInstanceConfig>;
+  perInstanceConfigs?: Array<compute_getInstanceGroupManagerStatusStatefulPerInstanceConfig>;
 }
 
-export function Compute_getInstanceGroupManagerStatusStateful_GetTypes(): DynamicUIProps[] {
+export function compute_getInstanceGroupManagerStatusStateful_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "HasStatefulConfig",
+      "hasStatefulConfig",
       "A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.",
       [],
       true,
@@ -30,9 +30,9 @@ export function Compute_getInstanceGroupManagerStatusStateful_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Array,
-      "PerInstanceConfigs",
+      "perInstanceConfigs",
       "Status of per-instance configs on the instance.",
-      Compute_getInstanceGroupManagerStatusStatefulPerInstanceConfig_GetTypes(),
+      compute_getInstanceGroupManagerStatusStatefulPerInstanceConfig_GetTypes(),
       true,
       false,
     ),

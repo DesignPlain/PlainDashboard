@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget,
-  Dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget_GetTypes,
-} from "./Dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget";
+  dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget,
+  dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget_GetTypes,
+} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget";
 
-export interface Dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfig {
+export interface dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfig {
   // A target for the deployment.
-  NamespacedGkeDeploymentTarget?: Dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget;
+  namespacedGkeDeploymentTarget?: dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget;
 }
 
-export function Dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "NamespacedGkeDeploymentTarget",
+      "namespacedGkeDeploymentTarget",
       "A target for the deployment.",
-      Dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget_GetTypes(),
+      dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget_GetTypes(),
       false,
       true,
     ),

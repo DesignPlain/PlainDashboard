@@ -6,40 +6,32 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_ReservationSpecificReservationInstanceProperties,
-  Compute_ReservationSpecificReservationInstanceProperties_GetTypes,
-} from "./Compute_ReservationSpecificReservationInstanceProperties";
+  compute_ReservationSpecificReservationInstanceProperties,
+  compute_ReservationSpecificReservationInstanceProperties_GetTypes,
+} from "./compute_ReservationSpecificReservationInstanceProperties";
 
-export interface Compute_ReservationSpecificReservation {
+export interface compute_ReservationSpecificReservation {
   // The number of resources that are allocated.
-  Count?: number;
+  count?: number;
 
   /*
 (Output)
 How many instances are in use.
 */
-  InUseCount?: number;
+  inUseCount?: number;
 
   /*
 The instance properties for the reservation.
 Structure is documented below.
 */
-  InstanceProperties?: Compute_ReservationSpecificReservationInstanceProperties;
+  instanceProperties?: compute_ReservationSpecificReservationInstanceProperties;
 }
 
-export function Compute_ReservationSpecificReservation_GetTypes(): DynamicUIProps[] {
+export function compute_ReservationSpecificReservation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "InstanceProperties",
-      "The instance properties for the reservation.\nStructure is documented below.",
-      Compute_ReservationSpecificReservationInstanceProperties_GetTypes(),
-      true,
-      true,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "Count",
+      "count",
       "The number of resources that are allocated.",
       [],
       true,
@@ -47,11 +39,19 @@ export function Compute_ReservationSpecificReservation_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Number,
-      "InUseCount",
+      "inUseCount",
       "(Output)\nHow many instances are in use.",
       [],
       false,
       false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "instanceProperties",
+      "The instance properties for the reservation.\nStructure is documented below.",
+      compute_ReservationSpecificReservationInstanceProperties_GetTypes(),
+      true,
+      true,
     ),
   ];
 }

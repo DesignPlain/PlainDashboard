@@ -6,72 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource {
+export interface cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource {
+  /*
+ID of the project that owns the Cloud Source Repository. If omitted, the
+project ID requesting the build is assumed.
+*/
+  projectId?: string;
+
+  // Name of the Cloud Source Repository.
+  repoName?: string;
+
   // Regex matching tags to build.
-  TagName?: string;
+  tagName?: string;
 
   // Regex matching branches to build.
-  BranchName?: string;
+  branchName?: string;
 
   // Regex matching tags to build.
-  CommitSha?: string;
+  commitSha?: string;
 
   // Directory, relative to the source root, in which to run the build.
-  Dir?: string;
+  dir?: string;
 
   /*
 Only trigger a build if the revision regex does
 NOT match the revision regex.
 */
-  InvertRegex?: boolean;
-
-  /*
-ID of the project that owns the Cloud Source Repository. If omitted, the
-project ID requesting the build is assumed.
-*/
-  ProjectId?: string;
-
-  // Name of the Cloud Source Repository.
-  RepoName?: string;
+  invertRegex?: boolean;
 }
 
-export function Cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource_GetTypes(): DynamicUIProps[] {
+export function cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "TagName",
-      "Regex matching tags to build.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "BranchName",
-      "Regex matching branches to build.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "CommitSha",
-      "Regex matching tags to build.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Dir",
-      "Directory, relative to the source root, in which to run the build.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "InvertRegex",
+      "invertRegex",
       "Only trigger a build if the revision regex does\nNOT match the revision regex.",
       [],
       true,
@@ -79,7 +47,7 @@ export function Cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource_GetTypes
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProjectId",
+      "projectId",
       "ID of the project that owns the Cloud Source Repository. If omitted, the\nproject ID requesting the build is assumed.",
       [],
       true,
@@ -87,8 +55,40 @@ export function Cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource_GetTypes
     ),
     new DynamicUIProps(
       InputType.String,
-      "RepoName",
+      "repoName",
       "Name of the Cloud Source Repository.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "tagName",
+      "Regex matching tags to build.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "branchName",
+      "Regex matching branches to build.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "commitSha",
+      "Regex matching tags to build.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "dir",
+      "Directory, relative to the source root, in which to run the build.",
       [],
       true,
       false,

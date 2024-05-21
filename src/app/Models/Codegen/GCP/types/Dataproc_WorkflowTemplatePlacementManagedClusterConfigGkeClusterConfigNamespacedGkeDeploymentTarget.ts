@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget {
+export interface dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget {
   // A namespace within the GKE cluster to deploy into.
-  ClusterNamespace?: string;
+  clusterNamespace?: string;
 
   // The target GKE cluster to deploy to. Format: 'projects/{project}/locations/{location}/clusters/{cluster_id}'
-  TargetGkeCluster?: string;
+  targetGkeCluster?: string;
 }
 
-export function Dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ClusterNamespace",
+      "clusterNamespace",
       "A namespace within the GKE cluster to deploy into.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeCluster
     ),
     new DynamicUIProps(
       InputType.String,
-      "TargetGkeCluster",
+      "targetGkeCluster",
       "The target GKE cluster to deploy to. Format: 'projects/{project}/locations/{location}/clusters/{cluster_id}'",
       [],
       false,

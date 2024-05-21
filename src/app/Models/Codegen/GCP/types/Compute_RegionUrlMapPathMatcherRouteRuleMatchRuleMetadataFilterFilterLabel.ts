@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel {
+export interface compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel {
   /*
 Name of metadata label. The name can have a maximum length of 1024 characters
 and must be at least 1 character long.
 */
-  Name?: string;
+  name?: string;
 
   /*
 The value of the label must match the specified value. value can have a maximum
 length of 1024 characters.
 */
-  Value?: string;
+  value?: string;
 }
 
-export function Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel_GetTypes(): DynamicUIProps[] {
+export function compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Name of metadata label. The name can have a maximum length of 1024 characters\nand must be at least 1 character long.",
       [],
       true,
@@ -32,7 +32,7 @@ export function Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterF
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "The value of the label must match the specified value. value can have a maximum\nlength of 1024 characters.",
       [],
       true,

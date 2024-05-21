@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudtasks_QueueStackdriverLoggingConfig {
+export interface cloudtasks_QueueStackdriverLoggingConfig {
   /*
 Specifies the fraction of operations to write to Stackdriver Logging.
 This field may contain any value between 0.0 and 1.0, inclusive. 0.0 is the
 default and means that no operations are logged.
 */
-  SamplingRatio?: number;
+  samplingRatio?: number;
 }
 
-export function Cloudtasks_QueueStackdriverLoggingConfig_GetTypes(): DynamicUIProps[] {
+export function cloudtasks_QueueStackdriverLoggingConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "SamplingRatio",
+      "samplingRatio",
       "Specifies the fraction of operations to write to Stackdriver Logging.\nThis field may contain any value between 0.0 and 1.0, inclusive. 0.0 is the\ndefault and means that no operations are logged.",
       [],
       true,

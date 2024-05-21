@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Projects_ApiKeyRestrictionsIosKeyRestrictions {
+export interface projects_ApiKeyRestrictionsIosKeyRestrictions {
   // A list of bundle IDs that are allowed when making API calls with this key.
-  AllowedBundleIds?: Array<string>;
+  allowedBundleIds?: Array<string>;
 }
 
-export function Projects_ApiKeyRestrictionsIosKeyRestrictions_GetTypes(): DynamicUIProps[] {
+export function projects_ApiKeyRestrictionsIosKeyRestrictions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AllowedBundleIds",
+      "allowedBundleIds",
       "A list of bundle IDs that are allowed when making API calls with this key.",
       InputType_String_GetTypes(),
       true,

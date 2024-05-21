@@ -8,19 +8,13 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface PublicAdvertisedPrefixArgs {
-  // An optional description of this resource.
-  Description?: string;
-
-  // The IPv4 address to be used for reverse DNS verification.
-  DnsVerificationIp?: string;
-
   /*
 The IPv4 address range, in CIDR format, represented by this public advertised prefix.
 
 
 - - -
 */
-  IpCidrRange?: string;
+  ipCidrRange?: string;
 
   /*
 Name of the resource. The name must be 1-63 characters long, and
@@ -30,26 +24,21 @@ which means the first character must be a lowercase letter, and all
 following characters must be a dash, lowercase letter, or digit,
 except the last character, which cannot be a dash.
 */
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
+
+  // An optional description of this resource.
+  description?: string;
+
+  // The IPv4 address to be used for reverse DNS verification.
+  dnsVerificationIp?: string;
 }
 export class PublicAdvertisedPrefix extends Resource {
-  // The IPv4 address to be used for reverse DNS verification.
-  public DnsVerificationIp?: string;
-
-  /*
-The IPv4 address range, in CIDR format, represented by this public advertised prefix.
-
-
-- - -
-*/
-  public IpCidrRange?: string;
-
   /*
 Name of the resource. The name must be 1-63 characters long, and
 comply with RFC1035. Specifically, the name must be 1-63 characters
@@ -58,41 +47,36 @@ which means the first character must be a lowercase letter, and all
 following characters must be a dash, lowercase letter, or digit,
 except the last character, which cannot be a dash.
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // The URI of the created resource.
-  public SelfLink?: string;
+  public selfLink?: string;
 
   // An optional description of this resource.
-  public Description?: string;
+  public description?: string;
+
+  // The IPv4 address to be used for reverse DNS verification.
+  public dnsVerificationIp?: string;
+
+  /*
+The IPv4 address range, in CIDR format, represented by this public advertised prefix.
+
+
+- - -
+*/
+  public ipCidrRange?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Description",
-        "An optional description of this resource.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "DnsVerificationIp",
-        "The IPv4 address to be used for reverse DNS verification.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "IpCidrRange",
+        "ipCidrRange",
         "The IPv4 address range, in CIDR format, represented by this public advertised prefix.\n\n\n- - -",
         [],
         true,
@@ -100,7 +84,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name of the resource. The name must be 1-63 characters long, and\ncomply with RFC1035. Specifically, the name must be 1-63 characters\nlong and match the regular expression `a-z?`\nwhich means the first character must be a lowercase letter, and all\nfollowing characters must be a dash, lowercase letter, or digit,\nexcept the last character, which cannot be a dash.",
         [],
         false,
@@ -108,10 +92,26 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "An optional description of this resource.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "dnsVerificationIp",
+        "The IPv4 address to be used for reverse DNS verification.",
+        [],
+        true,
         true,
       ),
     ];

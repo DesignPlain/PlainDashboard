@@ -7,108 +7,76 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Apigee_KeystoresAliasesPkcs12CertsInfo,
-  Apigee_KeystoresAliasesPkcs12CertsInfo_GetTypes,
-} from "../types/Apigee_KeystoresAliasesPkcs12CertsInfo";
+  apigee_KeystoresAliasesPkcs12CertsInfo,
+  apigee_KeystoresAliasesPkcs12CertsInfo_GetTypes,
+} from "../types/apigee_KeystoresAliasesPkcs12CertsInfo";
 
 export interface KeystoresAliasesPkcs12Args {
+  // Organization ID associated with the alias, without organization/ prefix
+  orgId?: string;
+
+  // Password for the PKCS12 file if it's encrypted
+  password?: string;
+
   // Alias Name
-  Alias?: string;
+  alias?: string;
 
   // Environment associated with the alias
-  Environment?: string;
+  environment?: string;
 
   /*
 PKCS12 file content
 
 - - -
 */
-  File?: string;
+  file?: string;
 
   // Hash of the pkcs file
-  Filehash?: string;
+  filehash?: string;
 
   // Keystore Name
-  Keystore?: string;
-
-  // Organization ID associated with the alias, without organization/ prefix
-  OrgId?: string;
-
-  // Password for the PKCS12 file if it's encrypted
-  Password?: string;
+  keystore?: string;
 }
 export class KeystoresAliasesPkcs12 extends Resource {
+  // Alias Name
+  public alias?: string;
+
+  // Environment associated with the alias
+  public environment?: string;
+
+  // Hash of the pkcs file
+  public filehash?: string;
+
+  // Keystore Name
+  public keystore?: string;
+
+  // Organization ID associated with the alias, without organization/ prefix
+  public orgId?: string;
+
   // Password for the PKCS12 file if it's encrypted
-  public Password?: string;
+  public password?: string;
 
   // Optional.Type of Alias
-  public Type?: string;
-
-  // Alias Name
-  public Alias?: string;
+  public type?: string;
 
   /*
 Chain of certificates under this alias.
 Structure is documented below.
 */
-  public CertsInfos?: Array<Apigee_KeystoresAliasesPkcs12CertsInfo>;
-
-  // Environment associated with the alias
-  public Environment?: string;
+  public certsInfos?: Array<apigee_KeystoresAliasesPkcs12CertsInfo>;
 
   /*
 PKCS12 file content
 
 - - -
 */
-  public File?: string;
-
-  // Hash of the pkcs file
-  public Filehash?: string;
-
-  // Keystore Name
-  public Keystore?: string;
-
-  // Organization ID associated with the alias, without organization/ prefix
-  public OrgId?: string;
+  public file?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Environment",
-        "Environment associated with the alias",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "File",
-        "PKCS12 file content\n\n- - -",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Filehash",
-        "Hash of the pkcs file",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Keystore",
-        "Keystore Name",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "OrgId",
+        "orgId",
         "Organization ID associated with the alias, without organization/ prefix",
         [],
         true,
@@ -116,7 +84,7 @@ PKCS12 file content
       ),
       new DynamicUIProps(
         InputType.String,
-        "Password",
+        "password",
         "Password for the PKCS12 file if it's encrypted",
         [],
         false,
@@ -124,8 +92,40 @@ PKCS12 file content
       ),
       new DynamicUIProps(
         InputType.String,
-        "Alias",
+        "alias",
         "Alias Name",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "environment",
+        "Environment associated with the alias",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "file",
+        "PKCS12 file content\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "filehash",
+        "Hash of the pkcs file",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "keystore",
+        "Keystore Name",
         [],
         true,
         true,

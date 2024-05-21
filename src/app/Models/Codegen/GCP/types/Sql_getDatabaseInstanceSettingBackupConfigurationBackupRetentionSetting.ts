@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting {
+export interface sql_getDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting {
   // Number of backups to retain.
-  RetainedBackups?: number;
+  retainedBackups?: number;
 
   // The unit that 'retainedBackups' represents. Defaults to COUNT
-  RetentionUnit?: string;
+  retentionUnit?: string;
 }
 
-export function Sql_getDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "RetainedBackups",
+      "retainedBackups",
       "Number of backups to retain.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Sql_getDatabaseInstanceSettingBackupConfigurationBackupRetention
     ),
     new DynamicUIProps(
       InputType.String,
-      "RetentionUnit",
+      "retentionUnit",
       "The unit that 'retainedBackups' represents. Defaults to COUNT",
       [],
       true,

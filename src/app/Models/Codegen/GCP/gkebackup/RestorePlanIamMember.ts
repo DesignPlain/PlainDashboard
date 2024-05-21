@@ -7,63 +7,80 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkebackup_RestorePlanIamMemberCondition,
-  Gkebackup_RestorePlanIamMemberCondition_GetTypes,
-} from "../types/Gkebackup_RestorePlanIamMemberCondition";
+  gkebackup_RestorePlanIamMemberCondition,
+  gkebackup_RestorePlanIamMemberCondition_GetTypes,
+} from "../types/gkebackup_RestorePlanIamMemberCondition";
 
 export interface RestorePlanIamMemberArgs {
+  //
+  condition?: gkebackup_RestorePlanIamMemberCondition;
+
+  // The region of the Restore Plan.
+  location?: string;
+
+  //
+  member?: string;
+
+  // The full name of the BackupPlan Resource.
+  name?: string;
+
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   //
-  Role?: string;
-
-  //
-  Condition?: Gkebackup_RestorePlanIamMemberCondition;
-
-  // The region of the Restore Plan.
-  Location?: string;
-
-  //
-  Member?: string;
-
-  // The full name of the BackupPlan Resource.
-  Name?: string;
+  role?: string;
 }
 export class RestorePlanIamMember extends Resource {
   //
-  public Member?: string;
+  public role?: string;
+
+  //
+  public condition?: gkebackup_RestorePlanIamMemberCondition;
+
+  //
+  public etag?: string;
+
+  // The region of the Restore Plan.
+  public location?: string;
+
+  //
+  public member?: string;
 
   // The full name of the BackupPlan Resource.
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
-
-  //
-  public Role?: string;
-
-  //
-  public Condition?: Gkebackup_RestorePlanIamMemberCondition;
-
-  //
-  public Etag?: string;
-
-  // The region of the Restore Plan.
-  public Location?: string;
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
+      new DynamicUIProps(InputType.String, "role", "", [], true, true),
+      new DynamicUIProps(
+        InputType.Object,
+        "condition",
+        "",
+        gkebackup_RestorePlanIamMemberCondition_GetTypes(),
+        false,
+        true,
+      ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "location",
+        "The region of the Restore Plan.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(InputType.String, "member", "", [], true, true),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
         "The full name of the BackupPlan Resource.",
         [],
         false,
@@ -71,25 +88,8 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
-      new DynamicUIProps(
-        InputType.Object,
-        "Condition",
-        "",
-        Gkebackup_RestorePlanIamMemberCondition_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Location",
-        "The region of the Restore Plan.",
         [],
         false,
         true,

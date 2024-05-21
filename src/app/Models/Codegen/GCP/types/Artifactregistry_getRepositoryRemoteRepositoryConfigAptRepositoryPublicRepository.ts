@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Artifactregistry_getRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository {
-  // Specific repository from the base.
-  RepositoryPath?: string;
-
+export interface artifactregistry_getRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository {
   // A common public repository base for Apt, e.g. '"debian/dists/buster"' Possible values: ["DEBIAN", "UBUNTU"]
-  RepositoryBase?: string;
+  repositoryBase?: string;
+
+  // Specific repository from the base.
+  repositoryPath?: string;
 }
 
-export function Artifactregistry_getRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_getRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "RepositoryPath",
-      "Specific repository from the base.",
+      "repositoryBase",
+      'A common public repository base for Apt, e.g. \'"debian/dists/buster"\' Possible values: ["DEBIAN", "UBUNTU"]',
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "RepositoryBase",
-      'A common public repository base for Apt, e.g. \'"debian/dists/buster"\' Possible values: ["DEBIAN", "UBUNTU"]',
+      "repositoryPath",
+      "Specific repository from the base.",
       [],
       true,
       false,

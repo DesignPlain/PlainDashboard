@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_SecurityPolicyRuleHeaderActionRequestHeadersToAdd {
+export interface compute_SecurityPolicyRuleHeaderActionRequestHeadersToAdd {
   // The name of the header to set.
-  HeaderName?: string;
+  headerName?: string;
 
   // The value to set the named header to.
-  HeaderValue?: string;
+  headerValue?: string;
 }
 
-export function Compute_SecurityPolicyRuleHeaderActionRequestHeadersToAdd_GetTypes(): DynamicUIProps[] {
+export function compute_SecurityPolicyRuleHeaderActionRequestHeadersToAdd_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "HeaderName",
-      "The name of the header to set.",
+      "headerValue",
+      "The value to set the named header to.",
       [],
-      true,
+      false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "HeaderValue",
-      "The value to set the named header to.",
+      "headerName",
+      "The name of the header to set.",
       [],
-      false,
+      true,
       false,
     ),
   ];

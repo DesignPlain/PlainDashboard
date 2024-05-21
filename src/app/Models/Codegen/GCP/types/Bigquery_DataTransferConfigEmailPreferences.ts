@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_DataTransferConfigEmailPreferences {
+export interface bigquery_DataTransferConfigEmailPreferences {
   // If true, email notifications will be sent on transfer run failures.
-  EnableFailureEmail?: boolean;
+  enableFailureEmail?: boolean;
 }
 
-export function Bigquery_DataTransferConfigEmailPreferences_GetTypes(): DynamicUIProps[] {
+export function bigquery_DataTransferConfigEmailPreferences_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableFailureEmail",
+      "enableFailureEmail",
       "If true, email notifications will be sent on transfer run failures.",
       [],
       true,

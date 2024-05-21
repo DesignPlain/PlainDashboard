@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_ResourcePolicyInstanceSchedulePolicyVmStartSchedule {
+export interface compute_ResourcePolicyInstanceSchedulePolicyVmStartSchedule {
   // Specifies the frequency for the operation, using the unix-cron format.
-  Schedule?: string;
+  schedule?: string;
 }
 
-export function Compute_ResourcePolicyInstanceSchedulePolicyVmStartSchedule_GetTypes(): DynamicUIProps[] {
+export function compute_ResourcePolicyInstanceSchedulePolicyVmStartSchedule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Schedule",
+      "schedule",
       "Specifies the frequency for the operation, using the unix-cron format.",
       [],
       true,

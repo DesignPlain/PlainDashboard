@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandard,
-  Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandard_GetTypes,
-} from "./Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandard";
+  clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanary,
+  clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanary_GetTypes,
+} from "./clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanary";
 import {
-  Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanary,
-  Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanary_GetTypes,
-} from "./Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanary";
+  clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandard,
+  clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandard_GetTypes,
+} from "./clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandard";
 
-export interface Clouddeploy_DeliveryPipelineSerialPipelineStageStrategy {
+export interface clouddeploy_DeliveryPipelineSerialPipelineStageStrategy {
   // Canary deployment strategy provides progressive percentage based deployments to a Target.
-  Canary?: Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanary;
+  canary?: clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanary;
 
   // Standard deployment strategy executes a single deploy and allows verifying the deployment.
-  Standard?: Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandard;
+  standard?: clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandard;
 }
 
-export function Clouddeploy_DeliveryPipelineSerialPipelineStageStrategy_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_DeliveryPipelineSerialPipelineStageStrategy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Canary",
+      "canary",
       "Canary deployment strategy provides progressive percentage based deployments to a Target.",
-      Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanary_GetTypes(),
+      clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanary_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Standard",
+      "standard",
       "Standard deployment strategy executes a single deploy and allows verifying the deployment.",
-      Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandard_GetTypes(),
+      clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandard_GetTypes(),
       false,
       false,
     ),

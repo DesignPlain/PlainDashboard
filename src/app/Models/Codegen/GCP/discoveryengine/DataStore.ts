@@ -9,35 +9,23 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface DataStoreArgs {
   /*
-The geographic location where the data store should reside. The value can
-only be one of "global", "us" and "eu".
-*/
-  Location?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  /*
 The solutions that the data store enrolls.
 Each value may be one of: `SOLUTION_TYPE_RECOMMENDATION`, `SOLUTION_TYPE_SEARCH`, `SOLUTION_TYPE_CHAT`.
 */
-  SolutionTypes?: Array<string>;
+  solutionTypes?: Array<string>;
 
   /*
 The content config of the data store.
 Possible values are: `NO_CONTENT`, `CONTENT_REQUIRED`, `PUBLIC_WEBSITE`.
 */
-  ContentConfig?: string;
+  contentConfig?: string;
 
   /*
 If true, an advanced data store for site search will be created. If the
 data store is not configured as site search (GENERIC vertical and
 PUBLIC_WEBSITE contentConfig), this flag will be ignored.
 */
-  CreateAdvancedSiteSearch?: boolean;
+  createAdvancedSiteSearch?: boolean;
 
   /*
 The unique id of the data store.
@@ -45,26 +33,77 @@ The unique id of the data store.
 
 - - -
 */
-  DataStoreId?: string;
+  dataStoreId?: string;
 
   /*
 The display name of the data store. This field must be a UTF-8 encoded
 string with a length limit of 128 characters.
 */
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 The industry vertical that the data store registers.
 Possible values are: `GENERIC`, `MEDIA`.
 */
-  IndustryVertical?: string;
-}
-export class DataStore extends Resource {
+  industryVertical?: string;
+
   /*
 The geographic location where the data store should reside. The value can
 only be one of "global", "us" and "eu".
 */
-  public Location?: string;
+  location?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+}
+export class DataStore extends Resource {
+  /*
+If true, an advanced data store for site search will be created. If the
+data store is not configured as site search (GENERIC vertical and
+PUBLIC_WEBSITE contentConfig), this flag will be ignored.
+*/
+  public createAdvancedSiteSearch?: boolean;
+
+  // Timestamp when the DataStore was created.
+  public createTime?: string;
+
+  // The id of the default Schema associated with this data store.
+  public defaultSchemaId?: string;
+
+  /*
+The display name of the data store. This field must be a UTF-8 encoded
+string with a length limit of 128 characters.
+*/
+  public displayName?: string;
+
+  /*
+The geographic location where the data store should reside. The value can
+only be one of "global", "us" and "eu".
+*/
+  public location?: string;
+
+  /*
+The content config of the data store.
+Possible values are: `NO_CONTENT`, `CONTENT_REQUIRED`, `PUBLIC_WEBSITE`.
+*/
+  public contentConfig?: string;
+
+  /*
+The unique id of the data store.
+
+
+- - -
+*/
+  public dataStoreId?: string;
+
+  /*
+The industry vertical that the data store registers.
+Possible values are: `GENERIC`, `MEDIA`.
+*/
+  public industryVertical?: string;
 
   /*
 The unique full resource name of the data store. Values are of the format
@@ -72,88 +111,25 @@ The unique full resource name of the data store. Values are of the format
 This field must be a UTF-8 encoded string with a length limit of 1024
 characters.
 */
-  public Name?: string;
-
-  /*
-If true, an advanced data store for site search will be created. If the
-data store is not configured as site search (GENERIC vertical and
-PUBLIC_WEBSITE contentConfig), this flag will be ignored.
-*/
-  public CreateAdvancedSiteSearch?: boolean;
-
-  // The id of the default Schema associated with this data store.
-  public DefaultSchemaId?: string;
-
-  /*
-The unique id of the data store.
-
-
-- - -
-*/
-  public DataStoreId?: string;
-
-  /*
-The display name of the data store. This field must be a UTF-8 encoded
-string with a length limit of 128 characters.
-*/
-  public DisplayName?: string;
-
-  /*
-The industry vertical that the data store registers.
-Possible values are: `GENERIC`, `MEDIA`.
-*/
-  public IndustryVertical?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 The solutions that the data store enrolls.
 Each value may be one of: `SOLUTION_TYPE_RECOMMENDATION`, `SOLUTION_TYPE_SEARCH`, `SOLUTION_TYPE_CHAT`.
 */
-  public SolutionTypes?: Array<string>;
-
-  /*
-The content config of the data store.
-Possible values are: `NO_CONTENT`, `CONTENT_REQUIRED`, `PUBLIC_WEBSITE`.
-*/
-  public ContentConfig?: string;
-
-  // Timestamp when the DataStore was created.
-  public CreateTime?: string;
+  public solutionTypes?: Array<string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Array,
-        "SolutionTypes",
-        "The solutions that the data store enrolls.\nEach value may be one of: `SOLUTION_TYPE_RECOMMENDATION`, `SOLUTION_TYPE_SEARCH`, `SOLUTION_TYPE_CHAT`.",
-        InputType_String_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "ContentConfig",
-        "The content config of the data store.\nPossible values are: `NO_CONTENT`, `CONTENT_REQUIRED`, `PUBLIC_WEBSITE`.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Bool,
-        "CreateAdvancedSiteSearch",
-        "If true, an advanced data store for site search will be created. If the\ndata store is not configured as site search (GENERIC vertical and\nPUBLIC_WEBSITE contentConfig), this flag will be ignored.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "DataStoreId",
+        "dataStoreId",
         "The unique id of the data store.\n\n\n- - -",
         [],
         true,
@@ -161,7 +137,7 @@ Possible values are: `NO_CONTENT`, `CONTENT_REQUIRED`, `PUBLIC_WEBSITE`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "The display name of the data store. This field must be a UTF-8 encoded\nstring with a length limit of 128 characters.",
         [],
         true,
@@ -169,7 +145,7 @@ Possible values are: `NO_CONTENT`, `CONTENT_REQUIRED`, `PUBLIC_WEBSITE`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "IndustryVertical",
+        "industryVertical",
         "The industry vertical that the data store registers.\nPossible values are: `GENERIC`, `MEDIA`.",
         [],
         true,
@@ -177,7 +153,7 @@ Possible values are: `NO_CONTENT`, `CONTENT_REQUIRED`, `PUBLIC_WEBSITE`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         'The geographic location where the data store should reside. The value can\nonly be one of "global", "us" and "eu".',
         [],
         true,
@@ -185,11 +161,35 @@ Possible values are: `NO_CONTENT`, `CONTENT_REQUIRED`, `PUBLIC_WEBSITE`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "solutionTypes",
+        "The solutions that the data store enrolls.\nEach value may be one of: `SOLUTION_TYPE_RECOMMENDATION`, `SOLUTION_TYPE_SEARCH`, `SOLUTION_TYPE_CHAT`.",
+        InputType_String_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "contentConfig",
+        "The content config of the data store.\nPossible values are: `NO_CONTENT`, `CONTENT_REQUIRED`, `PUBLIC_WEBSITE`.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "createAdvancedSiteSearch",
+        "If true, an advanced data store for site search will be created. If the\ndata store is not configured as site search (GENERIC vertical and\nPUBLIC_WEBSITE contentConfig), this flag will be ignored.",
+        [],
+        false,
+        false,
       ),
     ];
   }

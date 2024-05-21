@@ -6,39 +6,47 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificatemanager_CertificateManagedAuthorizationAttemptInfo {
-  /*
-(Output)
-State of the domain for managed certificate issuance.
-*/
-  State?: string;
-
+export interface certificatemanager_CertificateManagedAuthorizationAttemptInfo {
   /*
 (Output)
 Human readable explanation for reaching the state. Provided to help
 address the configuration issues.
 Not guaranteed to be stable. For programmatic access use `failure_reason` field.
 */
-  Details?: string;
+  details?: string;
 
   /*
 (Output)
 Domain name of the authorization attempt.
 */
-  Domain?: string;
+  domain?: string;
 
   /*
 (Output)
 Reason for failure of the authorization attempt for the domain.
 */
-  FailureReason?: string;
+  failureReason?: string;
+
+  /*
+(Output)
+State of the domain for managed certificate issuance.
+*/
+  state?: string;
 }
 
-export function Certificatemanager_CertificateManagedAuthorizationAttemptInfo_GetTypes(): DynamicUIProps[] {
+export function certificatemanager_CertificateManagedAuthorizationAttemptInfo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "failureReason",
+      "(Output)\nReason for failure of the authorization attempt for the domain.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "state",
       "(Output)\nState of the domain for managed certificate issuance.",
       [],
       false,
@@ -46,7 +54,7 @@ export function Certificatemanager_CertificateManagedAuthorizationAttemptInfo_Ge
     ),
     new DynamicUIProps(
       InputType.String,
-      "Details",
+      "details",
       "(Output)\nHuman readable explanation for reaching the state. Provided to help\naddress the configuration issues.\nNot guaranteed to be stable. For programmatic access use `failure_reason` field.",
       [],
       false,
@@ -54,16 +62,8 @@ export function Certificatemanager_CertificateManagedAuthorizationAttemptInfo_Ge
     ),
     new DynamicUIProps(
       InputType.String,
-      "Domain",
+      "domain",
       "(Output)\nDomain name of the authorization attempt.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "FailureReason",
-      "(Output)\nReason for failure of the authorization attempt for the domain.",
       [],
       false,
       false,

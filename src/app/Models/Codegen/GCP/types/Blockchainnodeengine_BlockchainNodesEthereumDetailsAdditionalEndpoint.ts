@@ -6,31 +6,39 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEndpoint {
+export interface blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEndpoint {
   /*
 (Output)
 The assigned URL for the node's Beacon API endpoint.
 */
-  BeaconApiEndpoint?: string;
+  beaconApiEndpoint?: string;
 
   /*
 (Output)
 The assigned URL for the node's Beacon Prometheus metrics endpoint.
 */
-  BeaconPrometheusMetricsApiEndpoint?: string;
+  beaconPrometheusMetricsApiEndpoint?: string;
 
   /*
 (Output)
 The assigned URL for the node's execution client's Prometheus metrics endpoint.
 */
-  ExecutionClientPrometheusMetricsApiEndpoint?: string;
+  executionClientPrometheusMetricsApiEndpoint?: string;
 }
 
-export function Blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEndpoint_GetTypes(): DynamicUIProps[] {
+export function blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEndpoint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "BeaconPrometheusMetricsApiEndpoint",
+      "beaconApiEndpoint",
+      "(Output)\nThe assigned URL for the node's Beacon API endpoint.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "beaconPrometheusMetricsApiEndpoint",
       "(Output)\nThe assigned URL for the node's Beacon Prometheus metrics endpoint.",
       [],
       false,
@@ -38,16 +46,8 @@ export function Blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEnd
     ),
     new DynamicUIProps(
       InputType.String,
-      "ExecutionClientPrometheusMetricsApiEndpoint",
+      "executionClientPrometheusMetricsApiEndpoint",
       "(Output)\nThe assigned URL for the node's execution client's Prometheus metrics endpoint.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "BeaconApiEndpoint",
-      "(Output)\nThe assigned URL for the node's Beacon API endpoint.",
       [],
       false,
       false,

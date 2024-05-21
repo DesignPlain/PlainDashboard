@@ -6,29 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrun_ServiceTemplateSpecContainerEnvValueFrom,
-  Cloudrun_ServiceTemplateSpecContainerEnvValueFrom_GetTypes,
-} from "./Cloudrun_ServiceTemplateSpecContainerEnvValueFrom";
+  cloudrun_ServiceTemplateSpecContainerEnvValueFrom,
+  cloudrun_ServiceTemplateSpecContainerEnvValueFrom_GetTypes,
+} from "./cloudrun_ServiceTemplateSpecContainerEnvValueFrom";
 
-export interface Cloudrun_ServiceTemplateSpecContainerEnv {
+export interface cloudrun_ServiceTemplateSpecContainerEnv {
+  // Name of the environment variable.
+  name?: string;
+
   // Defaults to "".
-  Value?: string;
+  value?: string;
 
   /*
 Source for the environment variable's value. Only supports secret_key_ref.
 Structure is documented below.
 */
-  ValueFrom?: Cloudrun_ServiceTemplateSpecContainerEnvValueFrom;
-
-  // Name of the environment variable.
-  Name?: string;
+  valueFrom?: cloudrun_ServiceTemplateSpecContainerEnvValueFrom;
 }
 
-export function Cloudrun_ServiceTemplateSpecContainerEnv_GetTypes(): DynamicUIProps[] {
+export function cloudrun_ServiceTemplateSpecContainerEnv_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "name",
+      "Name of the environment variable.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "value",
       'Defaults to "".',
       [],
       false,
@@ -36,17 +44,9 @@ export function Cloudrun_ServiceTemplateSpecContainerEnv_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ValueFrom",
+      "valueFrom",
       "Source for the environment variable's value. Only supports secret_key_ref.\nStructure is documented below.",
-      Cloudrun_ServiceTemplateSpecContainerEnvValueFrom_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Name",
-      "Name of the environment variable.",
-      [],
+      cloudrun_ServiceTemplateSpecContainerEnvValueFrom_GetTypes(),
       false,
       false,
     ),

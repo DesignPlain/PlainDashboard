@@ -9,25 +9,31 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface RegionSslCertificateArgs {
   /*
+Creates a unique name beginning with the
+specified prefix. Conflicts with `name`.
+*/
+  namePrefix?: string;
+
+  /*
 The write-only private key in PEM format.
 --Note--: This property is sensitive and will not be displayed in the plan.
 
 
 - - -
 */
-  PrivateKey?: string;
+  privateKey?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 The Region in which the created regional ssl certificate should reside.
 If it is not provided, the provider region is used.
 */
-  Region?: string;
+  region?: string;
 
   /*
 The certificate in PEM format.
@@ -35,10 +41,10 @@ The certificate chain must be no greater than 5 certs long.
 The chain must include at least one intermediate cert.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  Certificate?: string;
+  certificate?: string;
 
   // An optional description of this resource.
-  Description?: string;
+  description?: string;
 
   /*
 Name of the resource. Provided by the client when the resource is
@@ -51,17 +57,11 @@ character, which cannot be a dash.
 
 These are in the same namespace as the managed SSL certificates.
 */
-  Name?: string;
-
-  /*
-Creates a unique name beginning with the
-specified prefix. Conflicts with `name`.
-*/
-  NamePrefix?: string;
+  name?: string;
 }
 export class RegionSslCertificate extends Resource {
-  // Creation timestamp in RFC3339 text format.
-  public CreationTimestamp?: string;
+  // Expire time of the certificate in RFC3339 text format.
+  public expireTime?: string;
 
   /*
 Name of the resource. Provided by the client when the resource is
@@ -74,45 +74,25 @@ character, which cannot be a dash.
 
 These are in the same namespace as the managed SSL certificates.
 */
-  public Name?: string;
-
-  /*
-Creates a unique name beginning with the
-specified prefix. Conflicts with `name`.
-*/
-  public NamePrefix?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
+  public name?: string;
 
   /*
 The Region in which the created regional ssl certificate should reside.
 If it is not provided, the provider region is used.
 */
-  public Region?: string;
-
-  // The URI of the created resource.
-  public SelfLink?: string;
-
-  /*
-The certificate in PEM format.
-The certificate chain must be no greater than 5 certs long.
-The chain must include at least one intermediate cert.
---Note--: This property is sensitive and will not be displayed in the plan.
-*/
-  public Certificate?: string;
+  public region?: string;
 
   // The unique identifier for the resource.
-  public CertificateId?: number;
+  public certificateId?: number;
 
   // An optional description of this resource.
-  public Description?: string;
+  public description?: string;
 
-  // Expire time of the certificate in RFC3339 text format.
-  public ExpireTime?: string;
+  /*
+Creates a unique name beginning with the
+specified prefix. Conflicts with `name`.
+*/
+  public namePrefix?: string;
 
   /*
 The write-only private key in PEM format.
@@ -121,45 +101,33 @@ The write-only private key in PEM format.
 
 - - -
 */
-  public PrivateKey?: string;
+  public privateKey?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  // The URI of the created resource.
+  public selfLink?: string;
+
+  /*
+The certificate in PEM format.
+The certificate chain must be no greater than 5 certs long.
+The chain must include at least one intermediate cert.
+--Note--: This property is sensitive and will not be displayed in the plan.
+*/
+  public certificate?: string;
+
+  // Creation timestamp in RFC3339 text format.
+  public creationTimestamp?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "PrivateKey",
-        "The write-only private key in PEM format.\n**Note**: This property is sensitive and will not be displayed in the plan.\n\n\n- - -",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Region",
-        "The Region in which the created regional ssl certificate should reside.\nIf it is not provided, the provider region is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Certificate",
-        "The certificate in PEM format.\nThe certificate chain must be no greater than 5 certs long.\nThe chain must include at least one intermediate cert.\n**Note**: This property is sensitive and will not be displayed in the plan.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
+        "description",
         "An optional description of this resource.",
         [],
         false,
@@ -167,7 +135,7 @@ The write-only private key in PEM format.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.\n\nThese are in the same namespace as the managed SSL certificates.",
         [],
         false,
@@ -175,10 +143,42 @@ The write-only private key in PEM format.
       ),
       new DynamicUIProps(
         InputType.String,
-        "NamePrefix",
+        "namePrefix",
         "Creates a unique name beginning with the\nspecified prefix. Conflicts with `name`.",
         [],
         false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "privateKey",
+        "The write-only private key in PEM format.\n**Note**: This property is sensitive and will not be displayed in the plan.\n\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "region",
+        "The Region in which the created regional ssl certificate should reside.\nIf it is not provided, the provider region is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "certificate",
+        "The certificate in PEM format.\nThe certificate chain must be no greater than 5 certs long.\nThe chain must include at least one intermediate cert.\n**Note**: This property is sensitive and will not be displayed in the plan.",
+        [],
+        true,
         true,
       ),
     ];

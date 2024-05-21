@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vmwareengine_NetworkPolicyExternalIp {
+export interface vmwareengine_NetworkPolicyExternalIp {
   // True if the service is enabled; false otherwise.
-  Enabled?: boolean;
+  enabled?: boolean;
 
   /*
 (Output)
 State of the service. New values may be added to this enum when appropriate.
 */
-  State?: string;
+  state?: string;
 }
 
-export function Vmwareengine_NetworkPolicyExternalIp_GetTypes(): DynamicUIProps[] {
+export function vmwareengine_NetworkPolicyExternalIp_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "True if the service is enabled; false otherwise.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Vmwareengine_NetworkPolicyExternalIp_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "(Output)\nState of the service. New values may be added to this enum when appropriate.",
       [],
       false,

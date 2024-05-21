@@ -6,26 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataflow_PipelineScheduleInfo {
+export interface dataflow_PipelineScheduleInfo {
   /*
 (Output)
 When the next Scheduler job is going to run.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  NextJobTime?: string;
+  nextJobTime?: string;
 
   // Unix-cron format of the schedule. This information is retrieved from the linked Cloud Scheduler.
-  Schedule?: string;
+  schedule?: string;
 
   // Timezone ID. This matches the timezone IDs used by the Cloud Scheduler API. If empty, UTC time is assumed.
-  TimeZone?: string;
+  timeZone?: string;
 }
 
-export function Dataflow_PipelineScheduleInfo_GetTypes(): DynamicUIProps[] {
+export function dataflow_PipelineScheduleInfo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Schedule",
+      "nextJobTime",
+      '(Output)\nWhen the next Scheduler job is going to run.\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "schedule",
       "Unix-cron format of the schedule. This information is retrieved from the linked Cloud Scheduler.",
       [],
       false,
@@ -33,16 +41,8 @@ export function Dataflow_PipelineScheduleInfo_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "TimeZone",
+      "timeZone",
       "Timezone ID. This matches the timezone IDs used by the Cloud Scheduler API. If empty, UTC time is assumed.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "NextJobTime",
-      '(Output)\nWhen the next Scheduler job is going to run.\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
       [],
       false,
       false,

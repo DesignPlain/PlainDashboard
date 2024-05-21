@@ -6,36 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Firebase_HostingCustomDomainRequiredDnsUpdateDesired,
-  Firebase_HostingCustomDomainRequiredDnsUpdateDesired_GetTypes,
-} from "./Firebase_HostingCustomDomainRequiredDnsUpdateDesired";
+  firebase_HostingCustomDomainRequiredDnsUpdateDesired,
+  firebase_HostingCustomDomainRequiredDnsUpdateDesired_GetTypes,
+} from "./firebase_HostingCustomDomainRequiredDnsUpdateDesired";
 import {
-  Firebase_HostingCustomDomainRequiredDnsUpdateDiscovered,
-  Firebase_HostingCustomDomainRequiredDnsUpdateDiscovered_GetTypes,
-} from "./Firebase_HostingCustomDomainRequiredDnsUpdateDiscovered";
+  firebase_HostingCustomDomainRequiredDnsUpdateDiscovered,
+  firebase_HostingCustomDomainRequiredDnsUpdateDiscovered_GetTypes,
+} from "./firebase_HostingCustomDomainRequiredDnsUpdateDiscovered";
 
-export interface Firebase_HostingCustomDomainRequiredDnsUpdate {
+export interface firebase_HostingCustomDomainRequiredDnsUpdate {
   /*
 (Output)
 The last time Hosting checked your CustomDomain's DNS records.
 */
-  CheckTime?: string;
+  checkTime?: string;
 
   // A text string to serve at the path.
-  Desireds?: Array<Firebase_HostingCustomDomainRequiredDnsUpdateDesired>;
+  desireds?: Array<firebase_HostingCustomDomainRequiredDnsUpdateDesired>;
 
   /*
 Whether Hosting was able to find the required file contents on the
 specified path during its last check.
 */
-  Discovereds?: Array<Firebase_HostingCustomDomainRequiredDnsUpdateDiscovered>;
+  discovereds?: Array<firebase_HostingCustomDomainRequiredDnsUpdateDiscovered>;
 }
 
-export function Firebase_HostingCustomDomainRequiredDnsUpdate_GetTypes(): DynamicUIProps[] {
+export function firebase_HostingCustomDomainRequiredDnsUpdate_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CheckTime",
+      "checkTime",
       "(Output)\nThe last time Hosting checked your CustomDomain's DNS records.",
       [],
       false,
@@ -43,17 +43,17 @@ export function Firebase_HostingCustomDomainRequiredDnsUpdate_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Desireds",
+      "desireds",
       "A text string to serve at the path.",
-      Firebase_HostingCustomDomainRequiredDnsUpdateDesired_GetTypes(),
+      firebase_HostingCustomDomainRequiredDnsUpdateDesired_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Discovereds",
+      "discovereds",
       "Whether Hosting was able to find the required file contents on the\nspecified path during its last check.",
-      Firebase_HostingCustomDomainRequiredDnsUpdateDiscovered_GetTypes(),
+      firebase_HostingCustomDomainRequiredDnsUpdateDiscovered_GetTypes(),
       false,
       false,
     ),

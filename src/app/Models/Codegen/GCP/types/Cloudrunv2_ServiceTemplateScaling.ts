@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_ServiceTemplateScaling {
-  // Maximum number of serving instances that this resource should have.
-  MaxInstanceCount?: number;
-
+export interface cloudrunv2_ServiceTemplateScaling {
   // Minimum number of serving instances that this resource should have.
-  MinInstanceCount?: number;
+  minInstanceCount?: number;
+
+  // Maximum number of serving instances that this resource should have.
+  maxInstanceCount?: number;
 }
 
-export function Cloudrunv2_ServiceTemplateScaling_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_ServiceTemplateScaling_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "MaxInstanceCount",
-      "Maximum number of serving instances that this resource should have.",
+      "minInstanceCount",
+      "Minimum number of serving instances that this resource should have.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MinInstanceCount",
-      "Minimum number of serving instances that this resource should have.",
+      "maxInstanceCount",
+      "Maximum number of serving instances that this resource should have.",
       [],
       false,
       false,

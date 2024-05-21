@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Logging_MetricBucketOptionsLinearBuckets {
+export interface logging_MetricBucketOptionsLinearBuckets {
   // Must be greater than 0.
-  NumFiniteBuckets?: number;
+  numFiniteBuckets?: number;
 
   // Lower bound of the first bucket.
-  Offset?: number;
+  offset?: number;
 
   // Must be greater than 0.
-  Width?: number;
+  width?: number;
 }
 
-export function Logging_MetricBucketOptionsLinearBuckets_GetTypes(): DynamicUIProps[] {
+export function logging_MetricBucketOptionsLinearBuckets_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "NumFiniteBuckets",
+      "numFiniteBuckets",
       "Must be greater than 0.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Logging_MetricBucketOptionsLinearBuckets_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Offset",
+      "offset",
       "Lower bound of the first bucket.",
       [],
       true,
@@ -37,7 +37,7 @@ export function Logging_MetricBucketOptionsLinearBuckets_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Width",
+      "width",
       "Must be greater than 0.",
       [],
       true,

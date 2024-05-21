@@ -9,67 +9,59 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface LiteReservationArgs {
   /*
+Name of the reservation.
+
+
+- - -
+*/
+  name?: string;
+
+  /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // The region of the pubsub lite reservation.
-  Region?: string;
+  region?: string;
 
   /*
 The reserved throughput capacity. Every unit of throughput capacity is
 equivalent to 1 MiB/s of published messages or 2 MiB/s of subscribed
 messages.
 */
-  ThroughputCapacity?: number;
-
-  /*
-Name of the reservation.
-
-
-- - -
-*/
-  Name?: string;
+  throughputCapacity?: number;
 }
 export class LiteReservation extends Resource {
   /*
+The reserved throughput capacity. Every unit of throughput capacity is
+equivalent to 1 MiB/s of published messages or 2 MiB/s of subscribed
+messages.
+*/
+  public throughputCapacity?: number;
+
+  /*
 Name of the reservation.
 
 
 - - -
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // The region of the pubsub lite reservation.
-  public Region?: string;
-
-  /*
-The reserved throughput capacity. Every unit of throughput capacity is
-equivalent to 1 MiB/s of published messages or 2 MiB/s of subscribed
-messages.
-*/
-  public ThroughputCapacity?: number;
+  public region?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Number,
-        "ThroughputCapacity",
-        "The reserved throughput capacity. Every unit of throughput capacity is\nequivalent to 1 MiB/s of published messages or 2 MiB/s of subscribed\nmessages.",
-        [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name of the reservation.\n\n\n- - -",
         [],
         false,
@@ -77,7 +69,7 @@ messages.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -85,10 +77,18 @@ messages.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "The region of the pubsub lite reservation.",
         [],
         false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Number,
+        "throughputCapacity",
+        "The reserved throughput capacity. Every unit of throughput capacity is\nequivalent to 1 MiB/s of published messages or 2 MiB/s of subscribed\nmessages.",
+        [],
+        true,
         false,
       ),
     ];

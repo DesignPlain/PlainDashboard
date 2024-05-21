@@ -7,47 +7,47 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Appengine_ServiceNetworkSettingsNetworkSettings,
-  Appengine_ServiceNetworkSettingsNetworkSettings_GetTypes,
-} from "../types/Appengine_ServiceNetworkSettingsNetworkSettings";
+  appengine_ServiceNetworkSettingsNetworkSettings,
+  appengine_ServiceNetworkSettingsNetworkSettings_GetTypes,
+} from "../types/appengine_ServiceNetworkSettingsNetworkSettings";
 
 export interface ServiceNetworkSettingsArgs {
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  // The name of the service these settings apply to.
-  Service?: string;
-
   /*
 Ingress settings for this service. Will apply to all versions.
 Structure is documented below.
 */
-  NetworkSettings?: Appengine_ServiceNetworkSettingsNetworkSettings;
+  networkSettings?: appengine_ServiceNetworkSettingsNetworkSettings;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  // The name of the service these settings apply to.
+  service?: string;
 }
 export class ServiceNetworkSettings extends Resource {
   /*
 Ingress settings for this service. Will apply to all versions.
 Structure is documented below.
 */
-  public NetworkSettings?: Appengine_ServiceNetworkSettingsNetworkSettings;
+  public networkSettings?: appengine_ServiceNetworkSettingsNetworkSettings;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // The name of the service these settings apply to.
-  public Service?: string;
+  public service?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -55,7 +55,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Service",
+        "service",
         "The name of the service these settings apply to.",
         [],
         true,
@@ -63,9 +63,9 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "NetworkSettings",
+        "networkSettings",
         "Ingress settings for this service. Will apply to all versions.\nStructure is documented below.",
-        Appengine_ServiceNetworkSettingsNetworkSettings_GetTypes(),
+        appengine_ServiceNetworkSettingsNetworkSettings_GetTypes(),
         true,
         false,
       ),

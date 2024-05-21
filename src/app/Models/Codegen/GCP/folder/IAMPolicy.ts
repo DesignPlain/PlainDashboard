@@ -9,7 +9,7 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface IAMPolicyArgs {
   // The resource name of the folder the policy is attached to. Its format is folders/{folder_id}.
-  Folder?: string;
+  folder?: string;
 
   /*
 The `gcp.organizations.getIAMPolicy` data source that represents
@@ -21,9 +21,15 @@ Changing this updates the policy.
 Deleting this removes all policies from the folder, locking out users without
 folder-level access.
 */
-  PolicyData?: string;
+  policyData?: string;
 }
 export class IAMPolicy extends Resource {
+  // (Computed) The etag of the folder's IAM policy.
+  public etag?: string;
+
+  // The resource name of the folder the policy is attached to. Its format is folders/{folder_id}.
+  public folder?: string;
+
   /*
 The `gcp.organizations.getIAMPolicy` data source that represents
 the IAM policy that will be applied to the folder. The policy will be
@@ -34,19 +40,13 @@ Changing this updates the policy.
 Deleting this removes all policies from the folder, locking out users without
 folder-level access.
 */
-  public PolicyData?: string;
-
-  // (Computed) The etag of the folder's IAM policy.
-  public Etag?: string;
-
-  // The resource name of the folder the policy is attached to. Its format is folders/{folder_id}.
-  public Folder?: string;
+  public policyData?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Folder",
+        "folder",
         "The resource name of the folder the policy is attached to. Its format is folders/{folder_id}.",
         [],
         true,
@@ -54,7 +54,7 @@ folder-level access.
       ),
       new DynamicUIProps(
         InputType.String,
-        "PolicyData",
+        "policyData",
         "The `gcp.organizations.getIAMPolicy` data source that represents\nthe IAM policy that will be applied to the folder. The policy will be\nmerged with any existing policy applied to the folder.\n\nChanging this updates the policy.\n\nDeleting this removes all policies from the folder, locking out users without\nfolder-level access.",
         [],
         true,

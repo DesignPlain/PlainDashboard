@@ -8,86 +8,62 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface IAMCustomRoleArgs {
-  // A human-readable title for the role.
-  Title?: string;
-
-  // A human-readable description for the role.
-  Description?: string;
-
-  // The numeric ID of the organization in which you want to create a custom role.
-  OrgId?: string;
-
-  // The names of the permissions this role grants when bound in an IAM policy. At least one permission must be specified.
-  Permissions?: Array<string>;
-
   // The role id to use for this role.
-  RoleId?: string;
+  roleId?: string;
 
   /*
 The current launch stage of the role.
 Defaults to `GA`.
 List of possible stages is [here](https://cloud.google.com/iam/reference/rest/v1/organizations.roles#Role.RoleLaunchStage).
 */
-  Stage?: string;
+  stage?: string;
+
+  // A human-readable title for the role.
+  title?: string;
+
+  // A human-readable description for the role.
+  description?: string;
+
+  // The numeric ID of the organization in which you want to create a custom role.
+  orgId?: string;
+
+  // The names of the permissions this role grants when bound in an IAM policy. At least one permission must be specified.
+  permissions?: Array<string>;
 }
 export class IAMCustomRole extends Resource {
-  // A human-readable description for the role.
-  public Description?: string;
-
-  // The name of the role in the format `organizations/{{org_id}}/roles/{{role_id}}`. Like `id`, this field can be used as a reference in other resources such as IAM role bindings.
-  public Name?: string;
-
-  // The numeric ID of the organization in which you want to create a custom role.
-  public OrgId?: string;
-
   // The names of the permissions this role grants when bound in an IAM policy. At least one permission must be specified.
-  public Permissions?: Array<string>;
+  public permissions?: Array<string>;
 
   // The role id to use for this role.
-  public RoleId?: string;
+  public roleId?: string;
 
   /*
 The current launch stage of the role.
 Defaults to `GA`.
 List of possible stages is [here](https://cloud.google.com/iam/reference/rest/v1/organizations.roles#Role.RoleLaunchStage).
 */
-  public Stage?: string;
+  public stage?: string;
 
   // A human-readable title for the role.
-  public Title?: string;
+  public title?: string;
 
   // (Optional) The current deleted state of the role.
-  public Deleted?: boolean;
+  public deleted?: boolean;
+
+  // A human-readable description for the role.
+  public description?: string;
+
+  // The name of the role in the format `organizations/{{org_id}}/roles/{{role_id}}`. Like `id`, this field can be used as a reference in other resources such as IAM role bindings.
+  public name?: string;
+
+  // The numeric ID of the organization in which you want to create a custom role.
+  public orgId?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "Title",
-        "A human-readable title for the role.",
-        [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "A human-readable description for the role.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "OrgId",
-        "The numeric ID of the organization in which you want to create a custom role.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.Array,
-        "Permissions",
+        "permissions",
         "The names of the permissions this role grants when bound in an IAM policy. At least one permission must be specified.",
         InputType_String_GetTypes(),
         true,
@@ -95,7 +71,7 @@ List of possible stages is [here](https://cloud.google.com/iam/reference/rest/v1
       ),
       new DynamicUIProps(
         InputType.String,
-        "RoleId",
+        "roleId",
         "The role id to use for this role.",
         [],
         true,
@@ -103,11 +79,35 @@ List of possible stages is [here](https://cloud.google.com/iam/reference/rest/v1
       ),
       new DynamicUIProps(
         InputType.String,
-        "Stage",
+        "stage",
         "The current launch stage of the role.\nDefaults to `GA`.\nList of possible stages is [here](https://cloud.google.com/iam/reference/rest/v1/organizations.roles#Role.RoleLaunchStage).",
         [],
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "title",
+        "A human-readable title for the role.",
+        [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "A human-readable description for the role.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "orgId",
+        "The numeric ID of the organization in which you want to create a custom role.",
+        [],
+        true,
+        true,
       ),
     ];
   }

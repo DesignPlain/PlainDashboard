@@ -9,29 +9,29 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface UsageExportBucketArgs {
   // The bucket to store reports in.
-  BucketName?: string;
+  bucketName?: string;
 
   // A prefix for the reports, for instance, the project name.
-  Prefix?: string;
+  prefix?: string;
 
   // The project to set the export bucket on. If it is not provided, the provider project is used.
-  Project?: string;
+  project?: string;
 }
 export class UsageExportBucket extends Resource {
   // The bucket to store reports in.
-  public BucketName?: string;
+  public bucketName?: string;
 
   // A prefix for the reports, for instance, the project name.
-  public Prefix?: string;
+  public prefix?: string;
 
   // The project to set the export bucket on. If it is not provided, the provider project is used.
-  public Project?: string;
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "BucketName",
+        "bucketName",
         "The bucket to store reports in.",
         [],
         true,
@@ -39,7 +39,7 @@ export class UsageExportBucket extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "Prefix",
+        "prefix",
         "A prefix for the reports, for instance, the project name.",
         [],
         false,
@@ -47,7 +47,7 @@ export class UsageExportBucket extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The project to set the export bucket on. If it is not provided, the provider project is used.",
         [],
         false,

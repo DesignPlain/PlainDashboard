@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Securitycenter_OrganizationCustomModuleCustomConfigResourceSelector {
+export interface securitycenter_OrganizationCustomModuleCustomConfigResourceSelector {
   /*
 The resource types to run the detector on.
 
 - - -
 */
-  ResourceTypes?: Array<string>;
+  resourceTypes?: Array<string>;
 }
 
-export function Securitycenter_OrganizationCustomModuleCustomConfigResourceSelector_GetTypes(): DynamicUIProps[] {
+export function securitycenter_OrganizationCustomModuleCustomConfigResourceSelector_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ResourceTypes",
+      "resourceTypes",
       "The resource types to run the detector on.\n\n- - -",
       InputType_String_GetTypes(),
       true,

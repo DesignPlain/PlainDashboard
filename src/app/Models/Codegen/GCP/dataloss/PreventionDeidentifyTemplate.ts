@@ -7,22 +7,13 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfig,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfig_GetTypes,
-} from "../types/Dataloss_PreventionDeidentifyTemplateDeidentifyConfig";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfig,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfig_GetTypes,
+} from "../types/dataloss_PreventionDeidentifyTemplateDeidentifyConfig";
 
 export interface PreventionDeidentifyTemplateArgs {
-  /*
-Configuration of the deidentify template
-Structure is documented below.
-*/
-  DeidentifyConfig?: Dataloss_PreventionDeidentifyTemplateDeidentifyConfig;
-
-  // A description of the template.
-  Description?: string;
-
   // User set display name of the template.
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 The parent of the template in any of the following formats:
@@ -31,22 +22,25 @@ The parent of the template in any of the following formats:
 - `organizations/{{organization_id}}`
 - `organizations/{{organization_id}}/locations/{{location}}`
 */
-  Parent?: string;
+  parent?: string;
 
   /*
 The template id can contain uppercase and lowercase letters, numbers, and hyphens;
 that is, it must match the regular expression: [a-zA-Z\d-_]+. The maximum length is
 100 characters. Can be empty to allow the system to generate one.
 */
-  TemplateId?: string;
+  templateId?: string;
+
+  /*
+Configuration of the deidentify template
+Structure is documented below.
+*/
+  deidentifyConfig?: dataloss_PreventionDeidentifyTemplateDeidentifyConfig;
+
+  // A description of the template.
+  description?: string;
 }
 export class PreventionDeidentifyTemplate extends Resource {
-  // User set display name of the template.
-  public DisplayName?: string;
-
-  // Name describing the field.
-  public Name?: string;
-
   /*
 The parent of the template in any of the following formats:
 - `projects/{{project}}`
@@ -54,35 +48,49 @@ The parent of the template in any of the following formats:
 - `organizations/{{organization_id}}`
 - `organizations/{{organization_id}}/locations/{{location}}`
 */
-  public Parent?: string;
+  public parent?: string;
 
   /*
 The template id can contain uppercase and lowercase letters, numbers, and hyphens;
 that is, it must match the regular expression: [a-zA-Z\d-_]+. The maximum length is
 100 characters. Can be empty to allow the system to generate one.
 */
-  public TemplateId?: string;
+  public templateId?: string;
 
   // The last update timestamp of an deidentifyTemplate. Set by the server.
-  public UpdateTime?: string;
+  public updateTime?: string;
 
   // The creation timestamp of an deidentifyTemplate. Set by the server.
-  public CreateTime?: string;
+  public createTime?: string;
 
   /*
 Configuration of the deidentify template
 Structure is documented below.
 */
-  public DeidentifyConfig?: Dataloss_PreventionDeidentifyTemplateDeidentifyConfig;
+  public deidentifyConfig?: dataloss_PreventionDeidentifyTemplateDeidentifyConfig;
 
   // A description of the template.
-  public Description?: string;
+  public description?: string;
+
+  // User set display name of the template.
+  public displayName?: string;
+
+  // Name describing the field.
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "description",
+        "A description of the template.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "displayName",
         "User set display name of the template.",
         [],
         false,
@@ -90,7 +98,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Parent",
+        "parent",
         "The parent of the template in any of the following formats:\n* `projects/{{project}}`\n* `projects/{{project}}/locations/{{location}}`\n* `organizations/{{organization_id}}`\n* `organizations/{{organization_id}}/locations/{{location}}`",
         [],
         true,
@@ -98,7 +106,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "TemplateId",
+        "templateId",
         "The template id can contain uppercase and lowercase letters, numbers, and hyphens;\nthat is, it must match the regular expression: [a-zA-Z\\d-_]+. The maximum length is\n100 characters. Can be empty to allow the system to generate one.",
         [],
         false,
@@ -106,18 +114,10 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "DeidentifyConfig",
+        "deidentifyConfig",
         "Configuration of the deidentify template\nStructure is documented below.",
-        Dataloss_PreventionDeidentifyTemplateDeidentifyConfig_GetTypes(),
+        dataloss_PreventionDeidentifyTemplateDeidentifyConfig_GetTypes(),
         true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "A description of the template.",
-        [],
-        false,
         false,
       ),
     ];

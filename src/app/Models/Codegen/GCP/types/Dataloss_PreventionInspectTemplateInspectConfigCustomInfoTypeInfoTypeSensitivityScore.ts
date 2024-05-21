@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScore {
+export interface dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScore {
   /*
 The sensitivity score applied to the resource.
 Possible values are: `SENSITIVITY_LOW`, `SENSITIVITY_MODERATE`, `SENSITIVITY_HIGH`.
 */
-  Score?: string;
+  score?: string;
 }
 
-export function Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScore_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScore_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Score",
+      "score",
       "The sensitivity score applied to the resource.\nPossible values are: `SENSITIVITY_LOW`, `SENSITIVITY_MODERATE`, `SENSITIVITY_HIGH`.",
       [],
       true,

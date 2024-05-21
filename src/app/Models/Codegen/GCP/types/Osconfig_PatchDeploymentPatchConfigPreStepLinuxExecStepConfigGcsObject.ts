@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfigGcsObject {
+export interface osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfigGcsObject {
   // Bucket of the Cloud Storage object.
-  Bucket?: string;
+  bucket?: string;
 
   // Generation number of the Cloud Storage object. This is used to ensure that the ExecStep specified by this PatchJob does not change.
-  GenerationNumber?: string;
+  generationNumber?: string;
 
   // Name of the Cloud Storage object.
-  Object?: string;
+  object?: string;
 }
 
-export function Osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfigGcsObject_GetTypes(): DynamicUIProps[] {
+export function osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfigGcsObject_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "GenerationNumber",
+      "bucket",
+      "Bucket of the Cloud Storage object.",
+      [],
+      true,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "generationNumber",
       "Generation number of the Cloud Storage object. This is used to ensure that the ExecStep specified by this PatchJob does not change.",
       [],
       true,
@@ -29,16 +37,8 @@ export function Osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfigGcs
     ),
     new DynamicUIProps(
       InputType.String,
-      "Object",
+      "object",
       "Name of the Cloud Storage object.",
-      [],
-      true,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Bucket",
-      "Bucket of the Cloud Storage object.",
       [],
       true,
       true,

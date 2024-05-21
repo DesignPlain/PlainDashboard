@@ -14,58 +14,58 @@ ID of the endpoint attachment.
 
 - - -
 */
-  EndpointAttachmentId?: string;
+  endpointAttachmentId?: string;
 
   // Location of the endpoint attachment.
-  Location?: string;
+  location?: string;
 
   /*
 The Apigee Organization associated with the Apigee instance,
 in the format `organizations/{{org_name}}`.
 */
-  OrgId?: string;
+  orgId?: string;
 
   // Format: projects/-/regions/-/serviceAttachments/-
-  ServiceAttachment?: string;
+  serviceAttachment?: string;
 }
 export class EndpointAttachment extends Resource {
-  /*
-The Apigee Organization associated with the Apigee instance,
-in the format `organizations/{{org_name}}`.
-*/
-  public OrgId?: string;
-
-  // Format: projects/-/regions/-/serviceAttachments/-
-  public ServiceAttachment?: string;
-
-  // State of the endpoint attachment connection to the service attachment.
-  public ConnectionState?: string;
-
   /*
 ID of the endpoint attachment.
 
 
 - - -
 */
-  public EndpointAttachmentId?: string;
+  public endpointAttachmentId?: string;
 
   // Host that can be used in either HTTP Target Endpoint directly, or as the host in Target Server.
-  public Host?: string;
+  public host?: string;
 
   // Location of the endpoint attachment.
-  public Location?: string;
+  public location?: string;
 
   /*
 Name of the Endpoint Attachment in the following format:
 organizations/{organization}/endpointAttachments/{endpointAttachment}.
 */
-  public Name?: string;
+  public name?: string;
+
+  /*
+The Apigee Organization associated with the Apigee instance,
+in the format `organizations/{{org_name}}`.
+*/
+  public orgId?: string;
+
+  // Format: projects/-/regions/-/serviceAttachments/-
+  public serviceAttachment?: string;
+
+  // State of the endpoint attachment connection to the service attachment.
+  public connectionState?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "EndpointAttachmentId",
+        "endpointAttachmentId",
         "ID of the endpoint attachment.\n\n\n- - -",
         [],
         true,
@@ -73,7 +73,7 @@ organizations/{organization}/endpointAttachments/{endpointAttachment}.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "Location of the endpoint attachment.",
         [],
         true,
@@ -81,7 +81,7 @@ organizations/{organization}/endpointAttachments/{endpointAttachment}.
       ),
       new DynamicUIProps(
         InputType.String,
-        "OrgId",
+        "orgId",
         "The Apigee Organization associated with the Apigee instance,\nin the format `organizations/{{org_name}}`.",
         [],
         true,
@@ -89,7 +89,7 @@ organizations/{organization}/endpointAttachments/{endpointAttachment}.
       ),
       new DynamicUIProps(
         InputType.String,
-        "ServiceAttachment",
+        "serviceAttachment",
         "Format: projects/*/regions/*/serviceAttachments/*",
         [],
         true,

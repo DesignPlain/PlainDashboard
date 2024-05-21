@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Workstations_WorkstationConfigHostGceInstanceConfidentialInstanceConfig {
+export interface workstations_WorkstationConfigHostGceInstanceConfidentialInstanceConfig {
   // Whether the instance has confidential compute enabled.
-  EnableConfidentialCompute?: boolean;
+  enableConfidentialCompute?: boolean;
 }
 
-export function Workstations_WorkstationConfigHostGceInstanceConfidentialInstanceConfig_GetTypes(): DynamicUIProps[] {
+export function workstations_WorkstationConfigHostGceInstanceConfidentialInstanceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableConfidentialCompute",
+      "enableConfidentialCompute",
       "Whether the instance has confidential compute enabled.",
       [],
       false,

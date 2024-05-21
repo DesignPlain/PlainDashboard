@@ -6,51 +6,51 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudbuild_TriggerGithubPush,
-  Cloudbuild_TriggerGithubPush_GetTypes,
-} from "./Cloudbuild_TriggerGithubPush";
+  cloudbuild_TriggerGithubPullRequest,
+  cloudbuild_TriggerGithubPullRequest_GetTypes,
+} from "./cloudbuild_TriggerGithubPullRequest";
 import {
-  Cloudbuild_TriggerGithubPullRequest,
-  Cloudbuild_TriggerGithubPullRequest_GetTypes,
-} from "./Cloudbuild_TriggerGithubPullRequest";
+  cloudbuild_TriggerGithubPush,
+  cloudbuild_TriggerGithubPush_GetTypes,
+} from "./cloudbuild_TriggerGithubPush";
 
-export interface Cloudbuild_TriggerGithub {
+export interface cloudbuild_TriggerGithub {
   /*
 The resource name of the github enterprise config that should be applied to this installation.
 For example: "projects/{$projectId}/locations/{$locationId}/githubEnterpriseConfigs/{$configId}"
 */
-  EnterpriseConfigResourceName?: string;
+  enterpriseConfigResourceName?: string;
 
   /*
 Name of the repository. For example: The name for
 https://github.com/googlecloudplatform/cloud-builders is "cloud-builders".
 */
-  Name?: string;
+  name?: string;
 
   /*
 Owner of the repository. For example: The owner for
 https://github.com/googlecloudplatform/cloud-builders is "googlecloudplatform".
 */
-  Owner?: string;
+  owner?: string;
 
   /*
 filter to match changes in pull requests. Specify only one of `pull_request` or `push`.
 Structure is documented below.
 */
-  PullRequest?: Cloudbuild_TriggerGithubPullRequest;
+  pullRequest?: cloudbuild_TriggerGithubPullRequest;
 
   /*
 filter to match changes in refs, like branches or tags. Specify only one of `pull_request` or `push`.
 Structure is documented below.
 */
-  Push?: Cloudbuild_TriggerGithubPush;
+  push?: cloudbuild_TriggerGithubPush;
 }
 
-export function Cloudbuild_TriggerGithub_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_TriggerGithub_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "EnterpriseConfigResourceName",
+      "enterpriseConfigResourceName",
       'The resource name of the github enterprise config that should be applied to this installation.\nFor example: "projects/{$projectId}/locations/{$locationId}/githubEnterpriseConfigs/{$configId}"',
       [],
       false,
@@ -58,7 +58,7 @@ export function Cloudbuild_TriggerGithub_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       'Name of the repository. For example: The name for\nhttps://github.com/googlecloudplatform/cloud-builders is "cloud-builders".',
       [],
       false,
@@ -66,7 +66,7 @@ export function Cloudbuild_TriggerGithub_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Owner",
+      "owner",
       'Owner of the repository. For example: The owner for\nhttps://github.com/googlecloudplatform/cloud-builders is "googlecloudplatform".',
       [],
       false,
@@ -74,17 +74,17 @@ export function Cloudbuild_TriggerGithub_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "PullRequest",
+      "pullRequest",
       "filter to match changes in pull requests. Specify only one of `pull_request` or `push`.\nStructure is documented below.",
-      Cloudbuild_TriggerGithubPullRequest_GetTypes(),
+      cloudbuild_TriggerGithubPullRequest_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Push",
+      "push",
       "filter to match changes in refs, like branches or tags. Specify only one of `pull_request` or `push`.\nStructure is documented below.",
-      Cloudbuild_TriggerGithubPush_GetTypes(),
+      cloudbuild_TriggerGithubPush_GetTypes(),
       false,
       false,
     ),

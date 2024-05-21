@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigtable_TableColumnFamily {
+export interface bigtable_TableColumnFamily {
   // The name of the column family.
-  Family?: string;
+  family?: string;
 }
 
-export function Bigtable_TableColumnFamily_GetTypes(): DynamicUIProps[] {
+export function bigtable_TableColumnFamily_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Family",
+      "family",
       "The name of the column family.",
       [],
       true,

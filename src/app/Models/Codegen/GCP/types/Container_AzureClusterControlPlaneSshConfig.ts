@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AzureClusterControlPlaneSshConfig {
+export interface container_AzureClusterControlPlaneSshConfig {
   // The SSH public key data for VMs managed by Anthos. This accepts the authorized_keys file format used in OpenSSH according to the sshd(8) manual page.
-  AuthorizedKey?: string;
+  authorizedKey?: string;
 }
 
-export function Container_AzureClusterControlPlaneSshConfig_GetTypes(): DynamicUIProps[] {
+export function container_AzureClusterControlPlaneSshConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "AuthorizedKey",
+      "authorizedKey",
       "The SSH public key data for VMs managed by Anthos. This accepts the authorized_keys file format used in OpenSSH according to the sshd(8) manual page.",
       [],
       true,

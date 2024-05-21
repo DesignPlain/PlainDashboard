@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig {
+export interface compute_SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig {
   // If set to true, enables CAAP for L7 DDoS detection.
-  Enable?: boolean;
+  enable?: boolean;
 
   // Rule visibility can be one of the following:
-  RuleVisibility?: string;
+  ruleVisibility?: string;
 }
 
-export function Compute_SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig_GetTypes(): DynamicUIProps[] {
+export function compute_SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enable",
+      "enable",
       "If set to true, enables CAAP for L7 DDoS detection.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Compute_SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseC
     ),
     new DynamicUIProps(
       InputType.String,
-      "RuleVisibility",
+      "ruleVisibility",
       "Rule visibility can be one of the following:",
       [],
       false,

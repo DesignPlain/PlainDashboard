@@ -6,35 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_GuestPoliciesPackageRepositoryApt {
-  // List of components for this repository. Must contain at least one item.
-  Components?: Array<string>;
-
-  // Distribution of this repository.
-  Distribution?: string;
-
-  /*
-URI of the key file for this repository. The agent maintains a keyring at
-/etc/apt/trusted.gpg.d/osconfig_agent_managed.gpg containing all the keys in any applied guest policy.
-*/
-  GpgKey?: string;
-
-  // URI for this repository.
-  Uri?: string;
-
+export interface osconfig_GuestPoliciesPackageRepositoryApt {
   /*
 Type of archive files in this repository. The default behavior is DEB.
 Default value is `DEB`.
 Possible values are: `DEB`, `DEB_SRC`.
 */
-  ArchiveType?: string;
+  archiveType?: string;
+
+  // List of components for this repository. Must contain at least one item.
+  components?: Array<string>;
+
+  // Distribution of this repository.
+  distribution?: string;
+
+  /*
+URI of the key file for this repository. The agent maintains a keyring at
+/etc/apt/trusted.gpg.d/osconfig_agent_managed.gpg containing all the keys in any applied guest policy.
+*/
+  gpgKey?: string;
+
+  // URI for this repository.
+  uri?: string;
 }
 
-export function Osconfig_GuestPoliciesPackageRepositoryApt_GetTypes(): DynamicUIProps[] {
+export function osconfig_GuestPoliciesPackageRepositoryApt_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "archiveType",
+      "Type of archive files in this repository. The default behavior is DEB.\nDefault value is `DEB`.\nPossible values are: `DEB`, `DEB_SRC`.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Array,
-      "Components",
+      "components",
       "List of components for this repository. Must contain at least one item.",
       InputType_String_GetTypes(),
       true,
@@ -42,7 +50,7 @@ export function Osconfig_GuestPoliciesPackageRepositoryApt_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "Distribution",
+      "distribution",
       "Distribution of this repository.",
       [],
       true,
@@ -50,7 +58,7 @@ export function Osconfig_GuestPoliciesPackageRepositoryApt_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "GpgKey",
+      "gpgKey",
       "URI of the key file for this repository. The agent maintains a keyring at\n/etc/apt/trusted.gpg.d/osconfig_agent_managed.gpg containing all the keys in any applied guest policy.",
       [],
       false,
@@ -58,18 +66,10 @@ export function Osconfig_GuestPoliciesPackageRepositoryApt_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "Uri",
+      "uri",
       "URI for this repository.",
       [],
       true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ArchiveType",
-      "Type of archive files in this repository. The default behavior is DEB.\nDefault value is `DEB`.\nPossible values are: `DEB`, `DEB_SRC`.",
-      [],
-      false,
       false,
     ),
   ];

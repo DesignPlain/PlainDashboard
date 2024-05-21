@@ -6,21 +6,9 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Iam_DenyPolicyRuleDenyRuleDenialCondition {
-  /*
-Title for the expression, i.e. a short string describing its purpose.
-This can be used e.g. in UIs which allow to enter the expression.
-*/
-  Title?: string;
-
-  /*
-Description of the expression. This is a longer text which describes the expression,
-e.g. when hovered over it in a UI.
-*/
-  Description?: string;
-
+export interface iam_DenyPolicyRuleDenyRuleDenialCondition {
   // Textual representation of an expression in Common Expression Language syntax.
-  Expression?: string;
+  expression?: string;
 
   /*
 String indicating the location of the expression for error reporting,
@@ -28,30 +16,26 @@ e.g. a file name and a position in the file.
 
 - - -
 */
-  Location?: string;
+  location?: string;
+
+  /*
+Title for the expression, i.e. a short string describing its purpose.
+This can be used e.g. in UIs which allow to enter the expression.
+*/
+  title?: string;
+
+  /*
+Description of the expression. This is a longer text which describes the expression,
+e.g. when hovered over it in a UI.
+*/
+  description?: string;
 }
 
-export function Iam_DenyPolicyRuleDenyRuleDenialCondition_GetTypes(): DynamicUIProps[] {
+export function iam_DenyPolicyRuleDenyRuleDenialCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Title",
-      "Title for the expression, i.e. a short string describing its purpose.\nThis can be used e.g. in UIs which allow to enter the expression.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Description",
-      "Description of the expression. This is a longer text which describes the expression,\ne.g. when hovered over it in a UI.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Expression",
+      "expression",
       "Textual representation of an expression in Common Expression Language syntax.",
       [],
       true,
@@ -59,8 +43,24 @@ export function Iam_DenyPolicyRuleDenyRuleDenialCondition_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       "String indicating the location of the expression for error reporting,\ne.g. a file name and a position in the file.\n\n- - -",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "title",
+      "Title for the expression, i.e. a short string describing its purpose.\nThis can be used e.g. in UIs which allow to enter the expression.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "description",
+      "Description of the expression. This is a longer text which describes the expression,\ne.g. when hovered over it in a UI.",
       [],
       false,
       false,

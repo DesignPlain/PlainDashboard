@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Notebooks_EnvironmentVmImage {
+export interface notebooks_EnvironmentVmImage {
   // Use this VM image family to find the image; the newest image in this family will be used.
-  ImageFamily?: string;
+  imageFamily?: string;
 
   // Use VM image name to find the image.
-  ImageName?: string;
+  imageName?: string;
 
   /*
 The name of the Google Cloud project that this VM image belongs to.
 Format: projects/{project_id}
 */
-  Project?: string;
+  project?: string;
 }
 
-export function Notebooks_EnvironmentVmImage_GetTypes(): DynamicUIProps[] {
+export function notebooks_EnvironmentVmImage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ImageFamily",
+      "imageFamily",
       "Use this VM image family to find the image; the newest image in this family will be used.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Notebooks_EnvironmentVmImage_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ImageName",
+      "imageName",
       "Use VM image name to find the image.",
       [],
       false,
@@ -40,7 +40,7 @@ export function Notebooks_EnvironmentVmImage_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Project",
+      "project",
       "The name of the Google Cloud project that this VM image belongs to.\nFormat: projects/{project_id}",
       [],
       true,

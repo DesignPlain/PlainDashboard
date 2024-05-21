@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Kms_CryptoKeyIAMMemberCondition {
+export interface kms_CryptoKeyIAMMemberCondition {
   /*
 An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
 
@@ -14,20 +14,20 @@ An optional description of the expression. This is a longer text which describes
 identifier for the binding. This means that if any part of the condition is changed out-of-band, the provider will
 consider it to be an entirely different resource and will treat it as such.
 */
-  Description?: string;
+  description?: string;
 
   // Textual representation of an expression in Common Expression Language syntax.
-  Expression?: string;
+  expression?: string;
 
   // A title for the expression, i.e. a short string describing its purpose.
-  Title?: string;
+  title?: string;
 }
 
-export function Kms_CryptoKeyIAMMemberCondition_GetTypes(): DynamicUIProps[] {
+export function kms_CryptoKeyIAMMemberCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.\n\n> **Warning:** The provider considers the `role` and condition contents (`title`+`description`+`expression`) as the\nidentifier for the binding. This means that if any part of the condition is changed out-of-band, the provider will\nconsider it to be an entirely different resource and will treat it as such.",
       [],
       false,
@@ -35,7 +35,7 @@ export function Kms_CryptoKeyIAMMemberCondition_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Expression",
+      "expression",
       "Textual representation of an expression in Common Expression Language syntax.",
       [],
       true,
@@ -43,7 +43,7 @@ export function Kms_CryptoKeyIAMMemberCondition_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Title",
+      "title",
       "A title for the expression, i.e. a short string describing its purpose.",
       [],
       true,

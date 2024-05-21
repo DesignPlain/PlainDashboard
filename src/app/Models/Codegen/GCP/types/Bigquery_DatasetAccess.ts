@@ -6,19 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Bigquery_DatasetAccessRoutine,
-  Bigquery_DatasetAccessRoutine_GetTypes,
-} from "./Bigquery_DatasetAccessRoutine";
+  bigquery_DatasetAccessDataset,
+  bigquery_DatasetAccessDataset_GetTypes,
+} from "./bigquery_DatasetAccessDataset";
 import {
-  Bigquery_DatasetAccessDataset,
-  Bigquery_DatasetAccessDataset_GetTypes,
-} from "./Bigquery_DatasetAccessDataset";
+  bigquery_DatasetAccessRoutine,
+  bigquery_DatasetAccessRoutine_GetTypes,
+} from "./bigquery_DatasetAccessRoutine";
 import {
-  Bigquery_DatasetAccessView,
-  Bigquery_DatasetAccessView_GetTypes,
-} from "./Bigquery_DatasetAccessView";
+  bigquery_DatasetAccessView,
+  bigquery_DatasetAccessView_GetTypes,
+} from "./bigquery_DatasetAccessView";
 
-export interface Bigquery_DatasetAccess {
+export interface bigquery_DatasetAccess {
+  /*
+A domain to grant access to. Any users signed in with the
+domain specified will be granted the specified access
+*/
+  domain?: string;
+
+  // A special group to grant access to. Possible values include:
+  specialGroup?: string;
+
+  /*
+Grants all resources of particular types in a particular dataset read access to the current dataset.
+Structure is documented below.
+*/
+  dataset?: bigquery_DatasetAccessDataset;
+
+  // An email address of a Google Group to grant access to.
+  groupByEmail?: string;
+
+  /*
+Some other type of member that appears in the IAM Policy but isn't a user,
+group, domain, or special group. For example: `allUsers`
+*/
+  iamMember?: string;
+
   /*
 Describes the rights granted to the user specified by the other
 member of the access object. Basic, predefined, and custom roles
@@ -26,7 +50,7 @@ are supported. Predefined roles that have equivalent basic roles
 are swapped by the API to their basic counterparts. See
 [official docs](https://cloud.google.com/bigquery/docs/access-control).
 */
-  Role?: string;
+  role?: string;
 
   /*
 A routine from a different dataset to grant access to. Queries
@@ -36,37 +60,13 @@ set. If that routine is updated by any user, access to the routine
 needs to be granted again via an update operation.
 Structure is documented below.
 */
-  Routine?: Bigquery_DatasetAccessRoutine;
-
-  // A special group to grant access to. Possible values include:
-  SpecialGroup?: string;
-
-  /*
-Grants all resources of particular types in a particular dataset read access to the current dataset.
-Structure is documented below.
-*/
-  Dataset?: Bigquery_DatasetAccessDataset;
-
-  /*
-A domain to grant access to. Any users signed in with the
-domain specified will be granted the specified access
-*/
-  Domain?: string;
-
-  // An email address of a Google Group to grant access to.
-  GroupByEmail?: string;
-
-  /*
-Some other type of member that appears in the IAM Policy but isn't a user,
-group, domain, or special group. For example: `allUsers`
-*/
-  IamMember?: string;
+  routine?: bigquery_DatasetAccessRoutine;
 
   /*
 An email address of a user to grant access to. For example:
 fred@example.com
 */
-  UserByEmail?: string;
+  userByEmail?: string;
 
   /*
 A view from a different dataset to grant access to. Queries
@@ -76,38 +76,30 @@ set. If that view is updated by any user, access to the view
 needs to be granted again via an update operation.
 Structure is documented below.
 */
-  View?: Bigquery_DatasetAccessView;
+  view?: bigquery_DatasetAccessView;
 }
 
-export function Bigquery_DatasetAccess_GetTypes(): DynamicUIProps[] {
+export function bigquery_DatasetAccess_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Role",
-      "Describes the rights granted to the user specified by the other\nmember of the access object. Basic, predefined, and custom roles\nare supported. Predefined roles that have equivalent basic roles\nare swapped by the API to their basic counterparts. See\n[official docs](https://cloud.google.com/bigquery/docs/access-control).",
+      "domain",
+      "A domain to grant access to. Any users signed in with the\ndomain specified will be granted the specified access",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Routine",
-      "A routine from a different dataset to grant access to. Queries\nexecuted against that routine will have read access to tables in\nthis dataset. The role field is not required when this field is\nset. If that routine is updated by any user, access to the routine\nneeds to be granted again via an update operation.\nStructure is documented below.",
-      Bigquery_DatasetAccessRoutine_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "Dataset",
+      "dataset",
       "Grants all resources of particular types in a particular dataset read access to the current dataset.\nStructure is documented below.",
-      Bigquery_DatasetAccessDataset_GetTypes(),
+      bigquery_DatasetAccessDataset_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "GroupByEmail",
+      "groupByEmail",
       "An email address of a Google Group to grant access to.",
       [],
       false,
@@ -115,31 +107,7 @@ export function Bigquery_DatasetAccess_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "UserByEmail",
-      "An email address of a user to grant access to. For example:\nfred@example.com",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "SpecialGroup",
-      "A special group to grant access to. Possible values include:",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Domain",
-      "A domain to grant access to. Any users signed in with the\ndomain specified will be granted the specified access",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "IamMember",
+      "iamMember",
       "Some other type of member that appears in the IAM Policy but isn't a user,\ngroup, domain, or special group. For example: `allUsers`",
       [],
       false,
@@ -147,9 +115,41 @@ export function Bigquery_DatasetAccess_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "View",
+      "routine",
+      "A routine from a different dataset to grant access to. Queries\nexecuted against that routine will have read access to tables in\nthis dataset. The role field is not required when this field is\nset. If that routine is updated by any user, access to the routine\nneeds to be granted again via an update operation.\nStructure is documented below.",
+      bigquery_DatasetAccessRoutine_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "specialGroup",
+      "A special group to grant access to. Possible values include:",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "role",
+      "Describes the rights granted to the user specified by the other\nmember of the access object. Basic, predefined, and custom roles\nare supported. Predefined roles that have equivalent basic roles\nare swapped by the API to their basic counterparts. See\n[official docs](https://cloud.google.com/bigquery/docs/access-control).",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "userByEmail",
+      "An email address of a user to grant access to. For example:\nfred@example.com",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "view",
       "A view from a different dataset to grant access to. Queries\nexecuted against that view will have read access to tables in\nthis dataset. The role field is not required when this field is\nset. If that view is updated by any user, access to the view\nneeds to be granted again via an update operation.\nStructure is documented below.",
-      Bigquery_DatasetAccessView_GetTypes(),
+      bigquery_DatasetAccessView_GetTypes(),
       false,
       false,
     ),

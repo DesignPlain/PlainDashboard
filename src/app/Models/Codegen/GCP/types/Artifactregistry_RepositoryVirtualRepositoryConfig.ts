@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Artifactregistry_RepositoryVirtualRepositoryConfigUpstreamPolicy,
-  Artifactregistry_RepositoryVirtualRepositoryConfigUpstreamPolicy_GetTypes,
-} from "./Artifactregistry_RepositoryVirtualRepositoryConfigUpstreamPolicy";
+  artifactregistry_RepositoryVirtualRepositoryConfigUpstreamPolicy,
+  artifactregistry_RepositoryVirtualRepositoryConfigUpstreamPolicy_GetTypes,
+} from "./artifactregistry_RepositoryVirtualRepositoryConfigUpstreamPolicy";
 
-export interface Artifactregistry_RepositoryVirtualRepositoryConfig {
+export interface artifactregistry_RepositoryVirtualRepositoryConfig {
   /*
 Policies that configure the upstream artifacts distributed by the Virtual
 Repository. Upstream policies cannot be set on a standard repository.
 Structure is documented below.
 */
-  UpstreamPolicies?: Array<Artifactregistry_RepositoryVirtualRepositoryConfigUpstreamPolicy>;
+  upstreamPolicies?: Array<artifactregistry_RepositoryVirtualRepositoryConfigUpstreamPolicy>;
 }
 
-export function Artifactregistry_RepositoryVirtualRepositoryConfig_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_RepositoryVirtualRepositoryConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "UpstreamPolicies",
+      "upstreamPolicies",
       "Policies that configure the upstream artifacts distributed by the Virtual\nRepository. Upstream policies cannot be set on a standard repository.\nStructure is documented below.",
-      Artifactregistry_RepositoryVirtualRepositoryConfigUpstreamPolicy_GetTypes(),
+      artifactregistry_RepositoryVirtualRepositoryConfigUpstreamPolicy_GetTypes(),
       false,
       false,
     ),

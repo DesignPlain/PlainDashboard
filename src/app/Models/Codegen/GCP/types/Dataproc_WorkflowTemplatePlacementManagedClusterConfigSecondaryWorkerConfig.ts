@@ -6,71 +6,79 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigAccelerator,
-  Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigAccelerator_GetTypes,
-} from "./Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigAccelerator";
+  dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigManagedGroupConfig,
+  dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigManagedGroupConfig_GetTypes,
+} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigManagedGroupConfig";
 import {
-  Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfig,
-  Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfig_GetTypes,
-} from "./Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfig";
+  dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfig,
+  dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfig_GetTypes,
+} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfig";
 import {
-  Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigManagedGroupConfig,
-  Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigManagedGroupConfig_GetTypes,
-} from "./Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigManagedGroupConfig";
+  dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigAccelerator,
+  dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigAccelerator_GetTypes,
+} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigAccelerator";
 
-export interface Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfig {
-  // The Compute Engine image resource used for cluster instances. The URI can represent an image or image family. Image examples: - `https://www.googleapis.com/compute/beta/projects/` If the URI is unspecified, it will be inferred from `SoftwareConfig.image_version` or the system default.
-  Image?: string;
-
-  // Output only. The list of instance names. Dataproc derives the names from `cluster_name`, `num_instances`, and the instance group.
-  InstanceNames?: Array<string>;
-
-  // Output only. Specifies that this instance group contains preemptible instances.
-  IsPreemptible?: boolean;
-
+export interface dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfig {
   // Specifies the minimum cpu platform for the Instance Group. See (https://cloud.google.com/dataproc/docs/concepts/compute/dataproc-min-cpu).
-  MinCpuPlatform?: string;
+  minCpuPlatform?: string;
 
   // The number of VM instances in the instance group. For master instance groups, must be set to 1.
-  NumInstances?: number;
-
-  // The Compute Engine accelerator configuration for these instances.
-  Accelerators?: Array<Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigAccelerator>;
+  numInstances?: number;
 
   // Disk option config settings.
-  DiskConfig?: Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfig;
+  diskConfig?: dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfig;
 
-  // Specifies the preemptibility of the instance group. The default value for master and worker groups is `NON_PREEMPTIBLE`. This default cannot be changed. The default value for secondary instances is `PREEMPTIBLE`. Possible values: PREEMPTIBILITY_UNSPECIFIED, NON_PREEMPTIBLE, PREEMPTIBLE
-  Preemptibility?: string;
+  // The Compute Engine image resource used for cluster instances. The URI can represent an image or image family. Image examples: - `https://www.googleapis.com/compute/beta/projects/` If the URI is unspecified, it will be inferred from `SoftwareConfig.image_version` or the system default.
+  image?: string;
+
+  // Output only. The list of instance names. Dataproc derives the names from `cluster_name`, `num_instances`, and the instance group.
+  instanceNames?: Array<string>;
 
   // The Compute Engine machine type used for cluster instances. A full URL, partial URI, or short name are valid. Examples: - `https://www.googleapis.com/compute/v1/projects/(https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement) feature, you must use the short name of the machine type resource, for example, `n1-standard-2`.
-  MachineType?: string;
+  machineType?: string;
+
+  // The Compute Engine accelerator configuration for these instances.
+  accelerators?: Array<dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigAccelerator>;
+
+  // Output only. Specifies that this instance group contains preemptible instances.
+  isPreemptible?: boolean;
 
   // Output only. The config for Compute Engine Instance Group Manager that manages this group. This is only used for preemptible instance groups.
-  ManagedGroupConfigs?: Array<Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigManagedGroupConfig>;
+  managedGroupConfigs?: Array<dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigManagedGroupConfig>;
+
+  // Specifies the preemptibility of the instance group. The default value for master and worker groups is `NON_PREEMPTIBLE`. This default cannot be changed. The default value for secondary instances is `PREEMPTIBLE`. Possible values: PREEMPTIBILITY_UNSPECIFIED, NON_PREEMPTIBLE, PREEMPTIBLE
+  preemptibility?: string;
 }
 
-export function Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "Accelerators",
-      "The Compute Engine accelerator configuration for these instances.",
-      Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigAccelerator_GetTypes(),
+      InputType.Number,
+      "numInstances",
+      "The number of VM instances in the instance group. For master instance groups, must be set to 1.",
+      [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "DiskConfig",
+      "diskConfig",
       "Disk option config settings.",
-      Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfig_GetTypes(),
+      dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfig_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "image",
+      "The Compute Engine image resource used for cluster instances. The URI can represent an image or image family. Image examples: * `https://www.googleapis.com/compute/beta/projects/` If the URI is unspecified, it will be inferred from `SoftwareConfig.image_version` or the system default.",
+      [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "InstanceNames",
+      "instanceNames",
       "Output only. The list of instance names. Dataproc derives the names from `cluster_name`, `num_instances`, and the instance group.",
       InputType_String_GetTypes(),
       false,
@@ -78,31 +86,7 @@ export function Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryW
     ),
     new DynamicUIProps(
       InputType.String,
-      "MinCpuPlatform",
-      "Specifies the minimum cpu platform for the Instance Group. See (https://cloud.google.com/dataproc/docs/concepts/compute/dataproc-min-cpu).",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "NumInstances",
-      "The number of VM instances in the instance group. For master instance groups, must be set to 1.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Preemptibility",
-      "Specifies the preemptibility of the instance group. The default value for master and worker groups is `NON_PREEMPTIBLE`. This default cannot be changed. The default value for secondary instances is `PREEMPTIBLE`. Possible values: PREEMPTIBILITY_UNSPECIFIED, NON_PREEMPTIBLE, PREEMPTIBLE",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "MachineType",
+      "machineType",
       "The Compute Engine machine type used for cluster instances. A full URL, partial URI, or short name are valid. Examples: * `https://www.googleapis.com/compute/v1/projects/(https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement) feature, you must use the short name of the machine type resource, for example, `n1-standard-2`.",
       [],
       false,
@@ -110,27 +94,43 @@ export function Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryW
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ManagedGroupConfigs",
-      "Output only. The config for Compute Engine Instance Group Manager that manages this group. This is only used for preemptible instance groups.",
-      Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigManagedGroupConfig_GetTypes(),
+      "accelerators",
+      "The Compute Engine accelerator configuration for these instances.",
+      dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigAccelerator_GetTypes(),
       false,
-      false,
+      true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Image",
-      "The Compute Engine image resource used for cluster instances. The URI can represent an image or image family. Image examples: * `https://www.googleapis.com/compute/beta/projects/` If the URI is unspecified, it will be inferred from `SoftwareConfig.image_version` or the system default.",
+      "minCpuPlatform",
+      "Specifies the minimum cpu platform for the Instance Group. See (https://cloud.google.com/dataproc/docs/concepts/compute/dataproc-min-cpu).",
       [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IsPreemptible",
+      "isPreemptible",
       "Output only. Specifies that this instance group contains preemptible instances.",
       [],
       false,
       false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "managedGroupConfigs",
+      "Output only. The config for Compute Engine Instance Group Manager that manages this group. This is only used for preemptible instance groups.",
+      dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigManagedGroupConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "preemptibility",
+      "Specifies the preemptibility of the instance group. The default value for master and worker groups is `NON_PREEMPTIBLE`. This default cannot be changed. The default value for secondary instances is `PREEMPTIBLE`. Possible values: PREEMPTIBILITY_UNSPECIFIED, NON_PREEMPTIBLE, PREEMPTIBLE",
+      [],
+      false,
+      true,
     ),
   ];
 }

@@ -7,14 +7,11 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificateauthority_CertificateTemplateIamBindingCondition,
-  Certificateauthority_CertificateTemplateIamBindingCondition_GetTypes,
-} from "../types/Certificateauthority_CertificateTemplateIamBindingCondition";
+  certificateauthority_CertificateTemplateIamBindingCondition,
+  certificateauthority_CertificateTemplateIamBindingCondition_GetTypes,
+} from "../types/certificateauthority_CertificateTemplateIamBindingCondition";
 
 export interface CertificateTemplateIamBindingArgs {
-  //
-  Members?: Array<string>;
-
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the project will be parsed from the identifier of the parent resource. If no project is provided in the parent identifier and no project is specified, the provider project is used.
@@ -31,36 +28,36 @@ Each entry can have one of the following values:
 - --projectEditor:projectid--: Editors of the given project. For example, "projectEditor:my-example-project"
 - --projectViewer:projectid--: Viewers of the given project. For example, "projectViewer:my-example-project"
 */
-  Project?: string;
+  project?: string;
 
   /*
 The role that should be applied. Only one
 `gcp.certificateauthority.CertificateTemplateIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
-  Role?: string;
+  role?: string;
 
   // Used to find the parent resource to bind the IAM policy to
-  CertificateTemplate?: string;
+  certificateTemplate?: string;
 
   /*
 An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
 */
-  Condition?: Certificateauthority_CertificateTemplateIamBindingCondition;
+  condition?: certificateauthority_CertificateTemplateIamBindingCondition;
 
   //
-  Location?: string;
+  location?: string;
+
+  //
+  members?: Array<string>;
 }
 export class CertificateTemplateIamBinding extends Resource {
-  // (Computed) The etag of the IAM policy.
-  public Etag?: string;
+  //
+  public location?: string;
 
   //
-  public Location?: string;
-
-  //
-  public Members?: Array<string>;
+  public members?: Array<string>;
 
   /*
 The ID of the project in which the resource belongs.
@@ -78,54 +75,32 @@ Each entry can have one of the following values:
 - --projectEditor:projectid--: Editors of the given project. For example, "projectEditor:my-example-project"
 - --projectViewer:projectid--: Viewers of the given project. For example, "projectViewer:my-example-project"
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 The role that should be applied. Only one
 `gcp.certificateauthority.CertificateTemplateIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
-  public Role?: string;
+  public role?: string;
 
   // Used to find the parent resource to bind the IAM policy to
-  public CertificateTemplate?: string;
+  public certificateTemplate?: string;
 
   /*
 An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
 */
-  public Condition?: Certificateauthority_CertificateTemplateIamBindingCondition;
+  public condition?: certificateauthority_CertificateTemplateIamBindingCondition;
+
+  // (Computed) The etag of the IAM policy.
+  public etag?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "CertificateTemplate",
-        "Used to find the parent resource to bind the IAM policy to",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "Condition",
-        "An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.\nStructure is documented below.",
-        Certificateauthority_CertificateTemplateIamBindingCondition_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(InputType.String, "Location", "", [], false, true),
-      new DynamicUIProps(
-        InputType.Array,
-        "Members",
-        "",
-        InputType_String_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
+        "project",
         'The ID of the project in which the resource belongs.\nIf it is not provided, the project will be parsed from the identifier of the parent resource. If no project is provided in the parent identifier and no project is specified, the provider project is used.\n\n* `member/members` - (Required) Identities that will be granted the privilege in `role`.\nEach entry can have one of the following values:\n* **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.\n* **allAuthenticatedUsers**: A special identifier that represents anyone who is authenticated with a Google account or a service account.\n* **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.\n* **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.\n* **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.\n* **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.\n* **projectOwner:projectid**: Owners of the given project. For example, "projectOwner:my-example-project"\n* **projectEditor:projectid**: Editors of the given project. For example, "projectEditor:my-example-project"\n* **projectViewer:projectid**: Viewers of the given project. For example, "projectViewer:my-example-project"',
         [],
         false,
@@ -133,11 +108,36 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Role",
+        "role",
         "The role that should be applied. Only one\n`gcp.certificateauthority.CertificateTemplateIamBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
         [],
         true,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "certificateTemplate",
+        "Used to find the parent resource to bind the IAM policy to",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "condition",
+        "An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.\nStructure is documented below.",
+        certificateauthority_CertificateTemplateIamBindingCondition_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(InputType.String, "location", "", [], false, true),
+      new DynamicUIProps(
+        InputType.Array,
+        "members",
+        "",
+        InputType_String_GetTypes(),
+        true,
+        false,
       ),
     ];
   }

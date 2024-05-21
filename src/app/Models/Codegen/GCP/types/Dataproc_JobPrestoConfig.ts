@@ -6,48 +6,56 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_JobPrestoConfigLoggingConfig,
-  Dataproc_JobPrestoConfigLoggingConfig_GetTypes,
-} from "./Dataproc_JobPrestoConfigLoggingConfig";
+  dataproc_JobPrestoConfigLoggingConfig,
+  dataproc_JobPrestoConfigLoggingConfig_GetTypes,
+} from "./dataproc_JobPrestoConfigLoggingConfig";
 
-export interface Dataproc_JobPrestoConfig {
-  /*
-The list of SQL queries or statements to execute as part of the job.
-Conflicts with `query_file_uri`
-*/
-  QueryLists?: Array<string>;
-
+export interface dataproc_JobPrestoConfig {
   // Presto client tags to attach to this query.
-  ClientTags?: Array<string>;
+  clientTags?: Array<string>;
 
   // Whether to continue executing queries if a query fails. Setting to true can be useful when executing independent parallel queries. Defaults to false.
-  ContinueOnFailure?: boolean;
+  continueOnFailure?: boolean;
 
   // The runtime logging config of the job
-  LoggingConfig?: Dataproc_JobPrestoConfigLoggingConfig;
+  loggingConfig?: dataproc_JobPrestoConfigLoggingConfig;
 
   /*
 The format in which query output will be displayed. See the Presto documentation for supported output formats.
 
 - `logging_config.driver_log_levels`- (Required) The per-package log levels for the driver. This may include 'root' package name to configure rootLogger. Examples: 'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
 */
-  OutputFormat?: string;
+  outputFormat?: string;
 
   // A mapping of property names to values. Used to set Presto session properties Equivalent to using the --session flag in the Presto CLI.
-  Properties?: Map<string, string>;
+  properties?: Map<string, string>;
 
   /*
 The HCFS URI of the script that contains SQL queries.
 Conflicts with `query_list`
 */
-  QueryFileUri?: string;
+  queryFileUri?: string;
+
+  /*
+The list of SQL queries or statements to execute as part of the job.
+Conflicts with `query_file_uri`
+*/
+  queryLists?: Array<string>;
 }
 
-export function Dataproc_JobPrestoConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_JobPrestoConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Object,
+      "loggingConfig",
+      "The runtime logging config of the job",
+      dataproc_JobPrestoConfigLoggingConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "OutputFormat",
+      "outputFormat",
       "The format in which query output will be displayed. See the Presto documentation for supported output formats.\n\n* `logging_config.driver_log_levels`- (Required) The per-package log levels for the driver. This may include 'root' package name to configure rootLogger. Examples: 'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'",
       [],
       false,
@@ -55,7 +63,7 @@ export function Dataproc_JobPrestoConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Properties",
+      "properties",
       "A mapping of property names to values. Used to set Presto session properties Equivalent to using the --session flag in the Presto CLI.",
       InputType_Map_GetTypes(),
       false,
@@ -63,7 +71,7 @@ export function Dataproc_JobPrestoConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "QueryFileUri",
+      "queryFileUri",
       "The HCFS URI of the script that contains SQL queries.\nConflicts with `query_list`",
       [],
       false,
@@ -71,7 +79,7 @@ export function Dataproc_JobPrestoConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "QueryLists",
+      "queryLists",
       "The list of SQL queries or statements to execute as part of the job.\nConflicts with `query_file_uri`",
       InputType_String_GetTypes(),
       false,
@@ -79,7 +87,7 @@ export function Dataproc_JobPrestoConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ClientTags",
+      "clientTags",
       "Presto client tags to attach to this query.",
       InputType_String_GetTypes(),
       false,
@@ -87,19 +95,11 @@ export function Dataproc_JobPrestoConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "ContinueOnFailure",
+      "continueOnFailure",
       "Whether to continue executing queries if a query fails. Setting to true can be useful when executing independent parallel queries. Defaults to false.",
       [],
       false,
       true,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "LoggingConfig",
-      "The runtime logging config of the job",
-      Dataproc_JobPrestoConfigLoggingConfig_GetTypes(),
-      false,
-      false,
     ),
   ];
 }

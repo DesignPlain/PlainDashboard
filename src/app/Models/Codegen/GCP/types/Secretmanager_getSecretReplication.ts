@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Secretmanager_getSecretReplicationAuto,
-  Secretmanager_getSecretReplicationAuto_GetTypes,
-} from "./Secretmanager_getSecretReplicationAuto";
+  secretmanager_getSecretReplicationUserManaged,
+  secretmanager_getSecretReplicationUserManaged_GetTypes,
+} from "./secretmanager_getSecretReplicationUserManaged";
 import {
-  Secretmanager_getSecretReplicationUserManaged,
-  Secretmanager_getSecretReplicationUserManaged_GetTypes,
-} from "./Secretmanager_getSecretReplicationUserManaged";
+  secretmanager_getSecretReplicationAuto,
+  secretmanager_getSecretReplicationAuto_GetTypes,
+} from "./secretmanager_getSecretReplicationAuto";
 
-export interface Secretmanager_getSecretReplication {
-  // The Secret will automatically be replicated without any restrictions.
-  Autos?: Array<Secretmanager_getSecretReplicationAuto>;
-
+export interface secretmanager_getSecretReplication {
   // The Secret will be replicated to the regions specified by the user.
-  UserManageds?: Array<Secretmanager_getSecretReplicationUserManaged>;
+  userManageds?: Array<secretmanager_getSecretReplicationUserManaged>;
+
+  // The Secret will automatically be replicated without any restrictions.
+  autos?: Array<secretmanager_getSecretReplicationAuto>;
 }
 
-export function Secretmanager_getSecretReplication_GetTypes(): DynamicUIProps[] {
+export function secretmanager_getSecretReplication_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Autos",
-      "The Secret will automatically be replicated without any restrictions.",
-      Secretmanager_getSecretReplicationAuto_GetTypes(),
+      "userManageds",
+      "The Secret will be replicated to the regions specified by the user.",
+      secretmanager_getSecretReplicationUserManaged_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "UserManageds",
-      "The Secret will be replicated to the regions specified by the user.",
-      Secretmanager_getSecretReplicationUserManaged_GetTypes(),
+      "autos",
+      "The Secret will automatically be replicated without any restrictions.",
+      secretmanager_getSecretReplicationAuto_GetTypes(),
       true,
       false,
     ),

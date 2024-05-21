@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions {
+export interface gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions {
   // Amount of time to "soak" after a rollout has been finished before marking it COMPLETE. Cannot exceed 30 days.
-  Soaking?: string;
+  soaking?: string;
 }
 
-export function Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Soaking",
+      "soaking",
       'Amount of time to "soak" after a rollout has been finished before marking it COMPLETE. Cannot exceed 30 days.',
       [],
       true,

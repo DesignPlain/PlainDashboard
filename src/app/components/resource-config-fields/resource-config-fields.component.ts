@@ -15,7 +15,7 @@ import { Mode } from 'src/app/components/utilityComponents/key-value-array/key-v
 })
 export class ResourceConfigFieldsComponent implements OnInit {
   ngOnInit(): void {
-    //console.log(this.parent, ' With Config:', this.config);
+    console.log(this.parent, ' With Config:', this.config);
   }
   public faInfo: IconDefinition = faInfoCircle;
   public faRotate: IconDefinition = faRotate;
@@ -34,18 +34,29 @@ export class ResourceConfigFieldsComponent implements OnInit {
   check = false;
   Mode = Mode;
 
+  toKeyFormat(str: string): string {
+    return str[0].toUpperCase() + str.substring(1);
+  }
+
+  toStoreFormat(str: string): string {
+    return str[0].toLowerCase() + str.substring(1);
+  }
+
   addToMap(name: string, data: any, type: InputType) {
     this.check = true;
     switch (type) {
       case InputType.String:
-        this.listMap.set(name, data as string);
+        this.listMap.set(this.toStoreFormat(name), data as string);
         break;
       case InputType.Number:
-        this.listMap.set(name, data as number);
+        this.listMap.set(this.toStoreFormat(name), Number(data));
         break;
       // TODO: Fix this checkbox logic
       case InputType.Bool:
-        this.listMap.set(name, data == 'false' ? 'false' : '');
+        this.listMap.set(
+          this.toStoreFormat(name),
+          data == 'false' ? 'false' : ''
+        );
         break;
     }
 
@@ -53,17 +64,29 @@ export class ResourceConfigFieldsComponent implements OnInit {
   }
 
   public UpdateResourceConfig(it: Map<string, any>): void {
-    console.log(it);
     it.forEach((v, k) => {
-      if (this.config.get(k)?.type == InputType.Map) {
+      k = this.toStoreFormat(k);
+      let config = this.config.get(k);
+
+      console.log(this.config, k, v);
+      if (config?.type == InputType.Map) {
         let m: Map<string, string> = new Map();
-        v.forEach((array_val: Map<string, any>) => {
-          m.set(array_val.get('Key'), array_val.get('Value'));
+        v.forEach((kv: Map<string, any>) => {
+          m.set(kv.get('key'), kv.get('value'));
         });
 
         this.listMap.set(k, m);
+      } else if (
+        config?.type == InputType.Array &&
+        config.members.get('Value')?.description == 'GenericType'
+      ) {
+        let arr: Array<any> = [];
+        v.forEach((kv: Map<string, any>) => {
+          arr.push(kv.get('value'));
+        });
+
+        this.listMap.set(k, arr);
       } else {
-        //console.log(k, v[0]);
         this.listMap.set(k, v);
       }
     });
@@ -98,14 +121,36 @@ export class ResourceConfigFieldsComponent implements OnInit {
     }
 
     map_data.forEach((v, k) => {
-      arr.push(
-        new Map([
-          ['Key', k],
-          ['Value', v],
-        ])
-      );
+      if (k != 'dataType') {
+        arr.push(
+          new Map([
+            ['Key', k],
+            ['Value', v],
+          ])
+        );
+      }
     });
 
     return arr;
+  }
+
+  get_array_data(
+    arr_data: Array<any>,
+    members: Map<string, DynamicUIPropState>
+  ) {
+    if (members.get('Value')?.description == 'GenericType') {
+      let arr: Map<string, any>[] = [];
+      if (arr_data == undefined) {
+        arr_data = [];
+      }
+
+      arr_data.forEach((val) => {
+        arr.push(new Map([['Value', val]]));
+      });
+
+      return arr;
+    } else {
+      return arr_data;
+    }
   }
 }

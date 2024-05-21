@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_InsightsReportConfigObjectMetadataReportOptionsStorageFilters {
+export interface storage_InsightsReportConfigObjectMetadataReportOptionsStorageFilters {
   // The filter to use when specifying which bucket to generate inventory reports for.
-  Bucket?: string;
+  bucket?: string;
 }
 
-export function Storage_InsightsReportConfigObjectMetadataReportOptionsStorageFilters_GetTypes(): DynamicUIProps[] {
+export function storage_InsightsReportConfigObjectMetadataReportOptionsStorageFilters_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Bucket",
+      "bucket",
       "The filter to use when specifying which bucket to generate inventory reports for.",
       [],
       false,

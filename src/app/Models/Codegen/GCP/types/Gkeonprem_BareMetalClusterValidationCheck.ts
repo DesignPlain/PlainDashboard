@@ -6,36 +6,44 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_BareMetalClusterValidationCheckStatus,
-  Gkeonprem_BareMetalClusterValidationCheckStatus_GetTypes,
-} from "./Gkeonprem_BareMetalClusterValidationCheckStatus";
+  gkeonprem_BareMetalClusterValidationCheckStatus,
+  gkeonprem_BareMetalClusterValidationCheckStatus_GetTypes,
+} from "./gkeonprem_BareMetalClusterValidationCheckStatus";
 
-export interface Gkeonprem_BareMetalClusterValidationCheck {
+export interface gkeonprem_BareMetalClusterValidationCheck {
+  /*
+(Output)
+Options used for the validation check.
+*/
+  options?: string;
+
   /*
 (Output)
 The scenario when the preflight checks were run..
 */
-  Scenario?: string;
+  scenario?: string;
 
   /*
 (Output)
 Specifies the detailed validation check status
 Structure is documented below.
 */
-  Statuses?: Array<Gkeonprem_BareMetalClusterValidationCheckStatus>;
-
-  /*
-(Output)
-Options used for the validation check.
-*/
-  Options?: string;
+  statuses?: Array<gkeonprem_BareMetalClusterValidationCheckStatus>;
 }
 
-export function Gkeonprem_BareMetalClusterValidationCheck_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterValidationCheck_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Scenario",
+      "options",
+      "(Output)\nOptions used for the validation check.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "scenario",
       "(Output)\nThe scenario when the preflight checks were run..",
       [],
       false,
@@ -43,17 +51,9 @@ export function Gkeonprem_BareMetalClusterValidationCheck_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Statuses",
+      "statuses",
       "(Output)\nSpecifies the detailed validation check status\nStructure is documented below.",
-      Gkeonprem_BareMetalClusterValidationCheckStatus_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Options",
-      "(Output)\nOptions used for the validation check.",
-      [],
+      gkeonprem_BareMetalClusterValidationCheckStatus_GetTypes(),
       false,
       false,
     ),

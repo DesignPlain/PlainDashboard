@@ -6,46 +6,46 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPredeploy,
-  Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPredeploy_GetTypes,
-} from "./Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPredeploy";
+  clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPredeploy,
+  clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPredeploy_GetTypes,
+} from "./clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPredeploy";
 import {
-  Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPostdeploy,
-  Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPostdeploy_GetTypes,
-} from "./Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPostdeploy";
+  clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPostdeploy,
+  clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPostdeploy_GetTypes,
+} from "./clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPostdeploy";
 
-export interface Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandard {
+export interface clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandard {
+  // Optional. Configuration for the postdeploy job. If this is not configured, postdeploy job will not be present.
+  postdeploy?: clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPostdeploy;
+
   // Optional. Configuration for the predeploy job. If this is not configured, predeploy job will not be present.
-  Predeploy?: Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPredeploy;
+  predeploy?: clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPredeploy;
 
   // Whether to verify a deployment.
-  Verify?: boolean;
-
-  // Optional. Configuration for the postdeploy job. If this is not configured, postdeploy job will not be present.
-  Postdeploy?: Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPostdeploy;
+  verify?: boolean;
 }
 
-export function Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandard_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandard_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Postdeploy",
+      "postdeploy",
       "Optional. Configuration for the postdeploy job. If this is not configured, postdeploy job will not be present.",
-      Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPostdeploy_GetTypes(),
+      clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPostdeploy_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Predeploy",
+      "predeploy",
       "Optional. Configuration for the predeploy job. If this is not configured, predeploy job will not be present.",
-      Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPredeploy_GetTypes(),
+      clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPredeploy_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Verify",
+      "verify",
       "Whether to verify a deployment.",
       [],
       false,

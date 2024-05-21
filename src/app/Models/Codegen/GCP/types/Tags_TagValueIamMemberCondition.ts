@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Tags_TagValueIamMemberCondition {
+export interface tags_TagValueIamMemberCondition {
   //
-  Description?: string;
+  expression?: string;
 
   //
-  Expression?: string;
+  title?: string;
 
   //
-  Title?: string;
+  description?: string;
 }
 
-export function Tags_TagValueIamMemberCondition_GetTypes(): DynamicUIProps[] {
+export function tags_TagValueIamMemberCondition_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Expression", "", [], true, true),
-    new DynamicUIProps(InputType.String, "Title", "", [], true, true),
-    new DynamicUIProps(InputType.String, "Description", "", [], false, true),
+    new DynamicUIProps(InputType.String, "expression", "", [], true, true),
+    new DynamicUIProps(InputType.String, "title", "", [], true, true),
+    new DynamicUIProps(InputType.String, "description", "", [], false, true),
   ];
 }

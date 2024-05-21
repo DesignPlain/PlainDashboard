@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageConversationSuccess {
+export interface diagflow_CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageConversationSuccess {
   // Custom metadata. Dialogflow doesn't impose any structure on this.
-  Metadata?: string;
+  metadata?: string;
 }
 
-export function Diagflow_CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageConversationSuccess_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageConversationSuccess_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Metadata",
+      "metadata",
       "Custom metadata. Dialogflow doesn't impose any structure on this.",
       [],
       false,

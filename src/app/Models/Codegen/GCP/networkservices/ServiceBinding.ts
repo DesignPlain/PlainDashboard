@@ -9,14 +9,14 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface ServiceBindingArgs {
   // A free-text description of the resource. Max length 1024 characters.
-  Description?: string;
+  description?: string;
 
   /*
 Set of label tags associated with the ServiceBinding resource.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   /*
 Name of the ServiceBinding resource.
@@ -24,95 +24,71 @@ Name of the ServiceBinding resource.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 The full Service Directory Service name of the format
 projects/-/locations/-/namespaces/-/services/-
 */
-  Service?: string;
+  service?: string;
 }
 export class ServiceBinding extends Resource {
-  // Time the ServiceBinding was created in UTC.
-  public CreateTime?: string;
-
-  // A free-text description of the resource. Max length 1024 characters.
-  public Description?: string;
-
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
-
-  /*
-Set of label tags associated with the ServiceBinding resource.
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  public Labels?: Map<string, string>;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
   /*
 Name of the ServiceBinding resource.
 
 
 - - -
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
+  public pulumiLabels?: Map<string, string>;
 
   /*
 The full Service Directory Service name of the format
 projects/-/locations/-/namespaces/-/services/-
 */
-  public Service?: string;
+  public service?: string;
 
   // Time the ServiceBinding was updated in UTC.
-  public UpdateTime?: string;
+  public updateTime?: string;
+
+  // A free-text description of the resource. Max length 1024 characters.
+  public description?: string;
+
+  /*
+Set of label tags associated with the ServiceBinding resource.
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  // Time the ServiceBinding was created in UTC.
+  public createTime?: string;
+
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Description",
-        "A free-text description of the resource. Max length 1024 characters.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Map,
-        "Labels",
-        "Set of label tags associated with the ServiceBinding resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
-        InputType_Map_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "Name of the ServiceBinding resource.\n\n\n- - -",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -120,10 +96,34 @@ projects/-/locations/-/namespaces/-/services/-
       ),
       new DynamicUIProps(
         InputType.String,
-        "Service",
+        "service",
         "The full Service Directory Service name of the format\nprojects/*/locations/*/namespaces/*/services/*",
         [],
         true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "A free-text description of the resource. Max length 1024 characters.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Map,
+        "labels",
+        "Set of label tags associated with the ServiceBinding resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        InputType_Map_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "Name of the ServiceBinding resource.\n\n\n- - -",
+        [],
+        false,
         true,
       ),
     ];

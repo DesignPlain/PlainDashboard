@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceSchedulingLocalSsdRecoveryTimeout {
+export interface compute_InstanceSchedulingLocalSsdRecoveryTimeout {
+  /*
+Span of time at a resolution of a second. Must be from 0 to
+315,576,000,000 inclusive. Note: these bounds are computed from: 60
+sec/min - 60 min/hr - 24 hr/day - 365.25 days/year - 10000 years.
+*/
+  seconds?: number;
+
   /*
 Span of time that's a fraction of a second at nanosecond
 resolution. Durations less than one second are represented with a 0
 `seconds` field and a positive `nanos` field. Must be from 0 to
 999,999,999 inclusive.
 */
-  Nanos?: number;
-
-  /*
-Span of time at a resolution of a second. Must be from 0 to
-315,576,000,000 inclusive. Note: these bounds are computed from: 60
-sec/min - 60 min/hr - 24 hr/day - 365.25 days/year - 10000 years.
-*/
-  Seconds?: number;
+  nanos?: number;
 }
 
-export function Compute_InstanceSchedulingLocalSsdRecoveryTimeout_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceSchedulingLocalSsdRecoveryTimeout_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Nanos",
+      "nanos",
       "Span of time that's a fraction of a second at nanosecond\nresolution. Durations less than one second are represented with a 0\n`seconds` field and a positive `nanos` field. Must be from 0 to\n999,999,999 inclusive.",
       [],
       false,
@@ -35,7 +35,7 @@ export function Compute_InstanceSchedulingLocalSsdRecoveryTimeout_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Seconds",
+      "seconds",
       "Span of time at a resolution of a second. Must be from 0 to\n315,576,000,000 inclusive. Note: these bounds are computed from: 60\nsec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years.",
       [],
       true,

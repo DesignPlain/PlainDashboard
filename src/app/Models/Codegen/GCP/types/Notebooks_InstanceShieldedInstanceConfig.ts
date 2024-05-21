@@ -6,35 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Notebooks_InstanceShieldedInstanceConfig {
-  /*
-Defines whether the instance has integrity monitoring enabled. Enables monitoring and attestation of the
-boot integrity of the instance. The attestation is performed against the integrity policy baseline.
-This baseline is initially derived from the implicitly trusted boot image when the instance is created.
-Enabled by default.
-*/
-  EnableIntegrityMonitoring?: boolean;
-
+export interface notebooks_InstanceShieldedInstanceConfig {
   /*
 Defines whether the instance has Secure Boot enabled. Secure Boot helps ensure that the system only runs
 authentic software by verifying the digital signature of all boot components, and halting the boot process
 if signature verification fails.
 Disabled by default.
 */
-  EnableSecureBoot?: boolean;
+  enableSecureBoot?: boolean;
 
   /*
 Defines whether the instance has the vTPM enabled.
 Enabled by default.
 */
-  EnableVtpm?: boolean;
+  enableVtpm?: boolean;
+
+  /*
+Defines whether the instance has integrity monitoring enabled. Enables monitoring and attestation of the
+boot integrity of the instance. The attestation is performed against the integrity policy baseline.
+This baseline is initially derived from the implicitly trusted boot image when the instance is created.
+Enabled by default.
+*/
+  enableIntegrityMonitoring?: boolean;
 }
 
-export function Notebooks_InstanceShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
+export function notebooks_InstanceShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableIntegrityMonitoring",
+      "enableVtpm",
+      "Defines whether the instance has the vTPM enabled.\nEnabled by default.",
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "enableIntegrityMonitoring",
       "Defines whether the instance has integrity monitoring enabled. Enables monitoring and attestation of the\nboot integrity of the instance. The attestation is performed against the integrity policy baseline.\nThis baseline is initially derived from the implicitly trusted boot image when the instance is created.\nEnabled by default.",
       [],
       false,
@@ -42,16 +50,8 @@ export function Notebooks_InstanceShieldedInstanceConfig_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableSecureBoot",
+      "enableSecureBoot",
       "Defines whether the instance has Secure Boot enabled. Secure Boot helps ensure that the system only runs\nauthentic software by verifying the digital signature of all boot components, and halting the boot process\nif signature verification fails.\nDisabled by default.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "EnableVtpm",
-      "Defines whether the instance has the vTPM enabled.\nEnabled by default.",
       [],
       false,
       true,

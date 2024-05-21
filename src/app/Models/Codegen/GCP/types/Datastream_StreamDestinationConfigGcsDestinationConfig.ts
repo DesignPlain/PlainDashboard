@@ -6,42 +6,42 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamDestinationConfigGcsDestinationConfigAvroFileFormat,
-  Datastream_StreamDestinationConfigGcsDestinationConfigAvroFileFormat_GetTypes,
-} from "./Datastream_StreamDestinationConfigGcsDestinationConfigAvroFileFormat";
+  datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFormat,
+  datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFormat_GetTypes,
+} from "./datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFormat";
 import {
-  Datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFormat,
-  Datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFormat_GetTypes,
-} from "./Datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFormat";
+  datastream_StreamDestinationConfigGcsDestinationConfigAvroFileFormat,
+  datastream_StreamDestinationConfigGcsDestinationConfigAvroFileFormat_GetTypes,
+} from "./datastream_StreamDestinationConfigGcsDestinationConfigAvroFileFormat";
 
-export interface Datastream_StreamDestinationConfigGcsDestinationConfig {
-  // AVRO file format configuration.
-  AvroFileFormat?: Datastream_StreamDestinationConfigGcsDestinationConfigAvroFileFormat;
-
-  /*
-The maximum duration for which new events are added before a file is closed and a new file is created.
-A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s". Defaults to 900s.
-*/
-  FileRotationInterval?: string;
-
+export interface datastream_StreamDestinationConfigGcsDestinationConfig {
   // The maximum file size to be saved in the bucket.
-  FileRotationMb?: number;
+  fileRotationMb?: number;
 
   /*
 JSON file format configuration.
 Structure is documented below.
 */
-  JsonFileFormat?: Datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFormat;
+  jsonFileFormat?: datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFormat;
 
   // Path inside the Cloud Storage bucket to write data to.
-  Path?: string;
+  path?: string;
+
+  // AVRO file format configuration.
+  avroFileFormat?: datastream_StreamDestinationConfigGcsDestinationConfigAvroFileFormat;
+
+  /*
+The maximum duration for which new events are added before a file is closed and a new file is created.
+A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s". Defaults to 900s.
+*/
+  fileRotationInterval?: string;
 }
 
-export function Datastream_StreamDestinationConfigGcsDestinationConfig_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamDestinationConfigGcsDestinationConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "FileRotationMb",
+      "fileRotationMb",
       "The maximum file size to be saved in the bucket.",
       [],
       false,
@@ -49,15 +49,15 @@ export function Datastream_StreamDestinationConfigGcsDestinationConfig_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "JsonFileFormat",
+      "jsonFileFormat",
       "JSON file format configuration.\nStructure is documented below.",
-      Datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFormat_GetTypes(),
+      datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFormat_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Path",
+      "path",
       "Path inside the Cloud Storage bucket to write data to.",
       [],
       false,
@@ -65,15 +65,15 @@ export function Datastream_StreamDestinationConfigGcsDestinationConfig_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "AvroFileFormat",
+      "avroFileFormat",
       "AVRO file format configuration.",
-      Datastream_StreamDestinationConfigGcsDestinationConfigAvroFileFormat_GetTypes(),
+      datastream_StreamDestinationConfigGcsDestinationConfigAvroFileFormat_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "FileRotationInterval",
+      "fileRotationInterval",
       "The maximum duration for which new events are added before a file is closed and a new file is created.\nA duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\". Defaults to 900s.",
       [],
       false,

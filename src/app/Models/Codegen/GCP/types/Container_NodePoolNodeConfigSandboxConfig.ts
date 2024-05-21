@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_NodePoolNodeConfigSandboxConfig {
+export interface container_NodePoolNodeConfigSandboxConfig {
   // Type of the sandbox to use for the node (e.g. 'gvisor')
-  SandboxType?: string;
+  sandboxType?: string;
 }
 
-export function Container_NodePoolNodeConfigSandboxConfig_GetTypes(): DynamicUIProps[] {
+export function container_NodePoolNodeConfigSandboxConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SandboxType",
+      "sandboxType",
       "Type of the sandbox to use for the node (e.g. 'gvisor')",
       [],
       true,

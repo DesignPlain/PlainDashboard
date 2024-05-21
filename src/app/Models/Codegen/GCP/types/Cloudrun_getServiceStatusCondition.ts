@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrun_getServiceStatusCondition {
+export interface cloudrun_getServiceStatusCondition {
   // Human readable message indicating details about the current status.
-  Message?: string;
+  message?: string;
 
   // One-word CamelCase reason for the condition's current status.
-  Reason?: string;
+  reason?: string;
 
   // Status of the condition, one of True, False, Unknown.
-  Status?: string;
+  status?: string;
 
   // Type of domain mapping condition.
-  Type?: string;
+  type?: string;
 }
 
-export function Cloudrun_getServiceStatusCondition_GetTypes(): DynamicUIProps[] {
+export function cloudrun_getServiceStatusCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Message",
+      "message",
       "Human readable message indicating details about the current status.",
       [],
       true,
@@ -32,7 +32,7 @@ export function Cloudrun_getServiceStatusCondition_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.String,
-      "Reason",
+      "reason",
       "One-word CamelCase reason for the condition's current status.",
       [],
       true,
@@ -40,7 +40,7 @@ export function Cloudrun_getServiceStatusCondition_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.String,
-      "Status",
+      "status",
       "Status of the condition, one of True, False, Unknown.",
       [],
       true,
@@ -48,7 +48,7 @@ export function Cloudrun_getServiceStatusCondition_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "Type of domain mapping condition.",
       [],
       true,

@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Identityplatform_ConfigBlockingFunctionsForwardInboundCredentials {
+export interface identityplatform_ConfigBlockingFunctionsForwardInboundCredentials {
   // Whether to pass the user's OAuth identity provider's access token.
-  AccessToken?: boolean;
+  accessToken?: boolean;
 
   // Whether to pass the user's OIDC identity provider's ID token.
-  IdToken?: boolean;
+  idToken?: boolean;
 
   // Whether to pass the user's OAuth identity provider's refresh token.
-  RefreshToken?: boolean;
+  refreshToken?: boolean;
 }
 
-export function Identityplatform_ConfigBlockingFunctionsForwardInboundCredentials_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ConfigBlockingFunctionsForwardInboundCredentials_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "RefreshToken",
-      "Whether to pass the user's OAuth identity provider's refresh token.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "AccessToken",
+      "accessToken",
       "Whether to pass the user's OAuth identity provider's access token.",
       [],
       false,
@@ -37,8 +29,16 @@ export function Identityplatform_ConfigBlockingFunctionsForwardInboundCredential
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IdToken",
+      "idToken",
       "Whether to pass the user's OIDC identity provider's ID token.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "refreshToken",
+      "Whether to pass the user's OAuth identity provider's refresh token.",
       [],
       false,
       false,

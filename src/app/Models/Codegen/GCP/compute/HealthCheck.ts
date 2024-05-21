@@ -7,46 +7,77 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_HealthCheckHttp2HealthCheck,
-  Compute_HealthCheckHttp2HealthCheck_GetTypes,
-} from "../types/Compute_HealthCheckHttp2HealthCheck";
+  compute_HealthCheckHttp2HealthCheck,
+  compute_HealthCheckHttp2HealthCheck_GetTypes,
+} from "../types/compute_HealthCheckHttp2HealthCheck";
 import {
-  Compute_HealthCheckHttpsHealthCheck,
-  Compute_HealthCheckHttpsHealthCheck_GetTypes,
-} from "../types/Compute_HealthCheckHttpsHealthCheck";
+  compute_HealthCheckTcpHealthCheck,
+  compute_HealthCheckTcpHealthCheck_GetTypes,
+} from "../types/compute_HealthCheckTcpHealthCheck";
 import {
-  Compute_HealthCheckGrpcHealthCheck,
-  Compute_HealthCheckGrpcHealthCheck_GetTypes,
-} from "../types/Compute_HealthCheckGrpcHealthCheck";
+  compute_HealthCheckHttpsHealthCheck,
+  compute_HealthCheckHttpsHealthCheck_GetTypes,
+} from "../types/compute_HealthCheckHttpsHealthCheck";
 import {
-  Compute_HealthCheckSslHealthCheck,
-  Compute_HealthCheckSslHealthCheck_GetTypes,
-} from "../types/Compute_HealthCheckSslHealthCheck";
+  compute_HealthCheckHttpHealthCheck,
+  compute_HealthCheckHttpHealthCheck_GetTypes,
+} from "../types/compute_HealthCheckHttpHealthCheck";
 import {
-  Compute_HealthCheckLogConfig,
-  Compute_HealthCheckLogConfig_GetTypes,
-} from "../types/Compute_HealthCheckLogConfig";
+  compute_HealthCheckSslHealthCheck,
+  compute_HealthCheckSslHealthCheck_GetTypes,
+} from "../types/compute_HealthCheckSslHealthCheck";
 import {
-  Compute_HealthCheckHttpHealthCheck,
-  Compute_HealthCheckHttpHealthCheck_GetTypes,
-} from "../types/Compute_HealthCheckHttpHealthCheck";
+  compute_HealthCheckLogConfig,
+  compute_HealthCheckLogConfig_GetTypes,
+} from "../types/compute_HealthCheckLogConfig";
 import {
-  Compute_HealthCheckTcpHealthCheck,
-  Compute_HealthCheckTcpHealthCheck_GetTypes,
-} from "../types/Compute_HealthCheckTcpHealthCheck";
+  compute_HealthCheckGrpcHealthCheck,
+  compute_HealthCheckGrpcHealthCheck_GetTypes,
+} from "../types/compute_HealthCheckGrpcHealthCheck";
 
 export interface HealthCheckArgs {
   /*
+A nested object resource
+Structure is documented below.
+*/
+  tcpHealthCheck?: compute_HealthCheckTcpHealthCheck;
+
+  /*
+How long (in seconds) to wait before claiming failure.
+The default value is 5 seconds.  It is invalid for timeoutSec to have
+greater value than checkIntervalSec.
+*/
+  timeoutSec?: number;
+
+  /*
 An optional description of this resource. Provide this property when
 you create the resource.
 */
-  Description?: string;
+  description?: string;
 
   /*
-Configure logging on this health check.
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  /*
+A nested object resource
 Structure is documented below.
 */
-  LogConfig?: Compute_HealthCheckLogConfig;
+  httpsHealthCheck?: compute_HealthCheckHttpsHealthCheck;
+
+  /*
+A so-far healthy instance will be marked unhealthy after this many
+consecutive failures. The default value is 2.
+*/
+  unhealthyThreshold?: number;
+
+  /*
+A nested object resource
+Structure is documented below.
+*/
+  httpHealthCheck?: compute_HealthCheckHttpHealthCheck;
 
   /*
 Name of the resource. Provided by the client when the resource is
@@ -60,127 +91,123 @@ last character, which cannot be a dash.
 
 - - -
 */
-  Name?: string;
-
-  /*
-How long (in seconds) to wait before claiming failure.
-The default value is 5 seconds.  It is invalid for timeoutSec to have
-greater value than checkIntervalSec.
-*/
-  TimeoutSec?: number;
+  name?: string;
 
   /*
 A nested object resource
 Structure is documented below.
 */
-  HttpHealthCheck?: Compute_HealthCheckHttpHealthCheck;
-
-  /*
-A nested object resource
-Structure is documented below.
-*/
-  TcpHealthCheck?: Compute_HealthCheckTcpHealthCheck;
-
-  /*
-A so-far healthy instance will be marked unhealthy after this many
-consecutive failures. The default value is 2.
-*/
-  UnhealthyThreshold?: number;
+  sslHealthCheck?: compute_HealthCheckSslHealthCheck;
 
   /*
 How often (in seconds) to send a health check. The default value is 5
 seconds.
 */
-  CheckIntervalSec?: number;
+  checkIntervalSec?: number;
 
   /*
 A so-far unhealthy instance will be marked healthy after this many
 consecutive successes. The default value is 2.
 */
-  HealthyThreshold?: number;
+  healthyThreshold?: number;
+
+  /*
+Configure logging on this health check.
+Structure is documented below.
+*/
+  logConfig?: compute_HealthCheckLogConfig;
 
   /*
 A nested object resource
 Structure is documented below.
 */
-  Http2HealthCheck?: Compute_HealthCheckHttp2HealthCheck;
+  grpcHealthCheck?: compute_HealthCheckGrpcHealthCheck;
 
   /*
 A nested object resource
 Structure is documented below.
 */
-  HttpsHealthCheck?: Compute_HealthCheckHttpsHealthCheck;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  /*
-A nested object resource
-Structure is documented below.
-*/
-  GrpcHealthCheck?: Compute_HealthCheckGrpcHealthCheck;
-
-  /*
-A nested object resource
-Structure is documented below.
-*/
-  SslHealthCheck?: Compute_HealthCheckSslHealthCheck;
+  http2HealthCheck?: compute_HealthCheckHttp2HealthCheck;
 }
 export class HealthCheck extends Resource {
-  /*
-How often (in seconds) to send a health check. The default value is 5
-seconds.
-*/
-  public CheckIntervalSec?: number;
-
   // The URI of the created resource.
-  public SelfLink?: string;
-
-  /*
-A so-far unhealthy instance will be marked healthy after this many
-consecutive successes. The default value is 2.
-*/
-  public HealthyThreshold?: number;
-
-  /*
-A nested object resource
-Structure is documented below.
-*/
-  public Http2HealthCheck?: Compute_HealthCheckHttp2HealthCheck;
-
-  /*
-A nested object resource
-Structure is documented below.
-*/
-  public HttpHealthCheck?: Compute_HealthCheckHttpHealthCheck;
+  public selfLink?: string;
 
   /*
 How long (in seconds) to wait before claiming failure.
 The default value is 5 seconds.  It is invalid for timeoutSec to have
 greater value than checkIntervalSec.
 */
-  public TimeoutSec?: number;
+  public timeoutSec?: number;
 
   /*
 A so-far healthy instance will be marked unhealthy after this many
 consecutive failures. The default value is 2.
 */
-  public UnhealthyThreshold?: number;
+  public unhealthyThreshold?: number;
+
+  // Creation timestamp in RFC3339 text format.
+  public creationTimestamp?: string;
 
   /*
 An optional description of this resource. Provide this property when
 you create the resource.
 */
-  public Description?: string;
+  public description?: string;
 
   /*
 A nested object resource
 Structure is documented below.
 */
-  public GrpcHealthCheck?: Compute_HealthCheckGrpcHealthCheck;
+  public grpcHealthCheck?: compute_HealthCheckGrpcHealthCheck;
+
+  /*
+A nested object resource
+Structure is documented below.
+*/
+  public http2HealthCheck?: compute_HealthCheckHttp2HealthCheck;
+
+  /*
+A nested object resource
+Structure is documented below.
+*/
+  public httpsHealthCheck?: compute_HealthCheckHttpsHealthCheck;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  /*
+How often (in seconds) to send a health check. The default value is 5
+seconds.
+*/
+  public checkIntervalSec?: number;
+
+  /*
+A so-far unhealthy instance will be marked healthy after this many
+consecutive successes. The default value is 2.
+*/
+  public healthyThreshold?: number;
+
+  /*
+Configure logging on this health check.
+Structure is documented below.
+*/
+  public logConfig?: compute_HealthCheckLogConfig;
+
+  /*
+A nested object resource
+Structure is documented below.
+*/
+  public sslHealthCheck?: compute_HealthCheckSslHealthCheck;
+
+  /*
+A nested object resource
+Structure is documented below.
+*/
+  public httpHealthCheck?: compute_HealthCheckHttpHealthCheck;
 
   /*
 Name of the resource. Provided by the client when the resource is
@@ -194,105 +221,86 @@ last character, which cannot be a dash.
 
 - - -
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 A nested object resource
 Structure is documented below.
 */
-  public SslHealthCheck?: Compute_HealthCheckSslHealthCheck;
-
-  /*
-A nested object resource
-Structure is documented below.
-*/
-  public TcpHealthCheck?: Compute_HealthCheckTcpHealthCheck;
-
-  // Creation timestamp in RFC3339 text format.
-  public CreationTimestamp?: string;
-
-  /*
-A nested object resource
-Structure is documented below.
-*/
-  public HttpsHealthCheck?: Compute_HealthCheckHttpsHealthCheck;
-
-  /*
-Configure logging on this health check.
-Structure is documented below.
-*/
-  public LogConfig?: Compute_HealthCheckLogConfig;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
+  public tcpHealthCheck?: compute_HealthCheckTcpHealthCheck;
 
   // The type of the health check. One of HTTP, HTTPS, TCP, or SSL.
-  public Type?: string;
+  public type?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.Object,
-        "SslHealthCheck",
-        "A nested object resource\nStructure is documented below.",
-        Compute_HealthCheckSslHealthCheck_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Number,
-        "TimeoutSec",
-        "How long (in seconds) to wait before claiming failure.\nThe default value is 5 seconds.  It is invalid for timeoutSec to have\ngreater value than checkIntervalSec.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Number,
-        "CheckIntervalSec",
-        "How often (in seconds) to send a health check. The default value is 5\nseconds.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "Http2HealthCheck",
-        "A nested object resource\nStructure is documented below.",
-        Compute_HealthCheckHttp2HealthCheck_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "LogConfig",
+        "logConfig",
         "Configure logging on this health check.\nStructure is documented below.",
-        Compute_HealthCheckLogConfig_GetTypes(),
+        compute_HealthCheckLogConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "tcpHealthCheck",
+        "A nested object resource\nStructure is documented below.",
+        compute_HealthCheckTcpHealthCheck_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Number,
+        "unhealthyThreshold",
+        "A so-far healthy instance will be marked unhealthy after this many\nconsecutive failures. The default value is 2.",
+        [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035.  Specifically, the name must be 1-63 characters long and\nmatch the regular expression `a-z?` which means\nthe first character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the\nlast character, which cannot be a dash.\n\n\n- - -",
         [],
         false,
         true,
       ),
       new DynamicUIProps(
+        InputType.Object,
+        "grpcHealthCheck",
+        "A nested object resource\nStructure is documented below.",
+        compute_HealthCheckGrpcHealthCheck_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "http2HealthCheck",
+        "A nested object resource\nStructure is documented below.",
+        compute_HealthCheckHttp2HealthCheck_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "httpsHealthCheck",
+        "A nested object resource\nStructure is documented below.",
+        compute_HealthCheckHttpsHealthCheck_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
         InputType.Number,
-        "HealthyThreshold",
+        "checkIntervalSec",
+        "How often (in seconds) to send a health check. The default value is 5\nseconds.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Number,
+        "healthyThreshold",
         "A so-far unhealthy instance will be marked healthy after this many\nconsecutive successes. The default value is 2.",
         [],
         false,
@@ -300,49 +308,41 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "An optional description of this resource. Provide this property when\nyou create the resource.",
         [],
         false,
         false,
       ),
       new DynamicUIProps(
-        InputType.Object,
-        "HttpHealthCheck",
-        "A nested object resource\nStructure is documented below.",
-        Compute_HealthCheckHttpHealthCheck_GetTypes(),
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
         false,
-        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "GrpcHealthCheck",
+        "sslHealthCheck",
         "A nested object resource\nStructure is documented below.",
-        Compute_HealthCheckGrpcHealthCheck_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "TcpHealthCheck",
-        "A nested object resource\nStructure is documented below.",
-        Compute_HealthCheckTcpHealthCheck_GetTypes(),
+        compute_HealthCheckSslHealthCheck_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "UnhealthyThreshold",
-        "A so-far healthy instance will be marked unhealthy after this many\nconsecutive failures. The default value is 2.",
+        "timeoutSec",
+        "How long (in seconds) to wait before claiming failure.\nThe default value is 5 seconds.  It is invalid for timeoutSec to have\ngreater value than checkIntervalSec.",
         [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "HttpsHealthCheck",
+        "httpHealthCheck",
         "A nested object resource\nStructure is documented below.",
-        Compute_HealthCheckHttpsHealthCheck_GetTypes(),
+        compute_HealthCheckHttpHealthCheck_GetTypes(),
         false,
         false,
       ),

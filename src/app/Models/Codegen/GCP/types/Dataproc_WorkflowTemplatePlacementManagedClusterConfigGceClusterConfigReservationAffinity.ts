@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_WorkflowTemplatePlacementManagedClusterConfigGceClusterConfigReservationAffinity {
-  // Type of reservation to consume Possible values: TYPE_UNSPECIFIED, NO_RESERVATION, ANY_RESERVATION, SPECIFIC_RESERVATION
-  ConsumeReservationType?: string;
-
+export interface dataproc_WorkflowTemplatePlacementManagedClusterConfigGceClusterConfigReservationAffinity {
   // Corresponds to the label key of reservation resource.
-  Key?: string;
+  key?: string;
 
   // Corresponds to the label values of reservation resource.
-  Values?: Array<string>;
+  values?: Array<string>;
+
+  // Type of reservation to consume Possible values: TYPE_UNSPECIFIED, NO_RESERVATION, ANY_RESERVATION, SPECIFIC_RESERVATION
+  consumeReservationType?: string;
 }
 
-export function Dataproc_WorkflowTemplatePlacementManagedClusterConfigGceClusterConfigReservationAffinity_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplatePlacementManagedClusterConfigGceClusterConfigReservationAffinity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ConsumeReservationType",
+      "consumeReservationType",
       "Type of reservation to consume Possible values: TYPE_UNSPECIFIED, NO_RESERVATION, ANY_RESERVATION, SPECIFIC_RESERVATION",
       [],
       false,
@@ -29,7 +29,7 @@ export function Dataproc_WorkflowTemplatePlacementManagedClusterConfigGceCluster
     ),
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "key",
       "Corresponds to the label key of reservation resource.",
       [],
       false,
@@ -37,7 +37,7 @@ export function Dataproc_WorkflowTemplatePlacementManagedClusterConfigGceCluster
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Values",
+      "values",
       "Corresponds to the label values of reservation resource.",
       InputType_String_GetTypes(),
       false,

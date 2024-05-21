@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfig,
-  Gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfig_GetTypes,
-} from "./Gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfig";
+  gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfig,
+  gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfig_GetTypes,
+} from "./gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfig";
 
-export interface Gkehub_FeatureMembershipPolicycontroller {
+export interface gkehub_FeatureMembershipPolicycontroller {
   // Policy Controller configuration for the cluster. Structure is documented below.
-  PolicyControllerHubConfig?: Gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfig;
+  policyControllerHubConfig?: gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfig;
 
   // Version of Policy Controller to install. Defaults to the latest version.
-  Version?: string;
+  version?: string;
 }
 
-export function Gkehub_FeatureMembershipPolicycontroller_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureMembershipPolicycontroller_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "PolicyControllerHubConfig",
+      "policyControllerHubConfig",
       "Policy Controller configuration for the cluster. Structure is documented below.",
-      Gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfig_GetTypes(),
+      gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Version",
+      "version",
       "Version of Policy Controller to install. Defaults to the latest version.",
       [],
       false,

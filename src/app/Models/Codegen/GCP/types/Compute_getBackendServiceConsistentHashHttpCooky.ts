@@ -6,47 +6,47 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_getBackendServiceConsistentHashHttpCookyTtl,
-  Compute_getBackendServiceConsistentHashHttpCookyTtl_GetTypes,
-} from "./Compute_getBackendServiceConsistentHashHttpCookyTtl";
+  compute_getBackendServiceConsistentHashHttpCookyTtl,
+  compute_getBackendServiceConsistentHashHttpCookyTtl_GetTypes,
+} from "./compute_getBackendServiceConsistentHashHttpCookyTtl";
 
-export interface Compute_getBackendServiceConsistentHashHttpCooky {
+export interface compute_getBackendServiceConsistentHashHttpCooky {
+  // Lifetime of the cookie.
+  ttls?: Array<compute_getBackendServiceConsistentHashHttpCookyTtl>;
+
   /*
 The name of the Backend Service.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   // Path to set for the cookie.
-  Path?: string;
-
-  // Lifetime of the cookie.
-  Ttls?: Array<Compute_getBackendServiceConsistentHashHttpCookyTtl>;
+  path?: string;
 }
 
-export function Compute_getBackendServiceConsistentHashHttpCooky_GetTypes(): DynamicUIProps[] {
+export function compute_getBackendServiceConsistentHashHttpCooky_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "Ttls",
-      "Lifetime of the cookie.",
-      Compute_getBackendServiceConsistentHashHttpCookyTtl_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Name",
-      "The name of the Backend Service.\n\n- - -",
+      "path",
+      "Path to set for the cookie.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
+      InputType.Array,
+      "ttls",
+      "Lifetime of the cookie.",
+      compute_getBackendServiceConsistentHashHttpCookyTtl_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "Path",
-      "Path to set for the cookie.",
+      "name",
+      "The name of the Backend Service.\n\n- - -",
       [],
       true,
       false,

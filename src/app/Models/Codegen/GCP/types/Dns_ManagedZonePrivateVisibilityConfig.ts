@@ -6,40 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dns_ManagedZonePrivateVisibilityConfigGkeCluster,
-  Dns_ManagedZonePrivateVisibilityConfigGkeCluster_GetTypes,
-} from "./Dns_ManagedZonePrivateVisibilityConfigGkeCluster";
+  dns_ManagedZonePrivateVisibilityConfigGkeCluster,
+  dns_ManagedZonePrivateVisibilityConfigGkeCluster_GetTypes,
+} from "./dns_ManagedZonePrivateVisibilityConfigGkeCluster";
 import {
-  Dns_ManagedZonePrivateVisibilityConfigNetwork,
-  Dns_ManagedZonePrivateVisibilityConfigNetwork_GetTypes,
-} from "./Dns_ManagedZonePrivateVisibilityConfigNetwork";
+  dns_ManagedZonePrivateVisibilityConfigNetwork,
+  dns_ManagedZonePrivateVisibilityConfigNetwork_GetTypes,
+} from "./dns_ManagedZonePrivateVisibilityConfigNetwork";
 
-export interface Dns_ManagedZonePrivateVisibilityConfig {
+export interface dns_ManagedZonePrivateVisibilityConfig {
   /*
 The list of Google Kubernetes Engine clusters that can see this zone.
 Structure is documented below.
 */
-  GkeClusters?: Array<Dns_ManagedZonePrivateVisibilityConfigGkeCluster>;
+  gkeClusters?: Array<dns_ManagedZonePrivateVisibilityConfigGkeCluster>;
 
   //
-  Networks?: Array<Dns_ManagedZonePrivateVisibilityConfigNetwork>;
+  networks?: Array<dns_ManagedZonePrivateVisibilityConfigNetwork>;
 }
 
-export function Dns_ManagedZonePrivateVisibilityConfig_GetTypes(): DynamicUIProps[] {
+export function dns_ManagedZonePrivateVisibilityConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "GkeClusters",
-      "The list of Google Kubernetes Engine clusters that can see this zone.\nStructure is documented below.",
-      Dns_ManagedZonePrivateVisibilityConfigGkeCluster_GetTypes(),
+      "networks",
+      "",
+      dns_ManagedZonePrivateVisibilityConfigNetwork_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Networks",
-      "",
-      Dns_ManagedZonePrivateVisibilityConfigNetwork_GetTypes(),
+      "gkeClusters",
+      "The list of Google Kubernetes Engine clusters that can see this zone.\nStructure is documented below.",
+      dns_ManagedZonePrivateVisibilityConfigGkeCluster_GetTypes(),
       false,
       false,
     ),

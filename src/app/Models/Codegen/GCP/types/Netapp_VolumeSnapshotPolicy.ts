@@ -6,93 +6,93 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Netapp_VolumeSnapshotPolicyWeeklySchedule,
-  Netapp_VolumeSnapshotPolicyWeeklySchedule_GetTypes,
-} from "./Netapp_VolumeSnapshotPolicyWeeklySchedule";
+  netapp_VolumeSnapshotPolicyHourlySchedule,
+  netapp_VolumeSnapshotPolicyHourlySchedule_GetTypes,
+} from "./netapp_VolumeSnapshotPolicyHourlySchedule";
 import {
-  Netapp_VolumeSnapshotPolicyDailySchedule,
-  Netapp_VolumeSnapshotPolicyDailySchedule_GetTypes,
-} from "./Netapp_VolumeSnapshotPolicyDailySchedule";
+  netapp_VolumeSnapshotPolicyMonthlySchedule,
+  netapp_VolumeSnapshotPolicyMonthlySchedule_GetTypes,
+} from "./netapp_VolumeSnapshotPolicyMonthlySchedule";
 import {
-  Netapp_VolumeSnapshotPolicyHourlySchedule,
-  Netapp_VolumeSnapshotPolicyHourlySchedule_GetTypes,
-} from "./Netapp_VolumeSnapshotPolicyHourlySchedule";
+  netapp_VolumeSnapshotPolicyWeeklySchedule,
+  netapp_VolumeSnapshotPolicyWeeklySchedule_GetTypes,
+} from "./netapp_VolumeSnapshotPolicyWeeklySchedule";
 import {
-  Netapp_VolumeSnapshotPolicyMonthlySchedule,
-  Netapp_VolumeSnapshotPolicyMonthlySchedule_GetTypes,
-} from "./Netapp_VolumeSnapshotPolicyMonthlySchedule";
+  netapp_VolumeSnapshotPolicyDailySchedule,
+  netapp_VolumeSnapshotPolicyDailySchedule_GetTypes,
+} from "./netapp_VolumeSnapshotPolicyDailySchedule";
 
-export interface Netapp_VolumeSnapshotPolicy {
+export interface netapp_VolumeSnapshotPolicy {
+  /*
+Weekly schedule policy.
+Structure is documented below.
+*/
+  weeklySchedule?: netapp_VolumeSnapshotPolicyWeeklySchedule;
+
   /*
 Daily schedule policy.
 Structure is documented below.
 */
-  DailySchedule?: Netapp_VolumeSnapshotPolicyDailySchedule;
+  dailySchedule?: netapp_VolumeSnapshotPolicyDailySchedule;
 
   /*
 Enables automated snapshot creation according to defined schedule. Default is false.
 To disable automatic snapshot creation you have to remove the whole snapshot_policy block.
 */
-  Enabled?: boolean;
+  enabled?: boolean;
 
   /*
 Hourly schedule policy.
 Structure is documented below.
 */
-  HourlySchedule?: Netapp_VolumeSnapshotPolicyHourlySchedule;
+  hourlySchedule?: netapp_VolumeSnapshotPolicyHourlySchedule;
 
   /*
 Monthly schedule policy.
 Structure is documented below.
 */
-  MonthlySchedule?: Netapp_VolumeSnapshotPolicyMonthlySchedule;
-
-  /*
-Weekly schedule policy.
-Structure is documented below.
-*/
-  WeeklySchedule?: Netapp_VolumeSnapshotPolicyWeeklySchedule;
+  monthlySchedule?: netapp_VolumeSnapshotPolicyMonthlySchedule;
 }
 
-export function Netapp_VolumeSnapshotPolicy_GetTypes(): DynamicUIProps[] {
+export function netapp_VolumeSnapshotPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "HourlySchedule",
-      "Hourly schedule policy.\nStructure is documented below.",
-      Netapp_VolumeSnapshotPolicyHourlySchedule_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "MonthlySchedule",
+      "monthlySchedule",
       "Monthly schedule policy.\nStructure is documented below.",
-      Netapp_VolumeSnapshotPolicyMonthlySchedule_GetTypes(),
+      netapp_VolumeSnapshotPolicyMonthlySchedule_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "WeeklySchedule",
+      "weeklySchedule",
       "Weekly schedule policy.\nStructure is documented below.",
-      Netapp_VolumeSnapshotPolicyWeeklySchedule_GetTypes(),
+      netapp_VolumeSnapshotPolicyWeeklySchedule_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "DailySchedule",
+      "dailySchedule",
       "Daily schedule policy.\nStructure is documented below.",
-      Netapp_VolumeSnapshotPolicyDailySchedule_GetTypes(),
+      netapp_VolumeSnapshotPolicyDailySchedule_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Enables automated snapshot creation according to defined schedule. Default is false.\nTo disable automatic snapshot creation you have to remove the whole snapshot_policy block.",
       [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "hourlySchedule",
+      "Hourly schedule policy.\nStructure is documented below.",
+      netapp_VolumeSnapshotPolicyHourlySchedule_GetTypes(),
       false,
       false,
     ),

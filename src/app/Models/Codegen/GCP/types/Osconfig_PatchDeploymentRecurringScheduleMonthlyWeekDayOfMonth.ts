@@ -6,33 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_PatchDeploymentRecurringScheduleMonthlyWeekDayOfMonth {
-  // Week number in a month. 1-4 indicates the 1st to 4th week of the month. -1 indicates the last week of the month.
-  WeekOrdinal?: number;
-
+export interface osconfig_PatchDeploymentRecurringScheduleMonthlyWeekDayOfMonth {
   /*
 A day of the week.
 Possible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
 */
-  DayOfWeek?: string;
+  dayOfWeek?: string;
 
   // Represents the number of days before or after the given week day of month that the patch deployment is scheduled for.
-  DayOffset?: number;
+  dayOffset?: number;
+
+  // Week number in a month. 1-4 indicates the 1st to 4th week of the month. -1 indicates the last week of the month.
+  weekOrdinal?: number;
 }
 
-export function Osconfig_PatchDeploymentRecurringScheduleMonthlyWeekDayOfMonth_GetTypes(): DynamicUIProps[] {
+export function osconfig_PatchDeploymentRecurringScheduleMonthlyWeekDayOfMonth_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "WeekOrdinal",
-      "Week number in a month. 1-4 indicates the 1st to 4th week of the month. -1 indicates the last week of the month.",
-      [],
-      true,
-      true,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "DayOfWeek",
+      "dayOfWeek",
       "A day of the week.\nPossible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.",
       [],
       true,
@@ -40,10 +32,18 @@ export function Osconfig_PatchDeploymentRecurringScheduleMonthlyWeekDayOfMonth_G
     ),
     new DynamicUIProps(
       InputType.Number,
-      "DayOffset",
+      "dayOffset",
       "Represents the number of days before or after the given week day of month that the patch deployment is scheduled for.",
       [],
       false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "weekOrdinal",
+      "Week number in a month. 1-4 indicates the 1st to 4th week of the month. -1 indicates the last week of the month.",
+      [],
+      true,
       true,
     ),
   ];

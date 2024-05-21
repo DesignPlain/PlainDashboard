@@ -6,34 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Firebaserules_RulesetSourceFile {
-  // Textual Content.
-  Content?: string;
-
+export interface firebaserules_RulesetSourceFile {
   // Fingerprint (e.g. github sha) associated with the `File`.
-  Fingerprint?: string;
+  fingerprint?: string;
 
   /*
 File name.
 
 - - -
 */
-  Name?: string;
+  name?: string;
+
+  // Textual Content.
+  content?: string;
 }
 
-export function Firebaserules_RulesetSourceFile_GetTypes(): DynamicUIProps[] {
+export function firebaserules_RulesetSourceFile_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Content",
-      "Textual Content.",
-      [],
-      true,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Fingerprint",
+      "fingerprint",
       "Fingerprint (e.g. github sha) associated with the `File`.",
       [],
       false,
@@ -41,8 +33,16 @@ export function Firebaserules_RulesetSourceFile_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "File name.\n\n- - -",
+      [],
+      true,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "content",
+      "Textual Content.",
       [],
       true,
       true,

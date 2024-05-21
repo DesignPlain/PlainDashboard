@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfigPredicate {
+export interface securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfigPredicate {
   // Description of the expression
-  Description?: string;
+  description?: string;
 
   // Textual representation of an expression in Common Expression Language syntax.
-  Expression?: string;
+  expression?: string;
 
   // String indicating the location of the expression for error reporting, e.g. a file name and a position in the file
-  Location?: string;
+  location?: string;
 
   // Title for the expression, i.e. a short string describing its purpose.
-  Title?: string;
+  title?: string;
 }
 
-export function Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfigPredicate_GetTypes(): DynamicUIProps[] {
+export function securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfigPredicate_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Location",
+      "expression",
+      "Textual representation of an expression in Common Expression Language syntax.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "location",
       "String indicating the location of the expression for error reporting, e.g. a file name and a position in the file",
       [],
       false,
@@ -32,7 +40,7 @@ export function Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAn
     ),
     new DynamicUIProps(
       InputType.String,
-      "Title",
+      "title",
       "Title for the expression, i.e. a short string describing its purpose.",
       [],
       false,
@@ -40,18 +48,10 @@ export function Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAn
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "Description of the expression",
       [],
       false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Expression",
-      "Textual representation of an expression in Common Expression Language syntax.",
-      [],
-      true,
       false,
     ),
   ];

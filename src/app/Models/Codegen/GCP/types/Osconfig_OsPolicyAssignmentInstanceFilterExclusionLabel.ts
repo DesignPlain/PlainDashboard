@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_OsPolicyAssignmentInstanceFilterExclusionLabel {
+export interface osconfig_OsPolicyAssignmentInstanceFilterExclusionLabel {
   /*
 Labels are identified by key/value pairs in this map.
 A VM should contain all the key/value pairs specified in this map to be
 selected.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 }
 
-export function Osconfig_OsPolicyAssignmentInstanceFilterExclusionLabel_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentInstanceFilterExclusionLabel_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Map,
-      "Labels",
+      "labels",
       "Labels are identified by key/value pairs in this map.\nA VM should contain all the key/value pairs specified in this map to be\nselected.",
       InputType_Map_GetTypes(),
       false,

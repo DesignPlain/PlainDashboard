@@ -7,120 +7,120 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionJobTriggerTrigger,
-  Dataloss_PreventionJobTriggerTrigger_GetTypes,
-} from "../types/Dataloss_PreventionJobTriggerTrigger";
+  dataloss_PreventionJobTriggerInspectJob,
+  dataloss_PreventionJobTriggerInspectJob_GetTypes,
+} from "../types/dataloss_PreventionJobTriggerInspectJob";
 import {
-  Dataloss_PreventionJobTriggerInspectJob,
-  Dataloss_PreventionJobTriggerInspectJob_GetTypes,
-} from "../types/Dataloss_PreventionJobTriggerInspectJob";
+  dataloss_PreventionJobTriggerTrigger,
+  dataloss_PreventionJobTriggerTrigger_GetTypes,
+} from "../types/dataloss_PreventionJobTriggerTrigger";
 
 export interface PreventionJobTriggerArgs {
-  /*
-What event needs to occur for a new job to be started.
-Structure is documented below.
-*/
-  Triggers?: Array<Dataloss_PreventionJobTriggerTrigger>;
-
   // A short description of where the data is coming from. Will be stored once in the job. 256 max length.
-  Description?: string;
+  description?: string;
 
   // User set display name of the job trigger.
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 Controls what and how to inspect for findings.
 Structure is documented below.
 */
-  InspectJob?: Dataloss_PreventionJobTriggerInspectJob;
+  inspectJob?: dataloss_PreventionJobTriggerInspectJob;
 
   /*
 The parent of the trigger, either in the format `projects/{{project}}`
 or `projects/{{project}}/locations/{{location}}`
 */
-  Parent?: string;
+  parent?: string;
 
   /*
 Whether the trigger is currently active.
 Default value is `HEALTHY`.
 Possible values are: `PAUSED`, `HEALTHY`, `CANCELLED`.
 */
-  Status?: string;
+  status?: string;
 
   /*
 The trigger id can contain uppercase and lowercase letters, numbers, and hyphens;
 that is, it must match the regular expression: [a-zA-Z\d-_]+.
 The maximum length is 100 characters. Can be empty to allow the system to generate one.
 */
-  TriggerId?: string;
+  triggerId?: string;
+
+  /*
+What event needs to occur for a new job to be started.
+Structure is documented below.
+*/
+  triggers?: Array<dataloss_PreventionJobTriggerTrigger>;
 }
 export class PreventionJobTrigger extends Resource {
-  // A short description of where the data is coming from. Will be stored once in the job. 256 max length.
-  public Description?: string;
-
-  // User set display name of the job trigger.
-  public DisplayName?: string;
-
-  // The timestamp of the last time this trigger executed.
-  public LastRunTime?: string;
-
-  /*
-The trigger id can contain uppercase and lowercase letters, numbers, and hyphens;
-that is, it must match the regular expression: [a-zA-Z\d-_]+.
-The maximum length is 100 characters. Can be empty to allow the system to generate one.
-*/
-  public TriggerId?: string;
-
   /*
 (Output)
 The creation timestamp of an inspectTemplate. Set by the server.
 */
-  public CreateTime?: string;
+  public createTime?: string;
 
-  // Name describing the field excluded from scanning.
-  public Name?: string;
+  // A short description of where the data is coming from. Will be stored once in the job. 256 max length.
+  public description?: string;
+
+  /*
+Controls what and how to inspect for findings.
+Structure is documented below.
+*/
+  public inspectJob?: dataloss_PreventionJobTriggerInspectJob;
 
   /*
 The parent of the trigger, either in the format `projects/{{project}}`
 or `projects/{{project}}/locations/{{location}}`
 */
-  public Parent?: string;
+  public parent?: string;
+
+  /*
+The trigger id can contain uppercase and lowercase letters, numbers, and hyphens;
+that is, it must match the regular expression: [a-zA-Z\d-_]+.
+The maximum length is 100 characters. Can be empty to allow the system to generate one.
+*/
+  public triggerId?: string;
+
+  // User set display name of the job trigger.
+  public displayName?: string;
+
+  // The timestamp of the last time this trigger executed.
+  public lastRunTime?: string;
+
+  // Name describing the field excluded from scanning.
+  public name?: string;
 
   /*
 Whether the trigger is currently active.
 Default value is `HEALTHY`.
 Possible values are: `PAUSED`, `HEALTHY`, `CANCELLED`.
 */
-  public Status?: string;
+  public status?: string;
 
   /*
 What event needs to occur for a new job to be started.
 Structure is documented below.
 */
-  public Triggers?: Array<Dataloss_PreventionJobTriggerTrigger>;
+  public triggers?: Array<dataloss_PreventionJobTriggerTrigger>;
 
   // The last update timestamp of an inspectTemplate. Set by the server.
-  public UpdateTime?: string;
-
-  /*
-Controls what and how to inspect for findings.
-Structure is documented below.
-*/
-  public InspectJob?: Dataloss_PreventionJobTriggerInspectJob;
+  public updateTime?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "Triggers",
+        "triggers",
         "What event needs to occur for a new job to be started.\nStructure is documented below.",
-        Dataloss_PreventionJobTriggerTrigger_GetTypes(),
+        dataloss_PreventionJobTriggerTrigger_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "A short description of where the data is coming from. Will be stored once in the job. 256 max length.",
         [],
         false,
@@ -128,7 +128,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "User set display name of the job trigger.",
         [],
         false,
@@ -136,15 +136,15 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "InspectJob",
+        "inspectJob",
         "Controls what and how to inspect for findings.\nStructure is documented below.",
-        Dataloss_PreventionJobTriggerInspectJob_GetTypes(),
+        dataloss_PreventionJobTriggerInspectJob_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Parent",
+        "parent",
         "The parent of the trigger, either in the format `projects/{{project}}`\nor `projects/{{project}}/locations/{{location}}`",
         [],
         true,
@@ -152,7 +152,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Status",
+        "status",
         "Whether the trigger is currently active.\nDefault value is `HEALTHY`.\nPossible values are: `PAUSED`, `HEALTHY`, `CANCELLED`.",
         [],
         false,
@@ -160,7 +160,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "TriggerId",
+        "triggerId",
         "The trigger id can contain uppercase and lowercase letters, numbers, and hyphens;\nthat is, it must match the regular expression: [a-zA-Z\\d-_]+.\nThe maximum length is 100 characters. Can be empty to allow the system to generate one.",
         [],
         false,

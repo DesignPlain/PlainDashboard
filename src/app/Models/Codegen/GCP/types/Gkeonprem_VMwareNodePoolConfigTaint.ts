@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_VMwareNodePoolConfigTaint {
+export interface gkeonprem_VMwareNodePoolConfigTaint {
+  // Value associated with the effect.
+  value?: string;
+
   /*
 Available taint effects.
 Possible values are: `EFFECT_UNSPECIFIED`, `NO_SCHEDULE`, `PREFER_NO_SCHEDULE`, `NO_EXECUTE`.
 */
-  Effect?: string;
+  effect?: string;
 
   // Key associated with the effect.
-  Key?: string;
-
-  // Value associated with the effect.
-  Value?: string;
+  key?: string;
 }
 
-export function Gkeonprem_VMwareNodePoolConfigTaint_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareNodePoolConfigTaint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Effect",
+      "value",
+      "Value associated with the effect.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "effect",
       "Available taint effects.\nPossible values are: `EFFECT_UNSPECIFIED`, `NO_SCHEDULE`, `PREFER_NO_SCHEDULE`, `NO_EXECUTE`.",
       [],
       false,
@@ -32,16 +40,8 @@ export function Gkeonprem_VMwareNodePoolConfigTaint_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "key",
       "Key associated with the effect.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Value",
-      "Value associated with the effect.",
       [],
       true,
       false,

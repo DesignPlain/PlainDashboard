@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Iam_WorkforcePoolProviderOidcClientSecretValue {
+export interface iam_WorkforcePoolProviderOidcClientSecretValue {
   /*
 The plain text of the client secret value.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  PlainText?: string;
+  plainText?: string;
 
   /*
 (Output)
 A thumbprint to represent the current client secret value.
 */
-  Thumbprint?: string;
+  thumbprint?: string;
 }
 
-export function Iam_WorkforcePoolProviderOidcClientSecretValue_GetTypes(): DynamicUIProps[] {
+export function iam_WorkforcePoolProviderOidcClientSecretValue_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PlainText",
+      "plainText",
       "The plain text of the client secret value.\n**Note**: This property is sensitive and will not be displayed in the plan.",
       [],
       true,
@@ -32,7 +32,7 @@ export function Iam_WorkforcePoolProviderOidcClientSecretValue_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "Thumbprint",
+      "thumbprint",
       "(Output)\nA thumbprint to represent the current client secret value.",
       [],
       false,

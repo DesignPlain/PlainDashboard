@@ -6,57 +6,35 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_URLMapPathMatcherRouteRuleRouteActionRetryPolicy,
-  Compute_URLMapPathMatcherRouteRuleRouteActionRetryPolicy_GetTypes,
-} from "./Compute_URLMapPathMatcherRouteRuleRouteActionRetryPolicy";
+  compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendService,
+  compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendService_GetTypes,
+} from "./compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendService";
 import {
-  Compute_URLMapPathMatcherRouteRuleRouteActionTimeout,
-  Compute_URLMapPathMatcherRouteRuleRouteActionTimeout_GetTypes,
-} from "./Compute_URLMapPathMatcherRouteRuleRouteActionTimeout";
+  compute_URLMapPathMatcherRouteRuleRouteActionCorsPolicy,
+  compute_URLMapPathMatcherRouteRuleRouteActionCorsPolicy_GetTypes,
+} from "./compute_URLMapPathMatcherRouteRuleRouteActionCorsPolicy";
 import {
-  Compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite,
-  Compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite_GetTypes,
-} from "./Compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite";
+  compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy,
+  compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy_GetTypes,
+} from "./compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy";
 import {
-  Compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendService,
-  Compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendService_GetTypes,
-} from "./Compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendService";
+  compute_URLMapPathMatcherRouteRuleRouteActionRequestMirrorPolicy,
+  compute_URLMapPathMatcherRouteRuleRouteActionRequestMirrorPolicy_GetTypes,
+} from "./compute_URLMapPathMatcherRouteRuleRouteActionRequestMirrorPolicy";
 import {
-  Compute_URLMapPathMatcherRouteRuleRouteActionCorsPolicy,
-  Compute_URLMapPathMatcherRouteRuleRouteActionCorsPolicy_GetTypes,
-} from "./Compute_URLMapPathMatcherRouteRuleRouteActionCorsPolicy";
+  compute_URLMapPathMatcherRouteRuleRouteActionRetryPolicy,
+  compute_URLMapPathMatcherRouteRuleRouteActionRetryPolicy_GetTypes,
+} from "./compute_URLMapPathMatcherRouteRuleRouteActionRetryPolicy";
 import {
-  Compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy,
-  Compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy_GetTypes,
-} from "./Compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy";
+  compute_URLMapPathMatcherRouteRuleRouteActionTimeout,
+  compute_URLMapPathMatcherRouteRuleRouteActionTimeout_GetTypes,
+} from "./compute_URLMapPathMatcherRouteRuleRouteActionTimeout";
 import {
-  Compute_URLMapPathMatcherRouteRuleRouteActionRequestMirrorPolicy,
-  Compute_URLMapPathMatcherRouteRuleRouteActionRequestMirrorPolicy_GetTypes,
-} from "./Compute_URLMapPathMatcherRouteRuleRouteActionRequestMirrorPolicy";
+  compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite,
+  compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite_GetTypes,
+} from "./compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite";
 
-export interface Compute_URLMapPathMatcherRouteRuleRouteAction {
-  /*
-Specifies the retry policy associated with this route.
-Structure is documented below.
-*/
-  RetryPolicy?: Compute_URLMapPathMatcherRouteRuleRouteActionRetryPolicy;
-
-  /*
-Specifies the timeout for the selected route. Timeout is computed from the time
-the request is has been fully processed (i.e. end-of-stream) up until the
-response has been completely processed. Timeout includes all retries. If not
-specified, the default value is 15 seconds.
-Structure is documented below.
-*/
-  Timeout?: Compute_URLMapPathMatcherRouteRuleRouteActionTimeout;
-
-  /*
-The spec to modify the URL of the request, prior to forwarding the request to
-the matched service
-Structure is documented below.
-*/
-  UrlRewrite?: Compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite;
-
+export interface compute_URLMapPathMatcherRouteRuleRouteAction {
   /*
 A list of weighted backend services to send traffic to when a route match
 occurs. The weights determine the fraction of traffic that flows to their
@@ -68,14 +46,14 @@ transformations are applied depending on additional settings specified in this
 HttpRouteAction.
 Structure is documented below.
 */
-  WeightedBackendServices?: Array<Compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendService>;
+  weightedBackendServices?: Array<compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendService>;
 
   /*
 The specification for allowing client side cross-origin requests. Please see W3C
 Recommendation for Cross Origin Resource Sharing
 Structure is documented below.
 */
-  CorsPolicy?: Compute_URLMapPathMatcherRouteRuleRouteActionCorsPolicy;
+  corsPolicy?: compute_URLMapPathMatcherRouteRuleRouteActionCorsPolicy;
 
   /*
 The specification for fault injection introduced into traffic to test the
@@ -87,7 +65,7 @@ Loadbalancer for a percentage of requests. timeout and retry_policy will be
 ignored by clients that are configured with a fault_injection_policy.
 Structure is documented below.
 */
-  FaultInjectionPolicy?: Compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy;
+  faultInjectionPolicy?: compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy;
 
   /*
 Specifies the policy on how requests intended for the route's backends are
@@ -96,64 +74,86 @@ responses from the shadow service. Prior to sending traffic to the shadow
 service, the host / authority header is suffixed with -shadow.
 Structure is documented below.
 */
-  RequestMirrorPolicy?: Compute_URLMapPathMatcherRouteRuleRouteActionRequestMirrorPolicy;
+  requestMirrorPolicy?: compute_URLMapPathMatcherRouteRuleRouteActionRequestMirrorPolicy;
+
+  /*
+Specifies the retry policy associated with this route.
+Structure is documented below.
+*/
+  retryPolicy?: compute_URLMapPathMatcherRouteRuleRouteActionRetryPolicy;
+
+  /*
+Specifies the timeout for the selected route. Timeout is computed from the time
+the request is has been fully processed (i.e. end-of-stream) up until the
+response has been completely processed. Timeout includes all retries. If not
+specified, the default value is 15 seconds.
+Structure is documented below.
+*/
+  timeout?: compute_URLMapPathMatcherRouteRuleRouteActionTimeout;
+
+  /*
+The spec to modify the URL of the request, prior to forwarding the request to
+the matched service
+Structure is documented below.
+*/
+  urlRewrite?: compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite;
 }
 
-export function Compute_URLMapPathMatcherRouteRuleRouteAction_GetTypes(): DynamicUIProps[] {
+export function compute_URLMapPathMatcherRouteRuleRouteAction_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "RetryPolicy",
-      "Specifies the retry policy associated with this route.\nStructure is documented below.",
-      Compute_URLMapPathMatcherRouteRuleRouteActionRetryPolicy_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "Timeout",
-      "Specifies the timeout for the selected route. Timeout is computed from the time\nthe request is has been fully processed (i.e. end-of-stream) up until the\nresponse has been completely processed. Timeout includes all retries. If not\nspecified, the default value is 15 seconds.\nStructure is documented below.",
-      Compute_URLMapPathMatcherRouteRuleRouteActionTimeout_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "UrlRewrite",
-      "The spec to modify the URL of the request, prior to forwarding the request to\nthe matched service\nStructure is documented below.",
-      Compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "WeightedBackendServices",
+      "weightedBackendServices",
       "A list of weighted backend services to send traffic to when a route match\noccurs. The weights determine the fraction of traffic that flows to their\ncorresponding backend service. If all traffic needs to go to a single backend\nservice, there must be one  weightedBackendService with weight set to a non 0\nnumber. Once a backendService is identified and before forwarding the request to\nthe backend service, advanced routing actions like Url rewrites and header\ntransformations are applied depending on additional settings specified in this\nHttpRouteAction.\nStructure is documented below.",
-      Compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendService_GetTypes(),
+      compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendService_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "CorsPolicy",
+      "corsPolicy",
       "The specification for allowing client side cross-origin requests. Please see W3C\nRecommendation for Cross Origin Resource Sharing\nStructure is documented below.",
-      Compute_URLMapPathMatcherRouteRuleRouteActionCorsPolicy_GetTypes(),
+      compute_URLMapPathMatcherRouteRuleRouteActionCorsPolicy_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "FaultInjectionPolicy",
+      "faultInjectionPolicy",
       "The specification for fault injection introduced into traffic to test the\nresiliency of clients to backend service failure. As part of fault injection,\nwhen clients send requests to a backend service, delays can be introduced by\nLoadbalancer on a percentage of requests before sending those request to the\nbackend service. Similarly requests from clients can be aborted by the\nLoadbalancer for a percentage of requests. timeout and retry_policy will be\nignored by clients that are configured with a fault_injection_policy.\nStructure is documented below.",
-      Compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy_GetTypes(),
+      compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "RequestMirrorPolicy",
+      "requestMirrorPolicy",
       "Specifies the policy on how requests intended for the route's backends are\nshadowed to a separate mirrored backend service. Loadbalancer does not wait for\nresponses from the shadow service. Prior to sending traffic to the shadow\nservice, the host / authority header is suffixed with -shadow.\nStructure is documented below.",
-      Compute_URLMapPathMatcherRouteRuleRouteActionRequestMirrorPolicy_GetTypes(),
+      compute_URLMapPathMatcherRouteRuleRouteActionRequestMirrorPolicy_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "retryPolicy",
+      "Specifies the retry policy associated with this route.\nStructure is documented below.",
+      compute_URLMapPathMatcherRouteRuleRouteActionRetryPolicy_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "timeout",
+      "Specifies the timeout for the selected route. Timeout is computed from the time\nthe request is has been fully processed (i.e. end-of-stream) up until the\nresponse has been completely processed. Timeout includes all retries. If not\nspecified, the default value is 15 seconds.\nStructure is documented below.",
+      compute_URLMapPathMatcherRouteRuleRouteActionTimeout_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "urlRewrite",
+      "The spec to modify the URL of the request, prior to forwarding the request to\nthe matched service\nStructure is documented below.",
+      compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite_GetTypes(),
       false,
       false,
     ),

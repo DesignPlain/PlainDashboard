@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterMasterAuthClientCertificateConfig {
+export interface container_ClusterMasterAuthClientCertificateConfig {
   // Whether client certificate authorization is enabled for this cluster.
-  IssueClientCertificate?: boolean;
+  issueClientCertificate?: boolean;
 }
 
-export function Container_ClusterMasterAuthClientCertificateConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterMasterAuthClientCertificateConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "IssueClientCertificate",
+      "issueClientCertificate",
       "Whether client certificate authorization is enabled for this cluster.",
       [],
       true,

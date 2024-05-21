@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Firebase_ExtensionsInstanceErrorStatus {
+export interface firebase_ExtensionsInstanceErrorStatus {
   // The status code, which should be an enum value of google.rpc.Code.
-  Code?: number;
+  code?: number;
 
   // A list of messages that carry the error details.
-  Details?: Array<Map<string, InputType.String>>;
+  details?: Array<Map<string, string>>;
 
   // A developer-facing error message, which should be in English.
-  Message?: string;
+  message?: string;
 }
 
-export function Firebase_ExtensionsInstanceErrorStatus_GetTypes(): DynamicUIProps[] {
+export function firebase_ExtensionsInstanceErrorStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "message",
+      "A developer-facing error message, which should be in English.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Number,
-      "Code",
+      "code",
       "The status code, which should be an enum value of google.rpc.Code.",
       [],
       false,
@@ -29,17 +37,9 @@ export function Firebase_ExtensionsInstanceErrorStatus_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Details",
+      "details",
       "A list of messages that carry the error details.",
       InputType_Map_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Message",
-      "A developer-facing error message, which should be in English.",
-      [],
       false,
       false,
     ),

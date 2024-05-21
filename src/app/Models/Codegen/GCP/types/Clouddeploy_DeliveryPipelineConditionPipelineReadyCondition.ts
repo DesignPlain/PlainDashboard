@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Clouddeploy_DeliveryPipelineConditionPipelineReadyCondition {
+export interface clouddeploy_DeliveryPipelineConditionPipelineReadyCondition {
   // True if the Pipeline is in a valid state. Otherwise at least one condition in `PipelineCondition` is in an invalid state. Iterate over those conditions and see which condition(s) has status = false to find out what is wrong with the Pipeline.
-  Status?: boolean;
+  status?: boolean;
 
   // Output only. Most recent time at which the pipeline was updated.
-  UpdateTime?: string;
+  updateTime?: string;
 }
 
-export function Clouddeploy_DeliveryPipelineConditionPipelineReadyCondition_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_DeliveryPipelineConditionPipelineReadyCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Status",
+      "status",
       "True if the Pipeline is in a valid state. Otherwise at least one condition in `PipelineCondition` is in an invalid state. Iterate over those conditions and see which condition(s) has status = false to find out what is wrong with the Pipeline.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Clouddeploy_DeliveryPipelineConditionPipelineReadyCondition_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "UpdateTime",
+      "updateTime",
       "Output only. Most recent time at which the pipeline was updated.",
       [],
       false,

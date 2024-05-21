@@ -6,8 +6,8 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_StreamBackfillNone {}
+export interface datastream_StreamBackfillNone {}
 
-export function Datastream_StreamBackfillNone_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamBackfillNone_GetTypes(): DynamicUIProps[] {
   return [];
 }

@@ -6,21 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Monitoring_SloWindowsBasedSliMetricMeanInRangeRange,
-  Monitoring_SloWindowsBasedSliMetricMeanInRangeRange_GetTypes,
-} from "./Monitoring_SloWindowsBasedSliMetricMeanInRangeRange";
+  monitoring_SloWindowsBasedSliMetricMeanInRangeRange,
+  monitoring_SloWindowsBasedSliMetricMeanInRangeRange_GetTypes,
+} from "./monitoring_SloWindowsBasedSliMetricMeanInRangeRange";
 
-export interface Monitoring_SloWindowsBasedSliMetricMeanInRange {
-  /*
-A [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
-specifying the TimeSeries to use for evaluating window
-The provided TimeSeries must have ValueType = INT64 or
-ValueType = DOUBLE and MetricKind = GAUGE. Mean value `X`
-should satisfy `range.min <= X <= range.max`
-under good service.
-*/
-  TimeSeries?: string;
-
+export interface monitoring_SloWindowsBasedSliMetricMeanInRange {
   /*
 Range of numerical values. The computed good_service
 will be the count of values x in the Distribution such
@@ -31,24 +21,34 @@ values should satisfy `range.min <= X <= range.max` for a
 good service.
 Structure is documented below.
 */
-  Range?: Monitoring_SloWindowsBasedSliMetricMeanInRangeRange;
+  range?: monitoring_SloWindowsBasedSliMetricMeanInRangeRange;
+
+  /*
+A [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+specifying the TimeSeries to use for evaluating window
+The provided TimeSeries must have ValueType = INT64 or
+ValueType = DOUBLE and MetricKind = GAUGE. Mean value `X`
+should satisfy `range.min <= X <= range.max`
+under good service.
+*/
+  timeSeries?: string;
 }
 
-export function Monitoring_SloWindowsBasedSliMetricMeanInRange_GetTypes(): DynamicUIProps[] {
+export function monitoring_SloWindowsBasedSliMetricMeanInRange_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "TimeSeries",
-      "A [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)\nspecifying the TimeSeries to use for evaluating window\nThe provided TimeSeries must have ValueType = INT64 or\nValueType = DOUBLE and MetricKind = GAUGE. Mean value `X`\nshould satisfy `range.min <= X <= range.max`\nunder good service.",
-      [],
+      InputType.Object,
+      "range",
+      "Range of numerical values. The computed good_service\nwill be the count of values x in the Distribution such\nthat range.min <= x <= range.max. inclusive of min and\nmax. Open ranges can be defined by setting\njust one of min or max. Mean value `X` of `time_series`\nvalues should satisfy `range.min <= X <= range.max` for a\ngood service.\nStructure is documented below.",
+      monitoring_SloWindowsBasedSliMetricMeanInRangeRange_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "Range",
-      "Range of numerical values. The computed good_service\nwill be the count of values x in the Distribution such\nthat range.min <= x <= range.max. inclusive of min and\nmax. Open ranges can be defined by setting\njust one of min or max. Mean value `X` of `time_series`\nvalues should satisfy `range.min <= X <= range.max` for a\ngood service.\nStructure is documented below.",
-      Monitoring_SloWindowsBasedSliMetricMeanInRangeRange_GetTypes(),
+      InputType.String,
+      "timeSeries",
+      "A [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)\nspecifying the TimeSeries to use for evaluating window\nThe provided TimeSeries must have ValueType = INT64 or\nValueType = DOUBLE and MetricKind = GAUGE. Mean value `X`\nshould satisfy `range.min <= X <= range.max`\nunder good service.",
+      [],
       true,
       false,
     ),

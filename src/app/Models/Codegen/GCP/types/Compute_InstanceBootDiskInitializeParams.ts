@@ -6,24 +6,15 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceBootDiskInitializeParams {
-  // A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.
-  ResourceManagerTags?: Map<string, InputType.String>;
-
-  /*
-The size of the image in gigabytes. If not specified, it
-will inherit the size of its base image.
-*/
-  Size?: number;
-
+export interface compute_InstanceBootDiskInitializeParams {
   // The GCE disk type. Such as pd-standard, pd-balanced or pd-ssd.
-  Type?: string;
+  type?: string;
 
   /*
 Whether this disk is using confidential compute mode.
 Note: Only supported on hyperdisk skus, disk_encryption_key is required when setting to true.
 */
-  EnableConfidentialCompute?: boolean;
+  enableConfidentialCompute?: boolean;
 
   /*
 The image from which to initialize this disk. This can be
@@ -36,13 +27,13 @@ images names must include the family name. If they don't, use the
 For instance, the image `centos-6-v20180104` includes its family name `centos-6`.
 These images can be referred by family name here.
 */
-  Image?: string;
+  image?: string;
 
   /*
 A set of key/value label pairs assigned to the disk. This
 field is only applicable for persistent disks.
 */
-  Labels?: Map<string, InputType.String>;
+  labels?: Map<string, string>;
 
   /*
 Indicates how many IOPS to provision for the disk.
@@ -53,7 +44,7 @@ api/gcloud without the need to delete and recreate the disk, hyperdisk allows
 for an update of IOPS every 4 hours. To update your hyperdisk more frequently,
 you'll need to manually delete and recreate it.
 */
-  ProvisionedIops?: number;
+  provisionedIops?: number;
 
   /*
 Indicates how much throughput to provision for the disk.
@@ -64,14 +55,23 @@ api/gcloud without the need to delete and recreate the disk, hyperdisk allows
 for an update of throughput every 4 hours. To update your hyperdisk more
 frequently, you'll need to manually delete and recreate it.
 */
-  ProvisionedThroughput?: number;
+  provisionedThroughput?: number;
+
+  // A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.
+  resourceManagerTags?: Map<string, string>;
+
+  /*
+The size of the image in gigabytes. If not specified, it
+will inherit the size of its base image.
+*/
+  size?: number;
 }
 
-export function Compute_InstanceBootDiskInitializeParams_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceBootDiskInitializeParams_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableConfidentialCompute",
+      "enableConfidentialCompute",
       "Whether this disk is using confidential compute mode.\nNote: Only supported on hyperdisk skus, disk_encryption_key is required when setting to true.",
       [],
       false,
@@ -79,7 +79,7 @@ export function Compute_InstanceBootDiskInitializeParams_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "Image",
+      "image",
       "The image from which to initialize this disk. This can be\none of: the image's `self_link`, `projects/{project}/global/images/{image}`,\n`projects/{project}/global/images/family/{family}`, `global/images/{image}`,\n`global/images/family/{family}`, `family/{family}`, `{project}/{family}`,\n`{project}/{image}`, `{family}`, or `{image}`. If referred by family, the\nimages names must include the family name. If they don't, use the\n[gcp.compute.Image data source](https://www.terraform.io/docs/providers/google/d/compute_image.html).\nFor instance, the image `centos-6-v20180104` includes its family name `centos-6`.\nThese images can be referred by family name here.",
       [],
       false,
@@ -87,7 +87,7 @@ export function Compute_InstanceBootDiskInitializeParams_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Labels",
+      "labels",
       "A set of key/value label pairs assigned to the disk. This\nfield is only applicable for persistent disks.",
       InputType_Map_GetTypes(),
       false,
@@ -95,7 +95,7 @@ export function Compute_InstanceBootDiskInitializeParams_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Number,
-      "ProvisionedIops",
+      "provisionedIops",
       "Indicates how many IOPS to provision for the disk.\nThis sets the number of I/O operations per second that the disk can handle.\nFor more details,see the [Hyperdisk documentation](https://cloud.google.com/compute/docs/disks/hyperdisks).\nNote: Updating currently is only supported for hyperdisk skus via disk update\napi/gcloud without the need to delete and recreate the disk, hyperdisk allows\nfor an update of IOPS every 4 hours. To update your hyperdisk more frequently,\nyou'll need to manually delete and recreate it.",
       [],
       false,
@@ -103,7 +103,7 @@ export function Compute_InstanceBootDiskInitializeParams_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Number,
-      "ProvisionedThroughput",
+      "provisionedThroughput",
       "Indicates how much throughput to provision for the disk.\nThis sets the number of throughput mb per second that the disk can handle.\nFor more details,see the [Hyperdisk documentation](https://cloud.google.com/compute/docs/disks/hyperdisks).\nNote: Updating currently is only supported for hyperdisk skus via disk update\napi/gcloud without the need to delete and recreate the disk, hyperdisk allows\nfor an update of throughput every 4 hours. To update your hyperdisk more\nfrequently, you'll need to manually delete and recreate it.",
       [],
       false,
@@ -111,7 +111,7 @@ export function Compute_InstanceBootDiskInitializeParams_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Map,
-      "ResourceManagerTags",
+      "resourceManagerTags",
       "A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.",
       InputType_Map_GetTypes(),
       false,
@@ -119,7 +119,7 @@ export function Compute_InstanceBootDiskInitializeParams_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Size",
+      "size",
       "The size of the image in gigabytes. If not specified, it\nwill inherit the size of its base image.",
       [],
       false,
@@ -127,7 +127,7 @@ export function Compute_InstanceBootDiskInitializeParams_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "The GCE disk type. Such as pd-standard, pd-balanced or pd-ssd.",
       [],
       false,

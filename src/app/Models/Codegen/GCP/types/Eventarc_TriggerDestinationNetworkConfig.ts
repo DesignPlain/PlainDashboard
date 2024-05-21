@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Eventarc_TriggerDestinationNetworkConfig {
+export interface eventarc_TriggerDestinationNetworkConfig {
   // Required. Name of the NetworkAttachment that allows access to the destination VPC. Format: `projects/{PROJECT_ID}/regions/{REGION}/networkAttachments/{NETWORK_ATTACHMENT_NAME}`
-  NetworkAttachment?: string;
+  networkAttachment?: string;
 }
 
-export function Eventarc_TriggerDestinationNetworkConfig_GetTypes(): DynamicUIProps[] {
+export function eventarc_TriggerDestinationNetworkConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "NetworkAttachment",
+      "networkAttachment",
       "Required. Name of the NetworkAttachment that allows access to the destination VPC. Format: `projects/{PROJECT_ID}/regions/{REGION}/networkAttachments/{NETWORK_ATTACHMENT_NAME}`",
       [],
       true,

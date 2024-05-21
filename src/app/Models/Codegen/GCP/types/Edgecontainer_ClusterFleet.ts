@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Edgecontainer_ClusterFleet {
+export interface edgecontainer_ClusterFleet {
   /*
 (Output)
 The name of the managed Hub Membership resource associated to this cluster.
 Membership names are formatted as
 `projects/<project-number>/locations/global/membership/<cluster-id>`.
 */
-  Membership?: string;
+  membership?: string;
 
   /*
 The name of the Fleet host project where this cluster will be registered.
 Project names are formatted as
 `projects/<project-number>`.
 */
-  Project?: string;
+  project?: string;
 }
 
-export function Edgecontainer_ClusterFleet_GetTypes(): DynamicUIProps[] {
+export function edgecontainer_ClusterFleet_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Membership",
+      "membership",
       "(Output)\nThe name of the managed Hub Membership resource associated to this cluster.\nMembership names are formatted as\n`projects/<project-number>/locations/global/membership/<cluster-id>`.",
       [],
       false,
@@ -35,7 +35,7 @@ export function Edgecontainer_ClusterFleet_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Project",
+      "project",
       "The name of the Fleet host project where this cluster will be registered.\nProject names are formatted as\n`projects/<project-number>`.",
       [],
       true,

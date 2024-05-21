@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getBackendServiceCircuitBreakerConnectTimeout {
+export interface compute_getBackendServiceCircuitBreakerConnectTimeout {
   /*
 Span of time that's a fraction of a second at nanosecond
 resolution. Durations less than one second are represented
 with a 0 seconds field and a positive nanos field. Must
 be from 0 to 999,999,999 inclusive.
 */
-  Nanos?: number;
+  nanos?: number;
 
   /*
 Span of time at a resolution of a second.
 Must be from 0 to 315,576,000,000 inclusive.
 */
-  Seconds?: number;
+  seconds?: number;
 }
 
-export function Compute_getBackendServiceCircuitBreakerConnectTimeout_GetTypes(): DynamicUIProps[] {
+export function compute_getBackendServiceCircuitBreakerConnectTimeout_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Nanos",
+      "nanos",
       "Span of time that's a fraction of a second at nanosecond\nresolution. Durations less than one second are represented\nwith a 0 seconds field and a positive nanos field. Must\nbe from 0 to 999,999,999 inclusive.",
       [],
       true,
@@ -34,7 +34,7 @@ export function Compute_getBackendServiceCircuitBreakerConnectTimeout_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Seconds",
+      "seconds",
       "Span of time at a resolution of a second.\nMust be from 0 to 315,576,000,000 inclusive.",
       [],
       true,

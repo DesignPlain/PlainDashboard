@@ -6,61 +6,61 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataplex_TaskNotebookInfrastructureSpecContainerImage,
-  Dataplex_TaskNotebookInfrastructureSpecContainerImage_GetTypes,
-} from "./Dataplex_TaskNotebookInfrastructureSpecContainerImage";
+  dataplex_TaskNotebookInfrastructureSpecBatch,
+  dataplex_TaskNotebookInfrastructureSpecBatch_GetTypes,
+} from "./dataplex_TaskNotebookInfrastructureSpecBatch";
 import {
-  Dataplex_TaskNotebookInfrastructureSpecVpcNetwork,
-  Dataplex_TaskNotebookInfrastructureSpecVpcNetwork_GetTypes,
-} from "./Dataplex_TaskNotebookInfrastructureSpecVpcNetwork";
+  dataplex_TaskNotebookInfrastructureSpecContainerImage,
+  dataplex_TaskNotebookInfrastructureSpecContainerImage_GetTypes,
+} from "./dataplex_TaskNotebookInfrastructureSpecContainerImage";
 import {
-  Dataplex_TaskNotebookInfrastructureSpecBatch,
-  Dataplex_TaskNotebookInfrastructureSpecBatch_GetTypes,
-} from "./Dataplex_TaskNotebookInfrastructureSpecBatch";
+  dataplex_TaskNotebookInfrastructureSpecVpcNetwork,
+  dataplex_TaskNotebookInfrastructureSpecVpcNetwork_GetTypes,
+} from "./dataplex_TaskNotebookInfrastructureSpecVpcNetwork";
 
-export interface Dataplex_TaskNotebookInfrastructureSpec {
+export interface dataplex_TaskNotebookInfrastructureSpec {
+  /*
+Compute resources needed for a Task when using Dataproc Serverless.
+Structure is documented below.
+*/
+  batch?: dataplex_TaskNotebookInfrastructureSpecBatch;
+
   /*
 Container Image Runtime Configuration.
 Structure is documented below.
 */
-  ContainerImage?: Dataplex_TaskNotebookInfrastructureSpecContainerImage;
+  containerImage?: dataplex_TaskNotebookInfrastructureSpecContainerImage;
 
   /*
 Vpc network.
 Structure is documented below.
 */
-  VpcNetwork?: Dataplex_TaskNotebookInfrastructureSpecVpcNetwork;
-
-  /*
-Compute resources needed for a Task when using Dataproc Serverless.
-Structure is documented below.
-*/
-  Batch?: Dataplex_TaskNotebookInfrastructureSpecBatch;
+  vpcNetwork?: dataplex_TaskNotebookInfrastructureSpecVpcNetwork;
 }
 
-export function Dataplex_TaskNotebookInfrastructureSpec_GetTypes(): DynamicUIProps[] {
+export function dataplex_TaskNotebookInfrastructureSpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ContainerImage",
-      "Container Image Runtime Configuration.\nStructure is documented below.",
-      Dataplex_TaskNotebookInfrastructureSpecContainerImage_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "VpcNetwork",
+      "vpcNetwork",
       "Vpc network.\nStructure is documented below.",
-      Dataplex_TaskNotebookInfrastructureSpecVpcNetwork_GetTypes(),
+      dataplex_TaskNotebookInfrastructureSpecVpcNetwork_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Batch",
+      "batch",
       "Compute resources needed for a Task when using Dataproc Serverless.\nStructure is documented below.",
-      Dataplex_TaskNotebookInfrastructureSpecBatch_GetTypes(),
+      dataplex_TaskNotebookInfrastructureSpecBatch_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "containerImage",
+      "Container Image Runtime Configuration.\nStructure is documented below.",
+      dataplex_TaskNotebookInfrastructureSpecContainerImage_GetTypes(),
       false,
       false,
     ),

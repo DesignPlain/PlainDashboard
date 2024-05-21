@@ -7,16 +7,16 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Apigee_AddonsConfigAddonsConfig,
-  Apigee_AddonsConfigAddonsConfig_GetTypes,
-} from "../types/Apigee_AddonsConfigAddonsConfig";
+  apigee_AddonsConfigAddonsConfig,
+  apigee_AddonsConfigAddonsConfig_GetTypes,
+} from "../types/apigee_AddonsConfigAddonsConfig";
 
 export interface AddonsConfigArgs {
   /*
 Addon configurations of the Apigee organization.
 Structure is documented below.
 */
-  AddonsConfig?: Apigee_AddonsConfigAddonsConfig;
+  addonsConfig?: apigee_AddonsConfigAddonsConfig;
 
   /*
 Name of the Apigee organization.
@@ -24,14 +24,14 @@ Name of the Apigee organization.
 
 - - -
 */
-  Org?: string;
+  org?: string;
 }
 export class AddonsConfig extends Resource {
   /*
 Addon configurations of the Apigee organization.
 Structure is documented below.
 */
-  public AddonsConfig?: Apigee_AddonsConfigAddonsConfig;
+  public addonsConfig?: apigee_AddonsConfigAddonsConfig;
 
   /*
 Name of the Apigee organization.
@@ -39,21 +39,21 @@ Name of the Apigee organization.
 
 - - -
 */
-  public Org?: string;
+  public org?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "AddonsConfig",
+        "addonsConfig",
         "Addon configurations of the Apigee organization.\nStructure is documented below.",
-        Apigee_AddonsConfigAddonsConfig_GetTypes(),
+        apigee_AddonsConfigAddonsConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Org",
+        "org",
         "Name of the Apigee organization.\n\n\n- - -",
         [],
         true,

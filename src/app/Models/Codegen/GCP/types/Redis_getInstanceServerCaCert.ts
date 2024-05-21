@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Redis_getInstanceServerCaCert {
+export interface redis_getInstanceServerCaCert {
   // The certificate data in PEM format.
-  Cert?: string;
+  cert?: string;
 
   // The time when the certificate was created.
-  CreateTime?: string;
+  createTime?: string;
 
   // The time when the certificate expires.
-  ExpireTime?: string;
+  expireTime?: string;
 
   // Serial number, as extracted from the certificate.
-  SerialNumber?: string;
+  serialNumber?: string;
 
   // Sha1 Fingerprint of the certificate.
-  Sha1Fingerprint?: string;
+  sha1Fingerprint?: string;
 }
 
-export function Redis_getInstanceServerCaCert_GetTypes(): DynamicUIProps[] {
+export function redis_getInstanceServerCaCert_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Cert",
+      "cert",
       "The certificate data in PEM format.",
       [],
       true,
@@ -35,7 +35,7 @@ export function Redis_getInstanceServerCaCert_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "CreateTime",
+      "createTime",
       "The time when the certificate was created.",
       [],
       true,
@@ -43,7 +43,7 @@ export function Redis_getInstanceServerCaCert_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ExpireTime",
+      "expireTime",
       "The time when the certificate expires.",
       [],
       true,
@@ -51,7 +51,7 @@ export function Redis_getInstanceServerCaCert_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "SerialNumber",
+      "serialNumber",
       "Serial number, as extracted from the certificate.",
       [],
       true,
@@ -59,7 +59,7 @@ export function Redis_getInstanceServerCaCert_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Sha1Fingerprint",
+      "sha1Fingerprint",
       "Sha1 Fingerprint of the certificate.",
       [],
       true,

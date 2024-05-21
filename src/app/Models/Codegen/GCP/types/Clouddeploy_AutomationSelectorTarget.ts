@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Clouddeploy_AutomationSelectorTarget {
-  // Target labels.
-  Labels?: Map<string, string>;
-
+export interface clouddeploy_AutomationSelectorTarget {
   // ID of the `Target`. The value of this field could be one of the following: - The last segment of a target name. It only needs the ID to determine which target is being referred to - "-", all targets in a location.
-  Id?: string;
+  id?: string;
+
+  // Target labels.
+  labels?: Map<string, string>;
 }
 
-export function Clouddeploy_AutomationSelectorTarget_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_AutomationSelectorTarget_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Id",
+      "id",
       'ID of the `Target`. The value of this field could be one of the following: * The last segment of a target name. It only needs the ID to determine which target is being referred to * "*", all targets in a location.',
       [],
       false,
@@ -26,7 +26,7 @@ export function Clouddeploy_AutomationSelectorTarget_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Labels",
+      "labels",
       "Target labels.",
       InputType_Map_GetTypes(),
       false,

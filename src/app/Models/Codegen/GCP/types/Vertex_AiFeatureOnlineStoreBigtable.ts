@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Vertex_AiFeatureOnlineStoreBigtableAutoScaling,
-  Vertex_AiFeatureOnlineStoreBigtableAutoScaling_GetTypes,
-} from "./Vertex_AiFeatureOnlineStoreBigtableAutoScaling";
+  vertex_AiFeatureOnlineStoreBigtableAutoScaling,
+  vertex_AiFeatureOnlineStoreBigtableAutoScaling_GetTypes,
+} from "./vertex_AiFeatureOnlineStoreBigtableAutoScaling";
 
-export interface Vertex_AiFeatureOnlineStoreBigtable {
+export interface vertex_AiFeatureOnlineStoreBigtable {
   /*
 Autoscaling config applied to Bigtable Instance.
 Structure is documented below.
 */
-  AutoScaling?: Vertex_AiFeatureOnlineStoreBigtableAutoScaling;
+  autoScaling?: vertex_AiFeatureOnlineStoreBigtableAutoScaling;
 }
 
-export function Vertex_AiFeatureOnlineStoreBigtable_GetTypes(): DynamicUIProps[] {
+export function vertex_AiFeatureOnlineStoreBigtable_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "AutoScaling",
+      "autoScaling",
       "Autoscaling config applied to Bigtable Instance.\nStructure is documented below.",
-      Vertex_AiFeatureOnlineStoreBigtableAutoScaling_GetTypes(),
+      vertex_AiFeatureOnlineStoreBigtableAutoScaling_GetTypes(),
       true,
       false,
     ),

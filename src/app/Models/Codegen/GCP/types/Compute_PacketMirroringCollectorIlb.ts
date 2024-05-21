@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_PacketMirroringCollectorIlb {
+export interface compute_PacketMirroringCollectorIlb {
   // The URL of the forwarding rule.
-  Url?: string;
+  url?: string;
 }
 
-export function Compute_PacketMirroringCollectorIlb_GetTypes(): DynamicUIProps[] {
+export function compute_PacketMirroringCollectorIlb_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Url",
+      "url",
       "The URL of the forwarding rule.",
       [],
       true,

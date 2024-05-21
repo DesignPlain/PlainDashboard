@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkebackup_RestorePlanIamMemberCondition {
+export interface gkebackup_RestorePlanIamMemberCondition {
   // User specified descriptive string for this RestorePlan.
-  Description?: string;
+  description?: string;
 
   //
-  Expression?: string;
+  expression?: string;
 
   //
-  Title?: string;
+  title?: string;
 }
 
-export function Gkebackup_RestorePlanIamMemberCondition_GetTypes(): DynamicUIProps[] {
+export function gkebackup_RestorePlanIamMemberCondition_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Expression", "", [], true, true),
-    new DynamicUIProps(InputType.String, "Title", "", [], true, true),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "User specified descriptive string for this RestorePlan.",
       [],
       false,
       true,
     ),
+    new DynamicUIProps(InputType.String, "expression", "", [], true, true),
+    new DynamicUIProps(InputType.String, "title", "", [], true, true),
   ];
 }

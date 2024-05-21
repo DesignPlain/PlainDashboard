@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionSecurityPolicyDdosProtectionConfig {
+export interface compute_RegionSecurityPolicyDdosProtectionConfig {
   /*
 Google Cloud Armor offers the following options to help protect systems against DDoS attacks:
 - STANDARD: basic always-on protection for network load balancers, protocol forwarding, or VMs with public IP addresses.
@@ -14,14 +14,14 @@ Google Cloud Armor offers the following options to help protect systems against 
 - ADVANCED_PREVIEW: flag to enable the security policy in preview mode.
 Possible values are: `ADVANCED`, `ADVANCED_PREVIEW`, `STANDARD`.
 */
-  DdosProtection?: string;
+  ddosProtection?: string;
 }
 
-export function Compute_RegionSecurityPolicyDdosProtectionConfig_GetTypes(): DynamicUIProps[] {
+export function compute_RegionSecurityPolicyDdosProtectionConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DdosProtection",
+      "ddosProtection",
       "Google Cloud Armor offers the following options to help protect systems against DDoS attacks:\n- STANDARD: basic always-on protection for network load balancers, protocol forwarding, or VMs with public IP addresses.\n- ADVANCED: additional protections for Managed Protection Plus subscribers who use network load balancers, protocol forwarding, or VMs with public IP addresses.\n- ADVANCED_PREVIEW: flag to enable the security policy in preview mode.\nPossible values are: `ADVANCED`, `ADVANCED_PREVIEW`, `STANDARD`.",
       [],
       true,

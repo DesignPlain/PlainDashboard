@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_HttpRouteRuleActionRetryPolicy {
-  // Specifies the allowed number of retries.
-  NumRetries?: number;
-
+export interface networkservices_HttpRouteRuleActionRetryPolicy {
   // Specifies a non-zero timeout per retry attempt. A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
-  PerTryTimeout?: string;
+  perTryTimeout?: string;
 
   // Specifies one or more conditions when this retry policy applies.
-  RetryConditions?: Array<string>;
+  retryConditions?: Array<string>;
+
+  // Specifies the allowed number of retries.
+  numRetries?: number;
 }
 
-export function Networkservices_HttpRouteRuleActionRetryPolicy_GetTypes(): DynamicUIProps[] {
+export function networkservices_HttpRouteRuleActionRetryPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PerTryTimeout",
+      "perTryTimeout",
       "Specifies a non-zero timeout per retry attempt. A duration in seconds with up to nine fractional digits, ending with 's'. Example: \"3.5s\".",
       [],
       false,
@@ -29,7 +29,7 @@ export function Networkservices_HttpRouteRuleActionRetryPolicy_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Array,
-      "RetryConditions",
+      "retryConditions",
       "Specifies one or more conditions when this retry policy applies.",
       InputType_String_GetTypes(),
       false,
@@ -37,7 +37,7 @@ export function Networkservices_HttpRouteRuleActionRetryPolicy_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Number,
-      "NumRetries",
+      "numRetries",
       "Specifies the allowed number of retries.",
       [],
       false,

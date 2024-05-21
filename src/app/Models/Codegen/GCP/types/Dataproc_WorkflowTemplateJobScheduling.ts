@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_WorkflowTemplateJobScheduling {
+export interface dataproc_WorkflowTemplateJobScheduling {
   // Maximum number of times per hour a driver may be restarted as a result of driver exiting with non-zero code before job is reported failed. A job may be reported as thrashing if driver exits with non-zero code 4 times within 10 minute window. Maximum value is 10.
-  MaxFailuresPerHour?: number;
+  maxFailuresPerHour?: number;
 
   // Maximum number of times in total a driver may be restarted as a result of driver exiting with non-zero code before job is reported failed. Maximum value is 240
-  MaxFailuresTotal?: number;
+  maxFailuresTotal?: number;
 }
 
-export function Dataproc_WorkflowTemplateJobScheduling_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplateJobScheduling_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "MaxFailuresPerHour",
+      "maxFailuresPerHour",
       "Maximum number of times per hour a driver may be restarted as a result of driver exiting with non-zero code before job is reported failed. A job may be reported as thrashing if driver exits with non-zero code 4 times within 10 minute window. Maximum value is 10.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Dataproc_WorkflowTemplateJobScheduling_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxFailuresTotal",
+      "maxFailuresTotal",
       "Maximum number of times in total a driver may be restarted as a result of driver exiting with non-zero code before job is reported failed. Maximum value is 240",
       [],
       false,

@@ -6,72 +6,69 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Sql_getDatabaseInstancesInstanceSettingDatabaseFlag,
-  Sql_getDatabaseInstancesInstanceSettingDatabaseFlag_GetTypes,
-} from "./Sql_getDatabaseInstancesInstanceSettingDatabaseFlag";
+  sql_getDatabaseInstancesInstanceSettingDataCacheConfig,
+  sql_getDatabaseInstancesInstanceSettingDataCacheConfig_GetTypes,
+} from "./sql_getDatabaseInstancesInstanceSettingDataCacheConfig";
 import {
-  Sql_getDatabaseInstancesInstanceSettingPasswordValidationPolicy,
-  Sql_getDatabaseInstancesInstanceSettingPasswordValidationPolicy_GetTypes,
-} from "./Sql_getDatabaseInstancesInstanceSettingPasswordValidationPolicy";
+  sql_getDatabaseInstancesInstanceSettingDatabaseFlag,
+  sql_getDatabaseInstancesInstanceSettingDatabaseFlag_GetTypes,
+} from "./sql_getDatabaseInstancesInstanceSettingDatabaseFlag";
 import {
-  Sql_getDatabaseInstancesInstanceSettingAdvancedMachineFeature,
-  Sql_getDatabaseInstancesInstanceSettingAdvancedMachineFeature_GetTypes,
-} from "./Sql_getDatabaseInstancesInstanceSettingAdvancedMachineFeature";
+  sql_getDatabaseInstancesInstanceSettingInsightsConfig,
+  sql_getDatabaseInstancesInstanceSettingInsightsConfig_GetTypes,
+} from "./sql_getDatabaseInstancesInstanceSettingInsightsConfig";
 import {
-  Sql_getDatabaseInstancesInstanceSettingMaintenanceWindow,
-  Sql_getDatabaseInstancesInstanceSettingMaintenanceWindow_GetTypes,
-} from "./Sql_getDatabaseInstancesInstanceSettingMaintenanceWindow";
+  sql_getDatabaseInstancesInstanceSettingIpConfiguration,
+  sql_getDatabaseInstancesInstanceSettingIpConfiguration_GetTypes,
+} from "./sql_getDatabaseInstancesInstanceSettingIpConfiguration";
 import {
-  Sql_getDatabaseInstancesInstanceSettingSqlServerAuditConfig,
-  Sql_getDatabaseInstancesInstanceSettingSqlServerAuditConfig_GetTypes,
-} from "./Sql_getDatabaseInstancesInstanceSettingSqlServerAuditConfig";
+  sql_getDatabaseInstancesInstanceSettingPasswordValidationPolicy,
+  sql_getDatabaseInstancesInstanceSettingPasswordValidationPolicy_GetTypes,
+} from "./sql_getDatabaseInstancesInstanceSettingPasswordValidationPolicy";
 import {
-  Sql_getDatabaseInstancesInstanceSettingDataCacheConfig,
-  Sql_getDatabaseInstancesInstanceSettingDataCacheConfig_GetTypes,
-} from "./Sql_getDatabaseInstancesInstanceSettingDataCacheConfig";
+  sql_getDatabaseInstancesInstanceSettingAdvancedMachineFeature,
+  sql_getDatabaseInstancesInstanceSettingAdvancedMachineFeature_GetTypes,
+} from "./sql_getDatabaseInstancesInstanceSettingAdvancedMachineFeature";
 import {
-  Sql_getDatabaseInstancesInstanceSettingActiveDirectoryConfig,
-  Sql_getDatabaseInstancesInstanceSettingActiveDirectoryConfig_GetTypes,
-} from "./Sql_getDatabaseInstancesInstanceSettingActiveDirectoryConfig";
+  sql_getDatabaseInstancesInstanceSettingBackupConfiguration,
+  sql_getDatabaseInstancesInstanceSettingBackupConfiguration_GetTypes,
+} from "./sql_getDatabaseInstancesInstanceSettingBackupConfiguration";
 import {
-  Sql_getDatabaseInstancesInstanceSettingIpConfiguration,
-  Sql_getDatabaseInstancesInstanceSettingIpConfiguration_GetTypes,
-} from "./Sql_getDatabaseInstancesInstanceSettingIpConfiguration";
+  sql_getDatabaseInstancesInstanceSettingSqlServerAuditConfig,
+  sql_getDatabaseInstancesInstanceSettingSqlServerAuditConfig_GetTypes,
+} from "./sql_getDatabaseInstancesInstanceSettingSqlServerAuditConfig";
 import {
-  Sql_getDatabaseInstancesInstanceSettingBackupConfiguration,
-  Sql_getDatabaseInstancesInstanceSettingBackupConfiguration_GetTypes,
-} from "./Sql_getDatabaseInstancesInstanceSettingBackupConfiguration";
+  sql_getDatabaseInstancesInstanceSettingActiveDirectoryConfig,
+  sql_getDatabaseInstancesInstanceSettingActiveDirectoryConfig_GetTypes,
+} from "./sql_getDatabaseInstancesInstanceSettingActiveDirectoryConfig";
 import {
-  Sql_getDatabaseInstancesInstanceSettingDenyMaintenancePeriod,
-  Sql_getDatabaseInstancesInstanceSettingDenyMaintenancePeriod_GetTypes,
-} from "./Sql_getDatabaseInstancesInstanceSettingDenyMaintenancePeriod";
+  sql_getDatabaseInstancesInstanceSettingLocationPreference,
+  sql_getDatabaseInstancesInstanceSettingLocationPreference_GetTypes,
+} from "./sql_getDatabaseInstancesInstanceSettingLocationPreference";
 import {
-  Sql_getDatabaseInstancesInstanceSettingInsightsConfig,
-  Sql_getDatabaseInstancesInstanceSettingInsightsConfig_GetTypes,
-} from "./Sql_getDatabaseInstancesInstanceSettingInsightsConfig";
+  sql_getDatabaseInstancesInstanceSettingMaintenanceWindow,
+  sql_getDatabaseInstancesInstanceSettingMaintenanceWindow_GetTypes,
+} from "./sql_getDatabaseInstancesInstanceSettingMaintenanceWindow";
 import {
-  Sql_getDatabaseInstancesInstanceSettingLocationPreference,
-  Sql_getDatabaseInstancesInstanceSettingLocationPreference_GetTypes,
-} from "./Sql_getDatabaseInstancesInstanceSettingLocationPreference";
+  sql_getDatabaseInstancesInstanceSettingDenyMaintenancePeriod,
+  sql_getDatabaseInstancesInstanceSettingDenyMaintenancePeriod_GetTypes,
+} from "./sql_getDatabaseInstancesInstanceSettingDenyMaintenancePeriod";
 
-export interface Sql_getDatabaseInstancesInstanceSetting {
-  // To filter out the Cloud SQL instances based on the tier(or machine type) of the database instances.
-  Tier?: string;
-
-  // Used to make sure changes to the settings block are atomic.
-  Version?: number;
-
-  // Data cache configurations.
-  DataCacheConfigs?: Array<Sql_getDatabaseInstancesInstanceSettingDataCacheConfig>;
+export interface sql_getDatabaseInstancesInstanceSetting {
+  //
+  denyMaintenancePeriods?: Array<sql_getDatabaseInstancesInstanceSettingDenyMaintenancePeriod>;
 
   //
-  LocationPreferences?: Array<Sql_getDatabaseInstancesInstanceSettingLocationPreference>;
+  activeDirectoryConfigs?: Array<sql_getDatabaseInstancesInstanceSettingActiveDirectoryConfig>;
 
-  // The name of server instance collation.
-  Collation?: string;
+  // Specifies if connections must use Cloud SQL connectors.
+  connectorEnforcement?: string;
 
-  // A set of key/value user label pairs to assign to the instance.
-  UserLabels?: Map<string, string>;
+  // The size of data disk, in GB. Size of a running instance cannot be reduced but can be increased. The minimum value is 10GB.
+  diskSize?: number;
+
+  //
+  sqlServerAuditConfigs?: Array<sql_getDatabaseInstancesInstanceSettingSqlServerAuditConfig>;
 
   /*
 The availability type of the Cloud SQL instance, high availability
@@ -81,250 +78,109 @@ For MySQL instances, ensure that settings.backup_configuration.binary_log_enable
 For Postgres instances, ensure that settings.backup_configuration.point_in_time_recovery_enabled
 is set to true. Defaults to ZONAL.
 */
-  AvailabilityType?: string;
+  availabilityType?: string;
+
+  // Data cache configurations.
+  dataCacheConfigs?: Array<sql_getDatabaseInstancesInstanceSettingDataCacheConfig>;
 
   //
-  DatabaseFlags?: Array<Sql_getDatabaseInstancesInstanceSettingDatabaseFlag>;
-
-  // The maximum size, in GB, to which storage capacity can be automatically increased. The default value is 0, which specifies that there is no limit.
-  DiskAutoresizeLimit?: number;
-
-  // The edition of the instance, can be ENTERPRISE or ENTERPRISE_PLUS.
-  Edition?: string;
-
-  // This specifies when the instance should be active. Can be either ALWAYS, NEVER or ON_DEMAND.
-  ActivationPolicy?: string;
-
-  //
-  ActiveDirectoryConfigs?: Array<Sql_getDatabaseInstancesInstanceSettingActiveDirectoryConfig>;
-
-  // The size of data disk, in GB. Size of a running instance cannot be reduced but can be increased. The minimum value is 10GB.
-  DiskSize?: number;
-
-  //
-  IpConfigurations?: Array<Sql_getDatabaseInstancesInstanceSettingIpConfiguration>;
-
-  //
-  BackupConfigurations?: Array<Sql_getDatabaseInstancesInstanceSettingBackupConfiguration>;
-
-  //
-  DenyMaintenancePeriods?: Array<Sql_getDatabaseInstancesInstanceSettingDenyMaintenancePeriod>;
-
-  // Configuration to protect against accidental instance deletion.
-  DeletionProtectionEnabled?: boolean;
+  databaseFlags?: Array<sql_getDatabaseInstancesInstanceSettingDatabaseFlag>;
 
   // The type of data disk: PD_SSD or PD_HDD. Defaults to PD_SSD.
-  DiskType?: string;
-
-  //
-  PasswordValidationPolicies?: Array<Sql_getDatabaseInstancesInstanceSettingPasswordValidationPolicy>;
-
-  // Pricing plan for this instance, can only be PER_USE.
-  PricingPlan?: string;
-
-  //
-  AdvancedMachineFeatures?: Array<Sql_getDatabaseInstancesInstanceSettingAdvancedMachineFeature>;
-
-  // Enables auto-resizing of the storage size. Defaults to true.
-  DiskAutoresize?: boolean;
-
-  // Configuration of Query Insights.
-  InsightsConfigs?: Array<Sql_getDatabaseInstancesInstanceSettingInsightsConfig>;
-
-  // Declares a one-hour maintenance window when an Instance can automatically restart to apply updates. The maintenance window is specified in UTC time.
-  MaintenanceWindows?: Array<Sql_getDatabaseInstancesInstanceSettingMaintenanceWindow>;
-
-  // Specifies if connections must use Cloud SQL connectors.
-  ConnectorEnforcement?: string;
-
-  //
-  SqlServerAuditConfigs?: Array<Sql_getDatabaseInstancesInstanceSettingSqlServerAuditConfig>;
+  diskType?: string;
 
   // The time_zone to be used by the database engine (supported only for SQL Server), in SQL Server timezone format.
-  TimeZone?: string;
+  timeZone?: string;
+
+  // Configuration to protect against accidental instance deletion.
+  deletionProtectionEnabled?: boolean;
+
+  // Used to make sure changes to the settings block are atomic.
+  version?: number;
+
+  // Enables auto-resizing of the storage size. Defaults to true.
+  diskAutoresize?: boolean;
+
+  // The maximum size, in GB, to which storage capacity can be automatically increased. The default value is 0, which specifies that there is no limit.
+  diskAutoresizeLimit?: number;
+
+  // The edition of the instance, can be ENTERPRISE or ENTERPRISE_PLUS.
+  edition?: string;
+
+  //
+  locationPreferences?: Array<sql_getDatabaseInstancesInstanceSettingLocationPreference>;
+
+  // To filter out the Cloud SQL instances based on the tier(or machine type) of the database instances.
+  tier?: string;
+
+  // Configuration of Query Insights.
+  insightsConfigs?: Array<sql_getDatabaseInstancesInstanceSettingInsightsConfig>;
+
+  //
+  ipConfigurations?: Array<sql_getDatabaseInstancesInstanceSettingIpConfiguration>;
+
+  //
+  passwordValidationPolicies?: Array<sql_getDatabaseInstancesInstanceSettingPasswordValidationPolicy>;
+
+  // Pricing plan for this instance, can only be PER_USE.
+  pricingPlan?: string;
+
+  // The name of server instance collation.
+  collation?: string;
+
+  // A set of key/value user label pairs to assign to the instance.
+  userLabels?: Map<string, string>;
+
+  // This specifies when the instance should be active. Can be either ALWAYS, NEVER or ON_DEMAND.
+  activationPolicy?: string;
+
+  //
+  advancedMachineFeatures?: Array<sql_getDatabaseInstancesInstanceSettingAdvancedMachineFeature>;
+
+  //
+  backupConfigurations?: Array<sql_getDatabaseInstancesInstanceSettingBackupConfiguration>;
+
+  // Declares a one-hour maintenance window when an Instance can automatically restart to apply updates. The maintenance window is specified in UTC time.
+  maintenanceWindows?: Array<sql_getDatabaseInstancesInstanceSettingMaintenanceWindow>;
 }
 
-export function Sql_getDatabaseInstancesInstanceSetting_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstancesInstanceSetting_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "AvailabilityType",
-      "The availability type of the Cloud SQL instance, high availability\n(REGIONAL) or single zone (ZONAL). For all instances, ensure that\nsettings.backup_configuration.enabled is set to true.\nFor MySQL instances, ensure that settings.backup_configuration.binary_log_enabled is set to true.\nFor Postgres instances, ensure that settings.backup_configuration.point_in_time_recovery_enabled\nis set to true. Defaults to ZONAL.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "DeletionProtectionEnabled",
-      "Configuration to protect against accidental instance deletion.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "PricingPlan",
-      "Pricing plan for this instance, can only be PER_USE.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "DiskAutoresize",
-      "Enables auto-resizing of the storage size. Defaults to true.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "SqlServerAuditConfigs",
-      "",
-      Sql_getDatabaseInstancesInstanceSettingSqlServerAuditConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "ActiveDirectoryConfigs",
-      "",
-      Sql_getDatabaseInstancesInstanceSettingActiveDirectoryConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "DenyMaintenancePeriods",
-      "",
-      Sql_getDatabaseInstancesInstanceSettingDenyMaintenancePeriod_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "InsightsConfigs",
-      "Configuration of Query Insights.",
-      Sql_getDatabaseInstancesInstanceSettingInsightsConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "MaintenanceWindows",
-      "Declares a one-hour maintenance window when an Instance can automatically restart to apply updates. The maintenance window is specified in UTC time.",
-      Sql_getDatabaseInstancesInstanceSettingMaintenanceWindow_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Tier",
-      "To filter out the Cloud SQL instances based on the tier(or machine type) of the database instances.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Edition",
-      "The edition of the instance, can be ENTERPRISE or ENTERPRISE_PLUS.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ActivationPolicy",
-      "This specifies when the instance should be active. Can be either ALWAYS, NEVER or ON_DEMAND.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "IpConfigurations",
-      "",
-      Sql_getDatabaseInstancesInstanceSettingIpConfiguration_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "DiskType",
-      "The type of data disk: PD_SSD or PD_HDD. Defaults to PD_SSD.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "DataCacheConfigs",
-      "Data cache configurations.",
-      Sql_getDatabaseInstancesInstanceSettingDataCacheConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "DiskSize",
-      "The size of data disk, in GB. Size of a running instance cannot be reduced but can be increased. The minimum value is 10GB.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Version",
-      "Used to make sure changes to the settings block are atomic.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "LocationPreferences",
-      "",
-      Sql_getDatabaseInstancesInstanceSettingLocationPreference_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "DatabaseFlags",
-      "",
-      Sql_getDatabaseInstancesInstanceSettingDatabaseFlag_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "PasswordValidationPolicies",
-      "",
-      Sql_getDatabaseInstancesInstanceSettingPasswordValidationPolicy_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "AdvancedMachineFeatures",
-      "",
-      Sql_getDatabaseInstancesInstanceSettingAdvancedMachineFeature_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Map,
-      "UserLabels",
+      "userLabels",
       "A set of key/value user label pairs to assign to the instance.",
       InputType_Map_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
+      InputType.Array,
+      "sqlServerAuditConfigs",
+      "",
+      sql_getDatabaseInstancesInstanceSettingSqlServerAuditConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "timeZone",
+      "The time_zone to be used by the database engine (supported only for SQL Server), in SQL Server timezone format.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "diskAutoresize",
+      "Enables auto-resizing of the storage size. Defaults to true.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Number,
-      "DiskAutoresizeLimit",
+      "diskAutoresizeLimit",
       "The maximum size, in GB, to which storage capacity can be automatically increased. The default value is 0, which specifies that there is no limit.",
       [],
       true,
@@ -332,23 +188,135 @@ export function Sql_getDatabaseInstancesInstanceSetting_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Array,
-      "BackupConfigurations",
+      "passwordValidationPolicies",
       "",
-      Sql_getDatabaseInstancesInstanceSettingBackupConfiguration_GetTypes(),
+      sql_getDatabaseInstancesInstanceSettingPasswordValidationPolicy_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "TimeZone",
-      "The time_zone to be used by the database engine (supported only for SQL Server), in SQL Server timezone format.",
+      InputType.Array,
+      "denyMaintenancePeriods",
+      "",
+      sql_getDatabaseInstancesInstanceSettingDenyMaintenancePeriod_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "version",
+      "Used to make sure changes to the settings block are atomic.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Collation",
+      "connectorEnforcement",
+      "Specifies if connections must use Cloud SQL connectors.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "edition",
+      "The edition of the instance, can be ENTERPRISE or ENTERPRISE_PLUS.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "maintenanceWindows",
+      "Declares a one-hour maintenance window when an Instance can automatically restart to apply updates. The maintenance window is specified in UTC time.",
+      sql_getDatabaseInstancesInstanceSettingMaintenanceWindow_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "activationPolicy",
+      "This specifies when the instance should be active. Can be either ALWAYS, NEVER or ON_DEMAND.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "advancedMachineFeatures",
+      "",
+      sql_getDatabaseInstancesInstanceSettingAdvancedMachineFeature_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "activeDirectoryConfigs",
+      "",
+      sql_getDatabaseInstancesInstanceSettingActiveDirectoryConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "diskSize",
+      "The size of data disk, in GB. Size of a running instance cannot be reduced but can be increased. The minimum value is 10GB.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "tier",
+      "To filter out the Cloud SQL instances based on the tier(or machine type) of the database instances.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "pricingPlan",
+      "Pricing plan for this instance, can only be PER_USE.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "backupConfigurations",
+      "",
+      sql_getDatabaseInstancesInstanceSettingBackupConfiguration_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "diskType",
+      "The type of data disk: PD_SSD or PD_HDD. Defaults to PD_SSD.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "deletionProtectionEnabled",
+      "Configuration to protect against accidental instance deletion.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "insightsConfigs",
+      "Configuration of Query Insights.",
+      sql_getDatabaseInstancesInstanceSettingInsightsConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "collation",
       "The name of server instance collation.",
       [],
       true,
@@ -356,9 +324,41 @@ export function Sql_getDatabaseInstancesInstanceSetting_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "ConnectorEnforcement",
-      "Specifies if connections must use Cloud SQL connectors.",
+      "availabilityType",
+      "The availability type of the Cloud SQL instance, high availability\n(REGIONAL) or single zone (ZONAL). For all instances, ensure that\nsettings.backup_configuration.enabled is set to true.\nFor MySQL instances, ensure that settings.backup_configuration.binary_log_enabled is set to true.\nFor Postgres instances, ensure that settings.backup_configuration.point_in_time_recovery_enabled\nis set to true. Defaults to ZONAL.",
       [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "dataCacheConfigs",
+      "Data cache configurations.",
+      sql_getDatabaseInstancesInstanceSettingDataCacheConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "databaseFlags",
+      "",
+      sql_getDatabaseInstancesInstanceSettingDatabaseFlag_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "locationPreferences",
+      "",
+      sql_getDatabaseInstancesInstanceSettingLocationPreference_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "ipConfigurations",
+      "",
+      sql_getDatabaseInstancesInstanceSettingIpConfiguration_GetTypes(),
       true,
       false,
     ),

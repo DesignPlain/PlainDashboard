@@ -6,39 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getInstanceNetworkInterfaceIpv6AccessConfig {
-  // The name of the instance. One of `name` or `self_link` must be provided.
-  Name?: string;
-
+export interface compute_getInstanceNetworkInterfaceIpv6AccessConfig {
   // The [networking tier][network-tier] used for configuring this instance. One of `PREMIUM` or `STANDARD`.
-  NetworkTier?: string;
+  networkTier?: string;
 
   // The DNS domain name for the public PTR record.
-  PublicPtrDomainName?: string;
+  publicPtrDomainName?: string;
 
   // A full or partial URL to a security policy to add to this instance. If this field is set to an empty string it will remove the associated security policy.
-  SecurityPolicy?: string;
+  securityPolicy?: string;
 
   // The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
-  ExternalIpv6?: string;
+  externalIpv6?: string;
 
   // The prefix length of the external IPv6 range.
-  ExternalIpv6PrefixLength?: string;
+  externalIpv6PrefixLength?: string;
+
+  // The name of the instance. One of `name` or `self_link` must be provided.
+  name?: string;
 }
 
-export function Compute_getInstanceNetworkInterfaceIpv6AccessConfig_GetTypes(): DynamicUIProps[] {
+export function compute_getInstanceNetworkInterfaceIpv6AccessConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ExternalIpv6",
-      "The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ExternalIpv6PrefixLength",
+      "externalIpv6PrefixLength",
       "The prefix length of the external IPv6 range.",
       [],
       true,
@@ -46,7 +38,7 @@ export function Compute_getInstanceNetworkInterfaceIpv6AccessConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of the instance. One of `name` or `self_link` must be provided.",
       [],
       true,
@@ -54,7 +46,7 @@ export function Compute_getInstanceNetworkInterfaceIpv6AccessConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "NetworkTier",
+      "networkTier",
       "The [networking tier][network-tier] used for configuring this instance. One of `PREMIUM` or `STANDARD`.",
       [],
       true,
@@ -62,7 +54,7 @@ export function Compute_getInstanceNetworkInterfaceIpv6AccessConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "PublicPtrDomainName",
+      "publicPtrDomainName",
       "The DNS domain name for the public PTR record.",
       [],
       true,
@@ -70,8 +62,16 @@ export function Compute_getInstanceNetworkInterfaceIpv6AccessConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "SecurityPolicy",
+      "securityPolicy",
       "A full or partial URL to a security policy to add to this instance. If this field is set to an empty string it will remove the associated security policy.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "externalIpv6",
+      "The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.",
       [],
       true,
       false,

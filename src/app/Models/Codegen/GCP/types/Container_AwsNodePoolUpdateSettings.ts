@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_AwsNodePoolUpdateSettingsSurgeSettings,
-  Container_AwsNodePoolUpdateSettingsSurgeSettings_GetTypes,
-} from "./Container_AwsNodePoolUpdateSettingsSurgeSettings";
+  container_AwsNodePoolUpdateSettingsSurgeSettings,
+  container_AwsNodePoolUpdateSettingsSurgeSettings_GetTypes,
+} from "./container_AwsNodePoolUpdateSettingsSurgeSettings";
 
-export interface Container_AwsNodePoolUpdateSettings {
+export interface container_AwsNodePoolUpdateSettings {
   // Optional. Settings for surge update.
-  SurgeSettings?: Container_AwsNodePoolUpdateSettingsSurgeSettings;
+  surgeSettings?: container_AwsNodePoolUpdateSettingsSurgeSettings;
 }
 
-export function Container_AwsNodePoolUpdateSettings_GetTypes(): DynamicUIProps[] {
+export function container_AwsNodePoolUpdateSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "SurgeSettings",
+      "surgeSettings",
       "Optional. Settings for surge update.",
-      Container_AwsNodePoolUpdateSettingsSurgeSettings_GetTypes(),
+      container_AwsNodePoolUpdateSettingsSurgeSettings_GetTypes(),
       false,
       false,
     ),

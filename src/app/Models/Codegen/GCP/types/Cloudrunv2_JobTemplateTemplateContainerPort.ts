@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_JobTemplateTemplateContainerPort {
+export interface cloudrunv2_JobTemplateTemplateContainerPort {
   // Port number the container listens on. This must be a valid TCP port number, 0 < containerPort < 65536.
-  ContainerPort?: number;
+  containerPort?: number;
 
   // If specified, used to specify which protocol to use. Allowed values are "http1" and "h2c".
-  Name?: string;
+  name?: string;
 }
 
-export function Cloudrunv2_JobTemplateTemplateContainerPort_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_JobTemplateTemplateContainerPort_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "ContainerPort",
+      "containerPort",
       "Port number the container listens on. This must be a valid TCP port number, 0 < containerPort < 65536.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Cloudrunv2_JobTemplateTemplateContainerPort_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       'If specified, used to specify which protocol to use. Allowed values are "http1" and "h2c".',
       [],
       false,

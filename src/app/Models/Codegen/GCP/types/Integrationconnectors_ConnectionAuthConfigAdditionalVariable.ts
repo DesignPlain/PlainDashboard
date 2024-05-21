@@ -6,45 +6,45 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Integrationconnectors_ConnectionAuthConfigAdditionalVariableEncryptionKeyValue,
-  Integrationconnectors_ConnectionAuthConfigAdditionalVariableEncryptionKeyValue_GetTypes,
-} from "./Integrationconnectors_ConnectionAuthConfigAdditionalVariableEncryptionKeyValue";
+  integrationconnectors_ConnectionAuthConfigAdditionalVariableEncryptionKeyValue,
+  integrationconnectors_ConnectionAuthConfigAdditionalVariableEncryptionKeyValue_GetTypes,
+} from "./integrationconnectors_ConnectionAuthConfigAdditionalVariableEncryptionKeyValue";
 import {
-  Integrationconnectors_ConnectionAuthConfigAdditionalVariableSecretValue,
-  Integrationconnectors_ConnectionAuthConfigAdditionalVariableSecretValue_GetTypes,
-} from "./Integrationconnectors_ConnectionAuthConfigAdditionalVariableSecretValue";
+  integrationconnectors_ConnectionAuthConfigAdditionalVariableSecretValue,
+  integrationconnectors_ConnectionAuthConfigAdditionalVariableSecretValue_GetTypes,
+} from "./integrationconnectors_ConnectionAuthConfigAdditionalVariableSecretValue";
 
-export interface Integrationconnectors_ConnectionAuthConfigAdditionalVariable {
-  // Boolean Value of configVariable.
-  BooleanValue?: boolean;
-
+export interface integrationconnectors_ConnectionAuthConfigAdditionalVariable {
   /*
 Encription key value of configVariable.
 Structure is documented below.
 */
-  EncryptionKeyValue?: Integrationconnectors_ConnectionAuthConfigAdditionalVariableEncryptionKeyValue;
+  encryptionKeyValue?: integrationconnectors_ConnectionAuthConfigAdditionalVariableEncryptionKeyValue;
 
   // Integer Value of configVariable.
-  IntegerValue?: number;
+  integerValue?: number;
 
   // Key for the configVariable
-  Key?: string;
+  key?: string;
 
   /*
 Secret value of configVariable
 Structure is documented below.
 */
-  SecretValue?: Integrationconnectors_ConnectionAuthConfigAdditionalVariableSecretValue;
+  secretValue?: integrationconnectors_ConnectionAuthConfigAdditionalVariableSecretValue;
 
   // String Value of configVariabley.
-  StringValue?: string;
+  stringValue?: string;
+
+  // Boolean Value of configVariable.
+  booleanValue?: boolean;
 }
 
-export function Integrationconnectors_ConnectionAuthConfigAdditionalVariable_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionAuthConfigAdditionalVariable_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "StringValue",
+      "stringValue",
       "String Value of configVariabley.",
       [],
       false,
@@ -52,7 +52,7 @@ export function Integrationconnectors_ConnectionAuthConfigAdditionalVariable_Get
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "BooleanValue",
+      "booleanValue",
       "Boolean Value of configVariable.",
       [],
       false,
@@ -60,15 +60,15 @@ export function Integrationconnectors_ConnectionAuthConfigAdditionalVariable_Get
     ),
     new DynamicUIProps(
       InputType.Object,
-      "EncryptionKeyValue",
+      "encryptionKeyValue",
       "Encription key value of configVariable.\nStructure is documented below.",
-      Integrationconnectors_ConnectionAuthConfigAdditionalVariableEncryptionKeyValue_GetTypes(),
+      integrationconnectors_ConnectionAuthConfigAdditionalVariableEncryptionKeyValue_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "IntegerValue",
+      "integerValue",
       "Integer Value of configVariable.",
       [],
       false,
@@ -76,7 +76,7 @@ export function Integrationconnectors_ConnectionAuthConfigAdditionalVariable_Get
     ),
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "key",
       "Key for the configVariable",
       [],
       true,
@@ -84,9 +84,9 @@ export function Integrationconnectors_ConnectionAuthConfigAdditionalVariable_Get
     ),
     new DynamicUIProps(
       InputType.Object,
-      "SecretValue",
+      "secretValue",
       "Secret value of configVariable\nStructure is documented below.",
-      Integrationconnectors_ConnectionAuthConfigAdditionalVariableSecretValue_GetTypes(),
+      integrationconnectors_ConnectionAuthConfigAdditionalVariableSecretValue_GetTypes(),
       false,
       false,
     ),

@@ -6,7 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_FlexibleAppVersionEndpointsApiService {
+export interface appengine_FlexibleAppVersionEndpointsApiService {
+  // Enable or disable trace sampling. By default, this is set to false for enabled.
+  disableTraceSampling?: boolean;
+
+  /*
+Endpoints service name which is the name of the "service" resource in the Service Management API.
+For example "myapi.endpoints.myproject.cloud.goog"
+*/
+  name?: string;
+
+  /*
+Endpoints rollout strategy. If FIXED, configId must be specified. If MANAGED, configId must be omitted.
+Default value is `FIXED`.
+Possible values are: `FIXED`, `MANAGED`.
+*/
+  rolloutStrategy?: string;
+
   /*
 Endpoints service configuration ID as specified by the Service Management API. For example "2016-09-19r1".
 By default, the rollout strategy for Endpoints is "FIXED". This means that Endpoints starts up with a particular configuration ID.
@@ -15,30 +31,14 @@ and is required in this case.
 Endpoints also has a rollout strategy called "MANAGED". When using this, Endpoints fetches the latest configuration and does not need
 the configuration ID. In this case, configId must be omitted.
 */
-  ConfigId?: string;
-
-  // Enable or disable trace sampling. By default, this is set to false for enabled.
-  DisableTraceSampling?: boolean;
-
-  /*
-Endpoints service name which is the name of the "service" resource in the Service Management API.
-For example "myapi.endpoints.myproject.cloud.goog"
-*/
-  Name?: string;
-
-  /*
-Endpoints rollout strategy. If FIXED, configId must be specified. If MANAGED, configId must be omitted.
-Default value is `FIXED`.
-Possible values are: `FIXED`, `MANAGED`.
-*/
-  RolloutStrategy?: string;
+  configId?: string;
 }
 
-export function Appengine_FlexibleAppVersionEndpointsApiService_GetTypes(): DynamicUIProps[] {
+export function appengine_FlexibleAppVersionEndpointsApiService_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ConfigId",
+      "configId",
       'Endpoints service configuration ID as specified by the Service Management API. For example "2016-09-19r1".\nBy default, the rollout strategy for Endpoints is "FIXED". This means that Endpoints starts up with a particular configuration ID.\nWhen a new configuration is rolled out, Endpoints must be given the new configuration ID. The configId field is used to give the configuration ID\nand is required in this case.\nEndpoints also has a rollout strategy called "MANAGED". When using this, Endpoints fetches the latest configuration and does not need\nthe configuration ID. In this case, configId must be omitted.',
       [],
       false,
@@ -46,7 +46,7 @@ export function Appengine_FlexibleAppVersionEndpointsApiService_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "DisableTraceSampling",
+      "disableTraceSampling",
       "Enable or disable trace sampling. By default, this is set to false for enabled.",
       [],
       false,
@@ -54,7 +54,7 @@ export function Appengine_FlexibleAppVersionEndpointsApiService_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       'Endpoints service name which is the name of the "service" resource in the Service Management API.\nFor example "myapi.endpoints.myproject.cloud.goog"',
       [],
       true,
@@ -62,7 +62,7 @@ export function Appengine_FlexibleAppVersionEndpointsApiService_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.String,
-      "RolloutStrategy",
+      "rolloutStrategy",
       "Endpoints rollout strategy. If FIXED, configId must be specified. If MANAGED, configId must be omitted.\nDefault value is `FIXED`.\nPossible values are: `FIXED`, `MANAGED`.",
       [],
       false,

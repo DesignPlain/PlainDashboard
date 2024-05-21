@@ -6,93 +6,61 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionNetworkFirewallPolicyRuleMatchLayer4Config,
-  Compute_RegionNetworkFirewallPolicyRuleMatchLayer4Config_GetTypes,
-} from "./Compute_RegionNetworkFirewallPolicyRuleMatchLayer4Config";
+  compute_RegionNetworkFirewallPolicyRuleMatchLayer4Config,
+  compute_RegionNetworkFirewallPolicyRuleMatchLayer4Config_GetTypes,
+} from "./compute_RegionNetworkFirewallPolicyRuleMatchLayer4Config";
 import {
-  Compute_RegionNetworkFirewallPolicyRuleMatchSrcSecureTag,
-  Compute_RegionNetworkFirewallPolicyRuleMatchSrcSecureTag_GetTypes,
-} from "./Compute_RegionNetworkFirewallPolicyRuleMatchSrcSecureTag";
+  compute_RegionNetworkFirewallPolicyRuleMatchSrcSecureTag,
+  compute_RegionNetworkFirewallPolicyRuleMatchSrcSecureTag_GetTypes,
+} from "./compute_RegionNetworkFirewallPolicyRuleMatchSrcSecureTag";
 
-export interface Compute_RegionNetworkFirewallPolicyRuleMatch {
-  // Name of the Google Cloud Threat Intelligence list.
-  DestThreatIntelligences?: Array<string>;
+export interface compute_RegionNetworkFirewallPolicyRuleMatch {
+  // Address groups which should be matched against the traffic source. Maximum number of source address groups is 10. Source address groups is only supported in Ingress rules.
+  srcAddressGroups?: Array<string>;
+
+  // Domain names that will be used to match against the resolved domain name of source of traffic. Can only be specified if DIRECTION is ingress.
+  srcFqdns?: Array<string>;
+
+  // CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+  srcIpRanges?: Array<string>;
+
+  // Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10. Destination address groups is only supported in Egress rules.
+  destAddressGroups?: Array<string>;
+
+  // The Unicode country codes whose IP addresses will be used to match against the source of traffic. Can only be specified if DIRECTION is egress.
+  destRegionCodes?: Array<string>;
 
   // Pairs of IP protocols and ports that the rule should match.
-  Layer4Configs?: Array<Compute_RegionNetworkFirewallPolicyRuleMatchLayer4Config>;
-
-  // Address groups which should be matched against the traffic source. Maximum number of source address groups is 10. Source address groups is only supported in Ingress rules.
-  SrcAddressGroups?: Array<string>;
+  layer4Configs?: Array<compute_RegionNetworkFirewallPolicyRuleMatchLayer4Config>;
 
   // The Unicode country codes whose IP addresses will be used to match against the source of traffic. Can only be specified if DIRECTION is ingress.
-  SrcRegionCodes?: Array<string>;
+  srcRegionCodes?: Array<string>;
 
   // List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the <code>srcSecureTag</code> are INEFFECTIVE, and there is no <code>srcIpRange</code>, this rule will be ignored. Maximum number of source tag values allowed is 256.
-  SrcSecureTags?: Array<Compute_RegionNetworkFirewallPolicyRuleMatchSrcSecureTag>;
+  srcSecureTags?: Array<compute_RegionNetworkFirewallPolicyRuleMatchSrcSecureTag>;
 
   /*
 Name of the Google Cloud Threat Intelligence list.
 
 The `layer4_configs` block supports:
 */
-  SrcThreatIntelligences?: Array<string>;
+  srcThreatIntelligences?: Array<string>;
 
   // Domain names that will be used to match against the resolved domain name of destination of traffic. Can only be specified if DIRECTION is egress.
-  DestFqdns?: Array<string>;
+  destFqdns?: Array<string>;
 
   // CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
-  DestIpRanges?: Array<string>;
+  destIpRanges?: Array<string>;
 
-  // The Unicode country codes whose IP addresses will be used to match against the source of traffic. Can only be specified if DIRECTION is egress.
-  DestRegionCodes?: Array<string>;
-
-  // Domain names that will be used to match against the resolved domain name of source of traffic. Can only be specified if DIRECTION is ingress.
-  SrcFqdns?: Array<string>;
-
-  // CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
-  SrcIpRanges?: Array<string>;
-
-  // Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10. Destination address groups is only supported in Egress rules.
-  DestAddressGroups?: Array<string>;
+  // Name of the Google Cloud Threat Intelligence list.
+  destThreatIntelligences?: Array<string>;
 }
 
-export function Compute_RegionNetworkFirewallPolicyRuleMatch_GetTypes(): DynamicUIProps[] {
+export function compute_RegionNetworkFirewallPolicyRuleMatch_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "DestRegionCodes",
-      "The Unicode country codes whose IP addresses will be used to match against the source of traffic. Can only be specified if DIRECTION is egress.",
-      InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "SrcFqdns",
-      "Domain names that will be used to match against the resolved domain name of source of traffic. Can only be specified if DIRECTION is ingress.",
-      InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "DestAddressGroups",
-      "Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10. Destination address groups is only supported in Egress rules.",
-      InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Layer4Configs",
-      "Pairs of IP protocols and ports that the rule should match.",
-      Compute_RegionNetworkFirewallPolicyRuleMatchLayer4Config_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "SrcAddressGroups",
+      "srcAddressGroups",
       "Address groups which should be matched against the traffic source. Maximum number of source address groups is 10. Source address groups is only supported in Ingress rules.",
       InputType_String_GetTypes(),
       false,
@@ -100,39 +68,23 @@ export function Compute_RegionNetworkFirewallPolicyRuleMatch_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Array,
-      "SrcSecureTags",
-      "List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the <code>srcSecureTag</code> are INEFFECTIVE, and there is no <code>srcIpRange</code>, this rule will be ignored. Maximum number of source tag values allowed is 256.",
-      Compute_RegionNetworkFirewallPolicyRuleMatchSrcSecureTag_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "SrcThreatIntelligences",
-      "Name of the Google Cloud Threat Intelligence list.\n\nThe `layer4_configs` block supports:",
+      "srcFqdns",
+      "Domain names that will be used to match against the resolved domain name of source of traffic. Can only be specified if DIRECTION is ingress.",
       InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "DestFqdns",
-      "Domain names that will be used to match against the resolved domain name of destination of traffic. Can only be specified if DIRECTION is egress.",
+      "destRegionCodes",
+      "The Unicode country codes whose IP addresses will be used to match against the source of traffic. Can only be specified if DIRECTION is egress.",
       InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "DestThreatIntelligences",
-      "Name of the Google Cloud Threat Intelligence list.",
-      InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "SrcRegionCodes",
+      "srcRegionCodes",
       "The Unicode country codes whose IP addresses will be used to match against the source of traffic. Can only be specified if DIRECTION is ingress.",
       InputType_String_GetTypes(),
       false,
@@ -140,7 +92,15 @@ export function Compute_RegionNetworkFirewallPolicyRuleMatch_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Array,
-      "DestIpRanges",
+      "destFqdns",
+      "Domain names that will be used to match against the resolved domain name of destination of traffic. Can only be specified if DIRECTION is egress.",
+      InputType_String_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "destIpRanges",
       "CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.",
       InputType_String_GetTypes(),
       false,
@@ -148,8 +108,48 @@ export function Compute_RegionNetworkFirewallPolicyRuleMatch_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Array,
-      "SrcIpRanges",
+      "srcIpRanges",
       "CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.",
+      InputType_String_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "destAddressGroups",
+      "Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10. Destination address groups is only supported in Egress rules.",
+      InputType_String_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "layer4Configs",
+      "Pairs of IP protocols and ports that the rule should match.",
+      compute_RegionNetworkFirewallPolicyRuleMatchLayer4Config_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "srcSecureTags",
+      "List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the <code>srcSecureTag</code> are INEFFECTIVE, and there is no <code>srcIpRange</code>, this rule will be ignored. Maximum number of source tag values allowed is 256.",
+      compute_RegionNetworkFirewallPolicyRuleMatchSrcSecureTag_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "srcThreatIntelligences",
+      "Name of the Google Cloud Threat Intelligence list.\n\nThe `layer4_configs` block supports:",
+      InputType_String_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "destThreatIntelligences",
+      "Name of the Google Cloud Threat Intelligence list.",
       InputType_String_GetTypes(),
       false,
       false,

@@ -6,24 +6,24 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Firebase_ExtensionsInstanceRuntimeDataProcessingState {
+export interface firebase_ExtensionsInstanceRuntimeDataProcessingState {
   /*
 Details about the processing. e.g. This could include the type of
 processing in progress or it could list errors or failures.
 This information will be shown in the console on the detail page
 for the extension instance.
 */
-  DetailMessage?: string;
+  detailMessage?: string;
 
   // The processing state of the extension instance.
-  State?: string;
+  state?: string;
 }
 
-export function Firebase_ExtensionsInstanceRuntimeDataProcessingState_GetTypes(): DynamicUIProps[] {
+export function firebase_ExtensionsInstanceRuntimeDataProcessingState_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DetailMessage",
+      "detailMessage",
       "Details about the processing. e.g. This could include the type of\nprocessing in progress or it could list errors or failures.\nThis information will be shown in the console on the detail page\nfor the extension instance.",
       [],
       false,
@@ -31,7 +31,7 @@ export function Firebase_ExtensionsInstanceRuntimeDataProcessingState_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "The processing state of the extension instance.",
       [],
       false,

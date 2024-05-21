@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetwork,
-  Databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetwork_GetTypes,
-} from "./Databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetwork";
+  databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetwork,
+  databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetwork_GetTypes,
+} from "./databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetwork";
 
-export interface Databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfig {
-  /*
-The list of external networks that are allowed to connect to the instance using the IP.
-Structure is documented below.
-*/
-  AuthorizedNetworks?: Array<Databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetwork>;
-
-  // Whether the instance should be assigned an IPv4 address or not.
-  EnableIpv4?: boolean;
-
+export interface databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfig {
   /*
 The resource link for the VPC network from which the Cloud SQL instance is accessible for private IP. For example, projects/myProject/global/networks/default.
 This setting can be updated, but it cannot be removed after it is set.
 */
-  PrivateNetwork?: string;
+  privateNetwork?: string;
 
   // Whether SSL connections over IP should be enforced or not.
-  RequireSsl?: boolean;
+  requireSsl?: boolean;
+
+  /*
+The list of external networks that are allowed to connect to the instance using the IP.
+Structure is documented below.
+*/
+  authorizedNetworks?: Array<databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetwork>;
+
+  // Whether the instance should be assigned an IPv4 address or not.
+  enableIpv4?: boolean;
 }
 
-export function Databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfig_GetTypes(): DynamicUIProps[] {
+export function databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AuthorizedNetworks",
+      "authorizedNetworks",
       "The list of external networks that are allowed to connect to the instance using the IP.\nStructure is documented below.",
-      Databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetwork_GetTypes(),
+      databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetwork_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableIpv4",
+      "enableIpv4",
       "Whether the instance should be assigned an IPv4 address or not.",
       [],
       false,
@@ -50,7 +50,7 @@ export function Databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConf
     ),
     new DynamicUIProps(
       InputType.String,
-      "PrivateNetwork",
+      "privateNetwork",
       "The resource link for the VPC network from which the Cloud SQL instance is accessible for private IP. For example, projects/myProject/global/networks/default.\nThis setting can be updated, but it cannot be removed after it is set.",
       [],
       false,
@@ -58,7 +58,7 @@ export function Databasemigrationservice_ConnectionProfileCloudsqlSettingsIpConf
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "RequireSsl",
+      "requireSsl",
       "Whether SSL connections over IP should be enforced or not.",
       [],
       false,

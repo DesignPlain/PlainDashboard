@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Workstations_WorkstationConfigEncryptionKey {
+export interface workstations_WorkstationConfigEncryptionKey {
   // The name of the Google Cloud KMS encryption key.
-  KmsKey?: string;
+  kmsKey?: string;
 
   // The service account to use with the specified KMS key.
-  KmsKeyServiceAccount?: string;
+  kmsKeyServiceAccount?: string;
 }
 
-export function Workstations_WorkstationConfigEncryptionKey_GetTypes(): DynamicUIProps[] {
+export function workstations_WorkstationConfigEncryptionKey_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKey",
+      "kmsKey",
       "The name of the Google Cloud KMS encryption key.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Workstations_WorkstationConfigEncryptionKey_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyServiceAccount",
+      "kmsKeyServiceAccount",
       "The service account to use with the specified KMS key.",
       [],
       true,

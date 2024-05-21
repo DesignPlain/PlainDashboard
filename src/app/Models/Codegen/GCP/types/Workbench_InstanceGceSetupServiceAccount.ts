@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Workbench_InstanceGceSetupServiceAccount {
+export interface workbench_InstanceGceSetupServiceAccount {
   // Optional. Email address of the service account.
-  Email?: string;
+  email?: string;
 
   /*
 (Output)
 Output only. The list of scopes to be made available for this
 service account. Set by the CLH to https://www.googleapis.com/auth/cloud-platform
 */
-  Scopes?: Array<string>;
+  scopes?: Array<string>;
 }
 
-export function Workbench_InstanceGceSetupServiceAccount_GetTypes(): DynamicUIProps[] {
+export function workbench_InstanceGceSetupServiceAccount_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Email",
+      "email",
       "Optional. Email address of the service account.",
       [],
       false,
@@ -30,7 +30,7 @@ export function Workbench_InstanceGceSetupServiceAccount_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Scopes",
+      "scopes",
       "(Output)\nOutput only. The list of scopes to be made available for this\nservice account. Set by the CLH to https://www.googleapis.com/auth/cloud-platform",
       InputType_String_GetTypes(),
       false,

@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Redis_getInstanceMaintenancePolicyWeeklyMaintenanceWindowStartTime {
+export interface redis_getInstanceMaintenancePolicyWeeklyMaintenanceWindowStartTime {
   // Minutes of hour of day. Must be from 0 to 59.
-  Minutes?: number;
+  minutes?: number;
 
   // Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
-  Nanos?: number;
+  nanos?: number;
 
   /*
 Seconds of minutes of the time. Must normally be from 0 to 59.
 An API may allow the value 60 if it allows leap-seconds.
 */
-  Seconds?: number;
+  seconds?: number;
 
   /*
 Hours of day in 24 hour format. Should be from 0 to 23.
 An API may choose to allow the value "24:00:00" for scenarios like business closing time.
 */
-  Hours?: number;
+  hours?: number;
 }
 
-export function Redis_getInstanceMaintenancePolicyWeeklyMaintenanceWindowStartTime_GetTypes(): DynamicUIProps[] {
+export function redis_getInstanceMaintenancePolicyWeeklyMaintenanceWindowStartTime_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Minutes",
+      "minutes",
       "Minutes of hour of day. Must be from 0 to 59.",
       [],
       true,
@@ -38,7 +38,7 @@ export function Redis_getInstanceMaintenancePolicyWeeklyMaintenanceWindowStartTi
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Nanos",
+      "nanos",
       "Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.",
       [],
       true,
@@ -46,7 +46,7 @@ export function Redis_getInstanceMaintenancePolicyWeeklyMaintenanceWindowStartTi
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Seconds",
+      "seconds",
       "Seconds of minutes of the time. Must normally be from 0 to 59.\nAn API may allow the value 60 if it allows leap-seconds.",
       [],
       true,
@@ -54,7 +54,7 @@ export function Redis_getInstanceMaintenancePolicyWeeklyMaintenanceWindowStartTi
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Hours",
+      "hours",
       'Hours of day in 24 hour format. Should be from 0 to 23.\nAn API may choose to allow the value "24:00:00" for scenarios like business closing time.',
       [],
       true,

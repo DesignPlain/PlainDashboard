@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Logging_MetricBucketOptionsExplicitBuckets {
+export interface logging_MetricBucketOptionsExplicitBuckets {
   // The values must be monotonically increasing.
-  Bounds?: Array<number>;
+  bounds?: Array<number>;
 }
 
-export function Logging_MetricBucketOptionsExplicitBuckets_GetTypes(): DynamicUIProps[] {
+export function logging_MetricBucketOptionsExplicitBuckets_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Bounds",
+      "bounds",
       "The values must be monotonically increasing.",
       InputType_Number_GetTypes(),
       true,

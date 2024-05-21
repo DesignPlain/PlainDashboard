@@ -6,36 +6,44 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGit,
-  Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGit_GetTypes,
-} from "./Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGit";
+  clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGit,
+  clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGit_GetTypes,
+} from "./clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGit";
 import {
-  Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudStorage,
-  Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudStorage_GetTypes,
-} from "./Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudStorage";
+  clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudStorage,
+  clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudStorage_GetTypes,
+} from "./clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudStorage";
 
-export interface Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModule {
+export interface clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModule {
   // The Skaffold Config modules to use from the specified source.
-  Configs?: Array<string>;
+  configs?: Array<string>;
 
   /*
 Remote git repository containing the Skaffold Config modules.
 Structure is documented below.
 */
-  Git?: Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGit;
+  git?: clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGit;
 
   /*
 Cloud Storage bucket containing Skaffold Config modules.
 Structure is documented below.
 */
-  GoogleCloudStorage?: Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudStorage;
+  googleCloudStorage?: clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudStorage;
 }
 
-export function Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModule_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Object,
+      "googleCloudStorage",
+      "Cloud Storage bucket containing Skaffold Config modules.\nStructure is documented below.",
+      clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudStorage_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Array,
-      "Configs",
+      "configs",
       "The Skaffold Config modules to use from the specified source.",
       InputType_String_GetTypes(),
       false,
@@ -43,17 +51,9 @@ export function Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModule_G
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Git",
+      "git",
       "Remote git repository containing the Skaffold Config modules.\nStructure is documented below.",
-      Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGit_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "GoogleCloudStorage",
-      "Cloud Storage bucket containing Skaffold Config modules.\nStructure is documented below.",
-      Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudStorage_GetTypes(),
+      clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGit_GetTypes(),
       false,
       false,
     ),

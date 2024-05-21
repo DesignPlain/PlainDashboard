@@ -6,47 +6,39 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_WorkflowTemplateJobSparkSqlJobLoggingConfig,
-  Dataproc_WorkflowTemplateJobSparkSqlJobLoggingConfig_GetTypes,
-} from "./Dataproc_WorkflowTemplateJobSparkSqlJobLoggingConfig";
+  dataproc_WorkflowTemplateJobSparkSqlJobLoggingConfig,
+  dataproc_WorkflowTemplateJobSparkSqlJobLoggingConfig_GetTypes,
+} from "./dataproc_WorkflowTemplateJobSparkSqlJobLoggingConfig";
 import {
-  Dataproc_WorkflowTemplateJobSparkSqlJobQueryList,
-  Dataproc_WorkflowTemplateJobSparkSqlJobQueryList_GetTypes,
-} from "./Dataproc_WorkflowTemplateJobSparkSqlJobQueryList";
+  dataproc_WorkflowTemplateJobSparkSqlJobQueryList,
+  dataproc_WorkflowTemplateJobSparkSqlJobQueryList_GetTypes,
+} from "./dataproc_WorkflowTemplateJobSparkSqlJobQueryList";
 
-export interface Dataproc_WorkflowTemplateJobSparkSqlJob {
-  // Mapping of query variable names to values (equivalent to the Spark SQL command: SET `name="value";`).
-  ScriptVariables?: Map<string, string>;
-
+export interface dataproc_WorkflowTemplateJobSparkSqlJob {
   // HCFS URIs of jar files to be added to the Spark CLASSPATH.
-  JarFileUris?: Array<string>;
+  jarFileUris?: Array<string>;
 
   // The runtime log config for job execution.
-  LoggingConfig?: Dataproc_WorkflowTemplateJobSparkSqlJobLoggingConfig;
+  loggingConfig?: dataproc_WorkflowTemplateJobSparkSqlJobLoggingConfig;
 
   // A mapping of property names to values, used to configure Spark SQL's SparkConf. Properties that conflict with values set by the Dataproc API may be overwritten.
-  Properties?: Map<string, string>;
+  properties?: Map<string, string>;
 
   // The HCFS URI of the script that contains SQL queries.
-  QueryFileUri?: string;
+  queryFileUri?: string;
 
   // A list of queries.
-  QueryList?: Dataproc_WorkflowTemplateJobSparkSqlJobQueryList;
+  queryList?: dataproc_WorkflowTemplateJobSparkSqlJobQueryList;
+
+  // Mapping of query variable names to values (equivalent to the Spark SQL command: SET `name="value";`).
+  scriptVariables?: Map<string, string>;
 }
 
-export function Dataproc_WorkflowTemplateJobSparkSqlJob_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplateJobSparkSqlJob_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "LoggingConfig",
-      "The runtime log config for job execution.",
-      Dataproc_WorkflowTemplateJobSparkSqlJobLoggingConfig_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
       InputType.Map,
-      "Properties",
+      "properties",
       "A mapping of property names to values, used to configure Spark SQL's SparkConf. Properties that conflict with values set by the Dataproc API may be overwritten.",
       InputType_Map_GetTypes(),
       false,
@@ -54,7 +46,7 @@ export function Dataproc_WorkflowTemplateJobSparkSqlJob_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "QueryFileUri",
+      "queryFileUri",
       "The HCFS URI of the script that contains SQL queries.",
       [],
       false,
@@ -62,15 +54,15 @@ export function Dataproc_WorkflowTemplateJobSparkSqlJob_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Object,
-      "QueryList",
+      "queryList",
       "A list of queries.",
-      Dataproc_WorkflowTemplateJobSparkSqlJobQueryList_GetTypes(),
+      dataproc_WorkflowTemplateJobSparkSqlJobQueryList_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "ScriptVariables",
+      "scriptVariables",
       'Mapping of query variable names to values (equivalent to the Spark SQL command: SET `name="value";`).',
       InputType_Map_GetTypes(),
       false,
@@ -78,9 +70,17 @@ export function Dataproc_WorkflowTemplateJobSparkSqlJob_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Array,
-      "JarFileUris",
+      "jarFileUris",
       "HCFS URIs of jar files to be added to the Spark CLASSPATH.",
       InputType_String_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "loggingConfig",
+      "The runtime log config for job execution.",
+      dataproc_WorkflowTemplateJobSparkSqlJobLoggingConfig_GetTypes(),
       false,
       true,
     ),

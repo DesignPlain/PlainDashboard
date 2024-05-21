@@ -6,44 +6,52 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuild_TriggerSourceToBuild {
-  /*
-The full resource name of the bitbucket server config.
-Format: projects/{project}/locations/{location}/bitbucketServerConfigs/{id}.
-*/
-  BitbucketServerConfig?: string;
-
+export interface cloudbuild_TriggerSourceToBuild {
   /*
 The full resource name of the github enterprise config.
 Format: projects/{project}/locations/{location}/githubEnterpriseConfigs/{id}. projects/{project}/githubEnterpriseConfigs/{id}.
 */
-  GithubEnterpriseConfig?: string;
+  githubEnterpriseConfig?: string;
 
   // The branch or tag to use. Must start with "refs/" (required).
-  Ref?: string;
+  ref?: string;
 
   /*
 The type of the repo, since it may not be explicit from the repo field (e.g from a URL).
 Values can be UNKNOWN, CLOUD_SOURCE_REPOSITORIES, GITHUB, BITBUCKET_SERVER
 Possible values are: `UNKNOWN`, `CLOUD_SOURCE_REPOSITORIES`, `GITHUB`, `BITBUCKET_SERVER`.
 */
-  RepoType?: string;
+  repoType?: string;
 
   /*
 The qualified resource name of the Repo API repository.
 Either uri or repository can be specified and is required.
 */
-  Repository?: string;
+  repository?: string;
 
   // The URI of the repo.
-  Uri?: string;
+  uri?: string;
+
+  /*
+The full resource name of the bitbucket server config.
+Format: projects/{project}/locations/{location}/bitbucketServerConfigs/{id}.
+*/
+  bitbucketServerConfig?: string;
 }
 
-export function Cloudbuild_TriggerSourceToBuild_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_TriggerSourceToBuild_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Ref",
+      "githubEnterpriseConfig",
+      "The full resource name of the github enterprise config.\nFormat: projects/{project}/locations/{location}/githubEnterpriseConfigs/{id}. projects/{project}/githubEnterpriseConfigs/{id}.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "ref",
       'The branch or tag to use. Must start with "refs/" (required).',
       [],
       true,
@@ -51,7 +59,7 @@ export function Cloudbuild_TriggerSourceToBuild_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "RepoType",
+      "repoType",
       "The type of the repo, since it may not be explicit from the repo field (e.g from a URL).\nValues can be UNKNOWN, CLOUD_SOURCE_REPOSITORIES, GITHUB, BITBUCKET_SERVER\nPossible values are: `UNKNOWN`, `CLOUD_SOURCE_REPOSITORIES`, `GITHUB`, `BITBUCKET_SERVER`.",
       [],
       true,
@@ -59,7 +67,7 @@ export function Cloudbuild_TriggerSourceToBuild_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Repository",
+      "repository",
       "The qualified resource name of the Repo API repository.\nEither uri or repository can be specified and is required.",
       [],
       false,
@@ -67,7 +75,7 @@ export function Cloudbuild_TriggerSourceToBuild_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Uri",
+      "uri",
       "The URI of the repo.",
       [],
       false,
@@ -75,16 +83,8 @@ export function Cloudbuild_TriggerSourceToBuild_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "BitbucketServerConfig",
+      "bitbucketServerConfig",
       "The full resource name of the bitbucket server config.\nFormat: projects/{project}/locations/{location}/bitbucketServerConfigs/{id}.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "GithubEnterpriseConfig",
-      "The full resource name of the github enterprise config.\nFormat: projects/{project}/locations/{location}/githubEnterpriseConfigs/{id}. projects/{project}/githubEnterpriseConfigs/{id}.",
       [],
       false,
       false,

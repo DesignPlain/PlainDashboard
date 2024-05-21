@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve,
-  Certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve_GetTypes,
-} from "./Certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve";
+  certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve,
+  certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve_GetTypes,
+} from "./certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve";
 import {
-  Certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeRsa,
-  Certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeRsa_GetTypes,
-} from "./Certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeRsa";
+  certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeRsa,
+  certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeRsa_GetTypes,
+} from "./certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeRsa";
 
-export interface Certificateauthority_CaPoolIssuancePolicyAllowedKeyType {
+export interface certificateauthority_CaPoolIssuancePolicyAllowedKeyType {
   /*
 Represents an allowed Elliptic Curve key type.
 Structure is documented below.
 */
-  EllipticCurve?: Certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve;
+  ellipticCurve?: certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve;
 
   /*
 Describes an RSA key that may be used in a Certificate issued from a CaPool.
 Structure is documented below.
 */
-  Rsa?: Certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeRsa;
+  rsa?: certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeRsa;
 }
 
-export function Certificateauthority_CaPoolIssuancePolicyAllowedKeyType_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CaPoolIssuancePolicyAllowedKeyType_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "EllipticCurve",
+      "ellipticCurve",
       "Represents an allowed Elliptic Curve key type.\nStructure is documented below.",
-      Certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve_GetTypes(),
+      certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Rsa",
+      "rsa",
       "Describes an RSA key that may be used in a Certificate issued from a CaPool.\nStructure is documented below.",
-      Certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeRsa_GetTypes(),
+      certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeRsa_GetTypes(),
       false,
       false,
     ),

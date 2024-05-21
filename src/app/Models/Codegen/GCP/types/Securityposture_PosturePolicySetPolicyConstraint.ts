@@ -6,79 +6,79 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraint,
-  Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraint_GetTypes,
-} from "./Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraint";
+  securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraint,
+  securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraint_GetTypes,
+} from "./securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraint";
 import {
-  Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom,
-  Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom_GetTypes,
-} from "./Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom";
+  securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom,
+  securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom_GetTypes,
+} from "./securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom";
 import {
-  Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule,
-  Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule_GetTypes,
-} from "./Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule";
+  securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule,
+  securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule_GetTypes,
+} from "./securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule";
 import {
-  Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule,
-  Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule_GetTypes,
-} from "./Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule";
+  securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule,
+  securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule_GetTypes,
+} from "./securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule";
 
-export interface Securityposture_PosturePolicySetPolicyConstraint {
+export interface securityposture_PosturePolicySetPolicyConstraint {
   /*
 Organization policy canned constraint definition.
 Structure is documented below.
 */
-  OrgPolicyConstraint?: Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraint;
+  orgPolicyConstraint?: securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraint;
 
   /*
 Organization policy custom constraint policy definition.
 Structure is documented below.
 */
-  OrgPolicyConstraintCustom?: Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom;
+  orgPolicyConstraintCustom?: securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom;
 
   /*
 Definition of Security Health Analytics Custom Module.
 Structure is documented below.
 */
-  SecurityHealthAnalyticsCustomModule?: Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule;
+  securityHealthAnalyticsCustomModule?: securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule;
 
   /*
 Security Health Analytics built-in detector definition.
 Structure is documented below.
 */
-  SecurityHealthAnalyticsModule?: Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule;
+  securityHealthAnalyticsModule?: securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule;
 }
 
-export function Securityposture_PosturePolicySetPolicyConstraint_GetTypes(): DynamicUIProps[] {
+export function securityposture_PosturePolicySetPolicyConstraint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "SecurityHealthAnalyticsCustomModule",
-      "Definition of Security Health Analytics Custom Module.\nStructure is documented below.",
-      Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "SecurityHealthAnalyticsModule",
-      "Security Health Analytics built-in detector definition.\nStructure is documented below.",
-      Securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "OrgPolicyConstraint",
-      "Organization policy canned constraint definition.\nStructure is documented below.",
-      Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraint_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "OrgPolicyConstraintCustom",
+      "orgPolicyConstraintCustom",
       "Organization policy custom constraint policy definition.\nStructure is documented below.",
-      Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom_GetTypes(),
+      securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "securityHealthAnalyticsCustomModule",
+      "Definition of Security Health Analytics Custom Module.\nStructure is documented below.",
+      securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "securityHealthAnalyticsModule",
+      "Security Health Analytics built-in detector definition.\nStructure is documented below.",
+      securityposture_PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "orgPolicyConstraint",
+      "Organization policy canned constraint definition.\nStructure is documented below.",
+      securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraint_GetTypes(),
       false,
       false,
     ),

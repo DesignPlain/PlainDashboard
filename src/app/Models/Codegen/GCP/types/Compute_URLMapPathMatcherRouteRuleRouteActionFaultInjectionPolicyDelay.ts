@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayFixedDelay,
-  Compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayFixedDelay_GetTypes,
-} from "./Compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayFixedDelay";
+  compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayFixedDelay,
+  compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayFixedDelay_GetTypes,
+} from "./compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayFixedDelay";
 
-export interface Compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay {
+export interface compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay {
   /*
 Specifies the value of the fixed delay interval.
 Structure is documented below.
 */
-  FixedDelay?: Compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayFixedDelay;
+  fixedDelay?: compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayFixedDelay;
 
   /*
 The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.
 The value must be between 0.0 and 100.0 inclusive.
 */
-  Percentage?: number;
+  percentage?: number;
 }
 
-export function Compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay_GetTypes(): DynamicUIProps[] {
+export function compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "FixedDelay",
+      "fixedDelay",
       "Specifies the value of the fixed delay interval.\nStructure is documented below.",
-      Compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayFixedDelay_GetTypes(),
+      compute_URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayFixedDelay_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Percentage",
+      "percentage",
       "The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.\nThe value must be between 0.0 and 100.0 inclusive.",
       [],
       false,

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterNodePoolNetworkConfigNetworkPerformanceConfig {
+export interface container_ClusterNodePoolNetworkConfigNetworkPerformanceConfig {
   // Specifies the total network bandwidth tier for the NodePool.
-  TotalEgressBandwidthTier?: string;
+  totalEgressBandwidthTier?: string;
 }
 
-export function Container_ClusterNodePoolNetworkConfigNetworkPerformanceConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterNodePoolNetworkConfigNetworkPerformanceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "TotalEgressBandwidthTier",
+      "totalEgressBandwidthTier",
       "Specifies the total network bandwidth tier for the NodePool.",
       [],
       true,

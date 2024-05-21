@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Secretmanager_SecretTopic {
+export interface secretmanager_SecretTopic {
   /*
 The resource name of the Pub/Sub topic that will be published to, in the following format: projects/-/topics/-.
 For publication to succeed, the Secret Manager Service Agent service account must have pubsub.publisher permissions on the topic.
 */
-  Name?: string;
+  name?: string;
 }
 
-export function Secretmanager_SecretTopic_GetTypes(): DynamicUIProps[] {
+export function secretmanager_SecretTopic_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The resource name of the Pub/Sub topic that will be published to, in the following format: projects/*/topics/*.\nFor publication to succeed, the Secret Manager Service Agent service account must have pubsub.publisher permissions on the topic.",
       [],
       true,

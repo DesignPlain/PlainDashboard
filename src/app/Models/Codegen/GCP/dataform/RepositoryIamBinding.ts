@@ -7,73 +7,73 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataform_RepositoryIamBindingCondition,
-  Dataform_RepositoryIamBindingCondition_GetTypes,
-} from "../types/Dataform_RepositoryIamBindingCondition";
+  dataform_RepositoryIamBindingCondition,
+  dataform_RepositoryIamBindingCondition_GetTypes,
+} from "../types/dataform_RepositoryIamBindingCondition";
 
 export interface RepositoryIamBindingArgs {
   //
-  Region?: string;
+  repository?: string;
 
   //
-  Repository?: string;
+  role?: string;
 
   //
-  Role?: string;
+  condition?: dataform_RepositoryIamBindingCondition;
 
   //
-  Condition?: Dataform_RepositoryIamBindingCondition;
+  members?: Array<string>;
 
   //
-  Members?: Array<string>;
+  project?: string;
 
   //
-  Project?: string;
+  region?: string;
 }
 export class RepositoryIamBinding extends Resource {
   //
-  public Region?: string;
+  public condition?: dataform_RepositoryIamBindingCondition;
 
   //
-  public Repository?: string;
+  public etag?: string;
 
   //
-  public Role?: string;
+  public members?: Array<string>;
 
   //
-  public Condition?: Dataform_RepositoryIamBindingCondition;
+  public project?: string;
 
   //
-  public Etag?: string;
+  public region?: string;
 
   //
-  public Members?: Array<string>;
+  public repository?: string;
 
   //
-  public Project?: string;
+  public role?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Project", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Region", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Repository", "", [], true, true),
-      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
+      new DynamicUIProps(InputType.String, "repository", "", [], true, true),
+      new DynamicUIProps(InputType.String, "role", "", [], true, true),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Dataform_RepositoryIamBindingCondition_GetTypes(),
+        dataform_RepositoryIamBindingCondition_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "Members",
+        "members",
         "",
         InputType_String_GetTypes(),
         true,
         false,
       ),
+      new DynamicUIProps(InputType.String, "project", "", [], false, true),
+      new DynamicUIProps(InputType.String, "region", "", [], false, true),
     ];
   }
 }

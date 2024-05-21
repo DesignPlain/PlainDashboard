@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AttachedClusterProxyConfigKubernetesSecret {
+export interface container_AttachedClusterProxyConfigKubernetesSecret {
   // Name of the kubernetes secret containing the proxy config.
-  Name?: string;
+  name?: string;
 
   // Namespace of the kubernetes secret containing the proxy config.
-  Namespace?: string;
+  namespace?: string;
 }
 
-export function Container_AttachedClusterProxyConfigKubernetesSecret_GetTypes(): DynamicUIProps[] {
+export function container_AttachedClusterProxyConfigKubernetesSecret_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Name of the kubernetes secret containing the proxy config.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Container_AttachedClusterProxyConfigKubernetesSecret_GetTypes():
     ),
     new DynamicUIProps(
       InputType.String,
-      "Namespace",
+      "namespace",
       "Namespace of the kubernetes secret containing the proxy config.",
       [],
       true,

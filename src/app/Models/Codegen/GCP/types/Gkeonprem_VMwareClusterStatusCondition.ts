@@ -6,68 +6,44 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_VMwareClusterStatusCondition {
+export interface gkeonprem_VMwareClusterStatusCondition {
   /*
 (Output)
 Last time the condition transit from one status to another.
 */
-  LastTransitionTime?: string;
+  lastTransitionTime?: string;
 
   /*
 (Output)
 Human-readable message indicating details about last transition.
 */
-  Message?: string;
+  message?: string;
 
   /*
 (Output)
 Machine-readable message indicating details about last transition.
 */
-  Reason?: string;
+  reason?: string;
 
   /*
 (Output)
 The lifecycle state of the condition.
 */
-  State?: string;
+  state?: string;
 
   /*
 (Output)
 Type of the condition.
 (e.g., ClusterRunning, NodePoolRunning or ServerSidePreflightReady)
 */
-  Type?: string;
+  type?: string;
 }
 
-export function Gkeonprem_VMwareClusterStatusCondition_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterStatusCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Reason",
-      "(Output)\nMachine-readable message indicating details about last transition.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "State",
-      "(Output)\nThe lifecycle state of the condition.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Type",
-      "(Output)\nType of the condition.\n(e.g., ClusterRunning, NodePoolRunning or ServerSidePreflightReady)",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "LastTransitionTime",
+      "lastTransitionTime",
       "(Output)\nLast time the condition transit from one status to another.",
       [],
       false,
@@ -75,8 +51,32 @@ export function Gkeonprem_VMwareClusterStatusCondition_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "Message",
+      "message",
       "(Output)\nHuman-readable message indicating details about last transition.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "reason",
+      "(Output)\nMachine-readable message indicating details about last transition.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "state",
+      "(Output)\nThe lifecycle state of the condition.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "type",
+      "(Output)\nType of the condition.\n(e.g., ClusterRunning, NodePoolRunning or ServerSidePreflightReady)",
       [],
       false,
       false,

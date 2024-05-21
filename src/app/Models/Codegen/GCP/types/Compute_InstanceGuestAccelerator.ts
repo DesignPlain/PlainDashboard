@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceGuestAccelerator {
+export interface compute_InstanceGuestAccelerator {
   // The accelerator type resource to expose to this instance. E.g. `nvidia-tesla-k80`.
-  Type?: string;
+  type?: string;
 
   // The number of the guest accelerator cards exposed to this instance.
-  Count?: number;
+  count?: number;
 }
 
-export function Compute_InstanceGuestAccelerator_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceGuestAccelerator_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "The accelerator type resource to expose to this instance. E.g. `nvidia-tesla-k80`.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Compute_InstanceGuestAccelerator_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Count",
+      "count",
       "The number of the guest accelerator cards exposed to this instance.",
       [],
       true,

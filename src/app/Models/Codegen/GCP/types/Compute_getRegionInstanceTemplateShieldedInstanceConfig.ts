@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getRegionInstanceTemplateShieldedInstanceConfig {
+export interface compute_getRegionInstanceTemplateShieldedInstanceConfig {
   // - Compare the most recent boot measurements to the integrity policy baseline and return a pair of pass/fail results depending on whether they match or not. Defaults to true.
-  EnableIntegrityMonitoring?: boolean;
+  enableIntegrityMonitoring?: boolean;
 
   // - Verify the digital signature of all boot components, and halt the boot process if signature verification fails. Defaults to false.
-  EnableSecureBoot?: boolean;
+  enableSecureBoot?: boolean;
 
   // - Use a virtualized trusted platform module, which is a specialized computer chip you can use to encrypt objects like keys and certificates. Defaults to true.
-  EnableVtpm?: boolean;
+  enableVtpm?: boolean;
 }
 
-export function Compute_getRegionInstanceTemplateShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
+export function compute_getRegionInstanceTemplateShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableIntegrityMonitoring",
+      "enableIntegrityMonitoring",
       "- Compare the most recent boot measurements to the integrity policy baseline and return a pair of pass/fail results depending on whether they match or not. Defaults to true.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Compute_getRegionInstanceTemplateShieldedInstanceConfig_GetTypes
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableSecureBoot",
+      "enableSecureBoot",
       "- Verify the digital signature of all boot components, and halt the boot process if signature verification fails. Defaults to false.",
       [],
       true,
@@ -37,7 +37,7 @@ export function Compute_getRegionInstanceTemplateShieldedInstanceConfig_GetTypes
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableVtpm",
+      "enableVtpm",
       "- Use a virtualized trusted platform module, which is a specialized computer chip you can use to encrypt objects like keys and certificates. Defaults to true.",
       [],
       true,

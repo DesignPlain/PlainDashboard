@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_VMwareClusterLoadBalancerManualLbConfig {
+export interface gkeonprem_VMwareClusterLoadBalancerManualLbConfig {
+  /*
+NodePort for ingress service's https. The ingress service in the admin
+cluster is implemented as a Service of type NodePort (ex. 30139).
+*/
+  ingressHttpsNodePort?: number;
+
   /*
 NodePort for konnectivity server service running as a sidecar in each
 kube-apiserver pod (ex. 30564).
 */
-  KonnectivityServerNodePort?: number;
+  konnectivityServerNodePort?: number;
 
   /*
 NodePort for control plane service. The Kubernetes API server in the admin
 cluster is implemented as a Service of type NodePort (ex. 30968).
 */
-  ControlPlaneNodePort?: number;
+  controlPlaneNodePort?: number;
 
   /*
 NodePort for ingress service's http. The ingress service in the admin
 cluster is implemented as a Service of type NodePort (ex. 32527).
 */
-  IngressHttpNodePort?: number;
-
-  /*
-NodePort for ingress service's https. The ingress service in the admin
-cluster is implemented as a Service of type NodePort (ex. 30139).
-*/
-  IngressHttpsNodePort?: number;
+  ingressHttpNodePort?: number;
 }
 
-export function Gkeonprem_VMwareClusterLoadBalancerManualLbConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterLoadBalancerManualLbConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "ControlPlaneNodePort",
+      "controlPlaneNodePort",
       "NodePort for control plane service. The Kubernetes API server in the admin\ncluster is implemented as a Service of type NodePort (ex. 30968).",
       [],
       false,
@@ -44,7 +44,7 @@ export function Gkeonprem_VMwareClusterLoadBalancerManualLbConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Number,
-      "IngressHttpNodePort",
+      "ingressHttpNodePort",
       "NodePort for ingress service's http. The ingress service in the admin\ncluster is implemented as a Service of type NodePort (ex. 32527).",
       [],
       false,
@@ -52,7 +52,7 @@ export function Gkeonprem_VMwareClusterLoadBalancerManualLbConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Number,
-      "IngressHttpsNodePort",
+      "ingressHttpsNodePort",
       "NodePort for ingress service's https. The ingress service in the admin\ncluster is implemented as a Service of type NodePort (ex. 30139).",
       [],
       false,
@@ -60,7 +60,7 @@ export function Gkeonprem_VMwareClusterLoadBalancerManualLbConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Number,
-      "KonnectivityServerNodePort",
+      "konnectivityServerNodePort",
       "NodePort for konnectivity server service running as a sidecar in each\nkube-apiserver pod (ex. 30564).",
       [],
       false,

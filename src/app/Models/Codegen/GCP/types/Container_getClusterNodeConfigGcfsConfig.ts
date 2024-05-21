@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodeConfigGcfsConfig {
+export interface container_getClusterNodeConfigGcfsConfig {
   // Whether or not GCFS is enabled
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_getClusterNodeConfigGcfsConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodeConfigGcfsConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether or not GCFS is enabled",
       [],
       true,

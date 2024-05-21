@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_TransferJobScheduleStartTimeOfDay {
+export interface storage_TransferJobScheduleStartTimeOfDay {
   // Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
-  Nanos?: number;
+  nanos?: number;
 
   // Seconds of minutes of the time. Must normally be from 0 to 59.
-  Seconds?: number;
+  seconds?: number;
 
   // Hours of day in 24 hour format. Should be from 0 to 23
-  Hours?: number;
+  hours?: number;
 
   // Minutes of hour of day. Must be from 0 to 59.
-  Minutes?: number;
+  minutes?: number;
 }
 
-export function Storage_TransferJobScheduleStartTimeOfDay_GetTypes(): DynamicUIProps[] {
+export function storage_TransferJobScheduleStartTimeOfDay_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Nanos",
+      "nanos",
       "Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.",
       [],
       true,
@@ -32,7 +32,7 @@ export function Storage_TransferJobScheduleStartTimeOfDay_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Seconds",
+      "seconds",
       "Seconds of minutes of the time. Must normally be from 0 to 59.",
       [],
       true,
@@ -40,7 +40,7 @@ export function Storage_TransferJobScheduleStartTimeOfDay_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Hours",
+      "hours",
       "Hours of day in 24 hour format. Should be from 0 to 23",
       [],
       true,
@@ -48,7 +48,7 @@ export function Storage_TransferJobScheduleStartTimeOfDay_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Minutes",
+      "minutes",
       "Minutes of hour of day. Must be from 0 to 59.",
       [],
       true,

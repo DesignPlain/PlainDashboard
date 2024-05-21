@@ -6,11 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterAddonsConfigDnsCacheConfig {
+export interface container_getClusterAddonsConfigDnsCacheConfig {
   //
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_getClusterAddonsConfigDnsCacheConfig_GetTypes(): DynamicUIProps[] {
-  return [new DynamicUIProps(InputType.Bool, "Enabled", "", [], true, false)];
+export function container_getClusterAddonsConfigDnsCacheConfig_GetTypes(): DynamicUIProps[] {
+  return [new DynamicUIProps(InputType.Bool, "enabled", "", [], true, false)];
 }

@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTable,
-  Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTable_GetTypes,
-} from "./Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTable";
+  datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTable,
+  datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTable_GetTypes,
+} from "./datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTable";
 
-export interface Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabase {
+export interface datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabase {
   // Database name.
-  Database?: string;
+  database?: string;
 
   /*
 Tables in the database.
 Structure is documented below.
 */
-  MysqlTables?: Array<Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTable>;
+  mysqlTables?: Array<datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTable>;
 }
 
-export function Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabase_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabase_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Database",
+      "database",
       "Database name.",
       [],
       true,
@@ -33,9 +33,9 @@ export function Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysq
     ),
     new DynamicUIProps(
       InputType.Array,
-      "MysqlTables",
+      "mysqlTables",
       "Tables in the database.\nStructure is documented below.",
-      Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTable_GetTypes(),
+      datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTable_GetTypes(),
       false,
       false,
     ),

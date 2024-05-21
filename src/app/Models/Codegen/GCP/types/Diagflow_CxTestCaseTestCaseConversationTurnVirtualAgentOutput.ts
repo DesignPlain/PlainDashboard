@@ -6,54 +6,62 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage,
-  Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage_GetTypes,
-} from "./Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage";
+  diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTextResponse,
+  diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTextResponse_GetTypes,
+} from "./diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTextResponse";
 import {
-  Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTextResponse,
-  Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTextResponse_GetTypes,
-} from "./Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTextResponse";
+  diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTriggeredIntent,
+  diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTriggeredIntent_GetTypes,
+} from "./diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTriggeredIntent";
 import {
-  Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTriggeredIntent,
-  Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTriggeredIntent_GetTypes,
-} from "./Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTriggeredIntent";
+  diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage,
+  diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage_GetTypes,
+} from "./diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage";
 
-export interface Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutput {
-  /*
-The [Page](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents.flows.pages#Page) on which the utterance was spoken.
-Structure is documented below.
-*/
-  CurrentPage?: Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage;
-
+export interface diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutput {
   // The session parameters available to the bot at this point.
-  SessionParameters?: string;
+  sessionParameters?: string;
 
   /*
 The text responses from the agent for the turn.
 Structure is documented below.
 */
-  TextResponses?: Array<Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTextResponse>;
+  textResponses?: Array<diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTextResponse>;
 
   /*
 The [Intent](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents.intents#Intent) that triggered the response.
 Structure is documented below.
 */
-  TriggeredIntent?: Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTriggeredIntent;
+  triggeredIntent?: diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTriggeredIntent;
+
+  /*
+The [Page](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents.flows.pages#Page) on which the utterance was spoken.
+Structure is documented below.
+*/
+  currentPage?: diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage;
 }
 
-export function Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutput_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutput_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "CurrentPage",
+      "triggeredIntent",
+      "The [Intent](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents.intents#Intent) that triggered the response.\nStructure is documented below.",
+      diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTriggeredIntent_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "currentPage",
       "The [Page](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents.flows.pages#Page) on which the utterance was spoken.\nStructure is documented below.",
-      Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage_GetTypes(),
+      diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "SessionParameters",
+      "sessionParameters",
       "The session parameters available to the bot at this point.",
       [],
       false,
@@ -61,17 +69,9 @@ export function Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutput_Ge
     ),
     new DynamicUIProps(
       InputType.Array,
-      "TextResponses",
+      "textResponses",
       "The text responses from the agent for the turn.\nStructure is documented below.",
-      Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTextResponse_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "TriggeredIntent",
-      "The [Intent](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents.intents#Intent) that triggered the response.\nStructure is documented below.",
-      Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTriggeredIntent_GetTypes(),
+      diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputTextResponse_GetTypes(),
       false,
       false,
     ),

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxFlowTransitionRouteTriggerFulfillmentMessageTelephonyTransferCall {
+export interface diagflow_CxFlowTransitionRouteTriggerFulfillmentMessageTelephonyTransferCall {
   // Transfer the call to a phone number in E.164 format.
-  PhoneNumber?: string;
+  phoneNumber?: string;
 }
 
-export function Diagflow_CxFlowTransitionRouteTriggerFulfillmentMessageTelephonyTransferCall_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxFlowTransitionRouteTriggerFulfillmentMessageTelephonyTransferCall_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PhoneNumber",
+      "phoneNumber",
       "Transfer the call to a phone number in E.164 format.",
       [],
       true,

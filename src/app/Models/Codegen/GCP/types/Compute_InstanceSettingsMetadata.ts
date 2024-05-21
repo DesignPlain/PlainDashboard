@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceSettingsMetadata {
+export interface compute_InstanceSettingsMetadata {
   // A metadata key/value items map. The total size of all keys and values must be less than 512KB
-  Items?: Map<string, string>;
+  items?: Map<string, string>;
 }
 
-export function Compute_InstanceSettingsMetadata_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceSettingsMetadata_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Map,
-      "Items",
+      "items",
       "A metadata key/value items map. The total size of all keys and values must be less than 512KB",
       InputType_Map_GetTypes(),
       false,

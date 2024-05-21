@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelay,
-  Compute_RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelay_GetTypes,
-} from "./Compute_RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelay";
+  compute_RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelay,
+  compute_RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelay_GetTypes,
+} from "./compute_RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelay";
 
-export interface Compute_RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelay {
+export interface compute_RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelay {
   /*
 Specifies the value of the fixed delay interval.
 Structure is documented below.
 */
-  FixedDelay?: Compute_RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelay;
+  fixedDelay?: compute_RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelay;
 
   /*
 The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.
 The value must be between 0.0 and 100.0 inclusive.
 */
-  Percentage?: number;
+  percentage?: number;
 }
 
-export function Compute_RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelay_GetTypes(): DynamicUIProps[] {
+export function compute_RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelay_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Percentage",
+      "percentage",
       "The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.\nThe value must be between 0.0 and 100.0 inclusive.",
       [],
       false,
@@ -36,9 +36,9 @@ export function Compute_RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelay_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "FixedDelay",
+      "fixedDelay",
       "Specifies the value of the fixed delay interval.\nStructure is documented below.",
-      Compute_RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelay_GetTypes(),
+      compute_RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelay_GetTypes(),
       false,
       false,
     ),

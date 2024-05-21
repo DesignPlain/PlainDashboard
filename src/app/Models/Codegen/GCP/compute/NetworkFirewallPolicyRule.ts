@@ -7,107 +7,115 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_NetworkFirewallPolicyRuleMatch,
-  Compute_NetworkFirewallPolicyRuleMatch_GetTypes,
-} from "../types/Compute_NetworkFirewallPolicyRuleMatch";
+  compute_NetworkFirewallPolicyRuleMatch,
+  compute_NetworkFirewallPolicyRuleMatch_GetTypes,
+} from "../types/compute_NetworkFirewallPolicyRuleMatch";
 import {
-  Compute_NetworkFirewallPolicyRuleTargetSecureTag,
-  Compute_NetworkFirewallPolicyRuleTargetSecureTag_GetTypes,
-} from "../types/Compute_NetworkFirewallPolicyRuleTargetSecureTag";
+  compute_NetworkFirewallPolicyRuleTargetSecureTag,
+  compute_NetworkFirewallPolicyRuleTargetSecureTag_GetTypes,
+} from "../types/compute_NetworkFirewallPolicyRuleTargetSecureTag";
 
 export interface NetworkFirewallPolicyRuleArgs {
-  // Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.
-  Disabled?: boolean;
-
-  // Denotes whether to enable logging for a particular rule. If logging is enabled, logs will be exported to the configured export destination in Stackdriver. Logs may be exported to BigQuery or Pub/Sub. Note: you cannot enable logging on "goto_next" rules.
-  EnableLogging?: boolean;
-
-  // The firewall policy of the resource.
-  FirewallPolicy?: string;
-
-  // A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
-  Match?: Compute_NetworkFirewallPolicyRuleMatch;
-
-  // An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
-  Priority?: number;
-
-  // An optional name for the rule. This field is not a unique identifier and can be updated.
-  RuleName?: string;
-
-  // The direction in which this rule applies. Possible values: INGRESS, EGRESS
-  Direction?: string;
-
-  // An optional description for this resource.
-  Description?: string;
-
   // The project for the resource
-  Project?: string;
+  project?: string;
 
   // A list of secure tags that controls which instances the firewall rule applies to. If <code>targetSecureTag</code> are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. <code>targetSecureTag</code> may not be set at the same time as <code>targetServiceAccounts</code>. If neither <code>targetServiceAccounts</code> nor <code>targetSecureTag</code> are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
-  TargetSecureTags?: Array<Compute_NetworkFirewallPolicyRuleTargetSecureTag>;
+  targetSecureTags?: Array<compute_NetworkFirewallPolicyRuleTargetSecureTag>;
 
   // A list of service accounts indicating the sets of instances that are applied with this rule.
-  TargetServiceAccounts?: Array<string>;
+  targetServiceAccounts?: Array<string>;
+
+  // An optional description for this resource.
+  description?: string;
+
+  // The direction in which this rule applies. Possible values: INGRESS, EGRESS
+  direction?: string;
+
+  // The firewall policy of the resource.
+  firewallPolicy?: string;
+
+  // A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
+  match?: compute_NetworkFirewallPolicyRuleMatch;
+
+  // An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
+  priority?: number;
 
   // The Action to perform when the client connection triggers the rule. Valid actions are "allow", "deny" and "goto_next".
-  Action?: string;
+  action?: string;
+
+  // Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.
+  disabled?: boolean;
+
+  // Denotes whether to enable logging for a particular rule. If logging is enabled, logs will be exported to the configured export destination in Stackdriver. Logs may be exported to BigQuery or Pub/Sub. Note: you cannot enable logging on "goto_next" rules.
+  enableLogging?: boolean;
+
+  // An optional name for the rule. This field is not a unique identifier and can be updated.
+  ruleName?: string;
 }
 export class NetworkFirewallPolicyRule extends Resource {
-  // Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.
-  public Disabled?: boolean;
-
   // An optional name for the rule. This field is not a unique identifier and can be updated.
-  public RuleName?: string;
-
-  // A list of service accounts indicating the sets of instances that are applied with this rule.
-  public TargetServiceAccounts?: Array<string>;
-
-  // An optional description for this resource.
-  public Description?: string;
-
-  // Denotes whether to enable logging for a particular rule. If logging is enabled, logs will be exported to the configured export destination in Stackdriver. Logs may be exported to BigQuery or Pub/Sub. Note: you cannot enable logging on "goto_next" rules.
-  public EnableLogging?: boolean;
-
-  // Type of the resource. Always `compute#firewallPolicyRule` for firewall policy rules
-  public Kind?: string;
-
-  // An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
-  public Priority?: number;
-
-  // A list of secure tags that controls which instances the firewall rule applies to. If <code>targetSecureTag</code> are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. <code>targetSecureTag</code> may not be set at the same time as <code>targetServiceAccounts</code>. If neither <code>targetServiceAccounts</code> nor <code>targetSecureTag</code> are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
-  public TargetSecureTags?: Array<Compute_NetworkFirewallPolicyRuleTargetSecureTag>;
-
-  // A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
-  public Match?: Compute_NetworkFirewallPolicyRuleMatch;
-
-  // The project for the resource
-  public Project?: string;
-
-  // The Action to perform when the client connection triggers the rule. Valid actions are "allow", "deny" and "goto_next".
-  public Action?: string;
+  public ruleName?: string;
 
   // The direction in which this rule applies. Possible values: INGRESS, EGRESS
-  public Direction?: string;
+  public direction?: string;
+
+  // Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.
+  public disabled?: boolean;
 
   // The firewall policy of the resource.
-  public FirewallPolicy?: string;
+  public firewallPolicy?: string;
 
   // Calculation of the complexity of a single firewall policy rule.
-  public RuleTupleCount?: number;
+  public ruleTupleCount?: number;
+
+  // An optional description for this resource.
+  public description?: string;
+
+  // A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
+  public match?: compute_NetworkFirewallPolicyRuleMatch;
+
+  // An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
+  public priority?: number;
+
+  // The project for the resource
+  public project?: string;
+
+  // A list of secure tags that controls which instances the firewall rule applies to. If <code>targetSecureTag</code> are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. <code>targetSecureTag</code> may not be set at the same time as <code>targetServiceAccounts</code>. If neither <code>targetServiceAccounts</code> nor <code>targetSecureTag</code> are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+  public targetSecureTags?: Array<compute_NetworkFirewallPolicyRuleTargetSecureTag>;
+
+  // The Action to perform when the client connection triggers the rule. Valid actions are "allow", "deny" and "goto_next".
+  public action?: string;
+
+  // Denotes whether to enable logging for a particular rule. If logging is enabled, logs will be exported to the configured export destination in Stackdriver. Logs may be exported to BigQuery or Pub/Sub. Note: you cannot enable logging on "goto_next" rules.
+  public enableLogging?: boolean;
+
+  // Type of the resource. Always `compute#firewallPolicyRule` for firewall policy rules
+  public kind?: string;
+
+  // A list of service accounts indicating the sets of instances that are applied with this rule.
+  public targetServiceAccounts?: Array<string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Number,
-        "Priority",
-        "An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.",
-        [],
-        true,
-        true,
+        InputType.Array,
+        "targetSecureTags",
+        "A list of secure tags that controls which instances the firewall rule applies to. If <code>targetSecureTag</code> are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. <code>targetSecureTag</code> may not be set at the same time as <code>targetServiceAccounts</code>. If neither <code>targetServiceAccounts</code> nor <code>targetSecureTag</code> are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.",
+        compute_NetworkFirewallPolicyRuleTargetSecureTag_GetTypes(),
+        false,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Direction",
+        "description",
+        "An optional description for this resource.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "direction",
         "The direction in which this rule applies. Possible values: INGRESS, EGRESS",
         [],
         true,
@@ -115,31 +123,31 @@ export class NetworkFirewallPolicyRule extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
-        "The project for the resource",
+        "firewallPolicy",
+        "The firewall policy of the resource.",
         [],
-        false,
+        true,
         true,
       ),
       new DynamicUIProps(
-        InputType.String,
-        "Action",
-        'The Action to perform when the client connection triggers the rule. Valid actions are "allow", "deny" and "goto_next".',
-        [],
+        InputType.Object,
+        "match",
+        "A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.",
+        compute_NetworkFirewallPolicyRuleMatch_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
-        InputType.Bool,
-        "Disabled",
-        "Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.",
+        InputType.Number,
+        "priority",
+        "An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.",
         [],
-        false,
-        false,
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "EnableLogging",
+        "enableLogging",
         'Denotes whether to enable logging for a particular rule. If logging is enabled, logs will be exported to the configured export destination in Stackdriver. Logs may be exported to BigQuery or Pub/Sub. Note: you cannot enable logging on "goto_next" rules.',
         [],
         false,
@@ -147,39 +155,15 @@ export class NetworkFirewallPolicyRule extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "FirewallPolicy",
-        "The firewall policy of the resource.",
+        "project",
+        "The project for the resource",
         [],
+        false,
         true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Array,
-        "TargetSecureTags",
-        "A list of secure tags that controls which instances the firewall rule applies to. If <code>targetSecureTag</code> are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. <code>targetSecureTag</code> may not be set at the same time as <code>targetServiceAccounts</code>. If neither <code>targetServiceAccounts</code> nor <code>targetSecureTag</code> are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.",
-        Compute_NetworkFirewallPolicyRuleTargetSecureTag_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Array,
-        "TargetServiceAccounts",
-        "A list of service accounts indicating the sets of instances that are applied with this rule.",
-        InputType_String_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "Match",
-        "A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.",
-        Compute_NetworkFirewallPolicyRuleMatch_GetTypes(),
-        true,
-        false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "RuleName",
+        "ruleName",
         "An optional name for the rule. This field is not a unique identifier and can be updated.",
         [],
         false,
@@ -187,9 +171,25 @@ export class NetworkFirewallPolicyRule extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
-        "An optional description for this resource.",
+        "action",
+        'The Action to perform when the client connection triggers the rule. Valid actions are "allow", "deny" and "goto_next".',
         [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "disabled",
+        "Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "targetServiceAccounts",
+        "A list of service accounts indicating the sets of instances that are applied with this rule.",
+        InputType_String_GetTypes(),
         false,
         false,
       ),

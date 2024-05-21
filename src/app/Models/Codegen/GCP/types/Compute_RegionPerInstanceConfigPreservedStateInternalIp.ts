@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress,
-  Compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress_GetTypes,
-} from "./Compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress";
+  compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress,
+  compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress_GetTypes,
+} from "./compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress";
 
-export interface Compute_RegionPerInstanceConfigPreservedStateInternalIp {
+export interface compute_RegionPerInstanceConfigPreservedStateInternalIp {
+  /*
+Ip address representation
+Structure is documented below.
+*/
+  ipAddress?: compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress;
+
   /*
 These stateful IPs will never be released during autohealing, update or VM instance recreate operations. This flag is used to configure if the IP reservation should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted.
 Default value is `NEVER`.
 Possible values are: `NEVER`, `ON_PERMANENT_INSTANCE_DELETION`.
 */
-  AutoDelete?: string;
+  autoDelete?: string;
 
   // The identifier for this object. Format specified above.
-  InterfaceName?: string;
-
-  /*
-Ip address representation
-Structure is documented below.
-*/
-  IpAddress?: Compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress;
+  interfaceName?: string;
 }
 
-export function Compute_RegionPerInstanceConfigPreservedStateInternalIp_GetTypes(): DynamicUIProps[] {
+export function compute_RegionPerInstanceConfigPreservedStateInternalIp_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "AutoDelete",
+      "autoDelete",
       "These stateful IPs will never be released during autohealing, update or VM instance recreate operations. This flag is used to configure if the IP reservation should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted.\nDefault value is `NEVER`.\nPossible values are: `NEVER`, `ON_PERMANENT_INSTANCE_DELETION`.",
       [],
       false,
@@ -40,7 +40,7 @@ export function Compute_RegionPerInstanceConfigPreservedStateInternalIp_GetTypes
     ),
     new DynamicUIProps(
       InputType.String,
-      "InterfaceName",
+      "interfaceName",
       "The identifier for this object. Format specified above.",
       [],
       true,
@@ -48,9 +48,9 @@ export function Compute_RegionPerInstanceConfigPreservedStateInternalIp_GetTypes
     ),
     new DynamicUIProps(
       InputType.Object,
-      "IpAddress",
+      "ipAddress",
       "Ip address representation\nStructure is documented below.",
-      Compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress_GetTypes(),
+      compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress_GetTypes(),
       false,
       false,
     ),

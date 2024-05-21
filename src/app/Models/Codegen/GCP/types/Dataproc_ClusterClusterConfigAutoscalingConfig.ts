@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_ClusterClusterConfigAutoscalingConfig {
+export interface dataproc_ClusterClusterConfigAutoscalingConfig {
   /*
 The autoscaling policy used by the cluster.
 
@@ -18,14 +18,14 @@ Note that the policy must be in the same project and Cloud Dataproc region.
 
 - - -
 */
-  PolicyUri?: string;
+  policyUri?: string;
 }
 
-export function Dataproc_ClusterClusterConfigAutoscalingConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterClusterConfigAutoscalingConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PolicyUri",
+      "policyUri",
       "The autoscaling policy used by the cluster.\n\nOnly resource names including projectid and location (region) are valid. Examples:\n\n`https://www.googleapis.com/compute/v1/projects/[projectId]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`\n`projects/[projectId]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`\nNote that the policy must be in the same project and Cloud Dataproc region.\n\n- - -",
       [],
       true,

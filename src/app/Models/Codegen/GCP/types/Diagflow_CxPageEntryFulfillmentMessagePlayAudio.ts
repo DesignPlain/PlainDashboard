@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxPageEntryFulfillmentMessagePlayAudio {
+export interface diagflow_CxPageEntryFulfillmentMessagePlayAudio {
   /*
 (Output)
 Whether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.
 */
-  AllowPlaybackInterruption?: boolean;
+  allowPlaybackInterruption?: boolean;
 
   // URI of the audio clip. Dialogflow does not impose any validation on this value. It is specific to the client that reads it.
-  AudioUri?: string;
+  audioUri?: string;
 }
 
-export function Diagflow_CxPageEntryFulfillmentMessagePlayAudio_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxPageEntryFulfillmentMessagePlayAudio_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "AudioUri",
-      "URI of the audio clip. Dialogflow does not impose any validation on this value. It is specific to the client that reads it.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "AllowPlaybackInterruption",
+      "allowPlaybackInterruption",
       "(Output)\nWhether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.",
       [],
       false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "audioUri",
+      "URI of the audio clip. Dialogflow does not impose any validation on this value. It is specific to the client that reads it.",
+      [],
+      true,
       false,
     ),
   ];

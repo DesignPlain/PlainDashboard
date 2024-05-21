@@ -8,11 +8,8 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface EnvReferencesArgs {
-  // The type of resource referred to by this reference. Valid values are 'KeyStore' or 'TrustStore'.
-  ResourceType?: string;
-
   // Optional. A human-readable description of this reference.
-  Description?: string;
+  description?: string;
 
   /*
 The Apigee environment group associated with the Apigee environment,
@@ -21,18 +18,18 @@ in the format `organizations/{{org_name}}/environments/{{env_name}}`.
 
 - - -
 */
-  EnvId?: string;
+  envId?: string;
 
   // Required. The resource id of this reference. Values must match the regular expression [\w\s-.]+.
-  Name?: string;
+  name?: string;
 
   // Required. The id of the resource to which this reference refers. Must be the id of a resource that exists in the parent environment and is of the given resourceType.
-  Refers?: string;
+  refers?: string;
+
+  // The type of resource referred to by this reference. Valid values are 'KeyStore' or 'TrustStore'.
+  resourceType?: string;
 }
 export class EnvReferences extends Resource {
-  // Optional. A human-readable description of this reference.
-  public Description?: string;
-
   /*
 The Apigee environment group associated with the Apigee environment,
 in the format `organizations/{{org_name}}/environments/{{env_name}}`.
@@ -40,22 +37,25 @@ in the format `organizations/{{org_name}}/environments/{{env_name}}`.
 
 - - -
 */
-  public EnvId?: string;
+  public envId?: string;
 
   // Required. The resource id of this reference. Values must match the regular expression [\w\s-.]+.
-  public Name?: string;
+  public name?: string;
 
   // Required. The id of the resource to which this reference refers. Must be the id of a resource that exists in the parent environment and is of the given resourceType.
-  public Refers?: string;
+  public refers?: string;
 
   // The type of resource referred to by this reference. Valid values are 'KeyStore' or 'TrustStore'.
-  public ResourceType?: string;
+  public resourceType?: string;
+
+  // Optional. A human-readable description of this reference.
+  public description?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Refers",
+        "refers",
         "Required. The id of the resource to which this reference refers. Must be the id of a resource that exists in the parent environment and is of the given resourceType.",
         [],
         true,
@@ -63,7 +63,7 @@ in the format `organizations/{{org_name}}/environments/{{env_name}}`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "ResourceType",
+        "resourceType",
         "The type of resource referred to by this reference. Valid values are 'KeyStore' or 'TrustStore'.",
         [],
         true,
@@ -71,7 +71,7 @@ in the format `organizations/{{org_name}}/environments/{{env_name}}`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Optional. A human-readable description of this reference.",
         [],
         false,
@@ -79,7 +79,7 @@ in the format `organizations/{{org_name}}/environments/{{env_name}}`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "EnvId",
+        "envId",
         "The Apigee environment group associated with the Apigee environment,\nin the format `organizations/{{org_name}}/environments/{{env_name}}`.\n\n\n- - -",
         [],
         true,
@@ -87,7 +87,7 @@ in the format `organizations/{{org_name}}/environments/{{env_name}}`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Required. The resource id of this reference. Values must match the regular expression [\\w\\s-.]+.",
         [],
         false,

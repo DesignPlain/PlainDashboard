@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Firestore_BackupScheduleWeeklyRecurrence {
+export interface firestore_BackupScheduleWeeklyRecurrence {
   /*
 The day of week to run.
 Possible values are: `DAY_OF_WEEK_UNSPECIFIED`, `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
 */
-  Day?: string;
+  day?: string;
 }
 
-export function Firestore_BackupScheduleWeeklyRecurrence_GetTypes(): DynamicUIProps[] {
+export function firestore_BackupScheduleWeeklyRecurrence_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Day",
+      "day",
       "The day of week to run.\nPossible values are: `DAY_OF_WEEK_UNSPECIFIED`, `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.",
       [],
       false,

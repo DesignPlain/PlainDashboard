@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_TableRangePartitioningRange {
+export interface bigquery_TableRangePartitioningRange {
   // End of the range partitioning, exclusive.
-  End?: number;
+  end?: number;
 
   // The width of each range within the partition.
-  Interval?: number;
+  interval?: number;
 
   // Start of the range partitioning, inclusive.
-  Start?: number;
+  start?: number;
 }
 
-export function Bigquery_TableRangePartitioningRange_GetTypes(): DynamicUIProps[] {
+export function bigquery_TableRangePartitioningRange_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "End",
+      "end",
       "End of the range partitioning, exclusive.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Bigquery_TableRangePartitioningRange_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Interval",
+      "interval",
       "The width of each range within the partition.",
       [],
       true,
@@ -37,7 +37,7 @@ export function Bigquery_TableRangePartitioningRange_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Start",
+      "start",
       "Start of the range partitioning, inclusive.",
       [],
       true,

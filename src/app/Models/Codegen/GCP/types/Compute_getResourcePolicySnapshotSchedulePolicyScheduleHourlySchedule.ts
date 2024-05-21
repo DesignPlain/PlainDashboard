@@ -6,9 +6,9 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getResourcePolicySnapshotSchedulePolicyScheduleHourlySchedule {
+export interface compute_getResourcePolicySnapshotSchedulePolicyScheduleHourlySchedule {
   // The number of hours between snapshots.
-  HoursInCycle?: number;
+  hoursInCycle?: number;
 
   /*
 Time within the window to start the operations.
@@ -16,14 +16,14 @@ It must be in an hourly format "HH:MM",
 where HH : [00-23] and MM : [00] GMT.
 eg: 21:00
 */
-  StartTime?: string;
+  startTime?: string;
 }
 
-export function Compute_getResourcePolicySnapshotSchedulePolicyScheduleHourlySchedule_GetTypes(): DynamicUIProps[] {
+export function compute_getResourcePolicySnapshotSchedulePolicyScheduleHourlySchedule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "HoursInCycle",
+      "hoursInCycle",
       "The number of hours between snapshots.",
       [],
       true,
@@ -31,7 +31,7 @@ export function Compute_getResourcePolicySnapshotSchedulePolicyScheduleHourlySch
     ),
     new DynamicUIProps(
       InputType.String,
-      "StartTime",
+      "startTime",
       'Time within the window to start the operations.\nIt must be in an hourly format "HH:MM",\nwhere HH : [00-23] and MM : [00] GMT.\neg: 21:00',
       [],
       true,

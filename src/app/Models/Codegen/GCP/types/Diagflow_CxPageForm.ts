@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxPageFormParameter,
-  Diagflow_CxPageFormParameter_GetTypes,
-} from "./Diagflow_CxPageFormParameter";
+  diagflow_CxPageFormParameter,
+  diagflow_CxPageFormParameter_GetTypes,
+} from "./diagflow_CxPageFormParameter";
 
-export interface Diagflow_CxPageForm {
+export interface diagflow_CxPageForm {
   /*
 Parameters to collect from the user.
 Structure is documented below.
 */
-  Parameters?: Array<Diagflow_CxPageFormParameter>;
+  parameters?: Array<diagflow_CxPageFormParameter>;
 }
 
-export function Diagflow_CxPageForm_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxPageForm_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Parameters",
+      "parameters",
       "Parameters to collect from the user.\nStructure is documented below.",
-      Diagflow_CxPageFormParameter_GetTypes(),
+      diagflow_CxPageFormParameter_GetTypes(),
       false,
       false,
     ),

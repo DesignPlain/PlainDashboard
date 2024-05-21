@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Deploymentmanager_DeploymentTargetImport {
+export interface deploymentmanager_DeploymentTargetImport {
+  // The full contents of the template that you want to import.
+  content?: string;
+
   /*
 The name of the template to import, as declared in the YAML
 configuration.
 
 - - -
 */
-  Name?: string;
-
-  // The full contents of the template that you want to import.
-  Content?: string;
+  name?: string;
 }
 
-export function Deploymentmanager_DeploymentTargetImport_GetTypes(): DynamicUIProps[] {
+export function deploymentmanager_DeploymentTargetImport_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
-      "The name of the template to import, as declared in the YAML\nconfiguration.\n\n- - -",
+      "content",
+      "The full contents of the template that you want to import.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Content",
-      "The full contents of the template that you want to import.",
+      "name",
+      "The name of the template to import, as declared in the YAML\nconfiguration.\n\n- - -",
       [],
       false,
       false,

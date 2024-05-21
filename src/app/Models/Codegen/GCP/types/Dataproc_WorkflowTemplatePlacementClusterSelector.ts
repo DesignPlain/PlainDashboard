@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_WorkflowTemplatePlacementClusterSelector {
+export interface dataproc_WorkflowTemplatePlacementClusterSelector {
   // Required. The cluster labels. Cluster must have all labels to match.
-  ClusterLabels?: Map<string, string>;
+  clusterLabels?: Map<string, string>;
 
   // The zone where workflow process executes. This parameter does not affect the selection of the cluster. If unspecified, the zone of the first cluster matching the selector is used.
-  Zone?: string;
+  zone?: string;
 }
 
-export function Dataproc_WorkflowTemplatePlacementClusterSelector_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplatePlacementClusterSelector_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Map,
-      "ClusterLabels",
+      "clusterLabels",
       "Required. The cluster labels. Cluster must have all labels to match.",
       InputType_Map_GetTypes(),
       true,
@@ -26,7 +26,7 @@ export function Dataproc_WorkflowTemplatePlacementClusterSelector_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "Zone",
+      "zone",
       "The zone where workflow process executes. This parameter does not affect the selection of the cluster. If unspecified, the zone of the first cluster matching the selector is used.",
       [],
       false,

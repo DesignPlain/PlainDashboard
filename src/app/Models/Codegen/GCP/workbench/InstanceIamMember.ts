@@ -7,66 +7,66 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Workbench_InstanceIamMemberCondition,
-  Workbench_InstanceIamMemberCondition_GetTypes,
-} from "../types/Workbench_InstanceIamMemberCondition";
+  workbench_InstanceIamMemberCondition,
+  workbench_InstanceIamMemberCondition_GetTypes,
+} from "../types/workbench_InstanceIamMemberCondition";
 
 export interface InstanceIamMemberArgs {
   //
-  Role?: string;
+  role?: string;
 
   //
-  Condition?: Workbench_InstanceIamMemberCondition;
+  condition?: workbench_InstanceIamMemberCondition;
 
   //
-  Location?: string;
+  location?: string;
 
   //
-  Member?: string;
+  member?: string;
 
   //
-  Name?: string;
+  name?: string;
 
   //
-  Project?: string;
+  project?: string;
 }
 export class InstanceIamMember extends Resource {
   //
-  public Name?: string;
+  public member?: string;
 
   //
-  public Project?: string;
+  public name?: string;
 
   //
-  public Role?: string;
+  public project?: string;
 
   //
-  public Condition?: Workbench_InstanceIamMemberCondition;
+  public role?: string;
 
   //
-  public Etag?: string;
+  public condition?: workbench_InstanceIamMemberCondition;
 
   //
-  public Location?: string;
+  public etag?: string;
 
   //
-  public Member?: string;
+  public location?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Name", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Project", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
+      new DynamicUIProps(InputType.String, "role", "", [], true, true),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Workbench_InstanceIamMemberCondition_GetTypes(),
+        workbench_InstanceIamMemberCondition_GetTypes(),
         false,
         true,
       ),
-      new DynamicUIProps(InputType.String, "Location", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
+      new DynamicUIProps(InputType.String, "location", "", [], false, true),
+      new DynamicUIProps(InputType.String, "member", "", [], true, true),
+      new DynamicUIProps(InputType.String, "name", "", [], false, true),
+      new DynamicUIProps(InputType.String, "project", "", [], false, true),
     ];
   }
 }

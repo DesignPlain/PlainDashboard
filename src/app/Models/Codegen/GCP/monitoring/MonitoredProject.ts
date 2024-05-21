@@ -14,14 +14,14 @@ Required. The resource name of the existing Metrics Scope that will monitor this
 
 - - -
 */
-  MetricsScope?: string;
+  metricsScope?: string;
 
   // Immutable. The resource name of the `MonitoredProject`. On input, the resource name includes the scoping project ID and monitored project ID. On output, it contains the equivalent project numbers. Example: `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}/projects/{MONITORED_PROJECT_ID_OR_NUMBER}`
-  Name?: string;
+  name?: string;
 }
 export class MonitoredProject extends Resource {
   // Output only. The time when this `MonitoredProject` was created.
-  public CreateTime?: string;
+  public createTime?: string;
 
   /*
 Required. The resource name of the existing Metrics Scope that will monitor this project. Example: locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}
@@ -29,27 +29,27 @@ Required. The resource name of the existing Metrics Scope that will monitor this
 
 - - -
 */
-  public MetricsScope?: string;
+  public metricsScope?: string;
 
   // Immutable. The resource name of the `MonitoredProject`. On input, the resource name includes the scoping project ID and monitored project ID. On output, it contains the equivalent project numbers. Example: `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}/projects/{MONITORED_PROJECT_ID_OR_NUMBER}`
-  public Name?: string;
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Name",
-        "Immutable. The resource name of the `MonitoredProject`. On input, the resource name includes the scoping project ID and monitored project ID. On output, it contains the equivalent project numbers. Example: `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}/projects/{MONITORED_PROJECT_ID_OR_NUMBER}`",
+        "metricsScope",
+        "Required. The resource name of the existing Metrics Scope that will monitor this project. Example: locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}\n\n\n- - -",
         [],
-        false,
+        true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "MetricsScope",
-        "Required. The resource name of the existing Metrics Scope that will monitor this project. Example: locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}\n\n\n- - -",
+        "name",
+        "Immutable. The resource name of the `MonitoredProject`. On input, the resource name includes the scoping project ID and monitored project ID. On output, it contains the equivalent project numbers. Example: `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}/projects/{MONITORED_PROJECT_ID_OR_NUMBER}`",
         [],
-        true,
+        false,
         true,
       ),
     ];

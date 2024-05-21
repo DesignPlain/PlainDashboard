@@ -7,19 +7,19 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_MachineImageMachineImageEncryptionKey,
-  Compute_MachineImageMachineImageEncryptionKey_GetTypes,
-} from "../types/Compute_MachineImageMachineImageEncryptionKey";
+  compute_MachineImageMachineImageEncryptionKey,
+  compute_MachineImageMachineImageEncryptionKey_GetTypes,
+} from "../types/compute_MachineImageMachineImageEncryptionKey";
 
 export interface MachineImageArgs {
   // A text description of the resource.
-  Description?: string;
+  description?: string;
 
   /*
 Specify this to create an application consistent machine image by informing the OS to prepare for the snapshot process.
 Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
 */
-  GuestFlush?: boolean;
+  guestFlush?: boolean;
 
   /*
 Encrypts the machine image using a customer-supplied encryption key.
@@ -28,16 +28,16 @@ provide the same key if you use the machine image later (e.g. to create a
 instance from the image)
 Structure is documented below.
 */
-  MachineImageEncryptionKey?: Compute_MachineImageMachineImageEncryptionKey;
+  machineImageEncryptionKey?: compute_MachineImageMachineImageEncryptionKey;
 
   // Name of the resource.
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 The source instance used to create the machine image. You can provide this as a partial or full URL to the resource.
@@ -45,17 +45,29 @@ The source instance used to create the machine image. You can provide this as a 
 
 - - -
 */
-  SourceInstance?: string;
+  sourceInstance?: string;
 }
 export class MachineImage extends Resource {
   /*
+Encrypts the machine image using a customer-supplied encryption key.
+After you encrypt a machine image with a customer-supplied key, you must
+provide the same key if you use the machine image later (e.g. to create a
+instance from the image)
+Structure is documented below.
+*/
+  public machineImageEncryptionKey?: compute_MachineImageMachineImageEncryptionKey;
+
+  // Name of the resource.
+  public name?: string;
+
+  /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // The URI of the created resource.
-  public SelfLink?: string;
+  public selfLink?: string;
 
   /*
 The source instance used to create the machine image. You can provide this as a partial or full URL to the resource.
@@ -63,45 +75,33 @@ The source instance used to create the machine image. You can provide this as a 
 
 - - -
 */
-  public SourceInstance?: string;
+  public sourceInstance?: string;
 
   // The regional or multi-regional Cloud Storage bucket location where the machine image is stored.
-  public StorageLocations?: Array<string>;
+  public storageLocations?: Array<string>;
 
   // A text description of the resource.
-  public Description?: string;
+  public description?: string;
 
   /*
 Specify this to create an application consistent machine image by informing the OS to prepare for the snapshot process.
 Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
 */
-  public GuestFlush?: boolean;
-
-  /*
-Encrypts the machine image using a customer-supplied encryption key.
-After you encrypt a machine image with a customer-supplied key, you must
-provide the same key if you use the machine image later (e.g. to create a
-instance from the image)
-Structure is documented below.
-*/
-  public MachineImageEncryptionKey?: Compute_MachineImageMachineImageEncryptionKey;
-
-  // Name of the resource.
-  public Name?: string;
+  public guestFlush?: boolean;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "MachineImageEncryptionKey",
+        "machineImageEncryptionKey",
         "Encrypts the machine image using a customer-supplied encryption key.\nAfter you encrypt a machine image with a customer-supplied key, you must\nprovide the same key if you use the machine image later (e.g. to create a\ninstance from the image)\nStructure is documented below.",
-        Compute_MachineImageMachineImageEncryptionKey_GetTypes(),
+        compute_MachineImageMachineImageEncryptionKey_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name of the resource.",
         [],
         false,
@@ -109,7 +109,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -117,7 +117,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "SourceInstance",
+        "sourceInstance",
         "The source instance used to create the machine image. You can provide this as a partial or full URL to the resource.\n\n\n- - -",
         [],
         true,
@@ -125,7 +125,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "A text description of the resource.",
         [],
         false,
@@ -133,7 +133,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "GuestFlush",
+        "guestFlush",
         "Specify this to create an application consistent machine image by informing the OS to prepare for the snapshot process.\nCurrently only supported on Windows instances using the Volume Shadow Copy Service (VSS).",
         [],
         false,

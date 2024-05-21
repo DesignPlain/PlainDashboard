@@ -6,34 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_GuestPoliciesAssignmentOsType {
+export interface osconfig_GuestPoliciesAssignmentOsType {
+  // Targets VM instances with OS Inventory enabled and having the following OS short name, for example "debian" or "windows".
+  osShortName?: string;
+
+  // Targets VM instances with OS Inventory enabled and having the following following OS version.
+  osVersion?: string;
+
   /*
 Targets VM instances with OS Inventory enabled and having the following OS architecture.
 
 - - -
 */
-  OsArchitecture?: string;
-
-  // Targets VM instances with OS Inventory enabled and having the following OS short name, for example "debian" or "windows".
-  OsShortName?: string;
-
-  // Targets VM instances with OS Inventory enabled and having the following following OS version.
-  OsVersion?: string;
+  osArchitecture?: string;
 }
 
-export function Osconfig_GuestPoliciesAssignmentOsType_GetTypes(): DynamicUIProps[] {
+export function osconfig_GuestPoliciesAssignmentOsType_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "OsArchitecture",
-      "Targets VM instances with OS Inventory enabled and having the following OS architecture.\n\n- - -",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "OsShortName",
+      "osShortName",
       'Targets VM instances with OS Inventory enabled and having the following OS short name, for example "debian" or "windows".',
       [],
       false,
@@ -41,8 +33,16 @@ export function Osconfig_GuestPoliciesAssignmentOsType_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "OsVersion",
+      "osVersion",
       "Targets VM instances with OS Inventory enabled and having the following following OS version.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "osArchitecture",
+      "Targets VM instances with OS Inventory enabled and having the following OS architecture.\n\n- - -",
       [],
       false,
       false,

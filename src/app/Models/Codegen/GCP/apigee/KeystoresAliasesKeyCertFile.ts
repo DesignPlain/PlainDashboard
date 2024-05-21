@@ -7,19 +7,25 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Apigee_KeystoresAliasesKeyCertFileCertsInfo,
-  Apigee_KeystoresAliasesKeyCertFileCertsInfo_GetTypes,
-} from "../types/Apigee_KeystoresAliasesKeyCertFileCertsInfo";
+  apigee_KeystoresAliasesKeyCertFileCertsInfo,
+  apigee_KeystoresAliasesKeyCertFileCertsInfo_GetTypes,
+} from "../types/apigee_KeystoresAliasesKeyCertFileCertsInfo";
 
 export interface KeystoresAliasesKeyCertFileArgs {
+  // Private Key content, omit if uploading to truststore
+  key?: string;
+
+  // Keystore Name
+  keystore?: string;
+
   // Organization ID associated with the alias, without organization/ prefix
-  OrgId?: string;
+  orgId?: string;
 
   // Password for the Private Key if it's encrypted
-  Password?: string;
+  password?: string;
 
   // Alias Name
-  Alias?: string;
+  alias?: string;
 
   /*
 Cert content
@@ -27,44 +33,38 @@ Cert content
 
 - - -
 */
-  Cert?: string;
+  cert?: string;
 
   /*
 Chain of certificates under this alias.
 Structure is documented below.
 */
-  CertsInfo?: Apigee_KeystoresAliasesKeyCertFileCertsInfo;
+  certsInfo?: apigee_KeystoresAliasesKeyCertFileCertsInfo;
 
   // Environment associated with the alias
-  Environment?: string;
-
-  // Private Key content, omit if uploading to truststore
-  Key?: string;
-
-  // Keystore Name
-  Keystore?: string;
+  environment?: string;
 }
 export class KeystoresAliasesKeyCertFile extends Resource {
-  /*
-Chain of certificates under this alias.
-Structure is documented below.
-*/
-  public CertsInfo?: Apigee_KeystoresAliasesKeyCertFileCertsInfo;
+  // Environment associated with the alias
+  public environment?: string;
 
   // Private Key content, omit if uploading to truststore
-  public Key?: string;
-
-  // Organization ID associated with the alias, without organization/ prefix
-  public OrgId?: string;
-
-  // Password for the Private Key if it's encrypted
-  public Password?: string;
+  public key?: string;
 
   // Optional.Type of Alias
-  public Type?: string;
+  public type?: string;
+
+  // Keystore Name
+  public keystore?: string;
+
+  // Organization ID associated with the alias, without organization/ prefix
+  public orgId?: string;
+
+  // Password for the Private Key if it's encrypted
+  public password?: string;
 
   // Alias Name
-  public Alias?: string;
+  public alias?: string;
 
   /*
 Cert content
@@ -72,27 +72,19 @@ Cert content
 
 - - -
 */
-  public Cert?: string;
+  public cert?: string;
 
-  // Environment associated with the alias
-  public Environment?: string;
-
-  // Keystore Name
-  public Keystore?: string;
+  /*
+Chain of certificates under this alias.
+Structure is documented below.
+*/
+  public certsInfo?: apigee_KeystoresAliasesKeyCertFileCertsInfo;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Alias",
-        "Alias Name",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Cert",
+        "cert",
         "Cert content\n\n\n- - -",
         [],
         true,
@@ -100,15 +92,15 @@ Cert content
       ),
       new DynamicUIProps(
         InputType.Object,
-        "CertsInfo",
+        "certsInfo",
         "Chain of certificates under this alias.\nStructure is documented below.",
-        Apigee_KeystoresAliasesKeyCertFileCertsInfo_GetTypes(),
+        apigee_KeystoresAliasesKeyCertFileCertsInfo_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Environment",
+        "environment",
         "Environment associated with the alias",
         [],
         true,
@@ -116,7 +108,7 @@ Cert content
       ),
       new DynamicUIProps(
         InputType.String,
-        "Key",
+        "key",
         "Private Key content, omit if uploading to truststore",
         [],
         false,
@@ -124,7 +116,7 @@ Cert content
       ),
       new DynamicUIProps(
         InputType.String,
-        "Keystore",
+        "keystore",
         "Keystore Name",
         [],
         true,
@@ -132,7 +124,7 @@ Cert content
       ),
       new DynamicUIProps(
         InputType.String,
-        "OrgId",
+        "orgId",
         "Organization ID associated with the alias, without organization/ prefix",
         [],
         true,
@@ -140,11 +132,19 @@ Cert content
       ),
       new DynamicUIProps(
         InputType.String,
-        "Password",
+        "password",
         "Password for the Private Key if it's encrypted",
         [],
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "alias",
+        "Alias Name",
+        [],
+        true,
+        true,
       ),
     ];
   }

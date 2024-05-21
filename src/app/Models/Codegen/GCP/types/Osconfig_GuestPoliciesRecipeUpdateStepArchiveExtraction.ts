@@ -6,33 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_GuestPoliciesRecipeUpdateStepArchiveExtraction {
-  // The id of the relevant artifact in the recipe.
-  ArtifactId?: string;
-
+export interface osconfig_GuestPoliciesRecipeUpdateStepArchiveExtraction {
   // Directory to extract archive to. Defaults to / on Linux or C:\ on Windows.
-  Destination?: string;
+  destination?: string;
 
   /*
 The type of the archive to extract.
 Possible values are: `TAR`, `TAR_GZIP`, `TAR_BZIP`, `TAR_LZMA`, `TAR_XZ`, `ZIP`.
 */
-  Type?: string;
+  type?: string;
+
+  // The id of the relevant artifact in the recipe.
+  artifactId?: string;
 }
 
-export function Osconfig_GuestPoliciesRecipeUpdateStepArchiveExtraction_GetTypes(): DynamicUIProps[] {
+export function osconfig_GuestPoliciesRecipeUpdateStepArchiveExtraction_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ArtifactId",
-      "The id of the relevant artifact in the recipe.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Destination",
+      "destination",
       "Directory to extract archive to. Defaults to / on Linux or C:\\ on Windows.",
       [],
       false,
@@ -40,8 +32,16 @@ export function Osconfig_GuestPoliciesRecipeUpdateStepArchiveExtraction_GetTypes
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "The type of the archive to extract.\nPossible values are: `TAR`, `TAR_GZIP`, `TAR_BZIP`, `TAR_LZMA`, `TAR_XZ`, `ZIP`.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "artifactId",
+      "The id of the relevant artifact in the recipe.",
       [],
       true,
       false,

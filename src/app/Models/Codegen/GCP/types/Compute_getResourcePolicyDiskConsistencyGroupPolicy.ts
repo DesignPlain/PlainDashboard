@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getResourcePolicyDiskConsistencyGroupPolicy {
+export interface compute_getResourcePolicyDiskConsistencyGroupPolicy {
   // Enable disk consistency on the resource policy.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Compute_getResourcePolicyDiskConsistencyGroupPolicy_GetTypes(): DynamicUIProps[] {
+export function compute_getResourcePolicyDiskConsistencyGroupPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Enable disk consistency on the resource policy.",
       [],
       true,

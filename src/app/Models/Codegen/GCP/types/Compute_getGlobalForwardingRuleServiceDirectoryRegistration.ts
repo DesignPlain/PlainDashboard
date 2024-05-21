@@ -6,9 +6,9 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getGlobalForwardingRuleServiceDirectoryRegistration {
+export interface compute_getGlobalForwardingRuleServiceDirectoryRegistration {
   // Service Directory namespace to register the forwarding rule under.
-  Namespace?: string;
+  namespace?: string;
 
   /*
 [Optional] Service Directory region to register this global forwarding rule under.
@@ -16,14 +16,14 @@ Default to "us-central1". Only used for PSC for Google APIs. All PSC for
 Google APIs Forwarding Rules on the same network should use the same Service
 Directory region.
 */
-  ServiceDirectoryRegion?: string;
+  serviceDirectoryRegion?: string;
 }
 
-export function Compute_getGlobalForwardingRuleServiceDirectoryRegistration_GetTypes(): DynamicUIProps[] {
+export function compute_getGlobalForwardingRuleServiceDirectoryRegistration_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Namespace",
+      "namespace",
       "Service Directory namespace to register the forwarding rule under.",
       [],
       true,
@@ -31,7 +31,7 @@ export function Compute_getGlobalForwardingRuleServiceDirectoryRegistration_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "ServiceDirectoryRegion",
+      "serviceDirectoryRegion",
       '[Optional] Service Directory region to register this global forwarding rule under.\nDefault to "us-central1". Only used for PSC for Google APIs. All PSC for\nGoogle APIs Forwarding Rules on the same network should use the same Service\nDirectory region.',
       [],
       true,

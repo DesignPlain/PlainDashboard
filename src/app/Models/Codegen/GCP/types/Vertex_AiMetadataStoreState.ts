@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vertex_AiMetadataStoreState {
+export interface vertex_AiMetadataStoreState {
   /*
 (Output)
 The disk utilization of the MetadataStore in bytes.
 */
-  DiskUtilizationBytes?: string;
+  diskUtilizationBytes?: string;
 }
 
-export function Vertex_AiMetadataStoreState_GetTypes(): DynamicUIProps[] {
+export function vertex_AiMetadataStoreState_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DiskUtilizationBytes",
+      "diskUtilizationBytes",
       "(Output)\nThe disk utilization of the MetadataStore in bytes.",
       [],
       false,

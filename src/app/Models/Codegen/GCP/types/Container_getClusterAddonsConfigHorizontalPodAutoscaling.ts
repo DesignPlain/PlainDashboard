@@ -6,11 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterAddonsConfigHorizontalPodAutoscaling {
+export interface container_getClusterAddonsConfigHorizontalPodAutoscaling {
   //
-  Disabled?: boolean;
+  disabled?: boolean;
 }
 
-export function Container_getClusterAddonsConfigHorizontalPodAutoscaling_GetTypes(): DynamicUIProps[] {
-  return [new DynamicUIProps(InputType.Bool, "Disabled", "", [], true, false)];
+export function container_getClusterAddonsConfigHorizontalPodAutoscaling_GetTypes(): DynamicUIProps[] {
+  return [new DynamicUIProps(InputType.Bool, "disabled", "", [], true, false)];
 }

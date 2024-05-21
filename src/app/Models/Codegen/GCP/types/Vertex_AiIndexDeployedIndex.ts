@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vertex_AiIndexDeployedIndex {
+export interface vertex_AiIndexDeployedIndex {
   /*
 (Output)
 The ID of the DeployedIndex in the above IndexEndpoint.
 */
-  DeployedIndexId?: string;
+  deployedIndexId?: string;
 
   /*
 (Output)
 A resource name of the IndexEndpoint.
 */
-  IndexEndpoint?: string;
+  indexEndpoint?: string;
 }
 
-export function Vertex_AiIndexDeployedIndex_GetTypes(): DynamicUIProps[] {
+export function vertex_AiIndexDeployedIndex_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DeployedIndexId",
+      "deployedIndexId",
       "(Output)\nThe ID of the DeployedIndex in the above IndexEndpoint.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Vertex_AiIndexDeployedIndex_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "IndexEndpoint",
+      "indexEndpoint",
       "(Output)\nA resource name of the IndexEndpoint.",
       [],
       false,

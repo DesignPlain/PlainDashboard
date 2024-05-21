@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrun_ServiceTemplateSpecContainerVolumeMount {
+export interface cloudrun_ServiceTemplateSpecContainerVolumeMount {
+  // This must match the Name of a Volume.
+  name?: string;
+
   /*
 Path within the container at which the volume should be mounted.  Must
 not contain ':'.
 */
-  MountPath?: string;
-
-  // This must match the Name of a Volume.
-  Name?: string;
+  mountPath?: string;
 }
 
-export function Cloudrun_ServiceTemplateSpecContainerVolumeMount_GetTypes(): DynamicUIProps[] {
+export function cloudrun_ServiceTemplateSpecContainerVolumeMount_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "MountPath",
+      "mountPath",
       "Path within the container at which the volume should be mounted.  Must\nnot contain ':'.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Cloudrun_ServiceTemplateSpecContainerVolumeMount_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "This must match the Name of a Volume.",
       [],
       true,

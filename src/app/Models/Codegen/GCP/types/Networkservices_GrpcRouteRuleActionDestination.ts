@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_GrpcRouteRuleActionDestination {
+export interface networkservices_GrpcRouteRuleActionDestination {
   // The URL of a BackendService to route traffic to.
-  ServiceName?: string;
+  serviceName?: string;
 
   // Specifies the proportion of requests forwarded to the backend referenced by the serviceName field.
-  Weight?: number;
+  weight?: number;
 }
 
-export function Networkservices_GrpcRouteRuleActionDestination_GetTypes(): DynamicUIProps[] {
+export function networkservices_GrpcRouteRuleActionDestination_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ServiceName",
+      "serviceName",
       "The URL of a BackendService to route traffic to.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Networkservices_GrpcRouteRuleActionDestination_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Weight",
+      "weight",
       "Specifies the proportion of requests forwarded to the backend referenced by the serviceName field.",
       [],
       false,

@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudbuild_TriggerBuildAvailableSecretsSecretManager,
-  Cloudbuild_TriggerBuildAvailableSecretsSecretManager_GetTypes,
-} from "./Cloudbuild_TriggerBuildAvailableSecretsSecretManager";
+  cloudbuild_TriggerBuildAvailableSecretsSecretManager,
+  cloudbuild_TriggerBuildAvailableSecretsSecretManager_GetTypes,
+} from "./cloudbuild_TriggerBuildAvailableSecretsSecretManager";
 
-export interface Cloudbuild_TriggerBuildAvailableSecrets {
+export interface cloudbuild_TriggerBuildAvailableSecrets {
   /*
 Pairs a secret environment variable with a SecretVersion in Secret Manager.
 Structure is documented below.
 */
-  SecretManagers?: Array<Cloudbuild_TriggerBuildAvailableSecretsSecretManager>;
+  secretManagers?: Array<cloudbuild_TriggerBuildAvailableSecretsSecretManager>;
 }
 
-export function Cloudbuild_TriggerBuildAvailableSecrets_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_TriggerBuildAvailableSecrets_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "SecretManagers",
+      "secretManagers",
       "Pairs a secret environment variable with a SecretVersion in Secret Manager.\nStructure is documented below.",
-      Cloudbuild_TriggerBuildAvailableSecretsSecretManager_GetTypes(),
+      cloudbuild_TriggerBuildAvailableSecretsSecretManager_GetTypes(),
       true,
       false,
     ),

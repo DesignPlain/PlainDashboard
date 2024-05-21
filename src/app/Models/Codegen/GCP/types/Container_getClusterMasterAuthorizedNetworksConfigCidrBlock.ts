@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterMasterAuthorizedNetworksConfigCidrBlock {
+export interface container_getClusterMasterAuthorizedNetworksConfigCidrBlock {
   // External network that can access Kubernetes master through HTTPS. Must be specified in CIDR notation.
-  CidrBlock?: string;
+  cidrBlock?: string;
 
   // Field for users to identify CIDR blocks.
-  DisplayName?: string;
+  displayName?: string;
 }
 
-export function Container_getClusterMasterAuthorizedNetworksConfigCidrBlock_GetTypes(): DynamicUIProps[] {
+export function container_getClusterMasterAuthorizedNetworksConfigCidrBlock_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CidrBlock",
+      "cidrBlock",
       "External network that can access Kubernetes master through HTTPS. Must be specified in CIDR notation.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Container_getClusterMasterAuthorizedNetworksConfigCidrBlock_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "DisplayName",
+      "displayName",
       "Field for users to identify CIDR blocks.",
       [],
       true,

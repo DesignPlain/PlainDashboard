@@ -6,77 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Organizations_getFoldersFolder {
-  // The timestamp of when the folder was last modified
-  UpdateTime?: string;
-
-  // The timestamp of when the folder was created
-  CreateTime?: string;
-
-  // The timestamp of when the folder was requested to be deleted (if applicable)
-  DeleteTime?: string;
-
+export interface organizations_getFoldersFolder {
   // The display name of the folder
-  DisplayName?: string;
+  displayName?: string;
 
   // Entity tag identifier of the folder
-  Etag?: string;
+  etag?: string;
 
   // The id of the folder
-  Name?: string;
+  name?: string;
 
   // The parent id of the folder
-  Parent?: string;
+  parent?: string;
 
   // The lifecycle state of the folder
-  State?: string;
+  state?: string;
+
+  // The timestamp of when the folder was last modified
+  updateTime?: string;
+
+  // The timestamp of when the folder was created
+  createTime?: string;
+
+  // The timestamp of when the folder was requested to be deleted (if applicable)
+  deleteTime?: string;
 }
 
-export function Organizations_getFoldersFolder_GetTypes(): DynamicUIProps[] {
+export function organizations_getFoldersFolder_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Etag",
-      "Entity tag identifier of the folder",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Name",
-      "The id of the folder",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Parent",
-      "The parent id of the folder",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "State",
-      "The lifecycle state of the folder",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "UpdateTime",
-      "The timestamp of when the folder was last modified",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "CreateTime",
+      "createTime",
       "The timestamp of when the folder was created",
       [],
       true,
@@ -84,7 +44,7 @@ export function Organizations_getFoldersFolder_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "DeleteTime",
+      "deleteTime",
       "The timestamp of when the folder was requested to be deleted (if applicable)",
       [],
       true,
@@ -92,8 +52,48 @@ export function Organizations_getFoldersFolder_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "DisplayName",
+      "displayName",
       "The display name of the folder",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "etag",
+      "Entity tag identifier of the folder",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "name",
+      "The id of the folder",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "parent",
+      "The parent id of the folder",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "state",
+      "The lifecycle state of the folder",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "updateTime",
+      "The timestamp of when the folder was last modified",
       [],
       true,
       false,

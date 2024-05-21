@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Apigateway_ApiConfigGrpcServiceSource {
+export interface apigateway_ApiConfigGrpcServiceSource {
   // Base64 encoded content of the file.
-  Contents?: string;
+  contents?: string;
 
   // The file path (full or relative path). This is typically the path of the file when it is uploaded.
-  Path?: string;
+  path?: string;
 }
 
-export function Apigateway_ApiConfigGrpcServiceSource_GetTypes(): DynamicUIProps[] {
+export function apigateway_ApiConfigGrpcServiceSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Contents",
+      "contents",
       "Base64 encoded content of the file.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Apigateway_ApiConfigGrpcServiceSource_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "Path",
+      "path",
       "The file path (full or relative path). This is typically the path of the file when it is uploaded.",
       [],
       true,

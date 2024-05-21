@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_JobQueryScriptOptions {
+export interface bigquery_JobQueryScriptOptions {
   /*
 Determines which statement in the script represents the "key result",
 used to populate the schema and query results of the script job.
 Possible values are: `LAST`, `FIRST_SELECT`.
 */
-  KeyResultStatement?: string;
+  keyResultStatement?: string;
 
   // Limit on the number of bytes billed per statement. Exceeding this budget results in an error.
-  StatementByteBudget?: string;
+  statementByteBudget?: string;
 
   // Timeout period for each statement in a script.
-  StatementTimeoutMs?: string;
+  statementTimeoutMs?: string;
 }
 
-export function Bigquery_JobQueryScriptOptions_GetTypes(): DynamicUIProps[] {
+export function bigquery_JobQueryScriptOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KeyResultStatement",
+      "keyResultStatement",
       'Determines which statement in the script represents the "key result",\nused to populate the schema and query results of the script job.\nPossible values are: `LAST`, `FIRST_SELECT`.',
       [],
       false,
@@ -33,7 +33,7 @@ export function Bigquery_JobQueryScriptOptions_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "StatementByteBudget",
+      "statementByteBudget",
       "Limit on the number of bytes billed per statement. Exceeding this budget results in an error.",
       [],
       false,
@@ -41,7 +41,7 @@ export function Bigquery_JobQueryScriptOptions_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "StatementTimeoutMs",
+      "statementTimeoutMs",
       "Timeout period for each statement in a script.",
       [],
       false,

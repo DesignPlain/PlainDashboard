@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterVerticalPodAutoscaling {
+export interface container_getClusterVerticalPodAutoscaling {
   // Enables vertical pod autoscaling.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_getClusterVerticalPodAutoscaling_GetTypes(): DynamicUIProps[] {
+export function container_getClusterVerticalPodAutoscaling_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Enables vertical pod autoscaling.",
       [],
       true,

@@ -6,24 +6,24 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getInstanceGroupNamedPort {
+export interface compute_getInstanceGroupNamedPort {
   // The name of the instance group. Either `name` or `self_link` must be provided.
-  Name?: string;
+  name?: string;
 
   //
-  Port?: number;
+  port?: number;
 }
 
-export function Compute_getInstanceGroupNamedPort_GetTypes(): DynamicUIProps[] {
+export function compute_getInstanceGroupNamedPort_GetTypes(): DynamicUIProps[] {
   return [
+    new DynamicUIProps(InputType.Number, "port", "", [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of the instance group. Either `name` or `self_link` must be provided.",
       [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.Number, "Port", "", [], true, false),
   ];
 }

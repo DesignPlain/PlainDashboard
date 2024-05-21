@@ -8,179 +8,179 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface JobArgs {
-  /*
-User labels to be specified for the job. Keys and values should follow the restrictions
-specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page.
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration. Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  Labels?: Map<string, InputType.String>;
-
-  // The Service Account email used to create the job.
-  ServiceAccountEmail?: string;
-
-  // The zone in which the created job should run. If it is not provided, the provider zone is used.
-  Zone?: string;
-
-  // Enable/disable the use of [Streaming Engine](https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#streaming-engine) for the job. Note that Streaming Engine is enabled by default for pipelines developed against the Beam SDK for Python v2.21.0 or later when using Python 3.
-  EnableStreamingEngine?: boolean;
-
-  // The configuration for VM IPs.  Options are `"WORKER_IP_PUBLIC"` or `"WORKER_IP_PRIVATE"`.
-  IpConfiguration?: string;
-
-  // The network to which VMs will be assigned. If it is not provided, "default" will be used.
-  Network?: string;
-
-  // One of "drain" or "cancel".  Specifies behavior of deletion during `pulumi destroy`.  See above note.
-  OnDelete?: string;
-
-  // If set to `true`, Pulumi will treat `DRAINING` and `CANCELLING` as terminal states when deleting the resource, and will remove the resource from Pulumi state and move on.  See above note.
-  SkipWaitOnJobTermination?: boolean;
-
-  // The subnetwork to which VMs will be assigned. Should be of the form "regions/REGION/subnetworks/SUBNETWORK". If the [subnetwork is located in a Shared VPC network](https://cloud.google.com/dataflow/docs/guides/specifying-networks#shared), you must use the complete URL. For example `"googleapis.com/compute/v1/projects/PROJECT_ID/regions/REGION/subnetworks/SUBNET_NAME"`
-  Subnetwork?: string;
-
-  // List of experiments that should be used by the job. An example value is `["enable_stackdriver_agent_metrics"]`.
-  AdditionalExperiments?: Array<string>;
-
-  // The name for the Cloud KMS key for the job. Key format is: `projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY`
-  KmsKeyName?: string;
-
   // A unique name for the resource, required by Dataflow.
-  Name?: string;
+  name?: string;
 
   // The region in which the created job should run.
-  Region?: string;
+  region?: string;
+
+  // The subnetwork to which VMs will be assigned. Should be of the form "regions/REGION/subnetworks/SUBNETWORK". If the [subnetwork is located in a Shared VPC network](https://cloud.google.com/dataflow/docs/guides/specifying-networks#shared), you must use the complete URL. For example `"googleapis.com/compute/v1/projects/PROJECT_ID/regions/REGION/subnetworks/SUBNET_NAME"`
+  subnetwork?: string;
 
   /*
 A writeable location on GCS for the Dataflow job to dump its temporary data.
 
 - - -
 */
-  TempGcsLocation?: string;
+  tempGcsLocation?: string;
 
   // The GCS path to the Dataflow job template.
-  TemplateGcsPath?: string;
+  templateGcsPath?: string;
 
-  // The machine type to use for the job.
-  MachineType?: string;
+  // The zone in which the created job should run. If it is not provided, the provider zone is used.
+  zone?: string;
 
   // The number of workers permitted to work on the job.  More workers may improve processing speed at additional cost.
-  MaxWorkers?: number;
+  maxWorkers?: number;
 
-  // Key/Value pairs to be passed to the Dataflow job (as used in the template).
-  Parameters?: Map<string, InputType.String>;
+  // The name for the Cloud KMS key for the job. Key format is: `projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY`
+  kmsKeyName?: string;
 
   // The project in which the resource belongs. If it is not provided, the provider project is used.
-  Project?: string;
+  project?: string;
 
   // Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced with the corresponding name prefixes of the new job. This field is not used outside of update.
-  TransformNameMapping?: Map<string, InputType.String>;
+  transformNameMapping?: Map<string, string>;
+
+  // Enable/disable the use of [Streaming Engine](https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#streaming-engine) for the job. Note that Streaming Engine is enabled by default for pipelines developed against the Beam SDK for Python v2.21.0 or later when using Python 3.
+  enableStreamingEngine?: boolean;
+
+  // The configuration for VM IPs.  Options are `"WORKER_IP_PUBLIC"` or `"WORKER_IP_PRIVATE"`.
+  ipConfiguration?: string;
+
+  /*
+User labels to be specified for the job. Keys and values should follow the restrictions
+specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page.
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration. Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  labels?: Map<string, string>;
+
+  // The machine type to use for the job.
+  machineType?: string;
+
+  // List of experiments that should be used by the job. An example value is `["enable_stackdriver_agent_metrics"]`.
+  additionalExperiments?: Array<string>;
+
+  // One of "drain" or "cancel".  Specifies behavior of deletion during `pulumi destroy`.  See above note.
+  onDelete?: string;
+
+  // Key/Value pairs to be passed to the Dataflow job (as used in the template).
+  parameters?: Map<string, string>;
+
+  // The Service Account email used to create the job.
+  serviceAccountEmail?: string;
+
+  // If set to `true`, Pulumi will treat `DRAINING` and `CANCELLING` as terminal states when deleting the resource, and will remove the resource from Pulumi state and move on.  See above note.
+  skipWaitOnJobTermination?: boolean;
+
+  // The network to which VMs will be assigned. If it is not provided, "default" will be used.
+  network?: string;
 }
 export class Job extends Resource {
   // The machine type to use for the job.
-  public MachineType?: string;
+  public machineType?: string;
 
-  // The network to which VMs will be assigned. If it is not provided, "default" will be used.
-  public Network?: string;
+  // A unique name for the resource, required by Dataflow.
+  public name?: string;
 
   // The project in which the resource belongs. If it is not provided, the provider project is used.
-  public Project?: string;
+  public project?: string;
 
-  // If set to `true`, Pulumi will treat `DRAINING` and `CANCELLING` as terminal states when deleting the resource, and will remove the resource from Pulumi state and move on.  See above note.
-  public SkipWaitOnJobTermination?: boolean;
+  // The combination of labels configured directly on the resource and default labels configured on the provider.
+  public pulumiLabels?: Map<string, string>;
 
-  /*
-A writeable location on GCS for the Dataflow job to dump its temporary data.
-
-- - -
-*/
-  public TempGcsLocation?: string;
-
-  // Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced with the corresponding name prefixes of the new job. This field is not used outside of update.
-  public TransformNameMapping?: Map<string, InputType.String>;
-
-  // The zone in which the created job should run. If it is not provided, the provider zone is used.
-  public Zone?: string;
-
-  // The unique ID of this job.
-  public JobId?: string;
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
 
   // The configuration for VM IPs.  Options are `"WORKER_IP_PUBLIC"` or `"WORKER_IP_PRIVATE"`.
-  public IpConfiguration?: string;
+  public ipConfiguration?: string;
 
-  // The number of workers permitted to work on the job.  More workers may improve processing speed at additional cost.
-  public MaxWorkers?: number;
-
-  // Key/Value pairs to be passed to the Dataflow job (as used in the template).
-  public Parameters?: Map<string, InputType.String>;
-
-  // The Service Account email used to create the job.
-  public ServiceAccountEmail?: string;
-
-  // The current state of the resource, selected from the [JobState enum](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#Job.JobState)
-  public State?: string;
-
-  // List of experiments that should be used by the job. An example value is `["enable_stackdriver_agent_metrics"]`.
-  public AdditionalExperiments?: Array<string>;
-
-  // The type of this job, selected from the [JobType enum](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#Job.JobType)
-  public Type?: string;
-
-  // The region in which the created job should run.
-  public Region?: string;
-
-  // Enable/disable the use of [Streaming Engine](https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#streaming-engine) for the job. Note that Streaming Engine is enabled by default for pipelines developed against the Beam SDK for Python v2.21.0 or later when using Python 3.
-  public EnableStreamingEngine?: boolean;
-
-  // The name for the Cloud KMS key for the job. Key format is: `projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY`
-  public KmsKeyName?: string;
+  // The unique ID of this job.
+  public jobId?: string;
 
   /*
 User labels to be specified for the job. Keys and values should follow the restrictions
 specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration. Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  public Labels?: Map<string, InputType.String>;
+  public labels?: Map<string, string>;
 
-  // A unique name for the resource, required by Dataflow.
-  public Name?: string;
+  // The current state of the resource, selected from the [JobState enum](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#Job.JobState)
+  public state?: string;
+
+  /*
+A writeable location on GCS for the Dataflow job to dump its temporary data.
+
+- - -
+*/
+  public tempGcsLocation?: string;
+
+  // The type of this job, selected from the [JobType enum](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#Job.JobType)
+  public type?: string;
+
+  // Enable/disable the use of [Streaming Engine](https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#streaming-engine) for the job. Note that Streaming Engine is enabled by default for pipelines developed against the Beam SDK for Python v2.21.0 or later when using Python 3.
+  public enableStreamingEngine?: boolean;
+
+  // The number of workers permitted to work on the job.  More workers may improve processing speed at additional cost.
+  public maxWorkers?: number;
 
   // One of "drain" or "cancel".  Specifies behavior of deletion during `pulumi destroy`.  See above note.
-  public OnDelete?: string;
+  public onDelete?: string;
 
-  // The combination of labels configured directly on the resource and default labels configured on the provider.
-  public PulumiLabels?: Map<string, string>;
+  // If set to `true`, Pulumi will treat `DRAINING` and `CANCELLING` as terminal states when deleting the resource, and will remove the resource from Pulumi state and move on.  See above note.
+  public skipWaitOnJobTermination?: boolean;
 
-  // The subnetwork to which VMs will be assigned. Should be of the form "regions/REGION/subnetworks/SUBNETWORK". If the [subnetwork is located in a Shared VPC network](https://cloud.google.com/dataflow/docs/guides/specifying-networks#shared), you must use the complete URL. For example `"googleapis.com/compute/v1/projects/PROJECT_ID/regions/REGION/subnetworks/SUBNET_NAME"`
-  public Subnetwork?: string;
+  // The zone in which the created job should run. If it is not provided, the provider zone is used.
+  public zone?: string;
 
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
+  // The name for the Cloud KMS key for the job. Key format is: `projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY`
+  public kmsKeyName?: string;
+
+  // The network to which VMs will be assigned. If it is not provided, "default" will be used.
+  public network?: string;
+
+  // Key/Value pairs to be passed to the Dataflow job (as used in the template).
+  public parameters?: Map<string, string>;
+
+  // Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced with the corresponding name prefixes of the new job. This field is not used outside of update.
+  public transformNameMapping?: Map<string, string>;
 
   // The GCS path to the Dataflow job template.
-  public TemplateGcsPath?: string;
+  public templateGcsPath?: string;
+
+  // List of experiments that should be used by the job. An example value is `["enable_stackdriver_agent_metrics"]`.
+  public additionalExperiments?: Array<string>;
+
+  // The region in which the created job should run.
+  public region?: string;
+
+  // The Service Account email used to create the job.
+  public serviceAccountEmail?: string;
+
+  // The subnetwork to which VMs will be assigned. Should be of the form "regions/REGION/subnetworks/SUBNETWORK". If the [subnetwork is located in a Shared VPC network](https://cloud.google.com/dataflow/docs/guides/specifying-networks#shared), you must use the complete URL. For example `"googleapis.com/compute/v1/projects/PROJECT_ID/regions/REGION/subnetworks/SUBNET_NAME"`
+  public subnetwork?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "TempGcsLocation",
-        "A writeable location on GCS for the Dataflow job to dump its temporary data.\n\n- - -",
+        "zone",
+        "The zone in which the created job should run. If it is not provided, the provider zone is used.",
         [],
+        false,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.Map,
+        "transformNameMapping",
+        "Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced with the corresponding name prefixes of the new job. This field is not used outside of update.",
+        InputType_Map_GetTypes(),
+        false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "MachineType",
-        "The machine type to use for the job.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "IpConfiguration",
+        "ipConfiguration",
         'The configuration for VM IPs.  Options are `"WORKER_IP_PUBLIC"` or `"WORKER_IP_PRIVATE"`.',
         [],
         false,
@@ -188,23 +188,7 @@ specified in the [labeling restrictions](https://cloud.google.com/compute/docs/l
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
-        "The region in which the created job should run.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Bool,
-        "SkipWaitOnJobTermination",
-        "If set to `true`, Pulumi will treat `DRAINING` and `CANCELLING` as terminal states when deleting the resource, and will remove the resource from Pulumi state and move on.  See above note.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "TemplateGcsPath",
+        "templateGcsPath",
         "The GCS path to the Dataflow job template.",
         [],
         true,
@@ -212,23 +196,23 @@ specified in the [labeling restrictions](https://cloud.google.com/compute/docs/l
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
-        "The project in which the resource belongs. If it is not provided, the provider project is used.",
+        "region",
+        "The region in which the created job should run.",
         [],
         false,
         true,
       ),
       new DynamicUIProps(
-        InputType.Map,
-        "TransformNameMapping",
-        "Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced with the corresponding name prefixes of the new job. This field is not used outside of update.",
-        InputType_Map_GetTypes(),
-        false,
+        InputType.String,
+        "tempGcsLocation",
+        "A writeable location on GCS for the Dataflow job to dump its temporary data.\n\n- - -",
+        [],
+        true,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "EnableStreamingEngine",
+        "enableStreamingEngine",
         "Enable/disable the use of [Streaming Engine](https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#streaming-engine) for the job. Note that Streaming Engine is enabled by default for pipelines developed against the Beam SDK for Python v2.21.0 or later when using Python 3.",
         [],
         false,
@@ -236,47 +220,15 @@ specified in the [labeling restrictions](https://cloud.google.com/compute/docs/l
       ),
       new DynamicUIProps(
         InputType.String,
-        "Network",
-        'The network to which VMs will be assigned. If it is not provided, "default" will be used.',
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
+        "name",
         "A unique name for the resource, required by Dataflow.",
         [],
         false,
         true,
       ),
       new DynamicUIProps(
-        InputType.Number,
-        "MaxWorkers",
-        "The number of workers permitted to work on the job.  More workers may improve processing speed at additional cost.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Map,
-        "Parameters",
-        "Key/Value pairs to be passed to the Dataflow job (as used in the template).",
-        InputType_Map_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Subnetwork",
-        'The subnetwork to which VMs will be assigned. Should be of the form "regions/REGION/subnetworks/SUBNETWORK". If the [subnetwork is located in a Shared VPC network](https://cloud.google.com/dataflow/docs/guides/specifying-networks#shared), you must use the complete URL. For example `"googleapis.com/compute/v1/projects/PROJECT_ID/regions/REGION/subnetworks/SUBNET_NAME"`',
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "KmsKeyName",
+        "kmsKeyName",
         "The name for the Cloud KMS key for the job. Key format is: `projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY`",
         [],
         false,
@@ -284,23 +236,55 @@ specified in the [labeling restrictions](https://cloud.google.com/compute/docs/l
       ),
       new DynamicUIProps(
         InputType.String,
-        "Zone",
-        "The zone in which the created job should run. If it is not provided, the provider zone is used.",
+        "machineType",
+        "The machine type to use for the job.",
         [],
         false,
-        true,
+        false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "OnDelete",
+        "onDelete",
         'One of "drain" or "cancel".  Specifies behavior of deletion during `pulumi destroy`.  See above note.',
         [],
         false,
         false,
       ),
       new DynamicUIProps(
+        InputType.String,
+        "serviceAccountEmail",
+        "The Service Account email used to create the job.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "subnetwork",
+        'The subnetwork to which VMs will be assigned. Should be of the form "regions/REGION/subnetworks/SUBNETWORK". If the [subnetwork is located in a Shared VPC network](https://cloud.google.com/dataflow/docs/guides/specifying-networks#shared), you must use the complete URL. For example `"googleapis.com/compute/v1/projects/PROJECT_ID/regions/REGION/subnetworks/SUBNET_NAME"`',
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The project in which the resource belongs. If it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Map,
+        "labels",
+        "User labels to be specified for the job. Keys and values should follow the restrictions\nspecified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration. Please refer to the field `effective_labels` for all of the labels present on the resource.",
+        InputType_Map_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
         InputType.Array,
-        "AdditionalExperiments",
+        "additionalExperiments",
         'List of experiments that should be used by the job. An example value is `["enable_stackdriver_agent_metrics"]`.',
         InputType_String_GetTypes(),
         false,
@@ -308,19 +292,35 @@ specified in the [labeling restrictions](https://cloud.google.com/compute/docs/l
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
-        "User labels to be specified for the job. Keys and values should follow the restrictions\nspecified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration. Please refer to the field `effective_labels` for all of the labels present on the resource.",
+        "parameters",
+        "Key/Value pairs to be passed to the Dataflow job (as used in the template).",
         InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
-        InputType.String,
-        "ServiceAccountEmail",
-        "The Service Account email used to create the job.",
+        InputType.Bool,
+        "skipWaitOnJobTermination",
+        "If set to `true`, Pulumi will treat `DRAINING` and `CANCELLING` as terminal states when deleting the resource, and will remove the resource from Pulumi state and move on.  See above note.",
         [],
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "network",
+        'The network to which VMs will be assigned. If it is not provided, "default" will be used.',
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Number,
+        "maxWorkers",
+        "The number of workers permitted to work on the job.  More workers may improve processing speed at additional cost.",
+        [],
+        false,
+        true,
       ),
     ];
   }

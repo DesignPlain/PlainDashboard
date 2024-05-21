@@ -6,38 +6,46 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Sql_getDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting,
-  Sql_getDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting_GetTypes,
-} from "./Sql_getDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting";
+  sql_getDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting,
+  sql_getDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting_GetTypes,
+} from "./sql_getDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting";
 
-export interface Sql_getDatabaseInstanceSettingBackupConfiguration {
+export interface sql_getDatabaseInstanceSettingBackupConfiguration {
   //
-  BackupRetentionSettings?: Array<Sql_getDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting>;
+  backupRetentionSettings?: Array<sql_getDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting>;
 
   // True if binary logging is enabled. If settings.backup_configuration.enabled is false, this must be as well. Can only be used with MySQL.
-  BinaryLogEnabled?: boolean;
+  binaryLogEnabled?: boolean;
 
   // True if backup configuration is enabled.
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // Location of the backup configuration.
-  Location?: string;
+  location?: string;
 
   // True if Point-in-time recovery is enabled.
-  PointInTimeRecoveryEnabled?: boolean;
+  pointInTimeRecoveryEnabled?: boolean;
 
   // HH:MM format time indicating when backup configuration starts.
-  StartTime?: string;
+  startTime?: string;
 
   // The number of days of transaction logs we retain for point in time restore, from 1-7. (For PostgreSQL Enterprise Plus instances, from 1 to 35.)
-  TransactionLogRetentionDays?: number;
+  transactionLogRetentionDays?: number;
 }
 
-export function Sql_getDatabaseInstanceSettingBackupConfiguration_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstanceSettingBackupConfiguration_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Bool,
+      "pointInTimeRecoveryEnabled",
+      "True if Point-in-time recovery is enabled.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "StartTime",
+      "startTime",
       "HH:MM format time indicating when backup configuration starts.",
       [],
       true,
@@ -45,7 +53,7 @@ export function Sql_getDatabaseInstanceSettingBackupConfiguration_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Number,
-      "TransactionLogRetentionDays",
+      "transactionLogRetentionDays",
       "The number of days of transaction logs we retain for point in time restore, from 1-7. (For PostgreSQL Enterprise Plus instances, from 1 to 35.)",
       [],
       true,
@@ -53,15 +61,15 @@ export function Sql_getDatabaseInstanceSettingBackupConfiguration_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "BackupRetentionSettings",
+      "backupRetentionSettings",
       "",
-      Sql_getDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting_GetTypes(),
+      sql_getDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "BinaryLogEnabled",
+      "binaryLogEnabled",
       "True if binary logging is enabled. If settings.backup_configuration.enabled is false, this must be as well. Can only be used with MySQL.",
       [],
       true,
@@ -69,7 +77,7 @@ export function Sql_getDatabaseInstanceSettingBackupConfiguration_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "True if backup configuration is enabled.",
       [],
       true,
@@ -77,16 +85,8 @@ export function Sql_getDatabaseInstanceSettingBackupConfiguration_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       "Location of the backup configuration.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "PointInTimeRecoveryEnabled",
-      "True if Point-in-time recovery is enabled.",
       [],
       true,
       false,

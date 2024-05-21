@@ -6,68 +6,60 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtension,
-  Certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtension_GetTypes,
-} from "./Certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtension";
+  certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtension,
+  certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtension_GetTypes,
+} from "./certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtension";
 import {
-  Certificateauthority_CertificateTemplatePredefinedValuesCaOptions,
-  Certificateauthority_CertificateTemplatePredefinedValuesCaOptions_GetTypes,
-} from "./Certificateauthority_CertificateTemplatePredefinedValuesCaOptions";
+  certificateauthority_CertificateTemplatePredefinedValuesCaOptions,
+  certificateauthority_CertificateTemplatePredefinedValuesCaOptions_GetTypes,
+} from "./certificateauthority_CertificateTemplatePredefinedValuesCaOptions";
 import {
-  Certificateauthority_CertificateTemplatePredefinedValuesKeyUsage,
-  Certificateauthority_CertificateTemplatePredefinedValuesKeyUsage_GetTypes,
-} from "./Certificateauthority_CertificateTemplatePredefinedValuesKeyUsage";
+  certificateauthority_CertificateTemplatePredefinedValuesKeyUsage,
+  certificateauthority_CertificateTemplatePredefinedValuesKeyUsage_GetTypes,
+} from "./certificateauthority_CertificateTemplatePredefinedValuesKeyUsage";
 import {
-  Certificateauthority_CertificateTemplatePredefinedValuesPolicyId,
-  Certificateauthority_CertificateTemplatePredefinedValuesPolicyId_GetTypes,
-} from "./Certificateauthority_CertificateTemplatePredefinedValuesPolicyId";
+  certificateauthority_CertificateTemplatePredefinedValuesPolicyId,
+  certificateauthority_CertificateTemplatePredefinedValuesPolicyId_GetTypes,
+} from "./certificateauthority_CertificateTemplatePredefinedValuesPolicyId";
 
-export interface Certificateauthority_CertificateTemplatePredefinedValues {
+export interface certificateauthority_CertificateTemplatePredefinedValues {
   // Optional. Describes custom X.509 extensions.
-  AdditionalExtensions?: Array<Certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtension>;
+  additionalExtensions?: Array<certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtension>;
 
   // Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses that appear in the "Authority Information Access" extension in the certificate.
-  AiaOcspServers?: Array<string>;
+  aiaOcspServers?: Array<string>;
 
   // Optional. Describes options in this X509Parameters that are relevant in a CA certificate.
-  CaOptions?: Certificateauthority_CertificateTemplatePredefinedValuesCaOptions;
+  caOptions?: certificateauthority_CertificateTemplatePredefinedValuesCaOptions;
 
   // Optional. Indicates the intended use for keys that correspond to a certificate.
-  KeyUsage?: Certificateauthority_CertificateTemplatePredefinedValuesKeyUsage;
+  keyUsage?: certificateauthority_CertificateTemplatePredefinedValuesKeyUsage;
 
   // Optional. Describes the X.509 certificate policy object identifiers, per https://tools.ietf.org/html/rfc5280#section-4.2.1.4.
-  PolicyIds?: Array<Certificateauthority_CertificateTemplatePredefinedValuesPolicyId>;
+  policyIds?: Array<certificateauthority_CertificateTemplatePredefinedValuesPolicyId>;
 }
 
-export function Certificateauthority_CertificateTemplatePredefinedValues_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CertificateTemplatePredefinedValues_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "KeyUsage",
-      "Optional. Indicates the intended use for keys that correspond to a certificate.",
-      Certificateauthority_CertificateTemplatePredefinedValuesKeyUsage_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "PolicyIds",
+      "policyIds",
       "Optional. Describes the X.509 certificate policy object identifiers, per https://tools.ietf.org/html/rfc5280#section-4.2.1.4.",
-      Certificateauthority_CertificateTemplatePredefinedValuesPolicyId_GetTypes(),
+      certificateauthority_CertificateTemplatePredefinedValuesPolicyId_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AdditionalExtensions",
+      "additionalExtensions",
       "Optional. Describes custom X.509 extensions.",
-      Certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtension_GetTypes(),
+      certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtension_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AiaOcspServers",
+      "aiaOcspServers",
       'Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses that appear in the "Authority Information Access" extension in the certificate.',
       InputType_String_GetTypes(),
       false,
@@ -75,9 +67,17 @@ export function Certificateauthority_CertificateTemplatePredefinedValues_GetType
     ),
     new DynamicUIProps(
       InputType.Object,
-      "CaOptions",
+      "caOptions",
       "Optional. Describes options in this X509Parameters that are relevant in a CA certificate.",
-      Certificateauthority_CertificateTemplatePredefinedValuesCaOptions_GetTypes(),
+      certificateauthority_CertificateTemplatePredefinedValuesCaOptions_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "keyUsage",
+      "Optional. Indicates the intended use for keys that correspond to a certificate.",
+      certificateauthority_CertificateTemplatePredefinedValuesKeyUsage_GetTypes(),
       false,
       false,
     ),

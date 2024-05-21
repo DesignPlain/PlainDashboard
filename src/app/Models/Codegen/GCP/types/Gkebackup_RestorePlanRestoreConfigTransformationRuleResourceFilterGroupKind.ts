@@ -6,35 +6,35 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkebackup_RestorePlanRestoreConfigTransformationRuleResourceFilterGroupKind {
+export interface gkebackup_RestorePlanRestoreConfigTransformationRuleResourceFilterGroupKind {
   /*
 API Group string of a Kubernetes resource, e.g.
 "apiextensions.k8s.io", "storage.k8s.io", etc.
 Use empty string for core group.
 */
-  ResourceGroup?: string;
+  resourceGroup?: string;
 
   /*
 Kind of a Kubernetes resource, e.g.
 "CustomResourceDefinition", "StorageClass", etc.
 */
-  ResourceKind?: string;
+  resourceKind?: string;
 }
 
-export function Gkebackup_RestorePlanRestoreConfigTransformationRuleResourceFilterGroupKind_GetTypes(): DynamicUIProps[] {
+export function gkebackup_RestorePlanRestoreConfigTransformationRuleResourceFilterGroupKind_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ResourceKind",
-      'Kind of a Kubernetes resource, e.g.\n"CustomResourceDefinition", "StorageClass", etc.',
+      "resourceGroup",
+      'API Group string of a Kubernetes resource, e.g.\n"apiextensions.k8s.io", "storage.k8s.io", etc.\nUse empty string for core group.',
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ResourceGroup",
-      'API Group string of a Kubernetes resource, e.g.\n"apiextensions.k8s.io", "storage.k8s.io", etc.\nUse empty string for core group.',
+      "resourceKind",
+      'Kind of a Kubernetes resource, e.g.\n"CustomResourceDefinition", "StorageClass", etc.',
       [],
       false,
       false,

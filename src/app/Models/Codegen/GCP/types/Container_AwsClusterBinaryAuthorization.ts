@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AwsClusterBinaryAuthorization {
+export interface container_AwsClusterBinaryAuthorization {
   // Mode of operation for Binary Authorization policy evaluation. Possible values: DISABLED, PROJECT_SINGLETON_POLICY_ENFORCE
-  EvaluationMode?: string;
+  evaluationMode?: string;
 }
 
-export function Container_AwsClusterBinaryAuthorization_GetTypes(): DynamicUIProps[] {
+export function container_AwsClusterBinaryAuthorization_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "EvaluationMode",
+      "evaluationMode",
       "Mode of operation for Binary Authorization policy evaluation. Possible values: DISABLED, PROJECT_SINGLETON_POLICY_ENFORCE",
       [],
       false,

@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_ServiceTemplateVolumeEmptyDir {
+export interface cloudrunv2_ServiceTemplateVolumeEmptyDir {
   /*
 The different types of medium supported for EmptyDir.
 Default value is `MEMORY`.
 Possible values are: `MEMORY`.
 */
-  Medium?: string;
+  medium?: string;
 
   // Limit on the storage usable by this EmptyDir volume. The size limit is also applicable for memory medium. The maximum usage on memory medium EmptyDir would be the minimum value between the SizeLimit specified here and the sum of memory limits of all containers in a pod. This field's values are of the 'Quantity' k8s type: https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/. The default is nil which means that the limit is undefined. More info: https://kubernetes.io/docs/concepts/storage/volumes/#emptydir.
-  SizeLimit?: string;
+  sizeLimit?: string;
 }
 
-export function Cloudrunv2_ServiceTemplateVolumeEmptyDir_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_ServiceTemplateVolumeEmptyDir_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Medium",
+      "medium",
       "The different types of medium supported for EmptyDir.\nDefault value is `MEMORY`.\nPossible values are: `MEMORY`.",
       [],
       false,
@@ -30,7 +30,7 @@ export function Cloudrunv2_ServiceTemplateVolumeEmptyDir_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "SizeLimit",
+      "sizeLimit",
       "Limit on the storage usable by this EmptyDir volume. The size limit is also applicable for memory medium. The maximum usage on memory medium EmptyDir would be the minimum value between the SizeLimit specified here and the sum of memory limits of all containers in a pod. This field's values are of the 'Quantity' k8s type: https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/. The default is nil which means that the limit is undefined. More info: https://kubernetes.io/docs/concepts/storage/volumes/#emptydir.",
       [],
       false,

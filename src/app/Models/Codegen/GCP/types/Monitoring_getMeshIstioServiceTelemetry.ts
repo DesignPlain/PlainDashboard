@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_getMeshIstioServiceTelemetry {
+export interface monitoring_getMeshIstioServiceTelemetry {
   /*
 The full name of the resource that defines this service.
 Formatted as described in
 https://cloud.google.com/apis/design/resource_names.
 */
-  ResourceName?: string;
+  resourceName?: string;
 }
 
-export function Monitoring_getMeshIstioServiceTelemetry_GetTypes(): DynamicUIProps[] {
+export function monitoring_getMeshIstioServiceTelemetry_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ResourceName",
+      "resourceName",
       "The full name of the resource that defines this service.\nFormatted as described in\nhttps://cloud.google.com/apis/design/resource_names.",
       [],
       true,

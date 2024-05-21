@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FeatureFleetDefaultMemberConfigMesh {
+export interface gkehub_FeatureFleetDefaultMemberConfigMesh {
   /*
 Whether to automatically manage Service Mesh
 Possible values are: `MANAGEMENT_UNSPECIFIED`, `MANAGEMENT_AUTOMATIC`, `MANAGEMENT_MANUAL`.
 */
-  Management?: string;
+  management?: string;
 }
 
-export function Gkehub_FeatureFleetDefaultMemberConfigMesh_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureFleetDefaultMemberConfigMesh_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Management",
+      "management",
       "Whether to automatically manage Service Mesh\nPossible values are: `MANAGEMENT_UNSPECIFIED`, `MANAGEMENT_AUTOMATIC`, `MANAGEMENT_MANUAL`.",
       [],
       true,

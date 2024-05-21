@@ -6,8 +6,8 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Workbench_InstanceHealthInfo {}
+export interface workbench_InstanceHealthInfo {}
 
-export function Workbench_InstanceHealthInfo_GetTypes(): DynamicUIProps[] {
+export function workbench_InstanceHealthInfo_GetTypes(): DynamicUIProps[] {
   return [];
 }

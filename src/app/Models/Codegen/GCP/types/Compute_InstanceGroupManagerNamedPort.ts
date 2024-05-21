@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceGroupManagerNamedPort {
+export interface compute_InstanceGroupManagerNamedPort {
   // The name of the port.
-  Name?: string;
+  name?: string;
 
   /*
 The port number.
 - - -
 */
-  Port?: number;
+  port?: number;
 }
 
-export function Compute_InstanceGroupManagerNamedPort_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceGroupManagerNamedPort_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of the port.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Compute_InstanceGroupManagerNamedPort_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Port",
+      "port",
       "The port number.\n- - -",
       [],
       true,

@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_NamespaceState {
+export interface gkehub_NamespaceState {
   /*
 (Output)
 Code describes the state of a Namespace resource.
 */
-  Code?: string;
+  code?: string;
 }
 
-export function Gkehub_NamespaceState_GetTypes(): DynamicUIProps[] {
+export function gkehub_NamespaceState_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Code",
+      "code",
       "(Output)\nCode describes the state of a Namespace resource.",
       [],
       false,

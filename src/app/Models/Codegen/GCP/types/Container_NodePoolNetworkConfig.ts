@@ -6,75 +6,59 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_NodePoolNetworkConfigAdditionalPodNetworkConfig,
-  Container_NodePoolNetworkConfigAdditionalPodNetworkConfig_GetTypes,
-} from "./Container_NodePoolNetworkConfigAdditionalPodNetworkConfig";
+  container_NodePoolNetworkConfigAdditionalNodeNetworkConfig,
+  container_NodePoolNetworkConfigAdditionalNodeNetworkConfig_GetTypes,
+} from "./container_NodePoolNetworkConfigAdditionalNodeNetworkConfig";
 import {
-  Container_NodePoolNetworkConfigNetworkPerformanceConfig,
-  Container_NodePoolNetworkConfigNetworkPerformanceConfig_GetTypes,
-} from "./Container_NodePoolNetworkConfigNetworkPerformanceConfig";
+  container_NodePoolNetworkConfigAdditionalPodNetworkConfig,
+  container_NodePoolNetworkConfigAdditionalPodNetworkConfig_GetTypes,
+} from "./container_NodePoolNetworkConfigAdditionalPodNetworkConfig";
 import {
-  Container_NodePoolNetworkConfigPodCidrOverprovisionConfig,
-  Container_NodePoolNetworkConfigPodCidrOverprovisionConfig_GetTypes,
-} from "./Container_NodePoolNetworkConfigPodCidrOverprovisionConfig";
+  container_NodePoolNetworkConfigNetworkPerformanceConfig,
+  container_NodePoolNetworkConfigNetworkPerformanceConfig_GetTypes,
+} from "./container_NodePoolNetworkConfigNetworkPerformanceConfig";
 import {
-  Container_NodePoolNetworkConfigAdditionalNodeNetworkConfig,
-  Container_NodePoolNetworkConfigAdditionalNodeNetworkConfig_GetTypes,
-} from "./Container_NodePoolNetworkConfigAdditionalNodeNetworkConfig";
+  container_NodePoolNetworkConfigPodCidrOverprovisionConfig,
+  container_NodePoolNetworkConfigPodCidrOverprovisionConfig_GetTypes,
+} from "./container_NodePoolNetworkConfigPodCidrOverprovisionConfig";
 
-export interface Container_NodePoolNetworkConfig {
+export interface container_NodePoolNetworkConfig {
+  // Network bandwidth tier configuration.
+  networkPerformanceConfig?: container_NodePoolNetworkConfigNetworkPerformanceConfig;
+
+  // Configuration for node-pool level pod cidr overprovision. If not set, the cluster level setting will be inherited
+  podCidrOverprovisionConfig?: container_NodePoolNetworkConfigPodCidrOverprovisionConfig;
+
+  // The IP address range for pod IPs in this node pool. Only applicable if createPodRange is true. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. /14) to have a range chosen with a specific netmask. Set to a CIDR notation (e.g. 10.96.0.0/14) to pick a specific range to use.
+  podIpv4CidrBlock?: string;
+
   // The ID of the secondary range for pod IPs. If `create_pod_range` is true, this ID is used for the new range. If `create_pod_range` is false, uses an existing secondary range with this ID.
-  PodRange?: string;
+  podRange?: string;
 
   /*
 We specify the additional node networks for this node pool using this list. Each node network corresponds to an additional interface.
 Structure is documented below
 */
-  AdditionalNodeNetworkConfigs?: Array<Container_NodePoolNetworkConfigAdditionalNodeNetworkConfig>;
+  additionalNodeNetworkConfigs?: Array<container_NodePoolNetworkConfigAdditionalNodeNetworkConfig>;
 
   /*
 We specify the additional pod networks for this node pool using this list. Each pod network corresponds to an additional alias IP range for the node.
 Structure is documented below
 */
-  AdditionalPodNetworkConfigs?: Array<Container_NodePoolNetworkConfigAdditionalPodNetworkConfig>;
+  additionalPodNetworkConfigs?: Array<container_NodePoolNetworkConfigAdditionalPodNetworkConfig>;
 
   // Whether to create a new range for pod IPs in this node pool. Defaults are provided for `pod_range` and `pod_ipv4_cidr_block` if they are not specified.
-  CreatePodRange?: boolean;
+  createPodRange?: boolean;
 
   // Whether nodes have internal IP addresses only.
-  EnablePrivateNodes?: boolean;
-
-  // Network bandwidth tier configuration.
-  NetworkPerformanceConfig?: Container_NodePoolNetworkConfigNetworkPerformanceConfig;
-
-  // Configuration for node-pool level pod cidr overprovision. If not set, the cluster level setting will be inherited
-  PodCidrOverprovisionConfig?: Container_NodePoolNetworkConfigPodCidrOverprovisionConfig;
-
-  // The IP address range for pod IPs in this node pool. Only applicable if createPodRange is true. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. /14) to have a range chosen with a specific netmask. Set to a CIDR notation (e.g. 10.96.0.0/14) to pick a specific range to use.
-  PodIpv4CidrBlock?: string;
+  enablePrivateNodes?: boolean;
 }
 
-export function Container_NodePoolNetworkConfig_GetTypes(): DynamicUIProps[] {
+export function container_NodePoolNetworkConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "AdditionalNodeNetworkConfigs",
-      "We specify the additional node networks for this node pool using this list. Each node network corresponds to an additional interface.\nStructure is documented below",
-      Container_NodePoolNetworkConfigAdditionalNodeNetworkConfig_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "AdditionalPodNetworkConfigs",
-      "We specify the additional pod networks for this node pool using this list. Each pod network corresponds to an additional alias IP range for the node.\nStructure is documented below",
-      Container_NodePoolNetworkConfigAdditionalPodNetworkConfig_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "CreatePodRange",
+      "createPodRange",
       "Whether to create a new range for pod IPs in this node pool. Defaults are provided for `pod_range` and `pod_ipv4_cidr_block` if they are not specified.",
       [],
       false,
@@ -82,7 +66,7 @@ export function Container_NodePoolNetworkConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnablePrivateNodes",
+      "enablePrivateNodes",
       "Whether nodes have internal IP addresses only.",
       [],
       false,
@@ -90,23 +74,23 @@ export function Container_NodePoolNetworkConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "NetworkPerformanceConfig",
+      "networkPerformanceConfig",
       "Network bandwidth tier configuration.",
-      Container_NodePoolNetworkConfigNetworkPerformanceConfig_GetTypes(),
+      container_NodePoolNetworkConfigNetworkPerformanceConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "PodCidrOverprovisionConfig",
+      "podCidrOverprovisionConfig",
       "Configuration for node-pool level pod cidr overprovision. If not set, the cluster level setting will be inherited",
-      Container_NodePoolNetworkConfigPodCidrOverprovisionConfig_GetTypes(),
+      container_NodePoolNetworkConfigPodCidrOverprovisionConfig_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "PodIpv4CidrBlock",
+      "podIpv4CidrBlock",
       "The IP address range for pod IPs in this node pool. Only applicable if createPodRange is true. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. /14) to have a range chosen with a specific netmask. Set to a CIDR notation (e.g. 10.96.0.0/14) to pick a specific range to use.",
       [],
       false,
@@ -114,9 +98,25 @@ export function Container_NodePoolNetworkConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "PodRange",
+      "podRange",
       "The ID of the secondary range for pod IPs. If `create_pod_range` is true, this ID is used for the new range. If `create_pod_range` is false, uses an existing secondary range with this ID.",
       [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "additionalNodeNetworkConfigs",
+      "We specify the additional node networks for this node pool using this list. Each node network corresponds to an additional interface.\nStructure is documented below",
+      container_NodePoolNetworkConfigAdditionalNodeNetworkConfig_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "additionalPodNetworkConfigs",
+      "We specify the additional pod networks for this node pool using this list. Each pod network corresponds to an additional alias IP range for the node.\nStructure is documented below",
+      container_NodePoolNetworkConfigAdditionalPodNetworkConfig_GetTypes(),
       false,
       true,
     ),

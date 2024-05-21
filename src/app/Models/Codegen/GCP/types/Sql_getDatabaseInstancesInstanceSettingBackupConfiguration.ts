@@ -6,62 +6,38 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Sql_getDatabaseInstancesInstanceSettingBackupConfigurationBackupRetentionSetting,
-  Sql_getDatabaseInstancesInstanceSettingBackupConfigurationBackupRetentionSetting_GetTypes,
-} from "./Sql_getDatabaseInstancesInstanceSettingBackupConfigurationBackupRetentionSetting";
+  sql_getDatabaseInstancesInstanceSettingBackupConfigurationBackupRetentionSetting,
+  sql_getDatabaseInstancesInstanceSettingBackupConfigurationBackupRetentionSetting_GetTypes,
+} from "./sql_getDatabaseInstancesInstanceSettingBackupConfigurationBackupRetentionSetting";
 
-export interface Sql_getDatabaseInstancesInstanceSettingBackupConfiguration {
+export interface sql_getDatabaseInstancesInstanceSettingBackupConfiguration {
   // True if binary logging is enabled. If settings.backup_configuration.enabled is false, this must be as well. Can only be used with MySQL.
-  BinaryLogEnabled?: boolean;
+  binaryLogEnabled?: boolean;
 
   // True if backup configuration is enabled.
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // Location of the backup configuration.
-  Location?: string;
+  location?: string;
 
   // True if Point-in-time recovery is enabled.
-  PointInTimeRecoveryEnabled?: boolean;
+  pointInTimeRecoveryEnabled?: boolean;
 
   // HH:MM format time indicating when backup configuration starts.
-  StartTime?: string;
+  startTime?: string;
 
   // The number of days of transaction logs we retain for point in time restore, from 1-7. (For PostgreSQL Enterprise Plus instances, from 1 to 35.)
-  TransactionLogRetentionDays?: number;
+  transactionLogRetentionDays?: number;
 
   //
-  BackupRetentionSettings?: Array<Sql_getDatabaseInstancesInstanceSettingBackupConfigurationBackupRetentionSetting>;
+  backupRetentionSettings?: Array<sql_getDatabaseInstancesInstanceSettingBackupConfigurationBackupRetentionSetting>;
 }
 
-export function Sql_getDatabaseInstancesInstanceSettingBackupConfiguration_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstancesInstanceSettingBackupConfiguration_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "BackupRetentionSettings",
-      "",
-      Sql_getDatabaseInstancesInstanceSettingBackupConfigurationBackupRetentionSetting_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "BinaryLogEnabled",
-      "True if binary logging is enabled. If settings.backup_configuration.enabled is false, this must be as well. Can only be used with MySQL.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "Enabled",
-      "True if backup configuration is enabled.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       "Location of the backup configuration.",
       [],
       true,
@@ -69,7 +45,7 @@ export function Sql_getDatabaseInstancesInstanceSettingBackupConfiguration_GetTy
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "PointInTimeRecoveryEnabled",
+      "pointInTimeRecoveryEnabled",
       "True if Point-in-time recovery is enabled.",
       [],
       true,
@@ -77,7 +53,7 @@ export function Sql_getDatabaseInstancesInstanceSettingBackupConfiguration_GetTy
     ),
     new DynamicUIProps(
       InputType.String,
-      "StartTime",
+      "startTime",
       "HH:MM format time indicating when backup configuration starts.",
       [],
       true,
@@ -85,8 +61,32 @@ export function Sql_getDatabaseInstancesInstanceSettingBackupConfiguration_GetTy
     ),
     new DynamicUIProps(
       InputType.Number,
-      "TransactionLogRetentionDays",
+      "transactionLogRetentionDays",
       "The number of days of transaction logs we retain for point in time restore, from 1-7. (For PostgreSQL Enterprise Plus instances, from 1 to 35.)",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "backupRetentionSettings",
+      "",
+      sql_getDatabaseInstancesInstanceSettingBackupConfigurationBackupRetentionSetting_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "binaryLogEnabled",
+      "True if binary logging is enabled. If settings.backup_configuration.enabled is false, this must be as well. Can only be used with MySQL.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "enabled",
+      "True if backup configuration is enabled.",
       [],
       true,
       false,

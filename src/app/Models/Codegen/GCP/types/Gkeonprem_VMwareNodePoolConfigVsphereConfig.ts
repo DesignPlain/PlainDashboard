@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_VMwareNodePoolConfigVsphereConfigTag,
-  Gkeonprem_VMwareNodePoolConfigVsphereConfigTag_GetTypes,
-} from "./Gkeonprem_VMwareNodePoolConfigVsphereConfigTag";
+  gkeonprem_VMwareNodePoolConfigVsphereConfigTag,
+  gkeonprem_VMwareNodePoolConfigVsphereConfigTag_GetTypes,
+} from "./gkeonprem_VMwareNodePoolConfigVsphereConfigTag";
 
-export interface Gkeonprem_VMwareNodePoolConfigVsphereConfig {
+export interface gkeonprem_VMwareNodePoolConfigVsphereConfig {
   // The name of the vCenter datastore. Inherited from the user cluster.
-  Datastore?: string;
+  datastore?: string;
 
   // Vsphere host groups to apply to all VMs in the node pool
-  HostGroups?: Array<string>;
+  hostGroups?: Array<string>;
 
   /*
 Tags to apply to VMs.
 Structure is documented below.
 */
-  Tags?: Array<Gkeonprem_VMwareNodePoolConfigVsphereConfigTag>;
+  tags?: Array<gkeonprem_VMwareNodePoolConfigVsphereConfigTag>;
 }
 
-export function Gkeonprem_VMwareNodePoolConfigVsphereConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareNodePoolConfigVsphereConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Datastore",
+      "datastore",
       "The name of the vCenter datastore. Inherited from the user cluster.",
       [],
       false,
@@ -36,7 +36,7 @@ export function Gkeonprem_VMwareNodePoolConfigVsphereConfig_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Array,
-      "HostGroups",
+      "hostGroups",
       "Vsphere host groups to apply to all VMs in the node pool",
       InputType_String_GetTypes(),
       false,
@@ -44,9 +44,9 @@ export function Gkeonprem_VMwareNodePoolConfigVsphereConfig_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Tags",
+      "tags",
       "Tags to apply to VMs.\nStructure is documented below.",
-      Gkeonprem_VMwareNodePoolConfigVsphereConfigTag_GetTypes(),
+      gkeonprem_VMwareNodePoolConfigVsphereConfigTag_GetTypes(),
       false,
       false,
     ),

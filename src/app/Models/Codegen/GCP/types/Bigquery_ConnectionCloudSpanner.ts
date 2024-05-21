@@ -6,18 +6,15 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_ConnectionCloudSpanner {
-  // Cloud Spanner database role for fine-grained access control. The Cloud Spanner admin should have provisioned the database role with appropriate permissions, such as `SELECT` and `INSERT`. Other users should only use roles provided by their Cloud Spanner admins. The database role name must start with a letter, and can only contain letters, numbers, and underscores. For more details, see https://cloud.google.com/spanner/docs/fgac-about.
-  DatabaseRole?: string;
-
+export interface bigquery_ConnectionCloudSpanner {
   // Allows setting max parallelism per query when executing on Spanner independent compute resources. If unspecified, default values of parallelism are chosen that are dependent on the Cloud Spanner instance configuration. `useParallelism` and `useDataBoost` must be set when setting max parallelism.
-  MaxParallelism?: number;
+  maxParallelism?: number;
 
   // If set, the request will be executed via Spanner independent compute resources. `use_parallelism` must be set when using data boost.
-  UseDataBoost?: boolean;
+  useDataBoost?: boolean;
 
   // If parallelism should be used when reading from Cloud Spanner.
-  UseParallelism?: boolean;
+  useParallelism?: boolean;
 
   /*
 (Optional, Deprecated)
@@ -25,25 +22,20 @@ If the serverless analytics service should be used to read data from Cloud Spann
 
 > --Warning:-- `useServerlessAnalytics` is deprecated and will be removed in a future major release. Use `useDataBoost` instead.
 */
-  UseServerlessAnalytics?: boolean;
+  useServerlessAnalytics?: boolean;
 
   // Cloud Spanner database in the form `project/instance/database'.
-  Database?: string;
+  database?: string;
+
+  // Cloud Spanner database role for fine-grained access control. The Cloud Spanner admin should have provisioned the database role with appropriate permissions, such as `SELECT` and `INSERT`. Other users should only use roles provided by their Cloud Spanner admins. The database role name must start with a letter, and can only contain letters, numbers, and underscores. For more details, see https://cloud.google.com/spanner/docs/fgac-about.
+  databaseRole?: string;
 }
 
-export function Bigquery_ConnectionCloudSpanner_GetTypes(): DynamicUIProps[] {
+export function bigquery_ConnectionCloudSpanner_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "UseDataBoost",
-      "If set, the request will be executed via Spanner independent compute resources. `use_parallelism` must be set when using data boost.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "UseParallelism",
+      "useParallelism",
       "If parallelism should be used when reading from Cloud Spanner.",
       [],
       false,
@@ -51,7 +43,7 @@ export function Bigquery_ConnectionCloudSpanner_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "UseServerlessAnalytics",
+      "useServerlessAnalytics",
       "(Optional, Deprecated)\nIf the serverless analytics service should be used to read data from Cloud Spanner. `useParallelism` must be set when using serverless analytics.\n\n> **Warning:** `useServerlessAnalytics` is deprecated and will be removed in a future major release. Use `useDataBoost` instead.",
       [],
       false,
@@ -59,7 +51,7 @@ export function Bigquery_ConnectionCloudSpanner_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Database",
+      "database",
       "Cloud Spanner database in the form `project/instance/database'.",
       [],
       true,
@@ -67,7 +59,7 @@ export function Bigquery_ConnectionCloudSpanner_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "DatabaseRole",
+      "databaseRole",
       "Cloud Spanner database role for fine-grained access control. The Cloud Spanner admin should have provisioned the database role with appropriate permissions, such as `SELECT` and `INSERT`. Other users should only use roles provided by their Cloud Spanner admins. The database role name must start with a letter, and can only contain letters, numbers, and underscores. For more details, see https://cloud.google.com/spanner/docs/fgac-about.",
       [],
       false,
@@ -75,8 +67,16 @@ export function Bigquery_ConnectionCloudSpanner_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxParallelism",
+      "maxParallelism",
       "Allows setting max parallelism per query when executing on Spanner independent compute resources. If unspecified, default values of parallelism are chosen that are dependent on the Cloud Spanner instance configuration. `useParallelism` and `useDataBoost` must be set when setting max parallelism.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "useDataBoost",
+      "If set, the request will be executed via Spanner independent compute resources. `use_parallelism` must be set when using data boost.",
       [],
       false,
       false,

@@ -6,35 +6,35 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Integrationconnectors_ConnectionSslConfigAdditionalVariableEncryptionKeyValue {
+export interface integrationconnectors_ConnectionSslConfigAdditionalVariableEncryptionKeyValue {
+  /*
+Type of Encryption Key
+Possible values are: `GOOGLE_MANAGED`, `CUSTOMER_MANAGED`.
+*/
+  type?: string;
+
   /*
 The [KMS key name] with which the content of the Operation is encrypted. The expected
 format: projects/-/locations/-/keyRings/-/cryptoKeys/-.
 Will be empty string if google managed.
 */
-  KmsKeyName?: string;
-
-  /*
-Type of Encryption Key
-Possible values are: `GOOGLE_MANAGED`, `CUSTOMER_MANAGED`.
-*/
-  Type?: string;
+  kmsKeyName?: string;
 }
 
-export function Integrationconnectors_ConnectionSslConfigAdditionalVariableEncryptionKeyValue_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionSslConfigAdditionalVariableEncryptionKeyValue_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyName",
-      "The [KMS key name] with which the content of the Operation is encrypted. The expected\nformat: projects/*/locations/*/keyRings/*/cryptoKeys/*.\nWill be empty string if google managed.",
+      "type",
+      "Type of Encryption Key\nPossible values are: `GOOGLE_MANAGED`, `CUSTOMER_MANAGED`.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
-      "Type of Encryption Key\nPossible values are: `GOOGLE_MANAGED`, `CUSTOMER_MANAGED`.",
+      "kmsKeyName",
+      "The [KMS key name] with which the content of the Operation is encrypted. The expected\nformat: projects/*/locations/*/keyRings/*/cryptoKeys/*.\nWill be empty string if google managed.",
       [],
       false,
       false,

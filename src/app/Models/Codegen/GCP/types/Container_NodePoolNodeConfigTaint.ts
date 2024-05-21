@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_NodePoolNodeConfigTaint {
+export interface container_NodePoolNodeConfigTaint {
+  // Value for taint.
+  value?: string;
+
   // Effect for taint.
-  Effect?: string;
+  effect?: string;
 
   // Key for taint.
-  Key?: string;
-
-  // Value for taint.
-  Value?: string;
+  key?: string;
 }
 
-export function Container_NodePoolNodeConfigTaint_GetTypes(): DynamicUIProps[] {
+export function container_NodePoolNodeConfigTaint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Effect",
+      "value",
+      "Value for taint.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "effect",
       "Effect for taint.",
       [],
       true,
@@ -29,16 +37,8 @@ export function Container_NodePoolNodeConfigTaint_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "key",
       "Key for taint.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Value",
-      "Value for taint.",
       [],
       true,
       false,

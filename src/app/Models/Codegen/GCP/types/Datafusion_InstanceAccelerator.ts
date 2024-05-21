@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datafusion_InstanceAccelerator {
+export interface datafusion_InstanceAccelerator {
   /*
 The type of an accelator for a CDF instance.
 Possible values are: `CDC`, `HEALTHCARE`, `CCAI_INSIGHTS`.
 */
-  AcceleratorType?: string;
+  acceleratorType?: string;
 
   /*
 The type of an accelator for a CDF instance.
 Possible values are: `ENABLED`, `DISABLED`.
 */
-  State?: string;
+  state?: string;
 }
 
-export function Datafusion_InstanceAccelerator_GetTypes(): DynamicUIProps[] {
+export function datafusion_InstanceAccelerator_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "AcceleratorType",
+      "acceleratorType",
       "The type of an accelator for a CDF instance.\nPossible values are: `CDC`, `HEALTHCARE`, `CCAI_INSIGHTS`.",
       [],
       true,
@@ -32,7 +32,7 @@ export function Datafusion_InstanceAccelerator_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "The type of an accelator for a CDF instance.\nPossible values are: `ENABLED`, `DISABLED`.",
       [],
       true,

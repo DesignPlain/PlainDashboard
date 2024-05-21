@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Looker_InstanceOauthConfig {
+export interface looker_InstanceOauthConfig {
   // The client ID for the Oauth config.
-  ClientId?: string;
+  clientId?: string;
 
   // The client secret for the Oauth config.
-  ClientSecret?: string;
+  clientSecret?: string;
 }
 
-export function Looker_InstanceOauthConfig_GetTypes(): DynamicUIProps[] {
+export function looker_InstanceOauthConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ClientId",
+      "clientId",
       "The client ID for the Oauth config.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Looker_InstanceOauthConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ClientSecret",
+      "clientSecret",
       "The client secret for the Oauth config.",
       [],
       true,

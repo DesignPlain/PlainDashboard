@@ -6,57 +6,65 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueDateValue,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueDateValue_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueDateValue";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueTimeValue,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueTimeValue_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueTimeValue";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueTimeValue,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueTimeValue_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueTimeValue";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueDateValue,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueDateValue_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueDateValue";
 
-export interface Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValue {
-  /*
-A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
-Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
-*/
-  TimestampValue?: string;
-
-  // A boolean value.
-  BooleanValue?: boolean;
-
-  /*
-Represents a whole or partial calendar date.
-Structure is documented below.
-*/
-  DateValue?: Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueDateValue;
-
-  /*
-Represents a day of the week.
-Possible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
-*/
-  DayOfWeekValue?: string;
-
-  // A float value.
-  FloatValue?: number;
-
-  // An integer value (int64 format)
-  IntegerValue?: string;
-
+export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValue {
   // A string value.
-  StringValue?: string;
+  stringValue?: string;
 
   /*
 Represents a time of day.
 Structure is documented below.
 */
-  TimeValue?: Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueTimeValue;
+  timeValue?: dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueTimeValue;
+
+  /*
+A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
+Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
+*/
+  timestampValue?: string;
+
+  // A boolean value.
+  booleanValue?: boolean;
+
+  /*
+Represents a whole or partial calendar date.
+Structure is documented below.
+*/
+  dateValue?: dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueDateValue;
+
+  /*
+Represents a day of the week.
+Possible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
+*/
+  dayOfWeekValue?: string;
+
+  // A float value.
+  floatValue?: number;
+
+  // An integer value (int64 format)
+  integerValue?: string;
 }
 
-export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValue_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValue_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "timestampValue",
+      'A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.\nExamples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Bool,
-      "BooleanValue",
+      "booleanValue",
       "A boolean value.",
       [],
       false,
@@ -64,15 +72,15 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTrans
     ),
     new DynamicUIProps(
       InputType.Object,
-      "DateValue",
+      "dateValue",
       "Represents a whole or partial calendar date.\nStructure is documented below.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueDateValue_GetTypes(),
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueDateValue_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "DayOfWeekValue",
+      "dayOfWeekValue",
       "Represents a day of the week.\nPossible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.",
       [],
       false,
@@ -80,7 +88,7 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTrans
     ),
     new DynamicUIProps(
       InputType.Number,
-      "FloatValue",
+      "floatValue",
       "A float value.",
       [],
       false,
@@ -88,7 +96,7 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTrans
     ),
     new DynamicUIProps(
       InputType.String,
-      "IntegerValue",
+      "integerValue",
       "An integer value (int64 format)",
       [],
       false,
@@ -96,7 +104,7 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTrans
     ),
     new DynamicUIProps(
       InputType.String,
-      "StringValue",
+      "stringValue",
       "A string value.",
       [],
       false,
@@ -104,17 +112,9 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTrans
     ),
     new DynamicUIProps(
       InputType.Object,
-      "TimeValue",
+      "timeValue",
       "Represents a time of day.\nStructure is documented below.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueTimeValue_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "TimestampValue",
-      'A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.\nExamples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
-      [],
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueTimeValue_GetTypes(),
       false,
       false,
     ),

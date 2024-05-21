@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Monitoring_UptimeCheckConfigTcpCheckPingConfig,
-  Monitoring_UptimeCheckConfigTcpCheckPingConfig_GetTypes,
-} from "./Monitoring_UptimeCheckConfigTcpCheckPingConfig";
+  monitoring_UptimeCheckConfigTcpCheckPingConfig,
+  monitoring_UptimeCheckConfigTcpCheckPingConfig_GetTypes,
+} from "./monitoring_UptimeCheckConfigTcpCheckPingConfig";
 
-export interface Monitoring_UptimeCheckConfigTcpCheck {
+export interface monitoring_UptimeCheckConfigTcpCheck {
   /*
 Contains information needed to add pings to a TCP check.
 Structure is documented below.
 */
-  PingConfig?: Monitoring_UptimeCheckConfigTcpCheckPingConfig;
+  pingConfig?: monitoring_UptimeCheckConfigTcpCheckPingConfig;
 
   // The port to the page to run the check against. Will be combined with host (specified within the `monitored_resource`) to construct the full URL.
-  Port?: number;
+  port?: number;
 }
 
-export function Monitoring_UptimeCheckConfigTcpCheck_GetTypes(): DynamicUIProps[] {
+export function monitoring_UptimeCheckConfigTcpCheck_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "PingConfig",
+      "pingConfig",
       "Contains information needed to add pings to a TCP check.\nStructure is documented below.",
-      Monitoring_UptimeCheckConfigTcpCheckPingConfig_GetTypes(),
+      monitoring_UptimeCheckConfigTcpCheckPingConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Port",
+      "port",
       "The port to the page to run the check against. Will be combined with host (specified within the `monitored_resource`) to construct the full URL.",
       [],
       true,

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgYum {
+export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgYum {
   // Package name.
-  Name?: string;
+  name?: string;
 }
 
-export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgYum_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgYum_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Package name.",
       [],
       true,

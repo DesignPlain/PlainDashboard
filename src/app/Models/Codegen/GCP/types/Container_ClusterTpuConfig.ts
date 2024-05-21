@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterTpuConfig {
-  // Whether to use service networking for Cloud TPU or not
-  UseServiceNetworking?: boolean;
-
+export interface container_ClusterTpuConfig {
   // Enable Binary Authorization for this cluster. Deprecated in favor of `evaluation_mode`.
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // IPv4 CIDR block reserved for Cloud TPU in the VPC.
-  Ipv4CidrBlock?: string;
+  ipv4CidrBlock?: string;
+
+  // Whether to use service networking for Cloud TPU or not
+  useServiceNetworking?: boolean;
 }
 
-export function Container_ClusterTpuConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterTpuConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "UseServiceNetworking",
+      "useServiceNetworking",
       "Whether to use service networking for Cloud TPU or not",
       [],
       false,
@@ -29,7 +29,7 @@ export function Container_ClusterTpuConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Enable Binary Authorization for this cluster. Deprecated in favor of `evaluation_mode`.",
       [],
       true,
@@ -37,7 +37,7 @@ export function Container_ClusterTpuConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Ipv4CidrBlock",
+      "ipv4CidrBlock",
       "IPv4 CIDR block reserved for Cloud TPU in the VPC.",
       [],
       false,

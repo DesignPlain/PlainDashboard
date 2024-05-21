@@ -6,41 +6,41 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsiSource,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsiSource_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsiSource";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsiSource,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsiSource_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsiSource";
 
-export interface Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsi {
+export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsi {
   /*
 Additional properties to use during installation.
 This should be in the format of Property=Setting. Appended to the defaults
 of `ACTION=INSTALL REBOOT=ReallySuppress`.
 */
-  Properties?: Array<string>;
+  properties?: Array<string>;
 
   /*
 The MSI package. Structure is
 documented below.
 */
-  Source?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsiSource;
+  source?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsiSource;
 }
 
-export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsi_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsi_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "Properties",
-      "Additional properties to use during installation.\nThis should be in the format of Property=Setting. Appended to the defaults\nof `ACTION=INSTALL REBOOT=ReallySuppress`.",
-      InputType_String_GetTypes(),
-      false,
+      InputType.Object,
+      "source",
+      "The MSI package. Structure is\ndocumented below.",
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsiSource_GetTypes(),
+      true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "Source",
-      "The MSI package. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsiSource_GetTypes(),
-      true,
+      InputType.Array,
+      "properties",
+      "Additional properties to use during installation.\nThis should be in the format of Property=Setting. Appended to the defaults\nof `ACTION=INSTALL REBOOT=ReallySuppress`.",
+      InputType_String_GetTypes(),
+      false,
       false,
     ),
   ];

@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FleetState {
+export interface gkehub_FleetState {
   /*
 (Output)
 Describes the state of a Fleet resource.
 */
-  Code?: string;
+  code?: string;
 }
 
-export function Gkehub_FleetState_GetTypes(): DynamicUIProps[] {
+export function gkehub_FleetState_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Code",
+      "code",
       "(Output)\nDescribes the state of a Fleet resource.",
       [],
       false,

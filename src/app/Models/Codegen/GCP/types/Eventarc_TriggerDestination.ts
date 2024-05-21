@@ -6,47 +6,47 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Eventarc_TriggerDestinationGke,
-  Eventarc_TriggerDestinationGke_GetTypes,
-} from "./Eventarc_TriggerDestinationGke";
+  eventarc_TriggerDestinationCloudRunService,
+  eventarc_TriggerDestinationCloudRunService_GetTypes,
+} from "./eventarc_TriggerDestinationCloudRunService";
 import {
-  Eventarc_TriggerDestinationHttpEndpoint,
-  Eventarc_TriggerDestinationHttpEndpoint_GetTypes,
-} from "./Eventarc_TriggerDestinationHttpEndpoint";
+  eventarc_TriggerDestinationGke,
+  eventarc_TriggerDestinationGke_GetTypes,
+} from "./eventarc_TriggerDestinationGke";
 import {
-  Eventarc_TriggerDestinationNetworkConfig,
-  Eventarc_TriggerDestinationNetworkConfig_GetTypes,
-} from "./Eventarc_TriggerDestinationNetworkConfig";
+  eventarc_TriggerDestinationHttpEndpoint,
+  eventarc_TriggerDestinationHttpEndpoint_GetTypes,
+} from "./eventarc_TriggerDestinationHttpEndpoint";
 import {
-  Eventarc_TriggerDestinationCloudRunService,
-  Eventarc_TriggerDestinationCloudRunService_GetTypes,
-} from "./Eventarc_TriggerDestinationCloudRunService";
+  eventarc_TriggerDestinationNetworkConfig,
+  eventarc_TriggerDestinationNetworkConfig_GetTypes,
+} from "./eventarc_TriggerDestinationNetworkConfig";
 
-export interface Eventarc_TriggerDestination {
+export interface eventarc_TriggerDestination {
   // The Cloud Function resource name. Only Cloud Functions V2 is supported. Format projects/{project}/locations/{location}/functions/{function} This is a read-only field. [WARNING] Creating Cloud Functions V2 triggers is only supported via the Cloud Functions product. An error will be returned if the user sets this value.
-  CloudFunction?: string;
+  cloudFunction?: string;
 
   // Cloud Run fully-managed service that receives the events. The service should be running in the same project of the trigger.
-  CloudRunService?: Eventarc_TriggerDestinationCloudRunService;
+  cloudRunService?: eventarc_TriggerDestinationCloudRunService;
 
   // A GKE service capable of receiving events. The service should be running in the same project as the trigger.
-  Gke?: Eventarc_TriggerDestinationGke;
+  gke?: eventarc_TriggerDestinationGke;
 
   // An HTTP endpoint destination described by an URI.
-  HttpEndpoint?: Eventarc_TriggerDestinationHttpEndpoint;
+  httpEndpoint?: eventarc_TriggerDestinationHttpEndpoint;
 
   // Optional. Network config is used to configure how Eventarc resolves and connect to a destination. This should only be used with HttpEndpoint destination type.
-  NetworkConfig?: Eventarc_TriggerDestinationNetworkConfig;
+  networkConfig?: eventarc_TriggerDestinationNetworkConfig;
 
   // The resource name of the Workflow whose Executions are triggered by the events. The Workflow resource should be deployed in the same project as the trigger. Format: `projects/{project}/locations/{location}/workflows/{workflow}`
-  Workflow?: string;
+  workflow?: string;
 }
 
-export function Eventarc_TriggerDestination_GetTypes(): DynamicUIProps[] {
+export function eventarc_TriggerDestination_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CloudFunction",
+      "cloudFunction",
       "The Cloud Function resource name. Only Cloud Functions V2 is supported. Format projects/{project}/locations/{location}/functions/{function} This is a read-only field. [WARNING] Creating Cloud Functions V2 triggers is only supported via the Cloud Functions product. An error will be returned if the user sets this value.",
       [],
       false,
@@ -54,39 +54,39 @@ export function Eventarc_TriggerDestination_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "CloudRunService",
+      "cloudRunService",
       "Cloud Run fully-managed service that receives the events. The service should be running in the same project of the trigger.",
-      Eventarc_TriggerDestinationCloudRunService_GetTypes(),
+      eventarc_TriggerDestinationCloudRunService_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Gke",
+      "gke",
       "A GKE service capable of receiving events. The service should be running in the same project as the trigger.",
-      Eventarc_TriggerDestinationGke_GetTypes(),
+      eventarc_TriggerDestinationGke_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "HttpEndpoint",
+      "httpEndpoint",
       "An HTTP endpoint destination described by an URI.",
-      Eventarc_TriggerDestinationHttpEndpoint_GetTypes(),
+      eventarc_TriggerDestinationHttpEndpoint_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "NetworkConfig",
+      "networkConfig",
       "Optional. Network config is used to configure how Eventarc resolves and connect to a destination. This should only be used with HttpEndpoint destination type.",
-      Eventarc_TriggerDestinationNetworkConfig_GetTypes(),
+      eventarc_TriggerDestinationNetworkConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Workflow",
+      "workflow",
       "The resource name of the Workflow whose Executions are triggered by the events. The Workflow resource should be deployed in the same project as the trigger. Format: `projects/{project}/locations/{location}/workflows/{workflow}`",
       [],
       false,

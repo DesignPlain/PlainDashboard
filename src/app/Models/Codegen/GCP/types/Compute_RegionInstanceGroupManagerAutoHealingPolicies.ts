@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionInstanceGroupManagerAutoHealingPolicies {
+export interface compute_RegionInstanceGroupManagerAutoHealingPolicies {
+  // The health check resource that signals autohealing.
+  healthCheck?: string;
+
   /*
 The number of seconds that the managed instance group waits before
 it applies autohealing policies to new instances or recently recreated instances. Between 0 and 3600.
 */
-  InitialDelaySec?: number;
-
-  // The health check resource that signals autohealing.
-  HealthCheck?: string;
+  initialDelaySec?: number;
 }
 
-export function Compute_RegionInstanceGroupManagerAutoHealingPolicies_GetTypes(): DynamicUIProps[] {
+export function compute_RegionInstanceGroupManagerAutoHealingPolicies_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "HealthCheck",
+      "healthCheck",
       "The health check resource that signals autohealing.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Compute_RegionInstanceGroupManagerAutoHealingPolicies_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Number,
-      "InitialDelaySec",
+      "initialDelaySec",
       "The number of seconds that the managed instance group waits before\nit applies autohealing policies to new instances or recently recreated instances. Between 0 and 3600.",
       [],
       true,

@@ -6,38 +6,38 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Secretmanager_SecretReplicationUserManagedReplicaCustomerManagedEncryption,
-  Secretmanager_SecretReplicationUserManagedReplicaCustomerManagedEncryption_GetTypes,
-} from "./Secretmanager_SecretReplicationUserManagedReplicaCustomerManagedEncryption";
+  secretmanager_SecretReplicationUserManagedReplicaCustomerManagedEncryption,
+  secretmanager_SecretReplicationUserManagedReplicaCustomerManagedEncryption_GetTypes,
+} from "./secretmanager_SecretReplicationUserManagedReplicaCustomerManagedEncryption";
 
-export interface Secretmanager_SecretReplicationUserManagedReplica {
+export interface secretmanager_SecretReplicationUserManagedReplica {
   // The canonical IDs of the location to replicate data. For example: "us-east1".
-  Location?: string;
+  location?: string;
 
   /*
 Customer Managed Encryption for the secret.
 Structure is documented below.
 */
-  CustomerManagedEncryption?: Secretmanager_SecretReplicationUserManagedReplicaCustomerManagedEncryption;
+  customerManagedEncryption?: secretmanager_SecretReplicationUserManagedReplicaCustomerManagedEncryption;
 }
 
-export function Secretmanager_SecretReplicationUserManagedReplica_GetTypes(): DynamicUIProps[] {
+export function secretmanager_SecretReplicationUserManagedReplica_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "CustomerManagedEncryption",
-      "Customer Managed Encryption for the secret.\nStructure is documented below.",
-      Secretmanager_SecretReplicationUserManagedReplicaCustomerManagedEncryption_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       'The canonical IDs of the location to replicate data. For example: "us-east1".',
       [],
       true,
       true,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "customerManagedEncryption",
+      "Customer Managed Encryption for the secret.\nStructure is documented below.",
+      secretmanager_SecretReplicationUserManagedReplicaCustomerManagedEncryption_GetTypes(),
+      false,
+      false,
     ),
   ];
 }

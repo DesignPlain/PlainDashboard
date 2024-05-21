@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyAddSignatures {
+export interface networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyAddSignatures {
   /*
 The actions to take to add signatures to responses.
 Each value may be one of: `GENERATE_COOKIE`, `GENERATE_TOKEN_HLS_COOKIELESS`, `PROPAGATE_TOKEN_HLS_COOKIELESS`.
 */
-  Actions?: string;
+  actions?: string;
 
   /*
 The parameters to copy from the verified token to the generated token.
 Only the following parameters may be copied:
 */
-  CopiedParameters?: Array<string>;
+  copiedParameters?: Array<string>;
 
   /*
 The keyset to use for signature generation.
 The following are both valid paths to an EdgeCacheKeyset resource:
 - `projects/project/locations/global/edgeCacheKeysets/yourKeyset`
 */
-  Keyset?: string;
+  keyset?: string;
 
   /*
 The query parameter in which to put the generated token.
@@ -32,7 +32,7 @@ If not specified, defaults to `edge-cache-token`.
 If specified, the name must be 1-64 characters long and match the regular expression `a-zA-Z-` which means the first character must be a letter, and all following characters must be a dash, underscore, letter or digit.
 This field may only be set when the GENERATE_TOKEN_HLS_COOKIELESS or PROPAGATE_TOKEN_HLS_COOKIELESS actions are specified.
 */
-  TokenQueryParameter?: string;
+  tokenQueryParameter?: string;
 
   /*
 The duration the token is valid starting from the moment the token is first generated.
@@ -41,14 +41,22 @@ The TTL must be >= 0 and <= 604,800 seconds (1 week).
 This field may only be specified when the GENERATE_COOKIE or GENERATE_TOKEN_HLS_COOKIELESS actions are specified.
 A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
 */
-  TokenTtl?: string;
+  tokenTtl?: string;
 }
 
-export function Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyAddSignatures_GetTypes(): DynamicUIProps[] {
+export function networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyAddSignatures_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "TokenQueryParameter",
+      "keyset",
+      "The keyset to use for signature generation.\nThe following are both valid paths to an EdgeCacheKeyset resource:\n* `projects/project/locations/global/edgeCacheKeysets/yourKeyset`",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "tokenQueryParameter",
       "The query parameter in which to put the generated token.\nIf not specified, defaults to `edge-cache-token`.\nIf specified, the name must be 1-64 characters long and match the regular expression `a-zA-Z*` which means the first character must be a letter, and all following characters must be a dash, underscore, letter or digit.\nThis field may only be set when the GENERATE_TOKEN_HLS_COOKIELESS or PROPAGATE_TOKEN_HLS_COOKIELESS actions are specified.",
       [],
       false,
@@ -56,7 +64,7 @@ export function Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRoute
     ),
     new DynamicUIProps(
       InputType.String,
-      "TokenTtl",
+      "tokenTtl",
       "The duration the token is valid starting from the moment the token is first generated.\nDefaults to `86400s` (1 day).\nThe TTL must be >= 0 and <= 604,800 seconds (1 week).\nThis field may only be specified when the GENERATE_COOKIE or GENERATE_TOKEN_HLS_COOKIELESS actions are specified.\nA duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\".",
       [],
       false,
@@ -64,7 +72,7 @@ export function Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRoute
     ),
     new DynamicUIProps(
       InputType.String,
-      "Actions",
+      "actions",
       "The actions to take to add signatures to responses.\nEach value may be one of: `GENERATE_COOKIE`, `GENERATE_TOKEN_HLS_COOKIELESS`, `PROPAGATE_TOKEN_HLS_COOKIELESS`.",
       [],
       true,
@@ -72,17 +80,9 @@ export function Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRoute
     ),
     new DynamicUIProps(
       InputType.Array,
-      "CopiedParameters",
+      "copiedParameters",
       "The parameters to copy from the verified token to the generated token.\nOnly the following parameters may be copied:",
       InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Keyset",
-      "The keyset to use for signature generation.\nThe following are both valid paths to an EdgeCacheKeyset resource:\n* `projects/project/locations/global/edgeCacheKeysets/yourKeyset`",
-      [],
       false,
       false,
     ),

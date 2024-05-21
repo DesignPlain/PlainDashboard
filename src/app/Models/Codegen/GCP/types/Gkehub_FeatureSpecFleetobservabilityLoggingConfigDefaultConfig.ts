@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig {
+export interface gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig {
   /*
 Specified if fleet logging feature is enabled.
 Possible values are: `MODE_UNSPECIFIED`, `COPY`, `MOVE`.
 */
-  Mode?: string;
+  mode?: string;
 }
 
-export function Gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Mode",
+      "mode",
       "Specified if fleet logging feature is enabled.\nPossible values are: `MODE_UNSPECIFIED`, `COPY`, `MOVE`.",
       [],
       false,

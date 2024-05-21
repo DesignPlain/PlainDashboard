@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_StandardAppVersionHandlerScript {
+export interface appengine_StandardAppVersionHandlerScript {
   // Path to the script from the application root directory.
-  ScriptPath?: string;
+  scriptPath?: string;
 }
 
-export function Appengine_StandardAppVersionHandlerScript_GetTypes(): DynamicUIProps[] {
+export function appengine_StandardAppVersionHandlerScript_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ScriptPath",
+      "scriptPath",
       "Path to the script from the application root directory.",
       [],
       true,

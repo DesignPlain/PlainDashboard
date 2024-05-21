@@ -6,31 +6,39 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_GuestPoliciesRecipeArtifactGcs {
-  /*
-Name of the Google Cloud Storage object. Given an example URL: https://storage.googleapis.com/my-bucket/foo/bar#1234567
-this value would be foo/bar.
-*/
-  Object?: string;
-
+export interface osconfig_GuestPoliciesRecipeArtifactGcs {
   /*
 Bucket of the Google Cloud Storage object. Given an example URL: https://storage.googleapis.com/my-bucket/foo/bar#1234567
 this value would be my-bucket.
 */
-  Bucket?: string;
+  bucket?: string;
 
   /*
 Must be provided if allowInsecure is false. Generation number of the Google Cloud Storage object.
 https://storage.googleapis.com/my-bucket/foo/bar#1234567 this value would be 1234567.
 */
-  Generation?: number;
+  generation?: number;
+
+  /*
+Name of the Google Cloud Storage object. Given an example URL: https://storage.googleapis.com/my-bucket/foo/bar#1234567
+this value would be foo/bar.
+*/
+  object?: string;
 }
 
-export function Osconfig_GuestPoliciesRecipeArtifactGcs_GetTypes(): DynamicUIProps[] {
+export function osconfig_GuestPoliciesRecipeArtifactGcs_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "bucket",
+      "Bucket of the Google Cloud Storage object. Given an example URL: https://storage.googleapis.com/my-bucket/foo/bar#1234567\nthis value would be my-bucket.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Number,
-      "Generation",
+      "generation",
       "Must be provided if allowInsecure is false. Generation number of the Google Cloud Storage object.\nhttps://storage.googleapis.com/my-bucket/foo/bar#1234567 this value would be 1234567.",
       [],
       false,
@@ -38,16 +46,8 @@ export function Osconfig_GuestPoliciesRecipeArtifactGcs_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "Object",
+      "object",
       "Name of the Google Cloud Storage object. Given an example URL: https://storage.googleapis.com/my-bucket/foo/bar#1234567\nthis value would be foo/bar.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Bucket",
-      "Bucket of the Google Cloud Storage object. Given an example URL: https://storage.googleapis.com/my-bucket/foo/bar#1234567\nthis value would be my-bucket.",
       [],
       false,
       false,

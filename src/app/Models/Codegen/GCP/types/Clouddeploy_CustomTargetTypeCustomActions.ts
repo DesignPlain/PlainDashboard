@@ -6,29 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModule,
-  Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModule_GetTypes,
-} from "./Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModule";
+  clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModule,
+  clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModule_GetTypes,
+} from "./clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModule";
 
-export interface Clouddeploy_CustomTargetTypeCustomActions {
+export interface clouddeploy_CustomTargetTypeCustomActions {
+  // The Skaffold custom action responsible for render operations. If not provided then Cloud Deploy will perform the render operations via `skaffold render`.
+  renderAction?: string;
+
   // The Skaffold custom action responsible for deploy operations.
-  DeployAction?: string;
+  deployAction?: string;
 
   /*
 List of Skaffold modules Cloud Deploy will include in the Skaffold Config as required before performing diagnose.
 Structure is documented below.
 */
-  IncludeSkaffoldModules?: Array<Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModule>;
-
-  // The Skaffold custom action responsible for render operations. If not provided then Cloud Deploy will perform the render operations via `skaffold render`.
-  RenderAction?: string;
+  includeSkaffoldModules?: Array<clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModule>;
 }
 
-export function Clouddeploy_CustomTargetTypeCustomActions_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_CustomTargetTypeCustomActions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DeployAction",
+      "renderAction",
+      "The Skaffold custom action responsible for render operations. If not provided then Cloud Deploy will perform the render operations via `skaffold render`.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "deployAction",
       "The Skaffold custom action responsible for deploy operations.",
       [],
       true,
@@ -36,17 +44,9 @@ export function Clouddeploy_CustomTargetTypeCustomActions_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Array,
-      "IncludeSkaffoldModules",
+      "includeSkaffoldModules",
       "List of Skaffold modules Cloud Deploy will include in the Skaffold Config as required before performing diagnose.\nStructure is documented below.",
-      Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModule_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "RenderAction",
-      "The Skaffold custom action responsible for render operations. If not provided then Cloud Deploy will perform the render operations via `skaffold render`.",
-      [],
+      clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModule_GetTypes(),
       false,
       false,
     ),

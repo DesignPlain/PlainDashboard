@@ -7,66 +7,66 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Clouddeploy_TargetIamMemberCondition,
-  Clouddeploy_TargetIamMemberCondition_GetTypes,
-} from "../types/Clouddeploy_TargetIamMemberCondition";
+  clouddeploy_TargetIamMemberCondition,
+  clouddeploy_TargetIamMemberCondition_GetTypes,
+} from "../types/clouddeploy_TargetIamMemberCondition";
 
 export interface TargetIamMemberArgs {
   //
-  Name?: string;
+  condition?: clouddeploy_TargetIamMemberCondition;
 
   //
-  Project?: string;
+  location?: string;
 
   //
-  Role?: string;
+  member?: string;
 
   //
-  Condition?: Clouddeploy_TargetIamMemberCondition;
+  name?: string;
 
   //
-  Location?: string;
+  project?: string;
 
   //
-  Member?: string;
+  role?: string;
 }
 export class TargetIamMember extends Resource {
   //
-  public Condition?: Clouddeploy_TargetIamMemberCondition;
+  public project?: string;
 
   //
-  public Etag?: string;
+  public role?: string;
 
   //
-  public Location?: string;
+  public condition?: clouddeploy_TargetIamMemberCondition;
 
   //
-  public Member?: string;
+  public etag?: string;
 
   //
-  public Name?: string;
+  public location?: string;
 
   //
-  public Project?: string;
+  public member?: string;
 
   //
-  public Role?: string;
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Name", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Project", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
+      new DynamicUIProps(InputType.String, "project", "", [], false, true),
+      new DynamicUIProps(InputType.String, "role", "", [], true, true),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Clouddeploy_TargetIamMemberCondition_GetTypes(),
+        clouddeploy_TargetIamMemberCondition_GetTypes(),
         false,
         true,
       ),
-      new DynamicUIProps(InputType.String, "Location", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
+      new DynamicUIProps(InputType.String, "location", "", [], false, true),
+      new DynamicUIProps(InputType.String, "member", "", [], true, true),
+      new DynamicUIProps(InputType.String, "name", "", [], false, true),
     ];
   }
 }

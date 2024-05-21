@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterNodePoolNodeConfigEffectiveTaint {
+export interface container_ClusterNodePoolNodeConfigEffectiveTaint {
   // Effect for taint. Accepted values are `NO_SCHEDULE`, `PREFER_NO_SCHEDULE`, and `NO_EXECUTE`.
-  Effect?: string;
+  effect?: string;
 
   // The default or custom node affinity label key name.
-  Key?: string;
+  key?: string;
 
   // Value for taint.
-  Value?: string;
+  value?: string;
 }
 
-export function Container_ClusterNodePoolNodeConfigEffectiveTaint_GetTypes(): DynamicUIProps[] {
+export function container_ClusterNodePoolNodeConfigEffectiveTaint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "effect",
+      "Effect for taint. Accepted values are `NO_SCHEDULE`, `PREFER_NO_SCHEDULE`, and `NO_EXECUTE`.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "key",
       "The default or custom node affinity label key name.",
       [],
       false,
@@ -29,16 +37,8 @@ export function Container_ClusterNodePoolNodeConfigEffectiveTaint_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "Value for taint.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Effect",
-      "Effect for taint. Accepted values are `NO_SCHEDULE`, `PREFER_NO_SCHEDULE`, and `NO_EXECUTE`.",
       [],
       false,
       false,

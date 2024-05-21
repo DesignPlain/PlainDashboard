@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrun_getServiceTemplateSpecVolumeEmptyDir {
+export interface cloudrun_getServiceTemplateSpecVolumeEmptyDir {
   // The medium on which the data is stored. The default is "" which means to use the node's default medium. Must be an empty string (default) or Memory.
-  Medium?: string;
+  medium?: string;
 
   // Limit on the storage usable by this EmptyDir volume. The size limit is also applicable for memory medium. The maximum usage on memory medium EmptyDir would be the minimum value between the SizeLimit specified here and the sum of memory limits of all containers in a pod. This field's values are of the 'Quantity' k8s type: https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/. The default is nil which means that the limit is undefined. More info: https://kubernetes.io/docs/concepts/storage/volumes/#emptydir.
-  SizeLimit?: string;
+  sizeLimit?: string;
 }
 
-export function Cloudrun_getServiceTemplateSpecVolumeEmptyDir_GetTypes(): DynamicUIProps[] {
+export function cloudrun_getServiceTemplateSpecVolumeEmptyDir_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Medium",
+      "medium",
       'The medium on which the data is stored. The default is "" which means to use the node\'s default medium. Must be an empty string (default) or Memory.',
       [],
       true,
@@ -26,7 +26,7 @@ export function Cloudrun_getServiceTemplateSpecVolumeEmptyDir_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "SizeLimit",
+      "sizeLimit",
       "Limit on the storage usable by this EmptyDir volume. The size limit is also applicable for memory medium. The maximum usage on memory medium EmptyDir would be the minimum value between the SizeLimit specified here and the sum of memory limits of all containers in a pod. This field's values are of the 'Quantity' k8s type: https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/. The default is nil which means that the limit is undefined. More info: https://kubernetes.io/docs/concepts/storage/volumes/#emptydir.",
       [],
       true,

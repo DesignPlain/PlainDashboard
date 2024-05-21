@@ -6,32 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Clouddomains_RegistrationContactSettingsRegistrantContactPostalAddress,
-  Clouddomains_RegistrationContactSettingsRegistrantContactPostalAddress_GetTypes,
-} from "./Clouddomains_RegistrationContactSettingsRegistrantContactPostalAddress";
+  clouddomains_RegistrationContactSettingsRegistrantContactPostalAddress,
+  clouddomains_RegistrationContactSettingsRegistrantContactPostalAddress_GetTypes,
+} from "./clouddomains_RegistrationContactSettingsRegistrantContactPostalAddress";
 
-export interface Clouddomains_RegistrationContactSettingsRegistrantContact {
+export interface clouddomains_RegistrationContactSettingsRegistrantContact {
+  // Required. Email address of the contact.
+  email?: string;
+
   // Fax number of the contact in international format. For example, "+1-800-555-0123".
-  FaxNumber?: string;
+  faxNumber?: string;
 
   // Required. Phone number of the contact in international format. For example, "+1-800-555-0123".
-  PhoneNumber?: string;
+  phoneNumber?: string;
 
   /*
 Required. Postal address of the contact.
 Structure is documented below.
 */
-  PostalAddress?: Clouddomains_RegistrationContactSettingsRegistrantContactPostalAddress;
-
-  // Required. Email address of the contact.
-  Email?: string;
+  postalAddress?: clouddomains_RegistrationContactSettingsRegistrantContactPostalAddress;
 }
 
-export function Clouddomains_RegistrationContactSettingsRegistrantContact_GetTypes(): DynamicUIProps[] {
+export function clouddomains_RegistrationContactSettingsRegistrantContact_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "FaxNumber",
+      "email",
+      "Required. Email address of the contact.",
+      [],
+      true,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "faxNumber",
       'Fax number of the contact in international format. For example, "+1-800-555-0123".',
       [],
       false,
@@ -39,7 +47,7 @@ export function Clouddomains_RegistrationContactSettingsRegistrantContact_GetTyp
     ),
     new DynamicUIProps(
       InputType.String,
-      "PhoneNumber",
+      "phoneNumber",
       'Required. Phone number of the contact in international format. For example, "+1-800-555-0123".',
       [],
       true,
@@ -47,17 +55,9 @@ export function Clouddomains_RegistrationContactSettingsRegistrantContact_GetTyp
     ),
     new DynamicUIProps(
       InputType.Object,
-      "PostalAddress",
+      "postalAddress",
       "Required. Postal address of the contact.\nStructure is documented below.",
-      Clouddomains_RegistrationContactSettingsRegistrantContactPostalAddress_GetTypes(),
-      true,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Email",
-      "Required. Email address of the contact.",
-      [],
+      clouddomains_RegistrationContactSettingsRegistrantContactPostalAddress_GetTypes(),
       true,
       true,
     ),

@@ -7,147 +7,77 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionBackendServiceConsistentHash,
-  Compute_RegionBackendServiceConsistentHash_GetTypes,
-} from "../types/Compute_RegionBackendServiceConsistentHash";
+  compute_RegionBackendServiceFailoverPolicy,
+  compute_RegionBackendServiceFailoverPolicy_GetTypes,
+} from "../types/compute_RegionBackendServiceFailoverPolicy";
 import {
-  Compute_RegionBackendServiceFailoverPolicy,
-  Compute_RegionBackendServiceFailoverPolicy_GetTypes,
-} from "../types/Compute_RegionBackendServiceFailoverPolicy";
+  compute_RegionBackendServiceBackend,
+  compute_RegionBackendServiceBackend_GetTypes,
+} from "../types/compute_RegionBackendServiceBackend";
 import {
-  Compute_RegionBackendServiceIap,
-  Compute_RegionBackendServiceIap_GetTypes,
-} from "../types/Compute_RegionBackendServiceIap";
+  compute_RegionBackendServiceOutlierDetection,
+  compute_RegionBackendServiceOutlierDetection_GetTypes,
+} from "../types/compute_RegionBackendServiceOutlierDetection";
 import {
-  Compute_RegionBackendServiceOutlierDetection,
-  Compute_RegionBackendServiceOutlierDetection_GetTypes,
-} from "../types/Compute_RegionBackendServiceOutlierDetection";
+  compute_RegionBackendServiceLogConfig,
+  compute_RegionBackendServiceLogConfig_GetTypes,
+} from "../types/compute_RegionBackendServiceLogConfig";
 import {
-  Compute_RegionBackendServiceLogConfig,
-  Compute_RegionBackendServiceLogConfig_GetTypes,
-} from "../types/Compute_RegionBackendServiceLogConfig";
+  compute_RegionBackendServiceConsistentHash,
+  compute_RegionBackendServiceConsistentHash_GetTypes,
+} from "../types/compute_RegionBackendServiceConsistentHash";
 import {
-  Compute_RegionBackendServiceSubsetting,
-  Compute_RegionBackendServiceSubsetting_GetTypes,
-} from "../types/Compute_RegionBackendServiceSubsetting";
+  compute_RegionBackendServiceIap,
+  compute_RegionBackendServiceIap_GetTypes,
+} from "../types/compute_RegionBackendServiceIap";
 import {
-  Compute_RegionBackendServiceCdnPolicy,
-  Compute_RegionBackendServiceCdnPolicy_GetTypes,
-} from "../types/Compute_RegionBackendServiceCdnPolicy";
+  compute_RegionBackendServiceCdnPolicy,
+  compute_RegionBackendServiceCdnPolicy_GetTypes,
+} from "../types/compute_RegionBackendServiceCdnPolicy";
 import {
-  Compute_RegionBackendServiceConnectionTrackingPolicy,
-  Compute_RegionBackendServiceConnectionTrackingPolicy_GetTypes,
-} from "../types/Compute_RegionBackendServiceConnectionTrackingPolicy";
+  compute_RegionBackendServiceSubsetting,
+  compute_RegionBackendServiceSubsetting_GetTypes,
+} from "../types/compute_RegionBackendServiceSubsetting";
 import {
-  Compute_RegionBackendServiceBackend,
-  Compute_RegionBackendServiceBackend_GetTypes,
-} from "../types/Compute_RegionBackendServiceBackend";
+  compute_RegionBackendServiceCircuitBreakers,
+  compute_RegionBackendServiceCircuitBreakers_GetTypes,
+} from "../types/compute_RegionBackendServiceCircuitBreakers";
 import {
-  Compute_RegionBackendServiceCircuitBreakers,
-  Compute_RegionBackendServiceCircuitBreakers_GetTypes,
-} from "../types/Compute_RegionBackendServiceCircuitBreakers";
+  compute_RegionBackendServiceConnectionTrackingPolicy,
+  compute_RegionBackendServiceConnectionTrackingPolicy_GetTypes,
+} from "../types/compute_RegionBackendServiceConnectionTrackingPolicy";
 
 export interface RegionBackendServiceArgs {
   /*
-The set of backends that serve this RegionBackendService.
-Structure is documented below.
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 */
-  Backends?: Array<Compute_RegionBackendServiceBackend>;
-
-  /*
-Settings controlling the volume of connections to a backend service. This field
-is applicable only when the `load_balancing_scheme` is set to INTERNAL_MANAGED
-and the `protocol` is set to HTTP, HTTPS, or HTTP2.
-Structure is documented below.
-*/
-  CircuitBreakers?: Compute_RegionBackendServiceCircuitBreakers;
+  project?: string;
 
   /*
 Time for which instance will be drained (not accept new
 connections, but still work to finish started).
 */
-  ConnectionDrainingTimeoutSec?: number;
+  connectionDrainingTimeoutSec?: number;
 
-  /*
-The load balancing algorithm used within the scope of the locality.
-The possible values are:
-*/
-  LocalityLbPolicy?: string;
-
-  /*
-Subsetting configuration for this BackendService. Currently this is applicable only for Internal TCP/UDP load balancing and Internal HTTP(S) load balancing.
-Structure is documented below.
-*/
-  Subsetting?: Compute_RegionBackendServiceSubsetting;
-
-  /*
-Cloud CDN configuration for this BackendService.
-Structure is documented below.
-*/
-  CdnPolicy?: Compute_RegionBackendServiceCdnPolicy;
-
-  /*
-Consistent Hash-based load balancing can be used to provide soft session
-affinity based on HTTP headers, cookies or other properties. This load balancing
-policy is applicable only for HTTP connections. The affinity to a particular
-destination host will be lost when one or more hosts are added/removed from the
-destination service. This field specifies parameters that control consistent
-hashing.
-This field only applies when all of the following are true -
-*/
-  ConsistentHash?: Compute_RegionBackendServiceConsistentHash;
+  // If true, enable Cloud CDN for this RegionBackendService.
+  enableCdn?: boolean;
 
   /*
 Policy for failovers.
 Structure is documented below.
 */
-  FailoverPolicy?: Compute_RegionBackendServiceFailoverPolicy;
+  failoverPolicy?: compute_RegionBackendServiceFailoverPolicy;
 
   /*
-The set of URLs to HealthCheck resources for health checking
-this RegionBackendService. Currently at most one health
-check can be specified.
-A health check must be specified unless the backend service uses an internet
-or serverless NEG as a backend.
+Indicates what kind of load balancing this regional backend service
+will be used for. A backend service created for one type of load
+balancing cannot be used with the other(s). For more information, refer to
+[Choosing a load balancer](https://cloud.google.com/load-balancing/docs/backend-service).
+Default value is `INTERNAL`.
+Possible values are: `EXTERNAL`, `EXTERNAL_MANAGED`, `INTERNAL`, `INTERNAL_MANAGED`.
 */
-  HealthChecks?: string;
-
-  /*
-Settings for enabling Cloud Identity Aware Proxy
-Structure is documented below.
-*/
-  Iap?: Compute_RegionBackendServiceIap;
-
-  /*
-Settings controlling eviction of unhealthy hosts from the load balancing pool.
-This field is applicable only when the `load_balancing_scheme` is set
-to INTERNAL_MANAGED and the `protocol` is set to HTTP, HTTPS, or HTTP2.
-Structure is documented below.
-*/
-  OutlierDetection?: Compute_RegionBackendServiceOutlierDetection;
-
-  // The security policy associated with this backend service.
-  SecurityPolicy?: string;
-
-  /*
-Lifetime of cookies in seconds if session_affinity is
-GENERATED_COOKIE. If set to 0, the cookie is non-persistent and lasts
-only until the end of the browser session (or equivalent). The
-maximum allowed value for TTL is one day.
-When the load balancing scheme is INTERNAL, this field is not used.
-*/
-  AffinityCookieTtlSec?: number;
-
-  /*
-Connection Tracking configuration for this BackendService.
-This is available only for Layer 4 Internal Load Balancing and
-Network Load Balancing.
-Structure is documented below.
-*/
-  ConnectionTrackingPolicy?: Compute_RegionBackendServiceConnectionTrackingPolicy;
-
-  // An optional description of this resource.
-  Description?: string;
+  loadBalancingScheme?: string;
 
   /*
 Name of the resource. Provided by the client when the resource is
@@ -161,46 +91,70 @@ character, which cannot be a dash.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   /*
-The URL of the network to which this backend service belongs.
-This field can only be specified when the load balancing scheme is set to INTERNAL.
+The set of URLs to HealthCheck resources for health checking
+this RegionBackendService. Currently at most one health
+check can be specified.
+A health check must be specified unless the backend service uses an internet
+or serverless NEG as a backend.
 */
-  Network?: string;
+  healthChecks?: string;
+
+  /*
+Settings for enabling Cloud Identity Aware Proxy
+Structure is documented below.
+*/
+  iap?: compute_RegionBackendServiceIap;
+
+  /*
+The load balancing algorithm used within the scope of the locality.
+The possible values are:
+*/
+  localityLbPolicy?: string;
+
+  /*
+The Region in which the created backend service should reside.
+If it is not provided, the provider region is used.
+*/
+  region?: string;
+
+  // The security policy associated with this backend service.
+  securityPolicy?: string;
 
   /*
 Type of session affinity to use. The default is NONE. Session affinity is
 not applicable if the protocol is UDP.
 Possible values are: `NONE`, `CLIENT_IP`, `CLIENT_IP_PORT_PROTO`, `CLIENT_IP_PROTO`, `GENERATED_COOKIE`, `HEADER_FIELD`, `HTTP_COOKIE`, `CLIENT_IP_NO_DESTINATION`.
 */
-  SessionAffinity?: string;
+  sessionAffinity?: string;
 
   /*
 How many seconds to wait for the backend before considering it a
 failed request. Default is 30 seconds. Valid range is [1, 86400].
 */
-  TimeoutSec?: number;
-
-  // If true, enable Cloud CDN for this RegionBackendService.
-  EnableCdn?: boolean;
+  timeoutSec?: number;
 
   /*
-Indicates what kind of load balancing this regional backend service
-will be used for. A backend service created for one type of load
-balancing cannot be used with the other(s). For more information, refer to
-[Choosing a load balancer](https://cloud.google.com/load-balancing/docs/backend-service).
-Default value is `INTERNAL`.
-Possible values are: `EXTERNAL`, `EXTERNAL_MANAGED`, `INTERNAL`, `INTERNAL_MANAGED`.
-*/
-  LoadBalancingScheme?: string;
-
-  /*
-This field denotes the logging options for the load balancer traffic served by this backend service.
-If logging is enabled, logs will be exported to Stackdriver.
+The set of backends that serve this RegionBackendService.
 Structure is documented below.
 */
-  LogConfig?: Compute_RegionBackendServiceLogConfig;
+  backends?: Array<compute_RegionBackendServiceBackend>;
+
+  /*
+Cloud CDN configuration for this BackendService.
+Structure is documented below.
+*/
+  cdnPolicy?: compute_RegionBackendServiceCdnPolicy;
+
+  /*
+Settings controlling eviction of unhealthy hosts from the load balancing pool.
+This field is applicable only when the `load_balancing_scheme` is set
+to INTERNAL_MANAGED and the `protocol` is set to HTTP, HTTPS, or HTTP2.
+Structure is documented below.
+*/
+  outlierDetection?: compute_RegionBackendServiceOutlierDetection;
 
   /*
 A named port on a backend instance group representing the port for
@@ -211,13 +165,7 @@ backend instance group. This parameter has no meaning if the backends are NEGs. 
 default of "http" if not given.
 Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
 */
-  PortName?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
+  portName?: string;
 
   /*
 The protocol this RegionBackendService uses to communicate with backends.
@@ -225,50 +173,26 @@ The default is HTTP. --NOTE--: HTTP2 is only valid for beta HTTP/2 load balancer
 types and may result in errors if used with the GA API.
 Possible values are: `HTTP`, `HTTPS`, `HTTP2`, `SSL`, `TCP`, `UDP`, `GRPC`, `UNSPECIFIED`.
 */
-  Protocol?: string;
+  protocol?: string;
 
   /*
-The Region in which the created backend service should reside.
-If it is not provided, the provider region is used.
-*/
-  Region?: string;
-}
-export class RegionBackendService extends Resource {
-  /*
-Indicates what kind of load balancing this regional backend service
-will be used for. A backend service created for one type of load
-balancing cannot be used with the other(s). For more information, refer to
-[Choosing a load balancer](https://cloud.google.com/load-balancing/docs/backend-service).
-Default value is `INTERNAL`.
-Possible values are: `EXTERNAL`, `EXTERNAL_MANAGED`, `INTERNAL`, `INTERNAL_MANAGED`.
-*/
-  public LoadBalancingScheme?: string;
-
-  /*
-The protocol this RegionBackendService uses to communicate with backends.
-The default is HTTP. --NOTE--: HTTP2 is only valid for beta HTTP/2 load balancer
-types and may result in errors if used with the GA API.
-Possible values are: `HTTP`, `HTTPS`, `HTTP2`, `SSL`, `TCP`, `UDP`, `GRPC`, `UNSPECIFIED`.
-*/
-  public Protocol?: string;
-
-  /*
-How many seconds to wait for the backend before considering it a
-failed request. Default is 30 seconds. Valid range is [1, 86400].
-*/
-  public TimeoutSec?: number;
-
-  /*
-Settings for enabling Cloud Identity Aware Proxy
+This field denotes the logging options for the load balancer traffic served by this backend service.
+If logging is enabled, logs will be exported to Stackdriver.
 Structure is documented below.
 */
-  public Iap?: Compute_RegionBackendServiceIap;
+  logConfig?: compute_RegionBackendServiceLogConfig;
 
   /*
 The URL of the network to which this backend service belongs.
 This field can only be specified when the load balancing scheme is set to INTERNAL.
 */
-  public Network?: string;
+  network?: string;
+
+  /*
+Subsetting configuration for this BackendService. Currently this is applicable only for Internal TCP/UDP load balancing and Internal HTTP(S) load balancing.
+Structure is documented below.
+*/
+  subsetting?: compute_RegionBackendServiceSubsetting;
 
   /*
 Lifetime of cookies in seconds if session_affinity is
@@ -277,7 +201,15 @@ only until the end of the browser session (or equivalent). The
 maximum allowed value for TTL is one day.
 When the load balancing scheme is INTERNAL, this field is not used.
 */
-  public AffinityCookieTtlSec?: number;
+  affinityCookieTtlSec?: number;
+
+  /*
+Settings controlling the volume of connections to a backend service. This field
+is applicable only when the `load_balancing_scheme` is set to INTERNAL_MANAGED
+and the `protocol` is set to HTTP, HTTPS, or HTTP2.
+Structure is documented below.
+*/
+  circuitBreakers?: compute_RegionBackendServiceCircuitBreakers;
 
   /*
 Connection Tracking configuration for this BackendService.
@@ -285,7 +217,111 @@ This is available only for Layer 4 Internal Load Balancing and
 Network Load Balancing.
 Structure is documented below.
 */
-  public ConnectionTrackingPolicy?: Compute_RegionBackendServiceConnectionTrackingPolicy;
+  connectionTrackingPolicy?: compute_RegionBackendServiceConnectionTrackingPolicy;
+
+  /*
+Consistent Hash-based load balancing can be used to provide soft session
+affinity based on HTTP headers, cookies or other properties. This load balancing
+policy is applicable only for HTTP connections. The affinity to a particular
+destination host will be lost when one or more hosts are added/removed from the
+destination service. This field specifies parameters that control consistent
+hashing.
+This field only applies when all of the following are true -
+*/
+  consistentHash?: compute_RegionBackendServiceConsistentHash;
+
+  // An optional description of this resource.
+  description?: string;
+}
+export class RegionBackendService extends Resource {
+  /*
+Consistent Hash-based load balancing can be used to provide soft session
+affinity based on HTTP headers, cookies or other properties. This load balancing
+policy is applicable only for HTTP connections. The affinity to a particular
+destination host will be lost when one or more hosts are added/removed from the
+destination service. This field specifies parameters that control consistent
+hashing.
+This field only applies when all of the following are true -
+*/
+  public consistentHash?: compute_RegionBackendServiceConsistentHash;
+
+  // Creation timestamp in RFC3339 text format.
+  public creationTimestamp?: string;
+
+  /*
+The URL of the network to which this backend service belongs.
+This field can only be specified when the load balancing scheme is set to INTERNAL.
+*/
+  public network?: string;
+
+  /*
+The set of backends that serve this RegionBackendService.
+Structure is documented below.
+*/
+  public backends?: Array<compute_RegionBackendServiceBackend>;
+
+  /*
+A named port on a backend instance group representing the port for
+communication to the backend VMs in that group. Required when the
+loadBalancingScheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED, or INTERNAL_SELF_MANAGED
+and the backends are instance groups. The named port must be defined on each
+backend instance group. This parameter has no meaning if the backends are NEGs. API sets a
+default of "http" if not given.
+Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+*/
+  public portName?: string;
+
+  /*
+Cloud CDN configuration for this BackendService.
+Structure is documented below.
+*/
+  public cdnPolicy?: compute_RegionBackendServiceCdnPolicy;
+
+  /*
+The load balancing algorithm used within the scope of the locality.
+The possible values are:
+*/
+  public localityLbPolicy?: string;
+
+  /*
+Name of the resource. Provided by the client when the resource is
+created. The name must be 1-63 characters long, and comply with
+RFC1035. Specifically, the name must be 1-63 characters long and match
+the regular expression `a-z?` which means the
+first character must be a lowercase letter, and all following
+characters must be a dash, lowercase letter, or digit, except the last
+character, which cannot be a dash.
+
+
+- - -
+*/
+  public name?: string;
+
+  /*
+Settings controlling eviction of unhealthy hosts from the load balancing pool.
+This field is applicable only when the `load_balancing_scheme` is set
+to INTERNAL_MANAGED and the `protocol` is set to HTTP, HTTPS, or HTTP2.
+Structure is documented below.
+*/
+  public outlierDetection?: compute_RegionBackendServiceOutlierDetection;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  // An optional description of this resource.
+  public description?: string;
+
+  // If true, enable Cloud CDN for this RegionBackendService.
+  public enableCdn?: boolean;
+
+  /*
+Policy for failovers.
+Structure is documented below.
+*/
+  public failoverPolicy?: compute_RegionBackendServiceFailoverPolicy;
 
   /*
 The set of URLs to HealthCheck resources for health checking
@@ -294,19 +330,34 @@ check can be specified.
 A health check must be specified unless the backend service uses an internet
 or serverless NEG as a backend.
 */
-  public HealthChecks?: string;
+  public healthChecks?: string;
 
   /*
-The load balancing algorithm used within the scope of the locality.
-The possible values are:
+Settings for enabling Cloud Identity Aware Proxy
+Structure is documented below.
 */
-  public LocalityLbPolicy?: string;
+  public iap?: compute_RegionBackendServiceIap;
+
+  /*
+Lifetime of cookies in seconds if session_affinity is
+GENERATED_COOKIE. If set to 0, the cookie is non-persistent and lasts
+only until the end of the browser session (or equivalent). The
+maximum allowed value for TTL is one day.
+When the load balancing scheme is INTERNAL, this field is not used.
+*/
+  public affinityCookieTtlSec?: number;
+
+  /*
+How many seconds to wait for the backend before considering it a
+failed request. Default is 30 seconds. Valid range is [1, 86400].
+*/
+  public timeoutSec?: number;
 
   /*
 The Region in which the created backend service should reside.
 If it is not provided, the provider region is used.
 */
-  public Region?: string;
+  public region?: string;
 
   /*
 Settings controlling the volume of connections to a backend service. This field
@@ -314,312 +365,149 @@ is applicable only when the `load_balancing_scheme` is set to INTERNAL_MANAGED
 and the `protocol` is set to HTTP, HTTPS, or HTTP2.
 Structure is documented below.
 */
-  public CircuitBreakers?: Compute_RegionBackendServiceCircuitBreakers;
-
-  // Creation timestamp in RFC3339 text format.
-  public CreationTimestamp?: string;
-
-  // An optional description of this resource.
-  public Description?: string;
-
-  /*
-Subsetting configuration for this BackendService. Currently this is applicable only for Internal TCP/UDP load balancing and Internal HTTP(S) load balancing.
-Structure is documented below.
-*/
-  public Subsetting?: Compute_RegionBackendServiceSubsetting;
-
-  /*
-Cloud CDN configuration for this BackendService.
-Structure is documented below.
-*/
-  public CdnPolicy?: Compute_RegionBackendServiceCdnPolicy;
-
-  /*
-Time for which instance will be drained (not accept new
-connections, but still work to finish started).
-*/
-  public ConnectionDrainingTimeoutSec?: number;
-
-  // If true, enable Cloud CDN for this RegionBackendService.
-  public EnableCdn?: boolean;
-
-  // The security policy associated with this backend service.
-  public SecurityPolicy?: string;
-
-  // The URI of the created resource.
-  public SelfLink?: string;
-
-  /*
-The set of backends that serve this RegionBackendService.
-Structure is documented below.
-*/
-  public Backends?: Array<Compute_RegionBackendServiceBackend>;
+  public circuitBreakers?: compute_RegionBackendServiceCircuitBreakers;
 
   /*
 Fingerprint of this resource. A hash of the contents stored in this
 object. This field is used in optimistic locking.
 */
-  public Fingerprint?: string;
+  public fingerprint?: string;
 
   /*
-A named port on a backend instance group representing the port for
-communication to the backend VMs in that group. Required when the
-loadBalancingScheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED, or INTERNAL_SELF_MANAGED
-and the backends are instance groups. The named port must be defined on each
-backend instance group. This parameter has no meaning if the backends are NEGs. API sets a
-default of "http" if not given.
-Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+Indicates what kind of load balancing this regional backend service
+will be used for. A backend service created for one type of load
+balancing cannot be used with the other(s). For more information, refer to
+[Choosing a load balancer](https://cloud.google.com/load-balancing/docs/backend-service).
+Default value is `INTERNAL`.
+Possible values are: `EXTERNAL`, `EXTERNAL_MANAGED`, `INTERNAL`, `INTERNAL_MANAGED`.
 */
-  public PortName?: string;
+  public loadBalancingScheme?: string;
 
-  /*
-Consistent Hash-based load balancing can be used to provide soft session
-affinity based on HTTP headers, cookies or other properties. This load balancing
-policy is applicable only for HTTP connections. The affinity to a particular
-destination host will be lost when one or more hosts are added/removed from the
-destination service. This field specifies parameters that control consistent
-hashing.
-This field only applies when all of the following are true -
-*/
-  public ConsistentHash?: Compute_RegionBackendServiceConsistentHash;
-
-  /*
-Policy for failovers.
-Structure is documented below.
-*/
-  public FailoverPolicy?: Compute_RegionBackendServiceFailoverPolicy;
+  // The security policy associated with this backend service.
+  public securityPolicy?: string;
 
   /*
 Type of session affinity to use. The default is NONE. Session affinity is
 not applicable if the protocol is UDP.
 Possible values are: `NONE`, `CLIENT_IP`, `CLIENT_IP_PORT_PROTO`, `CLIENT_IP_PROTO`, `GENERATED_COOKIE`, `HEADER_FIELD`, `HTTP_COOKIE`, `CLIENT_IP_NO_DESTINATION`.
 */
-  public SessionAffinity?: string;
+  public sessionAffinity?: string;
+
+  /*
+Time for which instance will be drained (not accept new
+connections, but still work to finish started).
+*/
+  public connectionDrainingTimeoutSec?: number;
+
+  /*
+Connection Tracking configuration for this BackendService.
+This is available only for Layer 4 Internal Load Balancing and
+Network Load Balancing.
+Structure is documented below.
+*/
+  public connectionTrackingPolicy?: compute_RegionBackendServiceConnectionTrackingPolicy;
 
   /*
 This field denotes the logging options for the load balancer traffic served by this backend service.
 If logging is enabled, logs will be exported to Stackdriver.
 Structure is documented below.
 */
-  public LogConfig?: Compute_RegionBackendServiceLogConfig;
+  public logConfig?: compute_RegionBackendServiceLogConfig;
 
   /*
-Name of the resource. Provided by the client when the resource is
-created. The name must be 1-63 characters long, and comply with
-RFC1035. Specifically, the name must be 1-63 characters long and match
-the regular expression `a-z?` which means the
-first character must be a lowercase letter, and all following
-characters must be a dash, lowercase letter, or digit, except the last
-character, which cannot be a dash.
-
-
-- - -
+The protocol this RegionBackendService uses to communicate with backends.
+The default is HTTP. --NOTE--: HTTP2 is only valid for beta HTTP/2 load balancer
+types and may result in errors if used with the GA API.
+Possible values are: `HTTP`, `HTTPS`, `HTTP2`, `SSL`, `TCP`, `UDP`, `GRPC`, `UNSPECIFIED`.
 */
-  public Name?: string;
+  public protocol?: string;
+
+  // The URI of the created resource.
+  public selfLink?: string;
 
   /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  /*
-Settings controlling eviction of unhealthy hosts from the load balancing pool.
-This field is applicable only when the `load_balancing_scheme` is set
-to INTERNAL_MANAGED and the `protocol` is set to HTTP, HTTPS, or HTTP2.
+Subsetting configuration for this BackendService. Currently this is applicable only for Internal TCP/UDP load balancing and Internal HTTP(S) load balancing.
 Structure is documented below.
 */
-  public OutlierDetection?: Compute_RegionBackendServiceOutlierDetection;
+  public subsetting?: compute_RegionBackendServiceSubsetting;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "LocalityLbPolicy",
-        "The load balancing algorithm used within the scope of the locality.\nThe possible values are:",
-        [],
+        InputType.Object,
+        "logConfig",
+        "This field denotes the logging options for the load balancer traffic served by this backend service.\nIf logging is enabled, logs will be exported to Stackdriver.\nStructure is documented below.",
+        compute_RegionBackendServiceLogConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "CdnPolicy",
-        "Cloud CDN configuration for this BackendService.\nStructure is documented below.",
-        Compute_RegionBackendServiceCdnPolicy_GetTypes(),
+        "circuitBreakers",
+        "Settings controlling the volume of connections to a backend service. This field\nis applicable only when the `load_balancing_scheme` is set to INTERNAL_MANAGED\nand the `protocol` is set to HTTP, HTTPS, or HTTP2.\nStructure is documented below.",
+        compute_RegionBackendServiceCircuitBreakers_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "LoadBalancingScheme",
+        "loadBalancingScheme",
         "Indicates what kind of load balancing this regional backend service\nwill be used for. A backend service created for one type of load\nbalancing cannot be used with the other(s). For more information, refer to\n[Choosing a load balancer](https://cloud.google.com/load-balancing/docs/backend-service).\nDefault value is `INTERNAL`.\nPossible values are: `EXTERNAL`, `EXTERNAL_MANAGED`, `INTERNAL`, `INTERNAL_MANAGED`.",
         [],
         false,
         true,
       ),
       new DynamicUIProps(
-        InputType.Bool,
-        "EnableCdn",
-        "If true, enable Cloud CDN for this RegionBackendService.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Array,
-        "Backends",
-        "The set of backends that serve this RegionBackendService.\nStructure is documented below.",
-        Compute_RegionBackendServiceBackend_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "Subsetting",
-        "Subsetting configuration for this BackendService. Currently this is applicable only for Internal TCP/UDP load balancing and Internal HTTP(S) load balancing.\nStructure is documented below.",
-        Compute_RegionBackendServiceSubsetting_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "FailoverPolicy",
-        "Policy for failovers.\nStructure is documented below.",
-        Compute_RegionBackendServiceFailoverPolicy_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "HealthChecks",
+        "healthChecks",
         "The set of URLs to HealthCheck resources for health checking\nthis RegionBackendService. Currently at most one health\ncheck can be specified.\nA health check must be specified unless the backend service uses an internet\nor serverless NEG as a backend.",
         [],
         false,
         false,
       ),
       new DynamicUIProps(
-        InputType.Object,
-        "Iap",
-        "Settings for enabling Cloud Identity Aware Proxy\nStructure is documented below.",
-        Compute_RegionBackendServiceIap_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "OutlierDetection",
-        "Settings controlling eviction of unhealthy hosts from the load balancing pool.\nThis field is applicable only when the `load_balancing_scheme` is set\nto INTERNAL_MANAGED and the `protocol` is set to HTTP, HTTPS, or HTTP2.\nStructure is documented below.",
-        Compute_RegionBackendServiceOutlierDetection_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "SecurityPolicy",
-        "The security policy associated with this backend service.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "LogConfig",
-        "This field denotes the logging options for the load balancer traffic served by this backend service.\nIf logging is enabled, logs will be exported to Stackdriver.\nStructure is documented below.",
-        Compute_RegionBackendServiceLogConfig_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Protocol",
-        "The protocol this RegionBackendService uses to communicate with backends.\nThe default is HTTP. **NOTE**: HTTP2 is only valid for beta HTTP/2 load balancer\ntypes and may result in errors if used with the GA API.\nPossible values are: `HTTP`, `HTTPS`, `HTTP2`, `SSL`, `TCP`, `UDP`, `GRPC`, `UNSPECIFIED`.",
+        "localityLbPolicy",
+        "The load balancing algorithm used within the scope of the locality.\nThe possible values are:",
         [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "The Region in which the created backend service should reside.\nIf it is not provided, the provider region is used.",
         [],
         false,
         false,
       ),
       new DynamicUIProps(
-        InputType.Number,
-        "ConnectionDrainingTimeoutSec",
-        "Time for which instance will be drained (not accept new\nconnections, but still work to finish started).",
+        InputType.Object,
+        "cdnPolicy",
+        "Cloud CDN configuration for this BackendService.\nStructure is documented below.",
+        compute_RegionBackendServiceCdnPolicy_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "protocol",
+        "The protocol this RegionBackendService uses to communicate with backends.\nThe default is HTTP. **NOTE**: HTTP2 is only valid for beta HTTP/2 load balancer\ntypes and may result in errors if used with the GA API.\nPossible values are: `HTTP`, `HTTPS`, `HTTP2`, `SSL`, `TCP`, `UDP`, `GRPC`, `UNSPECIFIED`.",
         [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "ConnectionTrackingPolicy",
-        "Connection Tracking configuration for this BackendService.\nThis is available only for Layer 4 Internal Load Balancing and\nNetwork Load Balancing.\nStructure is documented below.",
-        Compute_RegionBackendServiceConnectionTrackingPolicy_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.\n\n\n- - -",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "SessionAffinity",
-        "Type of session affinity to use. The default is NONE. Session affinity is\nnot applicable if the protocol is UDP.\nPossible values are: `NONE`, `CLIENT_IP`, `CLIENT_IP_PORT_PROTO`, `CLIENT_IP_PROTO`, `GENERATED_COOKIE`, `HEADER_FIELD`, `HTTP_COOKIE`, `CLIENT_IP_NO_DESTINATION`.",
-        [],
+        "subsetting",
+        "Subsetting configuration for this BackendService. Currently this is applicable only for Internal TCP/UDP load balancing and Internal HTTP(S) load balancing.\nStructure is documented below.",
+        compute_RegionBackendServiceSubsetting_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "TimeoutSec",
-        "How many seconds to wait for the backend before considering it a\nfailed request. Default is 30 seconds. Valid range is [1, 86400].",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "PortName",
-        'A named port on a backend instance group representing the port for\ncommunication to the backend VMs in that group. Required when the\nloadBalancingScheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED, or INTERNAL_SELF_MANAGED\nand the backends are instance groups. The named port must be defined on each\nbackend instance group. This parameter has no meaning if the backends are NEGs. API sets a\ndefault of "http" if not given.\nMust be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).',
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "CircuitBreakers",
-        "Settings controlling the volume of connections to a backend service. This field\nis applicable only when the `load_balancing_scheme` is set to INTERNAL_MANAGED\nand the `protocol` is set to HTTP, HTTPS, or HTTP2.\nStructure is documented below.",
-        Compute_RegionBackendServiceCircuitBreakers_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "ConsistentHash",
-        "Consistent Hash-based load balancing can be used to provide soft session\naffinity based on HTTP headers, cookies or other properties. This load balancing\npolicy is applicable only for HTTP connections. The affinity to a particular\ndestination host will be lost when one or more hosts are added/removed from the\ndestination service. This field specifies parameters that control consistent\nhashing.\nThis field only applies when all of the following are true -",
-        Compute_RegionBackendServiceConsistentHash_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Number,
-        "AffinityCookieTtlSec",
+        "affinityCookieTtlSec",
         "Lifetime of cookies in seconds if session_affinity is\nGENERATED_COOKIE. If set to 0, the cookie is non-persistent and lasts\nonly until the end of the browser session (or equivalent). The\nmaximum allowed value for TTL is one day.\nWhen the load balancing scheme is INTERNAL, this field is not used.",
         [],
         false,
@@ -627,7 +515,87 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Number,
+        "connectionDrainingTimeoutSec",
+        "Time for which instance will be drained (not accept new\nconnections, but still work to finish started).",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "failoverPolicy",
+        "Policy for failovers.\nStructure is documented below.",
+        compute_RegionBackendServiceFailoverPolicy_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "iap",
+        "Settings for enabling Cloud Identity Aware Proxy\nStructure is documented below.",
+        compute_RegionBackendServiceIap_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "securityPolicy",
+        "The security policy associated with this backend service.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "consistentHash",
+        "Consistent Hash-based load balancing can be used to provide soft session\naffinity based on HTTP headers, cookies or other properties. This load balancing\npolicy is applicable only for HTTP connections. The affinity to a particular\ndestination host will be lost when one or more hosts are added/removed from the\ndestination service. This field specifies parameters that control consistent\nhashing.\nThis field only applies when all of the following are true -",
+        compute_RegionBackendServiceConsistentHash_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "enableCdn",
+        "If true, enable Cloud CDN for this RegionBackendService.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "backends",
+        "The set of backends that serve this RegionBackendService.\nStructure is documented below.",
+        compute_RegionBackendServiceBackend_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "network",
+        "The URL of the network to which this backend service belongs.\nThis field can only be specified when the load balancing scheme is set to INTERNAL.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "connectionTrackingPolicy",
+        "Connection Tracking configuration for this BackendService.\nThis is available only for Layer 4 Internal Load Balancing and\nNetwork Load Balancing.\nStructure is documented below.",
+        compute_RegionBackendServiceConnectionTrackingPolicy_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
         "An optional description of this resource.",
         [],
         false,
@@ -635,8 +603,40 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Network",
-        "The URL of the network to which this backend service belongs.\nThis field can only be specified when the load balancing scheme is set to INTERNAL.",
+        "name",
+        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.\n\n\n- - -",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "sessionAffinity",
+        "Type of session affinity to use. The default is NONE. Session affinity is\nnot applicable if the protocol is UDP.\nPossible values are: `NONE`, `CLIENT_IP`, `CLIENT_IP_PORT_PROTO`, `CLIENT_IP_PROTO`, `GENERATED_COOKIE`, `HEADER_FIELD`, `HTTP_COOKIE`, `CLIENT_IP_NO_DESTINATION`.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Number,
+        "timeoutSec",
+        "How many seconds to wait for the backend before considering it a\nfailed request. Default is 30 seconds. Valid range is [1, 86400].",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "outlierDetection",
+        "Settings controlling eviction of unhealthy hosts from the load balancing pool.\nThis field is applicable only when the `load_balancing_scheme` is set\nto INTERNAL_MANAGED and the `protocol` is set to HTTP, HTTPS, or HTTP2.\nStructure is documented below.",
+        compute_RegionBackendServiceOutlierDetection_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "portName",
+        'A named port on a backend instance group representing the port for\ncommunication to the backend VMs in that group. Required when the\nloadBalancingScheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED, or INTERNAL_SELF_MANAGED\nand the backends are instance groups. The named port must be defined on each\nbackend instance group. This parameter has no meaning if the backends are NEGs. API sets a\ndefault of "http" if not given.\nMust be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).',
         [],
         false,
         false,

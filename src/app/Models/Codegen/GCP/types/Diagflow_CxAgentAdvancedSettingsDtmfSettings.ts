@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxAgentAdvancedSettingsDtmfSettings {
+export interface diagflow_CxAgentAdvancedSettingsDtmfSettings {
   // If true, incoming audio is processed for DTMF (dual tone multi frequency) events. For example, if the caller presses a button on their telephone keypad and DTMF processing is enabled, Dialogflow will detect the event (e.g. a "3" was pressed) in the incoming audio and pass the event to the bot to drive business logic (e.g. when 3 is pressed, return the account balance).
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // The digit that terminates a DTMF digit sequence.
-  FinishDigit?: string;
+  finishDigit?: string;
 
   // Max length of DTMF digits.
-  MaxDigits?: number;
+  maxDigits?: number;
 }
 
-export function Diagflow_CxAgentAdvancedSettingsDtmfSettings_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxAgentAdvancedSettingsDtmfSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       'If true, incoming audio is processed for DTMF (dual tone multi frequency) events. For example, if the caller presses a button on their telephone keypad and DTMF processing is enabled, Dialogflow will detect the event (e.g. a "3" was pressed) in the incoming audio and pass the event to the bot to drive business logic (e.g. when 3 is pressed, return the account balance).',
       [],
       false,
@@ -29,7 +29,7 @@ export function Diagflow_CxAgentAdvancedSettingsDtmfSettings_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "FinishDigit",
+      "finishDigit",
       "The digit that terminates a DTMF digit sequence.",
       [],
       false,
@@ -37,7 +37,7 @@ export function Diagflow_CxAgentAdvancedSettingsDtmfSettings_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxDigits",
+      "maxDigits",
       "Max length of DTMF digits.",
       [],
       false,

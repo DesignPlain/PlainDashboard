@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintPolicyRuleValues {
+export interface securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintPolicyRuleValues {
   // List of values allowed at this resource.
-  AllowedValues?: Array<string>;
+  allowedValues?: Array<string>;
 
   // List of values denied at this resource.
-  DeniedValues?: Array<string>;
+  deniedValues?: Array<string>;
 }
 
-export function Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintPolicyRuleValues_GetTypes(): DynamicUIProps[] {
+export function securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintPolicyRuleValues_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AllowedValues",
+      "allowedValues",
       "List of values allowed at this resource.",
       InputType_String_GetTypes(),
       false,
@@ -26,7 +26,7 @@ export function Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstra
     ),
     new DynamicUIProps(
       InputType.Array,
-      "DeniedValues",
+      "deniedValues",
       "List of values denied at this resource.",
       InputType_String_GetTypes(),
       false,

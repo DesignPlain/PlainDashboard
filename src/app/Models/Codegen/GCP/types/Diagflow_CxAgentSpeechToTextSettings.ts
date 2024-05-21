@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxAgentSpeechToTextSettings {
+export interface diagflow_CxAgentSpeechToTextSettings {
   // Whether to use speech adaptation for speech recognition.
-  EnableSpeechAdaptation?: boolean;
+  enableSpeechAdaptation?: boolean;
 }
 
-export function Diagflow_CxAgentSpeechToTextSettings_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxAgentSpeechToTextSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableSpeechAdaptation",
+      "enableSpeechAdaptation",
       "Whether to use speech adaptation for speech recognition.",
       [],
       false,

@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_BucketAutoclass {
+export interface storage_BucketAutoclass {
   // While set to `true`, autoclass automatically transitions objects in your bucket to appropriate storage classes based on each object's access pattern.
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // The storage class that objects in the bucket eventually transition to if they are not read for a certain length of time. Supported values include: `NEARLINE`, `ARCHIVE`.
-  TerminalStorageClass?: string;
+  terminalStorageClass?: string;
 }
 
-export function Storage_BucketAutoclass_GetTypes(): DynamicUIProps[] {
+export function storage_BucketAutoclass_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "While set to `true`, autoclass automatically transitions objects in your bucket to appropriate storage classes based on each object's access pattern.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Storage_BucketAutoclass_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "TerminalStorageClass",
+      "terminalStorageClass",
       "The storage class that objects in the bucket eventually transition to if they are not read for a certain length of time. Supported values include: `NEARLINE`, `ARCHIVE`.",
       [],
       false,

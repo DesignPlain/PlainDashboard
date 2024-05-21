@@ -6,50 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Securitycenter_FolderCustomModuleCustomConfigPredicate {
+export interface securitycenter_FolderCustomModuleCustomConfigPredicate {
+  /*
+Description of the expression. This is a longer text which describes the
+expression, e.g. when hovered over it in a UI.
+*/
+  description?: string;
+
+  // Textual representation of an expression in Common Expression Language syntax.
+  expression?: string;
+
   /*
 String indicating the location of the expression for error reporting, e.g. a
 file name and a position in the file.
 */
-  Location?: string;
+  location?: string;
 
   /*
 Title for the expression, i.e. a short string describing its purpose. This can
 be used e.g. in UIs which allow to enter the expression.
 */
-  Title?: string;
-
-  /*
-Description of the expression. This is a longer text which describes the
-expression, e.g. when hovered over it in a UI.
-*/
-  Description?: string;
-
-  // Textual representation of an expression in Common Expression Language syntax.
-  Expression?: string;
+  title?: string;
 }
 
-export function Securitycenter_FolderCustomModuleCustomConfigPredicate_GetTypes(): DynamicUIProps[] {
+export function securitycenter_FolderCustomModuleCustomConfigPredicate_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Location",
-      "String indicating the location of the expression for error reporting, e.g. a\nfile name and a position in the file.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Title",
-      "Title for the expression, i.e. a short string describing its purpose. This can\nbe used e.g. in UIs which allow to enter the expression.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Description",
+      "description",
       "Description of the expression. This is a longer text which describes the\nexpression, e.g. when hovered over it in a UI.",
       [],
       false,
@@ -57,10 +41,26 @@ export function Securitycenter_FolderCustomModuleCustomConfigPredicate_GetTypes(
     ),
     new DynamicUIProps(
       InputType.String,
-      "Expression",
+      "expression",
       "Textual representation of an expression in Common Expression Language syntax.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "location",
+      "String indicating the location of the expression for error reporting, e.g. a\nfile name and a position in the file.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "title",
+      "Title for the expression, i.e. a short string describing its purpose. This can\nbe used e.g. in UIs which allow to enter the expression.",
+      [],
+      false,
       false,
     ),
   ];

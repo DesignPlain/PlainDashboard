@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigKubeletConfig {
+export interface gkeonprem_BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigKubeletConfig {
   /*
 The maximum size of bursty pulls, temporarily allows pulls to burst to this
 number, while still not exceeding registry_pull_qps.
@@ -15,7 +15,7 @@ Updating this field may impact scalability by changing the amount of
 traffic produced by image pulls.
 Defaults to 10.
 */
-  RegistryBurst?: number;
+  registryBurst?: number;
 
   /*
 The limit of registry pulls per second.
@@ -24,7 +24,7 @@ Updating this field may impact scalability by changing the amount of
 traffic produced by image pulls.
 Defaults to 5.
 */
-  RegistryPullQps?: number;
+  registryPullQps?: number;
 
   /*
 Prevents the Kubelet from pulling multiple images at a time.
@@ -33,14 +33,14 @@ daemon with version  < 1.9 or an Another Union File System (Aufs) storage
 backend. Issue https://github.com/kubernetes/kubernetes/issues/10959 has
 more details.
 */
-  SerializeImagePullsDisabled?: boolean;
+  serializeImagePullsDisabled?: boolean;
 }
 
-export function Gkeonprem_BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigKubeletConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigKubeletConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "RegistryBurst",
+      "registryBurst",
       "The maximum size of bursty pulls, temporarily allows pulls to burst to this\nnumber, while still not exceeding registry_pull_qps.\nThe value must not be a negative number.\nUpdating this field may impact scalability by changing the amount of\ntraffic produced by image pulls.\nDefaults to 10.",
       [],
       false,
@@ -48,7 +48,7 @@ export function Gkeonprem_BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNod
     ),
     new DynamicUIProps(
       InputType.Number,
-      "RegistryPullQps",
+      "registryPullQps",
       "The limit of registry pulls per second.\nSetting this value to 0 means no limit.\nUpdating this field may impact scalability by changing the amount of\ntraffic produced by image pulls.\nDefaults to 5.",
       [],
       false,
@@ -56,7 +56,7 @@ export function Gkeonprem_BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNod
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "SerializeImagePullsDisabled",
+      "serializeImagePullsDisabled",
       "Prevents the Kubelet from pulling multiple images at a time.\nWe recommend *not* changing the default value on nodes that run docker\ndaemon with version  < 1.9 or an Another Union File System (Aufs) storage\nbackend. Issue https://github.com/kubernetes/kubernetes/issues/10959 has\nmore details.",
       [],
       false,

@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterNetworkConfigMultipleNetworkInterfacesConfig {
+export interface gkeonprem_BareMetalClusterNetworkConfigMultipleNetworkInterfacesConfig {
   /*
 Whether to enable multiple network interfaces for your pods.
 When set network_config.advanced_networking is automatically
 set to true.
 */
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Gkeonprem_BareMetalClusterNetworkConfigMultipleNetworkInterfacesConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterNetworkConfigMultipleNetworkInterfacesConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether to enable multiple network interfaces for your pods.\nWhen set network_config.advanced_networking is automatically\nset to true.",
       [],
       false,

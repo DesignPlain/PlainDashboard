@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudscheduler_JobPubsubTarget {
+export interface cloudscheduler_JobPubsubTarget {
   /*
 Attributes for PubsubMessage.
 Pubsub message must contain either non-empty data, or at least one attribute.
 */
-  Attributes?: Map<string, string>;
+  attributes?: Map<string, string>;
 
   /*
 The message payload for PubsubMessage.
 Pubsub message must contain either non-empty data, or at least one attribute.
 A base64-encoded string.
 */
-  Data?: string;
+  data?: string;
 
   /*
 The full resource name for the Cloud Pub/Sub topic to which
@@ -26,22 +26,14 @@ messages will be published when a job is delivered. ~>--NOTE:--
 The topic name must be in the same format as required by PubSub's
 PublishRequest.name, e.g. `projects/my-project/topics/my-topic`.
 */
-  TopicName?: string;
+  topicName?: string;
 }
 
-export function Cloudscheduler_JobPubsubTarget_GetTypes(): DynamicUIProps[] {
+export function cloudscheduler_JobPubsubTarget_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Map,
-      "Attributes",
-      "Attributes for PubsubMessage.\nPubsub message must contain either non-empty data, or at least one attribute.",
-      InputType_Map_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Data",
+      "data",
       "The message payload for PubsubMessage.\nPubsub message must contain either non-empty data, or at least one attribute.\nA base64-encoded string.",
       [],
       false,
@@ -49,10 +41,18 @@ export function Cloudscheduler_JobPubsubTarget_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "TopicName",
+      "topicName",
       "The full resource name for the Cloud Pub/Sub topic to which\nmessages will be published when a job is delivered. ~>**NOTE:**\nThe topic name must be in the same format as required by PubSub's\nPublishRequest.name, e.g. `projects/my-project/topics/my-topic`.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Map,
+      "attributes",
+      "Attributes for PubsubMessage.\nPubsub message must contain either non-empty data, or at least one attribute.",
+      InputType_Map_GetTypes(),
+      false,
       false,
     ),
   ];

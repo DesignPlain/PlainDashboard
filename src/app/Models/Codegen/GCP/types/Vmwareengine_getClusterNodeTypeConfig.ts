@@ -6,27 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vmwareengine_getClusterNodeTypeConfig {
+export interface vmwareengine_getClusterNodeTypeConfig {
+  // The number of nodes of this type in the cluster.
+  nodeCount?: number;
+
+  //
+  nodeTypeId?: string;
+
   /*
 Customized number of cores available to each node of the type.
 This number must always be one of 'nodeType.availableCustomCoreCounts'.
 If zero is provided max value from 'nodeType.availableCustomCoreCounts' will be used.
 Once the customer is created then corecount cannot be changed.
 */
-  CustomCoreCount?: number;
-
-  // The number of nodes of this type in the cluster.
-  NodeCount?: number;
-
-  //
-  NodeTypeId?: string;
+  customCoreCount?: number;
 }
 
-export function Vmwareengine_getClusterNodeTypeConfig_GetTypes(): DynamicUIProps[] {
+export function vmwareengine_getClusterNodeTypeConfig_GetTypes(): DynamicUIProps[] {
   return [
+    new DynamicUIProps(InputType.String, "nodeTypeId", "", [], true, false),
     new DynamicUIProps(
       InputType.Number,
-      "CustomCoreCount",
+      "customCoreCount",
       "Customized number of cores available to each node of the type.\nThis number must always be one of 'nodeType.availableCustomCoreCounts'.\nIf zero is provided max value from 'nodeType.availableCustomCoreCounts' will be used.\nOnce the customer is created then corecount cannot be changed.",
       [],
       true,
@@ -34,12 +35,11 @@ export function Vmwareengine_getClusterNodeTypeConfig_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Number,
-      "NodeCount",
+      "nodeCount",
       "The number of nodes of this type in the cluster.",
       [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "NodeTypeId", "", [], true, false),
   ];
 }

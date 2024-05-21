@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_URLMapDefaultRouteActionFaultInjectionPolicyAbort {
-  /*
-The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection.
-The value must be between 0.0 and 100.0 inclusive.
-*/
-  Percentage?: number;
-
+export interface compute_URLMapDefaultRouteActionFaultInjectionPolicyAbort {
   /*
 The HTTP status code used to abort the request.
 The value must be between 200 and 599 inclusive.
 */
-  HttpStatus?: number;
+  httpStatus?: number;
+
+  /*
+The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection.
+The value must be between 0.0 and 100.0 inclusive.
+*/
+  percentage?: number;
 }
 
-export function Compute_URLMapDefaultRouteActionFaultInjectionPolicyAbort_GetTypes(): DynamicUIProps[] {
+export function compute_URLMapDefaultRouteActionFaultInjectionPolicyAbort_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Percentage",
-      "The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection.\nThe value must be between 0.0 and 100.0 inclusive.",
+      "httpStatus",
+      "The HTTP status code used to abort the request.\nThe value must be between 200 and 599 inclusive.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "HttpStatus",
-      "The HTTP status code used to abort the request.\nThe value must be between 200 and 599 inclusive.",
+      "percentage",
+      "The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection.\nThe value must be between 0.0 and 100.0 inclusive.",
       [],
       false,
       false,

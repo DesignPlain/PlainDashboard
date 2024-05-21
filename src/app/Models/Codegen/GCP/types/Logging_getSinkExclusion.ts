@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Logging_getSinkExclusion {
-  // A client-assigned identifier, such as `load-balancer-exclusion`.
-  Name?: string;
-
+export interface logging_getSinkExclusion {
   // A description of this exclusion.
-  Description?: string;
+  description?: string;
 
   // Whether this exclusion is disabled and it does not exclude any log entries.
-  Disabled?: boolean;
+  disabled?: boolean;
 
   // An advanced logs filter that matches the log entries to be excluded.
-  Filter?: string;
+  filter?: string;
+
+  // A client-assigned identifier, such as `load-balancer-exclusion`.
+  name?: string;
 }
 
-export function Logging_getSinkExclusion_GetTypes(): DynamicUIProps[] {
+export function logging_getSinkExclusion_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "A client-assigned identifier, such as `load-balancer-exclusion`.",
       [],
       true,
@@ -32,7 +32,7 @@ export function Logging_getSinkExclusion_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "A description of this exclusion.",
       [],
       true,
@@ -40,7 +40,7 @@ export function Logging_getSinkExclusion_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Disabled",
+      "disabled",
       "Whether this exclusion is disabled and it does not exclude any log entries.",
       [],
       true,
@@ -48,7 +48,7 @@ export function Logging_getSinkExclusion_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Filter",
+      "filter",
       "An advanced logs filter that matches the log entries to be excluded.",
       [],
       true,

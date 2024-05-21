@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vertex_AiFeatureStoreEncryptionSpec {
+export interface vertex_AiFeatureStoreEncryptionSpec {
   // The Cloud KMS resource identifier of the customer managed encryption key used to protect a resource. Has the form: projects/my-project/locations/my-region/keyRings/my-kr/cryptoKeys/my-key. The key needs to be in the same region as where the compute resource is created.
-  KmsKeyName?: string;
+  kmsKeyName?: string;
 }
 
-export function Vertex_AiFeatureStoreEncryptionSpec_GetTypes(): DynamicUIProps[] {
+export function vertex_AiFeatureStoreEncryptionSpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyName",
+      "kmsKeyName",
       "The Cloud KMS resource identifier of the customer managed encryption key used to protect a resource. Has the form: projects/my-project/locations/my-region/keyRings/my-kr/cryptoKeys/my-key. The key needs to be in the same region as where the compute resource is created.",
       [],
       true,

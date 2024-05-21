@@ -6,24 +6,32 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Clouddomains_RegistrationContactSettingsRegistrantContact,
-  Clouddomains_RegistrationContactSettingsRegistrantContact_GetTypes,
-} from "./Clouddomains_RegistrationContactSettingsRegistrantContact";
+  clouddomains_RegistrationContactSettingsAdminContact,
+  clouddomains_RegistrationContactSettingsAdminContact_GetTypes,
+} from "./clouddomains_RegistrationContactSettingsAdminContact";
 import {
-  Clouddomains_RegistrationContactSettingsTechnicalContact,
-  Clouddomains_RegistrationContactSettingsTechnicalContact_GetTypes,
-} from "./Clouddomains_RegistrationContactSettingsTechnicalContact";
+  clouddomains_RegistrationContactSettingsRegistrantContact,
+  clouddomains_RegistrationContactSettingsRegistrantContact_GetTypes,
+} from "./clouddomains_RegistrationContactSettingsRegistrantContact";
 import {
-  Clouddomains_RegistrationContactSettingsAdminContact,
-  Clouddomains_RegistrationContactSettingsAdminContact_GetTypes,
-} from "./Clouddomains_RegistrationContactSettingsAdminContact";
+  clouddomains_RegistrationContactSettingsTechnicalContact,
+  clouddomains_RegistrationContactSettingsTechnicalContact_GetTypes,
+} from "./clouddomains_RegistrationContactSettingsTechnicalContact";
 
-export interface Clouddomains_RegistrationContactSettings {
+export interface clouddomains_RegistrationContactSettings {
+  /*
+Caution: Anyone with access to this email address, phone number, and/or postal address can take control of the domain.
+Warning: For new Registrations, the registrant receives an email confirmation that they must complete within 15 days to
+avoid domain suspension.
+Structure is documented below.
+*/
+  adminContact?: clouddomains_RegistrationContactSettingsAdminContact;
+
   /*
 Required. Privacy setting for the contacts associated with the Registration.
 Values are PUBLIC_CONTACT_DATA, PRIVATE_CONTACT_DATA, and REDACTED_CONTACT_DATA
 */
-  Privacy?: string;
+  privacy?: string;
 
   /*
 Caution: Anyone with access to this email address, phone number, and/or postal address can take control of the domain.
@@ -31,7 +39,7 @@ Warning: For new Registrations, the registrant receives an email confirmation th
 avoid domain suspension.
 Structure is documented below.
 */
-  RegistrantContact?: Clouddomains_RegistrationContactSettingsRegistrantContact;
+  registrantContact?: clouddomains_RegistrationContactSettingsRegistrantContact;
 
   /*
 Caution: Anyone with access to this email address, phone number, and/or postal address can take control of the domain.
@@ -39,48 +47,40 @@ Warning: For new Registrations, the registrant receives an email confirmation th
 avoid domain suspension.
 Structure is documented below.
 */
-  TechnicalContact?: Clouddomains_RegistrationContactSettingsTechnicalContact;
-
-  /*
-Caution: Anyone with access to this email address, phone number, and/or postal address can take control of the domain.
-Warning: For new Registrations, the registrant receives an email confirmation that they must complete within 15 days to
-avoid domain suspension.
-Structure is documented below.
-*/
-  AdminContact?: Clouddomains_RegistrationContactSettingsAdminContact;
+  technicalContact?: clouddomains_RegistrationContactSettingsTechnicalContact;
 }
 
-export function Clouddomains_RegistrationContactSettings_GetTypes(): DynamicUIProps[] {
+export function clouddomains_RegistrationContactSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "AdminContact",
+      "registrantContact",
       "Caution: Anyone with access to this email address, phone number, and/or postal address can take control of the domain.\nWarning: For new Registrations, the registrant receives an email confirmation that they must complete within 15 days to\navoid domain suspension.\nStructure is documented below.",
-      Clouddomains_RegistrationContactSettingsAdminContact_GetTypes(),
+      clouddomains_RegistrationContactSettingsRegistrantContact_GetTypes(),
+      true,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "technicalContact",
+      "Caution: Anyone with access to this email address, phone number, and/or postal address can take control of the domain.\nWarning: For new Registrations, the registrant receives an email confirmation that they must complete within 15 days to\navoid domain suspension.\nStructure is documented below.",
+      clouddomains_RegistrationContactSettingsTechnicalContact_GetTypes(),
+      true,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "adminContact",
+      "Caution: Anyone with access to this email address, phone number, and/or postal address can take control of the domain.\nWarning: For new Registrations, the registrant receives an email confirmation that they must complete within 15 days to\navoid domain suspension.\nStructure is documented below.",
+      clouddomains_RegistrationContactSettingsAdminContact_GetTypes(),
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Privacy",
+      "privacy",
       "Required. Privacy setting for the contacts associated with the Registration.\nValues are PUBLIC_CONTACT_DATA, PRIVATE_CONTACT_DATA, and REDACTED_CONTACT_DATA",
       [],
-      true,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "RegistrantContact",
-      "Caution: Anyone with access to this email address, phone number, and/or postal address can take control of the domain.\nWarning: For new Registrations, the registrant receives an email confirmation that they must complete within 15 days to\navoid domain suspension.\nStructure is documented below.",
-      Clouddomains_RegistrationContactSettingsRegistrantContact_GetTypes(),
-      true,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "TechnicalContact",
-      "Caution: Anyone with access to this email address, phone number, and/or postal address can take control of the domain.\nWarning: For new Registrations, the registrant receives an email confirmation that they must complete within 15 days to\navoid domain suspension.\nStructure is documented below.",
-      Clouddomains_RegistrationContactSettingsTechnicalContact_GetTypes(),
       true,
       true,
     ),

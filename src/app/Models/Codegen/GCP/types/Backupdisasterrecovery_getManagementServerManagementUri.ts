@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Backupdisasterrecovery_getManagementServerManagementUri {
-  // The management console api endpoint.
-  Api?: string;
-
+export interface backupdisasterrecovery_getManagementServerManagementUri {
   // The management console webUi.
-  WebUi?: string;
+  webUi?: string;
+
+  // The management console api endpoint.
+  api?: string;
 }
 
-export function Backupdisasterrecovery_getManagementServerManagementUri_GetTypes(): DynamicUIProps[] {
+export function backupdisasterrecovery_getManagementServerManagementUri_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Api",
-      "The management console api endpoint.",
+      "webUi",
+      "The management console webUi.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "WebUi",
-      "The management console webUi.",
+      "api",
+      "The management console api endpoint.",
       [],
       true,
       false,

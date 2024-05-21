@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Apigee_OrganizationPropertiesProperty,
-  Apigee_OrganizationPropertiesProperty_GetTypes,
-} from "./Apigee_OrganizationPropertiesProperty";
+  apigee_OrganizationPropertiesProperty,
+  apigee_OrganizationPropertiesProperty_GetTypes,
+} from "./apigee_OrganizationPropertiesProperty";
 
-export interface Apigee_OrganizationProperties {
+export interface apigee_OrganizationProperties {
   /*
 List of all properties in the object.
 Structure is documented below.
 */
-  Properties?: Array<Apigee_OrganizationPropertiesProperty>;
+  properties?: Array<apigee_OrganizationPropertiesProperty>;
 }
 
-export function Apigee_OrganizationProperties_GetTypes(): DynamicUIProps[] {
+export function apigee_OrganizationProperties_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Properties",
+      "properties",
       "List of all properties in the object.\nStructure is documented below.",
-      Apigee_OrganizationPropertiesProperty_GetTypes(),
+      apigee_OrganizationPropertiesProperty_GetTypes(),
       false,
       false,
     ),

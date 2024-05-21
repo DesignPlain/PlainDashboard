@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Composer_EnvironmentStorageConfig {
+export interface composer_EnvironmentStorageConfig {
   // Optional. Name of an existing Cloud Storage bucket to be used by the environment.
-  Bucket?: string;
+  bucket?: string;
 }
 
-export function Composer_EnvironmentStorageConfig_GetTypes(): DynamicUIProps[] {
+export function composer_EnvironmentStorageConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Bucket",
+      "bucket",
       "Optional. Name of an existing Cloud Storage bucket to be used by the environment.",
       [],
       true,

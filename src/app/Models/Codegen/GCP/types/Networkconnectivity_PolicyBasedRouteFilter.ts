@@ -6,48 +6,32 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkconnectivity_PolicyBasedRouteFilter {
+export interface networkconnectivity_PolicyBasedRouteFilter {
+  // The IP protocol that this policy-based route applies to. Valid values are 'TCP', 'UDP', and 'ALL'. Default is 'ALL'.
+  ipProtocol?: string;
+
+  /*
+Internet protocol versions this policy-based route applies to.
+Possible values are: `IPV4`.
+*/
+  protocolVersion?: string;
+
   // The source IP range of outgoing packets that this policy-based route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.
-  SrcRange?: string;
+  srcRange?: string;
 
   /*
 The destination IP range of outgoing packets that this policy-based route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.
 
 - - -
 */
-  DestRange?: string;
-
-  // The IP protocol that this policy-based route applies to. Valid values are 'TCP', 'UDP', and 'ALL'. Default is 'ALL'.
-  IpProtocol?: string;
-
-  /*
-Internet protocol versions this policy-based route applies to.
-Possible values are: `IPV4`.
-*/
-  ProtocolVersion?: string;
+  destRange?: string;
 }
 
-export function Networkconnectivity_PolicyBasedRouteFilter_GetTypes(): DynamicUIProps[] {
+export function networkconnectivity_PolicyBasedRouteFilter_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SrcRange",
-      'The source IP range of outgoing packets that this policy-based route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.',
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "DestRange",
-      'The destination IP range of outgoing packets that this policy-based route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.\n\n- - -',
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "IpProtocol",
+      "ipProtocol",
       "The IP protocol that this policy-based route applies to. Valid values are 'TCP', 'UDP', and 'ALL'. Default is 'ALL'.",
       [],
       false,
@@ -55,10 +39,26 @@ export function Networkconnectivity_PolicyBasedRouteFilter_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProtocolVersion",
+      "protocolVersion",
       "Internet protocol versions this policy-based route applies to.\nPossible values are: `IPV4`.",
       [],
       true,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "srcRange",
+      'The source IP range of outgoing packets that this policy-based route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.',
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "destRange",
+      'The destination IP range of outgoing packets that this policy-based route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.\n\n- - -',
+      [],
+      false,
       true,
     ),
   ];

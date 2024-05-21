@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalAdminClusterClusterOperations {
+export interface gkeonprem_BareMetalAdminClusterClusterOperations {
   // Whether collection of application logs/metrics should be enabled (in addition to system logs/metrics).
-  EnableApplicationLogs?: boolean;
+  enableApplicationLogs?: boolean;
 }
 
-export function Gkeonprem_BareMetalAdminClusterClusterOperations_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalAdminClusterClusterOperations_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableApplicationLogs",
+      "enableApplicationLogs",
       "Whether collection of application logs/metrics should be enabled (in addition to system logs/metrics).",
       [],
       false,

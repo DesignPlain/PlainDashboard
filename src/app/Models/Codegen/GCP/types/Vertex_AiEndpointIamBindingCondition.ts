@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vertex_AiEndpointIamBindingCondition {
+export interface vertex_AiEndpointIamBindingCondition {
   //
-  Title?: string;
+  description?: string;
 
   //
-  Description?: string;
+  expression?: string;
 
   //
-  Expression?: string;
+  title?: string;
 }
 
-export function Vertex_AiEndpointIamBindingCondition_GetTypes(): DynamicUIProps[] {
+export function vertex_AiEndpointIamBindingCondition_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Description", "", [], false, true),
-    new DynamicUIProps(InputType.String, "Expression", "", [], true, true),
-    new DynamicUIProps(InputType.String, "Title", "", [], true, true),
+    new DynamicUIProps(InputType.String, "description", "", [], false, true),
+    new DynamicUIProps(InputType.String, "expression", "", [], true, true),
+    new DynamicUIProps(InputType.String, "title", "", [], true, true),
   ];
 }

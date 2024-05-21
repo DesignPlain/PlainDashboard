@@ -6,10 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Accesscontextmanager_ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromSource {
-  // An AccessLevel resource name that allows resources outside the ServicePerimeter to be accessed from the inside.
-  AccessLevel?: string;
-
+export interface accesscontextmanager_ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromSource {
   /*
 A Google Cloud resource that is allowed to ingress the perimeter.
 Requests from these resources will be allowed to access perimeter data.
@@ -18,23 +15,26 @@ The project may be in any Google Cloud organization, not just the
 organization that the perimeter is defined in. `-` is not allowed, the case
 of allowing all Google Cloud resources only is not supported.
 */
-  Resource?: string;
+  resource?: string;
+
+  // An AccessLevel resource name that allows resources outside the ServicePerimeter to be accessed from the inside.
+  accessLevel?: string;
 }
 
-export function Accesscontextmanager_ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromSource_GetTypes(): DynamicUIProps[] {
+export function accesscontextmanager_ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "AccessLevel",
-      "An AccessLevel resource name that allows resources outside the ServicePerimeter to be accessed from the inside.",
+      "resource",
+      "A Google Cloud resource that is allowed to ingress the perimeter.\nRequests from these resources will be allowed to access perimeter data.\nCurrently only projects are allowed. Format `projects/{project_number}`\nThe project may be in any Google Cloud organization, not just the\norganization that the perimeter is defined in. `*` is not allowed, the case\nof allowing all Google Cloud resources only is not supported.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Resource",
-      "A Google Cloud resource that is allowed to ingress the perimeter.\nRequests from these resources will be allowed to access perimeter data.\nCurrently only projects are allowed. Format `projects/{project_number}`\nThe project may be in any Google Cloud organization, not just the\norganization that the perimeter is defined in. `*` is not allowed, the case\nof allowing all Google Cloud resources only is not supported.",
+      "accessLevel",
+      "An AccessLevel resource name that allows resources outside the ServicePerimeter to be accessed from the inside.",
       [],
       false,
       false,

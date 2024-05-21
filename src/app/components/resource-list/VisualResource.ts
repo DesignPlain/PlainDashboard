@@ -4,6 +4,6 @@ export class VisualResource {
   constructor(
     public Titile: string,
     public ResourceType: ResourceType,
-    public IconSrc: string
+    public iconSrc: string
   ) {}
 }

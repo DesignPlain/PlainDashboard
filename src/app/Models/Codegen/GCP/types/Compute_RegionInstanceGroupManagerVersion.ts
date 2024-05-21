@@ -6,13 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionInstanceGroupManagerVersionTargetSize,
-  Compute_RegionInstanceGroupManagerVersionTargetSize_GetTypes,
-} from "./Compute_RegionInstanceGroupManagerVersionTargetSize";
+  compute_RegionInstanceGroupManagerVersionTargetSize,
+  compute_RegionInstanceGroupManagerVersionTargetSize_GetTypes,
+} from "./compute_RegionInstanceGroupManagerVersionTargetSize";
 
-export interface Compute_RegionInstanceGroupManagerVersion {
+export interface compute_RegionInstanceGroupManagerVersion {
+  // The full URL to an instance template from which all new instances of this version will be created.
+  instanceTemplate?: string;
+
   // Version name.
-  Name?: string;
+  name?: string;
 
   /*
 The number of instances calculated as a fixed number or a percentage depending on the settings. Structure is documented below.
@@ -20,17 +23,22 @@ The number of instances calculated as a fixed number or a percentage depending o
 > Exactly one `version` you specify must not have a `target_size` specified. During a rolling update, the instance group manager will fulfill the `target_size`
 constraints of every other `version`, and any remaining instances will be provisioned with the version where `target_size` is unset.
 */
-  TargetSize?: Compute_RegionInstanceGroupManagerVersionTargetSize;
-
-  // The full URL to an instance template from which all new instances of this version will be created.
-  InstanceTemplate?: string;
+  targetSize?: compute_RegionInstanceGroupManagerVersionTargetSize;
 }
 
-export function Compute_RegionInstanceGroupManagerVersion_GetTypes(): DynamicUIProps[] {
+export function compute_RegionInstanceGroupManagerVersion_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "instanceTemplate",
+      "The full URL to an instance template from which all new instances of this version will be created.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "name",
       "Version name.",
       [],
       false,
@@ -38,18 +46,10 @@ export function Compute_RegionInstanceGroupManagerVersion_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Object,
-      "TargetSize",
+      "targetSize",
       "The number of instances calculated as a fixed number or a percentage depending on the settings. Structure is documented below.\n\n> Exactly one `version` you specify must not have a `target_size` specified. During a rolling update, the instance group manager will fulfill the `target_size`\nconstraints of every other `version`, and any remaining instances will be provisioned with the version where `target_size` is unset.",
-      Compute_RegionInstanceGroupManagerVersionTargetSize_GetTypes(),
+      compute_RegionInstanceGroupManagerVersionTargetSize_GetTypes(),
       false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "InstanceTemplate",
-      "The full URL to an instance template from which all new instances of this version will be created.",
-      [],
-      true,
       false,
     ),
   ];

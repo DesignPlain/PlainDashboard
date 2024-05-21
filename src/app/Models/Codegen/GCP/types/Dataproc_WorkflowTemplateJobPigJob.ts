@@ -6,66 +6,42 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_WorkflowTemplateJobPigJobLoggingConfig,
-  Dataproc_WorkflowTemplateJobPigJobLoggingConfig_GetTypes,
-} from "./Dataproc_WorkflowTemplateJobPigJobLoggingConfig";
+  dataproc_WorkflowTemplateJobPigJobLoggingConfig,
+  dataproc_WorkflowTemplateJobPigJobLoggingConfig_GetTypes,
+} from "./dataproc_WorkflowTemplateJobPigJobLoggingConfig";
 import {
-  Dataproc_WorkflowTemplateJobPigJobQueryList,
-  Dataproc_WorkflowTemplateJobPigJobQueryList_GetTypes,
-} from "./Dataproc_WorkflowTemplateJobPigJobQueryList";
+  dataproc_WorkflowTemplateJobPigJobQueryList,
+  dataproc_WorkflowTemplateJobPigJobQueryList_GetTypes,
+} from "./dataproc_WorkflowTemplateJobPigJobQueryList";
 
-export interface Dataproc_WorkflowTemplateJobPigJob {
-  // A list of queries.
-  QueryList?: Dataproc_WorkflowTemplateJobPigJobQueryList;
-
-  // Mapping of query variable names to values (equivalent to the Pig command: `name=`).
-  ScriptVariables?: Map<string, string>;
-
-  // Whether to continue executing queries if a query fails. The default value is `false`. Setting to `true` can be useful when executing independent parallel queries.
-  ContinueOnFailure?: boolean;
-
-  // HCFS URIs of jar files to add to the CLASSPATH of the Pig Client and Hadoop MapReduce (MR) tasks. Can contain Pig UDFs.
-  JarFileUris?: Array<string>;
-
+export interface dataproc_WorkflowTemplateJobPigJob {
   // The runtime log config for job execution.
-  LoggingConfig?: Dataproc_WorkflowTemplateJobPigJobLoggingConfig;
+  loggingConfig?: dataproc_WorkflowTemplateJobPigJobLoggingConfig;
 
   // A mapping of property names to values, used to configure Pig. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/--site.xml, /etc/pig/conf/pig.properties, and classes in user code.
-  Properties?: Map<string, string>;
+  properties?: Map<string, string>;
 
   // The HCFS URI of the script that contains the Pig queries.
-  QueryFileUri?: string;
+  queryFileUri?: string;
+
+  // A list of queries.
+  queryList?: dataproc_WorkflowTemplateJobPigJobQueryList;
+
+  // Mapping of query variable names to values (equivalent to the Pig command: `name=`).
+  scriptVariables?: Map<string, string>;
+
+  // Whether to continue executing queries if a query fails. The default value is `false`. Setting to `true` can be useful when executing independent parallel queries.
+  continueOnFailure?: boolean;
+
+  // HCFS URIs of jar files to add to the CLASSPATH of the Pig Client and Hadoop MapReduce (MR) tasks. Can contain Pig UDFs.
+  jarFileUris?: Array<string>;
 }
 
-export function Dataproc_WorkflowTemplateJobPigJob_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplateJobPigJob_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "QueryFileUri",
-      "The HCFS URI of the script that contains the Pig queries.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "QueryList",
-      "A list of queries.",
-      Dataproc_WorkflowTemplateJobPigJobQueryList_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Map,
-      "ScriptVariables",
-      "Mapping of query variable names to values (equivalent to the Pig command: `name=`).",
-      InputType_Map_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "ContinueOnFailure",
+      "continueOnFailure",
       "Whether to continue executing queries if a query fails. The default value is `false`. Setting to `true` can be useful when executing independent parallel queries.",
       [],
       false,
@@ -73,7 +49,7 @@ export function Dataproc_WorkflowTemplateJobPigJob_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "JarFileUris",
+      "jarFileUris",
       "HCFS URIs of jar files to add to the CLASSPATH of the Pig Client and Hadoop MapReduce (MR) tasks. Can contain Pig UDFs.",
       InputType_String_GetTypes(),
       false,
@@ -81,16 +57,40 @@ export function Dataproc_WorkflowTemplateJobPigJob_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Object,
-      "LoggingConfig",
+      "loggingConfig",
       "The runtime log config for job execution.",
-      Dataproc_WorkflowTemplateJobPigJobLoggingConfig_GetTypes(),
+      dataproc_WorkflowTemplateJobPigJobLoggingConfig_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Properties",
+      "properties",
       "A mapping of property names to values, used to configure Pig. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site.xml, /etc/pig/conf/pig.properties, and classes in user code.",
+      InputType_Map_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "queryFileUri",
+      "The HCFS URI of the script that contains the Pig queries.",
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "queryList",
+      "A list of queries.",
+      dataproc_WorkflowTemplateJobPigJobQueryList_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Map,
+      "scriptVariables",
+      "Mapping of query variable names to values (equivalent to the Pig command: `name=`).",
       InputType_Map_GetTypes(),
       false,
       true,

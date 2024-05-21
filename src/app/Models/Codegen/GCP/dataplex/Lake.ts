@@ -7,24 +7,38 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataplex_LakeAssetStatus,
-  Dataplex_LakeAssetStatus_GetTypes,
-} from "../types/Dataplex_LakeAssetStatus";
+  dataplex_LakeMetastore,
+  dataplex_LakeMetastore_GetTypes,
+} from "../types/dataplex_LakeMetastore";
 import {
-  Dataplex_LakeMetastore,
-  Dataplex_LakeMetastore_GetTypes,
-} from "../types/Dataplex_LakeMetastore";
+  dataplex_LakeMetastoreStatus,
+  dataplex_LakeMetastoreStatus_GetTypes,
+} from "../types/dataplex_LakeMetastoreStatus";
 import {
-  Dataplex_LakeMetastoreStatus,
-  Dataplex_LakeMetastoreStatus_GetTypes,
-} from "../types/Dataplex_LakeMetastoreStatus";
+  dataplex_LakeAssetStatus,
+  dataplex_LakeAssetStatus_GetTypes,
+} from "../types/dataplex_LakeAssetStatus";
 
 export interface LakeArgs {
+  // Optional. Description of the lake.
+  description?: string;
+
+  // Optional. User friendly display name.
+  displayName?: string;
+
+  /*
+Optional. User-defined labels for the lake.
+
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  labels?: Map<string, string>;
+
   // The location for the resource
-  Location?: string;
+  location?: string;
 
   // Optional. Settings to manage lake and Dataproc Metastore service instance association.
-  Metastore?: Dataplex_LakeMetastore;
+  metastore?: dataplex_LakeMetastore;
 
   /*
 The name of the lake.
@@ -33,48 +47,52 @@ The name of the lake.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   // The project for the resource
-  Project?: string;
-
-  // Optional. Description of the lake.
-  Description?: string;
-
-  // Optional. User friendly display name.
-  DisplayName?: string;
-
-  /*
-Optional. User-defined labels for the lake.
-
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  Labels?: Map<string, string>;
+  project?: string;
 }
 export class Lake extends Resource {
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
+
   /*
 Optional. User-defined labels for the lake.
 
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  public Labels?: Map<string, string>;
-
-  // Output only. Metastore status of the lake.
-  public MetastoreStatuses?: Array<Dataplex_LakeMetastoreStatus>;
-
-  // The project for the resource
-  public Project?: string;
-
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, InputType.String>;
-
-  // Optional. User friendly display name.
-  public DisplayName?: string;
+  public labels?: Map<string, string>;
 
   // The location for the resource
-  public Location?: string;
+  public location?: string;
+
+  // Output only. Metastore status of the lake.
+  public metastoreStatuses?: Array<dataplex_LakeMetastoreStatus>;
+
+  // The combination of labels configured directly on the resource and default labels configured on the provider.
+  public pulumiLabels?: Map<string, string>;
+
+  // The project for the resource
+  public project?: string;
+
+  // Output only. Current state of the lake. Possible values: STATE_UNSPECIFIED, ACTIVE, CREATING, DELETING, ACTION_REQUIRED
+  public state?: string;
+
+  // Output only. System generated globally unique ID for the lake. This ID will be different if the lake is deleted and re-created with the same name.
+  public uid?: string;
+
+  // Output only. Aggregated status of the underlying assets of the lake.
+  public assetStatuses?: Array<dataplex_LakeAssetStatus>;
+
+  // Optional. Description of the lake.
+  public description?: string;
+
+  // Optional. User friendly display name.
+  public displayName?: string;
+
+  // Optional. Settings to manage lake and Dataproc Metastore service instance association.
+  public metastore?: dataplex_LakeMetastore;
 
   /*
 The name of the lake.
@@ -83,40 +101,22 @@ The name of the lake.
 
 - - -
 */
-  public Name?: string;
-
-  // Output only. Current state of the lake. Possible values: STATE_UNSPECIFIED, ACTIVE, CREATING, DELETING, ACTION_REQUIRED
-  public State?: string;
+  public name?: string;
 
   // Output only. The time when the lake was last updated.
-  public UpdateTime?: string;
-
-  // Output only. Aggregated status of the underlying assets of the lake.
-  public AssetStatuses?: Array<Dataplex_LakeAssetStatus>;
-
-  // Optional. Settings to manage lake and Dataproc Metastore service instance association.
-  public Metastore?: Dataplex_LakeMetastore;
+  public updateTime?: string;
 
   // Output only. The time when the lake was created.
-  public CreateTime?: string;
-
-  // The combination of labels configured directly on the resource and default labels configured on the provider.
-  public PulumiLabels?: Map<string, InputType.String>;
+  public createTime?: string;
 
   // Output only. Service account associated with this lake. This service account must be authorized to access or operate on resources managed by the lake.
-  public ServiceAccount?: string;
-
-  // Output only. System generated globally unique ID for the lake. This ID will be different if the lake is deleted and re-created with the same name.
-  public Uid?: string;
-
-  // Optional. Description of the lake.
-  public Description?: string;
+  public serviceAccount?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "Optional. User friendly display name.",
         [],
         false,
@@ -124,7 +124,7 @@ The name of the lake.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "Optional. User-defined labels for the lake.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
@@ -132,7 +132,7 @@ The name of the lake.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location for the resource",
         [],
         true,
@@ -140,15 +140,15 @@ The name of the lake.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Metastore",
+        "metastore",
         "Optional. Settings to manage lake and Dataproc Metastore service instance association.",
-        Dataplex_LakeMetastore_GetTypes(),
+        dataplex_LakeMetastore_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name of the lake.\n\n\n\n- - -",
         [],
         false,
@@ -156,7 +156,7 @@ The name of the lake.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The project for the resource",
         [],
         false,
@@ -164,7 +164,7 @@ The name of the lake.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Optional. Description of the lake.",
         [],
         false,

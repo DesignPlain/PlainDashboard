@@ -6,62 +6,62 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_ServiceTerminalCondition {
-  /*
-(Output)
-A common (service-level) reason for this condition.
-*/
-  Reason?: string;
-
-  /*
-(Output)
-A reason for the revision condition.
-*/
-  RevisionReason?: string;
-
-  /*
-(Output)
-How to interpret failures of this condition, one of Error, Warning, Info
-*/
-  Severity?: string;
-
-  /*
-(Output)
-State of the condition.
-*/
-  State?: string;
-
+export interface cloudrunv2_ServiceTerminalCondition {
   /*
 The allocation type for this traffic target.
 Possible values are: `TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST`, `TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION`.
 */
-  Type?: string;
+  type?: string;
 
   /*
 (Output)
 A reason for the execution condition.
 */
-  ExecutionReason?: string;
+  executionReason?: string;
 
   /*
 (Output)
 Last time the condition transitioned from one status to another.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  LastTransitionTime?: string;
+  lastTransitionTime?: string;
 
   /*
 (Output)
 Human readable message indicating details about the current status.
 */
-  Message?: string;
+  message?: string;
+
+  /*
+(Output)
+A common (service-level) reason for this condition.
+*/
+  reason?: string;
+
+  /*
+(Output)
+A reason for the revision condition.
+*/
+  revisionReason?: string;
+
+  /*
+(Output)
+How to interpret failures of this condition, one of Error, Warning, Info
+*/
+  severity?: string;
+
+  /*
+(Output)
+State of the condition.
+*/
+  state?: string;
 }
 
-export function Cloudrunv2_ServiceTerminalCondition_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_ServiceTerminalCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "(Output)\nState of the condition.",
       [],
       false,
@@ -69,7 +69,7 @@ export function Cloudrunv2_ServiceTerminalCondition_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "The allocation type for this traffic target.\nPossible values are: `TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST`, `TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION`.",
       [],
       false,
@@ -77,7 +77,7 @@ export function Cloudrunv2_ServiceTerminalCondition_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "ExecutionReason",
+      "executionReason",
       "(Output)\nA reason for the execution condition.",
       [],
       false,
@@ -85,7 +85,7 @@ export function Cloudrunv2_ServiceTerminalCondition_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "LastTransitionTime",
+      "lastTransitionTime",
       '(Output)\nLast time the condition transitioned from one status to another.\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
       [],
       false,
@@ -93,7 +93,7 @@ export function Cloudrunv2_ServiceTerminalCondition_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "Message",
+      "message",
       "(Output)\nHuman readable message indicating details about the current status.",
       [],
       false,
@@ -101,7 +101,7 @@ export function Cloudrunv2_ServiceTerminalCondition_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "Reason",
+      "reason",
       "(Output)\nA common (service-level) reason for this condition.",
       [],
       false,
@@ -109,7 +109,7 @@ export function Cloudrunv2_ServiceTerminalCondition_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "RevisionReason",
+      "revisionReason",
       "(Output)\nA reason for the revision condition.",
       [],
       false,
@@ -117,7 +117,7 @@ export function Cloudrunv2_ServiceTerminalCondition_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "Severity",
+      "severity",
       "(Output)\nHow to interpret failures of this condition, one of Error, Warning, Info",
       [],
       false,

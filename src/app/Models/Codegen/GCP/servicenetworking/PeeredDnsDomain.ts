@@ -8,45 +8,53 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface PeeredDnsDomainArgs {
-  // The network in the consumer project.
-  Network?: string;
-
-  // The producer project number. If not provided, the provider project is used.
-  Project?: string;
-
   // Private service connection between service and consumer network, defaults to `servicenetworking.googleapis.com`
-  Service?: string;
+  service?: string;
 
   // The DNS domain suffix of the peered DNS domain. Make sure to suffix with a `.` (dot).
-  DnsSuffix?: string;
+  dnsSuffix?: string;
 
   // Internal name used for the peered DNS domain.
-  Name?: string;
+  name?: string;
+
+  // The network in the consumer project.
+  network?: string;
+
+  // The producer project number. If not provided, the provider project is used.
+  project?: string;
 }
 export class PeeredDnsDomain extends Resource {
-  // The DNS domain suffix of the peered DNS domain. Make sure to suffix with a `.` (dot).
-  public DnsSuffix?: string;
-
-  // Internal name used for the peered DNS domain.
-  public Name?: string;
-
-  // The network in the consumer project.
-  public Network?: string;
-
-  // an identifier for the resource with format `services/{{service}}/projects/{{project}}/global/networks/{{network}}`
-  public Parent?: string;
-
   // The producer project number. If not provided, the provider project is used.
-  public Project?: string;
+  public project?: string;
 
   // Private service connection between service and consumer network, defaults to `servicenetworking.googleapis.com`
-  public Service?: string;
+  public service?: string;
+
+  // The DNS domain suffix of the peered DNS domain. Make sure to suffix with a `.` (dot).
+  public dnsSuffix?: string;
+
+  // Internal name used for the peered DNS domain.
+  public name?: string;
+
+  // The network in the consumer project.
+  public network?: string;
+
+  // an identifier for the resource with format `services/{{service}}/projects/{{project}}/global/networks/{{network}}`
+  public parent?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "DnsSuffix",
+        "service",
+        "Private service connection between service and consumer network, defaults to `servicenetworking.googleapis.com`",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "dnsSuffix",
         "The DNS domain suffix of the peered DNS domain. Make sure to suffix with a `.` (dot).",
         [],
         true,
@@ -54,7 +62,7 @@ export class PeeredDnsDomain extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Internal name used for the peered DNS domain.",
         [],
         false,
@@ -62,7 +70,7 @@ export class PeeredDnsDomain extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "Network",
+        "network",
         "The network in the consumer project.",
         [],
         true,
@@ -70,16 +78,8 @@ export class PeeredDnsDomain extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The producer project number. If not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Service",
-        "Private service connection between service and consumer network, defaults to `servicenetworking.googleapis.com`",
         [],
         false,
         true,

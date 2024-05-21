@@ -16,13 +16,13 @@ disabled rather than deleted. Default is `DELETE`. Possible values are:
 - DISABLE
 - ABANDON
 */
-  DeletionPolicy?: string;
+  deletionPolicy?: string;
 
   // The current state of the SecretVersion.
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // If set to 'true', the secret data is expected to be base64-encoded string and would be sent as is.
-  IsSecretDataBase64?: boolean;
+  isSecretDataBase64?: boolean;
 
   /*
 Secret Manager secret resource
@@ -30,46 +30,32 @@ Secret Manager secret resource
 
 - - -
 */
-  Secret?: string;
+  secret?: string;
 
   /*
 The secret data. Must be no larger than 64KiB.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  SecretData?: string;
+  secretData?: string;
 }
 export class SecretVersion extends Resource {
-  // The current state of the SecretVersion.
-  public Enabled?: boolean;
-
-  /*
-Secret Manager secret resource
-
-
-- - -
-*/
-  public Secret?: string;
-
-  // The version of the Secret.
-  public Version?: string;
-
-  // The time at which the Secret was created.
-  public CreateTime?: string;
-
-  // The time at which the Secret was destroyed. Only present if state is DESTROYED.
-  public DestroyTime?: string;
-
   /*
 The resource name of the SecretVersion. Format:
 `projects/{{project}}/secrets/{{secret_id}}/versions/{{version}}`
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The secret data. Must be no larger than 64KiB.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  public SecretData?: string;
+  public secretData?: string;
+
+  // The version of the Secret.
+  public version?: string;
+
+  // The time at which the Secret was created.
+  public createTime?: string;
 
   /*
 The deletion policy for the secret version. Setting `ABANDON` allows the resource
@@ -79,16 +65,30 @@ disabled rather than deleted. Default is `DELETE`. Possible values are:
 - DISABLE
 - ABANDON
 */
-  public DeletionPolicy?: string;
+  public deletionPolicy?: string;
 
   // If set to 'true', the secret data is expected to be base64-encoded string and would be sent as is.
-  public IsSecretDataBase64?: boolean;
+  public isSecretDataBase64?: boolean;
+
+  // The time at which the Secret was destroyed. Only present if state is DESTROYED.
+  public destroyTime?: string;
+
+  // The current state of the SecretVersion.
+  public enabled?: boolean;
+
+  /*
+Secret Manager secret resource
+
+
+- - -
+*/
+  public secret?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Secret",
+        "secret",
         "Secret Manager secret resource\n\n\n- - -",
         [],
         true,
@@ -96,7 +96,7 @@ disabled rather than deleted. Default is `DELETE`. Possible values are:
       ),
       new DynamicUIProps(
         InputType.String,
-        "SecretData",
+        "secretData",
         "The secret data. Must be no larger than 64KiB.\n**Note**: This property is sensitive and will not be displayed in the plan.",
         [],
         true,
@@ -104,7 +104,7 @@ disabled rather than deleted. Default is `DELETE`. Possible values are:
       ),
       new DynamicUIProps(
         InputType.String,
-        "DeletionPolicy",
+        "deletionPolicy",
         "The deletion policy for the secret version. Setting `ABANDON` allows the resource\nto be abandoned rather than deleted. Setting `DISABLE` allows the resource to be\ndisabled rather than deleted. Default is `DELETE`. Possible values are:\n* DELETE\n* DISABLE\n* ABANDON",
         [],
         false,
@@ -112,7 +112,7 @@ disabled rather than deleted. Default is `DELETE`. Possible values are:
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "Enabled",
+        "enabled",
         "The current state of the SecretVersion.",
         [],
         false,
@@ -120,7 +120,7 @@ disabled rather than deleted. Default is `DELETE`. Possible values are:
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "IsSecretDataBase64",
+        "isSecretDataBase64",
         "If set to 'true', the secret data is expected to be base64-encoded string and would be sent as is.",
         [],
         false,

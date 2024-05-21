@@ -6,37 +6,45 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudtasks_QueueAppEngineRoutingOverride {
-  /*
-App service.
-By default, the task is sent to the service which is the default service when the task is attempted.
-*/
-  Service?: string;
-
-  /*
-App version.
-By default, the task is sent to the version which is the default version when the task is attempted.
-*/
-  Version?: string;
-
+export interface cloudtasks_QueueAppEngineRoutingOverride {
   /*
 (Output)
 The host that the task is sent to.
 */
-  Host?: string;
+  host?: string;
 
   /*
 App instance.
 By default, the task is sent to an instance which is available when the task is attempted.
 */
-  Instance?: string;
+  instance?: string;
+
+  /*
+App service.
+By default, the task is sent to the service which is the default service when the task is attempted.
+*/
+  service?: string;
+
+  /*
+App version.
+By default, the task is sent to the version which is the default version when the task is attempted.
+*/
+  version?: string;
 }
 
-export function Cloudtasks_QueueAppEngineRoutingOverride_GetTypes(): DynamicUIProps[] {
+export function cloudtasks_QueueAppEngineRoutingOverride_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Service",
+      "instance",
+      "App instance.\nBy default, the task is sent to an instance which is available when the task is attempted.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "service",
       "App service.\nBy default, the task is sent to the service which is the default service when the task is attempted.",
       [],
       false,
@@ -44,7 +52,7 @@ export function Cloudtasks_QueueAppEngineRoutingOverride_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "Version",
+      "version",
       "App version.\nBy default, the task is sent to the version which is the default version when the task is attempted.",
       [],
       false,
@@ -52,16 +60,8 @@ export function Cloudtasks_QueueAppEngineRoutingOverride_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "Host",
+      "host",
       "(Output)\nThe host that the task is sent to.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Instance",
-      "App instance.\nBy default, the task is sent to an instance which is available when the task is attempted.",
       [],
       false,
       false,

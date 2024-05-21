@@ -6,40 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterStatusCondition {
+export interface gkeonprem_BareMetalClusterStatusCondition {
   /*
 (Output)
 Last time the condition transit from one status to another.
 */
-  LastTransitionTime?: string;
+  lastTransitionTime?: string;
 
   // Human-readable message indicating details about last transition.
-  Message?: string;
+  message?: string;
 
   /*
 (Output)
 A human-readable message of the check failure.
 */
-  Reason?: string;
+  reason?: string;
 
   /*
 (Output)
 The lifecycle state of the condition.
 */
-  State?: string;
+  state?: string;
 
   /*
 Type of the condition.
 (e.g., ClusterRunning, NodePoolRunning or ServerSidePreflightReady)
 */
-  Type?: string;
+  type?: string;
 }
 
-export function Gkeonprem_BareMetalClusterStatusCondition_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterStatusCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "LastTransitionTime",
+      "lastTransitionTime",
       "(Output)\nLast time the condition transit from one status to another.",
       [],
       false,
@@ -47,7 +47,7 @@ export function Gkeonprem_BareMetalClusterStatusCondition_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "Message",
+      "message",
       "Human-readable message indicating details about last transition.",
       [],
       false,
@@ -55,7 +55,7 @@ export function Gkeonprem_BareMetalClusterStatusCondition_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "Reason",
+      "reason",
       "(Output)\nA human-readable message of the check failure.",
       [],
       false,
@@ -63,7 +63,7 @@ export function Gkeonprem_BareMetalClusterStatusCondition_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "(Output)\nThe lifecycle state of the condition.",
       [],
       false,
@@ -71,7 +71,7 @@ export function Gkeonprem_BareMetalClusterStatusCondition_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "Type of the condition.\n(e.g., ClusterRunning, NodePoolRunning or ServerSidePreflightReady)",
       [],
       false,

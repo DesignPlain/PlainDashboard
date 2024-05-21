@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dns_ManagedZoneCloudLoggingConfig {
+export interface dns_ManagedZoneCloudLoggingConfig {
   // If set, enable query logging for this ManagedZone. False by default, making logging opt-in.
-  EnableLogging?: boolean;
+  enableLogging?: boolean;
 }
 
-export function Dns_ManagedZoneCloudLoggingConfig_GetTypes(): DynamicUIProps[] {
+export function dns_ManagedZoneCloudLoggingConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableLogging",
+      "enableLogging",
       "If set, enable query logging for this ManagedZone. False by default, making logging opt-in.",
       [],
       true,

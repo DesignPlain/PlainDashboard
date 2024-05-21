@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrun_ServiceTemplateSpecContainerEnvValueFromSecretKeyRef,
-  Cloudrun_ServiceTemplateSpecContainerEnvValueFromSecretKeyRef_GetTypes,
-} from "./Cloudrun_ServiceTemplateSpecContainerEnvValueFromSecretKeyRef";
+  cloudrun_ServiceTemplateSpecContainerEnvValueFromSecretKeyRef,
+  cloudrun_ServiceTemplateSpecContainerEnvValueFromSecretKeyRef_GetTypes,
+} from "./cloudrun_ServiceTemplateSpecContainerEnvValueFromSecretKeyRef";
 
-export interface Cloudrun_ServiceTemplateSpecContainerEnvValueFrom {
+export interface cloudrun_ServiceTemplateSpecContainerEnvValueFrom {
   /*
 Selects a key (version) of a secret in Secret Manager.
 Structure is documented below.
 */
-  SecretKeyRef?: Cloudrun_ServiceTemplateSpecContainerEnvValueFromSecretKeyRef;
+  secretKeyRef?: cloudrun_ServiceTemplateSpecContainerEnvValueFromSecretKeyRef;
 }
 
-export function Cloudrun_ServiceTemplateSpecContainerEnvValueFrom_GetTypes(): DynamicUIProps[] {
+export function cloudrun_ServiceTemplateSpecContainerEnvValueFrom_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "SecretKeyRef",
+      "secretKeyRef",
       "Selects a key (version) of a secret in Secret Manager.\nStructure is documented below.",
-      Cloudrun_ServiceTemplateSpecContainerEnvValueFromSecretKeyRef_GetTypes(),
+      cloudrun_ServiceTemplateSpecContainerEnvValueFromSecretKeyRef_GetTypes(),
       true,
       false,
     ),

@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_ClusterNotificationConfigPubsubFilter,
-  Container_ClusterNotificationConfigPubsubFilter_GetTypes,
-} from "./Container_ClusterNotificationConfigPubsubFilter";
+  container_ClusterNotificationConfigPubsubFilter,
+  container_ClusterNotificationConfigPubsubFilter_GetTypes,
+} from "./container_ClusterNotificationConfigPubsubFilter";
 
-export interface Container_ClusterNotificationConfigPubsub {
+export interface container_ClusterNotificationConfigPubsub {
   // Whether or not the notification config is enabled
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // Choose what type of notifications you want to receive. If no filters are applied, you'll receive all notification types. Structure is documented below.
-  Filter?: Container_ClusterNotificationConfigPubsubFilter;
+  filter?: container_ClusterNotificationConfigPubsubFilter;
 
   // The pubsub topic to push upgrade notifications to. Must be in the same project as the cluster. Must be in the format: `projects/{project}/topics/{topic}`.
-  Topic?: string;
+  topic?: string;
 }
 
-export function Container_ClusterNotificationConfigPubsub_GetTypes(): DynamicUIProps[] {
+export function container_ClusterNotificationConfigPubsub_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Topic",
+      "topic",
       "The pubsub topic to push upgrade notifications to. Must be in the same project as the cluster. Must be in the format: `projects/{project}/topics/{topic}`.",
       [],
       false,
@@ -33,7 +33,7 @@ export function Container_ClusterNotificationConfigPubsub_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether or not the notification config is enabled",
       [],
       true,
@@ -41,9 +41,9 @@ export function Container_ClusterNotificationConfigPubsub_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Filter",
+      "filter",
       "Choose what type of notifications you want to receive. If no filters are applied, you'll receive all notification types. Structure is documented below.",
-      Container_ClusterNotificationConfigPubsubFilter_GetTypes(),
+      container_ClusterNotificationConfigPubsubFilter_GetTypes(),
       false,
       false,
     ),

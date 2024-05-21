@@ -6,117 +6,85 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_SecurityPolicyRuleHeaderAction,
-  Compute_SecurityPolicyRuleHeaderAction_GetTypes,
-} from "./Compute_SecurityPolicyRuleHeaderAction";
+  compute_SecurityPolicyRuleMatch,
+  compute_SecurityPolicyRuleMatch_GetTypes,
+} from "./compute_SecurityPolicyRuleMatch";
 import {
-  Compute_SecurityPolicyRuleRateLimitOptions,
-  Compute_SecurityPolicyRuleRateLimitOptions_GetTypes,
-} from "./Compute_SecurityPolicyRuleRateLimitOptions";
+  compute_SecurityPolicyRulePreconfiguredWafConfig,
+  compute_SecurityPolicyRulePreconfiguredWafConfig_GetTypes,
+} from "./compute_SecurityPolicyRulePreconfiguredWafConfig";
 import {
-  Compute_SecurityPolicyRuleMatch,
-  Compute_SecurityPolicyRuleMatch_GetTypes,
-} from "./Compute_SecurityPolicyRuleMatch";
+  compute_SecurityPolicyRuleRedirectOptions,
+  compute_SecurityPolicyRuleRedirectOptions_GetTypes,
+} from "./compute_SecurityPolicyRuleRedirectOptions";
 import {
-  Compute_SecurityPolicyRulePreconfiguredWafConfig,
-  Compute_SecurityPolicyRulePreconfiguredWafConfig_GetTypes,
-} from "./Compute_SecurityPolicyRulePreconfiguredWafConfig";
+  compute_SecurityPolicyRuleHeaderAction,
+  compute_SecurityPolicyRuleHeaderAction_GetTypes,
+} from "./compute_SecurityPolicyRuleHeaderAction";
 import {
-  Compute_SecurityPolicyRuleRedirectOptions,
-  Compute_SecurityPolicyRuleRedirectOptions_GetTypes,
-} from "./Compute_SecurityPolicyRuleRedirectOptions";
+  compute_SecurityPolicyRuleRateLimitOptions,
+  compute_SecurityPolicyRuleRateLimitOptions_GetTypes,
+} from "./compute_SecurityPolicyRuleRateLimitOptions";
 
-export interface Compute_SecurityPolicyRule {
-  // Additional actions that are performed on headers. Structure is documented below.
-  HeaderAction?: Compute_SecurityPolicyRuleHeaderAction;
+export interface compute_SecurityPolicyRule {
+  // Action to take when `match` matches the request. Valid values:
+  action?: string;
 
-  // Must be specified if the `action` is `rate_based_ban` or `throttle`. Cannot be specified for other actions. Structure is documented below.
-  RateLimitOptions?: Compute_SecurityPolicyRuleRateLimitOptions;
+  // An optional description of this rule. Max size is 64.
+  description?: string;
 
   /*
 A match condition that incoming traffic is evaluated against.
 If it evaluates to true, the corresponding `action` is enforced. Structure is documented below.
 */
-  Match?: Compute_SecurityPolicyRuleMatch;
+  match?: compute_SecurityPolicyRuleMatch;
 
   // Preconfigured WAF configuration to be applied for the rule. If the rule does not evaluate preconfigured WAF rules, i.e., if `evaluatePreconfiguredWaf()` is not used, this field will have no effect. Structure is documented below.
-  PreconfiguredWafConfig?: Compute_SecurityPolicyRulePreconfiguredWafConfig;
+  preconfiguredWafConfig?: compute_SecurityPolicyRulePreconfiguredWafConfig;
+
+  // Can be specified if the `action` is `redirect`. Cannot be specified for other actions. Structure is documented below.
+  redirectOptions?: compute_SecurityPolicyRuleRedirectOptions;
+
+  // Additional actions that are performed on headers. Structure is documented below.
+  headerAction?: compute_SecurityPolicyRuleHeaderAction;
 
   /*
 When set to true, the `action` specified above is not enforced.
 Stackdriver logs for requests that trigger a preview action are annotated as such.
 */
-  Preview?: boolean;
+  preview?: boolean;
 
   /*
 An unique positive integer indicating the priority of evaluation for a rule.
 Rules are evaluated from highest priority (lowest numerically) to lowest priority (highest numerically) in order.
 */
-  Priority?: number;
+  priority?: number;
 
-  // Can be specified if the `action` is `redirect`. Cannot be specified for other actions. Structure is documented below.
-  RedirectOptions?: Compute_SecurityPolicyRuleRedirectOptions;
-
-  // Action to take when `match` matches the request. Valid values:
-  Action?: string;
-
-  // An optional description of this rule. Max size is 64.
-  Description?: string;
+  // Must be specified if the `action` is `rate_based_ban` or `throttle`. Cannot be specified for other actions. Structure is documented below.
+  rateLimitOptions?: compute_SecurityPolicyRuleRateLimitOptions;
 }
 
-export function Compute_SecurityPolicyRule_GetTypes(): DynamicUIProps[] {
+export function compute_SecurityPolicyRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "RateLimitOptions",
-      "Must be specified if the `action` is `rate_based_ban` or `throttle`. Cannot be specified for other actions. Structure is documented below.",
-      Compute_SecurityPolicyRuleRateLimitOptions_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "Match",
-      "A match condition that incoming traffic is evaluated against.\nIf it evaluates to true, the corresponding `action` is enforced. Structure is documented below.",
-      Compute_SecurityPolicyRuleMatch_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "PreconfiguredWafConfig",
+      "preconfiguredWafConfig",
       "Preconfigured WAF configuration to be applied for the rule. If the rule does not evaluate preconfigured WAF rules, i.e., if `evaluatePreconfiguredWaf()` is not used, this field will have no effect. Structure is documented below.",
-      Compute_SecurityPolicyRulePreconfiguredWafConfig_GetTypes(),
+      compute_SecurityPolicyRulePreconfiguredWafConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "RedirectOptions",
-      "Can be specified if the `action` is `redirect`. Cannot be specified for other actions. Structure is documented below.",
-      Compute_SecurityPolicyRuleRedirectOptions_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Action",
-      "Action to take when `match` matches the request. Valid values:",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "HeaderAction",
+      "headerAction",
       "Additional actions that are performed on headers. Structure is documented below.",
-      Compute_SecurityPolicyRuleHeaderAction_GetTypes(),
+      compute_SecurityPolicyRuleHeaderAction_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Preview",
+      "preview",
       "When set to true, the `action` specified above is not enforced.\nStackdriver logs for requests that trigger a preview action are annotated as such.",
       [],
       false,
@@ -124,17 +92,49 @@ export function Compute_SecurityPolicyRule_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Priority",
+      "priority",
       "An unique positive integer indicating the priority of evaluation for a rule.\nRules are evaluated from highest priority (lowest numerically) to lowest priority (highest numerically) in order.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
+      InputType.Object,
+      "rateLimitOptions",
+      "Must be specified if the `action` is `rate_based_ban` or `throttle`. Cannot be specified for other actions. Structure is documented below.",
+      compute_SecurityPolicyRuleRateLimitOptions_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "Description",
+      "action",
+      "Action to take when `match` matches the request. Valid values:",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "description",
       "An optional description of this rule. Max size is 64.",
       [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "match",
+      "A match condition that incoming traffic is evaluated against.\nIf it evaluates to true, the corresponding `action` is enforced. Structure is documented below.",
+      compute_SecurityPolicyRuleMatch_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "redirectOptions",
+      "Can be specified if the `action` is `redirect`. Cannot be specified for other actions. Structure is documented below.",
+      compute_SecurityPolicyRuleRedirectOptions_GetTypes(),
       false,
       false,
     ),

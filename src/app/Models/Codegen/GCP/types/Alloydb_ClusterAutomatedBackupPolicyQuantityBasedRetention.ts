@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Alloydb_ClusterAutomatedBackupPolicyQuantityBasedRetention {
+export interface alloydb_ClusterAutomatedBackupPolicyQuantityBasedRetention {
   // The number of backups to retain.
-  Count?: number;
+  count?: number;
 }
 
-export function Alloydb_ClusterAutomatedBackupPolicyQuantityBasedRetention_GetTypes(): DynamicUIProps[] {
+export function alloydb_ClusterAutomatedBackupPolicyQuantityBasedRetention_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Count",
+      "count",
       "The number of backups to retain.",
       [],
       false,

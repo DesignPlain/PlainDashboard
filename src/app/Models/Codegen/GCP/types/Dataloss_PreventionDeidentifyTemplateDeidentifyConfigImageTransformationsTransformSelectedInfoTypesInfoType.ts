@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore";
 
-export interface Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoType {
-  // Version name for this InfoType.
-  Version?: string;
-
+export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoType {
   // Name of the information type.
-  Name?: string;
+  name?: string;
 
   /*
 Optional custom sensitivity for this InfoType. This only applies to data profiling.
 Structure is documented below.
 */
-  SensitivityScore?: Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore;
+  sensitivityScore?: dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore;
+
+  // Version name for this InfoType.
+  version?: string;
 }
 
-export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoType_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoType_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Version",
+      "version",
       "Version name for this InfoType.",
       [],
       false,
@@ -36,7 +36,7 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransf
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Name of the information type.",
       [],
       true,
@@ -44,9 +44,9 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransf
     ),
     new DynamicUIProps(
       InputType.Object,
-      "SensitivityScore",
+      "sensitivityScore",
       "Optional custom sensitivity for this InfoType. This only applies to data profiling.\nStructure is documented below.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore_GetTypes(),
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore_GetTypes(),
       false,
       false,
     ),

@@ -6,44 +6,44 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressFrom,
-  Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressFrom_GetTypes,
-} from "./Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressFrom";
+  accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressTo,
+  accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressTo_GetTypes,
+} from "./accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressTo";
 import {
-  Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressTo,
-  Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressTo_GetTypes,
-} from "./Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressTo";
+  accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressFrom,
+  accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressFrom_GetTypes,
+} from "./accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressFrom";
 
-export interface Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicy {
+export interface accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicy {
   /*
 Defines conditions on the source of a request causing this `EgressPolicy` to apply.
 Structure is documented below.
 */
-  EgressFrom?: Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressFrom;
+  egressFrom?: accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressFrom;
 
   /*
 Defines the conditions on the `ApiOperation` and destination resources that
 cause this `EgressPolicy` to apply.
 Structure is documented below.
 */
-  EgressTo?: Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressTo;
+  egressTo?: accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressTo;
 }
 
-export function Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicy_GetTypes(): DynamicUIProps[] {
+export function accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "EgressFrom",
-      "Defines conditions on the source of a request causing this `EgressPolicy` to apply.\nStructure is documented below.",
-      Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressFrom_GetTypes(),
+      "egressTo",
+      "Defines the conditions on the `ApiOperation` and destination resources that\ncause this `EgressPolicy` to apply.\nStructure is documented below.",
+      accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressTo_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "EgressTo",
-      "Defines the conditions on the `ApiOperation` and destination resources that\ncause this `EgressPolicy` to apply.\nStructure is documented below.",
-      Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressTo_GetTypes(),
+      "egressFrom",
+      "Defines conditions on the source of a request causing this `EgressPolicy` to apply.\nStructure is documented below.",
+      accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressFrom_GetTypes(),
       false,
       false,
     ),

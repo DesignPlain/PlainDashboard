@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FeatureIamMemberCondition {
+export interface gkehub_FeatureIamMemberCondition {
   //
-  Description?: string;
+  title?: string;
 
   //
-  Expression?: string;
+  description?: string;
 
   //
-  Title?: string;
+  expression?: string;
 }
 
-export function Gkehub_FeatureIamMemberCondition_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureIamMemberCondition_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Description", "", [], false, true),
-    new DynamicUIProps(InputType.String, "Expression", "", [], true, true),
-    new DynamicUIProps(InputType.String, "Title", "", [], true, true),
+    new DynamicUIProps(InputType.String, "title", "", [], true, true),
+    new DynamicUIProps(InputType.String, "description", "", [], false, true),
+    new DynamicUIProps(InputType.String, "expression", "", [], true, true),
   ];
 }

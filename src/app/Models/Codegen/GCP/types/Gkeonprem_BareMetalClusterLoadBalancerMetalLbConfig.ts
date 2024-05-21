@@ -6,46 +6,46 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfig,
-  Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfig_GetTypes,
-} from "./Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfig";
+  gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigAddressPool,
+  gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigAddressPool_GetTypes,
+} from "./gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigAddressPool";
 import {
-  Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigAddressPool,
-  Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigAddressPool_GetTypes,
-} from "./Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigAddressPool";
+  gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfig,
+  gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfig_GetTypes,
+} from "./gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfig";
 
-export interface Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfig {
-  /*
-Specifies the load balancer's node pool configuration.
-Structure is documented below.
-*/
-  LoadBalancerNodePoolConfig?: Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfig;
-
+export interface gkeonprem_BareMetalClusterLoadBalancerMetalLbConfig {
   /*
 AddressPools is a list of non-overlapping IP pools used by load balancer
 typed services. All addresses must be routable to load balancer nodes.
 IngressVIP must be included in the pools.
 Structure is documented below.
 */
-  AddressPools?: Array<Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigAddressPool>;
+  addressPools?: Array<gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigAddressPool>;
+
+  /*
+Specifies the load balancer's node pool configuration.
+Structure is documented below.
+*/
+  loadBalancerNodePoolConfig?: gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfig;
 }
 
-export function Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterLoadBalancerMetalLbConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "LoadBalancerNodePoolConfig",
-      "Specifies the load balancer's node pool configuration.\nStructure is documented below.",
-      Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfig_GetTypes(),
-      false,
+      InputType.Array,
+      "addressPools",
+      "AddressPools is a list of non-overlapping IP pools used by load balancer\ntyped services. All addresses must be routable to load balancer nodes.\nIngressVIP must be included in the pools.\nStructure is documented below.",
+      gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigAddressPool_GetTypes(),
+      true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "AddressPools",
-      "AddressPools is a list of non-overlapping IP pools used by load balancer\ntyped services. All addresses must be routable to load balancer nodes.\nIngressVIP must be included in the pools.\nStructure is documented below.",
-      Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigAddressPool_GetTypes(),
-      true,
+      InputType.Object,
+      "loadBalancerNodePoolConfig",
+      "Specifies the load balancer's node pool configuration.\nStructure is documented below.",
+      gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfig_GetTypes(),
+      false,
       false,
     ),
   ];

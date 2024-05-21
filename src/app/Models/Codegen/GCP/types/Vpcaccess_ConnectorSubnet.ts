@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vpcaccess_ConnectorSubnet {
+export interface vpcaccess_ConnectorSubnet {
   /*
 Subnet name (relative, not fully qualified). E.g. if the full subnet selfLink is
 https://compute.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetName} the correct input for this field would be {subnetName}"
 */
-  Name?: string;
+  name?: string;
 
   // Project in which the subnet exists. If not set, this project is assumed to be the project for which the connector create request was issued.
-  ProjectId?: string;
+  projectId?: string;
 }
 
-export function Vpcaccess_ConnectorSubnet_GetTypes(): DynamicUIProps[] {
+export function vpcaccess_ConnectorSubnet_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       'Subnet name (relative, not fully qualified). E.g. if the full subnet selfLink is\nhttps://compute.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetName} the correct input for this field would be {subnetName}"',
       [],
       false,
@@ -29,7 +29,7 @@ export function Vpcaccess_ConnectorSubnet_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProjectId",
+      "projectId",
       "Project in which the subnet exists. If not set, this project is assumed to be the project for which the connector create request was issued.",
       [],
       false,

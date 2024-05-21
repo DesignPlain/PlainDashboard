@@ -7,75 +7,59 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Binaryauthorization_AttestorAttestationAuthorityNote,
-  Binaryauthorization_AttestorAttestationAuthorityNote_GetTypes,
-} from "../types/Binaryauthorization_AttestorAttestationAuthorityNote";
+  binaryauthorization_AttestorAttestationAuthorityNote,
+  binaryauthorization_AttestorAttestationAuthorityNote_GetTypes,
+} from "../types/binaryauthorization_AttestorAttestationAuthorityNote";
 
 export interface AttestorArgs {
   /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  /*
 A Container Analysis ATTESTATION_AUTHORITY Note, created by the user.
 Structure is documented below.
 */
-  AttestationAuthorityNote?: Binaryauthorization_AttestorAttestationAuthorityNote;
+  attestationAuthorityNote?: binaryauthorization_AttestorAttestationAuthorityNote;
 
   /*
 A descriptive comment. This field may be updated. The field may be
 displayed in chooser dialogs.
 */
-  Description?: string;
+  description?: string;
 
   // The resource name.
-  Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
+  name?: string;
 }
 export class Attestor extends Resource {
   /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  /*
 A Container Analysis ATTESTATION_AUTHORITY Note, created by the user.
 Structure is documented below.
 */
-  public AttestationAuthorityNote?: Binaryauthorization_AttestorAttestationAuthorityNote;
+  public attestationAuthorityNote?: binaryauthorization_AttestorAttestationAuthorityNote;
 
   /*
 A descriptive comment. This field may be updated. The field may be
 displayed in chooser dialogs.
 */
-  public Description?: string;
+  public description?: string;
 
   // The resource name.
-  public Name?: string;
+  public name?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Object,
-        "AttestationAuthorityNote",
-        "A Container Analysis ATTESTATION_AUTHORITY Note, created by the user.\nStructure is documented below.",
-        Binaryauthorization_AttestorAttestationAuthorityNote_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Description",
-        "A descriptive comment. This field may be updated. The field may be\ndisplayed in chooser dialogs.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
+        "name",
         "The resource name.",
         [],
         false,
@@ -83,11 +67,27 @@ displayed in chooser dialogs.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "attestationAuthorityNote",
+        "A Container Analysis ATTESTATION_AUTHORITY Note, created by the user.\nStructure is documented below.",
+        binaryauthorization_AttestorAttestationAuthorityNote_GetTypes(),
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "A descriptive comment. This field may be updated. The field may be\ndisplayed in chooser dialogs.",
+        [],
+        false,
+        false,
       ),
     ];
   }

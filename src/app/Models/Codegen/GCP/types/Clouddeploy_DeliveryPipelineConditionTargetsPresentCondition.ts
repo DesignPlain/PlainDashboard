@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Clouddeploy_DeliveryPipelineConditionTargetsPresentCondition {
-  // True if there aren't any missing Targets.
-  Status?: boolean;
-
+export interface clouddeploy_DeliveryPipelineConditionTargetsPresentCondition {
   // Output only. Most recent time at which the pipeline was updated.
-  UpdateTime?: string;
+  updateTime?: string;
 
   // The list of Target names that are missing. For example, projects/{project_id}/locations/{location_name}/targets/{target_name}.
-  MissingTargets?: Array<string>;
+  missingTargets?: Array<string>;
+
+  // True if there aren't any missing Targets.
+  status?: boolean;
 }
 
-export function Clouddeploy_DeliveryPipelineConditionTargetsPresentCondition_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_DeliveryPipelineConditionTargetsPresentCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "updateTime",
+      "Output only. Most recent time at which the pipeline was updated.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Array,
-      "MissingTargets",
+      "missingTargets",
       "The list of Target names that are missing. For example, projects/{project_id}/locations/{location_name}/targets/{target_name}.",
       InputType_String_GetTypes(),
       false,
@@ -29,16 +37,8 @@ export function Clouddeploy_DeliveryPipelineConditionTargetsPresentCondition_Get
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Status",
+      "status",
       "True if there aren't any missing Targets.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "UpdateTime",
-      "Output only. Most recent time at which the pipeline was updated.",
       [],
       false,
       false,

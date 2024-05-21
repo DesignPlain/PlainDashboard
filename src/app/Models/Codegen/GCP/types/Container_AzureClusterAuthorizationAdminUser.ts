@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AzureClusterAuthorizationAdminUser {
+export interface container_AzureClusterAuthorizationAdminUser {
   // The name of the user, e.g. `my-gcp-id@gmail.com`.
-  Username?: string;
+  username?: string;
 }
 
-export function Container_AzureClusterAuthorizationAdminUser_GetTypes(): DynamicUIProps[] {
+export function container_AzureClusterAuthorizationAdminUser_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Username",
+      "username",
       "The name of the user, e.g. `my-gcp-id@gmail.com`.",
       [],
       true,

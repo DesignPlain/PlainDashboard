@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterProtectConfigWorkloadConfig {
+export interface container_ClusterProtectConfigWorkloadConfig {
   // Sets which mode of auditing should be used for the cluster's workloads. Accepted values are DISABLED, BASIC.
-  AuditMode?: string;
+  auditMode?: string;
 }
 
-export function Container_ClusterProtectConfigWorkloadConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterProtectConfigWorkloadConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "AuditMode",
+      "auditMode",
       "Sets which mode of auditing should be used for the cluster's workloads. Accepted values are DISABLED, BASIC.",
       [],
       true,

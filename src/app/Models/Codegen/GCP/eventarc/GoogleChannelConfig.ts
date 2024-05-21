@@ -8,6 +8,12 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface GoogleChannelConfigArgs {
+  // Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt their event data. It must match the pattern `projects/-/locations/-/keyRings/-/cryptoKeys/-`.
+  cryptoKeyName?: string;
+
+  // The location for the resource
+  location?: string;
+
   /*
 Required. The resource name of the config. Must be in the format of, `projects/{project}/locations/{location}/googleChannelConfig`.
 
@@ -15,29 +21,17 @@ Required. The resource name of the config. Must be in the format of, `projects/{
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   // The project for the resource
-  Project?: string;
-
-  // Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt their event data. It must match the pattern `projects/-/locations/-/keyRings/-/cryptoKeys/-`.
-  CryptoKeyName?: string;
-
-  // The location for the resource
-  Location?: string;
+  project?: string;
 }
 export class GoogleChannelConfig extends Resource {
-  // The project for the resource
-  public Project?: string;
-
-  // Output only. The last-modified time.
-  public UpdateTime?: string;
-
   // Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt their event data. It must match the pattern `projects/-/locations/-/keyRings/-/cryptoKeys/-`.
-  public CryptoKeyName?: string;
+  public cryptoKeyName?: string;
 
   // The location for the resource
-  public Location?: string;
+  public location?: string;
 
   /*
 Required. The resource name of the config. Must be in the format of, `projects/{project}/locations/{location}/googleChannelConfig`.
@@ -46,13 +40,19 @@ Required. The resource name of the config. Must be in the format of, `projects/{
 
 - - -
 */
-  public Name?: string;
+  public name?: string;
+
+  // The project for the resource
+  public project?: string;
+
+  // Output only. The last-modified time.
+  public updateTime?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Required. The resource name of the config. Must be in the format of, `projects/{project}/locations/{location}/googleChannelConfig`.\n\n\n\n- - -",
         [],
         false,
@@ -60,7 +60,7 @@ Required. The resource name of the config. Must be in the format of, `projects/{
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The project for the resource",
         [],
         false,
@@ -68,7 +68,7 @@ Required. The resource name of the config. Must be in the format of, `projects/{
       ),
       new DynamicUIProps(
         InputType.String,
-        "CryptoKeyName",
+        "cryptoKeyName",
         "Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt their event data. It must match the pattern `projects/*/locations/*/keyRings/*/cryptoKeys/*`.",
         [],
         false,
@@ -76,7 +76,7 @@ Required. The resource name of the config. Must be in the format of, `projects/{
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location for the resource",
         [],
         true,

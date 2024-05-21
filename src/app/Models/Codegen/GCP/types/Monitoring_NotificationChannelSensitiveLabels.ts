@@ -6,39 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_NotificationChannelSensitiveLabels {
-  /*
-An authorization token for a notification channel. Channel types that support this field include: slack
---Note--: This property is sensitive and will not be displayed in the plan.
-*/
-  AuthToken?: string;
-
+export interface monitoring_NotificationChannelSensitiveLabels {
   /*
 An password for a notification channel. Channel types that support this field include: webhook_basicauth
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  Password?: string;
+  password?: string;
 
   /*
 An servicekey token for a notification channel. Channel types that support this field include: pagerduty
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  ServiceKey?: string;
+  serviceKey?: string;
+
+  /*
+An authorization token for a notification channel. Channel types that support this field include: slack
+--Note--: This property is sensitive and will not be displayed in the plan.
+*/
+  authToken?: string;
 }
 
-export function Monitoring_NotificationChannelSensitiveLabels_GetTypes(): DynamicUIProps[] {
+export function monitoring_NotificationChannelSensitiveLabels_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "AuthToken",
-      "An authorization token for a notification channel. Channel types that support this field include: slack\n**Note**: This property is sensitive and will not be displayed in the plan.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Password",
+      "password",
       "An password for a notification channel. Channel types that support this field include: webhook_basicauth\n**Note**: This property is sensitive and will not be displayed in the plan.",
       [],
       false,
@@ -46,8 +38,16 @@ export function Monitoring_NotificationChannelSensitiveLabels_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "ServiceKey",
+      "serviceKey",
       "An servicekey token for a notification channel. Channel types that support this field include: pagerduty\n**Note**: This property is sensitive and will not be displayed in the plan.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "authToken",
+      "An authorization token for a notification channel. Channel types that support this field include: slack\n**Note**: This property is sensitive and will not be displayed in the plan.",
       [],
       false,
       false,

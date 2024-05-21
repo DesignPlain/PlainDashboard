@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_PerInstanceConfigPreservedStateDisk {
+export interface compute_PerInstanceConfigPreservedStateDisk {
   /*
 A value that prescribes what should happen to the stateful disk when the VM instance is deleted.
 The available options are `NEVER` and `ON_PERMANENT_INSTANCE_DELETION`.
@@ -16,38 +16,30 @@ deleted from the instance group.
 Default value is `NEVER`.
 Possible values are: `NEVER`, `ON_PERMANENT_INSTANCE_DELETION`.
 */
-  DeleteRule?: string;
+  deleteRule?: string;
 
   // A unique device name that is reflected into the /dev/ tree of a Linux operating system running within the instance.
-  DeviceName?: string;
+  deviceName?: string;
 
   /*
 The mode of the disk.
 Default value is `READ_WRITE`.
 Possible values are: `READ_ONLY`, `READ_WRITE`.
 */
-  Mode?: string;
+  mode?: string;
 
   /*
 The URI of an existing persistent disk to attach under the specified device-name in the format
 `projects/project-id/zones/zone/disks/disk-name`.
 */
-  Source?: string;
+  source?: string;
 }
 
-export function Compute_PerInstanceConfigPreservedStateDisk_GetTypes(): DynamicUIProps[] {
+export function compute_PerInstanceConfigPreservedStateDisk_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DeleteRule",
-      "A value that prescribes what should happen to the stateful disk when the VM instance is deleted.\nThe available options are `NEVER` and `ON_PERMANENT_INSTANCE_DELETION`.\n`NEVER` - detach the disk when the VM is deleted, but do not delete the disk.\n`ON_PERMANENT_INSTANCE_DELETION` will delete the stateful disk when the VM is permanently\ndeleted from the instance group.\nDefault value is `NEVER`.\nPossible values are: `NEVER`, `ON_PERMANENT_INSTANCE_DELETION`.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "DeviceName",
+      "deviceName",
       "A unique device name that is reflected into the /dev/ tree of a Linux operating system running within the instance.",
       [],
       true,
@@ -55,7 +47,7 @@ export function Compute_PerInstanceConfigPreservedStateDisk_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "Mode",
+      "mode",
       "The mode of the disk.\nDefault value is `READ_WRITE`.\nPossible values are: `READ_ONLY`, `READ_WRITE`.",
       [],
       false,
@@ -63,10 +55,18 @@ export function Compute_PerInstanceConfigPreservedStateDisk_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "Source",
+      "source",
       "The URI of an existing persistent disk to attach under the specified device-name in the format\n`projects/project-id/zones/zone/disks/disk-name`.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "deleteRule",
+      "A value that prescribes what should happen to the stateful disk when the VM instance is deleted.\nThe available options are `NEVER` and `ON_PERMANENT_INSTANCE_DELETION`.\n`NEVER` - detach the disk when the VM is deleted, but do not delete the disk.\n`ON_PERMANENT_INSTANCE_DELETION` will delete the stateful disk when the VM is permanently\ndeleted from the instance group.\nDefault value is `NEVER`.\nPossible values are: `NEVER`, `ON_PERMANENT_INSTANCE_DELETION`.",
+      [],
+      false,
       false,
     ),
   ];

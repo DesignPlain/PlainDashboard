@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vertex_AiFeatureOnlineStoreFeatureviewBigQuerySource {
-  // The BigQuery view URI that will be materialized on each sync trigger based on FeatureView.SyncConfig.
-  Uri?: string;
-
+export interface vertex_AiFeatureOnlineStoreFeatureviewBigQuerySource {
   // Columns to construct entityId / row keys. Start by supporting 1 only.
-  EntityIdColumns?: Array<string>;
+  entityIdColumns?: Array<string>;
+
+  // The BigQuery view URI that will be materialized on each sync trigger based on FeatureView.SyncConfig.
+  uri?: string;
 }
 
-export function Vertex_AiFeatureOnlineStoreFeatureviewBigQuerySource_GetTypes(): DynamicUIProps[] {
+export function vertex_AiFeatureOnlineStoreFeatureviewBigQuerySource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "Uri",
-      "The BigQuery view URI that will be materialized on each sync trigger based on FeatureView.SyncConfig.",
-      [],
+      InputType.Array,
+      "entityIdColumns",
+      "Columns to construct entityId / row keys. Start by supporting 1 only.",
+      InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "EntityIdColumns",
-      "Columns to construct entityId / row keys. Start by supporting 1 only.",
-      InputType_String_GetTypes(),
+      InputType.String,
+      "uri",
+      "The BigQuery view URI that will be materialized on each sync trigger based on FeatureView.SyncConfig.",
+      [],
       true,
       false,
     ),

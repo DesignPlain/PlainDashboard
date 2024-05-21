@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vmwareengine_getExternalAccessRuleSourceIpRange {
-  // An IP address range in the CIDR format.
-  IpAddressRange?: string;
-
+export interface vmwareengine_getExternalAccessRuleSourceIpRange {
   // A single IP address.
-  IpAddress?: string;
+  ipAddress?: string;
+
+  // An IP address range in the CIDR format.
+  ipAddressRange?: string;
 }
 
-export function Vmwareengine_getExternalAccessRuleSourceIpRange_GetTypes(): DynamicUIProps[] {
+export function vmwareengine_getExternalAccessRuleSourceIpRange_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "IpAddressRange",
-      "An IP address range in the CIDR format.",
+      "ipAddress",
+      "A single IP address.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "IpAddress",
-      "A single IP address.",
+      "ipAddressRange",
+      "An IP address range in the CIDR format.",
       [],
       true,
       false,

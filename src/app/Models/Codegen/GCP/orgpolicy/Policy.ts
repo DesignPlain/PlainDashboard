@@ -7,20 +7,17 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Orgpolicy_PolicyDryRunSpec,
-  Orgpolicy_PolicyDryRunSpec_GetTypes,
-} from "../types/Orgpolicy_PolicyDryRunSpec";
+  orgpolicy_PolicySpec,
+  orgpolicy_PolicySpec_GetTypes,
+} from "../types/orgpolicy_PolicySpec";
 import {
-  Orgpolicy_PolicySpec,
-  Orgpolicy_PolicySpec_GetTypes,
-} from "../types/Orgpolicy_PolicySpec";
+  orgpolicy_PolicyDryRunSpec,
+  orgpolicy_PolicyDryRunSpec_GetTypes,
+} from "../types/orgpolicy_PolicyDryRunSpec";
 
 export interface PolicyArgs {
-  // Dry-run policy. Audit-only policy, can be used to monitor how the policy would have impacted the existing and future resources if it's enforced.
-  DryRunSpec?: Orgpolicy_PolicyDryRunSpec;
-
   // Immutable. The resource name of the Policy. Must be one of the following forms, where constraint_name is the name of the constraint which this Policy configures: - `projects/{project_number}/policies/{constraint_name}` - `folders/{folder_id}/policies/{constraint_name}` - `organizations/{organization_id}/policies/{constraint_name}` For example, "projects/123/policies/compute.disableSerialPortAccess". Note: `projects/{project_id}/policies/{constraint_name}` is also an acceptable name for API requests, but responses will return the name using the equivalent project number.
-  Name?: string;
+  name?: string;
 
   /*
 The parent of the resource.
@@ -29,14 +26,20 @@ The parent of the resource.
 
 - - -
 */
-  Parent?: string;
+  parent?: string;
 
   // Basic information about the Organization Policy.
-  Spec?: Orgpolicy_PolicySpec;
+  spec?: orgpolicy_PolicySpec;
+
+  // Dry-run policy. Audit-only policy, can be used to monitor how the policy would have impacted the existing and future resources if it's enforced.
+  dryRunSpec?: orgpolicy_PolicyDryRunSpec;
 }
 export class Policy extends Resource {
+  // An opaque tag indicating the current version of the policy, used for concurrency control. This field is ignored if used in a `CreatePolicy` request. When the policy` is returned from either a `GetPolicy` or a `ListPolicies` request, this `etag` indicates the version of the current policy to use when executing a read-modify-write loop. When the policy is returned from a `GetEffectivePolicy` request, the `etag` will be unset.
+  public etag?: string;
+
   // Immutable. The resource name of the Policy. Must be one of the following forms, where constraint_name is the name of the constraint which this Policy configures: - `projects/{project_number}/policies/{constraint_name}` - `folders/{folder_id}/policies/{constraint_name}` - `organizations/{organization_id}/policies/{constraint_name}` For example, "projects/123/policies/compute.disableSerialPortAccess". Note: `projects/{project_id}/policies/{constraint_name}` is also an acceptable name for API requests, but responses will return the name using the equivalent project number.
-  public Name?: string;
+  public name?: string;
 
   /*
 The parent of the resource.
@@ -45,30 +48,19 @@ The parent of the resource.
 
 - - -
 */
-  public Parent?: string;
+  public parent?: string;
 
   // Basic information about the Organization Policy.
-  public Spec?: Orgpolicy_PolicySpec;
+  public spec?: orgpolicy_PolicySpec;
 
   // Dry-run policy. Audit-only policy, can be used to monitor how the policy would have impacted the existing and future resources if it's enforced.
-  public DryRunSpec?: Orgpolicy_PolicyDryRunSpec;
-
-  // An opaque tag indicating the current version of the policy, used for concurrency control. This field is ignored if used in a `CreatePolicy` request. When the policy` is returned from either a `GetPolicy` or a `ListPolicies` request, this `etag` indicates the version of the current policy to use when executing a read-modify-write loop. When the policy is returned from a `GetEffectivePolicy` request, the `etag` will be unset.
-  public Etag?: string;
+  public dryRunSpec?: orgpolicy_PolicyDryRunSpec;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Object,
-        "DryRunSpec",
-        "Dry-run policy. Audit-only policy, can be used to monitor how the policy would have impacted the existing and future resources if it's enforced.",
-        Orgpolicy_PolicyDryRunSpec_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         'Immutable. The resource name of the Policy. Must be one of the following forms, where constraint_name is the name of the constraint which this Policy configures: * `projects/{project_number}/policies/{constraint_name}` * `folders/{folder_id}/policies/{constraint_name}` * `organizations/{organization_id}/policies/{constraint_name}` For example, "projects/123/policies/compute.disableSerialPortAccess". Note: `projects/{project_id}/policies/{constraint_name}` is also an acceptable name for API requests, but responses will return the name using the equivalent project number.',
         [],
         false,
@@ -76,7 +68,7 @@ The parent of the resource.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Parent",
+        "parent",
         "The parent of the resource.\n\n\n\n- - -",
         [],
         true,
@@ -84,9 +76,17 @@ The parent of the resource.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Spec",
+        "spec",
         "Basic information about the Organization Policy.",
-        Orgpolicy_PolicySpec_GetTypes(),
+        orgpolicy_PolicySpec_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "dryRunSpec",
+        "Dry-run policy. Audit-only policy, can be used to monitor how the policy would have impacted the existing and future resources if it's enforced.",
+        orgpolicy_PolicyDryRunSpec_GetTypes(),
         false,
         false,
       ),

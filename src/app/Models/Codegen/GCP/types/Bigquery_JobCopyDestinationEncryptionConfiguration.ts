@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_JobCopyDestinationEncryptionConfiguration {
+export interface bigquery_JobCopyDestinationEncryptionConfiguration {
   /*
 Describes the Cloud KMS encryption key that will be used to protect destination BigQuery table.
 The BigQuery Service Account associated with your project requires access to this encryption key.
 */
-  KmsKeyName?: string;
+  kmsKeyName?: string;
 
   /*
 (Output)
 Describes the Cloud KMS encryption key version used to protect destination BigQuery table.
 */
-  KmsKeyVersion?: string;
+  kmsKeyVersion?: string;
 }
 
-export function Bigquery_JobCopyDestinationEncryptionConfiguration_GetTypes(): DynamicUIProps[] {
+export function bigquery_JobCopyDestinationEncryptionConfiguration_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyName",
+      "kmsKeyName",
       "Describes the Cloud KMS encryption key that will be used to protect destination BigQuery table.\nThe BigQuery Service Account associated with your project requires access to this encryption key.",
       [],
       true,
@@ -32,7 +32,7 @@ export function Bigquery_JobCopyDestinationEncryptionConfiguration_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyVersion",
+      "kmsKeyVersion",
       "(Output)\nDescribes the Cloud KMS encryption key version used to protect destination BigQuery table.",
       [],
       false,

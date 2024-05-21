@@ -6,32 +6,32 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScore,
-  Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScore_GetTypes,
-} from "./Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScore";
+  dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScore,
+  dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScore_GetTypes,
+} from "./dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScore";
 
-export interface Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoType {
-  /*
-Name of the information type. Either a name of your choosing when creating a CustomInfoType, or one of the names
-listed at https://cloud.google.com/dlp/docs/infotypes-reference when specifying a built-in type.
-*/
-  Name?: string;
-
+export interface dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoType {
   /*
 Optional custom sensitivity for this InfoType. This only applies to data profiling.
 Structure is documented below.
 */
-  SensitivityScore?: Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScore;
+  sensitivityScore?: dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScore;
 
   // Version name for this InfoType.
-  Version?: string;
+  version?: string;
+
+  /*
+Name of the information type. Either a name of your choosing when creating a CustomInfoType, or one of the names
+listed at https://cloud.google.com/dlp/docs/infotypes-reference when specifying a built-in type.
+*/
+  name?: string;
 }
 
-export function Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoType_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoType_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Name of the information type. Either a name of your choosing when creating a CustomInfoType, or one of the names\nlisted at https://cloud.google.com/dlp/docs/infotypes-reference when specifying a built-in type.",
       [],
       true,
@@ -39,15 +39,15 @@ export function Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInf
     ),
     new DynamicUIProps(
       InputType.Object,
-      "SensitivityScore",
+      "sensitivityScore",
       "Optional custom sensitivity for this InfoType. This only applies to data profiling.\nStructure is documented below.",
-      Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScore_GetTypes(),
+      dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScore_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Version",
+      "version",
       "Version name for this InfoType.",
       [],
       false,

@@ -6,35 +6,41 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicy,
-  Compute_RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicy_GetTypes,
-} from "./Compute_RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicy";
+  compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendService,
+  compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendService_GetTypes,
+} from "./compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendService";
 import {
-  Compute_RegionUrlMapPathMatcherPathRuleRouteActionTimeout,
-  Compute_RegionUrlMapPathMatcherPathRuleRouteActionTimeout_GetTypes,
-} from "./Compute_RegionUrlMapPathMatcherPathRuleRouteActionTimeout";
+  compute_RegionUrlMapPathMatcherPathRuleRouteActionCorsPolicy,
+  compute_RegionUrlMapPathMatcherPathRuleRouteActionCorsPolicy_GetTypes,
+} from "./compute_RegionUrlMapPathMatcherPathRuleRouteActionCorsPolicy";
 import {
-  Compute_RegionUrlMapPathMatcherPathRuleRouteActionUrlRewrite,
-  Compute_RegionUrlMapPathMatcherPathRuleRouteActionUrlRewrite_GetTypes,
-} from "./Compute_RegionUrlMapPathMatcherPathRuleRouteActionUrlRewrite";
+  compute_RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicy,
+  compute_RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicy_GetTypes,
+} from "./compute_RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicy";
 import {
-  Compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendService,
-  Compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendService_GetTypes,
-} from "./Compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendService";
+  compute_RegionUrlMapPathMatcherPathRuleRouteActionRequestMirrorPolicy,
+  compute_RegionUrlMapPathMatcherPathRuleRouteActionRequestMirrorPolicy_GetTypes,
+} from "./compute_RegionUrlMapPathMatcherPathRuleRouteActionRequestMirrorPolicy";
 import {
-  Compute_RegionUrlMapPathMatcherPathRuleRouteActionCorsPolicy,
-  Compute_RegionUrlMapPathMatcherPathRuleRouteActionCorsPolicy_GetTypes,
-} from "./Compute_RegionUrlMapPathMatcherPathRuleRouteActionCorsPolicy";
+  compute_RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicy,
+  compute_RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicy_GetTypes,
+} from "./compute_RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicy";
 import {
-  Compute_RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicy,
-  Compute_RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicy_GetTypes,
-} from "./Compute_RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicy";
+  compute_RegionUrlMapPathMatcherPathRuleRouteActionTimeout,
+  compute_RegionUrlMapPathMatcherPathRuleRouteActionTimeout_GetTypes,
+} from "./compute_RegionUrlMapPathMatcherPathRuleRouteActionTimeout";
 import {
-  Compute_RegionUrlMapPathMatcherPathRuleRouteActionRequestMirrorPolicy,
-  Compute_RegionUrlMapPathMatcherPathRuleRouteActionRequestMirrorPolicy_GetTypes,
-} from "./Compute_RegionUrlMapPathMatcherPathRuleRouteActionRequestMirrorPolicy";
+  compute_RegionUrlMapPathMatcherPathRuleRouteActionUrlRewrite,
+  compute_RegionUrlMapPathMatcherPathRuleRouteActionUrlRewrite_GetTypes,
+} from "./compute_RegionUrlMapPathMatcherPathRuleRouteActionUrlRewrite";
 
-export interface Compute_RegionUrlMapPathMatcherPathRuleRouteAction {
+export interface compute_RegionUrlMapPathMatcherPathRuleRouteAction {
+  /*
+Specifies the retry policy associated with this route.
+Structure is documented below.
+*/
+  retryPolicy?: compute_RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicy;
+
   /*
 Specifies the timeout for the selected route. Timeout is computed from the time
 the request is has been fully processed (i.e. end-of-stream) up until the
@@ -42,14 +48,14 @@ response has been completely processed. Timeout includes all retries. If not
 specified, the default value is 15 seconds.
 Structure is documented below.
 */
-  Timeout?: Compute_RegionUrlMapPathMatcherPathRuleRouteActionTimeout;
+  timeout?: compute_RegionUrlMapPathMatcherPathRuleRouteActionTimeout;
 
   /*
 The spec to modify the URL of the request, prior to forwarding the request to
 the matched service
 Structure is documented below.
 */
-  UrlRewrite?: Compute_RegionUrlMapPathMatcherPathRuleRouteActionUrlRewrite;
+  urlRewrite?: compute_RegionUrlMapPathMatcherPathRuleRouteActionUrlRewrite;
 
   /*
 A list of weighted backend services to send traffic to when a route match
@@ -62,14 +68,14 @@ transformations are applied depending on additional settings specified in this
 HttpRouteAction.
 Structure is documented below.
 */
-  WeightedBackendServices?: Array<Compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendService>;
+  weightedBackendServices?: Array<compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendService>;
 
   /*
 The specification for allowing client side cross-origin requests. Please see W3C
 Recommendation for Cross Origin Resource Sharing
 Structure is documented below.
 */
-  CorsPolicy?: Compute_RegionUrlMapPathMatcherPathRuleRouteActionCorsPolicy;
+  corsPolicy?: compute_RegionUrlMapPathMatcherPathRuleRouteActionCorsPolicy;
 
   /*
 The specification for fault injection introduced into traffic to test the
@@ -81,7 +87,7 @@ Loadbalancer for a percentage of requests. timeout and retry_policy will be
 ignored by clients that are configured with a fault_injection_policy.
 Structure is documented below.
 */
-  FaultInjectionPolicy?: Compute_RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicy;
+  faultInjectionPolicy?: compute_RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicy;
 
   /*
 Specifies the policy on how requests intended for the route's backends are
@@ -90,70 +96,64 @@ responses from the shadow service. Prior to sending traffic to the shadow
 service, the host / authority header is suffixed with -shadow.
 Structure is documented below.
 */
-  RequestMirrorPolicy?: Compute_RegionUrlMapPathMatcherPathRuleRouteActionRequestMirrorPolicy;
-
-  /*
-Specifies the retry policy associated with this route.
-Structure is documented below.
-*/
-  RetryPolicy?: Compute_RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicy;
+  requestMirrorPolicy?: compute_RegionUrlMapPathMatcherPathRuleRouteActionRequestMirrorPolicy;
 }
 
-export function Compute_RegionUrlMapPathMatcherPathRuleRouteAction_GetTypes(): DynamicUIProps[] {
+export function compute_RegionUrlMapPathMatcherPathRuleRouteAction_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "WeightedBackendServices",
-      "A list of weighted backend services to send traffic to when a route match\noccurs. The weights determine the fraction of traffic that flows to their\ncorresponding backend service. If all traffic needs to go to a single backend\nservice, there must be one  weightedBackendService with weight set to a non 0\nnumber. Once a backendService is identified and before forwarding the request to\nthe backend service, advanced routing actions like Url rewrites and header\ntransformations are applied depending on additional settings specified in this\nHttpRouteAction.\nStructure is documented below.",
-      Compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendService_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Object,
-      "CorsPolicy",
-      "The specification for allowing client side cross-origin requests. Please see W3C\nRecommendation for Cross Origin Resource Sharing\nStructure is documented below.",
-      Compute_RegionUrlMapPathMatcherPathRuleRouteActionCorsPolicy_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "FaultInjectionPolicy",
-      "The specification for fault injection introduced into traffic to test the\nresiliency of clients to backend service failure. As part of fault injection,\nwhen clients send requests to a backend service, delays can be introduced by\nLoadbalancer on a percentage of requests before sending those request to the\nbackend service. Similarly requests from clients can be aborted by the\nLoadbalancer for a percentage of requests. timeout and retry_policy will be\nignored by clients that are configured with a fault_injection_policy.\nStructure is documented below.",
-      Compute_RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicy_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "RequestMirrorPolicy",
-      "Specifies the policy on how requests intended for the route's backends are\nshadowed to a separate mirrored backend service. Loadbalancer does not wait for\nresponses from the shadow service. Prior to sending traffic to the shadow\nservice, the host / authority header is suffixed with -shadow.\nStructure is documented below.",
-      Compute_RegionUrlMapPathMatcherPathRuleRouteActionRequestMirrorPolicy_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "RetryPolicy",
+      "retryPolicy",
       "Specifies the retry policy associated with this route.\nStructure is documented below.",
-      Compute_RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicy_GetTypes(),
+      compute_RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicy_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Timeout",
+      "timeout",
       "Specifies the timeout for the selected route. Timeout is computed from the time\nthe request is has been fully processed (i.e. end-of-stream) up until the\nresponse has been completely processed. Timeout includes all retries. If not\nspecified, the default value is 15 seconds.\nStructure is documented below.",
-      Compute_RegionUrlMapPathMatcherPathRuleRouteActionTimeout_GetTypes(),
+      compute_RegionUrlMapPathMatcherPathRuleRouteActionTimeout_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "UrlRewrite",
+      "urlRewrite",
       "The spec to modify the URL of the request, prior to forwarding the request to\nthe matched service\nStructure is documented below.",
-      Compute_RegionUrlMapPathMatcherPathRuleRouteActionUrlRewrite_GetTypes(),
+      compute_RegionUrlMapPathMatcherPathRuleRouteActionUrlRewrite_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "weightedBackendServices",
+      "A list of weighted backend services to send traffic to when a route match\noccurs. The weights determine the fraction of traffic that flows to their\ncorresponding backend service. If all traffic needs to go to a single backend\nservice, there must be one  weightedBackendService with weight set to a non 0\nnumber. Once a backendService is identified and before forwarding the request to\nthe backend service, advanced routing actions like Url rewrites and header\ntransformations are applied depending on additional settings specified in this\nHttpRouteAction.\nStructure is documented below.",
+      compute_RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendService_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "corsPolicy",
+      "The specification for allowing client side cross-origin requests. Please see W3C\nRecommendation for Cross Origin Resource Sharing\nStructure is documented below.",
+      compute_RegionUrlMapPathMatcherPathRuleRouteActionCorsPolicy_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "faultInjectionPolicy",
+      "The specification for fault injection introduced into traffic to test the\nresiliency of clients to backend service failure. As part of fault injection,\nwhen clients send requests to a backend service, delays can be introduced by\nLoadbalancer on a percentage of requests before sending those request to the\nbackend service. Similarly requests from clients can be aborted by the\nLoadbalancer for a percentage of requests. timeout and retry_policy will be\nignored by clients that are configured with a fault_injection_policy.\nStructure is documented below.",
+      compute_RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicy_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "requestMirrorPolicy",
+      "Specifies the policy on how requests intended for the route's backends are\nshadowed to a separate mirrored backend service. Loadbalancer does not wait for\nresponses from the shadow service. Prior to sending traffic to the shadow\nservice, the host / authority header is suffixed with -shadow.\nStructure is documented below.",
+      compute_RegionUrlMapPathMatcherPathRuleRouteActionRequestMirrorPolicy_GetTypes(),
       false,
       false,
     ),

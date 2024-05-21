@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_FlexibleAppVersionVpcAccessConnector {
+export interface appengine_FlexibleAppVersionVpcAccessConnector {
   // Full Serverless VPC Access Connector name e.g. /projects/my-project/locations/us-central1/connectors/c1.
-  Name?: string;
+  name?: string;
 }
 
-export function Appengine_FlexibleAppVersionVpcAccessConnector_GetTypes(): DynamicUIProps[] {
+export function appengine_FlexibleAppVersionVpcAccessConnector_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Full Serverless VPC Access Connector name e.g. /projects/my-project/locations/us-central1/connectors/c1.",
       [],
       true,

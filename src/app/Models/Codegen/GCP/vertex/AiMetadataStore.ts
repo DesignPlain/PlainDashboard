@@ -7,75 +7,75 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Vertex_AiMetadataStoreEncryptionSpec,
-  Vertex_AiMetadataStoreEncryptionSpec_GetTypes,
-} from "../types/Vertex_AiMetadataStoreEncryptionSpec";
+  vertex_AiMetadataStoreEncryptionSpec,
+  vertex_AiMetadataStoreEncryptionSpec_GetTypes,
+} from "../types/vertex_AiMetadataStoreEncryptionSpec";
 import {
-  Vertex_AiMetadataStoreState,
-  Vertex_AiMetadataStoreState_GetTypes,
-} from "../types/Vertex_AiMetadataStoreState";
+  vertex_AiMetadataStoreState,
+  vertex_AiMetadataStoreState_GetTypes,
+} from "../types/vertex_AiMetadataStoreState";
 
 export interface AiMetadataStoreArgs {
-  // The name of the MetadataStore. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.
-  Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  // The region of the Metadata Store. eg us-central1
-  Region?: string;
-
   // Description of the MetadataStore.
-  Description?: string;
+  description?: string;
 
   /*
 Customer-managed encryption key spec for a MetadataStore. If set, this MetadataStore and all sub-resources of this MetadataStore will be secured by this key.
 Structure is documented below.
 */
-  EncryptionSpec?: Vertex_AiMetadataStoreEncryptionSpec;
+  encryptionSpec?: vertex_AiMetadataStoreEncryptionSpec;
+
+  // The name of the MetadataStore. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.
+  name?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  // The region of the Metadata Store. eg us-central1
+  region?: string;
 }
 export class AiMetadataStore extends Resource {
   // The region of the Metadata Store. eg us-central1
-  public Region?: string;
+  public region?: string;
 
   /*
 State information of the MetadataStore.
 Structure is documented below.
 */
-  public States?: Array<Vertex_AiMetadataStoreState>;
+  public states?: Array<vertex_AiMetadataStoreState>;
 
   // The timestamp of when the MetadataStore was last updated in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
-  public UpdateTime?: string;
+  public updateTime?: string;
 
   // The timestamp of when the MetadataStore was created in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
-  public CreateTime?: string;
+  public createTime?: string;
 
   // Description of the MetadataStore.
-  public Description?: string;
+  public description?: string;
 
   /*
 Customer-managed encryption key spec for a MetadataStore. If set, this MetadataStore and all sub-resources of this MetadataStore will be secured by this key.
 Structure is documented below.
 */
-  public EncryptionSpec?: Vertex_AiMetadataStoreEncryptionSpec;
+  public encryptionSpec?: vertex_AiMetadataStoreEncryptionSpec;
 
   // The name of the MetadataStore. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Description of the MetadataStore.",
         [],
         false,
@@ -83,15 +83,15 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "EncryptionSpec",
+        "encryptionSpec",
         "Customer-managed encryption key spec for a MetadataStore. If set, this MetadataStore and all sub-resources of this MetadataStore will be secured by this key.\nStructure is documented below.",
-        Vertex_AiMetadataStoreEncryptionSpec_GetTypes(),
+        vertex_AiMetadataStoreEncryptionSpec_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name of the MetadataStore. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.",
         [],
         false,
@@ -99,7 +99,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -107,7 +107,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "The region of the Metadata Store. eg us-central1",
         [],
         false,

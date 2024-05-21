@@ -6,35 +6,35 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterNodePoolNetworkConfigAdditionalNodeNetworkConfig {
+export interface container_ClusterNodePoolNetworkConfigAdditionalNodeNetworkConfig {
   /*
 The name or self_link of the Google Compute Engine
 network to which the cluster is connected. For Shared VPC, set this to the self link of the
 shared network.
 */
-  Network?: string;
+  network?: string;
 
   /*
 The name or self_link of the Google Compute Engine
 subnetwork in which the cluster's instances are launched.
 */
-  Subnetwork?: string;
+  subnetwork?: string;
 }
 
-export function Container_ClusterNodePoolNetworkConfigAdditionalNodeNetworkConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterNodePoolNetworkConfigAdditionalNodeNetworkConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Subnetwork",
-      "The name or self_link of the Google Compute Engine\nsubnetwork in which the cluster's instances are launched.",
+      "network",
+      "The name or self_link of the Google Compute Engine\nnetwork to which the cluster is connected. For Shared VPC, set this to the self link of the\nshared network.",
       [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Network",
-      "The name or self_link of the Google Compute Engine\nnetwork to which the cluster is connected. For Shared VPC, set this to the self link of the\nshared network.",
+      "subnetwork",
+      "The name or self_link of the Google Compute Engine\nsubnetwork in which the cluster's instances are launched.",
       [],
       false,
       true,

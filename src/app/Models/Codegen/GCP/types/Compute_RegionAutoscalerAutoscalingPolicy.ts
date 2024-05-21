@@ -6,69 +6,64 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionAutoscalerAutoscalingPolicyScaleDownControl,
-  Compute_RegionAutoscalerAutoscalingPolicyScaleDownControl_GetTypes,
-} from "./Compute_RegionAutoscalerAutoscalingPolicyScaleDownControl";
+  compute_RegionAutoscalerAutoscalingPolicyLoadBalancingUtilization,
+  compute_RegionAutoscalerAutoscalingPolicyLoadBalancingUtilization_GetTypes,
+} from "./compute_RegionAutoscalerAutoscalingPolicyLoadBalancingUtilization";
 import {
-  Compute_RegionAutoscalerAutoscalingPolicyScalingSchedule,
-  Compute_RegionAutoscalerAutoscalingPolicyScalingSchedule_GetTypes,
-} from "./Compute_RegionAutoscalerAutoscalingPolicyScalingSchedule";
+  compute_RegionAutoscalerAutoscalingPolicyScaleDownControl,
+  compute_RegionAutoscalerAutoscalingPolicyScaleDownControl_GetTypes,
+} from "./compute_RegionAutoscalerAutoscalingPolicyScaleDownControl";
 import {
-  Compute_RegionAutoscalerAutoscalingPolicyScaleInControl,
-  Compute_RegionAutoscalerAutoscalingPolicyScaleInControl_GetTypes,
-} from "./Compute_RegionAutoscalerAutoscalingPolicyScaleInControl";
+  compute_RegionAutoscalerAutoscalingPolicyScaleInControl,
+  compute_RegionAutoscalerAutoscalingPolicyScaleInControl_GetTypes,
+} from "./compute_RegionAutoscalerAutoscalingPolicyScaleInControl";
 import {
-  Compute_RegionAutoscalerAutoscalingPolicyCpuUtilization,
-  Compute_RegionAutoscalerAutoscalingPolicyCpuUtilization_GetTypes,
-} from "./Compute_RegionAutoscalerAutoscalingPolicyCpuUtilization";
+  compute_RegionAutoscalerAutoscalingPolicyScalingSchedule,
+  compute_RegionAutoscalerAutoscalingPolicyScalingSchedule_GetTypes,
+} from "./compute_RegionAutoscalerAutoscalingPolicyScalingSchedule";
 import {
-  Compute_RegionAutoscalerAutoscalingPolicyLoadBalancingUtilization,
-  Compute_RegionAutoscalerAutoscalingPolicyLoadBalancingUtilization_GetTypes,
-} from "./Compute_RegionAutoscalerAutoscalingPolicyLoadBalancingUtilization";
+  compute_RegionAutoscalerAutoscalingPolicyCpuUtilization,
+  compute_RegionAutoscalerAutoscalingPolicyCpuUtilization_GetTypes,
+} from "./compute_RegionAutoscalerAutoscalingPolicyCpuUtilization";
 import {
-  Compute_RegionAutoscalerAutoscalingPolicyMetric,
-  Compute_RegionAutoscalerAutoscalingPolicyMetric_GetTypes,
-} from "./Compute_RegionAutoscalerAutoscalingPolicyMetric";
+  compute_RegionAutoscalerAutoscalingPolicyMetric,
+  compute_RegionAutoscalerAutoscalingPolicyMetric_GetTypes,
+} from "./compute_RegionAutoscalerAutoscalingPolicyMetric";
 
-export interface Compute_RegionAutoscalerAutoscalingPolicy {
+export interface compute_RegionAutoscalerAutoscalingPolicy {
+  /*
+Configuration parameters of autoscaling based on a load balancer.
+Structure is documented below.
+*/
+  loadBalancingUtilization?: compute_RegionAutoscalerAutoscalingPolicyLoadBalancingUtilization;
+
   /*
 The maximum number of instances that the autoscaler can scale up
 to. This is required when creating or updating an autoscaler. The
 maximum number of replicas should not be lower than minimal number
 of replicas.
 */
-  MaxReplicas?: number;
+  maxReplicas?: number;
 
   /*
 Defines scale down controls to reduce the risk of response latency
 and outages due to abrupt scale-in events
 Structure is documented below.
 */
-  ScaleDownControl?: Compute_RegionAutoscalerAutoscalingPolicyScaleDownControl;
-
-  /*
-Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler and they can overlap.
-Structure is documented below.
-*/
-  ScalingSchedules?: Array<Compute_RegionAutoscalerAutoscalingPolicyScalingSchedule>;
-
-  /*
-The minimum number of replicas that the autoscaler can scale down
-to. This cannot be less than 0. If not provided, autoscaler will
-choose a default value depending on maximum number of instances
-allowed.
-*/
-  MinReplicas?: number;
-
-  // Defines operating mode for this policy.
-  Mode?: string;
+  scaleDownControl?: compute_RegionAutoscalerAutoscalingPolicyScaleDownControl;
 
   /*
 Defines scale in controls to reduce the risk of response latency
 and outages due to abrupt scale-in events
 Structure is documented below.
 */
-  ScaleInControl?: Compute_RegionAutoscalerAutoscalingPolicyScaleInControl;
+  scaleInControl?: compute_RegionAutoscalerAutoscalingPolicyScaleInControl;
+
+  /*
+Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler and they can overlap.
+Structure is documented below.
+*/
+  scalingSchedules?: Array<compute_RegionAutoscalerAutoscalingPolicyScalingSchedule>;
 
   /*
 The number of seconds that the autoscaler should wait before it
@@ -81,7 +76,7 @@ numerous factors. We recommend that you test how long an
 instance may take to initialize. To do this, create an instance
 and time the startup process.
 */
-  CooldownPeriod?: number;
+  cooldownPeriod?: number;
 
   /*
 Defines the CPU utilization policy that allows the autoscaler to
@@ -89,82 +84,55 @@ scale based on the average CPU utilization of a managed instance
 group.
 Structure is documented below.
 */
-  CpuUtilization?: Compute_RegionAutoscalerAutoscalingPolicyCpuUtilization;
-
-  /*
-Configuration parameters of autoscaling based on a load balancer.
-Structure is documented below.
-*/
-  LoadBalancingUtilization?: Compute_RegionAutoscalerAutoscalingPolicyLoadBalancingUtilization;
+  cpuUtilization?: compute_RegionAutoscalerAutoscalingPolicyCpuUtilization;
 
   /*
 Configuration parameters of autoscaling based on a custom metric.
 Structure is documented below.
 */
-  Metrics?: Array<Compute_RegionAutoscalerAutoscalingPolicyMetric>;
+  metrics?: Array<compute_RegionAutoscalerAutoscalingPolicyMetric>;
+
+  /*
+The minimum number of replicas that the autoscaler can scale down
+to. This cannot be less than 0. If not provided, autoscaler will
+choose a default value depending on maximum number of instances
+allowed.
+*/
+  minReplicas?: number;
+
+  // Defines operating mode for this policy.
+  mode?: string;
 }
 
-export function Compute_RegionAutoscalerAutoscalingPolicy_GetTypes(): DynamicUIProps[] {
+export function compute_RegionAutoscalerAutoscalingPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ScaleDownControl",
+      "scaleDownControl",
       "Defines scale down controls to reduce the risk of response latency\nand outages due to abrupt scale-in events\nStructure is documented below.",
-      Compute_RegionAutoscalerAutoscalingPolicyScaleDownControl_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "ScalingSchedules",
-      "Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler and they can overlap.\nStructure is documented below.",
-      Compute_RegionAutoscalerAutoscalingPolicyScalingSchedule_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "CooldownPeriod",
-      "The number of seconds that the autoscaler should wait before it\nstarts collecting information from a new instance. This prevents\nthe autoscaler from collecting information when the instance is\ninitializing, during which the collected usage would not be\nreliable. The default time autoscaler waits is 60 seconds.\nVirtual machine initialization times might vary because of\nnumerous factors. We recommend that you test how long an\ninstance may take to initialize. To do this, create an instance\nand time the startup process.",
-      [],
+      compute_RegionAutoscalerAutoscalingPolicyScaleDownControl_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "CpuUtilization",
-      "Defines the CPU utilization policy that allows the autoscaler to\nscale based on the average CPU utilization of a managed instance\ngroup.\nStructure is documented below.",
-      Compute_RegionAutoscalerAutoscalingPolicyCpuUtilization_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "LoadBalancingUtilization",
-      "Configuration parameters of autoscaling based on a load balancer.\nStructure is documented below.",
-      Compute_RegionAutoscalerAutoscalingPolicyLoadBalancingUtilization_GetTypes(),
+      "scaleInControl",
+      "Defines scale in controls to reduce the risk of response latency\nand outages due to abrupt scale-in events\nStructure is documented below.",
+      compute_RegionAutoscalerAutoscalingPolicyScaleInControl_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Metrics",
+      "metrics",
       "Configuration parameters of autoscaling based on a custom metric.\nStructure is documented below.",
-      Compute_RegionAutoscalerAutoscalingPolicyMetric_GetTypes(),
+      compute_RegionAutoscalerAutoscalingPolicyMetric_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxReplicas",
-      "The maximum number of instances that the autoscaler can scale up\nto. This is required when creating or updating an autoscaler. The\nmaximum number of replicas should not be lower than minimal number\nof replicas.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "MinReplicas",
+      "minReplicas",
       "The minimum number of replicas that the autoscaler can scale down\nto. This cannot be less than 0. If not provided, autoscaler will\nchoose a default value depending on maximum number of instances\nallowed.",
       [],
       true,
@@ -172,7 +140,7 @@ export function Compute_RegionAutoscalerAutoscalingPolicy_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "Mode",
+      "mode",
       "Defines operating mode for this policy.",
       [],
       false,
@@ -180,9 +148,41 @@ export function Compute_RegionAutoscalerAutoscalingPolicy_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ScaleInControl",
-      "Defines scale in controls to reduce the risk of response latency\nand outages due to abrupt scale-in events\nStructure is documented below.",
-      Compute_RegionAutoscalerAutoscalingPolicyScaleInControl_GetTypes(),
+      "loadBalancingUtilization",
+      "Configuration parameters of autoscaling based on a load balancer.\nStructure is documented below.",
+      compute_RegionAutoscalerAutoscalingPolicyLoadBalancingUtilization_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "maxReplicas",
+      "The maximum number of instances that the autoscaler can scale up\nto. This is required when creating or updating an autoscaler. The\nmaximum number of replicas should not be lower than minimal number\nof replicas.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "scalingSchedules",
+      "Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler and they can overlap.\nStructure is documented below.",
+      compute_RegionAutoscalerAutoscalingPolicyScalingSchedule_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "cooldownPeriod",
+      "The number of seconds that the autoscaler should wait before it\nstarts collecting information from a new instance. This prevents\nthe autoscaler from collecting information when the instance is\ninitializing, during which the collected usage would not be\nreliable. The default time autoscaler waits is 60 seconds.\nVirtual machine initialization times might vary because of\nnumerous factors. We recommend that you test how long an\ninstance may take to initialize. To do this, create an instance\nand time the startup process.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "cpuUtilization",
+      "Defines the CPU utilization policy that allows the autoscaler to\nscale based on the average CPU utilization of a managed instance\ngroup.\nStructure is documented below.",
+      compute_RegionAutoscalerAutoscalingPolicyCpuUtilization_GetTypes(),
       false,
       false,
     ),

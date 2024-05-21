@@ -9,59 +9,67 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface BackendServiceSignedUrlKeyArgs {
   /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  /*
 The backend service this signed URL key belongs.
 
 
 - - -
 */
-  BackendService?: string;
+  backendService?: string;
 
   /*
 128-bit key value used for signing the URL. The key value must be a
 valid RFC 4648 Section 5 base64url encoded string.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  KeyValue?: string;
+  keyValue?: string;
 
   // Name of the signed URL key.
-  Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
+  name?: string;
 }
 export class BackendServiceSignedUrlKey extends Resource {
   /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  /*
 The backend service this signed URL key belongs.
 
 
 - - -
 */
-  public BackendService?: string;
+  public backendService?: string;
 
   /*
 128-bit key value used for signing the URL. The key value must be a
 valid RFC 4648 Section 5 base64url encoded string.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  public KeyValue?: string;
+  public keyValue?: string;
 
   // Name of the signed URL key.
-  public Name?: string;
+  public name?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "BackendService",
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "backendService",
         "The backend service this signed URL key belongs.\n\n\n- - -",
         [],
         true,
@@ -69,7 +77,7 @@ valid RFC 4648 Section 5 base64url encoded string.
       ),
       new DynamicUIProps(
         InputType.String,
-        "KeyValue",
+        "keyValue",
         "128-bit key value used for signing the URL. The key value must be a\nvalid RFC 4648 Section 5 base64url encoded string.\n**Note**: This property is sensitive and will not be displayed in the plan.",
         [],
         true,
@@ -77,16 +85,8 @@ valid RFC 4648 Section 5 base64url encoded string.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name of the signed URL key.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
         true,

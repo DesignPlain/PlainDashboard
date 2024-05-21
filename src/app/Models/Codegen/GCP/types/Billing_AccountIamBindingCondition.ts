@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Billing_AccountIamBindingCondition {
+export interface billing_AccountIamBindingCondition {
   //
-  Description?: string;
+  title?: string;
 
   //
-  Expression?: string;
+  description?: string;
 
   //
-  Title?: string;
+  expression?: string;
 }
 
-export function Billing_AccountIamBindingCondition_GetTypes(): DynamicUIProps[] {
+export function billing_AccountIamBindingCondition_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Expression", "", [], true, true),
-    new DynamicUIProps(InputType.String, "Title", "", [], true, true),
-    new DynamicUIProps(InputType.String, "Description", "", [], false, true),
+    new DynamicUIProps(InputType.String, "title", "", [], true, true),
+    new DynamicUIProps(InputType.String, "description", "", [], false, true),
+    new DynamicUIProps(InputType.String, "expression", "", [], true, true),
   ];
 }

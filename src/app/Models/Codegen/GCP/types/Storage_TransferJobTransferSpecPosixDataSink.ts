@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_TransferJobTransferSpecPosixDataSink {
+export interface storage_TransferJobTransferSpecPosixDataSink {
   // Root directory path to the filesystem.
-  RootDirectory?: string;
+  rootDirectory?: string;
 }
 
-export function Storage_TransferJobTransferSpecPosixDataSink_GetTypes(): DynamicUIProps[] {
+export function storage_TransferJobTransferSpecPosixDataSink_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "RootDirectory",
+      "rootDirectory",
       "Root directory path to the filesystem.",
       [],
       true,

@@ -7,19 +7,37 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionStoredInfoTypeRegex,
-  Dataloss_PreventionStoredInfoTypeRegex_GetTypes,
-} from "../types/Dataloss_PreventionStoredInfoTypeRegex";
+  dataloss_PreventionStoredInfoTypeRegex,
+  dataloss_PreventionStoredInfoTypeRegex_GetTypes,
+} from "../types/dataloss_PreventionStoredInfoTypeRegex";
 import {
-  Dataloss_PreventionStoredInfoTypeDictionary,
-  Dataloss_PreventionStoredInfoTypeDictionary_GetTypes,
-} from "../types/Dataloss_PreventionStoredInfoTypeDictionary";
+  dataloss_PreventionStoredInfoTypeDictionary,
+  dataloss_PreventionStoredInfoTypeDictionary_GetTypes,
+} from "../types/dataloss_PreventionStoredInfoTypeDictionary";
 import {
-  Dataloss_PreventionStoredInfoTypeLargeCustomDictionary,
-  Dataloss_PreventionStoredInfoTypeLargeCustomDictionary_GetTypes,
-} from "../types/Dataloss_PreventionStoredInfoTypeLargeCustomDictionary";
+  dataloss_PreventionStoredInfoTypeLargeCustomDictionary,
+  dataloss_PreventionStoredInfoTypeLargeCustomDictionary_GetTypes,
+} from "../types/dataloss_PreventionStoredInfoTypeLargeCustomDictionary";
 
 export interface PreventionStoredInfoTypeArgs {
+  // A description of the info type.
+  description?: string;
+
+  /*
+Dictionary which defines the rule.
+Structure is documented below.
+*/
+  dictionary?: dataloss_PreventionStoredInfoTypeDictionary;
+
+  // User set display name of the info type.
+  displayName?: string;
+
+  /*
+Dictionary which defines the rule.
+Structure is documented below.
+*/
+  largeCustomDictionary?: dataloss_PreventionStoredInfoTypeLargeCustomDictionary;
+
   /*
 The parent of the info type in any of the following formats:
 - `projects/{{project}}`
@@ -30,51 +48,30 @@ The parent of the info type in any of the following formats:
 
 - - -
 */
-  Parent?: string;
+  parent?: string;
 
   /*
 Regular expression which defines the rule.
 Structure is documented below.
 */
-  Regex?: Dataloss_PreventionStoredInfoTypeRegex;
+  regex?: dataloss_PreventionStoredInfoTypeRegex;
 
   /*
 The storedInfoType ID can contain uppercase and lowercase letters, numbers, and hyphens;
 that is, it must match the regular expression: [a-zA-Z\d-_]+. The maximum length is 100
 characters. Can be empty to allow the system to generate one.
 */
-  StoredInfoTypeId?: string;
-
-  // A description of the info type.
-  Description?: string;
-
-  /*
-Dictionary which defines the rule.
-Structure is documented below.
-*/
-  Dictionary?: Dataloss_PreventionStoredInfoTypeDictionary;
-
-  // User set display name of the info type.
-  DisplayName?: string;
-
-  /*
-Dictionary which defines the rule.
-Structure is documented below.
-*/
-  LargeCustomDictionary?: Dataloss_PreventionStoredInfoTypeLargeCustomDictionary;
+  storedInfoTypeId?: string;
 }
 export class PreventionStoredInfoType extends Resource {
-  // User set display name of the info type.
-  public DisplayName?: string;
-
   /*
 Dictionary which defines the rule.
 Structure is documented below.
 */
-  public LargeCustomDictionary?: Dataloss_PreventionStoredInfoTypeLargeCustomDictionary;
+  public largeCustomDictionary?: dataloss_PreventionStoredInfoTypeLargeCustomDictionary;
 
   // Name describing the field.
-  public Name?: string;
+  public name?: string;
 
   /*
 The parent of the info type in any of the following formats:
@@ -86,43 +83,54 @@ The parent of the info type in any of the following formats:
 
 - - -
 */
-  public Parent?: string;
+  public parent?: string;
 
   /*
 Regular expression which defines the rule.
 Structure is documented below.
 */
-  public Regex?: Dataloss_PreventionStoredInfoTypeRegex;
+  public regex?: dataloss_PreventionStoredInfoTypeRegex;
 
   /*
 The storedInfoType ID can contain uppercase and lowercase letters, numbers, and hyphens;
 that is, it must match the regular expression: [a-zA-Z\d-_]+. The maximum length is 100
 characters. Can be empty to allow the system to generate one.
 */
-  public StoredInfoTypeId?: string;
+  public storedInfoTypeId?: string;
 
   // A description of the info type.
-  public Description?: string;
+  public description?: string;
 
   /*
 Dictionary which defines the rule.
 Structure is documented below.
 */
-  public Dictionary?: Dataloss_PreventionStoredInfoTypeDictionary;
+  public dictionary?: dataloss_PreventionStoredInfoTypeDictionary;
+
+  // User set display name of the info type.
+  public displayName?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
+        InputType.String,
+        "description",
+        "A description of the info type.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
         InputType.Object,
-        "Dictionary",
+        "dictionary",
         "Dictionary which defines the rule.\nStructure is documented below.",
-        Dataloss_PreventionStoredInfoTypeDictionary_GetTypes(),
+        dataloss_PreventionStoredInfoTypeDictionary_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "User set display name of the info type.",
         [],
         false,
@@ -130,15 +138,15 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "LargeCustomDictionary",
+        "largeCustomDictionary",
         "Dictionary which defines the rule.\nStructure is documented below.",
-        Dataloss_PreventionStoredInfoTypeLargeCustomDictionary_GetTypes(),
+        dataloss_PreventionStoredInfoTypeLargeCustomDictionary_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Parent",
+        "parent",
         "The parent of the info type in any of the following formats:\n* `projects/{{project}}`\n* `projects/{{project}}/locations/{{location}}`\n* `organizations/{{organization_id}}`\n* `organizations/{{organization_id}}/locations/{{location}}`\n\n\n- - -",
         [],
         true,
@@ -146,27 +154,19 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Regex",
+        "regex",
         "Regular expression which defines the rule.\nStructure is documented below.",
-        Dataloss_PreventionStoredInfoTypeRegex_GetTypes(),
+        dataloss_PreventionStoredInfoTypeRegex_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "StoredInfoTypeId",
+        "storedInfoTypeId",
         "The storedInfoType ID can contain uppercase and lowercase letters, numbers, and hyphens;\nthat is, it must match the regular expression: [a-zA-Z\\d-_]+. The maximum length is 100\ncharacters. Can be empty to allow the system to generate one.",
         [],
         false,
         true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "A description of the info type.",
-        [],
-        false,
-        false,
       ),
     ];
   }

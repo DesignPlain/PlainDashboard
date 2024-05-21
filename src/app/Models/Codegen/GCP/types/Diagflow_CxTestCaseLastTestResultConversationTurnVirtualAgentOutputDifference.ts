@@ -6,9 +6,9 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifference {
+export interface diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifference {
   // A human readable description of the diff, showing the actual output vs expected output.
-  Description?: string;
+  description?: string;
 
   /*
 The type of diff.
@@ -19,14 +19,14 @@ The type of diff.
 - FLOW: The flow.
 Possible values are: `INTENT`, `PAGE`, `PARAMETERS`, `UTTERANCE`, `FLOW`.
 */
-  Type?: string;
+  type?: string;
 }
 
-export function Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifference_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifference_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "A human readable description of the diff, showing the actual output vs expected output.",
       [],
       false,
@@ -34,7 +34,7 @@ export function Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOut
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "The type of diff.\n* INTENT: The intent.\n* PAGE: The page.\n* PARAMETERS: The parameters.\n* UTTERANCE: The message utterance.\n* FLOW: The flow.\nPossible values are: `INTENT`, `PAGE`, `PARAMETERS`, `UTTERANCE`, `FLOW`.",
       [],
       false,

@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vmwareengine_SubnetDhcpAddressRange {
+export interface vmwareengine_SubnetDhcpAddressRange {
   /*
 (Output)
 The first IP address of the range.
 */
-  FirstAddress?: string;
+  firstAddress?: string;
 
   /*
 (Output)
 The last IP address of the range.
 */
-  LastAddress?: string;
+  lastAddress?: string;
 }
 
-export function Vmwareengine_SubnetDhcpAddressRange_GetTypes(): DynamicUIProps[] {
+export function vmwareengine_SubnetDhcpAddressRange_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "FirstAddress",
+      "firstAddress",
       "(Output)\nThe first IP address of the range.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Vmwareengine_SubnetDhcpAddressRange_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "LastAddress",
+      "lastAddress",
       "(Output)\nThe last IP address of the range.",
       [],
       false,

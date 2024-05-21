@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Bigquery_TableRangePartitioningRange,
-  Bigquery_TableRangePartitioningRange_GetTypes,
-} from "./Bigquery_TableRangePartitioningRange";
+  bigquery_TableRangePartitioningRange,
+  bigquery_TableRangePartitioningRange_GetTypes,
+} from "./bigquery_TableRangePartitioningRange";
 
-export interface Bigquery_TableRangePartitioning {
+export interface bigquery_TableRangePartitioning {
   /*
 The field used to determine how to create a range-based
 partition.
 */
-  Field?: string;
+  field?: string;
 
   /*
 Information required to partition based on ranges.
 Structure is documented below.
 */
-  Range?: Bigquery_TableRangePartitioningRange;
+  range?: bigquery_TableRangePartitioningRange;
 }
 
-export function Bigquery_TableRangePartitioning_GetTypes(): DynamicUIProps[] {
+export function bigquery_TableRangePartitioning_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Field",
+      "field",
       "The field used to determine how to create a range-based\npartition.",
       [],
       true,
@@ -36,9 +36,9 @@ export function Bigquery_TableRangePartitioning_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Range",
+      "range",
       "Information required to partition based on ranges.\nStructure is documented below.",
-      Bigquery_TableRangePartitioningRange_GetTypes(),
+      bigquery_TableRangePartitioningRange_GetTypes(),
       true,
       false,
     ),

@@ -8,45 +8,46 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface InstanceIamPolicyArgs {
-  // The ID of the instance or a fully qualified identifier for the instance.
-  Name?: string;
-
-  //
-  PolicyData?: string;
-
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // The region of the Data Fusion instance.
-  Region?: string;
+  region?: string;
+
+  // The ID of the instance or a fully qualified identifier for the instance.
+  name?: string;
+
+  //
+  policyData?: string;
 }
 export class InstanceIamPolicy extends Resource {
-  // The region of the Data Fusion instance.
-  public Region?: string;
-
   //
-  public Etag?: string;
+  public etag?: string;
 
   // The ID of the instance or a fully qualified identifier for the instance.
-  public Name?: string;
+  public name?: string;
 
   //
-  public PolicyData?: string;
+  public policyData?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
+
+  // The region of the Data Fusion instance.
+  public region?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
+      new DynamicUIProps(InputType.String, "policyData", "", [], true, false),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -54,7 +55,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "The region of the Data Fusion instance.",
         [],
         false,
@@ -62,13 +63,12 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The ID of the instance or a fully qualified identifier for the instance.",
         [],
         false,
         true,
       ),
-      new DynamicUIProps(InputType.String, "PolicyData", "", [], true, false),
     ];
   }
 }

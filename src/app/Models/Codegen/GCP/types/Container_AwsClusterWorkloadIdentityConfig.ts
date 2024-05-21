@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AwsClusterWorkloadIdentityConfig {
+export interface container_AwsClusterWorkloadIdentityConfig {
   // The ID of the OIDC Identity Provider (IdP) associated to the Workload Identity Pool.
-  IdentityProvider?: string;
+  identityProvider?: string;
 
   // The OIDC issuer URL for this cluster.
-  IssuerUri?: string;
+  issuerUri?: string;
 
   // The Workload Identity Pool associated to the cluster.
-  WorkloadPool?: string;
+  workloadPool?: string;
 }
 
-export function Container_AwsClusterWorkloadIdentityConfig_GetTypes(): DynamicUIProps[] {
+export function container_AwsClusterWorkloadIdentityConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "IssuerUri",
+      "identityProvider",
+      "The ID of the OIDC Identity Provider (IdP) associated to the Workload Identity Pool.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "issuerUri",
       "The OIDC issuer URL for this cluster.",
       [],
       false,
@@ -29,16 +37,8 @@ export function Container_AwsClusterWorkloadIdentityConfig_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "WorkloadPool",
+      "workloadPool",
       "The Workload Identity Pool associated to the cluster.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "IdentityProvider",
-      "The ID of the OIDC Identity Provider (IdP) associated to the Workload Identity Pool.",
       [],
       false,
       false,

@@ -6,57 +6,57 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformance,
-  Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformance_GetTypes,
-} from "./Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformance";
+  monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance,
+  monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance_GetTypes,
+} from "./monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance";
 import {
-  Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance,
-  Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance_GetTypes,
-} from "./Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance";
+  monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformance,
+  monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformance_GetTypes,
+} from "./monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformance";
 
-export interface Monitoring_SloWindowsBasedSliGoodTotalRatioThreshold {
+export interface monitoring_SloWindowsBasedSliGoodTotalRatioThreshold {
+  /*
+Basic SLI to evaluate to judge window quality.
+Structure is documented below.
+*/
+  basicSliPerformance?: monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance;
+
   /*
 Request-based SLI to evaluate to judge window quality.
 Structure is documented below.
 */
-  Performance?: Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformance;
+  performance?: monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformance;
 
   /*
 If window performance >= threshold, the window is counted
 as good.
 */
-  Threshold?: number;
-
-  /*
-Basic SLI to evaluate to judge window quality.
-Structure is documented below.
-*/
-  BasicSliPerformance?: Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance;
+  threshold?: number;
 }
 
-export function Monitoring_SloWindowsBasedSliGoodTotalRatioThreshold_GetTypes(): DynamicUIProps[] {
+export function monitoring_SloWindowsBasedSliGoodTotalRatioThreshold_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Performance",
+      "basicSliPerformance",
+      "Basic SLI to evaluate to judge window quality.\nStructure is documented below.",
+      monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "performance",
       "Request-based SLI to evaluate to judge window quality.\nStructure is documented below.",
-      Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformance_GetTypes(),
+      monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformance_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Threshold",
+      "threshold",
       "If window performance >= threshold, the window is counted\nas good.",
       [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "BasicSliPerformance",
-      "Basic SLI to evaluate to judge window quality.\nStructure is documented below.",
-      Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance_GetTypes(),
       false,
       false,
     ),

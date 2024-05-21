@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_WorkflowTemplatePlacementManagedClusterConfigMetastoreConfig {
+export interface dataproc_WorkflowTemplatePlacementManagedClusterConfigMetastoreConfig {
   // Required. Resource name of an existing Dataproc Metastore service. Example: - `projects/`
-  DataprocMetastoreService?: string;
+  dataprocMetastoreService?: string;
 }
 
-export function Dataproc_WorkflowTemplatePlacementManagedClusterConfigMetastoreConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplatePlacementManagedClusterConfigMetastoreConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DataprocMetastoreService",
+      "dataprocMetastoreService",
       "Required. Resource name of an existing Dataproc Metastore service. Example: * `projects/`",
       [],
       true,

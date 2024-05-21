@@ -7,61 +7,53 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Appengine_EngineSplitTrafficSplit,
-  Appengine_EngineSplitTrafficSplit_GetTypes,
-} from "../types/Appengine_EngineSplitTrafficSplit";
+  appengine_EngineSplitTrafficSplit,
+  appengine_EngineSplitTrafficSplit_GetTypes,
+} from "../types/appengine_EngineSplitTrafficSplit";
 
 export interface EngineSplitTrafficArgs {
   // If set to true traffic will be migrated to this version.
-  MigrateTraffic?: boolean;
+  migrateTraffic?: boolean;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // The name of the service these settings apply to.
-  Service?: string;
+  service?: string;
 
   /*
 Mapping that defines fractional HTTP traffic diversion to different versions within the service.
 Structure is documented below.
 */
-  Split?: Appengine_EngineSplitTrafficSplit;
+  split?: appengine_EngineSplitTrafficSplit;
 }
 export class EngineSplitTraffic extends Resource {
+  /*
+Mapping that defines fractional HTTP traffic diversion to different versions within the service.
+Structure is documented below.
+*/
+  public split?: appengine_EngineSplitTrafficSplit;
+
   // If set to true traffic will be migrated to this version.
-  public MigrateTraffic?: boolean;
+  public migrateTraffic?: boolean;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // The name of the service these settings apply to.
-  public Service?: string;
-
-  /*
-Mapping that defines fractional HTTP traffic diversion to different versions within the service.
-Structure is documented below.
-*/
-  public Split?: Appengine_EngineSplitTrafficSplit;
+  public service?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Object,
-        "Split",
-        "Mapping that defines fractional HTTP traffic diversion to different versions within the service.\nStructure is documented below.",
-        Appengine_EngineSplitTrafficSplit_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.Bool,
-        "MigrateTraffic",
+        "migrateTraffic",
         "If set to true traffic will be migrated to this version.",
         [],
         false,
@@ -69,7 +61,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -77,9 +69,17 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Service",
+        "service",
         "The name of the service these settings apply to.",
         [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "split",
+        "Mapping that defines fractional HTTP traffic diversion to different versions within the service.\nStructure is documented below.",
+        appengine_EngineSplitTrafficSplit_GetTypes(),
         true,
         false,
       ),

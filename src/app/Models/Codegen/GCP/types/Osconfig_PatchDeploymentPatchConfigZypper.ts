@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_PatchDeploymentPatchConfigZypper {
-  // Install only patches with these severities. Common severities include critical, important, moderate, and low.
-  Severities?: Array<string>;
-
-  // Adds the --with-optional flag to zypper patch.
-  WithOptional?: boolean;
-
+export interface osconfig_PatchDeploymentPatchConfigZypper {
   // Adds the --with-update flag, to zypper patch.
-  WithUpdate?: boolean;
+  withUpdate?: boolean;
 
   // Install only patches with these categories. Common categories include security, recommended, and feature.
-  Categories?: Array<string>;
+  categories?: Array<string>;
 
   // List of packages to exclude from update.
-  Excludes?: Array<string>;
+  excludes?: Array<string>;
 
   /*
 An exclusive list of patches to be updated. These are the only patches that will be installed using 'zypper patch patch:' command.
 This field must not be used with any other patch configuration fields.
 */
-  ExclusivePatches?: Array<string>;
+  exclusivePatches?: Array<string>;
+
+  // Install only patches with these severities. Common severities include critical, important, moderate, and low.
+  severities?: Array<string>;
+
+  // Adds the --with-optional flag to zypper patch.
+  withOptional?: boolean;
 }
 
-export function Osconfig_PatchDeploymentPatchConfigZypper_GetTypes(): DynamicUIProps[] {
+export function osconfig_PatchDeploymentPatchConfigZypper_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ExclusivePatches",
+      "exclusivePatches",
       "An exclusive list of patches to be updated. These are the only patches that will be installed using 'zypper patch patch:' command.\nThis field must not be used with any other patch configuration fields.",
       InputType_String_GetTypes(),
       false,
@@ -41,7 +41,7 @@ export function Osconfig_PatchDeploymentPatchConfigZypper_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Severities",
+      "severities",
       "Install only patches with these severities. Common severities include critical, important, moderate, and low.",
       InputType_String_GetTypes(),
       false,
@@ -49,7 +49,7 @@ export function Osconfig_PatchDeploymentPatchConfigZypper_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "WithOptional",
+      "withOptional",
       "Adds the --with-optional flag to zypper patch.",
       [],
       false,
@@ -57,7 +57,7 @@ export function Osconfig_PatchDeploymentPatchConfigZypper_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "WithUpdate",
+      "withUpdate",
       "Adds the --with-update flag, to zypper patch.",
       [],
       false,
@@ -65,7 +65,7 @@ export function Osconfig_PatchDeploymentPatchConfigZypper_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Categories",
+      "categories",
       "Install only patches with these categories. Common categories include security, recommended, and feature.",
       InputType_String_GetTypes(),
       false,
@@ -73,7 +73,7 @@ export function Osconfig_PatchDeploymentPatchConfigZypper_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Excludes",
+      "excludes",
       "List of packages to exclude from update.",
       InputType_String_GetTypes(),
       false,

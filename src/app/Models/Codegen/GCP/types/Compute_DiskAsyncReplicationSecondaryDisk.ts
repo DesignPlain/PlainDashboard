@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_DiskAsyncReplicationSecondaryDisk {
+export interface compute_DiskAsyncReplicationSecondaryDisk {
   // The secondary disk.
-  Disk?: string;
+  disk?: string;
 
   /*
 Output-only. Status of replication on the secondary disk.
 
 - - -
 */
-  State?: string;
+  state?: string;
 }
 
-export function Compute_DiskAsyncReplicationSecondaryDisk_GetTypes(): DynamicUIProps[] {
+export function compute_DiskAsyncReplicationSecondaryDisk_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Disk",
+      "disk",
       "The secondary disk.",
       [],
       true,
@@ -30,7 +30,7 @@ export function Compute_DiskAsyncReplicationSecondaryDisk_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "Output-only. Status of replication on the secondary disk.\n\n- - -",
       [],
       false,

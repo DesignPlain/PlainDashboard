@@ -6,133 +6,133 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Osconfig_GuestPoliciesRecipeUpdateStepFileExec,
-  Osconfig_GuestPoliciesRecipeUpdateStepFileExec_GetTypes,
-} from "./Osconfig_GuestPoliciesRecipeUpdateStepFileExec";
+  osconfig_GuestPoliciesRecipeUpdateStepArchiveExtraction,
+  osconfig_GuestPoliciesRecipeUpdateStepArchiveExtraction_GetTypes,
+} from "./osconfig_GuestPoliciesRecipeUpdateStepArchiveExtraction";
 import {
-  Osconfig_GuestPoliciesRecipeUpdateStepMsiInstallation,
-  Osconfig_GuestPoliciesRecipeUpdateStepMsiInstallation_GetTypes,
-} from "./Osconfig_GuestPoliciesRecipeUpdateStepMsiInstallation";
+  osconfig_GuestPoliciesRecipeUpdateStepDpkgInstallation,
+  osconfig_GuestPoliciesRecipeUpdateStepDpkgInstallation_GetTypes,
+} from "./osconfig_GuestPoliciesRecipeUpdateStepDpkgInstallation";
 import {
-  Osconfig_GuestPoliciesRecipeUpdateStepRpmInstallation,
-  Osconfig_GuestPoliciesRecipeUpdateStepRpmInstallation_GetTypes,
-} from "./Osconfig_GuestPoliciesRecipeUpdateStepRpmInstallation";
+  osconfig_GuestPoliciesRecipeUpdateStepFileCopy,
+  osconfig_GuestPoliciesRecipeUpdateStepFileCopy_GetTypes,
+} from "./osconfig_GuestPoliciesRecipeUpdateStepFileCopy";
 import {
-  Osconfig_GuestPoliciesRecipeUpdateStepScriptRun,
-  Osconfig_GuestPoliciesRecipeUpdateStepScriptRun_GetTypes,
-} from "./Osconfig_GuestPoliciesRecipeUpdateStepScriptRun";
+  osconfig_GuestPoliciesRecipeUpdateStepFileExec,
+  osconfig_GuestPoliciesRecipeUpdateStepFileExec_GetTypes,
+} from "./osconfig_GuestPoliciesRecipeUpdateStepFileExec";
 import {
-  Osconfig_GuestPoliciesRecipeUpdateStepArchiveExtraction,
-  Osconfig_GuestPoliciesRecipeUpdateStepArchiveExtraction_GetTypes,
-} from "./Osconfig_GuestPoliciesRecipeUpdateStepArchiveExtraction";
+  osconfig_GuestPoliciesRecipeUpdateStepMsiInstallation,
+  osconfig_GuestPoliciesRecipeUpdateStepMsiInstallation_GetTypes,
+} from "./osconfig_GuestPoliciesRecipeUpdateStepMsiInstallation";
 import {
-  Osconfig_GuestPoliciesRecipeUpdateStepDpkgInstallation,
-  Osconfig_GuestPoliciesRecipeUpdateStepDpkgInstallation_GetTypes,
-} from "./Osconfig_GuestPoliciesRecipeUpdateStepDpkgInstallation";
+  osconfig_GuestPoliciesRecipeUpdateStepRpmInstallation,
+  osconfig_GuestPoliciesRecipeUpdateStepRpmInstallation_GetTypes,
+} from "./osconfig_GuestPoliciesRecipeUpdateStepRpmInstallation";
 import {
-  Osconfig_GuestPoliciesRecipeUpdateStepFileCopy,
-  Osconfig_GuestPoliciesRecipeUpdateStepFileCopy_GetTypes,
-} from "./Osconfig_GuestPoliciesRecipeUpdateStepFileCopy";
+  osconfig_GuestPoliciesRecipeUpdateStepScriptRun,
+  osconfig_GuestPoliciesRecipeUpdateStepScriptRun_GetTypes,
+} from "./osconfig_GuestPoliciesRecipeUpdateStepScriptRun";
 
-export interface Osconfig_GuestPoliciesRecipeUpdateStep {
+export interface osconfig_GuestPoliciesRecipeUpdateStep {
+  /*
+Copies a file onto the instance.
+Structure is documented below.
+*/
+  fileCopy?: osconfig_GuestPoliciesRecipeUpdateStepFileCopy;
+
   /*
 Executes an artifact or local file.
 Structure is documented below.
 */
-  FileExec?: Osconfig_GuestPoliciesRecipeUpdateStepFileExec;
+  fileExec?: osconfig_GuestPoliciesRecipeUpdateStepFileExec;
 
   /*
 Installs an MSI file.
 Structure is documented below.
 */
-  MsiInstallation?: Osconfig_GuestPoliciesRecipeUpdateStepMsiInstallation;
+  msiInstallation?: osconfig_GuestPoliciesRecipeUpdateStepMsiInstallation;
 
   /*
 Installs an rpm file via the rpm utility.
 Structure is documented below.
 */
-  RpmInstallation?: Osconfig_GuestPoliciesRecipeUpdateStepRpmInstallation;
+  rpmInstallation?: osconfig_GuestPoliciesRecipeUpdateStepRpmInstallation;
 
   /*
 Runs commands in a shell.
 Structure is documented below.
 */
-  ScriptRun?: Osconfig_GuestPoliciesRecipeUpdateStepScriptRun;
+  scriptRun?: osconfig_GuestPoliciesRecipeUpdateStepScriptRun;
 
   /*
 Extracts an archive into the specified directory.
 Structure is documented below.
 */
-  ArchiveExtraction?: Osconfig_GuestPoliciesRecipeUpdateStepArchiveExtraction;
+  archiveExtraction?: osconfig_GuestPoliciesRecipeUpdateStepArchiveExtraction;
 
   /*
 Installs a deb file via dpkg.
 Structure is documented below.
 */
-  DpkgInstallation?: Osconfig_GuestPoliciesRecipeUpdateStepDpkgInstallation;
-
-  /*
-Copies a file onto the instance.
-Structure is documented below.
-*/
-  FileCopy?: Osconfig_GuestPoliciesRecipeUpdateStepFileCopy;
+  dpkgInstallation?: osconfig_GuestPoliciesRecipeUpdateStepDpkgInstallation;
 }
 
-export function Osconfig_GuestPoliciesRecipeUpdateStep_GetTypes(): DynamicUIProps[] {
+export function osconfig_GuestPoliciesRecipeUpdateStep_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "FileExec",
-      "Executes an artifact or local file.\nStructure is documented below.",
-      Osconfig_GuestPoliciesRecipeUpdateStepFileExec_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "MsiInstallation",
-      "Installs an MSI file.\nStructure is documented below.",
-      Osconfig_GuestPoliciesRecipeUpdateStepMsiInstallation_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "RpmInstallation",
-      "Installs an rpm file via the rpm utility.\nStructure is documented below.",
-      Osconfig_GuestPoliciesRecipeUpdateStepRpmInstallation_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "ScriptRun",
+      "scriptRun",
       "Runs commands in a shell.\nStructure is documented below.",
-      Osconfig_GuestPoliciesRecipeUpdateStepScriptRun_GetTypes(),
+      osconfig_GuestPoliciesRecipeUpdateStepScriptRun_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ArchiveExtraction",
+      "archiveExtraction",
       "Extracts an archive into the specified directory.\nStructure is documented below.",
-      Osconfig_GuestPoliciesRecipeUpdateStepArchiveExtraction_GetTypes(),
+      osconfig_GuestPoliciesRecipeUpdateStepArchiveExtraction_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "DpkgInstallation",
+      "dpkgInstallation",
       "Installs a deb file via dpkg.\nStructure is documented below.",
-      Osconfig_GuestPoliciesRecipeUpdateStepDpkgInstallation_GetTypes(),
+      osconfig_GuestPoliciesRecipeUpdateStepDpkgInstallation_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "FileCopy",
+      "fileCopy",
       "Copies a file onto the instance.\nStructure is documented below.",
-      Osconfig_GuestPoliciesRecipeUpdateStepFileCopy_GetTypes(),
+      osconfig_GuestPoliciesRecipeUpdateStepFileCopy_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "fileExec",
+      "Executes an artifact or local file.\nStructure is documented below.",
+      osconfig_GuestPoliciesRecipeUpdateStepFileExec_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "msiInstallation",
+      "Installs an MSI file.\nStructure is documented below.",
+      osconfig_GuestPoliciesRecipeUpdateStepMsiInstallation_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "rpmInstallation",
+      "Installs an rpm file via the rpm utility.\nStructure is documented below.",
+      osconfig_GuestPoliciesRecipeUpdateStepRpmInstallation_GetTypes(),
       false,
       false,
     ),

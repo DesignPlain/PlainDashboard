@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterDefaultSnatStatus {
+export interface container_getClusterDefaultSnatStatus {
   // When disabled is set to false, default IP masquerade rules will be applied to the nodes to prevent sNAT on cluster internal traffic.
-  Disabled?: boolean;
+  disabled?: boolean;
 }
 
-export function Container_getClusterDefaultSnatStatus_GetTypes(): DynamicUIProps[] {
+export function container_getClusterDefaultSnatStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Disabled",
+      "disabled",
       "When disabled is set to false, default IP masquerade rules will be applied to the nodes to prevent sNAT on cluster internal traffic.",
       [],
       true,

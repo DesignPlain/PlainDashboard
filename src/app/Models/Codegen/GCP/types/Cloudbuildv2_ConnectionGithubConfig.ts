@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudbuildv2_ConnectionGithubConfigAuthorizerCredential,
-  Cloudbuildv2_ConnectionGithubConfigAuthorizerCredential_GetTypes,
-} from "./Cloudbuildv2_ConnectionGithubConfigAuthorizerCredential";
+  cloudbuildv2_ConnectionGithubConfigAuthorizerCredential,
+  cloudbuildv2_ConnectionGithubConfigAuthorizerCredential_GetTypes,
+} from "./cloudbuildv2_ConnectionGithubConfigAuthorizerCredential";
 
-export interface Cloudbuildv2_ConnectionGithubConfig {
+export interface cloudbuildv2_ConnectionGithubConfig {
   // GitHub App installation id.
-  AppInstallationId?: number;
+  appInstallationId?: number;
 
   /*
 OAuth credential of the account that authorized the Cloud Build GitHub App. It is recommended to use a robot account instead of a human user account. The OAuth token must be tied to the Cloud Build GitHub App.
 Structure is documented below.
 */
-  AuthorizerCredential?: Cloudbuildv2_ConnectionGithubConfigAuthorizerCredential;
+  authorizerCredential?: cloudbuildv2_ConnectionGithubConfigAuthorizerCredential;
 }
 
-export function Cloudbuildv2_ConnectionGithubConfig_GetTypes(): DynamicUIProps[] {
+export function cloudbuildv2_ConnectionGithubConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "AppInstallationId",
+      "appInstallationId",
       "GitHub App installation id.",
       [],
       false,
@@ -33,9 +33,9 @@ export function Cloudbuildv2_ConnectionGithubConfig_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.Object,
-      "AuthorizerCredential",
+      "authorizerCredential",
       "OAuth credential of the account that authorized the Cloud Build GitHub App. It is recommended to use a robot account instead of a human user account. The OAuth token must be tied to the Cloud Build GitHub App.\nStructure is documented below.",
-      Cloudbuildv2_ConnectionGithubConfigAuthorizerCredential_GetTypes(),
+      cloudbuildv2_ConnectionGithubConfigAuthorizerCredential_GetTypes(),
       false,
       false,
     ),

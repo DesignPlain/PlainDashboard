@@ -9,7 +9,7 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface IAMPolicyArgs {
   // The organization id of the target organization.
-  OrgId?: string;
+  orgId?: string;
 
   /*
 The `gcp.organizations.getIAMPolicy` data source that represents
@@ -21,11 +21,14 @@ Changing this updates the policy.
 Deleting this removes all policies from the organization, locking out users without
 organization-level access.
 */
-  PolicyData?: string;
+  policyData?: string;
 }
 export class IAMPolicy extends Resource {
+  // (Computed) The etag of the organization's IAM policy.
+  public etag?: string;
+
   // The organization id of the target organization.
-  public OrgId?: string;
+  public orgId?: string;
 
   /*
 The `gcp.organizations.getIAMPolicy` data source that represents
@@ -37,16 +40,13 @@ Changing this updates the policy.
 Deleting this removes all policies from the organization, locking out users without
 organization-level access.
 */
-  public PolicyData?: string;
-
-  // (Computed) The etag of the organization's IAM policy.
-  public Etag?: string;
+  public policyData?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "OrgId",
+        "orgId",
         "The organization id of the target organization.",
         [],
         true,
@@ -54,7 +54,7 @@ organization-level access.
       ),
       new DynamicUIProps(
         InputType.String,
-        "PolicyData",
+        "policyData",
         "The `gcp.organizations.getIAMPolicy` data source that represents\nthe IAM policy that will be applied to the organization. The policy will be\nmerged with any existing policy applied to the organization.\n\nChanging this updates the policy.\n\nDeleting this removes all policies from the organization, locking out users without\norganization-level access.",
         [],
         true,

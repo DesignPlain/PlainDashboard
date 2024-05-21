@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuild_getTriggerBitbucketServerTriggerConfigPullRequest {
-  // If true, branches that do NOT match the git_ref will trigger a build.
-  InvertRegex?: boolean;
-
+export interface cloudbuild_getTriggerBitbucketServerTriggerConfigPullRequest {
   /*
 Regex of branches to match.
 The syntax of the regular expressions accepted is the syntax accepted by RE2 and described at https://github.com/google/re2/wiki/Syntax
 */
-  Branch?: string;
+  branch?: string;
 
   // Configure builds to run whether a repository owner or collaborator need to comment /gcbrun. Possible values: ["COMMENTS_DISABLED", "COMMENTS_ENABLED", "COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY"]
-  CommentControl?: string;
+  commentControl?: string;
+
+  // If true, branches that do NOT match the git_ref will trigger a build.
+  invertRegex?: boolean;
 }
 
-export function Cloudbuild_getTriggerBitbucketServerTriggerConfigPullRequest_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_getTriggerBitbucketServerTriggerConfigPullRequest_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CommentControl",
+      "branch",
+      "Regex of branches to match.\nThe syntax of the regular expressions accepted is the syntax accepted by RE2 and described at https://github.com/google/re2/wiki/Syntax",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "commentControl",
       'Configure builds to run whether a repository owner or collaborator need to comment /gcbrun. Possible values: ["COMMENTS_DISABLED", "COMMENTS_ENABLED", "COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY"]',
       [],
       true,
@@ -32,16 +40,8 @@ export function Cloudbuild_getTriggerBitbucketServerTriggerConfigPullRequest_Get
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "InvertRegex",
+      "invertRegex",
       "If true, branches that do NOT match the git_ref will trigger a build.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Branch",
-      "Regex of branches to match.\nThe syntax of the regular expressions accepted is the syntax accepted by RE2 and described at https://github.com/google/re2/wiki/Syntax",
       [],
       true,
       false,

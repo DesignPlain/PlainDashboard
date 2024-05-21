@@ -7,85 +7,85 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Securityposture_PosturePolicySet,
-  Securityposture_PosturePolicySet_GetTypes,
-} from "../types/Securityposture_PosturePolicySet";
+  securityposture_PosturePolicySet,
+  securityposture_PosturePolicySet_GetTypes,
+} from "../types/securityposture_PosturePolicySet";
 
 export interface PostureArgs {
-  // The parent of the resource, an organization. Format should be `organizations/{organization_id}`.
-  Parent?: string;
-
-  /*
-List of policy sets for the posture.
-Structure is documented below.
-*/
-  PolicySets?: Array<Securityposture_PosturePolicySet>;
-
-  // Id of the posture. It is an immutable field.
-  PostureId?: string;
-
   /*
 State of the posture. Update to state field should not be triggered along with
 with other field updates.
 Possible values are: `DEPRECATED`, `DRAFT`, `ACTIVE`.
 */
-  State?: string;
+  state?: string;
 
   // Description of the expression
-  Description?: string;
+  description?: string;
 
   // Location of the resource, eg: global.
-  Location?: string;
+  location?: string;
+
+  // The parent of the resource, an organization. Format should be `organizations/{organization_id}`.
+  parent?: string;
+
+  /*
+List of policy sets for the posture.
+Structure is documented below.
+*/
+  policySets?: Array<securityposture_PosturePolicySet>;
+
+  // Id of the posture. It is an immutable field.
+  postureId?: string;
 }
 export class Posture extends Resource {
-  // Description of the expression
-  public Description?: string;
+  // Time the Posture was created in UTC.
+  public createTime?: string;
+
+  // For Resource freshness validation (https://google.aip.dev/154)
+  public etag?: string;
 
   // Location of the resource, eg: global.
-  public Location?: string;
+  public location?: string;
+
+  // Revision_id of the posture.
+  public revisionId?: string;
+
+  // Time the Posture was updated in UTC.
+  public updateTime?: string;
+
+  // Description of the expression
+  public description?: string;
+
+  // Immutable. The name of the custom constraint. This is unique within the organization.
+  public name?: string;
 
   // The parent of the resource, an organization. Format should be `organizations/{organization_id}`.
-  public Parent?: string;
+  public parent?: string;
 
   /*
 List of policy sets for the posture.
 Structure is documented below.
 */
-  public PolicySets?: Array<Securityposture_PosturePolicySet>;
+  public policySets?: Array<securityposture_PosturePolicySet>;
 
   // Id of the posture. It is an immutable field.
-  public PostureId?: string;
-
-  // Time the Posture was updated in UTC.
-  public UpdateTime?: string;
-
-  // Time the Posture was created in UTC.
-  public CreateTime?: string;
-
-  // For Resource freshness validation (https://google.aip.dev/154)
-  public Etag?: string;
-
-  // Immutable. The name of the custom constraint. This is unique within the organization.
-  public Name?: string;
+  public postureId?: string;
 
   // If set, there are currently changes in flight to the posture.
-  public Reconciling?: boolean;
-
-  // Revision_id of the posture.
-  public RevisionId?: string;
+  public reconciling?: boolean;
 
   /*
 State of the posture. Update to state field should not be triggered along with
 with other field updates.
 Possible values are: `DEPRECATED`, `DRAFT`, `ACTIVE`.
 */
-  public State?: string;
+  public state?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Parent",
+        "parent",
         "The parent of the resource, an organization. Format should be `organizations/{organization_id}`.",
         [],
         true,
@@ -93,15 +93,15 @@ Possible values are: `DEPRECATED`, `DRAFT`, `ACTIVE`.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "PolicySets",
+        "policySets",
         "List of policy sets for the posture.\nStructure is documented below.",
-        Securityposture_PosturePolicySet_GetTypes(),
+        securityposture_PosturePolicySet_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "PostureId",
+        "postureId",
         "Id of the posture. It is an immutable field.",
         [],
         true,
@@ -109,7 +109,7 @@ Possible values are: `DEPRECATED`, `DRAFT`, `ACTIVE`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "State",
+        "state",
         "State of the posture. Update to state field should not be triggered along with\nwith other field updates.\nPossible values are: `DEPRECATED`, `DRAFT`, `ACTIVE`.",
         [],
         true,
@@ -117,7 +117,7 @@ Possible values are: `DEPRECATED`, `DRAFT`, `ACTIVE`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Description of the expression",
         [],
         false,
@@ -125,7 +125,7 @@ Possible values are: `DEPRECATED`, `DRAFT`, `ACTIVE`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "Location of the resource, eg: global.",
         [],
         true,

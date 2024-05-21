@@ -6,52 +6,52 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkehub_FeatureMembershipConfigmanagementPolicyController,
-  Gkehub_FeatureMembershipConfigmanagementPolicyController_GetTypes,
-} from "./Gkehub_FeatureMembershipConfigmanagementPolicyController";
+  gkehub_FeatureMembershipConfigmanagementConfigSync,
+  gkehub_FeatureMembershipConfigmanagementConfigSync_GetTypes,
+} from "./gkehub_FeatureMembershipConfigmanagementConfigSync";
 import {
-  Gkehub_FeatureMembershipConfigmanagementBinauthz,
-  Gkehub_FeatureMembershipConfigmanagementBinauthz_GetTypes,
-} from "./Gkehub_FeatureMembershipConfigmanagementBinauthz";
+  gkehub_FeatureMembershipConfigmanagementHierarchyController,
+  gkehub_FeatureMembershipConfigmanagementHierarchyController_GetTypes,
+} from "./gkehub_FeatureMembershipConfigmanagementHierarchyController";
 import {
-  Gkehub_FeatureMembershipConfigmanagementConfigSync,
-  Gkehub_FeatureMembershipConfigmanagementConfigSync_GetTypes,
-} from "./Gkehub_FeatureMembershipConfigmanagementConfigSync";
+  gkehub_FeatureMembershipConfigmanagementPolicyController,
+  gkehub_FeatureMembershipConfigmanagementPolicyController_GetTypes,
+} from "./gkehub_FeatureMembershipConfigmanagementPolicyController";
 import {
-  Gkehub_FeatureMembershipConfigmanagementHierarchyController,
-  Gkehub_FeatureMembershipConfigmanagementHierarchyController_GetTypes,
-} from "./Gkehub_FeatureMembershipConfigmanagementHierarchyController";
+  gkehub_FeatureMembershipConfigmanagementBinauthz,
+  gkehub_FeatureMembershipConfigmanagementBinauthz_GetTypes,
+} from "./gkehub_FeatureMembershipConfigmanagementBinauthz";
 
-export interface Gkehub_FeatureMembershipConfigmanagement {
+export interface gkehub_FeatureMembershipConfigmanagement {
   // Policy Controller configuration for the cluster. Structure is documented below.
-  PolicyController?: Gkehub_FeatureMembershipConfigmanagementPolicyController;
+  policyController?: gkehub_FeatureMembershipConfigmanagementPolicyController;
 
   // Version of ACM installed.
-  Version?: string;
+  version?: string;
 
   // Binauthz configuration for the cluster. Structure is documented below.
-  Binauthz?: Gkehub_FeatureMembershipConfigmanagementBinauthz;
+  binauthz?: gkehub_FeatureMembershipConfigmanagementBinauthz;
 
   // Config Sync configuration for the cluster. Structure is documented below.
-  ConfigSync?: Gkehub_FeatureMembershipConfigmanagementConfigSync;
+  configSync?: gkehub_FeatureMembershipConfigmanagementConfigSync;
 
   // Hierarchy Controller configuration for the cluster. Structure is documented below.
-  HierarchyController?: Gkehub_FeatureMembershipConfigmanagementHierarchyController;
+  hierarchyController?: gkehub_FeatureMembershipConfigmanagementHierarchyController;
 }
 
-export function Gkehub_FeatureMembershipConfigmanagement_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureMembershipConfigmanagement_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "PolicyController",
+      "policyController",
       "Policy Controller configuration for the cluster. Structure is documented below.",
-      Gkehub_FeatureMembershipConfigmanagementPolicyController_GetTypes(),
+      gkehub_FeatureMembershipConfigmanagementPolicyController_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Version",
+      "version",
       "Version of ACM installed.",
       [],
       false,
@@ -59,25 +59,25 @@ export function Gkehub_FeatureMembershipConfigmanagement_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Binauthz",
+      "binauthz",
       "Binauthz configuration for the cluster. Structure is documented below.",
-      Gkehub_FeatureMembershipConfigmanagementBinauthz_GetTypes(),
+      gkehub_FeatureMembershipConfigmanagementBinauthz_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ConfigSync",
+      "configSync",
       "Config Sync configuration for the cluster. Structure is documented below.",
-      Gkehub_FeatureMembershipConfigmanagementConfigSync_GetTypes(),
+      gkehub_FeatureMembershipConfigmanagementConfigSync_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "HierarchyController",
+      "hierarchyController",
       "Hierarchy Controller configuration for the cluster. Structure is documented below.",
-      Gkehub_FeatureMembershipConfigmanagementHierarchyController_GetTypes(),
+      gkehub_FeatureMembershipConfigmanagementHierarchyController_GetTypes(),
       false,
       false,
     ),

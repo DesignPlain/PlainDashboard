@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificateauthority_getAuthorityConfigX509ConfigAdditionalExtensionObjectId,
-  Certificateauthority_getAuthorityConfigX509ConfigAdditionalExtensionObjectId_GetTypes,
-} from "./Certificateauthority_getAuthorityConfigX509ConfigAdditionalExtensionObjectId";
+  certificateauthority_getAuthorityConfigX509ConfigAdditionalExtensionObjectId,
+  certificateauthority_getAuthorityConfigX509ConfigAdditionalExtensionObjectId_GetTypes,
+} from "./certificateauthority_getAuthorityConfigX509ConfigAdditionalExtensionObjectId";
 
-export interface Certificateauthority_getAuthorityConfigX509ConfigAdditionalExtension {
+export interface certificateauthority_getAuthorityConfigX509ConfigAdditionalExtension {
   /*
 Indicates whether or not this extension is critical (i.e., if the client does not know how to
 handle this extension, the client should consider this to be an error).
 */
-  Critical?: boolean;
+  critical?: boolean;
 
   // Describes values that are relevant in a CA certificate.
-  ObjectIds?: Array<Certificateauthority_getAuthorityConfigX509ConfigAdditionalExtensionObjectId>;
+  objectIds?: Array<certificateauthority_getAuthorityConfigX509ConfigAdditionalExtensionObjectId>;
 
   // The value of this X.509 extension. A base64-encoded string.
-  Value?: string;
+  value?: string;
 }
 
-export function Certificateauthority_getAuthorityConfigX509ConfigAdditionalExtension_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_getAuthorityConfigX509ConfigAdditionalExtension_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Critical",
+      "critical",
       "Indicates whether or not this extension is critical (i.e., if the client does not know how to\nhandle this extension, the client should consider this to be an error).",
       [],
       true,
@@ -36,15 +36,15 @@ export function Certificateauthority_getAuthorityConfigX509ConfigAdditionalExten
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ObjectIds",
+      "objectIds",
       "Describes values that are relevant in a CA certificate.",
-      Certificateauthority_getAuthorityConfigX509ConfigAdditionalExtensionObjectId_GetTypes(),
+      certificateauthority_getAuthorityConfigX509ConfigAdditionalExtensionObjectId_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "The value of this X.509 extension. A base64-encoded string.",
       [],
       true,

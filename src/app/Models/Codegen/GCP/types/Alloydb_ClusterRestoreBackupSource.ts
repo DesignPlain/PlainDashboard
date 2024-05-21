@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Alloydb_ClusterRestoreBackupSource {
+export interface alloydb_ClusterRestoreBackupSource {
   // The name of the backup that this cluster is restored from.
-  BackupName?: string;
+  backupName?: string;
 }
 
-export function Alloydb_ClusterRestoreBackupSource_GetTypes(): DynamicUIProps[] {
+export function alloydb_ClusterRestoreBackupSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "BackupName",
+      "backupName",
       "The name of the backup that this cluster is restored from.",
       [],
       true,

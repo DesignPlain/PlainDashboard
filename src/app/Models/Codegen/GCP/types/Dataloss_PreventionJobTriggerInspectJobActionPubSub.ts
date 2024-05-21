@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionJobTriggerInspectJobActionPubSub {
+export interface dataloss_PreventionJobTriggerInspectJobActionPubSub {
   // Cloud Pub/Sub topic to send notifications to.
-  Topic?: string;
+  topic?: string;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJobActionPubSub_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobActionPubSub_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Topic",
+      "topic",
       "Cloud Pub/Sub topic to send notifications to.",
       [],
       true,

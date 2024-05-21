@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_ClusterClusterConfigEndpointConfig {
-  // The map of port descriptions to URLs. Will only be populated if enable_http_port_access is true.
-  HttpPorts?: Map<string, InputType.String>;
-
+export interface dataproc_ClusterClusterConfigEndpointConfig {
   /*
 The flag to enable http access to specific ports
 on the cluster from external sources (aka Component Gateway). Defaults to false.
 */
-  EnableHttpPortAccess?: boolean;
+  enableHttpPortAccess?: boolean;
+
+  // The map of port descriptions to URLs. Will only be populated if enable_http_port_access is true.
+  httpPorts?: Map<string, string>;
 }
 
-export function Dataproc_ClusterClusterConfigEndpointConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterClusterConfigEndpointConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Map,
-      "HttpPorts",
-      "The map of port descriptions to URLs. Will only be populated if enable_http_port_access is true.",
-      InputType_Map_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "EnableHttpPortAccess",
+      "enableHttpPortAccess",
       "The flag to enable http access to specific ports\non the cluster from external sources (aka Component Gateway). Defaults to false.",
       [],
       true,
       true,
+    ),
+    new DynamicUIProps(
+      InputType.Map,
+      "httpPorts",
+      "The map of port descriptions to URLs. Will only be populated if enable_http_port_access is true.",
+      InputType_Map_GetTypes(),
+      false,
+      false,
     ),
   ];
 }

@@ -6,52 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodePoolAutoscaling {
+export interface container_getClusterNodePoolAutoscaling {
   // Location policy specifies the algorithm used when scaling-up the node pool. "BALANCED" - Is a best effort policy that aims to balance the sizes of available zones. "ANY" - Instructs the cluster autoscaler to prioritize utilization of unused reservations, and reduces preemption risk for Spot VMs.
-  LocationPolicy?: string;
+  locationPolicy?: string;
 
   // Maximum number of nodes per zone in the node pool. Must be >= min_node_count. Cannot be used with total limits.
-  MaxNodeCount?: number;
+  maxNodeCount?: number;
 
   // Minimum number of nodes per zone in the node pool. Must be >=0 and <= max_node_count. Cannot be used with total limits.
-  MinNodeCount?: number;
+  minNodeCount?: number;
 
   // Maximum number of all nodes in the node pool. Must be >= total_min_node_count. Cannot be used with per zone limits.
-  TotalMaxNodeCount?: number;
+  totalMaxNodeCount?: number;
 
   // Minimum number of all nodes in the node pool. Must be >=0 and <= total_max_node_count. Cannot be used with per zone limits.
-  TotalMinNodeCount?: number;
+  totalMinNodeCount?: number;
 }
 
-export function Container_getClusterNodePoolAutoscaling_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolAutoscaling_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "LocationPolicy",
-      'Location policy specifies the algorithm used when scaling-up the node pool. "BALANCED" - Is a best effort policy that aims to balance the sizes of available zones. "ANY" - Instructs the cluster autoscaler to prioritize utilization of unused reservations, and reduces preemption risk for Spot VMs.',
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "MaxNodeCount",
-      "Maximum number of nodes per zone in the node pool. Must be >= min_node_count. Cannot be used with total limits.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "MinNodeCount",
-      "Minimum number of nodes per zone in the node pool. Must be >=0 and <= max_node_count. Cannot be used with total limits.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "TotalMaxNodeCount",
+      "totalMaxNodeCount",
       "Maximum number of all nodes in the node pool. Must be >= total_min_node_count. Cannot be used with per zone limits.",
       [],
       true,
@@ -59,8 +35,32 @@ export function Container_getClusterNodePoolAutoscaling_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Number,
-      "TotalMinNodeCount",
+      "totalMinNodeCount",
       "Minimum number of all nodes in the node pool. Must be >=0 and <= total_max_node_count. Cannot be used with per zone limits.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "locationPolicy",
+      'Location policy specifies the algorithm used when scaling-up the node pool. "BALANCED" - Is a best effort policy that aims to balance the sizes of available zones. "ANY" - Instructs the cluster autoscaler to prioritize utilization of unused reservations, and reduces preemption risk for Spot VMs.',
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "maxNodeCount",
+      "Maximum number of nodes per zone in the node pool. Must be >= min_node_count. Cannot be used with total limits.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "minNodeCount",
+      "Minimum number of nodes per zone in the node pool. Must be >=0 and <= max_node_count. Cannot be used with total limits.",
       [],
       true,
       false,

@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Pubsub_SubscriptionExpirationPolicy {
+export interface pubsub_SubscriptionExpirationPolicy {
   /*
 Specifies the "time-to-live" duration for an associated resource. The
 resource expires if it is not active for a period of ttl.
@@ -14,14 +14,14 @@ If ttl is set to "", the associated resource never expires.
 A duration in seconds with up to nine fractional digits, terminated by 's'.
 Example - "3.5s".
 */
-  Ttl?: string;
+  ttl?: string;
 }
 
-export function Pubsub_SubscriptionExpirationPolicy_GetTypes(): DynamicUIProps[] {
+export function pubsub_SubscriptionExpirationPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Ttl",
+      "ttl",
       'Specifies the "time-to-live" duration for an associated resource. The\nresource expires if it is not active for a period of ttl.\nIf ttl is set to "", the associated resource never expires.\nA duration in seconds with up to nine fractional digits, terminated by \'s\'.\nExample - "3.5s".',
       [],
       true,

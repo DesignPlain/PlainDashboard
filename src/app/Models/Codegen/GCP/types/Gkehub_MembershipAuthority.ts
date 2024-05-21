@@ -6,11 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_MembershipAuthority {
+export interface gkehub_MembershipAuthority {
   //
-  Issuer?: string;
+  issuer?: string;
 }
 
-export function Gkehub_MembershipAuthority_GetTypes(): DynamicUIProps[] {
-  return [new DynamicUIProps(InputType.String, "Issuer", "", [], true, true)];
+export function gkehub_MembershipAuthority_GetTypes(): DynamicUIProps[] {
+  return [new DynamicUIProps(InputType.String, "issuer", "", [], true, true)];
 }

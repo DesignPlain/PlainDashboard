@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Recaptcha_EnterpriseKeyIosSettings {
+export interface recaptcha_EnterpriseKeyIosSettings {
   // If set to true, it means allowed_bundle_ids will not be enforced.
-  AllowAllBundleIds?: boolean;
+  allowAllBundleIds?: boolean;
 
   // iOS bundle ids of apps allowed to use the key. Example: 'com.companyname.productname.appname'
-  AllowedBundleIds?: Array<string>;
+  allowedBundleIds?: Array<string>;
 }
 
-export function Recaptcha_EnterpriseKeyIosSettings_GetTypes(): DynamicUIProps[] {
+export function recaptcha_EnterpriseKeyIosSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "AllowAllBundleIds",
+      "allowAllBundleIds",
       "If set to true, it means allowed_bundle_ids will not be enforced.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Recaptcha_EnterpriseKeyIosSettings_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AllowedBundleIds",
+      "allowedBundleIds",
       "iOS bundle ids of apps allowed to use the key. Example: 'com.companyname.productname.appname'",
       InputType_String_GetTypes(),
       false,

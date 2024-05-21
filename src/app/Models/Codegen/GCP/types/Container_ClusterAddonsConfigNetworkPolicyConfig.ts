@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterAddonsConfigNetworkPolicyConfig {
+export interface container_ClusterAddonsConfigNetworkPolicyConfig {
   /*
 Whether the cluster disables default in-node sNAT rules. In-node sNAT rules will be disabled when defaultSnatStatus is disabled.When disabled is set to false, default IP masquerade rules will be applied to the nodes to prevent sNAT on cluster internal traffic
 
 <a name="nested_cluster_telemetry"></a>The `cluster_telemetry` block supports
 */
-  Disabled?: boolean;
+  disabled?: boolean;
 }
 
-export function Container_ClusterAddonsConfigNetworkPolicyConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterAddonsConfigNetworkPolicyConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Disabled",
+      "disabled",
       'Whether the cluster disables default in-node sNAT rules. In-node sNAT rules will be disabled when defaultSnatStatus is disabled.When disabled is set to false, default IP masquerade rules will be applied to the nodes to prevent sNAT on cluster internal traffic\n\n<a name="nested_cluster_telemetry"></a>The `cluster_telemetry` block supports',
       [],
       true,

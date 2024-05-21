@@ -6,17 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Looker_InstanceMaintenanceWindowStartTime,
-  Looker_InstanceMaintenanceWindowStartTime_GetTypes,
-} from "./Looker_InstanceMaintenanceWindowStartTime";
+  looker_InstanceMaintenanceWindowStartTime,
+  looker_InstanceMaintenanceWindowStartTime_GetTypes,
+} from "./looker_InstanceMaintenanceWindowStartTime";
 
-export interface Looker_InstanceMaintenanceWindow {
-  /*
-Required. Start time of the window in UTC time.
-Structure is documented below.
-*/
-  StartTime?: Looker_InstanceMaintenanceWindowStartTime;
-
+export interface looker_InstanceMaintenanceWindow {
   /*
 Required. Day of the week for this MaintenanceWindow (in UTC).
 - MONDAY: Monday
@@ -28,24 +22,30 @@ Required. Day of the week for this MaintenanceWindow (in UTC).
 - SUNDAY: Sunday
 Possible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
 */
-  DayOfWeek?: string;
+  dayOfWeek?: string;
+
+  /*
+Required. Start time of the window in UTC time.
+Structure is documented below.
+*/
+  startTime?: looker_InstanceMaintenanceWindowStartTime;
 }
 
-export function Looker_InstanceMaintenanceWindow_GetTypes(): DynamicUIProps[] {
+export function looker_InstanceMaintenanceWindow_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "StartTime",
-      "Required. Start time of the window in UTC time.\nStructure is documented below.",
-      Looker_InstanceMaintenanceWindowStartTime_GetTypes(),
+      InputType.String,
+      "dayOfWeek",
+      "Required. Day of the week for this MaintenanceWindow (in UTC).\n- MONDAY: Monday\n- TUESDAY: Tuesday\n- WEDNESDAY: Wednesday\n- THURSDAY: Thursday\n- FRIDAY: Friday\n- SATURDAY: Saturday\n- SUNDAY: Sunday\nPossible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.",
+      [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "DayOfWeek",
-      "Required. Day of the week for this MaintenanceWindow (in UTC).\n- MONDAY: Monday\n- TUESDAY: Tuesday\n- WEDNESDAY: Wednesday\n- THURSDAY: Thursday\n- FRIDAY: Friday\n- SATURDAY: Saturday\n- SUNDAY: Sunday\nPossible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.",
-      [],
+      InputType.Object,
+      "startTime",
+      "Required. Start time of the window in UTC time.\nStructure is documented below.",
+      looker_InstanceMaintenanceWindowStartTime_GetTypes(),
       true,
       false,
     ),

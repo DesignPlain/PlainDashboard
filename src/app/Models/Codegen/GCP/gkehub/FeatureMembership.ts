@@ -7,113 +7,81 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkehub_FeatureMembershipMesh,
-  Gkehub_FeatureMembershipMesh_GetTypes,
-} from "../types/Gkehub_FeatureMembershipMesh";
+  gkehub_FeatureMembershipPolicycontroller,
+  gkehub_FeatureMembershipPolicycontroller_GetTypes,
+} from "../types/gkehub_FeatureMembershipPolicycontroller";
 import {
-  Gkehub_FeatureMembershipPolicycontroller,
-  Gkehub_FeatureMembershipPolicycontroller_GetTypes,
-} from "../types/Gkehub_FeatureMembershipPolicycontroller";
+  gkehub_FeatureMembershipConfigmanagement,
+  gkehub_FeatureMembershipConfigmanagement_GetTypes,
+} from "../types/gkehub_FeatureMembershipConfigmanagement";
 import {
-  Gkehub_FeatureMembershipConfigmanagement,
-  Gkehub_FeatureMembershipConfigmanagement_GetTypes,
-} from "../types/Gkehub_FeatureMembershipConfigmanagement";
+  gkehub_FeatureMembershipMesh,
+  gkehub_FeatureMembershipMesh_GetTypes,
+} from "../types/gkehub_FeatureMembershipMesh";
 
 export interface FeatureMembershipArgs {
-  // The name of the membership
-  Membership?: string;
-
-  // The location of the membership, for example, "us-central1". Default is "global".
-  MembershipLocation?: string;
-
-  // Service mesh specific spec. Structure is documented below.
-  Mesh?: Gkehub_FeatureMembershipMesh;
-
   // Policy Controller-specific spec. Structure is documented below.
-  Policycontroller?: Gkehub_FeatureMembershipPolicycontroller;
+  policycontroller?: gkehub_FeatureMembershipPolicycontroller;
 
   // The project of the feature
-  Project?: string;
+  project?: string;
 
   // Config Management-specific spec. Structure is documented below.
-  Configmanagement?: Gkehub_FeatureMembershipConfigmanagement;
+  configmanagement?: gkehub_FeatureMembershipConfigmanagement;
 
   // The name of the feature
-  Feature?: string;
+  feature?: string;
 
   // The location of the feature
-  Location?: string;
+  location?: string;
+
+  // The name of the membership
+  membership?: string;
+
+  // The location of the membership, for example, "us-central1". Default is "global".
+  membershipLocation?: string;
+
+  // Service mesh specific spec. Structure is documented below.
+  mesh?: gkehub_FeatureMembershipMesh;
 }
 export class FeatureMembership extends Resource {
-  // The location of the feature
-  public Location?: string;
-
-  // The name of the membership
-  public Membership?: string;
-
-  // The location of the membership, for example, "us-central1". Default is "global".
-  public MembershipLocation?: string;
-
-  // Service mesh specific spec. Structure is documented below.
-  public Mesh?: Gkehub_FeatureMembershipMesh;
-
   // Policy Controller-specific spec. Structure is documented below.
-  public Policycontroller?: Gkehub_FeatureMembershipPolicycontroller;
+  public policycontroller?: gkehub_FeatureMembershipPolicycontroller;
 
   // The project of the feature
-  public Project?: string;
+  public project?: string;
 
   // Config Management-specific spec. Structure is documented below.
-  public Configmanagement?: Gkehub_FeatureMembershipConfigmanagement;
+  public configmanagement?: gkehub_FeatureMembershipConfigmanagement;
 
   // The name of the feature
-  public Feature?: string;
+  public feature?: string;
+
+  // The location of the feature
+  public location?: string;
+
+  // The name of the membership
+  public membership?: string;
+
+  // The location of the membership, for example, "us-central1". Default is "global".
+  public membershipLocation?: string;
+
+  // Service mesh specific spec. Structure is documented below.
+  public mesh?: gkehub_FeatureMembershipMesh;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "MembershipLocation",
-        'The location of the membership, for example, "us-central1". Default is "global".',
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.Object,
-        "Mesh",
-        "Service mesh specific spec. Structure is documented below.",
-        Gkehub_FeatureMembershipMesh_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "Policycontroller",
-        "Policy Controller-specific spec. Structure is documented below.",
-        Gkehub_FeatureMembershipPolicycontroller_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The project of the feature",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "Configmanagement",
+        "configmanagement",
         "Config Management-specific spec. Structure is documented below.",
-        Gkehub_FeatureMembershipConfigmanagement_GetTypes(),
+        gkehub_FeatureMembershipConfigmanagement_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Feature",
+        "feature",
         "The name of the feature",
         [],
         true,
@@ -121,7 +89,7 @@ export class FeatureMembership extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location of the feature",
         [],
         true,
@@ -129,10 +97,42 @@ export class FeatureMembership extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "Membership",
+        "membership",
         "The name of the membership",
         [],
         true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "membershipLocation",
+        'The location of the membership, for example, "us-central1". Default is "global".',
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "mesh",
+        "Service mesh specific spec. Structure is documented below.",
+        gkehub_FeatureMembershipMesh_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "policycontroller",
+        "Policy Controller-specific spec. Structure is documented below.",
+        gkehub_FeatureMembershipPolicycontroller_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The project of the feature",
+        [],
+        false,
         true,
       ),
     ];

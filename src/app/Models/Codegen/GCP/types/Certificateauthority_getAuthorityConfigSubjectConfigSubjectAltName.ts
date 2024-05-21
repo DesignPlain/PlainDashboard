@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificateauthority_getAuthorityConfigSubjectConfigSubjectAltName {
+export interface certificateauthority_getAuthorityConfigSubjectConfigSubjectAltName {
   // Contains only valid, fully-qualified host names.
-  DnsNames?: Array<string>;
+  dnsNames?: Array<string>;
 
   // Contains only valid RFC 2822 E-mail addresses.
-  EmailAddresses?: Array<string>;
+  emailAddresses?: Array<string>;
 
   // Contains only valid 32-bit IPv4 addresses or RFC 4291 IPv6 addresses.
-  IpAddresses?: Array<string>;
+  ipAddresses?: Array<string>;
 
   // Contains only valid RFC 3986 URIs.
-  Uris?: Array<string>;
+  uris?: Array<string>;
 }
 
-export function Certificateauthority_getAuthorityConfigSubjectConfigSubjectAltName_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_getAuthorityConfigSubjectConfigSubjectAltName_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "DnsNames",
+      "dnsNames",
       "Contains only valid, fully-qualified host names.",
       InputType_String_GetTypes(),
       true,
@@ -32,7 +32,7 @@ export function Certificateauthority_getAuthorityConfigSubjectConfigSubjectAltNa
     ),
     new DynamicUIProps(
       InputType.Array,
-      "EmailAddresses",
+      "emailAddresses",
       "Contains only valid RFC 2822 E-mail addresses.",
       InputType_String_GetTypes(),
       true,
@@ -40,7 +40,7 @@ export function Certificateauthority_getAuthorityConfigSubjectConfigSubjectAltNa
     ),
     new DynamicUIProps(
       InputType.Array,
-      "IpAddresses",
+      "ipAddresses",
       "Contains only valid 32-bit IPv4 addresses or RFC 4291 IPv6 addresses.",
       InputType_String_GetTypes(),
       true,
@@ -48,7 +48,7 @@ export function Certificateauthority_getAuthorityConfigSubjectConfigSubjectAltNa
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Uris",
+      "uris",
       "Contains only valid RFC 3986 URIs.",
       InputType_String_GetTypes(),
       true,

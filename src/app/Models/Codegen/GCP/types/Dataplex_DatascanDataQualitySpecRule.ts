@@ -6,62 +6,41 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataplex_DatascanDataQualitySpecRuleTableConditionExpectation,
-  Dataplex_DatascanDataQualitySpecRuleTableConditionExpectation_GetTypes,
-} from "./Dataplex_DatascanDataQualitySpecRuleTableConditionExpectation";
+  dataplex_DatascanDataQualitySpecRuleRowConditionExpectation,
+  dataplex_DatascanDataQualitySpecRuleRowConditionExpectation_GetTypes,
+} from "./dataplex_DatascanDataQualitySpecRuleRowConditionExpectation";
 import {
-  Dataplex_DatascanDataQualitySpecRuleRangeExpectation,
-  Dataplex_DatascanDataQualitySpecRuleRangeExpectation_GetTypes,
-} from "./Dataplex_DatascanDataQualitySpecRuleRangeExpectation";
+  dataplex_DatascanDataQualitySpecRuleTableConditionExpectation,
+  dataplex_DatascanDataQualitySpecRuleTableConditionExpectation_GetTypes,
+} from "./dataplex_DatascanDataQualitySpecRuleTableConditionExpectation";
 import {
-  Dataplex_DatascanDataQualitySpecRuleRowConditionExpectation,
-  Dataplex_DatascanDataQualitySpecRuleRowConditionExpectation_GetTypes,
-} from "./Dataplex_DatascanDataQualitySpecRuleRowConditionExpectation";
+  dataplex_DatascanDataQualitySpecRuleNonNullExpectation,
+  dataplex_DatascanDataQualitySpecRuleNonNullExpectation_GetTypes,
+} from "./dataplex_DatascanDataQualitySpecRuleNonNullExpectation";
 import {
-  Dataplex_DatascanDataQualitySpecRuleRegexExpectation,
-  Dataplex_DatascanDataQualitySpecRuleRegexExpectation_GetTypes,
-} from "./Dataplex_DatascanDataQualitySpecRuleRegexExpectation";
+  dataplex_DatascanDataQualitySpecRuleSetExpectation,
+  dataplex_DatascanDataQualitySpecRuleSetExpectation_GetTypes,
+} from "./dataplex_DatascanDataQualitySpecRuleSetExpectation";
 import {
-  Dataplex_DatascanDataQualitySpecRuleUniquenessExpectation,
-  Dataplex_DatascanDataQualitySpecRuleUniquenessExpectation_GetTypes,
-} from "./Dataplex_DatascanDataQualitySpecRuleUniquenessExpectation";
+  dataplex_DatascanDataQualitySpecRuleStatisticRangeExpectation,
+  dataplex_DatascanDataQualitySpecRuleStatisticRangeExpectation_GetTypes,
+} from "./dataplex_DatascanDataQualitySpecRuleStatisticRangeExpectation";
 import {
-  Dataplex_DatascanDataQualitySpecRuleSetExpectation,
-  Dataplex_DatascanDataQualitySpecRuleSetExpectation_GetTypes,
-} from "./Dataplex_DatascanDataQualitySpecRuleSetExpectation";
+  dataplex_DatascanDataQualitySpecRuleRangeExpectation,
+  dataplex_DatascanDataQualitySpecRuleRangeExpectation_GetTypes,
+} from "./dataplex_DatascanDataQualitySpecRuleRangeExpectation";
 import {
-  Dataplex_DatascanDataQualitySpecRuleNonNullExpectation,
-  Dataplex_DatascanDataQualitySpecRuleNonNullExpectation_GetTypes,
-} from "./Dataplex_DatascanDataQualitySpecRuleNonNullExpectation";
+  dataplex_DatascanDataQualitySpecRuleUniquenessExpectation,
+  dataplex_DatascanDataQualitySpecRuleUniquenessExpectation_GetTypes,
+} from "./dataplex_DatascanDataQualitySpecRuleUniquenessExpectation";
 import {
-  Dataplex_DatascanDataQualitySpecRuleStatisticRangeExpectation,
-  Dataplex_DatascanDataQualitySpecRuleStatisticRangeExpectation_GetTypes,
-} from "./Dataplex_DatascanDataQualitySpecRuleStatisticRangeExpectation";
+  dataplex_DatascanDataQualitySpecRuleRegexExpectation,
+  dataplex_DatascanDataQualitySpecRuleRegexExpectation_GetTypes,
+} from "./dataplex_DatascanDataQualitySpecRuleRegexExpectation";
 
-export interface Dataplex_DatascanDataQualitySpecRule {
-  // The unnested column which this rule is evaluated against.
-  Column?: string;
-
-  /*
-ColumnMap rule which evaluates whether each column value matches a specified regex.
-Structure is documented below.
-*/
-  RegexExpectation?: Dataplex_DatascanDataQualitySpecRuleRegexExpectation;
-
-  // Row-level rule which evaluates whether each column value is unique.
-  UniquenessExpectation?: Dataplex_DatascanDataQualitySpecRuleUniquenessExpectation;
-
-  /*
-ColumnMap rule which evaluates whether each column value is contained by a specified set.
-Structure is documented below.
-*/
-  SetExpectation?: Dataplex_DatascanDataQualitySpecRuleSetExpectation;
-
-  /*
-Description of the rule.
-The maximum length is 1,024 characters.
-*/
-  Description?: string;
+export interface dataplex_DatascanDataQualitySpecRule {
+  // Rows with null values will automatically fail a rule, unless ignoreNull is true. In that case, such null rows are trivially considered passing. Only applicable to ColumnMap rules.
+  ignoreNull?: boolean;
 
   /*
 A mutable name for the rule.
@@ -70,58 +49,79 @@ The maximum length is 63 characters.
 Must start with a letter.
 Must end with a number or a letter.
 */
-  Name?: string;
-
-  // ColumnMap rule which evaluates whether each column value is null.
-  NonNullExpectation?: Dataplex_DatascanDataQualitySpecRuleNonNullExpectation;
+  name?: string;
 
   /*
-ColumnAggregate rule which evaluates whether the column aggregate statistic lies between a specified range.
+ColumnMap rule which evaluates whether each column value matches a specified regex.
 Structure is documented below.
 */
-  StatisticRangeExpectation?: Dataplex_DatascanDataQualitySpecRuleStatisticRangeExpectation;
-
-  /*
-Table rule which evaluates whether the provided expression is true.
-Structure is documented below.
-*/
-  TableConditionExpectation?: Dataplex_DatascanDataQualitySpecRuleTableConditionExpectation;
-
-  // The minimum ratio of passing_rows / total_rows required to pass this rule, with a range of [0.0, 1.0]. 0 indicates default value (i.e. 1.0).
-  Threshold?: number;
-
-  // The dimension a rule belongs to. Results are also aggregated at the dimension level. Supported dimensions are ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "INTEGRITY"]
-  Dimension?: string;
-
-  // Rows with null values will automatically fail a rule, unless ignoreNull is true. In that case, such null rows are trivially considered passing. Only applicable to ColumnMap rules.
-  IgnoreNull?: boolean;
-
-  /*
-ColumnMap rule which evaluates whether each column value lies between a specified range.
-Structure is documented below.
-*/
-  RangeExpectation?: Dataplex_DatascanDataQualitySpecRuleRangeExpectation;
+  regexExpectation?: dataplex_DatascanDataQualitySpecRuleRegexExpectation;
 
   /*
 Table rule which evaluates whether each row passes the specified condition.
 Structure is documented below.
 */
-  RowConditionExpectation?: Dataplex_DatascanDataQualitySpecRuleRowConditionExpectation;
+  rowConditionExpectation?: dataplex_DatascanDataQualitySpecRuleRowConditionExpectation;
+
+  /*
+Table rule which evaluates whether the provided expression is true.
+Structure is documented below.
+*/
+  tableConditionExpectation?: dataplex_DatascanDataQualitySpecRuleTableConditionExpectation;
+
+  // The dimension a rule belongs to. Results are also aggregated at the dimension level. Supported dimensions are ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "INTEGRITY"]
+  dimension?: string;
+
+  // ColumnMap rule which evaluates whether each column value is null.
+  nonNullExpectation?: dataplex_DatascanDataQualitySpecRuleNonNullExpectation;
+
+  /*
+ColumnMap rule which evaluates whether each column value is contained by a specified set.
+Structure is documented below.
+*/
+  setExpectation?: dataplex_DatascanDataQualitySpecRuleSetExpectation;
+
+  /*
+ColumnAggregate rule which evaluates whether the column aggregate statistic lies between a specified range.
+Structure is documented below.
+*/
+  statisticRangeExpectation?: dataplex_DatascanDataQualitySpecRuleStatisticRangeExpectation;
+
+  // The minimum ratio of passing_rows / total_rows required to pass this rule, with a range of [0.0, 1.0]. 0 indicates default value (i.e. 1.0).
+  threshold?: number;
+
+  // The unnested column which this rule is evaluated against.
+  column?: string;
+
+  /*
+Description of the rule.
+The maximum length is 1,024 characters.
+*/
+  description?: string;
+
+  /*
+ColumnMap rule which evaluates whether each column value lies between a specified range.
+Structure is documented below.
+*/
+  rangeExpectation?: dataplex_DatascanDataQualitySpecRuleRangeExpectation;
+
+  // Row-level rule which evaluates whether each column value is unique.
+  uniquenessExpectation?: dataplex_DatascanDataQualitySpecRuleUniquenessExpectation;
 }
 
-export function Dataplex_DatascanDataQualitySpecRule_GetTypes(): DynamicUIProps[] {
+export function dataplex_DatascanDataQualitySpecRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "StatisticRangeExpectation",
-      "ColumnAggregate rule which evaluates whether the column aggregate statistic lies between a specified range.\nStructure is documented below.",
-      Dataplex_DatascanDataQualitySpecRuleStatisticRangeExpectation_GetTypes(),
-      false,
+      InputType.String,
+      "dimension",
+      'The dimension a rule belongs to. Results are also aggregated at the dimension level. Supported dimensions are ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "INTEGRITY"]',
+      [],
+      true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Threshold",
+      "threshold",
       "The minimum ratio of passing_rows / total_rows required to pass this rule, with a range of [0.0, 1.0]. 0 indicates default value (i.e. 1.0).",
       [],
       false,
@@ -129,87 +129,55 @@ export function Dataplex_DatascanDataQualitySpecRule_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Object,
-      "RegexExpectation",
+      "uniquenessExpectation",
+      "Row-level rule which evaluates whether each column value is unique.",
+      dataplex_DatascanDataQualitySpecRuleUniquenessExpectation_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "regexExpectation",
       "ColumnMap rule which evaluates whether each column value matches a specified regex.\nStructure is documented below.",
-      Dataplex_DatascanDataQualitySpecRuleRegexExpectation_GetTypes(),
+      dataplex_DatascanDataQualitySpecRuleRegexExpectation_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "tableConditionExpectation",
+      "Table rule which evaluates whether the provided expression is true.\nStructure is documented below.",
+      dataplex_DatascanDataQualitySpecRuleTableConditionExpectation_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "nonNullExpectation",
+      "ColumnMap rule which evaluates whether each column value is null.",
+      dataplex_DatascanDataQualitySpecRuleNonNullExpectation_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "statisticRangeExpectation",
+      "ColumnAggregate rule which evaluates whether the column aggregate statistic lies between a specified range.\nStructure is documented below.",
+      dataplex_DatascanDataQualitySpecRuleStatisticRangeExpectation_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "Description of the rule.\nThe maximum length is 1,024 characters.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "NonNullExpectation",
-      "ColumnMap rule which evaluates whether each column value is null.",
-      Dataplex_DatascanDataQualitySpecRuleNonNullExpectation_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "RangeExpectation",
-      "ColumnMap rule which evaluates whether each column value lies between a specified range.\nStructure is documented below.",
-      Dataplex_DatascanDataQualitySpecRuleRangeExpectation_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Column",
-      "The unnested column which this rule is evaluated against.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "TableConditionExpectation",
-      "Table rule which evaluates whether the provided expression is true.\nStructure is documented below.",
-      Dataplex_DatascanDataQualitySpecRuleTableConditionExpectation_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Dimension",
-      'The dimension a rule belongs to. Results are also aggregated at the dimension level. Supported dimensions are ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "INTEGRITY"]',
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "RowConditionExpectation",
-      "Table rule which evaluates whether each row passes the specified condition.\nStructure is documented below.",
-      Dataplex_DatascanDataQualitySpecRuleRowConditionExpectation_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "SetExpectation",
-      "ColumnMap rule which evaluates whether each column value is contained by a specified set.\nStructure is documented below.",
-      Dataplex_DatascanDataQualitySpecRuleSetExpectation_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Name",
-      "A mutable name for the rule.\nThe name must contain only letters (a-z, A-Z), numbers (0-9), or hyphens (-).\nThe maximum length is 63 characters.\nMust start with a letter.\nMust end with a number or a letter.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "IgnoreNull",
+      "ignoreNull",
       "Rows with null values will automatically fail a rule, unless ignoreNull is true. In that case, such null rows are trivially considered passing. Only applicable to ColumnMap rules.",
       [],
       false,
@@ -217,9 +185,41 @@ export function Dataplex_DatascanDataQualitySpecRule_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Object,
-      "UniquenessExpectation",
-      "Row-level rule which evaluates whether each column value is unique.",
-      Dataplex_DatascanDataQualitySpecRuleUniquenessExpectation_GetTypes(),
+      "rowConditionExpectation",
+      "Table rule which evaluates whether each row passes the specified condition.\nStructure is documented below.",
+      dataplex_DatascanDataQualitySpecRuleRowConditionExpectation_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "column",
+      "The unnested column which this rule is evaluated against.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "name",
+      "A mutable name for the rule.\nThe name must contain only letters (a-z, A-Z), numbers (0-9), or hyphens (-).\nThe maximum length is 63 characters.\nMust start with a letter.\nMust end with a number or a letter.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "setExpectation",
+      "ColumnMap rule which evaluates whether each column value is contained by a specified set.\nStructure is documented below.",
+      dataplex_DatascanDataQualitySpecRuleSetExpectation_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "rangeExpectation",
+      "ColumnMap rule which evaluates whether each column value lies between a specified range.\nStructure is documented below.",
+      dataplex_DatascanDataQualitySpecRuleRangeExpectation_GetTypes(),
       false,
       false,
     ),

@@ -6,23 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_getReservationSpecificReservationInstancePropertyLocalSsd,
-  Compute_getReservationSpecificReservationInstancePropertyLocalSsd_GetTypes,
-} from "./Compute_getReservationSpecificReservationInstancePropertyLocalSsd";
+  compute_getReservationSpecificReservationInstancePropertyGuestAccelerator,
+  compute_getReservationSpecificReservationInstancePropertyGuestAccelerator_GetTypes,
+} from "./compute_getReservationSpecificReservationInstancePropertyGuestAccelerator";
 import {
-  Compute_getReservationSpecificReservationInstancePropertyGuestAccelerator,
-  Compute_getReservationSpecificReservationInstancePropertyGuestAccelerator_GetTypes,
-} from "./Compute_getReservationSpecificReservationInstancePropertyGuestAccelerator";
+  compute_getReservationSpecificReservationInstancePropertyLocalSsd,
+  compute_getReservationSpecificReservationInstancePropertyLocalSsd_GetTypes,
+} from "./compute_getReservationSpecificReservationInstancePropertyLocalSsd";
 
-export interface Compute_getReservationSpecificReservationInstanceProperty {
+export interface compute_getReservationSpecificReservationInstanceProperty {
+  // Guest accelerator type and count.
+  guestAccelerators?: Array<compute_getReservationSpecificReservationInstancePropertyGuestAccelerator>;
+
   /*
 The amount of local ssd to reserve with each instance. This
 reserves disks of type 'local-ssd'.
 */
-  LocalSsds?: Array<Compute_getReservationSpecificReservationInstancePropertyLocalSsd>;
+  localSsds?: Array<compute_getReservationSpecificReservationInstancePropertyLocalSsd>;
 
   // The name of the machine type to reserve.
-  MachineType?: string;
+  machineType?: string;
 
   /*
 The minimum CPU platform for the reservation. For example,
@@ -30,17 +33,22 @@ The minimum CPU platform for the reservation. For example,
 the CPU platform availability reference](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform#availablezones)
 for information on available CPU platforms.
 */
-  MinCpuPlatform?: string;
-
-  // Guest accelerator type and count.
-  GuestAccelerators?: Array<Compute_getReservationSpecificReservationInstancePropertyGuestAccelerator>;
+  minCpuPlatform?: string;
 }
 
-export function Compute_getReservationSpecificReservationInstanceProperty_GetTypes(): DynamicUIProps[] {
+export function compute_getReservationSpecificReservationInstanceProperty_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Array,
+      "localSsds",
+      "The amount of local ssd to reserve with each instance. This\nreserves disks of type 'local-ssd'.",
+      compute_getReservationSpecificReservationInstancePropertyLocalSsd_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "MachineType",
+      "machineType",
       "The name of the machine type to reserve.",
       [],
       true,
@@ -48,7 +56,7 @@ export function Compute_getReservationSpecificReservationInstanceProperty_GetTyp
     ),
     new DynamicUIProps(
       InputType.String,
-      "MinCpuPlatform",
+      "minCpuPlatform",
       "The minimum CPU platform for the reservation. For example,\n'\"Intel Skylake\"'. See\nthe CPU platform availability reference](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform#availablezones)\nfor information on available CPU platforms.",
       [],
       true,
@@ -56,17 +64,9 @@ export function Compute_getReservationSpecificReservationInstanceProperty_GetTyp
     ),
     new DynamicUIProps(
       InputType.Array,
-      "GuestAccelerators",
+      "guestAccelerators",
       "Guest accelerator type and count.",
-      Compute_getReservationSpecificReservationInstancePropertyGuestAccelerator_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "LocalSsds",
-      "The amount of local ssd to reserve with each instance. This\nreserves disks of type 'local-ssd'.",
-      Compute_getReservationSpecificReservationInstancePropertyLocalSsd_GetTypes(),
+      compute_getReservationSpecificReservationInstancePropertyGuestAccelerator_GetTypes(),
       true,
       false,
     ),

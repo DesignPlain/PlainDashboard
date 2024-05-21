@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_VMwareClusterDataplaneV2 {
+export interface gkeonprem_VMwareClusterDataplaneV2 {
   // Enable advanced networking which requires dataplane_v2_enabled to be set true.
-  AdvancedNetworking?: boolean;
+  advancedNetworking?: boolean;
 
   // Enables Dataplane V2.
-  DataplaneV2Enabled?: boolean;
+  dataplaneV2Enabled?: boolean;
 
   // Enable Dataplane V2 for clusters with Windows nodes.
-  WindowsDataplaneV2Enabled?: boolean;
+  windowsDataplaneV2Enabled?: boolean;
 }
 
-export function Gkeonprem_VMwareClusterDataplaneV2_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterDataplaneV2_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "AdvancedNetworking",
+      "advancedNetworking",
       "Enable advanced networking which requires dataplane_v2_enabled to be set true.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Gkeonprem_VMwareClusterDataplaneV2_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "DataplaneV2Enabled",
+      "dataplaneV2Enabled",
       "Enables Dataplane V2.",
       [],
       false,
@@ -37,7 +37,7 @@ export function Gkeonprem_VMwareClusterDataplaneV2_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "WindowsDataplaneV2Enabled",
+      "windowsDataplaneV2Enabled",
       "Enable Dataplane V2 for clusters with Windows nodes.",
       [],
       false,

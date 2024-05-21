@@ -6,10 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getHcVpnGatewayVpnInterface {
-  // The numeric ID of this VPN gateway interface.
-  Id?: number;
-
+export interface compute_getHcVpnGatewayVpnInterface {
   /*
 URL of the interconnect attachment resource. When the value
 of this field is present, the VPN Gateway will be used for
@@ -19,25 +16,20 @@ specified interconnect attachment resource.
 
 Not currently available publicly.
 */
-  InterconnectAttachment?: string;
+  interconnectAttachment?: string;
 
   // The external IP address for this VPN gateway interface.
-  IpAddress?: string;
+  ipAddress?: string;
+
+  // The numeric ID of this VPN gateway interface.
+  id?: number;
 }
 
-export function Compute_getHcVpnGatewayVpnInterface_GetTypes(): DynamicUIProps[] {
+export function compute_getHcVpnGatewayVpnInterface_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "Id",
-      "The numeric ID of this VPN gateway interface.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "InterconnectAttachment",
+      "interconnectAttachment",
       "URL of the interconnect attachment resource. When the value\nof this field is present, the VPN Gateway will be used for\nIPsec-encrypted Cloud Interconnect; all Egress or Ingress\ntraffic for this VPN Gateway interface will go through the\nspecified interconnect attachment resource.\n\nNot currently available publicly.",
       [],
       true,
@@ -45,8 +37,16 @@ export function Compute_getHcVpnGatewayVpnInterface_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "IpAddress",
+      "ipAddress",
       "The external IP address for this VPN gateway interface.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "id",
+      "The numeric ID of this VPN gateway interface.",
       [],
       true,
       false,

@@ -6,30 +6,24 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegex,
-  Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegex_GetTypes,
-} from "./Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegex";
+  dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustment,
+  dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustment_GetTypes,
+} from "./dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustment";
 import {
-  Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustment,
-  Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustment_GetTypes,
-} from "./Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustment";
+  dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleProximity,
+  dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleProximity_GetTypes,
+} from "./dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleProximity";
 import {
-  Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleProximity,
-  Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleProximity_GetTypes,
-} from "./Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleProximity";
+  dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegex,
+  dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegex_GetTypes,
+} from "./dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegex";
 
-export interface Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule {
-  /*
-Regular expression pattern defining what qualifies as a hotword.
-Structure is documented below.
-*/
-  HotwordRegex?: Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegex;
-
+export interface dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule {
   /*
 Likelihood adjustment to apply to all matching findings.
 Structure is documented below.
 */
-  LikelihoodAdjustment?: Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustment;
+  likelihoodAdjustment?: dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustment;
 
   /*
 Proximity of the finding within which the entire hotword must reside. The total length of the window cannot
@@ -39,32 +33,38 @@ used to match substrings of the finding itself. For example, the certainty of a 
 office using the hotword regex `(xxx)`, where `xxx` is the area code in question.
 Structure is documented below.
 */
-  Proximity?: Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleProximity;
+  proximity?: dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleProximity;
+
+  /*
+Regular expression pattern defining what qualifies as a hotword.
+Structure is documented below.
+*/
+  hotwordRegex?: dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegex;
 }
 
-export function Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "HotwordRegex",
-      "Regular expression pattern defining what qualifies as a hotword.\nStructure is documented below.",
-      Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegex_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "LikelihoodAdjustment",
+      "likelihoodAdjustment",
       "Likelihood adjustment to apply to all matching findings.\nStructure is documented below.",
-      Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustment_GetTypes(),
+      dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustment_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Proximity",
+      "proximity",
       "Proximity of the finding within which the entire hotword must reside. The total length of the window cannot\nexceed 1000 characters. Note that the finding itself will be included in the window, so that hotwords may be\nused to match substrings of the finding itself. For example, the certainty of a phone number regex\n`(\\d{3}) \\d{3}-\\d{4}` could be adjusted upwards if the area code is known to be the local area code of a company\noffice using the hotword regex `(xxx)`, where `xxx` is the area code in question.\nStructure is documented below.",
-      Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleProximity_GetTypes(),
+      dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleProximity_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "hotwordRegex",
+      "Regular expression pattern defining what qualifies as a hotword.\nStructure is documented below.",
+      dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegex_GetTypes(),
       true,
       false,
     ),

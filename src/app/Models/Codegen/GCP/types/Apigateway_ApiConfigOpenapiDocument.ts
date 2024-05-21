@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Apigateway_ApiConfigOpenapiDocumentDocument,
-  Apigateway_ApiConfigOpenapiDocumentDocument_GetTypes,
-} from "./Apigateway_ApiConfigOpenapiDocumentDocument";
+  apigateway_ApiConfigOpenapiDocumentDocument,
+  apigateway_ApiConfigOpenapiDocumentDocument_GetTypes,
+} from "./apigateway_ApiConfigOpenapiDocumentDocument";
 
-export interface Apigateway_ApiConfigOpenapiDocument {
+export interface apigateway_ApiConfigOpenapiDocument {
   /*
 The OpenAPI Specification document file.
 Structure is documented below.
 */
-  Document?: Apigateway_ApiConfigOpenapiDocumentDocument;
+  document?: apigateway_ApiConfigOpenapiDocumentDocument;
 }
 
-export function Apigateway_ApiConfigOpenapiDocument_GetTypes(): DynamicUIProps[] {
+export function apigateway_ApiConfigOpenapiDocument_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Document",
+      "document",
       "The OpenAPI Specification document file.\nStructure is documented below.",
-      Apigateway_ApiConfigOpenapiDocumentDocument_GetTypes(),
+      apigateway_ApiConfigOpenapiDocumentDocument_GetTypes(),
       true,
       false,
     ),

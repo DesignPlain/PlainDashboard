@@ -9,7 +9,7 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface BucketAccessControlArgs {
   // The name of the bucket.
-  Bucket?: string;
+  bucket?: string;
 
   /*
 The entity holding the permission, in one of the following forms:
@@ -31,23 +31,23 @@ example.com, the entity would be domain-example.com.
 
 - - -
 */
-  Entity?: string;
+  entity?: string;
 
   /*
 The access permission for the entity.
 Possible values are: `OWNER`, `READER`, `WRITER`.
 */
-  Role?: string;
+  role?: string;
 }
 export class BucketAccessControl extends Resource {
   // The name of the bucket.
-  public Bucket?: string;
+  public bucket?: string;
 
   // The domain associated with the entity.
-  public Domain?: string;
+  public domain?: string;
 
   // The email address associated with the entity.
-  public Email?: string;
+  public email?: string;
 
   /*
 The entity holding the permission, in one of the following forms:
@@ -69,19 +69,19 @@ example.com, the entity would be domain-example.com.
 
 - - -
 */
-  public Entity?: string;
+  public entity?: string;
 
   /*
 The access permission for the entity.
 Possible values are: `OWNER`, `READER`, `WRITER`.
 */
-  public Role?: string;
+  public role?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Bucket",
+        "bucket",
         "The name of the bucket.",
         [],
         true,
@@ -89,7 +89,7 @@ Possible values are: `OWNER`, `READER`, `WRITER`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Entity",
+        "entity",
         "The entity holding the permission, in one of the following forms:\nuser-userId\nuser-email\ngroup-groupId\ngroup-email\ndomain-domain\nproject-team-projectId\nallUsers\nallAuthenticatedUsers\nExamples:\nThe user liz@example.com would be user-liz@example.com.\nThe group example@googlegroups.com would be\ngroup-example@googlegroups.com.\nTo refer to all members of the Google Apps for Business domain\nexample.com, the entity would be domain-example.com.\n\n\n- - -",
         [],
         true,
@@ -97,7 +97,7 @@ Possible values are: `OWNER`, `READER`, `WRITER`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Role",
+        "role",
         "The access permission for the entity.\nPossible values are: `OWNER`, `READER`, `WRITER`.",
         [],
         false,

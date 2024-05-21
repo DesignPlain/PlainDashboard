@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_getJobLatestCreatedExecution {
+export interface cloudrunv2_getJobLatestCreatedExecution {
   /*
 Completion timestamp of the execution.
 
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  CompletionTime?: string;
+  completionTime?: string;
 
   /*
 Creation timestamp of the execution.
 
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  CreateTime?: string;
+  createTime?: string;
 
   // The name of the Cloud Run v2 Job.
-  Name?: string;
+  name?: string;
 }
 
-export function Cloudrunv2_getJobLatestCreatedExecution_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_getJobLatestCreatedExecution_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CompletionTime",
+      "completionTime",
       'Completion timestamp of the execution.\n\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
       [],
       true,
@@ -37,7 +37,7 @@ export function Cloudrunv2_getJobLatestCreatedExecution_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "CreateTime",
+      "createTime",
       'Creation timestamp of the execution.\n\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
       [],
       true,
@@ -45,7 +45,7 @@ export function Cloudrunv2_getJobLatestCreatedExecution_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of the Cloud Run v2 Job.",
       [],
       true,

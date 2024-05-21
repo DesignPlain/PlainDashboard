@@ -6,38 +6,38 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudidentity_GroupMembershipRoleExpiryDetail,
-  Cloudidentity_GroupMembershipRoleExpiryDetail_GetTypes,
-} from "./Cloudidentity_GroupMembershipRoleExpiryDetail";
+  cloudidentity_GroupMembershipRoleExpiryDetail,
+  cloudidentity_GroupMembershipRoleExpiryDetail_GetTypes,
+} from "./cloudidentity_GroupMembershipRoleExpiryDetail";
 
-export interface Cloudidentity_GroupMembershipRole {
+export interface cloudidentity_GroupMembershipRole {
   /*
 The MembershipRole expiry details, only supported for MEMBER role.
 Other roles cannot be accompanied with MEMBER role having expiry.
 Structure is documented below.
 */
-  ExpiryDetail?: Cloudidentity_GroupMembershipRoleExpiryDetail;
+  expiryDetail?: cloudidentity_GroupMembershipRoleExpiryDetail;
 
   /*
 The name of the MembershipRole. Must be one of OWNER, MANAGER, MEMBER.
 Possible values are: `OWNER`, `MANAGER`, `MEMBER`.
 */
-  Name?: string;
+  name?: string;
 }
 
-export function Cloudidentity_GroupMembershipRole_GetTypes(): DynamicUIProps[] {
+export function cloudidentity_GroupMembershipRole_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ExpiryDetail",
+      "expiryDetail",
       "The MembershipRole expiry details, only supported for MEMBER role.\nOther roles cannot be accompanied with MEMBER role having expiry.\nStructure is documented below.",
-      Cloudidentity_GroupMembershipRoleExpiryDetail_GetTypes(),
+      cloudidentity_GroupMembershipRoleExpiryDetail_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of the MembershipRole. Must be one of OWNER, MANAGER, MEMBER.\nPossible values are: `OWNER`, `MANAGER`, `MEMBER`.",
       [],
       true,

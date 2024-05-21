@@ -6,39 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudscheduler_JobAppEngineHttpTargetAppEngineRouting {
-  /*
-App version.
-By default, the job is sent to the version which is the default version when the job is attempted.
-*/
-  Version?: string;
-
+export interface cloudscheduler_JobAppEngineHttpTargetAppEngineRouting {
   /*
 App instance.
 By default, the job is sent to an instance which is available when the job is attempted.
 */
-  Instance?: string;
+  instance?: string;
 
   /*
 App service.
 By default, the job is sent to the service which is the default service when the job is attempted.
 */
-  Service?: string;
+  service?: string;
+
+  /*
+App version.
+By default, the job is sent to the version which is the default version when the job is attempted.
+*/
+  version?: string;
 }
 
-export function Cloudscheduler_JobAppEngineHttpTargetAppEngineRouting_GetTypes(): DynamicUIProps[] {
+export function cloudscheduler_JobAppEngineHttpTargetAppEngineRouting_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Version",
-      "App version.\nBy default, the job is sent to the version which is the default version when the job is attempted.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Instance",
+      "instance",
       "App instance.\nBy default, the job is sent to an instance which is available when the job is attempted.",
       [],
       false,
@@ -46,8 +38,16 @@ export function Cloudscheduler_JobAppEngineHttpTargetAppEngineRouting_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "Service",
+      "service",
       "App service.\nBy default, the job is sent to the service which is the default service when the job is attempted.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "version",
+      "App version.\nBy default, the job is sent to the version which is the default version when the job is attempted.",
       [],
       false,
       false,

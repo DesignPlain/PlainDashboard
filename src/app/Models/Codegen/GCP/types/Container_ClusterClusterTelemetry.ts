@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterClusterTelemetry {
+export interface container_ClusterClusterTelemetry {
   /*
 Telemetry integration for the cluster. Supported values (`ENABLED, DISABLED, SYSTEM_ONLY`);
 `SYSTEM_ONLY` (Only system components are monitored and logged) is only available in GKE versions 1.15 and later.
 */
-  Type?: string;
+  type?: string;
 }
 
-export function Container_ClusterClusterTelemetry_GetTypes(): DynamicUIProps[] {
+export function container_ClusterClusterTelemetry_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "Telemetry integration for the cluster. Supported values (`ENABLED, DISABLED, SYSTEM_ONLY`);\n`SYSTEM_ONLY` (Only system components are monitored and logged) is only available in GKE versions 1.15 and later.",
       [],
       true,

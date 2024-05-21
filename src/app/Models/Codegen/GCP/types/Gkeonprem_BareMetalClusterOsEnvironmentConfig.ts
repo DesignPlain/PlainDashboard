@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterOsEnvironmentConfig {
+export interface gkeonprem_BareMetalClusterOsEnvironmentConfig {
   /*
 Whether the package repo should not be included when initializing
 bare metal machines.
 */
-  PackageRepoExcluded?: boolean;
+  packageRepoExcluded?: boolean;
 }
 
-export function Gkeonprem_BareMetalClusterOsEnvironmentConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterOsEnvironmentConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "PackageRepoExcluded",
+      "packageRepoExcluded",
       "Whether the package repo should not be included when initializing\nbare metal machines.",
       [],
       true,

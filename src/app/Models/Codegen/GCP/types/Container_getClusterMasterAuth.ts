@@ -6,45 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterMasterAuthClientCertificateConfig,
-  Container_getClusterMasterAuthClientCertificateConfig_GetTypes,
-} from "./Container_getClusterMasterAuthClientCertificateConfig";
+  container_getClusterMasterAuthClientCertificateConfig,
+  container_getClusterMasterAuthClientCertificateConfig_GetTypes,
+} from "./container_getClusterMasterAuthClientCertificateConfig";
 
-export interface Container_getClusterMasterAuth {
+export interface container_getClusterMasterAuth {
   // Base64 encoded public certificate used by clients to authenticate to the cluster endpoint.
-  ClientCertificate?: string;
+  clientCertificate?: string;
 
   // Whether client certificate authorization is enabled for this cluster.
-  ClientCertificateConfigs?: Array<Container_getClusterMasterAuthClientCertificateConfig>;
+  clientCertificateConfigs?: Array<container_getClusterMasterAuthClientCertificateConfig>;
 
   // Base64 encoded private key used by clients to authenticate to the cluster endpoint.
-  ClientKey?: string;
+  clientKey?: string;
 
   // Base64 encoded public certificate that is the root of trust for the cluster.
-  ClusterCaCertificate?: string;
+  clusterCaCertificate?: string;
 }
 
-export function Container_getClusterMasterAuth_GetTypes(): DynamicUIProps[] {
+export function container_getClusterMasterAuth_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "ClientCertificate",
-      "Base64 encoded public certificate used by clients to authenticate to the cluster endpoint.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "ClientCertificateConfigs",
+      "clientCertificateConfigs",
       "Whether client certificate authorization is enabled for this cluster.",
-      Container_getClusterMasterAuthClientCertificateConfig_GetTypes(),
+      container_getClusterMasterAuthClientCertificateConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ClientKey",
+      "clientKey",
       "Base64 encoded private key used by clients to authenticate to the cluster endpoint.",
       [],
       true,
@@ -52,8 +44,16 @@ export function Container_getClusterMasterAuth_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ClusterCaCertificate",
+      "clusterCaCertificate",
       "Base64 encoded public certificate that is the root of trust for the cluster.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "clientCertificate",
+      "Base64 encoded public certificate used by clients to authenticate to the cluster endpoint.",
       [],
       true,
       false,

@@ -6,81 +6,57 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Identityplatform_ProjectDefaultConfigSignInEmail,
-  Identityplatform_ProjectDefaultConfigSignInEmail_GetTypes,
-} from "./Identityplatform_ProjectDefaultConfigSignInEmail";
+  identityplatform_ProjectDefaultConfigSignInAnonymous,
+  identityplatform_ProjectDefaultConfigSignInAnonymous_GetTypes,
+} from "./identityplatform_ProjectDefaultConfigSignInAnonymous";
 import {
-  Identityplatform_ProjectDefaultConfigSignInHashConfig,
-  Identityplatform_ProjectDefaultConfigSignInHashConfig_GetTypes,
-} from "./Identityplatform_ProjectDefaultConfigSignInHashConfig";
+  identityplatform_ProjectDefaultConfigSignInEmail,
+  identityplatform_ProjectDefaultConfigSignInEmail_GetTypes,
+} from "./identityplatform_ProjectDefaultConfigSignInEmail";
 import {
-  Identityplatform_ProjectDefaultConfigSignInPhoneNumber,
-  Identityplatform_ProjectDefaultConfigSignInPhoneNumber_GetTypes,
-} from "./Identityplatform_ProjectDefaultConfigSignInPhoneNumber";
+  identityplatform_ProjectDefaultConfigSignInHashConfig,
+  identityplatform_ProjectDefaultConfigSignInHashConfig_GetTypes,
+} from "./identityplatform_ProjectDefaultConfigSignInHashConfig";
 import {
-  Identityplatform_ProjectDefaultConfigSignInAnonymous,
-  Identityplatform_ProjectDefaultConfigSignInAnonymous_GetTypes,
-} from "./Identityplatform_ProjectDefaultConfigSignInAnonymous";
+  identityplatform_ProjectDefaultConfigSignInPhoneNumber,
+  identityplatform_ProjectDefaultConfigSignInPhoneNumber_GetTypes,
+} from "./identityplatform_ProjectDefaultConfigSignInPhoneNumber";
 
-export interface Identityplatform_ProjectDefaultConfigSignIn {
+export interface identityplatform_ProjectDefaultConfigSignIn {
+  // Whether to allow more than one account to have the same email.
+  allowDuplicateEmails?: boolean;
+
+  /*
+Configuration options related to authenticating an anonymous user.
+Structure is documented below.
+*/
+  anonymous?: identityplatform_ProjectDefaultConfigSignInAnonymous;
+
   /*
 Configuration options related to authenticating a user by their email address.
 Structure is documented below.
 */
-  Email?: Identityplatform_ProjectDefaultConfigSignInEmail;
+  email?: identityplatform_ProjectDefaultConfigSignInEmail;
 
   /*
 (Output)
 Output only. Hash config information.
 Structure is documented below.
 */
-  HashConfigs?: Array<Identityplatform_ProjectDefaultConfigSignInHashConfig>;
+  hashConfigs?: Array<identityplatform_ProjectDefaultConfigSignInHashConfig>;
 
   /*
 Configuration options related to authenticated a user by their phone number.
 Structure is documented below.
 */
-  PhoneNumber?: Identityplatform_ProjectDefaultConfigSignInPhoneNumber;
-
-  // Whether to allow more than one account to have the same email.
-  AllowDuplicateEmails?: boolean;
-
-  /*
-Configuration options related to authenticating an anonymous user.
-Structure is documented below.
-*/
-  Anonymous?: Identityplatform_ProjectDefaultConfigSignInAnonymous;
+  phoneNumber?: identityplatform_ProjectDefaultConfigSignInPhoneNumber;
 }
 
-export function Identityplatform_ProjectDefaultConfigSignIn_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ProjectDefaultConfigSignIn_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "Email",
-      "Configuration options related to authenticating a user by their email address.\nStructure is documented below.",
-      Identityplatform_ProjectDefaultConfigSignInEmail_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "HashConfigs",
-      "(Output)\nOutput only. Hash config information.\nStructure is documented below.",
-      Identityplatform_ProjectDefaultConfigSignInHashConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "PhoneNumber",
-      "Configuration options related to authenticated a user by their phone number.\nStructure is documented below.",
-      Identityplatform_ProjectDefaultConfigSignInPhoneNumber_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "AllowDuplicateEmails",
+      "allowDuplicateEmails",
       "Whether to allow more than one account to have the same email.",
       [],
       false,
@@ -88,9 +64,33 @@ export function Identityplatform_ProjectDefaultConfigSignIn_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Anonymous",
+      "anonymous",
       "Configuration options related to authenticating an anonymous user.\nStructure is documented below.",
-      Identityplatform_ProjectDefaultConfigSignInAnonymous_GetTypes(),
+      identityplatform_ProjectDefaultConfigSignInAnonymous_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "email",
+      "Configuration options related to authenticating a user by their email address.\nStructure is documented below.",
+      identityplatform_ProjectDefaultConfigSignInEmail_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "hashConfigs",
+      "(Output)\nOutput only. Hash config information.\nStructure is documented below.",
+      identityplatform_ProjectDefaultConfigSignInHashConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "phoneNumber",
+      "Configuration options related to authenticated a user by their phone number.\nStructure is documented below.",
+      identityplatform_ProjectDefaultConfigSignInPhoneNumber_GetTypes(),
       false,
       false,
     ),

@@ -7,117 +7,73 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Bigquery_TableRangePartitioning,
-  Bigquery_TableRangePartitioning_GetTypes,
-} from "../types/Bigquery_TableRangePartitioning";
+  bigquery_TableTableReplicationInfo,
+  bigquery_TableTableReplicationInfo_GetTypes,
+} from "../types/bigquery_TableTableReplicationInfo";
 import {
-  Bigquery_TableMaterializedView,
-  Bigquery_TableMaterializedView_GetTypes,
-} from "../types/Bigquery_TableMaterializedView";
+  bigquery_TableEncryptionConfiguration,
+  bigquery_TableEncryptionConfiguration_GetTypes,
+} from "../types/bigquery_TableEncryptionConfiguration";
 import {
-  Bigquery_TableEncryptionConfiguration,
-  Bigquery_TableEncryptionConfiguration_GetTypes,
-} from "../types/Bigquery_TableEncryptionConfiguration";
+  bigquery_TableTimePartitioning,
+  bigquery_TableTimePartitioning_GetTypes,
+} from "../types/bigquery_TableTimePartitioning";
 import {
-  Bigquery_TableExternalDataConfiguration,
-  Bigquery_TableExternalDataConfiguration_GetTypes,
-} from "../types/Bigquery_TableExternalDataConfiguration";
+  bigquery_TableMaterializedView,
+  bigquery_TableMaterializedView_GetTypes,
+} from "../types/bigquery_TableMaterializedView";
 import {
-  Bigquery_TableTimePartitioning,
-  Bigquery_TableTimePartitioning_GetTypes,
-} from "../types/Bigquery_TableTimePartitioning";
+  bigquery_TableView,
+  bigquery_TableView_GetTypes,
+} from "../types/bigquery_TableView";
 import {
-  Bigquery_TableTableReplicationInfo,
-  Bigquery_TableTableReplicationInfo_GetTypes,
-} from "../types/Bigquery_TableTableReplicationInfo";
+  bigquery_TableExternalDataConfiguration,
+  bigquery_TableExternalDataConfiguration_GetTypes,
+} from "../types/bigquery_TableExternalDataConfiguration";
 import {
-  Bigquery_TableTableConstraints,
-  Bigquery_TableTableConstraints_GetTypes,
-} from "../types/Bigquery_TableTableConstraints";
+  bigquery_TableRangePartitioning,
+  bigquery_TableRangePartitioning_GetTypes,
+} from "../types/bigquery_TableRangePartitioning";
 import {
-  Bigquery_TableView,
-  Bigquery_TableView_GetTypes,
-} from "../types/Bigquery_TableView";
+  bigquery_TableTableConstraints,
+  bigquery_TableTableConstraints_GetTypes,
+} from "../types/bigquery_TableTableConstraints";
 
 export interface TableArgs {
   /*
-Whether or not to allow the provider to destroy the instance. Unless this field is set to false
-in state, a `=destroy` or `=update` that would delete the instance will fail.
+If set to true, queries over this table
+require a partition filter that can be used for partition elimination to be
+specified.
 */
-  DeletionProtection?: boolean;
-
-  // A descriptive name for the table.
-  FriendlyName?: string;
+  requirePartitionFilter?: boolean;
 
   /*
 A unique ID for the resource.
 Changing this forces a new resource to be created.
 */
-  TableId?: string;
+  tableId?: string;
 
   /*
-If specified, configures time-based
-partitioning for this table. Structure is documented below.
+The dataset ID to create the table in.
+Changing this forces a new resource to be created.
 */
-  TimePartitioning?: Bigquery_TableTimePartitioning;
+  datasetId?: string;
 
   /*
-A JSON schema for the external table. Schema is required
-for CSV and JSON formats if autodetect is not on. Schema is disallowed
-for Google Cloud Bigtable, Cloud Datastore backups, Avro, Iceberg, ORC and Parquet formats.
-~>--NOTE:-- Because this field expects a JSON string, any changes to the
-string will create a diff, even if the JSON itself hasn't changed.
-Furthermore drift for this field cannot not be detected because BigQuery
-only uses this schema to compute the effective schema for the table, therefore
-any changes on the configured value will force the table to be recreated.
-This schema is effectively only applied when creating a table from an external
-datasource, after creation the computed schema will be stored in
-`google_bigquery_table.schema`
-
-~>--NOTE:-- If you set `external_data_configuration.connection_id`, the
-table schema must be specified using the top-level `schema` field
-documented above.
+The time when this table expires, in
+milliseconds since the epoch. If not present, the table will persist
+indefinitely. Expired tables will be deleted and their storage
+reclaimed.
 */
-  Schema?: string;
-
-  // Replication info of a table created using "AS REPLICA" DDL like: "CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv".
-  TableReplicationInfo?: Bigquery_TableTableReplicationInfo;
+  expirationTime?: number;
 
   /*
-Defines the primary key and foreign keys. 
-Structure is documented below.
+Describes the data format,
+location, and other properties of a table stored outside of BigQuery.
+By defining these properties, the data source can then be queried as
+if it were a standard BigQuery table. Structure is documented below.
 */
-  TableConstraints?: Bigquery_TableTableConstraints;
-
-  /*
-If specified, configures this table as a view.
-Structure is documented below.
-*/
-  View?: Bigquery_TableView;
-
-  /*
-Specifies column names to use for data clustering.
-Up to four top-level columns are allowed, and should be specified in
-descending priority order.
-*/
-  Clusterings?: Array<string>;
-
-  // The field description.
-  Description?: string;
-
-  /*
-The maximum staleness of data that could be
-returned when the table (or stale MV) is queried. Staleness encoded as a
-string encoding of [SQL IntervalValue
-type](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#interval_type).
-*/
-  MaxStaleness?: string;
-
-  /*
-If specified, configures range-based
-partitioning for this table. Structure is documented below.
-*/
-  RangePartitioning?: Bigquery_TableRangePartitioning;
+  externalDataConfiguration?: bigquery_TableExternalDataConfiguration;
 
   /*
 A mapping of labels to assign to the resource.
@@ -125,105 +81,13 @@ A mapping of labels to assign to the resource.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field 'effective_labels' for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
-
-  /*
-If specified, configures this table as a materialized view.
-Structure is documented below.
-*/
-  MaterializedView?: Bigquery_TableMaterializedView;
-
-  /*
-The ID of the project in which the resource belongs. If it
-is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  /*
-If set to true, queries over this table
-require a partition filter that can be used for partition elimination to be
-specified.
-*/
-  RequirePartitionFilter?: boolean;
-
-  /*
-The dataset ID to create the table in.
-Changing this forces a new resource to be created.
-*/
-  DatasetId?: string;
-
-  /*
-Specifies how the table should be encrypted.
-If left blank, the table will be encrypted with a Google-managed key; that process
-is transparent to the user.  Structure is documented below.
-*/
-  EncryptionConfiguration?: Bigquery_TableEncryptionConfiguration;
-
-  /*
-The time when this table expires, in
-milliseconds since the epoch. If not present, the table will persist
-indefinitely. Expired tables will be deleted and their storage
-reclaimed.
-*/
-  ExpirationTime?: number;
-
-  /*
-Describes the data format,
-location, and other properties of a table stored outside of BigQuery.
-By defining these properties, the data source can then be queried as
-if it were a standard BigQuery table. Structure is documented below.
-*/
-  ExternalDataConfiguration?: Bigquery_TableExternalDataConfiguration;
-}
-export class Table extends Resource {
-  // A hash of the resource.
-  public Etag?: string;
-
-  /*
-The time when this table expires, in
-milliseconds since the epoch. If not present, the table will persist
-indefinitely. Expired tables will be deleted and their storage
-reclaimed.
-*/
-  public ExpirationTime?: number;
-
-  /*
-Defines the primary key and foreign keys. 
-Structure is documented below.
-*/
-  public TableConstraints?: Bigquery_TableTableConstraints;
-
-  /*
-Whether or not to allow the provider to destroy the instance. Unless this field is set to false
-in state, a `=destroy` or `=update` that would delete the instance will fail.
-*/
-  public DeletionProtection?: boolean;
-
-  // Replication info of a table created using "AS REPLICA" DDL like: "CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv".
-  public TableReplicationInfo?: Bigquery_TableTableReplicationInfo;
-
-  /*
-If specified, configures time-based
-partitioning for this table. Structure is documented below.
-*/
-  public TimePartitioning?: Bigquery_TableTimePartitioning;
-
-  /*
-The maximum staleness of data that could be
-returned when the table (or stale MV) is queried. Staleness encoded as a
-string encoding of [SQL IntervalValue
-type](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#interval_type).
-*/
-  public MaxStaleness?: string;
+  labels?: Map<string, string>;
 
   /*
 If specified, configures range-based
 partitioning for this table. Structure is documented below.
 */
-  public RangePartitioning?: Bigquery_TableRangePartitioning;
-
-  // The URI of the created resource.
-  public SelfLink?: string;
+  rangePartitioning?: bigquery_TableRangePartitioning;
 
   /*
 A JSON schema for the external table. Schema is required
@@ -242,68 +106,102 @@ datasource, after creation the computed schema will be stored in
 table schema must be specified using the top-level `schema` field
 documented above.
 */
-  public Schema?: string;
+  schema?: string;
 
-  // The time when this table was created, in milliseconds since the epoch.
-  public CreationTime?: number;
+  /*
+Defines the primary key and foreign keys. 
+Structure is documented below.
+*/
+  tableConstraints?: bigquery_TableTableConstraints;
+
+  // Replication info of a table created using "AS REPLICA" DDL like: "CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv".
+  tableReplicationInfo?: bigquery_TableTableReplicationInfo;
+
+  /*
+Whether or not to allow the provider to destroy the instance. Unless this field is set to false
+in state, a `=destroy` or `=update` that would delete the instance will fail.
+*/
+  deletionProtection?: boolean;
 
   // The field description.
-  public Description?: string;
-
-  // The geographic location where the table resides. This value is inherited from the dataset.
-  public Location?: string;
-
-  // The number of bytes in the table that are considered "long-term storage".
-  public NumLongTermBytes?: number;
+  description?: string;
 
   /*
-If set to true, queries over this table
-require a partition filter that can be used for partition elimination to be
-specified.
+Specifies how the table should be encrypted.
+If left blank, the table will be encrypted with a Google-managed key; that process
+is transparent to the user.  Structure is documented below.
 */
-  public RequirePartitionFilter?: boolean;
+  encryptionConfiguration?: bigquery_TableEncryptionConfiguration;
 
   /*
-Describes the data format,
-location, and other properties of a table stored outside of BigQuery.
-By defining these properties, the data source can then be queried as
-if it were a standard BigQuery table. Structure is documented below.
+If specified, configures time-based
+partitioning for this table. Structure is documented below.
 */
-  public ExternalDataConfiguration?: Bigquery_TableExternalDataConfiguration;
+  timePartitioning?: bigquery_TableTimePartitioning;
 
-  // A descriptive name for the table.
-  public FriendlyName?: string;
+  /*
+If specified, configures this table as a materialized view.
+Structure is documented below.
+*/
+  materializedView?: bigquery_TableMaterializedView;
+
+  /*
+The maximum staleness of data that could be
+returned when the table (or stale MV) is queried. Staleness encoded as a
+string encoding of [SQL IntervalValue
+type](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#interval_type).
+*/
+  maxStaleness?: string;
 
   /*
 The ID of the project in which the resource belongs. If it
 is not provided, the provider project is used.
 */
-  public Project?: string;
+  project?: string;
 
   /*
 If specified, configures this table as a view.
 Structure is documented below.
 */
-  public View?: Bigquery_TableView;
+  view?: bigquery_TableView;
 
   /*
 Specifies column names to use for data clustering.
 Up to four top-level columns are allowed, and should be specified in
 descending priority order.
 */
-  public Clusterings?: Array<string>;
+  clusterings?: Array<string>;
+
+  // A descriptive name for the table.
+  friendlyName?: string;
+}
+export class Table extends Resource {
+  /*
+A mapping of labels to assign to the resource.
+
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field 'effective_labels' for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
 
   /*
-If specified, configures this table as a materialized view.
+If specified, configures range-based
+partitioning for this table. Structure is documented below.
+*/
+  public rangePartitioning?: bigquery_TableRangePartitioning;
+
+  /*
+If specified, configures this table as a view.
 Structure is documented below.
 */
-  public MaterializedView?: Bigquery_TableMaterializedView;
+  public view?: bigquery_TableView;
 
   /*
-A unique ID for the resource.
-Changing this forces a new resource to be created.
+Specifies column names to use for data clustering.
+Up to four top-level columns are allowed, and should be specified in
+descending priority order.
 */
-  public TableId?: string;
+  public clusterings?: Array<string>;
 
   /*
 All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
@@ -323,164 +221,186 @@ documented below and do --not-- set
 with `external_data_configuration.schema`. Otherwise, schemas must be
 specified with this top-level field.
 */
-  public EffectiveLabels?: Map<string, string>;
+  public effectiveLabels?: Map<string, string>;
+
+  // The geographic location where the table resides. This value is inherited from the dataset.
+  public location?: string;
+
+  // The URI of the created resource.
+  public selfLink?: string;
+
+  /*
+The dataset ID to create the table in.
+Changing this forces a new resource to be created.
+*/
+  public datasetId?: string;
+
+  /*
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  // The combination of labels configured directly on the resource and default labels configured on the provider.
+  public pulumiLabels?: Map<string, string>;
+
+  // The field description.
+  public description?: string;
+
+  /*
+The time when this table expires, in
+milliseconds since the epoch. If not present, the table will persist
+indefinitely. Expired tables will be deleted and their storage
+reclaimed.
+*/
+  public expirationTime?: number;
+
+  // The number of bytes in the table that are considered "long-term storage".
+  public numLongTermBytes?: number;
+
+  /*
+A JSON schema for the external table. Schema is required
+for CSV and JSON formats if autodetect is not on. Schema is disallowed
+for Google Cloud Bigtable, Cloud Datastore backups, Avro, Iceberg, ORC and Parquet formats.
+~>--NOTE:-- Because this field expects a JSON string, any changes to the
+string will create a diff, even if the JSON itself hasn't changed.
+Furthermore drift for this field cannot not be detected because BigQuery
+only uses this schema to compute the effective schema for the table, therefore
+any changes on the configured value will force the table to be recreated.
+This schema is effectively only applied when creating a table from an external
+datasource, after creation the computed schema will be stored in
+`google_bigquery_table.schema`
+
+~>--NOTE:-- If you set `external_data_configuration.connection_id`, the
+table schema must be specified using the top-level `schema` field
+documented above.
+*/
+  public schema?: string;
+
+  /*
+The supported types are DAY, HOUR, MONTH, and YEAR,
+which will generate one partition per day, hour, month, and year, respectively.
+*/
+  public type?: string;
+
+  /*
+If specified, configures time-based
+partitioning for this table. Structure is documented below.
+*/
+  public timePartitioning?: bigquery_TableTimePartitioning;
+
+  /*
+Whether or not to allow the provider to destroy the instance. Unless this field is set to false
+in state, a `=destroy` or `=update` that would delete the instance will fail.
+*/
+  public deletionProtection?: boolean;
+
+  // A hash of the resource.
+  public etag?: string;
+
+  /*
+If specified, configures this table as a materialized view.
+Structure is documented below.
+*/
+  public materializedView?: bigquery_TableMaterializedView;
+
+  // The number of rows of data in this table, excluding any data in the streaming buffer.
+  public numRows?: number;
+
+  /*
+A unique ID for the resource.
+Changing this forces a new resource to be created.
+*/
+  public tableId?: string;
+
+  /*
+Defines the primary key and foreign keys. 
+Structure is documented below.
+*/
+  public tableConstraints?: bigquery_TableTableConstraints;
+
+  // Replication info of a table created using "AS REPLICA" DDL like: "CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv".
+  public tableReplicationInfo?: bigquery_TableTableReplicationInfo;
+
+  // The time when this table was created, in milliseconds since the epoch.
+  public creationTime?: number;
 
   /*
 Specifies how the table should be encrypted.
 If left blank, the table will be encrypted with a Google-managed key; that process
 is transparent to the user.  Structure is documented below.
 */
-  public EncryptionConfiguration?: Bigquery_TableEncryptionConfiguration;
+  public encryptionConfiguration?: bigquery_TableEncryptionConfiguration;
 
-  // The time when this table was last modified, in milliseconds since the epoch.
-  public LastModifiedTime?: number;
+  /*
+Describes the data format,
+location, and other properties of a table stored outside of BigQuery.
+By defining these properties, the data source can then be queried as
+if it were a standard BigQuery table. Structure is documented below.
+*/
+  public externalDataConfiguration?: bigquery_TableExternalDataConfiguration;
+
+  // A descriptive name for the table.
+  public friendlyName?: string;
 
   // The size of this table in bytes, excluding any data in the streaming buffer.
-  public NumBytes?: number;
+  public numBytes?: number;
+
+  // The time when this table was last modified, in milliseconds since the epoch.
+  public lastModifiedTime?: number;
 
   /*
-The supported types are DAY, HOUR, MONTH, and YEAR,
-which will generate one partition per day, hour, month, and year, respectively.
+The maximum staleness of data that could be
+returned when the table (or stale MV) is queried. Staleness encoded as a
+string encoding of [SQL IntervalValue
+type](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#interval_type).
 */
-  public Type?: string;
+  public maxStaleness?: string;
 
   /*
-The dataset ID to create the table in.
-Changing this forces a new resource to be created.
+If set to true, queries over this table
+require a partition filter that can be used for partition elimination to be
+specified.
 */
-  public DatasetId?: string;
-
-  /*
-A mapping of labels to assign to the resource.
-
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field 'effective_labels' for all of the labels present on the resource.
-*/
-  public Labels?: Map<string, string>;
-
-  // The number of rows of data in this table, excluding any data in the streaming buffer.
-  public NumRows?: number;
-
-  // The combination of labels configured directly on the resource and default labels configured on the provider.
-  public PulumiLabels?: Map<string, string>;
+  public requirePartitionFilter?: boolean;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Bool,
-        "RequirePartitionFilter",
-        "If set to true, queries over this table\nrequire a partition filter that can be used for partition elimination to be\nspecified.",
-        [],
+        InputType.Object,
+        "view",
+        "If specified, configures this table as a view.\nStructure is documented below.",
+        bigquery_TableView_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "EncryptionConfiguration",
-        "Specifies how the table should be encrypted.\nIf left blank, the table will be encrypted with a Google-managed key; that process\nis transparent to the user.  Structure is documented below.",
-        Bigquery_TableEncryptionConfiguration_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "ExternalDataConfiguration",
+        "externalDataConfiguration",
         "Describes the data format,\nlocation, and other properties of a table stored outside of BigQuery.\nBy defining these properties, the data source can then be queried as\nif it were a standard BigQuery table. Structure is documented below.",
-        Bigquery_TableExternalDataConfiguration_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "TableId",
-        "A unique ID for the resource.\nChanging this forces a new resource to be created.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "TimePartitioning",
-        "If specified, configures time-based\npartitioning for this table. Structure is documented below.",
-        Bigquery_TableTimePartitioning_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Schema",
-        "A JSON schema for the external table. Schema is required\nfor CSV and JSON formats if autodetect is not on. Schema is disallowed\nfor Google Cloud Bigtable, Cloud Datastore backups, Avro, Iceberg, ORC and Parquet formats.\n~>**NOTE:** Because this field expects a JSON string, any changes to the\nstring will create a diff, even if the JSON itself hasn't changed.\nFurthermore drift for this field cannot not be detected because BigQuery\nonly uses this schema to compute the effective schema for the table, therefore\nany changes on the configured value will force the table to be recreated.\nThis schema is effectively only applied when creating a table from an external\ndatasource, after creation the computed schema will be stored in\n`google_bigquery_table.schema`\n\n~>**NOTE:** If you set `external_data_configuration.connection_id`, the\ntable schema must be specified using the top-level `schema` field\ndocumented above.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Map,
-        "Labels",
-        "A mapping of labels to assign to the resource.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field 'effective_labels' for all of the labels present on the resource.",
-        InputType_Map_GetTypes(),
+        bigquery_TableExternalDataConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "MaterializedView",
-        "If specified, configures this table as a materialized view.\nStructure is documented below.",
-        Bigquery_TableMaterializedView_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "FriendlyName",
-        "A descriptive name for the table.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Array,
-        "Clusterings",
-        "Specifies column names to use for data clustering.\nUp to four top-level columns are allowed, and should be specified in\ndescending priority order.",
-        InputType_String_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "DatasetId",
-        "The dataset ID to create the table in.\nChanging this forces a new resource to be created.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Bool,
-        "DeletionProtection",
-        "Whether or not to allow the provider to destroy the instance. Unless this field is set to false\nin state, a `=destroy` or `=update` that would delete the instance will fail.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "TableReplicationInfo",
-        'Replication info of a table created using "AS REPLICA" DDL like: "CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv".',
-        Bigquery_TableTableReplicationInfo_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "TableConstraints",
+        "tableConstraints",
         "Defines the primary key and foreign keys. \nStructure is documented below.",
-        Bigquery_TableTableConstraints_GetTypes(),
+        bigquery_TableTableConstraints_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
+        InputType.Object,
+        "encryptionConfiguration",
+        "Specifies how the table should be encrypted.\nIf left blank, the table will be encrypted with a Google-managed key; that process\nis transparent to the user.  Structure is documented below.",
+        bigquery_TableEncryptionConfiguration_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "The field description.",
         [],
         false,
@@ -488,41 +408,121 @@ Please refer to the field 'effective_labels' for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.Object,
-        "RangePartitioning",
-        "If specified, configures range-based\npartitioning for this table. Structure is documented below.",
-        Bigquery_TableRangePartitioning_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "View",
-        "If specified, configures this table as a view.\nStructure is documented below.",
-        Bigquery_TableView_GetTypes(),
+        "timePartitioning",
+        "If specified, configures time-based\npartitioning for this table. Structure is documented below.",
+        bigquery_TableTimePartitioning_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "MaxStaleness",
+        "maxStaleness",
         "The maximum staleness of data that could be\nreturned when the table (or stale MV) is queried. Staleness encoded as a\nstring encoding of [SQL IntervalValue\ntype](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#interval_type).",
         [],
         false,
         false,
       ),
       new DynamicUIProps(
+        InputType.Object,
+        "rangePartitioning",
+        "If specified, configures range-based\npartitioning for this table. Structure is documented below.",
+        bigquery_TableRangePartitioning_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
         InputType.String,
-        "Project",
+        "schema",
+        "A JSON schema for the external table. Schema is required\nfor CSV and JSON formats if autodetect is not on. Schema is disallowed\nfor Google Cloud Bigtable, Cloud Datastore backups, Avro, Iceberg, ORC and Parquet formats.\n~>**NOTE:** Because this field expects a JSON string, any changes to the\nstring will create a diff, even if the JSON itself hasn't changed.\nFurthermore drift for this field cannot not be detected because BigQuery\nonly uses this schema to compute the effective schema for the table, therefore\nany changes on the configured value will force the table to be recreated.\nThis schema is effectively only applied when creating a table from an external\ndatasource, after creation the computed schema will be stored in\n`google_bigquery_table.schema`\n\n~>**NOTE:** If you set `external_data_configuration.connection_id`, the\ntable schema must be specified using the top-level `schema` field\ndocumented above.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "deletionProtection",
+        "Whether or not to allow the provider to destroy the instance. Unless this field is set to false\nin state, a `=destroy` or `=update` that would delete the instance will fail.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
         "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
         [],
         false,
         true,
       ),
       new DynamicUIProps(
+        InputType.Array,
+        "clusterings",
+        "Specifies column names to use for data clustering.\nUp to four top-level columns are allowed, and should be specified in\ndescending priority order.",
+        InputType_String_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "tableId",
+        "A unique ID for the resource.\nChanging this forces a new resource to be created.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "datasetId",
+        "The dataset ID to create the table in.\nChanging this forces a new resource to be created.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "materializedView",
+        "If specified, configures this table as a materialized view.\nStructure is documented below.",
+        bigquery_TableMaterializedView_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "tableReplicationInfo",
+        'Replication info of a table created using "AS REPLICA" DDL like: "CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv".',
+        bigquery_TableTableReplicationInfo_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "friendlyName",
+        "A descriptive name for the table.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "requirePartitionFilter",
+        "If set to true, queries over this table\nrequire a partition filter that can be used for partition elimination to be\nspecified.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
         InputType.Number,
-        "ExpirationTime",
+        "expirationTime",
         "The time when this table expires, in\nmilliseconds since the epoch. If not present, the table will persist\nindefinitely. Expired tables will be deleted and their storage\nreclaimed.",
         [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Map,
+        "labels",
+        "A mapping of labels to assign to the resource.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field 'effective_labels' for all of the labels present on the resource.",
+        InputType_Map_GetTypes(),
         false,
         false,
       ),

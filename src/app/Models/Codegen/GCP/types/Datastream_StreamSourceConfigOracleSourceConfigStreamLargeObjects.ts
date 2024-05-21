@@ -6,8 +6,8 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects {}
+export interface datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects {}
 
-export function Datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects_GetTypes(): DynamicUIProps[] {
   return [];
 }

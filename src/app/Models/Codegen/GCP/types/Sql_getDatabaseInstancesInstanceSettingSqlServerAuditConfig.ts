@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstancesInstanceSettingSqlServerAuditConfig {
+export interface sql_getDatabaseInstancesInstanceSettingSqlServerAuditConfig {
   // The name of the destination bucket (e.g., gs://mybucket).
-  Bucket?: string;
+  bucket?: string;
 
   // How long to keep generated audit files. A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s"..
-  RetentionInterval?: string;
+  retentionInterval?: string;
 
   // How often to upload generated audit files. A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
-  UploadInterval?: string;
+  uploadInterval?: string;
 }
 
-export function Sql_getDatabaseInstancesInstanceSettingSqlServerAuditConfig_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstancesInstanceSettingSqlServerAuditConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Bucket",
+      "bucket",
       "The name of the destination bucket (e.g., gs://mybucket).",
       [],
       true,
@@ -29,7 +29,7 @@ export function Sql_getDatabaseInstancesInstanceSettingSqlServerAuditConfig_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "RetentionInterval",
+      "retentionInterval",
       "How long to keep generated audit files. A duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\"..",
       [],
       true,
@@ -37,7 +37,7 @@ export function Sql_getDatabaseInstancesInstanceSettingSqlServerAuditConfig_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "UploadInterval",
+      "uploadInterval",
       "How often to upload generated audit files. A duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\".",
       [],
       true,

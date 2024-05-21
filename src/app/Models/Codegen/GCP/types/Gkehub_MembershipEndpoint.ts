@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkehub_MembershipEndpointGkeCluster,
-  Gkehub_MembershipEndpointGkeCluster_GetTypes,
-} from "./Gkehub_MembershipEndpointGkeCluster";
+  gkehub_MembershipEndpointGkeCluster,
+  gkehub_MembershipEndpointGkeCluster_GetTypes,
+} from "./gkehub_MembershipEndpointGkeCluster";
 
-export interface Gkehub_MembershipEndpoint {
+export interface gkehub_MembershipEndpoint {
   /*
 If this Membership is a Kubernetes API server hosted on GKE, this is a self link to its GCP resource.
 Structure is documented below.
 */
-  GkeCluster?: Gkehub_MembershipEndpointGkeCluster;
+  gkeCluster?: gkehub_MembershipEndpointGkeCluster;
 }
 
-export function Gkehub_MembershipEndpoint_GetTypes(): DynamicUIProps[] {
+export function gkehub_MembershipEndpoint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "GkeCluster",
+      "gkeCluster",
       "If this Membership is a Kubernetes API server hosted on GKE, this is a self link to its GCP resource.\nStructure is documented below.",
-      Gkehub_MembershipEndpointGkeCluster_GetTypes(),
+      gkehub_MembershipEndpointGkeCluster_GetTypes(),
       false,
       true,
     ),

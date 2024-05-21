@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterNodeConfigGcfsConfig {
+export interface container_ClusterNodeConfigGcfsConfig {
   // Whether or not the Google Container Filesystem (GCFS) is enabled
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_ClusterNodeConfigGcfsConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterNodeConfigGcfsConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether or not the Google Container Filesystem (GCFS) is enabled",
       [],
       true,

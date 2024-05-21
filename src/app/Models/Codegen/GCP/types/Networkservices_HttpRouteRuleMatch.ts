@@ -6,53 +6,61 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networkservices_HttpRouteRuleMatchHeader,
-  Networkservices_HttpRouteRuleMatchHeader_GetTypes,
-} from "./Networkservices_HttpRouteRuleMatchHeader";
+  networkservices_HttpRouteRuleMatchQueryParameter,
+  networkservices_HttpRouteRuleMatchQueryParameter_GetTypes,
+} from "./networkservices_HttpRouteRuleMatchQueryParameter";
 import {
-  Networkservices_HttpRouteRuleMatchQueryParameter,
-  Networkservices_HttpRouteRuleMatchQueryParameter_GetTypes,
-} from "./Networkservices_HttpRouteRuleMatchQueryParameter";
+  networkservices_HttpRouteRuleMatchHeader,
+  networkservices_HttpRouteRuleMatchHeader_GetTypes,
+} from "./networkservices_HttpRouteRuleMatchHeader";
 
-export interface Networkservices_HttpRouteRuleMatch {
-  /*
-Specifies a list of HTTP request headers to match against.
-Structure is documented below.
-*/
-  Headers?: Array<Networkservices_HttpRouteRuleMatchHeader>;
-
-  // Specifies if prefixMatch and fullPathMatch matches are case sensitive. The default value is false.
-  IgnoreCase?: boolean;
-
-  // The HTTP request path value must begin with specified prefixMatch. prefixMatch must begin with a /.
-  PrefixMatch?: string;
-
+export interface networkservices_HttpRouteRuleMatch {
   /*
 Specifies a list of query parameters to match against.
 Structure is documented below.
 */
-  QueryParameters?: Array<Networkservices_HttpRouteRuleMatchQueryParameter>;
+  queryParameters?: Array<networkservices_HttpRouteRuleMatchQueryParameter>;
 
   // The HTTP request path value must satisfy the regular expression specified by regexMatch after removing any query parameters and anchor supplied with the original URL. For regular expression grammar, please see https://github.com/google/re2/wiki/Syntax
-  RegexMatch?: string;
+  regexMatch?: string;
 
   // The HTTP request path value should exactly match this value.
-  FullPathMatch?: string;
+  fullPathMatch?: string;
+
+  /*
+Specifies a list of HTTP request headers to match against.
+Structure is documented below.
+*/
+  headers?: Array<networkservices_HttpRouteRuleMatchHeader>;
+
+  // Specifies if prefixMatch and fullPathMatch matches are case sensitive. The default value is false.
+  ignoreCase?: boolean;
+
+  // The HTTP request path value must begin with specified prefixMatch. prefixMatch must begin with a /.
+  prefixMatch?: string;
 }
 
-export function Networkservices_HttpRouteRuleMatch_GetTypes(): DynamicUIProps[] {
+export function networkservices_HttpRouteRuleMatch_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "fullPathMatch",
+      "The HTTP request path value should exactly match this value.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Array,
-      "Headers",
+      "headers",
       "Specifies a list of HTTP request headers to match against.\nStructure is documented below.",
-      Networkservices_HttpRouteRuleMatchHeader_GetTypes(),
+      networkservices_HttpRouteRuleMatchHeader_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IgnoreCase",
+      "ignoreCase",
       "Specifies if prefixMatch and fullPathMatch matches are case sensitive. The default value is false.",
       [],
       false,
@@ -60,7 +68,7 @@ export function Networkservices_HttpRouteRuleMatch_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.String,
-      "PrefixMatch",
+      "prefixMatch",
       "The HTTP request path value must begin with specified prefixMatch. prefixMatch must begin with a /.",
       [],
       false,
@@ -68,24 +76,16 @@ export function Networkservices_HttpRouteRuleMatch_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "QueryParameters",
+      "queryParameters",
       "Specifies a list of query parameters to match against.\nStructure is documented below.",
-      Networkservices_HttpRouteRuleMatchQueryParameter_GetTypes(),
+      networkservices_HttpRouteRuleMatchQueryParameter_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "RegexMatch",
+      "regexMatch",
       "The HTTP request path value must satisfy the regular expression specified by regexMatch after removing any query parameters and anchor supplied with the original URL. For regular expression grammar, please see https://github.com/google/re2/wiki/Syntax",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "FullPathMatch",
-      "The HTTP request path value should exactly match this value.",
       [],
       false,
       false,

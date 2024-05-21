@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset {
+export interface datastream_StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset {
   /*
 Dataset ID in the format projects/{project}/datasets/{dataset_id} or
 {project}:{dataset_id}
 */
-  DatasetId?: string;
+  datasetId?: string;
 }
 
-export function Datastream_StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DatasetId",
+      "datasetId",
       "Dataset ID in the format projects/{project}/datasets/{dataset_id} or\n{project}:{dataset_id}",
       [],
       true,

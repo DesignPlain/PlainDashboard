@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference,
-  Cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference_GetTypes,
-} from "./Cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference";
+  cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference,
+  cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference_GetTypes,
+} from "./cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference";
 
-export interface Cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRef {
+export interface cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRef {
   /*
 The ConfigMap to select from.
 Structure is documented below.
 */
-  LocalObjectReference?: Cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference;
+  localObjectReference?: cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference;
 
   // Specify whether the ConfigMap must be defined
-  Optional?: boolean;
+  optional?: boolean;
 }
 
-export function Cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRef_GetTypes(): DynamicUIProps[] {
+export function cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRef_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "LocalObjectReference",
+      "localObjectReference",
       "The ConfigMap to select from.\nStructure is documented below.",
-      Cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference_GetTypes(),
+      cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Optional",
+      "optional",
       "Specify whether the ConfigMap must be defined",
       [],
       false,

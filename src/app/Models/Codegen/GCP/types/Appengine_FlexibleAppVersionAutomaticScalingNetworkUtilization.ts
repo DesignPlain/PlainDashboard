@@ -6,41 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_FlexibleAppVersionAutomaticScalingNetworkUtilization {
+export interface appengine_FlexibleAppVersionAutomaticScalingNetworkUtilization {
   // Target bytes received per second.
-  TargetReceivedBytesPerSecond?: number;
+  targetReceivedBytesPerSecond?: number;
 
   // Target packets received per second.
-  TargetReceivedPacketsPerSecond?: number;
+  targetReceivedPacketsPerSecond?: number;
 
   // Target bytes sent per second.
-  TargetSentBytesPerSecond?: number;
+  targetSentBytesPerSecond?: number;
 
   // Target packets sent per second.
-  TargetSentPacketsPerSecond?: number;
+  targetSentPacketsPerSecond?: number;
 }
 
-export function Appengine_FlexibleAppVersionAutomaticScalingNetworkUtilization_GetTypes(): DynamicUIProps[] {
+export function appengine_FlexibleAppVersionAutomaticScalingNetworkUtilization_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "TargetSentBytesPerSecond",
-      "Target bytes sent per second.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "TargetSentPacketsPerSecond",
-      "Target packets sent per second.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "TargetReceivedBytesPerSecond",
+      "targetReceivedBytesPerSecond",
       "Target bytes received per second.",
       [],
       false,
@@ -48,8 +32,24 @@ export function Appengine_FlexibleAppVersionAutomaticScalingNetworkUtilization_G
     ),
     new DynamicUIProps(
       InputType.Number,
-      "TargetReceivedPacketsPerSecond",
+      "targetReceivedPacketsPerSecond",
       "Target packets received per second.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "targetSentBytesPerSecond",
+      "Target bytes sent per second.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "targetSentPacketsPerSecond",
+      "Target packets sent per second.",
       [],
       false,
       false,

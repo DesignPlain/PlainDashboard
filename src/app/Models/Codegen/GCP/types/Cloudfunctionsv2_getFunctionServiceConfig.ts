@@ -6,206 +6,102 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudfunctionsv2_getFunctionServiceConfigSecretVolume,
-  Cloudfunctionsv2_getFunctionServiceConfigSecretVolume_GetTypes,
-} from "./Cloudfunctionsv2_getFunctionServiceConfigSecretVolume";
+  cloudfunctionsv2_getFunctionServiceConfigSecretVolume,
+  cloudfunctionsv2_getFunctionServiceConfigSecretVolume_GetTypes,
+} from "./cloudfunctionsv2_getFunctionServiceConfigSecretVolume";
 import {
-  Cloudfunctionsv2_getFunctionServiceConfigSecretEnvironmentVariable,
-  Cloudfunctionsv2_getFunctionServiceConfigSecretEnvironmentVariable_GetTypes,
-} from "./Cloudfunctionsv2_getFunctionServiceConfigSecretEnvironmentVariable";
+  cloudfunctionsv2_getFunctionServiceConfigSecretEnvironmentVariable,
+  cloudfunctionsv2_getFunctionServiceConfigSecretEnvironmentVariable_GetTypes,
+} from "./cloudfunctionsv2_getFunctionServiceConfigSecretEnvironmentVariable";
 
-export interface Cloudfunctionsv2_getFunctionServiceConfig {
-  // The number of CPUs used in a single container instance. Default value is calculated from available memory.
-  AvailableCpu?: string;
-
+export interface cloudfunctionsv2_getFunctionServiceConfig {
   // Available egress settings. Possible values: ["VPC_CONNECTOR_EGRESS_SETTINGS_UNSPECIFIED", "PRIVATE_RANGES_ONLY", "ALL_TRAFFIC"]
-  VpcConnectorEgressSettings?: string;
+  vpcConnectorEgressSettings?: string;
+
+  // Environment variables that shall be available during function execution.
+  environmentVariables?: Map<string, string>;
+
+  // Available ingress settings. Defaults to "ALLOW_ALL" if unspecified. Default value: "ALLOW_ALL" Possible values: ["ALLOW_ALL", "ALLOW_INTERNAL_ONLY", "ALLOW_INTERNAL_AND_GCLB"]
+  ingressSettings?: string;
 
   /*
-The amount of memory available for a function.
-Defaults to 256M. Supported units are k, M, G, Mi, Gi. If no unit is
-supplied the value is interpreted as bytes.
+The limit on the maximum number of function instances that may coexist at a
+given time.
 */
-  AvailableMemory?: string;
+  maxInstanceCount?: number;
+
+  /*
+The limit on the minimum number of function instances that may coexist at a
+given time.
+*/
+  minInstanceCount?: number;
 
   // Secret volumes configuration.
-  SecretVolumes?: Array<Cloudfunctionsv2_getFunctionServiceConfigSecretVolume>;
+  secretVolumes?: Array<cloudfunctionsv2_getFunctionServiceConfigSecretVolume>;
+
+  // The Serverless VPC Access connector that this cloud function can connect to.
+  vpcConnector?: string;
+
+  // The number of CPUs used in a single container instance. Default value is calculated from available memory.
+  availableCpu?: string;
+
+  // Sets the maximum number of concurrent requests that each instance can receive. Defaults to 1.
+  maxInstanceRequestConcurrency?: number;
+
+  // Secret environment variables configuration.
+  secretEnvironmentVariables?: Array<cloudfunctionsv2_getFunctionServiceConfigSecretEnvironmentVariable>;
 
   /*
 The function execution timeout. Execution is considered failed and
 can be terminated if the function is not completed at the end of the
 timeout period. Defaults to 60 seconds.
 */
-  TimeoutSeconds?: number;
-
-  // URI of the Service deployed.
-  Uri?: string;
-
-  // Whether 100%!!(MISSING)o(MISSING)f traffic is routed to the latest revision. Defaults to true.
-  AllTrafficOnLatestRevision?: boolean;
-
-  // Environment variables that shall be available during function execution.
-  EnvironmentVariables?: Map<string, string>;
+  timeoutSeconds?: number;
 
   // URIs of the Service deployed
-  GcfUri?: string;
-
-  // Available ingress settings. Defaults to "ALLOW_ALL" if unspecified. Default value: "ALLOW_ALL" Possible values: ["ALLOW_ALL", "ALLOW_INTERNAL_ONLY", "ALLOW_INTERNAL_AND_GCLB"]
-  IngressSettings?: string;
-
-  // The Serverless VPC Access connector that this cloud function can connect to.
-  VpcConnector?: string;
-
-  /*
-The limit on the maximum number of function instances that may coexist at a
-given time.
-*/
-  MaxInstanceCount?: number;
-
-  // Sets the maximum number of concurrent requests that each instance can receive. Defaults to 1.
-  MaxInstanceRequestConcurrency?: number;
-
-  /*
-The limit on the minimum number of function instances that may coexist at a
-given time.
-*/
-  MinInstanceCount?: number;
-
-  // Secret environment variables configuration.
-  SecretEnvironmentVariables?: Array<Cloudfunctionsv2_getFunctionServiceConfigSecretEnvironmentVariable>;
+  gcfUri?: string;
 
   // Name of the service associated with a Function.
-  Service?: string;
+  service?: string;
 
   // The email of the service account for this function.
-  ServiceAccountEmail?: string;
+  serviceAccountEmail?: string;
+
+  // Whether 100%!!(MISSING)o(MISSING)f traffic is routed to the latest revision. Defaults to true.
+  allTrafficOnLatestRevision?: boolean;
+
+  /*
+The amount of memory available for a function.
+Defaults to 256M. Supported units are k, M, G, Mi, Gi. If no unit is
+supplied the value is interpreted as bytes.
+*/
+  availableMemory?: string;
+
+  // URI of the Service deployed.
+  uri?: string;
 }
 
-export function Cloudfunctionsv2_getFunctionServiceConfig_GetTypes(): DynamicUIProps[] {
+export function cloudfunctionsv2_getFunctionServiceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "AvailableCpu",
-      "The number of CPUs used in a single container instance. Default value is calculated from available memory.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Map,
-      "EnvironmentVariables",
-      "Environment variables that shall be available during function execution.",
-      InputType_Map_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "MaxInstanceCount",
-      "The limit on the maximum number of function instances that may coexist at a\ngiven time.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "AvailableMemory",
-      "The amount of memory available for a function.\nDefaults to 256M. Supported units are k, M, G, Mi, Gi. If no unit is\nsupplied the value is interpreted as bytes.",
+      "minInstanceCount",
+      "The limit on the minimum number of function instances that may coexist at a\ngiven time.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "AllTrafficOnLatestRevision",
+      "allTrafficOnLatestRevision",
       "Whether 100%!o(MISSING)f traffic is routed to the latest revision. Defaults to true.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Number,
-      "MaxInstanceRequestConcurrency",
-      "Sets the maximum number of concurrent requests that each instance can receive. Defaults to 1.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "VpcConnectorEgressSettings",
-      'Available egress settings. Possible values: ["VPC_CONNECTOR_EGRESS_SETTINGS_UNSPECIFIED", "PRIVATE_RANGES_ONLY", "ALL_TRAFFIC"]',
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "SecretVolumes",
-      "Secret volumes configuration.",
-      Cloudfunctionsv2_getFunctionServiceConfigSecretVolume_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "SecretEnvironmentVariables",
-      "Secret environment variables configuration.",
-      Cloudfunctionsv2_getFunctionServiceConfigSecretEnvironmentVariable_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Service",
-      "Name of the service associated with a Function.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ServiceAccountEmail",
-      "The email of the service account for this function.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "TimeoutSeconds",
-      "The function execution timeout. Execution is considered failed and\ncan be terminated if the function is not completed at the end of the\ntimeout period. Defaults to 60 seconds.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Uri",
-      "URI of the Service deployed.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "GcfUri",
-      "URIs of the Service deployed",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "IngressSettings",
-      'Available ingress settings. Defaults to "ALLOW_ALL" if unspecified. Default value: "ALLOW_ALL" Possible values: ["ALLOW_ALL", "ALLOW_INTERNAL_ONLY", "ALLOW_INTERNAL_AND_GCLB"]',
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "VpcConnector",
+      "vpcConnector",
       "The Serverless VPC Access connector that this cloud function can connect to.",
       [],
       true,
@@ -213,8 +109,112 @@ export function Cloudfunctionsv2_getFunctionServiceConfig_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MinInstanceCount",
-      "The limit on the minimum number of function instances that may coexist at a\ngiven time.",
+      "maxInstanceRequestConcurrency",
+      "Sets the maximum number of concurrent requests that each instance can receive. Defaults to 1.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "service",
+      "Name of the service associated with a Function.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "availableMemory",
+      "The amount of memory available for a function.\nDefaults to 256M. Supported units are k, M, G, Mi, Gi. If no unit is\nsupplied the value is interpreted as bytes.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Map,
+      "environmentVariables",
+      "Environment variables that shall be available during function execution.",
+      InputType_Map_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "maxInstanceCount",
+      "The limit on the maximum number of function instances that may coexist at a\ngiven time.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "availableCpu",
+      "The number of CPUs used in a single container instance. Default value is calculated from available memory.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "secretEnvironmentVariables",
+      "Secret environment variables configuration.",
+      cloudfunctionsv2_getFunctionServiceConfigSecretEnvironmentVariable_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "timeoutSeconds",
+      "The function execution timeout. Execution is considered failed and\ncan be terminated if the function is not completed at the end of the\ntimeout period. Defaults to 60 seconds.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "serviceAccountEmail",
+      "The email of the service account for this function.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "vpcConnectorEgressSettings",
+      'Available egress settings. Possible values: ["VPC_CONNECTOR_EGRESS_SETTINGS_UNSPECIFIED", "PRIVATE_RANGES_ONLY", "ALL_TRAFFIC"]',
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "secretVolumes",
+      "Secret volumes configuration.",
+      cloudfunctionsv2_getFunctionServiceConfigSecretVolume_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "uri",
+      "URI of the Service deployed.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "ingressSettings",
+      'Available ingress settings. Defaults to "ALLOW_ALL" if unspecified. Default value: "ALLOW_ALL" Possible values: ["ALLOW_ALL", "ALLOW_INTERNAL_ONLY", "ALLOW_INTERNAL_AND_GCLB"]',
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "gcfUri",
+      "URIs of the Service deployed",
       [],
       true,
       false,

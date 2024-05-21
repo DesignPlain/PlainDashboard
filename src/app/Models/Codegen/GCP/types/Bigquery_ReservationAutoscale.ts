@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_ReservationAutoscale {
+export interface bigquery_ReservationAutoscale {
   /*
 (Output)
 The slot capacity added to this reservation when autoscale happens. Will be between [0, max_slots].
 */
-  CurrentSlots?: number;
+  currentSlots?: number;
 
   // Number of slots to be scaled when needed.
-  MaxSlots?: number;
+  maxSlots?: number;
 }
 
-export function Bigquery_ReservationAutoscale_GetTypes(): DynamicUIProps[] {
+export function bigquery_ReservationAutoscale_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "CurrentSlots",
+      "currentSlots",
       "(Output)\nThe slot capacity added to this reservation when autoscale happens. Will be between [0, max_slots].",
       [],
       false,
@@ -29,7 +29,7 @@ export function Bigquery_ReservationAutoscale_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxSlots",
+      "maxSlots",
       "Number of slots to be scaled when needed.",
       [],
       false,

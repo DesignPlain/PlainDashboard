@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Composer_EnvironmentConfigWorkloadsConfigWebServer {
+export interface composer_EnvironmentConfigWorkloadsConfigWebServer {
   // CPU request and limit for Airflow web server.
-  Cpu?: number;
+  cpu?: number;
 
   // Memory (GB) request and limit for Airflow web server.
-  MemoryGb?: number;
+  memoryGb?: number;
 
   // Storage (GB) request and limit for Airflow web server.
-  StorageGb?: number;
+  storageGb?: number;
 }
 
-export function Composer_EnvironmentConfigWorkloadsConfigWebServer_GetTypes(): DynamicUIProps[] {
+export function composer_EnvironmentConfigWorkloadsConfigWebServer_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "StorageGb",
-      "Storage (GB) request and limit for Airflow web server.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Cpu",
+      "cpu",
       "CPU request and limit for Airflow web server.",
       [],
       false,
@@ -37,8 +29,16 @@ export function Composer_EnvironmentConfigWorkloadsConfigWebServer_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MemoryGb",
+      "memoryGb",
       "Memory (GB) request and limit for Airflow web server.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "storageGb",
+      "Storage (GB) request and limit for Airflow web server.",
       [],
       false,
       false,

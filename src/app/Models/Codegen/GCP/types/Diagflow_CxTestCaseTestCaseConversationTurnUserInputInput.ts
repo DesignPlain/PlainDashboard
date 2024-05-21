@@ -6,65 +6,57 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxTestCaseTestCaseConversationTurnUserInputInputDtmf,
-  Diagflow_CxTestCaseTestCaseConversationTurnUserInputInputDtmf_GetTypes,
-} from "./Diagflow_CxTestCaseTestCaseConversationTurnUserInputInputDtmf";
+  diagflow_CxTestCaseTestCaseConversationTurnUserInputInputDtmf,
+  diagflow_CxTestCaseTestCaseConversationTurnUserInputInputDtmf_GetTypes,
+} from "./diagflow_CxTestCaseTestCaseConversationTurnUserInputInputDtmf";
 import {
-  Diagflow_CxTestCaseTestCaseConversationTurnUserInputInputEvent,
-  Diagflow_CxTestCaseTestCaseConversationTurnUserInputInputEvent_GetTypes,
-} from "./Diagflow_CxTestCaseTestCaseConversationTurnUserInputInputEvent";
+  diagflow_CxTestCaseTestCaseConversationTurnUserInputInputEvent,
+  diagflow_CxTestCaseTestCaseConversationTurnUserInputInputEvent_GetTypes,
+} from "./diagflow_CxTestCaseTestCaseConversationTurnUserInputInputEvent";
 import {
-  Diagflow_CxTestCaseTestCaseConversationTurnUserInputInputText,
-  Diagflow_CxTestCaseTestCaseConversationTurnUserInputInputText_GetTypes,
-} from "./Diagflow_CxTestCaseTestCaseConversationTurnUserInputInputText";
+  diagflow_CxTestCaseTestCaseConversationTurnUserInputInputText,
+  diagflow_CxTestCaseTestCaseConversationTurnUserInputInputText_GetTypes,
+} from "./diagflow_CxTestCaseTestCaseConversationTurnUserInputInputText";
 
-export interface Diagflow_CxTestCaseTestCaseConversationTurnUserInputInput {
+export interface diagflow_CxTestCaseTestCaseConversationTurnUserInputInput {
   /*
 The DTMF event to be handled.
 Structure is documented below.
 */
-  Dtmf?: Diagflow_CxTestCaseTestCaseConversationTurnUserInputInputDtmf;
+  dtmf?: diagflow_CxTestCaseTestCaseConversationTurnUserInputInputDtmf;
 
   /*
 The event to be triggered.
 Structure is documented below.
 */
-  Event?: Diagflow_CxTestCaseTestCaseConversationTurnUserInputInputEvent;
+  event?: diagflow_CxTestCaseTestCaseConversationTurnUserInputInputEvent;
 
   /*
 The language of the input. See [Language Support](https://cloud.google.com/dialogflow/cx/docs/reference/language) for a list of the currently supported language codes.
 Note that queries in the same session do not necessarily need to specify the same language.
 */
-  LanguageCode?: string;
+  languageCode?: string;
 
   /*
 The natural language text to be processed.
 Structure is documented below.
 */
-  Text?: Diagflow_CxTestCaseTestCaseConversationTurnUserInputInputText;
+  text?: diagflow_CxTestCaseTestCaseConversationTurnUserInputInputText;
 }
 
-export function Diagflow_CxTestCaseTestCaseConversationTurnUserInputInput_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxTestCaseTestCaseConversationTurnUserInputInput_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Dtmf",
-      "The DTMF event to be handled.\nStructure is documented below.",
-      Diagflow_CxTestCaseTestCaseConversationTurnUserInputInputDtmf_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "Event",
+      "event",
       "The event to be triggered.\nStructure is documented below.",
-      Diagflow_CxTestCaseTestCaseConversationTurnUserInputInputEvent_GetTypes(),
+      diagflow_CxTestCaseTestCaseConversationTurnUserInputInputEvent_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "LanguageCode",
+      "languageCode",
       "The language of the input. See [Language Support](https://cloud.google.com/dialogflow/cx/docs/reference/language) for a list of the currently supported language codes.\nNote that queries in the same session do not necessarily need to specify the same language.",
       [],
       false,
@@ -72,9 +64,17 @@ export function Diagflow_CxTestCaseTestCaseConversationTurnUserInputInput_GetTyp
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Text",
+      "text",
       "The natural language text to be processed.\nStructure is documented below.",
-      Diagflow_CxTestCaseTestCaseConversationTurnUserInputInputText_GetTypes(),
+      diagflow_CxTestCaseTestCaseConversationTurnUserInputInputText_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "dtmf",
+      "The DTMF event to be handled.\nStructure is documented below.",
+      diagflow_CxTestCaseTestCaseConversationTurnUserInputInputDtmf_GetTypes(),
       false,
       false,
     ),

@@ -6,51 +6,59 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValue,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValue_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValue";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValue,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValue_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValue";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinDateValue,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinDateValue_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinDateValue";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinDateValue,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinDateValue_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinDateValue";
 
-export interface Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMin {
-  // A float value.
-  FloatValue?: number;
-
-  // An integer value (int64 format)
-  IntegerValue?: string;
-
-  // A string value.
-  StringValue?: string;
-
+export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMin {
   /*
 Represents a time of day.
 Structure is documented below.
 */
-  TimeValue?: Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValue;
+  timeValue?: dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValue;
 
   // A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
-  TimestampValue?: string;
+  timestampValue?: string;
 
   /*
 Represents a whole or partial calendar date.
 Structure is documented below.
 */
-  DateValue?: Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinDateValue;
+  dateValue?: dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinDateValue;
 
   /*
 Represents a day of the week.
 Possible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
 */
-  DayOfWeekValue?: string;
+  dayOfWeekValue?: string;
+
+  // A float value.
+  floatValue?: number;
+
+  // An integer value (int64 format)
+  integerValue?: string;
+
+  // A string value.
+  stringValue?: string;
 }
 
-export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMin_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMin_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "StringValue",
+      "integerValue",
+      "An integer value (int64 format)",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "stringValue",
       "A string value.",
       [],
       false,
@@ -58,15 +66,15 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTra
     ),
     new DynamicUIProps(
       InputType.Object,
-      "TimeValue",
+      "timeValue",
       "Represents a time of day.\nStructure is documented below.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValue_GetTypes(),
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValue_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "TimestampValue",
+      "timestampValue",
       'A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
       [],
       false,
@@ -74,15 +82,15 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTra
     ),
     new DynamicUIProps(
       InputType.Object,
-      "DateValue",
+      "dateValue",
       "Represents a whole or partial calendar date.\nStructure is documented below.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinDateValue_GetTypes(),
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinDateValue_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "DayOfWeekValue",
+      "dayOfWeekValue",
       "Represents a day of the week.\nPossible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.",
       [],
       false,
@@ -90,16 +98,8 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTra
     ),
     new DynamicUIProps(
       InputType.Number,
-      "FloatValue",
+      "floatValue",
       "A float value.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "IntegerValue",
-      "An integer value (int64 format)",
       [],
       false,
       false,

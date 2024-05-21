@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Composer_EnvironmentConfigSoftwareConfigCloudDataLineageIntegration {
+export interface composer_EnvironmentConfigSoftwareConfigCloudDataLineageIntegration {
   // Whether or not Cloud Data Lineage integration is enabled.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Composer_EnvironmentConfigSoftwareConfigCloudDataLineageIntegration_GetTypes(): DynamicUIProps[] {
+export function composer_EnvironmentConfigSoftwareConfigCloudDataLineageIntegration_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether or not Cloud Data Lineage integration is enabled.",
       [],
       true,

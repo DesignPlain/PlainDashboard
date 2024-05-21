@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstancesInstanceSettingActiveDirectoryConfig {
+export interface sql_getDatabaseInstancesInstanceSettingActiveDirectoryConfig {
   // Domain name of the Active Directory for SQL Server (e.g., mydomain.com).
-  Domain?: string;
+  domain?: string;
 }
 
-export function Sql_getDatabaseInstancesInstanceSettingActiveDirectoryConfig_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstancesInstanceSettingActiveDirectoryConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Domain",
+      "domain",
       "Domain name of the Active Directory for SQL Server (e.g., mydomain.com).",
       [],
       true,

@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vertex_AiEndpointDeployedModelDedicatedResourceAutoscalingMetricSpec {
-  /*
-(Output)
-The resource metric name. Supported metrics: - For Online Prediction: - `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle` - `aiplatform.googleapis.com/prediction/online/cpu/utilization`
-*/
-  MetricName?: string;
-
+export interface vertex_AiEndpointDeployedModelDedicatedResourceAutoscalingMetricSpec {
   /*
 (Output)
 The target resource utilization in percentage (1%!)(MISSING) for the given metric; once the real usage deviates from the target by a certain percentage, the machine replicas change. The default value is 60 (representing 60%!!(MISSING))(MISSING) if not provided.
 */
-  Target?: number;
+  target?: number;
+
+  /*
+(Output)
+The resource metric name. Supported metrics: - For Online Prediction: - `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle` - `aiplatform.googleapis.com/prediction/online/cpu/utilization`
+*/
+  metricName?: string;
 }
 
-export function Vertex_AiEndpointDeployedModelDedicatedResourceAutoscalingMetricSpec_GetTypes(): DynamicUIProps[] {
+export function vertex_AiEndpointDeployedModelDedicatedResourceAutoscalingMetricSpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "MetricName",
-      "(Output)\nThe resource metric name. Supported metrics: * For Online Prediction: * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle` * `aiplatform.googleapis.com/prediction/online/cpu/utilization`",
+      InputType.Number,
+      "target",
+      "(Output)\nThe target resource utilization in percentage (1%) for the given metric; once the real usage deviates from the target by a certain percentage, the machine replicas change. The default value is 60 (representing 60%!)(MISSING) if not provided.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Number,
-      "Target",
-      "(Output)\nThe target resource utilization in percentage (1%) for the given metric; once the real usage deviates from the target by a certain percentage, the machine replicas change. The default value is 60 (representing 60%!)(MISSING) if not provided.",
+      InputType.String,
+      "metricName",
+      "(Output)\nThe resource metric name. Supported metrics: * For Online Prediction: * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle` * `aiplatform.googleapis.com/prediction/online/cpu/utilization`",
       [],
       false,
       false,

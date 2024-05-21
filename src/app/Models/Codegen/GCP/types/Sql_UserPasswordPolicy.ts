@@ -6,40 +6,32 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Sql_UserPasswordPolicyStatus,
-  Sql_UserPasswordPolicyStatus_GetTypes,
-} from "./Sql_UserPasswordPolicyStatus";
+  sql_UserPasswordPolicyStatus,
+  sql_UserPasswordPolicyStatus_GetTypes,
+} from "./sql_UserPasswordPolicyStatus";
 
-export interface Sql_UserPasswordPolicy {
-  //
-  Statuses?: Array<Sql_UserPasswordPolicyStatus>;
-
+export interface sql_UserPasswordPolicy {
   // Number of failed attempts allowed before the user get locked.
-  AllowedFailedAttempts?: number;
+  allowedFailedAttempts?: number;
 
   // If true, the check that will lock user after too many failed login attempts will be enabled.
-  EnableFailedAttemptsCheck?: boolean;
+  enableFailedAttemptsCheck?: boolean;
 
   // If true, the user must specify the current password before changing the password. This flag is supported only for MySQL.
-  EnablePasswordVerification?: boolean;
+  enablePasswordVerification?: boolean;
 
   // Password expiration duration with one week grace period.
-  PasswordExpirationDuration?: string;
+  passwordExpirationDuration?: string;
+
+  //
+  statuses?: Array<sql_UserPasswordPolicyStatus>;
 }
 
-export function Sql_UserPasswordPolicy_GetTypes(): DynamicUIProps[] {
+export function sql_UserPasswordPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "Statuses",
-      "",
-      Sql_UserPasswordPolicyStatus_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "AllowedFailedAttempts",
+      "allowedFailedAttempts",
       "Number of failed attempts allowed before the user get locked.",
       [],
       false,
@@ -47,7 +39,7 @@ export function Sql_UserPasswordPolicy_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableFailedAttemptsCheck",
+      "enableFailedAttemptsCheck",
       "If true, the check that will lock user after too many failed login attempts will be enabled.",
       [],
       false,
@@ -55,7 +47,7 @@ export function Sql_UserPasswordPolicy_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnablePasswordVerification",
+      "enablePasswordVerification",
       "If true, the user must specify the current password before changing the password. This flag is supported only for MySQL.",
       [],
       false,
@@ -63,9 +55,17 @@ export function Sql_UserPasswordPolicy_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "PasswordExpirationDuration",
+      "passwordExpirationDuration",
       "Password expiration duration with one week grace period.",
       [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "statuses",
+      "",
+      sql_UserPasswordPolicyStatus_GetTypes(),
       false,
       false,
     ),

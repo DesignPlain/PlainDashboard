@@ -6,61 +6,61 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificateauthority_AuthorityConfigX509ConfigKeyUsageUnknownExtendedKeyUsage,
-  Certificateauthority_AuthorityConfigX509ConfigKeyUsageUnknownExtendedKeyUsage_GetTypes,
-} from "./Certificateauthority_AuthorityConfigX509ConfigKeyUsageUnknownExtendedKeyUsage";
+  certificateauthority_AuthorityConfigX509ConfigKeyUsageBaseKeyUsage,
+  certificateauthority_AuthorityConfigX509ConfigKeyUsageBaseKeyUsage_GetTypes,
+} from "./certificateauthority_AuthorityConfigX509ConfigKeyUsageBaseKeyUsage";
 import {
-  Certificateauthority_AuthorityConfigX509ConfigKeyUsageBaseKeyUsage,
-  Certificateauthority_AuthorityConfigX509ConfigKeyUsageBaseKeyUsage_GetTypes,
-} from "./Certificateauthority_AuthorityConfigX509ConfigKeyUsageBaseKeyUsage";
+  certificateauthority_AuthorityConfigX509ConfigKeyUsageExtendedKeyUsage,
+  certificateauthority_AuthorityConfigX509ConfigKeyUsageExtendedKeyUsage_GetTypes,
+} from "./certificateauthority_AuthorityConfigX509ConfigKeyUsageExtendedKeyUsage";
 import {
-  Certificateauthority_AuthorityConfigX509ConfigKeyUsageExtendedKeyUsage,
-  Certificateauthority_AuthorityConfigX509ConfigKeyUsageExtendedKeyUsage_GetTypes,
-} from "./Certificateauthority_AuthorityConfigX509ConfigKeyUsageExtendedKeyUsage";
+  certificateauthority_AuthorityConfigX509ConfigKeyUsageUnknownExtendedKeyUsage,
+  certificateauthority_AuthorityConfigX509ConfigKeyUsageUnknownExtendedKeyUsage_GetTypes,
+} from "./certificateauthority_AuthorityConfigX509ConfigKeyUsageUnknownExtendedKeyUsage";
 
-export interface Certificateauthority_AuthorityConfigX509ConfigKeyUsage {
+export interface certificateauthority_AuthorityConfigX509ConfigKeyUsage {
+  /*
+Describes high-level ways in which a key may be used.
+Structure is documented below.
+*/
+  baseKeyUsage?: certificateauthority_AuthorityConfigX509ConfigKeyUsageBaseKeyUsage;
+
+  /*
+Describes high-level ways in which a key may be used.
+Structure is documented below.
+*/
+  extendedKeyUsage?: certificateauthority_AuthorityConfigX509ConfigKeyUsageExtendedKeyUsage;
+
   /*
 An ObjectId specifies an object identifier (OID). These provide context and describe types in ASN.1 messages.
 Structure is documented below.
 */
-  UnknownExtendedKeyUsages?: Array<Certificateauthority_AuthorityConfigX509ConfigKeyUsageUnknownExtendedKeyUsage>;
-
-  /*
-Describes high-level ways in which a key may be used.
-Structure is documented below.
-*/
-  BaseKeyUsage?: Certificateauthority_AuthorityConfigX509ConfigKeyUsageBaseKeyUsage;
-
-  /*
-Describes high-level ways in which a key may be used.
-Structure is documented below.
-*/
-  ExtendedKeyUsage?: Certificateauthority_AuthorityConfigX509ConfigKeyUsageExtendedKeyUsage;
+  unknownExtendedKeyUsages?: Array<certificateauthority_AuthorityConfigX509ConfigKeyUsageUnknownExtendedKeyUsage>;
 }
 
-export function Certificateauthority_AuthorityConfigX509ConfigKeyUsage_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_AuthorityConfigX509ConfigKeyUsage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "UnknownExtendedKeyUsages",
+      "unknownExtendedKeyUsages",
       "An ObjectId specifies an object identifier (OID). These provide context and describe types in ASN.1 messages.\nStructure is documented below.",
-      Certificateauthority_AuthorityConfigX509ConfigKeyUsageUnknownExtendedKeyUsage_GetTypes(),
+      certificateauthority_AuthorityConfigX509ConfigKeyUsageUnknownExtendedKeyUsage_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "BaseKeyUsage",
+      "baseKeyUsage",
       "Describes high-level ways in which a key may be used.\nStructure is documented below.",
-      Certificateauthority_AuthorityConfigX509ConfigKeyUsageBaseKeyUsage_GetTypes(),
+      certificateauthority_AuthorityConfigX509ConfigKeyUsageBaseKeyUsage_GetTypes(),
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ExtendedKeyUsage",
+      "extendedKeyUsage",
       "Describes high-level ways in which a key may be used.\nStructure is documented below.",
-      Certificateauthority_AuthorityConfigX509ConfigKeyUsageExtendedKeyUsage_GetTypes(),
+      certificateauthority_AuthorityConfigX509ConfigKeyUsageExtendedKeyUsage_GetTypes(),
       true,
       true,
     ),

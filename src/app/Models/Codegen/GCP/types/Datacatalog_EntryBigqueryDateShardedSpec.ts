@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datacatalog_EntryBigqueryDateShardedSpec {
+export interface datacatalog_EntryBigqueryDateShardedSpec {
   /*
 (Output)
 The Data Catalog resource name of the dataset entry the current table belongs to, for example,
 projects/{project_id}/locations/{location}/entrygroups/{entryGroupId}/entries/{entryId}
 */
-  Dataset?: string;
+  dataset?: string;
 
   /*
 (Output)
 Total number of shards.
 */
-  ShardCount?: number;
+  shardCount?: number;
 
   /*
 (Output)
 The table name prefix of the shards. The name of any given shard is [tablePrefix]YYYYMMDD,
 for example, for shard MyTable20180101, the tablePrefix is MyTable.
 */
-  TablePrefix?: string;
+  tablePrefix?: string;
 }
 
-export function Datacatalog_EntryBigqueryDateShardedSpec_GetTypes(): DynamicUIProps[] {
+export function datacatalog_EntryBigqueryDateShardedSpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Dataset",
+      "dataset",
       "(Output)\nThe Data Catalog resource name of the dataset entry the current table belongs to, for example,\nprojects/{project_id}/locations/{location}/entrygroups/{entryGroupId}/entries/{entryId}",
       [],
       false,
@@ -40,7 +40,7 @@ export function Datacatalog_EntryBigqueryDateShardedSpec_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Number,
-      "ShardCount",
+      "shardCount",
       "(Output)\nTotal number of shards.",
       [],
       false,
@@ -48,7 +48,7 @@ export function Datacatalog_EntryBigqueryDateShardedSpec_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "TablePrefix",
+      "tablePrefix",
       "(Output)\nThe table name prefix of the shards. The name of any given shard is [tablePrefix]YYYYMMDD,\nfor example, for shard MyTable20180101, the tablePrefix is MyTable.",
       [],
       false,

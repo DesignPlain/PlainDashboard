@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Alloydb_ClusterRestoreContinuousBackupSource {
+export interface alloydb_ClusterRestoreContinuousBackupSource {
   // The name of the source cluster that this cluster is restored from.
-  Cluster?: string;
+  cluster?: string;
 
   // The point in time that this cluster is restored to, in RFC 3339 format.
-  PointInTime?: string;
+  pointInTime?: string;
 }
 
-export function Alloydb_ClusterRestoreContinuousBackupSource_GetTypes(): DynamicUIProps[] {
+export function alloydb_ClusterRestoreContinuousBackupSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Cluster",
+      "cluster",
       "The name of the source cluster that this cluster is restored from.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Alloydb_ClusterRestoreContinuousBackupSource_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "PointInTime",
+      "pointInTime",
       "The point in time that this cluster is restored to, in RFC 3339 format.",
       [],
       true,

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterAddonsConfigGcePersistentDiskCsiDriverConfig {
+export interface container_ClusterAddonsConfigGcePersistentDiskCsiDriverConfig {
   // Enable Binary Authorization for this cluster. Deprecated in favor of `evaluation_mode`.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_ClusterAddonsConfigGcePersistentDiskCsiDriverConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterAddonsConfigGcePersistentDiskCsiDriverConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Enable Binary Authorization for this cluster. Deprecated in favor of `evaluation_mode`.",
       [],
       true,

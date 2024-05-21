@@ -7,19 +7,35 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Spanner_DatabaseIAMBindingCondition,
-  Spanner_DatabaseIAMBindingCondition_GetTypes,
-} from "../types/Spanner_DatabaseIAMBindingCondition";
+  spanner_DatabaseIAMBindingCondition,
+  spanner_DatabaseIAMBindingCondition_GetTypes,
+} from "../types/spanner_DatabaseIAMBindingCondition";
 
 export interface DatabaseIAMBindingArgs {
+  //
+  members?: Array<string>;
+
+  /*
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
+*/
+  project?: string;
+
+  /*
+The role that should be applied. Only one
+`gcp.spanner.DatabaseIAMBinding` can be used per role. Note that custom roles must be of the format
+`[projects|organizations]/{parent-name}/roles/{role-name}`.
+*/
+  role?: string;
+
   /*
 An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
 */
-  Condition?: Spanner_DatabaseIAMBindingCondition;
+  condition?: spanner_DatabaseIAMBindingCondition;
 
   // The name of the Spanner database.
-  Database?: string;
+  database?: string;
 
   /*
 The name of the Spanner instance the database belongs to.
@@ -33,27 +49,27 @@ Each entry can have one of the following values:
 - --group:{emailid}--: An email address that represents a Google group. For example, admins@example.com.
 - --domain:{domain}--: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
 */
-  Instance?: string;
-
-  //
-  Members?: Array<string>;
-
-  /*
-The ID of the project in which the resource belongs. If it
-is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  /*
-The role that should be applied. Only one
-`gcp.spanner.DatabaseIAMBinding` can be used per role. Note that custom roles must be of the format
-`[projects|organizations]/{parent-name}/roles/{role-name}`.
-*/
-  Role?: string;
+  instance?: string;
 }
 export class DatabaseIAMBinding extends Resource {
+  /*
+The role that should be applied. Only one
+`gcp.spanner.DatabaseIAMBinding` can be used per role. Note that custom roles must be of the format
+`[projects|organizations]/{parent-name}/roles/{role-name}`.
+*/
+  public role?: string;
+
+  /*
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+Structure is documented below.
+*/
+  public condition?: spanner_DatabaseIAMBindingCondition;
+
+  // The name of the Spanner database.
+  public database?: string;
+
   // (Computed) The etag of the database's IAM policy.
-  public Etag?: string;
+  public etag?: string;
 
   /*
 The name of the Spanner instance the database belongs to.
@@ -67,38 +83,22 @@ Each entry can have one of the following values:
 - --group:{emailid}--: An email address that represents a Google group. For example, admins@example.com.
 - --domain:{domain}--: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
 */
-  public Instance?: string;
+  public instance?: string;
 
   //
-  public Members?: Array<string>;
+  public members?: Array<string>;
 
   /*
 The ID of the project in which the resource belongs. If it
 is not provided, the provider project is used.
 */
-  public Project?: string;
-
-  /*
-The role that should be applied. Only one
-`gcp.spanner.DatabaseIAMBinding` can be used per role. Note that custom roles must be of the format
-`[projects|organizations]/{parent-name}/roles/{role-name}`.
-*/
-  public Role?: string;
-
-  /*
-An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
-Structure is documented below.
-*/
-  public Condition?: Spanner_DatabaseIAMBindingCondition;
-
-  // The name of the Spanner database.
-  public Database?: string;
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
         [],
         false,
@@ -106,7 +106,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Role",
+        "role",
         "The role that should be applied. Only one\n`gcp.spanner.DatabaseIAMBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
         [],
         true,
@@ -114,15 +114,15 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.\nStructure is documented below.",
-        Spanner_DatabaseIAMBindingCondition_GetTypes(),
+        spanner_DatabaseIAMBindingCondition_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Database",
+        "database",
         "The name of the Spanner database.",
         [],
         true,
@@ -130,7 +130,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Instance",
+        "instance",
         "The name of the Spanner instance the database belongs to.\n\n* `member/members` - (Required) Identities that will be granted the privilege in `role`.\nEach entry can have one of the following values:\n* **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.\n* **allAuthenticatedUsers**: A special identifier that represents anyone who is authenticated with a Google account or a service account.\n* **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.\n* **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.\n* **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.\n* **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.",
         [],
         true,
@@ -138,7 +138,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "Members",
+        "members",
         "",
         InputType_String_GetTypes(),
         true,

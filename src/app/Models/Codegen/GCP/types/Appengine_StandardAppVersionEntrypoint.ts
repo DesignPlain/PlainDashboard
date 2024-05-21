@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_StandardAppVersionEntrypoint {
+export interface appengine_StandardAppVersionEntrypoint {
   /*
 The format should be a shell command that can be fed to bash -c.
 
 - - -
 */
-  Shell?: string;
+  shell?: string;
 }
 
-export function Appengine_StandardAppVersionEntrypoint_GetTypes(): DynamicUIProps[] {
+export function appengine_StandardAppVersionEntrypoint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Shell",
+      "shell",
       "The format should be a shell command that can be fed to bash -c.\n\n- - -",
       [],
       true,

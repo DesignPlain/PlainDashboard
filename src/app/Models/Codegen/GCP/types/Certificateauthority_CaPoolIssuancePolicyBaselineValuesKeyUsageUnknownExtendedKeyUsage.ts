@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsage {
+export interface certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsage {
   // An ObjectId specifies an object identifier (OID). These provide context and describe types in ASN.1 messages.
-  ObjectIdPaths?: Array<number>;
+  objectIdPaths?: Array<number>;
 }
 
-export function Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsage_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ObjectIdPaths",
+      "objectIdPaths",
       "An ObjectId specifies an object identifier (OID). These provide context and describe types in ASN.1 messages.",
       InputType_Number_GetTypes(),
       true,

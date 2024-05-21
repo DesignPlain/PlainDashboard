@@ -6,61 +6,61 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Looker_InstanceDenyMaintenancePeriodEndDate,
-  Looker_InstanceDenyMaintenancePeriodEndDate_GetTypes,
-} from "./Looker_InstanceDenyMaintenancePeriodEndDate";
+  looker_InstanceDenyMaintenancePeriodEndDate,
+  looker_InstanceDenyMaintenancePeriodEndDate_GetTypes,
+} from "./looker_InstanceDenyMaintenancePeriodEndDate";
 import {
-  Looker_InstanceDenyMaintenancePeriodStartDate,
-  Looker_InstanceDenyMaintenancePeriodStartDate_GetTypes,
-} from "./Looker_InstanceDenyMaintenancePeriodStartDate";
+  looker_InstanceDenyMaintenancePeriodStartDate,
+  looker_InstanceDenyMaintenancePeriodStartDate_GetTypes,
+} from "./looker_InstanceDenyMaintenancePeriodStartDate";
 import {
-  Looker_InstanceDenyMaintenancePeriodTime,
-  Looker_InstanceDenyMaintenancePeriodTime_GetTypes,
-} from "./Looker_InstanceDenyMaintenancePeriodTime";
+  looker_InstanceDenyMaintenancePeriodTime,
+  looker_InstanceDenyMaintenancePeriodTime_GetTypes,
+} from "./looker_InstanceDenyMaintenancePeriodTime";
 
-export interface Looker_InstanceDenyMaintenancePeriod {
+export interface looker_InstanceDenyMaintenancePeriod {
   /*
 Required. Start date of the deny maintenance period
 Structure is documented below.
 */
-  EndDate?: Looker_InstanceDenyMaintenancePeriodEndDate;
+  endDate?: looker_InstanceDenyMaintenancePeriodEndDate;
 
   /*
 Required. Start date of the deny maintenance period
 Structure is documented below.
 */
-  StartDate?: Looker_InstanceDenyMaintenancePeriodStartDate;
+  startDate?: looker_InstanceDenyMaintenancePeriodStartDate;
 
   /*
 Required. Start time of the window in UTC time.
 Structure is documented below.
 */
-  Time?: Looker_InstanceDenyMaintenancePeriodTime;
+  time?: looker_InstanceDenyMaintenancePeriodTime;
 }
 
-export function Looker_InstanceDenyMaintenancePeriod_GetTypes(): DynamicUIProps[] {
+export function looker_InstanceDenyMaintenancePeriod_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "EndDate",
+      "endDate",
       "Required. Start date of the deny maintenance period\nStructure is documented below.",
-      Looker_InstanceDenyMaintenancePeriodEndDate_GetTypes(),
+      looker_InstanceDenyMaintenancePeriodEndDate_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "StartDate",
+      "startDate",
       "Required. Start date of the deny maintenance period\nStructure is documented below.",
-      Looker_InstanceDenyMaintenancePeriodStartDate_GetTypes(),
+      looker_InstanceDenyMaintenancePeriodStartDate_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Time",
+      "time",
       "Required. Start time of the window in UTC time.\nStructure is documented below.",
-      Looker_InstanceDenyMaintenancePeriodTime_GetTypes(),
+      looker_InstanceDenyMaintenancePeriodTime_GetTypes(),
       true,
       false,
     ),

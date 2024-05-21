@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Integrationconnectors_ConnectionAuthConfigOauth2ClientCredentialsClientSecret,
-  Integrationconnectors_ConnectionAuthConfigOauth2ClientCredentialsClientSecret_GetTypes,
-} from "./Integrationconnectors_ConnectionAuthConfigOauth2ClientCredentialsClientSecret";
+  integrationconnectors_ConnectionAuthConfigOauth2ClientCredentialsClientSecret,
+  integrationconnectors_ConnectionAuthConfigOauth2ClientCredentialsClientSecret_GetTypes,
+} from "./integrationconnectors_ConnectionAuthConfigOauth2ClientCredentialsClientSecret";
 
-export interface Integrationconnectors_ConnectionAuthConfigOauth2ClientCredentials {
+export interface integrationconnectors_ConnectionAuthConfigOauth2ClientCredentials {
   // Secret version of Password for Authentication.
-  ClientId?: string;
+  clientId?: string;
 
   /*
 Secret version reference containing the client secret.
 Structure is documented below.
 */
-  ClientSecret?: Integrationconnectors_ConnectionAuthConfigOauth2ClientCredentialsClientSecret;
+  clientSecret?: integrationconnectors_ConnectionAuthConfigOauth2ClientCredentialsClientSecret;
 }
 
-export function Integrationconnectors_ConnectionAuthConfigOauth2ClientCredentials_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionAuthConfigOauth2ClientCredentials_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ClientId",
+      "clientId",
       "Secret version of Password for Authentication.",
       [],
       true,
@@ -33,9 +33,9 @@ export function Integrationconnectors_ConnectionAuthConfigOauth2ClientCredential
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ClientSecret",
+      "clientSecret",
       "Secret version reference containing the client secret.\nStructure is documented below.",
-      Integrationconnectors_ConnectionAuthConfigOauth2ClientCredentialsClientSecret_GetTypes(),
+      integrationconnectors_ConnectionAuthConfigOauth2ClientCredentialsClientSecret_GetTypes(),
       false,
       false,
     ),

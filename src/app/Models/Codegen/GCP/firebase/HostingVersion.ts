@@ -7,16 +7,16 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Firebase_HostingVersionConfig,
-  Firebase_HostingVersionConfig_GetTypes,
-} from "../types/Firebase_HostingVersionConfig";
+  firebase_HostingVersionConfig,
+  firebase_HostingVersionConfig_GetTypes,
+} from "../types/firebase_HostingVersionConfig";
 
 export interface HostingVersionArgs {
   /*
 The configuration for the behavior of the site. This configuration exists in the `firebase.json` file.
 Structure is documented below.
 */
-  Config?: Firebase_HostingVersionConfig;
+  config?: firebase_HostingVersionConfig;
 
   /*
 Required. The ID of the site in which to create this Version.
@@ -24,20 +24,20 @@ Required. The ID of the site in which to create this Version.
 
 - - -
 */
-  SiteId?: string;
+  siteId?: string;
 }
 export class HostingVersion extends Resource {
   /*
 The configuration for the behavior of the site. This configuration exists in the `firebase.json` file.
 Structure is documented below.
 */
-  public Config?: Firebase_HostingVersionConfig;
+  public config?: firebase_HostingVersionConfig;
 
   /*
 The fully-qualified resource name for the version, in the format:
 sites/SITE_ID/versions/VERSION_ID
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 Required. The ID of the site in which to create this Version.
@@ -45,24 +45,24 @@ Required. The ID of the site in which to create this Version.
 
 - - -
 */
-  public SiteId?: string;
+  public siteId?: string;
 
   // The ID for the version as in sites/SITE_ID/versions/VERSION_ID
-  public VersionId?: string;
+  public versionId?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "Config",
+        "config",
         "The configuration for the behavior of the site. This configuration exists in the `firebase.json` file.\nStructure is documented below.",
-        Firebase_HostingVersionConfig_GetTypes(),
+        firebase_HostingVersionConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "SiteId",
+        "siteId",
         "Required. The ID of the site in which to create this Version.\n\n\n- - -",
         [],
         true,

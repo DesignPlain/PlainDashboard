@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceNetworkInterfaceAccessConfig {
+export interface compute_InstanceNetworkInterfaceAccessConfig {
   /*
 The IP address that will be 1:1 mapped to the instance's
 network ip. If not given, one will be generated.
 */
-  NatIp?: string;
+  natIp?: string;
 
   /*
 The service-level to be provided for IPv6 traffic when the
 subnet has an external subnet. Only PREMIUM or STANDARD tier is valid for IPv6.
 */
-  NetworkTier?: string;
+  networkTier?: string;
 
   /*
 The domain name to be used when creating DNSv6
 records for the external IPv6 ranges..
 */
-  PublicPtrDomainName?: string;
+  publicPtrDomainName?: string;
 
   // A full or partial URL to a security policy to add to this instance. If this field is set to an empty string it will remove the associated security policy.
-  SecurityPolicy?: string;
+  securityPolicy?: string;
 }
 
-export function Compute_InstanceNetworkInterfaceAccessConfig_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceNetworkInterfaceAccessConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "NatIp",
+      "natIp",
       "The IP address that will be 1:1 mapped to the instance's\nnetwork ip. If not given, one will be generated.",
       [],
       false,
@@ -41,7 +41,7 @@ export function Compute_InstanceNetworkInterfaceAccessConfig_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "NetworkTier",
+      "networkTier",
       "The service-level to be provided for IPv6 traffic when the\nsubnet has an external subnet. Only PREMIUM or STANDARD tier is valid for IPv6.",
       [],
       false,
@@ -49,7 +49,7 @@ export function Compute_InstanceNetworkInterfaceAccessConfig_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "PublicPtrDomainName",
+      "publicPtrDomainName",
       "The domain name to be used when creating DNSv6\nrecords for the external IPv6 ranges..",
       [],
       false,
@@ -57,7 +57,7 @@ export function Compute_InstanceNetworkInterfaceAccessConfig_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "SecurityPolicy",
+      "securityPolicy",
       "A full or partial URL to a security policy to add to this instance. If this field is set to an empty string it will remove the associated security policy.",
       [],
       false,

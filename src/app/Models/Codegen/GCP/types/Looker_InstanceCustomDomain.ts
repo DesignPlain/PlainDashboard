@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Looker_InstanceCustomDomain {
+export interface looker_InstanceCustomDomain {
   // Domain name
-  Domain?: string;
+  domain?: string;
 
   /*
 (Output)
 Status of the custom domain.
 */
-  State?: string;
+  state?: string;
 }
 
-export function Looker_InstanceCustomDomain_GetTypes(): DynamicUIProps[] {
+export function looker_InstanceCustomDomain_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Domain",
-      "Domain name",
+      "state",
+      "(Output)\nStatus of the custom domain.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
-      "(Output)\nStatus of the custom domain.",
+      "domain",
+      "Domain name",
       [],
       false,
       false,

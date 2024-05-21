@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_AwsClusterLoggingConfigComponentConfig,
-  Container_AwsClusterLoggingConfigComponentConfig_GetTypes,
-} from "./Container_AwsClusterLoggingConfigComponentConfig";
+  container_AwsClusterLoggingConfigComponentConfig,
+  container_AwsClusterLoggingConfigComponentConfig_GetTypes,
+} from "./container_AwsClusterLoggingConfigComponentConfig";
 
-export interface Container_AwsClusterLoggingConfig {
+export interface container_AwsClusterLoggingConfig {
   // Configuration of the logging components.
-  ComponentConfig?: Container_AwsClusterLoggingConfigComponentConfig;
+  componentConfig?: container_AwsClusterLoggingConfigComponentConfig;
 }
 
-export function Container_AwsClusterLoggingConfig_GetTypes(): DynamicUIProps[] {
+export function container_AwsClusterLoggingConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ComponentConfig",
+      "componentConfig",
       "Configuration of the logging components.",
-      Container_AwsClusterLoggingConfigComponentConfig_GetTypes(),
+      container_AwsClusterLoggingConfigComponentConfig_GetTypes(),
       false,
       false,
     ),

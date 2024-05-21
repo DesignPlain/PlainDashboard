@@ -6,52 +6,60 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networkservices_HttpRouteRuleMatchHeaderRangeMatch,
-  Networkservices_HttpRouteRuleMatchHeaderRangeMatch_GetTypes,
-} from "./Networkservices_HttpRouteRuleMatchHeaderRangeMatch";
+  networkservices_HttpRouteRuleMatchHeaderRangeMatch,
+  networkservices_HttpRouteRuleMatchHeaderRangeMatch_GetTypes,
+} from "./networkservices_HttpRouteRuleMatchHeaderRangeMatch";
 
-export interface Networkservices_HttpRouteRuleMatchHeader {
-  // The name of the HTTP header to match against.
-  Header?: string;
-
-  // If specified, the match result will be inverted before checking. Default value is set to false.
-  InvertMatch?: boolean;
-
-  // The value of the header must start with the contents of prefixMatch.
-  PrefixMatch?: string;
-
-  // A header with headerName must exist. The match takes place whether or not the header has a value.
-  PresentMatch?: boolean;
-
+export interface networkservices_HttpRouteRuleMatchHeader {
   /*
 If specified, the rule will match if the request header value is within the range.
 Structure is documented below.
 */
-  RangeMatch?: Networkservices_HttpRouteRuleMatchHeaderRangeMatch;
+  rangeMatch?: networkservices_HttpRouteRuleMatchHeaderRangeMatch;
 
   // The value of the header must match the regular expression specified in regexMatch.
-  RegexMatch?: string;
+  regexMatch?: string;
 
   // The value of the header must end with the contents of suffixMatch.
-  SuffixMatch?: string;
+  suffixMatch?: string;
 
   // The value of the header should match exactly the content of exactMatch.
-  ExactMatch?: string;
+  exactMatch?: string;
+
+  // The name of the HTTP header to match against.
+  header?: string;
+
+  // If specified, the match result will be inverted before checking. Default value is set to false.
+  invertMatch?: boolean;
+
+  // The value of the header must start with the contents of prefixMatch.
+  prefixMatch?: string;
+
+  // A header with headerName must exist. The match takes place whether or not the header has a value.
+  presentMatch?: boolean;
 }
 
-export function Networkservices_HttpRouteRuleMatchHeader_GetTypes(): DynamicUIProps[] {
+export function networkservices_HttpRouteRuleMatchHeader_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Bool,
+      "presentMatch",
+      "A header with headerName must exist. The match takes place whether or not the header has a value.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Object,
-      "RangeMatch",
+      "rangeMatch",
       "If specified, the rule will match if the request header value is within the range.\nStructure is documented below.",
-      Networkservices_HttpRouteRuleMatchHeaderRangeMatch_GetTypes(),
+      networkservices_HttpRouteRuleMatchHeaderRangeMatch_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "RegexMatch",
+      "regexMatch",
       "The value of the header must match the regular expression specified in regexMatch.",
       [],
       false,
@@ -59,7 +67,7 @@ export function Networkservices_HttpRouteRuleMatchHeader_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "SuffixMatch",
+      "suffixMatch",
       "The value of the header must end with the contents of suffixMatch.",
       [],
       false,
@@ -67,7 +75,7 @@ export function Networkservices_HttpRouteRuleMatchHeader_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "ExactMatch",
+      "exactMatch",
       "The value of the header should match exactly the content of exactMatch.",
       [],
       false,
@@ -75,7 +83,7 @@ export function Networkservices_HttpRouteRuleMatchHeader_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "Header",
+      "header",
       "The name of the HTTP header to match against.",
       [],
       false,
@@ -83,7 +91,7 @@ export function Networkservices_HttpRouteRuleMatchHeader_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "InvertMatch",
+      "invertMatch",
       "If specified, the match result will be inverted before checking. Default value is set to false.",
       [],
       false,
@@ -91,16 +99,8 @@ export function Networkservices_HttpRouteRuleMatchHeader_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "PrefixMatch",
+      "prefixMatch",
       "The value of the header must start with the contents of prefixMatch.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "PresentMatch",
-      "A header with headerName must exist. The match takes place whether or not the header has a value.",
       [],
       false,
       false,

@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_ServiceAttachmentConsumerAcceptList {
-  // A project that is allowed to connect to this service attachment.
-  ProjectIdOrNum?: string;
-
+export interface compute_ServiceAttachmentConsumerAcceptList {
   /*
 The number of consumer forwarding rules the consumer project can
 create.
 */
-  ConnectionLimit?: number;
+  connectionLimit?: number;
+
+  // A project that is allowed to connect to this service attachment.
+  projectIdOrNum?: string;
 }
 
-export function Compute_ServiceAttachmentConsumerAcceptList_GetTypes(): DynamicUIProps[] {
+export function compute_ServiceAttachmentConsumerAcceptList_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "ProjectIdOrNum",
-      "A project that is allowed to connect to this service attachment.",
+      InputType.Number,
+      "connectionLimit",
+      "The number of consumer forwarding rules the consumer project can\ncreate.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Number,
-      "ConnectionLimit",
-      "The number of consumer forwarding rules the consumer project can\ncreate.",
+      InputType.String,
+      "projectIdOrNum",
+      "A project that is allowed to connect to this service attachment.",
       [],
       true,
       false,

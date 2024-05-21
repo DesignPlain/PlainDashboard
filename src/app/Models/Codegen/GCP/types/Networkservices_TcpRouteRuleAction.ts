@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networkservices_TcpRouteRuleActionDestination,
-  Networkservices_TcpRouteRuleActionDestination_GetTypes,
-} from "./Networkservices_TcpRouteRuleActionDestination";
+  networkservices_TcpRouteRuleActionDestination,
+  networkservices_TcpRouteRuleActionDestination_GetTypes,
+} from "./networkservices_TcpRouteRuleActionDestination";
 
-export interface Networkservices_TcpRouteRuleAction {
+export interface networkservices_TcpRouteRuleAction {
   /*
 The destination services to which traffic should be forwarded. At least one destination service is required.
 Structure is documented below.
 */
-  Destinations?: Array<Networkservices_TcpRouteRuleActionDestination>;
+  destinations?: Array<networkservices_TcpRouteRuleActionDestination>;
 
   // If true, Router will use the destination IP and port of the original connection as the destination of the request.
-  OriginalDestination?: boolean;
+  originalDestination?: boolean;
 }
 
-export function Networkservices_TcpRouteRuleAction_GetTypes(): DynamicUIProps[] {
+export function networkservices_TcpRouteRuleAction_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Destinations",
+      "destinations",
       "The destination services to which traffic should be forwarded. At least one destination service is required.\nStructure is documented below.",
-      Networkservices_TcpRouteRuleActionDestination_GetTypes(),
+      networkservices_TcpRouteRuleActionDestination_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "OriginalDestination",
+      "originalDestination",
       "If true, Router will use the destination IP and port of the original connection as the destination of the request.",
       [],
       false,

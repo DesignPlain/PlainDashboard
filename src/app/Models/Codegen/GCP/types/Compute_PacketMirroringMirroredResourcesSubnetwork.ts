@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_PacketMirroringMirroredResourcesSubnetwork {
+export interface compute_PacketMirroringMirroredResourcesSubnetwork {
   // The URL of the subnetwork where this rule should be active.
-  Url?: string;
+  url?: string;
 }
 
-export function Compute_PacketMirroringMirroredResourcesSubnetwork_GetTypes(): DynamicUIProps[] {
+export function compute_PacketMirroringMirroredResourcesSubnetwork_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Url",
+      "url",
       "The URL of the subnetwork where this rule should be active.",
       [],
       true,

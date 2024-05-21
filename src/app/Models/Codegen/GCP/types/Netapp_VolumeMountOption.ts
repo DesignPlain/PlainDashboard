@@ -6,47 +6,39 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Netapp_VolumeMountOption {
-  /*
-(Output)
-Export path of the volume.
-*/
-  Export?: string;
-
+export interface netapp_VolumeMountOption {
   /*
 (Output)
 Full export path of the volume.
 Format for NFS volumes: `<export_ip>:/<shareName>`
 Format for SMB volumes: `\\\\netbios_prefix-four_random_hex_letters.domain_name\\shareName`
 */
-  ExportFull?: string;
+  exportFull?: string;
 
   /*
 (Output)
 Human-readable mount instructions.
 */
-  Instructions?: string;
+  instructions?: string;
 
   /*
 (Output)
 Protocol to mount with.
 */
-  Protocol?: string;
+  protocol?: string;
+
+  /*
+(Output)
+Export path of the volume.
+*/
+  export?: string;
 }
 
-export function Netapp_VolumeMountOption_GetTypes(): DynamicUIProps[] {
+export function netapp_VolumeMountOption_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Instructions",
-      "(Output)\nHuman-readable mount instructions.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Protocol",
+      "protocol",
       "(Output)\nProtocol to mount with.",
       [],
       false,
@@ -54,7 +46,7 @@ export function Netapp_VolumeMountOption_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Export",
+      "export",
       "(Output)\nExport path of the volume.",
       [],
       false,
@@ -62,8 +54,16 @@ export function Netapp_VolumeMountOption_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ExportFull",
+      "exportFull",
       "(Output)\nFull export path of the volume.\nFormat for NFS volumes: `<export_ip>:/<shareName>`\nFormat for SMB volumes: `\\\\\\\\netbios_prefix-four_random_hex_letters.domain_name\\\\shareName`",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "instructions",
+      "(Output)\nHuman-readable mount instructions.",
       [],
       false,
       false,

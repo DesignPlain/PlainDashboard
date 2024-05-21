@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_PrivateConnectionError {
+export interface datastream_PrivateConnectionError {
   // A list of messages that carry the error details.
-  Details?: Map<string, string>;
+  details?: Map<string, string>;
 
   // A message containing more information about the error that occurred.
-  Message?: string;
+  message?: string;
 }
 
-export function Datastream_PrivateConnectionError_GetTypes(): DynamicUIProps[] {
+export function datastream_PrivateConnectionError_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Map,
-      "Details",
+      "details",
       "A list of messages that carry the error details.",
       InputType_Map_GetTypes(),
       false,
@@ -26,7 +26,7 @@ export function Datastream_PrivateConnectionError_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Message",
+      "message",
       "A message containing more information about the error that occurred.",
       [],
       false,

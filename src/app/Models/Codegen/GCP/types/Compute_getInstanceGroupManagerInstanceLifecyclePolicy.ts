@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getInstanceGroupManagerInstanceLifecyclePolicy {
+export interface compute_getInstanceGroupManagerInstanceLifecyclePolicy {
   // Specifies whether to apply the group's latest configuration when repairing a VM. Valid options are: YES, NO. If YES and you updated the group's instance template or per-instance configurations after the VM was created, then these changes are applied when VM is repaired. If NO (default), then updates are applied in accordance with the group's update policy type.
-  ForceUpdateOnRepair?: string;
+  forceUpdateOnRepair?: string;
 }
 
-export function Compute_getInstanceGroupManagerInstanceLifecyclePolicy_GetTypes(): DynamicUIProps[] {
+export function compute_getInstanceGroupManagerInstanceLifecyclePolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ForceUpdateOnRepair",
+      "forceUpdateOnRepair",
       "Specifies whether to apply the group's latest configuration when repairing a VM. Valid options are: YES, NO. If YES and you updated the group's instance template or per-instance configurations after the VM was created, then these changes are applied when VM is repaired. If NO (default), then updates are applied in accordance with the group's update policy type.",
       [],
       true,

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponse {
+export interface diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponse {
   // A collection of text responses.
-  Texts?: Array<string>;
+  texts?: Array<string>;
 }
 
-export function Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponse_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponse_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Texts",
+      "texts",
       "A collection of text responses.",
       InputType_String_GetTypes(),
       false,

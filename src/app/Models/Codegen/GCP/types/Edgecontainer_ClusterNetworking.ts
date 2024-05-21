@@ -6,19 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Edgecontainer_ClusterNetworking {
+export interface edgecontainer_ClusterNetworking {
+  /*
+If specified, dual stack mode is enabled and all pods in the cluster are
+assigned an IPv6 address from these blocks alongside from an IPv4
+address. Only a single block is supported. This field cannot be changed
+after creation.
+*/
+  clusterIpv6CidrBlocks?: Array<string>;
+
   /*
 (Output)
 IP addressing type of this cluster i.e. SINGLESTACK_V4 vs DUALSTACK_V4_V6.
 */
-  NetworkType?: string;
+  networkType?: string;
 
   /*
 All services in the cluster are assigned an RFC1918 IPv4 address from these
 blocks. Only a single block is supported. This field cannot be changed
 after creation.
 */
-  ServicesIpv4CidrBlocks?: Array<string>;
+  servicesIpv4CidrBlocks?: Array<string>;
 
   /*
 If specified, dual stack mode is enabled and all services in the cluster are
@@ -26,29 +34,21 @@ assigned an IPv6 address from these blocks alongside from an IPv4
 address. Only a single block is supported. This field cannot be changed
 after creation.
 */
-  ServicesIpv6CidrBlocks?: Array<string>;
+  servicesIpv6CidrBlocks?: Array<string>;
 
   /*
 All pods in the cluster are assigned an RFC1918 IPv4 address from these
 blocks. Only a single block is supported. This field cannot be changed
 after creation.
 */
-  ClusterIpv4CidrBlocks?: Array<string>;
-
-  /*
-If specified, dual stack mode is enabled and all pods in the cluster are
-assigned an IPv6 address from these blocks alongside from an IPv4
-address. Only a single block is supported. This field cannot be changed
-after creation.
-*/
-  ClusterIpv6CidrBlocks?: Array<string>;
+  clusterIpv4CidrBlocks?: Array<string>;
 }
 
-export function Edgecontainer_ClusterNetworking_GetTypes(): DynamicUIProps[] {
+export function edgecontainer_ClusterNetworking_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ClusterIpv4CidrBlocks",
+      "clusterIpv4CidrBlocks",
       "All pods in the cluster are assigned an RFC1918 IPv4 address from these\nblocks. Only a single block is supported. This field cannot be changed\nafter creation.",
       InputType_String_GetTypes(),
       true,
@@ -56,7 +56,7 @@ export function Edgecontainer_ClusterNetworking_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ClusterIpv6CidrBlocks",
+      "clusterIpv6CidrBlocks",
       "If specified, dual stack mode is enabled and all pods in the cluster are\nassigned an IPv6 address from these blocks alongside from an IPv4\naddress. Only a single block is supported. This field cannot be changed\nafter creation.",
       InputType_String_GetTypes(),
       false,
@@ -64,7 +64,7 @@ export function Edgecontainer_ClusterNetworking_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "NetworkType",
+      "networkType",
       "(Output)\nIP addressing type of this cluster i.e. SINGLESTACK_V4 vs DUALSTACK_V4_V6.",
       [],
       false,
@@ -72,7 +72,7 @@ export function Edgecontainer_ClusterNetworking_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ServicesIpv4CidrBlocks",
+      "servicesIpv4CidrBlocks",
       "All services in the cluster are assigned an RFC1918 IPv4 address from these\nblocks. Only a single block is supported. This field cannot be changed\nafter creation.",
       InputType_String_GetTypes(),
       true,
@@ -80,7 +80,7 @@ export function Edgecontainer_ClusterNetworking_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ServicesIpv6CidrBlocks",
+      "servicesIpv6CidrBlocks",
       "If specified, dual stack mode is enabled and all services in the cluster are\nassigned an IPv6 address from these blocks alongside from an IPv4\naddress. Only a single block is supported. This field cannot be changed\nafter creation.",
       InputType_String_GetTypes(),
       false,

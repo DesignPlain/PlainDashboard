@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Tpu_V2VmServiceAccount {
+export interface tpu_V2VmServiceAccount {
   // Email address of the service account. If empty, default Compute service account will be used.
-  Email?: string;
+  email?: string;
 
   /*
 The list of scopes to be made available for this service account. If empty, access to all
 Cloud APIs will be allowed.
 */
-  Scopes?: Array<string>;
+  scopes?: Array<string>;
 }
 
-export function Tpu_V2VmServiceAccount_GetTypes(): DynamicUIProps[] {
+export function tpu_V2VmServiceAccount_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Email",
+      "email",
       "Email address of the service account. If empty, default Compute service account will be used.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Tpu_V2VmServiceAccount_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Scopes",
+      "scopes",
       "The list of scopes to be made available for this service account. If empty, access to all\nCloud APIs will be allowed.",
       InputType_String_GetTypes(),
       false,

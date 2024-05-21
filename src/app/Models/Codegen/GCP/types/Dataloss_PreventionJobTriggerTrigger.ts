@@ -6,40 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionJobTriggerTriggerManual,
-  Dataloss_PreventionJobTriggerTriggerManual_GetTypes,
-} from "./Dataloss_PreventionJobTriggerTriggerManual";
+  dataloss_PreventionJobTriggerTriggerManual,
+  dataloss_PreventionJobTriggerTriggerManual_GetTypes,
+} from "./dataloss_PreventionJobTriggerTriggerManual";
 import {
-  Dataloss_PreventionJobTriggerTriggerSchedule,
-  Dataloss_PreventionJobTriggerTriggerSchedule_GetTypes,
-} from "./Dataloss_PreventionJobTriggerTriggerSchedule";
+  dataloss_PreventionJobTriggerTriggerSchedule,
+  dataloss_PreventionJobTriggerTriggerSchedule_GetTypes,
+} from "./dataloss_PreventionJobTriggerTriggerSchedule";
 
-export interface Dataloss_PreventionJobTriggerTrigger {
+export interface dataloss_PreventionJobTriggerTrigger {
   // For use with hybrid jobs. Jobs must be manually created and finished.
-  Manual?: Dataloss_PreventionJobTriggerTriggerManual;
+  manual?: dataloss_PreventionJobTriggerTriggerManual;
 
   /*
 Schedule for triggered jobs
 Structure is documented below.
 */
-  Schedule?: Dataloss_PreventionJobTriggerTriggerSchedule;
+  schedule?: dataloss_PreventionJobTriggerTriggerSchedule;
 }
 
-export function Dataloss_PreventionJobTriggerTrigger_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerTrigger_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Manual",
+      "manual",
       "For use with hybrid jobs. Jobs must be manually created and finished.",
-      Dataloss_PreventionJobTriggerTriggerManual_GetTypes(),
+      dataloss_PreventionJobTriggerTriggerManual_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Schedule",
+      "schedule",
       "Schedule for triggered jobs\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerTriggerSchedule_GetTypes(),
+      dataloss_PreventionJobTriggerTriggerSchedule_GetTypes(),
       false,
       false,
     ),

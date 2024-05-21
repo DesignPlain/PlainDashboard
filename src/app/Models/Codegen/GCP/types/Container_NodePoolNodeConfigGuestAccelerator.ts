@@ -6,40 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_NodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig,
-  Container_NodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig_GetTypes,
-} from "./Container_NodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig";
+  container_NodePoolNodeConfigGuestAcceleratorGpuSharingConfig,
+  container_NodePoolNodeConfigGuestAcceleratorGpuSharingConfig_GetTypes,
+} from "./container_NodePoolNodeConfigGuestAcceleratorGpuSharingConfig";
 import {
-  Container_NodePoolNodeConfigGuestAcceleratorGpuSharingConfig,
-  Container_NodePoolNodeConfigGuestAcceleratorGpuSharingConfig_GetTypes,
-} from "./Container_NodePoolNodeConfigGuestAcceleratorGpuSharingConfig";
+  container_NodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig,
+  container_NodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig_GetTypes,
+} from "./container_NodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig";
 
-export interface Container_NodePoolNodeConfigGuestAccelerator {
-  // Configuration for auto installation of GPU driver.
-  GpuDriverInstallationConfig?: Container_NodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig;
-
+export interface container_NodePoolNodeConfigGuestAccelerator {
   // Size of partitions to create on the GPU. Valid values are described in the NVIDIA mig user guide (https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning)
-  GpuPartitionSize?: string;
+  gpuPartitionSize?: string;
 
   // Configuration for GPU sharing.
-  GpuSharingConfig?: Container_NodePoolNodeConfigGuestAcceleratorGpuSharingConfig;
+  gpuSharingConfig?: container_NodePoolNodeConfigGuestAcceleratorGpuSharingConfig;
 
   /*
 The type of the policy. Supports a single value: COMPACT.
 Specifying COMPACT placement policy type places node pool's nodes in a closer
 physical proximity in order to reduce network latency between nodes.
 */
-  Type?: string;
+  type?: string;
 
   // The number of the accelerator cards exposed to an instance.
-  Count?: number;
+  count?: number;
+
+  // Configuration for auto installation of GPU driver.
+  gpuDriverInstallationConfig?: container_NodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig;
 }
 
-export function Container_NodePoolNodeConfigGuestAccelerator_GetTypes(): DynamicUIProps[] {
+export function container_NodePoolNodeConfigGuestAccelerator_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "GpuPartitionSize",
+      "gpuPartitionSize",
       "Size of partitions to create on the GPU. Valid values are described in the NVIDIA mig user guide (https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning)",
       [],
       false,
@@ -47,15 +47,15 @@ export function Container_NodePoolNodeConfigGuestAccelerator_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Object,
-      "GpuSharingConfig",
+      "gpuSharingConfig",
       "Configuration for GPU sharing.",
-      Container_NodePoolNodeConfigGuestAcceleratorGpuSharingConfig_GetTypes(),
+      container_NodePoolNodeConfigGuestAcceleratorGpuSharingConfig_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "The type of the policy. Supports a single value: COMPACT.\nSpecifying COMPACT placement policy type places node pool's nodes in a closer\nphysical proximity in order to reduce network latency between nodes.",
       [],
       true,
@@ -63,7 +63,7 @@ export function Container_NodePoolNodeConfigGuestAccelerator_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Count",
+      "count",
       "The number of the accelerator cards exposed to an instance.",
       [],
       true,
@@ -71,9 +71,9 @@ export function Container_NodePoolNodeConfigGuestAccelerator_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Object,
-      "GpuDriverInstallationConfig",
+      "gpuDriverInstallationConfig",
       "Configuration for auto installation of GPU driver.",
-      Container_NodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig_GetTypes(),
+      container_NodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig_GetTypes(),
       false,
       true,
     ),

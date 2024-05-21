@@ -6,63 +6,39 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataplex_AssetDiscoverySpecJsonOptions,
-  Dataplex_AssetDiscoverySpecJsonOptions_GetTypes,
-} from "./Dataplex_AssetDiscoverySpecJsonOptions";
+  dataplex_AssetDiscoverySpecJsonOptions,
+  dataplex_AssetDiscoverySpecJsonOptions_GetTypes,
+} from "./dataplex_AssetDiscoverySpecJsonOptions";
 import {
-  Dataplex_AssetDiscoverySpecCsvOptions,
-  Dataplex_AssetDiscoverySpecCsvOptions_GetTypes,
-} from "./Dataplex_AssetDiscoverySpecCsvOptions";
+  dataplex_AssetDiscoverySpecCsvOptions,
+  dataplex_AssetDiscoverySpecCsvOptions_GetTypes,
+} from "./dataplex_AssetDiscoverySpecCsvOptions";
 
-export interface Dataplex_AssetDiscoverySpec {
+export interface dataplex_AssetDiscoverySpec {
+  // Optional. The list of patterns to apply for selecting data to include during discovery if only a subset of the data should considered. For Cloud Storage bucket assets, these are interpreted as glob patterns used to match object names. For BigQuery dataset assets, these are interpreted as patterns to match table names.
+  includePatterns?: Array<string>;
+
   // Optional. Configuration for Json data.
-  JsonOptions?: Dataplex_AssetDiscoverySpecJsonOptions;
+  jsonOptions?: dataplex_AssetDiscoverySpecJsonOptions;
 
   // Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running discovery periodically. Successive discovery runs must be scheduled at least 60 minutes apart. The default value is to run discovery every 60 minutes. To explicitly set a timezone to the cron tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone database. For example, "CRON_TZ=America/New_York 1 - - - -", or "TZ=America/New_York 1 - - - -".
-  Schedule?: string;
+  schedule?: string;
 
   // Optional. Configuration for CSV data.
-  CsvOptions?: Dataplex_AssetDiscoverySpecCsvOptions;
+  csvOptions?: dataplex_AssetDiscoverySpecCsvOptions;
 
   // Required. Whether discovery is enabled.
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // Optional. The list of patterns to apply for selecting data to exclude during discovery. For Cloud Storage bucket assets, these are interpreted as glob patterns used to match object names. For BigQuery dataset assets, these are interpreted as patterns to match table names.
-  ExcludePatterns?: Array<string>;
-
-  // Optional. The list of patterns to apply for selecting data to include during discovery if only a subset of the data should considered. For Cloud Storage bucket assets, these are interpreted as glob patterns used to match object names. For BigQuery dataset assets, these are interpreted as patterns to match table names.
-  IncludePatterns?: Array<string>;
+  excludePatterns?: Array<string>;
 }
 
-export function Dataplex_AssetDiscoverySpec_GetTypes(): DynamicUIProps[] {
+export function dataplex_AssetDiscoverySpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "JsonOptions",
-      "Optional. Configuration for Json data.",
-      Dataplex_AssetDiscoverySpecJsonOptions_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Schedule",
-      'Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running discovery periodically. Successive discovery runs must be scheduled at least 60 minutes apart. The default value is to run discovery every 60 minutes. To explicitly set a timezone to the cron tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone database. For example, "CRON_TZ=America/New_York 1 * * * *", or "TZ=America/New_York 1 * * * *".',
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "CsvOptions",
-      "Optional. Configuration for CSV data.",
-      Dataplex_AssetDiscoverySpecCsvOptions_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Required. Whether discovery is enabled.",
       [],
       true,
@@ -70,7 +46,7 @@ export function Dataplex_AssetDiscoverySpec_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ExcludePatterns",
+      "excludePatterns",
       "Optional. The list of patterns to apply for selecting data to exclude during discovery. For Cloud Storage bucket assets, these are interpreted as glob patterns used to match object names. For BigQuery dataset assets, these are interpreted as patterns to match table names.",
       InputType_String_GetTypes(),
       false,
@@ -78,9 +54,33 @@ export function Dataplex_AssetDiscoverySpec_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "IncludePatterns",
+      "includePatterns",
       "Optional. The list of patterns to apply for selecting data to include during discovery if only a subset of the data should considered. For Cloud Storage bucket assets, these are interpreted as glob patterns used to match object names. For BigQuery dataset assets, these are interpreted as patterns to match table names.",
       InputType_String_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "jsonOptions",
+      "Optional. Configuration for Json data.",
+      dataplex_AssetDiscoverySpecJsonOptions_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "schedule",
+      'Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running discovery periodically. Successive discovery runs must be scheduled at least 60 minutes apart. The default value is to run discovery every 60 minutes. To explicitly set a timezone to the cron tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone database. For example, "CRON_TZ=America/New_York 1 * * * *", or "TZ=America/New_York 1 * * * *".',
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "csvOptions",
+      "Optional. Configuration for CSV data.",
+      dataplex_AssetDiscoverySpecCsvOptions_GetTypes(),
       false,
       false,
     ),

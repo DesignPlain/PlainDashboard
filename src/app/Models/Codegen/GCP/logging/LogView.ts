@@ -14,32 +14,32 @@ The bucket of the resource
 
 - - -
 */
-  Bucket?: string;
+  bucket?: string;
 
   // Describes this view.
-  Description?: string;
+  description?: string;
 
   // Filter that restricts which log entries in a bucket are visible in this view. Filters are restricted to be a logical AND of ==/!= of any of the following: - originating project/folder/organization/billing account. - resource type - log id For example: SOURCE("projects/myproject") AND resource.type = "gce_instance" AND LOG_ID("stdout")
-  Filter?: string;
+  filter?: string;
 
   // The location of the resource. The supported locations are: global, us-central1, us-east1, us-west1, asia-east1, europe-west1.
-  Location?: string;
+  location?: string;
 
   // The resource name of the view. For example: \`projects/my-project/locations/global/buckets/my-bucket/views/my-view\`
-  Name?: string;
+  name?: string;
 
   // The parent of the resource.
-  Parent?: string;
+  parent?: string;
 }
 export class LogView extends Resource {
   // The resource name of the view. For example: \`projects/my-project/locations/global/buckets/my-bucket/views/my-view\`
-  public Name?: string;
+  public name?: string;
 
   // The parent of the resource.
-  public Parent?: string;
+  public parent?: string;
 
   // Output only. The last update timestamp of the view.
-  public UpdateTime?: string;
+  public updateTime?: string;
 
   /*
 The bucket of the resource
@@ -47,25 +47,33 @@ The bucket of the resource
 
 - - -
 */
-  public Bucket?: string;
+  public bucket?: string;
 
   // Output only. The creation timestamp of the view.
-  public CreateTime?: string;
+  public createTime?: string;
 
   // Describes this view.
-  public Description?: string;
+  public description?: string;
 
   // Filter that restricts which log entries in a bucket are visible in this view. Filters are restricted to be a logical AND of ==/!= of any of the following: - originating project/folder/organization/billing account. - resource type - log id For example: SOURCE("projects/myproject") AND resource.type = "gce_instance" AND LOG_ID("stdout")
-  public Filter?: string;
+  public filter?: string;
 
   // The location of the resource. The supported locations are: global, us-central1, us-east1, us-west1, asia-east1, europe-west1.
-  public Location?: string;
+  public location?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Bucket",
+        "parent",
+        "The parent of the resource.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "bucket",
         "The bucket of the resource\n\n\n- - -",
         [],
         true,
@@ -73,7 +81,7 @@ The bucket of the resource
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Describes this view.",
         [],
         false,
@@ -81,7 +89,7 @@ The bucket of the resource
       ),
       new DynamicUIProps(
         InputType.String,
-        "Filter",
+        "filter",
         'Filter that restricts which log entries in a bucket are visible in this view. Filters are restricted to be a logical AND of ==/!= of any of the following: - originating project/folder/organization/billing account. - resource type - log id For example: SOURCE("projects/myproject") AND resource.type = "gce_instance" AND LOG_ID("stdout")',
         [],
         false,
@@ -89,7 +97,7 @@ The bucket of the resource
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location of the resource. The supported locations are: global, us-central1, us-east1, us-west1, asia-east1, europe-west1.",
         [],
         false,
@@ -97,16 +105,8 @@ The bucket of the resource
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The resource name of the view. For example: \\`projects/my-project/locations/global/buckets/my-bucket/views/my-view\\`",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Parent",
-        "The parent of the resource.",
         [],
         false,
         true,

@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificateauthority_CertificateCertificateDescriptionSubjectKeyId {
+export interface certificateauthority_CertificateCertificateDescriptionSubjectKeyId {
   /*
 (Output)
 Optional. The value of this KeyId encoded in lowercase hexadecimal. This is most likely the 160 bit SHA-1 hash of the public key.
 */
-  KeyId?: string;
+  keyId?: string;
 }
 
-export function Certificateauthority_CertificateCertificateDescriptionSubjectKeyId_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CertificateCertificateDescriptionSubjectKeyId_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KeyId",
+      "keyId",
       "(Output)\nOptional. The value of this KeyId encoded in lowercase hexadecimal. This is most likely the 160 bit SHA-1 hash of the public key.",
       [],
       false,

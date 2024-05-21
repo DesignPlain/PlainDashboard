@@ -6,54 +6,62 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValue,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValue_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValue";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValue,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValue_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValue";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValue,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValue_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValue";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValue,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValue_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValue";
 
-export interface Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMax {
-  // A string value.
-  StringValue?: string;
-
-  /*
-Represents a time of day.
-Structure is documented below.
-*/
-  TimeValue?: Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValue;
-
-  // A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
-  TimestampValue?: string;
-
+export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMax {
   // A boolean value.
-  BooleanValue?: boolean;
+  booleanValue?: boolean;
 
   /*
 Represents a whole or partial calendar date.
 Structure is documented below.
 */
-  DateValue?: Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValue;
+  dateValue?: dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValue;
 
   /*
 Represents a day of the week.
 Possible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
 */
-  DayOfWeekValue?: string;
+  dayOfWeekValue?: string;
 
   // A float value.
-  FloatValue?: number;
+  floatValue?: number;
 
   // An integer value (int64 format)
-  IntegerValue?: string;
+  integerValue?: string;
+
+  // A string value.
+  stringValue?: string;
+
+  /*
+Represents a time of day.
+Structure is documented below.
+*/
+  timeValue?: dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValue;
+
+  // A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
+  timestampValue?: string;
 }
 
-export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMax_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMax_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "dayOfWeekValue",
+      "Represents a day of the week.\nPossible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Number,
-      "FloatValue",
+      "floatValue",
       "A float value.",
       [],
       false,
@@ -61,7 +69,7 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTrans
     ),
     new DynamicUIProps(
       InputType.String,
-      "IntegerValue",
+      "integerValue",
       "An integer value (int64 format)",
       [],
       false,
@@ -69,7 +77,7 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTrans
     ),
     new DynamicUIProps(
       InputType.String,
-      "StringValue",
+      "stringValue",
       "A string value.",
       [],
       false,
@@ -77,15 +85,15 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTrans
     ),
     new DynamicUIProps(
       InputType.Object,
-      "TimeValue",
+      "timeValue",
       "Represents a time of day.\nStructure is documented below.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValue_GetTypes(),
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValue_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "TimestampValue",
+      "timestampValue",
       'A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
       [],
       false,
@@ -93,7 +101,7 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTrans
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "BooleanValue",
+      "booleanValue",
       "A boolean value.",
       [],
       false,
@@ -101,17 +109,9 @@ export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTrans
     ),
     new DynamicUIProps(
       InputType.Object,
-      "DateValue",
+      "dateValue",
       "Represents a whole or partial calendar date.\nStructure is documented below.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValue_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "DayOfWeekValue",
-      "Represents a day of the week.\nPossible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.",
-      [],
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValue_GetTypes(),
       false,
       false,
     ),

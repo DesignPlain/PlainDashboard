@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterAddonsConfigIstioConfig {
-  // The status of the Istio addon, which makes it easy to set up Istio for services in a cluster. It is disabled by default. Set disabled = false to enable.
-  Disabled?: boolean;
-
+export interface container_getClusterAddonsConfigIstioConfig {
   // The authentication type between services in Istio. Available options include AUTH_MUTUAL_TLS.
-  Auth?: string;
+  auth?: string;
+
+  // The status of the Istio addon, which makes it easy to set up Istio for services in a cluster. It is disabled by default. Set disabled = false to enable.
+  disabled?: boolean;
 }
 
-export function Container_getClusterAddonsConfigIstioConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterAddonsConfigIstioConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Bool,
-      "Disabled",
-      "The status of the Istio addon, which makes it easy to set up Istio for services in a cluster. It is disabled by default. Set disabled = false to enable.",
+      InputType.String,
+      "auth",
+      "The authentication type between services in Istio. Available options include AUTH_MUTUAL_TLS.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "Auth",
-      "The authentication type between services in Istio. Available options include AUTH_MUTUAL_TLS.",
+      InputType.Bool,
+      "disabled",
+      "The status of the Istio addon, which makes it easy to set up Istio for services in a cluster. It is disabled by default. Set disabled = false to enable.",
       [],
       true,
       false,

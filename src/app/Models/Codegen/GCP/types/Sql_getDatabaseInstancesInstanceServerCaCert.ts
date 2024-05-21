@@ -6,36 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstancesInstanceServerCaCert {
-  // The CN valid for the CA Cert.
-  CommonName?: string;
-
+export interface sql_getDatabaseInstancesInstanceServerCaCert {
   // Creation time of the CA Cert.
-  CreateTime?: string;
+  createTime?: string;
 
   // Expiration time of the CA Cert.
-  ExpirationTime?: string;
+  expirationTime?: string;
 
   // SHA Fingerprint of the CA Cert.
-  Sha1Fingerprint?: string;
+  sha1Fingerprint?: string;
 
   // The CA Certificate used to connect to the SQL Instance via SSL.
-  Cert?: string;
+  cert?: string;
+
+  // The CN valid for the CA Cert.
+  commonName?: string;
 }
 
-export function Sql_getDatabaseInstancesInstanceServerCaCert_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstancesInstanceServerCaCert_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CreateTime",
-      "Creation time of the CA Cert.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ExpirationTime",
+      "expirationTime",
       "Expiration time of the CA Cert.",
       [],
       true,
@@ -43,7 +35,7 @@ export function Sql_getDatabaseInstancesInstanceServerCaCert_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "Sha1Fingerprint",
+      "sha1Fingerprint",
       "SHA Fingerprint of the CA Cert.",
       [],
       true,
@@ -51,7 +43,7 @@ export function Sql_getDatabaseInstancesInstanceServerCaCert_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "Cert",
+      "cert",
       "The CA Certificate used to connect to the SQL Instance via SSL.",
       [],
       true,
@@ -59,8 +51,16 @@ export function Sql_getDatabaseInstancesInstanceServerCaCert_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "CommonName",
+      "commonName",
       "The CN valid for the CA Cert.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "createTime",
+      "Creation time of the CA Cert.",
       [],
       true,
       false,

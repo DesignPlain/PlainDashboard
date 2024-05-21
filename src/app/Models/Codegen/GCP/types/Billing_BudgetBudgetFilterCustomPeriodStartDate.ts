@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Billing_BudgetBudgetFilterCustomPeriodStartDate {
-  // Year of the date. Must be from 1 to 9999.
-  Year?: number;
-
+export interface billing_BudgetBudgetFilterCustomPeriodStartDate {
   // Day of a month. Must be from 1 to 31 and valid for the year and month.
-  Day?: number;
+  day?: number;
 
   // Month of a year. Must be from 1 to 12.
-  Month?: number;
+  month?: number;
+
+  // Year of the date. Must be from 1 to 9999.
+  year?: number;
 }
 
-export function Billing_BudgetBudgetFilterCustomPeriodStartDate_GetTypes(): DynamicUIProps[] {
+export function billing_BudgetBudgetFilterCustomPeriodStartDate_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Day",
+      "day",
       "Day of a month. Must be from 1 to 31 and valid for the year and month.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Billing_BudgetBudgetFilterCustomPeriodStartDate_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Month",
+      "month",
       "Month of a year. Must be from 1 to 12.",
       [],
       true,
@@ -37,7 +37,7 @@ export function Billing_BudgetBudgetFilterCustomPeriodStartDate_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Year",
+      "year",
       "Year of the date. Must be from 1 to 9999.",
       [],
       true,

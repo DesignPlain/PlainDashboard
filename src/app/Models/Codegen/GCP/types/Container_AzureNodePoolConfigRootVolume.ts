@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AzureNodePoolConfigRootVolume {
+export interface container_AzureNodePoolConfigRootVolume {
   // Optional. The size of the disk, in GiBs. When unspecified, a default value is provided. See the specific reference in the parent resource.
-  SizeGib?: number;
+  sizeGib?: number;
 }
 
-export function Container_AzureNodePoolConfigRootVolume_GetTypes(): DynamicUIProps[] {
+export function container_AzureNodePoolConfigRootVolume_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "SizeGib",
+      "sizeGib",
       "Optional. The size of the disk, in GiBs. When unspecified, a default value is provided. See the specific reference in the parent resource.",
       [],
       false,

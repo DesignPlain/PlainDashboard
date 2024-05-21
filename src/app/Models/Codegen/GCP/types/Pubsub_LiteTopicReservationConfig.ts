@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Pubsub_LiteTopicReservationConfig {
+export interface pubsub_LiteTopicReservationConfig {
   // The Reservation to use for this topic's throughput capacity.
-  ThroughputReservation?: string;
+  throughputReservation?: string;
 }
 
-export function Pubsub_LiteTopicReservationConfig_GetTypes(): DynamicUIProps[] {
+export function pubsub_LiteTopicReservationConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ThroughputReservation",
+      "throughputReservation",
       "The Reservation to use for this topic's throughput capacity.",
       [],
       false,

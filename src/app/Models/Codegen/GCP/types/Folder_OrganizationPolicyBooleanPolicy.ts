@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Folder_OrganizationPolicyBooleanPolicy {
+export interface folder_OrganizationPolicyBooleanPolicy {
   // If true, then the Policy is enforced. If false, then any configuration is acceptable.
-  Enforced?: boolean;
+  enforced?: boolean;
 }
 
-export function Folder_OrganizationPolicyBooleanPolicy_GetTypes(): DynamicUIProps[] {
+export function folder_OrganizationPolicyBooleanPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enforced",
+      "enforced",
       "If true, then the Policy is enforced. If false, then any configuration is acceptable.",
       [],
       true,

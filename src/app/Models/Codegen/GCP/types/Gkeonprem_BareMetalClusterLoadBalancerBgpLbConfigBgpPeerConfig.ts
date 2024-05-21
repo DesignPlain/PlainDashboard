@@ -6,12 +6,12 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterLoadBalancerBgpLbConfigBgpPeerConfig {
+export interface gkeonprem_BareMetalClusterLoadBalancerBgpLbConfigBgpPeerConfig {
   /*
 BGP autonomous system number (ASN) for the network that contains the
 external peer device.
 */
-  Asn?: number;
+  asn?: number;
 
   /*
 The IP address of the control plane node that connects to the external
@@ -20,25 +20,17 @@ If you don't specify any control plane nodes, all control plane nodes
 can connect to the external peer. If you specify one or more IP addresses,
 only the nodes specified participate in peering sessions.
 */
-  ControlPlaneNodes?: Array<string>;
+  controlPlaneNodes?: Array<string>;
 
   // The IP address of the external peer device.
-  IpAddress?: string;
+  ipAddress?: string;
 }
 
-export function Gkeonprem_BareMetalClusterLoadBalancerBgpLbConfigBgpPeerConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterLoadBalancerBgpLbConfigBgpPeerConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "IpAddress",
-      "The IP address of the external peer device.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "Asn",
+      "asn",
       "BGP autonomous system number (ASN) for the network that contains the\nexternal peer device.",
       [],
       true,
@@ -46,10 +38,18 @@ export function Gkeonprem_BareMetalClusterLoadBalancerBgpLbConfigBgpPeerConfig_G
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ControlPlaneNodes",
+      "controlPlaneNodes",
       "The IP address of the control plane node that connects to the external\npeer.\nIf you don't specify any control plane nodes, all control plane nodes\ncan connect to the external peer. If you specify one or more IP addresses,\nonly the nodes specified participate in peering sessions.",
       InputType_String_GetTypes(),
       false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "ipAddress",
+      "The IP address of the external peer device.",
+      [],
+      true,
       false,
     ),
   ];

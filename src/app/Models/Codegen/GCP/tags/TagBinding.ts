@@ -9,7 +9,7 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface TagBindingArgs {
   // The full resource name of the resource the TagValue is bound to. E.g. //cloudresourcemanager.googleapis.com/projects/123
-  Parent?: string;
+  parent?: string;
 
   /*
 The TagValue of the TagBinding. Must be of the form tagValues/456.
@@ -17,14 +17,14 @@ The TagValue of the TagBinding. Must be of the form tagValues/456.
 
 - - -
 */
-  TagValue?: string;
+  tagValue?: string;
 }
 export class TagBinding extends Resource {
   // The generated id for the TagBinding. This is a string of the form: `tagBindings/{full-resource-name}/{tag-value-name}`
-  public Name?: string;
+  public name?: string;
 
   // The full resource name of the resource the TagValue is bound to. E.g. //cloudresourcemanager.googleapis.com/projects/123
-  public Parent?: string;
+  public parent?: string;
 
   /*
 The TagValue of the TagBinding. Must be of the form tagValues/456.
@@ -32,13 +32,13 @@ The TagValue of the TagBinding. Must be of the form tagValues/456.
 
 - - -
 */
-  public TagValue?: string;
+  public tagValue?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Parent",
+        "parent",
         "The full resource name of the resource the TagValue is bound to. E.g. //cloudresourcemanager.googleapis.com/projects/123",
         [],
         true,
@@ -46,7 +46,7 @@ The TagValue of the TagBinding. Must be of the form tagValues/456.
       ),
       new DynamicUIProps(
         InputType.String,
-        "TagValue",
+        "tagValue",
         "The TagValue of the TagBinding. Must be of the form tagValues/456.\n\n\n- - -",
         [],
         true,

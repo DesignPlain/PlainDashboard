@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig {
+export interface certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig {
   /*
 A CA pool resource used to issue a certificate.
 The CA pool string has a relative resource path following the form
@@ -14,14 +14,14 @@ The CA pool string has a relative resource path following the form
 
 - - -
 */
-  CaPool?: string;
+  caPool?: string;
 }
 
-export function Certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig_GetTypes(): DynamicUIProps[] {
+export function certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CaPool",
+      "caPool",
       'A CA pool resource used to issue a certificate.\nThe CA pool string has a relative resource path following the form\n"projects/{project}/locations/{location}/caPools/{caPool}".\n\n- - -',
       [],
       true,

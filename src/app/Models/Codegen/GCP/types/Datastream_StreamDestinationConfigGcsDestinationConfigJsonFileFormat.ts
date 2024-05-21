@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFormat {
+export interface datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFormat {
   /*
 Compression of the loaded JSON file.
 Possible values are: `NO_COMPRESSION`, `GZIP`.
 */
-  Compression?: string;
+  compression?: string;
 
   /*
 The schema file format along JSON data files.
 Possible values are: `NO_SCHEMA_FILE`, `AVRO_SCHEMA_FILE`.
 */
-  SchemaFileFormat?: string;
+  schemaFileFormat?: string;
 }
 
-export function Datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFormat_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFormat_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Compression",
+      "compression",
       "Compression of the loaded JSON file.\nPossible values are: `NO_COMPRESSION`, `GZIP`.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFo
     ),
     new DynamicUIProps(
       InputType.String,
-      "SchemaFileFormat",
+      "schemaFileFormat",
       "The schema file format along JSON data files.\nPossible values are: `NO_SCHEMA_FILE`, `AVRO_SCHEMA_FILE`.",
       [],
       false,

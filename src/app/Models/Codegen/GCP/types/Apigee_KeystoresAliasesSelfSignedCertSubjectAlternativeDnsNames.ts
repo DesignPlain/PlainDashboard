@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames {
+export interface apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames {
   // Subject Alternative Name
-  SubjectAlternativeName?: string;
+  subjectAlternativeName?: string;
 }
 
-export function Apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames_GetTypes(): DynamicUIProps[] {
+export function apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SubjectAlternativeName",
+      "subjectAlternativeName",
       "Subject Alternative Name",
       [],
       false,

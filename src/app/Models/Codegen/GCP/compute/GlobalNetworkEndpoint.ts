@@ -12,7 +12,7 @@ export interface GlobalNetworkEndpointArgs {
 Fully qualified domain name of network endpoint.
 This can only be specified when network_endpoint_type of the NEG is INTERNET_FQDN_PORT.
 */
-  Fqdn?: string;
+  fqdn?: string;
 
   /*
 The global network endpoint group this endpoint is part of.
@@ -20,19 +20,19 @@ The global network endpoint group this endpoint is part of.
 
 - - -
 */
-  GlobalNetworkEndpointGroup?: string;
+  globalNetworkEndpointGroup?: string;
 
   // IPv4 address external endpoint.
-  IpAddress?: string;
+  ipAddress?: string;
 
   // Port number of the external endpoint.
-  Port?: number;
+  port?: number;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 }
 export class GlobalNetworkEndpoint extends Resource {
   /*
@@ -41,31 +41,31 @@ The global network endpoint group this endpoint is part of.
 
 - - -
 */
-  public GlobalNetworkEndpointGroup?: string;
+  public globalNetworkEndpointGroup?: string;
 
   // IPv4 address external endpoint.
-  public IpAddress?: string;
+  public ipAddress?: string;
 
   // Port number of the external endpoint.
-  public Port?: number;
+  public port?: number;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 Fully qualified domain name of network endpoint.
 This can only be specified when network_endpoint_type of the NEG is INTERNET_FQDN_PORT.
 */
-  public Fqdn?: string;
+  public fqdn?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Fqdn",
+        "fqdn",
         "Fully qualified domain name of network endpoint.\nThis can only be specified when network_endpoint_type of the NEG is INTERNET_FQDN_PORT.",
         [],
         false,
@@ -73,7 +73,7 @@ This can only be specified when network_endpoint_type of the NEG is INTERNET_FQD
       ),
       new DynamicUIProps(
         InputType.String,
-        "GlobalNetworkEndpointGroup",
+        "globalNetworkEndpointGroup",
         "The global network endpoint group this endpoint is part of.\n\n\n- - -",
         [],
         true,
@@ -81,7 +81,7 @@ This can only be specified when network_endpoint_type of the NEG is INTERNET_FQD
       ),
       new DynamicUIProps(
         InputType.String,
-        "IpAddress",
+        "ipAddress",
         "IPv4 address external endpoint.",
         [],
         false,
@@ -89,7 +89,7 @@ This can only be specified when network_endpoint_type of the NEG is INTERNET_FQD
       ),
       new DynamicUIProps(
         InputType.Number,
-        "Port",
+        "port",
         "Port number of the external endpoint.",
         [],
         true,
@@ -97,7 +97,7 @@ This can only be specified when network_endpoint_type of the NEG is INTERNET_FQD
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,

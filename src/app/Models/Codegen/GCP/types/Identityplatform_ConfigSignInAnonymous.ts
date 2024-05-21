@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Identityplatform_ConfigSignInAnonymous {
+export interface identityplatform_ConfigSignInAnonymous {
   /*
 Whether anonymous user auth is enabled for the project or not.
 
 <a name="nested_hash_config"></a>The `hash_config` block contains:
 */
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Identityplatform_ConfigSignInAnonymous_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ConfigSignInAnonymous_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       'Whether anonymous user auth is enabled for the project or not.\n\n<a name="nested_hash_config"></a>The `hash_config` block contains:',
       [],
       true,

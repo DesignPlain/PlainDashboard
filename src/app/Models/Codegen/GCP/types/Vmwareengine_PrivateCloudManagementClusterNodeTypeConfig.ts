@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vmwareengine_PrivateCloudManagementClusterNodeTypeConfig {
+export interface vmwareengine_PrivateCloudManagementClusterNodeTypeConfig {
   /*
 Customized number of cores available to each node of the type.
 This number must always be one of `nodeType.availableCustomCoreCounts`.
@@ -15,20 +15,28 @@ This cannot be changed once the PrivateCloud is created.
 
 - - -
 */
-  CustomCoreCount?: number;
+  customCoreCount?: number;
 
   // The number of nodes of this type in the cluster.
-  NodeCount?: number;
+  nodeCount?: number;
 
   // The identifier for this object. Format specified above.
-  NodeTypeId?: string;
+  nodeTypeId?: string;
 }
 
-export function Vmwareengine_PrivateCloudManagementClusterNodeTypeConfig_GetTypes(): DynamicUIProps[] {
+export function vmwareengine_PrivateCloudManagementClusterNodeTypeConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "NodeCount",
+      "customCoreCount",
+      "Customized number of cores available to each node of the type.\nThis number must always be one of `nodeType.availableCustomCoreCounts`.\nIf zero is provided max value from `nodeType.availableCustomCoreCounts` will be used.\nThis cannot be changed once the PrivateCloud is created.\n\n- - -",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "nodeCount",
       "The number of nodes of this type in the cluster.",
       [],
       true,
@@ -36,18 +44,10 @@ export function Vmwareengine_PrivateCloudManagementClusterNodeTypeConfig_GetType
     ),
     new DynamicUIProps(
       InputType.String,
-      "NodeTypeId",
+      "nodeTypeId",
       "The identifier for this object. Format specified above.",
       [],
       true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "CustomCoreCount",
-      "Customized number of cores available to each node of the type.\nThis number must always be one of `nodeType.availableCustomCoreCounts`.\nIf zero is provided max value from `nodeType.availableCustomCoreCounts` will be used.\nThis cannot be changed once the PrivateCloud is created.\n\n- - -",
-      [],
-      false,
       false,
     ),
   ];

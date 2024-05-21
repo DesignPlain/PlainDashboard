@@ -7,13 +7,26 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Spanner_InstanceIAMMemberCondition,
-  Spanner_InstanceIAMMemberCondition_GetTypes,
-} from "../types/Spanner_InstanceIAMMemberCondition";
+  spanner_InstanceIAMMemberCondition,
+  spanner_InstanceIAMMemberCondition_GetTypes,
+} from "../types/spanner_InstanceIAMMemberCondition";
 
 export interface InstanceIAMMemberArgs {
+  /*
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
+*/
+  project?: string;
+
+  /*
+The role that should be applied. Only one
+`gcp.spanner.InstanceIAMBinding` can be used per role. Note that custom roles must be of the format
+`[projects|organizations]/{parent-name}/roles/{role-name}`.
+*/
+  role?: string;
+
   //
-  Condition?: Spanner_InstanceIAMMemberCondition;
+  condition?: spanner_InstanceIAMMemberCondition;
 
   /*
 The name of the instance.
@@ -27,30 +40,17 @@ Each entry can have one of the following values:
 - --group:{emailid}--: An email address that represents a Google group. For example, admins@example.com.
 - --domain:{domain}--: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
 */
-  Instance?: string;
+  instance?: string;
 
   //
-  Member?: string;
-
-  /*
-The ID of the project in which the resource belongs. If it
-is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  /*
-The role that should be applied. Only one
-`gcp.spanner.InstanceIAMBinding` can be used per role. Note that custom roles must be of the format
-`[projects|organizations]/{parent-name}/roles/{role-name}`.
-*/
-  Role?: string;
+  member?: string;
 }
 export class InstanceIAMMember extends Resource {
   //
-  public Condition?: Spanner_InstanceIAMMemberCondition;
+  public condition?: spanner_InstanceIAMMemberCondition;
 
   // (Computed) The etag of the instance's IAM policy.
-  public Etag?: string;
+  public etag?: string;
 
   /*
 The name of the instance.
@@ -64,38 +64,29 @@ Each entry can have one of the following values:
 - --group:{emailid}--: An email address that represents a Google group. For example, admins@example.com.
 - --domain:{domain}--: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
 */
-  public Instance?: string;
+  public instance?: string;
 
   //
-  public Member?: string;
+  public member?: string;
 
   /*
 The ID of the project in which the resource belongs. If it
 is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 The role that should be applied. Only one
 `gcp.spanner.InstanceIAMBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
-  public Role?: string;
+  public role?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Instance",
-        "The name of the instance.\n\n* `member/members` - (Required) Identities that will be granted the privilege in `role`.\nEach entry can have one of the following values:\n* **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.\n* **allAuthenticatedUsers**: A special identifier that represents anyone who is authenticated with a Google account or a service account.\n* **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.\n* **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.\n* **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.\n* **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
         [],
         false,
@@ -103,7 +94,7 @@ The role that should be applied. Only one
       ),
       new DynamicUIProps(
         InputType.String,
-        "Role",
+        "role",
         "The role that should be applied. Only one\n`gcp.spanner.InstanceIAMBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
         [],
         true,
@@ -111,12 +102,21 @@ The role that should be applied. Only one
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Spanner_InstanceIAMMemberCondition_GetTypes(),
+        spanner_InstanceIAMMemberCondition_GetTypes(),
         false,
         true,
       ),
+      new DynamicUIProps(
+        InputType.String,
+        "instance",
+        "The name of the instance.\n\n* `member/members` - (Required) Identities that will be granted the privilege in `role`.\nEach entry can have one of the following values:\n* **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.\n* **allAuthenticatedUsers**: A special identifier that represents anyone who is authenticated with a Google account or a service account.\n* **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.\n* **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.\n* **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.\n* **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(InputType.String, "member", "", [], true, true),
     ];
   }
 }

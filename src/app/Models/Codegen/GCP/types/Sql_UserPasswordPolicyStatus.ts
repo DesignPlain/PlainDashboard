@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_UserPasswordPolicyStatus {
+export interface sql_UserPasswordPolicyStatus {
   // If true, user does not have login privileges.
-  Locked?: boolean;
+  locked?: boolean;
 
   // Password expiration duration with one week grace period.
-  PasswordExpirationTime?: string;
+  passwordExpirationTime?: string;
 }
 
-export function Sql_UserPasswordPolicyStatus_GetTypes(): DynamicUIProps[] {
+export function sql_UserPasswordPolicyStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Locked",
+      "locked",
       "If true, user does not have login privileges.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Sql_UserPasswordPolicyStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "PasswordExpirationTime",
+      "passwordExpirationTime",
       "Password expiration duration with one week grace period.",
       [],
       false,

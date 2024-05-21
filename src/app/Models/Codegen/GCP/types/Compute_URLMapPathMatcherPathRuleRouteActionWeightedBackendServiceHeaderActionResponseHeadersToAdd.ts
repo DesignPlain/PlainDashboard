@@ -6,33 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAdd {
-  // The name of the header to add.
-  HeaderName?: string;
-
+export interface compute_URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAdd {
   // The value of the header to add.
-  HeaderValue?: string;
+  headerValue?: string;
 
   /*
 If false, headerValue is appended to any values that already exist for the header.
 If true, headerValue is set for the header, discarding any values that were set for that header.
 */
-  Replace?: boolean;
+  replace?: boolean;
+
+  // The name of the header to add.
+  headerName?: string;
 }
 
-export function Compute_URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAdd_GetTypes(): DynamicUIProps[] {
+export function compute_URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAdd_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "HeaderName",
-      "The name of the header to add.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "HeaderValue",
+      "headerValue",
       "The value of the header to add.",
       [],
       true,
@@ -40,8 +32,16 @@ export function Compute_URLMapPathMatcherPathRuleRouteActionWeightedBackendServi
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Replace",
+      "replace",
       "If false, headerValue is appended to any values that already exist for the header.\nIf true, headerValue is set for the header, discarding any values that were set for that header.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "headerName",
+      "The name of the header to add.",
       [],
       true,
       false,

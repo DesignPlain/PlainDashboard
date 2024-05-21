@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AwsClusterFleet {
+export interface container_AwsClusterFleet {
   // The name of the managed Hub Membership resource associated to this cluster. Membership names are formatted as projects/<project-number>/locations/global/membership/<cluster-id>.
-  Membership?: string;
+  membership?: string;
 
   // The number of the Fleet host project where this cluster will be registered.
-  Project?: string;
+  project?: string;
 }
 
-export function Container_AwsClusterFleet_GetTypes(): DynamicUIProps[] {
+export function container_AwsClusterFleet_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Membership",
+      "membership",
       "The name of the managed Hub Membership resource associated to this cluster. Membership names are formatted as projects/<project-number>/locations/global/membership/<cluster-id>.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Container_AwsClusterFleet_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Project",
+      "project",
       "The number of the Fleet host project where this cluster will be registered.",
       [],
       false,

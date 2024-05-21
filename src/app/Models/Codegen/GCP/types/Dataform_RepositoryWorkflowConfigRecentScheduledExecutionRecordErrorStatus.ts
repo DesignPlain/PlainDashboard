@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus {
+export interface dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus {
   /*
 (Output)
 The status code, which should be an enum value of google.rpc.Code.
 */
-  Code?: number;
+  code?: number;
 
   /*
 (Output)
 A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.
 */
-  Message?: string;
+  message?: string;
 }
 
-export function Dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus_GetTypes(): DynamicUIProps[] {
+export function dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Code",
+      "code",
       "(Output)\nThe status code, which should be an enum value of google.rpc.Code.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordE
     ),
     new DynamicUIProps(
       InputType.String,
-      "Message",
+      "message",
       "(Output)\nA developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.",
       [],
       false,

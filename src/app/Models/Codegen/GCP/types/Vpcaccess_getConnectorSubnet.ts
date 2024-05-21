@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vpcaccess_getConnectorSubnet {
+export interface vpcaccess_getConnectorSubnet {
   /*
 Name of the resource.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   // Project in which the subnet exists. If not set, this project is assumed to be the project for which the connector create request was issued.
-  ProjectId?: string;
+  projectId?: string;
 }
 
-export function Vpcaccess_getConnectorSubnet_GetTypes(): DynamicUIProps[] {
+export function vpcaccess_getConnectorSubnet_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Name of the resource.\n\n- - -",
       [],
       true,
@@ -30,7 +30,7 @@ export function Vpcaccess_getConnectorSubnet_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProjectId",
+      "projectId",
       "Project in which the subnet exists. If not set, this project is assumed to be the project for which the connector create request was issued.",
       [],
       true,

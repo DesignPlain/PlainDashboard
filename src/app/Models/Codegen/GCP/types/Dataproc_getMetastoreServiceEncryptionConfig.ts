@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_getMetastoreServiceEncryptionConfig {
+export interface dataproc_getMetastoreServiceEncryptionConfig {
   /*
 The fully qualified customer provided Cloud KMS key name to use for customer data encryption.
 Use the following format: 'projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)'
 */
-  KmsKey?: string;
+  kmsKey?: string;
 }
 
-export function Dataproc_getMetastoreServiceEncryptionConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_getMetastoreServiceEncryptionConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKey",
+      "kmsKey",
       "The fully qualified customer provided Cloud KMS key name to use for customer data encryption.\nUse the following format: 'projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)'",
       [],
       true,

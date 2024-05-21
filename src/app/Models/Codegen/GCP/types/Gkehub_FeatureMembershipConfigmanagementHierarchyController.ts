@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FeatureMembershipConfigmanagementHierarchyController {
+export interface gkehub_FeatureMembershipConfigmanagementHierarchyController {
   // Whether hierarchical resource quota is enabled in this cluster.
-  EnableHierarchicalResourceQuota?: boolean;
+  enableHierarchicalResourceQuota?: boolean;
 
   // Whether pod tree labels are enabled in this cluster.
-  EnablePodTreeLabels?: boolean;
+  enablePodTreeLabels?: boolean;
 
   // Whether Hierarchy Controller is enabled in this cluster.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Gkehub_FeatureMembershipConfigmanagementHierarchyController_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureMembershipConfigmanagementHierarchyController_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableHierarchicalResourceQuota",
-      "Whether hierarchical resource quota is enabled in this cluster.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "EnablePodTreeLabels",
+      "enablePodTreeLabels",
       "Whether pod tree labels are enabled in this cluster.",
       [],
       false,
@@ -37,8 +29,16 @@ export function Gkehub_FeatureMembershipConfigmanagementHierarchyController_GetT
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether Hierarchy Controller is enabled in this cluster.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "enableHierarchicalResourceQuota",
+      "Whether hierarchical resource quota is enabled in this cluster.",
       [],
       false,
       false,

@@ -6,187 +6,187 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterAddonsConfigConfigConnectorConfig,
-  Container_getClusterAddonsConfigConfigConnectorConfig_GetTypes,
-} from "./Container_getClusterAddonsConfigConfigConnectorConfig";
+  container_getClusterAddonsConfigGcePersistentDiskCsiDriverConfig,
+  container_getClusterAddonsConfigGcePersistentDiskCsiDriverConfig_GetTypes,
+} from "./container_getClusterAddonsConfigGcePersistentDiskCsiDriverConfig";
 import {
-  Container_getClusterAddonsConfigNetworkPolicyConfig,
-  Container_getClusterAddonsConfigNetworkPolicyConfig_GetTypes,
-} from "./Container_getClusterAddonsConfigNetworkPolicyConfig";
+  container_getClusterAddonsConfigCloudrunConfig,
+  container_getClusterAddonsConfigCloudrunConfig_GetTypes,
+} from "./container_getClusterAddonsConfigCloudrunConfig";
 import {
-  Container_getClusterAddonsConfigGcsFuseCsiDriverConfig,
-  Container_getClusterAddonsConfigGcsFuseCsiDriverConfig_GetTypes,
-} from "./Container_getClusterAddonsConfigGcsFuseCsiDriverConfig";
+  container_getClusterAddonsConfigGkeBackupAgentConfig,
+  container_getClusterAddonsConfigGkeBackupAgentConfig_GetTypes,
+} from "./container_getClusterAddonsConfigGkeBackupAgentConfig";
 import {
-  Container_getClusterAddonsConfigHorizontalPodAutoscaling,
-  Container_getClusterAddonsConfigHorizontalPodAutoscaling_GetTypes,
-} from "./Container_getClusterAddonsConfigHorizontalPodAutoscaling";
+  container_getClusterAddonsConfigHorizontalPodAutoscaling,
+  container_getClusterAddonsConfigHorizontalPodAutoscaling_GetTypes,
+} from "./container_getClusterAddonsConfigHorizontalPodAutoscaling";
 import {
-  Container_getClusterAddonsConfigKalmConfig,
-  Container_getClusterAddonsConfigKalmConfig_GetTypes,
-} from "./Container_getClusterAddonsConfigKalmConfig";
+  container_getClusterAddonsConfigDnsCacheConfig,
+  container_getClusterAddonsConfigDnsCacheConfig_GetTypes,
+} from "./container_getClusterAddonsConfigDnsCacheConfig";
 import {
-  Container_getClusterAddonsConfigIstioConfig,
-  Container_getClusterAddonsConfigIstioConfig_GetTypes,
-} from "./Container_getClusterAddonsConfigIstioConfig";
+  container_getClusterAddonsConfigIstioConfig,
+  container_getClusterAddonsConfigIstioConfig_GetTypes,
+} from "./container_getClusterAddonsConfigIstioConfig";
 import {
-  Container_getClusterAddonsConfigGcePersistentDiskCsiDriverConfig,
-  Container_getClusterAddonsConfigGcePersistentDiskCsiDriverConfig_GetTypes,
-} from "./Container_getClusterAddonsConfigGcePersistentDiskCsiDriverConfig";
+  container_getClusterAddonsConfigKalmConfig,
+  container_getClusterAddonsConfigKalmConfig_GetTypes,
+} from "./container_getClusterAddonsConfigKalmConfig";
 import {
-  Container_getClusterAddonsConfigGcpFilestoreCsiDriverConfig,
-  Container_getClusterAddonsConfigGcpFilestoreCsiDriverConfig_GetTypes,
-} from "./Container_getClusterAddonsConfigGcpFilestoreCsiDriverConfig";
+  container_getClusterAddonsConfigNetworkPolicyConfig,
+  container_getClusterAddonsConfigNetworkPolicyConfig_GetTypes,
+} from "./container_getClusterAddonsConfigNetworkPolicyConfig";
 import {
-  Container_getClusterAddonsConfigGkeBackupAgentConfig,
-  Container_getClusterAddonsConfigGkeBackupAgentConfig_GetTypes,
-} from "./Container_getClusterAddonsConfigGkeBackupAgentConfig";
+  container_getClusterAddonsConfigConfigConnectorConfig,
+  container_getClusterAddonsConfigConfigConnectorConfig_GetTypes,
+} from "./container_getClusterAddonsConfigConfigConnectorConfig";
 import {
-  Container_getClusterAddonsConfigCloudrunConfig,
-  Container_getClusterAddonsConfigCloudrunConfig_GetTypes,
-} from "./Container_getClusterAddonsConfigCloudrunConfig";
+  container_getClusterAddonsConfigGcpFilestoreCsiDriverConfig,
+  container_getClusterAddonsConfigGcpFilestoreCsiDriverConfig_GetTypes,
+} from "./container_getClusterAddonsConfigGcpFilestoreCsiDriverConfig";
 import {
-  Container_getClusterAddonsConfigHttpLoadBalancing,
-  Container_getClusterAddonsConfigHttpLoadBalancing_GetTypes,
-} from "./Container_getClusterAddonsConfigHttpLoadBalancing";
+  container_getClusterAddonsConfigGcsFuseCsiDriverConfig,
+  container_getClusterAddonsConfigGcsFuseCsiDriverConfig_GetTypes,
+} from "./container_getClusterAddonsConfigGcsFuseCsiDriverConfig";
 import {
-  Container_getClusterAddonsConfigDnsCacheConfig,
-  Container_getClusterAddonsConfigDnsCacheConfig_GetTypes,
-} from "./Container_getClusterAddonsConfigDnsCacheConfig";
+  container_getClusterAddonsConfigHttpLoadBalancing,
+  container_getClusterAddonsConfigHttpLoadBalancing_GetTypes,
+} from "./container_getClusterAddonsConfigHttpLoadBalancing";
 
-export interface Container_getClusterAddonsConfig {
-  // The status of the Istio addon.
-  IstioConfigs?: Array<Container_getClusterAddonsConfigIstioConfig>;
-
-  // The of the Config Connector addon.
-  ConfigConnectorConfigs?: Array<Container_getClusterAddonsConfigConfigConnectorConfig>;
-
+export interface container_getClusterAddonsConfig {
   // The status of the NodeLocal DNSCache addon. It is disabled by default. Set enabled = true to enable.
-  DnsCacheConfigs?: Array<Container_getClusterAddonsConfigDnsCacheConfig>;
+  dnsCacheConfigs?: Array<container_getClusterAddonsConfigDnsCacheConfig>;
 
   // Whether this cluster should enable the Google Compute Engine Persistent Disk Container Storage Interface (CSI) Driver. Set enabled = true to enable. The Compute Engine persistent disk CSI Driver is enabled by default on newly created clusters for the following versions: Linux clusters: GKE version 1.18.10-gke.2100 or later, or 1.19.3-gke.2100 or later.
-  GcePersistentDiskCsiDriverConfigs?: Array<Container_getClusterAddonsConfigGcePersistentDiskCsiDriverConfig>;
+  gcePersistentDiskCsiDriverConfigs?: Array<container_getClusterAddonsConfigGcePersistentDiskCsiDriverConfig>;
 
-  // The status of the Filestore CSI driver addon, which allows the usage of filestore instance as volumes. Defaults to disabled; set enabled = true to enable.
-  GcpFilestoreCsiDriverConfigs?: Array<Container_getClusterAddonsConfigGcpFilestoreCsiDriverConfig>;
-
-  // The status of the Backup for GKE Agent addon. It is disabled by default. Set enabled = true to enable.
-  GkeBackupAgentConfigs?: Array<Container_getClusterAddonsConfigGkeBackupAgentConfig>;
-
-  // Whether we should enable the network policy addon for the master. This must be enabled in order to enable network policy for the nodes. To enable this, you must also define a network_policy block, otherwise nothing will happen. It can only be disabled if the nodes already do not have network policies enabled. Defaults to disabled; set disabled = false to enable.
-  NetworkPolicyConfigs?: Array<Container_getClusterAddonsConfigNetworkPolicyConfig>;
-
-  // The status of the CloudRun addon. It is disabled by default. Set disabled = false to enable.
-  CloudrunConfigs?: Array<Container_getClusterAddonsConfigCloudrunConfig>;
-
-  // The status of the GCS Fuse CSI driver addon, which allows the usage of gcs bucket as volumes. Defaults to disabled; set enabled = true to enable.
-  GcsFuseCsiDriverConfigs?: Array<Container_getClusterAddonsConfigGcsFuseCsiDriverConfig>;
-
-  // The status of the Horizontal Pod Autoscaling addon, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods. It ensures that a Heapster pod is running in the cluster, which is also used by the Cloud Monitoring service. It is enabled by default; set disabled = true to disable.
-  HorizontalPodAutoscalings?: Array<Container_getClusterAddonsConfigHorizontalPodAutoscaling>;
-
-  // The status of the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster. It is enabled by default; set disabled = true to disable.
-  HttpLoadBalancings?: Array<Container_getClusterAddonsConfigHttpLoadBalancing>;
+  // The status of the Istio addon.
+  istioConfigs?: Array<container_getClusterAddonsConfigIstioConfig>;
 
   // Configuration for the KALM addon, which manages the lifecycle of k8s. It is disabled by default; Set enabled = true to enable.
-  KalmConfigs?: Array<Container_getClusterAddonsConfigKalmConfig>;
+  kalmConfigs?: Array<container_getClusterAddonsConfigKalmConfig>;
+
+  // Whether we should enable the network policy addon for the master. This must be enabled in order to enable network policy for the nodes. To enable this, you must also define a network_policy block, otherwise nothing will happen. It can only be disabled if the nodes already do not have network policies enabled. Defaults to disabled; set disabled = false to enable.
+  networkPolicyConfigs?: Array<container_getClusterAddonsConfigNetworkPolicyConfig>;
+
+  // The status of the CloudRun addon. It is disabled by default. Set disabled = false to enable.
+  cloudrunConfigs?: Array<container_getClusterAddonsConfigCloudrunConfig>;
+
+  // The of the Config Connector addon.
+  configConnectorConfigs?: Array<container_getClusterAddonsConfigConfigConnectorConfig>;
+
+  // The status of the Filestore CSI driver addon, which allows the usage of filestore instance as volumes. Defaults to disabled; set enabled = true to enable.
+  gcpFilestoreCsiDriverConfigs?: Array<container_getClusterAddonsConfigGcpFilestoreCsiDriverConfig>;
+
+  // The status of the GCS Fuse CSI driver addon, which allows the usage of gcs bucket as volumes. Defaults to disabled; set enabled = true to enable.
+  gcsFuseCsiDriverConfigs?: Array<container_getClusterAddonsConfigGcsFuseCsiDriverConfig>;
+
+  // The status of the Backup for GKE Agent addon. It is disabled by default. Set enabled = true to enable.
+  gkeBackupAgentConfigs?: Array<container_getClusterAddonsConfigGkeBackupAgentConfig>;
+
+  // The status of the Horizontal Pod Autoscaling addon, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods. It ensures that a Heapster pod is running in the cluster, which is also used by the Cloud Monitoring service. It is enabled by default; set disabled = true to disable.
+  horizontalPodAutoscalings?: Array<container_getClusterAddonsConfigHorizontalPodAutoscaling>;
+
+  // The status of the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster. It is enabled by default; set disabled = true to disable.
+  httpLoadBalancings?: Array<container_getClusterAddonsConfigHttpLoadBalancing>;
 }
 
-export function Container_getClusterAddonsConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterAddonsConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "GkeBackupAgentConfigs",
-      "The status of the Backup for GKE Agent addon. It is disabled by default. Set enabled = true to enable.",
-      Container_getClusterAddonsConfigGkeBackupAgentConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "NetworkPolicyConfigs",
-      "Whether we should enable the network policy addon for the master. This must be enabled in order to enable network policy for the nodes. To enable this, you must also define a network_policy block, otherwise nothing will happen. It can only be disabled if the nodes already do not have network policies enabled. Defaults to disabled; set disabled = false to enable.",
-      Container_getClusterAddonsConfigNetworkPolicyConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "CloudrunConfigs",
-      "The status of the CloudRun addon. It is disabled by default. Set disabled = false to enable.",
-      Container_getClusterAddonsConfigCloudrunConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "GcsFuseCsiDriverConfigs",
+      "gcsFuseCsiDriverConfigs",
       "The status of the GCS Fuse CSI driver addon, which allows the usage of gcs bucket as volumes. Defaults to disabled; set enabled = true to enable.",
-      Container_getClusterAddonsConfigGcsFuseCsiDriverConfig_GetTypes(),
+      container_getClusterAddonsConfigGcsFuseCsiDriverConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "HorizontalPodAutoscalings",
+      "gkeBackupAgentConfigs",
+      "The status of the Backup for GKE Agent addon. It is disabled by default. Set enabled = true to enable.",
+      container_getClusterAddonsConfigGkeBackupAgentConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "horizontalPodAutoscalings",
       "The status of the Horizontal Pod Autoscaling addon, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods. It ensures that a Heapster pod is running in the cluster, which is also used by the Cloud Monitoring service. It is enabled by default; set disabled = true to disable.",
-      Container_getClusterAddonsConfigHorizontalPodAutoscaling_GetTypes(),
+      container_getClusterAddonsConfigHorizontalPodAutoscaling_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "DnsCacheConfigs",
-      "The status of the NodeLocal DNSCache addon. It is disabled by default. Set enabled = true to enable.",
-      Container_getClusterAddonsConfigDnsCacheConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "GcePersistentDiskCsiDriverConfigs",
-      "Whether this cluster should enable the Google Compute Engine Persistent Disk Container Storage Interface (CSI) Driver. Set enabled = true to enable. The Compute Engine persistent disk CSI Driver is enabled by default on newly created clusters for the following versions: Linux clusters: GKE version 1.18.10-gke.2100 or later, or 1.19.3-gke.2100 or later.",
-      Container_getClusterAddonsConfigGcePersistentDiskCsiDriverConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "GcpFilestoreCsiDriverConfigs",
-      "The status of the Filestore CSI driver addon, which allows the usage of filestore instance as volumes. Defaults to disabled; set enabled = true to enable.",
-      Container_getClusterAddonsConfigGcpFilestoreCsiDriverConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "HttpLoadBalancings",
+      "httpLoadBalancings",
       "The status of the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster. It is enabled by default; set disabled = true to disable.",
-      Container_getClusterAddonsConfigHttpLoadBalancing_GetTypes(),
+      container_getClusterAddonsConfigHttpLoadBalancing_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "IstioConfigs",
-      "The status of the Istio addon.",
-      Container_getClusterAddonsConfigIstioConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "ConfigConnectorConfigs",
-      "The of the Config Connector addon.",
-      Container_getClusterAddonsConfigConfigConnectorConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "KalmConfigs",
+      "kalmConfigs",
       "Configuration for the KALM addon, which manages the lifecycle of k8s. It is disabled by default; Set enabled = true to enable.",
-      Container_getClusterAddonsConfigKalmConfig_GetTypes(),
+      container_getClusterAddonsConfigKalmConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "networkPolicyConfigs",
+      "Whether we should enable the network policy addon for the master. This must be enabled in order to enable network policy for the nodes. To enable this, you must also define a network_policy block, otherwise nothing will happen. It can only be disabled if the nodes already do not have network policies enabled. Defaults to disabled; set disabled = false to enable.",
+      container_getClusterAddonsConfigNetworkPolicyConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "cloudrunConfigs",
+      "The status of the CloudRun addon. It is disabled by default. Set disabled = false to enable.",
+      container_getClusterAddonsConfigCloudrunConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "configConnectorConfigs",
+      "The of the Config Connector addon.",
+      container_getClusterAddonsConfigConfigConnectorConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "gcpFilestoreCsiDriverConfigs",
+      "The status of the Filestore CSI driver addon, which allows the usage of filestore instance as volumes. Defaults to disabled; set enabled = true to enable.",
+      container_getClusterAddonsConfigGcpFilestoreCsiDriverConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "dnsCacheConfigs",
+      "The status of the NodeLocal DNSCache addon. It is disabled by default. Set enabled = true to enable.",
+      container_getClusterAddonsConfigDnsCacheConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "gcePersistentDiskCsiDriverConfigs",
+      "Whether this cluster should enable the Google Compute Engine Persistent Disk Container Storage Interface (CSI) Driver. Set enabled = true to enable. The Compute Engine persistent disk CSI Driver is enabled by default on newly created clusters for the following versions: Linux clusters: GKE version 1.18.10-gke.2100 or later, or 1.19.3-gke.2100 or later.",
+      container_getClusterAddonsConfigGcePersistentDiskCsiDriverConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "istioConfigs",
+      "The status of the Istio addon.",
+      container_getClusterAddonsConfigIstioConfig_GetTypes(),
       true,
       false,
     ),

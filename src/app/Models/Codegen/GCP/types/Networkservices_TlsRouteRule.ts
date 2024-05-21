@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networkservices_TlsRouteRuleAction,
-  Networkservices_TlsRouteRuleAction_GetTypes,
-} from "./Networkservices_TlsRouteRuleAction";
+  networkservices_TlsRouteRuleMatch,
+  networkservices_TlsRouteRuleMatch_GetTypes,
+} from "./networkservices_TlsRouteRuleMatch";
 import {
-  Networkservices_TlsRouteRuleMatch,
-  Networkservices_TlsRouteRuleMatch_GetTypes,
-} from "./Networkservices_TlsRouteRuleMatch";
+  networkservices_TlsRouteRuleAction,
+  networkservices_TlsRouteRuleAction_GetTypes,
+} from "./networkservices_TlsRouteRuleAction";
 
-export interface Networkservices_TlsRouteRule {
-  /*
-Required. A detailed rule defining how to route traffic.
-Structure is documented below.
-*/
-  Action?: Networkservices_TlsRouteRuleAction;
-
+export interface networkservices_TlsRouteRule {
   /*
 Matches define the predicate used to match requests to a given action.
 Structure is documented below.
 */
-  Matches?: Array<Networkservices_TlsRouteRuleMatch>;
+  matches?: Array<networkservices_TlsRouteRuleMatch>;
+
+  /*
+Required. A detailed rule defining how to route traffic.
+Structure is documented below.
+*/
+  action?: networkservices_TlsRouteRuleAction;
 }
 
-export function Networkservices_TlsRouteRule_GetTypes(): DynamicUIProps[] {
+export function networkservices_TlsRouteRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "Action",
-      "Required. A detailed rule defining how to route traffic.\nStructure is documented below.",
-      Networkservices_TlsRouteRuleAction_GetTypes(),
+      InputType.Array,
+      "matches",
+      "Matches define the predicate used to match requests to a given action.\nStructure is documented below.",
+      networkservices_TlsRouteRuleMatch_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "Matches",
-      "Matches define the predicate used to match requests to a given action.\nStructure is documented below.",
-      Networkservices_TlsRouteRuleMatch_GetTypes(),
+      InputType.Object,
+      "action",
+      "Required. A detailed rule defining how to route traffic.\nStructure is documented below.",
+      networkservices_TlsRouteRuleAction_GetTypes(),
       true,
       false,
     ),

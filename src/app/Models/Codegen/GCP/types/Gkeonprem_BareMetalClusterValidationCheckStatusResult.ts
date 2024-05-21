@@ -6,40 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterValidationCheckStatusResult {
+export interface gkeonprem_BareMetalClusterValidationCheckStatusResult {
   /*
 (Output)
 The category of the validation.
 */
-  Category?: string;
+  category?: string;
 
   // A human readable description of this Bare Metal User Cluster.
-  Description?: string;
+  description?: string;
 
   /*
 (Output)
 Detailed failure information, which might be unformatted.
 */
-  Details?: string;
+  details?: string;
 
   /*
 (Output)
 Options used for the validation check.
 */
-  Options?: string;
+  options?: string;
 
   /*
 (Output)
 A human-readable message of the check failure.
 */
-  Reason?: string;
+  reason?: string;
 }
 
-export function Gkeonprem_BareMetalClusterValidationCheckStatusResult_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterValidationCheckStatusResult_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Reason",
+      "reason",
       "(Output)\nA human-readable message of the check failure.",
       [],
       false,
@@ -47,7 +47,7 @@ export function Gkeonprem_BareMetalClusterValidationCheckStatusResult_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "Category",
+      "category",
       "(Output)\nThe category of the validation.",
       [],
       false,
@@ -55,7 +55,7 @@ export function Gkeonprem_BareMetalClusterValidationCheckStatusResult_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "A human readable description of this Bare Metal User Cluster.",
       [],
       false,
@@ -63,7 +63,7 @@ export function Gkeonprem_BareMetalClusterValidationCheckStatusResult_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "Details",
+      "details",
       "(Output)\nDetailed failure information, which might be unformatted.",
       [],
       false,
@@ -71,7 +71,7 @@ export function Gkeonprem_BareMetalClusterValidationCheckStatusResult_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "Options",
+      "options",
       "(Output)\nOptions used for the validation check.",
       [],
       false,

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress {
+export interface compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress {
   // The URL of the reservation for this IP address.
-  Address?: string;
+  address?: string;
 }
 
-export function Compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress_GetTypes(): DynamicUIProps[] {
+export function compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Address",
+      "address",
       "The URL of the reservation for this IP address.",
       [],
       false,

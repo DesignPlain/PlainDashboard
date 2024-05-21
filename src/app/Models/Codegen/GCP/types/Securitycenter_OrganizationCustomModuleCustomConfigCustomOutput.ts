@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Securitycenter_OrganizationCustomModuleCustomConfigCustomOutputProperty,
-  Securitycenter_OrganizationCustomModuleCustomConfigCustomOutputProperty_GetTypes,
-} from "./Securitycenter_OrganizationCustomModuleCustomConfigCustomOutputProperty";
+  securitycenter_OrganizationCustomModuleCustomConfigCustomOutputProperty,
+  securitycenter_OrganizationCustomModuleCustomConfigCustomOutputProperty_GetTypes,
+} from "./securitycenter_OrganizationCustomModuleCustomConfigCustomOutputProperty";
 
-export interface Securitycenter_OrganizationCustomModuleCustomConfigCustomOutput {
+export interface securitycenter_OrganizationCustomModuleCustomConfigCustomOutput {
   /*
 A list of custom output properties to add to the finding.
 Structure is documented below.
 */
-  Properties?: Array<Securitycenter_OrganizationCustomModuleCustomConfigCustomOutputProperty>;
+  properties?: Array<securitycenter_OrganizationCustomModuleCustomConfigCustomOutputProperty>;
 }
 
-export function Securitycenter_OrganizationCustomModuleCustomConfigCustomOutput_GetTypes(): DynamicUIProps[] {
+export function securitycenter_OrganizationCustomModuleCustomConfigCustomOutput_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Properties",
+      "properties",
       "A list of custom output properties to add to the finding.\nStructure is documented below.",
-      Securitycenter_OrganizationCustomModuleCustomConfigCustomOutputProperty_GetTypes(),
+      securitycenter_OrganizationCustomModuleCustomConfigCustomOutputProperty_GetTypes(),
       false,
       false,
     ),

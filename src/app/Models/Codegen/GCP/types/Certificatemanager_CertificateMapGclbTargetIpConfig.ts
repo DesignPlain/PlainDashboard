@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificatemanager_CertificateMapGclbTargetIpConfig {
+export interface certificatemanager_CertificateMapGclbTargetIpConfig {
   // An external IP address
-  IpAddress?: string;
+  ipAddress?: string;
 
   // A list of ports
-  Ports?: Array<number>;
+  ports?: Array<number>;
 }
 
-export function Certificatemanager_CertificateMapGclbTargetIpConfig_GetTypes(): DynamicUIProps[] {
+export function certificatemanager_CertificateMapGclbTargetIpConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "IpAddress",
+      "ipAddress",
       "An external IP address",
       [],
       false,
@@ -26,7 +26,7 @@ export function Certificatemanager_CertificateMapGclbTargetIpConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Ports",
+      "ports",
       "A list of ports",
       InputType_Number_GetTypes(),
       false,

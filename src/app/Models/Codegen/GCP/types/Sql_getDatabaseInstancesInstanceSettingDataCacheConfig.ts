@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstancesInstanceSettingDataCacheConfig {
+export interface sql_getDatabaseInstancesInstanceSettingDataCacheConfig {
   // Whether data cache is enabled for the instance.
-  DataCacheEnabled?: boolean;
+  dataCacheEnabled?: boolean;
 }
 
-export function Sql_getDatabaseInstancesInstanceSettingDataCacheConfig_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstancesInstanceSettingDataCacheConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "DataCacheEnabled",
+      "dataCacheEnabled",
       "Whether data cache is enabled for the instance.",
       [],
       true,

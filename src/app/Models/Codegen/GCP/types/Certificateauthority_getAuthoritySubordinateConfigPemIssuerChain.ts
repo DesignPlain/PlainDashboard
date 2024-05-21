@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificateauthority_getAuthoritySubordinateConfigPemIssuerChain {
+export interface certificateauthority_getAuthoritySubordinateConfigPemIssuerChain {
   // Expected to be in leaf-to-root order according to RFC 5246.
-  PemCertificates?: Array<string>;
+  pemCertificates?: Array<string>;
 }
 
-export function Certificateauthority_getAuthoritySubordinateConfigPemIssuerChain_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_getAuthoritySubordinateConfigPemIssuerChain_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "PemCertificates",
+      "pemCertificates",
       "Expected to be in leaf-to-root order according to RFC 5246.",
       InputType_String_GetTypes(),
       true,

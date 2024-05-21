@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Workstations_WorkstationConfigHostGceInstance,
-  Workstations_WorkstationConfigHostGceInstance_GetTypes,
-} from "./Workstations_WorkstationConfigHostGceInstance";
+  workstations_WorkstationConfigHostGceInstance,
+  workstations_WorkstationConfigHostGceInstance_GetTypes,
+} from "./workstations_WorkstationConfigHostGceInstance";
 
-export interface Workstations_WorkstationConfigHost {
+export interface workstations_WorkstationConfigHost {
   /*
 A runtime using a Compute Engine instance.
 Structure is documented below.
 */
-  GceInstance?: Workstations_WorkstationConfigHostGceInstance;
+  gceInstance?: workstations_WorkstationConfigHostGceInstance;
 }
 
-export function Workstations_WorkstationConfigHost_GetTypes(): DynamicUIProps[] {
+export function workstations_WorkstationConfigHost_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "GceInstance",
+      "gceInstance",
       "A runtime using a Compute Engine instance.\nStructure is documented below.",
-      Workstations_WorkstationConfigHostGceInstance_GetTypes(),
+      workstations_WorkstationConfigHostGceInstance_GetTypes(),
       false,
       false,
     ),

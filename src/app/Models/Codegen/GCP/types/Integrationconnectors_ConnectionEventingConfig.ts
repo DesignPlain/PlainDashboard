@@ -6,73 +6,73 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfig,
-  Integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfig_GetTypes,
-} from "./Integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfig";
+  integrationconnectors_ConnectionEventingConfigAdditionalVariable,
+  integrationconnectors_ConnectionEventingConfigAdditionalVariable_GetTypes,
+} from "./integrationconnectors_ConnectionEventingConfigAdditionalVariable";
 import {
-  Integrationconnectors_ConnectionEventingConfigAdditionalVariable,
-  Integrationconnectors_ConnectionEventingConfigAdditionalVariable_GetTypes,
-} from "./Integrationconnectors_ConnectionEventingConfigAdditionalVariable";
+  integrationconnectors_ConnectionEventingConfigAuthConfig,
+  integrationconnectors_ConnectionEventingConfigAuthConfig_GetTypes,
+} from "./integrationconnectors_ConnectionEventingConfigAuthConfig";
 import {
-  Integrationconnectors_ConnectionEventingConfigAuthConfig,
-  Integrationconnectors_ConnectionEventingConfigAuthConfig_GetTypes,
-} from "./Integrationconnectors_ConnectionEventingConfigAuthConfig";
+  integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfig,
+  integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfig_GetTypes,
+} from "./integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfig";
 
-export interface Integrationconnectors_ConnectionEventingConfig {
+export interface integrationconnectors_ConnectionEventingConfig {
   /*
 List containing additional auth configs.
 Structure is documented below.
 */
-  AdditionalVariables?: Array<Integrationconnectors_ConnectionEventingConfigAdditionalVariable>;
+  additionalVariables?: Array<integrationconnectors_ConnectionEventingConfigAdditionalVariable>;
 
   /*
 authConfig for Eventing Configuration.
 Structure is documented below.
 */
-  AuthConfig?: Integrationconnectors_ConnectionEventingConfigAuthConfig;
+  authConfig?: integrationconnectors_ConnectionEventingConfigAuthConfig;
 
   // Enrichment Enabled.
-  EnrichmentEnabled?: boolean;
+  enrichmentEnabled?: boolean;
 
   /*
 registrationDestinationConfig
 Structure is documented below.
 */
-  RegistrationDestinationConfig?: Integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfig;
+  registrationDestinationConfig?: integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfig;
 }
 
-export function Integrationconnectors_ConnectionEventingConfig_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionEventingConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Object,
+      "registrationDestinationConfig",
+      "registrationDestinationConfig\nStructure is documented below.",
+      integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Array,
-      "AdditionalVariables",
+      "additionalVariables",
       "List containing additional auth configs.\nStructure is documented below.",
-      Integrationconnectors_ConnectionEventingConfigAdditionalVariable_GetTypes(),
+      integrationconnectors_ConnectionEventingConfigAdditionalVariable_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "AuthConfig",
+      "authConfig",
       "authConfig for Eventing Configuration.\nStructure is documented below.",
-      Integrationconnectors_ConnectionEventingConfigAuthConfig_GetTypes(),
+      integrationconnectors_ConnectionEventingConfigAuthConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnrichmentEnabled",
+      "enrichmentEnabled",
       "Enrichment Enabled.",
       [],
       false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "RegistrationDestinationConfig",
-      "registrationDestinationConfig\nStructure is documented below.",
-      Integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfig_GetTypes(),
-      true,
       false,
     ),
   ];

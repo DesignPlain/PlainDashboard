@@ -6,35 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Redis_getInstanceMaintenanceSchedule {
+export interface redis_getInstanceMaintenanceSchedule {
+  /*
+Output only. The end time of any upcoming scheduled maintenance for this instance.
+A timestamp in RFC3339 UTC "Zulu" format, with nanosecond
+resolution and up to nine fractional digits.
+*/
+  endTime?: string;
+
   /*
 Output only. The deadline that the maintenance schedule start time
 can not go beyond, including reschedule.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond
 resolution and up to nine fractional digits.
 */
-  ScheduleDeadlineTime?: string;
+  scheduleDeadlineTime?: string;
 
   /*
 Output only. The start time of any upcoming scheduled maintenance for this instance.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond
 resolution and up to nine fractional digits.
 */
-  StartTime?: string;
-
-  /*
-Output only. The end time of any upcoming scheduled maintenance for this instance.
-A timestamp in RFC3339 UTC "Zulu" format, with nanosecond
-resolution and up to nine fractional digits.
-*/
-  EndTime?: string;
+  startTime?: string;
 }
 
-export function Redis_getInstanceMaintenanceSchedule_GetTypes(): DynamicUIProps[] {
+export function redis_getInstanceMaintenanceSchedule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ScheduleDeadlineTime",
+      "endTime",
+      'Output only. The end time of any upcoming scheduled maintenance for this instance.\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond\nresolution and up to nine fractional digits.',
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "scheduleDeadlineTime",
       'Output only. The deadline that the maintenance schedule start time\ncan not go beyond, including reschedule.\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond\nresolution and up to nine fractional digits.',
       [],
       true,
@@ -42,16 +50,8 @@ export function Redis_getInstanceMaintenanceSchedule_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "StartTime",
+      "startTime",
       'Output only. The start time of any upcoming scheduled maintenance for this instance.\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond\nresolution and up to nine fractional digits.',
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "EndTime",
-      'Output only. The end time of any upcoming scheduled maintenance for this instance.\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond\nresolution and up to nine fractional digits.',
       [],
       true,
       false,

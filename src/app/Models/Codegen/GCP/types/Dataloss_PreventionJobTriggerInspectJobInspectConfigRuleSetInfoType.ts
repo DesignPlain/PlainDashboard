@@ -6,40 +6,32 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeSensitivityScore,
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeSensitivityScore_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeSensitivityScore";
+  dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeSensitivityScore,
+  dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeSensitivityScore_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeSensitivityScore";
 
-export interface Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType {
+export interface dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType {
   /*
 Name of the information type. Either a name of your choosing when creating a CustomInfoType, or one of the names listed
 at https://cloud.google.com/dlp/docs/infotypes-reference when specifying a built-in type.
 */
-  Name?: string;
+  name?: string;
 
   /*
 Optional custom sensitivity for this InfoType. This only applies to data profiling.
 Structure is documented below.
 */
-  SensitivityScore?: Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeSensitivityScore;
+  sensitivityScore?: dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeSensitivityScore;
 
   // Version of the information type to use. By default, the version is set to stable.
-  Version?: string;
+  version?: string;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "SensitivityScore",
-      "Optional custom sensitivity for this InfoType. This only applies to data profiling.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeSensitivityScore_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Version",
+      "version",
       "Version of the information type to use. By default, the version is set to stable.",
       [],
       false,
@@ -47,10 +39,18 @@ export function Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoT
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Name of the information type. Either a name of your choosing when creating a CustomInfoType, or one of the names listed\nat https://cloud.google.com/dlp/docs/infotypes-reference when specifying a built-in type.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "sensitivityScore",
+      "Optional custom sensitivity for this InfoType. This only applies to data profiling.\nStructure is documented below.",
+      dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeSensitivityScore_GetTypes(),
+      false,
       false,
     ),
   ];

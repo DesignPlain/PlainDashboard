@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Redis_ClusterDiscoveryEndpointPscConfig,
-  Redis_ClusterDiscoveryEndpointPscConfig_GetTypes,
-} from "./Redis_ClusterDiscoveryEndpointPscConfig";
+  redis_ClusterDiscoveryEndpointPscConfig,
+  redis_ClusterDiscoveryEndpointPscConfig_GetTypes,
+} from "./redis_ClusterDiscoveryEndpointPscConfig";
 
-export interface Redis_ClusterDiscoveryEndpoint {
+export interface redis_ClusterDiscoveryEndpoint {
   // Output only. The IP allocated on the consumer network for the PSC forwarding rule.
-  Address?: string;
+  address?: string;
 
   // Output only. The port number of the exposed Redis endpoint.
-  Port?: number;
+  port?: number;
 
   /*
 Output only. Customer configuration for where the endpoint
 is created and accessed from.
 Structure is documented below.
 */
-  PscConfig?: Redis_ClusterDiscoveryEndpointPscConfig;
+  pscConfig?: redis_ClusterDiscoveryEndpointPscConfig;
 }
 
-export function Redis_ClusterDiscoveryEndpoint_GetTypes(): DynamicUIProps[] {
+export function redis_ClusterDiscoveryEndpoint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Port",
+      "port",
       "Output only. The port number of the exposed Redis endpoint.",
       [],
       false,
@@ -37,15 +37,15 @@ export function Redis_ClusterDiscoveryEndpoint_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "PscConfig",
+      "pscConfig",
       "Output only. Customer configuration for where the endpoint\nis created and accessed from.\nStructure is documented below.",
-      Redis_ClusterDiscoveryEndpointPscConfig_GetTypes(),
+      redis_ClusterDiscoveryEndpointPscConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Address",
+      "address",
       "Output only. The IP allocated on the consumer network for the PSC forwarding rule.",
       [],
       false,

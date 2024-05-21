@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxIntentTrainingPhrasePart {
+export interface diagflow_CxIntentTrainingPhrasePart {
   // The parameter used to annotate this part of the training phrase. This field is required for annotated parts of the training phrase.
-  ParameterId?: string;
+  parameterId?: string;
 
   // The text for this part.
-  Text?: string;
+  text?: string;
 }
 
-export function Diagflow_CxIntentTrainingPhrasePart_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxIntentTrainingPhrasePart_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ParameterId",
+      "parameterId",
       "The parameter used to annotate this part of the training phrase. This field is required for annotated parts of the training phrase.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Diagflow_CxIntentTrainingPhrasePart_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "Text",
+      "text",
       "The text for this part.",
       [],
       true,

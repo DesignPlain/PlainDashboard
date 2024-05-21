@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Blockchainnodeengine_BlockchainNodesConnectionInfoEndpointInfo {
-  /*
-(Output)
-The assigned URL for the node WebSockets API endpoint.
-*/
-  WebsocketsApiEndpoint?: string;
-
+export interface blockchainnodeengine_BlockchainNodesConnectionInfoEndpointInfo {
   /*
 (Output)
 The assigned URL for the node JSON-RPC API endpoint.
 */
-  JsonRpcApiEndpoint?: string;
+  jsonRpcApiEndpoint?: string;
+
+  /*
+(Output)
+The assigned URL for the node WebSockets API endpoint.
+*/
+  websocketsApiEndpoint?: string;
 }
 
-export function Blockchainnodeengine_BlockchainNodesConnectionInfoEndpointInfo_GetTypes(): DynamicUIProps[] {
+export function blockchainnodeengine_BlockchainNodesConnectionInfoEndpointInfo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "WebsocketsApiEndpoint",
-      "(Output)\nThe assigned URL for the node WebSockets API endpoint.",
+      "jsonRpcApiEndpoint",
+      "(Output)\nThe assigned URL for the node JSON-RPC API endpoint.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "JsonRpcApiEndpoint",
-      "(Output)\nThe assigned URL for the node JSON-RPC API endpoint.",
+      "websocketsApiEndpoint",
+      "(Output)\nThe assigned URL for the node WebSockets API endpoint.",
       [],
       false,
       false,

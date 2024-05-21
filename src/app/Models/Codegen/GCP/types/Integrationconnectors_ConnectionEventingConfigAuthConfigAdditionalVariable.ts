@@ -6,77 +6,53 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableEncryptionKeyValue,
-  Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableEncryptionKeyValue_GetTypes,
-} from "./Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableEncryptionKeyValue";
+  integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableEncryptionKeyValue,
+  integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableEncryptionKeyValue_GetTypes,
+} from "./integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableEncryptionKeyValue";
 import {
-  Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableSecretValue,
-  Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableSecretValue_GetTypes,
-} from "./Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableSecretValue";
+  integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableSecretValue,
+  integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableSecretValue_GetTypes,
+} from "./integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableSecretValue";
 
-export interface Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable {
-  // Boolean Value of configVariable.
-  BooleanValue?: boolean;
-
+export interface integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable {
   /*
 Encription key value of configVariable.
 Structure is documented below.
 */
-  EncryptionKeyValue?: Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableEncryptionKeyValue;
+  encryptionKeyValue?: integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableEncryptionKeyValue;
 
   // Integer Value of configVariable.
-  IntegerValue?: number;
+  integerValue?: number;
 
   // Key for the configVariable
-  Key?: string;
+  key?: string;
 
   /*
 Secret value of configVariable
 Structure is documented below.
 */
-  SecretValue?: Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableSecretValue;
+  secretValue?: integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableSecretValue;
 
   // String Value of configVariabley.
-  StringValue?: string;
+  stringValue?: string;
+
+  // Boolean Value of configVariable.
+  booleanValue?: boolean;
 }
 
-export function Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "SecretValue",
-      "Secret value of configVariable\nStructure is documented below.",
-      Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableSecretValue_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "StringValue",
-      "String Value of configVariabley.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "BooleanValue",
-      "Boolean Value of configVariable.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "EncryptionKeyValue",
+      "encryptionKeyValue",
       "Encription key value of configVariable.\nStructure is documented below.",
-      Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableEncryptionKeyValue_GetTypes(),
+      integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableEncryptionKeyValue_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "IntegerValue",
+      "integerValue",
       "Integer Value of configVariable.",
       [],
       false,
@@ -84,10 +60,34 @@ export function Integrationconnectors_ConnectionEventingConfigAuthConfigAddition
     ),
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "key",
       "Key for the configVariable",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "secretValue",
+      "Secret value of configVariable\nStructure is documented below.",
+      integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariableSecretValue_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "stringValue",
+      "String Value of configVariabley.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "booleanValue",
+      "Boolean Value of configVariable.",
+      [],
+      false,
       false,
     ),
   ];

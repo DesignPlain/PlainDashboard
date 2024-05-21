@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AttachedClusterOidcConfig {
+export interface container_AttachedClusterOidcConfig {
   // A JSON Web Token (JWT) issuer URI. `issuer` must start with `https://`
-  IssuerUrl?: string;
+  issuerUrl?: string;
 
   // OIDC verification keys in JWKS format (RFC 7517).
-  Jwks?: string;
+  jwks?: string;
 }
 
-export function Container_AttachedClusterOidcConfig_GetTypes(): DynamicUIProps[] {
+export function container_AttachedClusterOidcConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "IssuerUrl",
-      "A JSON Web Token (JWT) issuer URI. `issuer` must start with `https://`",
+      "jwks",
+      "OIDC verification keys in JWKS format (RFC 7517).",
       [],
-      true,
+      false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Jwks",
-      "OIDC verification keys in JWKS format (RFC 7517).",
+      "issuerUrl",
+      "A JSON Web Token (JWT) issuer URI. `issuer` must start with `https://`",
       [],
-      false,
+      true,
       true,
     ),
   ];

@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Identityplatform_ConfigMonitoringRequestLogging,
-  Identityplatform_ConfigMonitoringRequestLogging_GetTypes,
-} from "./Identityplatform_ConfigMonitoringRequestLogging";
+  identityplatform_ConfigMonitoringRequestLogging,
+  identityplatform_ConfigMonitoringRequestLogging_GetTypes,
+} from "./identityplatform_ConfigMonitoringRequestLogging";
 
-export interface Identityplatform_ConfigMonitoring {
+export interface identityplatform_ConfigMonitoring {
   /*
 Configuration for logging requests made to this project to Stackdriver Logging
 Structure is documented below.
 */
-  RequestLogging?: Identityplatform_ConfigMonitoringRequestLogging;
+  requestLogging?: identityplatform_ConfigMonitoringRequestLogging;
 }
 
-export function Identityplatform_ConfigMonitoring_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ConfigMonitoring_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "RequestLogging",
+      "requestLogging",
       "Configuration for logging requests made to this project to Stackdriver Logging\nStructure is documented below.",
-      Identityplatform_ConfigMonitoringRequestLogging_GetTypes(),
+      identityplatform_ConfigMonitoringRequestLogging_GetTypes(),
       false,
       false,
     ),

@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificatemanager_CertificateManagedProvisioningIssue {
+export interface certificatemanager_CertificateManagedProvisioningIssue {
   /*
 (Output)
 Human readable explanation for reaching the state. Provided to help
 address the configuration issues.
 Not guaranteed to be stable. For programmatic access use `failure_reason` field.
 */
-  Details?: string;
+  details?: string;
 
   /*
 (Output)
 Reason for provisioning failures.
 */
-  Reason?: string;
+  reason?: string;
 }
 
-export function Certificatemanager_CertificateManagedProvisioningIssue_GetTypes(): DynamicUIProps[] {
+export function certificatemanager_CertificateManagedProvisioningIssue_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Details",
+      "details",
       "(Output)\nHuman readable explanation for reaching the state. Provided to help\naddress the configuration issues.\nNot guaranteed to be stable. For programmatic access use `failure_reason` field.",
       [],
       false,
@@ -34,7 +34,7 @@ export function Certificatemanager_CertificateManagedProvisioningIssue_GetTypes(
     ),
     new DynamicUIProps(
       InputType.String,
-      "Reason",
+      "reason",
       "(Output)\nReason for provisioning failures.",
       [],
       false,

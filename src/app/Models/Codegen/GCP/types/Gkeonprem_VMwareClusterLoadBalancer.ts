@@ -6,79 +6,79 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_VMwareClusterLoadBalancerF5Config,
-  Gkeonprem_VMwareClusterLoadBalancerF5Config_GetTypes,
-} from "./Gkeonprem_VMwareClusterLoadBalancerF5Config";
+  gkeonprem_VMwareClusterLoadBalancerManualLbConfig,
+  gkeonprem_VMwareClusterLoadBalancerManualLbConfig_GetTypes,
+} from "./gkeonprem_VMwareClusterLoadBalancerManualLbConfig";
 import {
-  Gkeonprem_VMwareClusterLoadBalancerManualLbConfig,
-  Gkeonprem_VMwareClusterLoadBalancerManualLbConfig_GetTypes,
-} from "./Gkeonprem_VMwareClusterLoadBalancerManualLbConfig";
+  gkeonprem_VMwareClusterLoadBalancerMetalLbConfig,
+  gkeonprem_VMwareClusterLoadBalancerMetalLbConfig_GetTypes,
+} from "./gkeonprem_VMwareClusterLoadBalancerMetalLbConfig";
 import {
-  Gkeonprem_VMwareClusterLoadBalancerMetalLbConfig,
-  Gkeonprem_VMwareClusterLoadBalancerMetalLbConfig_GetTypes,
-} from "./Gkeonprem_VMwareClusterLoadBalancerMetalLbConfig";
+  gkeonprem_VMwareClusterLoadBalancerVipConfig,
+  gkeonprem_VMwareClusterLoadBalancerVipConfig_GetTypes,
+} from "./gkeonprem_VMwareClusterLoadBalancerVipConfig";
 import {
-  Gkeonprem_VMwareClusterLoadBalancerVipConfig,
-  Gkeonprem_VMwareClusterLoadBalancerVipConfig_GetTypes,
-} from "./Gkeonprem_VMwareClusterLoadBalancerVipConfig";
+  gkeonprem_VMwareClusterLoadBalancerF5Config,
+  gkeonprem_VMwareClusterLoadBalancerF5Config_GetTypes,
+} from "./gkeonprem_VMwareClusterLoadBalancerF5Config";
 
-export interface Gkeonprem_VMwareClusterLoadBalancer {
+export interface gkeonprem_VMwareClusterLoadBalancer {
+  /*
+The VIPs used by the load balancer.
+Structure is documented below.
+*/
+  vipConfig?: gkeonprem_VMwareClusterLoadBalancerVipConfig;
+
   /*
 Configuration for F5 Big IP typed load balancers.
 Structure is documented below.
 */
-  F5Config?: Gkeonprem_VMwareClusterLoadBalancerF5Config;
+  f5Config?: gkeonprem_VMwareClusterLoadBalancerF5Config;
 
   /*
 Manually configured load balancers.
 Structure is documented below.
 */
-  ManualLbConfig?: Gkeonprem_VMwareClusterLoadBalancerManualLbConfig;
+  manualLbConfig?: gkeonprem_VMwareClusterLoadBalancerManualLbConfig;
 
   /*
 Configuration for MetalLB typed load balancers.
 Structure is documented below.
 */
-  MetalLbConfig?: Gkeonprem_VMwareClusterLoadBalancerMetalLbConfig;
-
-  /*
-The VIPs used by the load balancer.
-Structure is documented below.
-*/
-  VipConfig?: Gkeonprem_VMwareClusterLoadBalancerVipConfig;
+  metalLbConfig?: gkeonprem_VMwareClusterLoadBalancerMetalLbConfig;
 }
 
-export function Gkeonprem_VMwareClusterLoadBalancer_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterLoadBalancer_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "F5Config",
-      "Configuration for F5 Big IP typed load balancers.\nStructure is documented below.",
-      Gkeonprem_VMwareClusterLoadBalancerF5Config_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "ManualLbConfig",
+      "manualLbConfig",
       "Manually configured load balancers.\nStructure is documented below.",
-      Gkeonprem_VMwareClusterLoadBalancerManualLbConfig_GetTypes(),
+      gkeonprem_VMwareClusterLoadBalancerManualLbConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "MetalLbConfig",
+      "metalLbConfig",
       "Configuration for MetalLB typed load balancers.\nStructure is documented below.",
-      Gkeonprem_VMwareClusterLoadBalancerMetalLbConfig_GetTypes(),
+      gkeonprem_VMwareClusterLoadBalancerMetalLbConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "VipConfig",
+      "vipConfig",
       "The VIPs used by the load balancer.\nStructure is documented below.",
-      Gkeonprem_VMwareClusterLoadBalancerVipConfig_GetTypes(),
+      gkeonprem_VMwareClusterLoadBalancerVipConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "f5Config",
+      "Configuration for F5 Big IP typed load balancers.\nStructure is documented below.",
+      gkeonprem_VMwareClusterLoadBalancerF5Config_GetTypes(),
       false,
       false,
     ),

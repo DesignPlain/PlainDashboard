@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodePoolNodeConfigLocalNvmeSsdBlockConfig {
+export interface container_getClusterNodePoolNodeConfigLocalNvmeSsdBlockConfig {
   // Number of raw-block local NVMe SSD disks to be attached to the node. Each local SSD is 375 GB in size.
-  LocalSsdCount?: number;
+  localSsdCount?: number;
 }
 
-export function Container_getClusterNodePoolNodeConfigLocalNvmeSsdBlockConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolNodeConfigLocalNvmeSsdBlockConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "LocalSsdCount",
+      "localSsdCount",
       "Number of raw-block local NVMe SSD disks to be attached to the node. Each local SSD is 375 GB in size.",
       [],
       true,

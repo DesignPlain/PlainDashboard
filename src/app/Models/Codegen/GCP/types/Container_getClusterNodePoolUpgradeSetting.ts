@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterNodePoolUpgradeSettingBlueGreenSetting,
-  Container_getClusterNodePoolUpgradeSettingBlueGreenSetting_GetTypes,
-} from "./Container_getClusterNodePoolUpgradeSettingBlueGreenSetting";
+  container_getClusterNodePoolUpgradeSettingBlueGreenSetting,
+  container_getClusterNodePoolUpgradeSettingBlueGreenSetting_GetTypes,
+} from "./container_getClusterNodePoolUpgradeSettingBlueGreenSetting";
 
-export interface Container_getClusterNodePoolUpgradeSetting {
+export interface container_getClusterNodePoolUpgradeSetting {
   // Settings for BlueGreen node pool upgrade.
-  BlueGreenSettings?: Array<Container_getClusterNodePoolUpgradeSettingBlueGreenSetting>;
+  blueGreenSettings?: Array<container_getClusterNodePoolUpgradeSettingBlueGreenSetting>;
 
   // The number of additional nodes that can be added to the node pool during an upgrade. Increasing max_surge raises the number of nodes that can be upgraded simultaneously. Can be set to 0 or greater.
-  MaxSurge?: number;
+  maxSurge?: number;
 
   // The number of nodes that can be simultaneously unavailable during an upgrade. Increasing max_unavailable raises the number of nodes that can be upgraded in parallel. Can be set to 0 or greater.
-  MaxUnavailable?: number;
+  maxUnavailable?: number;
 
   // Update strategy for the given nodepool.
-  Strategy?: string;
+  strategy?: string;
 }
 
-export function Container_getClusterNodePoolUpgradeSetting_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolUpgradeSetting_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "BlueGreenSettings",
+      "blueGreenSettings",
       "Settings for BlueGreen node pool upgrade.",
-      Container_getClusterNodePoolUpgradeSettingBlueGreenSetting_GetTypes(),
+      container_getClusterNodePoolUpgradeSettingBlueGreenSetting_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxSurge",
+      "maxSurge",
       "The number of additional nodes that can be added to the node pool during an upgrade. Increasing max_surge raises the number of nodes that can be upgraded simultaneously. Can be set to 0 or greater.",
       [],
       true,
@@ -44,7 +44,7 @@ export function Container_getClusterNodePoolUpgradeSetting_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxUnavailable",
+      "maxUnavailable",
       "The number of nodes that can be simultaneously unavailable during an upgrade. Increasing max_unavailable raises the number of nodes that can be upgraded in parallel. Can be set to 0 or greater.",
       [],
       true,
@@ -52,7 +52,7 @@ export function Container_getClusterNodePoolUpgradeSetting_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "Strategy",
+      "strategy",
       "Update strategy for the given nodepool.",
       [],
       true,

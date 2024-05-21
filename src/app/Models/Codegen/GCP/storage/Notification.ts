@@ -8,18 +8,6 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface NotificationArgs {
-  // A set of key/value attribute pairs to attach to each Cloud PubSub message published for this notification subscription
-  CustomAttributes?: Map<string, string>;
-
-  // List of event type filters for this notification config. If not specified, Cloud Storage will send notifications for all event types. The valid types are: `"OBJECT_FINALIZE"`, `"OBJECT_METADATA_UPDATE"`, `"OBJECT_DELETE"`, `"OBJECT_ARCHIVE"`
-  EventTypes?: Array<string>;
-
-  // Specifies a prefix path filter for this notification config. Cloud Storage will only send notifications for objects in this bucket whose names begin with the specified prefix.
-  ObjectNamePrefix?: string;
-
-  // The desired content of the Payload. One of `"JSON_API_V1"` or `"NONE"`.
-  PayloadFormat?: string;
-
   /*
 The Cloud PubSub topic to which this subscription publishes. Expects either the
 topic name, assumed to belong to the default GCP provider project, or the project-level name,
@@ -28,29 +16,38 @@ you will need to use the project-level name.
 
 - - -
 */
-  Topic?: string;
+  topic?: string;
 
   // The name of the bucket.
-  Bucket?: string;
+  bucket?: string;
+
+  // A set of key/value attribute pairs to attach to each Cloud PubSub message published for this notification subscription
+  customAttributes?: Map<string, string>;
+
+  // List of event type filters for this notification config. If not specified, Cloud Storage will send notifications for all event types. The valid types are: `"OBJECT_FINALIZE"`, `"OBJECT_METADATA_UPDATE"`, `"OBJECT_DELETE"`, `"OBJECT_ARCHIVE"`
+  eventTypes?: Array<string>;
+
+  // Specifies a prefix path filter for this notification config. Cloud Storage will only send notifications for objects in this bucket whose names begin with the specified prefix.
+  objectNamePrefix?: string;
+
+  // The desired content of the Payload. One of `"JSON_API_V1"` or `"NONE"`.
+  payloadFormat?: string;
 }
 export class Notification extends Resource {
-  // A set of key/value attribute pairs to attach to each Cloud PubSub message published for this notification subscription
-  public CustomAttributes?: Map<string, string>;
-
   // List of event type filters for this notification config. If not specified, Cloud Storage will send notifications for all event types. The valid types are: `"OBJECT_FINALIZE"`, `"OBJECT_METADATA_UPDATE"`, `"OBJECT_DELETE"`, `"OBJECT_ARCHIVE"`
-  public EventTypes?: Array<string>;
+  public eventTypes?: Array<string>;
 
   // The ID of the created notification.
-  public NotificationId?: string;
+  public notificationId?: string;
 
   // Specifies a prefix path filter for this notification config. Cloud Storage will only send notifications for objects in this bucket whose names begin with the specified prefix.
-  public ObjectNamePrefix?: string;
+  public objectNamePrefix?: string;
 
   // The desired content of the Payload. One of `"JSON_API_V1"` or `"NONE"`.
-  public PayloadFormat?: string;
+  public payloadFormat?: string;
 
   // The URI of the created resource.
-  public SelfLink?: string;
+  public selfLink?: string;
 
   /*
 The Cloud PubSub topic to which this subscription publishes. Expects either the
@@ -60,40 +57,19 @@ you will need to use the project-level name.
 
 - - -
 */
-  public Topic?: string;
+  public topic?: string;
 
   // The name of the bucket.
-  public Bucket?: string;
+  public bucket?: string;
+
+  // A set of key/value attribute pairs to attach to each Cloud PubSub message published for this notification subscription
+  public customAttributes?: Map<string, string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "Topic",
-        "The Cloud PubSub topic to which this subscription publishes. Expects either the\ntopic name, assumed to belong to the default GCP provider project, or the project-level name,\ni.e. `projects/my-gcp-project/topics/my-topic` or `my-topic`. If the project is not set in the provider,\nyou will need to use the project-level name.\n\n- - -",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Bucket",
-        "The name of the bucket.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Map,
-        "CustomAttributes",
-        "A set of key/value attribute pairs to attach to each Cloud PubSub message published for this notification subscription",
-        InputType_Map_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.Array,
-        "EventTypes",
+        "eventTypes",
         'List of event type filters for this notification config. If not specified, Cloud Storage will send notifications for all event types. The valid types are: `"OBJECT_FINALIZE"`, `"OBJECT_METADATA_UPDATE"`, `"OBJECT_DELETE"`, `"OBJECT_ARCHIVE"`',
         InputType_String_GetTypes(),
         false,
@@ -101,7 +77,7 @@ you will need to use the project-level name.
       ),
       new DynamicUIProps(
         InputType.String,
-        "ObjectNamePrefix",
+        "objectNamePrefix",
         "Specifies a prefix path filter for this notification config. Cloud Storage will only send notifications for objects in this bucket whose names begin with the specified prefix.",
         [],
         false,
@@ -109,10 +85,34 @@ you will need to use the project-level name.
       ),
       new DynamicUIProps(
         InputType.String,
-        "PayloadFormat",
+        "payloadFormat",
         'The desired content of the Payload. One of `"JSON_API_V1"` or `"NONE"`.',
         [],
         true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "topic",
+        "The Cloud PubSub topic to which this subscription publishes. Expects either the\ntopic name, assumed to belong to the default GCP provider project, or the project-level name,\ni.e. `projects/my-gcp-project/topics/my-topic` or `my-topic`. If the project is not set in the provider,\nyou will need to use the project-level name.\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "bucket",
+        "The name of the bucket.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Map,
+        "customAttributes",
+        "A set of key/value attribute pairs to attach to each Cloud PubSub message published for this notification subscription",
+        InputType_Map_GetTypes(),
+        false,
         true,
       ),
     ];

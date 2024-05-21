@@ -8,8 +8,11 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface OrganizationSecurityPolicyAssociationArgs {
+  // The resource that the security policy is attached to.
+  attachmentId?: string;
+
   // The name for an association.
-  Name?: string;
+  name?: string;
 
   /*
 The security policy ID of the association.
@@ -17,20 +20,17 @@ The security policy ID of the association.
 
 - - -
 */
-  PolicyId?: string;
-
-  // The resource that the security policy is attached to.
-  AttachmentId?: string;
+  policyId?: string;
 }
 export class OrganizationSecurityPolicyAssociation extends Resource {
   // The resource that the security policy is attached to.
-  public AttachmentId?: string;
+  public attachmentId?: string;
 
   // The display name of the security policy of the association.
-  public DisplayName?: string;
+  public displayName?: string;
 
   // The name for an association.
-  public Name?: string;
+  public name?: string;
 
   /*
 The security policy ID of the association.
@@ -38,13 +38,13 @@ The security policy ID of the association.
 
 - - -
 */
-  public PolicyId?: string;
+  public policyId?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "AttachmentId",
+        "attachmentId",
         "The resource that the security policy is attached to.",
         [],
         true,
@@ -52,7 +52,7 @@ The security policy ID of the association.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name for an association.",
         [],
         false,
@@ -60,7 +60,7 @@ The security policy ID of the association.
       ),
       new DynamicUIProps(
         InputType.String,
-        "PolicyId",
+        "policyId",
         "The security policy ID of the association.\n\n\n- - -",
         [],
         true,

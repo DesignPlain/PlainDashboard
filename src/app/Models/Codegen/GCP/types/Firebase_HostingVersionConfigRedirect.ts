@@ -6,37 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Firebase_HostingVersionConfigRedirect {
+export interface firebase_HostingVersionConfigRedirect {
+  // The user-supplied RE2 regular expression to match against the request URL path.
+  regex?: string;
+
+  // The status HTTP code to return in the response. It must be a valid 3xx status code.
+  statusCode?: number;
+
   // The user-supplied glob to match against the request URL path.
-  Glob?: string;
+  glob?: string;
 
   /*
 The value to put in the HTTP location header of the response.
 The location can contain capture group values from the pattern using a : prefix to identify
 the segment and an optional - to capture the rest of the URL. For example:
 */
-  Location?: string;
-
-  // The user-supplied RE2 regular expression to match against the request URL path.
-  Regex?: string;
-
-  // The status HTTP code to return in the response. It must be a valid 3xx status code.
-  StatusCode?: number;
+  location?: string;
 }
 
-export function Firebase_HostingVersionConfigRedirect_GetTypes(): DynamicUIProps[] {
+export function firebase_HostingVersionConfigRedirect_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Location",
-      "The value to put in the HTTP location header of the response.\nThe location can contain capture group values from the pattern using a : prefix to identify\nthe segment and an optional * to capture the rest of the URL. For example:",
-      [],
-      true,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Regex",
+      "regex",
       "The user-supplied RE2 regular expression to match against the request URL path.",
       [],
       false,
@@ -44,7 +36,7 @@ export function Firebase_HostingVersionConfigRedirect_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Number,
-      "StatusCode",
+      "statusCode",
       "The status HTTP code to return in the response. It must be a valid 3xx status code.",
       [],
       true,
@@ -52,10 +44,18 @@ export function Firebase_HostingVersionConfigRedirect_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "Glob",
+      "glob",
       "The user-supplied glob to match against the request URL path.",
       [],
       false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "location",
+      "The value to put in the HTTP location header of the response.\nThe location can contain capture group values from the pattern using a : prefix to identify\nthe segment and an optional * to capture the rest of the URL. For example:",
+      [],
+      true,
       true,
     ),
   ];

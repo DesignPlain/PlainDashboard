@@ -6,16 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dns_ManagedZoneDnssecConfigDefaultKeySpec {
-  /*
-String mnemonic specifying the DNSSEC algorithm of this key
-Possible values are: `ecdsap256sha256`, `ecdsap384sha384`, `rsasha1`, `rsasha256`, `rsasha512`.
-*/
-  Algorithm?: string;
-
-  // Length of the keys in bits
-  KeyLength?: number;
-
+export interface dns_ManagedZoneDnssecConfigDefaultKeySpec {
   /*
 Specifies whether this is a key signing key (KSK) or a zone
 signing key (ZSK). Key signing keys have the Secure Entry
@@ -25,25 +16,26 @@ not have the Secure Entry Point flag set and will be used
 to sign all other types of resource record sets.
 Possible values are: `keySigning`, `zoneSigning`.
 */
-  KeyType?: string;
+  keyType?: string;
 
   // Identifies what kind of resource this is
-  Kind?: string;
+  kind?: string;
+
+  /*
+String mnemonic specifying the DNSSEC algorithm of this key
+Possible values are: `ecdsap256sha256`, `ecdsap384sha384`, `rsasha1`, `rsasha256`, `rsasha512`.
+*/
+  algorithm?: string;
+
+  // Length of the keys in bits
+  keyLength?: number;
 }
 
-export function Dns_ManagedZoneDnssecConfigDefaultKeySpec_GetTypes(): DynamicUIProps[] {
+export function dns_ManagedZoneDnssecConfigDefaultKeySpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Kind",
-      "Identifies what kind of resource this is",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Algorithm",
+      "algorithm",
       "String mnemonic specifying the DNSSEC algorithm of this key\nPossible values are: `ecdsap256sha256`, `ecdsap384sha384`, `rsasha1`, `rsasha256`, `rsasha512`.",
       [],
       false,
@@ -51,7 +43,7 @@ export function Dns_ManagedZoneDnssecConfigDefaultKeySpec_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Number,
-      "KeyLength",
+      "keyLength",
       "Length of the keys in bits",
       [],
       false,
@@ -59,8 +51,16 @@ export function Dns_ManagedZoneDnssecConfigDefaultKeySpec_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "KeyType",
+      "keyType",
       "Specifies whether this is a key signing key (KSK) or a zone\nsigning key (ZSK). Key signing keys have the Secure Entry\nPoint flag set and, when active, will only be used to sign\nresource record sets of type DNSKEY. Zone signing keys do\nnot have the Secure Entry Point flag set and will be used\nto sign all other types of resource record sets.\nPossible values are: `keySigning`, `zoneSigning`.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "kind",
+      "Identifies what kind of resource this is",
       [],
       false,
       false,

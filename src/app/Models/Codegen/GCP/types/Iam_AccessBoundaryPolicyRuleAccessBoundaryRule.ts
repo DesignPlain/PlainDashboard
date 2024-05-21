@@ -6,29 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Iam_AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityCondition,
-  Iam_AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityCondition_GetTypes,
-} from "./Iam_AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityCondition";
+  iam_AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityCondition,
+  iam_AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityCondition_GetTypes,
+} from "./iam_AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityCondition";
 
-export interface Iam_AccessBoundaryPolicyRuleAccessBoundaryRule {
+export interface iam_AccessBoundaryPolicyRuleAccessBoundaryRule {
+  // A list of permissions that may be allowed for use on the specified resource.
+  availablePermissions?: Array<string>;
+
   // The full resource name of a Google Cloud resource entity.
-  AvailableResource?: string;
+  availableResource?: string;
 
   /*
 The availability condition further constrains the access allowed by the access boundary rule.
 Structure is documented below.
 */
-  AvailabilityCondition?: Iam_AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityCondition;
-
-  // A list of permissions that may be allowed for use on the specified resource.
-  AvailablePermissions?: Array<string>;
+  availabilityCondition?: iam_AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityCondition;
 }
 
-export function Iam_AccessBoundaryPolicyRuleAccessBoundaryRule_GetTypes(): DynamicUIProps[] {
+export function iam_AccessBoundaryPolicyRuleAccessBoundaryRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Array,
+      "availablePermissions",
+      "A list of permissions that may be allowed for use on the specified resource.",
+      InputType_String_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "AvailableResource",
+      "availableResource",
       "The full resource name of a Google Cloud resource entity.",
       [],
       false,
@@ -36,17 +44,9 @@ export function Iam_AccessBoundaryPolicyRuleAccessBoundaryRule_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Object,
-      "AvailabilityCondition",
+      "availabilityCondition",
       "The availability condition further constrains the access allowed by the access boundary rule.\nStructure is documented below.",
-      Iam_AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityCondition_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "AvailablePermissions",
-      "A list of permissions that may be allowed for use on the specified resource.",
-      InputType_String_GetTypes(),
+      iam_AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityCondition_GetTypes(),
       false,
       false,
     ),

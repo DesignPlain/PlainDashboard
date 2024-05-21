@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileGcs {
-  // Bucket of the Cloud Storage object.
-  Bucket?: string;
-
+export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileGcs {
   // Generation number of the Cloud Storage object.
-  Generation?: number;
+  generation?: number;
 
   // Name of the Cloud Storage object.
-  Object?: string;
+  object?: string;
+
+  // Bucket of the Cloud Storage object.
+  bucket?: string;
 }
 
-export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileGcs_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileGcs_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "Bucket",
-      "Bucket of the Cloud Storage object.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "Generation",
+      "generation",
       "Generation number of the Cloud Storage object.",
       [],
       false,
@@ -37,8 +29,16 @@ export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnfo
     ),
     new DynamicUIProps(
       InputType.String,
-      "Object",
+      "object",
       "Name of the Cloud Storage object.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "bucket",
+      "Bucket of the Cloud Storage object.",
       [],
       true,
       false,

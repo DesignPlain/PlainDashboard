@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchema,
-  Datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchema_GetTypes,
-} from "./Datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchema";
+  datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchema,
+  datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchema_GetTypes,
+} from "./datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchema";
 
-export interface Datastream_StreamSourceConfigOracleSourceConfigExcludeObjects {
+export interface datastream_StreamSourceConfigOracleSourceConfigExcludeObjects {
   /*
 Oracle schemas/databases in the database server
 Structure is documented below.
 */
-  OracleSchemas?: Array<Datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchema>;
+  oracleSchemas?: Array<datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchema>;
 }
 
-export function Datastream_StreamSourceConfigOracleSourceConfigExcludeObjects_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamSourceConfigOracleSourceConfigExcludeObjects_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "OracleSchemas",
+      "oracleSchemas",
       "Oracle schemas/databases in the database server\nStructure is documented below.",
-      Datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchema_GetTypes(),
+      datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchema_GetTypes(),
       true,
       false,
     ),

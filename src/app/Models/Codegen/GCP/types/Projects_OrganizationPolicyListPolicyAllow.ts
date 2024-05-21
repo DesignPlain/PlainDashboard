@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Projects_OrganizationPolicyListPolicyAllow {
-  // The policy allows or denies all values.
-  All?: boolean;
-
+export interface projects_OrganizationPolicyListPolicyAllow {
   // The policy can define specific values that are allowed or denied.
-  Values?: Array<string>;
+  values?: Array<string>;
+
+  // The policy allows or denies all values.
+  all?: boolean;
 }
 
-export function Projects_OrganizationPolicyListPolicyAllow_GetTypes(): DynamicUIProps[] {
+export function projects_OrganizationPolicyListPolicyAllow_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Bool,
-      "All",
-      "The policy allows or denies all values.",
-      [],
+      InputType.Array,
+      "values",
+      "The policy can define specific values that are allowed or denied.",
+      InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "Values",
-      "The policy can define specific values that are allowed or denied.",
-      InputType_String_GetTypes(),
+      InputType.Bool,
+      "all",
+      "The policy allows or denies all values.",
+      [],
       false,
       false,
     ),

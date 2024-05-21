@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_TableExternalDataConfigurationHivePartitioningOptions {
+export interface bigquery_TableExternalDataConfigurationHivePartitioningOptions {
   /*
 When set, what mode of hive partitioning to use when
 reading data. The following modes are supported.
@@ -17,14 +17,14 @@ partitioning on an unsupported format will lead to an error.
 Currently supported formats are: JSON, CSV, ORC, Avro and Parquet.
 - CUSTOM: when set to `CUSTOM`, you must encode the partition key schema within the `source_uri_prefix` by setting `source_uri_prefix` to `gs://bucket/path_to_table/{key1:TYPE1}/{key2:TYPE2}/{key3:TYPE3}`.
 */
-  Mode?: string;
+  mode?: string;
 
   /*
 If set to true, queries over this table
 require a partition filter that can be used for partition elimination to be
 specified.
 */
-  RequirePartitionFilter?: boolean;
+  requirePartitionFilter?: boolean;
 
   /*
 When hive partition detection is requested,
@@ -36,14 +36,14 @@ partitioning is requested with either AUTO or STRINGS detection, the common pref
 can be either of `gs://bucket/path_to_table` or `gs://bucket/path_to_table/`.
 Note that when `mode` is set to `CUSTOM`, you must encode the partition key schema within the `source_uri_prefix` by setting `source_uri_prefix` to `gs://bucket/path_to_table/{key1:TYPE1}/{key2:TYPE2}/{key3:TYPE3}`.
 */
-  SourceUriPrefix?: string;
+  sourceUriPrefix?: string;
 }
 
-export function Bigquery_TableExternalDataConfigurationHivePartitioningOptions_GetTypes(): DynamicUIProps[] {
+export function bigquery_TableExternalDataConfigurationHivePartitioningOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Mode",
+      "mode",
       "When set, what mode of hive partitioning to use when\nreading data. The following modes are supported.\n* AUTO: automatically infer partition key name(s) and type(s).\n* STRINGS: automatically infer partition key name(s). All types are\nNot all storage formats support hive partitioning. Requesting hive\npartitioning on an unsupported format will lead to an error.\nCurrently supported formats are: JSON, CSV, ORC, Avro and Parquet.\n* CUSTOM: when set to `CUSTOM`, you must encode the partition key schema within the `source_uri_prefix` by setting `source_uri_prefix` to `gs://bucket/path_to_table/{key1:TYPE1}/{key2:TYPE2}/{key3:TYPE3}`.",
       [],
       false,
@@ -51,7 +51,7 @@ export function Bigquery_TableExternalDataConfigurationHivePartitioningOptions_G
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "RequirePartitionFilter",
+      "requirePartitionFilter",
       "If set to true, queries over this table\nrequire a partition filter that can be used for partition elimination to be\nspecified.",
       [],
       false,
@@ -59,7 +59,7 @@ export function Bigquery_TableExternalDataConfigurationHivePartitioningOptions_G
     ),
     new DynamicUIProps(
       InputType.String,
-      "SourceUriPrefix",
+      "sourceUriPrefix",
       "When hive partition detection is requested,\na common for all source uris must be required. The prefix must end immediately\nbefore the partition key encoding begins. For example, consider files following\nthis data layout. `gs://bucket/path_to_table/dt=2019-06-01/country=USA/id=7/file.avro`\n`gs://bucket/path_to_table/dt=2019-05-31/country=CA/id=3/file.avro` When hive\npartitioning is requested with either AUTO or STRINGS detection, the common prefix\ncan be either of `gs://bucket/path_to_table` or `gs://bucket/path_to_table/`.\nNote that when `mode` is set to `CUSTOM`, you must encode the partition key schema within the `source_uri_prefix` by setting `source_uri_prefix` to `gs://bucket/path_to_table/{key1:TYPE1}/{key2:TYPE2}/{key3:TYPE3}`.",
       [],
       false,

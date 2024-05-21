@@ -7,38 +7,37 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dns_ManagedZonePrivateVisibilityConfig,
-  Dns_ManagedZonePrivateVisibilityConfig_GetTypes,
-} from "../types/Dns_ManagedZonePrivateVisibilityConfig";
+  dns_ManagedZoneCloudLoggingConfig,
+  dns_ManagedZoneCloudLoggingConfig_GetTypes,
+} from "../types/dns_ManagedZoneCloudLoggingConfig";
 import {
-  Dns_ManagedZoneServiceDirectoryConfig,
-  Dns_ManagedZoneServiceDirectoryConfig_GetTypes,
-} from "../types/Dns_ManagedZoneServiceDirectoryConfig";
+  dns_ManagedZonePeeringConfig,
+  dns_ManagedZonePeeringConfig_GetTypes,
+} from "../types/dns_ManagedZonePeeringConfig";
 import {
-  Dns_ManagedZoneCloudLoggingConfig,
-  Dns_ManagedZoneCloudLoggingConfig_GetTypes,
-} from "../types/Dns_ManagedZoneCloudLoggingConfig";
+  dns_ManagedZoneServiceDirectoryConfig,
+  dns_ManagedZoneServiceDirectoryConfig_GetTypes,
+} from "../types/dns_ManagedZoneServiceDirectoryConfig";
 import {
-  Dns_ManagedZonePeeringConfig,
-  Dns_ManagedZonePeeringConfig_GetTypes,
-} from "../types/Dns_ManagedZonePeeringConfig";
+  dns_ManagedZoneDnssecConfig,
+  dns_ManagedZoneDnssecConfig_GetTypes,
+} from "../types/dns_ManagedZoneDnssecConfig";
 import {
-  Dns_ManagedZoneDnssecConfig,
-  Dns_ManagedZoneDnssecConfig_GetTypes,
-} from "../types/Dns_ManagedZoneDnssecConfig";
+  dns_ManagedZoneForwardingConfig,
+  dns_ManagedZoneForwardingConfig_GetTypes,
+} from "../types/dns_ManagedZoneForwardingConfig";
 import {
-  Dns_ManagedZoneForwardingConfig,
-  Dns_ManagedZoneForwardingConfig_GetTypes,
-} from "../types/Dns_ManagedZoneForwardingConfig";
+  dns_ManagedZonePrivateVisibilityConfig,
+  dns_ManagedZonePrivateVisibilityConfig_GetTypes,
+} from "../types/dns_ManagedZonePrivateVisibilityConfig";
 
 export interface ManagedZoneArgs {
   /*
-The presence for this field indicates that outbound forwarding is enabled
-for this zone. The value of this field contains the set of destinations
-to forward to.
+For privately visible zones, the set of Virtual Private Cloud
+resources that the zone is visible from. At least one of `gke_clusters` or `networks` must be specified.
 Structure is documented below.
 */
-  ForwardingConfig?: Dns_ManagedZoneForwardingConfig;
+  privateVisibilityConfig?: dns_ManagedZonePrivateVisibilityConfig;
 
   /*
 The zone's visibility: public zones are exposed to the Internet,
@@ -46,47 +45,46 @@ while private zones are visible only to Virtual Private Cloud resources.
 Default value is `public`.
 Possible values are: `private`, `public`.
 */
-  Visibility?: string;
-
-  /*
-A set of key/value label pairs to assign to this ManagedZone.
-
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  Labels?: Map<string, string>;
-
-  // A textual description field. Defaults to 'Managed by Pulumi'.
-  Description?: string;
-
-  // Set this true to delete all records in the zone.
-  ForceDestroy?: boolean;
-
-  /*
-For privately visible zones, the set of Virtual Private Cloud
-resources that the zone is visible from. At least one of `gke_clusters` or `networks` must be specified.
-Structure is documented below.
-*/
-  PrivateVisibilityConfig?: Dns_ManagedZonePrivateVisibilityConfig;
-
-  /*
-Specifies if this is a managed reverse lookup zone. If true, Cloud DNS will resolve reverse
-lookup queries using automatically configured records for VPC resources. This only applies
-to networks listed under `private_visibility_config`.
-*/
-  ReverseLookup?: boolean;
-
-  /*
-The presence of this field indicates that this zone is backed by Service Directory. The value of this field contains information related to the namespace associated with the zone.
-Structure is documented below.
-*/
-  ServiceDirectoryConfig?: Dns_ManagedZoneServiceDirectoryConfig;
+  visibility?: string;
 
   /*
 Cloud logging configuration
 Structure is documented below.
 */
-  CloudLoggingConfig?: Dns_ManagedZoneCloudLoggingConfig;
+  cloudLoggingConfig?: dns_ManagedZoneCloudLoggingConfig;
+
+  // The DNS name of this managed zone, for instance "example.com.".
+  dnsName?: string;
+
+  /*
+The presence of this field indicates that DNS Peering is enabled for this
+zone. The value of this field contains the network to peer with.
+Structure is documented below.
+*/
+  peeringConfig?: dns_ManagedZonePeeringConfig;
+
+  /*
+The presence of this field indicates that this zone is backed by Service Directory. The value of this field contains information related to the namespace associated with the zone.
+Structure is documented below.
+*/
+  serviceDirectoryConfig?: dns_ManagedZoneServiceDirectoryConfig;
+
+  // A textual description field. Defaults to 'Managed by Pulumi'.
+  description?: string;
+
+  /*
+DNSSEC configuration
+Structure is documented below.
+*/
+  dnssecConfig?: dns_ManagedZoneDnssecConfig;
+
+  /*
+The presence for this field indicates that outbound forwarding is enabled
+for this zone. The value of this field contains the set of destinations
+to forward to.
+Structure is documented below.
+*/
+  forwardingConfig?: dns_ManagedZoneForwardingConfig;
 
   /*
 User assigned name for this resource.
@@ -94,53 +92,23 @@ Must be unique within the project.
 
 - - -
 */
-  Name?: string;
-
-  /*
-The presence of this field indicates that DNS Peering is enabled for this
-zone. The value of this field contains the network to peer with.
-Structure is documented below.
-*/
-  PeeringConfig?: Dns_ManagedZonePeeringConfig;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
-
-  // The DNS name of this managed zone, for instance "example.com.".
-  DnsName?: string;
+  project?: string;
 
   /*
-DNSSEC configuration
-Structure is documented below.
+Specifies if this is a managed reverse lookup zone. If true, Cloud DNS will resolve reverse
+lookup queries using automatically configured records for VPC resources. This only applies
+to networks listed under `private_visibility_config`.
 */
-  DnssecConfig?: Dns_ManagedZoneDnssecConfig;
-}
-export class ManagedZone extends Resource {
-  /*
-Delegate your managed_zone to these virtual name servers;
-defined by the server
-*/
-  public NameServers?: Array<string>;
+  reverseLookup?: boolean;
 
-  /*
-The presence of this field indicates that this zone is backed by Service Directory. The value of this field contains information related to the namespace associated with the zone.
-Structure is documented below.
-*/
-  public ServiceDirectoryConfig?: Dns_ManagedZoneServiceDirectoryConfig;
-
-  /*
-The zone's visibility: public zones are exposed to the Internet,
-while private zones are visible only to Virtual Private Cloud resources.
-Default value is `public`.
-Possible values are: `private`, `public`.
-*/
-  public Visibility?: string;
-
-  // The DNS name of this managed zone, for instance "example.com.".
-  public DnsName?: string;
+  // Set this true to delete all records in the zone.
+  forceDestroy?: boolean;
 
   /*
 A set of key/value label pairs to assign to this ManagedZone.
@@ -148,33 +116,51 @@ A set of key/value label pairs to assign to this ManagedZone.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  public Labels?: Map<string, string>;
-
+  labels?: Map<string, string>;
+}
+export class ManagedZone extends Resource {
   /*
-The presence of this field indicates that DNS Peering is enabled for this
-zone. The value of this field contains the network to peer with.
+DNSSEC configuration
 Structure is documented below.
 */
-  public PeeringConfig?: Dns_ManagedZonePeeringConfig;
+  public dnssecConfig?: dns_ManagedZoneDnssecConfig;
+
+  /*
+User assigned name for this resource.
+Must be unique within the project.
+
+- - -
+*/
+  public name?: string;
+
+  /*
+Delegate your managed_zone to these virtual name servers;
+defined by the server
+*/
+  public nameServers?: Array<string>;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
+  public pulumiLabels?: Map<string, string>;
 
   /*
-Specifies if this is a managed reverse lookup zone. If true, Cloud DNS will resolve reverse
-lookup queries using automatically configured records for VPC resources. This only applies
-to networks listed under `private_visibility_config`.
+The presence of this field indicates that this zone is backed by Service Directory. The value of this field contains information related to the namespace associated with the zone.
+Structure is documented below.
 */
-  public ReverseLookup?: boolean;
+  public serviceDirectoryConfig?: dns_ManagedZoneServiceDirectoryConfig;
 
   /*
-The time that this resource was created on the server.
-This is in RFC3339 text format.
+The zone's visibility: public zones are exposed to the Internet,
+while private zones are visible only to Virtual Private Cloud resources.
+Default value is `public`.
+Possible values are: `private`, `public`.
 */
-  public CreationTime?: string;
+  public visibility?: string;
+
+  // The DNS name of this managed zone, for instance "example.com.".
+  public dnsName?: string;
 
   /*
 The presence for this field indicates that outbound forwarding is enabled
@@ -182,90 +168,104 @@ for this zone. The value of this field contains the set of destinations
 to forward to.
 Structure is documented below.
 */
-  public ForwardingConfig?: Dns_ManagedZoneForwardingConfig;
+  public forwardingConfig?: dns_ManagedZoneForwardingConfig;
 
   /*
 For privately visible zones, the set of Virtual Private Cloud
 resources that the zone is visible from. At least one of `gke_clusters` or `networks` must be specified.
 Structure is documented below.
 */
-  public PrivateVisibilityConfig?: Dns_ManagedZonePrivateVisibilityConfig;
+  public privateVisibilityConfig?: dns_ManagedZonePrivateVisibilityConfig;
 
   /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
+Specifies if this is a managed reverse lookup zone. If true, Cloud DNS will resolve reverse
+lookup queries using automatically configured records for VPC resources. This only applies
+to networks listed under `private_visibility_config`.
 */
-  public Project?: string;
+  public reverseLookup?: boolean;
 
   /*
 Cloud logging configuration
 Structure is documented below.
 */
-  public CloudLoggingConfig?: Dns_ManagedZoneCloudLoggingConfig;
-
-  /*
-User assigned name for this resource.
-Must be unique within the project.
-
-- - -
-*/
-  public Name?: string;
+  public cloudLoggingConfig?: dns_ManagedZoneCloudLoggingConfig;
 
   // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
+  public effectiveLabels?: Map<string, string>;
 
   // Set this true to delete all records in the zone.
-  public ForceDestroy?: boolean;
-
-  // Unique identifier for the resource; defined by the server.
-  public ManagedZoneId?: number;
-
-  // A textual description field. Defaults to 'Managed by Pulumi'.
-  public Description?: string;
+  public forceDestroy?: boolean;
 
   /*
-DNSSEC configuration
+The presence of this field indicates that DNS Peering is enabled for this
+zone. The value of this field contains the network to peer with.
 Structure is documented below.
 */
-  public DnssecConfig?: Dns_ManagedZoneDnssecConfig;
+  public peeringConfig?: dns_ManagedZonePeeringConfig;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  /*
+The time that this resource was created on the server.
+This is in RFC3339 text format.
+*/
+  public creationTime?: string;
+
+  // A textual description field. Defaults to 'Managed by Pulumi'.
+  public description?: string;
+
+  /*
+A set of key/value label pairs to assign to this ManagedZone.
+
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
+
+  // Unique identifier for the resource; defined by the server.
+  public managedZoneId?: number;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Object,
-        "ServiceDirectoryConfig",
-        "The presence of this field indicates that this zone is backed by Service Directory. The value of this field contains information related to the namespace associated with the zone.\nStructure is documented below.",
-        Dns_ManagedZoneServiceDirectoryConfig_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "PrivateVisibilityConfig",
-        "For privately visible zones, the set of Virtual Private Cloud\nresources that the zone is visible from. At least one of `gke_clusters` or `networks` must be specified.\nStructure is documented below.",
-        Dns_ManagedZonePrivateVisibilityConfig_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Bool,
-        "ForceDestroy",
-        "Set this true to delete all records in the zone.",
+        InputType.String,
+        "description",
+        "A textual description field. Defaults to 'Managed by Pulumi'.",
         [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "PeeringConfig",
-        "The presence of this field indicates that DNS Peering is enabled for this\nzone. The value of this field contains the network to peer with.\nStructure is documented below.",
-        Dns_ManagedZonePeeringConfig_GetTypes(),
+        "serviceDirectoryConfig",
+        "The presence of this field indicates that this zone is backed by Service Directory. The value of this field contains information related to the namespace associated with the zone.\nStructure is documented below.",
+        dns_ManagedZoneServiceDirectoryConfig_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "forwardingConfig",
+        "The presence for this field indicates that outbound forwarding is enabled\nfor this zone. The value of this field contains the set of destinations\nto forward to.\nStructure is documented below.",
+        dns_ManagedZoneForwardingConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
+        InputType.Bool,
+        "reverseLookup",
+        "Specifies if this is a managed reverse lookup zone. If true, Cloud DNS will resolve reverse\nlookup queries using automatically configured records for VPC resources. This only applies\nto networks listed under `private_visibility_config`.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "A set of key/value label pairs to assign to this ManagedZone.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
@@ -273,55 +273,15 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Visibility",
+        "visibility",
         "The zone's visibility: public zones are exposed to the Internet,\nwhile private zones are visible only to Virtual Private Cloud resources.\nDefault value is `public`.\nPossible values are: `private`, `public`.",
         [],
         false,
         true,
       ),
       new DynamicUIProps(
-        InputType.Object,
-        "ForwardingConfig",
-        "The presence for this field indicates that outbound forwarding is enabled\nfor this zone. The value of this field contains the set of destinations\nto forward to.\nStructure is documented below.",
-        Dns_ManagedZoneForwardingConfig_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Bool,
-        "ReverseLookup",
-        "Specifies if this is a managed reverse lookup zone. If true, Cloud DNS will resolve reverse\nlookup queries using automatically configured records for VPC resources. This only applies\nto networks listed under `private_visibility_config`.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "CloudLoggingConfig",
-        "Cloud logging configuration\nStructure is documented below.",
-        Dns_ManagedZoneCloudLoggingConfig_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Name",
-        "User assigned name for this resource.\nMust be unique within the project.\n\n- - -",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "DnsName",
+        "dnsName",
         'The DNS name of this managed zone, for instance "example.com.".',
         [],
         true,
@@ -329,17 +289,57 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "DnssecConfig",
+        "dnssecConfig",
         "DNSSEC configuration\nStructure is documented below.",
-        Dns_ManagedZoneDnssecConfig_GetTypes(),
+        dns_ManagedZoneDnssecConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
-        "A textual description field. Defaults to 'Managed by Pulumi'.",
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "peeringConfig",
+        "The presence of this field indicates that DNS Peering is enabled for this\nzone. The value of this field contains the network to peer with.\nStructure is documented below.",
+        dns_ManagedZonePeeringConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "User assigned name for this resource.\nMust be unique within the project.\n\n- - -",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "forceDestroy",
+        "Set this true to delete all records in the zone.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "privateVisibilityConfig",
+        "For privately visible zones, the set of Virtual Private Cloud\nresources that the zone is visible from. At least one of `gke_clusters` or `networks` must be specified.\nStructure is documented below.",
+        dns_ManagedZonePrivateVisibilityConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "cloudLoggingConfig",
+        "Cloud logging configuration\nStructure is documented below.",
+        dns_ManagedZoneCloudLoggingConfig_GetTypes(),
         false,
         false,
       ),

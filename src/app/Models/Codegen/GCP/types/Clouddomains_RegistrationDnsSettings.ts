@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Clouddomains_RegistrationDnsSettingsGlueRecord,
-  Clouddomains_RegistrationDnsSettingsGlueRecord_GetTypes,
-} from "./Clouddomains_RegistrationDnsSettingsGlueRecord";
+  clouddomains_RegistrationDnsSettingsGlueRecord,
+  clouddomains_RegistrationDnsSettingsGlueRecord_GetTypes,
+} from "./clouddomains_RegistrationDnsSettingsGlueRecord";
 import {
-  Clouddomains_RegistrationDnsSettingsCustomDns,
-  Clouddomains_RegistrationDnsSettingsCustomDns_GetTypes,
-} from "./Clouddomains_RegistrationDnsSettingsCustomDns";
+  clouddomains_RegistrationDnsSettingsCustomDns,
+  clouddomains_RegistrationDnsSettingsCustomDns_GetTypes,
+} from "./clouddomains_RegistrationDnsSettingsCustomDns";
 
-export interface Clouddomains_RegistrationDnsSettings {
-  /*
-Configuration for an arbitrary DNS provider.
-Structure is documented below.
-*/
-  CustomDns?: Clouddomains_RegistrationDnsSettingsCustomDns;
-
+export interface clouddomains_RegistrationDnsSettings {
   /*
 The list of glue records for this Registration. Commonly empty.
 Structure is documented below.
 */
-  GlueRecords?: Array<Clouddomains_RegistrationDnsSettingsGlueRecord>;
+  glueRecords?: Array<clouddomains_RegistrationDnsSettingsGlueRecord>;
+
+  /*
+Configuration for an arbitrary DNS provider.
+Structure is documented below.
+*/
+  customDns?: clouddomains_RegistrationDnsSettingsCustomDns;
 }
 
-export function Clouddomains_RegistrationDnsSettings_GetTypes(): DynamicUIProps[] {
+export function clouddomains_RegistrationDnsSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "CustomDns",
-      "Configuration for an arbitrary DNS provider.\nStructure is documented below.",
-      Clouddomains_RegistrationDnsSettingsCustomDns_GetTypes(),
+      InputType.Array,
+      "glueRecords",
+      "The list of glue records for this Registration. Commonly empty.\nStructure is documented below.",
+      clouddomains_RegistrationDnsSettingsGlueRecord_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "GlueRecords",
-      "The list of glue records for this Registration. Commonly empty.\nStructure is documented below.",
-      Clouddomains_RegistrationDnsSettingsGlueRecord_GetTypes(),
+      InputType.Object,
+      "customDns",
+      "Configuration for an arbitrary DNS provider.\nStructure is documented below.",
+      clouddomains_RegistrationDnsSettingsCustomDns_GetTypes(),
       false,
       true,
     ),

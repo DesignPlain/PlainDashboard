@@ -6,52 +6,52 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_PacketMirroringMirroredResourcesInstance,
-  Compute_PacketMirroringMirroredResourcesInstance_GetTypes,
-} from "./Compute_PacketMirroringMirroredResourcesInstance";
+  compute_PacketMirroringMirroredResourcesInstance,
+  compute_PacketMirroringMirroredResourcesInstance_GetTypes,
+} from "./compute_PacketMirroringMirroredResourcesInstance";
 import {
-  Compute_PacketMirroringMirroredResourcesSubnetwork,
-  Compute_PacketMirroringMirroredResourcesSubnetwork_GetTypes,
-} from "./Compute_PacketMirroringMirroredResourcesSubnetwork";
+  compute_PacketMirroringMirroredResourcesSubnetwork,
+  compute_PacketMirroringMirroredResourcesSubnetwork_GetTypes,
+} from "./compute_PacketMirroringMirroredResourcesSubnetwork";
 
-export interface Compute_PacketMirroringMirroredResources {
+export interface compute_PacketMirroringMirroredResources {
   /*
 All the listed instances will be mirrored.  Specify at most 50.
 Structure is documented below.
 */
-  Instances?: Array<Compute_PacketMirroringMirroredResourcesInstance>;
+  instances?: Array<compute_PacketMirroringMirroredResourcesInstance>;
 
   /*
 All instances in one of these subnetworks will be mirrored.
 Structure is documented below.
 */
-  Subnetworks?: Array<Compute_PacketMirroringMirroredResourcesSubnetwork>;
+  subnetworks?: Array<compute_PacketMirroringMirroredResourcesSubnetwork>;
 
   // All instances with these tags will be mirrored.
-  Tags?: Array<string>;
+  tags?: Array<string>;
 }
 
-export function Compute_PacketMirroringMirroredResources_GetTypes(): DynamicUIProps[] {
+export function compute_PacketMirroringMirroredResources_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Instances",
+      "instances",
       "All the listed instances will be mirrored.  Specify at most 50.\nStructure is documented below.",
-      Compute_PacketMirroringMirroredResourcesInstance_GetTypes(),
+      compute_PacketMirroringMirroredResourcesInstance_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Subnetworks",
+      "subnetworks",
       "All instances in one of these subnetworks will be mirrored.\nStructure is documented below.",
-      Compute_PacketMirroringMirroredResourcesSubnetwork_GetTypes(),
+      compute_PacketMirroringMirroredResourcesSubnetwork_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Tags",
+      "tags",
       "All instances with these tags will be mirrored.",
       InputType_String_GetTypes(),
       false,

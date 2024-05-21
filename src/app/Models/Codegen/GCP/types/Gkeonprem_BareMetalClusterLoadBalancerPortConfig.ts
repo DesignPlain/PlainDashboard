@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterLoadBalancerPortConfig {
+export interface gkeonprem_BareMetalClusterLoadBalancerPortConfig {
   // The port that control plane hosted load balancers will listen on.
-  ControlPlaneLoadBalancerPort?: number;
+  controlPlaneLoadBalancerPort?: number;
 }
 
-export function Gkeonprem_BareMetalClusterLoadBalancerPortConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterLoadBalancerPortConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "ControlPlaneLoadBalancerPort",
+      "controlPlaneLoadBalancerPort",
       "The port that control plane hosted load balancers will listen on.",
       [],
       true,

@@ -7,195 +7,131 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Vmwareengine_ExternalAccessRuleDestinationIpRange,
-  Vmwareengine_ExternalAccessRuleDestinationIpRange_GetTypes,
-} from "../types/Vmwareengine_ExternalAccessRuleDestinationIpRange";
+  vmwareengine_ExternalAccessRuleSourceIpRange,
+  vmwareengine_ExternalAccessRuleSourceIpRange_GetTypes,
+} from "../types/vmwareengine_ExternalAccessRuleSourceIpRange";
 import {
-  Vmwareengine_ExternalAccessRuleSourceIpRange,
-  Vmwareengine_ExternalAccessRuleSourceIpRange_GetTypes,
-} from "../types/Vmwareengine_ExternalAccessRuleSourceIpRange";
+  vmwareengine_ExternalAccessRuleDestinationIpRange,
+  vmwareengine_ExternalAccessRuleDestinationIpRange_GetTypes,
+} from "../types/vmwareengine_ExternalAccessRuleDestinationIpRange";
 
 export interface ExternalAccessRuleArgs {
+  // A list of destination ports to which the external access rule applies.
+  destinationPorts?: Array<string>;
+
   /*
-If destination ranges are specified, the external access rule applies only to
-traffic that has a destination IP address in these ranges.
+If source ranges are specified, the external access rule applies only to
+traffic that has a source IP address in these ranges.
 Structure is documented below.
 */
-  DestinationIpRanges?: Array<Vmwareengine_ExternalAccessRuleDestinationIpRange>;
+  sourceIpRanges?: Array<vmwareengine_ExternalAccessRuleSourceIpRange>;
 
   // The IP protocol to which the external access rule applies.
-  IpProtocol?: string;
+  ipProtocol?: string;
 
   // The ID of the external access rule.
-  Name?: string;
+  name?: string;
+
+  /*
+The resource name of the network policy.
+Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.
+For example: projects/my-project/locations/us-west1-a/networkPolicies/my-policy
+*/
+  parent?: string;
 
   // External access rule priority, which determines the external access rule to use when multiple rules apply.
-  Priority?: number;
+  priority?: number;
+
+  // A list of source ports to which the external access rule applies.
+  sourcePorts?: Array<string>;
 
   /*
 The action that the external access rule performs.
 Possible values are: `ALLOW`, `DENY`.
 */
-  Action?: string;
+  action?: string;
 
   // User-provided description for the external access rule.
-  Description?: string;
+  description?: string;
 
   /*
-If source ranges are specified, the external access rule applies only to
-traffic that has a source IP address in these ranges.
+If destination ranges are specified, the external access rule applies only to
+traffic that has a destination IP address in these ranges.
 Structure is documented below.
 */
-  SourceIpRanges?: Array<Vmwareengine_ExternalAccessRuleSourceIpRange>;
-
-  // A list of source ports to which the external access rule applies.
-  SourcePorts?: Array<string>;
-
-  // A list of destination ports to which the external access rule applies.
-  DestinationPorts?: Array<string>;
-
-  /*
-The resource name of the network policy.
-Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.
-For example: projects/my-project/locations/us-west1-a/networkPolicies/my-policy
-*/
-  Parent?: string;
+  destinationIpRanges?: Array<vmwareengine_ExternalAccessRuleDestinationIpRange>;
 }
 export class ExternalAccessRule extends Resource {
-  /*
-The resource name of the network policy.
-Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.
-For example: projects/my-project/locations/us-west1-a/networkPolicies/my-policy
-*/
-  public Parent?: string;
+  // A list of destination ports to which the external access rule applies.
+  public destinationPorts?: Array<string>;
 
-  /*
-If source ranges are specified, the external access rule applies only to
-traffic that has a source IP address in these ranges.
-Structure is documented below.
-*/
-  public SourceIpRanges?: Array<Vmwareengine_ExternalAccessRuleSourceIpRange>;
+  // The IP protocol to which the external access rule applies.
+  public ipProtocol?: string;
 
-  // State of the Cluster.
-  public State?: string;
+  // The ID of the external access rule.
+  public name?: string;
 
   /*
 Last updated time of this resource.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine
 fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  public UpdateTime?: string;
+  public updateTime?: string;
+
+  /*
+The action that the external access rule performs.
+Possible values are: `ALLOW`, `DENY`.
+*/
+  public action?: string;
+
+  // System-generated unique identifier for the resource.
+  public uid?: string;
 
   /*
 Creation time of this resource.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and
 up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  public CreateTime?: string;
-
-  // External access rule priority, which determines the external access rule to use when multiple rules apply.
-  public Priority?: number;
-
-  /*
-The action that the external access rule performs.
-Possible values are: `ALLOW`, `DENY`.
-*/
-  public Action?: string;
-
-  // The ID of the external access rule.
-  public Name?: string;
-
-  // A list of source ports to which the external access rule applies.
-  public SourcePorts?: Array<string>;
-
-  // User-provided description for the external access rule.
-  public Description?: string;
-
-  // A list of destination ports to which the external access rule applies.
-  public DestinationPorts?: Array<string>;
-
-  // The IP protocol to which the external access rule applies.
-  public IpProtocol?: string;
-
-  // System-generated unique identifier for the resource.
-  public Uid?: string;
+  public createTime?: string;
 
   /*
 If destination ranges are specified, the external access rule applies only to
 traffic that has a destination IP address in these ranges.
 Structure is documented below.
 */
-  public DestinationIpRanges?: Array<Vmwareengine_ExternalAccessRuleDestinationIpRange>;
+  public destinationIpRanges?: Array<vmwareengine_ExternalAccessRuleDestinationIpRange>;
+
+  // External access rule priority, which determines the external access rule to use when multiple rules apply.
+  public priority?: number;
+
+  /*
+If source ranges are specified, the external access rule applies only to
+traffic that has a source IP address in these ranges.
+Structure is documented below.
+*/
+  public sourceIpRanges?: Array<vmwareengine_ExternalAccessRuleSourceIpRange>;
+
+  // A list of source ports to which the external access rule applies.
+  public sourcePorts?: Array<string>;
+
+  // User-provided description for the external access rule.
+  public description?: string;
+
+  /*
+The resource name of the network policy.
+Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.
+For example: projects/my-project/locations/us-west1-a/networkPolicies/my-policy
+*/
+  public parent?: string;
+
+  // State of the Cluster.
+  public state?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Array,
-        "SourcePorts",
-        "A list of source ports to which the external access rule applies.",
-        InputType_String_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Array,
-        "DestinationIpRanges",
-        "If destination ranges are specified, the external access rule applies only to\ntraffic that has a destination IP address in these ranges.\nStructure is documented below.",
-        Vmwareengine_ExternalAccessRuleDestinationIpRange_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Number,
-        "Priority",
-        "External access rule priority, which determines the external access rule to use when multiple rules apply.",
-        [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Action",
-        "The action that the external access rule performs.\nPossible values are: `ALLOW`, `DENY`.",
-        [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Array,
-        "SourceIpRanges",
-        "If source ranges are specified, the external access rule applies only to\ntraffic that has a source IP address in these ranges.\nStructure is documented below.",
-        Vmwareengine_ExternalAccessRuleSourceIpRange_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Parent",
-        "The resource name of the network policy.\nResource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.\nFor example: projects/my-project/locations/us-west1-a/networkPolicies/my-policy",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "IpProtocol",
-        "The IP protocol to which the external access rule applies.",
-        [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "The ID of the external access rule.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
+        "description",
         "User-provided description for the external access rule.",
         [],
         false,
@@ -203,11 +139,75 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "DestinationPorts",
+        "destinationIpRanges",
+        "If destination ranges are specified, the external access rule applies only to\ntraffic that has a destination IP address in these ranges.\nStructure is documented below.",
+        vmwareengine_ExternalAccessRuleDestinationIpRange_GetTypes(),
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "sourceIpRanges",
+        "If source ranges are specified, the external access rule applies only to\ntraffic that has a source IP address in these ranges.\nStructure is documented below.",
+        vmwareengine_ExternalAccessRuleSourceIpRange_GetTypes(),
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "parent",
+        "The resource name of the network policy.\nResource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.\nFor example: projects/my-project/locations/us-west1-a/networkPolicies/my-policy",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "sourcePorts",
+        "A list of source ports to which the external access rule applies.",
+        InputType_String_GetTypes(),
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Number,
+        "priority",
+        "External access rule priority, which determines the external access rule to use when multiple rules apply.",
+        [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "action",
+        "The action that the external access rule performs.\nPossible values are: `ALLOW`, `DENY`.",
+        [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "destinationPorts",
         "A list of destination ports to which the external access rule applies.",
         InputType_String_GetTypes(),
         true,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "ipProtocol",
+        "The IP protocol to which the external access rule applies.",
+        [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "The ID of the external access rule.",
+        [],
+        false,
+        true,
       ),
     ];
   }

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AzureClusterControlPlaneDatabaseEncryption {
+export interface container_AzureClusterControlPlaneDatabaseEncryption {
   // The ARM ID of the Azure Key Vault key to encrypt / decrypt data. For example: `/subscriptions/<subscription-id>/resourceGroups/<resource-group-id>/providers/Microsoft.KeyVault/vaults/<key-vault-id>/keys/<key-name>` Encryption will always take the latest version of the key and hence specific version is not supported.
-  KeyId?: string;
+  keyId?: string;
 }
 
-export function Container_AzureClusterControlPlaneDatabaseEncryption_GetTypes(): DynamicUIProps[] {
+export function container_AzureClusterControlPlaneDatabaseEncryption_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KeyId",
+      "keyId",
       "The ARM ID of the Azure Key Vault key to encrypt / decrypt data. For example: `/subscriptions/<subscription-id>/resourceGroups/<resource-group-id>/providers/Microsoft.KeyVault/vaults/<key-vault-id>/keys/<key-name>` Encryption will always take the latest version of the key and hence specific version is not supported.",
       [],
       true,

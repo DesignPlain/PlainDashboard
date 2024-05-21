@@ -6,9 +6,9 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Iam_getWorkloadIdentityPoolProviderOidc {
+export interface iam_getWorkloadIdentityPoolProviderOidc {
   // The OIDC issuer URL.
-  IssuerUri?: string;
+  issuerUri?: string;
 
   /*
 OIDC JWKs in JSON String format. For details on definition of a
@@ -35,7 +35,7 @@ the following fields:
 }
 '''
 */
-  JwksJson?: string;
+  jwksJson?: string;
 
   /*
 Acceptable values for the 'aud' field (audience) in the OIDC token. Token exchange
@@ -51,22 +51,14 @@ For example:
 https://iam.googleapis.com/projects/<project-number>/locations/<location>/workloadIdentityPools/<pool-id>/providers/<provider-id>
 '''
 */
-  AllowedAudiences?: Array<string>;
+  allowedAudiences?: Array<string>;
 }
 
-export function Iam_getWorkloadIdentityPoolProviderOidc_GetTypes(): DynamicUIProps[] {
+export function iam_getWorkloadIdentityPoolProviderOidc_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "AllowedAudiences",
-      "Acceptable values for the 'aud' field (audience) in the OIDC token. Token exchange\nrequests are rejected if the token audience does not match one of the configured\nvalues. Each audience may be at most 256 characters. A maximum of 10 audiences may\nbe configured.\n\nIf this list is empty, the OIDC token audience must be equal to the full canonical\nresource name of the WorkloadIdentityPoolProvider, with or without the HTTPS prefix.\nFor example:\n'''\n//iam.googleapis.com/projects/<project-number>/locations/<location>/workloadIdentityPools/<pool-id>/providers/<provider-id>\nhttps://iam.googleapis.com/projects/<project-number>/locations/<location>/workloadIdentityPools/<pool-id>/providers/<provider-id>\n'''",
-      InputType_String_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "IssuerUri",
+      "issuerUri",
       "The OIDC issuer URL.",
       [],
       true,
@@ -74,9 +66,17 @@ export function Iam_getWorkloadIdentityPoolProviderOidc_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "JwksJson",
+      "jwksJson",
       'OIDC JWKs in JSON String format. For details on definition of a\nJWK, see https:tools.ietf.org/html/rfc7517. If not set, then we\nuse the \'jwks_uri\' from the discovery document fetched from the\n.well-known path for the \'issuer_uri\'. Currently, RSA and EC asymmetric\nkeys are supported. The JWK must use following format and include only\nthe following fields:\n\'\'\'\n{\n  "keys": [\n    {\n          "kty": "RSA/EC",\n          "alg": "<algorithm>",\n          "use": "sig",\n          "kid": "<key-id>",\n          "n": "",\n          "e": "",\n          "x": "",\n          "y": "",\n          "crv": ""\n    }\n  ]\n}\n\'\'\'',
       [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "allowedAudiences",
+      "Acceptable values for the 'aud' field (audience) in the OIDC token. Token exchange\nrequests are rejected if the token audience does not match one of the configured\nvalues. Each audience may be at most 256 characters. A maximum of 10 audiences may\nbe configured.\n\nIf this list is empty, the OIDC token audience must be equal to the full canonical\nresource name of the WorkloadIdentityPoolProvider, with or without the HTTPS prefix.\nFor example:\n'''\n//iam.googleapis.com/projects/<project-number>/locations/<location>/workloadIdentityPools/<pool-id>/providers/<provider-id>\nhttps://iam.googleapis.com/projects/<project-number>/locations/<location>/workloadIdentityPools/<pool-id>/providers/<provider-id>\n'''",
+      InputType_String_GetTypes(),
       true,
       false,
     ),

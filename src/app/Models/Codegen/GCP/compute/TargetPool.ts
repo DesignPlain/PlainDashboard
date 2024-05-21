@@ -9,20 +9,10 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface TargetPoolArgs {
   /*
-How to distribute load. Options are "NONE" (no
-affinity). "CLIENT\_IP" (hash of the source/dest addresses / ports), and
-"CLIENT\_IP\_PROTO" also includes the protocol (default "NONE").
-*/
-  SessionAffinity?: string;
-
-  // Textual description field.
-  Description?: string;
-
-  /*
 List of zero or one health check name or self_link. Only
 legacy `gcp.compute.HttpHealthCheck` is supported.
 */
-  HealthChecks?: string;
+  healthChecks?: string;
 
   /*
 List of instances in the pool. They can be given as
@@ -31,7 +21,7 @@ at the time of target pool creation, so there is no need to use the
 interpolation to create a dependency on the instances from the
 target pool.
 */
-  Instances?: Array<string>;
+  instances?: Array<string>;
 
   /*
 A unique name for the resource, required by GCE. Changing
@@ -39,89 +29,64 @@ this forces a new resource to be created.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs. If it
 is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 Where the target pool resides. Defaults to project
 region.
 */
-  Region?: string;
-
-  // The resource URL for the security policy associated with this target pool.
-  SecurityPolicy?: string;
+  region?: string;
 
   /*
 URL to the backup target pool. Must also set
 failover\_ratio.
 */
-  BackupPool?: string;
+  backupPool?: string;
+
+  // Textual description field.
+  description?: string;
 
   /*
 Ratio (0 to 1) of failed nodes before using the
 backup pool (which must also be set).
 */
-  FailoverRatio?: number;
+  failoverRatio?: number;
+
+  /*
+How to distribute load. Options are "NONE" (no
+affinity). "CLIENT\_IP" (hash of the source/dest addresses / ports), and
+"CLIENT\_IP\_PROTO" also includes the protocol (default "NONE").
+*/
+  sessionAffinity?: string;
+
+  // The resource URL for the security policy associated with this target pool.
+  securityPolicy?: string;
 }
 export class TargetPool extends Resource {
   /*
-Ratio (0 to 1) of failed nodes before using the
-backup pool (which must also be set).
-*/
-  public FailoverRatio?: number;
-
-  /*
-Where the target pool resides. Defaults to project
-region.
-*/
-  public Region?: string;
-
-  // The URI of the created resource.
-  public SelfLink?: string;
-
-  /*
 How to distribute load. Options are "NONE" (no
 affinity). "CLIENT\_IP" (hash of the source/dest addresses / ports), and
 "CLIENT\_IP\_PROTO" also includes the protocol (default "NONE").
 */
-  public SessionAffinity?: string;
-
-  /*
-A unique name for the resource, required by GCE. Changing
-this forces a new resource to be created.
-
-- - -
-*/
-  public Name?: string;
-
-  /*
-The ID of the project in which the resource belongs. If it
-is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  // The resource URL for the security policy associated with this target pool.
-  public SecurityPolicy?: string;
+  public sessionAffinity?: string;
 
   /*
 URL to the backup target pool. Must also set
 failover\_ratio.
 */
-  public BackupPool?: string;
-
-  // Textual description field.
-  public Description?: string;
+  public backupPool?: string;
 
   /*
 List of zero or one health check name or self_link. Only
 legacy `gcp.compute.HttpHealthCheck` is supported.
 */
-  public HealthChecks?: string;
+  public healthChecks?: string;
 
   /*
 List of instances in the pool. They can be given as
@@ -130,45 +95,56 @@ at the time of target pool creation, so there is no need to use the
 interpolation to create a dependency on the instances from the
 target pool.
 */
-  public Instances?: Array<string>;
+  public instances?: Array<string>;
+
+  /*
+A unique name for the resource, required by GCE. Changing
+this forces a new resource to be created.
+
+- - -
+*/
+  public name?: string;
+
+  /*
+Where the target pool resides. Defaults to project
+region.
+*/
+  public region?: string;
+
+  // Textual description field.
+  public description?: string;
+
+  /*
+Ratio (0 to 1) of failed nodes before using the
+backup pool (which must also be set).
+*/
+  public failoverRatio?: number;
+
+  /*
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  // The resource URL for the security policy associated with this target pool.
+  public securityPolicy?: string;
+
+  // The URI of the created resource.
+  public selfLink?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "SessionAffinity",
-        'How to distribute load. Options are "NONE" (no\naffinity). "CLIENT\\_IP" (hash of the source/dest addresses / ports), and\n"CLIENT\\_IP\\_PROTO" also includes the protocol (default "NONE").',
+        "description",
+        "Textual description field.",
         [],
         false,
         true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "HealthChecks",
-        "List of zero or one health check name or self_link. Only\nlegacy `gcp.compute.HttpHealthCheck` is supported.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "SecurityPolicy",
-        "The resource URL for the security policy associated with this target pool.",
-        [],
-        false,
-        false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "FailoverRatio",
+        "failoverRatio",
         "Ratio (0 to 1) of failed nodes before using the\nbackup pool (which must also be set).",
         [],
         false,
@@ -176,23 +152,7 @@ target pool.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
-        "Textual description field.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Array,
-        "Instances",
-        'List of instances in the pool. They can be given as\nURLs, or in the form of "zone/name". Note that the instances need not exist\nat the time of target pool creation, so there is no need to use the\ninterpolation to create a dependency on the instances from the\ntarget pool.',
-        InputType_String_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
+        "name",
         "A unique name for the resource, required by GCE. Changing\nthis forces a new resource to be created.\n\n- - -",
         [],
         false,
@@ -200,7 +160,7 @@ target pool.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "Where the target pool resides. Defaults to project\nregion.",
         [],
         false,
@@ -208,9 +168,49 @@ target pool.
       ),
       new DynamicUIProps(
         InputType.String,
-        "BackupPool",
+        "project",
+        "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "backupPool",
         "URL to the backup target pool. Must also set\nfailover\\_ratio.",
         [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "sessionAffinity",
+        'How to distribute load. Options are "NONE" (no\naffinity). "CLIENT\\_IP" (hash of the source/dest addresses / ports), and\n"CLIENT\\_IP\\_PROTO" also includes the protocol (default "NONE").',
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "securityPolicy",
+        "The resource URL for the security policy associated with this target pool.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "healthChecks",
+        "List of zero or one health check name or self_link. Only\nlegacy `gcp.compute.HttpHealthCheck` is supported.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "instances",
+        'List of instances in the pool. They can be given as\nURLs, or in the form of "zone/name". Note that the instances need not exist\nat the time of target pool creation, so there is no need to use the\ninterpolation to create a dependency on the instances from the\ntarget pool.',
+        InputType_String_GetTypes(),
         false,
         false,
       ),

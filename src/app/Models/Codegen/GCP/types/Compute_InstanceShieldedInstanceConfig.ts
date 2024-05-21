@@ -6,31 +6,39 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceShieldedInstanceConfig {
+export interface compute_InstanceShieldedInstanceConfig {
   /*
 - Compare the most recent boot measurements to the integrity policy baseline and return a pair of pass/fail results depending on whether they match or not. Defaults to true.
 --Note--: `allow_stopping_for_update` must be set to true or your instance must have a `desired_status` of `TERMINATED` in order to update this field.
 */
-  EnableIntegrityMonitoring?: boolean;
+  enableIntegrityMonitoring?: boolean;
 
   /*
 - Verify the digital signature of all boot components, and halt the boot process if signature verification fails. Defaults to false.
 --Note--: `allow_stopping_for_update` must be set to true or your instance must have a `desired_status` of `TERMINATED` in order to update this field.
 */
-  EnableSecureBoot?: boolean;
+  enableSecureBoot?: boolean;
 
   /*
 - Use a virtualized trusted platform module, which is a specialized computer chip you can use to encrypt objects like keys and certificates. Defaults to true.
 --Note--: `allow_stopping_for_update` must be set to true or your instance must have a `desired_status` of `TERMINATED` in order to update this field.
 */
-  EnableVtpm?: boolean;
+  enableVtpm?: boolean;
 }
 
-export function Compute_InstanceShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableSecureBoot",
+      "enableIntegrityMonitoring",
+      "- Compare the most recent boot measurements to the integrity policy baseline and return a pair of pass/fail results depending on whether they match or not. Defaults to true.\n**Note**: `allow_stopping_for_update` must be set to true or your instance must have a `desired_status` of `TERMINATED` in order to update this field.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "enableSecureBoot",
       "- Verify the digital signature of all boot components, and halt the boot process if signature verification fails. Defaults to false.\n**Note**: `allow_stopping_for_update` must be set to true or your instance must have a `desired_status` of `TERMINATED` in order to update this field.",
       [],
       false,
@@ -38,16 +46,8 @@ export function Compute_InstanceShieldedInstanceConfig_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableVtpm",
+      "enableVtpm",
       "- Use a virtualized trusted platform module, which is a specialized computer chip you can use to encrypt objects like keys and certificates. Defaults to true.\n**Note**: `allow_stopping_for_update` must be set to true or your instance must have a `desired_status` of `TERMINATED` in order to update this field.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "EnableIntegrityMonitoring",
-      "- Compare the most recent boot measurements to the integrity policy baseline and return a pair of pass/fail results depending on whether they match or not. Defaults to true.\n**Note**: `allow_stopping_for_update` must be set to true or your instance must have a `desired_status` of `TERMINATED` in order to update this field.",
       [],
       false,
       false,

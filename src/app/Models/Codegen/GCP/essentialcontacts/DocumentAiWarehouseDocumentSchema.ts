@@ -7,64 +7,56 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition,
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition_GetTypes,
-} from "../types/Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition";
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition,
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition_GetTypes,
+} from "../types/essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition";
 
 export interface DocumentAiWarehouseDocumentSchemaArgs {
+  // Name of the schema given by the user.
+  displayName?: string;
+
   // Tells whether the document is a folder or a typical document.
-  DocumentIsFolder?: boolean;
+  documentIsFolder?: boolean;
 
   // The location of the resource.
-  Location?: string;
+  location?: string;
 
   // The unique identifier of the project.
-  ProjectNumber?: string;
+  projectNumber?: string;
 
   /*
 Defines the metadata for a schema property.
 Structure is documented below.
 */
-  PropertyDefinitions?: Array<Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition>;
-
-  // Name of the schema given by the user.
-  DisplayName?: string;
+  propertyDefinitions?: Array<essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition>;
 }
 export class DocumentAiWarehouseDocumentSchema extends Resource {
+  // Name of the schema given by the user.
+  public displayName?: string;
+
+  // Tells whether the document is a folder or a typical document.
+  public documentIsFolder?: boolean;
+
   // The location of the resource.
-  public Location?: string;
+  public location?: string;
 
   // The name of the metadata property.
-  public Name?: string;
+  public name?: string;
 
   // The unique identifier of the project.
-  public ProjectNumber?: string;
+  public projectNumber?: string;
 
   /*
 Defines the metadata for a schema property.
 Structure is documented below.
 */
-  public PropertyDefinitions?: Array<Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition>;
-
-  // Name of the schema given by the user.
-  public DisplayName?: string;
-
-  // Tells whether the document is a folder or a typical document.
-  public DocumentIsFolder?: boolean;
+  public propertyDefinitions?: Array<essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Array,
-        "PropertyDefinitions",
-        "Defines the metadata for a schema property.\nStructure is documented below.",
-        Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition_GetTypes(),
-        true,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "Name of the schema given by the user.",
         [],
         true,
@@ -72,7 +64,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "DocumentIsFolder",
+        "documentIsFolder",
         "Tells whether the document is a folder or a typical document.",
         [],
         false,
@@ -80,7 +72,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location of the resource.",
         [],
         true,
@@ -88,9 +80,17 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "ProjectNumber",
+        "projectNumber",
         "The unique identifier of the project.",
         [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "propertyDefinitions",
+        "Defines the metadata for a schema property.\nStructure is documented below.",
+        essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition_GetTypes(),
         true,
         true,
       ),

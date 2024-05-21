@@ -6,9 +6,9 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Billing_BudgetAmountSpecifiedAmount {
+export interface billing_BudgetAmountSpecifiedAmount {
   // The 3-letter currency code defined in ISO 4217.
-  CurrencyCode?: string;
+  currencyCode?: string;
 
   /*
 Number of nano (10^-9) units of the amount.
@@ -21,20 +21,20 @@ nanos=-750,000,000.
 
 - - -
 */
-  Nanos?: number;
+  nanos?: number;
 
   /*
 The whole units of the amount. For example if currencyCode
 is "USD", then 1 unit is one US dollar.
 */
-  Units?: string;
+  units?: string;
 }
 
-export function Billing_BudgetAmountSpecifiedAmount_GetTypes(): DynamicUIProps[] {
+export function billing_BudgetAmountSpecifiedAmount_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CurrencyCode",
+      "currencyCode",
       "The 3-letter currency code defined in ISO 4217.",
       [],
       false,
@@ -42,7 +42,7 @@ export function Billing_BudgetAmountSpecifiedAmount_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Nanos",
+      "nanos",
       "Number of nano (10^-9) units of the amount.\nThe value must be between -999,999,999 and +999,999,999\ninclusive. If units is positive, nanos must be positive or\nzero. If units is zero, nanos can be positive, zero, or\nnegative. If units is negative, nanos must be negative or\nzero. For example $-1.75 is represented as units=-1 and\nnanos=-750,000,000.\n\n- - -",
       [],
       false,
@@ -50,7 +50,7 @@ export function Billing_BudgetAmountSpecifiedAmount_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "Units",
+      "units",
       'The whole units of the amount. For example if currencyCode\nis "USD", then 1 unit is one US dollar.',
       [],
       false,

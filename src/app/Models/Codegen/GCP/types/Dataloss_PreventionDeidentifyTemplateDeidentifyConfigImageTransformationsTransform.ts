@@ -6,73 +6,73 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllInfoTypes,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllInfoTypes_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllInfoTypes";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypes,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypes_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypes";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllText,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllText_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllText";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllInfoTypes,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllInfoTypes_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllInfoTypes";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColor,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColor_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColor";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllText,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllText_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllText";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypes,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypes_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypes";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColor,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColor_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColor";
 
-export interface Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransform {
+export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransform {
+  /*
+Apply transformation to the selected infoTypes.
+Structure is documented below.
+*/
+  selectedInfoTypes?: dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypes;
+
   // Apply transformation to all findings not specified in other ImageTransformation's selectedInfoTypes.
-  AllInfoTypes?: Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllInfoTypes;
+  allInfoTypes?: dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllInfoTypes;
 
   // Apply transformation to all text that doesn't match an infoType.
-  AllText?: Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllText;
+  allText?: dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllText;
 
   /*
 The color to use when redacting content from an image. If not specified, the default is black.
 Structure is documented below.
 */
-  RedactionColor?: Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColor;
-
-  /*
-Apply transformation to the selected infoTypes.
-Structure is documented below.
-*/
-  SelectedInfoTypes?: Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypes;
+  redactionColor?: dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColor;
 }
 
-export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransform_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransform_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "AllInfoTypes",
-      "Apply transformation to all findings not specified in other ImageTransformation's selectedInfoTypes.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllInfoTypes_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "AllText",
-      "Apply transformation to all text that doesn't match an infoType.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllText_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "RedactionColor",
-      "The color to use when redacting content from an image. If not specified, the default is black.\nStructure is documented below.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColor_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "SelectedInfoTypes",
+      "selectedInfoTypes",
       "Apply transformation to the selected infoTypes.\nStructure is documented below.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypes_GetTypes(),
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypes_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "allInfoTypes",
+      "Apply transformation to all findings not specified in other ImageTransformation's selectedInfoTypes.",
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllInfoTypes_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "allText",
+      "Apply transformation to all text that doesn't match an infoType.",
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllText_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "redactionColor",
+      "The color to use when redacting content from an image. If not specified, the default is black.\nStructure is documented below.",
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColor_GetTypes(),
       false,
       false,
     ),

@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_JobExtractSourceModel {
+export interface bigquery_JobExtractSourceModel {
+  // The ID of the dataset containing this model.
+  datasetId?: string;
+
   /*
 The ID of the model.
 
 - - -
 */
-  ModelId?: string;
+  modelId?: string;
 
   // The ID of the project containing this model.
-  ProjectId?: string;
-
-  // The ID of the dataset containing this model.
-  DatasetId?: string;
+  projectId?: string;
 }
 
-export function Bigquery_JobExtractSourceModel_GetTypes(): DynamicUIProps[] {
+export function bigquery_JobExtractSourceModel_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DatasetId",
+      "datasetId",
       "The ID of the dataset containing this model.",
       [],
       true,
@@ -33,7 +33,7 @@ export function Bigquery_JobExtractSourceModel_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ModelId",
+      "modelId",
       "The ID of the model.\n\n- - -",
       [],
       true,
@@ -41,7 +41,7 @@ export function Bigquery_JobExtractSourceModel_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProjectId",
+      "projectId",
       "The ID of the project containing this model.",
       [],
       true,

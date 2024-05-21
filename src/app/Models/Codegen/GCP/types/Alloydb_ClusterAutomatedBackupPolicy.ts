@@ -6,69 +6,93 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Alloydb_ClusterAutomatedBackupPolicyQuantityBasedRetention,
-  Alloydb_ClusterAutomatedBackupPolicyQuantityBasedRetention_GetTypes,
-} from "./Alloydb_ClusterAutomatedBackupPolicyQuantityBasedRetention";
+  alloydb_ClusterAutomatedBackupPolicyQuantityBasedRetention,
+  alloydb_ClusterAutomatedBackupPolicyQuantityBasedRetention_GetTypes,
+} from "./alloydb_ClusterAutomatedBackupPolicyQuantityBasedRetention";
 import {
-  Alloydb_ClusterAutomatedBackupPolicyTimeBasedRetention,
-  Alloydb_ClusterAutomatedBackupPolicyTimeBasedRetention_GetTypes,
-} from "./Alloydb_ClusterAutomatedBackupPolicyTimeBasedRetention";
+  alloydb_ClusterAutomatedBackupPolicyTimeBasedRetention,
+  alloydb_ClusterAutomatedBackupPolicyTimeBasedRetention_GetTypes,
+} from "./alloydb_ClusterAutomatedBackupPolicyTimeBasedRetention";
 import {
-  Alloydb_ClusterAutomatedBackupPolicyWeeklySchedule,
-  Alloydb_ClusterAutomatedBackupPolicyWeeklySchedule_GetTypes,
-} from "./Alloydb_ClusterAutomatedBackupPolicyWeeklySchedule";
+  alloydb_ClusterAutomatedBackupPolicyWeeklySchedule,
+  alloydb_ClusterAutomatedBackupPolicyWeeklySchedule_GetTypes,
+} from "./alloydb_ClusterAutomatedBackupPolicyWeeklySchedule";
 import {
-  Alloydb_ClusterAutomatedBackupPolicyEncryptionConfig,
-  Alloydb_ClusterAutomatedBackupPolicyEncryptionConfig_GetTypes,
-} from "./Alloydb_ClusterAutomatedBackupPolicyEncryptionConfig";
+  alloydb_ClusterAutomatedBackupPolicyEncryptionConfig,
+  alloydb_ClusterAutomatedBackupPolicyEncryptionConfig_GetTypes,
+} from "./alloydb_ClusterAutomatedBackupPolicyEncryptionConfig";
 
-export interface Alloydb_ClusterAutomatedBackupPolicy {
-  /*
-The length of the time window during which a backup can be taken. If a backup does not succeed within this time window, it will be canceled and considered failed.
-The backup window must be at least 5 minutes long. There is no upper bound on the window. If not set, it will default to 1 hour.
-A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
-*/
-  BackupWindow?: string;
-
-  // Whether automated backups are enabled.
-  Enabled?: boolean;
-
-  /*
-EncryptionConfig describes the encryption config of a cluster or a backup that is encrypted with a CMEK (customer-managed encryption key).
-Structure is documented below.
-*/
-  EncryptionConfig?: Alloydb_ClusterAutomatedBackupPolicyEncryptionConfig;
-
-  // Labels to apply to backups created using this configuration.
-  Labels?: Map<string, string>;
-
+export interface alloydb_ClusterAutomatedBackupPolicy {
   // The location where the backup will be stored. Currently, the only supported option is to store the backup in the same region as the cluster.
-  Location?: string;
+  location?: string;
 
   /*
 Quantity-based Backup retention policy to retain recent backups. Conflicts with 'time_based_retention', both can't be set together.
 Structure is documented below.
 */
-  QuantityBasedRetention?: Alloydb_ClusterAutomatedBackupPolicyQuantityBasedRetention;
+  quantityBasedRetention?: alloydb_ClusterAutomatedBackupPolicyQuantityBasedRetention;
 
   /*
 Time-based Backup retention policy. Conflicts with 'quantity_based_retention', both can't be set together.
 Structure is documented below.
 */
-  TimeBasedRetention?: Alloydb_ClusterAutomatedBackupPolicyTimeBasedRetention;
+  timeBasedRetention?: alloydb_ClusterAutomatedBackupPolicyTimeBasedRetention;
 
   /*
 Weekly schedule for the Backup.
 Structure is documented below.
 */
-  WeeklySchedule?: Alloydb_ClusterAutomatedBackupPolicyWeeklySchedule;
+  weeklySchedule?: alloydb_ClusterAutomatedBackupPolicyWeeklySchedule;
+
+  /*
+The length of the time window during which a backup can be taken. If a backup does not succeed within this time window, it will be canceled and considered failed.
+The backup window must be at least 5 minutes long. There is no upper bound on the window. If not set, it will default to 1 hour.
+A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
+*/
+  backupWindow?: string;
+
+  // Whether automated backups are enabled.
+  enabled?: boolean;
+
+  /*
+EncryptionConfig describes the encryption config of a cluster or a backup that is encrypted with a CMEK (customer-managed encryption key).
+Structure is documented below.
+*/
+  encryptionConfig?: alloydb_ClusterAutomatedBackupPolicyEncryptionConfig;
+
+  // Labels to apply to backups created using this configuration.
+  labels?: Map<string, string>;
 }
 
-export function Alloydb_ClusterAutomatedBackupPolicy_GetTypes(): DynamicUIProps[] {
+export function alloydb_ClusterAutomatedBackupPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Object,
+      "quantityBasedRetention",
+      "Quantity-based Backup retention policy to retain recent backups. Conflicts with 'time_based_retention', both can't be set together.\nStructure is documented below.",
+      alloydb_ClusterAutomatedBackupPolicyQuantityBasedRetention_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "timeBasedRetention",
+      "Time-based Backup retention policy. Conflicts with 'quantity_based_retention', both can't be set together.\nStructure is documented below.",
+      alloydb_ClusterAutomatedBackupPolicyTimeBasedRetention_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "weeklySchedule",
+      "Weekly schedule for the Backup.\nStructure is documented below.",
+      alloydb_ClusterAutomatedBackupPolicyWeeklySchedule_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "BackupWindow",
+      "backupWindow",
       "The length of the time window during which a backup can be taken. If a backup does not succeed within this time window, it will be canceled and considered failed.\nThe backup window must be at least 5 minutes long. There is no upper bound on the window. If not set, it will default to 1 hour.\nA duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\".",
       [],
       false,
@@ -76,7 +100,7 @@ export function Alloydb_ClusterAutomatedBackupPolicy_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether automated backups are enabled.",
       [],
       false,
@@ -84,15 +108,15 @@ export function Alloydb_ClusterAutomatedBackupPolicy_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Object,
-      "EncryptionConfig",
+      "encryptionConfig",
       "EncryptionConfig describes the encryption config of a cluster or a backup that is encrypted with a CMEK (customer-managed encryption key).\nStructure is documented below.",
-      Alloydb_ClusterAutomatedBackupPolicyEncryptionConfig_GetTypes(),
+      alloydb_ClusterAutomatedBackupPolicyEncryptionConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Labels",
+      "labels",
       "Labels to apply to backups created using this configuration.",
       InputType_Map_GetTypes(),
       false,
@@ -100,33 +124,9 @@ export function Alloydb_ClusterAutomatedBackupPolicy_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       "The location where the backup will be stored. Currently, the only supported option is to store the backup in the same region as the cluster.",
       [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "QuantityBasedRetention",
-      "Quantity-based Backup retention policy to retain recent backups. Conflicts with 'time_based_retention', both can't be set together.\nStructure is documented below.",
-      Alloydb_ClusterAutomatedBackupPolicyQuantityBasedRetention_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "TimeBasedRetention",
-      "Time-based Backup retention policy. Conflicts with 'quantity_based_retention', both can't be set together.\nStructure is documented below.",
-      Alloydb_ClusterAutomatedBackupPolicyTimeBasedRetention_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "WeeklySchedule",
-      "Weekly schedule for the Backup.\nStructure is documented below.",
-      Alloydb_ClusterAutomatedBackupPolicyWeeklySchedule_GetTypes(),
       false,
       false,
     ),

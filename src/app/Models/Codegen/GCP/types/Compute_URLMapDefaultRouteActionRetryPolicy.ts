@@ -6,13 +6,13 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_URLMapDefaultRouteActionRetryPolicyPerTryTimeout,
-  Compute_URLMapDefaultRouteActionRetryPolicyPerTryTimeout_GetTypes,
-} from "./Compute_URLMapDefaultRouteActionRetryPolicyPerTryTimeout";
+  compute_URLMapDefaultRouteActionRetryPolicyPerTryTimeout,
+  compute_URLMapDefaultRouteActionRetryPolicyPerTryTimeout_GetTypes,
+} from "./compute_URLMapDefaultRouteActionRetryPolicyPerTryTimeout";
 
-export interface Compute_URLMapDefaultRouteActionRetryPolicy {
+export interface compute_URLMapDefaultRouteActionRetryPolicy {
   // Specifies the allowed number retries. This number must be > 0. If not specified, defaults to 1.
-  NumRetries?: number;
+  numRetries?: number;
 
   /*
 Specifies a non-zero timeout per retry attempt.
@@ -20,7 +20,7 @@ If not specified, will use the timeout set in HttpRouteAction. If timeout in Htt
 will use the largest timeout among all backend services associated with the route.
 Structure is documented below.
 */
-  PerTryTimeout?: Compute_URLMapDefaultRouteActionRetryPolicyPerTryTimeout;
+  perTryTimeout?: compute_URLMapDefaultRouteActionRetryPolicyPerTryTimeout;
 
   /*
 Specfies one or more conditions when this retry rule applies. Valid values are:
@@ -39,22 +39,14 @@ This reset type indicates that it is safe to retry.
 - resource-exhausted: Loadbalancer will retry if the gRPC status code in the response header is set to resource-exhausted
 - unavailable: Loadbalancer will retry if the gRPC status code in the response header is set to unavailable
 */
-  RetryConditions?: Array<string>;
+  retryConditions?: Array<string>;
 }
 
-export function Compute_URLMapDefaultRouteActionRetryPolicy_GetTypes(): DynamicUIProps[] {
+export function compute_URLMapDefaultRouteActionRetryPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "PerTryTimeout",
-      "Specifies a non-zero timeout per retry attempt.\nIf not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set,\nwill use the largest timeout among all backend services associated with the route.\nStructure is documented below.",
-      Compute_URLMapDefaultRouteActionRetryPolicyPerTryTimeout_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "RetryConditions",
+      "retryConditions",
       "Specfies one or more conditions when this retry rule applies. Valid values are:\n* 5xx: Loadbalancer will attempt a retry if the backend service responds with any 5xx response code,\nor if the backend service does not respond at all, example: disconnects, reset, read timeout,\n* connection failure, and refused streams.\n* gateway-error: Similar to 5xx, but only applies to response codes 502, 503 or 504.\n* connect-failure: Loadbalancer will retry on failures connecting to backend services,\nfor example due to connection timeouts.\n* retriable-4xx: Loadbalancer will retry for retriable 4xx response codes.\nCurrently the only retriable error supported is 409.\n* refused-stream:Loadbalancer will retry if the backend service resets the stream with a REFUSED_STREAM error code.\nThis reset type indicates that it is safe to retry.\n* cancelled: Loadbalancer will retry if the gRPC status code in the response header is set to cancelled\n* deadline-exceeded: Loadbalancer will retry if the gRPC status code in the response header is set to deadline-exceeded\n* resource-exhausted: Loadbalancer will retry if the gRPC status code in the response header is set to resource-exhausted\n* unavailable: Loadbalancer will retry if the gRPC status code in the response header is set to unavailable",
       InputType_String_GetTypes(),
       false,
@@ -62,9 +54,17 @@ export function Compute_URLMapDefaultRouteActionRetryPolicy_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Number,
-      "NumRetries",
+      "numRetries",
       "Specifies the allowed number retries. This number must be > 0. If not specified, defaults to 1.",
       [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "perTryTimeout",
+      "Specifies a non-zero timeout per retry attempt.\nIf not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set,\nwill use the largest timeout among all backend services associated with the route.\nStructure is documented below.",
+      compute_URLMapDefaultRouteActionRetryPolicyPerTryTimeout_GetTypes(),
       false,
       false,
     ),

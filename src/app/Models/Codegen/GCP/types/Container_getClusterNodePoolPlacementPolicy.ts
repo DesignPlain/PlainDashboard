@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodePoolPlacementPolicy {
+export interface container_getClusterNodePoolPlacementPolicy {
   // If set, refers to the name of a custom resource policy supplied by the user. The resource policy must be in the same project and region as the node pool. If not found, InvalidArgument error is returned.
-  PolicyName?: string;
+  policyName?: string;
 
   // TPU placement topology for pod slice node pool. https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
-  TpuTopology?: string;
+  tpuTopology?: string;
 
   // Type defines the type of placement policy
-  Type?: string;
+  type?: string;
 }
 
-export function Container_getClusterNodePoolPlacementPolicy_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolPlacementPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PolicyName",
+      "policyName",
       "If set, refers to the name of a custom resource policy supplied by the user. The resource policy must be in the same project and region as the node pool. If not found, InvalidArgument error is returned.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Container_getClusterNodePoolPlacementPolicy_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "TpuTopology",
+      "tpuTopology",
       "TPU placement topology for pod slice node pool. https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies",
       [],
       true,
@@ -37,7 +37,7 @@ export function Container_getClusterNodePoolPlacementPolicy_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "Type defines the type of placement policy",
       [],
       true,

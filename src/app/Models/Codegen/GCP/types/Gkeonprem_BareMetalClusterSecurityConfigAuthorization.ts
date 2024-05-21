@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_BareMetalClusterSecurityConfigAuthorizationAdminUser,
-  Gkeonprem_BareMetalClusterSecurityConfigAuthorizationAdminUser_GetTypes,
-} from "./Gkeonprem_BareMetalClusterSecurityConfigAuthorizationAdminUser";
+  gkeonprem_BareMetalClusterSecurityConfigAuthorizationAdminUser,
+  gkeonprem_BareMetalClusterSecurityConfigAuthorizationAdminUser_GetTypes,
+} from "./gkeonprem_BareMetalClusterSecurityConfigAuthorizationAdminUser";
 
-export interface Gkeonprem_BareMetalClusterSecurityConfigAuthorization {
+export interface gkeonprem_BareMetalClusterSecurityConfigAuthorization {
   /*
 Users that will be granted the cluster-admin role on the cluster, providing full access to the cluster.
 Structure is documented below.
 */
-  AdminUsers?: Array<Gkeonprem_BareMetalClusterSecurityConfigAuthorizationAdminUser>;
+  adminUsers?: Array<gkeonprem_BareMetalClusterSecurityConfigAuthorizationAdminUser>;
 }
 
-export function Gkeonprem_BareMetalClusterSecurityConfigAuthorization_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterSecurityConfigAuthorization_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AdminUsers",
+      "adminUsers",
       "Users that will be granted the cluster-admin role on the cluster, providing full access to the cluster.\nStructure is documented below.",
-      Gkeonprem_BareMetalClusterSecurityConfigAuthorizationAdminUser_GetTypes(),
+      gkeonprem_BareMetalClusterSecurityConfigAuthorizationAdminUser_GetTypes(),
       true,
       false,
     ),

@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_ServiceTemplateVolumeGcs {
+export interface cloudrunv2_ServiceTemplateVolumeGcs {
   // GCS Bucket name
-  Bucket?: string;
+  bucket?: string;
 
   // If true, mount the GCS bucket as read-only
-  ReadOnly?: boolean;
+  readOnly?: boolean;
 }
 
-export function Cloudrunv2_ServiceTemplateVolumeGcs_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_ServiceTemplateVolumeGcs_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Bucket",
+      "bucket",
       "GCS Bucket name",
       [],
       true,
@@ -26,7 +26,7 @@ export function Cloudrunv2_ServiceTemplateVolumeGcs_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "ReadOnly",
+      "readOnly",
       "If true, mount the GCS bucket as read-only",
       [],
       false,

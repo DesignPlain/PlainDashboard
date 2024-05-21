@@ -6,11 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterAddonsConfigHttpLoadBalancing {
+export interface container_getClusterAddonsConfigHttpLoadBalancing {
   //
-  Disabled?: boolean;
+  disabled?: boolean;
 }
 
-export function Container_getClusterAddonsConfigHttpLoadBalancing_GetTypes(): DynamicUIProps[] {
-  return [new DynamicUIProps(InputType.Bool, "Disabled", "", [], true, false)];
+export function container_getClusterAddonsConfigHttpLoadBalancing_GetTypes(): DynamicUIProps[] {
+  return [new DynamicUIProps(InputType.Bool, "disabled", "", [], true, false)];
 }

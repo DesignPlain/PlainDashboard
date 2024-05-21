@@ -7,9 +7,9 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Bigquery_BiReservationPreferredTable,
-  Bigquery_BiReservationPreferredTable_GetTypes,
-} from "../types/Bigquery_BiReservationPreferredTable";
+  bigquery_BiReservationPreferredTable,
+  bigquery_BiReservationPreferredTable_GetTypes,
+} from "../types/bigquery_BiReservationPreferredTable";
 
 export interface BiReservationArgs {
   /*
@@ -18,44 +18,32 @@ LOCATION_DESCRIPTION
 
 - - -
 */
-  Location?: string;
+  location?: string;
 
   /*
 Preferred tables to use BI capacity for.
 Structure is documented below.
 */
-  PreferredTables?: Array<Bigquery_BiReservationPreferredTable>;
+  preferredTables?: Array<bigquery_BiReservationPreferredTable>;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // Size of a reservation, in bytes.
-  Size?: number;
+  size?: number;
 }
 export class BiReservation extends Resource {
-  /*
-Preferred tables to use BI capacity for.
-Structure is documented below.
-*/
-  public PreferredTables?: Array<Bigquery_BiReservationPreferredTable>;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
   // Size of a reservation, in bytes.
-  public Size?: number;
+  public size?: number;
 
   /*
 The last update timestamp of a reservation.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  public UpdateTime?: string;
+  public updateTime?: string;
 
   /*
 LOCATION_DESCRIPTION
@@ -63,32 +51,28 @@ LOCATION_DESCRIPTION
 
 - - -
 */
-  public Location?: string;
+  public location?: string;
 
   // The resource name of the singleton BI reservation. Reservation names have the form `projects/{projectId}/locations/{locationId}/biReservation`.
-  public Name?: string;
+  public name?: string;
+
+  /*
+Preferred tables to use BI capacity for.
+Structure is documented below.
+*/
+  public preferredTables?: Array<bigquery_BiReservationPreferredTable>;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Location",
-        "LOCATION_DESCRIPTION\n\n\n- - -",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Array,
-        "PreferredTables",
-        "Preferred tables to use BI capacity for.\nStructure is documented below.",
-        Bigquery_BiReservationPreferredTable_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -96,9 +80,25 @@ LOCATION_DESCRIPTION
       ),
       new DynamicUIProps(
         InputType.Number,
-        "Size",
+        "size",
         "Size of a reservation, in bytes.",
         [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "location",
+        "LOCATION_DESCRIPTION\n\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "preferredTables",
+        "Preferred tables to use BI capacity for.\nStructure is documented below.",
+        bigquery_BiReservationPreferredTable_GetTypes(),
         false,
         false,
       ),

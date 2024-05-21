@@ -6,35 +6,35 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas {
+export interface compute_RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas {
+  /*
+Specifies a fixed number of VM instances. This must be a positive
+integer.
+*/
+  fixed?: number;
+
   /*
 Specifies a percentage of instances between 0 to 100%!!(MISSING),(MISSING) inclusive.
 For example, specify 80 for 80%!!(MISSING)
 (MISSING)
 */
-  Percent?: number;
-
-  /*
-Specifies a fixed number of VM instances. This must be a positive
-integer.
-*/
-  Fixed?: number;
+  percent?: number;
 }
 
-export function Compute_RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas_GetTypes(): DynamicUIProps[] {
+export function compute_RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Percent",
-      "Specifies a percentage of instances between 0 to 100%!,(MISSING) inclusive.\nFor example, specify 80 for 80%!\n(MISSING)",
+      "fixed",
+      "Specifies a fixed number of VM instances. This must be a positive\ninteger.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Fixed",
-      "Specifies a fixed number of VM instances. This must be a positive\ninteger.",
+      "percent",
+      "Specifies a percentage of instances between 0 to 100%!,(MISSING) inclusive.\nFor example, specify 80 for 80%!\n(MISSING)",
       [],
       false,
       false,

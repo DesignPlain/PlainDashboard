@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getMachineTypesMachineTypeAccelerator {
-  // The accelerator type resource name, not a full URL, e.g. `nvidia-tesla-t4`.
-  GuestAcceleratorType?: string;
-
+export interface compute_getMachineTypesMachineTypeAccelerator {
   // Number of accelerator cards exposed to the guest.
-  GuestAcceleratorCount?: number;
+  guestAcceleratorCount?: number;
+
+  // The accelerator type resource name, not a full URL, e.g. `nvidia-tesla-t4`.
+  guestAcceleratorType?: string;
 }
 
-export function Compute_getMachineTypesMachineTypeAccelerator_GetTypes(): DynamicUIProps[] {
+export function compute_getMachineTypesMachineTypeAccelerator_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "GuestAcceleratorType",
-      "The accelerator type resource name, not a full URL, e.g. `nvidia-tesla-t4`.",
+      InputType.Number,
+      "guestAcceleratorCount",
+      "Number of accelerator cards exposed to the guest.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Number,
-      "GuestAcceleratorCount",
-      "Number of accelerator cards exposed to the guest.",
+      InputType.String,
+      "guestAcceleratorType",
+      "The accelerator type resource name, not a full URL, e.g. `nvidia-tesla-t4`.",
       [],
       true,
       false,

@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Pubsub_SubscriptionRetryPolicy {
+export interface pubsub_SubscriptionRetryPolicy {
   /*
 The maximum delay between consecutive deliveries of a given message. Value should be between 0 and 600 seconds. Defaults to 600 seconds.
 A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
 */
-  MaximumBackoff?: string;
+  maximumBackoff?: string;
 
   /*
 The minimum delay between consecutive deliveries of a given message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
 A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
 */
-  MinimumBackoff?: string;
+  minimumBackoff?: string;
 }
 
-export function Pubsub_SubscriptionRetryPolicy_GetTypes(): DynamicUIProps[] {
+export function pubsub_SubscriptionRetryPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "MaximumBackoff",
+      "maximumBackoff",
       "The maximum delay between consecutive deliveries of a given message. Value should be between 0 and 600 seconds. Defaults to 600 seconds.\nA duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\".",
       [],
       false,
@@ -32,7 +32,7 @@ export function Pubsub_SubscriptionRetryPolicy_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "MinimumBackoff",
+      "minimumBackoff",
       "The minimum delay between consecutive deliveries of a given message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.\nA duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\".",
       [],
       false,

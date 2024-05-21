@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_SecurityPolicyRuleRateLimitOptionsBanThreshold {
+export interface compute_SecurityPolicyRuleRateLimitOptionsBanThreshold {
   // Number of HTTP(S) requests for calculating the threshold.
-  Count?: number;
+  count?: number;
 
   // Interval over which the threshold is computed.
-  IntervalSec?: number;
+  intervalSec?: number;
 }
 
-export function Compute_SecurityPolicyRuleRateLimitOptionsBanThreshold_GetTypes(): DynamicUIProps[] {
+export function compute_SecurityPolicyRuleRateLimitOptionsBanThreshold_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Count",
+      "count",
       "Number of HTTP(S) requests for calculating the threshold.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Compute_SecurityPolicyRuleRateLimitOptionsBanThreshold_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Number,
-      "IntervalSec",
+      "intervalSec",
       "Interval over which the threshold is computed.",
       [],
       true,

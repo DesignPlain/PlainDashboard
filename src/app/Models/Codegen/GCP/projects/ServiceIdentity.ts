@@ -12,37 +12,37 @@ export interface ServiceIdentityArgs {
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 The service to generate identity for.
 
 - - -
 */
-  Service?: string;
+  service?: string;
 }
 export class ServiceIdentity extends Resource {
-  /*
-The service to generate identity for.
-
-- - -
-*/
-  public Service?: string;
-
   // The email address of the Google managed service account.
-  public Email?: string;
+  public email?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
+
+  /*
+The service to generate identity for.
+
+- - -
+*/
+  public service?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -50,7 +50,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Service",
+        "service",
         "The service to generate identity for.\n\n- - -",
         [],
         true,

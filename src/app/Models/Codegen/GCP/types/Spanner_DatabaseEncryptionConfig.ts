@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Spanner_DatabaseEncryptionConfig {
+export interface spanner_DatabaseEncryptionConfig {
   /*
 Fully qualified name of the KMS key to use to encrypt this database. This key must exist
 in the same location as the Spanner Database.
 */
-  KmsKeyName?: string;
+  kmsKeyName?: string;
 }
 
-export function Spanner_DatabaseEncryptionConfig_GetTypes(): DynamicUIProps[] {
+export function spanner_DatabaseEncryptionConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyName",
+      "kmsKeyName",
       "Fully qualified name of the KMS key to use to encrypt this database. This key must exist\nin the same location as the Spanner Database.",
       [],
       true,

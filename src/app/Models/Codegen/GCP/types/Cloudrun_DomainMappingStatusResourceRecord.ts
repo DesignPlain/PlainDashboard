@@ -6,29 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrun_DomainMappingStatusResourceRecord {
+export interface cloudrun_DomainMappingStatusResourceRecord {
   // Name should be a [verified](https://support.google.com/webmasters/answer/9008080) domain
-  Name?: string;
+  name?: string;
 
   /*
 (Output)
 Data for this record. Values vary by record type, as defined in RFC 1035
 (section 5) and RFC 1034 (section 3.6.1).
 */
-  Rrdata?: string;
+  rrdata?: string;
 
   /*
 Resource record type. Example: `AAAA`.
 Possible values are: `A`, `AAAA`, `CNAME`.
 */
-  Type?: string;
+  type?: string;
 }
 
-export function Cloudrun_DomainMappingStatusResourceRecord_GetTypes(): DynamicUIProps[] {
+export function cloudrun_DomainMappingStatusResourceRecord_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "type",
+      "Resource record type. Example: `AAAA`.\nPossible values are: `A`, `AAAA`, `CNAME`.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "name",
       "Name should be a [verified](https://support.google.com/webmasters/answer/9008080) domain",
       [],
       false,
@@ -36,16 +44,8 @@ export function Cloudrun_DomainMappingStatusResourceRecord_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "Rrdata",
+      "rrdata",
       "(Output)\nData for this record. Values vary by record type, as defined in RFC 1035\n(section 5) and RFC 1034 (section 3.6.1).",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Type",
-      "Resource record type. Example: `AAAA`.\nPossible values are: `A`, `AAAA`, `CNAME`.",
       [],
       false,
       false,

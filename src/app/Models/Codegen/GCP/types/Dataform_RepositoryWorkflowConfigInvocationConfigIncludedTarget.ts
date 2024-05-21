@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataform_RepositoryWorkflowConfigInvocationConfigIncludedTarget {
-  // The action's database (Google Cloud project ID).
-  Database?: string;
-
+export interface dataform_RepositoryWorkflowConfigInvocationConfigIncludedTarget {
   // The action's name, within database and schema.
-  Name?: string;
+  name?: string;
 
   // The action's schema (BigQuery dataset ID), within database.
-  Schema?: string;
+  schema?: string;
+
+  // The action's database (Google Cloud project ID).
+  database?: string;
 }
 
-export function Dataform_RepositoryWorkflowConfigInvocationConfigIncludedTarget_GetTypes(): DynamicUIProps[] {
+export function dataform_RepositoryWorkflowConfigInvocationConfigIncludedTarget_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Database",
+      "database",
       "The action's database (Google Cloud project ID).",
       [],
       false,
@@ -29,7 +29,7 @@ export function Dataform_RepositoryWorkflowConfigInvocationConfigIncludedTarget_
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The action's name, within database and schema.",
       [],
       false,
@@ -37,7 +37,7 @@ export function Dataform_RepositoryWorkflowConfigInvocationConfigIncludedTarget_
     ),
     new DynamicUIProps(
       InputType.String,
-      "Schema",
+      "schema",
       "The action's schema (BigQuery dataset ID), within database.",
       [],
       false,

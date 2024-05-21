@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxAgentGitIntegrationSettingsGithubSettings,
-  Diagflow_CxAgentGitIntegrationSettingsGithubSettings_GetTypes,
-} from "./Diagflow_CxAgentGitIntegrationSettingsGithubSettings";
+  diagflow_CxAgentGitIntegrationSettingsGithubSettings,
+  diagflow_CxAgentGitIntegrationSettingsGithubSettings_GetTypes,
+} from "./diagflow_CxAgentGitIntegrationSettingsGithubSettings";
 
-export interface Diagflow_CxAgentGitIntegrationSettings {
+export interface diagflow_CxAgentGitIntegrationSettings {
   /*
 Settings of integration with GitHub.
 Structure is documented below.
 */
-  GithubSettings?: Diagflow_CxAgentGitIntegrationSettingsGithubSettings;
+  githubSettings?: diagflow_CxAgentGitIntegrationSettingsGithubSettings;
 }
 
-export function Diagflow_CxAgentGitIntegrationSettings_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxAgentGitIntegrationSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "GithubSettings",
+      "githubSettings",
       "Settings of integration with GitHub.\nStructure is documented below.",
-      Diagflow_CxAgentGitIntegrationSettingsGithubSettings_GetTypes(),
+      diagflow_CxAgentGitIntegrationSettingsGithubSettings_GetTypes(),
       false,
       false,
     ),

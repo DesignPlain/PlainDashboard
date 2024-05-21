@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_AppProfileStandardIsolation {
+export interface bigquery_AppProfileStandardIsolation {
   /*
 The priority of requests sent using this app profile.
 Possible values are: `PRIORITY_LOW`, `PRIORITY_MEDIUM`, `PRIORITY_HIGH`.
 */
-  Priority?: string;
+  priority?: string;
 }
 
-export function Bigquery_AppProfileStandardIsolation_GetTypes(): DynamicUIProps[] {
+export function bigquery_AppProfileStandardIsolation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Priority",
+      "priority",
       "The priority of requests sent using this app profile.\nPossible values are: `PRIORITY_LOW`, `PRIORITY_MEDIUM`, `PRIORITY_HIGH`.",
       [],
       true,

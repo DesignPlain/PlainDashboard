@@ -6,12 +6,12 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Redis_ClusterPscConnection {
+export interface redis_ClusterPscConnection {
   // Output only. The IP allocated on the consumer network for the PSC forwarding rule.
-  Address?: string;
+  address?: string;
 
   // Output only. The URI of the consumer side forwarding rule. Example: projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.
-  ForwardingRule?: string;
+  forwardingRule?: string;
 
   /*
 Required. The consumer network where the network address of
@@ -20,20 +20,20 @@ projects/{network_project_id_or_number}/global/networks/{network_id}.
 
 - - -
 */
-  Network?: string;
+  network?: string;
 
   // Output only. The consumer projectId where the forwarding rule is created from.
-  ProjectId?: string;
+  projectId?: string;
 
   // Output only. The PSC connection id of the forwarding rule connected to the service attachment.
-  PscConnectionId?: string;
+  pscConnectionId?: string;
 }
 
-export function Redis_ClusterPscConnection_GetTypes(): DynamicUIProps[] {
+export function redis_ClusterPscConnection_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ProjectId",
+      "projectId",
       "Output only. The consumer projectId where the forwarding rule is created from.",
       [],
       false,
@@ -41,7 +41,7 @@ export function Redis_ClusterPscConnection_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "PscConnectionId",
+      "pscConnectionId",
       "Output only. The PSC connection id of the forwarding rule connected to the service attachment.",
       [],
       false,
@@ -49,7 +49,7 @@ export function Redis_ClusterPscConnection_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Address",
+      "address",
       "Output only. The IP allocated on the consumer network for the PSC forwarding rule.",
       [],
       false,
@@ -57,7 +57,7 @@ export function Redis_ClusterPscConnection_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ForwardingRule",
+      "forwardingRule",
       "Output only. The URI of the consumer side forwarding rule. Example: projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.",
       [],
       false,
@@ -65,7 +65,7 @@ export function Redis_ClusterPscConnection_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Network",
+      "network",
       "Required. The consumer network where the network address of\nthe discovery endpoint will be reserved, in the form of\nprojects/{network_project_id_or_number}/global/networks/{network_id}.\n\n- - -",
       [],
       false,

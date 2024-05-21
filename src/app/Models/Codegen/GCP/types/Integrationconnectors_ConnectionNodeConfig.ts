@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Integrationconnectors_ConnectionNodeConfig {
+export interface integrationconnectors_ConnectionNodeConfig {
   // Minimum number of nodes in the runtime nodes.
-  MaxNodeCount?: number;
+  maxNodeCount?: number;
 
   // Minimum number of nodes in the runtime nodes.
-  MinNodeCount?: number;
+  minNodeCount?: number;
 }
 
-export function Integrationconnectors_ConnectionNodeConfig_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionNodeConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "MinNodeCount",
+      "maxNodeCount",
       "Minimum number of nodes in the runtime nodes.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Integrationconnectors_ConnectionNodeConfig_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxNodeCount",
+      "minNodeCount",
       "Minimum number of nodes in the runtime nodes.",
       [],
       false,

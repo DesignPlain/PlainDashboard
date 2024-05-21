@@ -6,53 +6,61 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Workbench_InstanceUpgradeHistory {
-  // Optional. Target VM Version, like m63.
-  TargetVersion?: string;
-
-  // Optional. The version of the workbench instance before this upgrade.
-  Version?: string;
-
+export interface workbench_InstanceUpgradeHistory {
   /*
 Use a container image to start the workbench instance.
 Structure is documented below.
 */
-  ContainerImage?: string;
+  containerImage?: string;
+
+  // Optional. The framework of this workbench instance.
+  framework?: string;
+
+  // Optional. Target VM Version, like m63.
+  targetVersion?: string;
+
+  // Optional. The version of the workbench instance before this upgrade.
+  version?: string;
+
+  // Optional. Action. Rolloback or Upgrade.
+  action?: string;
 
   /*
 An RFC3339 timestamp in UTC time. This in the format of yyyy-MM-ddTHH:mm:ss.SSSZ.
 The milliseconds portion (".SSS") is optional.
 */
-  CreateTime?: string;
+  createTime?: string;
 
   // Optional. The snapshot of the boot disk of this workbench instance before upgrade.
-  Snapshot?: string;
+  snapshot?: string;
 
   /*
 (Output)
 Output only. The state of this instance upgrade history entry.
 */
-  State?: string;
+  state?: string;
 
   /*
 Definition of a custom Compute Engine virtual machine image for starting
 a workbench instance with the environment installed directly on the VM.
 Structure is documented below.
 */
-  VmImage?: string;
-
-  // Optional. Action. Rolloback or Upgrade.
-  Action?: string;
-
-  // Optional. The framework of this workbench instance.
-  Framework?: string;
+  vmImage?: string;
 }
 
-export function Workbench_InstanceUpgradeHistory_GetTypes(): DynamicUIProps[] {
+export function workbench_InstanceUpgradeHistory_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "TargetVersion",
+      "framework",
+      "Optional. The framework of this workbench instance.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "targetVersion",
       "Optional. Target VM Version, like m63.",
       [],
       false,
@@ -60,23 +68,7 @@ export function Workbench_InstanceUpgradeHistory_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Snapshot",
-      "Optional. The snapshot of the boot disk of this workbench instance before upgrade.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "VmImage",
-      "Definition of a custom Compute Engine virtual machine image for starting\na workbench instance with the environment installed directly on the VM.\nStructure is documented below.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Version",
+      "version",
       "Optional. The version of the workbench instance before this upgrade.",
       [],
       false,
@@ -84,31 +76,7 @@ export function Workbench_InstanceUpgradeHistory_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ContainerImage",
-      "Use a container image to start the workbench instance.\nStructure is documented below.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "CreateTime",
-      'An RFC3339 timestamp in UTC time. This in the format of yyyy-MM-ddTHH:mm:ss.SSSZ.\nThe milliseconds portion (".SSS") is optional.',
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "State",
-      "(Output)\nOutput only. The state of this instance upgrade history entry.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Action",
+      "action",
       "Optional. Action. Rolloback or Upgrade.",
       [],
       false,
@@ -116,8 +84,40 @@ export function Workbench_InstanceUpgradeHistory_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Framework",
-      "Optional. The framework of this workbench instance.",
+      "createTime",
+      'An RFC3339 timestamp in UTC time. This in the format of yyyy-MM-ddTHH:mm:ss.SSSZ.\nThe milliseconds portion (".SSS") is optional.',
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "containerImage",
+      "Use a container image to start the workbench instance.\nStructure is documented below.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "snapshot",
+      "Optional. The snapshot of the boot disk of this workbench instance before upgrade.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "state",
+      "(Output)\nOutput only. The state of this instance upgrade history entry.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "vmImage",
+      "Definition of a custom Compute Engine virtual machine image for starting\na workbench instance with the environment installed directly on the VM.\nStructure is documented below.",
       [],
       false,
       false,

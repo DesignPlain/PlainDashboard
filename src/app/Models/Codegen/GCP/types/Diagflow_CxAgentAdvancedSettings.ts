@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxAgentAdvancedSettingsAudioExportGcsDestination,
-  Diagflow_CxAgentAdvancedSettingsAudioExportGcsDestination_GetTypes,
-} from "./Diagflow_CxAgentAdvancedSettingsAudioExportGcsDestination";
+  diagflow_CxAgentAdvancedSettingsAudioExportGcsDestination,
+  diagflow_CxAgentAdvancedSettingsAudioExportGcsDestination_GetTypes,
+} from "./diagflow_CxAgentAdvancedSettingsAudioExportGcsDestination";
 import {
-  Diagflow_CxAgentAdvancedSettingsDtmfSettings,
-  Diagflow_CxAgentAdvancedSettingsDtmfSettings_GetTypes,
-} from "./Diagflow_CxAgentAdvancedSettingsDtmfSettings";
+  diagflow_CxAgentAdvancedSettingsDtmfSettings,
+  diagflow_CxAgentAdvancedSettingsDtmfSettings_GetTypes,
+} from "./diagflow_CxAgentAdvancedSettingsDtmfSettings";
 
-export interface Diagflow_CxAgentAdvancedSettings {
+export interface diagflow_CxAgentAdvancedSettings {
   /*
 If present, incoming audio is exported by Dialogflow to the configured Google Cloud Storage destination. Exposed at the following levels:
 - Agent level
 - Flow level
 Structure is documented below.
 */
-  AudioExportGcsDestination?: Diagflow_CxAgentAdvancedSettingsAudioExportGcsDestination;
+  audioExportGcsDestination?: diagflow_CxAgentAdvancedSettingsAudioExportGcsDestination;
 
   /*
 Define behaviors for DTMF (dual tone multi frequency). DTMF settings does not override each other. DTMF settings set at different levels define DTMF detections running in parallel. Exposed at the following levels:
@@ -31,24 +31,24 @@ Define behaviors for DTMF (dual tone multi frequency). DTMF settings does not ov
 - Parameter level
 Structure is documented below.
 */
-  DtmfSettings?: Diagflow_CxAgentAdvancedSettingsDtmfSettings;
+  dtmfSettings?: diagflow_CxAgentAdvancedSettingsDtmfSettings;
 }
 
-export function Diagflow_CxAgentAdvancedSettings_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxAgentAdvancedSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "DtmfSettings",
-      "Define behaviors for DTMF (dual tone multi frequency). DTMF settings does not override each other. DTMF settings set at different levels define DTMF detections running in parallel. Exposed at the following levels:\n* Agent level\n* Flow level\n* Page level\n* Parameter level\nStructure is documented below.",
-      Diagflow_CxAgentAdvancedSettingsDtmfSettings_GetTypes(),
+      "audioExportGcsDestination",
+      "If present, incoming audio is exported by Dialogflow to the configured Google Cloud Storage destination. Exposed at the following levels:\n* Agent level\n* Flow level\nStructure is documented below.",
+      diagflow_CxAgentAdvancedSettingsAudioExportGcsDestination_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "AudioExportGcsDestination",
-      "If present, incoming audio is exported by Dialogflow to the configured Google Cloud Storage destination. Exposed at the following levels:\n* Agent level\n* Flow level\nStructure is documented below.",
-      Diagflow_CxAgentAdvancedSettingsAudioExportGcsDestination_GetTypes(),
+      "dtmfSettings",
+      "Define behaviors for DTMF (dual tone multi frequency). DTMF settings does not override each other. DTMF settings set at different levels define DTMF detections running in parallel. Exposed at the following levels:\n* Agent level\n* Flow level\n* Page level\n* Parameter level\nStructure is documented below.",
+      diagflow_CxAgentAdvancedSettingsDtmfSettings_GetTypes(),
       false,
       false,
     ),

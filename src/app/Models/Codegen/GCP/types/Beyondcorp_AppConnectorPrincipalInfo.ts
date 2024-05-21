@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Beyondcorp_AppConnectorPrincipalInfoServiceAccount,
-  Beyondcorp_AppConnectorPrincipalInfoServiceAccount_GetTypes,
-} from "./Beyondcorp_AppConnectorPrincipalInfoServiceAccount";
+  beyondcorp_AppConnectorPrincipalInfoServiceAccount,
+  beyondcorp_AppConnectorPrincipalInfoServiceAccount_GetTypes,
+} from "./beyondcorp_AppConnectorPrincipalInfoServiceAccount";
 
-export interface Beyondcorp_AppConnectorPrincipalInfo {
+export interface beyondcorp_AppConnectorPrincipalInfo {
   /*
 ServiceAccount represents a GCP service account.
 Structure is documented below.
 */
-  ServiceAccount?: Beyondcorp_AppConnectorPrincipalInfoServiceAccount;
+  serviceAccount?: beyondcorp_AppConnectorPrincipalInfoServiceAccount;
 }
 
-export function Beyondcorp_AppConnectorPrincipalInfo_GetTypes(): DynamicUIProps[] {
+export function beyondcorp_AppConnectorPrincipalInfo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ServiceAccount",
+      "serviceAccount",
       "ServiceAccount represents a GCP service account.\nStructure is documented below.",
-      Beyondcorp_AppConnectorPrincipalInfoServiceAccount_GetTypes(),
+      beyondcorp_AppConnectorPrincipalInfoServiceAccount_GetTypes(),
       true,
       false,
     ),

@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Integrationconnectors_ConnectionConnectorVersionInfraConfig {
+export interface integrationconnectors_ConnectionConnectorVersionInfraConfig {
   /*
 (Output)
 Max QPS supported by the connector version before throttling of requests.
 */
-  RatelimitThreshold?: string;
+  ratelimitThreshold?: string;
 }
 
-export function Integrationconnectors_ConnectionConnectorVersionInfraConfig_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionConnectorVersionInfraConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "RatelimitThreshold",
+      "ratelimitThreshold",
       "(Output)\nMax QPS supported by the connector version before throttling of requests.",
       [],
       false,

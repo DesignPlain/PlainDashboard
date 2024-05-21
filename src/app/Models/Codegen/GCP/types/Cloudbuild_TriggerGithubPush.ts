@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuild_TriggerGithubPush {
+export interface cloudbuild_TriggerGithubPush {
   // Regex of branches to match.  Specify only one of branch or tag.
-  Branch?: string;
+  branch?: string;
 
   // When true, only trigger a build if the revision regex does NOT match the gitRef regex.
-  InvertRegex?: boolean;
+  invertRegex?: boolean;
 
   // Regex of tags to match.  Specify only one of branch or tag.
-  Tag?: string;
+  tag?: string;
 }
 
-export function Cloudbuild_TriggerGithubPush_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_TriggerGithubPush_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Branch",
+      "branch",
       "Regex of branches to match.  Specify only one of branch or tag.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Cloudbuild_TriggerGithubPush_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "InvertRegex",
+      "invertRegex",
       "When true, only trigger a build if the revision regex does NOT match the gitRef regex.",
       [],
       false,
@@ -37,7 +37,7 @@ export function Cloudbuild_TriggerGithubPush_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Tag",
+      "tag",
       "Regex of tags to match.  Specify only one of branch or tag.",
       [],
       false,

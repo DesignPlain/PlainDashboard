@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getInstanceTemplateConfidentialInstanceConfig {
+export interface compute_getInstanceTemplateConfidentialInstanceConfig {
   /*
 Specifies which confidential computing technology to use.
 								This could be one of the following values: SEV, SEV_SNP.
 								If SEV_SNP, min_cpu_platform = "AMD Milan" is currently required.
 */
-  ConfidentialInstanceType?: string;
+  confidentialInstanceType?: string;
 
   // Defines whether the instance should have confidential compute enabled. `on_host_maintenance` has to be set to TERMINATE or this will fail to create the VM.
-  EnableConfidentialCompute?: boolean;
+  enableConfidentialCompute?: boolean;
 }
 
-export function Compute_getInstanceTemplateConfidentialInstanceConfig_GetTypes(): DynamicUIProps[] {
+export function compute_getInstanceTemplateConfidentialInstanceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ConfidentialInstanceType",
+      "confidentialInstanceType",
       'Specifies which confidential computing technology to use.\n\t\t\t\t\t\t\t\tThis could be one of the following values: SEV, SEV_SNP.\n\t\t\t\t\t\t\t\tIf SEV_SNP, min_cpu_platform = "AMD Milan" is currently required.',
       [],
       true,
@@ -30,7 +30,7 @@ export function Compute_getInstanceTemplateConfidentialInstanceConfig_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableConfidentialCompute",
+      "enableConfidentialCompute",
       "Defines whether the instance should have confidential compute enabled. `on_host_maintenance` has to be set to TERMINATE or this will fail to create the VM.",
       [],
       true,

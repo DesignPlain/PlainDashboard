@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionUrlMapPathMatcherRouteRuleHeaderActionResponseHeadersToAdd {
-  // The name of the header.
-  HeaderName?: string;
-
-  // The value of the header to add.
-  HeaderValue?: string;
-
+export interface compute_RegionUrlMapPathMatcherRouteRuleHeaderActionResponseHeadersToAdd {
   /*
 If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header.
 The default value is false.
 */
-  Replace?: boolean;
+  replace?: boolean;
+
+  // The name of the header.
+  headerName?: string;
+
+  // The value of the header to add.
+  headerValue?: string;
 }
 
-export function Compute_RegionUrlMapPathMatcherRouteRuleHeaderActionResponseHeadersToAdd_GetTypes(): DynamicUIProps[] {
+export function compute_RegionUrlMapPathMatcherRouteRuleHeaderActionResponseHeadersToAdd_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Replace",
+      "replace",
       "If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header.\nThe default value is false.",
       [],
       true,
@@ -32,7 +32,7 @@ export function Compute_RegionUrlMapPathMatcherRouteRuleHeaderActionResponseHead
     ),
     new DynamicUIProps(
       InputType.String,
-      "HeaderName",
+      "headerName",
       "The name of the header.",
       [],
       true,
@@ -40,7 +40,7 @@ export function Compute_RegionUrlMapPathMatcherRouteRuleHeaderActionResponseHead
     ),
     new DynamicUIProps(
       InputType.String,
-      "HeaderValue",
+      "headerValue",
       "The value of the header to add.",
       [],
       true,

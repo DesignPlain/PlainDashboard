@@ -9,10 +9,10 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface NetworkPeeringRoutesConfigArgs {
   // Whether to export the custom routes to the peer network.
-  ExportCustomRoutes?: boolean;
+  exportCustomRoutes?: boolean;
 
   // Whether to import the custom routes to the peer network.
-  ImportCustomRoutes?: boolean;
+  importCustomRoutes?: boolean;
 
   /*
 The name of the primary network for the peering.
@@ -20,46 +20,46 @@ The name of the primary network for the peering.
 
 - - -
 */
-  Network?: string;
+  network?: string;
 
   // Name of the peering.
-  Peering?: string;
+  peering?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 }
 export class NetworkPeeringRoutesConfig extends Resource {
+  // Whether to export the custom routes to the peer network.
+  public exportCustomRoutes?: boolean;
+
+  // Whether to import the custom routes to the peer network.
+  public importCustomRoutes?: boolean;
+
   /*
 The name of the primary network for the peering.
 
 
 - - -
 */
-  public Network?: string;
+  public network?: string;
 
   // Name of the peering.
-  public Peering?: string;
+  public peering?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
-
-  // Whether to export the custom routes to the peer network.
-  public ExportCustomRoutes?: boolean;
-
-  // Whether to import the custom routes to the peer network.
-  public ImportCustomRoutes?: boolean;
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "ExportCustomRoutes",
+        "exportCustomRoutes",
         "Whether to export the custom routes to the peer network.",
         [],
         true,
@@ -67,7 +67,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "ImportCustomRoutes",
+        "importCustomRoutes",
         "Whether to import the custom routes to the peer network.",
         [],
         true,
@@ -75,7 +75,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Network",
+        "network",
         "The name of the primary network for the peering.\n\n\n- - -",
         [],
         true,
@@ -83,7 +83,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Peering",
+        "peering",
         "Name of the peering.",
         [],
         true,
@@ -91,7 +91,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,

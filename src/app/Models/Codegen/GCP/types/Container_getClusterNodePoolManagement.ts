@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodePoolManagement {
+export interface container_getClusterNodePoolManagement {
   // Whether the nodes will be automatically repaired. Enabled by default.
-  AutoRepair?: boolean;
+  autoRepair?: boolean;
 
   // Whether the nodes will be automatically upgraded. Enabled by default.
-  AutoUpgrade?: boolean;
+  autoUpgrade?: boolean;
 }
 
-export function Container_getClusterNodePoolManagement_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolManagement_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "AutoRepair",
+      "autoRepair",
       "Whether the nodes will be automatically repaired. Enabled by default.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Container_getClusterNodePoolManagement_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "AutoUpgrade",
+      "autoUpgrade",
       "Whether the nodes will be automatically upgraded. Enabled by default.",
       [],
       true,

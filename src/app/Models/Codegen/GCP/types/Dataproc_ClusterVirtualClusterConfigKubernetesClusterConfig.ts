@@ -6,17 +6,17 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfig,
-  Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfig_GetTypes,
-} from "./Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfig";
+  dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfig,
+  dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfig_GetTypes,
+} from "./dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfig";
 import {
-  Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigKubernetesSoftwareConfig,
-  Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigKubernetesSoftwareConfig_GetTypes,
-} from "./Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigKubernetesSoftwareConfig";
+  dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigKubernetesSoftwareConfig,
+  dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigKubernetesSoftwareConfig_GetTypes,
+} from "./dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigKubernetesSoftwareConfig";
 
-export interface Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig {
+export interface dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig {
   // The configuration for running the Dataproc cluster on GKE.
-  GkeClusterConfig?: Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfig;
+  gkeClusterConfig?: dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfig;
 
   /*
 A namespace within the Kubernetes cluster to deploy into. 
@@ -24,37 +24,37 @@ If this namespace does not exist, it is created.
 If it  exists, Dataproc verifies that another Dataproc VirtualCluster is not installed into it.
 If not specified, the name of the Dataproc Cluster is used.
 */
-  KubernetesNamespace?: string;
+  kubernetesNamespace?: string;
 
   // The software configuration for this Dataproc cluster running on Kubernetes.
-  KubernetesSoftwareConfig?: Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigKubernetesSoftwareConfig;
+  kubernetesSoftwareConfig?: dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigKubernetesSoftwareConfig;
 }
 
-export function Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "KubernetesSoftwareConfig",
-      "The software configuration for this Dataproc cluster running on Kubernetes.",
-      Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigKubernetesSoftwareConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "GkeClusterConfig",
+      "gkeClusterConfig",
       "The configuration for running the Dataproc cluster on GKE.",
-      Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfig_GetTypes(),
+      dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "KubernetesNamespace",
+      "kubernetesNamespace",
       "A namespace within the Kubernetes cluster to deploy into. \nIf this namespace does not exist, it is created.\nIf it  exists, Dataproc verifies that another Dataproc VirtualCluster is not installed into it.\nIf not specified, the name of the Dataproc Cluster is used.",
       [],
       false,
       true,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "kubernetesSoftwareConfig",
+      "The software configuration for this Dataproc cluster running on Kubernetes.",
+      dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigKubernetesSoftwareConfig_GetTypes(),
+      true,
+      false,
     ),
   ];
 }

@@ -6,8 +6,8 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vertex_AiFeatureOnlineStoreFeatureviewVectorSearchConfigBruteForceConfig {}
+export interface vertex_AiFeatureOnlineStoreFeatureviewVectorSearchConfigBruteForceConfig {}
 
-export function Vertex_AiFeatureOnlineStoreFeatureviewVectorSearchConfigBruteForceConfig_GetTypes(): DynamicUIProps[] {
+export function vertex_AiFeatureOnlineStoreFeatureviewVectorSearchConfigBruteForceConfig_GetTypes(): DynamicUIProps[] {
   return [];
 }

@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Composer_EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig {
+export interface composer_EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig {
   // When enabled, Cloud Composer periodically saves snapshots of your environment to a Cloud Storage bucket.
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // Snapshot schedule, in the unix-cron format.
-  SnapshotCreationSchedule?: string;
+  snapshotCreationSchedule?: string;
 
   // the URI of a bucket folder where to save the snapshot.
-  SnapshotLocation?: string;
+  snapshotLocation?: string;
 
   // A time zone for the schedule. This value is a time offset and does not take into account daylight saving time changes. Valid values are from UTC-12 to UTC+12. Examples: UTC, UTC-01, UTC+03.
-  TimeZone?: string;
+  timeZone?: string;
 }
 
-export function Composer_EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig_GetTypes(): DynamicUIProps[] {
+export function composer_EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "timeZone",
+      "A time zone for the schedule. This value is a time offset and does not take into account daylight saving time changes. Valid values are from UTC-12 to UTC+12. Examples: UTC, UTC-01, UTC+03.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "When enabled, Cloud Composer periodically saves snapshots of your environment to a Cloud Storage bucket.",
       [],
       true,
@@ -32,7 +40,7 @@ export function Composer_EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig
     ),
     new DynamicUIProps(
       InputType.String,
-      "SnapshotCreationSchedule",
+      "snapshotCreationSchedule",
       "Snapshot schedule, in the unix-cron format.",
       [],
       false,
@@ -40,16 +48,8 @@ export function Composer_EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig
     ),
     new DynamicUIProps(
       InputType.String,
-      "SnapshotLocation",
+      "snapshotLocation",
       "the URI of a bucket folder where to save the snapshot.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "TimeZone",
-      "A time zone for the schedule. This value is a time offset and does not take into account daylight saving time changes. Valid values are from UTC-12 to UTC+12. Examples: UTC, UTC-01, UTC+03.",
       [],
       false,
       false,

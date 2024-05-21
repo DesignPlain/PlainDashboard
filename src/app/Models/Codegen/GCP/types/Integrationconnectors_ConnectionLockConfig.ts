@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Integrationconnectors_ConnectionLockConfig {
-  // Indicates whether or not the connection is locked.
-  Locked?: boolean;
-
+export interface integrationconnectors_ConnectionLockConfig {
   // Describes why a connection is locked.
-  Reason?: string;
+  reason?: string;
+
+  // Indicates whether or not the connection is locked.
+  locked?: boolean;
 }
 
-export function Integrationconnectors_ConnectionLockConfig_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionLockConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Bool,
-      "Locked",
-      "Indicates whether or not the connection is locked.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Reason",
+      "reason",
       "Describes why a connection is locked.",
       [],
       false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "locked",
+      "Indicates whether or not the connection is locked.",
+      [],
+      true,
       false,
     ),
   ];

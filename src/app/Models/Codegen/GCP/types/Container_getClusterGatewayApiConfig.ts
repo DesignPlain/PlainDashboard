@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterGatewayApiConfig {
+export interface container_getClusterGatewayApiConfig {
   // The Gateway API release channel to use for Gateway API.
-  Channel?: string;
+  channel?: string;
 }
 
-export function Container_getClusterGatewayApiConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterGatewayApiConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Channel",
+      "channel",
       "The Gateway API release channel to use for Gateway API.",
       [],
       true,

@@ -6,31 +6,39 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionInstanceTemplateNetworkInterfaceIpv6AccessConfig {
-  // The domain name to be used when creating DNSv6 records for the external IPv6 ranges.
-  PublicPtrDomainName?: string;
-
-  // The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
-  ExternalIpv6?: string;
-
-  // The prefix length of the external IPv6 range.
-  ExternalIpv6PrefixLength?: string;
-
-  // The name of this access configuration.
-  Name?: string;
-
+export interface compute_RegionInstanceTemplateNetworkInterfaceIpv6AccessConfig {
   /*
 The service-level to be provided for IPv6 traffic when the
 subnet has an external subnet. Only PREMIUM and STANDARD tier is valid for IPv6.
 */
-  NetworkTier?: string;
+  networkTier?: string;
+
+  // The domain name to be used when creating DNSv6 records for the external IPv6 ranges.
+  publicPtrDomainName?: string;
+
+  // The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+  externalIpv6?: string;
+
+  // The prefix length of the external IPv6 range.
+  externalIpv6PrefixLength?: string;
+
+  // The name of this access configuration.
+  name?: string;
 }
 
-export function Compute_RegionInstanceTemplateNetworkInterfaceIpv6AccessConfig_GetTypes(): DynamicUIProps[] {
+export function compute_RegionInstanceTemplateNetworkInterfaceIpv6AccessConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PublicPtrDomainName",
+      "networkTier",
+      "The service-level to be provided for IPv6 traffic when the\nsubnet has an external subnet. Only PREMIUM and STANDARD tier is valid for IPv6.",
+      [],
+      true,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "publicPtrDomainName",
       "The domain name to be used when creating DNSv6 records for the external IPv6 ranges.",
       [],
       false,
@@ -38,7 +46,7 @@ export function Compute_RegionInstanceTemplateNetworkInterfaceIpv6AccessConfig_G
     ),
     new DynamicUIProps(
       InputType.String,
-      "ExternalIpv6",
+      "externalIpv6",
       "The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.",
       [],
       false,
@@ -46,7 +54,7 @@ export function Compute_RegionInstanceTemplateNetworkInterfaceIpv6AccessConfig_G
     ),
     new DynamicUIProps(
       InputType.String,
-      "ExternalIpv6PrefixLength",
+      "externalIpv6PrefixLength",
       "The prefix length of the external IPv6 range.",
       [],
       false,
@@ -54,18 +62,10 @@ export function Compute_RegionInstanceTemplateNetworkInterfaceIpv6AccessConfig_G
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of this access configuration.",
       [],
       false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "NetworkTier",
-      "The service-level to be provided for IPv6 traffic when the\nsubnet has an external subnet. Only PREMIUM and STANDARD tier is valid for IPv6.",
-      [],
-      true,
       true,
     ),
   ];

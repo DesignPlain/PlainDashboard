@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_InstanceReservationAffinitySpecificReservation,
-  Compute_InstanceReservationAffinitySpecificReservation_GetTypes,
-} from "./Compute_InstanceReservationAffinitySpecificReservation";
+  compute_InstanceReservationAffinitySpecificReservation,
+  compute_InstanceReservationAffinitySpecificReservation_GetTypes,
+} from "./compute_InstanceReservationAffinitySpecificReservation";
 
-export interface Compute_InstanceReservationAffinity {
+export interface compute_InstanceReservationAffinity {
   /*
 Specifies the label selector for the reservation to use..
 Structure is documented below.
 */
-  SpecificReservation?: Compute_InstanceReservationAffinitySpecificReservation;
+  specificReservation?: compute_InstanceReservationAffinitySpecificReservation;
 
   // The type of reservation from which this instance can consume resources.
-  Type?: string;
+  type?: string;
 }
 
-export function Compute_InstanceReservationAffinity_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceReservationAffinity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "Type",
-      "The type of reservation from which this instance can consume resources.",
-      [],
-      true,
+      InputType.Object,
+      "specificReservation",
+      "Specifies the label selector for the reservation to use..\nStructure is documented below.",
+      compute_InstanceReservationAffinitySpecificReservation_GetTypes(),
+      false,
       true,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "SpecificReservation",
-      "Specifies the label selector for the reservation to use..\nStructure is documented below.",
-      Compute_InstanceReservationAffinitySpecificReservation_GetTypes(),
-      false,
+      InputType.String,
+      "type",
+      "The type of reservation from which this instance can consume resources.",
+      [],
+      true,
       true,
     ),
   ];

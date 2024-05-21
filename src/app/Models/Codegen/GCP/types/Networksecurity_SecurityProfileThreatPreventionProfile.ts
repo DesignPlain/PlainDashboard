@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride,
-  Networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride_GetTypes,
-} from "./Networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride";
+  networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride,
+  networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride_GetTypes,
+} from "./networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride";
 import {
-  Networksecurity_SecurityProfileThreatPreventionProfileThreatOverride,
-  Networksecurity_SecurityProfileThreatPreventionProfileThreatOverride_GetTypes,
-} from "./Networksecurity_SecurityProfileThreatPreventionProfileThreatOverride";
+  networksecurity_SecurityProfileThreatPreventionProfileThreatOverride,
+  networksecurity_SecurityProfileThreatPreventionProfileThreatOverride_GetTypes,
+} from "./networksecurity_SecurityProfileThreatPreventionProfileThreatOverride";
 
-export interface Networksecurity_SecurityProfileThreatPreventionProfile {
+export interface networksecurity_SecurityProfileThreatPreventionProfile {
   /*
 The configuration for overriding threats actions by severity match.
 Structure is documented below.
 */
-  SeverityOverrides?: Array<Networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride>;
+  severityOverrides?: Array<networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride>;
 
   /*
 The configuration for overriding threats actions by threat id match.
@@ -27,24 +27,24 @@ If a threat is matched both by configuration provided in severity overrides
 and threat overrides, the threat overrides action is applied.
 Structure is documented below.
 */
-  ThreatOverrides?: Array<Networksecurity_SecurityProfileThreatPreventionProfileThreatOverride>;
+  threatOverrides?: Array<networksecurity_SecurityProfileThreatPreventionProfileThreatOverride>;
 }
 
-export function Networksecurity_SecurityProfileThreatPreventionProfile_GetTypes(): DynamicUIProps[] {
+export function networksecurity_SecurityProfileThreatPreventionProfile_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "SeverityOverrides",
+      "severityOverrides",
       "The configuration for overriding threats actions by severity match.\nStructure is documented below.",
-      Networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride_GetTypes(),
+      networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ThreatOverrides",
+      "threatOverrides",
       "The configuration for overriding threats actions by threat id match.\nIf a threat is matched both by configuration provided in severity overrides\nand threat overrides, the threat overrides action is applied.\nStructure is documented below.",
-      Networksecurity_SecurityProfileThreatPreventionProfileThreatOverride_GetTypes(),
+      networksecurity_SecurityProfileThreatPreventionProfileThreatOverride_GetTypes(),
       false,
       false,
     ),

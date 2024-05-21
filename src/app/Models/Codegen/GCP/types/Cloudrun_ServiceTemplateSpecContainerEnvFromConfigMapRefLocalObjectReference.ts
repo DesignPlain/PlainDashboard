@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference {
+export interface cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference {
   // Name of the referent.
-  Name?: string;
+  name?: string;
 }
 
-export function Cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference_GetTypes(): DynamicUIProps[] {
+export function cloudrun_ServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Name of the referent.",
       [],
       true,

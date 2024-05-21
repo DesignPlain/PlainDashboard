@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AwsNodePoolConfigConfigEncryption {
+export interface container_AwsNodePoolConfigConfigEncryption {
   // The ARN of the AWS KMS key used to encrypt node pool configuration.
-  KmsKeyArn?: string;
+  kmsKeyArn?: string;
 }
 
-export function Container_AwsNodePoolConfigConfigEncryption_GetTypes(): DynamicUIProps[] {
+export function container_AwsNodePoolConfigConfigEncryption_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyArn",
+      "kmsKeyArn",
       "The ARN of the AWS KMS key used to encrypt node pool configuration.",
       [],
       true,

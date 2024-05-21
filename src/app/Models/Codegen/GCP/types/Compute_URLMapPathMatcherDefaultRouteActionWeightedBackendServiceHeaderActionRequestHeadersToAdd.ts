@@ -6,33 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_URLMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAdd {
+export interface compute_URLMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAdd {
   // The name of the header to add.
-  HeaderName?: string;
+  headerName?: string;
 
   // The value of the header to add.
-  HeaderValue?: string;
+  headerValue?: string;
 
   /*
 If false, headerValue is appended to any values that already exist for the header.
 If true, headerValue is set for the header, discarding any values that were set for that header.
 */
-  Replace?: boolean;
+  replace?: boolean;
 }
 
-export function Compute_URLMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAdd_GetTypes(): DynamicUIProps[] {
+export function compute_URLMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAdd_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Bool,
-      "Replace",
-      "If false, headerValue is appended to any values that already exist for the header.\nIf true, headerValue is set for the header, discarding any values that were set for that header.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "HeaderName",
+      "headerName",
       "The name of the header to add.",
       [],
       false,
@@ -40,8 +32,16 @@ export function Compute_URLMapPathMatcherDefaultRouteActionWeightedBackendServic
     ),
     new DynamicUIProps(
       InputType.String,
-      "HeaderValue",
+      "headerValue",
       "The value of the header to add.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "replace",
+      "If false, headerValue is appended to any values that already exist for the header.\nIf true, headerValue is set for the header, discarding any values that were set for that header.",
       [],
       false,
       false,

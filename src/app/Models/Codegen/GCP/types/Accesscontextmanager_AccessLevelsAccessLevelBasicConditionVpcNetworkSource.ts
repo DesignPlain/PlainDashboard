@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Accesscontextmanager_AccessLevelsAccessLevelBasicConditionVpcNetworkSourceVpcSubnetwork,
-  Accesscontextmanager_AccessLevelsAccessLevelBasicConditionVpcNetworkSourceVpcSubnetwork_GetTypes,
-} from "./Accesscontextmanager_AccessLevelsAccessLevelBasicConditionVpcNetworkSourceVpcSubnetwork";
+  accesscontextmanager_AccessLevelsAccessLevelBasicConditionVpcNetworkSourceVpcSubnetwork,
+  accesscontextmanager_AccessLevelsAccessLevelBasicConditionVpcNetworkSourceVpcSubnetwork_GetTypes,
+} from "./accesscontextmanager_AccessLevelsAccessLevelBasicConditionVpcNetworkSourceVpcSubnetwork";
 
-export interface Accesscontextmanager_AccessLevelsAccessLevelBasicConditionVpcNetworkSource {
+export interface accesscontextmanager_AccessLevelsAccessLevelBasicConditionVpcNetworkSource {
   /*
 Sub networks within a VPC network.
 Structure is documented below.
 */
-  VpcSubnetwork?: Accesscontextmanager_AccessLevelsAccessLevelBasicConditionVpcNetworkSourceVpcSubnetwork;
+  vpcSubnetwork?: accesscontextmanager_AccessLevelsAccessLevelBasicConditionVpcNetworkSourceVpcSubnetwork;
 }
 
-export function Accesscontextmanager_AccessLevelsAccessLevelBasicConditionVpcNetworkSource_GetTypes(): DynamicUIProps[] {
+export function accesscontextmanager_AccessLevelsAccessLevelBasicConditionVpcNetworkSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "VpcSubnetwork",
+      "vpcSubnetwork",
       "Sub networks within a VPC network.\nStructure is documented below.",
-      Accesscontextmanager_AccessLevelsAccessLevelBasicConditionVpcNetworkSourceVpcSubnetwork_GetTypes(),
+      accesscontextmanager_AccessLevelsAccessLevelBasicConditionVpcNetworkSourceVpcSubnetwork_GetTypes(),
       false,
       false,
     ),

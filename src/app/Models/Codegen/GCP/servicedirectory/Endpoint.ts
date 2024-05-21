@@ -8,44 +8,41 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface EndpointArgs {
+  // IPv4 or IPv6 address of the endpoint.
+  address?: string;
+
+  /*
+The Resource ID must be 1-63 characters long, including digits,
+lowercase letters or the hyphen character.
+
+
+- - -
+*/
+  endpointId?: string;
+
+  /*
+Metadata for the endpoint. This data can be consumed
+by service clients. The entire metadata dictionary may contain
+up to 512 characters, spread across all key-value pairs.
+Metadata that goes beyond any these limits will be rejected.
+*/
+  metadata?: Map<string, string>;
+
+  // The URL to the network, such as projects/PROJECT_NUMBER/locations/global/networks/NETWORK_NAME.
+  network?: string;
+
   /*
 Port that the endpoint is running on, must be in the
 range of [0, 65535]. If unspecified, the default is 0.
 */
-  Port?: number;
+  port?: number;
 
   // The resource name of the service that this endpoint provides.
-  Service?: string;
-
-  // IPv4 or IPv6 address of the endpoint.
-  Address?: string;
-
-  /*
-The Resource ID must be 1-63 characters long, including digits,
-lowercase letters or the hyphen character.
-
-
-- - -
-*/
-  EndpointId?: string;
-
-  /*
-Metadata for the endpoint. This data can be consumed
-by service clients. The entire metadata dictionary may contain
-up to 512 characters, spread across all key-value pairs.
-Metadata that goes beyond any these limits will be rejected.
-*/
-  Metadata?: Map<string, string>;
-
-  // The URL to the network, such as projects/PROJECT_NUMBER/locations/global/networks/NETWORK_NAME.
-  Network?: string;
+  service?: string;
 }
 export class Endpoint extends Resource {
-  // The resource name of the service that this endpoint provides.
-  public Service?: string;
-
   // IPv4 or IPv6 address of the endpoint.
-  public Address?: string;
+  public address?: string;
 
   /*
 The Resource ID must be 1-63 characters long, including digits,
@@ -54,7 +51,7 @@ lowercase letters or the hyphen character.
 
 - - -
 */
-  public EndpointId?: string;
+  public endpointId?: string;
 
   /*
 Metadata for the endpoint. This data can be consumed
@@ -62,28 +59,39 @@ by service clients. The entire metadata dictionary may contain
 up to 512 characters, spread across all key-value pairs.
 Metadata that goes beyond any these limits will be rejected.
 */
-  public Metadata?: Map<string, string>;
+  public metadata?: Map<string, string>;
 
   /*
 The resource name for the endpoint in the format
 `projects/-/locations/-/namespaces/-/services/-/endpoints/-`.
 */
-  public Name?: string;
+  public name?: string;
 
   // The URL to the network, such as projects/PROJECT_NUMBER/locations/global/networks/NETWORK_NAME.
-  public Network?: string;
+  public network?: string;
 
   /*
 Port that the endpoint is running on, must be in the
 range of [0, 65535]. If unspecified, the default is 0.
 */
-  public Port?: number;
+  public port?: number;
+
+  // The resource name of the service that this endpoint provides.
+  public service?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Address",
+        "service",
+        "The resource name of the service that this endpoint provides.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "address",
         "IPv4 or IPv6 address of the endpoint.",
         [],
         false,
@@ -91,7 +99,7 @@ range of [0, 65535]. If unspecified, the default is 0.
       ),
       new DynamicUIProps(
         InputType.String,
-        "EndpointId",
+        "endpointId",
         "The Resource ID must be 1-63 characters long, including digits,\nlowercase letters or the hyphen character.\n\n\n- - -",
         [],
         true,
@@ -99,7 +107,7 @@ range of [0, 65535]. If unspecified, the default is 0.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Metadata",
+        "metadata",
         "Metadata for the endpoint. This data can be consumed\nby service clients. The entire metadata dictionary may contain\nup to 512 characters, spread across all key-value pairs.\nMetadata that goes beyond any these limits will be rejected.",
         InputType_Map_GetTypes(),
         false,
@@ -107,7 +115,7 @@ range of [0, 65535]. If unspecified, the default is 0.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Network",
+        "network",
         "The URL to the network, such as projects/PROJECT_NUMBER/locations/global/networks/NETWORK_NAME.",
         [],
         false,
@@ -115,19 +123,11 @@ range of [0, 65535]. If unspecified, the default is 0.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "Port",
+        "port",
         "Port that the endpoint is running on, must be in the\nrange of [0, 65535]. If unspecified, the default is 0.",
         [],
         false,
         false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Service",
-        "The resource name of the service that this endpoint provides.",
-        [],
-        true,
-        true,
       ),
     ];
   }

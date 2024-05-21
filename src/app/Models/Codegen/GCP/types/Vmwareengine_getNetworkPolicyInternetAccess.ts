@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vmwareengine_getNetworkPolicyInternetAccess {
+export interface vmwareengine_getNetworkPolicyInternetAccess {
   // True if the service is enabled; false otherwise.
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // State of the service. New values may be added to this enum when appropriate.
-  State?: string;
+  state?: string;
 }
 
-export function Vmwareengine_getNetworkPolicyInternetAccess_GetTypes(): DynamicUIProps[] {
+export function vmwareengine_getNetworkPolicyInternetAccess_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "True if the service is enabled; false otherwise.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Vmwareengine_getNetworkPolicyInternetAccess_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "State of the service. New values may be added to this enum when appropriate.",
       [],
       true,

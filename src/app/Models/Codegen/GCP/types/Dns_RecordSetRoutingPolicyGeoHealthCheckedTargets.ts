@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer,
-  Dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer_GetTypes,
-} from "./Dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer";
+  dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer,
+  dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer_GetTypes,
+} from "./dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer";
 
-export interface Dns_RecordSetRoutingPolicyGeoHealthCheckedTargets {
+export interface dns_RecordSetRoutingPolicyGeoHealthCheckedTargets {
   /*
 The list of internal load balancers to health check.
 Structure is document below.
 */
-  InternalLoadBalancers?: Array<Dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer>;
+  internalLoadBalancers?: Array<dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer>;
 }
 
-export function Dns_RecordSetRoutingPolicyGeoHealthCheckedTargets_GetTypes(): DynamicUIProps[] {
+export function dns_RecordSetRoutingPolicyGeoHealthCheckedTargets_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "InternalLoadBalancers",
+      "internalLoadBalancers",
       "The list of internal load balancers to health check.\nStructure is document below.",
-      Dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer_GetTypes(),
+      dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer_GetTypes(),
       true,
       false,
     ),

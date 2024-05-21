@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_getBucketObjectContentRetention {
+export interface storage_getBucketObjectContentRetention {
   // The object retention mode. Supported values include: "Unlocked", "Locked".
-  Mode?: string;
+  mode?: string;
 
   // Time in RFC 3339 (e.g. 2030-01-01T02:03:04Z) until which object retention protects this object.
-  RetainUntilTime?: string;
+  retainUntilTime?: string;
 }
 
-export function Storage_getBucketObjectContentRetention_GetTypes(): DynamicUIProps[] {
+export function storage_getBucketObjectContentRetention_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "RetainUntilTime",
-      "Time in RFC 3339 (e.g. 2030-01-01T02:03:04Z) until which object retention protects this object.",
+      "mode",
+      'The object retention mode. Supported values include: "Unlocked", "Locked".',
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Mode",
-      'The object retention mode. Supported values include: "Unlocked", "Locked".',
+      "retainUntilTime",
+      "Time in RFC 3339 (e.g. 2030-01-01T02:03:04Z) until which object retention protects this object.",
       [],
       true,
       false,

@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTable,
-  Datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTable_GetTypes,
-} from "./Datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTable";
+  datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTable,
+  datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTable_GetTypes,
+} from "./datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTable";
 
-export interface Datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabase {
+export interface datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabase {
   // Database name.
-  Database?: string;
+  database?: string;
 
   /*
 Tables in the database.
 Structure is documented below.
 */
-  MysqlTables?: Array<Datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTable>;
+  mysqlTables?: Array<datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTable>;
 }
 
-export function Datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabase_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabase_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Database",
+      "database",
       "Database name.",
       [],
       true,
@@ -33,9 +33,9 @@ export function Datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabase_Ge
     ),
     new DynamicUIProps(
       InputType.Array,
-      "MysqlTables",
+      "mysqlTables",
       "Tables in the database.\nStructure is documented below.",
-      Datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTable_GetTypes(),
+      datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTable_GetTypes(),
       false,
       false,
     ),

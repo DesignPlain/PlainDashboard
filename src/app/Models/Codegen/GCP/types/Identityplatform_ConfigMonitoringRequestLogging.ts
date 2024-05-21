@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Identityplatform_ConfigMonitoringRequestLogging {
+export interface identityplatform_ConfigMonitoringRequestLogging {
   // Whether logging is enabled for this project or not.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Identityplatform_ConfigMonitoringRequestLogging_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ConfigMonitoringRequestLogging_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether logging is enabled for this project or not.",
       [],
       false,

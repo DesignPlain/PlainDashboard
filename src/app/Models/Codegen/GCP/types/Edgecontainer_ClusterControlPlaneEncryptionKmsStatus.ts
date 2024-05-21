@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Edgecontainer_ClusterControlPlaneEncryptionKmsStatus {
-  /*
-(Output)
-The status code, which should be an enum value of google.rpc.Code.
-*/
-  Code?: number;
-
+export interface edgecontainer_ClusterControlPlaneEncryptionKmsStatus {
   /*
 (Output)
 A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.
 */
-  Message?: string;
+  message?: string;
+
+  /*
+(Output)
+The status code, which should be an enum value of google.rpc.Code.
+*/
+  code?: number;
 }
 
-export function Edgecontainer_ClusterControlPlaneEncryptionKmsStatus_GetTypes(): DynamicUIProps[] {
+export function edgecontainer_ClusterControlPlaneEncryptionKmsStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "Code",
-      "(Output)\nThe status code, which should be an enum value of google.rpc.Code.",
+      InputType.String,
+      "message",
+      "(Output)\nA developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "Message",
-      "(Output)\nA developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.",
+      InputType.Number,
+      "code",
+      "(Output)\nThe status code, which should be an enum value of google.rpc.Code.",
       [],
       false,
       false,

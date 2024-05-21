@@ -6,12 +6,12 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Binaryauthorization_AttestorAttestationAuthorityNotePublicKeyPkixPublicKey {
+export interface binaryauthorization_AttestorAttestationAuthorityNotePublicKeyPkixPublicKey {
   /*
 A PEM-encoded public key, as described in
 `https://tools.ietf.org/html/rfc7468#section-13`
 */
-  PublicKeyPem?: string;
+  publicKeyPem?: string;
 
   /*
 The signature algorithm used to verify a message against
@@ -22,14 +22,14 @@ public key).
 
 - - -
 */
-  SignatureAlgorithm?: string;
+  signatureAlgorithm?: string;
 }
 
-export function Binaryauthorization_AttestorAttestationAuthorityNotePublicKeyPkixPublicKey_GetTypes(): DynamicUIProps[] {
+export function binaryauthorization_AttestorAttestationAuthorityNotePublicKeyPkixPublicKey_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PublicKeyPem",
+      "publicKeyPem",
       "A PEM-encoded public key, as described in\n`https://tools.ietf.org/html/rfc7468#section-13`",
       [],
       false,
@@ -37,7 +37,7 @@ export function Binaryauthorization_AttestorAttestationAuthorityNotePublicKeyPki
     ),
     new DynamicUIProps(
       InputType.String,
-      "SignatureAlgorithm",
+      "signatureAlgorithm",
       "The signature algorithm used to verify a message against\na signature using this key. These signature algorithm must\nmatch the structure and any object identifiers encoded in\npublicKeyPem (i.e. this algorithm must match that of the\npublic key).\n\n- - -",
       [],
       false,

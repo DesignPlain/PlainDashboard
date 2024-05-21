@@ -7,73 +7,73 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Clouddeploy_TargetIamBindingCondition,
-  Clouddeploy_TargetIamBindingCondition_GetTypes,
-} from "../types/Clouddeploy_TargetIamBindingCondition";
+  clouddeploy_TargetIamBindingCondition,
+  clouddeploy_TargetIamBindingCondition_GetTypes,
+} from "../types/clouddeploy_TargetIamBindingCondition";
 
 export interface TargetIamBindingArgs {
   //
-  Project?: string;
+  location?: string;
 
   //
-  Role?: string;
+  members?: Array<string>;
 
   //
-  Condition?: Clouddeploy_TargetIamBindingCondition;
+  name?: string;
 
   //
-  Location?: string;
+  project?: string;
 
   //
-  Members?: Array<string>;
+  role?: string;
 
   //
-  Name?: string;
+  condition?: clouddeploy_TargetIamBindingCondition;
 }
 export class TargetIamBinding extends Resource {
   //
-  public Condition?: Clouddeploy_TargetIamBindingCondition;
+  public condition?: clouddeploy_TargetIamBindingCondition;
 
   //
-  public Etag?: string;
+  public etag?: string;
 
   //
-  public Location?: string;
+  public location?: string;
 
   //
-  public Members?: Array<string>;
+  public members?: Array<string>;
 
   //
-  public Name?: string;
+  public name?: string;
 
   //
-  public Project?: string;
+  public project?: string;
 
   //
-  public Role?: string;
+  public role?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Project", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
-      new DynamicUIProps(
-        InputType.Object,
-        "Condition",
-        "",
-        Clouddeploy_TargetIamBindingCondition_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(InputType.String, "Location", "", [], false, true),
+      new DynamicUIProps(InputType.String, "location", "", [], false, true),
       new DynamicUIProps(
         InputType.Array,
-        "Members",
+        "members",
         "",
         InputType_String_GetTypes(),
         true,
         false,
       ),
-      new DynamicUIProps(InputType.String, "Name", "", [], false, true),
+      new DynamicUIProps(InputType.String, "name", "", [], false, true),
+      new DynamicUIProps(InputType.String, "project", "", [], false, true),
+      new DynamicUIProps(InputType.String, "role", "", [], true, true),
+      new DynamicUIProps(
+        InputType.Object,
+        "condition",
+        "",
+        clouddeploy_TargetIamBindingCondition_GetTypes(),
+        false,
+        true,
+      ),
     ];
   }
 }

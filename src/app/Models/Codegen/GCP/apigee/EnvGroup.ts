@@ -9,10 +9,10 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface EnvGroupArgs {
   // Hostnames of the environment group.
-  Hostnames?: Array<string>;
+  hostnames?: Array<string>;
 
   // The resource ID of the environment group.
-  Name?: string;
+  name?: string;
 
   /*
 The Apigee Organization associated with the Apigee environment group,
@@ -21,9 +21,15 @@ in the format `organizations/{{org_name}}`.
 
 - - -
 */
-  OrgId?: string;
+  orgId?: string;
 }
 export class EnvGroup extends Resource {
+  // Hostnames of the environment group.
+  public hostnames?: Array<string>;
+
+  // The resource ID of the environment group.
+  public name?: string;
+
   /*
 The Apigee Organization associated with the Apigee environment group,
 in the format `organizations/{{org_name}}`.
@@ -31,19 +37,13 @@ in the format `organizations/{{org_name}}`.
 
 - - -
 */
-  public OrgId?: string;
-
-  // Hostnames of the environment group.
-  public Hostnames?: Array<string>;
-
-  // The resource ID of the environment group.
-  public Name?: string;
+  public orgId?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "Hostnames",
+        "hostnames",
         "Hostnames of the environment group.",
         InputType_String_GetTypes(),
         false,
@@ -51,7 +51,7 @@ in the format `organizations/{{org_name}}`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The resource ID of the environment group.",
         [],
         false,
@@ -59,7 +59,7 @@ in the format `organizations/{{org_name}}`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "OrgId",
+        "orgId",
         "The Apigee Organization associated with the Apigee environment group,\nin the format `organizations/{{org_name}}`.\n\n\n- - -",
         [],
         true,

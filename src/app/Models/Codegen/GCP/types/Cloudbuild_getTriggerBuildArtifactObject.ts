@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudbuild_getTriggerBuildArtifactObjectTiming,
-  Cloudbuild_getTriggerBuildArtifactObjectTiming_GetTypes,
-} from "./Cloudbuild_getTriggerBuildArtifactObjectTiming";
+  cloudbuild_getTriggerBuildArtifactObjectTiming,
+  cloudbuild_getTriggerBuildArtifactObjectTiming_GetTypes,
+} from "./cloudbuild_getTriggerBuildArtifactObjectTiming";
 
-export interface Cloudbuild_getTriggerBuildArtifactObject {
+export interface cloudbuild_getTriggerBuildArtifactObject {
   /*
 The Cloud Build location for the trigger.
 
 - - -
 */
-  Location?: string;
+  location?: string;
 
   // Path globs used to match files in the build's workspace.
-  Paths?: Array<string>;
+  paths?: Array<string>;
 
   // Output only. Stores timing information for pushing all artifact objects.
-  Timings?: Array<Cloudbuild_getTriggerBuildArtifactObjectTiming>;
+  timings?: Array<cloudbuild_getTriggerBuildArtifactObjectTiming>;
 }
 
-export function Cloudbuild_getTriggerBuildArtifactObject_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_getTriggerBuildArtifactObject_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       "The Cloud Build location for the trigger.\n\n- - -",
       [],
       true,
@@ -37,7 +37,7 @@ export function Cloudbuild_getTriggerBuildArtifactObject_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Paths",
+      "paths",
       "Path globs used to match files in the build's workspace.",
       InputType_String_GetTypes(),
       true,
@@ -45,9 +45,9 @@ export function Cloudbuild_getTriggerBuildArtifactObject_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Timings",
+      "timings",
       "Output only. Stores timing information for pushing all artifact objects.",
-      Cloudbuild_getTriggerBuildArtifactObjectTiming_GetTypes(),
+      cloudbuild_getTriggerBuildArtifactObjectTiming_GetTypes(),
       true,
       false,
     ),

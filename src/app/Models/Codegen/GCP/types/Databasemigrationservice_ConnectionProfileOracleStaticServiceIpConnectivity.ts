@@ -6,8 +6,8 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Databasemigrationservice_ConnectionProfileOracleStaticServiceIpConnectivity {}
+export interface databasemigrationservice_ConnectionProfileOracleStaticServiceIpConnectivity {}
 
-export function Databasemigrationservice_ConnectionProfileOracleStaticServiceIpConnectivity_GetTypes(): DynamicUIProps[] {
+export function databasemigrationservice_ConnectionProfileOracleStaticServiceIpConnectivity_GetTypes(): DynamicUIProps[] {
   return [];
 }

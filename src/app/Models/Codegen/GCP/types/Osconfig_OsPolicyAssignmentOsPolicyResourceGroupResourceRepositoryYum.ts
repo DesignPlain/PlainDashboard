@@ -6,9 +6,15 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum {
+export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum {
+  // The location of the repository directory.
+  baseUrl?: string;
+
+  // The display name of the repository.
+  displayName?: string;
+
   // URIs of GPG keys.
-  GpgKeys?: Array<string>;
+  gpgKeys?: Array<string>;
 
   /*
 A one word, unique name for this repository. This is the
@@ -16,20 +22,14 @@ A one word, unique name for this repository. This is the
 `display_name` is omitted. This id is also used as the unique identifier
 when checking for resource conflicts.
 */
-  Id?: string;
-
-  // The location of the repository directory.
-  BaseUrl?: string;
-
-  // The display name of the repository.
-  DisplayName?: string;
+  id?: string;
 }
 
-export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Id",
+      "id",
       "A one word, unique name for this repository. This is the\n`repo id` in the yum config file and also the `display_name` if\n`display_name` is omitted. This id is also used as the unique identifier\nwhen checking for resource conflicts.",
       [],
       true,
@@ -37,7 +37,7 @@ export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceReposito
     ),
     new DynamicUIProps(
       InputType.String,
-      "BaseUrl",
+      "baseUrl",
       "The location of the repository directory.",
       [],
       true,
@@ -45,7 +45,7 @@ export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceReposito
     ),
     new DynamicUIProps(
       InputType.String,
-      "DisplayName",
+      "displayName",
       "The display name of the repository.",
       [],
       false,
@@ -53,7 +53,7 @@ export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceReposito
     ),
     new DynamicUIProps(
       InputType.Array,
-      "GpgKeys",
+      "gpgKeys",
       "URIs of GPG keys.",
       InputType_String_GetTypes(),
       false,

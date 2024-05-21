@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuild_getTriggerApprovalConfig {
+export interface cloudbuild_getTriggerApprovalConfig {
   /*
 Whether or not approval is needed. If this is set on a build, it will become pending when run,
 and will need to be explicitly approved to start.
 */
-  ApprovalRequired?: boolean;
+  approvalRequired?: boolean;
 }
 
-export function Cloudbuild_getTriggerApprovalConfig_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_getTriggerApprovalConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "ApprovalRequired",
+      "approvalRequired",
       "Whether or not approval is needed. If this is set on a build, it will become pending when run,\nand will need to be explicitly approved to start.",
       [],
       true,

@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datacatalog_EntryGcsFilesetSpecSampleGcsFileSpec {
+export interface datacatalog_EntryGcsFilesetSpecSampleGcsFileSpec {
   /*
 (Output)
 The full file path
 */
-  FilePath?: string;
+  filePath?: string;
 
   /*
 (Output)
 The size of the file, in bytes.
 */
-  SizeBytes?: number;
+  sizeBytes?: number;
 }
 
-export function Datacatalog_EntryGcsFilesetSpecSampleGcsFileSpec_GetTypes(): DynamicUIProps[] {
+export function datacatalog_EntryGcsFilesetSpecSampleGcsFileSpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "FilePath",
+      "filePath",
       "(Output)\nThe full file path",
       [],
       false,
@@ -32,7 +32,7 @@ export function Datacatalog_EntryGcsFilesetSpecSampleGcsFileSpec_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Number,
-      "SizeBytes",
+      "sizeBytes",
       "(Output)\nThe size of the file, in bytes.",
       [],
       false,

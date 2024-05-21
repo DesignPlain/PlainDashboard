@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek {
+export interface compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek {
   /*
 The day of the week to create the snapshot. e.g. MONDAY
 Possible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
 */
-  Day?: string;
+  day?: string;
 
   /*
 Time within the window to start the operations.
 It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
 */
-  StartTime?: string;
+  startTime?: string;
 }
 
-export function Compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek_GetTypes(): DynamicUIProps[] {
+export function compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Day",
+      "day",
       "The day of the week to create the snapshot. e.g. MONDAY\nPossible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.",
       [],
       true,
@@ -32,7 +32,7 @@ export function Compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedu
     ),
     new DynamicUIProps(
       InputType.String,
-      "StartTime",
+      "startTime",
       'Time within the window to start the operations.\nIt must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.',
       [],
       true,

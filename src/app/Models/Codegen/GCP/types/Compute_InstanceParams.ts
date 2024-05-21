@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceParams {
+export interface compute_InstanceParams {
   // A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.
-  ResourceManagerTags?: Map<string, InputType.String>;
+  resourceManagerTags?: Map<string, string>;
 }
 
-export function Compute_InstanceParams_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceParams_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Map,
-      "ResourceManagerTags",
+      "resourceManagerTags",
       "A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.",
       InputType_Map_GetTypes(),
       false,

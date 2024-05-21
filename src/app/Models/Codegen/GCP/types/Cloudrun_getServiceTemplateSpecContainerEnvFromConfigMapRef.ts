@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference,
-  Cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference_GetTypes,
-} from "./Cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference";
+  cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference,
+  cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference_GetTypes,
+} from "./cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference";
 
-export interface Cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef {
+export interface cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef {
   // The ConfigMap to select from.
-  LocalObjectReferences?: Array<Cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference>;
+  localObjectReferences?: Array<cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference>;
 
   // Specify whether the ConfigMap must be defined
-  Optional?: boolean;
+  optional?: boolean;
 }
 
-export function Cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef_GetTypes(): DynamicUIProps[] {
+export function cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "LocalObjectReferences",
-      "The ConfigMap to select from.",
-      Cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference_GetTypes(),
+      InputType.Bool,
+      "optional",
+      "Specify whether the ConfigMap must be defined",
+      [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Bool,
-      "Optional",
-      "Specify whether the ConfigMap must be defined",
-      [],
+      InputType.Array,
+      "localObjectReferences",
+      "The ConfigMap to select from.",
+      cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference_GetTypes(),
       true,
       false,
     ),

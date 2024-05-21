@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomCustomConstraint,
-  Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomCustomConstraint_GetTypes,
-} from "./Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomCustomConstraint";
+  securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomCustomConstraint,
+  securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomCustomConstraint_GetTypes,
+} from "./securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomCustomConstraint";
 import {
-  Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomPolicyRule,
-  Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomPolicyRule_GetTypes,
-} from "./Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomPolicyRule";
+  securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomPolicyRule,
+  securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomPolicyRule_GetTypes,
+} from "./securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomPolicyRule";
 
-export interface Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom {
+export interface securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom {
   /*
 Organization policy custom constraint definition.
 Structure is documented below.
 */
-  CustomConstraint?: Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomCustomConstraint;
+  customConstraint?: securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomCustomConstraint;
 
   /*
 Definition of policy rules
 Structure is documented below.
 */
-  PolicyRules?: Array<Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomPolicyRule>;
+  policyRules?: Array<securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomPolicyRule>;
 }
 
-export function Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom_GetTypes(): DynamicUIProps[] {
+export function securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "CustomConstraint",
+      "customConstraint",
       "Organization policy custom constraint definition.\nStructure is documented below.",
-      Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomCustomConstraint_GetTypes(),
+      securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomCustomConstraint_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "PolicyRules",
+      "policyRules",
       "Definition of policy rules\nStructure is documented below.",
-      Securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomPolicyRule_GetTypes(),
+      securityposture_PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomPolicyRule_GetTypes(),
       true,
       false,
     ),

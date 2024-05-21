@@ -14,22 +14,22 @@ The name of the regional disk in which the resource policies are attached to.
 
 - - -
 */
-  Disk?: string;
+  disk?: string;
 
   /*
 The resource policy to be attached to the disk for scheduling snapshot
 creation. Do not specify the self link.
 */
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // A reference to the region where the disk resides.
-  Region?: string;
+  region?: string;
 }
 export class RegionDiskResourcePolicyAttachment extends Resource {
   /*
@@ -38,28 +38,36 @@ The name of the regional disk in which the resource policies are attached to.
 
 - - -
 */
-  public Disk?: string;
+  public disk?: string;
 
   /*
 The resource policy to be attached to the disk for scheduling snapshot
 creation. Do not specify the self link.
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // A reference to the region where the disk resides.
-  public Region?: string;
+  public region?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "name",
+        "The resource policy to be attached to the disk for scheduling snapshot\ncreation. Do not specify the self link.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -67,7 +75,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "A reference to the region where the disk resides.",
         [],
         false,
@@ -75,18 +83,10 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Disk",
+        "disk",
         "The name of the regional disk in which the resource policies are attached to.\n\n\n- - -",
         [],
         true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "The resource policy to be attached to the disk for scheduling snapshot\ncreation. Do not specify the self link.",
-        [],
-        false,
         true,
       ),
     ];

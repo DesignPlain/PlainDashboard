@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudfunctions_FunctionSecretEnvironmentVariable {
-  // Name of the environment variable.
-  Key?: string;
-
-  // Project identifier (due to a known limitation, only project number is supported by this field) of the project that contains the secret. If not set, it will be populated with the function's project, assuming that the secret exists in the same project as of the function.
-  ProjectId?: string;
-
+export interface cloudfunctions_FunctionSecretEnvironmentVariable {
   // ID of the secret in secret manager (not the full resource name).
-  Secret?: string;
+  secret?: string;
 
   // Version of the secret (version number or the string "latest"). It is recommended to use a numeric version for secret environment variables as any updates to the secret value is not reflected until new clones start.
-  Version?: string;
+  version?: string;
+
+  // Name of the environment variable.
+  key?: string;
+
+  // Project identifier (due to a known limitation, only project number is supported by this field) of the project that contains the secret. If not set, it will be populated with the function's project, assuming that the secret exists in the same project as of the function.
+  projectId?: string;
 }
 
-export function Cloudfunctions_FunctionSecretEnvironmentVariable_GetTypes(): DynamicUIProps[] {
+export function cloudfunctions_FunctionSecretEnvironmentVariable_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Secret",
+      "secret",
       "ID of the secret in secret manager (not the full resource name).",
       [],
       true,
@@ -32,7 +32,7 @@ export function Cloudfunctions_FunctionSecretEnvironmentVariable_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "Version",
+      "version",
       'Version of the secret (version number or the string "latest"). It is recommended to use a numeric version for secret environment variables as any updates to the secret value is not reflected until new clones start.',
       [],
       true,
@@ -40,7 +40,7 @@ export function Cloudfunctions_FunctionSecretEnvironmentVariable_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "key",
       "Name of the environment variable.",
       [],
       true,
@@ -48,7 +48,7 @@ export function Cloudfunctions_FunctionSecretEnvironmentVariable_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProjectId",
+      "projectId",
       "Project identifier (due to a known limitation, only project number is supported by this field) of the project that contains the secret. If not set, it will be populated with the function's project, assuming that the secret exists in the same project as of the function.",
       [],
       false,

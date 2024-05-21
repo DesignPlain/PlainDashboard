@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getInstanceGroupManagerAllInstancesConfig {
-  // The label key-value pairs that you want to patch onto the instance,
-  Labels?: Map<string, string>;
-
+export interface compute_getInstanceGroupManagerAllInstancesConfig {
   // The metadata key-value pairs that you want to patch onto the instance. For more information, see Project and instance metadata,
-  Metadata?: Map<string, string>;
+  metadata?: Map<string, string>;
+
+  // The label key-value pairs that you want to patch onto the instance,
+  labels?: Map<string, string>;
 }
 
-export function Compute_getInstanceGroupManagerAllInstancesConfig_GetTypes(): DynamicUIProps[] {
+export function compute_getInstanceGroupManagerAllInstancesConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Map,
-      "Metadata",
+      "metadata",
       "The metadata key-value pairs that you want to patch onto the instance. For more information, see Project and instance metadata,",
       InputType_Map_GetTypes(),
       true,
@@ -26,7 +26,7 @@ export function Compute_getInstanceGroupManagerAllInstancesConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Labels",
+      "labels",
       "The label key-value pairs that you want to patch onto the instance,",
       InputType_Map_GetTypes(),
       true,

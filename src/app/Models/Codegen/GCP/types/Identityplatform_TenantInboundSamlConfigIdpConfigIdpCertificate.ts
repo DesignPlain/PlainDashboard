@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Identityplatform_TenantInboundSamlConfigIdpConfigIdpCertificate {
+export interface identityplatform_TenantInboundSamlConfigIdpConfigIdpCertificate {
   // The x509 certificate
-  X509Certificate?: string;
+  x509Certificate?: string;
 }
 
-export function Identityplatform_TenantInboundSamlConfigIdpConfigIdpCertificate_GetTypes(): DynamicUIProps[] {
+export function identityplatform_TenantInboundSamlConfigIdpConfigIdpCertificate_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "X509Certificate",
+      "x509Certificate",
       "The x509 certificate",
       [],
       false,

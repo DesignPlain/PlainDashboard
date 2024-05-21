@@ -6,31 +6,24 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudscheduler_JobHttpTargetOauthToken,
-  Cloudscheduler_JobHttpTargetOauthToken_GetTypes,
-} from "./Cloudscheduler_JobHttpTargetOauthToken";
+  cloudscheduler_JobHttpTargetOidcToken,
+  cloudscheduler_JobHttpTargetOidcToken_GetTypes,
+} from "./cloudscheduler_JobHttpTargetOidcToken";
 import {
-  Cloudscheduler_JobHttpTargetOidcToken,
-  Cloudscheduler_JobHttpTargetOidcToken_GetTypes,
-} from "./Cloudscheduler_JobHttpTargetOidcToken";
+  cloudscheduler_JobHttpTargetOauthToken,
+  cloudscheduler_JobHttpTargetOauthToken_GetTypes,
+} from "./cloudscheduler_JobHttpTargetOauthToken";
 
-export interface Cloudscheduler_JobHttpTarget {
-  /*
-Contains information needed for generating an OAuth token.
-This type of authorization should be used when sending requests to a GCP endpoint.
-Structure is documented below.
-*/
-  OauthToken?: Cloudscheduler_JobHttpTargetOauthToken;
-
+export interface cloudscheduler_JobHttpTarget {
   /*
 Contains information needed for generating an OpenID Connect token.
 This type of authorization should be used when sending requests to third party endpoints or Cloud Run.
 Structure is documented below.
 */
-  OidcToken?: Cloudscheduler_JobHttpTargetOidcToken;
+  oidcToken?: cloudscheduler_JobHttpTargetOidcToken;
 
   // The full URI path that the request will be sent to.
-  Uri?: string;
+  uri?: string;
 
   /*
 HTTP request body.
@@ -38,47 +31,38 @@ A request body is allowed only if the HTTP method is POST, PUT, or PATCH.
 It is an error to set body on a job with an incompatible HttpMethod.
 A base64-encoded string.
 */
-  Body?: string;
+  body?: string;
 
   /*
 This map contains the header field names and values.
 Repeated headers are not supported, but a header value can contain commas.
 */
-  Headers?: Map<string, string>;
+  headers?: Map<string, string>;
 
   // Which HTTP method to use for the request.
-  HttpMethod?: string;
+  httpMethod?: string;
+
+  /*
+Contains information needed for generating an OAuth token.
+This type of authorization should be used when sending requests to a GCP endpoint.
+Structure is documented below.
+*/
+  oauthToken?: cloudscheduler_JobHttpTargetOauthToken;
 }
 
-export function Cloudscheduler_JobHttpTarget_GetTypes(): DynamicUIProps[] {
+export function cloudscheduler_JobHttpTarget_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "HttpMethod",
-      "Which HTTP method to use for the request.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Object,
-      "OauthToken",
-      "Contains information needed for generating an OAuth token.\nThis type of authorization should be used when sending requests to a GCP endpoint.\nStructure is documented below.",
-      Cloudscheduler_JobHttpTargetOauthToken_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "OidcToken",
+      "oidcToken",
       "Contains information needed for generating an OpenID Connect token.\nThis type of authorization should be used when sending requests to third party endpoints or Cloud Run.\nStructure is documented below.",
-      Cloudscheduler_JobHttpTargetOidcToken_GetTypes(),
+      cloudscheduler_JobHttpTargetOidcToken_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Uri",
+      "uri",
       "The full URI path that the request will be sent to.",
       [],
       true,
@@ -86,7 +70,7 @@ export function Cloudscheduler_JobHttpTarget_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Body",
+      "body",
       "HTTP request body.\nA request body is allowed only if the HTTP method is POST, PUT, or PATCH.\nIt is an error to set body on a job with an incompatible HttpMethod.\nA base64-encoded string.",
       [],
       false,
@@ -94,9 +78,25 @@ export function Cloudscheduler_JobHttpTarget_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Headers",
+      "headers",
       "This map contains the header field names and values.\nRepeated headers are not supported, but a header value can contain commas.",
       InputType_Map_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "httpMethod",
+      "Which HTTP method to use for the request.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "oauthToken",
+      "Contains information needed for generating an OAuth token.\nThis type of authorization should be used when sending requests to a GCP endpoint.\nStructure is documented below.",
+      cloudscheduler_JobHttpTargetOauthToken_GetTypes(),
       false,
       false,
     ),

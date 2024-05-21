@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterUpgradePolicy {
+export interface gkeonprem_BareMetalClusterUpgradePolicy {
   /*
 Specifies which upgrade policy to use.
 Possible values are: `SERIAL`, `CONCURRENT`.
 */
-  Policy?: string;
+  policy?: string;
 }
 
-export function Gkeonprem_BareMetalClusterUpgradePolicy_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterUpgradePolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Policy",
+      "policy",
       "Specifies which upgrade policy to use.\nPossible values are: `SERIAL`, `CONCURRENT`.",
       [],
       false,

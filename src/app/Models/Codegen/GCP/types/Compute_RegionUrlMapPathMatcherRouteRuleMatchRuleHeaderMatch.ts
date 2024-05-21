@@ -6,11 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch,
-  Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch_GetTypes,
-} from "./Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch";
+  compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch,
+  compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch_GetTypes,
+} from "./compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch";
 
-export interface Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatch {
+export interface compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatch {
   /*
 The header value must be an integer and its value must be in the range specified
 in rangeMatch. If the header does not contain an integer, number or is empty,
@@ -23,7 +23,7 @@ Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or
 rangeMatch must be set.
 Structure is documented below.
 */
-  RangeMatch?: Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch;
+  rangeMatch?: compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch;
 
   /*
 The value of the header must match the regular expression specified in
@@ -34,55 +34,55 @@ a regular expression that satisfies the RFC2616 Host header's port specifier.
 Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or
 rangeMatch must be set.
 */
-  RegexMatch?: string;
+  regexMatch?: string;
 
   /*
 The value of the header must end with the contents of suffixMatch. Only one of
 exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch
 must be set.
 */
-  SuffixMatch?: string;
+  suffixMatch?: string;
 
   /*
 The value should exactly match contents of exactMatch. Only one of exactMatch,
 prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
 */
-  ExactMatch?: string;
+  exactMatch?: string;
 
   /*
 The name of the HTTP header to match. For matching against the HTTP request's
 authority, use a headerMatch with the header name ":authority". For matching a
 request's method, use the headerName ":method".
 */
-  HeaderName?: string;
+  headerName?: string;
 
   /*
 If set to false, the headerMatch is considered a match if the match criteria
 above are met. If set to true, the headerMatch is considered a match if the
 match criteria above are NOT met. Defaults to false.
 */
-  InvertMatch?: boolean;
+  invertMatch?: boolean;
 
   /*
 The value of the header must start with the contents of prefixMatch. Only one of
 exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch
 must be set.
 */
-  PrefixMatch?: string;
+  prefixMatch?: string;
 
   /*
 A header with the contents of headerName must exist. The match takes place
 whether or not the request's header has a value or not. Only one of exactMatch,
 prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
 */
-  PresentMatch?: boolean;
+  presentMatch?: boolean;
 }
 
-export function Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatch_GetTypes(): DynamicUIProps[] {
+export function compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatch_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PrefixMatch",
+      "prefixMatch",
       "The value of the header must start with the contents of prefixMatch. Only one of\nexactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch\nmust be set.",
       [],
       false,
@@ -90,7 +90,7 @@ export function Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatch_Get
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "PresentMatch",
+      "presentMatch",
       "A header with the contents of headerName must exist. The match takes place\nwhether or not the request's header has a value or not. Only one of exactMatch,\nprefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.",
       [],
       false,
@@ -98,15 +98,15 @@ export function Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatch_Get
     ),
     new DynamicUIProps(
       InputType.Object,
-      "RangeMatch",
+      "rangeMatch",
       "The header value must be an integer and its value must be in the range specified\nin rangeMatch. If the header does not contain an integer, number or is empty,\nthe match fails. For example for a range [-5, 0]\n* -3 will match\n* 0 will not match\n* 0.25 will not match\n* -3someString will not match.\nOnly one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or\nrangeMatch must be set.\nStructure is documented below.",
-      Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch_GetTypes(),
+      compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "RegexMatch",
+      "regexMatch",
       "The value of the header must match the regular expression specified in\nregexMatch. For regular expression grammar, please see:\nen.cppreference.com/w/cpp/regex/ecmascript  For matching against a port\nspecified in the HTTP request, use a headerMatch with headerName set to PORT and\na regular expression that satisfies the RFC2616 Host header's port specifier.\nOnly one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or\nrangeMatch must be set.",
       [],
       false,
@@ -114,7 +114,7 @@ export function Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatch_Get
     ),
     new DynamicUIProps(
       InputType.String,
-      "SuffixMatch",
+      "suffixMatch",
       "The value of the header must end with the contents of suffixMatch. Only one of\nexactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch\nmust be set.",
       [],
       false,
@@ -122,7 +122,7 @@ export function Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatch_Get
     ),
     new DynamicUIProps(
       InputType.String,
-      "ExactMatch",
+      "exactMatch",
       "The value should exactly match contents of exactMatch. Only one of exactMatch,\nprefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.",
       [],
       false,
@@ -130,7 +130,7 @@ export function Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatch_Get
     ),
     new DynamicUIProps(
       InputType.String,
-      "HeaderName",
+      "headerName",
       'The name of the HTTP header to match. For matching against the HTTP request\'s\nauthority, use a headerMatch with the header name ":authority". For matching a\nrequest\'s method, use the headerName ":method".',
       [],
       true,
@@ -138,7 +138,7 @@ export function Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatch_Get
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "InvertMatch",
+      "invertMatch",
       "If set to false, the headerMatch is considered a match if the match criteria\nabove are met. If set to true, the headerMatch is considered a match if the\nmatch criteria above are NOT met. Defaults to false.",
       [],
       false,

@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataplex_TaskNotebookInfrastructureSpecBatch {
+export interface dataplex_TaskNotebookInfrastructureSpecBatch {
   // Total number of job executors. Executor Count should be between 2 and 100. [Default=2]
-  ExecutorsCount?: number;
+  executorsCount?: number;
 
   // Max configurable executors. If maxExecutorsCount > executorsCount, then auto-scaling is enabled. Max Executor Count should be between 2 and 1000. [Default=1000]
-  MaxExecutorsCount?: number;
+  maxExecutorsCount?: number;
 }
 
-export function Dataplex_TaskNotebookInfrastructureSpecBatch_GetTypes(): DynamicUIProps[] {
+export function dataplex_TaskNotebookInfrastructureSpecBatch_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "ExecutorsCount",
-      "Total number of job executors. Executor Count should be between 2 and 100. [Default=2]",
+      "maxExecutorsCount",
+      "Max configurable executors. If maxExecutorsCount > executorsCount, then auto-scaling is enabled. Max Executor Count should be between 2 and 1000. [Default=1000]",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxExecutorsCount",
-      "Max configurable executors. If maxExecutorsCount > executorsCount, then auto-scaling is enabled. Max Executor Count should be between 2 and 1000. [Default=1000]",
+      "executorsCount",
+      "Total number of job executors. Executor Count should be between 2 and 100. [Default=2]",
       [],
       false,
       false,

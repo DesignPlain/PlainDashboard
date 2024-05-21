@@ -6,37 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionBackendServiceConsistentHashHttpCookieTtl,
-  Compute_RegionBackendServiceConsistentHashHttpCookieTtl_GetTypes,
-} from "./Compute_RegionBackendServiceConsistentHashHttpCookieTtl";
+  compute_RegionBackendServiceConsistentHashHttpCookieTtl,
+  compute_RegionBackendServiceConsistentHashHttpCookieTtl_GetTypes,
+} from "./compute_RegionBackendServiceConsistentHashHttpCookieTtl";
 
-export interface Compute_RegionBackendServiceConsistentHashHttpCookie {
+export interface compute_RegionBackendServiceConsistentHashHttpCookie {
   // Name of the cookie.
-  Name?: string;
+  name?: string;
 
   // Path to set for the cookie.
-  Path?: string;
+  path?: string;
 
   /*
 Lifetime of the cookie.
 Structure is documented below.
 */
-  Ttl?: Compute_RegionBackendServiceConsistentHashHttpCookieTtl;
+  ttl?: compute_RegionBackendServiceConsistentHashHttpCookieTtl;
 }
 
-export function Compute_RegionBackendServiceConsistentHashHttpCookie_GetTypes(): DynamicUIProps[] {
+export function compute_RegionBackendServiceConsistentHashHttpCookie_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "Ttl",
-      "Lifetime of the cookie.\nStructure is documented below.",
-      Compute_RegionBackendServiceConsistentHashHttpCookieTtl_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Name of the cookie.",
       [],
       false,
@@ -44,9 +36,17 @@ export function Compute_RegionBackendServiceConsistentHashHttpCookie_GetTypes():
     ),
     new DynamicUIProps(
       InputType.String,
-      "Path",
+      "path",
       "Path to set for the cookie.",
       [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "ttl",
+      "Lifetime of the cookie.\nStructure is documented below.",
+      compute_RegionBackendServiceConsistentHashHttpCookieTtl_GetTypes(),
       false,
       false,
     ),

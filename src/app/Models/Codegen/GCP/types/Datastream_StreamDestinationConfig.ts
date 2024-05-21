@@ -6,52 +6,52 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamDestinationConfigGcsDestinationConfig,
-  Datastream_StreamDestinationConfigGcsDestinationConfig_GetTypes,
-} from "./Datastream_StreamDestinationConfigGcsDestinationConfig";
+  datastream_StreamDestinationConfigGcsDestinationConfig,
+  datastream_StreamDestinationConfigGcsDestinationConfig_GetTypes,
+} from "./datastream_StreamDestinationConfigGcsDestinationConfig";
 import {
-  Datastream_StreamDestinationConfigBigqueryDestinationConfig,
-  Datastream_StreamDestinationConfigBigqueryDestinationConfig_GetTypes,
-} from "./Datastream_StreamDestinationConfigBigqueryDestinationConfig";
+  datastream_StreamDestinationConfigBigqueryDestinationConfig,
+  datastream_StreamDestinationConfigBigqueryDestinationConfig_GetTypes,
+} from "./datastream_StreamDestinationConfigBigqueryDestinationConfig";
 
-export interface Datastream_StreamDestinationConfig {
+export interface datastream_StreamDestinationConfig {
   /*
 A configuration for how data should be loaded to Cloud Storage.
 Structure is documented below.
 */
-  GcsDestinationConfig?: Datastream_StreamDestinationConfigGcsDestinationConfig;
+  gcsDestinationConfig?: datastream_StreamDestinationConfigGcsDestinationConfig;
 
   /*
 A configuration for how data should be loaded to Cloud Storage.
 Structure is documented below.
 */
-  BigqueryDestinationConfig?: Datastream_StreamDestinationConfigBigqueryDestinationConfig;
+  bigqueryDestinationConfig?: datastream_StreamDestinationConfigBigqueryDestinationConfig;
 
   // Destination connection profile resource. Format: projects/{project}/locations/{location}/connectionProfiles/{name}
-  DestinationConnectionProfile?: string;
+  destinationConnectionProfile?: string;
 }
 
-export function Datastream_StreamDestinationConfig_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamDestinationConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "GcsDestinationConfig",
+      "gcsDestinationConfig",
       "A configuration for how data should be loaded to Cloud Storage.\nStructure is documented below.",
-      Datastream_StreamDestinationConfigGcsDestinationConfig_GetTypes(),
+      datastream_StreamDestinationConfigGcsDestinationConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "BigqueryDestinationConfig",
+      "bigqueryDestinationConfig",
       "A configuration for how data should be loaded to Cloud Storage.\nStructure is documented below.",
-      Datastream_StreamDestinationConfigBigqueryDestinationConfig_GetTypes(),
+      datastream_StreamDestinationConfigBigqueryDestinationConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "DestinationConnectionProfile",
+      "destinationConnectionProfile",
       "Destination connection profile resource. Format: projects/{project}/locations/{location}/connectionProfiles/{name}",
       [],
       true,

@@ -6,33 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigTaint {
+export interface gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigTaint {
   /*
 Specifies the nodes operating system (default: LINUX).
 Possible values are: `EFFECT_UNSPECIFIED`, `PREFER_NO_SCHEDULE`, `NO_EXECUTE`.
 */
-  Effect?: string;
+  effect?: string;
 
   // Key associated with the effect.
-  Key?: string;
+  key?: string;
 
   // Value associated with the effect.
-  Value?: string;
+  value?: string;
 }
 
-export function Gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigTaint_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigTaint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Key",
-      "Key associated with the effect.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Value",
+      "value",
       "Value associated with the effect.",
       [],
       false,
@@ -40,8 +32,16 @@ export function Gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfig
     ),
     new DynamicUIProps(
       InputType.String,
-      "Effect",
+      "effect",
       "Specifies the nodes operating system (default: LINUX).\nPossible values are: `EFFECT_UNSPECIFIED`, `PREFER_NO_SCHEDULE`, `NO_EXECUTE`.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "key",
+      "Key associated with the effect.",
       [],
       false,
       false,

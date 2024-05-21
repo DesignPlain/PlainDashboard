@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntent {
-  /*
-(Output)
-The human-readable name of the intent, unique within the agent.
-*/
-  DisplayName?: string;
-
+export interface diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntent {
   /*
 The unique identifier of the intent.
 Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/intents/<Intent ID>.
 */
-  Name?: string;
+  name?: string;
+
+  /*
+(Output)
+The human-readable name of the intent, unique within the agent.
+*/
+  displayName?: string;
 }
 
-export function Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntent_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntent_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DisplayName",
-      "(Output)\nThe human-readable name of the intent, unique within the agent.",
+      "name",
+      "The unique identifier of the intent.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/intents/<Intent ID>.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
-      "The unique identifier of the intent.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/intents/<Intent ID>.",
+      "displayName",
+      "(Output)\nThe human-readable name of the intent, unique within the agent.",
       [],
       false,
       false,

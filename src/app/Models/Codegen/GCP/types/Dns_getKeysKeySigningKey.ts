@@ -6,71 +6,47 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dns_getKeysKeySigningKeyDigest,
-  Dns_getKeysKeySigningKeyDigest_GetTypes,
-} from "./Dns_getKeysKeySigningKeyDigest";
+  dns_getKeysKeySigningKeyDigest,
+  dns_getKeysKeySigningKeyDigest_GetTypes,
+} from "./dns_getKeysKeySigningKeyDigest";
 
-export interface Dns_getKeysKeySigningKey {
-  // Length of the key in bits. Specified at creation time then immutable.
-  KeyLength?: number;
-
-  // The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone's DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B.
-  KeyTag?: number;
-
-  // Base64 encoded public half of this key.
-  PublicKey?: string;
-
-  // The time that this resource was created in the control plane. This is in RFC3339 text format.
-  CreationTime?: string;
-
-  // A mutable string of at most 1024 characters associated with this resource for the user's convenience.
-  Description?: string;
+export interface dns_getKeysKeySigningKey {
+  // String mnemonic specifying the DNSSEC algorithm of this key. Immutable after creation time. Possible values are `ecdsap256sha256`, `ecdsap384sha384`, `rsasha1`, `rsasha256`, and `rsasha512`.
+  algorithm?: string;
 
   // A list of cryptographic hashes of the DNSKEY resource record associated with this DnsKey. These digests are needed to construct a DS record that points at this DNS key. Each contains:
-  Digests?: Array<Dns_getKeysKeySigningKeyDigest>;
-
-  // Unique identifier for the resource; defined by the server.
-  Id?: string;
-
-  // Active keys will be used to sign subsequent changes to the ManagedZone. Inactive keys will still be present as DNSKEY Resource Records for the use of resolvers validating existing signatures.
-  IsActive?: boolean;
-
-  // String mnemonic specifying the DNSSEC algorithm of this key. Immutable after creation time. Possible values are `ecdsap256sha256`, `ecdsap384sha384`, `rsasha1`, `rsasha256`, and `rsasha512`.
-  Algorithm?: string;
+  digests?: Array<dns_getKeysKeySigningKeyDigest>;
 
   // The DS record based on the KSK record. This is used when [delegating](https://cloud.google.com/dns/docs/dnssec-advanced#subdelegation) DNSSEC-signed subdomains.
-  DsRecord?: string;
+  dsRecord?: string;
+
+  // Unique identifier for the resource; defined by the server.
+  id?: string;
+
+  // Active keys will be used to sign subsequent changes to the ManagedZone. Inactive keys will still be present as DNSKEY Resource Records for the use of resolvers validating existing signatures.
+  isActive?: boolean;
+
+  // The time that this resource was created in the control plane. This is in RFC3339 text format.
+  creationTime?: string;
+
+  // A mutable string of at most 1024 characters associated with this resource for the user's convenience.
+  description?: string;
+
+  // Length of the key in bits. Specified at creation time then immutable.
+  keyLength?: number;
+
+  // The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone's DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B.
+  keyTag?: number;
+
+  // Base64 encoded public half of this key.
+  publicKey?: string;
 }
 
-export function Dns_getKeysKeySigningKey_GetTypes(): DynamicUIProps[] {
+export function dns_getKeysKeySigningKey_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "KeyTag",
-      "The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone's DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "PublicKey",
-      "Base64 encoded public half of this key.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Digests",
-      "A list of cryptographic hashes of the DNSKEY resource record associated with this DnsKey. These digests are needed to construct a DS record that points at this DNS key. Each contains:",
-      Dns_getKeysKeySigningKeyDigest_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Id",
+      "id",
       "Unique identifier for the resource; defined by the server.",
       [],
       true,
@@ -78,7 +54,7 @@ export function Dns_getKeysKeySigningKey_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IsActive",
+      "isActive",
       "Active keys will be used to sign subsequent changes to the ManagedZone. Inactive keys will still be present as DNSKEY Resource Records for the use of resolvers validating existing signatures.",
       [],
       true,
@@ -86,23 +62,15 @@ export function Dns_getKeysKeySigningKey_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "DsRecord",
+      "dsRecord",
       "The DS record based on the KSK record. This is used when [delegating](https://cloud.google.com/dns/docs/dnssec-advanced#subdelegation) DNSSEC-signed subdomains.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Number,
-      "KeyLength",
-      "Length of the key in bits. Specified at creation time then immutable.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "CreationTime",
+      "creationTime",
       "The time that this resource was created in the control plane. This is in RFC3339 text format.",
       [],
       true,
@@ -110,17 +78,49 @@ export function Dns_getKeysKeySigningKey_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "A mutable string of at most 1024 characters associated with this resource for the user's convenience.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
+      InputType.Number,
+      "keyLength",
+      "Length of the key in bits. Specified at creation time then immutable.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "keyTag",
+      "The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone's DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "Algorithm",
+      "publicKey",
+      "Base64 encoded public half of this key.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "algorithm",
       "String mnemonic specifying the DNSSEC algorithm of this key. Immutable after creation time. Possible values are `ecdsap256sha256`, `ecdsap384sha384`, `rsasha1`, `rsasha256`, and `rsasha512`.",
       [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "digests",
+      "A list of cryptographic hashes of the DNSKEY resource record associated with this DnsKey. These digests are needed to construct a DS record that points at this DNS key. Each contains:",
+      dns_getKeysKeySigningKeyDigest_GetTypes(),
       true,
       false,
     ),

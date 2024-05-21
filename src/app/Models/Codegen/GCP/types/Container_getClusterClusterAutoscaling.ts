@@ -6,49 +6,41 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterClusterAutoscalingResourceLimit,
-  Container_getClusterClusterAutoscalingResourceLimit_GetTypes,
-} from "./Container_getClusterClusterAutoscalingResourceLimit";
+  container_getClusterClusterAutoscalingAutoProvisioningDefault,
+  container_getClusterClusterAutoscalingAutoProvisioningDefault_GetTypes,
+} from "./container_getClusterClusterAutoscalingAutoProvisioningDefault";
 import {
-  Container_getClusterClusterAutoscalingAutoProvisioningDefault,
-  Container_getClusterClusterAutoscalingAutoProvisioningDefault_GetTypes,
-} from "./Container_getClusterClusterAutoscalingAutoProvisioningDefault";
+  container_getClusterClusterAutoscalingResourceLimit,
+  container_getClusterClusterAutoscalingResourceLimit_GetTypes,
+} from "./container_getClusterClusterAutoscalingResourceLimit";
 
-export interface Container_getClusterClusterAutoscaling {
+export interface container_getClusterClusterAutoscaling {
+  // Contains defaults for a node pool created by NAP.
+  autoProvisioningDefaults?: Array<container_getClusterClusterAutoscalingAutoProvisioningDefault>;
+
   // Configuration options for the Autoscaling profile feature, which lets you choose whether the cluster autoscaler should optimize for resource utilization or resource availability when deciding to remove nodes from a cluster. Can be BALANCED or OPTIMIZE_UTILIZATION. Defaults to BALANCED.
-  AutoscalingProfile?: string;
+  autoscalingProfile?: string;
 
   // Whether node auto-provisioning is enabled. Resource limits for cpu and memory must be defined to enable node auto-provisioning.
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // Global constraints for machine resources in the cluster. Configuring the cpu and memory types is required if node auto-provisioning is enabled. These limits will apply to node pool autoscaling in addition to node auto-provisioning.
-  ResourceLimits?: Array<Container_getClusterClusterAutoscalingResourceLimit>;
-
-  // Contains defaults for a node pool created by NAP.
-  AutoProvisioningDefaults?: Array<Container_getClusterClusterAutoscalingAutoProvisioningDefault>;
+  resourceLimits?: Array<container_getClusterClusterAutoscalingResourceLimit>;
 }
 
-export function Container_getClusterClusterAutoscaling_GetTypes(): DynamicUIProps[] {
+export function container_getClusterClusterAutoscaling_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ResourceLimits",
-      "Global constraints for machine resources in the cluster. Configuring the cpu and memory types is required if node auto-provisioning is enabled. These limits will apply to node pool autoscaling in addition to node auto-provisioning.",
-      Container_getClusterClusterAutoscalingResourceLimit_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "AutoProvisioningDefaults",
+      "autoProvisioningDefaults",
       "Contains defaults for a node pool created by NAP.",
-      Container_getClusterClusterAutoscalingAutoProvisioningDefault_GetTypes(),
+      container_getClusterClusterAutoscalingAutoProvisioningDefault_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "AutoscalingProfile",
+      "autoscalingProfile",
       "Configuration options for the Autoscaling profile feature, which lets you choose whether the cluster autoscaler should optimize for resource utilization or resource availability when deciding to remove nodes from a cluster. Can be BALANCED or OPTIMIZE_UTILIZATION. Defaults to BALANCED.",
       [],
       true,
@@ -56,9 +48,17 @@ export function Container_getClusterClusterAutoscaling_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether node auto-provisioning is enabled. Resource limits for cpu and memory must be defined to enable node auto-provisioning.",
       [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "resourceLimits",
+      "Global constraints for machine resources in the cluster. Configuring the cpu and memory types is required if node auto-provisioning is enabled. These limits will apply to node pool autoscaling in addition to node auto-provisioning.",
+      container_getClusterClusterAutoscalingResourceLimit_GetTypes(),
       true,
       false,
     ),

@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodePoolNodeConfigGuestAcceleratorGpuSharingConfig {
+export interface container_getClusterNodePoolNodeConfigGuestAcceleratorGpuSharingConfig {
   // The type of GPU sharing strategy to enable on the GPU node. Possible values are described in the API package (https://pkg.go.dev/google.golang.org/api/container/v1#GPUSharingConfig)
-  GpuSharingStrategy?: string;
+  gpuSharingStrategy?: string;
 
   // The maximum number of containers that can share a GPU.
-  MaxSharedClientsPerGpu?: number;
+  maxSharedClientsPerGpu?: number;
 }
 
-export function Container_getClusterNodePoolNodeConfigGuestAcceleratorGpuSharingConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolNodeConfigGuestAcceleratorGpuSharingConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "GpuSharingStrategy",
+      "gpuSharingStrategy",
       "The type of GPU sharing strategy to enable on the GPU node. Possible values are described in the API package (https://pkg.go.dev/google.golang.org/api/container/v1#GPUSharingConfig)",
       [],
       true,
@@ -26,7 +26,7 @@ export function Container_getClusterNodePoolNodeConfigGuestAcceleratorGpuSharing
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxSharedClientsPerGpu",
+      "maxSharedClientsPerGpu",
       "The maximum number of containers that can share a GPU.",
       [],
       true,

@@ -6,33 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_DatabaseInstanceRestoreBackupContext {
+export interface sql_DatabaseInstanceRestoreBackupContext {
+  // The ID of the backup run to restore from.
+  backupRunId?: number;
+
   /*
 The ID of the instance that the backup was taken from. If left empty,
 this instance's ID will be used.
 */
-  InstanceId?: string;
+  instanceId?: string;
 
   // The full project ID of the source instance.`
-  Project?: string;
-
-  // The ID of the backup run to restore from.
-  BackupRunId?: number;
+  project?: string;
 }
 
-export function Sql_DatabaseInstanceRestoreBackupContext_GetTypes(): DynamicUIProps[] {
+export function sql_DatabaseInstanceRestoreBackupContext_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "InstanceId",
-      "The ID of the instance that the backup was taken from. If left empty,\nthis instance's ID will be used.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Project",
+      "project",
       "The full project ID of the source instance.`",
       [],
       false,
@@ -40,10 +32,18 @@ export function Sql_DatabaseInstanceRestoreBackupContext_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Number,
-      "BackupRunId",
+      "backupRunId",
       "The ID of the backup run to restore from.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "instanceId",
+      "The ID of the instance that the backup was taken from. If left empty,\nthis instance's ID will be used.",
+      [],
+      false,
       false,
     ),
   ];

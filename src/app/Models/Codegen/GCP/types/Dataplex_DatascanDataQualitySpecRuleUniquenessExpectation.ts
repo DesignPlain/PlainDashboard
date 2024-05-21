@@ -6,8 +6,8 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataplex_DatascanDataQualitySpecRuleUniquenessExpectation {}
+export interface dataplex_DatascanDataQualitySpecRuleUniquenessExpectation {}
 
-export function Dataplex_DatascanDataQualitySpecRuleUniquenessExpectation_GetTypes(): DynamicUIProps[] {
+export function dataplex_DatascanDataQualitySpecRuleUniquenessExpectation_GetTypes(): DynamicUIProps[] {
   return [];
 }

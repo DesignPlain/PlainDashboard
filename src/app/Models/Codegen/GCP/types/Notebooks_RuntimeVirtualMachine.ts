@@ -6,35 +6,35 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Notebooks_RuntimeVirtualMachineVirtualMachineConfig,
-  Notebooks_RuntimeVirtualMachineVirtualMachineConfig_GetTypes,
-} from "./Notebooks_RuntimeVirtualMachineVirtualMachineConfig";
+  notebooks_RuntimeVirtualMachineVirtualMachineConfig,
+  notebooks_RuntimeVirtualMachineVirtualMachineConfig_GetTypes,
+} from "./notebooks_RuntimeVirtualMachineVirtualMachineConfig";
 
-export interface Notebooks_RuntimeVirtualMachine {
+export interface notebooks_RuntimeVirtualMachine {
   /*
 (Output)
 The unique identifier of the Managed Compute Engine instance.
 */
-  InstanceId?: string;
+  instanceId?: string;
 
   /*
 (Output)
 The user-friendly name of the Managed Compute Engine instance.
 */
-  InstanceName?: string;
+  instanceName?: string;
 
   /*
 Virtual Machine configuration settings.
 Structure is documented below.
 */
-  VirtualMachineConfig?: Notebooks_RuntimeVirtualMachineVirtualMachineConfig;
+  virtualMachineConfig?: notebooks_RuntimeVirtualMachineVirtualMachineConfig;
 }
 
-export function Notebooks_RuntimeVirtualMachine_GetTypes(): DynamicUIProps[] {
+export function notebooks_RuntimeVirtualMachine_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "InstanceId",
+      "instanceId",
       "(Output)\nThe unique identifier of the Managed Compute Engine instance.",
       [],
       false,
@@ -42,7 +42,7 @@ export function Notebooks_RuntimeVirtualMachine_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "InstanceName",
+      "instanceName",
       "(Output)\nThe user-friendly name of the Managed Compute Engine instance.",
       [],
       false,
@@ -50,9 +50,9 @@ export function Notebooks_RuntimeVirtualMachine_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "VirtualMachineConfig",
+      "virtualMachineConfig",
       "Virtual Machine configuration settings.\nStructure is documented below.",
-      Notebooks_RuntimeVirtualMachineVirtualMachineConfig_GetTypes(),
+      notebooks_RuntimeVirtualMachineVirtualMachineConfig_GetTypes(),
       false,
       false,
     ),

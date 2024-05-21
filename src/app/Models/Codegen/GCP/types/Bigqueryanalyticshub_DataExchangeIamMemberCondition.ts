@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigqueryanalyticshub_DataExchangeIamMemberCondition {
+export interface bigqueryanalyticshub_DataExchangeIamMemberCondition {
   //
-  Title?: string;
+  description?: string;
 
   //
-  Description?: string;
+  expression?: string;
 
   //
-  Expression?: string;
+  title?: string;
 }
 
-export function Bigqueryanalyticshub_DataExchangeIamMemberCondition_GetTypes(): DynamicUIProps[] {
+export function bigqueryanalyticshub_DataExchangeIamMemberCondition_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Title", "", [], true, true),
-    new DynamicUIProps(InputType.String, "Description", "", [], false, true),
-    new DynamicUIProps(InputType.String, "Expression", "", [], true, true),
+    new DynamicUIProps(InputType.String, "description", "", [], false, true),
+    new DynamicUIProps(InputType.String, "expression", "", [], true, true),
+    new DynamicUIProps(InputType.String, "title", "", [], true, true),
   ];
 }

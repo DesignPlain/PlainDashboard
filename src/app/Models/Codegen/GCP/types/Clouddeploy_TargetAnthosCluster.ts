@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Clouddeploy_TargetAnthosCluster {
+export interface clouddeploy_TargetAnthosCluster {
   // Membership of the GKE Hub-registered cluster to which to apply the Skaffold configuration. Format is `projects/{project}/locations/{location}/memberships/{membership_name}`.
-  Membership?: string;
+  membership?: string;
 }
 
-export function Clouddeploy_TargetAnthosCluster_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_TargetAnthosCluster_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Membership",
+      "membership",
       "Membership of the GKE Hub-registered cluster to which to apply the Skaffold configuration. Format is `projects/{project}/locations/{location}/memberships/{membership_name}`.",
       [],
       false,

@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrun_getServiceTemplateSpecContainerEnvValueFrom,
-  Cloudrun_getServiceTemplateSpecContainerEnvValueFrom_GetTypes,
-} from "./Cloudrun_getServiceTemplateSpecContainerEnvValueFrom";
+  cloudrun_getServiceTemplateSpecContainerEnvValueFrom,
+  cloudrun_getServiceTemplateSpecContainerEnvValueFrom_GetTypes,
+} from "./cloudrun_getServiceTemplateSpecContainerEnvValueFrom";
 
-export interface Cloudrun_getServiceTemplateSpecContainerEnv {
-  // The name of the Cloud Run Service.
-  Name?: string;
-
+export interface cloudrun_getServiceTemplateSpecContainerEnv {
   // Defaults to "".
-  Value?: string;
+  value?: string;
 
   // Source for the environment variable's value. Only supports secret_key_ref.
-  ValueFroms?: Array<Cloudrun_getServiceTemplateSpecContainerEnvValueFrom>;
+  valueFroms?: Array<cloudrun_getServiceTemplateSpecContainerEnvValueFrom>;
+
+  // The name of the Cloud Run Service.
+  name?: string;
 }
 
-export function Cloudrun_getServiceTemplateSpecContainerEnv_GetTypes(): DynamicUIProps[] {
+export function cloudrun_getServiceTemplateSpecContainerEnv_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "ValueFroms",
-      "Source for the environment variable's value. Only supports secret_key_ref.",
-      Cloudrun_getServiceTemplateSpecContainerEnvValueFrom_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Name",
-      "The name of the Cloud Run Service.",
+      "value",
+      'Defaults to "".',
       [],
       true,
       false,
     ),
     new DynamicUIProps(
+      InputType.Array,
+      "valueFroms",
+      "Source for the environment variable's value. Only supports secret_key_ref.",
+      cloudrun_getServiceTemplateSpecContainerEnvValueFrom_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "Value",
-      'Defaults to "".',
+      "name",
+      "The name of the Cloud Run Service.",
       [],
       true,
       false,

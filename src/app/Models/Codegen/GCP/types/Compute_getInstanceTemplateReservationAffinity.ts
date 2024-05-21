@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_getInstanceTemplateReservationAffinitySpecificReservation,
-  Compute_getInstanceTemplateReservationAffinitySpecificReservation_GetTypes,
-} from "./Compute_getInstanceTemplateReservationAffinitySpecificReservation";
+  compute_getInstanceTemplateReservationAffinitySpecificReservation,
+  compute_getInstanceTemplateReservationAffinitySpecificReservation_GetTypes,
+} from "./compute_getInstanceTemplateReservationAffinitySpecificReservation";
 
-export interface Compute_getInstanceTemplateReservationAffinity {
-  // Specifies the label selector for the reservation to use.
-  SpecificReservations?: Array<Compute_getInstanceTemplateReservationAffinitySpecificReservation>;
-
+export interface compute_getInstanceTemplateReservationAffinity {
   // The accelerator type resource to expose to this instance. E.g. `nvidia-tesla-k80`.
-  Type?: string;
+  type?: string;
+
+  // Specifies the label selector for the reservation to use.
+  specificReservations?: Array<compute_getInstanceTemplateReservationAffinitySpecificReservation>;
 }
 
-export function Compute_getInstanceTemplateReservationAffinity_GetTypes(): DynamicUIProps[] {
+export function compute_getInstanceTemplateReservationAffinity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "SpecificReservations",
-      "Specifies the label selector for the reservation to use.",
-      Compute_getInstanceTemplateReservationAffinitySpecificReservation_GetTypes(),
+      InputType.String,
+      "type",
+      "The accelerator type resource to expose to this instance. E.g. `nvidia-tesla-k80`.",
+      [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "Type",
-      "The accelerator type resource to expose to this instance. E.g. `nvidia-tesla-k80`.",
-      [],
+      InputType.Array,
+      "specificReservations",
+      "Specifies the label selector for the reservation to use.",
+      compute_getInstanceTemplateReservationAffinitySpecificReservation_GetTypes(),
       true,
       false,
     ),

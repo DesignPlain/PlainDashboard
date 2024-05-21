@@ -6,13 +6,13 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_MembershipEndpointGkeCluster {
+export interface gkehub_MembershipEndpointGkeCluster {
   //
-  ResourceLink?: string;
+  resourceLink?: string;
 }
 
-export function Gkehub_MembershipEndpointGkeCluster_GetTypes(): DynamicUIProps[] {
+export function gkehub_MembershipEndpointGkeCluster_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "ResourceLink", "", [], true, true),
+    new DynamicUIProps(InputType.String, "resourceLink", "", [], true, true),
   ];
 }

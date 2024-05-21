@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionStoredInfoTypeDictionaryWordList,
-  Dataloss_PreventionStoredInfoTypeDictionaryWordList_GetTypes,
-} from "./Dataloss_PreventionStoredInfoTypeDictionaryWordList";
+  dataloss_PreventionStoredInfoTypeDictionaryWordList,
+  dataloss_PreventionStoredInfoTypeDictionaryWordList_GetTypes,
+} from "./dataloss_PreventionStoredInfoTypeDictionaryWordList";
 import {
-  Dataloss_PreventionStoredInfoTypeDictionaryCloudStoragePath,
-  Dataloss_PreventionStoredInfoTypeDictionaryCloudStoragePath_GetTypes,
-} from "./Dataloss_PreventionStoredInfoTypeDictionaryCloudStoragePath";
+  dataloss_PreventionStoredInfoTypeDictionaryCloudStoragePath,
+  dataloss_PreventionStoredInfoTypeDictionaryCloudStoragePath_GetTypes,
+} from "./dataloss_PreventionStoredInfoTypeDictionaryCloudStoragePath";
 
-export interface Dataloss_PreventionStoredInfoTypeDictionary {
-  /*
-Newline-delimited file of words in Cloud Storage. Only a single file is accepted.
-Structure is documented below.
-*/
-  CloudStoragePath?: Dataloss_PreventionStoredInfoTypeDictionaryCloudStoragePath;
-
+export interface dataloss_PreventionStoredInfoTypeDictionary {
   /*
 List of words or phrases to search for.
 Structure is documented below.
 */
-  WordList?: Dataloss_PreventionStoredInfoTypeDictionaryWordList;
+  wordList?: dataloss_PreventionStoredInfoTypeDictionaryWordList;
+
+  /*
+Newline-delimited file of words in Cloud Storage. Only a single file is accepted.
+Structure is documented below.
+*/
+  cloudStoragePath?: dataloss_PreventionStoredInfoTypeDictionaryCloudStoragePath;
 }
 
-export function Dataloss_PreventionStoredInfoTypeDictionary_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionStoredInfoTypeDictionary_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "WordList",
-      "List of words or phrases to search for.\nStructure is documented below.",
-      Dataloss_PreventionStoredInfoTypeDictionaryWordList_GetTypes(),
+      "cloudStoragePath",
+      "Newline-delimited file of words in Cloud Storage. Only a single file is accepted.\nStructure is documented below.",
+      dataloss_PreventionStoredInfoTypeDictionaryCloudStoragePath_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "CloudStoragePath",
-      "Newline-delimited file of words in Cloud Storage. Only a single file is accepted.\nStructure is documented below.",
-      Dataloss_PreventionStoredInfoTypeDictionaryCloudStoragePath_GetTypes(),
+      "wordList",
+      "List of words or phrases to search for.\nStructure is documented below.",
+      dataloss_PreventionStoredInfoTypeDictionaryWordList_GetTypes(),
       false,
       false,
     ),

@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationConfig {
+export interface dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationConfig {
   // If this template is specified, it will serve as the default de-identify template.
-  DeidentifyTemplate?: string;
+  deidentifyTemplate?: string;
 
   // If this template is specified, it will serve as the de-identify template for images.
-  ImageRedactTemplate?: string;
+  imageRedactTemplate?: string;
 
   // If this template is specified, it will serve as the de-identify template for structured content such as delimited files and tables.
-  StructuredDeidentifyTemplate?: string;
+  structuredDeidentifyTemplate?: string;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationConfig_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "StructuredDeidentifyTemplate",
-      "If this template is specified, it will serve as the de-identify template for structured content such as delimited files and tables.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "DeidentifyTemplate",
+      "deidentifyTemplate",
       "If this template is specified, it will serve as the default de-identify template.",
       [],
       false,
@@ -37,8 +29,16 @@ export function Dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransform
     ),
     new DynamicUIProps(
       InputType.String,
-      "ImageRedactTemplate",
+      "imageRedactTemplate",
       "If this template is specified, it will serve as the de-identify template for images.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "structuredDeidentifyTemplate",
+      "If this template is specified, it will serve as the de-identify template for structured content such as delimited files and tables.",
       [],
       false,
       false,

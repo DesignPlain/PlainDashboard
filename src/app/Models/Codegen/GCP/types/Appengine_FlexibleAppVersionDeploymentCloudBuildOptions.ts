@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_FlexibleAppVersionDeploymentCloudBuildOptions {
+export interface appengine_FlexibleAppVersionDeploymentCloudBuildOptions {
+  // Path to the yaml file used in deployment, used to determine runtime configuration details.
+  appYamlPath?: string;
+
   /*
 The Cloud Build timeout used as part of any dependent builds performed by version creation. Defaults to 10 minutes.
 A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
 */
-  CloudBuildTimeout?: string;
-
-  // Path to the yaml file used in deployment, used to determine runtime configuration details.
-  AppYamlPath?: string;
+  cloudBuildTimeout?: string;
 }
 
-export function Appengine_FlexibleAppVersionDeploymentCloudBuildOptions_GetTypes(): DynamicUIProps[] {
+export function appengine_FlexibleAppVersionDeploymentCloudBuildOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CloudBuildTimeout",
-      "The Cloud Build timeout used as part of any dependent builds performed by version creation. Defaults to 10 minutes.\nA duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\".",
+      "appYamlPath",
+      "Path to the yaml file used in deployment, used to determine runtime configuration details.",
       [],
-      false,
+      true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "AppYamlPath",
-      "Path to the yaml file used in deployment, used to determine runtime configuration details.",
+      "cloudBuildTimeout",
+      "The Cloud Build timeout used as part of any dependent builds performed by version creation. Defaults to 10 minutes.\nA duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\".",
       [],
-      true,
+      false,
       false,
     ),
   ];

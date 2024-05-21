@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionSecurityPolicyRuleMatchConfig {
+export interface compute_RegionSecurityPolicyRuleMatchConfig {
   // CIDR IP address range. Maximum number of srcIpRanges allowed is 10.
-  SrcIpRanges?: Array<string>;
+  srcIpRanges?: Array<string>;
 }
 
-export function Compute_RegionSecurityPolicyRuleMatchConfig_GetTypes(): DynamicUIProps[] {
+export function compute_RegionSecurityPolicyRuleMatchConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "SrcIpRanges",
+      "srcIpRanges",
       "CIDR IP address range. Maximum number of srcIpRanges allowed is 10.",
       InputType_String_GetTypes(),
       false,

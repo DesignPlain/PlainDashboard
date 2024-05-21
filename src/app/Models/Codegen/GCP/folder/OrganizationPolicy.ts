@@ -7,37 +7,37 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Folder_OrganizationPolicyListPolicy,
-  Folder_OrganizationPolicyListPolicy_GetTypes,
-} from "../types/Folder_OrganizationPolicyListPolicy";
+  folder_OrganizationPolicyBooleanPolicy,
+  folder_OrganizationPolicyBooleanPolicy_GetTypes,
+} from "../types/folder_OrganizationPolicyBooleanPolicy";
 import {
-  Folder_OrganizationPolicyRestorePolicy,
-  Folder_OrganizationPolicyRestorePolicy_GetTypes,
-} from "../types/Folder_OrganizationPolicyRestorePolicy";
+  folder_OrganizationPolicyListPolicy,
+  folder_OrganizationPolicyListPolicy_GetTypes,
+} from "../types/folder_OrganizationPolicyListPolicy";
 import {
-  Folder_OrganizationPolicyBooleanPolicy,
-  Folder_OrganizationPolicyBooleanPolicy_GetTypes,
-} from "../types/Folder_OrganizationPolicyBooleanPolicy";
+  folder_OrganizationPolicyRestorePolicy,
+  folder_OrganizationPolicyRestorePolicy_GetTypes,
+} from "../types/folder_OrganizationPolicyRestorePolicy";
 
 export interface OrganizationPolicyArgs {
   // A boolean policy is a constraint that is either enforced or not. Structure is documented below.
-  BooleanPolicy?: Folder_OrganizationPolicyBooleanPolicy;
+  booleanPolicy?: folder_OrganizationPolicyBooleanPolicy;
 
   /*
 The name of the Constraint the Policy is configuring, for example, `serviceuser.services`. Check out the [complete list of available constraints](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-constraints#available_constraints).
 
 - - -
 */
-  Constraint?: string;
+  constraint?: string;
 
   // The resource name of the folder to set the policy for. Its format is folders/{folder_id}.
-  Folder?: string;
+  folder?: string;
 
   /*
 A policy that can define specific values that are allowed or denied for the given constraint. It
 can also be used to allow or deny all values. Structure is documented below.
 */
-  ListPolicy?: Folder_OrganizationPolicyListPolicy;
+  listPolicy?: folder_OrganizationPolicyListPolicy;
 
   /*
 A restore policy is a constraint to restore the default policy. Structure is documented below.
@@ -47,36 +47,39 @@ effectively be unset. This is represented in the UI as the constraint being 'Inh
 
 - - -
 */
-  RestorePolicy?: Folder_OrganizationPolicyRestorePolicy;
+  restorePolicy?: folder_OrganizationPolicyRestorePolicy;
 
   // Version of the Policy. Default version is 0.
-  Version?: number;
+  version?: number;
 }
 export class OrganizationPolicy extends Resource {
+  // (Computed) The timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds, representing when the variable was last updated. Example: "2016-10-09T12:33:37.578138407Z".
+  public updateTime?: string;
+
   // Version of the Policy. Default version is 0.
-  public Version?: number;
+  public version?: number;
 
   // A boolean policy is a constraint that is either enforced or not. Structure is documented below.
-  public BooleanPolicy?: Folder_OrganizationPolicyBooleanPolicy;
+  public booleanPolicy?: folder_OrganizationPolicyBooleanPolicy;
 
   /*
 The name of the Constraint the Policy is configuring, for example, `serviceuser.services`. Check out the [complete list of available constraints](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-constraints#available_constraints).
 
 - - -
 */
-  public Constraint?: string;
+  public constraint?: string;
 
   // (Computed) The etag of the organization policy. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other.
-  public Etag?: string;
+  public etag?: string;
 
   // The resource name of the folder to set the policy for. Its format is folders/{folder_id}.
-  public Folder?: string;
+  public folder?: string;
 
   /*
 A policy that can define specific values that are allowed or denied for the given constraint. It
 can also be used to allow or deny all values. Structure is documented below.
 */
-  public ListPolicy?: Folder_OrganizationPolicyListPolicy;
+  public listPolicy?: folder_OrganizationPolicyListPolicy;
 
   /*
 A restore policy is a constraint to restore the default policy. Structure is documented below.
@@ -86,32 +89,13 @@ effectively be unset. This is represented in the UI as the constraint being 'Inh
 
 - - -
 */
-  public RestorePolicy?: Folder_OrganizationPolicyRestorePolicy;
-
-  // (Computed) The timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds, representing when the variable was last updated. Example: "2016-10-09T12:33:37.578138407Z".
-  public UpdateTime?: string;
+  public restorePolicy?: folder_OrganizationPolicyRestorePolicy;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Number,
-        "Version",
-        "Version of the Policy. Default version is 0.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "BooleanPolicy",
-        "A boolean policy is a constraint that is either enforced or not. Structure is documented below.",
-        Folder_OrganizationPolicyBooleanPolicy_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Constraint",
+        "constraint",
         "The name of the Constraint the Policy is configuring, for example, `serviceuser.services`. Check out the [complete list of available constraints](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-constraints#available_constraints).\n\n- - -",
         [],
         true,
@@ -119,7 +103,7 @@ effectively be unset. This is represented in the UI as the constraint being 'Inh
       ),
       new DynamicUIProps(
         InputType.String,
-        "Folder",
+        "folder",
         "The resource name of the folder to set the policy for. Its format is folders/{folder_id}.",
         [],
         true,
@@ -127,17 +111,33 @@ effectively be unset. This is represented in the UI as the constraint being 'Inh
       ),
       new DynamicUIProps(
         InputType.Object,
-        "ListPolicy",
+        "listPolicy",
         "A policy that can define specific values that are allowed or denied for the given constraint. It\ncan also be used to allow or deny all values. Structure is documented below.",
-        Folder_OrganizationPolicyListPolicy_GetTypes(),
+        folder_OrganizationPolicyListPolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "RestorePolicy",
+        "restorePolicy",
         "A restore policy is a constraint to restore the default policy. Structure is documented below.\n\n> **Note:** If none of [`boolean_policy`, `list_policy`, `restore_policy`] are defined the policy for a given constraint will\neffectively be unset. This is represented in the UI as the constraint being 'Inherited'.\n\n- - -",
-        Folder_OrganizationPolicyRestorePolicy_GetTypes(),
+        folder_OrganizationPolicyRestorePolicy_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Number,
+        "version",
+        "Version of the Policy. Default version is 0.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "booleanPolicy",
+        "A boolean policy is a constraint that is either enforced or not. Structure is documented below.",
+        folder_OrganizationPolicyBooleanPolicy_GetTypes(),
         false,
         false,
       ),

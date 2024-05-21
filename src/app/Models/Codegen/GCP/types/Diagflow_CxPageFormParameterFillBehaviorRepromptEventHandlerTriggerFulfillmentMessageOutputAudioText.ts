@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageOutputAudioText {
+export interface diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageOutputAudioText {
   /*
 (Output)
 Whether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.
 */
-  AllowPlaybackInterruption?: boolean;
+  allowPlaybackInterruption?: boolean;
 
   // The SSML text to be synthesized. For more information, see SSML.
-  Ssml?: string;
+  ssml?: string;
 
   // The raw text to be synthesized.
-  Text?: string;
+  text?: string;
 }
 
-export function Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageOutputAudioText_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageOutputAudioText_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Text",
+      "ssml",
+      "The SSML text to be synthesized. For more information, see SSML.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "text",
       "The raw text to be synthesized.",
       [],
       false,
@@ -32,16 +40,8 @@ export function Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTrig
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "AllowPlaybackInterruption",
+      "allowPlaybackInterruption",
       "(Output)\nWhether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Ssml",
-      "The SSML text to be synthesized. For more information, see SSML.",
       [],
       false,
       false,

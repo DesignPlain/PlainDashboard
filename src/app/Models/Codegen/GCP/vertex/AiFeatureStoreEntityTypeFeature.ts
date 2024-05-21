@@ -8,19 +8,13 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface AiFeatureStoreEntityTypeFeatureArgs {
-  // Type of Feature value. Immutable. https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.featurestores.entityTypes.features#ValueType
-  ValueType?: string;
-
-  // Description of the feature.
-  Description?: string;
-
   /*
 The name of the Featurestore to use, in the format projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entitytype}.
 
 
 - - -
 */
-  Entitytype?: string;
+  entitytype?: string;
 
   /*
 A set of key/value label pairs to assign to the feature.
@@ -28,41 +22,23 @@ A set of key/value label pairs to assign to the feature.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   // The name of the feature. The feature can be up to 64 characters long and can consist only of ASCII Latin letters A-Z and a-z, underscore(_), and ASCII digits 0-9 starting with a letter. The value will be unique given an entity type.
-  Name?: string;
+  name?: string;
+
+  // Type of Feature value. Immutable. https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.featurestores.entityTypes.features#ValueType
+  valueType?: string;
+
+  // Description of the feature.
+  description?: string;
 }
 export class AiFeatureStoreEntityTypeFeature extends Resource {
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
-
-  // Used to perform consistent read-modify-write updates.
-  public Etag?: string;
-
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
-
-  // The timestamp when the entity type was most recently updated in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
-  public UpdateTime?: string;
-
-  // The name of the feature. The feature can be up to 64 characters long and can consist only of ASCII Latin letters A-Z and a-z, underscore(_), and ASCII digits 0-9 starting with a letter. The value will be unique given an entity type.
-  public Name?: string;
-
-  // The region of the feature
-  public Region?: string;
-
-  // Type of Feature value. Immutable. https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.featurestores.entityTypes.features#ValueType
-  public ValueType?: string;
-
-  // The timestamp of when the entity type was created in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
-  public CreateTime?: string;
-
-  // Description of the feature.
-  public Description?: string;
+  public pulumiLabels?: Map<string, string>;
 
   /*
 The name of the Featurestore to use, in the format projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entitytype}.
@@ -70,7 +46,10 @@ The name of the Featurestore to use, in the format projects/{project}/locations/
 
 - - -
 */
-  public Entitytype?: string;
+  public entitytype?: string;
+
+  // Used to perform consistent read-modify-write updates.
+  public etag?: string;
 
   /*
 A set of key/value label pairs to assign to the feature.
@@ -78,13 +57,34 @@ A set of key/value label pairs to assign to the feature.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  public Labels?: Map<string, string>;
+  public labels?: Map<string, string>;
+
+  // The name of the feature. The feature can be up to 64 characters long and can consist only of ASCII Latin letters A-Z and a-z, underscore(_), and ASCII digits 0-9 starting with a letter. The value will be unique given an entity type.
+  public name?: string;
+
+  // The timestamp when the entity type was most recently updated in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
+  public updateTime?: string;
+
+  // Type of Feature value. Immutable. https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.featurestores.entityTypes.features#ValueType
+  public valueType?: string;
+
+  // The timestamp of when the entity type was created in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
+  public createTime?: string;
+
+  // Description of the feature.
+  public description?: string;
+
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
+
+  // The region of the feature
+  public region?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "ValueType",
+        "valueType",
         "Type of Feature value. Immutable. https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.featurestores.entityTypes.features#ValueType",
         [],
         true,
@@ -92,7 +92,7 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Description of the feature.",
         [],
         false,
@@ -100,7 +100,7 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "Entitytype",
+        "entitytype",
         "The name of the Featurestore to use, in the format projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entitytype}.\n\n\n- - -",
         [],
         true,
@@ -108,7 +108,7 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "A set of key/value label pairs to assign to the feature.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
@@ -116,7 +116,7 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name of the feature. The feature can be up to 64 characters long and can consist only of ASCII Latin letters A-Z and a-z, underscore(_), and ASCII digits 0-9 starting with a letter. The value will be unique given an entity type.",
         [],
         false,

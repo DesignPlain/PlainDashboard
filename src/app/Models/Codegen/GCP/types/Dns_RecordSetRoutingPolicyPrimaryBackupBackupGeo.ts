@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargets,
-  Dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargets_GetTypes,
-} from "./Dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargets";
+  dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargets,
+  dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargets_GetTypes,
+} from "./dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargets";
 
-export interface Dns_RecordSetRoutingPolicyPrimaryBackupBackupGeo {
+export interface dns_RecordSetRoutingPolicyPrimaryBackupBackupGeo {
   /*
 For A and AAAA types only. The list of targets to be health checked. These can be specified along with `rrdatas` within this item.
 Structure is document below.
 */
-  HealthCheckedTargets?: Dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargets;
+  healthCheckedTargets?: dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargets;
 
   // The location name defined in Google Cloud.
-  Location?: string;
+  location?: string;
 
   //
-  Rrdatas?: Array<string>;
+  rrdatas?: Array<string>;
 }
 
-export function Dns_RecordSetRoutingPolicyPrimaryBackupBackupGeo_GetTypes(): DynamicUIProps[] {
+export function dns_RecordSetRoutingPolicyPrimaryBackupBackupGeo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "HealthCheckedTargets",
+      "healthCheckedTargets",
       "For A and AAAA types only. The list of targets to be health checked. These can be specified along with `rrdatas` within this item.\nStructure is document below.",
-      Dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargets_GetTypes(),
+      dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargets_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       "The location name defined in Google Cloud.",
       [],
       true,
@@ -44,7 +44,7 @@ export function Dns_RecordSetRoutingPolicyPrimaryBackupBackupGeo_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Rrdatas",
+      "rrdatas",
       "",
       InputType_String_GetTypes(),
       false,

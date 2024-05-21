@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Artifactregistry_getRepositoryRemoteRepositoryConfigPythonRepository {
+export interface artifactregistry_getRepositoryRemoteRepositoryConfigPythonRepository {
   // Address of the remote repository. Default value: "PYPI" Possible values: ["PYPI"]
-  PublicRepository?: string;
+  publicRepository?: string;
 }
 
-export function Artifactregistry_getRepositoryRemoteRepositoryConfigPythonRepository_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_getRepositoryRemoteRepositoryConfigPythonRepository_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PublicRepository",
+      "publicRepository",
       'Address of the remote repository. Default value: "PYPI" Possible values: ["PYPI"]',
       [],
       true,

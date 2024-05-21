@@ -7,16 +7,16 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Pubsub_LiteSubscriptionDeliveryConfig,
-  Pubsub_LiteSubscriptionDeliveryConfig_GetTypes,
-} from "../types/Pubsub_LiteSubscriptionDeliveryConfig";
+  pubsub_LiteSubscriptionDeliveryConfig,
+  pubsub_LiteSubscriptionDeliveryConfig_GetTypes,
+} from "../types/pubsub_LiteSubscriptionDeliveryConfig";
 
 export interface LiteSubscriptionArgs {
   /*
 The settings for this subscription's message delivery.
 Structure is documented below.
 */
-  DeliveryConfig?: Pubsub_LiteSubscriptionDeliveryConfig;
+  deliveryConfig?: pubsub_LiteSubscriptionDeliveryConfig;
 
   /*
 Name of the subscription.
@@ -24,32 +24,32 @@ Name of the subscription.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // The region of the pubsub lite topic.
-  Region?: string;
+  region?: string;
 
   // A reference to a Topic resource.
-  Topic?: string;
+  topic?: string;
 
   // The zone of the pubsub lite topic.
-  Zone?: string;
+  zone?: string;
 }
 export class LiteSubscription extends Resource {
   // The zone of the pubsub lite topic.
-  public Zone?: string;
+  public zone?: string;
 
   /*
 The settings for this subscription's message delivery.
 Structure is documented below.
 */
-  public DeliveryConfig?: Pubsub_LiteSubscriptionDeliveryConfig;
+  public deliveryConfig?: pubsub_LiteSubscriptionDeliveryConfig;
 
   /*
 Name of the subscription.
@@ -57,49 +57,25 @@ Name of the subscription.
 
 - - -
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // The region of the pubsub lite topic.
-  public Region?: string;
+  public region?: string;
 
   // A reference to a Topic resource.
-  public Topic?: string;
+  public topic?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Object,
-        "DeliveryConfig",
-        "The settings for this subscription's message delivery.\nStructure is documented below.",
-        Pubsub_LiteSubscriptionDeliveryConfig_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Name",
-        "Name of the subscription.\n\n\n- - -",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Region",
+        "region",
         "The region of the pubsub lite topic.",
         [],
         false,
@@ -107,7 +83,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Topic",
+        "topic",
         "A reference to a Topic resource.",
         [],
         true,
@@ -115,11 +91,35 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Zone",
+        "zone",
         "The zone of the pubsub lite topic.",
         [],
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "deliveryConfig",
+        "The settings for this subscription's message delivery.\nStructure is documented below.",
+        pubsub_LiteSubscriptionDeliveryConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "Name of the subscription.\n\n\n- - -",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
     ];
   }

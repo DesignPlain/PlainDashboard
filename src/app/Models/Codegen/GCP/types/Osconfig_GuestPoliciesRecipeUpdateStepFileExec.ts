@@ -6,33 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_GuestPoliciesRecipeUpdateStepFileExec {
-  // A list of possible return values that the program can return to indicate a success. Defaults to [0].
-  AllowedExitCodes?: Array<number>;
-
+export interface osconfig_GuestPoliciesRecipeUpdateStepFileExec {
   // Arguments to be passed to the provided executable.
-  Args?: Array<string>;
+  args?: Array<string>;
 
   // The id of the relevant artifact in the recipe.
-  ArtifactId?: string;
+  artifactId?: string;
 
   // The absolute path of the file on the local filesystem.
-  LocalPath?: string;
+  localPath?: string;
+
+  // A list of possible return values that the program can return to indicate a success. Defaults to [0].
+  allowedExitCodes?: Array<number>;
 }
 
-export function Osconfig_GuestPoliciesRecipeUpdateStepFileExec_GetTypes(): DynamicUIProps[] {
+export function osconfig_GuestPoliciesRecipeUpdateStepFileExec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AllowedExitCodes",
-      "A list of possible return values that the program can return to indicate a success. Defaults to [0].",
-      InputType_Number_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Args",
+      "args",
       "Arguments to be passed to the provided executable.",
       InputType_String_GetTypes(),
       false,
@@ -40,7 +32,7 @@ export function Osconfig_GuestPoliciesRecipeUpdateStepFileExec_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "ArtifactId",
+      "artifactId",
       "The id of the relevant artifact in the recipe.",
       [],
       false,
@@ -48,9 +40,17 @@ export function Osconfig_GuestPoliciesRecipeUpdateStepFileExec_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "LocalPath",
+      "localPath",
       "The absolute path of the file on the local filesystem.",
       [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "allowedExitCodes",
+      "A list of possible return values that the program can return to indicate a success. Defaults to [0].",
+      InputType_Number_GetTypes(),
       false,
       false,
     ),

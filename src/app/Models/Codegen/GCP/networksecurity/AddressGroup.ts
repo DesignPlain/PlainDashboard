@@ -8,113 +8,121 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface AddressGroupArgs {
+  // List of items.
+  items?: Array<string>;
+
+  /*
+Set of label tags associated with the AddressGroup resource.
+An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
+
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  labels?: Map<string, string>;
+
+  /*
+The location of the gateway security policy.
+The default value is `global`.
+
+
+- - -
+*/
+  location?: string;
+
   // Name of the AddressGroup resource.
-  Name?: string;
+  name?: string;
 
   // The name of the parent this address group belongs to. Format: organizations/{organization_id} or projects/{project_id}.
-  Parent?: string;
+  parent?: string;
 
   /*
 The type of the Address Group. Possible values are "IPV4" or "IPV6".
 Possible values are: `IPV4`, `IPV6`.
 */
-  Type?: string;
+  type?: string;
 
   // Capacity of the Address Group.
-  Capacity?: number;
+  capacity?: number;
 
   // Free-text description of the resource.
-  Description?: string;
-
-  // List of items.
-  Items?: Array<string>;
-
-  /*
-Set of label tags associated with the AddressGroup resource.
-An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
-
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  Labels?: Map<string, string>;
-
-  /*
-The location of the gateway security policy.
-The default value is `global`.
-
-
-- - -
-*/
-  Location?: string;
+  description?: string;
 }
 export class AddressGroup extends Resource {
-  // Free-text description of the resource.
-  public Description?: string;
-
-  /*
-Set of label tags associated with the AddressGroup resource.
-An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
-
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  public Labels?: Map<string, string>;
-
-  /*
-The location of the gateway security policy.
-The default value is `global`.
-
-
-- - -
-*/
-  public Location?: string;
+  // Name of the AddressGroup resource.
+  public name?: string;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
-
-  /*
-The type of the Address Group. Possible values are "IPV4" or "IPV6".
-Possible values are: `IPV4`, `IPV6`.
-*/
-  public Type?: string;
+  public pulumiLabels?: Map<string, string>;
 
   /*
 The timestamp when the resource was updated.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
 Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  public UpdateTime?: string;
+  public updateTime?: string;
+
+  // Free-text description of the resource.
+  public description?: string;
+
+  /*
+Set of label tags associated with the AddressGroup resource.
+An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
+
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
+
+  /*
+The location of the gateway security policy.
+The default value is `global`.
+
+
+- - -
+*/
+  public location?: string;
+
+  // List of items.
+  public items?: Array<string>;
+
+  // The name of the parent this address group belongs to. Format: organizations/{organization_id} or projects/{project_id}.
+  public parent?: string;
+
+  /*
+The type of the Address Group. Possible values are "IPV4" or "IPV6".
+Possible values are: `IPV4`, `IPV6`.
+*/
+  public type?: string;
+
+  // Capacity of the Address Group.
+  public capacity?: number;
 
   /*
 The timestamp when the resource was created.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
 Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"
 */
-  public CreateTime?: string;
+  public createTime?: string;
 
   // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
-
-  // List of items.
-  public Items?: Array<string>;
-
-  // Name of the AddressGroup resource.
-  public Name?: string;
-
-  // The name of the parent this address group belongs to. Format: organizations/{organization_id} or projects/{project_id}.
-  public Parent?: string;
-
-  // Capacity of the Address Group.
-  public Capacity?: number;
+  public effectiveLabels?: Map<string, string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
+        InputType.Map,
+        "labels",
+        'Set of label tags associated with the AddressGroup resource.\nAn object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
+        InputType_Map_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location of the gateway security policy.\nThe default value is `global`.\n\n\n- - -",
         [],
         true,
@@ -122,7 +130,7 @@ Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name of the AddressGroup resource.",
         [],
         false,
@@ -130,7 +138,7 @@ Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"
       ),
       new DynamicUIProps(
         InputType.String,
-        "Parent",
+        "parent",
         "The name of the parent this address group belongs to. Format: organizations/{organization_id} or projects/{project_id}.",
         [],
         false,
@@ -138,7 +146,7 @@ Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"
       ),
       new DynamicUIProps(
         InputType.String,
-        "Type",
+        "type",
         'The type of the Address Group. Possible values are "IPV4" or "IPV6".\nPossible values are: `IPV4`, `IPV6`.',
         [],
         true,
@@ -146,7 +154,7 @@ Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"
       ),
       new DynamicUIProps(
         InputType.Number,
-        "Capacity",
+        "capacity",
         "Capacity of the Address Group.",
         [],
         true,
@@ -154,7 +162,7 @@ Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Free-text description of the resource.",
         [],
         false,
@@ -162,17 +170,9 @@ Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"
       ),
       new DynamicUIProps(
         InputType.Array,
-        "Items",
+        "items",
         "List of items.",
         InputType_String_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Map,
-        "Labels",
-        'Set of label tags associated with the AddressGroup resource.\nAn object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
-        InputType_Map_GetTypes(),
         false,
         false,
       ),

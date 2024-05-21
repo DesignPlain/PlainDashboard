@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_AppProfileSingleClusterRouting {
+export interface bigquery_AppProfileSingleClusterRouting {
   /*
 If true, CheckAndMutateRow and ReadModifyWriteRow requests are allowed by this app profile.
 It is unsafe to send these requests to the same table/row/column in multiple clusters.
 */
-  AllowTransactionalWrites?: boolean;
+  allowTransactionalWrites?: boolean;
 
   // The cluster to which read/write requests should be routed.
-  ClusterId?: string;
+  clusterId?: string;
 }
 
-export function Bigquery_AppProfileSingleClusterRouting_GetTypes(): DynamicUIProps[] {
+export function bigquery_AppProfileSingleClusterRouting_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "AllowTransactionalWrites",
+      "allowTransactionalWrites",
       "If true, CheckAndMutateRow and ReadModifyWriteRow requests are allowed by this app profile.\nIt is unsafe to send these requests to the same table/row/column in multiple clusters.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Bigquery_AppProfileSingleClusterRouting_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "ClusterId",
+      "clusterId",
       "The cluster to which read/write requests should be routed.",
       [],
       true,

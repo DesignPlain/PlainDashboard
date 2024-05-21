@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Notebooks_RuntimeMetric {
+export interface notebooks_RuntimeMetric {
   /*
 (Output)
 Contains runtime daemon metrics, such as OS and kernels and
 sessions stats.
 */
-  SystemMetrics?: Map<string, string>;
+  systemMetrics?: Map<string, string>;
 }
 
-export function Notebooks_RuntimeMetric_GetTypes(): DynamicUIProps[] {
+export function notebooks_RuntimeMetric_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Map,
-      "SystemMetrics",
+      "systemMetrics",
       "(Output)\nContains runtime daemon metrics, such as OS and kernels and\nsessions stats.",
       InputType_Map_GetTypes(),
       false,

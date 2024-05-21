@@ -6,47 +6,47 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_BareMetalClusterStorageLvpShareConfig,
-  Gkeonprem_BareMetalClusterStorageLvpShareConfig_GetTypes,
-} from "./Gkeonprem_BareMetalClusterStorageLvpShareConfig";
+  gkeonprem_BareMetalClusterStorageLvpNodeMountsConfig,
+  gkeonprem_BareMetalClusterStorageLvpNodeMountsConfig_GetTypes,
+} from "./gkeonprem_BareMetalClusterStorageLvpNodeMountsConfig";
 import {
-  Gkeonprem_BareMetalClusterStorageLvpNodeMountsConfig,
-  Gkeonprem_BareMetalClusterStorageLvpNodeMountsConfig_GetTypes,
-} from "./Gkeonprem_BareMetalClusterStorageLvpNodeMountsConfig";
+  gkeonprem_BareMetalClusterStorageLvpShareConfig,
+  gkeonprem_BareMetalClusterStorageLvpShareConfig_GetTypes,
+} from "./gkeonprem_BareMetalClusterStorageLvpShareConfig";
 
-export interface Gkeonprem_BareMetalClusterStorage {
-  /*
-Specifies the config for local PersistentVolumes backed by
-subdirectories in a shared filesystem. These subdirectores are
-automatically created during cluster creation.
-Structure is documented below.
-*/
-  LvpShareConfig?: Gkeonprem_BareMetalClusterStorageLvpShareConfig;
-
+export interface gkeonprem_BareMetalClusterStorage {
   /*
 Specifies the config for local PersistentVolumes backed
 by mounted node disks. These disks need to be formatted and mounted by the
 user, which can be done before or after cluster creation.
 Structure is documented below.
 */
-  LvpNodeMountsConfig?: Gkeonprem_BareMetalClusterStorageLvpNodeMountsConfig;
+  lvpNodeMountsConfig?: gkeonprem_BareMetalClusterStorageLvpNodeMountsConfig;
+
+  /*
+Specifies the config for local PersistentVolumes backed by
+subdirectories in a shared filesystem. These subdirectores are
+automatically created during cluster creation.
+Structure is documented below.
+*/
+  lvpShareConfig?: gkeonprem_BareMetalClusterStorageLvpShareConfig;
 }
 
-export function Gkeonprem_BareMetalClusterStorage_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterStorage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "LvpShareConfig",
-      "Specifies the config for local PersistentVolumes backed by\nsubdirectories in a shared filesystem. These subdirectores are\nautomatically created during cluster creation.\nStructure is documented below.",
-      Gkeonprem_BareMetalClusterStorageLvpShareConfig_GetTypes(),
+      "lvpNodeMountsConfig",
+      "Specifies the config for local PersistentVolumes backed\nby mounted node disks. These disks need to be formatted and mounted by the\nuser, which can be done before or after cluster creation.\nStructure is documented below.",
+      gkeonprem_BareMetalClusterStorageLvpNodeMountsConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "LvpNodeMountsConfig",
-      "Specifies the config for local PersistentVolumes backed\nby mounted node disks. These disks need to be formatted and mounted by the\nuser, which can be done before or after cluster creation.\nStructure is documented below.",
-      Gkeonprem_BareMetalClusterStorageLvpNodeMountsConfig_GetTypes(),
+      "lvpShareConfig",
+      "Specifies the config for local PersistentVolumes backed by\nsubdirectories in a shared filesystem. These subdirectores are\nautomatically created during cluster creation.\nStructure is documented below.",
+      gkeonprem_BareMetalClusterStorageLvpShareConfig_GetTypes(),
       true,
       false,
     ),

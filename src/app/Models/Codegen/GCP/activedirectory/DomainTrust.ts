@@ -9,74 +9,68 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface DomainTrustArgs {
   /*
-The type of trust represented by the trust resource.
-Possible values are: `FOREST`, `EXTERNAL`.
-*/
-  TrustType?: string;
-
-  /*
 The fully qualified domain name. e.g. mydomain.myorganization.com, with the restrictions,
 https://cloud.google.com/managed-microsoft-ad/reference/rest/v1/projects.locations.global.domains.
 
 
 - - -
 */
-  Domain?: string;
+  domain?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // Whether the trusted side has forest/domain wide access or selective access to an approved set of resources.
-  SelectiveAuthentication?: boolean;
+  selectiveAuthentication?: boolean;
 
   // The target DNS server IP addresses which can resolve the remote domain involved in the trust.
-  TargetDnsIpAddresses?: Array<string>;
+  targetDnsIpAddresses?: Array<string>;
 
   // The fully qualified target domain name which will be in trust with the current domain.
-  TargetDomainName?: string;
+  targetDomainName?: string;
 
   /*
 The trust direction, which decides if the current domain is trusted, trusting, or both.
 Possible values are: `INBOUND`, `OUTBOUND`, `BIDIRECTIONAL`.
 */
-  TrustDirection?: string;
+  trustDirection?: string;
 
   /*
 The trust secret used for the handshake with the target domain. This will not be stored.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  TrustHandshakeSecret?: string;
+  trustHandshakeSecret?: string;
+
+  /*
+The type of trust represented by the trust resource.
+Possible values are: `FOREST`, `EXTERNAL`.
+*/
+  trustType?: string;
 }
 export class DomainTrust extends Resource {
-  // Whether the trusted side has forest/domain wide access or selective access to an approved set of resources.
-  public SelectiveAuthentication?: boolean;
-
-  // The target DNS server IP addresses which can resolve the remote domain involved in the trust.
-  public TargetDnsIpAddresses?: Array<string>;
-
   // The fully qualified target domain name which will be in trust with the current domain.
-  public TargetDomainName?: string;
+  public targetDomainName?: string;
 
   /*
 The trust direction, which decides if the current domain is trusted, trusting, or both.
 Possible values are: `INBOUND`, `OUTBOUND`, `BIDIRECTIONAL`.
 */
-  public TrustDirection?: string;
+  public trustDirection?: string;
 
   /*
 The trust secret used for the handshake with the target domain. This will not be stored.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  public TrustHandshakeSecret?: string;
+  public trustHandshakeSecret?: string;
 
   /*
 The type of trust represented by the trust resource.
 Possible values are: `FOREST`, `EXTERNAL`.
 */
-  public TrustType?: string;
+  public trustType?: string;
 
   /*
 The fully qualified domain name. e.g. mydomain.myorganization.com, with the restrictions,
@@ -85,19 +79,33 @@ https://cloud.google.com/managed-microsoft-ad/reference/rest/v1/projects.locatio
 
 - - -
 */
-  public Domain?: string;
+  public domain?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
+
+  // Whether the trusted side has forest/domain wide access or selective access to an approved set of resources.
+  public selectiveAuthentication?: boolean;
+
+  // The target DNS server IP addresses which can resolve the remote domain involved in the trust.
+  public targetDnsIpAddresses?: Array<string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "TrustHandshakeSecret",
+        "trustDirection",
+        "The trust direction, which decides if the current domain is trusted, trusting, or both.\nPossible values are: `INBOUND`, `OUTBOUND`, `BIDIRECTIONAL`.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "trustHandshakeSecret",
         "The trust secret used for the handshake with the target domain. This will not be stored.\n**Note**: This property is sensitive and will not be displayed in the plan.",
         [],
         true,
@@ -105,7 +113,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "TrustType",
+        "trustType",
         "The type of trust represented by the trust resource.\nPossible values are: `FOREST`, `EXTERNAL`.",
         [],
         true,
@@ -113,7 +121,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Domain",
+        "domain",
         "The fully qualified domain name. e.g. mydomain.myorganization.com, with the restrictions,\nhttps://cloud.google.com/managed-microsoft-ad/reference/rest/v1/projects.locations.global.domains.\n\n\n- - -",
         [],
         true,
@@ -121,7 +129,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -129,7 +137,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "SelectiveAuthentication",
+        "selectiveAuthentication",
         "Whether the trusted side has forest/domain wide access or selective access to an approved set of resources.",
         [],
         false,
@@ -137,7 +145,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "TargetDnsIpAddresses",
+        "targetDnsIpAddresses",
         "The target DNS server IP addresses which can resolve the remote domain involved in the trust.",
         InputType_String_GetTypes(),
         true,
@@ -145,19 +153,11 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "TargetDomainName",
+        "targetDomainName",
         "The fully qualified target domain name which will be in trust with the current domain.",
         [],
         true,
         false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "TrustDirection",
-        "The trust direction, which decides if the current domain is trusted, trusting, or both.\nPossible values are: `INBOUND`, `OUTBOUND`, `BIDIRECTIONAL`.",
-        [],
-        true,
-        true,
       ),
     ];
   }

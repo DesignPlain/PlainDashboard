@@ -6,26 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getDiskDiskEncryptionKey {
-  /*
-Specifies a 256-bit customer-supplied encryption key, encoded in
-RFC 4648 base64 to either encrypt or decrypt this resource.
-*/
-  RawKey?: string;
-
-  /*
-Specifies an RFC 4648 base64 encoded, RSA-wrapped 2048-bit
-customer-supplied encryption key to either encrypt or decrypt
-this resource. You can provide either the rawKey or the rsaEncryptedKey.
-*/
-  RsaEncryptedKey?: string;
-
-  /*
-The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied
-encryption key that protects this resource.
-*/
-  Sha256?: string;
-
+export interface compute_getDiskDiskEncryptionKey {
   /*
 The self link of the encryption key used to encrypt the disk. Also called KmsKeyName
 in the cloud console. Your project's Compute Engine System service account
@@ -33,36 +14,39 @@ in the cloud console. Your project's Compute Engine System service account
 'roles/cloudkms.cryptoKeyEncrypterDecrypter' to use this feature.
 See https://cloud.google.com/compute/docs/disks/customer-managed-encryption#encrypt_a_new_persistent_disk_with_your_own_keys
 */
-  KmsKeySelfLink?: string;
+  kmsKeySelfLink?: string;
 
   /*
 The service account used for the encryption request for the given KMS key.
 If absent, the Compute Engine Service Agent service account is used.
 */
-  KmsKeyServiceAccount?: string;
+  kmsKeyServiceAccount?: string;
+
+  /*
+Specifies a 256-bit customer-supplied encryption key, encoded in
+RFC 4648 base64 to either encrypt or decrypt this resource.
+*/
+  rawKey?: string;
+
+  /*
+Specifies an RFC 4648 base64 encoded, RSA-wrapped 2048-bit
+customer-supplied encryption key to either encrypt or decrypt
+this resource. You can provide either the rawKey or the rsaEncryptedKey.
+*/
+  rsaEncryptedKey?: string;
+
+  /*
+The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied
+encryption key that protects this resource.
+*/
+  sha256?: string;
 }
 
-export function Compute_getDiskDiskEncryptionKey_GetTypes(): DynamicUIProps[] {
+export function compute_getDiskDiskEncryptionKey_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyServiceAccount",
-      "The service account used for the encryption request for the given KMS key.\nIf absent, the Compute Engine Service Agent service account is used.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "RawKey",
-      "Specifies a 256-bit customer-supplied encryption key, encoded in\nRFC 4648 base64 to either encrypt or decrypt this resource.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "RsaEncryptedKey",
+      "rsaEncryptedKey",
       "Specifies an RFC 4648 base64 encoded, RSA-wrapped 2048-bit\ncustomer-supplied encryption key to either encrypt or decrypt\nthis resource. You can provide either the rawKey or the rsaEncryptedKey.",
       [],
       true,
@@ -70,7 +54,7 @@ export function Compute_getDiskDiskEncryptionKey_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Sha256",
+      "sha256",
       "The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied\nencryption key that protects this resource.",
       [],
       true,
@@ -78,8 +62,24 @@ export function Compute_getDiskDiskEncryptionKey_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "KmsKeySelfLink",
+      "kmsKeySelfLink",
       "The self link of the encryption key used to encrypt the disk. Also called KmsKeyName\nin the cloud console. Your project's Compute Engine System service account\n('service-{{PROJECT_NUMBER}}@compute-system.iam.gserviceaccount.com') must have\n'roles/cloudkms.cryptoKeyEncrypterDecrypter' to use this feature.\nSee https://cloud.google.com/compute/docs/disks/customer-managed-encryption#encrypt_a_new_persistent_disk_with_your_own_keys",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "kmsKeyServiceAccount",
+      "The service account used for the encryption request for the given KMS key.\nIf absent, the Compute Engine Service Agent service account is used.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "rawKey",
+      "Specifies a 256-bit customer-supplied encryption key, encoded in\nRFC 4648 base64 to either encrypt or decrypt this resource.",
       [],
       true,
       false,

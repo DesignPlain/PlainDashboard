@@ -6,27 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Bigquery_JobStatusErrorResult,
-  Bigquery_JobStatusErrorResult_GetTypes,
-} from "./Bigquery_JobStatusErrorResult";
+  bigquery_JobStatusErrorResult,
+  bigquery_JobStatusErrorResult_GetTypes,
+} from "./bigquery_JobStatusErrorResult";
 import {
-  Bigquery_JobStatusError,
-  Bigquery_JobStatusError_GetTypes,
-} from "./Bigquery_JobStatusError";
+  bigquery_JobStatusError,
+  bigquery_JobStatusError_GetTypes,
+} from "./bigquery_JobStatusError";
 
-export interface Bigquery_JobStatus {
-  /*
-(Output)
-Running state of the job. Valid states include 'PENDING', 'RUNNING', and 'DONE'.
-*/
-  State?: string;
-
+export interface bigquery_JobStatus {
   /*
 (Output)
 Final error result of the job. If present, indicates that the job has completed and was unsuccessful.
 Structure is documented below.
 */
-  ErrorResults?: Array<Bigquery_JobStatusErrorResult>;
+  errorResults?: Array<bigquery_JobStatusErrorResult>;
 
   /*
 (Output)
@@ -35,32 +29,38 @@ includes the number of errors that caused the process to stop. Errors here do
 not necessarily mean that the job has not completed or was unsuccessful.
 Structure is documented below.
 */
-  Errors?: Array<Bigquery_JobStatusError>;
+  errors?: Array<bigquery_JobStatusError>;
+
+  /*
+(Output)
+Running state of the job. Valid states include 'PENDING', 'RUNNING', and 'DONE'.
+*/
+  state?: string;
 }
 
-export function Bigquery_JobStatus_GetTypes(): DynamicUIProps[] {
+export function bigquery_JobStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Array,
+      "errorResults",
+      "(Output)\nFinal error result of the job. If present, indicates that the job has completed and was unsuccessful.\nStructure is documented below.",
+      bigquery_JobStatusErrorResult_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "errors",
+      "(Output)\nThe first errors encountered during the running of the job. The final message\nincludes the number of errors that caused the process to stop. Errors here do\nnot necessarily mean that the job has not completed or was unsuccessful.\nStructure is documented below.",
+      bigquery_JobStatusError_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "(Output)\nRunning state of the job. Valid states include 'PENDING', 'RUNNING', and 'DONE'.",
       [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "ErrorResults",
-      "(Output)\nFinal error result of the job. If present, indicates that the job has completed and was unsuccessful.\nStructure is documented below.",
-      Bigquery_JobStatusErrorResult_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Errors",
-      "(Output)\nThe first errors encountered during the running of the job. The final message\nincludes the number of errors that caused the process to stop. Errors here do\nnot necessarily mean that the job has not completed or was unsuccessful.\nStructure is documented below.",
-      Bigquery_JobStatusError_GetTypes(),
       false,
       false,
     ),

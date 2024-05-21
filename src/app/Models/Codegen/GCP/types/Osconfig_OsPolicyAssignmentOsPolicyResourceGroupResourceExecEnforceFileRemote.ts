@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileRemote {
+export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileRemote {
+  // SHA256 checksum of the remote file.
+  sha256Checksum?: string;
+
   /*
 URI from which to fetch the object. It should contain
 both the protocol and path following the format `{protocol}://{location}`.
 */
-  Uri?: string;
-
-  // SHA256 checksum of the remote file.
-  Sha256Checksum?: string;
+  uri?: string;
 }
 
-export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileRemote_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileRemote_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Uri",
-      "URI from which to fetch the object. It should contain\nboth the protocol and path following the format `{protocol}://{location}`.",
+      "sha256Checksum",
+      "SHA256 checksum of the remote file.",
       [],
-      true,
+      false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Sha256Checksum",
-      "SHA256 checksum of the remote file.",
+      "uri",
+      "URI from which to fetch the object. It should contain\nboth the protocol and path following the format `{protocol}://{location}`.",
       [],
-      false,
+      true,
       false,
     ),
   ];

@@ -6,51 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote";
 
-export interface Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFile {
-  // A local path within the VM to use.
-  LocalPath?: string;
-
-  /*
-A generic remote file. Structure is
-documented below.
-*/
-  Remote?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote;
-
+export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFile {
   /*
 Defaults to false. When false, files are
 subject to validations based on the file type: Remote: A checksum must be
 specified. Cloud Storage: An object generation number must be specified.
 */
-  AllowInsecure?: boolean;
+  allowInsecure?: boolean;
 
   /*
 A Cloud Storage object. Structure is
 documented below.
 */
-  Gcs?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs;
+  gcs?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs;
+
+  // A local path within the VM to use.
+  localPath?: string;
+
+  /*
+A generic remote file. Structure is
+documented below.
+*/
+  remote?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote;
 }
 
-export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFile_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFile_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "Remote",
-      "A generic remote file. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "AllowInsecure",
+      "allowInsecure",
       "Defaults to false. When false, files are\nsubject to validations based on the file type: Remote: A checksum must be\nspecified. Cloud Storage: An object generation number must be specified.",
       [],
       false,
@@ -58,17 +50,25 @@ export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecVali
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Gcs",
+      "gcs",
       "A Cloud Storage object. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs_GetTypes(),
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "LocalPath",
+      "localPath",
       "A local path within the VM to use.",
       [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "remote",
+      "A generic remote file. Structure is\ndocumented below.",
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote_GetTypes(),
       false,
       false,
     ),

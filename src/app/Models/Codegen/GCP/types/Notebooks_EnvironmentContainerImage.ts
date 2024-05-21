@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Notebooks_EnvironmentContainerImage {
+export interface notebooks_EnvironmentContainerImage {
+  // The tag of the container image. If not specified, this defaults to the latest tag.
+  tag?: string;
+
   /*
 The path to the container image repository.
 For example: gcr.io/{project_id}/{imageName}
 */
-  Repository?: string;
-
-  // The tag of the container image. If not specified, this defaults to the latest tag.
-  Tag?: string;
+  repository?: string;
 }
 
-export function Notebooks_EnvironmentContainerImage_GetTypes(): DynamicUIProps[] {
+export function notebooks_EnvironmentContainerImage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Repository",
-      "The path to the container image repository.\nFor example: gcr.io/{project_id}/{imageName}",
+      "tag",
+      "The tag of the container image. If not specified, this defaults to the latest tag.",
       [],
-      true,
+      false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Tag",
-      "The tag of the container image. If not specified, this defaults to the latest tag.",
+      "repository",
+      "The path to the container image repository.\nFor example: gcr.io/{project_id}/{imageName}",
       [],
-      false,
+      true,
       false,
     ),
   ];

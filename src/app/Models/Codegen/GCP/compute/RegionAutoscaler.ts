@@ -7,9 +7,9 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionAutoscalerAutoscalingPolicy,
-  Compute_RegionAutoscalerAutoscalingPolicy_GetTypes,
-} from "../types/Compute_RegionAutoscalerAutoscalingPolicy";
+  compute_RegionAutoscalerAutoscalingPolicy,
+  compute_RegionAutoscalerAutoscalingPolicy_GetTypes,
+} from "../types/compute_RegionAutoscalerAutoscalingPolicy";
 
 export interface RegionAutoscalerArgs {
   /*
@@ -20,10 +20,10 @@ If none of these are specified, the default will be to autoscale based
 on cpuUtilization to 0.6 or 60%!!(MISSING)
 (MISSING)Structure is documented below.
 */
-  AutoscalingPolicy?: Compute_RegionAutoscalerAutoscalingPolicy;
+  autoscalingPolicy?: compute_RegionAutoscalerAutoscalingPolicy;
 
   // An optional description of this resource.
-  Description?: string;
+  description?: string;
 
   /*
 Name of the resource. The name must be 1-63 characters long and match
@@ -32,23 +32,23 @@ first character must be a lowercase letter, and all following
 characters must be a dash, lowercase letter, or digit, except the last
 character, which cannot be a dash.
 */
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // URL of the region where the instance group resides.
-  Region?: string;
+  region?: string;
 
   // URL of the managed instance group that this autoscaler will scale.
-  Target?: string;
+  target?: string;
 }
 export class RegionAutoscaler extends Resource {
   // URL of the managed instance group that this autoscaler will scale.
-  public Target?: string;
+  public target?: string;
 
   /*
 The configuration parameters for the autoscaling algorithm. You can
@@ -58,13 +58,13 @@ If none of these are specified, the default will be to autoscale based
 on cpuUtilization to 0.6 or 60%!!(MISSING)
 (MISSING)Structure is documented below.
 */
-  public AutoscalingPolicy?: Compute_RegionAutoscalerAutoscalingPolicy;
+  public autoscalingPolicy?: compute_RegionAutoscalerAutoscalingPolicy;
 
   // Creation timestamp in RFC3339 text format.
-  public CreationTimestamp?: string;
+  public creationTimestamp?: string;
 
   // An optional description of this resource.
-  public Description?: string;
+  public description?: string;
 
   /*
 Name of the resource. The name must be 1-63 characters long and match
@@ -73,41 +73,33 @@ first character must be a lowercase letter, and all following
 characters must be a dash, lowercase letter, or digit, except the last
 character, which cannot be a dash.
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // URL of the region where the instance group resides.
-  public Region?: string;
+  public region?: string;
 
   // The URI of the created resource.
-  public SelfLink?: string;
+  public selfLink?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "Target",
-        "URL of the managed instance group that this autoscaler will scale.",
-        [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.Object,
-        "AutoscalingPolicy",
+        "autoscalingPolicy",
         "The configuration parameters for the autoscaling algorithm. You can\ndefine one or more of the policies for an autoscaler: cpuUtilization,\ncustomMetricUtilizations, and loadBalancingUtilization.\nIf none of these are specified, the default will be to autoscale based\non cpuUtilization to 0.6 or 60%!\n(MISSING)Structure is documented below.",
-        Compute_RegionAutoscalerAutoscalingPolicy_GetTypes(),
+        compute_RegionAutoscalerAutoscalingPolicy_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "An optional description of this resource.",
         [],
         false,
@@ -115,7 +107,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name of the resource. The name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.",
         [],
         false,
@@ -123,7 +115,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -131,11 +123,19 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "URL of the region where the instance group resides.",
         [],
         false,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "target",
+        "URL of the managed instance group that this autoscaler will scale.",
+        [],
+        true,
+        false,
       ),
     ];
   }

@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_TableExternalDataConfigurationCsvOptions {
+export interface bigquery_TableExternalDataConfigurationCsvOptions {
   /*
 Indicates if BigQuery should accept rows
 that are missing trailing optional columns.
 */
-  AllowJaggedRows?: boolean;
+  allowJaggedRows?: boolean;
 
   /*
 Indicates if BigQuery should allow
 quoted data sections that contain newline characters in a CSV file.
 The default value is false.
 */
-  AllowQuotedNewlines?: boolean;
+  allowQuotedNewlines?: boolean;
 
   /*
 The character encoding of the data. The supported
 values are UTF-8 or ISO-8859-1.
 */
-  Encoding?: string;
+  encoding?: string;
 
   // The separator for fields in a CSV file.
-  FieldDelimiter?: string;
+  fieldDelimiter?: string;
 
   /*
 The value that is used to quote data sections in a
@@ -38,20 +38,20 @@ The API-side default is `"`, specified in the provider escaped as `\"`. Due to
 limitations with default values, this value is required to be
 explicitly set.
 */
-  Quote?: string;
+  quote?: string;
 
   /*
 The number of rows at the top of a CSV
 file that BigQuery will skip when reading the data.
 */
-  SkipLeadingRows?: number;
+  skipLeadingRows?: number;
 }
 
-export function Bigquery_TableExternalDataConfigurationCsvOptions_GetTypes(): DynamicUIProps[] {
+export function bigquery_TableExternalDataConfigurationCsvOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "AllowQuotedNewlines",
+      "allowQuotedNewlines",
       "Indicates if BigQuery should allow\nquoted data sections that contain newline characters in a CSV file.\nThe default value is false.",
       [],
       false,
@@ -59,7 +59,7 @@ export function Bigquery_TableExternalDataConfigurationCsvOptions_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "Encoding",
+      "encoding",
       "The character encoding of the data. The supported\nvalues are UTF-8 or ISO-8859-1.",
       [],
       false,
@@ -67,7 +67,7 @@ export function Bigquery_TableExternalDataConfigurationCsvOptions_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "FieldDelimiter",
+      "fieldDelimiter",
       "The separator for fields in a CSV file.",
       [],
       false,
@@ -75,7 +75,7 @@ export function Bigquery_TableExternalDataConfigurationCsvOptions_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "Quote",
+      "quote",
       'The value that is used to quote data sections in a\nCSV file. If your data does not contain quoted sections, set the\nproperty value to an empty string. If your data contains quoted newline\ncharacters, you must also set the `allow_quoted_newlines` property to true.\nThe API-side default is `"`, specified in the provider escaped as `\\"`. Due to\nlimitations with default values, this value is required to be\nexplicitly set.',
       [],
       true,
@@ -83,7 +83,7 @@ export function Bigquery_TableExternalDataConfigurationCsvOptions_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Number,
-      "SkipLeadingRows",
+      "skipLeadingRows",
       "The number of rows at the top of a CSV\nfile that BigQuery will skip when reading the data.",
       [],
       false,
@@ -91,7 +91,7 @@ export function Bigquery_TableExternalDataConfigurationCsvOptions_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "AllowJaggedRows",
+      "allowJaggedRows",
       "Indicates if BigQuery should accept rows\nthat are missing trailing optional columns.",
       [],
       false,

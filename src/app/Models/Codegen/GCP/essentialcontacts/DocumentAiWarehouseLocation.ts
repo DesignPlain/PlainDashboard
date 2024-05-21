@@ -8,26 +8,34 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface DocumentAiWarehouseLocationArgs {
+  /*
+The location in which the instance is to be provisioned. It takes the form projects/{projectNumber}/locations/{location}.
+
+
+- - -
+*/
+  location?: string;
+
   // The unique identifier of the project.
-  ProjectNumber?: string;
+  projectNumber?: string;
 
   /*
 The access control mode for accessing the customer data.
 Possible values are: `ACL_MODE_DOCUMENT_LEVEL_ACCESS_CONTROL_GCI`, `ACL_MODE_DOCUMENT_LEVEL_ACCESS_CONTROL_BYOID`, `ACL_MODE_UNIVERSAL_ACCESS`.
 */
-  AccessControlMode?: string;
+  accessControlMode?: string;
 
   /*
 The type of database used to store customer data.
 Possible values are: `DB_INFRA_SPANNER`, `DB_CLOUD_SQL_POSTGRES`.
 */
-  DatabaseType?: string;
+  databaseType?: string;
 
   /*
 The default role for the person who create a document.
 Possible values are: `DOCUMENT_ADMIN`, `DOCUMENT_EDITOR`, `DOCUMENT_VIEWER`.
 */
-  DocumentCreatorDefaultRole?: string;
+  documentCreatorDefaultRole?: string;
 
   /*
 The KMS key used for CMEK encryption. It is required that
@@ -36,34 +44,29 @@ same key will be used for all provisioned resources, if
 encryption is available. If the kmsKey is left empty, no
 encryption will be enforced.
 */
-  KmsKey?: string;
-
-  /*
-The location in which the instance is to be provisioned. It takes the form projects/{projectNumber}/locations/{location}.
-
-
-- - -
-*/
-  Location?: string;
+  kmsKey?: string;
 }
 export class DocumentAiWarehouseLocation extends Resource {
+  // The unique identifier of the project.
+  public projectNumber?: string;
+
   /*
 The access control mode for accessing the customer data.
 Possible values are: `ACL_MODE_DOCUMENT_LEVEL_ACCESS_CONTROL_GCI`, `ACL_MODE_DOCUMENT_LEVEL_ACCESS_CONTROL_BYOID`, `ACL_MODE_UNIVERSAL_ACCESS`.
 */
-  public AccessControlMode?: string;
+  public accessControlMode?: string;
 
   /*
 The type of database used to store customer data.
 Possible values are: `DB_INFRA_SPANNER`, `DB_CLOUD_SQL_POSTGRES`.
 */
-  public DatabaseType?: string;
+  public databaseType?: string;
 
   /*
 The default role for the person who create a document.
 Possible values are: `DOCUMENT_ADMIN`, `DOCUMENT_EDITOR`, `DOCUMENT_VIEWER`.
 */
-  public DocumentCreatorDefaultRole?: string;
+  public documentCreatorDefaultRole?: string;
 
   /*
 The KMS key used for CMEK encryption. It is required that
@@ -72,7 +75,7 @@ same key will be used for all provisioned resources, if
 encryption is available. If the kmsKey is left empty, no
 encryption will be enforced.
 */
-  public KmsKey?: string;
+  public kmsKey?: string;
 
   /*
 The location in which the instance is to be provisioned. It takes the form projects/{projectNumber}/locations/{location}.
@@ -80,16 +83,13 @@ The location in which the instance is to be provisioned. It takes the form proje
 
 - - -
 */
-  public Location?: string;
-
-  // The unique identifier of the project.
-  public ProjectNumber?: string;
+  public location?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location in which the instance is to be provisioned. It takes the form projects/{projectNumber}/locations/{location}.\n\n\n- - -",
         [],
         true,
@@ -97,7 +97,7 @@ The location in which the instance is to be provisioned. It takes the form proje
       ),
       new DynamicUIProps(
         InputType.String,
-        "ProjectNumber",
+        "projectNumber",
         "The unique identifier of the project.",
         [],
         true,
@@ -105,7 +105,7 @@ The location in which the instance is to be provisioned. It takes the form proje
       ),
       new DynamicUIProps(
         InputType.String,
-        "AccessControlMode",
+        "accessControlMode",
         "The access control mode for accessing the customer data.\nPossible values are: `ACL_MODE_DOCUMENT_LEVEL_ACCESS_CONTROL_GCI`, `ACL_MODE_DOCUMENT_LEVEL_ACCESS_CONTROL_BYOID`, `ACL_MODE_UNIVERSAL_ACCESS`.",
         [],
         true,
@@ -113,7 +113,7 @@ The location in which the instance is to be provisioned. It takes the form proje
       ),
       new DynamicUIProps(
         InputType.String,
-        "DatabaseType",
+        "databaseType",
         "The type of database used to store customer data.\nPossible values are: `DB_INFRA_SPANNER`, `DB_CLOUD_SQL_POSTGRES`.",
         [],
         true,
@@ -121,7 +121,7 @@ The location in which the instance is to be provisioned. It takes the form proje
       ),
       new DynamicUIProps(
         InputType.String,
-        "DocumentCreatorDefaultRole",
+        "documentCreatorDefaultRole",
         "The default role for the person who create a document.\nPossible values are: `DOCUMENT_ADMIN`, `DOCUMENT_EDITOR`, `DOCUMENT_VIEWER`.",
         [],
         false,
@@ -129,7 +129,7 @@ The location in which the instance is to be provisioned. It takes the form proje
       ),
       new DynamicUIProps(
         InputType.String,
-        "KmsKey",
+        "kmsKey",
         "The KMS key used for CMEK encryption. It is required that\nthe kms key is in the same region as the endpoint. The\nsame key will be used for all provisioned resources, if\nencryption is available. If the kmsKey is left empty, no\nencryption will be enforced.",
         [],
         false,

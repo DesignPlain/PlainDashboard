@@ -7,40 +7,26 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Securesourcemanager_InstancePrivateConfig,
-  Securesourcemanager_InstancePrivateConfig_GetTypes,
-} from "../types/Securesourcemanager_InstancePrivateConfig";
+  securesourcemanager_InstanceHostConfig,
+  securesourcemanager_InstanceHostConfig_GetTypes,
+} from "../types/securesourcemanager_InstanceHostConfig";
 import {
-  Securesourcemanager_InstanceHostConfig,
-  Securesourcemanager_InstanceHostConfig_GetTypes,
-} from "../types/Securesourcemanager_InstanceHostConfig";
+  securesourcemanager_InstancePrivateConfig,
+  securesourcemanager_InstancePrivateConfig_GetTypes,
+} from "../types/securesourcemanager_InstancePrivateConfig";
 
 export interface InstanceArgs {
-  // Customer-managed encryption key name, in the format projects/-/locations/-/keyRings/-/cryptoKeys/-.
-  KmsKey?: string;
-
-  /*
-Labels as key value pairs.
-
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  Labels?: Map<string, string>;
-
-  // The location for the Instance.
-  Location?: string;
-
   /*
 Private settings for private instance.
 Structure is documented below.
 */
-  PrivateConfig?: Securesourcemanager_InstancePrivateConfig;
+  privateConfig?: securesourcemanager_InstancePrivateConfig;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 The name for the Instance.
@@ -48,17 +34,10 @@ The name for the Instance.
 
 - - -
 */
-  InstanceId?: string;
-}
-export class Instance extends Resource {
-  // Time the Instance was created in UTC.
-  public CreateTime?: string;
+  instanceId?: string;
 
-  /*
-A list of hostnames for this instance.
-Structure is documented below.
-*/
-  public HostConfigs?: Array<Securesourcemanager_InstanceHostConfig>;
+  // Customer-managed encryption key name, in the format projects/-/locations/-/keyRings/-/cryptoKeys/-.
+  kmsKey?: string;
 
   /*
 Labels as key value pairs.
@@ -66,22 +45,47 @@ Labels as key value pairs.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  public Labels?: Map<string, string>;
+  labels?: Map<string, string>;
+
+  // The location for the Instance.
+  location?: string;
+}
+export class Instance extends Resource {
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
+
+  // The location for the Instance.
+  public location?: string;
+
+  // Time the Instance was created in UTC.
+  public createTime?: string;
+
+  // The resource name for the Instance.
+  public name?: string;
+
+  // Customer-managed encryption key name, in the format projects/-/locations/-/keyRings/-/cryptoKeys/-.
+  public kmsKey?: string;
 
   /*
-Private settings for private instance.
-Structure is documented below.
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 */
-  public PrivateConfig?: Securesourcemanager_InstancePrivateConfig;
+  public project?: string;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
+  public pulumiLabels?: Map<string, string>;
 
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
+  // Provides information about the current instance state.
+  public stateNote?: string;
+
+  /*
+A list of hostnames for this instance.
+Structure is documented below.
+*/
+  public hostConfigs?: Array<securesourcemanager_InstanceHostConfig>;
 
   /*
 The name for the Instance.
@@ -89,69 +93,41 @@ The name for the Instance.
 
 - - -
 */
-  public InstanceId?: string;
-
-  // The resource name for the Instance.
-  public Name?: string;
-
-  // The current state of the Instance.
-  public State?: string;
-
-  // Customer-managed encryption key name, in the format projects/-/locations/-/keyRings/-/cryptoKeys/-.
-  public KmsKey?: string;
+  public instanceId?: string;
 
   /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
+Labels as key value pairs.
+
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  public Project?: string;
+  public labels?: Map<string, string>;
+
+  /*
+Private settings for private instance.
+Structure is documented below.
+*/
+  public privateConfig?: securesourcemanager_InstancePrivateConfig;
+
+  // The current state of the Instance.
+  public state?: string;
 
   // Time the Instance was updated in UTC.
-  public UpdateTime?: string;
-
-  // The location for the Instance.
-  public Location?: string;
-
-  // Provides information about the current instance state.
-  public StateNote?: string;
+  public updateTime?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "KmsKey",
-        "Customer-managed encryption key name, in the format projects/*/locations/*/keyRings/*/cryptoKeys/*.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Map,
-        "Labels",
-        "Labels as key value pairs.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
-        InputType_Map_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Location",
-        "The location for the Instance.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.Object,
-        "PrivateConfig",
+        "privateConfig",
         "Private settings for private instance.\nStructure is documented below.",
-        Securesourcemanager_InstancePrivateConfig_GetTypes(),
+        securesourcemanager_InstancePrivateConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -159,8 +135,32 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "InstanceId",
+        "instanceId",
         "The name for the Instance.\n\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "kmsKey",
+        "Customer-managed encryption key name, in the format projects/*/locations/*/keyRings/*/cryptoKeys/*.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Map,
+        "labels",
+        "Labels as key value pairs.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        InputType_Map_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "location",
+        "The location for the Instance.",
         [],
         true,
         true,

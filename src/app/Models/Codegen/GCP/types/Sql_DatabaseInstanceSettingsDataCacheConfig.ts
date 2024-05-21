@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_DatabaseInstanceSettingsDataCacheConfig {
+export interface sql_DatabaseInstanceSettingsDataCacheConfig {
   // Whether data cache is enabled for the instance. Defaults to `false`. Can be used with MYSQL and PostgreSQL only.
-  DataCacheEnabled?: boolean;
+  dataCacheEnabled?: boolean;
 }
 
-export function Sql_DatabaseInstanceSettingsDataCacheConfig_GetTypes(): DynamicUIProps[] {
+export function sql_DatabaseInstanceSettingsDataCacheConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "DataCacheEnabled",
+      "dataCacheEnabled",
       "Whether data cache is enabled for the instance. Defaults to `false`. Can be used with MYSQL and PostgreSQL only.",
       [],
       false,

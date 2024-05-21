@@ -6,52 +6,52 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_getResourcePolicySnapshotSchedulePolicyRetentionPolicy,
-  Compute_getResourcePolicySnapshotSchedulePolicyRetentionPolicy_GetTypes,
-} from "./Compute_getResourcePolicySnapshotSchedulePolicyRetentionPolicy";
+  compute_getResourcePolicySnapshotSchedulePolicySnapshotProperty,
+  compute_getResourcePolicySnapshotSchedulePolicySnapshotProperty_GetTypes,
+} from "./compute_getResourcePolicySnapshotSchedulePolicySnapshotProperty";
 import {
-  Compute_getResourcePolicySnapshotSchedulePolicySchedule,
-  Compute_getResourcePolicySnapshotSchedulePolicySchedule_GetTypes,
-} from "./Compute_getResourcePolicySnapshotSchedulePolicySchedule";
+  compute_getResourcePolicySnapshotSchedulePolicyRetentionPolicy,
+  compute_getResourcePolicySnapshotSchedulePolicyRetentionPolicy_GetTypes,
+} from "./compute_getResourcePolicySnapshotSchedulePolicyRetentionPolicy";
 import {
-  Compute_getResourcePolicySnapshotSchedulePolicySnapshotProperty,
-  Compute_getResourcePolicySnapshotSchedulePolicySnapshotProperty_GetTypes,
-} from "./Compute_getResourcePolicySnapshotSchedulePolicySnapshotProperty";
+  compute_getResourcePolicySnapshotSchedulePolicySchedule,
+  compute_getResourcePolicySnapshotSchedulePolicySchedule_GetTypes,
+} from "./compute_getResourcePolicySnapshotSchedulePolicySchedule";
 
-export interface Compute_getResourcePolicySnapshotSchedulePolicy {
+export interface compute_getResourcePolicySnapshotSchedulePolicy {
+  // Properties with which the snapshots are created, such as labels.
+  snapshotProperties?: Array<compute_getResourcePolicySnapshotSchedulePolicySnapshotProperty>;
+
   // Retention policy applied to snapshots created by this resource policy.
-  RetentionPolicies?: Array<Compute_getResourcePolicySnapshotSchedulePolicyRetentionPolicy>;
+  retentionPolicies?: Array<compute_getResourcePolicySnapshotSchedulePolicyRetentionPolicy>;
 
   // Contains one of an 'hourlySchedule', 'dailySchedule', or 'weeklySchedule'.
-  Schedules?: Array<Compute_getResourcePolicySnapshotSchedulePolicySchedule>;
-
-  // Properties with which the snapshots are created, such as labels.
-  SnapshotProperties?: Array<Compute_getResourcePolicySnapshotSchedulePolicySnapshotProperty>;
+  schedules?: Array<compute_getResourcePolicySnapshotSchedulePolicySchedule>;
 }
 
-export function Compute_getResourcePolicySnapshotSchedulePolicy_GetTypes(): DynamicUIProps[] {
+export function compute_getResourcePolicySnapshotSchedulePolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "SnapshotProperties",
+      "snapshotProperties",
       "Properties with which the snapshots are created, such as labels.",
-      Compute_getResourcePolicySnapshotSchedulePolicySnapshotProperty_GetTypes(),
+      compute_getResourcePolicySnapshotSchedulePolicySnapshotProperty_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "RetentionPolicies",
+      "retentionPolicies",
       "Retention policy applied to snapshots created by this resource policy.",
-      Compute_getResourcePolicySnapshotSchedulePolicyRetentionPolicy_GetTypes(),
+      compute_getResourcePolicySnapshotSchedulePolicyRetentionPolicy_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Schedules",
+      "schedules",
       "Contains one of an 'hourlySchedule', 'dailySchedule', or 'weeklySchedule'.",
-      Compute_getResourcePolicySnapshotSchedulePolicySchedule_GetTypes(),
+      compute_getResourcePolicySnapshotSchedulePolicySchedule_GetTypes(),
       true,
       false,
     ),

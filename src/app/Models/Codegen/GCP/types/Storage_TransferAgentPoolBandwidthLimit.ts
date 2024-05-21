@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_TransferAgentPoolBandwidthLimit {
+export interface storage_TransferAgentPoolBandwidthLimit {
   // Bandwidth rate in megabytes per second, distributed across all the agents in the pool.
-  LimitMbps?: string;
+  limitMbps?: string;
 }
 
-export function Storage_TransferAgentPoolBandwidthLimit_GetTypes(): DynamicUIProps[] {
+export function storage_TransferAgentPoolBandwidthLimit_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "LimitMbps",
+      "limitMbps",
       "Bandwidth rate in megabytes per second, distributed across all the agents in the pool.",
       [],
       true,

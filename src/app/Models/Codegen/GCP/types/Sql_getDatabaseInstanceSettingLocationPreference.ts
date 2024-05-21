@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstanceSettingLocationPreference {
+export interface sql_getDatabaseInstanceSettingLocationPreference {
   // A Google App Engine application whose zone to remain in. Must be in the same region as this instance.
-  FollowGaeApplication?: string;
+  followGaeApplication?: string;
 
   // The preferred Compute Engine zone for the secondary/failover
-  SecondaryZone?: string;
+  secondaryZone?: string;
 
   // The preferred compute engine zone.
-  Zone?: string;
+  zone?: string;
 }
 
-export function Sql_getDatabaseInstanceSettingLocationPreference_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstanceSettingLocationPreference_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "FollowGaeApplication",
+      "followGaeApplication",
       "A Google App Engine application whose zone to remain in. Must be in the same region as this instance.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Sql_getDatabaseInstanceSettingLocationPreference_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "SecondaryZone",
+      "secondaryZone",
       "The preferred Compute Engine zone for the secondary/failover",
       [],
       true,
@@ -37,7 +37,7 @@ export function Sql_getDatabaseInstanceSettingLocationPreference_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "Zone",
+      "zone",
       "The preferred compute engine zone.",
       [],
       true,

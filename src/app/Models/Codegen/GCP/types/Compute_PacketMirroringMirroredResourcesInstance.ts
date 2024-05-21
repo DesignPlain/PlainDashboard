@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_PacketMirroringMirroredResourcesInstance {
+export interface compute_PacketMirroringMirroredResourcesInstance {
   /*
 The URL of the instances where this rule should be active.
 
 - - -
 */
-  Url?: string;
+  url?: string;
 }
 
-export function Compute_PacketMirroringMirroredResourcesInstance_GetTypes(): DynamicUIProps[] {
+export function compute_PacketMirroringMirroredResourcesInstance_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Url",
+      "url",
       "The URL of the instances where this rule should be active.\n\n- - -",
       [],
       true,

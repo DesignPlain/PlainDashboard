@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_PatchDeploymentPatchConfigGoo {
+export interface osconfig_PatchDeploymentPatchConfigGoo {
   // goo update settings. Use this setting to override the default goo patch rules.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Osconfig_PatchDeploymentPatchConfigGoo_GetTypes(): DynamicUIProps[] {
+export function osconfig_PatchDeploymentPatchConfigGoo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "goo update settings. Use this setting to override the default goo patch rules.",
       [],
       true,

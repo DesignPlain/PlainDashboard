@@ -9,10 +9,10 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface OrganizationSecurityPolicyArgs {
   // A textual description for the organization security policy.
-  Description?: string;
+  description?: string;
 
   // A textual name of the security policy.
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 The parent of this OrganizationSecurityPolicy in the Cloud Resource Hierarchy.
@@ -21,7 +21,7 @@ Format: organizations/{organization_id} or folders/{folder_id}
 
 - - -
 */
-  Parent?: string;
+  parent?: string;
 
   /*
 The type indicates the intended use of the security policy.
@@ -30,32 +30,20 @@ is "FIREWALL".
 Default value is `FIREWALL`.
 Possible values are: `FIREWALL`.
 */
-  Type?: string;
+  type?: string;
 }
 export class OrganizationSecurityPolicy extends Resource {
-  // The unique identifier for the resource. This identifier is defined by the server.
-  public PolicyId?: string;
-
-  /*
-The type indicates the intended use of the security policy.
-For organization security policies, the only supported type
-is "FIREWALL".
-Default value is `FIREWALL`.
-Possible values are: `FIREWALL`.
-*/
-  public Type?: string;
-
   // A textual description for the organization security policy.
-  public Description?: string;
+  public description?: string;
 
   // A textual name of the security policy.
-  public DisplayName?: string;
+  public displayName?: string;
 
   /*
 Fingerprint of this resource. This field is used internally during
 updates of this resource.
 */
-  public Fingerprint?: string;
+  public fingerprint?: string;
 
   /*
 The parent of this OrganizationSecurityPolicy in the Cloud Resource Hierarchy.
@@ -64,13 +52,25 @@ Format: organizations/{organization_id} or folders/{folder_id}
 
 - - -
 */
-  public Parent?: string;
+  public parent?: string;
+
+  // The unique identifier for the resource. This identifier is defined by the server.
+  public policyId?: string;
+
+  /*
+The type indicates the intended use of the security policy.
+For organization security policies, the only supported type
+is "FIREWALL".
+Default value is `FIREWALL`.
+Possible values are: `FIREWALL`.
+*/
+  public type?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "A textual description for the organization security policy.",
         [],
         false,
@@ -78,7 +78,7 @@ Format: organizations/{organization_id} or folders/{folder_id}
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "A textual name of the security policy.",
         [],
         true,
@@ -86,7 +86,7 @@ Format: organizations/{organization_id} or folders/{folder_id}
       ),
       new DynamicUIProps(
         InputType.String,
-        "Parent",
+        "parent",
         "The parent of this OrganizationSecurityPolicy in the Cloud Resource Hierarchy.\nFormat: organizations/{organization_id} or folders/{folder_id}\n\n\n- - -",
         [],
         true,
@@ -94,7 +94,7 @@ Format: organizations/{organization_id} or folders/{folder_id}
       ),
       new DynamicUIProps(
         InputType.String,
-        "Type",
+        "type",
         'The type indicates the intended use of the security policy.\nFor organization security policies, the only supported type\nis "FIREWALL".\nDefault value is `FIREWALL`.\nPossible values are: `FIREWALL`.',
         [],
         false,

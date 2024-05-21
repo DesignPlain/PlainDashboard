@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodeConfigConfidentialNode {
+export interface container_getClusterNodeConfigConfidentialNode {
   // Whether Confidential Nodes feature is enabled for all nodes in this pool.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_getClusterNodeConfigConfidentialNode_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodeConfigConfidentialNode_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether Confidential Nodes feature is enabled for all nodes in this pool.",
       [],
       true,

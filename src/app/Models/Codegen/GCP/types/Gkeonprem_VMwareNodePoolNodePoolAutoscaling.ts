@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_VMwareNodePoolNodePoolAutoscaling {
+export interface gkeonprem_VMwareNodePoolNodePoolAutoscaling {
   // Maximum number of replicas in the NodePool.
-  MaxReplicas?: number;
+  maxReplicas?: number;
 
   // Minimum number of replicas in the NodePool.
-  MinReplicas?: number;
+  minReplicas?: number;
 }
 
-export function Gkeonprem_VMwareNodePoolNodePoolAutoscaling_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareNodePoolNodePoolAutoscaling_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "MinReplicas",
-      "Minimum number of replicas in the NodePool.",
+      "maxReplicas",
+      "Maximum number of replicas in the NodePool.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxReplicas",
-      "Maximum number of replicas in the NodePool.",
+      "minReplicas",
+      "Minimum number of replicas in the NodePool.",
       [],
       true,
       false,

@@ -7,36 +7,11 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Iap_AppEngineVersionIamMemberCondition,
-  Iap_AppEngineVersionIamMemberCondition_GetTypes,
-} from "../types/Iap_AppEngineVersionIamMemberCondition";
+  iap_AppEngineVersionIamMemberCondition,
+  iap_AppEngineVersionIamMemberCondition_GetTypes,
+} from "../types/iap_AppEngineVersionIamMemberCondition";
 
 export interface AppEngineVersionIamMemberArgs {
-  /*
-The role that should be applied. Only one
-`gcp.iap.AppEngineVersionIamBinding` can be used per role. Note that custom roles must be of the format
-`[projects|organizations]/{parent-name}/roles/{role-name}`.
-*/
-  Role?: string;
-
-  // Service id of the App Engine application Used to find the parent resource to bind the IAM policy to
-  Service?: string;
-
-  // Version id of the App Engine application Used to find the parent resource to bind the IAM policy to
-  VersionId?: string;
-
-  // Id of the App Engine application. Used to find the parent resource to bind the IAM policy to
-  AppId?: string;
-
-  /*
-An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
-Structure is documented below.
-*/
-  Condition?: Iap_AppEngineVersionIamMemberCondition;
-
-  //
-  Member?: string;
-
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the project will be parsed from the identifier of the parent resource. If no project is provided in the parent identifier and no project is specified, the provider project is used.
@@ -53,20 +28,45 @@ Each entry can have one of the following values:
 - --projectEditor:projectid--: Editors of the given project. For example, "projectEditor:my-example-project"
 - --projectViewer:projectid--: Viewers of the given project. For example, "projectViewer:my-example-project"
 */
-  Project?: string;
+  project?: string;
+
+  /*
+The role that should be applied. Only one
+`gcp.iap.AppEngineVersionIamBinding` can be used per role. Note that custom roles must be of the format
+`[projects|organizations]/{parent-name}/roles/{role-name}`.
+*/
+  role?: string;
+
+  // Service id of the App Engine application Used to find the parent resource to bind the IAM policy to
+  service?: string;
+
+  // Version id of the App Engine application Used to find the parent resource to bind the IAM policy to
+  versionId?: string;
+
+  // Id of the App Engine application. Used to find the parent resource to bind the IAM policy to
+  appId?: string;
+
+  /*
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+Structure is documented below.
+*/
+  condition?: iap_AppEngineVersionIamMemberCondition;
+
+  //
+  member?: string;
 }
 export class AppEngineVersionIamMember extends Resource {
   /*
 An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
 */
-  public Condition?: Iap_AppEngineVersionIamMemberCondition;
+  public condition?: iap_AppEngineVersionIamMemberCondition;
 
   // (Computed) The etag of the IAM policy.
-  public Etag?: string;
+  public etag?: string;
 
   //
-  public Member?: string;
+  public member?: string;
 
   /*
 The ID of the project in which the resource belongs.
@@ -84,38 +84,38 @@ Each entry can have one of the following values:
 - --projectEditor:projectid--: Editors of the given project. For example, "projectEditor:my-example-project"
 - --projectViewer:projectid--: Viewers of the given project. For example, "projectViewer:my-example-project"
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 The role that should be applied. Only one
 `gcp.iap.AppEngineVersionIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
-  public Role?: string;
+  public role?: string;
 
   // Service id of the App Engine application Used to find the parent resource to bind the IAM policy to
-  public Service?: string;
+  public service?: string;
 
   // Version id of the App Engine application Used to find the parent resource to bind the IAM policy to
-  public VersionId?: string;
+  public versionId?: string;
 
   // Id of the App Engine application. Used to find the parent resource to bind the IAM policy to
-  public AppId?: string;
+  public appId?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.\nStructure is documented below.",
-        Iap_AppEngineVersionIamMemberCondition_GetTypes(),
+        iap_AppEngineVersionIamMemberCondition_GetTypes(),
         false,
         true,
       ),
-      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
+      new DynamicUIProps(InputType.String, "member", "", [], true, true),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         'The ID of the project in which the resource belongs.\nIf it is not provided, the project will be parsed from the identifier of the parent resource. If no project is provided in the parent identifier and no project is specified, the provider project is used.\n\n* `member/members` - (Required) Identities that will be granted the privilege in `role`.\nEach entry can have one of the following values:\n* **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.\n* **allAuthenticatedUsers**: A special identifier that represents anyone who is authenticated with a Google account or a service account.\n* **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.\n* **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.\n* **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.\n* **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.\n* **projectOwner:projectid**: Owners of the given project. For example, "projectOwner:my-example-project"\n* **projectEditor:projectid**: Editors of the given project. For example, "projectEditor:my-example-project"\n* **projectViewer:projectid**: Viewers of the given project. For example, "projectViewer:my-example-project"',
         [],
         false,
@@ -123,7 +123,7 @@ The role that should be applied. Only one
       ),
       new DynamicUIProps(
         InputType.String,
-        "Role",
+        "role",
         "The role that should be applied. Only one\n`gcp.iap.AppEngineVersionIamBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
         [],
         true,
@@ -131,7 +131,7 @@ The role that should be applied. Only one
       ),
       new DynamicUIProps(
         InputType.String,
-        "Service",
+        "service",
         "Service id of the App Engine application Used to find the parent resource to bind the IAM policy to",
         [],
         true,
@@ -139,7 +139,7 @@ The role that should be applied. Only one
       ),
       new DynamicUIProps(
         InputType.String,
-        "VersionId",
+        "versionId",
         "Version id of the App Engine application Used to find the parent resource to bind the IAM policy to",
         [],
         true,
@@ -147,7 +147,7 @@ The role that should be applied. Only one
       ),
       new DynamicUIProps(
         InputType.String,
-        "AppId",
+        "appId",
         "Id of the App Engine application. Used to find the parent resource to bind the IAM policy to",
         [],
         true,

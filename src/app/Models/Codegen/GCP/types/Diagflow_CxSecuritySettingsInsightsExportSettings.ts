@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxSecuritySettingsInsightsExportSettings {
+export interface diagflow_CxSecuritySettingsInsightsExportSettings {
   // If enabled, we will automatically exports conversations to Insights and Insights runs its analyzers.
-  EnableInsightsExport?: boolean;
+  enableInsightsExport?: boolean;
 }
 
-export function Diagflow_CxSecuritySettingsInsightsExportSettings_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxSecuritySettingsInsightsExportSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableInsightsExport",
+      "enableInsightsExport",
       "If enabled, we will automatically exports conversations to Insights and Insights runs its analyzers.",
       [],
       true,

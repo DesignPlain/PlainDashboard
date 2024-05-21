@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_NodeTemplateNodeTypeFlexibility {
+export interface compute_NodeTemplateNodeTypeFlexibility {
   // Number of virtual CPUs to use.
-  Cpus?: string;
+  cpus?: string;
 
   /*
 (Output)
 Use local SSD
 */
-  LocalSsd?: string;
+  localSsd?: string;
 
   // Physical memory available to the node, defined in MB.
-  Memory?: string;
+  memory?: string;
 }
 
-export function Compute_NodeTemplateNodeTypeFlexibility_GetTypes(): DynamicUIProps[] {
+export function compute_NodeTemplateNodeTypeFlexibility_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Cpus",
+      "cpus",
       "Number of virtual CPUs to use.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Compute_NodeTemplateNodeTypeFlexibility_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "LocalSsd",
+      "localSsd",
       "(Output)\nUse local SSD",
       [],
       false,
@@ -40,7 +40,7 @@ export function Compute_NodeTemplateNodeTypeFlexibility_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "Memory",
+      "memory",
       "Physical memory available to the node, defined in MB.",
       [],
       false,

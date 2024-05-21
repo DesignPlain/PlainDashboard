@@ -6,63 +6,32 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_getInstanceTemplateDiskDiskEncryptionKey,
-  Compute_getInstanceTemplateDiskDiskEncryptionKey_GetTypes,
-} from "./Compute_getInstanceTemplateDiskDiskEncryptionKey";
+  compute_getInstanceTemplateDiskSourceImageEncryptionKey,
+  compute_getInstanceTemplateDiskSourceImageEncryptionKey_GetTypes,
+} from "./compute_getInstanceTemplateDiskSourceImageEncryptionKey";
 import {
-  Compute_getInstanceTemplateDiskSourceSnapshotEncryptionKey,
-  Compute_getInstanceTemplateDiskSourceSnapshotEncryptionKey_GetTypes,
-} from "./Compute_getInstanceTemplateDiskSourceSnapshotEncryptionKey";
+  compute_getInstanceTemplateDiskSourceSnapshotEncryptionKey,
+  compute_getInstanceTemplateDiskSourceSnapshotEncryptionKey_GetTypes,
+} from "./compute_getInstanceTemplateDiskSourceSnapshotEncryptionKey";
 import {
-  Compute_getInstanceTemplateDiskSourceImageEncryptionKey,
-  Compute_getInstanceTemplateDiskSourceImageEncryptionKey_GetTypes,
-} from "./Compute_getInstanceTemplateDiskSourceImageEncryptionKey";
+  compute_getInstanceTemplateDiskDiskEncryptionKey,
+  compute_getInstanceTemplateDiskDiskEncryptionKey_GetTypes,
+} from "./compute_getInstanceTemplateDiskDiskEncryptionKey";
 
-export interface Compute_getInstanceTemplateDisk {
-  // Indicates that this is a boot disk.
-  Boot?: boolean;
-
-  // Encrypts or decrypts a disk using a customer-supplied encryption key.
-  DiskEncryptionKeys?: Array<Compute_getInstanceTemplateDiskDiskEncryptionKey>;
-
-  // A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.
-  ResourceManagerTags?: Map<string, string>;
-
-  /*
-The name (--not self_link--)
-of the disk (such as those managed by `gcp.compute.Disk`) to attach.
-> --Note:-- Either `source` or `source_image` is --required-- in a disk block unless the disk type is `local-ssd`. Check the API [docs](https://cloud.google.com/compute/docs/reference/rest/v1/instanceTemplates/insert) for details.
-*/
-  Source?: string;
-
-  // The customer-supplied encryption key of the source snapshot.
-  SourceSnapshotEncryptionKeys?: Array<Compute_getInstanceTemplateDiskSourceSnapshotEncryptionKey>;
-
+export interface compute_getInstanceTemplateDisk {
   /*
 A unique device name that is reflected into the
 /dev/  tree of a Linux operating system running within the instance. If not
 specified, the server chooses a default device name to apply to this disk.
 */
-  DeviceName?: string;
+  deviceName?: string;
 
   /*
-Name of the disk. When not provided, this defaults
-to the name of the instance.
+The mode in which to attach this disk, either READ_WRITE
+or READ_ONLY. If you are attaching or creating a boot disk, this must
+read-write mode.
 */
-  DiskName?: string;
-
-  /*
-The size of the image in gigabytes. If not
-specified, it will inherit the size of its base image. For SCRATCH disks,
-the size must be exactly 375GB.
-*/
-  DiskSizeGb?: number;
-
-  /*
-(Optional) A set of ket/value label pairs to assign to disk created from
-this template
-*/
-  Labels?: Map<string, string>;
+  mode?: string;
 
   /*
 Indicates how many IOPS to provision for the disk. This
@@ -70,28 +39,15 @@ sets the number of I/O operations per second that the disk can handle.
 Values must be between 10,000 and 120,000. For more details, see the
 [Extreme persistent disk documentation](https://cloud.google.com/compute/docs/disks/extreme-persistent-disk).
 */
-  ProvisionedIops?: number;
+  provisionedIops?: number;
 
   /*
-Whether or not the disk should be auto-deleted.
-This defaults to true.
+The source snapshot to create this disk. When creating
+a new instance, one of initializeParams.sourceSnapshot,
+initializeParams.sourceImage, or disks.source is
+required except for local SSD.
 */
-  AutoDelete?: boolean;
-
-  /*
-Specifies the disk interface to use for attaching this disk,
-which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI
-and the request will fail if you attempt to attach a persistent disk in any other format
-than SCSI. Local SSDs can use either NVME or SCSI.
-*/
-  Interface?: string;
-
-  /*
-The mode in which to attach this disk, either READ_WRITE
-or READ_ONLY. If you are attaching or creating a boot disk, this must
-read-write mode.
-*/
-  Mode?: string;
+  sourceSnapshot?: string;
 
   /*
 The customer-supplied encryption key of the source
@@ -103,16 +59,50 @@ encryption keys, so you cannot create disks for
 instances in a managed instance group if the source
 images are encrypted with your own keys.
 */
-  SourceImageEncryptionKeys?: Array<Compute_getInstanceTemplateDiskSourceImageEncryptionKey>;
+  sourceImageEncryptionKeys?: Array<compute_getInstanceTemplateDiskSourceImageEncryptionKey>;
+
+  // A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.
+  resourceManagerTags?: Map<string, string>;
+
+  /*
+The name (--not self_link--)
+of the disk (such as those managed by `gcp.compute.Disk`) to attach.
+> --Note:-- Either `source` or `source_image` is --required-- in a disk block unless the disk type is `local-ssd`. Check the API [docs](https://cloud.google.com/compute/docs/reference/rest/v1/instanceTemplates/insert) for details.
+*/
+  source?: string;
+
+  // The customer-supplied encryption key of the source snapshot.
+  sourceSnapshotEncryptionKeys?: Array<compute_getInstanceTemplateDiskSourceSnapshotEncryptionKey>;
+
+  /*
+Name of the disk. When not provided, this defaults
+to the name of the instance.
+*/
+  diskName?: string;
+
+  /*
+The size of the image in gigabytes. If not
+specified, it will inherit the size of its base image. For SCRATCH disks,
+the size must be exactly 375GB.
+*/
+  diskSizeGb?: number;
 
   /*
 The GCE disk type. Such as `"pd-ssd"`, `"local-ssd"`,
 `"pd-balanced"` or `"pd-standard"`.
 */
-  DiskType?: string;
+  diskType?: string;
+
+  /*
+Specifies the disk interface to use for attaching this disk,
+which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI
+and the request will fail if you attempt to attach a persistent disk in any other format
+than SCSI. Local SSDs can use either NVME or SCSI.
+*/
+  interface?: string;
 
   // (Optional) -- A list of short names of resource policies to attach to this disk for automatic snapshot creations. Currently a max of 1 resource policy is supported.
-  ResourcePolicies?: Array<string>;
+  resourcePolicies?: Array<string>;
 
   /*
 The image from which to
@@ -123,41 +113,67 @@ initialize this disk. This can be one of: the image's `self_link`,
 `{project}/{image}`, `{family}`, or `{image}`.
 > --Note:-- Either `source` or `source_image` is --required-- in a disk block unless the disk type is `local-ssd`. Check the API [docs](https://cloud.google.com/compute/docs/reference/rest/v1/instanceTemplates/insert) for details.
 */
-  SourceImage?: string;
-
-  /*
-The source snapshot to create this disk. When creating
-a new instance, one of initializeParams.sourceSnapshot,
-initializeParams.sourceImage, or disks.source is
-required except for local SSD.
-*/
-  SourceSnapshot?: string;
+  sourceImage?: string;
 
   // The accelerator type resource to expose to this instance. E.g. `nvidia-tesla-k80`.
-  Type?: string;
+  type?: string;
+
+  /*
+Whether or not the disk should be auto-deleted.
+This defaults to true.
+*/
+  autoDelete?: boolean;
+
+  // Indicates that this is a boot disk.
+  boot?: boolean;
+
+  // Encrypts or decrypts a disk using a customer-supplied encryption key.
+  diskEncryptionKeys?: Array<compute_getInstanceTemplateDiskDiskEncryptionKey>;
+
+  /*
+(Optional) A set of ket/value label pairs to assign to disk created from
+this template
+*/
+  labels?: Map<string, string>;
 }
 
-export function Compute_getInstanceTemplateDisk_GetTypes(): DynamicUIProps[] {
+export function compute_getInstanceTemplateDisk_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "SourceSnapshotEncryptionKeys",
-      "The customer-supplied encryption key of the source snapshot.",
-      Compute_getInstanceTemplateDiskSourceSnapshotEncryptionKey_GetTypes(),
+      "sourceImageEncryptionKeys",
+      "The customer-supplied encryption key of the source\nimage. Required if the source image is protected by a\ncustomer-supplied encryption key.\n\nInstance templates do not store customer-supplied\nencryption keys, so you cannot create disks for\ninstances in a managed instance group if the source\nimages are encrypted with your own keys.",
+      compute_getInstanceTemplateDiskSourceImageEncryptionKey_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "DiskSizeGb",
+      "diskSizeGb",
       "The size of the image in gigabytes. If not\nspecified, it will inherit the size of its base image. For SCRATCH disks,\nthe size must be exactly 375GB.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
+      InputType.String,
+      "interface",
+      "Specifies the disk interface to use for attaching this disk,\nwhich is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI\nand the request will fail if you attempt to attach a persistent disk in any other format\nthan SCSI. Local SSDs can use either NVME or SCSI.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "boot",
+      "Indicates that this is a boot disk.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Number,
-      "ProvisionedIops",
+      "provisionedIops",
       "Indicates how many IOPS to provision for the disk. This\nsets the number of I/O operations per second that the disk can handle.\nValues must be between 10,000 and 120,000. For more details, see the\n[Extreme persistent disk documentation](https://cloud.google.com/compute/docs/disks/extreme-persistent-disk).",
       [],
       true,
@@ -165,39 +181,39 @@ export function Compute_getInstanceTemplateDisk_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Interface",
-      "Specifies the disk interface to use for attaching this disk,\nwhich is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI\nand the request will fail if you attempt to attach a persistent disk in any other format\nthan SCSI. Local SSDs can use either NVME or SCSI.",
+      "diskType",
+      'The GCE disk type. Such as `"pd-ssd"`, `"local-ssd"`,\n`"pd-balanced"` or `"pd-standard"`.',
       [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "SourceImageEncryptionKeys",
-      "The customer-supplied encryption key of the source\nimage. Required if the source image is protected by a\ncustomer-supplied encryption key.\n\nInstance templates do not store customer-supplied\nencryption keys, so you cannot create disks for\ninstances in a managed instance group if the source\nimages are encrypted with your own keys.",
-      Compute_getInstanceTemplateDiskSourceImageEncryptionKey_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Type",
-      "The accelerator type resource to expose to this instance. E.g. `nvidia-tesla-k80`.",
+      InputType.Bool,
+      "autoDelete",
+      "Whether or not the disk should be auto-deleted.\nThis defaults to true.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "Source",
-      "The name (**not self_link**)\nof the disk (such as those managed by `gcp.compute.Disk`) to attach.\n> **Note:** Either `source` or `source_image` is **required** in a disk block unless the disk type is `local-ssd`. Check the API [docs](https://cloud.google.com/compute/docs/reference/rest/v1/instanceTemplates/insert) for details.",
-      [],
+      InputType.Map,
+      "resourceManagerTags",
+      "A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.",
+      InputType_Map_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Map,
+      "labels",
+      "(Optional) A set of ket/value label pairs to assign to disk created from\nthis template",
+      InputType_Map_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "DeviceName",
+      "deviceName",
       "A unique device name that is reflected into the\n/dev/  tree of a Linux operating system running within the instance. If not\nspecified, the server chooses a default device name to apply to this disk.",
       [],
       true,
@@ -205,47 +221,31 @@ export function Compute_getInstanceTemplateDisk_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "DiskName",
-      "Name of the disk. When not provided, this defaults\nto the name of the instance.",
+      "mode",
+      "The mode in which to attach this disk, either READ_WRITE\nor READ_ONLY. If you are attaching or creating a boot disk, this must\nread-write mode.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Map,
-      "Labels",
-      "(Optional) A set of ket/value label pairs to assign to disk created from\nthis template",
-      InputType_Map_GetTypes(),
+      InputType.String,
+      "sourceSnapshot",
+      "The source snapshot to create this disk. When creating\na new instance, one of initializeParams.sourceSnapshot,\ninitializeParams.sourceImage, or disks.source is\nrequired except for local SSD.",
+      [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "DiskEncryptionKeys",
-      "Encrypts or decrypts a disk using a customer-supplied encryption key.",
-      Compute_getInstanceTemplateDiskDiskEncryptionKey_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Map,
-      "ResourceManagerTags",
-      "A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.",
-      InputType_Map_GetTypes(),
+      "resourcePolicies",
+      "(Optional) -- A list of short names of resource policies to attach to this disk for automatic snapshot creations. Currently a max of 1 resource policy is supported.",
+      InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "DiskType",
-      'The GCE disk type. Such as `"pd-ssd"`, `"local-ssd"`,\n`"pd-balanced"` or `"pd-standard"`.',
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "SourceImage",
+      "sourceImage",
       "The image from which to\ninitialize this disk. This can be one of: the image's `self_link`,\n`projects/{project}/global/images/{image}`,\n`projects/{project}/global/images/family/{family}`, `global/images/{image}`,\n`global/images/family/{family}`, `family/{family}`, `{project}/{family}`,\n`{project}/{image}`, `{family}`, or `{image}`.\n> **Note:** Either `source` or `source_image` is **required** in a disk block unless the disk type is `local-ssd`. Check the API [docs](https://cloud.google.com/compute/docs/reference/rest/v1/instanceTemplates/insert) for details.",
       [],
       true,
@@ -253,41 +253,41 @@ export function Compute_getInstanceTemplateDisk_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "SourceSnapshot",
-      "The source snapshot to create this disk. When creating\na new instance, one of initializeParams.sourceSnapshot,\ninitializeParams.sourceImage, or disks.source is\nrequired except for local SSD.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "Boot",
-      "Indicates that this is a boot disk.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "AutoDelete",
-      "Whether or not the disk should be auto-deleted.\nThis defaults to true.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Mode",
-      "The mode in which to attach this disk, either READ_WRITE\nor READ_ONLY. If you are attaching or creating a boot disk, this must\nread-write mode.",
+      "type",
+      "The accelerator type resource to expose to this instance. E.g. `nvidia-tesla-k80`.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ResourcePolicies",
-      "(Optional) -- A list of short names of resource policies to attach to this disk for automatic snapshot creations. Currently a max of 1 resource policy is supported.",
-      InputType_String_GetTypes(),
+      "diskEncryptionKeys",
+      "Encrypts or decrypts a disk using a customer-supplied encryption key.",
+      compute_getInstanceTemplateDiskDiskEncryptionKey_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "source",
+      "The name (**not self_link**)\nof the disk (such as those managed by `gcp.compute.Disk`) to attach.\n> **Note:** Either `source` or `source_image` is **required** in a disk block unless the disk type is `local-ssd`. Check the API [docs](https://cloud.google.com/compute/docs/reference/rest/v1/instanceTemplates/insert) for details.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "sourceSnapshotEncryptionKeys",
+      "The customer-supplied encryption key of the source snapshot.",
+      compute_getInstanceTemplateDiskSourceSnapshotEncryptionKey_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "diskName",
+      "Name of the disk. When not provided, this defaults\nto the name of the instance.",
+      [],
       true,
       false,
     ),

@@ -7,73 +7,73 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Securesourcemanager_InstanceIamBindingCondition,
-  Securesourcemanager_InstanceIamBindingCondition_GetTypes,
-} from "../types/Securesourcemanager_InstanceIamBindingCondition";
+  securesourcemanager_InstanceIamBindingCondition,
+  securesourcemanager_InstanceIamBindingCondition_GetTypes,
+} from "../types/securesourcemanager_InstanceIamBindingCondition";
 
 export interface InstanceIamBindingArgs {
   //
-  Condition?: Securesourcemanager_InstanceIamBindingCondition;
+  role?: string;
 
   //
-  InstanceId?: string;
+  condition?: securesourcemanager_InstanceIamBindingCondition;
 
   //
-  Location?: string;
+  instanceId?: string;
 
   //
-  Members?: Array<string>;
+  location?: string;
 
   //
-  Project?: string;
+  members?: Array<string>;
 
   //
-  Role?: string;
+  project?: string;
 }
 export class InstanceIamBinding extends Resource {
   //
-  public Role?: string;
+  public condition?: securesourcemanager_InstanceIamBindingCondition;
 
   //
-  public Condition?: Securesourcemanager_InstanceIamBindingCondition;
+  public etag?: string;
 
   //
-  public Etag?: string;
+  public instanceId?: string;
 
   //
-  public InstanceId?: string;
+  public location?: string;
 
   //
-  public Location?: string;
+  public members?: Array<string>;
 
   //
-  public Members?: Array<string>;
+  public project?: string;
 
   //
-  public Project?: string;
+  public role?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
+      new DynamicUIProps(InputType.String, "role", "", [], true, true),
+      new DynamicUIProps(
+        InputType.Object,
+        "condition",
+        "",
+        securesourcemanager_InstanceIamBindingCondition_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(InputType.String, "instanceId", "", [], true, true),
+      new DynamicUIProps(InputType.String, "location", "", [], false, true),
       new DynamicUIProps(
         InputType.Array,
-        "Members",
+        "members",
         "",
         InputType_String_GetTypes(),
         true,
         false,
       ),
-      new DynamicUIProps(InputType.String, "Project", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
-      new DynamicUIProps(
-        InputType.Object,
-        "Condition",
-        "",
-        Securesourcemanager_InstanceIamBindingCondition_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(InputType.String, "InstanceId", "", [], true, true),
-      new DynamicUIProps(InputType.String, "Location", "", [], false, true),
+      new DynamicUIProps(InputType.String, "project", "", [], false, true),
     ];
   }
 }

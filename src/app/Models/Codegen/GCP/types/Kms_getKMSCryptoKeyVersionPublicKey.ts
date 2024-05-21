@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Kms_getKMSCryptoKeyVersionPublicKey {
+export interface kms_getKMSCryptoKeyVersionPublicKey {
   // The CryptoKeyVersionAlgorithm that this CryptoKeyVersion supports.
-  Algorithm?: string;
+  algorithm?: string;
 
   // The public key, encoded in PEM format. For more information, see the RFC 7468 sections for General Considerations and Textual Encoding of Subject Public Key Info.
-  Pem?: string;
+  pem?: string;
 }
 
-export function Kms_getKMSCryptoKeyVersionPublicKey_GetTypes(): DynamicUIProps[] {
+export function kms_getKMSCryptoKeyVersionPublicKey_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Algorithm",
+      "algorithm",
       "The CryptoKeyVersionAlgorithm that this CryptoKeyVersion supports.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Kms_getKMSCryptoKeyVersionPublicKey_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "Pem",
+      "pem",
       "The public key, encoded in PEM format. For more information, see the RFC 7468 sections for General Considerations and Textual Encoding of Subject Public Key Info.",
       [],
       true,

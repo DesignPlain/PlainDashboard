@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterControlPlaneApiServerArg {
+export interface gkeonprem_BareMetalClusterControlPlaneApiServerArg {
   // The argument name as it appears on the API Server command line please make sure to remove the leading dashes.
-  Argument?: string;
+  argument?: string;
 
   // The value of the arg as it will be passed to the API Server command line.
-  Value?: string;
+  value?: string;
 }
 
-export function Gkeonprem_BareMetalClusterControlPlaneApiServerArg_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterControlPlaneApiServerArg_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Argument",
+      "argument",
       "The argument name as it appears on the API Server command line please make sure to remove the leading dashes.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Gkeonprem_BareMetalClusterControlPlaneApiServerArg_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "The value of the arg as it will be passed to the API Server command line.",
       [],
       true,

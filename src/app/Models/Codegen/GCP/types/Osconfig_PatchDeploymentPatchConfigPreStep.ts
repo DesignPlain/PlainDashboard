@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Osconfig_PatchDeploymentPatchConfigPreStepWindowsExecStepConfig,
-  Osconfig_PatchDeploymentPatchConfigPreStepWindowsExecStepConfig_GetTypes,
-} from "./Osconfig_PatchDeploymentPatchConfigPreStepWindowsExecStepConfig";
+  osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfig,
+  osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfig_GetTypes,
+} from "./osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfig";
 import {
-  Osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfig,
-  Osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfig_GetTypes,
-} from "./Osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfig";
+  osconfig_PatchDeploymentPatchConfigPreStepWindowsExecStepConfig,
+  osconfig_PatchDeploymentPatchConfigPreStepWindowsExecStepConfig_GetTypes,
+} from "./osconfig_PatchDeploymentPatchConfigPreStepWindowsExecStepConfig";
 
-export interface Osconfig_PatchDeploymentPatchConfigPreStep {
-  /*
-The ExecStepConfig for all Windows VMs targeted by the PatchJob.
-Structure is documented below.
-*/
-  WindowsExecStepConfig?: Osconfig_PatchDeploymentPatchConfigPreStepWindowsExecStepConfig;
-
+export interface osconfig_PatchDeploymentPatchConfigPreStep {
   /*
 The ExecStepConfig for all Linux VMs targeted by the PatchJob.
 Structure is documented below.
 */
-  LinuxExecStepConfig?: Osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfig;
+  linuxExecStepConfig?: osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfig;
+
+  /*
+The ExecStepConfig for all Windows VMs targeted by the PatchJob.
+Structure is documented below.
+*/
+  windowsExecStepConfig?: osconfig_PatchDeploymentPatchConfigPreStepWindowsExecStepConfig;
 }
 
-export function Osconfig_PatchDeploymentPatchConfigPreStep_GetTypes(): DynamicUIProps[] {
+export function osconfig_PatchDeploymentPatchConfigPreStep_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "WindowsExecStepConfig",
-      "The ExecStepConfig for all Windows VMs targeted by the PatchJob.\nStructure is documented below.",
-      Osconfig_PatchDeploymentPatchConfigPreStepWindowsExecStepConfig_GetTypes(),
+      "linuxExecStepConfig",
+      "The ExecStepConfig for all Linux VMs targeted by the PatchJob.\nStructure is documented below.",
+      osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfig_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "LinuxExecStepConfig",
-      "The ExecStepConfig for all Linux VMs targeted by the PatchJob.\nStructure is documented below.",
-      Osconfig_PatchDeploymentPatchConfigPreStepLinuxExecStepConfig_GetTypes(),
+      "windowsExecStepConfig",
+      "The ExecStepConfig for all Windows VMs targeted by the PatchJob.\nStructure is documented below.",
+      osconfig_PatchDeploymentPatchConfigPreStepWindowsExecStepConfig_GetTypes(),
       false,
       true,
     ),

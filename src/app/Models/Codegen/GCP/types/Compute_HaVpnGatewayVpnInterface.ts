@@ -6,10 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_HaVpnGatewayVpnInterface {
-  // The numeric ID of this VPN gateway interface.
-  Id?: number;
-
+export interface compute_HaVpnGatewayVpnInterface {
   /*
 URL of the interconnect attachment resource. When the value
 of this field is present, the VPN Gateway will be used for
@@ -18,28 +15,23 @@ traffic for this VPN Gateway interface will go through the
 specified interconnect attachment resource.
 Not currently available publicly.
 */
-  InterconnectAttachment?: string;
+  interconnectAttachment?: string;
 
   /*
 (Output)
 The external IP address for this VPN gateway interface.
 */
-  IpAddress?: string;
+  ipAddress?: string;
+
+  // The numeric ID of this VPN gateway interface.
+  id?: number;
 }
 
-export function Compute_HaVpnGatewayVpnInterface_GetTypes(): DynamicUIProps[] {
+export function compute_HaVpnGatewayVpnInterface_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "Id",
-      "The numeric ID of this VPN gateway interface.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "InterconnectAttachment",
+      "interconnectAttachment",
       "URL of the interconnect attachment resource. When the value\nof this field is present, the VPN Gateway will be used for\nIPsec-encrypted Cloud Interconnect; all Egress or Ingress\ntraffic for this VPN Gateway interface will go through the\nspecified interconnect attachment resource.\nNot currently available publicly.",
       [],
       false,
@@ -47,11 +39,19 @@ export function Compute_HaVpnGatewayVpnInterface_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "IpAddress",
+      "ipAddress",
       "(Output)\nThe external IP address for this VPN gateway interface.",
       [],
       false,
       false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "id",
+      "The numeric ID of this VPN gateway interface.",
+      [],
+      false,
+      true,
     ),
   ];
 }

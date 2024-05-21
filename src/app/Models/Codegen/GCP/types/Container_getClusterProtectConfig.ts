@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterProtectConfigWorkloadConfig,
-  Container_getClusterProtectConfigWorkloadConfig_GetTypes,
-} from "./Container_getClusterProtectConfigWorkloadConfig";
+  container_getClusterProtectConfigWorkloadConfig,
+  container_getClusterProtectConfigWorkloadConfig_GetTypes,
+} from "./container_getClusterProtectConfigWorkloadConfig";
 
-export interface Container_getClusterProtectConfig {
+export interface container_getClusterProtectConfig {
   // WorkloadConfig defines which actions are enabled for a cluster's workload configurations.
-  WorkloadConfigs?: Array<Container_getClusterProtectConfigWorkloadConfig>;
+  workloadConfigs?: Array<container_getClusterProtectConfigWorkloadConfig>;
 
   // Sets which mode to use for Protect workload vulnerability scanning feature. Accepted values are DISABLED, BASIC.
-  WorkloadVulnerabilityMode?: string;
+  workloadVulnerabilityMode?: string;
 }
 
-export function Container_getClusterProtectConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterProtectConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "WorkloadConfigs",
+      "workloadConfigs",
       "WorkloadConfig defines which actions are enabled for a cluster's workload configurations.",
-      Container_getClusterProtectConfigWorkloadConfig_GetTypes(),
+      container_getClusterProtectConfigWorkloadConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "WorkloadVulnerabilityMode",
+      "workloadVulnerabilityMode",
       "Sets which mode to use for Protect workload vulnerability scanning feature. Accepted values are DISABLED, BASIC.",
       [],
       true,

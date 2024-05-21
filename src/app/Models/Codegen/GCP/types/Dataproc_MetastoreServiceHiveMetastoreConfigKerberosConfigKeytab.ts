@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_MetastoreServiceHiveMetastoreConfigKerberosConfigKeytab {
+export interface dataproc_MetastoreServiceHiveMetastoreConfigKerberosConfigKeytab {
   /*
 The relative resource name of a Secret Manager secret version, in the following form:
 "projects/{projectNumber}/secrets/{secret_id}/versions/{version_id}".
 */
-  CloudSecret?: string;
+  cloudSecret?: string;
 }
 
-export function Dataproc_MetastoreServiceHiveMetastoreConfigKerberosConfigKeytab_GetTypes(): DynamicUIProps[] {
+export function dataproc_MetastoreServiceHiveMetastoreConfigKerberosConfigKeytab_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CloudSecret",
+      "cloudSecret",
       'The relative resource name of a Secret Manager secret version, in the following form:\n"projects/{projectNumber}/secrets/{secret_id}/versions/{version_id}".',
       [],
       true,

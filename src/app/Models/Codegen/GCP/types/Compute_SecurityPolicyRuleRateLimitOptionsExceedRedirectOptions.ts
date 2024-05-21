@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_SecurityPolicyRuleRateLimitOptionsExceedRedirectOptions {
+export interface compute_SecurityPolicyRuleRateLimitOptionsExceedRedirectOptions {
   // Target for the redirect action. This is required if the type is `EXTERNAL_302` and cannot be specified for `GOOGLE_RECAPTCHA`.
-  Target?: string;
+  target?: string;
 
   // Type of the redirect action.
-  Type?: string;
+  type?: string;
 }
 
-export function Compute_SecurityPolicyRuleRateLimitOptionsExceedRedirectOptions_GetTypes(): DynamicUIProps[] {
+export function compute_SecurityPolicyRuleRateLimitOptionsExceedRedirectOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Target",
+      "target",
       "Target for the redirect action. This is required if the type is `EXTERNAL_302` and cannot be specified for `GOOGLE_RECAPTCHA`.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Compute_SecurityPolicyRuleRateLimitOptionsExceedRedirectOptions_
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "Type of the redirect action.",
       [],
       true,

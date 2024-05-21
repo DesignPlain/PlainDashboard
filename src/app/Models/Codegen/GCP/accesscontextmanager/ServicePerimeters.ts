@@ -7,11 +7,17 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Accesscontextmanager_ServicePerimetersServicePerimeter,
-  Accesscontextmanager_ServicePerimetersServicePerimeter_GetTypes,
-} from "../types/Accesscontextmanager_ServicePerimetersServicePerimeter";
+  accesscontextmanager_ServicePerimetersServicePerimeter,
+  accesscontextmanager_ServicePerimetersServicePerimeter_GetTypes,
+} from "../types/accesscontextmanager_ServicePerimetersServicePerimeter";
 
 export interface ServicePerimetersArgs {
+  /*
+The desired Service Perimeters that should replace all existing Service Perimeters in the Access Policy.
+Structure is documented below.
+*/
+  servicePerimeters?: Array<accesscontextmanager_ServicePerimetersServicePerimeter>;
+
   /*
 The AccessPolicy this ServicePerimeter lives in.
 Format: accessPolicies/{policy_id}
@@ -19,13 +25,7 @@ Format: accessPolicies/{policy_id}
 
 - - -
 */
-  Parent?: string;
-
-  /*
-The desired Service Perimeters that should replace all existing Service Perimeters in the Access Policy.
-Structure is documented below.
-*/
-  ServicePerimeters?: Array<Accesscontextmanager_ServicePerimetersServicePerimeter>;
+  parent?: string;
 }
 export class ServicePerimeters extends Resource {
   /*
@@ -35,31 +35,31 @@ Format: accessPolicies/{policy_id}
 
 - - -
 */
-  public Parent?: string;
+  public parent?: string;
 
   /*
 The desired Service Perimeters that should replace all existing Service Perimeters in the Access Policy.
 Structure is documented below.
 */
-  public ServicePerimeters?: Array<Accesscontextmanager_ServicePerimetersServicePerimeter>;
+  public servicePerimeters?: Array<accesscontextmanager_ServicePerimetersServicePerimeter>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Array,
-        "ServicePerimeters",
-        "The desired Service Perimeters that should replace all existing Service Perimeters in the Access Policy.\nStructure is documented below.",
-        Accesscontextmanager_ServicePerimetersServicePerimeter_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Parent",
+        "parent",
         "The AccessPolicy this ServicePerimeter lives in.\nFormat: accessPolicies/{policy_id}\n\n\n- - -",
         [],
         true,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "servicePerimeters",
+        "The desired Service Perimeters that should replace all existing Service Perimeters in the Access Policy.\nStructure is documented below.",
+        accesscontextmanager_ServicePerimetersServicePerimeter_GetTypes(),
+        false,
+        false,
       ),
     ];
   }

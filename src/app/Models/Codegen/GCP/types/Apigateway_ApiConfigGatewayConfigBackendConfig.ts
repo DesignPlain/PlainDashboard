@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Apigateway_ApiConfigGatewayConfigBackendConfig {
+export interface apigateway_ApiConfigGatewayConfigBackendConfig {
   /*
 Google Cloud IAM service account used to sign OIDC tokens for backends that have authentication configured
 (https://cloud.google.com/service-infrastructure/docs/service-management/reference/rest/v1/services.configs#backend).
 */
-  GoogleServiceAccount?: string;
+  googleServiceAccount?: string;
 }
 
-export function Apigateway_ApiConfigGatewayConfigBackendConfig_GetTypes(): DynamicUIProps[] {
+export function apigateway_ApiConfigGatewayConfigBackendConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "GoogleServiceAccount",
+      "googleServiceAccount",
       "Google Cloud IAM service account used to sign OIDC tokens for backends that have authentication configured\n(https://cloud.google.com/service-infrastructure/docs/service-management/reference/rest/v1/services.configs#backend).",
       [],
       true,

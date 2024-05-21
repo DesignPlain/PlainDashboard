@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig {
+export interface compute_SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig {
   // Rate limit key name applicable only for the following key types:
-  EnforceOnKeyName?: string;
+  enforceOnKeyName?: string;
 
   // Determines the key to enforce the `rate_limit_threshold` on. If not specified, defaults to `ALL`.
-  EnforceOnKeyType?: string;
+  enforceOnKeyType?: string;
 }
 
-export function Compute_SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig_GetTypes(): DynamicUIProps[] {
+export function compute_SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "EnforceOnKeyName",
+      "enforceOnKeyName",
       "Rate limit key name applicable only for the following key types:",
       [],
       false,
@@ -26,7 +26,7 @@ export function Compute_SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig_Get
     ),
     new DynamicUIProps(
       InputType.String,
-      "EnforceOnKeyType",
+      "enforceOnKeyType",
       "Determines the key to enforce the `rate_limit_threshold` on. If not specified, defaults to `ALL`.",
       [],
       false,

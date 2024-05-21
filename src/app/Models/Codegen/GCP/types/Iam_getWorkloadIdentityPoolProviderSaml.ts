@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Iam_getWorkloadIdentityPoolProviderSaml {
+export interface iam_getWorkloadIdentityPoolProviderSaml {
   // SAML Identity provider configuration metadata xml doc.
-  IdpMetadataXml?: string;
+  idpMetadataXml?: string;
 }
 
-export function Iam_getWorkloadIdentityPoolProviderSaml_GetTypes(): DynamicUIProps[] {
+export function iam_getWorkloadIdentityPoolProviderSaml_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "IdpMetadataXml",
+      "idpMetadataXml",
       "SAML Identity provider configuration metadata xml doc.",
       [],
       true,

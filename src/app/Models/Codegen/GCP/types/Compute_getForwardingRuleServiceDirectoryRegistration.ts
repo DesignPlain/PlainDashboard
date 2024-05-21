@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getForwardingRuleServiceDirectoryRegistration {
+export interface compute_getForwardingRuleServiceDirectoryRegistration {
   // Service Directory namespace to register the forwarding rule under.
-  Namespace?: string;
+  namespace?: string;
 
   // Service Directory service to register the forwarding rule under.
-  Service?: string;
+  service?: string;
 }
 
-export function Compute_getForwardingRuleServiceDirectoryRegistration_GetTypes(): DynamicUIProps[] {
+export function compute_getForwardingRuleServiceDirectoryRegistration_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Service",
+      "service",
       "Service Directory service to register the forwarding rule under.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Compute_getForwardingRuleServiceDirectoryRegistration_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "Namespace",
+      "namespace",
       "Service Directory namespace to register the forwarding rule under.",
       [],
       true,

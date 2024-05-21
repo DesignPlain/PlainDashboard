@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Identityplatform_ConfigBlockingFunctionsTrigger {
-  // The identifier for this object. Format specified above.
-  EventType?: string;
-
-  // HTTP URI trigger for the Cloud Function.
-  FunctionUri?: string;
-
+export interface identityplatform_ConfigBlockingFunctionsTrigger {
   /*
 (Output)
 When the trigger was changed.
 */
-  UpdateTime?: string;
+  updateTime?: string;
+
+  // The identifier for this object. Format specified above.
+  eventType?: string;
+
+  // HTTP URI trigger for the Cloud Function.
+  functionUri?: string;
 }
 
-export function Identityplatform_ConfigBlockingFunctionsTrigger_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ConfigBlockingFunctionsTrigger_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "EventType",
+      "updateTime",
+      "(Output)\nWhen the trigger was changed.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "eventType",
       "The identifier for this object. Format specified above.",
       [],
       true,
@@ -32,18 +40,10 @@ export function Identityplatform_ConfigBlockingFunctionsTrigger_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.String,
-      "FunctionUri",
+      "functionUri",
       "HTTP URI trigger for the Cloud Function.",
       [],
       true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "UpdateTime",
-      "(Output)\nWhen the trigger was changed.",
-      [],
-      false,
       false,
     ),
   ];

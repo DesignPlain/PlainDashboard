@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Integrationconnectors_ConnectionLogConfig {
+export interface integrationconnectors_ConnectionLogConfig {
   // Enabled represents whether logging is enabled or not for a connection.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Integrationconnectors_ConnectionLogConfig_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionLogConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Enabled represents whether logging is enabled or not for a connection.",
       [],
       true,

@@ -6,8 +6,8 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllText {}
+export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllText {}
 
-export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllText_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllText_GetTypes(): DynamicUIProps[] {
   return [];
 }

@@ -6,29 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRule,
-  Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRule_GetTypes,
-} from "./Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRule";
+  networkservices_EdgeCacheServiceRoutingPathMatcherRouteRule,
+  networkservices_EdgeCacheServiceRoutingPathMatcherRouteRule_GetTypes,
+} from "./networkservices_EdgeCacheServiceRoutingPathMatcherRouteRule";
 
-export interface Networkservices_EdgeCacheServiceRoutingPathMatcher {
+export interface networkservices_EdgeCacheServiceRoutingPathMatcher {
   // A human-readable description of the resource.
-  Description?: string;
+  description?: string;
 
   // The name to which this PathMatcher is referred by the HostRule.
-  Name?: string;
+  name?: string;
 
   /*
 The routeRules to match against. routeRules support advanced routing behaviour, and can match on paths, headers and query parameters, as well as status codes and HTTP methods.
 Structure is documented below.
 */
-  RouteRules?: Array<Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRule>;
+  routeRules?: Array<networkservices_EdgeCacheServiceRoutingPathMatcherRouteRule>;
 }
 
-export function Networkservices_EdgeCacheServiceRoutingPathMatcher_GetTypes(): DynamicUIProps[] {
+export function networkservices_EdgeCacheServiceRoutingPathMatcher_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Array,
+      "routeRules",
+      "The routeRules to match against. routeRules support advanced routing behaviour, and can match on paths, headers and query parameters, as well as status codes and HTTP methods.\nStructure is documented below.",
+      networkservices_EdgeCacheServiceRoutingPathMatcherRouteRule_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "A human-readable description of the resource.",
       [],
       false,
@@ -36,17 +44,9 @@ export function Networkservices_EdgeCacheServiceRoutingPathMatcher_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name to which this PathMatcher is referred by the HostRule.",
       [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "RouteRules",
-      "The routeRules to match against. routeRules support advanced routing behaviour, and can match on paths, headers and query parameters, as well as status codes and HTTP methods.\nStructure is documented below.",
-      Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRule_GetTypes(),
       true,
       false,
     ),

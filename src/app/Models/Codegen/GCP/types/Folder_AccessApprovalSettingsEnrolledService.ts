@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Folder_AccessApprovalSettingsEnrolledService {
+export interface folder_AccessApprovalSettingsEnrolledService {
   /*
 The product for which Access Approval will be enrolled. Allowed values are listed (case-sensitive):
 - all
@@ -32,7 +32,7 @@ Note: These values are supported as input, but considered a legacy format:
 - pubsub.googleapis.com
 - storage.googleapis.com
 */
-  CloudProduct?: string;
+  cloudProduct?: string;
 
   /*
 The enrollment level of the service.
@@ -41,14 +41,14 @@ Possible values are: `BLOCK_ALL`.
 
 - - -
 */
-  EnrollmentLevel?: string;
+  enrollmentLevel?: string;
 }
 
-export function Folder_AccessApprovalSettingsEnrolledService_GetTypes(): DynamicUIProps[] {
+export function folder_AccessApprovalSettingsEnrolledService_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CloudProduct",
+      "cloudProduct",
       "The product for which Access Approval will be enrolled. Allowed values are listed (case-sensitive):\n* all\n* App Engine\n* BigQuery\n* Cloud Bigtable\n* Cloud Key Management Service\n* Compute Engine\n* Cloud Dataflow\n* Cloud Identity and Access Management\n* Cloud Pub/Sub\n* Cloud Storage\n* Persistent Disk\nNote: These values are supported as input, but considered a legacy format:\n* all\n* appengine.googleapis.com\n* bigquery.googleapis.com\n* bigtable.googleapis.com\n* cloudkms.googleapis.com\n* compute.googleapis.com\n* dataflow.googleapis.com\n* iam.googleapis.com\n* pubsub.googleapis.com\n* storage.googleapis.com",
       [],
       true,
@@ -56,7 +56,7 @@ export function Folder_AccessApprovalSettingsEnrolledService_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "EnrollmentLevel",
+      "enrollmentLevel",
       "The enrollment level of the service.\nDefault value is `BLOCK_ALL`.\nPossible values are: `BLOCK_ALL`.\n\n- - -",
       [],
       false,

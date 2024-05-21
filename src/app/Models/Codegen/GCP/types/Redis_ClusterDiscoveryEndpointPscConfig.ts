@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Redis_ClusterDiscoveryEndpointPscConfig {
+export interface redis_ClusterDiscoveryEndpointPscConfig {
   /*
 Required. The consumer network where the network address of
 the discovery endpoint will be reserved, in the form of
@@ -14,14 +14,14 @@ projects/{network_project_id_or_number}/global/networks/{network_id}.
 
 - - -
 */
-  Network?: string;
+  network?: string;
 }
 
-export function Redis_ClusterDiscoveryEndpointPscConfig_GetTypes(): DynamicUIProps[] {
+export function redis_ClusterDiscoveryEndpointPscConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Network",
+      "network",
       "Required. The consumer network where the network address of\nthe discovery endpoint will be reserved, in the form of\nprojects/{network_project_id_or_number}/global/networks/{network_id}.\n\n- - -",
       [],
       false,

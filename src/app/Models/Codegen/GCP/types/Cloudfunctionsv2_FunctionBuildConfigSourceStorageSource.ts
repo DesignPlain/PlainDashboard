@@ -6,33 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudfunctionsv2_FunctionBuildConfigSourceStorageSource {
+export interface cloudfunctionsv2_FunctionBuildConfigSourceStorageSource {
   // Google Cloud Storage bucket containing the source
-  Bucket?: string;
+  bucket?: string;
 
   /*
 Google Cloud Storage generation for the object. If the generation
 is omitted, the latest generation will be used.
 */
-  Generation?: number;
+  generation?: number;
 
   // Google Cloud Storage object containing the source.
-  Object?: string;
+  object?: string;
 }
 
-export function Cloudfunctionsv2_FunctionBuildConfigSourceStorageSource_GetTypes(): DynamicUIProps[] {
+export function cloudfunctionsv2_FunctionBuildConfigSourceStorageSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "Bucket",
-      "Google Cloud Storage bucket containing the source",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "Generation",
+      "generation",
       "Google Cloud Storage generation for the object. If the generation\nis omitted, the latest generation will be used.",
       [],
       false,
@@ -40,8 +32,16 @@ export function Cloudfunctionsv2_FunctionBuildConfigSourceStorageSource_GetTypes
     ),
     new DynamicUIProps(
       InputType.String,
-      "Object",
+      "object",
       "Google Cloud Storage object containing the source.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "bucket",
+      "Google Cloud Storage bucket containing the source",
       [],
       false,
       false,

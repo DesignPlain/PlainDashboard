@@ -6,57 +6,49 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_InstanceGroupManagerStatusVersionTarget,
-  Compute_InstanceGroupManagerStatusVersionTarget_GetTypes,
-} from "./Compute_InstanceGroupManagerStatusVersionTarget";
+  compute_InstanceGroupManagerStatusAllInstancesConfig,
+  compute_InstanceGroupManagerStatusAllInstancesConfig_GetTypes,
+} from "./compute_InstanceGroupManagerStatusAllInstancesConfig";
 import {
-  Compute_InstanceGroupManagerStatusAllInstancesConfig,
-  Compute_InstanceGroupManagerStatusAllInstancesConfig_GetTypes,
-} from "./Compute_InstanceGroupManagerStatusAllInstancesConfig";
+  compute_InstanceGroupManagerStatusStateful,
+  compute_InstanceGroupManagerStatusStateful_GetTypes,
+} from "./compute_InstanceGroupManagerStatusStateful";
 import {
-  Compute_InstanceGroupManagerStatusStateful,
-  Compute_InstanceGroupManagerStatusStateful_GetTypes,
-} from "./Compute_InstanceGroupManagerStatusStateful";
+  compute_InstanceGroupManagerStatusVersionTarget,
+  compute_InstanceGroupManagerStatusVersionTarget_GetTypes,
+} from "./compute_InstanceGroupManagerStatusVersionTarget";
 
-export interface Compute_InstanceGroupManagerStatus {
-  // A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
-  VersionTargets?: Array<Compute_InstanceGroupManagerStatusVersionTarget>;
-
+export interface compute_InstanceGroupManagerStatus {
   /*
 Properties to set on all instances in the group. After setting
 allInstancesConfig on the group, you must update the group's instances to
 apply the configuration.
 */
-  AllInstancesConfigs?: Array<Compute_InstanceGroupManagerStatusAllInstancesConfig>;
+  allInstancesConfigs?: Array<compute_InstanceGroupManagerStatusAllInstancesConfig>;
 
   // A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
-  IsStable?: boolean;
+  isStable?: boolean;
 
   // Stateful status of the given Instance Group Manager.
-  Statefuls?: Array<Compute_InstanceGroupManagerStatusStateful>;
+  statefuls?: Array<compute_InstanceGroupManagerStatusStateful>;
+
+  // A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
+  versionTargets?: Array<compute_InstanceGroupManagerStatusVersionTarget>;
 }
 
-export function Compute_InstanceGroupManagerStatus_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceGroupManagerStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "VersionTargets",
-      "A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.",
-      Compute_InstanceGroupManagerStatusVersionTarget_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "AllInstancesConfigs",
+      "allInstancesConfigs",
       "Properties to set on all instances in the group. After setting\nallInstancesConfig on the group, you must update the group's instances to\napply the configuration.",
-      Compute_InstanceGroupManagerStatusAllInstancesConfig_GetTypes(),
+      compute_InstanceGroupManagerStatusAllInstancesConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IsStable",
+      "isStable",
       "A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.",
       [],
       false,
@@ -64,9 +56,17 @@ export function Compute_InstanceGroupManagerStatus_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Statefuls",
+      "statefuls",
       "Stateful status of the given Instance Group Manager.",
-      Compute_InstanceGroupManagerStatusStateful_GetTypes(),
+      compute_InstanceGroupManagerStatusStateful_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "versionTargets",
+      "A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.",
+      compute_InstanceGroupManagerStatusVersionTarget_GetTypes(),
       false,
       false,
     ),

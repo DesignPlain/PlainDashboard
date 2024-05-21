@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_FlexibleAppVersionAutomaticScalingCpuUtilization {
+export interface appengine_FlexibleAppVersionAutomaticScalingCpuUtilization {
   // Period of time over which CPU utilization is calculated.
-  AggregationWindowLength?: string;
+  aggregationWindowLength?: string;
 
   // Target CPU utilization ratio to maintain when scaling. Must be between 0 and 1.
-  TargetUtilization?: number;
+  targetUtilization?: number;
 }
 
-export function Appengine_FlexibleAppVersionAutomaticScalingCpuUtilization_GetTypes(): DynamicUIProps[] {
+export function appengine_FlexibleAppVersionAutomaticScalingCpuUtilization_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "AggregationWindowLength",
+      "aggregationWindowLength",
       "Period of time over which CPU utilization is calculated.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Appengine_FlexibleAppVersionAutomaticScalingCpuUtilization_GetTy
     ),
     new DynamicUIProps(
       InputType.Number,
-      "TargetUtilization",
+      "targetUtilization",
       "Target CPU utilization ratio to maintain when scaling. Must be between 0 and 1.",
       [],
       true,

@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Composer_EnvironmentConfigWorkloadsConfigTriggerer {
-  // Memory (GB) request and limit for a single Airflow triggerer replica.
-  MemoryGb?: number;
-
+export interface composer_EnvironmentConfigWorkloadsConfigTriggerer {
   // The number of triggerers.
-  Count?: number;
+  count?: number;
 
   // CPU request and limit for a single Airflow triggerer replica.
-  Cpu?: number;
+  cpu?: number;
+
+  // Memory (GB) request and limit for a single Airflow triggerer replica.
+  memoryGb?: number;
 }
 
-export function Composer_EnvironmentConfigWorkloadsConfigTriggerer_GetTypes(): DynamicUIProps[] {
+export function composer_EnvironmentConfigWorkloadsConfigTriggerer_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "MemoryGb",
-      "Memory (GB) request and limit for a single Airflow triggerer replica.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Count",
+      "count",
       "The number of triggerers.",
       [],
       true,
@@ -37,8 +29,16 @@ export function Composer_EnvironmentConfigWorkloadsConfigTriggerer_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Cpu",
+      "cpu",
       "CPU request and limit for a single Airflow triggerer replica.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "memoryGb",
+      "Memory (GB) request and limit for a single Airflow triggerer replica.",
       [],
       true,
       false,

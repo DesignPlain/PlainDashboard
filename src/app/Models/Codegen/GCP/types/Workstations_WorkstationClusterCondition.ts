@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Workstations_WorkstationClusterCondition {
+export interface workstations_WorkstationClusterCondition {
   /*
 (Output)
 The status code, which should be an enum value of google.rpc.Code.
 */
-  Code?: number;
+  code?: number;
 
   /*
 (Output)
 A list of messages that carry the error details.
 */
-  Details?: Array<Map<string, InputType.String>>;
+  details?: Array<Map<string, string>>;
 
   /*
 (Output)
 Human readable message indicating details about the current status.
 */
-  Message?: string;
+  message?: string;
 }
 
-export function Workstations_WorkstationClusterCondition_GetTypes(): DynamicUIProps[] {
+export function workstations_WorkstationClusterCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Code",
+      "code",
       "(Output)\nThe status code, which should be an enum value of google.rpc.Code.",
       [],
       false,
@@ -38,7 +38,7 @@ export function Workstations_WorkstationClusterCondition_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Details",
+      "details",
       "(Output)\nA list of messages that carry the error details.",
       InputType_Map_GetTypes(),
       false,
@@ -46,7 +46,7 @@ export function Workstations_WorkstationClusterCondition_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "Message",
+      "message",
       "(Output)\nHuman readable message indicating details about the current status.",
       [],
       false,

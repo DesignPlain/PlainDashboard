@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuild_getTriggerBuildArtifactNpmPackage {
+export interface cloudbuild_getTriggerBuildArtifactNpmPackage {
   // Path to the package.json. e.g. workspace/path/to/package
-  PackagePath?: string;
+  packagePath?: string;
 
   /*
 Artifact Registry repository, in the form "https://$REGION-npm.pkg.dev/$PROJECT/$REPOSITORY"
 
 Npm package in the workspace specified by path will be zipped and uploaded to Artifact Registry with this location as a prefix.
 */
-  Repository?: string;
+  repository?: string;
 }
 
-export function Cloudbuild_getTriggerBuildArtifactNpmPackage_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_getTriggerBuildArtifactNpmPackage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PackagePath",
+      "packagePath",
       "Path to the package.json. e.g. workspace/path/to/package",
       [],
       true,
@@ -30,7 +30,7 @@ export function Cloudbuild_getTriggerBuildArtifactNpmPackage_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "Repository",
+      "repository",
       'Artifact Registry repository, in the form "https://$REGION-npm.pkg.dev/$PROJECT/$REPOSITORY"\n\nNpm package in the workspace specified by path will be zipped and uploaded to Artifact Registry with this location as a prefix.',
       [],
       true,

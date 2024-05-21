@@ -6,13 +6,13 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionNetworkEndpointGroupCloudFunction {
+export interface compute_RegionNetworkEndpointGroupCloudFunction {
   /*
 A user-defined name of the Cloud Function.
 The function name is case-sensitive and must be 1-63 characters long.
 Example value: "func1".
 */
-  Function?: string;
+  function?: string;
 
   /*
 A template to parse function field from a request URL. URL mask allows
@@ -22,23 +22,23 @@ For example, request URLs "mydomain.com/function1" and "mydomain.com/function2"
 can be backed by the same Serverless NEG with URL mask "/". The URL mask
 will parse them to { function = "function1" } and { function = "function2" } respectively.
 */
-  UrlMask?: string;
+  urlMask?: string;
 }
 
-export function Compute_RegionNetworkEndpointGroupCloudFunction_GetTypes(): DynamicUIProps[] {
+export function compute_RegionNetworkEndpointGroupCloudFunction_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "UrlMask",
-      'A template to parse function field from a request URL. URL mask allows\nfor routing to multiple Cloud Functions without having to create\nmultiple Network Endpoint Groups and backend services.\nFor example, request URLs "mydomain.com/function1" and "mydomain.com/function2"\ncan be backed by the same Serverless NEG with URL mask "/". The URL mask\nwill parse them to { function = "function1" } and { function = "function2" } respectively.',
+      "function",
+      'A user-defined name of the Cloud Function.\nThe function name is case-sensitive and must be 1-63 characters long.\nExample value: "func1".',
       [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Function",
-      'A user-defined name of the Cloud Function.\nThe function name is case-sensitive and must be 1-63 characters long.\nExample value: "func1".',
+      "urlMask",
+      'A template to parse function field from a request URL. URL mask allows\nfor routing to multiple Cloud Functions without having to create\nmultiple Network Endpoint Groups and backend services.\nFor example, request URLs "mydomain.com/function1" and "mydomain.com/function2"\ncan be backed by the same Serverless NEG with URL mask "/". The URL mask\nwill parse them to { function = "function1" } and { function = "function2" } respectively.',
       [],
       false,
       true,

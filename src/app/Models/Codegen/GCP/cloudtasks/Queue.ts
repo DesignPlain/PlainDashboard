@@ -7,35 +7,29 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudtasks_QueueStackdriverLoggingConfig,
-  Cloudtasks_QueueStackdriverLoggingConfig_GetTypes,
-} from "../types/Cloudtasks_QueueStackdriverLoggingConfig";
+  cloudtasks_QueueAppEngineRoutingOverride,
+  cloudtasks_QueueAppEngineRoutingOverride_GetTypes,
+} from "../types/cloudtasks_QueueAppEngineRoutingOverride";
 import {
-  Cloudtasks_QueueAppEngineRoutingOverride,
-  Cloudtasks_QueueAppEngineRoutingOverride_GetTypes,
-} from "../types/Cloudtasks_QueueAppEngineRoutingOverride";
+  cloudtasks_QueueRateLimits,
+  cloudtasks_QueueRateLimits_GetTypes,
+} from "../types/cloudtasks_QueueRateLimits";
 import {
-  Cloudtasks_QueueRateLimits,
-  Cloudtasks_QueueRateLimits_GetTypes,
-} from "../types/Cloudtasks_QueueRateLimits";
+  cloudtasks_QueueRetryConfig,
+  cloudtasks_QueueRetryConfig_GetTypes,
+} from "../types/cloudtasks_QueueRetryConfig";
 import {
-  Cloudtasks_QueueRetryConfig,
-  Cloudtasks_QueueRetryConfig_GetTypes,
-} from "../types/Cloudtasks_QueueRetryConfig";
+  cloudtasks_QueueStackdriverLoggingConfig,
+  cloudtasks_QueueStackdriverLoggingConfig_GetTypes,
+} from "../types/cloudtasks_QueueStackdriverLoggingConfig";
 
 export interface QueueArgs {
   /*
-Configuration options for writing logs to Stackdriver Logging.
-Structure is documented below.
-*/
-  StackdriverLoggingConfig?: Cloudtasks_QueueStackdriverLoggingConfig;
-
-  /*
 Overrides for task-level appEngineRouting. These settings apply only
 to App Engine tasks in this queue
 Structure is documented below.
 */
-  AppEngineRoutingOverride?: Cloudtasks_QueueAppEngineRoutingOverride;
+  appEngineRoutingOverride?: cloudtasks_QueueAppEngineRoutingOverride;
 
   /*
 The location of the queue
@@ -43,16 +37,16 @@ The location of the queue
 
 - - -
 */
-  Location?: string;
+  location?: string;
 
   // The queue name.
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 Rate limits for task dispatches.
@@ -64,40 +58,22 @@ Unavailable) responses from the worker, high error rates, or to
 smooth sudden large traffic spikes.
 Structure is documented below.
 */
-  RateLimits?: Cloudtasks_QueueRateLimits;
+  rateLimits?: cloudtasks_QueueRateLimits;
 
   /*
 Settings that determine the retry behavior.
 Structure is documented below.
 */
-  RetryConfig?: Cloudtasks_QueueRetryConfig;
+  retryConfig?: cloudtasks_QueueRetryConfig;
+
+  /*
+Configuration options for writing logs to Stackdriver Logging.
+Structure is documented below.
+*/
+  stackdriverLoggingConfig?: cloudtasks_QueueStackdriverLoggingConfig;
 }
 export class Queue extends Resource {
   /*
-Overrides for task-level appEngineRouting. These settings apply only
-to App Engine tasks in this queue
-Structure is documented below.
-*/
-  public AppEngineRoutingOverride?: Cloudtasks_QueueAppEngineRoutingOverride;
-
-  /*
-The location of the queue
-
-
-- - -
-*/
-  public Location?: string;
-
-  // The queue name.
-  public Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  /*
 Rate limits for task dispatches.
 The queue's actual dispatch rate is the result of:
 - Number of tasks in the queue
@@ -107,57 +83,89 @@ Unavailable) responses from the worker, high error rates, or to
 smooth sudden large traffic spikes.
 Structure is documented below.
 */
-  public RateLimits?: Cloudtasks_QueueRateLimits;
+  public rateLimits?: cloudtasks_QueueRateLimits;
 
   /*
 Settings that determine the retry behavior.
 Structure is documented below.
 */
-  public RetryConfig?: Cloudtasks_QueueRetryConfig;
+  public retryConfig?: cloudtasks_QueueRetryConfig;
 
   /*
 Configuration options for writing logs to Stackdriver Logging.
 Structure is documented below.
 */
-  public StackdriverLoggingConfig?: Cloudtasks_QueueStackdriverLoggingConfig;
+  public stackdriverLoggingConfig?: cloudtasks_QueueStackdriverLoggingConfig;
+
+  /*
+Overrides for task-level appEngineRouting. These settings apply only
+to App Engine tasks in this queue
+Structure is documented below.
+*/
+  public appEngineRoutingOverride?: cloudtasks_QueueAppEngineRoutingOverride;
+
+  /*
+The location of the queue
+
+
+- - -
+*/
+  public location?: string;
+
+  // The queue name.
+  public name?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
         InputType.Object,
-        "RateLimits",
+        "rateLimits",
         "Rate limits for task dispatches.\nThe queue's actual dispatch rate is the result of:\n* Number of tasks in the queue\n* User-specified throttling: rateLimits, retryConfig, and the queue's state.\n* System throttling due to 429 (Too Many Requests) or 503 (Service\nUnavailable) responses from the worker, high error rates, or to\nsmooth sudden large traffic spikes.\nStructure is documented below.",
-        Cloudtasks_QueueRateLimits_GetTypes(),
+        cloudtasks_QueueRateLimits_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "RetryConfig",
+        "retryConfig",
         "Settings that determine the retry behavior.\nStructure is documented below.",
-        Cloudtasks_QueueRetryConfig_GetTypes(),
+        cloudtasks_QueueRetryConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "StackdriverLoggingConfig",
+        "stackdriverLoggingConfig",
         "Configuration options for writing logs to Stackdriver Logging.\nStructure is documented below.",
-        Cloudtasks_QueueStackdriverLoggingConfig_GetTypes(),
+        cloudtasks_QueueStackdriverLoggingConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "AppEngineRoutingOverride",
+        "appEngineRoutingOverride",
         "Overrides for task-level appEngineRouting. These settings apply only\nto App Engine tasks in this queue\nStructure is documented below.",
-        Cloudtasks_QueueAppEngineRoutingOverride_GetTypes(),
+        cloudtasks_QueueAppEngineRoutingOverride_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location of the queue\n\n\n- - -",
         [],
         true,
@@ -165,16 +173,8 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The queue name.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
         true,

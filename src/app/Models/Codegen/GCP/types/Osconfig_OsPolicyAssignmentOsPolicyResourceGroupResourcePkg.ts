@@ -6,149 +6,149 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgApt,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgApt_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgApt";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgGooget,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgGooget_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgGooget";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsi,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsi_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsi";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgGooget,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgGooget_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgGooget";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgRpm,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgRpm_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgRpm";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsi,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsi_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsi";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgYum,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgYum_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgYum";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgRpm,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgRpm_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgRpm";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgZypper,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgZypper_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgZypper";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgYum,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgYum_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgYum";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgApt,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgApt_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgApt";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgZypper,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgZypper_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgZypper";
 
-export interface Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkg {
-  /*
-A package managed by YUM. Structure is
-documented below.
-*/
-  Yum?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgYum;
-
-  /*
-A package managed by Zypper. Structure is
-documented below.
-*/
-  Zypper?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgZypper;
-
-  /*
-A package managed by Apt. Structure is
-documented below.
-*/
-  Apt?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgApt;
-
+export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkg {
   /*
 A deb package file. Structure is
 documented below.
 */
-  Deb?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb;
+  deb?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb;
 
   /*
 The desired state the agent should maintain for
 this package. Possible values are: `DESIRED_STATE_UNSPECIFIED`, `INSTALLED`,
 `REMOVED`.
 */
-  DesiredState?: string;
+  desiredState?: string;
 
   /*
 A package managed by GooGet. Structure is
 documented below.
 */
-  Googet?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgGooget;
+  googet?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgGooget;
 
   /*
 An MSI package. Structure is
 documented below.
 */
-  Msi?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsi;
+  msi?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsi;
 
   /*
 An rpm package file. Structure is
 documented below.
 */
-  Rpm?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgRpm;
+  rpm?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgRpm;
+
+  /*
+A package managed by YUM. Structure is
+documented below.
+*/
+  yum?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgYum;
+
+  /*
+A package managed by Zypper. Structure is
+documented below.
+*/
+  zypper?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgZypper;
+
+  /*
+A package managed by Apt. Structure is
+documented below.
+*/
+  apt?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgApt;
 }
 
-export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkg_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkg_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Googet",
-      "A package managed by GooGet. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgGooget_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "Msi",
-      "An MSI package. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsi_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "Rpm",
+      "rpm",
       "An rpm package file. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgRpm_GetTypes(),
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgRpm_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Yum",
+      "yum",
       "A package managed by YUM. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgYum_GetTypes(),
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgYum_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Zypper",
+      "zypper",
       "A package managed by Zypper. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgZypper_GetTypes(),
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgZypper_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Apt",
+      "apt",
       "A package managed by Apt. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgApt_GetTypes(),
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgApt_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Deb",
+      "deb",
       "A deb package file. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb_GetTypes(),
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "DesiredState",
+      "desiredState",
       "The desired state the agent should maintain for\nthis package. Possible values are: `DESIRED_STATE_UNSPECIFIED`, `INSTALLED`,\n`REMOVED`.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "googet",
+      "A package managed by GooGet. Structure is\ndocumented below.",
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgGooget_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "msi",
+      "An MSI package. Structure is\ndocumented below.",
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsi_GetTypes(),
+      false,
       false,
     ),
   ];

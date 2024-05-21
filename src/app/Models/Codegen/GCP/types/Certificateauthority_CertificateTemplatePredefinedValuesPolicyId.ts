@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificateauthority_CertificateTemplatePredefinedValuesPolicyId {
+export interface certificateauthority_CertificateTemplatePredefinedValuesPolicyId {
   // Required. The parts of an OID path. The most significant parts of the path come first.
-  ObjectIdPaths?: Array<number>;
+  objectIdPaths?: Array<number>;
 }
 
-export function Certificateauthority_CertificateTemplatePredefinedValuesPolicyId_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CertificateTemplatePredefinedValuesPolicyId_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ObjectIdPaths",
+      "objectIdPaths",
       "Required. The parts of an OID path. The most significant parts of the path come first.",
       InputType_Number_GetTypes(),
       true,

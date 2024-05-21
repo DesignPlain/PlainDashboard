@@ -7,15 +7,18 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Containeranalysis_NoteAttestationAuthority,
-  Containeranalysis_NoteAttestationAuthority_GetTypes,
-} from "../types/Containeranalysis_NoteAttestationAuthority";
+  containeranalysis_NoteAttestationAuthority,
+  containeranalysis_NoteAttestationAuthority_GetTypes,
+} from "../types/containeranalysis_NoteAttestationAuthority";
 import {
-  Containeranalysis_NoteRelatedUrl,
-  Containeranalysis_NoteRelatedUrl_GetTypes,
-} from "../types/Containeranalysis_NoteRelatedUrl";
+  containeranalysis_NoteRelatedUrl,
+  containeranalysis_NoteRelatedUrl_GetTypes,
+} from "../types/containeranalysis_NoteRelatedUrl";
 
 export interface NoteArgs {
+  // A one sentence description of the note.
+  shortDescription?: string;
+
   /*
 Note kind that represents a logical attestation "role" or "authority".
 For example, an organization might have one AttestationAuthority for
@@ -28,36 +31,66 @@ Attestation Occurrences, even if they don't all live in the same
 project.
 Structure is documented below.
 */
-  AttestationAuthority?: Containeranalysis_NoteAttestationAuthority;
+  attestationAuthority?: containeranalysis_NoteAttestationAuthority;
 
   // Time of expiration for this note. Leave empty if note does not expire.
-  ExpirationTime?: string;
+  expirationTime?: string;
 
   // A detailed description of the note
-  LongDescription?: string;
+  longDescription?: string;
 
   // The name of the note.
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // Names of other notes related to this note.
-  RelatedNoteNames?: Array<string>;
+  relatedNoteNames?: Array<string>;
 
   /*
 URLs associated with this note and related metadata.
 Structure is documented below.
 */
-  RelatedUrls?: Array<Containeranalysis_NoteRelatedUrl>;
-
-  // A one sentence description of the note.
-  ShortDescription?: string;
+  relatedUrls?: Array<containeranalysis_NoteRelatedUrl>;
 }
 export class Note extends Resource {
+  // The type of analysis this note describes
+  public kind?: string;
+
+  // The name of the note.
+  public name?: string;
+
+  // The time this note was last updated.
+  public updateTime?: string;
+
+  // The time this note was created.
+  public createTime?: string;
+
+  // Time of expiration for this note. Leave empty if note does not expire.
+  public expirationTime?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  // Names of other notes related to this note.
+  public relatedNoteNames?: Array<string>;
+
+  /*
+URLs associated with this note and related metadata.
+Structure is documented below.
+*/
+  public relatedUrls?: Array<containeranalysis_NoteRelatedUrl>;
+
+  // A one sentence description of the note.
+  public shortDescription?: string;
+
   /*
 Note kind that represents a logical attestation "role" or "authority".
 For example, an organization might have one AttestationAuthority for
@@ -70,73 +103,16 @@ Attestation Occurrences, even if they don't all live in the same
 project.
 Structure is documented below.
 */
-  public AttestationAuthority?: Containeranalysis_NoteAttestationAuthority;
-
-  // The type of analysis this note describes
-  public Kind?: string;
-
-  // The name of the note.
-  public Name?: string;
-
-  // A one sentence description of the note.
-  public ShortDescription?: string;
-
-  // The time this note was last updated.
-  public UpdateTime?: string;
-
-  /*
-URLs associated with this note and related metadata.
-Structure is documented below.
-*/
-  public RelatedUrls?: Array<Containeranalysis_NoteRelatedUrl>;
-
-  // The time this note was created.
-  public CreateTime?: string;
-
-  // Time of expiration for this note. Leave empty if note does not expire.
-  public ExpirationTime?: string;
+  public attestationAuthority?: containeranalysis_NoteAttestationAuthority;
 
   // A detailed description of the note
-  public LongDescription?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  // Names of other notes related to this note.
-  public RelatedNoteNames?: Array<string>;
+  public longDescription?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Array,
-        "RelatedUrls",
-        "URLs associated with this note and related metadata.\nStructure is documented below.",
-        Containeranalysis_NoteRelatedUrl_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "ShortDescription",
-        "A one sentence description of the note.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "AttestationAuthority",
-        'Note kind that represents a logical attestation "role" or "authority".\nFor example, an organization might have one AttestationAuthority for\n"QA" and one for "build". This Note is intended to act strictly as a\ngrouping mechanism for the attached Occurrences (Attestations). This\ngrouping mechanism also provides a security boundary, since IAM ACLs\ngate the ability for a principle to attach an Occurrence to a given\nNote. It also provides a single point of lookup to find all attached\nAttestation Occurrences, even if they don\'t all live in the same\nproject.\nStructure is documented below.',
-        Containeranalysis_NoteAttestationAuthority_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ExpirationTime",
+        "expirationTime",
         "Time of expiration for this note. Leave empty if note does not expire.",
         [],
         false,
@@ -144,7 +120,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "LongDescription",
+        "longDescription",
         "A detailed description of the note",
         [],
         false,
@@ -152,7 +128,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name of the note.",
         [],
         false,
@@ -160,7 +136,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -168,10 +144,34 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "RelatedNoteNames",
+        "relatedNoteNames",
         "Names of other notes related to this note.",
         InputType_String_GetTypes(),
         false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "relatedUrls",
+        "URLs associated with this note and related metadata.\nStructure is documented below.",
+        containeranalysis_NoteRelatedUrl_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "shortDescription",
+        "A one sentence description of the note.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "attestationAuthority",
+        'Note kind that represents a logical attestation "role" or "authority".\nFor example, an organization might have one AttestationAuthority for\n"QA" and one for "build". This Note is intended to act strictly as a\ngrouping mechanism for the attached Occurrences (Attestations). This\ngrouping mechanism also provides a security boundary, since IAM ACLs\ngate the ability for a principle to attach an Occurrence to a given\nNote. It also provides a single point of lookup to find all attached\nAttestation Occurrences, even if they don\'t all live in the same\nproject.\nStructure is documented below.',
+        containeranalysis_NoteAttestationAuthority_GetTypes(),
+        true,
         false,
       ),
     ];

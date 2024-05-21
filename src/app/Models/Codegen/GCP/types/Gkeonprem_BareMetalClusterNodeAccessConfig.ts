@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterNodeAccessConfig {
+export interface gkeonprem_BareMetalClusterNodeAccessConfig {
   /*
 LoginUser is the user name used to access node machines.
 It defaults to "root" if not set.
 */
-  LoginUser?: string;
+  loginUser?: string;
 }
 
-export function Gkeonprem_BareMetalClusterNodeAccessConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterNodeAccessConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "LoginUser",
+      "loginUser",
       'LoginUser is the user name used to access node machines.\nIt defaults to "root" if not set.',
       [],
       false,

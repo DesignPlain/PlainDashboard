@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionInstanceTemplateReservationAffinitySpecificReservation,
-  Compute_RegionInstanceTemplateReservationAffinitySpecificReservation_GetTypes,
-} from "./Compute_RegionInstanceTemplateReservationAffinitySpecificReservation";
+  compute_RegionInstanceTemplateReservationAffinitySpecificReservation,
+  compute_RegionInstanceTemplateReservationAffinitySpecificReservation_GetTypes,
+} from "./compute_RegionInstanceTemplateReservationAffinitySpecificReservation";
 
-export interface Compute_RegionInstanceTemplateReservationAffinity {
+export interface compute_RegionInstanceTemplateReservationAffinity {
   /*
 Specifies the label selector for the reservation to use..
 Structure is documented below.
 */
-  SpecificReservation?: Compute_RegionInstanceTemplateReservationAffinitySpecificReservation;
+  specificReservation?: compute_RegionInstanceTemplateReservationAffinitySpecificReservation;
 
   // The type of reservation from which this instance can consume resources.
-  Type?: string;
+  type?: string;
 }
 
-export function Compute_RegionInstanceTemplateReservationAffinity_GetTypes(): DynamicUIProps[] {
+export function compute_RegionInstanceTemplateReservationAffinity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "SpecificReservation",
+      "specificReservation",
       "Specifies the label selector for the reservation to use..\nStructure is documented below.",
-      Compute_RegionInstanceTemplateReservationAffinitySpecificReservation_GetTypes(),
+      compute_RegionInstanceTemplateReservationAffinitySpecificReservation_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "The type of reservation from which this instance can consume resources.",
       [],
       true,

@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuild_getTriggerBuildArtifactPythonPackage {
+export interface cloudbuild_getTriggerBuildArtifactPythonPackage {
   // Path globs used to match files in the build's workspace. For Python/ Twine, this is usually dist/-, and sometimes additionally an .asc file.
-  Paths?: Array<string>;
+  paths?: Array<string>;
 
   /*
 Artifact Registry repository, in the form "https://$REGION-python.pkg.dev/$PROJECT/$REPOSITORY"
 
 Files in the workspace matching any path pattern will be uploaded to Artifact Registry with this location as a prefix.
 */
-  Repository?: string;
+  repository?: string;
 }
 
-export function Cloudbuild_getTriggerBuildArtifactPythonPackage_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_getTriggerBuildArtifactPythonPackage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "Paths",
-      "Path globs used to match files in the build's workspace. For Python/ Twine, this is usually dist/*, and sometimes additionally an .asc file.",
-      InputType_String_GetTypes(),
+      InputType.String,
+      "repository",
+      'Artifact Registry repository, in the form "https://$REGION-python.pkg.dev/$PROJECT/$REPOSITORY"\n\nFiles in the workspace matching any path pattern will be uploaded to Artifact Registry with this location as a prefix.',
+      [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "Repository",
-      'Artifact Registry repository, in the form "https://$REGION-python.pkg.dev/$PROJECT/$REPOSITORY"\n\nFiles in the workspace matching any path pattern will be uploaded to Artifact Registry with this location as a prefix.',
-      [],
+      InputType.Array,
+      "paths",
+      "Path globs used to match files in the build's workspace. For Python/ Twine, this is usually dist/*, and sometimes additionally an .asc file.",
+      InputType_String_GetTypes(),
       true,
       false,
     ),

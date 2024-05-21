@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_DatasetAccessAuthorizedDatasetDataset {
+export interface bigquery_DatasetAccessAuthorizedDatasetDataset {
   // The ID of the dataset containing this table.
-  DatasetId?: string;
+  datasetId?: string;
 
   // The ID of the project containing this table.
-  ProjectId?: string;
+  projectId?: string;
 }
 
-export function Bigquery_DatasetAccessAuthorizedDatasetDataset_GetTypes(): DynamicUIProps[] {
+export function bigquery_DatasetAccessAuthorizedDatasetDataset_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DatasetId",
+      "datasetId",
       "The ID of the dataset containing this table.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Bigquery_DatasetAccessAuthorizedDatasetDataset_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProjectId",
+      "projectId",
       "The ID of the project containing this table.",
       [],
       true,

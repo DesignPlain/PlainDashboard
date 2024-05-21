@@ -6,38 +6,38 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Databasemigrationservice_ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfig,
-  Databasemigrationservice_ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfig_GetTypes,
-} from "./Databasemigrationservice_ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfig";
+  databasemigrationservice_ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfig,
+  databasemigrationservice_ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfig_GetTypes,
+} from "./databasemigrationservice_ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfig";
 
-export interface Databasemigrationservice_ConnectionProfileAlloydbSettingsPrimaryInstanceSettings {
+export interface databasemigrationservice_ConnectionProfileAlloydbSettingsPrimaryInstanceSettings {
+  // Database flags to pass to AlloyDB when DMS is creating the AlloyDB cluster and instances. See the AlloyDB documentation for how these can be used.
+  databaseFlags?: Map<string, string>;
+
   // The database username.
-  Id?: string;
+  id?: string;
 
   // Labels for the AlloyDB primary instance created by DMS.
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   /*
 Configuration for the machines that host the underlying database engine.
 Structure is documented below.
 */
-  MachineConfig?: Databasemigrationservice_ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfig;
+  machineConfig?: databasemigrationservice_ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfig;
 
   /*
 (Output)
 Output only. The private IP address for the Instance. This is the connection endpoint for an end-user application.
 */
-  PrivateIp?: string;
-
-  // Database flags to pass to AlloyDB when DMS is creating the AlloyDB cluster and instances. See the AlloyDB documentation for how these can be used.
-  DatabaseFlags?: Map<string, string>;
+  privateIp?: string;
 }
 
-export function Databasemigrationservice_ConnectionProfileAlloydbSettingsPrimaryInstanceSettings_GetTypes(): DynamicUIProps[] {
+export function databasemigrationservice_ConnectionProfileAlloydbSettingsPrimaryInstanceSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Map,
-      "DatabaseFlags",
+      "databaseFlags",
       "Database flags to pass to AlloyDB when DMS is creating the AlloyDB cluster and instances. See the AlloyDB documentation for how these can be used.",
       InputType_Map_GetTypes(),
       false,
@@ -45,7 +45,7 @@ export function Databasemigrationservice_ConnectionProfileAlloydbSettingsPrimary
     ),
     new DynamicUIProps(
       InputType.String,
-      "Id",
+      "id",
       "The database username.",
       [],
       true,
@@ -53,7 +53,7 @@ export function Databasemigrationservice_ConnectionProfileAlloydbSettingsPrimary
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Labels",
+      "labels",
       "Labels for the AlloyDB primary instance created by DMS.",
       InputType_Map_GetTypes(),
       false,
@@ -61,15 +61,15 @@ export function Databasemigrationservice_ConnectionProfileAlloydbSettingsPrimary
     ),
     new DynamicUIProps(
       InputType.Object,
-      "MachineConfig",
+      "machineConfig",
       "Configuration for the machines that host the underlying database engine.\nStructure is documented below.",
-      Databasemigrationservice_ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfig_GetTypes(),
+      databasemigrationservice_ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfig_GetTypes(),
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "PrivateIp",
+      "privateIp",
       "(Output)\nOutput only. The private IP address for the Instance. This is the connection endpoint for an end-user application.",
       [],
       false,

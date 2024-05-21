@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Firebase_HostingCustomDomainIssue {
+export interface firebase_HostingCustomDomainIssue {
+  // Error message
+  message?: string;
+
   // The status code, which should be an enum value of `google.rpc.Code`
-  Code?: number;
+  code?: number;
 
   // A list of messages that carry the error details.
-  Details?: string;
-
-  // Error message
-  Message?: string;
+  details?: string;
 }
 
-export function Firebase_HostingCustomDomainIssue_GetTypes(): DynamicUIProps[] {
+export function firebase_HostingCustomDomainIssue_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "message",
+      "Error message",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Number,
-      "Code",
+      "code",
       "The status code, which should be an enum value of `google.rpc.Code`",
       [],
       false,
@@ -29,16 +37,8 @@ export function Firebase_HostingCustomDomainIssue_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Details",
+      "details",
       "A list of messages that carry the error details.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Message",
-      "Error message",
       [],
       false,
       false,

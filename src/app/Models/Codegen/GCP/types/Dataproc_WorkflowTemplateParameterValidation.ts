@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_WorkflowTemplateParameterValidationValues,
-  Dataproc_WorkflowTemplateParameterValidationValues_GetTypes,
-} from "./Dataproc_WorkflowTemplateParameterValidationValues";
+  dataproc_WorkflowTemplateParameterValidationValues,
+  dataproc_WorkflowTemplateParameterValidationValues_GetTypes,
+} from "./dataproc_WorkflowTemplateParameterValidationValues";
 import {
-  Dataproc_WorkflowTemplateParameterValidationRegex,
-  Dataproc_WorkflowTemplateParameterValidationRegex_GetTypes,
-} from "./Dataproc_WorkflowTemplateParameterValidationRegex";
+  dataproc_WorkflowTemplateParameterValidationRegex,
+  dataproc_WorkflowTemplateParameterValidationRegex_GetTypes,
+} from "./dataproc_WorkflowTemplateParameterValidationRegex";
 
-export interface Dataproc_WorkflowTemplateParameterValidation {
+export interface dataproc_WorkflowTemplateParameterValidation {
   // Validation based on a list of allowed values.
-  Values?: Dataproc_WorkflowTemplateParameterValidationValues;
+  values?: dataproc_WorkflowTemplateParameterValidationValues;
 
   // Validation based on regular expressions.
-  Regex?: Dataproc_WorkflowTemplateParameterValidationRegex;
+  regex?: dataproc_WorkflowTemplateParameterValidationRegex;
 }
 
-export function Dataproc_WorkflowTemplateParameterValidation_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplateParameterValidation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Values",
-      "Validation based on a list of allowed values.",
-      Dataproc_WorkflowTemplateParameterValidationValues_GetTypes(),
+      "regex",
+      "Validation based on regular expressions.",
+      dataproc_WorkflowTemplateParameterValidationRegex_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Regex",
-      "Validation based on regular expressions.",
-      Dataproc_WorkflowTemplateParameterValidationRegex_GetTypes(),
+      "values",
+      "Validation based on a list of allowed values.",
+      dataproc_WorkflowTemplateParameterValidationValues_GetTypes(),
       false,
       true,
     ),

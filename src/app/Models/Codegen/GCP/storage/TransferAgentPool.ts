@@ -7,19 +7,25 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Storage_TransferAgentPoolBandwidthLimit,
-  Storage_TransferAgentPoolBandwidthLimit_GetTypes,
-} from "../types/Storage_TransferAgentPoolBandwidthLimit";
+  storage_TransferAgentPoolBandwidthLimit,
+  storage_TransferAgentPoolBandwidthLimit_GetTypes,
+} from "../types/storage_TransferAgentPoolBandwidthLimit";
 
 export interface TransferAgentPoolArgs {
   /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  /*
 Specifies the bandwidth limit details. If this field is unspecified, the default value is set as 'No Limit'.
 Structure is documented below.
 */
-  BandwidthLimit?: Storage_TransferAgentPoolBandwidthLimit;
+  bandwidthLimit?: storage_TransferAgentPoolBandwidthLimit;
 
   // Specifies the client-specified AgentPool description.
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 The ID of the agent pool to create.
@@ -34,26 +40,17 @@ As expressed by the regular expression: ^(?!goog)a-z?$.
 
 - - -
 */
-  Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
+  name?: string;
 }
 export class TransferAgentPool extends Resource {
-  // Specifies the state of the AgentPool.
-  public State?: string;
-
   /*
 Specifies the bandwidth limit details. If this field is unspecified, the default value is set as 'No Limit'.
 Structure is documented below.
 */
-  public BandwidthLimit?: Storage_TransferAgentPoolBandwidthLimit;
+  public bandwidthLimit?: storage_TransferAgentPoolBandwidthLimit;
 
   // Specifies the client-specified AgentPool description.
-  public DisplayName?: string;
+  public displayName?: string;
 
   /*
 The ID of the agent pool to create.
@@ -68,27 +65,38 @@ As expressed by the regular expression: ^(?!goog)a-z?$.
 
 - - -
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
+
+  // Specifies the state of the AgentPool.
+  public state?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
         InputType.Object,
-        "BandwidthLimit",
+        "bandwidthLimit",
         "Specifies the bandwidth limit details. If this field is unspecified, the default value is set as 'No Limit'.\nStructure is documented below.",
-        Storage_TransferAgentPoolBandwidthLimit_GetTypes(),
+        storage_TransferAgentPoolBandwidthLimit_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "Specifies the client-specified AgentPool description.",
         [],
         false,
@@ -96,16 +104,8 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The ID of the agent pool to create.\nThe agentPoolId must meet the following requirements:\n* Length of 128 characters or less.\n* Not start with the string goog.\n* Start with a lowercase ASCII character, followed by:\n* Zero or more: lowercase Latin alphabet characters, numerals, hyphens (-), periods (.), underscores (_), or tildes (~).\n* One or more numerals or lowercase ASCII characters.\nAs expressed by the regular expression: ^(?!goog)a-z?$.\n\n\n- - -",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
         true,

@@ -6,38 +6,38 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_ConnectionProfileMysqlProfileSslConfig,
-  Datastream_ConnectionProfileMysqlProfileSslConfig_GetTypes,
-} from "./Datastream_ConnectionProfileMysqlProfileSslConfig";
+  datastream_ConnectionProfileMysqlProfileSslConfig,
+  datastream_ConnectionProfileMysqlProfileSslConfig_GetTypes,
+} from "./datastream_ConnectionProfileMysqlProfileSslConfig";
 
-export interface Datastream_ConnectionProfileMysqlProfile {
+export interface datastream_ConnectionProfileMysqlProfile {
+  /*
+SSL configuration for the MySQL connection.
+Structure is documented below.
+*/
+  sslConfig?: datastream_ConnectionProfileMysqlProfileSslConfig;
+
   // Username for the MySQL connection.
-  Username?: string;
+  username?: string;
 
   // Hostname for the MySQL connection.
-  Hostname?: string;
+  hostname?: string;
 
   /*
 Password for the MySQL connection.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  Password?: string;
+  password?: string;
 
   // Port for the MySQL connection.
-  Port?: number;
-
-  /*
-SSL configuration for the MySQL connection.
-Structure is documented below.
-*/
-  SslConfig?: Datastream_ConnectionProfileMysqlProfileSslConfig;
+  port?: number;
 }
 
-export function Datastream_ConnectionProfileMysqlProfile_GetTypes(): DynamicUIProps[] {
+export function datastream_ConnectionProfileMysqlProfile_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Username",
+      "username",
       "Username for the MySQL connection.",
       [],
       true,
@@ -45,7 +45,7 @@ export function Datastream_ConnectionProfileMysqlProfile_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "Hostname",
+      "hostname",
       "Hostname for the MySQL connection.",
       [],
       true,
@@ -53,7 +53,7 @@ export function Datastream_ConnectionProfileMysqlProfile_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "Password",
+      "password",
       "Password for the MySQL connection.\n**Note**: This property is sensitive and will not be displayed in the plan.",
       [],
       true,
@@ -61,7 +61,7 @@ export function Datastream_ConnectionProfileMysqlProfile_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Port",
+      "port",
       "Port for the MySQL connection.",
       [],
       false,
@@ -69,9 +69,9 @@ export function Datastream_ConnectionProfileMysqlProfile_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "SslConfig",
+      "sslConfig",
       "SSL configuration for the MySQL connection.\nStructure is documented below.",
-      Datastream_ConnectionProfileMysqlProfileSslConfig_GetTypes(),
+      datastream_ConnectionProfileMysqlProfileSslConfig_GetTypes(),
       false,
       false,
     ),

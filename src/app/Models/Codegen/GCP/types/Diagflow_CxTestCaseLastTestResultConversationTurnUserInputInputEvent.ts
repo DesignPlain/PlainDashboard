@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputEvent {
+export interface diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputEvent {
   // Name of the event.
-  Event?: string;
+  event?: string;
 }
 
-export function Diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputEvent_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputEvent_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Event",
+      "event",
       "Name of the event.",
       [],
       true,

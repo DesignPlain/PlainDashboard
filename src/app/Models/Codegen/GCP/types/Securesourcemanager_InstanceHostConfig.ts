@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Securesourcemanager_InstanceHostConfig {
-  /*
-(Output)
-Git SSH hostname.
-*/
-  GitSsh?: string;
-
-  /*
-(Output)
-HTML hostname.
-*/
-  Html?: string;
-
+export interface securesourcemanager_InstanceHostConfig {
   /*
 (Output)
 API hostname.
 */
-  Api?: string;
+  api?: string;
 
   /*
 (Output)
 Git HTTP hostname.
 */
-  GitHttp?: string;
+  gitHttp?: string;
+
+  /*
+(Output)
+Git SSH hostname.
+*/
+  gitSsh?: string;
+
+  /*
+(Output)
+HTML hostname.
+*/
+  html?: string;
 }
 
-export function Securesourcemanager_InstanceHostConfig_GetTypes(): DynamicUIProps[] {
+export function securesourcemanager_InstanceHostConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Api",
+      "api",
       "(Output)\nAPI hostname.",
       [],
       false,
@@ -44,7 +44,7 @@ export function Securesourcemanager_InstanceHostConfig_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "GitHttp",
+      "gitHttp",
       "(Output)\nGit HTTP hostname.",
       [],
       false,
@@ -52,7 +52,7 @@ export function Securesourcemanager_InstanceHostConfig_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "GitSsh",
+      "gitSsh",
       "(Output)\nGit SSH hostname.",
       [],
       false,
@@ -60,7 +60,7 @@ export function Securesourcemanager_InstanceHostConfig_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "Html",
+      "html",
       "(Output)\nHTML hostname.",
       [],
       false,

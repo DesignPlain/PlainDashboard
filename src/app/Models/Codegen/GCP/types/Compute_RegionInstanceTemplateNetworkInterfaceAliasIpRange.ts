@@ -6,7 +6,14 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionInstanceTemplateNetworkInterfaceAliasIpRange {
+export interface compute_RegionInstanceTemplateNetworkInterfaceAliasIpRange {
+  /*
+The subnetwork secondary range name specifying
+the secondary range from which to allocate the IP CIDR range for this alias IP
+range. If left unspecified, the primary range of the subnetwork will be used.
+*/
+  subnetworkRangeName?: string;
+
   /*
 The IP CIDR range represented by this alias IP range. This IP CIDR range
 must belong to the specified subnetwork and cannot contain IP addresses reserved by
@@ -14,32 +21,25 @@ system or used by other network interfaces. At the time of writing only a
 netmask (e.g. /24) may be supplied, with a CIDR format resulting in an API
 error.
 */
-  IpCidrRange?: string;
-
-  /*
-The subnetwork secondary range name specifying
-the secondary range from which to allocate the IP CIDR range for this alias IP
-range. If left unspecified, the primary range of the subnetwork will be used.
-*/
-  SubnetworkRangeName?: string;
+  ipCidrRange?: string;
 }
 
-export function Compute_RegionInstanceTemplateNetworkInterfaceAliasIpRange_GetTypes(): DynamicUIProps[] {
+export function compute_RegionInstanceTemplateNetworkInterfaceAliasIpRange_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "IpCidrRange",
-      "The IP CIDR range represented by this alias IP range. This IP CIDR range\nmust belong to the specified subnetwork and cannot contain IP addresses reserved by\nsystem or used by other network interfaces. At the time of writing only a\nnetmask (e.g. /24) may be supplied, with a CIDR format resulting in an API\nerror.",
+      "subnetworkRangeName",
+      "The subnetwork secondary range name specifying\nthe secondary range from which to allocate the IP CIDR range for this alias IP\nrange. If left unspecified, the primary range of the subnetwork will be used.",
       [],
-      true,
+      false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "SubnetworkRangeName",
-      "The subnetwork secondary range name specifying\nthe secondary range from which to allocate the IP CIDR range for this alias IP\nrange. If left unspecified, the primary range of the subnetwork will be used.",
+      "ipCidrRange",
+      "The IP CIDR range represented by this alias IP range. This IP CIDR range\nmust belong to the specified subnetwork and cannot contain IP addresses reserved by\nsystem or used by other network interfaces. At the time of writing only a\nnetmask (e.g. /24) may be supplied, with a CIDR format resulting in an API\nerror.",
       [],
-      false,
+      true,
       true,
     ),
   ];

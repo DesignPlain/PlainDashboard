@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterClusterAutoscalingAutoProvisioningDefaultShieldedInstanceConfig {
-  // Defines whether the instance has integrity monitoring enabled.
-  EnableIntegrityMonitoring?: boolean;
-
+export interface container_getClusterClusterAutoscalingAutoProvisioningDefaultShieldedInstanceConfig {
   // Defines whether the instance has Secure Boot enabled.
-  EnableSecureBoot?: boolean;
+  enableSecureBoot?: boolean;
+
+  // Defines whether the instance has integrity monitoring enabled.
+  enableIntegrityMonitoring?: boolean;
 }
 
-export function Container_getClusterClusterAutoscalingAutoProvisioningDefaultShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterClusterAutoscalingAutoProvisioningDefaultShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableIntegrityMonitoring",
-      "Defines whether the instance has integrity monitoring enabled.",
+      "enableSecureBoot",
+      "Defines whether the instance has Secure Boot enabled.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableSecureBoot",
-      "Defines whether the instance has Secure Boot enabled.",
+      "enableIntegrityMonitoring",
+      "Defines whether the instance has integrity monitoring enabled.",
       [],
       true,
       false,

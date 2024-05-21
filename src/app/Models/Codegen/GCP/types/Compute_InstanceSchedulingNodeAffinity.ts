@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceSchedulingNodeAffinity {
+export interface compute_InstanceSchedulingNodeAffinity {
   // The key for the node affinity label.
-  Key?: string;
+  key?: string;
 
   /*
 The operator. Can be `IN` for node-affinities
 or `NOT_IN` for anti-affinities.
 */
-  Operator?: string;
+  operator?: string;
 
   // The values for the node affinity label.
-  Values?: Array<string>;
+  values?: Array<string>;
 }
 
-export function Compute_InstanceSchedulingNodeAffinity_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceSchedulingNodeAffinity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "key",
       "The key for the node affinity label.",
       [],
       true,
@@ -32,7 +32,7 @@ export function Compute_InstanceSchedulingNodeAffinity_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "Operator",
+      "operator",
       "The operator. Can be `IN` for node-affinities\nor `NOT_IN` for anti-affinities.",
       [],
       true,
@@ -40,7 +40,7 @@ export function Compute_InstanceSchedulingNodeAffinity_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Values",
+      "values",
       "The values for the node affinity label.",
       InputType_String_GetTypes(),
       true,

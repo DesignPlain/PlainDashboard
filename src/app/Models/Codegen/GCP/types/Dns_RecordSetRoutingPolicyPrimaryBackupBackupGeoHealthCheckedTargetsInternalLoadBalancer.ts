@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargetsInternalLoadBalancer {
-  // The configured port of the load balancer.
-  Port?: string;
-
-  // The ID of the project in which the load balancer belongs.
-  Project?: string;
-
+export interface dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargetsInternalLoadBalancer {
   // The region of the load balancer. Only needed for regional load balancers.
-  Region?: string;
+  region?: string;
 
   // The frontend IP address of the load balancer.
-  IpAddress?: string;
+  ipAddress?: string;
 
   // The configured IP protocol of the load balancer. This value is case-sensitive. Possible values: ["tcp", "udp"]
-  IpProtocol?: string;
+  ipProtocol?: string;
 
   // The type of load balancer. This value is case-sensitive. Possible values: ["regionalL4ilb", "regionalL7ilb", "globalL7ilb"]
-  LoadBalancerType?: string;
+  loadBalancerType?: string;
 
   // The fully qualified url of the network in which the load balancer belongs. This should be formatted like `projects/{project}/global/networks/{network}` or `https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`.
-  NetworkUrl?: string;
+  networkUrl?: string;
+
+  // The configured port of the load balancer.
+  port?: string;
+
+  // The ID of the project in which the load balancer belongs.
+  project?: string;
 }
 
-export function Dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargetsInternalLoadBalancer_GetTypes(): DynamicUIProps[] {
+export function dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargetsInternalLoadBalancer_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "IpAddress",
+      "ipAddress",
       "The frontend IP address of the load balancer.",
       [],
       true,
@@ -41,7 +41,7 @@ export function Dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTar
     ),
     new DynamicUIProps(
       InputType.String,
-      "IpProtocol",
+      "ipProtocol",
       'The configured IP protocol of the load balancer. This value is case-sensitive. Possible values: ["tcp", "udp"]',
       [],
       true,
@@ -49,7 +49,7 @@ export function Dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTar
     ),
     new DynamicUIProps(
       InputType.String,
-      "LoadBalancerType",
+      "loadBalancerType",
       'The type of load balancer. This value is case-sensitive. Possible values: ["regionalL4ilb", "regionalL7ilb", "globalL7ilb"]',
       [],
       true,
@@ -57,7 +57,7 @@ export function Dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTar
     ),
     new DynamicUIProps(
       InputType.String,
-      "NetworkUrl",
+      "networkUrl",
       "The fully qualified url of the network in which the load balancer belongs. This should be formatted like `projects/{project}/global/networks/{network}` or `https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`.",
       [],
       true,
@@ -65,7 +65,7 @@ export function Dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTar
     ),
     new DynamicUIProps(
       InputType.String,
-      "Port",
+      "port",
       "The configured port of the load balancer.",
       [],
       true,
@@ -73,7 +73,7 @@ export function Dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTar
     ),
     new DynamicUIProps(
       InputType.String,
-      "Project",
+      "project",
       "The ID of the project in which the load balancer belongs.",
       [],
       true,
@@ -81,7 +81,7 @@ export function Dns_RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTar
     ),
     new DynamicUIProps(
       InputType.String,
-      "Region",
+      "region",
       "The region of the load balancer. Only needed for regional load balancers.",
       [],
       false,

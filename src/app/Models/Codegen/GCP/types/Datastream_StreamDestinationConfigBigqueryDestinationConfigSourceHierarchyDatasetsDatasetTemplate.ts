@@ -6,12 +6,12 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate {
+export interface datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate {
   /*
 If supplied, every created dataset will have its name prefixed by the provided value.
 The prefix and name will be separated by an underscore. i.e. _.
 */
-  DatasetIdPrefix?: string;
+  datasetIdPrefix?: string;
 
   /*
 Describes the Cloud KMS encryption key that will be used to protect destination BigQuery
@@ -21,20 +21,20 @@ See https://cloud.google.com/bigquery/docs/customer-managed-encryption for more 
 
 - - -
 */
-  KmsKeyName?: string;
+  kmsKeyName?: string;
 
   /*
 The geographic location where the dataset should reside.
 See https://cloud.google.com/bigquery/docs/locations for supported locations.
 */
-  Location?: string;
+  location?: string;
 }
 
-export function Datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DatasetIdPrefix",
+      "datasetIdPrefix",
       "If supplied, every created dataset will have its name prefixed by the provided value.\nThe prefix and name will be separated by an underscore. i.e. _.",
       [],
       false,
@@ -42,7 +42,7 @@ export function Datastream_StreamDestinationConfigBigqueryDestinationConfigSourc
     ),
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyName",
+      "kmsKeyName",
       "Describes the Cloud KMS encryption key that will be used to protect destination BigQuery\ntable. The BigQuery Service Account associated with your project requires access to this\nencryption key. i.e. projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{cryptoKey}.\nSee https://cloud.google.com/bigquery/docs/customer-managed-encryption for more information.\n\n- - -",
       [],
       false,
@@ -50,7 +50,7 @@ export function Datastream_StreamDestinationConfigBigqueryDestinationConfigSourc
     ),
     new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       "The geographic location where the dataset should reside.\nSee https://cloud.google.com/bigquery/docs/locations for supported locations.",
       [],
       true,

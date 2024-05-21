@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_ClusterClusterConfigWorkerConfigAccelerator {
+export interface dataproc_ClusterClusterConfigWorkerConfigAccelerator {
+  // The short name of the accelerator type to expose to this instance. For example, `nvidia-tesla-k80`.
+  acceleratorType?: string;
+
   /*
 The number of the accelerator cards of this type exposed to this instance. Often restricted to one of `1`, `2`, `4`, or `8`.
 
 
 - - -
 */
-  AcceleratorCount?: number;
-
-  // The short name of the accelerator type to expose to this instance. For example, `nvidia-tesla-k80`.
-  AcceleratorType?: string;
+  acceleratorCount?: number;
 }
 
-export function Dataproc_ClusterClusterConfigWorkerConfigAccelerator_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterClusterConfigWorkerConfigAccelerator_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "AcceleratorCount",
-      "The number of the accelerator cards of this type exposed to this instance. Often restricted to one of `1`, `2`, `4`, or `8`.\n\n\n- - -",
+      InputType.String,
+      "acceleratorType",
+      "The short name of the accelerator type to expose to this instance. For example, `nvidia-tesla-k80`.",
       [],
       true,
       true,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "AcceleratorType",
-      "The short name of the accelerator type to expose to this instance. For example, `nvidia-tesla-k80`.",
+      InputType.Number,
+      "acceleratorCount",
+      "The number of the accelerator cards of this type exposed to this instance. Often restricted to one of `1`, `2`, `4`, or `8`.\n\n\n- - -",
       [],
       true,
       true,

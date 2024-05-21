@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_NodePoolNodeConfigReservationAffinity {
+export interface container_NodePoolNodeConfigReservationAffinity {
+  // Corresponds to the type of reservation consumption.
+  consumeReservationType?: string;
+
   // The label key of a reservation resource.
-  Key?: string;
+  key?: string;
 
   // The label values of the reservation resource.
-  Values?: Array<string>;
-
-  // Corresponds to the type of reservation consumption.
-  ConsumeReservationType?: string;
+  values?: Array<string>;
 }
 
-export function Container_NodePoolNodeConfigReservationAffinity_GetTypes(): DynamicUIProps[] {
+export function container_NodePoolNodeConfigReservationAffinity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "consumeReservationType",
+      "Corresponds to the type of reservation consumption.",
+      [],
+      true,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "key",
       "The label key of a reservation resource.",
       [],
       false,
@@ -29,18 +37,10 @@ export function Container_NodePoolNodeConfigReservationAffinity_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Values",
+      "values",
       "The label values of the reservation resource.",
       InputType_String_GetTypes(),
       false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ConsumeReservationType",
-      "Corresponds to the type of reservation consumption.",
-      [],
-      true,
       true,
     ),
   ];

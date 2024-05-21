@@ -6,11 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datacatalog_EntryGcsFilesetSpecSampleGcsFileSpec,
-  Datacatalog_EntryGcsFilesetSpecSampleGcsFileSpec_GetTypes,
-} from "./Datacatalog_EntryGcsFilesetSpecSampleGcsFileSpec";
+  datacatalog_EntryGcsFilesetSpecSampleGcsFileSpec,
+  datacatalog_EntryGcsFilesetSpecSampleGcsFileSpec_GetTypes,
+} from "./datacatalog_EntryGcsFilesetSpecSampleGcsFileSpec";
 
-export interface Datacatalog_EntryGcsFilesetSpec {
+export interface datacatalog_EntryGcsFilesetSpec {
   /*
 Patterns to identify a set of files in Google Cloud Storage.
 See [Cloud Storage documentation](https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames)
@@ -24,7 +24,7 @@ for more information. Note that bucket wildcards are currently not supported. Ex
 - gs://bucket_name/a/-/b: matches all files in bucket_name that match a/-/b pattern, such as a/c/b, a/d/b
 - gs://another_bucket/a.txt: matches gs://another_bucket/a.txt
 */
-  FilePatterns?: Array<string>;
+  filePatterns?: Array<string>;
 
   /*
 (Output)
@@ -34,14 +34,14 @@ Structure is documented below.
 
 <a name="nested_sample_gcs_file_specs"></a>The `sample_gcs_file_specs` block contains:
 */
-  SampleGcsFileSpecs?: Array<Datacatalog_EntryGcsFilesetSpecSampleGcsFileSpec>;
+  sampleGcsFileSpecs?: Array<datacatalog_EntryGcsFilesetSpecSampleGcsFileSpec>;
 }
 
-export function Datacatalog_EntryGcsFilesetSpec_GetTypes(): DynamicUIProps[] {
+export function datacatalog_EntryGcsFilesetSpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "FilePatterns",
+      "filePatterns",
       "Patterns to identify a set of files in Google Cloud Storage.\nSee [Cloud Storage documentation](https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames)\nfor more information. Note that bucket wildcards are currently not supported. Examples of valid filePatterns:\n* gs://bucket_name/dir/*: matches all files within bucket_name/dir directory.\n* gs://bucket_name/dir/**: matches all files in bucket_name/dir spanning all subdirectories.\n* gs://bucket_name/file*: matches files prefixed by file in bucket_name\n* gs://bucket_name/??.txt: matches files with two characters followed by .txt in bucket_name\n* gs://bucket_name/[aeiou].txt: matches files that contain a single vowel character followed by .txt in bucket_name\n* gs://bucket_name/[a-m].txt: matches files that contain a, b, ... or m followed by .txt in bucket_name\n* gs://bucket_name/a/*/b: matches all files in bucket_name that match a/*/b pattern, such as a/c/b, a/d/b\n* gs://another_bucket/a.txt: matches gs://another_bucket/a.txt",
       InputType_String_GetTypes(),
       true,
@@ -49,9 +49,9 @@ export function Datacatalog_EntryGcsFilesetSpec_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "SampleGcsFileSpecs",
+      "sampleGcsFileSpecs",
       '(Output)\nSample files contained in this fileset, not all files contained in this fileset are represented here.\nStructure is documented below.\n\n\n<a name="nested_sample_gcs_file_specs"></a>The `sample_gcs_file_specs` block contains:',
-      Datacatalog_EntryGcsFilesetSpecSampleGcsFileSpec_GetTypes(),
+      datacatalog_EntryGcsFilesetSpecSampleGcsFileSpec_GetTypes(),
       false,
       false,
     ),

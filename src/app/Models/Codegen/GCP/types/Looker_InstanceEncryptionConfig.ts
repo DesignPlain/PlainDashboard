@@ -6,28 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Looker_InstanceEncryptionConfig {
+export interface looker_InstanceEncryptionConfig {
   // Name of the customer managed encryption key (CMEK) in KMS.
-  KmsKeyName?: string;
+  kmsKeyName?: string;
 
   /*
 (Output)
 Full name and version of the CMEK key currently in use to encrypt Looker data.
 */
-  KmsKeyNameVersion?: string;
+  kmsKeyNameVersion?: string;
 
   /*
 (Output)
 Status of the customer managed encryption key (CMEK) in KMS.
 */
-  KmsKeyState?: string;
+  kmsKeyState?: string;
 }
 
-export function Looker_InstanceEncryptionConfig_GetTypes(): DynamicUIProps[] {
+export function looker_InstanceEncryptionConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyNameVersion",
+      "kmsKeyName",
+      "Name of the customer managed encryption key (CMEK) in KMS.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "kmsKeyNameVersion",
       "(Output)\nFull name and version of the CMEK key currently in use to encrypt Looker data.",
       [],
       false,
@@ -35,16 +43,8 @@ export function Looker_InstanceEncryptionConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyState",
+      "kmsKeyState",
       "(Output)\nStatus of the customer managed encryption key (CMEK) in KMS.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "KmsKeyName",
-      "Name of the customer managed encryption key (CMEK) in KMS.",
       [],
       false,
       false,

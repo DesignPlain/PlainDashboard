@@ -6,25 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionUrlMapPathMatcherPathRule,
-  Compute_RegionUrlMapPathMatcherPathRule_GetTypes,
-} from "./Compute_RegionUrlMapPathMatcherPathRule";
+  compute_RegionUrlMapPathMatcherRouteRule,
+  compute_RegionUrlMapPathMatcherRouteRule_GetTypes,
+} from "./compute_RegionUrlMapPathMatcherRouteRule";
 import {
-  Compute_RegionUrlMapPathMatcherRouteRule,
-  Compute_RegionUrlMapPathMatcherRouteRule_GetTypes,
-} from "./Compute_RegionUrlMapPathMatcherRouteRule";
+  compute_RegionUrlMapPathMatcherDefaultUrlRedirect,
+  compute_RegionUrlMapPathMatcherDefaultUrlRedirect_GetTypes,
+} from "./compute_RegionUrlMapPathMatcherDefaultUrlRedirect";
 import {
-  Compute_RegionUrlMapPathMatcherDefaultUrlRedirect,
-  Compute_RegionUrlMapPathMatcherDefaultUrlRedirect_GetTypes,
-} from "./Compute_RegionUrlMapPathMatcherDefaultUrlRedirect";
+  compute_RegionUrlMapPathMatcherPathRule,
+  compute_RegionUrlMapPathMatcherPathRule_GetTypes,
+} from "./compute_RegionUrlMapPathMatcherPathRule";
 
-export interface Compute_RegionUrlMapPathMatcher {
+export interface compute_RegionUrlMapPathMatcher {
+  /*
+The list of ordered HTTP route rules. Use this list instead of pathRules when
+advanced route matching and routing actions are desired. The order of specifying
+routeRules matters: the first rule that matches will cause its specified routing
+action to take effect. Within a given pathMatcher, only one of pathRules or
+routeRules must be set. routeRules are not supported in UrlMaps intended for
+External load balancers.
+Structure is documented below.
+*/
+  routeRules?: Array<compute_RegionUrlMapPathMatcherRouteRule>;
+
   /*
 A reference to a RegionBackendService resource. This will be used if
 none of the pathRules defined by this PathMatcher is matched by
 the URL's path portion.
 */
-  DefaultService?: string;
+  defaultService?: string;
 
   /*
 When none of the specified hostRules match, the request is redirected to a URL specified
@@ -32,13 +43,13 @@ by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or
 defaultRouteAction must not be set.
 Structure is documented below.
 */
-  DefaultUrlRedirect?: Compute_RegionUrlMapPathMatcherDefaultUrlRedirect;
+  defaultUrlRedirect?: compute_RegionUrlMapPathMatcherDefaultUrlRedirect;
 
   // An optional description of this resource.
-  Description?: string;
+  description?: string;
 
   // The name to which this PathMatcher is referred by the HostRule.
-  Name?: string;
+  name?: string;
 
   /*
 The list of path rules. Use this list instead of routeRules when routing based
@@ -49,33 +60,22 @@ irrespective of the order in which those paths appear in this list. Within a
 given pathMatcher, only one of pathRules or routeRules must be set.
 Structure is documented below.
 */
-  PathRules?: Array<Compute_RegionUrlMapPathMatcherPathRule>;
-
-  /*
-The list of ordered HTTP route rules. Use this list instead of pathRules when
-advanced route matching and routing actions are desired. The order of specifying
-routeRules matters: the first rule that matches will cause its specified routing
-action to take effect. Within a given pathMatcher, only one of pathRules or
-routeRules must be set. routeRules are not supported in UrlMaps intended for
-External load balancers.
-Structure is documented below.
-*/
-  RouteRules?: Array<Compute_RegionUrlMapPathMatcherRouteRule>;
+  pathRules?: Array<compute_RegionUrlMapPathMatcherPathRule>;
 }
 
-export function Compute_RegionUrlMapPathMatcher_GetTypes(): DynamicUIProps[] {
+export function compute_RegionUrlMapPathMatcher_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "RouteRules",
+      "routeRules",
       "The list of ordered HTTP route rules. Use this list instead of pathRules when\nadvanced route matching and routing actions are desired. The order of specifying\nrouteRules matters: the first rule that matches will cause its specified routing\naction to take effect. Within a given pathMatcher, only one of pathRules or\nrouteRules must be set. routeRules are not supported in UrlMaps intended for\nExternal load balancers.\nStructure is documented below.",
-      Compute_RegionUrlMapPathMatcherRouteRule_GetTypes(),
+      compute_RegionUrlMapPathMatcherRouteRule_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "DefaultService",
+      "defaultService",
       "A reference to a RegionBackendService resource. This will be used if\nnone of the pathRules defined by this PathMatcher is matched by\nthe URL's path portion.",
       [],
       false,
@@ -83,15 +83,15 @@ export function Compute_RegionUrlMapPathMatcher_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "DefaultUrlRedirect",
+      "defaultUrlRedirect",
       "When none of the specified hostRules match, the request is redirected to a URL specified\nby defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or\ndefaultRouteAction must not be set.\nStructure is documented below.",
-      Compute_RegionUrlMapPathMatcherDefaultUrlRedirect_GetTypes(),
+      compute_RegionUrlMapPathMatcherDefaultUrlRedirect_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "An optional description of this resource.",
       [],
       false,
@@ -99,7 +99,7 @@ export function Compute_RegionUrlMapPathMatcher_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name to which this PathMatcher is referred by the HostRule.",
       [],
       true,
@@ -107,9 +107,9 @@ export function Compute_RegionUrlMapPathMatcher_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "PathRules",
+      "pathRules",
       "The list of path rules. Use this list instead of routeRules when routing based\non simple path matching is all that's required. The order by which path rules\nare specified does not matter. Matches are always done on the longest-path-first\nbasis. For example: a pathRule with a path /a/b/c/* will match before /a/b/*\nirrespective of the order in which those paths appear in this list. Within a\ngiven pathMatcher, only one of pathRules or routeRules must be set.\nStructure is documented below.",
-      Compute_RegionUrlMapPathMatcherPathRule_GetTypes(),
+      compute_RegionUrlMapPathMatcherPathRule_GetTypes(),
       false,
       false,
     ),

@@ -7,31 +7,31 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_JobIAMMemberCondition,
-  Dataproc_JobIAMMemberCondition_GetTypes,
-} from "../types/Dataproc_JobIAMMemberCondition";
+  dataproc_JobIAMMemberCondition,
+  dataproc_JobIAMMemberCondition_GetTypes,
+} from "../types/dataproc_JobIAMMemberCondition";
 
 export interface JobIAMMemberArgs {
   //
-  Condition?: Dataproc_JobIAMMemberCondition;
+  condition?: dataproc_JobIAMMemberCondition;
 
   //
-  JobId?: string;
+  jobId?: string;
 
   //
-  Member?: string;
+  member?: string;
 
   /*
 The project in which the job belongs. If it
 is not provided, the provider will use a default.
 */
-  Project?: string;
+  project?: string;
 
   /*
 The region in which the job belongs. If it
 is not provided, the provider will use a default.
 */
-  Region?: string;
+  region?: string;
 
   /*
 The role that should be applied. Only one
@@ -40,27 +40,9 @@ The role that should be applied. Only one
 
 `gcp.dataproc.JobIAMPolicy` only:
 */
-  Role?: string;
+  role?: string;
 }
 export class JobIAMMember extends Resource {
-  //
-  public JobId?: string;
-
-  //
-  public Member?: string;
-
-  /*
-The project in which the job belongs. If it
-is not provided, the provider will use a default.
-*/
-  public Project?: string;
-
-  /*
-The region in which the job belongs. If it
-is not provided, the provider will use a default.
-*/
-  public Region?: string;
-
   /*
 The role that should be applied. Only one
 `gcp.dataproc.JobIAMBinding` can be used per role. Note that custom roles must be of the format
@@ -68,29 +50,47 @@ The role that should be applied. Only one
 
 `gcp.dataproc.JobIAMPolicy` only:
 */
-  public Role?: string;
+  public role?: string;
 
   //
-  public Condition?: Dataproc_JobIAMMemberCondition;
+  public condition?: dataproc_JobIAMMemberCondition;
 
   // (Computed) The etag of the jobs's IAM policy.
-  public Etag?: string;
+  public etag?: string;
+
+  //
+  public jobId?: string;
+
+  //
+  public member?: string;
+
+  /*
+The project in which the job belongs. If it
+is not provided, the provider will use a default.
+*/
+  public project?: string;
+
+  /*
+The region in which the job belongs. If it
+is not provided, the provider will use a default.
+*/
+  public region?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Dataproc_JobIAMMemberCondition_GetTypes(),
+        dataproc_JobIAMMemberCondition_GetTypes(),
         false,
         true,
       ),
-      new DynamicUIProps(InputType.String, "JobId", "", [], true, true),
-      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
+      new DynamicUIProps(InputType.String, "jobId", "", [], true, true),
+      new DynamicUIProps(InputType.String, "member", "", [], true, true),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The project in which the job belongs. If it\nis not provided, the provider will use a default.",
         [],
         false,
@@ -98,7 +98,7 @@ The role that should be applied. Only one
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "The region in which the job belongs. If it\nis not provided, the provider will use a default.",
         [],
         false,
@@ -106,7 +106,7 @@ The role that should be applied. Only one
       ),
       new DynamicUIProps(
         InputType.String,
-        "Role",
+        "role",
         "The role that should be applied. Only one\n`gcp.dataproc.JobIAMBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.\n\n`gcp.dataproc.JobIAMPolicy` only:",
         [],
         true,

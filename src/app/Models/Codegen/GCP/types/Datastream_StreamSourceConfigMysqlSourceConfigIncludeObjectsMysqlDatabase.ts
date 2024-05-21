@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTable,
-  Datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTable_GetTypes,
-} from "./Datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTable";
+  datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTable,
+  datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTable_GetTypes,
+} from "./datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTable";
 
-export interface Datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabase {
+export interface datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabase {
+  // Database name.
+  database?: string;
+
   /*
 Tables in the database.
 Structure is documented below.
 */
-  MysqlTables?: Array<Datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTable>;
-
-  // Database name.
-  Database?: string;
+  mysqlTables?: Array<datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTable>;
 }
 
-export function Datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabase_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabase_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Database",
+      "database",
       "Database name.",
       [],
       true,
@@ -33,9 +33,9 @@ export function Datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysq
     ),
     new DynamicUIProps(
       InputType.Array,
-      "MysqlTables",
+      "mysqlTables",
       "Tables in the database.\nStructure is documented below.",
-      Datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTable_GetTypes(),
+      datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTable_GetTypes(),
       false,
       false,
     ),

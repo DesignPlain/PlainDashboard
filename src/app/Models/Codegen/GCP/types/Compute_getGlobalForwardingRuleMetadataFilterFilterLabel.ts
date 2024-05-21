@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getGlobalForwardingRuleMetadataFilterFilterLabel {
+export interface compute_getGlobalForwardingRuleMetadataFilterFilterLabel {
   /*
 The name of the global forwarding rule.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   /*
 The value that the label must match. The value has a maximum
 length of 1024 characters.
 */
-  Value?: string;
+  value?: string;
 }
 
-export function Compute_getGlobalForwardingRuleMetadataFilterFilterLabel_GetTypes(): DynamicUIProps[] {
+export function compute_getGlobalForwardingRuleMetadataFilterFilterLabel_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of the global forwarding rule.\n\n- - -",
       [],
       true,
@@ -33,7 +33,7 @@ export function Compute_getGlobalForwardingRuleMetadataFilterFilterLabel_GetType
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "The value that the label must match. The value has a maximum\nlength of 1024 characters.",
       [],
       true,

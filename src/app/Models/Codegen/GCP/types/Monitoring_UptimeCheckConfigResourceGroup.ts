@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_UptimeCheckConfigResourceGroup {
-  // The group of resources being monitored. Should be the `name` of a group
-  GroupId?: string;
-
+export interface monitoring_UptimeCheckConfigResourceGroup {
   /*
 The resource type of the group members.
 Possible values are: `RESOURCE_TYPE_UNSPECIFIED`, `INSTANCE`, `AWS_ELB_LOAD_BALANCER`.
 */
-  ResourceType?: string;
+  resourceType?: string;
+
+  // The group of resources being monitored. Should be the `name` of a group
+  groupId?: string;
 }
 
-export function Monitoring_UptimeCheckConfigResourceGroup_GetTypes(): DynamicUIProps[] {
+export function monitoring_UptimeCheckConfigResourceGroup_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ResourceType",
+      "resourceType",
       "The resource type of the group members.\nPossible values are: `RESOURCE_TYPE_UNSPECIFIED`, `INSTANCE`, `AWS_ELB_LOAD_BALANCER`.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Monitoring_UptimeCheckConfigResourceGroup_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "GroupId",
+      "groupId",
       "The group of resources being monitored. Should be the `name` of a group",
       [],
       false,

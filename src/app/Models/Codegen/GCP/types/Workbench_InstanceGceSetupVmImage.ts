@@ -6,28 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Workbench_InstanceGceSetupVmImage {
-  /*
-The name of the Google Cloud project that this VM image belongs to.
-Format: {project_id}
-*/
-  Project?: string;
-
+export interface workbench_InstanceGceSetupVmImage {
   /*
 Optional. Use this VM image family to find the image; the newest
 image in this family will be used.
 */
-  Family?: string;
+  family?: string;
 
   // Optional. Use VM image name to find the image.
-  Name?: string;
+  name?: string;
+
+  /*
+The name of the Google Cloud project that this VM image belongs to.
+Format: {project_id}
+*/
+  project?: string;
 }
 
-export function Workbench_InstanceGceSetupVmImage_GetTypes(): DynamicUIProps[] {
+export function workbench_InstanceGceSetupVmImage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "family",
+      "Optional. Use this VM image family to find the image; the newest\nimage in this family will be used.",
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "name",
       "Optional. Use VM image name to find the image.",
       [],
       false,
@@ -35,16 +43,8 @@ export function Workbench_InstanceGceSetupVmImage_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Project",
+      "project",
       "The name of the Google Cloud project that this VM image belongs to.\nFormat: {project_id}",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Family",
-      "Optional. Use this VM image family to find the image; the newest\nimage in this family will be used.",
       [],
       false,
       true,

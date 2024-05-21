@@ -6,100 +6,60 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrunv2_getJobTemplateTemplateContainerResource,
-  Cloudrunv2_getJobTemplateTemplateContainerResource_GetTypes,
-} from "./Cloudrunv2_getJobTemplateTemplateContainerResource";
+  cloudrunv2_getJobTemplateTemplateContainerResource,
+  cloudrunv2_getJobTemplateTemplateContainerResource_GetTypes,
+} from "./cloudrunv2_getJobTemplateTemplateContainerResource";
 import {
-  Cloudrunv2_getJobTemplateTemplateContainerVolumeMount,
-  Cloudrunv2_getJobTemplateTemplateContainerVolumeMount_GetTypes,
-} from "./Cloudrunv2_getJobTemplateTemplateContainerVolumeMount";
+  cloudrunv2_getJobTemplateTemplateContainerPort,
+  cloudrunv2_getJobTemplateTemplateContainerPort_GetTypes,
+} from "./cloudrunv2_getJobTemplateTemplateContainerPort";
 import {
-  Cloudrunv2_getJobTemplateTemplateContainerEnv,
-  Cloudrunv2_getJobTemplateTemplateContainerEnv_GetTypes,
-} from "./Cloudrunv2_getJobTemplateTemplateContainerEnv";
+  cloudrunv2_getJobTemplateTemplateContainerVolumeMount,
+  cloudrunv2_getJobTemplateTemplateContainerVolumeMount_GetTypes,
+} from "./cloudrunv2_getJobTemplateTemplateContainerVolumeMount";
 import {
-  Cloudrunv2_getJobTemplateTemplateContainerPort,
-  Cloudrunv2_getJobTemplateTemplateContainerPort_GetTypes,
-} from "./Cloudrunv2_getJobTemplateTemplateContainerPort";
+  cloudrunv2_getJobTemplateTemplateContainerEnv,
+  cloudrunv2_getJobTemplateTemplateContainerEnv_GetTypes,
+} from "./cloudrunv2_getJobTemplateTemplateContainerEnv";
 
-export interface Cloudrunv2_getJobTemplateTemplateContainer {
-  // Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
-  Args?: Array<string>;
-
-  // List of environment variables to set in the container.
-  Envs?: Array<Cloudrunv2_getJobTemplateTemplateContainerEnv>;
-
-  // The name of the Cloud Run v2 Job.
-  Name?: string;
+export interface cloudrunv2_getJobTemplateTemplateContainer {
+  // Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
+  commands?: Array<string>;
 
   /*
 List of ports to expose from the container. Only a single port can be specified. The specified ports must be listening on all interfaces (0.0.0.0) within the container to be accessible.
 
 If omitted, a port number will be chosen and passed to the container through the PORT environment variable for the container to listen on
 */
-  Ports?: Array<Cloudrunv2_getJobTemplateTemplateContainerPort>;
-
-  // Compute Resource requirements by this container. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources
-  Resources?: Array<Cloudrunv2_getJobTemplateTemplateContainerResource>;
+  ports?: Array<cloudrunv2_getJobTemplateTemplateContainerPort>;
 
   // Volume to mount into the container's filesystem.
-  VolumeMounts?: Array<Cloudrunv2_getJobTemplateTemplateContainerVolumeMount>;
+  volumeMounts?: Array<cloudrunv2_getJobTemplateTemplateContainerVolumeMount>;
 
-  // Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image.
-  WorkingDir?: string;
+  // Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
+  args?: Array<string>;
 
-  // Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
-  Commands?: Array<string>;
+  // List of environment variables to set in the container.
+  envs?: Array<cloudrunv2_getJobTemplateTemplateContainerEnv>;
 
   // URL of the Container image in Google Container Registry or Google Artifact Registry. More info: https://kubernetes.io/docs/concepts/containers/images
-  Image?: string;
+  image?: string;
+
+  // The name of the Cloud Run v2 Job.
+  name?: string;
+
+  // Compute Resource requirements by this container. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources
+  resources?: Array<cloudrunv2_getJobTemplateTemplateContainerResource>;
+
+  // Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image.
+  workingDir?: string;
 }
 
-export function Cloudrunv2_getJobTemplateTemplateContainer_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_getJobTemplateTemplateContainer_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "Name",
-      "The name of the Cloud Run v2 Job.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "VolumeMounts",
-      "Volume to mount into the container's filesystem.",
-      Cloudrunv2_getJobTemplateTemplateContainerVolumeMount_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "WorkingDir",
-      "Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Commands",
-      "Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell",
-      InputType_String_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Image",
-      "URL of the Container image in Google Container Registry or Google Artifact Registry. More info: https://kubernetes.io/docs/concepts/containers/images",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Args",
+      "args",
       "Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell",
       InputType_String_GetTypes(),
       true,
@@ -107,25 +67,65 @@ export function Cloudrunv2_getJobTemplateTemplateContainer_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Envs",
+      "envs",
       "List of environment variables to set in the container.",
-      Cloudrunv2_getJobTemplateTemplateContainerEnv_GetTypes(),
+      cloudrunv2_getJobTemplateTemplateContainerEnv_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Ports",
-      "List of ports to expose from the container. Only a single port can be specified. The specified ports must be listening on all interfaces (0.0.0.0) within the container to be accessible.\n\nIf omitted, a port number will be chosen and passed to the container through the PORT environment variable for the container to listen on",
-      Cloudrunv2_getJobTemplateTemplateContainerPort_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Resources",
+      "resources",
       "Compute Resource requirements by this container. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources",
-      Cloudrunv2_getJobTemplateTemplateContainerResource_GetTypes(),
+      cloudrunv2_getJobTemplateTemplateContainerResource_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "workingDir",
+      "Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "commands",
+      "Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell",
+      InputType_String_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "ports",
+      "List of ports to expose from the container. Only a single port can be specified. The specified ports must be listening on all interfaces (0.0.0.0) within the container to be accessible.\n\nIf omitted, a port number will be chosen and passed to the container through the PORT environment variable for the container to listen on",
+      cloudrunv2_getJobTemplateTemplateContainerPort_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "volumeMounts",
+      "Volume to mount into the container's filesystem.",
+      cloudrunv2_getJobTemplateTemplateContainerVolumeMount_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "image",
+      "URL of the Container image in Google Container Registry or Google Artifact Registry. More info: https://kubernetes.io/docs/concepts/containers/images",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "name",
+      "The name of the Cloud Run v2 Job.",
+      [],
       true,
       false,
     ),

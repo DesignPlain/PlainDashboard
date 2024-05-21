@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_SecurityScanConfigAuthenticationCustomAccount,
-  Compute_SecurityScanConfigAuthenticationCustomAccount_GetTypes,
-} from "./Compute_SecurityScanConfigAuthenticationCustomAccount";
+  compute_SecurityScanConfigAuthenticationCustomAccount,
+  compute_SecurityScanConfigAuthenticationCustomAccount_GetTypes,
+} from "./compute_SecurityScanConfigAuthenticationCustomAccount";
 import {
-  Compute_SecurityScanConfigAuthenticationGoogleAccount,
-  Compute_SecurityScanConfigAuthenticationGoogleAccount_GetTypes,
-} from "./Compute_SecurityScanConfigAuthenticationGoogleAccount";
+  compute_SecurityScanConfigAuthenticationGoogleAccount,
+  compute_SecurityScanConfigAuthenticationGoogleAccount_GetTypes,
+} from "./compute_SecurityScanConfigAuthenticationGoogleAccount";
 
-export interface Compute_SecurityScanConfigAuthentication {
+export interface compute_SecurityScanConfigAuthentication {
   /*
 Describes authentication configuration that uses a custom account.
 Structure is documented below.
 */
-  CustomAccount?: Compute_SecurityScanConfigAuthenticationCustomAccount;
+  customAccount?: compute_SecurityScanConfigAuthenticationCustomAccount;
 
   /*
 Describes authentication configuration that uses a Google account.
 Structure is documented below.
 */
-  GoogleAccount?: Compute_SecurityScanConfigAuthenticationGoogleAccount;
+  googleAccount?: compute_SecurityScanConfigAuthenticationGoogleAccount;
 }
 
-export function Compute_SecurityScanConfigAuthentication_GetTypes(): DynamicUIProps[] {
+export function compute_SecurityScanConfigAuthentication_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "CustomAccount",
+      "customAccount",
       "Describes authentication configuration that uses a custom account.\nStructure is documented below.",
-      Compute_SecurityScanConfigAuthenticationCustomAccount_GetTypes(),
+      compute_SecurityScanConfigAuthenticationCustomAccount_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "GoogleAccount",
+      "googleAccount",
       "Describes authentication configuration that uses a Google account.\nStructure is documented below.",
-      Compute_SecurityScanConfigAuthenticationGoogleAccount_GetTypes(),
+      compute_SecurityScanConfigAuthenticationGoogleAccount_GetTypes(),
       false,
       false,
     ),

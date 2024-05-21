@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalAdminClusterStorageLvpNodeMountsConfig {
+export interface gkeonprem_BareMetalAdminClusterStorageLvpNodeMountsConfig {
   // The host machine path.
-  Path?: string;
+  path?: string;
 
   // The StorageClass name that PVs will be created with.
-  StorageClass?: string;
+  storageClass?: string;
 }
 
-export function Gkeonprem_BareMetalAdminClusterStorageLvpNodeMountsConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalAdminClusterStorageLvpNodeMountsConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Path",
-      "The host machine path.",
+      "storageClass",
+      "The StorageClass name that PVs will be created with.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "StorageClass",
-      "The StorageClass name that PVs will be created with.",
+      "path",
+      "The host machine path.",
       [],
       true,
       false,

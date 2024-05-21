@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock,
-  Gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock_GetTypes,
-} from "./Gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock";
+  gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock,
+  gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock_GetTypes,
+} from "./gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock";
 
-export interface Gkeonprem_VMwareClusterNetworkConfigStaticIpConfig {
+export interface gkeonprem_VMwareClusterNetworkConfigStaticIpConfig {
   /*
 Represents the configuration values for static IP allocation to nodes.
 Structure is documented below.
 */
-  IpBlocks?: Array<Gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock>;
+  ipBlocks?: Array<gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock>;
 }
 
-export function Gkeonprem_VMwareClusterNetworkConfigStaticIpConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterNetworkConfigStaticIpConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "IpBlocks",
+      "ipBlocks",
       "Represents the configuration values for static IP allocation to nodes.\nStructure is documented below.",
-      Gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock_GetTypes(),
+      gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock_GetTypes(),
       true,
       false,
     ),

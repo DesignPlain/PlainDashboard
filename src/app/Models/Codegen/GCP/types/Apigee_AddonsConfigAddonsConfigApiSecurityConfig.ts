@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Apigee_AddonsConfigAddonsConfigApiSecurityConfig {
+export interface apigee_AddonsConfigAddonsConfigApiSecurityConfig {
   // Flag that specifies whether the Advanced API Ops add-on is enabled.
-  Enabled?: boolean;
+  enabled?: boolean;
 
   /*
 (Output)
 Flag that specifies whether the Advanced API Ops add-on is enabled.
 */
-  ExpiresAt?: string;
+  expiresAt?: string;
 }
 
-export function Apigee_AddonsConfigAddonsConfigApiSecurityConfig_GetTypes(): DynamicUIProps[] {
+export function apigee_AddonsConfigAddonsConfigApiSecurityConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Flag that specifies whether the Advanced API Ops add-on is enabled.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Apigee_AddonsConfigAddonsConfigApiSecurityConfig_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "ExpiresAt",
+      "expiresAt",
       "(Output)\nFlag that specifies whether the Advanced API Ops add-on is enabled.",
       [],
       false,

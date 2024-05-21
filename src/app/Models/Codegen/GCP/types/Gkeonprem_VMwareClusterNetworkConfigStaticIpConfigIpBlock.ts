@@ -6,37 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlockIp,
-  Gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlockIp_GetTypes,
-} from "./Gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlockIp";
+  gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlockIp,
+  gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlockIp_GetTypes,
+} from "./gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlockIp";
 
-export interface Gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock {
+export interface gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock {
   // The network gateway used by the VMware User Cluster.
-  Gateway?: string;
+  gateway?: string;
 
   /*
 The node's network configurations used by the VMware User Cluster.
 Structure is documented below.
 */
-  Ips?: Array<Gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlockIp>;
+  ips?: Array<gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlockIp>;
 
   // The netmask used by the VMware User Cluster.
-  Netmask?: string;
+  netmask?: string;
 }
 
-export function Gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Netmask",
-      "The netmask used by the VMware User Cluster.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Gateway",
+      "gateway",
       "The network gateway used by the VMware User Cluster.",
       [],
       true,
@@ -44,9 +36,17 @@ export function Gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock_GetTyp
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Ips",
+      "ips",
       "The node's network configurations used by the VMware User Cluster.\nStructure is documented below.",
-      Gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlockIp_GetTypes(),
+      gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlockIp_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "netmask",
+      "The netmask used by the VMware User Cluster.",
+      [],
       true,
       false,
     ),

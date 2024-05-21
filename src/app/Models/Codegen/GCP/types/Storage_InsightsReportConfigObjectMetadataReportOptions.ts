@@ -6,44 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Storage_InsightsReportConfigObjectMetadataReportOptionsStorageDestinationOptions,
-  Storage_InsightsReportConfigObjectMetadataReportOptionsStorageDestinationOptions_GetTypes,
-} from "./Storage_InsightsReportConfigObjectMetadataReportOptionsStorageDestinationOptions";
+  storage_InsightsReportConfigObjectMetadataReportOptionsStorageDestinationOptions,
+  storage_InsightsReportConfigObjectMetadataReportOptionsStorageDestinationOptions_GetTypes,
+} from "./storage_InsightsReportConfigObjectMetadataReportOptionsStorageDestinationOptions";
 import {
-  Storage_InsightsReportConfigObjectMetadataReportOptionsStorageFilters,
-  Storage_InsightsReportConfigObjectMetadataReportOptionsStorageFilters_GetTypes,
-} from "./Storage_InsightsReportConfigObjectMetadataReportOptionsStorageFilters";
+  storage_InsightsReportConfigObjectMetadataReportOptionsStorageFilters,
+  storage_InsightsReportConfigObjectMetadataReportOptionsStorageFilters_GetTypes,
+} from "./storage_InsightsReportConfigObjectMetadataReportOptionsStorageFilters";
 
-export interface Storage_InsightsReportConfigObjectMetadataReportOptions {
+export interface storage_InsightsReportConfigObjectMetadataReportOptions {
   // The metadata fields included in an inventory report.
-  MetadataFields?: Array<string>;
+  metadataFields?: Array<string>;
 
   /*
 Options for where the inventory reports are stored.
 Structure is documented below.
 */
-  StorageDestinationOptions?: Storage_InsightsReportConfigObjectMetadataReportOptionsStorageDestinationOptions;
+  storageDestinationOptions?: storage_InsightsReportConfigObjectMetadataReportOptionsStorageDestinationOptions;
 
   /*
 A nested object resource
 Structure is documented below.
 */
-  StorageFilters?: Storage_InsightsReportConfigObjectMetadataReportOptionsStorageFilters;
+  storageFilters?: storage_InsightsReportConfigObjectMetadataReportOptionsStorageFilters;
 }
 
-export function Storage_InsightsReportConfigObjectMetadataReportOptions_GetTypes(): DynamicUIProps[] {
+export function storage_InsightsReportConfigObjectMetadataReportOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "StorageFilters",
-      "A nested object resource\nStructure is documented below.",
-      Storage_InsightsReportConfigObjectMetadataReportOptionsStorageFilters_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "MetadataFields",
+      "metadataFields",
       "The metadata fields included in an inventory report.",
       InputType_String_GetTypes(),
       true,
@@ -51,10 +43,18 @@ export function Storage_InsightsReportConfigObjectMetadataReportOptions_GetTypes
     ),
     new DynamicUIProps(
       InputType.Object,
-      "StorageDestinationOptions",
+      "storageDestinationOptions",
       "Options for where the inventory reports are stored.\nStructure is documented below.",
-      Storage_InsightsReportConfigObjectMetadataReportOptionsStorageDestinationOptions_GetTypes(),
+      storage_InsightsReportConfigObjectMetadataReportOptionsStorageDestinationOptions_GetTypes(),
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "storageFilters",
+      "A nested object resource\nStructure is documented below.",
+      storage_InsightsReportConfigObjectMetadataReportOptionsStorageFilters_GetTypes(),
+      false,
       false,
     ),
   ];

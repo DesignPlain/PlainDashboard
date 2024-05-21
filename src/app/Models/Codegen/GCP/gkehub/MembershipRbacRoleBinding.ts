@@ -7,74 +7,53 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkehub_MembershipRbacRoleBindingRole,
-  Gkehub_MembershipRbacRoleBindingRole_GetTypes,
-} from "../types/Gkehub_MembershipRbacRoleBindingRole";
+  gkehub_MembershipRbacRoleBindingRole,
+  gkehub_MembershipRbacRoleBindingRole_GetTypes,
+} from "../types/gkehub_MembershipRbacRoleBindingRole";
 import {
-  Gkehub_MembershipRbacRoleBindingState,
-  Gkehub_MembershipRbacRoleBindingState_GetTypes,
-} from "../types/Gkehub_MembershipRbacRoleBindingState";
+  gkehub_MembershipRbacRoleBindingState,
+  gkehub_MembershipRbacRoleBindingState_GetTypes,
+} from "../types/gkehub_MembershipRbacRoleBindingState";
 
 export interface MembershipRbacRoleBindingArgs {
+  // Location of the Membership
+  location?: string;
+
+  // Id of the membership
+  membershipId?: string;
+
+  // The client-provided identifier of the RBAC Role Binding.
+  membershipRbacRoleBindingId?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  /*
+Role to bind to the principal.
+Structure is documented below.
+*/
+  role?: gkehub_MembershipRbacRoleBindingRole;
+
   /*
 Principal that is be authorized in the cluster (at least of one the oneof
 is required). Updating one will unset the other automatically.
 user is the name of the user as seen by the kubernetes cluster, example
 "alice" or "alice@domain.tld"
 */
-  User?: string;
-
-  // Location of the Membership
-  Location?: string;
-
-  // Id of the membership
-  MembershipId?: string;
-
-  // The client-provided identifier of the RBAC Role Binding.
-  MembershipRbacRoleBindingId?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  /*
-Role to bind to the principal.
-Structure is documented below.
-*/
-  Role?: Gkehub_MembershipRbacRoleBindingRole;
+  user?: string;
 }
 export class MembershipRbacRoleBinding extends Resource {
-  // Google-generated UUID for this resource.
-  public Uid?: string;
-
-  // Time the RBAC Role Binding was updated in UTC.
-  public UpdateTime?: string;
-
-  // Time the RBAC Role Binding was created in UTC.
-  public CreateTime?: string;
-
-  // Location of the Membership
-  public Location?: string;
-
-  // The client-provided identifier of the RBAC Role Binding.
-  public MembershipRbacRoleBindingId?: string;
-
-  // The resource name for the RBAC Role Binding
-  public Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
   /*
 State of the RBAC Role Binding resource.
 Structure is documented below.
 */
-  public States?: Array<Gkehub_MembershipRbacRoleBindingState>;
+  public states?: Array<gkehub_MembershipRbacRoleBindingState>;
+
+  // Google-generated UUID for this resource.
+  public uid?: string;
 
   /*
 Principal that is be authorized in the cluster (at least of one the oneof
@@ -82,33 +61,46 @@ is required). Updating one will unset the other automatically.
 user is the name of the user as seen by the kubernetes cluster, example
 "alice" or "alice@domain.tld"
 */
-  public User?: string;
+  public user?: string;
 
-  // Time the RBAC Role Binding was deleted in UTC.
-  public DeleteTime?: string;
+  // Time the RBAC Role Binding was created in UTC.
+  public createTime?: string;
 
-  // Id of the membership
-  public MembershipId?: string;
+  // The client-provided identifier of the RBAC Role Binding.
+  public membershipRbacRoleBindingId?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   /*
 Role to bind to the principal.
 Structure is documented below.
 */
-  public Role?: Gkehub_MembershipRbacRoleBindingRole;
+  public role?: gkehub_MembershipRbacRoleBindingRole;
+
+  // Time the RBAC Role Binding was updated in UTC.
+  public updateTime?: string;
+
+  // Time the RBAC Role Binding was deleted in UTC.
+  public deleteTime?: string;
+
+  // Location of the Membership
+  public location?: string;
+
+  // Id of the membership
+  public membershipId?: string;
+
+  // The resource name for the RBAC Role Binding
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "User",
-        'Principal that is be authorized in the cluster (at least of one the oneof\nis required). Updating one will unset the other automatically.\nuser is the name of the user as seen by the kubernetes cluster, example\n"alice" or "alice@domain.tld"',
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Location",
+        "location",
         "Location of the Membership",
         [],
         true,
@@ -116,7 +108,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "MembershipId",
+        "membershipId",
         "Id of the membership",
         [],
         true,
@@ -124,7 +116,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "MembershipRbacRoleBindingId",
+        "membershipRbacRoleBindingId",
         "The client-provided identifier of the RBAC Role Binding.",
         [],
         true,
@@ -132,7 +124,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -140,9 +132,17 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Role",
+        "role",
         "Role to bind to the principal.\nStructure is documented below.",
-        Gkehub_MembershipRbacRoleBindingRole_GetTypes(),
+        gkehub_MembershipRbacRoleBindingRole_GetTypes(),
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "user",
+        'Principal that is be authorized in the cluster (at least of one the oneof\nis required). Updating one will unset the other automatically.\nuser is the name of the user as seen by the kubernetes cluster, example\n"alice" or "alice@domain.tld"',
+        [],
         true,
         true,
       ),

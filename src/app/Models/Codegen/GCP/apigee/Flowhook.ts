@@ -8,56 +8,48 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface FlowhookArgs {
-  // Flag that specifies whether execution should continue if the flow hook throws an exception. Set to true to continue execution. Set to false to stop execution if the flow hook throws an exception. Defaults to true.
-  ContinueOnError?: boolean;
-
   // Description of the flow hook.
-  Description?: string;
+  description?: string;
 
   // The resource ID of the environment.
-  Environment?: string;
+  environment?: string;
 
   // Where in the API call flow the flow hook is invoked. Must be one of PreProxyFlowHook, PostProxyFlowHook, PreTargetFlowHook, or PostTargetFlowHook.
-  FlowHookPoint?: string;
+  flowHookPoint?: string;
 
   // The Apigee Organization associated with the environment
-  OrgId?: string;
+  orgId?: string;
 
   // Id of the Sharedflow attaching to a flowhook point.
-  Sharedflow?: string;
+  sharedflow?: string;
+
+  // Flag that specifies whether execution should continue if the flow hook throws an exception. Set to true to continue execution. Set to false to stop execution if the flow hook throws an exception. Defaults to true.
+  continueOnError?: boolean;
 }
 export class Flowhook extends Resource {
+  // Id of the Sharedflow attaching to a flowhook point.
+  public sharedflow?: string;
+
   // Flag that specifies whether execution should continue if the flow hook throws an exception. Set to true to continue execution. Set to false to stop execution if the flow hook throws an exception. Defaults to true.
-  public ContinueOnError?: boolean;
+  public continueOnError?: boolean;
 
   // Description of the flow hook.
-  public Description?: string;
+  public description?: string;
 
   // The resource ID of the environment.
-  public Environment?: string;
+  public environment?: string;
 
   // Where in the API call flow the flow hook is invoked. Must be one of PreProxyFlowHook, PostProxyFlowHook, PreTargetFlowHook, or PostTargetFlowHook.
-  public FlowHookPoint?: string;
+  public flowHookPoint?: string;
 
   // The Apigee Organization associated with the environment
-  public OrgId?: string;
-
-  // Id of the Sharedflow attaching to a flowhook point.
-  public Sharedflow?: string;
+  public orgId?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Bool,
-        "ContinueOnError",
-        "Flag that specifies whether execution should continue if the flow hook throws an exception. Set to true to continue execution. Set to false to stop execution if the flow hook throws an exception. Defaults to true.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Description of the flow hook.",
         [],
         false,
@@ -65,7 +57,7 @@ export class Flowhook extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "Environment",
+        "environment",
         "The resource ID of the environment.",
         [],
         true,
@@ -73,7 +65,7 @@ export class Flowhook extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "FlowHookPoint",
+        "flowHookPoint",
         "Where in the API call flow the flow hook is invoked. Must be one of PreProxyFlowHook, PostProxyFlowHook, PreTargetFlowHook, or PostTargetFlowHook.",
         [],
         true,
@@ -81,7 +73,7 @@ export class Flowhook extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "OrgId",
+        "orgId",
         "The Apigee Organization associated with the environment",
         [],
         true,
@@ -89,10 +81,18 @@ export class Flowhook extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "Sharedflow",
+        "sharedflow",
         "Id of the Sharedflow attaching to a flowhook point.",
         [],
         true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "continueOnError",
+        "Flag that specifies whether execution should continue if the flow hook throws an exception. Set to true to continue execution. Set to false to stop execution if the flow hook throws an exception. Defaults to true.",
+        [],
+        false,
         true,
       ),
     ];

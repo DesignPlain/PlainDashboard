@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceTemplateDiskDiskEncryptionKey {
+export interface compute_InstanceTemplateDiskDiskEncryptionKey {
   // The self link of the encryption key that is stored in Google Cloud KMS
-  KmsKeySelfLink?: string;
+  kmsKeySelfLink?: string;
 }
 
-export function Compute_InstanceTemplateDiskDiskEncryptionKey_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceTemplateDiskDiskEncryptionKey_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKeySelfLink",
+      "kmsKeySelfLink",
       "The self link of the encryption key that is stored in Google Cloud KMS",
       [],
       true,

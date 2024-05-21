@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AwsClusterControlPlaneDatabaseEncryption {
+export interface container_AwsClusterControlPlaneDatabaseEncryption {
   // The ARN of the AWS KMS key used to encrypt cluster secrets.
-  KmsKeyArn?: string;
+  kmsKeyArn?: string;
 }
 
-export function Container_AwsClusterControlPlaneDatabaseEncryption_GetTypes(): DynamicUIProps[] {
+export function container_AwsClusterControlPlaneDatabaseEncryption_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyArn",
+      "kmsKeyArn",
       "The ARN of the AWS KMS key used to encrypt cluster secrets.",
       [],
       true,

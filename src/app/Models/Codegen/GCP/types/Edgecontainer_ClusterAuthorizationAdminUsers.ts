@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Edgecontainer_ClusterAuthorizationAdminUsers {
+export interface edgecontainer_ClusterAuthorizationAdminUsers {
   /*
 An active Google username.
 
 - - -
 */
-  Username?: string;
+  username?: string;
 }
 
-export function Edgecontainer_ClusterAuthorizationAdminUsers_GetTypes(): DynamicUIProps[] {
+export function edgecontainer_ClusterAuthorizationAdminUsers_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Username",
+      "username",
       "An active Google username.\n\n- - -",
       [],
       true,

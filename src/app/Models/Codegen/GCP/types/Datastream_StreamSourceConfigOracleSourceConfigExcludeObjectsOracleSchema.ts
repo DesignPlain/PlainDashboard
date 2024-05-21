@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTable,
-  Datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTable_GetTypes,
-} from "./Datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTable";
+  datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTable,
+  datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTable_GetTypes,
+} from "./datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTable";
 
-export interface Datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchema {
+export interface datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchema {
   /*
 Tables in the database.
 Structure is documented below.
 */
-  OracleTables?: Array<Datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTable>;
+  oracleTables?: Array<datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTable>;
 
   // Schema name.
-  Schema?: string;
+  schema?: string;
 }
 
-export function Datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchema_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchema_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "OracleTables",
+      "oracleTables",
       "Tables in the database.\nStructure is documented below.",
-      Datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTable_GetTypes(),
+      datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTable_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Schema",
+      "schema",
       "Schema name.",
       [],
       true,

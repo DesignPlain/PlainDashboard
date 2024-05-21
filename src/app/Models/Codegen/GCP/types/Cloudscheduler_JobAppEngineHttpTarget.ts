@@ -6,13 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudscheduler_JobAppEngineHttpTargetAppEngineRouting,
-  Cloudscheduler_JobAppEngineHttpTargetAppEngineRouting_GetTypes,
-} from "./Cloudscheduler_JobAppEngineHttpTargetAppEngineRouting";
+  cloudscheduler_JobAppEngineHttpTargetAppEngineRouting,
+  cloudscheduler_JobAppEngineHttpTargetAppEngineRouting_GetTypes,
+} from "./cloudscheduler_JobAppEngineHttpTargetAppEngineRouting";
 
-export interface Cloudscheduler_JobAppEngineHttpTarget {
+export interface cloudscheduler_JobAppEngineHttpTarget {
+  /*
+App Engine Routing setting for the job.
+Structure is documented below.
+*/
+  appEngineRouting?: cloudscheduler_JobAppEngineHttpTargetAppEngineRouting;
+
+  /*
+HTTP request body.
+A request body is allowed only if the HTTP method is POST or PUT.
+It will result in invalid argument error to set a body on a job with an incompatible HttpMethod.
+A base64-encoded string.
+*/
+  body?: string;
+
+  /*
+HTTP request headers.
+This map contains the header field names and values.
+Headers can be set when the job is created.
+*/
+  headers?: Map<string, string>;
+
   // Which HTTP method to use for the request.
-  HttpMethod?: string;
+  httpMethod?: string;
 
   /*
 The relative URI.
@@ -21,51 +42,22 @@ It can contain a path, query string arguments, and \# fragments.
 If the relative URL is empty, then the root path "/" will be used.
 No spaces are allowed, and the maximum length allowed is 2083 characters
 */
-  RelativeUri?: string;
-
-  /*
-App Engine Routing setting for the job.
-Structure is documented below.
-*/
-  AppEngineRouting?: Cloudscheduler_JobAppEngineHttpTargetAppEngineRouting;
-
-  /*
-HTTP request body.
-A request body is allowed only if the HTTP method is POST or PUT.
-It will result in invalid argument error to set a body on a job with an incompatible HttpMethod.
-A base64-encoded string.
-*/
-  Body?: string;
-
-  /*
-HTTP request headers.
-This map contains the header field names and values.
-Headers can be set when the job is created.
-*/
-  Headers?: Map<string, string>;
+  relativeUri?: string;
 }
 
-export function Cloudscheduler_JobAppEngineHttpTarget_GetTypes(): DynamicUIProps[] {
+export function cloudscheduler_JobAppEngineHttpTarget_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "RelativeUri",
-      'The relative URI.\nThe relative URL must begin with "/" and must be a valid HTTP relative URL.\nIt can contain a path, query string arguments, and \\# fragments.\nIf the relative URL is empty, then the root path "/" will be used.\nNo spaces are allowed, and the maximum length allowed is 2083 characters',
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Object,
-      "AppEngineRouting",
+      "appEngineRouting",
       "App Engine Routing setting for the job.\nStructure is documented below.",
-      Cloudscheduler_JobAppEngineHttpTargetAppEngineRouting_GetTypes(),
+      cloudscheduler_JobAppEngineHttpTargetAppEngineRouting_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Body",
+      "body",
       "HTTP request body.\nA request body is allowed only if the HTTP method is POST or PUT.\nIt will result in invalid argument error to set a body on a job with an incompatible HttpMethod.\nA base64-encoded string.",
       [],
       false,
@@ -73,7 +65,7 @@ export function Cloudscheduler_JobAppEngineHttpTarget_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Headers",
+      "headers",
       "HTTP request headers.\nThis map contains the header field names and values.\nHeaders can be set when the job is created.",
       InputType_Map_GetTypes(),
       false,
@@ -81,10 +73,18 @@ export function Cloudscheduler_JobAppEngineHttpTarget_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "HttpMethod",
+      "httpMethod",
       "Which HTTP method to use for the request.",
       [],
       false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "relativeUri",
+      'The relative URI.\nThe relative URL must begin with "/" and must be a valid HTTP relative URL.\nIt can contain a path, query string arguments, and \\# fragments.\nIf the relative URL is empty, then the root path "/" will be used.\nNo spaces are allowed, and the maximum length allowed is 2083 characters',
+      [],
+      true,
       false,
     ),
   ];

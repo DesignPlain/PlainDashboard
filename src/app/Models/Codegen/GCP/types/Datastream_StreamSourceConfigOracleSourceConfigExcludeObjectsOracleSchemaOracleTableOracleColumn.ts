@@ -6,88 +6,64 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTableOracleColumn {
+export interface datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTableOracleColumn {
   /*
 (Output)
-Column encoding.
+Column length.
 */
-  Encoding?: string;
+  length?: number;
 
   /*
 (Output)
 Whether or not the column can accept a null value.
 */
-  Nullable?: boolean;
-
-  /*
-(Output)
-Column precision.
-*/
-  Precision?: number;
+  nullable?: boolean;
 
   /*
 (Output)
 Whether or not the column represents a primary key.
 */
-  PrimaryKey?: boolean;
+  primaryKey?: boolean;
 
   // Column name.
-  Column?: string;
+  column?: string;
 
   /*
 The Oracle data type. Full data types list can be found here:
 https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/Data-Types.html
 */
-  DataType?: string;
+  dataType?: string;
 
   /*
 (Output)
-Column length.
+Column precision.
 */
-  Length?: number;
-
-  /*
-(Output)
-The ordinal position of the column in the table.
-*/
-  OrdinalPosition?: number;
+  precision?: number;
 
   /*
 (Output)
 Column scale.
 */
-  Scale?: number;
+  scale?: number;
+
+  /*
+(Output)
+Column encoding.
+*/
+  encoding?: string;
+
+  /*
+(Output)
+The ordinal position of the column in the table.
+*/
+  ordinalPosition?: number;
 }
 
-export function Datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTableOracleColumn_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTableOracleColumn_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Bool,
-      "Nullable",
-      "(Output)\nWhether or not the column can accept a null value.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Precision",
-      "(Output)\nColumn precision.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "PrimaryKey",
-      "(Output)\nWhether or not the column represents a primary key.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Column",
+      "column",
       "Column name.",
       [],
       false,
@@ -95,7 +71,7 @@ export function Datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOra
     ),
     new DynamicUIProps(
       InputType.String,
-      "DataType",
+      "dataType",
       "The Oracle data type. Full data types list can be found here:\nhttps://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/Data-Types.html",
       [],
       false,
@@ -103,32 +79,56 @@ export function Datastream_StreamSourceConfigOracleSourceConfigExcludeObjectsOra
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Length",
-      "(Output)\nColumn length.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "OrdinalPosition",
+      "ordinalPosition",
       "(Output)\nThe ordinal position of the column in the table.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "Encoding",
-      "(Output)\nColumn encoding.",
+      InputType.Number,
+      "length",
+      "(Output)\nColumn length.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "nullable",
+      "(Output)\nWhether or not the column can accept a null value.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "primaryKey",
+      "(Output)\nWhether or not the column represents a primary key.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Scale",
+      "precision",
+      "(Output)\nColumn precision.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "scale",
       "(Output)\nColumn scale.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "encoding",
+      "(Output)\nColumn encoding.",
       [],
       false,
       false,

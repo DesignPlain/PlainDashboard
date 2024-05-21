@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrunv2_getServiceTemplateContainerEnvValueSourceSecretKeyRef,
-  Cloudrunv2_getServiceTemplateContainerEnvValueSourceSecretKeyRef_GetTypes,
-} from "./Cloudrunv2_getServiceTemplateContainerEnvValueSourceSecretKeyRef";
+  cloudrunv2_getServiceTemplateContainerEnvValueSourceSecretKeyRef,
+  cloudrunv2_getServiceTemplateContainerEnvValueSourceSecretKeyRef_GetTypes,
+} from "./cloudrunv2_getServiceTemplateContainerEnvValueSourceSecretKeyRef";
 
-export interface Cloudrunv2_getServiceTemplateContainerEnvValueSource {
+export interface cloudrunv2_getServiceTemplateContainerEnvValueSource {
   // Selects a secret and a specific version from Cloud Secret Manager.
-  SecretKeyReves?: Array<Cloudrunv2_getServiceTemplateContainerEnvValueSourceSecretKeyRef>;
+  secretKeyReves?: Array<cloudrunv2_getServiceTemplateContainerEnvValueSourceSecretKeyRef>;
 }
 
-export function Cloudrunv2_getServiceTemplateContainerEnvValueSource_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_getServiceTemplateContainerEnvValueSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "SecretKeyReves",
+      "secretKeyReves",
       "Selects a secret and a specific version from Cloud Secret Manager.",
-      Cloudrunv2_getServiceTemplateContainerEnvValueSourceSecretKeyRef_GetTypes(),
+      cloudrunv2_getServiceTemplateContainerEnvValueSourceSecretKeyRef_GetTypes(),
       true,
       false,
     ),

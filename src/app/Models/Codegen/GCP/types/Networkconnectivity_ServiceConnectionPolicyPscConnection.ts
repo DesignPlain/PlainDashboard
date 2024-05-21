@@ -6,77 +6,69 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networkconnectivity_ServiceConnectionPolicyPscConnectionError,
-  Networkconnectivity_ServiceConnectionPolicyPscConnectionError_GetTypes,
-} from "./Networkconnectivity_ServiceConnectionPolicyPscConnectionError";
+  networkconnectivity_ServiceConnectionPolicyPscConnectionError,
+  networkconnectivity_ServiceConnectionPolicyPscConnectionError_GetTypes,
+} from "./networkconnectivity_ServiceConnectionPolicyPscConnectionError";
 import {
-  Networkconnectivity_ServiceConnectionPolicyPscConnectionErrorInfo,
-  Networkconnectivity_ServiceConnectionPolicyPscConnectionErrorInfo_GetTypes,
-} from "./Networkconnectivity_ServiceConnectionPolicyPscConnectionErrorInfo";
+  networkconnectivity_ServiceConnectionPolicyPscConnectionErrorInfo,
+  networkconnectivity_ServiceConnectionPolicyPscConnectionErrorInfo_GetTypes,
+} from "./networkconnectivity_ServiceConnectionPolicyPscConnectionErrorInfo";
 
-export interface Networkconnectivity_ServiceConnectionPolicyPscConnection {
+export interface networkconnectivity_ServiceConnectionPolicyPscConnection {
+  // The PSC connection id of the PSC forwarding rule.
+  pscConnectionId?: string;
+
+  // The resource reference of the consumer address.
+  consumerAddress?: string;
+
   // The resource reference of the PSC Forwarding Rule within the consumer VPC.
-  ConsumerForwardingRule?: string;
+  consumerForwardingRule?: string;
 
   // The project where the PSC connection is created.
-  ConsumerTargetProject?: string;
+  consumerTargetProject?: string;
 
   /*
 The most recent error during operating this connection.
 Structure is documented below.
 */
-  Error?: Networkconnectivity_ServiceConnectionPolicyPscConnectionError;
+  error?: networkconnectivity_ServiceConnectionPolicyPscConnectionError;
 
   /*
 The error info for the latest error during operating this connection.
 Structure is documented below.
 */
-  ErrorInfo?: Networkconnectivity_ServiceConnectionPolicyPscConnectionErrorInfo;
+  errorInfo?: networkconnectivity_ServiceConnectionPolicyPscConnectionErrorInfo;
 
-  // The PSC connection id of the PSC forwarding rule.
-  PscConnectionId?: string;
-
-  // The resource reference of the consumer address.
-  ConsumerAddress?: string;
+  // The last Compute Engine operation to setup PSC connection.
+  gceOperation?: string;
 
   /*
 The error type indicates whether the error is consumer facing, producer
 facing or system internal.
 Possible values are: `CONNECTION_ERROR_TYPE_UNSPECIFIED`, `ERROR_INTERNAL`, `ERROR_CONSUMER_SIDE`, `ERROR_PRODUCER_SIDE`.
 */
-  ErrorType?: string;
-
-  // The last Compute Engine operation to setup PSC connection.
-  GceOperation?: string;
+  errorType?: string;
 
   /*
 The state of the PSC connection.
 Possible values are: `STATE_UNSPECIFIED`, `ACTIVE`, `CREATING`, `DELETING`, `FAILED`.
 */
-  State?: string;
+  state?: string;
 }
 
-export function Networkconnectivity_ServiceConnectionPolicyPscConnection_GetTypes(): DynamicUIProps[] {
+export function networkconnectivity_ServiceConnectionPolicyPscConnection_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Error",
+      "error",
       "The most recent error during operating this connection.\nStructure is documented below.",
-      Networkconnectivity_ServiceConnectionPolicyPscConnectionError_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "ErrorInfo",
-      "The error info for the latest error during operating this connection.\nStructure is documented below.",
-      Networkconnectivity_ServiceConnectionPolicyPscConnectionErrorInfo_GetTypes(),
+      networkconnectivity_ServiceConnectionPolicyPscConnectionError_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "GceOperation",
+      "gceOperation",
       "The last Compute Engine operation to setup PSC connection.",
       [],
       false,
@@ -84,15 +76,7 @@ export function Networkconnectivity_ServiceConnectionPolicyPscConnection_GetType
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
-      "The state of the PSC connection.\nPossible values are: `STATE_UNSPECIFIED`, `ACTIVE`, `CREATING`, `DELETING`, `FAILED`.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ErrorType",
+      "errorType",
       "The error type indicates whether the error is consumer facing, producer\nfacing or system internal.\nPossible values are: `CONNECTION_ERROR_TYPE_UNSPECIFIED`, `ERROR_INTERNAL`, `ERROR_CONSUMER_SIDE`, `ERROR_PRODUCER_SIDE`.",
       [],
       false,
@@ -100,23 +84,31 @@ export function Networkconnectivity_ServiceConnectionPolicyPscConnection_GetType
     ),
     new DynamicUIProps(
       InputType.String,
-      "ConsumerForwardingRule",
-      "The resource reference of the PSC Forwarding Rule within the consumer VPC.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ConsumerTargetProject",
+      "consumerTargetProject",
       "The project where the PSC connection is created.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
+      InputType.Object,
+      "errorInfo",
+      "The error info for the latest error during operating this connection.\nStructure is documented below.",
+      networkconnectivity_ServiceConnectionPolicyPscConnectionErrorInfo_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "PscConnectionId",
+      "state",
+      "The state of the PSC connection.\nPossible values are: `STATE_UNSPECIFIED`, `ACTIVE`, `CREATING`, `DELETING`, `FAILED`.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "pscConnectionId",
       "The PSC connection id of the PSC forwarding rule.",
       [],
       false,
@@ -124,8 +116,16 @@ export function Networkconnectivity_ServiceConnectionPolicyPscConnection_GetType
     ),
     new DynamicUIProps(
       InputType.String,
-      "ConsumerAddress",
+      "consumerAddress",
       "The resource reference of the consumer address.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "consumerForwardingRule",
+      "The resource reference of the PSC Forwarding Rule within the consumer VPC.",
       [],
       false,
       false,

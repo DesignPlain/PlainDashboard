@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceFromMachineImageNetworkInterfaceAliasIpRange {
+export interface compute_InstanceFromMachineImageNetworkInterfaceAliasIpRange {
   // The IP CIDR range represented by this alias IP range.
-  IpCidrRange?: string;
+  ipCidrRange?: string;
 
   // The subnetwork secondary range name specifying the secondary range from which to allocate the IP CIDR range for this alias IP range.
-  SubnetworkRangeName?: string;
+  subnetworkRangeName?: string;
 }
 
-export function Compute_InstanceFromMachineImageNetworkInterfaceAliasIpRange_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceFromMachineImageNetworkInterfaceAliasIpRange_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "IpCidrRange",
+      "ipCidrRange",
       "The IP CIDR range represented by this alias IP range.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Compute_InstanceFromMachineImageNetworkInterfaceAliasIpRange_Get
     ),
     new DynamicUIProps(
       InputType.String,
-      "SubnetworkRangeName",
+      "subnetworkRangeName",
       "The subnetwork secondary range name specifying the secondary range from which to allocate the IP CIDR range for this alias IP range.",
       [],
       false,

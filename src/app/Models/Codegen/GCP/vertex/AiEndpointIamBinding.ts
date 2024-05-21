@@ -7,73 +7,73 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Vertex_AiEndpointIamBindingCondition,
-  Vertex_AiEndpointIamBindingCondition_GetTypes,
-} from "../types/Vertex_AiEndpointIamBindingCondition";
+  vertex_AiEndpointIamBindingCondition,
+  vertex_AiEndpointIamBindingCondition_GetTypes,
+} from "../types/vertex_AiEndpointIamBindingCondition";
 
 export interface AiEndpointIamBindingArgs {
   //
-  Condition?: Vertex_AiEndpointIamBindingCondition;
+  condition?: vertex_AiEndpointIamBindingCondition;
 
   //
-  Endpoint?: string;
+  endpoint?: string;
 
   //
-  Location?: string;
+  location?: string;
 
   //
-  Members?: Array<string>;
+  members?: Array<string>;
 
   //
-  Project?: string;
+  project?: string;
 
   //
-  Role?: string;
+  role?: string;
 }
 export class AiEndpointIamBinding extends Resource {
   //
-  public Etag?: string;
+  public members?: Array<string>;
 
   //
-  public Location?: string;
+  public project?: string;
 
   //
-  public Members?: Array<string>;
+  public role?: string;
 
   //
-  public Project?: string;
+  public condition?: vertex_AiEndpointIamBindingCondition;
 
   //
-  public Role?: string;
+  public endpoint?: string;
 
   //
-  public Condition?: Vertex_AiEndpointIamBindingCondition;
+  public etag?: string;
 
   //
-  public Endpoint?: string;
+  public location?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Vertex_AiEndpointIamBindingCondition_GetTypes(),
+        vertex_AiEndpointIamBindingCondition_GetTypes(),
         false,
         true,
       ),
-      new DynamicUIProps(InputType.String, "Endpoint", "", [], true, true),
-      new DynamicUIProps(InputType.String, "Location", "", [], false, true),
+      new DynamicUIProps(InputType.String, "endpoint", "", [], true, true),
+      new DynamicUIProps(InputType.String, "location", "", [], false, true),
       new DynamicUIProps(
         InputType.Array,
-        "Members",
+        "members",
         "",
         InputType_String_GetTypes(),
         true,
         false,
       ),
-      new DynamicUIProps(InputType.String, "Project", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
+      new DynamicUIProps(InputType.String, "project", "", [], false, true),
+      new DynamicUIProps(InputType.String, "role", "", [], true, true),
     ];
   }
 }

@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Accesscontextmanager_ServicePerimeterIngressPolicyIngressToOperationMethodSelector {
+export interface accesscontextmanager_ServicePerimeterIngressPolicyIngressToOperationMethodSelector {
   /*
 Value for method should be a valid method name for the corresponding
 serviceName in `ApiOperation`. If `-` used as value for `method`, then
 ALL methods and permissions are allowed.
 */
-  Method?: string;
+  method?: string;
 
   /*
 Value for permission should be a valid Cloud IAM permission for the
 corresponding `serviceName` in `ApiOperation`.
 */
-  Permission?: string;
+  permission?: string;
 }
 
-export function Accesscontextmanager_ServicePerimeterIngressPolicyIngressToOperationMethodSelector_GetTypes(): DynamicUIProps[] {
+export function accesscontextmanager_ServicePerimeterIngressPolicyIngressToOperationMethodSelector_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Method",
+      "method",
       "Value for method should be a valid method name for the corresponding\nserviceName in `ApiOperation`. If `*` used as value for `method`, then\nALL methods and permissions are allowed.",
       [],
       false,
@@ -33,7 +33,7 @@ export function Accesscontextmanager_ServicePerimeterIngressPolicyIngressToOpera
     ),
     new DynamicUIProps(
       InputType.String,
-      "Permission",
+      "permission",
       "Value for permission should be a valid Cloud IAM permission for the\ncorresponding `serviceName` in `ApiOperation`.",
       [],
       false,

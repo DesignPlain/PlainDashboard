@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Assuredworkloads_WorkloadComplianceStatus {
+export interface assuredworkloads_WorkloadComplianceStatus {
   // Number of current orgPolicy violations which are acknowledged.
-  AcknowledgedViolationCounts?: Array<number>;
+  acknowledgedViolationCounts?: Array<number>;
 
   // Number of current orgPolicy violations which are not acknowledged.
-  ActiveViolationCounts?: Array<number>;
+  activeViolationCounts?: Array<number>;
 }
 
-export function Assuredworkloads_WorkloadComplianceStatus_GetTypes(): DynamicUIProps[] {
+export function assuredworkloads_WorkloadComplianceStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AcknowledgedViolationCounts",
+      "acknowledgedViolationCounts",
       "Number of current orgPolicy violations which are acknowledged.",
       InputType_Number_GetTypes(),
       false,
@@ -26,7 +26,7 @@ export function Assuredworkloads_WorkloadComplianceStatus_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ActiveViolationCounts",
+      "activeViolationCounts",
       "Number of current orgPolicy violations which are not acknowledged.",
       InputType_Number_GetTypes(),
       false,

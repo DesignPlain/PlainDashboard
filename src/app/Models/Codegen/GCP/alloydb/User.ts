@@ -12,16 +12,16 @@ export interface UserArgs {
 Identifies the alloydb cluster. Must be in the format
 'projects/{project}/locations/{location}/clusters/{cluster_id}'
 */
-  Cluster?: string;
+  cluster?: string;
 
   // List of database roles this database user has.
-  DatabaseRoles?: Array<string>;
+  databaseRoles?: Array<string>;
 
   // Password for this database user.
-  Password?: string;
+  password?: string;
 
   // The database role name of the user.
-  UserId?: string;
+  userId?: string;
 
   /*
 The type of this user.
@@ -30,9 +30,21 @@ Possible values are: `ALLOYDB_BUILT_IN`, `ALLOYDB_IAM_USER`.
 
 - - -
 */
-  UserType?: string;
+  userType?: string;
 }
 export class User extends Resource {
+  // List of database roles this database user has.
+  public databaseRoles?: Array<string>;
+
+  // Name of the resource in the form of projects/{project}/locations/{location}/clusters/{cluster}/users/{user}.
+  public name?: string;
+
+  // Password for this database user.
+  public password?: string;
+
+  // The database role name of the user.
+  public userId?: string;
+
   /*
 The type of this user.
 Possible values are: `ALLOYDB_BUILT_IN`, `ALLOYDB_IAM_USER`.
@@ -40,31 +52,19 @@ Possible values are: `ALLOYDB_BUILT_IN`, `ALLOYDB_IAM_USER`.
 
 - - -
 */
-  public UserType?: string;
+  public userType?: string;
 
   /*
 Identifies the alloydb cluster. Must be in the format
 'projects/{project}/locations/{location}/clusters/{cluster_id}'
 */
-  public Cluster?: string;
-
-  // List of database roles this database user has.
-  public DatabaseRoles?: Array<string>;
-
-  // Name of the resource in the form of projects/{project}/locations/{location}/clusters/{cluster}/users/{user}.
-  public Name?: string;
-
-  // Password for this database user.
-  public Password?: string;
-
-  // The database role name of the user.
-  public UserId?: string;
+  public cluster?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Cluster",
+        "cluster",
         "Identifies the alloydb cluster. Must be in the format\n'projects/{project}/locations/{location}/clusters/{cluster_id}'",
         [],
         true,
@@ -72,7 +72,7 @@ Identifies the alloydb cluster. Must be in the format
       ),
       new DynamicUIProps(
         InputType.Array,
-        "DatabaseRoles",
+        "databaseRoles",
         "List of database roles this database user has.",
         InputType_String_GetTypes(),
         false,
@@ -80,7 +80,7 @@ Identifies the alloydb cluster. Must be in the format
       ),
       new DynamicUIProps(
         InputType.String,
-        "Password",
+        "password",
         "Password for this database user.",
         [],
         false,
@@ -88,7 +88,7 @@ Identifies the alloydb cluster. Must be in the format
       ),
       new DynamicUIProps(
         InputType.String,
-        "UserId",
+        "userId",
         "The database role name of the user.",
         [],
         true,
@@ -96,7 +96,7 @@ Identifies the alloydb cluster. Must be in the format
       ),
       new DynamicUIProps(
         InputType.String,
-        "UserType",
+        "userType",
         "The type of this user.\nPossible values are: `ALLOYDB_BUILT_IN`, `ALLOYDB_IAM_USER`.\n\n\n- - -",
         [],
         true,

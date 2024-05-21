@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AwsNodePoolConfigProxyConfig {
+export interface container_AwsNodePoolConfigProxyConfig {
   // The ARN of the AWS Secret Manager secret that contains the HTTP(S) proxy configuration.
-  SecretArn?: string;
+  secretArn?: string;
 
   // The version string of the AWS Secret Manager secret that contains the HTTP(S) proxy configuration.
-  SecretVersion?: string;
+  secretVersion?: string;
 }
 
-export function Container_AwsNodePoolConfigProxyConfig_GetTypes(): DynamicUIProps[] {
+export function container_AwsNodePoolConfigProxyConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SecretArn",
+      "secretArn",
       "The ARN of the AWS Secret Manager secret that contains the HTTP(S) proxy configuration.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Container_AwsNodePoolConfigProxyConfig_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "SecretVersion",
+      "secretVersion",
       "The version string of the AWS Secret Manager secret that contains the HTTP(S) proxy configuration.",
       [],
       true,

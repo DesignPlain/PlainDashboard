@@ -6,48 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Netapp_VolumeReplicationTransferStat {
-  /*
-(Output)
-Size of last completed transfer in bytes.
-*/
-  LastTransferBytes?: string;
-
-  /*
-(Output)
-Time taken during last completed transfer.
-*/
-  LastTransferDuration?: string;
-
-  /*
-(Output)
-Time when last transfer completed. A timestamp in RFC3339 UTC "Zulu" format. Examples: "2023-06-22T09:13:01.617Z".
-*/
-  LastTransferEndTime?: string;
-
+export interface netapp_VolumeReplicationTransferStat {
   /*
 (Output)
 A message describing the cause of the last transfer failure.
 */
-  LastTransferError?: string;
+  lastTransferError?: string;
 
   /*
 (Output)
 Total time taken so far during current transfer.
 */
-  TotalTransferDuration?: string;
+  totalTransferDuration?: string;
 
   /*
 (Output)
 Number of bytes transferred so far in current transfer.
 */
-  TransferBytes?: string;
+  transferBytes?: string;
 
   /*
 (Output)
 Time when progress was updated last. A timestamp in RFC3339 UTC "Zulu" format. Examples: "2023-06-22T09:13:01.617Z".
 */
-  UpdateTime?: string;
+  updateTime?: string;
 
   /*
 (Output)
@@ -55,22 +37,32 @@ The elapsed time since the creation of the snapshot on the source volume that wa
 to the destination volume. Lag time represents the difference in age of the destination volume
 data in relation to the source volume data.
 */
-  LagDuration?: string;
+  lagDuration?: string;
+
+  /*
+(Output)
+Size of last completed transfer in bytes.
+*/
+  lastTransferBytes?: string;
+
+  /*
+(Output)
+Time taken during last completed transfer.
+*/
+  lastTransferDuration?: string;
+
+  /*
+(Output)
+Time when last transfer completed. A timestamp in RFC3339 UTC "Zulu" format. Examples: "2023-06-22T09:13:01.617Z".
+*/
+  lastTransferEndTime?: string;
 }
 
-export function Netapp_VolumeReplicationTransferStat_GetTypes(): DynamicUIProps[] {
+export function netapp_VolumeReplicationTransferStat_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "LastTransferDuration",
-      "(Output)\nTime taken during last completed transfer.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "LastTransferEndTime",
+      "lastTransferEndTime",
       '(Output)\nTime when last transfer completed. A timestamp in RFC3339 UTC "Zulu" format. Examples: "2023-06-22T09:13:01.617Z".',
       [],
       false,
@@ -78,7 +70,7 @@ export function Netapp_VolumeReplicationTransferStat_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "LastTransferError",
+      "lastTransferError",
       "(Output)\nA message describing the cause of the last transfer failure.",
       [],
       false,
@@ -86,7 +78,7 @@ export function Netapp_VolumeReplicationTransferStat_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "TotalTransferDuration",
+      "totalTransferDuration",
       "(Output)\nTotal time taken so far during current transfer.",
       [],
       false,
@@ -94,7 +86,7 @@ export function Netapp_VolumeReplicationTransferStat_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "TransferBytes",
+      "transferBytes",
       "(Output)\nNumber of bytes transferred so far in current transfer.",
       [],
       false,
@@ -102,7 +94,7 @@ export function Netapp_VolumeReplicationTransferStat_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "UpdateTime",
+      "updateTime",
       '(Output)\nTime when progress was updated last. A timestamp in RFC3339 UTC "Zulu" format. Examples: "2023-06-22T09:13:01.617Z".',
       [],
       false,
@@ -110,7 +102,7 @@ export function Netapp_VolumeReplicationTransferStat_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "LagDuration",
+      "lagDuration",
       "(Output)\nThe elapsed time since the creation of the snapshot on the source volume that was last replicated\nto the destination volume. Lag time represents the difference in age of the destination volume\ndata in relation to the source volume data.",
       [],
       false,
@@ -118,8 +110,16 @@ export function Netapp_VolumeReplicationTransferStat_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "LastTransferBytes",
+      "lastTransferBytes",
       "(Output)\nSize of last completed transfer in bytes.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "lastTransferDuration",
+      "(Output)\nTime taken during last completed transfer.",
       [],
       false,
       false,

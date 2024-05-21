@@ -9,15 +9,21 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface SSLCertificateArgs {
   /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  /*
 The certificate in PEM format.
 The certificate chain must be no greater than 5 certs long.
 The chain must include at least one intermediate cert.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  Certificate?: string;
+  certificate?: string;
 
   // An optional description of this resource.
-  Description?: string;
+  description?: string;
 
   /*
 Name of the resource. Provided by the client when the resource is
@@ -30,13 +36,13 @@ character, which cannot be a dash.
 
 These are in the same namespace as the managed SSL certificates.
 */
-  Name?: string;
+  name?: string;
 
   /*
 Creates a unique name beginning with the
 specified prefix. Conflicts with `name`.
 */
-  NamePrefix?: string;
+  namePrefix?: string;
 
   /*
 The write-only private key in PEM format.
@@ -45,43 +51,35 @@ The write-only private key in PEM format.
 
 - - -
 */
-  PrivateKey?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
+  privateKey?: string;
 }
 export class SSLCertificate extends Resource {
-  // Creation timestamp in RFC3339 text format.
-  public CreationTimestamp?: string;
-
   // Expire time of the certificate in RFC3339 text format.
-  public ExpireTime?: string;
+  public expireTime?: string;
 
   /*
 Creates a unique name beginning with the
 specified prefix. Conflicts with `name`.
 */
-  public NamePrefix?: string;
-
-  // The URI of the created resource.
-  public SelfLink?: string;
+  public namePrefix?: string;
 
   /*
-The certificate in PEM format.
-The certificate chain must be no greater than 5 certs long.
-The chain must include at least one intermediate cert.
+The write-only private key in PEM format.
 --Note--: This property is sensitive and will not be displayed in the plan.
+
+
+- - -
 */
-  public Certificate?: string;
+  public privateKey?: string;
+
+  // The URI of the created resource.
+  public selfLink?: string;
 
   // The unique identifier for the resource.
-  public CertificateId?: number;
+  public certificateId?: number;
 
-  // An optional description of this resource.
-  public Description?: string;
+  // Creation timestamp in RFC3339 text format.
+  public creationTimestamp?: string;
 
   /*
 Name of the resource. Provided by the client when the resource is
@@ -94,28 +92,30 @@ character, which cannot be a dash.
 
 These are in the same namespace as the managed SSL certificates.
 */
-  public Name?: string;
-
-  /*
-The write-only private key in PEM format.
---Note--: This property is sensitive and will not be displayed in the plan.
-
-
-- - -
-*/
-  public PrivateKey?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
+
+  /*
+The certificate in PEM format.
+The certificate chain must be no greater than 5 certs long.
+The chain must include at least one intermediate cert.
+--Note--: This property is sensitive and will not be displayed in the plan.
+*/
+  public certificate?: string;
+
+  // An optional description of this resource.
+  public description?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Certificate",
+        "certificate",
         "The certificate in PEM format.\nThe certificate chain must be no greater than 5 certs long.\nThe chain must include at least one intermediate cert.\n**Note**: This property is sensitive and will not be displayed in the plan.",
         [],
         true,
@@ -123,7 +123,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "An optional description of this resource.",
         [],
         false,
@@ -131,7 +131,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.\n\nThese are in the same namespace as the managed SSL certificates.",
         [],
         false,
@@ -139,7 +139,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "NamePrefix",
+        "namePrefix",
         "Creates a unique name beginning with the\nspecified prefix. Conflicts with `name`.",
         [],
         false,
@@ -147,7 +147,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "PrivateKey",
+        "privateKey",
         "The write-only private key in PEM format.\n**Note**: This property is sensitive and will not be displayed in the plan.\n\n\n- - -",
         [],
         true,
@@ -155,7 +155,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,

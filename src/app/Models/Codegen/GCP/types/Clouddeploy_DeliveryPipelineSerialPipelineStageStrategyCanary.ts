@@ -6,52 +6,52 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfig,
-  Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfig_GetTypes,
-} from "./Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfig";
+  clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeployment,
+  clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeployment_GetTypes,
+} from "./clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeployment";
 import {
-  Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeployment,
-  Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeployment_GetTypes,
-} from "./Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeployment";
+  clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeployment,
+  clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeployment_GetTypes,
+} from "./clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeployment";
 import {
-  Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeployment,
-  Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeployment_GetTypes,
-} from "./Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeployment";
+  clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfig,
+  clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfig_GetTypes,
+} from "./clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfig";
 
-export interface Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanary {
-  // Optional. Runtime specific configurations for the deployment strategy. The runtime configuration is used to determine how Cloud Deploy will split traffic to enable a progressive deployment.
-  RuntimeConfig?: Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfig;
-
+export interface clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanary {
   // Configures the progressive based deployment for a Target.
-  CanaryDeployment?: Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeployment;
+  canaryDeployment?: clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeployment;
 
   // Configures the progressive based deployment for a Target, but allows customizing at the phase level where a phase represents each of the percentage deployments.
-  CustomCanaryDeployment?: Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeployment;
+  customCanaryDeployment?: clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeployment;
+
+  // Optional. Runtime specific configurations for the deployment strategy. The runtime configuration is used to determine how Cloud Deploy will split traffic to enable a progressive deployment.
+  runtimeConfig?: clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfig;
 }
 
-export function Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanary_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanary_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "CanaryDeployment",
+      "canaryDeployment",
       "Configures the progressive based deployment for a Target.",
-      Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeployment_GetTypes(),
+      clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeployment_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "CustomCanaryDeployment",
+      "customCanaryDeployment",
       "Configures the progressive based deployment for a Target, but allows customizing at the phase level where a phase represents each of the percentage deployments.",
-      Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeployment_GetTypes(),
+      clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeployment_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "RuntimeConfig",
+      "runtimeConfig",
       "Optional. Runtime specific configurations for the deployment strategy. The runtime configuration is used to determine how Cloud Deploy will split traffic to enable a progressive deployment.",
-      Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfig_GetTypes(),
+      clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfig_GetTypes(),
       false,
       false,
     ),

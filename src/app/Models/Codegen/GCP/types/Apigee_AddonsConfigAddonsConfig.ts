@@ -6,97 +6,97 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Apigee_AddonsConfigAddonsConfigIntegrationConfig,
-  Apigee_AddonsConfigAddonsConfigIntegrationConfig_GetTypes,
-} from "./Apigee_AddonsConfigAddonsConfigIntegrationConfig";
+  apigee_AddonsConfigAddonsConfigApiSecurityConfig,
+  apigee_AddonsConfigAddonsConfigApiSecurityConfig_GetTypes,
+} from "./apigee_AddonsConfigAddonsConfigApiSecurityConfig";
 import {
-  Apigee_AddonsConfigAddonsConfigMonetizationConfig,
-  Apigee_AddonsConfigAddonsConfigMonetizationConfig_GetTypes,
-} from "./Apigee_AddonsConfigAddonsConfigMonetizationConfig";
+  apigee_AddonsConfigAddonsConfigConnectorsPlatformConfig,
+  apigee_AddonsConfigAddonsConfigConnectorsPlatformConfig_GetTypes,
+} from "./apigee_AddonsConfigAddonsConfigConnectorsPlatformConfig";
 import {
-  Apigee_AddonsConfigAddonsConfigAdvancedApiOpsConfig,
-  Apigee_AddonsConfigAddonsConfigAdvancedApiOpsConfig_GetTypes,
-} from "./Apigee_AddonsConfigAddonsConfigAdvancedApiOpsConfig";
+  apigee_AddonsConfigAddonsConfigIntegrationConfig,
+  apigee_AddonsConfigAddonsConfigIntegrationConfig_GetTypes,
+} from "./apigee_AddonsConfigAddonsConfigIntegrationConfig";
 import {
-  Apigee_AddonsConfigAddonsConfigApiSecurityConfig,
-  Apigee_AddonsConfigAddonsConfigApiSecurityConfig_GetTypes,
-} from "./Apigee_AddonsConfigAddonsConfigApiSecurityConfig";
+  apigee_AddonsConfigAddonsConfigMonetizationConfig,
+  apigee_AddonsConfigAddonsConfigMonetizationConfig_GetTypes,
+} from "./apigee_AddonsConfigAddonsConfigMonetizationConfig";
 import {
-  Apigee_AddonsConfigAddonsConfigConnectorsPlatformConfig,
-  Apigee_AddonsConfigAddonsConfigConnectorsPlatformConfig_GetTypes,
-} from "./Apigee_AddonsConfigAddonsConfigConnectorsPlatformConfig";
+  apigee_AddonsConfigAddonsConfigAdvancedApiOpsConfig,
+  apigee_AddonsConfigAddonsConfigAdvancedApiOpsConfig_GetTypes,
+} from "./apigee_AddonsConfigAddonsConfigAdvancedApiOpsConfig";
 
-export interface Apigee_AddonsConfigAddonsConfig {
+export interface apigee_AddonsConfigAddonsConfig {
   /*
 Configuration for the Monetization add-on.
 Structure is documented below.
 */
-  IntegrationConfig?: Apigee_AddonsConfigAddonsConfigIntegrationConfig;
-
-  /*
-Configuration for the Monetization add-on.
-Structure is documented below.
-*/
-  MonetizationConfig?: Apigee_AddonsConfigAddonsConfigMonetizationConfig;
+  advancedApiOpsConfig?: apigee_AddonsConfigAddonsConfigAdvancedApiOpsConfig;
 
   /*
 Configuration for the Monetization add-on.
 Structure is documented below.
 */
-  AdvancedApiOpsConfig?: Apigee_AddonsConfigAddonsConfigAdvancedApiOpsConfig;
+  apiSecurityConfig?: apigee_AddonsConfigAddonsConfigApiSecurityConfig;
 
   /*
 Configuration for the Monetization add-on.
 Structure is documented below.
 */
-  ApiSecurityConfig?: Apigee_AddonsConfigAddonsConfigApiSecurityConfig;
+  connectorsPlatformConfig?: apigee_AddonsConfigAddonsConfigConnectorsPlatformConfig;
 
   /*
 Configuration for the Monetization add-on.
 Structure is documented below.
 */
-  ConnectorsPlatformConfig?: Apigee_AddonsConfigAddonsConfigConnectorsPlatformConfig;
+  integrationConfig?: apigee_AddonsConfigAddonsConfigIntegrationConfig;
+
+  /*
+Configuration for the Monetization add-on.
+Structure is documented below.
+*/
+  monetizationConfig?: apigee_AddonsConfigAddonsConfigMonetizationConfig;
 }
 
-export function Apigee_AddonsConfigAddonsConfig_GetTypes(): DynamicUIProps[] {
+export function apigee_AddonsConfigAddonsConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "MonetizationConfig",
+      "advancedApiOpsConfig",
       "Configuration for the Monetization add-on.\nStructure is documented below.",
-      Apigee_AddonsConfigAddonsConfigMonetizationConfig_GetTypes(),
+      apigee_AddonsConfigAddonsConfigAdvancedApiOpsConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "AdvancedApiOpsConfig",
+      "apiSecurityConfig",
       "Configuration for the Monetization add-on.\nStructure is documented below.",
-      Apigee_AddonsConfigAddonsConfigAdvancedApiOpsConfig_GetTypes(),
+      apigee_AddonsConfigAddonsConfigApiSecurityConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ApiSecurityConfig",
+      "connectorsPlatformConfig",
       "Configuration for the Monetization add-on.\nStructure is documented below.",
-      Apigee_AddonsConfigAddonsConfigApiSecurityConfig_GetTypes(),
+      apigee_AddonsConfigAddonsConfigConnectorsPlatformConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ConnectorsPlatformConfig",
+      "integrationConfig",
       "Configuration for the Monetization add-on.\nStructure is documented below.",
-      Apigee_AddonsConfigAddonsConfigConnectorsPlatformConfig_GetTypes(),
+      apigee_AddonsConfigAddonsConfigIntegrationConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "IntegrationConfig",
+      "monetizationConfig",
       "Configuration for the Monetization add-on.\nStructure is documented below.",
-      Apigee_AddonsConfigAddonsConfigIntegrationConfig_GetTypes(),
+      apigee_AddonsConfigAddonsConfigMonetizationConfig_GetTypes(),
       false,
       false,
     ),

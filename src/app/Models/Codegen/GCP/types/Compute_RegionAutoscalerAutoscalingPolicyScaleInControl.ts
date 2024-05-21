@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionAutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas,
-  Compute_RegionAutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas_GetTypes,
-} from "./Compute_RegionAutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas";
+  compute_RegionAutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas,
+  compute_RegionAutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas_GetTypes,
+} from "./compute_RegionAutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas";
 
-export interface Compute_RegionAutoscalerAutoscalingPolicyScaleInControl {
+export interface compute_RegionAutoscalerAutoscalingPolicyScaleInControl {
   /*
 A nested object resource
 Structure is documented below.
 */
-  MaxScaledInReplicas?: Compute_RegionAutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas;
+  maxScaledInReplicas?: compute_RegionAutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas;
 
   /*
 How long back autoscaling should look when computing recommendations
 to include directives regarding slower scale down, as described above.
 */
-  TimeWindowSec?: number;
+  timeWindowSec?: number;
 }
 
-export function Compute_RegionAutoscalerAutoscalingPolicyScaleInControl_GetTypes(): DynamicUIProps[] {
+export function compute_RegionAutoscalerAutoscalingPolicyScaleInControl_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "MaxScaledInReplicas",
+      "maxScaledInReplicas",
       "A nested object resource\nStructure is documented below.",
-      Compute_RegionAutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas_GetTypes(),
+      compute_RegionAutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "TimeWindowSec",
+      "timeWindowSec",
       "How long back autoscaling should look when computing recommendations\nto include directives regarding slower scale down, as described above.",
       [],
       false,

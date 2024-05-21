@@ -6,22 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Spanner_DatabaseIAMBindingCondition {
+export interface spanner_DatabaseIAMBindingCondition {
+  //
+  description?: string;
+
   // Textual representation of an expression in Common Expression Language syntax.
-  Expression?: string;
+  expression?: string;
 
   // A title for the expression, i.e. a short string describing its purpose.
-  Title?: string;
-
-  //
-  Description?: string;
+  title?: string;
 }
 
-export function Spanner_DatabaseIAMBindingCondition_GetTypes(): DynamicUIProps[] {
+export function spanner_DatabaseIAMBindingCondition_GetTypes(): DynamicUIProps[] {
   return [
+    new DynamicUIProps(InputType.String, "description", "", [], false, true),
     new DynamicUIProps(
       InputType.String,
-      "Expression",
+      "expression",
       "Textual representation of an expression in Common Expression Language syntax.",
       [],
       true,
@@ -29,12 +30,11 @@ export function Spanner_DatabaseIAMBindingCondition_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "Title",
+      "title",
       "A title for the expression, i.e. a short string describing its purpose.",
       [],
       true,
       true,
     ),
-    new DynamicUIProps(InputType.String, "Description", "", [], false, true),
   ];
 }

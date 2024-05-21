@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_JobLatestCreatedExecution {
+export interface cloudrunv2_JobLatestCreatedExecution {
   /*
 (Output)
 Completion timestamp of the execution.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  CompletionTime?: string;
+  completionTime?: string;
 
   /*
 (Output)
 Creation timestamp of the execution.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  CreateTime?: string;
+  createTime?: string;
 
   // Name of the Job.
-  Name?: string;
+  name?: string;
 }
 
-export function Cloudrunv2_JobLatestCreatedExecution_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_JobLatestCreatedExecution_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CompletionTime",
+      "completionTime",
       '(Output)\nCompletion timestamp of the execution.\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
       [],
       false,
@@ -37,7 +37,7 @@ export function Cloudrunv2_JobLatestCreatedExecution_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "CreateTime",
+      "createTime",
       '(Output)\nCreation timestamp of the execution.\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
       [],
       false,
@@ -45,7 +45,7 @@ export function Cloudrunv2_JobLatestCreatedExecution_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Name of the Job.",
       [],
       false,

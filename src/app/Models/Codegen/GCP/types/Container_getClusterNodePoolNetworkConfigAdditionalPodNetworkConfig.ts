@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodePoolNetworkConfigAdditionalPodNetworkConfig {
+export interface container_getClusterNodePoolNetworkConfigAdditionalPodNetworkConfig {
   // The maximum number of pods per node which use this pod network.
-  MaxPodsPerNode?: number;
+  maxPodsPerNode?: number;
 
   // The name of the secondary range on the subnet which provides IP address for this pod range.
-  SecondaryPodRange?: string;
+  secondaryPodRange?: string;
 
   // Name of the subnetwork where the additional pod network belongs.
-  Subnetwork?: string;
+  subnetwork?: string;
 }
 
-export function Container_getClusterNodePoolNetworkConfigAdditionalPodNetworkConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolNetworkConfigAdditionalPodNetworkConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "subnetwork",
+      "Name of the subnetwork where the additional pod network belongs.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Number,
-      "MaxPodsPerNode",
+      "maxPodsPerNode",
       "The maximum number of pods per node which use this pod network.",
       [],
       true,
@@ -29,16 +37,8 @@ export function Container_getClusterNodePoolNetworkConfigAdditionalPodNetworkCon
     ),
     new DynamicUIProps(
       InputType.String,
-      "SecondaryPodRange",
+      "secondaryPodRange",
       "The name of the secondary range on the subnet which provides IP address for this pod range.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Subnetwork",
-      "Name of the subnetwork where the additional pod network belongs.",
       [],
       true,
       false,

@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Artifactregistry_RepositoryCleanupPolicyMostRecentVersions {
+export interface artifactregistry_RepositoryCleanupPolicyMostRecentVersions {
   // Minimum number of versions to keep.
-  KeepCount?: number;
+  keepCount?: number;
 
   // Match versions by package prefix. Applied on any prefix match.
-  PackageNamePrefixes?: Array<string>;
+  packageNamePrefixes?: Array<string>;
 }
 
-export function Artifactregistry_RepositoryCleanupPolicyMostRecentVersions_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_RepositoryCleanupPolicyMostRecentVersions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "KeepCount",
-      "Minimum number of versions to keep.",
-      [],
+      InputType.Array,
+      "packageNamePrefixes",
+      "Match versions by package prefix. Applied on any prefix match.",
+      InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "PackageNamePrefixes",
-      "Match versions by package prefix. Applied on any prefix match.",
-      InputType_String_GetTypes(),
+      InputType.Number,
+      "keepCount",
+      "Minimum number of versions to keep.",
+      [],
       false,
       false,
     ),

@@ -6,49 +6,57 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrun_getServiceTemplateSpecVolumeSecret,
-  Cloudrun_getServiceTemplateSpecVolumeSecret_GetTypes,
-} from "./Cloudrun_getServiceTemplateSpecVolumeSecret";
+  cloudrun_getServiceTemplateSpecVolumeEmptyDir,
+  cloudrun_getServiceTemplateSpecVolumeEmptyDir_GetTypes,
+} from "./cloudrun_getServiceTemplateSpecVolumeEmptyDir";
 import {
-  Cloudrun_getServiceTemplateSpecVolumeCsi,
-  Cloudrun_getServiceTemplateSpecVolumeCsi_GetTypes,
-} from "./Cloudrun_getServiceTemplateSpecVolumeCsi";
+  cloudrun_getServiceTemplateSpecVolumeSecret,
+  cloudrun_getServiceTemplateSpecVolumeSecret_GetTypes,
+} from "./cloudrun_getServiceTemplateSpecVolumeSecret";
 import {
-  Cloudrun_getServiceTemplateSpecVolumeEmptyDir,
-  Cloudrun_getServiceTemplateSpecVolumeEmptyDir_GetTypes,
-} from "./Cloudrun_getServiceTemplateSpecVolumeEmptyDir";
+  cloudrun_getServiceTemplateSpecVolumeCsi,
+  cloudrun_getServiceTemplateSpecVolumeCsi_GetTypes,
+} from "./cloudrun_getServiceTemplateSpecVolumeCsi";
 
-export interface Cloudrun_getServiceTemplateSpecVolume {
+export interface cloudrun_getServiceTemplateSpecVolume {
+  // A filesystem specified by the Container Storage Interface (CSI).
+  csis?: Array<cloudrun_getServiceTemplateSpecVolumeCsi>;
+
+  // Ephemeral storage which can be backed by real disks (HD, SSD), network storage or memory (i.e. tmpfs). For now only in memory (tmpfs) is supported. It is ephemeral in the sense that when the sandbox is taken down, the data is destroyed with it (it does not persist across sandbox runs).
+  emptyDirs?: Array<cloudrun_getServiceTemplateSpecVolumeEmptyDir>;
+
   // The name of the Cloud Run Service.
-  Name?: string;
+  name?: string;
 
   /*
 The secret's value will be presented as the content of a file whose
 name is defined in the item path. If no items are defined, the name of
 the file is the secret_name.
 */
-  Secrets?: Array<Cloudrun_getServiceTemplateSpecVolumeSecret>;
-
-  // A filesystem specified by the Container Storage Interface (CSI).
-  Csis?: Array<Cloudrun_getServiceTemplateSpecVolumeCsi>;
-
-  // Ephemeral storage which can be backed by real disks (HD, SSD), network storage or memory (i.e. tmpfs). For now only in memory (tmpfs) is supported. It is ephemeral in the sense that when the sandbox is taken down, the data is destroyed with it (it does not persist across sandbox runs).
-  EmptyDirs?: Array<Cloudrun_getServiceTemplateSpecVolumeEmptyDir>;
+  secrets?: Array<cloudrun_getServiceTemplateSpecVolumeSecret>;
 }
 
-export function Cloudrun_getServiceTemplateSpecVolume_GetTypes(): DynamicUIProps[] {
+export function cloudrun_getServiceTemplateSpecVolume_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "EmptyDirs",
+      "csis",
+      "A filesystem specified by the Container Storage Interface (CSI).",
+      cloudrun_getServiceTemplateSpecVolumeCsi_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "emptyDirs",
       "Ephemeral storage which can be backed by real disks (HD, SSD), network storage or memory (i.e. tmpfs). For now only in memory (tmpfs) is supported. It is ephemeral in the sense that when the sandbox is taken down, the data is destroyed with it (it does not persist across sandbox runs).",
-      Cloudrun_getServiceTemplateSpecVolumeEmptyDir_GetTypes(),
+      cloudrun_getServiceTemplateSpecVolumeEmptyDir_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of the Cloud Run Service.",
       [],
       true,
@@ -56,17 +64,9 @@ export function Cloudrun_getServiceTemplateSpecVolume_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Secrets",
+      "secrets",
       "The secret's value will be presented as the content of a file whose\nname is defined in the item path. If no items are defined, the name of\nthe file is the secret_name.",
-      Cloudrun_getServiceTemplateSpecVolumeSecret_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Csis",
-      "A filesystem specified by the Container Storage Interface (CSI).",
-      Cloudrun_getServiceTemplateSpecVolumeCsi_GetTypes(),
+      cloudrun_getServiceTemplateSpecVolumeSecret_GetTypes(),
       true,
       false,
     ),

@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_PatchDeploymentPatchConfigYum {
+export interface osconfig_PatchDeploymentPatchConfigYum {
   /*
 An exclusive list of packages to be updated. These are the only packages that will be updated.
 If these packages are not installed, they will be ignored. This field cannot be specified with
 any other patch configuration fields.
 */
-  ExclusivePackages?: Array<string>;
+  exclusivePackages?: Array<string>;
 
   // Will cause patch to run yum update-minimal instead.
-  Minimal?: boolean;
+  minimal?: boolean;
 
   // Adds the --security flag to yum update. Not supported on all platforms.
-  Security?: boolean;
+  security?: boolean;
 
   // List of packages to exclude from update. These packages will be excluded.
-  Excludes?: Array<string>;
+  excludes?: Array<string>;
 }
 
-export function Osconfig_PatchDeploymentPatchConfigYum_GetTypes(): DynamicUIProps[] {
+export function osconfig_PatchDeploymentPatchConfigYum_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ExclusivePackages",
+      "exclusivePackages",
       "An exclusive list of packages to be updated. These are the only packages that will be updated.\nIf these packages are not installed, they will be ignored. This field cannot be specified with\nany other patch configuration fields.",
       InputType_String_GetTypes(),
       false,
@@ -36,7 +36,7 @@ export function Osconfig_PatchDeploymentPatchConfigYum_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Minimal",
+      "minimal",
       "Will cause patch to run yum update-minimal instead.",
       [],
       false,
@@ -44,7 +44,7 @@ export function Osconfig_PatchDeploymentPatchConfigYum_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Security",
+      "security",
       "Adds the --security flag to yum update. Not supported on all platforms.",
       [],
       false,
@@ -52,7 +52,7 @@ export function Osconfig_PatchDeploymentPatchConfigYum_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Excludes",
+      "excludes",
       "List of packages to exclude from update. These packages will be excluded.",
       InputType_String_GetTypes(),
       false,

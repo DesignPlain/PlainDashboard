@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vertex_AiFeatureOnlineStoreEmbeddingManagement {
+export interface vertex_AiFeatureOnlineStoreEmbeddingManagement {
   // Enable embedding management.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Vertex_AiFeatureOnlineStoreEmbeddingManagement_GetTypes(): DynamicUIProps[] {
+export function vertex_AiFeatureOnlineStoreEmbeddingManagement_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Enable embedding management.",
       [],
       false,

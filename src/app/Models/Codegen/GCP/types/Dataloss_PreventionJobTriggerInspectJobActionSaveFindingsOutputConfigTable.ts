@@ -6,34 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable {
+export interface dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable {
+  // The ID of the dataset containing this table.
+  datasetId?: string;
+
+  // The ID of the project containing this table.
+  projectId?: string;
+
   /*
 The ID of the table. The ID must contain only letters (a-z,
 A-Z), numbers (0-9), or underscores (_). The maximum length
 is 1,024 characters.
 */
-  TableId?: string;
-
-  // The ID of the dataset containing this table.
-  DatasetId?: string;
-
-  // The ID of the project containing this table.
-  ProjectId?: string;
+  tableId?: string;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "TableId",
-      "The ID of the table. The ID must contain only letters (a-z,\nA-Z), numbers (0-9), or underscores (_). The maximum length\nis 1,024 characters.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "DatasetId",
+      "datasetId",
       "The ID of the dataset containing this table.",
       [],
       true,
@@ -41,10 +33,18 @@ export function Dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputC
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProjectId",
+      "projectId",
       "The ID of the project containing this table.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "tableId",
+      "The ID of the table. The ID must contain only letters (a-z,\nA-Z), numbers (0-9), or underscores (_). The maximum length\nis 1,024 characters.",
+      [],
+      false,
       false,
     ),
   ];

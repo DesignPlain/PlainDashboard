@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_FirewallPolicyRuleMatchLayer4Config {
-  // The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (`tcp`, `udp`, `icmp`, `esp`, `ah`, `ipip`, `sctp`), or the IP protocol number.
-  IpProtocol?: string;
-
+export interface compute_FirewallPolicyRuleMatchLayer4Config {
   /*
 An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port. Example inputs include: ``.
 
 - - -
 */
-  Ports?: Array<string>;
+  ports?: Array<string>;
+
+  // The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (`tcp`, `udp`, `icmp`, `esp`, `ah`, `ipip`, `sctp`), or the IP protocol number.
+  ipProtocol?: string;
 }
 
-export function Compute_FirewallPolicyRuleMatchLayer4Config_GetTypes(): DynamicUIProps[] {
+export function compute_FirewallPolicyRuleMatchLayer4Config_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Ports",
+      "ports",
       "An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port. Example inputs include: ``.\n\n- - -",
       InputType_String_GetTypes(),
       false,
@@ -30,7 +30,7 @@ export function Compute_FirewallPolicyRuleMatchLayer4Config_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "IpProtocol",
+      "ipProtocol",
       "The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (`tcp`, `udp`, `icmp`, `esp`, `ah`, `ipip`, `sctp`), or the IP protocol number.",
       [],
       true,

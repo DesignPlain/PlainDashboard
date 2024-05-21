@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfigMonitoring {
+export interface gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfigMonitoring {
   // Specifies the list of backends Policy Controller will export to. Must be one of `CLOUD_MONITORING` or `PROMETHEUS`. Defaults to [`CLOUD_MONITORING`, `PROMETHEUS`]. Specifying an empty value `[]` disables metrics export.
-  Backends?: Array<string>;
+  backends?: Array<string>;
 }
 
-export function Gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfigMonitoring_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfigMonitoring_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Backends",
+      "backends",
       "Specifies the list of backends Policy Controller will export to. Must be one of `CLOUD_MONITORING` or `PROMETHEUS`. Defaults to [`CLOUD_MONITORING`, `PROMETHEUS`]. Specifying an empty value `[]` disables metrics export.",
       InputType_String_GetTypes(),
       false,

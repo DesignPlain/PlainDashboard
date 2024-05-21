@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vertex_AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfig {
+export interface vertex_AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfig {
   // Specify a threshold value that can trigger the alert. For numerical feature, the distribution distance is calculated by Jensen–Shannon divergence. Each feature must have a non-zero threshold if they need to be monitored. Otherwise no alert will be triggered for that feature. The default value is 0.3.
-  Value?: number;
+  value?: number;
 }
 
-export function Vertex_AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfig_GetTypes(): DynamicUIProps[] {
+export function vertex_AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Value",
+      "value",
       "Specify a threshold value that can trigger the alert. For numerical feature, the distribution distance is calculated by Jensen–Shannon divergence. Each feature must have a non-zero threshold if they need to be monitored. Otherwise no alert will be triggered for that feature. The default value is 0.3.",
       [],
       true,

@@ -6,9 +6,9 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionBackendServiceLogConfig {
+export interface compute_RegionBackendServiceLogConfig {
   // Whether to enable logging for the load balancer traffic served by this backend service.
-  Enable?: boolean;
+  enable?: boolean;
 
   /*
 This field can only be specified if logging is enabled for this backend service. The value of
@@ -16,14 +16,14 @@ the field must be in [0, 1]. This configures the sampling rate of requests to th
 where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported.
 The default value is 1.0.
 */
-  SampleRate?: number;
+  sampleRate?: number;
 }
 
-export function Compute_RegionBackendServiceLogConfig_GetTypes(): DynamicUIProps[] {
+export function compute_RegionBackendServiceLogConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enable",
+      "enable",
       "Whether to enable logging for the load balancer traffic served by this backend service.",
       [],
       false,
@@ -31,7 +31,7 @@ export function Compute_RegionBackendServiceLogConfig_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Number,
-      "SampleRate",
+      "sampleRate",
       "This field can only be specified if logging is enabled for this backend service. The value of\nthe field must be in [0, 1]. This configures the sampling rate of requests to the load balancer\nwhere 1.0 means all logged requests are reported and 0.0 means no logged requests are reported.\nThe default value is 1.0.",
       [],
       false,

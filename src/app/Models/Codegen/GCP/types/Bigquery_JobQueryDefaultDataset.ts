@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_JobQueryDefaultDataset {
+export interface bigquery_JobQueryDefaultDataset {
   /*
 The dataset. Can be specified `{{dataset_id}}` if `project_id` is also set,
 or of the form `projects/{{project}}/datasets/{{dataset_id}}` if not.
 */
-  DatasetId?: string;
+  datasetId?: string;
 
   // The ID of the project containing this table.
-  ProjectId?: string;
+  projectId?: string;
 }
 
-export function Bigquery_JobQueryDefaultDataset_GetTypes(): DynamicUIProps[] {
+export function bigquery_JobQueryDefaultDataset_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DatasetId",
+      "datasetId",
       "The dataset. Can be specified `{{dataset_id}}` if `project_id` is also set,\nor of the form `projects/{{project}}/datasets/{{dataset_id}}` if not.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Bigquery_JobQueryDefaultDataset_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProjectId",
+      "projectId",
       "The ID of the project containing this table.",
       [],
       false,

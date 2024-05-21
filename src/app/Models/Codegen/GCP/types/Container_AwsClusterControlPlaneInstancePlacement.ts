@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AwsClusterControlPlaneInstancePlacement {
+export interface container_AwsClusterControlPlaneInstancePlacement {
   // The tenancy for the instance. Possible values: TENANCY_UNSPECIFIED, DEFAULT, DEDICATED, HOST
-  Tenancy?: string;
+  tenancy?: string;
 }
 
-export function Container_AwsClusterControlPlaneInstancePlacement_GetTypes(): DynamicUIProps[] {
+export function container_AwsClusterControlPlaneInstancePlacement_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Tenancy",
+      "tenancy",
       "The tenancy for the instance. Possible values: TENANCY_UNSPECIFIED, DEFAULT, DEDICATED, HOST",
       [],
       false,
