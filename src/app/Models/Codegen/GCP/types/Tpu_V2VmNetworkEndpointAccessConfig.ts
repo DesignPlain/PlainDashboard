@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Tpu_V2VmNetworkEndpointAccessConfig {
+export interface tpu_V2VmNetworkEndpointAccessConfig {
   /*
 (Output)
 An external IP address associated with the TPU worker.
 */
-  ExternalIp?: string;
+  externalIp?: string;
 }
 
-export function Tpu_V2VmNetworkEndpointAccessConfig_GetTypes(): DynamicUIProps[] {
+export function tpu_V2VmNetworkEndpointAccessConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ExternalIp",
+      "externalIp",
       "(Output)\nAn external IP address associated with the TPU worker.",
       [],
       false,

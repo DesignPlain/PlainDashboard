@@ -6,36 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigAddressPool {
-  // The addresses that are part of this pool. Each address must be either in the CIDR form (1.2.3.0/24) or range form (1.2.3.1-1.2.3.5).
-  Addresses?: Array<string>;
-
+export interface gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigAddressPool {
   /*
 If true, avoid using IPs ending in .0 or .255.
 This avoids buggy consumer devices mistakenly dropping IPv4 traffic for those special IP addresses.
 */
-  AvoidBuggyIps?: boolean;
+  avoidBuggyIps?: boolean;
 
   // If true, prevent IP addresses from being automatically assigned.
-  ManualAssign?: boolean;
+  manualAssign?: boolean;
 
   // The name of the address pool.
-  Pool?: string;
+  pool?: string;
+
+  // The addresses that are part of this pool. Each address must be either in the CIDR form (1.2.3.0/24) or range form (1.2.3.1-1.2.3.5).
+  addresses?: Array<string>;
 }
 
-export function Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigAddressPool_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigAddressPool_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "Pool",
-      "The name of the address pool.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "Addresses",
+      "addresses",
       "The addresses that are part of this pool. Each address must be either in the CIDR form (1.2.3.0/24) or range form (1.2.3.1-1.2.3.5).",
       InputType_String_GetTypes(),
       true,
@@ -43,7 +35,7 @@ export function Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigAddressPool_G
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "AvoidBuggyIps",
+      "avoidBuggyIps",
       "If true, avoid using IPs ending in .0 or .255.\nThis avoids buggy consumer devices mistakenly dropping IPv4 traffic for those special IP addresses.",
       [],
       false,
@@ -51,10 +43,18 @@ export function Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigAddressPool_G
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "ManualAssign",
+      "manualAssign",
       "If true, prevent IP addresses from being automatically assigned.",
       [],
       false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "pool",
+      "The name of the address pool.",
+      [],
+      true,
       false,
     ),
   ];

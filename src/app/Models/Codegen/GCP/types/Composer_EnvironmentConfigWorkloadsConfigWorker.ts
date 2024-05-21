@@ -6,44 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Composer_EnvironmentConfigWorkloadsConfigWorker {
-  // CPU request and limit for a single Airflow worker replica.
-  Cpu?: number;
-
+export interface composer_EnvironmentConfigWorkloadsConfigWorker {
   // Maximum number of workers for autoscaling.
-  MaxCount?: number;
+  maxCount?: number;
 
   // Memory (GB) request and limit for a single Airflow worker replica.
-  MemoryGb?: number;
+  memoryGb?: number;
 
   // Minimum number of workers for autoscaling.
-  MinCount?: number;
+  minCount?: number;
 
   // Storage (GB) request and limit for a single Airflow worker replica.
-  StorageGb?: number;
+  storageGb?: number;
+
+  // CPU request and limit for a single Airflow worker replica.
+  cpu?: number;
 }
 
-export function Composer_EnvironmentConfigWorkloadsConfigWorker_GetTypes(): DynamicUIProps[] {
+export function composer_EnvironmentConfigWorkloadsConfigWorker_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Cpu",
-      "CPU request and limit for a single Airflow worker replica.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "MaxCount",
-      "Maximum number of workers for autoscaling.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "MemoryGb",
+      "memoryGb",
       "Memory (GB) request and limit for a single Airflow worker replica.",
       [],
       false,
@@ -51,7 +35,7 @@ export function Composer_EnvironmentConfigWorkloadsConfigWorker_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MinCount",
+      "minCount",
       "Minimum number of workers for autoscaling.",
       [],
       false,
@@ -59,8 +43,24 @@ export function Composer_EnvironmentConfigWorkloadsConfigWorker_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Number,
-      "StorageGb",
+      "storageGb",
       "Storage (GB) request and limit for a single Airflow worker replica.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "cpu",
+      "CPU request and limit for a single Airflow worker replica.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "maxCount",
+      "Maximum number of workers for autoscaling.",
       [],
       false,
       false,

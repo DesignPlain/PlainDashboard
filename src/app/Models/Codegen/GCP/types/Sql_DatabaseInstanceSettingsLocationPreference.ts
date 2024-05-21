@@ -6,12 +6,12 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_DatabaseInstanceSettingsLocationPreference {
+export interface sql_DatabaseInstanceSettingsLocationPreference {
   /*
 A GAE application whose zone to remain
 in. Must be in the same region as this instance.
 */
-  FollowGaeApplication?: string;
+  followGaeApplication?: string;
 
   /*
 The preferred Compute Engine zone for the secondary/failover.
@@ -20,20 +20,20 @@ The optional `settings.maintenance_window` subblock for instances declares a one
 [maintenance window](https://cloud.google.com/sql/docs/instance-settings?hl=en#maintenance-window-2ndgen)
 when an Instance can automatically restart to apply updates. The maintenance window is specified in UTC time. It supports:
 */
-  SecondaryZone?: string;
+  secondaryZone?: string;
 
   /*
 The preferred compute engine
 [zone](https://cloud.google.com/compute/docs/zones?hl=en).
 */
-  Zone?: string;
+  zone?: string;
 }
 
-export function Sql_DatabaseInstanceSettingsLocationPreference_GetTypes(): DynamicUIProps[] {
+export function sql_DatabaseInstanceSettingsLocationPreference_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "FollowGaeApplication",
+      "followGaeApplication",
       "A GAE application whose zone to remain\nin. Must be in the same region as this instance.",
       [],
       false,
@@ -41,7 +41,7 @@ export function Sql_DatabaseInstanceSettingsLocationPreference_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "SecondaryZone",
+      "secondaryZone",
       "The preferred Compute Engine zone for the secondary/failover.\n\nThe optional `settings.maintenance_window` subblock for instances declares a one-hour\n[maintenance window](https://cloud.google.com/sql/docs/instance-settings?hl=en#maintenance-window-2ndgen)\nwhen an Instance can automatically restart to apply updates. The maintenance window is specified in UTC time. It supports:",
       [],
       false,
@@ -49,7 +49,7 @@ export function Sql_DatabaseInstanceSettingsLocationPreference_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "Zone",
+      "zone",
       "The preferred compute engine\n[zone](https://cloud.google.com/compute/docs/zones?hl=en).",
       [],
       false,

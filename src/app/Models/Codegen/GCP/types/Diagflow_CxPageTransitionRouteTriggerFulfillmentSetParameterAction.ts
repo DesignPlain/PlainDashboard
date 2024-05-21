@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxPageTransitionRouteTriggerFulfillmentSetParameterAction {
+export interface diagflow_CxPageTransitionRouteTriggerFulfillmentSetParameterAction {
   // Display name of the parameter.
-  Parameter?: string;
+  parameter?: string;
 
   // The new JSON-encoded value of the parameter. A null value clears the parameter.
-  Value?: string;
+  value?: string;
 }
 
-export function Diagflow_CxPageTransitionRouteTriggerFulfillmentSetParameterAction_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxPageTransitionRouteTriggerFulfillmentSetParameterAction_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Value",
-      "The new JSON-encoded value of the parameter. A null value clears the parameter.",
+      "parameter",
+      "Display name of the parameter.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Parameter",
-      "Display name of the parameter.",
+      "value",
+      "The new JSON-encoded value of the parameter. A null value clears the parameter.",
       [],
       false,
       false,

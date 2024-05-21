@@ -6,33 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRun {
+export interface clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRun {
   // Whether Cloud Deploy should update the traffic stanza in a Cloud Run Service on the user's behalf to facilitate traffic splitting. This is required to be true for CanaryDeployments, but optional for CustomCanaryDeployments.
-  AutomaticTrafficControl?: boolean;
+  automaticTrafficControl?: boolean;
 
   // Optional. A list of tags that are added to the canary revision while the canary phase is in progress.
-  CanaryRevisionTags?: Array<string>;
+  canaryRevisionTags?: Array<string>;
 
   // Optional. A list of tags that are added to the prior revision while the canary phase is in progress.
-  PriorRevisionTags?: Array<string>;
+  priorRevisionTags?: Array<string>;
 
   // Optional. A list of tags that are added to the final stable revision when the stable phase is applied.
-  StableRevisionTags?: Array<string>;
+  stableRevisionTags?: Array<string>;
 }
 
-export function Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRun_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRun_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "StableRevisionTags",
-      "Optional. A list of tags that are added to the final stable revision when the stable phase is applied.",
-      InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "AutomaticTrafficControl",
+      "automaticTrafficControl",
       "Whether Cloud Deploy should update the traffic stanza in a Cloud Run Service on the user's behalf to facilitate traffic splitting. This is required to be true for CanaryDeployments, but optional for CustomCanaryDeployments.",
       [],
       false,
@@ -40,7 +32,7 @@ export function Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRun
     ),
     new DynamicUIProps(
       InputType.Array,
-      "CanaryRevisionTags",
+      "canaryRevisionTags",
       "Optional. A list of tags that are added to the canary revision while the canary phase is in progress.",
       InputType_String_GetTypes(),
       false,
@@ -48,8 +40,16 @@ export function Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRun
     ),
     new DynamicUIProps(
       InputType.Array,
-      "PriorRevisionTags",
+      "priorRevisionTags",
       "Optional. A list of tags that are added to the prior revision while the canary phase is in progress.",
+      InputType_String_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "stableRevisionTags",
+      "Optional. A list of tags that are added to the final stable revision when the stable phase is applied.",
       InputType_String_GetTypes(),
       false,
       false,

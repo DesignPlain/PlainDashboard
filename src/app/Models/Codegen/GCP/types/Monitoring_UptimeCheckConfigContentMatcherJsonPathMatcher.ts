@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher {
+export interface monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher {
   /*
 Options to perform JSONPath content matching.
 Default value is `EXACT_MATCH`.
 Possible values are: `EXACT_MATCH`, `REGEX_MATCH`.
 */
-  JsonMatcher?: string;
+  jsonMatcher?: string;
 
   // JSONPath within the response output pointing to the expected `ContentMatcher::content` to match against.
-  JsonPath?: string;
+  jsonPath?: string;
 }
 
-export function Monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher_GetTypes(): DynamicUIProps[] {
+export function monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "JsonMatcher",
+      "jsonMatcher",
       "Options to perform JSONPath content matching.\nDefault value is `EXACT_MATCH`.\nPossible values are: `EXACT_MATCH`, `REGEX_MATCH`.",
       [],
       false,
@@ -30,7 +30,7 @@ export function Monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher_GetTyp
     ),
     new DynamicUIProps(
       InputType.String,
-      "JsonPath",
+      "jsonPath",
       "JSONPath within the response output pointing to the expected `ContentMatcher::content` to match against.",
       [],
       true,

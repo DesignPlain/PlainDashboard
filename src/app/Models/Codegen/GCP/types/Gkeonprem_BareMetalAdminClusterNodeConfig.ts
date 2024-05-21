@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalAdminClusterNodeConfig {
+export interface gkeonprem_BareMetalAdminClusterNodeConfig {
   /*
 The maximum number of pods a node can run. The size of the CIDR range
 assigned to the node will be derived from this parameter.
 */
-  MaxPodsPerNode?: number;
+  maxPodsPerNode?: number;
 }
 
-export function Gkeonprem_BareMetalAdminClusterNodeConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalAdminClusterNodeConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "MaxPodsPerNode",
+      "maxPodsPerNode",
       "The maximum number of pods a node can run. The size of the CIDR range\nassigned to the node will be derived from this parameter.",
       [],
       false,

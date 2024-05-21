@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanObectId,
-  Certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanObectId_GetTypes,
-} from "./Certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanObectId";
+  certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanObectId,
+  certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanObectId_GetTypes,
+} from "./certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanObectId";
 
-export interface Certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSan {
+export interface certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSan {
   /*
 Indicates whether or not this extension is critical (i.e., if the client does not know how to
 handle this extension, the client should consider this to be an error).
 */
-  Critical?: boolean;
+  critical?: boolean;
 
   /*
 (Output)
 Describes how some of the technical fields in a certificate should be populated.
 Structure is documented below.
 */
-  ObectIds?: Array<Certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanObectId>;
+  obectIds?: Array<certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanObectId>;
 
   // The value of this X.509 extension. A base64-encoded string.
-  Value?: string;
+  value?: string;
 }
 
-export function Certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSan_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSan_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Critical",
+      "critical",
       "Indicates whether or not this extension is critical (i.e., if the client does not know how to\nhandle this extension, the client should consider this to be an error).",
       [],
       false,
@@ -40,15 +40,15 @@ export function Certificateauthority_CertificateCertificateDescriptionSubjectDes
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ObectIds",
+      "obectIds",
       "(Output)\nDescribes how some of the technical fields in a certificate should be populated.\nStructure is documented below.",
-      Certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanObectId_GetTypes(),
+      certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanObectId_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "The value of this X.509 extension. A base64-encoded string.",
       [],
       false,

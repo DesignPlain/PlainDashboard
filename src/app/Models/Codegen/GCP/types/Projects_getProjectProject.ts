@@ -6,66 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Projects_getProjectProject {
-  // The numeric identifier of the project.
-  Number?: string;
-
+export interface projects_getProjectProject {
   // An optional reference to a parent resource.
-  Parent?: Map<string, string>;
+  parent?: Map<string, string>;
 
   // The project id of the project.
-  ProjectId?: string;
+  projectId?: string;
 
   // Creation time in RFC3339 UTC "Zulu" format.
-  CreateTime?: string;
+  createTime?: string;
 
   // A set of key/value label pairs assigned on a project.
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   // The Project lifecycle state.
-  LifecycleState?: string;
+  lifecycleState?: string;
 
   // The optional user-assigned display name of the project.
-  Name?: string;
+  name?: string;
+
+  // The numeric identifier of the project.
+  number?: string;
 }
 
-export function Projects_getProjectProject_GetTypes(): DynamicUIProps[] {
+export function projects_getProjectProject_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CreateTime",
-      'Creation time in RFC3339 UTC "Zulu" format.',
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Map,
-      "Labels",
-      "A set of key/value label pairs assigned on a project.",
-      InputType_Map_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "LifecycleState",
-      "The Project lifecycle state.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Name",
-      "The optional user-assigned display name of the project.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Number",
+      "number",
       "The numeric identifier of the project.",
       [],
       true,
@@ -73,7 +41,7 @@ export function Projects_getProjectProject_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Parent",
+      "parent",
       "An optional reference to a parent resource.",
       InputType_Map_GetTypes(),
       true,
@@ -81,8 +49,40 @@ export function Projects_getProjectProject_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProjectId",
+      "projectId",
       "The project id of the project.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "createTime",
+      'Creation time in RFC3339 UTC "Zulu" format.',
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Map,
+      "labels",
+      "A set of key/value label pairs assigned on a project.",
+      InputType_Map_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "lifecycleState",
+      "The Project lifecycle state.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "name",
+      "The optional user-assigned display name of the project.",
       [],
       true,
       false,

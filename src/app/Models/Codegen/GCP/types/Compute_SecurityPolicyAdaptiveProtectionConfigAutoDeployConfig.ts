@@ -6,41 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_SecurityPolicyAdaptiveProtectionConfigAutoDeployConfig {
-  // Rules are only automatically deployed for alerts on potential attacks with confidence scores greater than this threshold.
-  ConfidenceThreshold?: number;
-
-  // Google Cloud Armor stops applying the action in the automatically deployed rule to an identified attacker after this duration. The rule continues to operate against new requests.
-  ExpirationSec?: number;
-
+export interface compute_SecurityPolicyAdaptiveProtectionConfigAutoDeployConfig {
   // Rules are only automatically deployed when the estimated impact to baseline traffic from the suggested mitigation is below this threshold.
-  ImpactedBaselineThreshold?: number;
+  impactedBaselineThreshold?: number;
 
   // Identifies new attackers only when the load to the backend service that is under attack exceeds this threshold.
-  LoadThreshold?: number;
+  loadThreshold?: number;
+
+  // Rules are only automatically deployed for alerts on potential attacks with confidence scores greater than this threshold.
+  confidenceThreshold?: number;
+
+  // Google Cloud Armor stops applying the action in the automatically deployed rule to an identified attacker after this duration. The rule continues to operate against new requests.
+  expirationSec?: number;
 }
 
-export function Compute_SecurityPolicyAdaptiveProtectionConfigAutoDeployConfig_GetTypes(): DynamicUIProps[] {
+export function compute_SecurityPolicyAdaptiveProtectionConfigAutoDeployConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "ConfidenceThreshold",
-      "Rules are only automatically deployed for alerts on potential attacks with confidence scores greater than this threshold.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "ExpirationSec",
-      "Google Cloud Armor stops applying the action in the automatically deployed rule to an identified attacker after this duration. The rule continues to operate against new requests.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "ImpactedBaselineThreshold",
+      "impactedBaselineThreshold",
       "Rules are only automatically deployed when the estimated impact to baseline traffic from the suggested mitigation is below this threshold.",
       [],
       false,
@@ -48,8 +32,24 @@ export function Compute_SecurityPolicyAdaptiveProtectionConfigAutoDeployConfig_G
     ),
     new DynamicUIProps(
       InputType.Number,
-      "LoadThreshold",
+      "loadThreshold",
       "Identifies new attackers only when the load to the backend service that is under attack exceeds this threshold.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "confidenceThreshold",
+      "Rules are only automatically deployed for alerts on potential attacks with confidence scores greater than this threshold.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "expirationSec",
+      "Google Cloud Armor stops applying the action in the automatically deployed rule to an identified attacker after this duration. The rule continues to operate against new requests.",
       [],
       false,
       false,

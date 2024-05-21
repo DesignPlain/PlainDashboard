@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dns_ManagedZoneServiceDirectoryConfigNamespace,
-  Dns_ManagedZoneServiceDirectoryConfigNamespace_GetTypes,
-} from "./Dns_ManagedZoneServiceDirectoryConfigNamespace";
+  dns_ManagedZoneServiceDirectoryConfigNamespace,
+  dns_ManagedZoneServiceDirectoryConfigNamespace_GetTypes,
+} from "./dns_ManagedZoneServiceDirectoryConfigNamespace";
 
-export interface Dns_ManagedZoneServiceDirectoryConfig {
+export interface dns_ManagedZoneServiceDirectoryConfig {
   /*
 The namespace associated with the zone.
 Structure is documented below.
 */
-  Namespace?: Dns_ManagedZoneServiceDirectoryConfigNamespace;
+  namespace?: dns_ManagedZoneServiceDirectoryConfigNamespace;
 }
 
-export function Dns_ManagedZoneServiceDirectoryConfig_GetTypes(): DynamicUIProps[] {
+export function dns_ManagedZoneServiceDirectoryConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Namespace",
+      "namespace",
       "The namespace associated with the zone.\nStructure is documented below.",
-      Dns_ManagedZoneServiceDirectoryConfigNamespace_GetTypes(),
+      dns_ManagedZoneServiceDirectoryConfigNamespace_GetTypes(),
       true,
       false,
     ),

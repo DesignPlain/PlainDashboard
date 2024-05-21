@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodeConfigEphemeralStorageLocalSsdConfig {
+export interface container_getClusterNodeConfigEphemeralStorageLocalSsdConfig {
   // Number of local SSDs to use to back ephemeral storage. Uses NVMe interfaces. Each local SSD must be 375 or 3000 GB in size, and all local SSDs must share the same size.
-  LocalSsdCount?: number;
+  localSsdCount?: number;
 }
 
-export function Container_getClusterNodeConfigEphemeralStorageLocalSsdConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodeConfigEphemeralStorageLocalSsdConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "LocalSsdCount",
+      "localSsdCount",
       "Number of local SSDs to use to back ephemeral storage. Uses NVMe interfaces. Each local SSD must be 375 or 3000 GB in size, and all local SSDs must share the same size.",
       [],
       true,

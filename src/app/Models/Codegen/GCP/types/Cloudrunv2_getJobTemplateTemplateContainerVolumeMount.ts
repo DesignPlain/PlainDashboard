@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_getJobTemplateTemplateContainerVolumeMount {
+export interface cloudrunv2_getJobTemplateTemplateContainerVolumeMount {
   // Path within the container at which the volume should be mounted. Must not contain ':'. For Cloud SQL volumes, it can be left empty, or must otherwise be /cloudsql. All instances defined in the Volume will be available as /cloudsql/[instance]. For more information on Cloud SQL volumes, visit https://cloud.google.com/sql/docs/mysql/connect-run
-  MountPath?: string;
+  mountPath?: string;
 
   // The name of the Cloud Run v2 Job.
-  Name?: string;
+  name?: string;
 }
 
-export function Cloudrunv2_getJobTemplateTemplateContainerVolumeMount_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_getJobTemplateTemplateContainerVolumeMount_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "MountPath",
-      "Path within the container at which the volume should be mounted. Must not contain ':'. For Cloud SQL volumes, it can be left empty, or must otherwise be /cloudsql. All instances defined in the Volume will be available as /cloudsql/[instance]. For more information on Cloud SQL volumes, visit https://cloud.google.com/sql/docs/mysql/connect-run",
+      "name",
+      "The name of the Cloud Run v2 Job.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
-      "The name of the Cloud Run v2 Job.",
+      "mountPath",
+      "Path within the container at which the volume should be mounted. Must not contain ':'. For Cloud SQL volumes, it can be left empty, or must otherwise be /cloudsql. All instances defined in the Volume will be available as /cloudsql/[instance]. For more information on Cloud SQL volumes, visit https://cloud.google.com/sql/docs/mysql/connect-run",
       [],
       true,
       false,

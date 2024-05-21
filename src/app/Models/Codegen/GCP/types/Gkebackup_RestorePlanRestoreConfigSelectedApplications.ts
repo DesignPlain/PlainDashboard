@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkebackup_RestorePlanRestoreConfigSelectedApplicationsNamespacedName,
-  Gkebackup_RestorePlanRestoreConfigSelectedApplicationsNamespacedName_GetTypes,
-} from "./Gkebackup_RestorePlanRestoreConfigSelectedApplicationsNamespacedName";
+  gkebackup_RestorePlanRestoreConfigSelectedApplicationsNamespacedName,
+  gkebackup_RestorePlanRestoreConfigSelectedApplicationsNamespacedName_GetTypes,
+} from "./gkebackup_RestorePlanRestoreConfigSelectedApplicationsNamespacedName";
 
-export interface Gkebackup_RestorePlanRestoreConfigSelectedApplications {
+export interface gkebackup_RestorePlanRestoreConfigSelectedApplications {
   /*
 A list of namespaced Kubernetes resources.
 Structure is documented below.
 */
-  NamespacedNames?: Array<Gkebackup_RestorePlanRestoreConfigSelectedApplicationsNamespacedName>;
+  namespacedNames?: Array<gkebackup_RestorePlanRestoreConfigSelectedApplicationsNamespacedName>;
 }
 
-export function Gkebackup_RestorePlanRestoreConfigSelectedApplications_GetTypes(): DynamicUIProps[] {
+export function gkebackup_RestorePlanRestoreConfigSelectedApplications_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "NamespacedNames",
+      "namespacedNames",
       "A list of namespaced Kubernetes resources.\nStructure is documented below.",
-      Gkebackup_RestorePlanRestoreConfigSelectedApplicationsNamespacedName_GetTypes(),
+      gkebackup_RestorePlanRestoreConfigSelectedApplicationsNamespacedName_GetTypes(),
       true,
       false,
     ),

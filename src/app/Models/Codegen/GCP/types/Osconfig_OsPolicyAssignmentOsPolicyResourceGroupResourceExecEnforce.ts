@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFile,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFile_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFile";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFile,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFile_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFile";
 
-export interface Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforce {
+export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforce {
   /*
 Optional arguments to pass to the source during
 execution.
 */
-  Args?: Array<string>;
+  args?: Array<string>;
 
   /*
 A remote or local file. Structure is
 documented below.
 */
-  File?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFile;
+  file?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFile;
 
   /*
 The script interpreter to use. Possible values
 are: `INTERPRETER_UNSPECIFIED`, `NONE`, `SHELL`, `POWERSHELL`.
 */
-  Interpreter?: string;
+  interpreter?: string;
 
   /*
 Only recorded for enforce Exec. Path to an
@@ -36,20 +36,28 @@ OSPolicyResourceCompliance after a successful run. Absence or failure to
 read this file will result in this ExecResource being non-compliant. Output
 file size is limited to 100K bytes.
 */
-  OutputFilePath?: string;
+  outputFilePath?: string;
 
   /*
 An inline script. The size of the script is limited to
 1024 characters.
 */
-  Script?: string;
+  script?: string;
 }
 
-export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforce_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforce_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "OutputFilePath",
+      "interpreter",
+      "The script interpreter to use. Possible values\nare: `INTERPRETER_UNSPECIFIED`, `NONE`, `SHELL`, `POWERSHELL`.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "outputFilePath",
       "Only recorded for enforce Exec. Path to an\noutput file (that is created by this Exec) whose content will be recorded in\nOSPolicyResourceCompliance after a successful run. Absence or failure to\nread this file will result in this ExecResource being non-compliant. Output\nfile size is limited to 100K bytes.",
       [],
       false,
@@ -57,7 +65,7 @@ export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnfo
     ),
     new DynamicUIProps(
       InputType.String,
-      "Script",
+      "script",
       "An inline script. The size of the script is limited to\n1024 characters.",
       [],
       false,
@@ -65,7 +73,7 @@ export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnfo
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Args",
+      "args",
       "Optional arguments to pass to the source during\nexecution.",
       InputType_String_GetTypes(),
       false,
@@ -73,18 +81,10 @@ export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnfo
     ),
     new DynamicUIProps(
       InputType.Object,
-      "File",
+      "file",
       "A remote or local file. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFile_GetTypes(),
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFile_GetTypes(),
       false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Interpreter",
-      "The script interpreter to use. Possible values\nare: `INTERPRETER_UNSPECIFIED`, `NONE`, `SHELL`, `POWERSHELL`.",
-      [],
-      true,
       false,
     ),
   ];

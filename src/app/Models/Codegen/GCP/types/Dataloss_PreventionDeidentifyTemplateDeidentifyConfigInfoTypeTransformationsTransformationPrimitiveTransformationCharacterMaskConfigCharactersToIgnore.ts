@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigCharactersToIgnore {
-  // Characters to not transform when masking. Only one of this or `common_characters_to_ignore` must be specified.
-  CharactersToSkip?: string;
-
+export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigCharactersToIgnore {
   /*
 Common characters to not transform when masking. Useful to avoid removing punctuation. Only one of this or `characters_to_skip` must be specified.
 Possible values are: `NUMERIC`, `ALPHA_UPPER_CASE`, `ALPHA_LOWER_CASE`, `PUNCTUATION`, `WHITESPACE`.
 */
-  CommonCharactersToIgnore?: string;
+  commonCharactersToIgnore?: string;
+
+  // Characters to not transform when masking. Only one of this or `common_characters_to_ignore` must be specified.
+  charactersToSkip?: string;
 }
 
-export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigCharactersToIgnore_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigCharactersToIgnore_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CharactersToSkip",
-      "Characters to not transform when masking. Only one of this or `common_characters_to_ignore` must be specified.",
+      "commonCharactersToIgnore",
+      "Common characters to not transform when masking. Useful to avoid removing punctuation. Only one of this or `characters_to_skip` must be specified.\nPossible values are: `NUMERIC`, `ALPHA_UPPER_CASE`, `ALPHA_LOWER_CASE`, `PUNCTUATION`, `WHITESPACE`.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "CommonCharactersToIgnore",
-      "Common characters to not transform when masking. Useful to avoid removing punctuation. Only one of this or `characters_to_skip` must be specified.\nPossible values are: `NUMERIC`, `ALPHA_UPPER_CASE`, `ALPHA_LOWER_CASE`, `PUNCTUATION`, `WHITESPACE`.",
+      "charactersToSkip",
+      "Characters to not transform when masking. Only one of this or `common_characters_to_ignore` must be specified.",
       [],
       false,
       false,

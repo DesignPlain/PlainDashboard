@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Clouddeploy_TargetIamBindingCondition {
+export interface clouddeploy_TargetIamBindingCondition {
   //
-  Title?: string;
+  description?: string;
 
   //
-  Description?: string;
+  expression?: string;
 
   //
-  Expression?: string;
+  title?: string;
 }
 
-export function Clouddeploy_TargetIamBindingCondition_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_TargetIamBindingCondition_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Title", "", [], true, true),
-    new DynamicUIProps(InputType.String, "Description", "", [], false, true),
-    new DynamicUIProps(InputType.String, "Expression", "", [], true, true),
+    new DynamicUIProps(InputType.String, "description", "", [], false, true),
+    new DynamicUIProps(InputType.String, "expression", "", [], true, true),
+    new DynamicUIProps(InputType.String, "title", "", [], true, true),
   ];
 }

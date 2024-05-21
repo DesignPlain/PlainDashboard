@@ -15,15 +15,12 @@ in the format `organizations/{{org_name}}/environments/{{env_name}}`.
 
 - - -
 */
-  EnvId?: string;
+  envId?: string;
 
   // The name of the newly created keystore.
-  Name?: string;
+  name?: string;
 }
 export class EnvKeystore extends Resource {
-  // Aliases in this keystore.
-  public Aliases?: Array<string>;
-
   /*
 The Apigee environment group associated with the Apigee environment,
 in the format `organizations/{{org_name}}/environments/{{env_name}}`.
@@ -31,27 +28,30 @@ in the format `organizations/{{org_name}}/environments/{{env_name}}`.
 
 - - -
 */
-  public EnvId?: string;
+  public envId?: string;
 
   // The name of the newly created keystore.
-  public Name?: string;
+  public name?: string;
+
+  // Aliases in this keystore.
+  public aliases?: Array<string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "EnvId",
-        "The Apigee environment group associated with the Apigee environment,\nin the format `organizations/{{org_name}}/environments/{{env_name}}`.\n\n\n- - -",
+        "name",
+        "The name of the newly created keystore.",
         [],
-        true,
+        false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
-        "The name of the newly created keystore.",
+        "envId",
+        "The Apigee environment group associated with the Apigee environment,\nin the format `organizations/{{org_name}}/environments/{{env_name}}`.\n\n\n- - -",
         [],
-        false,
+        true,
         true,
       ),
     ];

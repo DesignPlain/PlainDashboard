@@ -6,98 +6,82 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponse,
-  Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponse_GetTypes,
-} from "./Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponse";
+  diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponse,
+  diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponse_GetTypes,
+} from "./diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponse";
 import {
-  Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntent,
-  Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntent_GetTypes,
-} from "./Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntent";
+  diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntent,
+  diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntent_GetTypes,
+} from "./diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntent";
 import {
-  Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputCurrentPage,
-  Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputCurrentPage_GetTypes,
-} from "./Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputCurrentPage";
+  diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputCurrentPage,
+  diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputCurrentPage_GetTypes,
+} from "./diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputCurrentPage";
 import {
-  Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifference,
-  Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifference_GetTypes,
-} from "./Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifference";
+  diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifference,
+  diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifference_GetTypes,
+} from "./diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifference";
 import {
-  Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus,
-  Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus_GetTypes,
-} from "./Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus";
+  diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus,
+  diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus_GetTypes,
+} from "./diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus";
 
-export interface Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutput {
-  /*
-The text responses from the agent for the turn.
-Structure is documented below.
-*/
-  TextResponses?: Array<Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponse>;
-
-  /*
-The [Intent](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents.intents#Intent) that triggered the response.
-Structure is documented below.
-*/
-  TriggeredIntent?: Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntent;
-
+export interface diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutput {
   /*
 The [Page](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents.flows.pages#Page) on which the utterance was spoken.
 Structure is documented below.
 */
-  CurrentPage?: Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputCurrentPage;
+  currentPage?: diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputCurrentPage;
 
   /*
 The list of differences between the original run and the replay for this output, if any.
 Structure is documented below.
 */
-  Differences?: Array<Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifference>;
+  differences?: Array<diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifference>;
 
   // The session parameters available to the bot at this point.
-  SessionParameters?: string;
+  sessionParameters?: string;
 
   /*
 Response error from the agent in the test result. If set, other output is empty.
 Structure is documented below.
 */
-  Status?: Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus;
+  status?: diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus;
+
+  /*
+The text responses from the agent for the turn.
+Structure is documented below.
+*/
+  textResponses?: Array<diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponse>;
+
+  /*
+The [Intent](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents.intents#Intent) that triggered the response.
+Structure is documented below.
+*/
+  triggeredIntent?: diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntent;
 }
 
-export function Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutput_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutput_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "TextResponses",
-      "The text responses from the agent for the turn.\nStructure is documented below.",
-      Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponse_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Object,
-      "TriggeredIntent",
-      "The [Intent](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents.intents#Intent) that triggered the response.\nStructure is documented below.",
-      Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntent_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "CurrentPage",
+      "currentPage",
       "The [Page](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents.flows.pages#Page) on which the utterance was spoken.\nStructure is documented below.",
-      Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputCurrentPage_GetTypes(),
+      diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputCurrentPage_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Differences",
+      "differences",
       "The list of differences between the original run and the replay for this output, if any.\nStructure is documented below.",
-      Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifference_GetTypes(),
+      diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifference_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "SessionParameters",
+      "sessionParameters",
       "The session parameters available to the bot at this point.",
       [],
       false,
@@ -105,9 +89,25 @@ export function Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOut
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Status",
+      "status",
       "Response error from the agent in the test result. If set, other output is empty.\nStructure is documented below.",
-      Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus_GetTypes(),
+      diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "textResponses",
+      "The text responses from the agent for the turn.\nStructure is documented below.",
+      diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponse_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "triggeredIntent",
+      "The [Intent](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents.intents#Intent) that triggered the response.\nStructure is documented below.",
+      diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntent_GetTypes(),
       false,
       false,
     ),

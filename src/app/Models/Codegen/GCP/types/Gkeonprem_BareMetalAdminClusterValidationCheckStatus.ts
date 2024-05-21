@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_BareMetalAdminClusterValidationCheckStatusResult,
-  Gkeonprem_BareMetalAdminClusterValidationCheckStatusResult_GetTypes,
-} from "./Gkeonprem_BareMetalAdminClusterValidationCheckStatusResult";
+  gkeonprem_BareMetalAdminClusterValidationCheckStatusResult,
+  gkeonprem_BareMetalAdminClusterValidationCheckStatusResult_GetTypes,
+} from "./gkeonprem_BareMetalAdminClusterValidationCheckStatusResult";
 
-export interface Gkeonprem_BareMetalAdminClusterValidationCheckStatus {
+export interface gkeonprem_BareMetalAdminClusterValidationCheckStatus {
   /*
 (Output)
 Individual checks which failed as part of the Preflight check execution.
 Structure is documented below.
 */
-  Results?: Array<Gkeonprem_BareMetalAdminClusterValidationCheckStatusResult>;
+  results?: Array<gkeonprem_BareMetalAdminClusterValidationCheckStatusResult>;
 }
 
-export function Gkeonprem_BareMetalAdminClusterValidationCheckStatus_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalAdminClusterValidationCheckStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Results",
+      "results",
       "(Output)\nIndividual checks which failed as part of the Preflight check execution.\nStructure is documented below.",
-      Gkeonprem_BareMetalAdminClusterValidationCheckStatusResult_GetTypes(),
+      gkeonprem_BareMetalAdminClusterValidationCheckStatusResult_GetTypes(),
       false,
       false,
     ),

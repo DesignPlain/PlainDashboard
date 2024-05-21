@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Iap_TunnelIamMemberCondition {
+export interface iap_TunnelIamMemberCondition {
   // An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
-  Description?: string;
+  description?: string;
 
   // Textual representation of an expression in Common Expression Language syntax.
-  Expression?: string;
+  expression?: string;
 
   // A title for the expression, i.e. a short string describing its purpose.
-  Title?: string;
+  title?: string;
 }
 
-export function Iap_TunnelIamMemberCondition_GetTypes(): DynamicUIProps[] {
+export function iap_TunnelIamMemberCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Description",
-      "An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Expression",
+      "expression",
       "Textual representation of an expression in Common Expression Language syntax.",
       [],
       true,
@@ -37,10 +29,18 @@ export function Iap_TunnelIamMemberCondition_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Title",
+      "title",
       "A title for the expression, i.e. a short string describing its purpose.",
       [],
       true,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "description",
+      "An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.",
+      [],
+      false,
       true,
     ),
   ];

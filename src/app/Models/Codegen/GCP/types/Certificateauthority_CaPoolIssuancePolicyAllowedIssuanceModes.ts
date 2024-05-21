@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificateauthority_CaPoolIssuancePolicyAllowedIssuanceModes {
+export interface certificateauthority_CaPoolIssuancePolicyAllowedIssuanceModes {
   // When true, allows callers to create Certificates by specifying a CertificateConfig.
-  AllowConfigBasedIssuance?: boolean;
+  allowConfigBasedIssuance?: boolean;
 
   // When true, allows callers to create Certificates by specifying a CSR.
-  AllowCsrBasedIssuance?: boolean;
+  allowCsrBasedIssuance?: boolean;
 }
 
-export function Certificateauthority_CaPoolIssuancePolicyAllowedIssuanceModes_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CaPoolIssuancePolicyAllowedIssuanceModes_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "AllowConfigBasedIssuance",
+      "allowConfigBasedIssuance",
       "When true, allows callers to create Certificates by specifying a CertificateConfig.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Certificateauthority_CaPoolIssuancePolicyAllowedIssuanceModes_Ge
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "AllowCsrBasedIssuance",
+      "allowCsrBasedIssuance",
       "When true, allows callers to create Certificates by specifying a CSR.",
       [],
       true,

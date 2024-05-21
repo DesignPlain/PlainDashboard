@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterAction {
+export interface diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterAction {
   // Display name of the parameter.
-  Parameter?: string;
+  parameter?: string;
 
   // The new JSON-encoded value of the parameter. A null value clears the parameter.
-  Value?: string;
+  value?: string;
 }
 
-export function Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterAction_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterAction_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Parameter",
+      "parameter",
       "Display name of the parameter.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTrig
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "The new JSON-encoded value of the parameter. A null value clears the parameter.",
       [],
       false,

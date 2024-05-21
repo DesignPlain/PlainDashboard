@@ -6,133 +6,101 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_WorkflowTemplateJobScheduling,
-  Dataproc_WorkflowTemplateJobScheduling_GetTypes,
-} from "./Dataproc_WorkflowTemplateJobScheduling";
+  dataproc_WorkflowTemplateJobSparkJob,
+  dataproc_WorkflowTemplateJobSparkJob_GetTypes,
+} from "./dataproc_WorkflowTemplateJobSparkJob";
 import {
-  Dataproc_WorkflowTemplateJobPysparkJob,
-  Dataproc_WorkflowTemplateJobPysparkJob_GetTypes,
-} from "./Dataproc_WorkflowTemplateJobPysparkJob";
+  dataproc_WorkflowTemplateJobSparkRJob,
+  dataproc_WorkflowTemplateJobSparkRJob_GetTypes,
+} from "./dataproc_WorkflowTemplateJobSparkRJob";
 import {
-  Dataproc_WorkflowTemplateJobSparkJob,
-  Dataproc_WorkflowTemplateJobSparkJob_GetTypes,
-} from "./Dataproc_WorkflowTemplateJobSparkJob";
+  dataproc_WorkflowTemplateJobScheduling,
+  dataproc_WorkflowTemplateJobScheduling_GetTypes,
+} from "./dataproc_WorkflowTemplateJobScheduling";
 import {
-  Dataproc_WorkflowTemplateJobSparkSqlJob,
-  Dataproc_WorkflowTemplateJobSparkSqlJob_GetTypes,
-} from "./Dataproc_WorkflowTemplateJobSparkSqlJob";
+  dataproc_WorkflowTemplateJobPigJob,
+  dataproc_WorkflowTemplateJobPigJob_GetTypes,
+} from "./dataproc_WorkflowTemplateJobPigJob";
 import {
-  Dataproc_WorkflowTemplateJobSparkRJob,
-  Dataproc_WorkflowTemplateJobSparkRJob_GetTypes,
-} from "./Dataproc_WorkflowTemplateJobSparkRJob";
+  dataproc_WorkflowTemplateJobPrestoJob,
+  dataproc_WorkflowTemplateJobPrestoJob_GetTypes,
+} from "./dataproc_WorkflowTemplateJobPrestoJob";
 import {
-  Dataproc_WorkflowTemplateJobHadoopJob,
-  Dataproc_WorkflowTemplateJobHadoopJob_GetTypes,
-} from "./Dataproc_WorkflowTemplateJobHadoopJob";
+  dataproc_WorkflowTemplateJobPysparkJob,
+  dataproc_WorkflowTemplateJobPysparkJob_GetTypes,
+} from "./dataproc_WorkflowTemplateJobPysparkJob";
 import {
-  Dataproc_WorkflowTemplateJobHiveJob,
-  Dataproc_WorkflowTemplateJobHiveJob_GetTypes,
-} from "./Dataproc_WorkflowTemplateJobHiveJob";
+  dataproc_WorkflowTemplateJobHadoopJob,
+  dataproc_WorkflowTemplateJobHadoopJob_GetTypes,
+} from "./dataproc_WorkflowTemplateJobHadoopJob";
 import {
-  Dataproc_WorkflowTemplateJobPigJob,
-  Dataproc_WorkflowTemplateJobPigJob_GetTypes,
-} from "./Dataproc_WorkflowTemplateJobPigJob";
+  dataproc_WorkflowTemplateJobHiveJob,
+  dataproc_WorkflowTemplateJobHiveJob_GetTypes,
+} from "./dataproc_WorkflowTemplateJobHiveJob";
 import {
-  Dataproc_WorkflowTemplateJobPrestoJob,
-  Dataproc_WorkflowTemplateJobPrestoJob_GetTypes,
-} from "./Dataproc_WorkflowTemplateJobPrestoJob";
+  dataproc_WorkflowTemplateJobSparkSqlJob,
+  dataproc_WorkflowTemplateJobSparkSqlJob_GetTypes,
+} from "./dataproc_WorkflowTemplateJobSparkSqlJob";
 
-export interface Dataproc_WorkflowTemplateJob {
-  // Job is a SparkR job.
-  SparkRJob?: Dataproc_WorkflowTemplateJobSparkRJob;
-
-  // Job is a Hadoop job.
-  HadoopJob?: Dataproc_WorkflowTemplateJobHadoopJob;
-
-  // Job is a Hive job.
-  HiveJob?: Dataproc_WorkflowTemplateJobHiveJob;
-
-  // Job is a Pig job.
-  PigJob?: Dataproc_WorkflowTemplateJobPigJob;
+export interface dataproc_WorkflowTemplateJob {
+  // Job is a SparkSql job.
+  sparkSqlJob?: dataproc_WorkflowTemplateJobSparkSqlJob;
 
   // The optional list of prerequisite job step_ids. If not specified, the job will start at the beginning of workflow.
-  PrerequisiteStepIds?: Array<string>;
+  prerequisiteStepIds?: Array<string>;
 
   // Job is a Presto job.
-  PrestoJob?: Dataproc_WorkflowTemplateJobPrestoJob;
-
-  // Job scheduling configuration.
-  Scheduling?: Dataproc_WorkflowTemplateJobScheduling;
-
-  // The labels to associate with this job. Label keys must be between 1 and 63 characters long, and must conform to the following regular expression: {0,63} No more than 32 labels can be associated with a given job.
-  Labels?: Map<string, string>;
-
-  // Job is a PySpark job.
-  PysparkJob?: Dataproc_WorkflowTemplateJobPysparkJob;
+  prestoJob?: dataproc_WorkflowTemplateJobPrestoJob;
 
   // Job is a Spark job.
-  SparkJob?: Dataproc_WorkflowTemplateJobSparkJob;
+  sparkJob?: dataproc_WorkflowTemplateJobSparkJob;
 
-  // Job is a SparkSql job.
-  SparkSqlJob?: Dataproc_WorkflowTemplateJobSparkSqlJob;
+  // Job is a SparkR job.
+  sparkRJob?: dataproc_WorkflowTemplateJobSparkRJob;
+
+  // Job is a PySpark job.
+  pysparkJob?: dataproc_WorkflowTemplateJobPysparkJob;
+
+  // Job scheduling configuration.
+  scheduling?: dataproc_WorkflowTemplateJobScheduling;
 
   // Required. The step id. The id must be unique among all jobs within the template. The step id is used as prefix for job id, as job `goog-dataproc-workflow-step-id` label, and in field from other steps. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between 3 and 50 characters.
-  StepId?: string;
+  stepId?: string;
+
+  // Job is a Hadoop job.
+  hadoopJob?: dataproc_WorkflowTemplateJobHadoopJob;
+
+  // Job is a Hive job.
+  hiveJob?: dataproc_WorkflowTemplateJobHiveJob;
+
+  // The labels to associate with this job. Label keys must be between 1 and 63 characters long, and must conform to the following regular expression: {0,63} No more than 32 labels can be associated with a given job.
+  labels?: Map<string, string>;
+
+  // Job is a Pig job.
+  pigJob?: dataproc_WorkflowTemplateJobPigJob;
 }
 
-export function Dataproc_WorkflowTemplateJob_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplateJob_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "SparkRJob",
-      "Job is a SparkR job.",
-      Dataproc_WorkflowTemplateJobSparkRJob_GetTypes(),
+      "sparkJob",
+      "Job is a Spark job.",
+      dataproc_WorkflowTemplateJobSparkJob_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "HadoopJob",
-      "Job is a Hadoop job.",
-      Dataproc_WorkflowTemplateJobHadoopJob_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "PigJob",
-      "Job is a Pig job.",
-      Dataproc_WorkflowTemplateJobPigJob_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "PrerequisiteStepIds",
-      "The optional list of prerequisite job step_ids. If not specified, the job will start at the beginning of workflow.",
-      InputType_String_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Map,
-      "Labels",
-      "The labels to associate with this job. Label keys must be between 1 and 63 characters long, and must conform to the following regular expression: {0,63} No more than 32 labels can be associated with a given job.",
-      InputType_Map_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "SparkSqlJob",
-      "Job is a SparkSql job.",
-      Dataproc_WorkflowTemplateJobSparkSqlJob_GetTypes(),
+      "scheduling",
+      "Job scheduling configuration.",
+      dataproc_WorkflowTemplateJobScheduling_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "StepId",
+      "stepId",
       "Required. The step id. The id must be unique among all jobs within the template. The step id is used as prefix for job id, as job `goog-dataproc-workflow-step-id` label, and in field from other steps. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between 3 and 50 characters.",
       [],
       true,
@@ -140,41 +108,73 @@ export function Dataproc_WorkflowTemplateJob_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "HiveJob",
-      "Job is a Hive job.",
-      Dataproc_WorkflowTemplateJobHiveJob_GetTypes(),
+      "sparkSqlJob",
+      "Job is a SparkSql job.",
+      dataproc_WorkflowTemplateJobSparkSqlJob_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "PrestoJob",
+      "prestoJob",
       "Job is a Presto job.",
-      Dataproc_WorkflowTemplateJobPrestoJob_GetTypes(),
+      dataproc_WorkflowTemplateJobPrestoJob_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Scheduling",
-      "Job scheduling configuration.",
-      Dataproc_WorkflowTemplateJobScheduling_GetTypes(),
+      "sparkRJob",
+      "Job is a SparkR job.",
+      dataproc_WorkflowTemplateJobSparkRJob_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "PysparkJob",
+      "pysparkJob",
       "Job is a PySpark job.",
-      Dataproc_WorkflowTemplateJobPysparkJob_GetTypes(),
+      dataproc_WorkflowTemplateJobPysparkJob_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "SparkJob",
-      "Job is a Spark job.",
-      Dataproc_WorkflowTemplateJobSparkJob_GetTypes(),
+      "hadoopJob",
+      "Job is a Hadoop job.",
+      dataproc_WorkflowTemplateJobHadoopJob_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "hiveJob",
+      "Job is a Hive job.",
+      dataproc_WorkflowTemplateJobHiveJob_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Map,
+      "labels",
+      "The labels to associate with this job. Label keys must be between 1 and 63 characters long, and must conform to the following regular expression: {0,63} No more than 32 labels can be associated with a given job.",
+      InputType_Map_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "pigJob",
+      "Job is a Pig job.",
+      dataproc_WorkflowTemplateJobPigJob_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "prerequisiteStepIds",
+      "The optional list of prerequisite job step_ids. If not specified, the job will start at the beginning of workflow.",
+      InputType_String_GetTypes(),
       false,
       true,
     ),

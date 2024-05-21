@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Logging_OrganizationSinkBigqueryOptions {
+export interface logging_OrganizationSinkBigqueryOptions {
   /*
 Whether to use [BigQuery's partition tables](https://cloud.google.com/bigquery/docs/partitioned-tables).
 By default, Logging creates dated tables based on the log entries' timestamps, e.g. syslog_20170523. With partitioned
 tables the date suffix is no longer present and [special query syntax](https://cloud.google.com/bigquery/docs/querying-partitioned-tables)
 has to be used instead. In both cases, tables are sharded based on UTC timezone.
 */
-  UsePartitionedTables?: boolean;
+  usePartitionedTables?: boolean;
 }
 
-export function Logging_OrganizationSinkBigqueryOptions_GetTypes(): DynamicUIProps[] {
+export function logging_OrganizationSinkBigqueryOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "UsePartitionedTables",
+      "usePartitionedTables",
       "Whether to use [BigQuery's partition tables](https://cloud.google.com/bigquery/docs/partitioned-tables).\nBy default, Logging creates dated tables based on the log entries' timestamps, e.g. syslog_20170523. With partitioned\ntables the date suffix is no longer present and [special query syntax](https://cloud.google.com/bigquery/docs/querying-partitioned-tables)\nhas to be used instead. In both cases, tables are sharded based on UTC timezone.",
       [],
       true,

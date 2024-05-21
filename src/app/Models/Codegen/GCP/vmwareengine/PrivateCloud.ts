@@ -7,126 +7,126 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Vmwareengine_PrivateCloudManagementCluster,
-  Vmwareengine_PrivateCloudManagementCluster_GetTypes,
-} from "../types/Vmwareengine_PrivateCloudManagementCluster";
+  vmwareengine_PrivateCloudHcx,
+  vmwareengine_PrivateCloudHcx_GetTypes,
+} from "../types/vmwareengine_PrivateCloudHcx";
 import {
-  Vmwareengine_PrivateCloudNetworkConfig,
-  Vmwareengine_PrivateCloudNetworkConfig_GetTypes,
-} from "../types/Vmwareengine_PrivateCloudNetworkConfig";
+  vmwareengine_PrivateCloudVcenter,
+  vmwareengine_PrivateCloudVcenter_GetTypes,
+} from "../types/vmwareengine_PrivateCloudVcenter";
 import {
-  Vmwareengine_PrivateCloudNsx,
-  Vmwareengine_PrivateCloudNsx_GetTypes,
-} from "../types/Vmwareengine_PrivateCloudNsx";
+  vmwareengine_PrivateCloudNsx,
+  vmwareengine_PrivateCloudNsx_GetTypes,
+} from "../types/vmwareengine_PrivateCloudNsx";
 import {
-  Vmwareengine_PrivateCloudVcenter,
-  Vmwareengine_PrivateCloudVcenter_GetTypes,
-} from "../types/Vmwareengine_PrivateCloudVcenter";
+  vmwareengine_PrivateCloudManagementCluster,
+  vmwareengine_PrivateCloudManagementCluster_GetTypes,
+} from "../types/vmwareengine_PrivateCloudManagementCluster";
 import {
-  Vmwareengine_PrivateCloudHcx,
-  Vmwareengine_PrivateCloudHcx_GetTypes,
-} from "../types/Vmwareengine_PrivateCloudHcx";
+  vmwareengine_PrivateCloudNetworkConfig,
+  vmwareengine_PrivateCloudNetworkConfig_GetTypes,
+} from "../types/vmwareengine_PrivateCloudNetworkConfig";
 
 export interface PrivateCloudArgs {
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  /*
-Initial type of the private cloud.
-Possible values are: `STANDARD`, `TIME_LIMITED`.
-*/
-  Type?: string;
-
   // User-provided description for this private cloud.
-  Description?: string;
+  description?: string;
 
   // The location where the PrivateCloud should reside.
-  Location?: string;
+  location?: string;
 
   /*
 The management cluster for this private cloud. This used for creating and managing the default cluster.
 Structure is documented below.
 */
-  ManagementCluster?: Vmwareengine_PrivateCloudManagementCluster;
+  managementCluster?: vmwareengine_PrivateCloudManagementCluster;
 
   // The ID of the PrivateCloud.
-  Name?: string;
+  name?: string;
 
   /*
 Network configuration in the consumer project with which the peering has to be done.
 Structure is documented below.
 */
-  NetworkConfig?: Vmwareengine_PrivateCloudNetworkConfig;
-}
-export class PrivateCloud extends Resource {
-  // User-provided description for this private cloud.
-  public Description?: string;
-
-  // The location where the PrivateCloud should reside.
-  public Location?: string;
-
-  // The ID of the PrivateCloud.
-  public Name?: string;
+  networkConfig?: vmwareengine_PrivateCloudNetworkConfig;
 
   /*
-Details about a NSX Manager appliance.
-Structure is documented below.
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 */
-  public Nsxes?: Array<Vmwareengine_PrivateCloudNsx>;
+  project?: string;
 
   /*
 Initial type of the private cloud.
 Possible values are: `STANDARD`, `TIME_LIMITED`.
 */
-  public Type?: string;
+  type?: string;
+}
+export class PrivateCloud extends Resource {
+  /*
+Details about a HCX Cloud Manager appliance.
+Structure is documented below.
+*/
+  public hcxes?: Array<vmwareengine_PrivateCloudHcx>;
+
+  // The ID of the PrivateCloud.
+  public name?: string;
+
+  /*
+Network configuration in the consumer project with which the peering has to be done.
+Structure is documented below.
+*/
+  public networkConfig?: vmwareengine_PrivateCloudNetworkConfig;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  /*
+Initial type of the private cloud.
+Possible values are: `STANDARD`, `TIME_LIMITED`.
+*/
+  public type?: string;
+
+  // System-generated unique identifier for the resource.
+  public uid?: string;
 
   /*
 Details about a vCenter Server management appliance.
 Structure is documented below.
 */
-  public Vcenters?: Array<Vmwareengine_PrivateCloudVcenter>;
+  public vcenters?: Array<vmwareengine_PrivateCloudVcenter>;
 
-  /*
-Details about a HCX Cloud Manager appliance.
-Structure is documented below.
-*/
-  public Hcxes?: Array<Vmwareengine_PrivateCloudHcx>;
+  // User-provided description for this private cloud.
+  public description?: string;
+
+  // The location where the PrivateCloud should reside.
+  public location?: string;
 
   /*
 The management cluster for this private cloud. This used for creating and managing the default cluster.
 Structure is documented below.
 */
-  public ManagementCluster?: Vmwareengine_PrivateCloudManagementCluster;
+  public managementCluster?: vmwareengine_PrivateCloudManagementCluster;
 
   /*
-Network configuration in the consumer project with which the peering has to be done.
+Details about a NSX Manager appliance.
 Structure is documented below.
 */
-  public NetworkConfig?: Vmwareengine_PrivateCloudNetworkConfig;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
+  public nsxes?: Array<vmwareengine_PrivateCloudNsx>;
 
   /*
 State of the appliance.
 Possible values are: `ACTIVE`, `CREATING`.
 */
-  public State?: string;
-
-  // System-generated unique identifier for the resource.
-  public Uid?: string;
+  public state?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "User-provided description for this private cloud.",
         [],
         false,
@@ -134,7 +134,7 @@ Possible values are: `ACTIVE`, `CREATING`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location where the PrivateCloud should reside.",
         [],
         true,
@@ -142,15 +142,15 @@ Possible values are: `ACTIVE`, `CREATING`.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "ManagementCluster",
+        "managementCluster",
         "The management cluster for this private cloud. This used for creating and managing the default cluster.\nStructure is documented below.",
-        Vmwareengine_PrivateCloudManagementCluster_GetTypes(),
+        vmwareengine_PrivateCloudManagementCluster_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The ID of the PrivateCloud.",
         [],
         false,
@@ -158,15 +158,15 @@ Possible values are: `ACTIVE`, `CREATING`.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "NetworkConfig",
+        "networkConfig",
         "Network configuration in the consumer project with which the peering has to be done.\nStructure is documented below.",
-        Vmwareengine_PrivateCloudNetworkConfig_GetTypes(),
+        vmwareengine_PrivateCloudNetworkConfig_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -174,7 +174,7 @@ Possible values are: `ACTIVE`, `CREATING`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Type",
+        "type",
         "Initial type of the private cloud.\nPossible values are: `STANDARD`, `TIME_LIMITED`.",
         [],
         false,

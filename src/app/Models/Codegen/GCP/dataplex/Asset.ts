@@ -7,107 +7,104 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataplex_AssetDiscoveryStatus,
-  Dataplex_AssetDiscoveryStatus_GetTypes,
-} from "../types/Dataplex_AssetDiscoveryStatus";
+  dataplex_AssetResourceSpec,
+  dataplex_AssetResourceSpec_GetTypes,
+} from "../types/dataplex_AssetResourceSpec";
 import {
-  Dataplex_AssetResourceStatus,
-  Dataplex_AssetResourceStatus_GetTypes,
-} from "../types/Dataplex_AssetResourceStatus";
+  dataplex_AssetSecurityStatus,
+  dataplex_AssetSecurityStatus_GetTypes,
+} from "../types/dataplex_AssetSecurityStatus";
 import {
-  Dataplex_AssetSecurityStatus,
-  Dataplex_AssetSecurityStatus_GetTypes,
-} from "../types/Dataplex_AssetSecurityStatus";
+  dataplex_AssetResourceStatus,
+  dataplex_AssetResourceStatus_GetTypes,
+} from "../types/dataplex_AssetResourceStatus";
 import {
-  Dataplex_AssetDiscoverySpec,
-  Dataplex_AssetDiscoverySpec_GetTypes,
-} from "../types/Dataplex_AssetDiscoverySpec";
+  dataplex_AssetDiscoveryStatus,
+  dataplex_AssetDiscoveryStatus_GetTypes,
+} from "../types/dataplex_AssetDiscoveryStatus";
 import {
-  Dataplex_AssetResourceSpec,
-  Dataplex_AssetResourceSpec_GetTypes,
-} from "../types/Dataplex_AssetResourceSpec";
+  dataplex_AssetDiscoverySpec,
+  dataplex_AssetDiscoverySpec_GetTypes,
+} from "../types/dataplex_AssetDiscoverySpec";
 
 export interface AssetArgs {
+  // The zone for the resource
+  dataplexZone?: string;
+
+  // Optional. User friendly display name.
+  displayName?: string;
+
   /*
 Optional. User defined labels for the asset.
 
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   // The lake for the resource
-  Lake?: string;
-
-  // The location for the resource
-  Location?: string;
-
-  // The name of the asset.
-  Name?: string;
+  lake?: string;
 
   // The project for the resource
-  Project?: string;
-
-  // Optional. User friendly display name.
-  DisplayName?: string;
+  project?: string;
 
   // Optional. Description of the asset.
-  Description?: string;
+  description?: string;
 
   // Required. Specification of the discovery feature applied to data referenced by this asset. When this spec is left unset, the asset will use the spec set on the parent zone.
-  DiscoverySpec?: Dataplex_AssetDiscoverySpec;
+  discoverySpec?: dataplex_AssetDiscoverySpec;
+
+  // The location for the resource
+  location?: string;
+
+  // The name of the asset.
+  name?: string;
 
   // Required. Immutable. Specification of the resource that is referenced by this asset.
-  ResourceSpec?: Dataplex_AssetResourceSpec;
-
-  // The zone for the resource
-  DataplexZone?: string;
+  resourceSpec?: dataplex_AssetResourceSpec;
 }
 export class Asset extends Resource {
-  // Output only. Status of the discovery feature applied to data referenced by this asset.
-  public DiscoveryStatuses?: Array<Dataplex_AssetDiscoveryStatus>;
+  // Output only. Status of the security policy applied to resource referenced by this asset.
+  public securityStatuses?: Array<dataplex_AssetSecurityStatus>;
 
   // Optional. User friendly display name.
-  public DisplayName?: string;
-
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, InputType.String>;
-
-  // The lake for the resource
-  public Lake?: string;
-
-  // The location for the resource
-  public Location?: string;
+  public displayName?: string;
 
   // The project for the resource
-  public Project?: string;
+  public project?: string;
 
-  // Output only. The time when the asset was last updated.
-  public UpdateTime?: string;
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
 
-  // The combination of labels configured directly on the resource and default labels configured on the provider.
-  public PulumiLabels?: Map<string, InputType.String>;
+  // The lake for the resource
+  public lake?: string;
+
+  // Output only. Status of the resource referenced by this asset.
+  public resourceStatuses?: Array<dataplex_AssetResourceStatus>;
 
   // Output only. Current state of the asset. Possible values: STATE_UNSPECIFIED, ACTIVE, CREATING, DELETING, ACTION_REQUIRED
-  public State?: string;
+  public state?: string;
 
   // Output only. System generated globally unique ID for the asset. This ID will be different if the asset is deleted and re-created with the same name.
-  public Uid?: string;
-
-  // Output only. The time when the asset was created.
-  public CreateTime?: string;
+  public uid?: string;
 
   // The zone for the resource
-  public DataplexZone?: string;
+  public dataplexZone?: string;
 
-  // Optional. Description of the asset.
-  public Description?: string;
+  // Output only. Status of the discovery feature applied to data referenced by this asset.
+  public discoveryStatuses?: Array<dataplex_AssetDiscoveryStatus>;
+
+  // The name of the asset.
+  public name?: string;
+
+  // Output only. The time when the asset was last updated.
+  public updateTime?: string;
 
   // Required. Specification of the discovery feature applied to data referenced by this asset. When this spec is left unset, the asset will use the spec set on the parent zone.
-  public DiscoverySpec?: Dataplex_AssetDiscoverySpec;
+  public discoverySpec?: dataplex_AssetDiscoverySpec;
 
-  // Required. Immutable. Specification of the resource that is referenced by this asset.
-  public ResourceSpec?: Dataplex_AssetResourceSpec;
+  // The location for the resource
+  public location?: string;
 
   /*
 Optional. User defined labels for the asset.
@@ -115,70 +112,25 @@ Optional. User defined labels for the asset.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  public Labels?: Map<string, string>;
+  public labels?: Map<string, string>;
 
-  // The name of the asset.
-  public Name?: string;
+  // The combination of labels configured directly on the resource and default labels configured on the provider.
+  public pulumiLabels?: Map<string, string>;
 
-  // Output only. Status of the resource referenced by this asset.
-  public ResourceStatuses?: Array<Dataplex_AssetResourceStatus>;
+  // Required. Immutable. Specification of the resource that is referenced by this asset.
+  public resourceSpec?: dataplex_AssetResourceSpec;
 
-  // Output only. Status of the security policy applied to resource referenced by this asset.
-  public SecurityStatuses?: Array<Dataplex_AssetSecurityStatus>;
+  // Output only. The time when the asset was created.
+  public createTime?: string;
+
+  // Optional. Description of the asset.
+  public description?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
-        "The project for the resource",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "DisplayName",
-        "Optional. User friendly display name.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "DiscoverySpec",
-        "Required. Specification of the discovery feature applied to data referenced by this asset. When this spec is left unset, the asset will use the spec set on the parent zone.",
-        Dataplex_AssetDiscoverySpec_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "DataplexZone",
-        "The zone for the resource",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Map,
-        "Labels",
-        "Optional. User defined labels for the asset.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
-        InputType_Map_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Location",
-        "The location for the resource",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
+        "name",
         "The name of the asset.",
         [],
         false,
@@ -186,15 +138,15 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "Lake",
-        "The lake for the resource",
+        "dataplexZone",
+        "The zone for the resource",
         [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Optional. Description of the asset.",
         [],
         false,
@@ -202,11 +154,59 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.Object,
-        "ResourceSpec",
-        "Required. Immutable. Specification of the resource that is referenced by this asset.",
-        Dataplex_AssetResourceSpec_GetTypes(),
+        "discoverySpec",
+        "Required. Specification of the discovery feature applied to data referenced by this asset. When this spec is left unset, the asset will use the spec set on the parent zone.",
+        dataplex_AssetDiscoverySpec_GetTypes(),
         true,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The project for the resource",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "location",
+        "The location for the resource",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "resourceSpec",
+        "Required. Immutable. Specification of the resource that is referenced by this asset.",
+        dataplex_AssetResourceSpec_GetTypes(),
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "displayName",
+        "Optional. User friendly display name.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Map,
+        "labels",
+        "Optional. User defined labels for the asset.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        InputType_Map_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "lake",
+        "The lake for the resource",
+        [],
+        true,
+        true,
       ),
     ];
   }

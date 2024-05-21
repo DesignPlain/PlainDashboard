@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig {
+export interface container_getClusterNodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig {
   // Mode for how the GPU driver is installed.
-  GpuDriverVersion?: string;
+  gpuDriverVersion?: string;
 }
 
-export function Container_getClusterNodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "GpuDriverVersion",
+      "gpuDriverVersion",
       "Mode for how the GPU driver is installed.",
       [],
       true,

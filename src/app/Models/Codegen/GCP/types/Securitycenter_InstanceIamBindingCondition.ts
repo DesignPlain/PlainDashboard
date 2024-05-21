@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Securitycenter_InstanceIamBindingCondition {
-  //
-  Title?: string;
-
+export interface securitycenter_InstanceIamBindingCondition {
   // An optional description of the instance.
-  Description?: string;
+  description?: string;
 
   //
-  Expression?: string;
+  expression?: string;
+
+  //
+  title?: string;
 }
 
-export function Securitycenter_InstanceIamBindingCondition_GetTypes(): DynamicUIProps[] {
+export function securitycenter_InstanceIamBindingCondition_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Title", "", [], true, true),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "An optional description of the instance.",
       [],
       false,
       true,
     ),
-    new DynamicUIProps(InputType.String, "Expression", "", [], true, true),
+    new DynamicUIProps(InputType.String, "expression", "", [], true, true),
+    new DynamicUIProps(InputType.String, "title", "", [], true, true),
   ];
 }

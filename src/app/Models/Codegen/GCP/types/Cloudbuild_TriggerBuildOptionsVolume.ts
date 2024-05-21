@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuild_TriggerBuildOptionsVolume {
+export interface cloudbuild_TriggerBuildOptionsVolume {
   /*
 Name of the volume to mount.
 Volume names must be unique per build step and must be valid names for Docker volumes.
 Each named volume must be used by at least two build steps.
 */
-  Name?: string;
+  name?: string;
 
   /*
 Path at which to mount the volume.
 Paths must be absolute and cannot conflict with other volume paths on the same
 build step or with certain reserved volume paths.
 */
-  Path?: string;
+  path?: string;
 }
 
-export function Cloudbuild_TriggerBuildOptionsVolume_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_TriggerBuildOptionsVolume_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Name of the volume to mount.\nVolume names must be unique per build step and must be valid names for Docker volumes.\nEach named volume must be used by at least two build steps.",
       [],
       false,
@@ -34,7 +34,7 @@ export function Cloudbuild_TriggerBuildOptionsVolume_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "Path",
+      "path",
       "Path at which to mount the volume.\nPaths must be absolute and cannot conflict with other volume paths on the same\nbuild step or with certain reserved volume paths.",
       [],
       false,

@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstanceSettingSqlServerAuditConfig {
+export interface sql_getDatabaseInstanceSettingSqlServerAuditConfig {
   // The name of the destination bucket (e.g., gs://mybucket).
-  Bucket?: string;
+  bucket?: string;
 
   // How long to keep generated audit files. A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s"..
-  RetentionInterval?: string;
+  retentionInterval?: string;
 
   // How often to upload generated audit files. A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
-  UploadInterval?: string;
+  uploadInterval?: string;
 }
 
-export function Sql_getDatabaseInstanceSettingSqlServerAuditConfig_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstanceSettingSqlServerAuditConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "RetentionInterval",
+      "bucket",
+      "The name of the destination bucket (e.g., gs://mybucket).",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "retentionInterval",
       "How long to keep generated audit files. A duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\"..",
       [],
       true,
@@ -29,16 +37,8 @@ export function Sql_getDatabaseInstanceSettingSqlServerAuditConfig_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.String,
-      "UploadInterval",
+      "uploadInterval",
       "How often to upload generated audit files. A duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\".",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Bucket",
-      "The name of the destination bucket (e.g., gs://mybucket).",
       [],
       true,
       false,

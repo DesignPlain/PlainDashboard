@@ -6,33 +6,49 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Folder_getOrganizationPolicyListPolicyAllow,
-  Folder_getOrganizationPolicyListPolicyAllow_GetTypes,
-} from "./Folder_getOrganizationPolicyListPolicyAllow";
+  folder_getOrganizationPolicyListPolicyDeny,
+  folder_getOrganizationPolicyListPolicyDeny_GetTypes,
+} from "./folder_getOrganizationPolicyListPolicyDeny";
 import {
-  Folder_getOrganizationPolicyListPolicyDeny,
-  Folder_getOrganizationPolicyListPolicyDeny_GetTypes,
-} from "./Folder_getOrganizationPolicyListPolicyDeny";
+  folder_getOrganizationPolicyListPolicyAllow,
+  folder_getOrganizationPolicyListPolicyAllow_GetTypes,
+} from "./folder_getOrganizationPolicyListPolicyAllow";
 
-export interface Folder_getOrganizationPolicyListPolicy {
+export interface folder_getOrganizationPolicyListPolicy {
   // One or the other must be set.
-  Allows?: Array<Folder_getOrganizationPolicyListPolicyAllow>;
-
-  // One or the other must be set.
-  Denies?: Array<Folder_getOrganizationPolicyListPolicyDeny>;
+  denies?: Array<folder_getOrganizationPolicyListPolicyDeny>;
 
   // If set to true, the values from the effective Policy of the parent resource are inherited, meaning the values set in this Policy are added to the values inherited up the hierarchy.
-  InheritFromParent?: boolean;
+  inheritFromParent?: boolean;
 
   // The Google Cloud Console will try to default to a configuration that matches the value specified in this field.
-  SuggestedValue?: string;
+  suggestedValue?: string;
+
+  // One or the other must be set.
+  allows?: Array<folder_getOrganizationPolicyListPolicyAllow>;
 }
 
-export function Folder_getOrganizationPolicyListPolicy_GetTypes(): DynamicUIProps[] {
+export function folder_getOrganizationPolicyListPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Array,
+      "allows",
+      "One or the other must be set.",
+      folder_getOrganizationPolicyListPolicyAllow_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "denies",
+      "One or the other must be set.",
+      folder_getOrganizationPolicyListPolicyDeny_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Bool,
-      "InheritFromParent",
+      "inheritFromParent",
       "If set to true, the values from the effective Policy of the parent resource are inherited, meaning the values set in this Policy are added to the values inherited up the hierarchy.",
       [],
       true,
@@ -40,25 +56,9 @@ export function Folder_getOrganizationPolicyListPolicy_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "SuggestedValue",
+      "suggestedValue",
       "The Google Cloud Console will try to default to a configuration that matches the value specified in this field.",
       [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Allows",
-      "One or the other must be set.",
-      Folder_getOrganizationPolicyListPolicyAllow_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Denies",
-      "One or the other must be set.",
-      Folder_getOrganizationPolicyListPolicyDeny_GetTypes(),
       true,
       false,
     ),

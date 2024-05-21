@@ -6,24 +6,24 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Osconfig_GuestPoliciesRecipeInstallStep,
-  Osconfig_GuestPoliciesRecipeInstallStep_GetTypes,
-} from "./Osconfig_GuestPoliciesRecipeInstallStep";
+  osconfig_GuestPoliciesRecipeInstallStep,
+  osconfig_GuestPoliciesRecipeInstallStep_GetTypes,
+} from "./osconfig_GuestPoliciesRecipeInstallStep";
 import {
-  Osconfig_GuestPoliciesRecipeUpdateStep,
-  Osconfig_GuestPoliciesRecipeUpdateStep_GetTypes,
-} from "./Osconfig_GuestPoliciesRecipeUpdateStep";
+  osconfig_GuestPoliciesRecipeUpdateStep,
+  osconfig_GuestPoliciesRecipeUpdateStep_GetTypes,
+} from "./osconfig_GuestPoliciesRecipeUpdateStep";
 import {
-  Osconfig_GuestPoliciesRecipeArtifact,
-  Osconfig_GuestPoliciesRecipeArtifact_GetTypes,
-} from "./Osconfig_GuestPoliciesRecipeArtifact";
+  osconfig_GuestPoliciesRecipeArtifact,
+  osconfig_GuestPoliciesRecipeArtifact_GetTypes,
+} from "./osconfig_GuestPoliciesRecipeArtifact";
 
-export interface Osconfig_GuestPoliciesRecipe {
+export interface osconfig_GuestPoliciesRecipe {
   /*
 Resources available to be used in the steps in the recipe.
 Structure is documented below.
 */
-  Artifacts?: Array<Osconfig_GuestPoliciesRecipeArtifact>;
+  artifacts?: Array<osconfig_GuestPoliciesRecipeArtifact>;
 
   /*
 Default is INSTALLED. The desired state the agent should maintain for this recipe.
@@ -34,14 +34,14 @@ REMOVE: Remove is unsupported for software recipes and attempts to create or upd
 Default value is `INSTALLED`.
 Possible values are: `INSTALLED`, `UPDATED`, `REMOVED`.
 */
-  DesiredState?: string;
+  desiredState?: string;
 
   /*
 Actions to be taken for installing this recipe. On failure it stops executing steps and does not attempt another installation.
 Any steps taken (including partially completed steps) are not rolled back.
 Structure is documented below.
 */
-  InstallSteps?: Array<Osconfig_GuestPoliciesRecipeInstallStep>;
+  installSteps?: Array<osconfig_GuestPoliciesRecipeInstallStep>;
 
   /*
 Unique identifier for the recipe. Only one recipe with a given name is installed on an instance.
@@ -49,40 +49,24 @@ Names are also used to identify resources which helps to determine whether guest
 This means that requests to create multiple recipes with the same name and version are rejected since they
 could potentially have conflicting assignments.
 */
-  Name?: string;
+  name?: string;
 
   /*
 Actions to be taken for updating this recipe. On failure it stops executing steps and does not attempt another update for this recipe.
 Any steps taken (including partially completed steps) are not rolled back.
 Structure is documented below.
 */
-  UpdateSteps?: Array<Osconfig_GuestPoliciesRecipeUpdateStep>;
+  updateSteps?: Array<osconfig_GuestPoliciesRecipeUpdateStep>;
 
   // The version of this software recipe. Version can be up to 4 period separated numbers (e.g. 12.34.56.78).
-  Version?: string;
+  version?: string;
 }
 
-export function Osconfig_GuestPoliciesRecipe_GetTypes(): DynamicUIProps[] {
+export function osconfig_GuestPoliciesRecipe_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Version",
-      "The version of this software recipe. Version can be up to 4 period separated numbers (e.g. 12.34.56.78).",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Artifacts",
-      "Resources available to be used in the steps in the recipe.\nStructure is documented below.",
-      Osconfig_GuestPoliciesRecipeArtifact_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "DesiredState",
+      "desiredState",
       "Default is INSTALLED. The desired state the agent should maintain for this recipe.\nINSTALLED: The software recipe is installed on the instance but won't be updated to new versions.\nINSTALLED_KEEP_UPDATED: The software recipe is installed on the instance. The recipe is updated to a higher version,\nif a higher version of the recipe is assigned to this instance.\nREMOVE: Remove is unsupported for software recipes and attempts to create or update a recipe to the REMOVE state is rejected.\nDefault value is `INSTALLED`.\nPossible values are: `INSTALLED`, `UPDATED`, `REMOVED`.",
       [],
       false,
@@ -90,15 +74,15 @@ export function Osconfig_GuestPoliciesRecipe_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "InstallSteps",
+      "installSteps",
       "Actions to be taken for installing this recipe. On failure it stops executing steps and does not attempt another installation.\nAny steps taken (including partially completed steps) are not rolled back.\nStructure is documented below.",
-      Osconfig_GuestPoliciesRecipeInstallStep_GetTypes(),
+      osconfig_GuestPoliciesRecipeInstallStep_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Unique identifier for the recipe. Only one recipe with a given name is installed on an instance.\nNames are also used to identify resources which helps to determine whether guest policies have conflicts.\nThis means that requests to create multiple recipes with the same name and version are rejected since they\ncould potentially have conflicting assignments.",
       [],
       true,
@@ -106,9 +90,25 @@ export function Osconfig_GuestPoliciesRecipe_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "UpdateSteps",
+      "updateSteps",
       "Actions to be taken for updating this recipe. On failure it stops executing steps and does not attempt another update for this recipe.\nAny steps taken (including partially completed steps) are not rolled back.\nStructure is documented below.",
-      Osconfig_GuestPoliciesRecipeUpdateStep_GetTypes(),
+      osconfig_GuestPoliciesRecipeUpdateStep_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "version",
+      "The version of this software recipe. Version can be up to 4 period separated numbers (e.g. 12.34.56.78).",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "artifacts",
+      "Resources available to be used in the steps in the recipe.\nStructure is documented below.",
+      osconfig_GuestPoliciesRecipeArtifact_GetTypes(),
       false,
       false,
     ),

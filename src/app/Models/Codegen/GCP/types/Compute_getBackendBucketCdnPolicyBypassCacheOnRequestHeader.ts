@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getBackendBucketCdnPolicyBypassCacheOnRequestHeader {
+export interface compute_getBackendBucketCdnPolicyBypassCacheOnRequestHeader {
   // The header field name to match on when bypassing cache. Values are case-insensitive.
-  HeaderName?: string;
+  headerName?: string;
 }
 
-export function Compute_getBackendBucketCdnPolicyBypassCacheOnRequestHeader_GetTypes(): DynamicUIProps[] {
+export function compute_getBackendBucketCdnPolicyBypassCacheOnRequestHeader_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "HeaderName",
+      "headerName",
       "The header field name to match on when bypassing cache. Values are case-insensitive.",
       [],
       true,

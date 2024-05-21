@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Apigee_AddonsConfigAddonsConfigIntegrationConfig {
+export interface apigee_AddonsConfigAddonsConfigIntegrationConfig {
   // Flag that specifies whether the Advanced API Ops add-on is enabled.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Apigee_AddonsConfigAddonsConfigIntegrationConfig_GetTypes(): DynamicUIProps[] {
+export function apigee_AddonsConfigAddonsConfigIntegrationConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Flag that specifies whether the Advanced API Ops add-on is enabled.",
       [],
       false,

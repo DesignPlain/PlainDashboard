@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate,
-  Datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate_GetTypes,
-} from "./Datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate";
+  datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate,
+  datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate_GetTypes,
+} from "./datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate";
 
-export interface Datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets {
+export interface datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets {
   /*
 Dataset template used for dynamic dataset creation.
 Structure is documented below.
 */
-  DatasetTemplate?: Datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate;
+  datasetTemplate?: datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate;
 }
 
-export function Datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "DatasetTemplate",
+      "datasetTemplate",
       "Dataset template used for dynamic dataset creation.\nStructure is documented below.",
-      Datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate_GetTypes(),
+      datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate_GetTypes(),
       true,
       false,
     ),

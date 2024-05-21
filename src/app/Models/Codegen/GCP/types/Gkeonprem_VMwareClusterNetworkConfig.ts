@@ -6,80 +6,72 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config,
-  Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config_GetTypes,
-} from "./Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config";
+  gkeonprem_VMwareClusterNetworkConfigStaticIpConfig,
+  gkeonprem_VMwareClusterNetworkConfigStaticIpConfig_GetTypes,
+} from "./gkeonprem_VMwareClusterNetworkConfigStaticIpConfig";
 import {
-  Gkeonprem_VMwareClusterNetworkConfigDhcpIpConfig,
-  Gkeonprem_VMwareClusterNetworkConfigDhcpIpConfig_GetTypes,
-} from "./Gkeonprem_VMwareClusterNetworkConfigDhcpIpConfig";
+  gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config,
+  gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config_GetTypes,
+} from "./gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config";
 import {
-  Gkeonprem_VMwareClusterNetworkConfigHostConfig,
-  Gkeonprem_VMwareClusterNetworkConfigHostConfig_GetTypes,
-} from "./Gkeonprem_VMwareClusterNetworkConfigHostConfig";
+  gkeonprem_VMwareClusterNetworkConfigDhcpIpConfig,
+  gkeonprem_VMwareClusterNetworkConfigDhcpIpConfig_GetTypes,
+} from "./gkeonprem_VMwareClusterNetworkConfigDhcpIpConfig";
 import {
-  Gkeonprem_VMwareClusterNetworkConfigStaticIpConfig,
-  Gkeonprem_VMwareClusterNetworkConfigStaticIpConfig_GetTypes,
-} from "./Gkeonprem_VMwareClusterNetworkConfigStaticIpConfig";
+  gkeonprem_VMwareClusterNetworkConfigHostConfig,
+  gkeonprem_VMwareClusterNetworkConfigHostConfig_GetTypes,
+} from "./gkeonprem_VMwareClusterNetworkConfigHostConfig";
 
-export interface Gkeonprem_VMwareClusterNetworkConfig {
+export interface gkeonprem_VMwareClusterNetworkConfig {
   /*
 All services in the cluster are assigned an RFC1918 IPv4 address
 from these ranges. Only a single range is supported.. This field
 cannot be changed after creation.
 */
-  ServiceAddressCidrBlocks?: Array<string>;
+  serviceAddressCidrBlocks?: Array<string>;
 
   /*
 Configuration settings for a static IP configuration.
 Structure is documented below.
 */
-  StaticIpConfig?: Gkeonprem_VMwareClusterNetworkConfigStaticIpConfig;
+  staticIpConfig?: gkeonprem_VMwareClusterNetworkConfigStaticIpConfig;
 
   /*
 (Output)
 vcenter_network specifies vCenter network name. Inherited from the admin cluster.
 */
-  VcenterNetwork?: string;
+  vcenterNetwork?: string;
 
   /*
 Configuration for control plane V2 mode.
 Structure is documented below.
 */
-  ControlPlaneV2Config?: Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config;
+  controlPlaneV2Config?: gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config;
 
   /*
 Configuration settings for a DHCP IP configuration.
 Structure is documented below.
 */
-  DhcpIpConfig?: Gkeonprem_VMwareClusterNetworkConfigDhcpIpConfig;
+  dhcpIpConfig?: gkeonprem_VMwareClusterNetworkConfigDhcpIpConfig;
 
   /*
 Represents common network settings irrespective of the host's IP address.
 Structure is documented below.
 */
-  HostConfig?: Gkeonprem_VMwareClusterNetworkConfigHostConfig;
+  hostConfig?: gkeonprem_VMwareClusterNetworkConfigHostConfig;
 
   /*
 All pods in the cluster are assigned an RFC1918 IPv4 address from these ranges.
 Only a single range is supported. This field cannot be changed after creation.
 */
-  PodAddressCidrBlocks?: Array<string>;
+  podAddressCidrBlocks?: Array<string>;
 }
 
-export function Gkeonprem_VMwareClusterNetworkConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterNetworkConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "HostConfig",
-      "Represents common network settings irrespective of the host's IP address.\nStructure is documented below.",
-      Gkeonprem_VMwareClusterNetworkConfigHostConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "PodAddressCidrBlocks",
+      "podAddressCidrBlocks",
       "All pods in the cluster are assigned an RFC1918 IPv4 address from these ranges.\nOnly a single range is supported. This field cannot be changed after creation.",
       InputType_String_GetTypes(),
       true,
@@ -87,7 +79,7 @@ export function Gkeonprem_VMwareClusterNetworkConfig_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ServiceAddressCidrBlocks",
+      "serviceAddressCidrBlocks",
       "All services in the cluster are assigned an RFC1918 IPv4 address\nfrom these ranges. Only a single range is supported.. This field\ncannot be changed after creation.",
       InputType_String_GetTypes(),
       true,
@@ -95,15 +87,15 @@ export function Gkeonprem_VMwareClusterNetworkConfig_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Object,
-      "StaticIpConfig",
+      "staticIpConfig",
       "Configuration settings for a static IP configuration.\nStructure is documented below.",
-      Gkeonprem_VMwareClusterNetworkConfigStaticIpConfig_GetTypes(),
+      gkeonprem_VMwareClusterNetworkConfigStaticIpConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "VcenterNetwork",
+      "vcenterNetwork",
       "(Output)\nvcenter_network specifies vCenter network name. Inherited from the admin cluster.",
       [],
       false,
@@ -111,17 +103,25 @@ export function Gkeonprem_VMwareClusterNetworkConfig_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ControlPlaneV2Config",
+      "controlPlaneV2Config",
       "Configuration for control plane V2 mode.\nStructure is documented below.",
-      Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config_GetTypes(),
+      gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "DhcpIpConfig",
+      "dhcpIpConfig",
       "Configuration settings for a DHCP IP configuration.\nStructure is documented below.",
-      Gkeonprem_VMwareClusterNetworkConfigDhcpIpConfig_GetTypes(),
+      gkeonprem_VMwareClusterNetworkConfigDhcpIpConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "hostConfig",
+      "Represents common network settings irrespective of the host's IP address.\nStructure is documented below.",
+      gkeonprem_VMwareClusterNetworkConfigHostConfig_GetTypes(),
       false,
       false,
     ),

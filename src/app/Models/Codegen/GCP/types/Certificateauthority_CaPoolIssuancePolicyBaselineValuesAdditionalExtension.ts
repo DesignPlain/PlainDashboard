@@ -6,32 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtensionObjectId,
-  Certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtensionObjectId_GetTypes,
-} from "./Certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtensionObjectId";
+  certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtensionObjectId,
+  certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtensionObjectId_GetTypes,
+} from "./certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtensionObjectId";
 
-export interface Certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtension {
+export interface certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtension {
+  /*
+Describes values that are relevant in a CA certificate.
+Structure is documented below.
+*/
+  objectId?: certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtensionObjectId;
+
   // The value of this X.509 extension. A base64-encoded string.
-  Value?: string;
+  value?: string;
 
   /*
 Indicates whether or not this extension is critical (i.e., if the client does not know how to
 handle this extension, the client should consider this to be an error).
 */
-  Critical?: boolean;
-
-  /*
-Describes values that are relevant in a CA certificate.
-Structure is documented below.
-*/
-  ObjectId?: Certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtensionObjectId;
+  critical?: boolean;
 }
 
-export function Certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtension_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtension_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Object,
+      "objectId",
+      "Describes values that are relevant in a CA certificate.\nStructure is documented below.",
+      certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtensionObjectId_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "The value of this X.509 extension. A base64-encoded string.",
       [],
       true,
@@ -39,17 +47,9 @@ export function Certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditiona
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Critical",
+      "critical",
       "Indicates whether or not this extension is critical (i.e., if the client does not know how to\nhandle this extension, the client should consider this to be an error).",
       [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "ObjectId",
-      "Describes values that are relevant in a CA certificate.\nStructure is documented below.",
-      Certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtensionObjectId_GetTypes(),
       true,
       false,
     ),

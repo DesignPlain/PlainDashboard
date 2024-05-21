@@ -6,89 +6,65 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudidentity_getGroupMembershipsMembershipMemberKey,
-  Cloudidentity_getGroupMembershipsMembershipMemberKey_GetTypes,
-} from "./Cloudidentity_getGroupMembershipsMembershipMemberKey";
+  cloudidentity_getGroupMembershipsMembershipPreferredMemberKey,
+  cloudidentity_getGroupMembershipsMembershipPreferredMemberKey_GetTypes,
+} from "./cloudidentity_getGroupMembershipsMembershipPreferredMemberKey";
 import {
-  Cloudidentity_getGroupMembershipsMembershipPreferredMemberKey,
-  Cloudidentity_getGroupMembershipsMembershipPreferredMemberKey_GetTypes,
-} from "./Cloudidentity_getGroupMembershipsMembershipPreferredMemberKey";
+  cloudidentity_getGroupMembershipsMembershipRole,
+  cloudidentity_getGroupMembershipsMembershipRole_GetTypes,
+} from "./cloudidentity_getGroupMembershipsMembershipRole";
 import {
-  Cloudidentity_getGroupMembershipsMembershipRole,
-  Cloudidentity_getGroupMembershipsMembershipRole_GetTypes,
-} from "./Cloudidentity_getGroupMembershipsMembershipRole";
+  cloudidentity_getGroupMembershipsMembershipMemberKey,
+  cloudidentity_getGroupMembershipsMembershipMemberKey_GetTypes,
+} from "./cloudidentity_getGroupMembershipsMembershipMemberKey";
 
-export interface Cloudidentity_getGroupMembershipsMembership {
-  // EntityKey of the member.  Structure is documented below.
-  MemberKeys?: Array<Cloudidentity_getGroupMembershipsMembershipMemberKey>;
-
+export interface cloudidentity_getGroupMembershipsMembership {
   // The name of the MembershipRole. One of OWNER, MANAGER, MEMBER.
-  Name?: string;
+  name?: string;
 
   // EntityKey of the member.  Structure is documented below.
-  PreferredMemberKeys?: Array<Cloudidentity_getGroupMembershipsMembershipPreferredMemberKey>;
+  preferredMemberKeys?: Array<cloudidentity_getGroupMembershipsMembershipPreferredMemberKey>;
 
   // The MembershipRoles that apply to the Membership. Structure is documented below.
-  Roles?: Array<Cloudidentity_getGroupMembershipsMembershipRole>;
+  roles?: Array<cloudidentity_getGroupMembershipsMembershipRole>;
 
   // The type of the membership.
-  Type?: string;
+  type?: string;
 
   // The time when the Membership was last updated.
-  UpdateTime?: string;
+  updateTime?: string;
 
   // The time when the Membership was created.
-  CreateTime?: string;
+  createTime?: string;
 
   // The parent Group resource under which to lookup the Membership names. Must be of the form groups/{group_id}.
-  Group?: string;
+  group?: string;
+
+  // EntityKey of the member.  Structure is documented below.
+  memberKeys?: Array<cloudidentity_getGroupMembershipsMembershipMemberKey>;
 }
 
-export function Cloudidentity_getGroupMembershipsMembership_GetTypes(): DynamicUIProps[] {
+export function cloudidentity_getGroupMembershipsMembership_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "Group",
-      "The parent Group resource under which to lookup the Membership names. Must be of the form groups/{group_id}.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "MemberKeys",
+      "preferredMemberKeys",
       "EntityKey of the member.  Structure is documented below.",
-      Cloudidentity_getGroupMembershipsMembershipMemberKey_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Name",
-      "The name of the MembershipRole. One of OWNER, MANAGER, MEMBER.",
-      [],
+      cloudidentity_getGroupMembershipsMembershipPreferredMemberKey_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "PreferredMemberKeys",
-      "EntityKey of the member.  Structure is documented below.",
-      Cloudidentity_getGroupMembershipsMembershipPreferredMemberKey_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Roles",
+      "roles",
       "The MembershipRoles that apply to the Membership. Structure is documented below.",
-      Cloudidentity_getGroupMembershipsMembershipRole_GetTypes(),
+      cloudidentity_getGroupMembershipsMembershipRole_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "The type of the membership.",
       [],
       true,
@@ -96,7 +72,7 @@ export function Cloudidentity_getGroupMembershipsMembership_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "UpdateTime",
+      "updateTime",
       "The time when the Membership was last updated.",
       [],
       true,
@@ -104,8 +80,32 @@ export function Cloudidentity_getGroupMembershipsMembership_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "CreateTime",
+      "createTime",
       "The time when the Membership was created.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "group",
+      "The parent Group resource under which to lookup the Membership names. Must be of the form groups/{group_id}.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "memberKeys",
+      "EntityKey of the member.  Structure is documented below.",
+      cloudidentity_getGroupMembershipsMembershipMemberKey_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "name",
+      "The name of the MembershipRole. One of OWNER, MANAGER, MEMBER.",
       [],
       true,
       false,

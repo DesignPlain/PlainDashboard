@@ -6,57 +6,57 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Storage_InsightsReportConfigFrequencyOptionsEndDate,
-  Storage_InsightsReportConfigFrequencyOptionsEndDate_GetTypes,
-} from "./Storage_InsightsReportConfigFrequencyOptionsEndDate";
+  storage_InsightsReportConfigFrequencyOptionsEndDate,
+  storage_InsightsReportConfigFrequencyOptionsEndDate_GetTypes,
+} from "./storage_InsightsReportConfigFrequencyOptionsEndDate";
 import {
-  Storage_InsightsReportConfigFrequencyOptionsStartDate,
-  Storage_InsightsReportConfigFrequencyOptionsStartDate_GetTypes,
-} from "./Storage_InsightsReportConfigFrequencyOptionsStartDate";
+  storage_InsightsReportConfigFrequencyOptionsStartDate,
+  storage_InsightsReportConfigFrequencyOptionsStartDate_GetTypes,
+} from "./storage_InsightsReportConfigFrequencyOptionsStartDate";
 
-export interface Storage_InsightsReportConfigFrequencyOptions {
+export interface storage_InsightsReportConfigFrequencyOptions {
   /*
 The date to stop generating inventory reports. For example, {"day": 15, "month": 9, "year": 2022}.
 Structure is documented below.
 */
-  EndDate?: Storage_InsightsReportConfigFrequencyOptionsEndDate;
+  endDate?: storage_InsightsReportConfigFrequencyOptionsEndDate;
 
   /*
 The frequency in which inventory reports are generated. Values are DAILY or WEEKLY.
 Possible values are: `DAILY`, `WEEKLY`.
 */
-  Frequency?: string;
+  frequency?: string;
 
   /*
 The date to start generating inventory reports. For example, {"day": 15, "month": 8, "year": 2022}.
 Structure is documented below.
 */
-  StartDate?: Storage_InsightsReportConfigFrequencyOptionsStartDate;
+  startDate?: storage_InsightsReportConfigFrequencyOptionsStartDate;
 }
 
-export function Storage_InsightsReportConfigFrequencyOptions_GetTypes(): DynamicUIProps[] {
+export function storage_InsightsReportConfigFrequencyOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Object,
+      "startDate",
+      'The date to start generating inventory reports. For example, {"day": 15, "month": 8, "year": 2022}.\nStructure is documented below.',
+      storage_InsightsReportConfigFrequencyOptionsStartDate_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "endDate",
+      'The date to stop generating inventory reports. For example, {"day": 15, "month": 9, "year": 2022}.\nStructure is documented below.',
+      storage_InsightsReportConfigFrequencyOptionsEndDate_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "Frequency",
+      "frequency",
       "The frequency in which inventory reports are generated. Values are DAILY or WEEKLY.\nPossible values are: `DAILY`, `WEEKLY`.",
       [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "StartDate",
-      'The date to start generating inventory reports. For example, {"day": 15, "month": 8, "year": 2022}.\nStructure is documented below.',
-      Storage_InsightsReportConfigFrequencyOptionsStartDate_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "EndDate",
-      'The date to stop generating inventory reports. For example, {"day": 15, "month": 9, "year": 2022}.\nStructure is documented below.',
-      Storage_InsightsReportConfigFrequencyOptionsEndDate_GetTypes(),
       true,
       false,
     ),

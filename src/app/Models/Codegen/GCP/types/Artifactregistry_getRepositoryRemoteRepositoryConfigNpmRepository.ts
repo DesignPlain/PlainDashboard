@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Artifactregistry_getRepositoryRemoteRepositoryConfigNpmRepository {
+export interface artifactregistry_getRepositoryRemoteRepositoryConfigNpmRepository {
   // Address of the remote repository. Default value: "NPMJS" Possible values: ["NPMJS"]
-  PublicRepository?: string;
+  publicRepository?: string;
 }
 
-export function Artifactregistry_getRepositoryRemoteRepositoryConfigNpmRepository_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_getRepositoryRemoteRepositoryConfigNpmRepository_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PublicRepository",
+      "publicRepository",
       'Address of the remote repository. Default value: "NPMJS" Possible values: ["NPMJS"]',
       [],
       true,

@@ -7,36 +7,25 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkehub_MembershipBindingState,
-  Gkehub_MembershipBindingState_GetTypes,
-} from "../types/Gkehub_MembershipBindingState";
+  gkehub_MembershipBindingState,
+  gkehub_MembershipBindingState_GetTypes,
+} from "../types/gkehub_MembershipBindingState";
 
 export interface MembershipBindingArgs {
-  /*
-Location of the membership
-
-
-- - -
-*/
-  Location?: string;
-
-  // The client-provided identifier of the membership binding.
-  MembershipBindingId?: string;
-
   // Id of the membership
-  MembershipId?: string;
+  membershipId?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 A Workspace resource name in the format
 `projects/-/locations/-/scopes/-`.
 */
-  Scope?: string;
+  scope?: string;
 
   /*
 Labels for this Membership binding.
@@ -44,94 +33,89 @@ Labels for this Membership binding.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
+
+  /*
+Location of the membership
+
+
+- - -
+*/
+  location?: string;
+
+  // The client-provided identifier of the membership binding.
+  membershipBindingId?: string;
 }
 export class MembershipBinding extends Resource {
-  // Time the MembershipBinding was created in UTC.
-  public CreateTime?: string;
+  /*
+Labels for this Membership binding.
 
-  // Time the MembershipBinding was deleted in UTC.
-  public DeleteTime?: string;
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
 
-  // Id of the membership
-  public MembershipId?: string;
+  // The resource name for the membershipbinding itself
+  public name?: string;
+
+  /*
+Location of the membership
+
+
+- - -
+*/
+  public location?: string;
+
+  // The client-provided identifier of the membership binding.
+  public membershipBindingId?: string;
 
   /*
 A Workspace resource name in the format
 `projects/-/locations/-/scopes/-`.
 */
-  public Scope?: string;
+  public scope?: string;
 
-  // The client-provided identifier of the membership binding.
-  public MembershipBindingId?: string;
+  // Time the MembershipBinding was updated in UTC.
+  public updateTime?: string;
+
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 State of the membership binding resource.
 Structure is documented below.
 */
-  public States?: Array<Gkehub_MembershipBindingState>;
+  public states?: Array<gkehub_MembershipBindingState>;
 
   // Google-generated UUID for this resource.
-  public Uid?: string;
+  public uid?: string;
+
+  // Time the MembershipBinding was created in UTC.
+  public createTime?: string;
+
+  // Time the MembershipBinding was deleted in UTC.
+  public deleteTime?: string;
+
+  // Id of the membership
+  public membershipId?: string;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
-
-  // Time the MembershipBinding was updated in UTC.
-  public UpdateTime?: string;
-
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
-
-  /*
-Labels for this Membership binding.
-
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  public Labels?: Map<string, string>;
-
-  /*
-Location of the membership
-
-
-- - -
-*/
-  public Location?: string;
-
-  // The resource name for the membershipbinding itself
-  public Name?: string;
+  public pulumiLabels?: Map<string, string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Location",
-        "Location of the membership\n\n\n- - -",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "MembershipBindingId",
-        "The client-provided identifier of the membership binding.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "MembershipId",
+        "membershipId",
         "Id of the membership",
         [],
         true,
@@ -139,7 +123,7 @@ Location of the membership
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -147,7 +131,7 @@ Location of the membership
       ),
       new DynamicUIProps(
         InputType.String,
-        "Scope",
+        "scope",
         "A Workspace resource name in the format\n`projects/*/locations/*/scopes/*`.",
         [],
         true,
@@ -155,11 +139,27 @@ Location of the membership
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "Labels for this Membership binding.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "location",
+        "Location of the membership\n\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "membershipBindingId",
+        "The client-provided identifier of the membership binding.",
+        [],
+        true,
+        true,
       ),
     ];
   }

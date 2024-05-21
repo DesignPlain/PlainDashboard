@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Iap_TunnelIamBindingCondition {
+export interface iap_TunnelIamBindingCondition {
+  // An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
+  description?: string;
+
   // Textual representation of an expression in Common Expression Language syntax.
-  Expression?: string;
+  expression?: string;
 
   // A title for the expression, i.e. a short string describing its purpose.
-  Title?: string;
-
-  // An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
-  Description?: string;
+  title?: string;
 }
 
-export function Iap_TunnelIamBindingCondition_GetTypes(): DynamicUIProps[] {
+export function iap_TunnelIamBindingCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Expression",
+      "description",
+      "An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.",
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "expression",
       "Textual representation of an expression in Common Expression Language syntax.",
       [],
       true,
@@ -29,18 +37,10 @@ export function Iap_TunnelIamBindingCondition_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Title",
+      "title",
       "A title for the expression, i.e. a short string describing its purpose.",
       [],
       true,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Description",
-      "An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.",
-      [],
-      false,
       true,
     ),
   ];

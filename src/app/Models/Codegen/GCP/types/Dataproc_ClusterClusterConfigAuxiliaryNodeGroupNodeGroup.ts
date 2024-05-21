@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfig,
-  Dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfig_GetTypes,
-} from "./Dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfig";
+  dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfig,
+  dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfig_GetTypes,
+} from "./dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfig";
 
-export interface Dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroup {
+export interface dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroup {
   /*
 The name of the cluster, unique within the project and
 zone.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   // The node group instance group configuration.
-  NodeGroupConfig?: Dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfig;
+  nodeGroupConfig?: dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfig;
 
   /*
 Node group roles. 
 One of `"DRIVER"`.
 */
-  Roles?: Array<string>;
+  roles?: Array<string>;
 }
 
-export function Dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroup_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroup_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of the cluster, unique within the project and\nzone.\n\n- - -",
       [],
       false,
@@ -41,15 +41,15 @@ export function Dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroup_GetType
     ),
     new DynamicUIProps(
       InputType.Object,
-      "NodeGroupConfig",
+      "nodeGroupConfig",
       "The node group instance group configuration.",
-      Dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfig_GetTypes(),
+      dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Roles",
+      "roles",
       'Node group roles. \nOne of `"DRIVER"`.',
       InputType_String_GetTypes(),
       true,

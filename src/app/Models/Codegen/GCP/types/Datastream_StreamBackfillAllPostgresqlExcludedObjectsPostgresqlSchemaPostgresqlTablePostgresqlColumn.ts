@@ -6,89 +6,49 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumn {
-  // The ordinal position of the column in the table.
-  OrdinalPosition?: number;
-
-  /*
-(Output)
-Column precision.
-*/
-  Precision?: number;
-
-  // Whether or not the column represents a primary key.
-  PrimaryKey?: boolean;
-
-  /*
-(Output)
-Column scale.
-*/
-  Scale?: number;
-
+export interface datastream_StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumn {
   // Column name.
-  Column?: string;
+  column?: string;
 
   /*
 The PostgreSQL data type. Full data types list can be found here:
 https://www.postgresql.org/docs/current/datatype.html
 */
-  DataType?: string;
+  dataType?: string;
 
   /*
 (Output)
 Column length.
 */
-  Length?: number;
+  length?: number;
 
   // Whether or not the column can accept a null value.
-  Nullable?: boolean;
+  nullable?: boolean;
+
+  // The ordinal position of the column in the table.
+  ordinalPosition?: number;
+
+  /*
+(Output)
+Column precision.
+*/
+  precision?: number;
+
+  // Whether or not the column represents a primary key.
+  primaryKey?: boolean;
+
+  /*
+(Output)
+Column scale.
+*/
+  scale?: number;
 }
 
-export function Datastream_StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumn_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumn_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "OrdinalPosition",
-      "The ordinal position of the column in the table.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Precision",
-      "(Output)\nColumn precision.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "PrimaryKey",
-      "Whether or not the column represents a primary key.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Scale",
-      "(Output)\nColumn scale.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Column",
-      "Column name.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "DataType",
+      "dataType",
       "The PostgreSQL data type. Full data types list can be found here:\nhttps://www.postgresql.org/docs/current/datatype.html",
       [],
       false,
@@ -96,7 +56,7 @@ export function Datastream_StreamBackfillAllPostgresqlExcludedObjectsPostgresqlS
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Length",
+      "length",
       "(Output)\nColumn length.",
       [],
       false,
@@ -104,8 +64,48 @@ export function Datastream_StreamBackfillAllPostgresqlExcludedObjectsPostgresqlS
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Nullable",
+      "nullable",
       "Whether or not the column can accept a null value.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "ordinalPosition",
+      "The ordinal position of the column in the table.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "precision",
+      "(Output)\nColumn precision.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "primaryKey",
+      "Whether or not the column represents a primary key.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "scale",
+      "(Output)\nColumn scale.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "column",
+      "Column name.",
       [],
       false,
       false,

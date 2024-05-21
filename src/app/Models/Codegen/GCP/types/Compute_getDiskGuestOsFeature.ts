@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getDiskGuestOsFeature {
+export interface compute_getDiskGuestOsFeature {
   /*
 URL of the disk type resource describing which disk type to use to
 create the disk.
 */
-  Type?: string;
+  type?: string;
 }
 
-export function Compute_getDiskGuestOsFeature_GetTypes(): DynamicUIProps[] {
+export function compute_getDiskGuestOsFeature_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "URL of the disk type resource describing which disk type to use to\ncreate the disk.",
       [],
       true,

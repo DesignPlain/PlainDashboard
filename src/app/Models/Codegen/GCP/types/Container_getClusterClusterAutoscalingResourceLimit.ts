@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterClusterAutoscalingResourceLimit {
+export interface container_getClusterClusterAutoscalingResourceLimit {
+  // The type of the resource. For example, cpu and memory. See the guide to using Node Auto-Provisioning for a list of types.
+  resourceType?: string;
+
   // Maximum amount of the resource in the cluster.
-  Maximum?: number;
+  maximum?: number;
 
   // Minimum amount of the resource in the cluster.
-  Minimum?: number;
-
-  // The type of the resource. For example, cpu and memory. See the guide to using Node Auto-Provisioning for a list of types.
-  ResourceType?: string;
+  minimum?: number;
 }
 
-export function Container_getClusterClusterAutoscalingResourceLimit_GetTypes(): DynamicUIProps[] {
+export function container_getClusterClusterAutoscalingResourceLimit_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "resourceType",
+      "The type of the resource. For example, cpu and memory. See the guide to using Node Auto-Provisioning for a list of types.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Number,
-      "Maximum",
+      "maximum",
       "Maximum amount of the resource in the cluster.",
       [],
       true,
@@ -29,16 +37,8 @@ export function Container_getClusterClusterAutoscalingResourceLimit_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Minimum",
+      "minimum",
       "Minimum amount of the resource in the cluster.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ResourceType",
-      "The type of the resource. For example, cpu and memory. See the guide to using Node Auto-Provisioning for a list of types.",
       [],
       true,
       false,

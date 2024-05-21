@@ -6,44 +6,52 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataform_RepositoryReleaseConfigCodeCompilationConfig {
+export interface dataform_RepositoryReleaseConfigCodeCompilationConfig {
   // Optional. The prefix that should be prepended to all table names.
-  TablePrefix?: string;
+  tablePrefix?: string;
 
   /*
 Optional. User-defined variables that are made available to project code during compilation.
 An object containing a list of "key": value pairs.
 Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
 */
-  Vars?: Map<string, string>;
+  vars?: Map<string, string>;
 
   // Optional. The default schema (BigQuery dataset ID) for assertions.
-  AssertionSchema?: string;
+  assertionSchema?: string;
 
   // Optional. The suffix that should be appended to all database (Google Cloud project ID) names.
-  DatabaseSuffix?: string;
+  databaseSuffix?: string;
 
   // Optional. The default database (Google Cloud project ID).
-  DefaultDatabase?: string;
+  defaultDatabase?: string;
 
   /*
 Optional. The default BigQuery location to use. Defaults to "US".
 See the BigQuery docs for a full list of locations: https://cloud.google.com/bigquery/docs/locations.
 */
-  DefaultLocation?: string;
+  defaultLocation?: string;
 
   // Optional. The default schema (BigQuery dataset ID).
-  DefaultSchema?: string;
+  defaultSchema?: string;
 
   // Optional. The suffix that should be appended to all schema (BigQuery dataset ID) names.
-  SchemaSuffix?: string;
+  schemaSuffix?: string;
 }
 
-export function Dataform_RepositoryReleaseConfigCodeCompilationConfig_GetTypes(): DynamicUIProps[] {
+export function dataform_RepositoryReleaseConfigCodeCompilationConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "TablePrefix",
+      "schemaSuffix",
+      "Optional. The suffix that should be appended to all schema (BigQuery dataset ID) names.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "tablePrefix",
       "Optional. The prefix that should be prepended to all table names.",
       [],
       false,
@@ -51,7 +59,7 @@ export function Dataform_RepositoryReleaseConfigCodeCompilationConfig_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Vars",
+      "vars",
       'Optional. User-defined variables that are made available to project code during compilation.\nAn object containing a list of "key": value pairs.\nExample: { "name": "wrench", "mass": "1.3kg", "count": "3" }.',
       InputType_Map_GetTypes(),
       false,
@@ -59,7 +67,7 @@ export function Dataform_RepositoryReleaseConfigCodeCompilationConfig_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "AssertionSchema",
+      "assertionSchema",
       "Optional. The default schema (BigQuery dataset ID) for assertions.",
       [],
       false,
@@ -67,7 +75,7 @@ export function Dataform_RepositoryReleaseConfigCodeCompilationConfig_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "DatabaseSuffix",
+      "databaseSuffix",
       "Optional. The suffix that should be appended to all database (Google Cloud project ID) names.",
       [],
       false,
@@ -75,7 +83,7 @@ export function Dataform_RepositoryReleaseConfigCodeCompilationConfig_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "DefaultDatabase",
+      "defaultDatabase",
       "Optional. The default database (Google Cloud project ID).",
       [],
       false,
@@ -83,7 +91,7 @@ export function Dataform_RepositoryReleaseConfigCodeCompilationConfig_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "DefaultLocation",
+      "defaultLocation",
       'Optional. The default BigQuery location to use. Defaults to "US".\nSee the BigQuery docs for a full list of locations: https://cloud.google.com/bigquery/docs/locations.',
       [],
       false,
@@ -91,16 +99,8 @@ export function Dataform_RepositoryReleaseConfigCodeCompilationConfig_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "DefaultSchema",
+      "defaultSchema",
       "Optional. The default schema (BigQuery dataset ID).",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "SchemaSuffix",
-      "Optional. The suffix that should be appended to all schema (BigQuery dataset ID) names.",
       [],
       false,
       false,

@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredType {
+export interface dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredType {
   /*
 (Output)
 The creation timestamp of an inspectTemplate. Set by the server.
 */
-  CreateTime?: string;
+  createTime?: string;
 
   /*
 Resource name of the requested StoredInfoType, for example `organizations/433245324/storedInfoTypes/432452342`
 or `projects/project-id/storedInfoTypes/432452342`.
 */
-  Name?: string;
+  name?: string;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredType_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredType_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CreateTime",
+      "createTime",
       "(Output)\nThe creation timestamp of an inspectTemplate. Set by the server.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTy
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Resource name of the requested StoredInfoType, for example `organizations/433245324/storedInfoTypes/432452342`\nor `projects/project-id/storedInfoTypes/432452342`.",
       [],
       true,

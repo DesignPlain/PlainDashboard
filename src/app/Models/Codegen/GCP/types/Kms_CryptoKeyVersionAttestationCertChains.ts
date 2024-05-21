@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Kms_CryptoKeyVersionAttestationCertChains {
+export interface kms_CryptoKeyVersionAttestationCertChains {
   // Cavium certificate chain corresponding to the attestation.
-  CaviumCerts?: string;
+  caviumCerts?: string;
 
   // Google card certificate chain corresponding to the attestation.
-  GoogleCardCerts?: string;
+  googleCardCerts?: string;
 
   // Google partition certificate chain corresponding to the attestation.
-  GooglePartitionCerts?: string;
+  googlePartitionCerts?: string;
 }
 
-export function Kms_CryptoKeyVersionAttestationCertChains_GetTypes(): DynamicUIProps[] {
+export function kms_CryptoKeyVersionAttestationCertChains_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CaviumCerts",
-      "Cavium certificate chain corresponding to the attestation.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "GoogleCardCerts",
+      "googleCardCerts",
       "Google card certificate chain corresponding to the attestation.",
       [],
       false,
@@ -37,8 +29,16 @@ export function Kms_CryptoKeyVersionAttestationCertChains_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "GooglePartitionCerts",
+      "googlePartitionCerts",
       "Google partition certificate chain corresponding to the attestation.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "caviumCerts",
+      "Cavium certificate chain corresponding to the attestation.",
       [],
       false,
       false,

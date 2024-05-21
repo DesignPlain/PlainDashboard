@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup {
-  // Identifiers of features under the feature group.
-  FeatureIds?: Array<string>;
-
+export interface vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup {
   // Identifier of the feature group.
-  FeatureGroupId?: string;
+  featureGroupId?: string;
+
+  // Identifiers of features under the feature group.
+  featureIds?: Array<string>;
 }
 
-export function Vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup_GetTypes(): DynamicUIProps[] {
+export function vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "FeatureIds",
+      "featureIds",
       "Identifiers of features under the feature group.",
       InputType_String_GetTypes(),
       true,
@@ -26,7 +26,7 @@ export function Vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatu
     ),
     new DynamicUIProps(
       InputType.String,
-      "FeatureGroupId",
+      "featureGroupId",
       "Identifier of the feature group.",
       [],
       true,

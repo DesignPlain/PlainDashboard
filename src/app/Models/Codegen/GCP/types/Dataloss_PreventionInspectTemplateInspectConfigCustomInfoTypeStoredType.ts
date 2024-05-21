@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeStoredType {
+export interface dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeStoredType {
   /*
 Resource name of the requested StoredInfoType, for example `organizations/433245324/storedInfoTypes/432452342`
 or `projects/project-id/storedInfoTypes/432452342`.
 */
-  Name?: string;
+  name?: string;
 }
 
-export function Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeStoredType_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeStoredType_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Resource name of the requested StoredInfoType, for example `organizations/433245324/storedInfoTypes/432452342`\nor `projects/project-id/storedInfoTypes/432452342`.",
       [],
       true,

@@ -9,10 +9,10 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface DocumentArgs {
   // The collection ID, relative to database. For example: chatrooms or chatrooms/my-document/private-messages.
-  Collection?: string;
+  collection?: string;
 
   // The Firestore database id. Defaults to `"(default)"`.
-  Database?: string;
+  database?: string;
 
   /*
 The client-assigned document ID to use for this document during creation.
@@ -20,61 +20,69 @@ The client-assigned document ID to use for this document during creation.
 
 - - -
 */
-  DocumentId?: string;
+  documentId?: string;
 
   // The document's [fields](https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents) formated as a json string.
-  Fields?: string;
+  fields?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 }
 export class Document extends Resource {
+  /*
+The client-assigned document ID to use for this document during creation.
+
+
+- - -
+*/
+  public documentId?: string;
+
+  // The document's [fields](https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents) formated as a json string.
+  public fields?: string;
+
+  // A relative path to the collection this document exists within
+  public path?: string;
+
+  // Last update timestamp in RFC3339 format.
+  public updateTime?: string;
+
   // The collection ID, relative to database. For example: chatrooms or chatrooms/my-document/private-messages.
-  public Collection?: string;
+  public collection?: string;
+
+  // Creation timestamp in RFC3339 format.
+  public createTime?: string;
 
   // The Firestore database id. Defaults to `"(default)"`.
-  public Database?: string;
+  public database?: string;
 
   /*
 A server defined name for this index. Format:
 `projects/{{project_id}}/databases/{{database_id}}/documents/{{path}}/{{document_id}}`
 */
-  public Name?: string;
-
-  // A relative path to the collection this document exists within
-  public Path?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
-
-  // Creation timestamp in RFC3339 format.
-  public CreateTime?: string;
-
-  /*
-The client-assigned document ID to use for this document during creation.
-
-
-- - -
-*/
-  public DocumentId?: string;
-
-  // The document's [fields](https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents) formated as a json string.
-  public Fields?: string;
-
-  // Last update timestamp in RFC3339 format.
-  public UpdateTime?: string;
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Collection",
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "collection",
         "The collection ID, relative to database. For example: chatrooms or chatrooms/my-document/private-messages.",
         [],
         true,
@@ -82,7 +90,7 @@ The client-assigned document ID to use for this document during creation.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Database",
+        "database",
         'The Firestore database id. Defaults to `"(default)"`.',
         [],
         false,
@@ -90,7 +98,7 @@ The client-assigned document ID to use for this document during creation.
       ),
       new DynamicUIProps(
         InputType.String,
-        "DocumentId",
+        "documentId",
         "The client-assigned document ID to use for this document during creation.\n\n\n- - -",
         [],
         true,
@@ -98,19 +106,11 @@ The client-assigned document ID to use for this document during creation.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Fields",
+        "fields",
         "The document's [fields](https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents) formated as a json string.",
         [],
         true,
         false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
       ),
     ];
   }

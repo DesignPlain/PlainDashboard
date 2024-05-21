@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek,
-  Compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek_GetTypes,
-} from "./Compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek";
+  compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek,
+  compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek_GetTypes,
+} from "./compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek";
 
-export interface Compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedule {
+export interface compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedule {
   /*
 May contain up to seven (one for each day of the week) snapshot times.
 Structure is documented below.
 */
-  DayOfWeeks?: Array<Compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek>;
+  dayOfWeeks?: Array<compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek>;
 }
 
-export function Compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedule_GetTypes(): DynamicUIProps[] {
+export function compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "DayOfWeeks",
+      "dayOfWeeks",
       "May contain up to seven (one for each day of the week) snapshot times.\nStructure is documented below.",
-      Compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek_GetTypes(),
+      compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek_GetTypes(),
       true,
       true,
     ),

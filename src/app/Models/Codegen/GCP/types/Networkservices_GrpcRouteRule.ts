@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networkservices_GrpcRouteRuleMatch,
-  Networkservices_GrpcRouteRuleMatch_GetTypes,
-} from "./Networkservices_GrpcRouteRuleMatch";
+  networkservices_GrpcRouteRuleAction,
+  networkservices_GrpcRouteRuleAction_GetTypes,
+} from "./networkservices_GrpcRouteRuleAction";
 import {
-  Networkservices_GrpcRouteRuleAction,
-  Networkservices_GrpcRouteRuleAction_GetTypes,
-} from "./Networkservices_GrpcRouteRuleAction";
+  networkservices_GrpcRouteRuleMatch,
+  networkservices_GrpcRouteRuleMatch_GetTypes,
+} from "./networkservices_GrpcRouteRuleMatch";
 
-export interface Networkservices_GrpcRouteRule {
+export interface networkservices_GrpcRouteRule {
   /*
 Required. A detailed rule defining how to route traffic.
 Structure is documented below.
 */
-  Action?: Networkservices_GrpcRouteRuleAction;
+  action?: networkservices_GrpcRouteRuleAction;
 
   /*
 Matches define conditions used for matching the rule against incoming gRPC requests.
 Structure is documented below.
 */
-  Matches?: Array<Networkservices_GrpcRouteRuleMatch>;
+  matches?: Array<networkservices_GrpcRouteRuleMatch>;
 }
 
-export function Networkservices_GrpcRouteRule_GetTypes(): DynamicUIProps[] {
+export function networkservices_GrpcRouteRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Action",
+      "action",
       "Required. A detailed rule defining how to route traffic.\nStructure is documented below.",
-      Networkservices_GrpcRouteRuleAction_GetTypes(),
+      networkservices_GrpcRouteRuleAction_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Matches",
+      "matches",
       "Matches define conditions used for matching the rule against incoming gRPC requests.\nStructure is documented below.",
-      Networkservices_GrpcRouteRuleMatch_GetTypes(),
+      networkservices_GrpcRouteRuleMatch_GetTypes(),
       false,
       false,
     ),

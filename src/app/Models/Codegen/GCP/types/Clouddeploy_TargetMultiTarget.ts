@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Clouddeploy_TargetMultiTarget {
+export interface clouddeploy_TargetMultiTarget {
   // Required. The target_ids of this multiTarget.
-  TargetIds?: Array<string>;
+  targetIds?: Array<string>;
 }
 
-export function Clouddeploy_TargetMultiTarget_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_TargetMultiTarget_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "TargetIds",
+      "targetIds",
       "Required. The target_ids of this multiTarget.",
       InputType_String_GetTypes(),
       true,

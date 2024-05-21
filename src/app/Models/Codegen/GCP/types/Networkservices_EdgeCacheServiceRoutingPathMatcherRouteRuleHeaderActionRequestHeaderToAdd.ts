@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToAdd {
+export interface networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToAdd {
+  // The name of the header to add.
+  headerName?: string;
+
   // The value of the header to add.
-  HeaderValue?: string;
+  headerValue?: string;
 
   // Whether to replace all existing headers with the same name.
-  Replace?: boolean;
-
-  // The name of the header to add.
-  HeaderName?: string;
+  replace?: boolean;
 }
 
-export function Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToAdd_GetTypes(): DynamicUIProps[] {
+export function networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToAdd_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "HeaderValue",
-      "The value of the header to add.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "Replace",
+      "replace",
       "Whether to replace all existing headers with the same name.",
       [],
       false,
@@ -37,8 +29,16 @@ export function Networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeade
     ),
     new DynamicUIProps(
       InputType.String,
-      "HeaderName",
+      "headerName",
       "The name of the header to add.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "headerValue",
+      "The value of the header to add.",
       [],
       true,
       false,

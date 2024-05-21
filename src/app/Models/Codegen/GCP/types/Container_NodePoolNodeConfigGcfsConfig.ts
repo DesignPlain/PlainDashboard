@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_NodePoolNodeConfigGcfsConfig {
+export interface container_NodePoolNodeConfigGcfsConfig {
   /*
 Enable Confidential GKE Nodes for this cluster, to
 enforce encryption of data in-use.
 */
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_NodePoolNodeConfigGcfsConfig_GetTypes(): DynamicUIProps[] {
+export function container_NodePoolNodeConfigGcfsConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Enable Confidential GKE Nodes for this cluster, to\nenforce encryption of data in-use.",
       [],
       true,

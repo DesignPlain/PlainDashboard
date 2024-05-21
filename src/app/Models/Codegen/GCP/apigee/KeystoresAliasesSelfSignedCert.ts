@@ -7,140 +7,124 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Apigee_KeystoresAliasesSelfSignedCertSubject,
-  Apigee_KeystoresAliasesSelfSignedCertSubject_GetTypes,
-} from "../types/Apigee_KeystoresAliasesSelfSignedCertSubject";
+  apigee_KeystoresAliasesSelfSignedCertSubject,
+  apigee_KeystoresAliasesSelfSignedCertSubject_GetTypes,
+} from "../types/apigee_KeystoresAliasesSelfSignedCertSubject";
 import {
-  Apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames,
-  Apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames_GetTypes,
-} from "../types/Apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames";
+  apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames,
+  apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames_GetTypes,
+} from "../types/apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames";
 import {
-  Apigee_KeystoresAliasesSelfSignedCertCertsInfo,
-  Apigee_KeystoresAliasesSelfSignedCertCertsInfo_GetTypes,
-} from "../types/Apigee_KeystoresAliasesSelfSignedCertCertsInfo";
+  apigee_KeystoresAliasesSelfSignedCertCertsInfo,
+  apigee_KeystoresAliasesSelfSignedCertCertsInfo_GetTypes,
+} from "../types/apigee_KeystoresAliasesSelfSignedCertCertsInfo";
 
 export interface KeystoresAliasesSelfSignedCertArgs {
-  // The Apigee keystore name associated in an Apigee environment
-  Keystore?: string;
-
-  // The Apigee Organization name associated with the Apigee environment
-  OrgId?: string;
-
-  // Signature algorithm to generate private key. Valid values are SHA512withRSA, SHA384withRSA, and SHA256withRSA
-  SigAlg?: string;
-
   /*
 Subject details.
 Structure is documented below.
 */
-  Subject?: Apigee_KeystoresAliasesSelfSignedCertSubject;
-
-  // Validity duration of certificate, in days. Accepts positive non-zero value. Defaults to 365.
-  CertValidityInDays?: number;
-
-  // Key size. Default and maximum value is 2048 bits.
-  KeySize?: string;
+  subject?: apigee_KeystoresAliasesSelfSignedCertSubject;
 
   /*
 List of alternative host names. Maximum length is 255 characters for each value.
 Structure is documented below.
 */
-  SubjectAlternativeDnsNames?: Apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames;
+  subjectAlternativeDnsNames?: apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames;
 
   /*
 Alias for the key/certificate pair. Values must match the regular expression [\w\s-.]{1,255}.
 This must be provided for all formats except selfsignedcert; self-signed certs may specify the alias in either
 this parameter or the JSON body.
 */
-  Alias?: string;
+  alias?: string;
+
+  // Validity duration of certificate, in days. Accepts positive non-zero value. Defaults to 365.
+  certValidityInDays?: number;
+
+  // Signature algorithm to generate private key. Valid values are SHA512withRSA, SHA384withRSA, and SHA256withRSA
+  sigAlg?: string;
+
+  // The Apigee Organization name associated with the Apigee environment
+  orgId?: string;
 
   // The Apigee environment name
-  Environment?: string;
+  environment?: string;
+
+  // Key size. Default and maximum value is 2048 bits.
+  keySize?: string;
+
+  // The Apigee keystore name associated in an Apigee environment
+  keystore?: string;
 }
 export class KeystoresAliasesSelfSignedCert extends Resource {
   /*
-Alias for the key/certificate pair. Values must match the regular expression [\w\s-.]{1,255}.
-This must be provided for all formats except selfsignedcert; self-signed certs may specify the alias in either
-this parameter or the JSON body.
+List of alternative host names. Maximum length is 255 characters for each value.
+Structure is documented below.
 */
-  public Alias?: string;
-
-  // Validity duration of certificate, in days. Accepts positive non-zero value. Defaults to 365.
-  public CertValidityInDays?: number;
+  public subjectAlternativeDnsNames?: apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames;
 
   /*
 Chain of certificates under this alias.
 Structure is documented below.
 */
-  public CertsInfos?: Array<Apigee_KeystoresAliasesSelfSignedCertCertsInfo>;
+  public certsInfos?: Array<apigee_KeystoresAliasesSelfSignedCertCertsInfo>;
 
   // The Apigee environment name
-  public Environment?: string;
-
-  // The Apigee Organization name associated with the Apigee environment
-  public OrgId?: string;
-
-  // Optional.Type of Alias
-  public Type?: string;
+  public environment?: string;
 
   // Key size. Default and maximum value is 2048 bits.
-  public KeySize?: string;
+  public keySize?: string;
 
   // The Apigee keystore name associated in an Apigee environment
-  public Keystore?: string;
-
-  // Signature algorithm to generate private key. Valid values are SHA512withRSA, SHA384withRSA, and SHA256withRSA
-  public SigAlg?: string;
+  public keystore?: string;
 
   /*
 Subject details.
 Structure is documented below.
 */
-  public Subject?: Apigee_KeystoresAliasesSelfSignedCertSubject;
+  public subject?: apigee_KeystoresAliasesSelfSignedCertSubject;
+
+  // Optional.Type of Alias
+  public type?: string;
 
   /*
-List of alternative host names. Maximum length is 255 characters for each value.
-Structure is documented below.
+Alias for the key/certificate pair. Values must match the regular expression [\w\s-.]{1,255}.
+This must be provided for all formats except selfsignedcert; self-signed certs may specify the alias in either
+this parameter or the JSON body.
 */
-  public SubjectAlternativeDnsNames?: Apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames;
+  public alias?: string;
+
+  // Validity duration of certificate, in days. Accepts positive non-zero value. Defaults to 365.
+  public certValidityInDays?: number;
+
+  // The Apigee Organization name associated with the Apigee environment
+  public orgId?: string;
+
+  // Signature algorithm to generate private key. Valid values are SHA512withRSA, SHA384withRSA, and SHA256withRSA
+  public sigAlg?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "Alias",
-        "Alias for the key/certificate pair. Values must match the regular expression [\\w\\s-.]{1,255}.\nThis must be provided for all formats except selfsignedcert; self-signed certs may specify the alias in either\nthis parameter or the JSON body.",
-        [],
+        InputType.Object,
+        "subject",
+        "Subject details.\nStructure is documented below.",
+        apigee_KeystoresAliasesSelfSignedCertSubject_GetTypes(),
         true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Keystore",
-        "The Apigee keystore name associated in an Apigee environment",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Number,
-        "CertValidityInDays",
-        "Validity duration of certificate, in days. Accepts positive non-zero value. Defaults to 365.",
-        [],
-        false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "SubjectAlternativeDnsNames",
+        "subjectAlternativeDnsNames",
         "List of alternative host names. Maximum length is 255 characters for each value.\nStructure is documented below.",
-        Apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames_GetTypes(),
+        apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "KeySize",
+        "keySize",
         "Key size. Default and maximum value is 2048 bits.",
         [],
         false,
@@ -148,15 +132,31 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Environment",
-        "The Apigee environment name",
+        "alias",
+        "Alias for the key/certificate pair. Values must match the regular expression [\\w\\s-.]{1,255}.\nThis must be provided for all formats except selfsignedcert; self-signed certs may specify the alias in either\nthis parameter or the JSON body.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Number,
+        "certValidityInDays",
+        "Validity duration of certificate, in days. Accepts positive non-zero value. Defaults to 365.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "sigAlg",
+        "Signature algorithm to generate private key. Valid values are SHA512withRSA, SHA384withRSA, and SHA256withRSA",
         [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "OrgId",
+        "orgId",
         "The Apigee Organization name associated with the Apigee environment",
         [],
         true,
@@ -164,17 +164,17 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "SigAlg",
-        "Signature algorithm to generate private key. Valid values are SHA512withRSA, SHA384withRSA, and SHA256withRSA",
+        "environment",
+        "The Apigee environment name",
         [],
         true,
         true,
       ),
       new DynamicUIProps(
-        InputType.Object,
-        "Subject",
-        "Subject details.\nStructure is documented below.",
-        Apigee_KeystoresAliasesSelfSignedCertSubject_GetTypes(),
+        InputType.String,
+        "keystore",
+        "The Apigee keystore name associated in an Apigee environment",
+        [],
         true,
         true,
       ),

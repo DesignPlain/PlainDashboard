@@ -6,37 +6,45 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificateauthority_getAuthorityConfigSubjectConfigSubject {
-  // The province, territory, or regional state of the subject.
-  Province?: string;
-
-  // The street address of the subject.
-  StreetAddress?: string;
-
-  // The common name of the distinguished name.
-  CommonName?: string;
-
-  // The country code of the subject.
-  CountryCode?: string;
-
-  // The locality or city of the subject.
-  Locality?: string;
-
-  // The organization of the subject.
-  Organization?: string;
-
+export interface certificateauthority_getAuthorityConfigSubjectConfigSubject {
   // The organizational unit of the subject.
-  OrganizationalUnit?: string;
+  organizationalUnit?: string;
 
   // The postal code of the subject.
-  PostalCode?: string;
+  postalCode?: string;
+
+  // The province, territory, or regional state of the subject.
+  province?: string;
+
+  // The street address of the subject.
+  streetAddress?: string;
+
+  // The common name of the distinguished name.
+  commonName?: string;
+
+  // The country code of the subject.
+  countryCode?: string;
+
+  // The locality or city of the subject.
+  locality?: string;
+
+  // The organization of the subject.
+  organization?: string;
 }
 
-export function Certificateauthority_getAuthorityConfigSubjectConfigSubject_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_getAuthorityConfigSubjectConfigSubject_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PostalCode",
+      "organizationalUnit",
+      "The organizational unit of the subject.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "postalCode",
       "The postal code of the subject.",
       [],
       true,
@@ -44,7 +52,7 @@ export function Certificateauthority_getAuthorityConfigSubjectConfigSubject_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "Province",
+      "province",
       "The province, territory, or regional state of the subject.",
       [],
       true,
@@ -52,7 +60,7 @@ export function Certificateauthority_getAuthorityConfigSubjectConfigSubject_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "StreetAddress",
+      "streetAddress",
       "The street address of the subject.",
       [],
       true,
@@ -60,7 +68,7 @@ export function Certificateauthority_getAuthorityConfigSubjectConfigSubject_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "CommonName",
+      "commonName",
       "The common name of the distinguished name.",
       [],
       true,
@@ -68,7 +76,7 @@ export function Certificateauthority_getAuthorityConfigSubjectConfigSubject_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "CountryCode",
+      "countryCode",
       "The country code of the subject.",
       [],
       true,
@@ -76,7 +84,7 @@ export function Certificateauthority_getAuthorityConfigSubjectConfigSubject_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "Locality",
+      "locality",
       "The locality or city of the subject.",
       [],
       true,
@@ -84,16 +92,8 @@ export function Certificateauthority_getAuthorityConfigSubjectConfigSubject_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "Organization",
+      "organization",
       "The organization of the subject.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "OrganizationalUnit",
-      "The organizational unit of the subject.",
       [],
       true,
       false,

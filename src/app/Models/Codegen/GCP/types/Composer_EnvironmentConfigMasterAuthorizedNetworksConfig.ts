@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Composer_EnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock,
-  Composer_EnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock_GetTypes,
-} from "./Composer_EnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock";
+  composer_EnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock,
+  composer_EnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock_GetTypes,
+} from "./composer_EnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock";
 
-export interface Composer_EnvironmentConfigMasterAuthorizedNetworksConfig {
-  // cidr_blocks define up to 50 external networks that could access Kubernetes master through HTTPS.
-  CidrBlocks?: Array<Composer_EnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock>;
-
+export interface composer_EnvironmentConfigMasterAuthorizedNetworksConfig {
   // Whether or not master authorized networks is enabled.
-  Enabled?: boolean;
+  enabled?: boolean;
+
+  // cidr_blocks define up to 50 external networks that could access Kubernetes master through HTTPS.
+  cidrBlocks?: Array<composer_EnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock>;
 }
 
-export function Composer_EnvironmentConfigMasterAuthorizedNetworksConfig_GetTypes(): DynamicUIProps[] {
+export function composer_EnvironmentConfigMasterAuthorizedNetworksConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "CidrBlocks",
-      "cidr_blocks define up to 50 external networks that could access Kubernetes master through HTTPS.",
-      Composer_EnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether or not master authorized networks is enabled.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "cidrBlocks",
+      "cidr_blocks define up to 50 external networks that could access Kubernetes master through HTTPS.",
+      composer_EnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock_GetTypes(),
+      false,
       false,
     ),
   ];

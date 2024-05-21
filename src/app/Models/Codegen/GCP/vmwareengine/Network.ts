@@ -7,28 +7,28 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Vmwareengine_NetworkVpcNetwork,
-  Vmwareengine_NetworkVpcNetwork_GetTypes,
-} from "../types/Vmwareengine_NetworkVpcNetwork";
+  vmwareengine_NetworkVpcNetwork,
+  vmwareengine_NetworkVpcNetwork_GetTypes,
+} from "../types/vmwareengine_NetworkVpcNetwork";
 
 export interface NetworkArgs {
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 VMware Engine network type.
 Possible values are: `LEGACY`, `STANDARD`.
 */
-  Type?: string;
+  type?: string;
 
   // User-provided description for this VMware Engine network.
-  Description?: string;
+  description?: string;
 
   // The location where the VMwareEngineNetwork should reside.
-  Location?: string;
+  location?: string;
 
   /*
 The ID of the VMwareEngineNetwork.
@@ -36,39 +36,33 @@ The ID of the VMwareEngineNetwork.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 }
 export class Network extends Resource {
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
   // State of the VMware Engine network.
-  public State?: string;
+  public state?: string;
 
   /*
 VMware Engine network type.
 Possible values are: `LEGACY`, `STANDARD`.
 */
-  public Type?: string;
+  public type?: string;
 
   // System-generated unique identifier for the resource.
-  public Uid?: string;
+  public uid?: string;
 
   /*
 VMware Engine service VPC networks that provide connectivity from a private cloud to customer projects,
 the internet, and other Google Cloud services.
 Structure is documented below.
 */
-  public VpcNetworks?: Array<Vmwareengine_NetworkVpcNetwork>;
+  public vpcNetworks?: Array<vmwareengine_NetworkVpcNetwork>;
 
   // User-provided description for this VMware Engine network.
-  public Description?: string;
+  public description?: string;
 
   // The location where the VMwareEngineNetwork should reside.
-  public Location?: string;
+  public location?: string;
 
   /*
 The ID of the VMwareEngineNetwork.
@@ -76,13 +70,19 @@ The ID of the VMwareEngineNetwork.
 
 - - -
 */
-  public Name?: string;
+  public name?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -90,7 +90,7 @@ The ID of the VMwareEngineNetwork.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Type",
+        "type",
         "VMware Engine network type.\nPossible values are: `LEGACY`, `STANDARD`.",
         [],
         true,
@@ -98,7 +98,7 @@ The ID of the VMwareEngineNetwork.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "User-provided description for this VMware Engine network.",
         [],
         false,
@@ -106,7 +106,7 @@ The ID of the VMwareEngineNetwork.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location where the VMwareEngineNetwork should reside.",
         [],
         true,
@@ -114,7 +114,7 @@ The ID of the VMwareEngineNetwork.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The ID of the VMwareEngineNetwork.\n\n\n- - -",
         [],
         false,

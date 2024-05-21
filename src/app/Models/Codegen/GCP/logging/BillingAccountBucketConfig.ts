@@ -7,77 +7,77 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Logging_BillingAccountBucketConfigIndexConfig,
-  Logging_BillingAccountBucketConfigIndexConfig_GetTypes,
-} from "../types/Logging_BillingAccountBucketConfigIndexConfig";
+  logging_BillingAccountBucketConfigCmekSettings,
+  logging_BillingAccountBucketConfigCmekSettings_GetTypes,
+} from "../types/logging_BillingAccountBucketConfigCmekSettings";
 import {
-  Logging_BillingAccountBucketConfigCmekSettings,
-  Logging_BillingAccountBucketConfigCmekSettings_GetTypes,
-} from "../types/Logging_BillingAccountBucketConfigCmekSettings";
+  logging_BillingAccountBucketConfigIndexConfig,
+  logging_BillingAccountBucketConfigIndexConfig_GetTypes,
+} from "../types/logging_BillingAccountBucketConfigIndexConfig";
 
 export interface BillingAccountBucketConfigArgs {
-  // Describes this bucket.
-  Description?: string;
-
-  // A list of indexed fields and related configuration data. Structure is documented below.
-  IndexConfigs?: Array<Logging_BillingAccountBucketConfigIndexConfig>;
-
-  // The location of the bucket.
-  Location?: string;
-
-  // Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used. Bucket retention can not be increased on buckets outside of projects.
-  RetentionDays?: number;
-
   // The parent resource that contains the logging bucket.
-  BillingAccount?: string;
+  billingAccount?: string;
 
   // The name of the logging bucket. Logging automatically creates two log buckets: `_Required` and `_Default`.
-  BucketId?: string;
+  bucketId?: string;
 
   /*
 The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK
 key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by
 updating the log bucket. Changing the KMS key is allowed.
 */
-  CmekSettings?: Logging_BillingAccountBucketConfigCmekSettings;
+  cmekSettings?: logging_BillingAccountBucketConfigCmekSettings;
+
+  // Describes this bucket.
+  description?: string;
+
+  // A list of indexed fields and related configuration data. Structure is documented below.
+  indexConfigs?: Array<logging_BillingAccountBucketConfigIndexConfig>;
+
+  // The location of the bucket.
+  location?: string;
+
+  // Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used. Bucket retention can not be increased on buckets outside of projects.
+  retentionDays?: number;
 }
 export class BillingAccountBucketConfig extends Resource {
-  // The bucket's lifecycle such as active or deleted. See [LifecycleState](https://cloud.google.com/logging/docs/reference/v2/rest/v2/billingAccounts.buckets#LogBucket.LifecycleState).
-  public LifecycleState?: string;
+  // The name of the logging bucket. Logging automatically creates two log buckets: `_Required` and `_Default`.
+  public bucketId?: string;
 
-  // Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used. Bucket retention can not be increased on buckets outside of projects.
-  public RetentionDays?: number;
+  // Describes this bucket.
+  public description?: string;
+
+  // The bucket's lifecycle such as active or deleted. See [LifecycleState](https://cloud.google.com/logging/docs/reference/v2/rest/v2/billingAccounts.buckets#LogBucket.LifecycleState).
+  public lifecycleState?: string;
+
+  // The location of the bucket.
+  public location?: string;
+
+  // The resource name of the bucket. For example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id"
+  public name?: string;
+
+  // The parent resource that contains the logging bucket.
+  public billingAccount?: string;
 
   /*
 The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK
 key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by
 updating the log bucket. Changing the KMS key is allowed.
 */
-  public CmekSettings?: Logging_BillingAccountBucketConfigCmekSettings;
-
-  // Describes this bucket.
-  public Description?: string;
+  public cmekSettings?: logging_BillingAccountBucketConfigCmekSettings;
 
   // A list of indexed fields and related configuration data. Structure is documented below.
-  public IndexConfigs?: Array<Logging_BillingAccountBucketConfigIndexConfig>;
+  public indexConfigs?: Array<logging_BillingAccountBucketConfigIndexConfig>;
 
-  // The location of the bucket.
-  public Location?: string;
-
-  // The resource name of the bucket. For example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id"
-  public Name?: string;
-
-  // The parent resource that contains the logging bucket.
-  public BillingAccount?: string;
-
-  // The name of the logging bucket. Logging automatically creates two log buckets: `_Required` and `_Default`.
-  public BucketId?: string;
+  // Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used. Bucket retention can not be increased on buckets outside of projects.
+  public retentionDays?: number;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Describes this bucket.",
         [],
         false,
@@ -85,15 +85,15 @@ updating the log bucket. Changing the KMS key is allowed.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "IndexConfigs",
+        "indexConfigs",
         "A list of indexed fields and related configuration data. Structure is documented below.",
-        Logging_BillingAccountBucketConfigIndexConfig_GetTypes(),
+        logging_BillingAccountBucketConfigIndexConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location of the bucket.",
         [],
         true,
@@ -101,7 +101,7 @@ updating the log bucket. Changing the KMS key is allowed.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "RetentionDays",
+        "retentionDays",
         "Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used. Bucket retention can not be increased on buckets outside of projects.",
         [],
         false,
@@ -109,7 +109,7 @@ updating the log bucket. Changing the KMS key is allowed.
       ),
       new DynamicUIProps(
         InputType.String,
-        "BillingAccount",
+        "billingAccount",
         "The parent resource that contains the logging bucket.",
         [],
         true,
@@ -117,7 +117,7 @@ updating the log bucket. Changing the KMS key is allowed.
       ),
       new DynamicUIProps(
         InputType.String,
-        "BucketId",
+        "bucketId",
         "The name of the logging bucket. Logging automatically creates two log buckets: `_Required` and `_Default`.",
         [],
         true,
@@ -125,9 +125,9 @@ updating the log bucket. Changing the KMS key is allowed.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "CmekSettings",
+        "cmekSettings",
         "The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK\nkey provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by\nupdating the log bucket. Changing the KMS key is allowed.",
-        Logging_BillingAccountBucketConfigCmekSettings_GetTypes(),
+        logging_BillingAccountBucketConfigCmekSettings_GetTypes(),
         false,
         false,
       ),

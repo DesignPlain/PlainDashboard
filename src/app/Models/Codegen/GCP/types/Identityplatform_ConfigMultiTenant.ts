@@ -6,32 +6,32 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Identityplatform_ConfigMultiTenant {
-  // Whether this project can have tenants or not.
-  AllowTenants?: boolean;
-
+export interface identityplatform_ConfigMultiTenant {
   /*
 The default cloud parent org or folder that the tenant project should be created under.
 The parent resource name should be in the format of "/", such as "folders/123" or "organizations/456".
 If the value is not set, the tenant will be created under the same organization or folder as the agent project.
 */
-  DefaultTenantLocation?: string;
+  defaultTenantLocation?: string;
+
+  // Whether this project can have tenants or not.
+  allowTenants?: boolean;
 }
 
-export function Identityplatform_ConfigMultiTenant_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ConfigMultiTenant_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Bool,
-      "AllowTenants",
-      "Whether this project can have tenants or not.",
+      InputType.String,
+      "defaultTenantLocation",
+      'The default cloud parent org or folder that the tenant project should be created under.\nThe parent resource name should be in the format of "/", such as "folders/123" or "organizations/456".\nIf the value is not set, the tenant will be created under the same organization or folder as the agent project.',
       [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "DefaultTenantLocation",
-      'The default cloud parent org or folder that the tenant project should be created under.\nThe parent resource name should be in the format of "/", such as "folders/123" or "organizations/456".\nIf the value is not set, the tenant will be created under the same organization or folder as the agent project.',
+      InputType.Bool,
+      "allowTenants",
+      "Whether this project can have tenants or not.",
       [],
       false,
       false,

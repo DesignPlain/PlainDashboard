@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Secretmanager_getSecretReplicationUserManagedReplica,
-  Secretmanager_getSecretReplicationUserManagedReplica_GetTypes,
-} from "./Secretmanager_getSecretReplicationUserManagedReplica";
+  secretmanager_getSecretReplicationUserManagedReplica,
+  secretmanager_getSecretReplicationUserManagedReplica_GetTypes,
+} from "./secretmanager_getSecretReplicationUserManagedReplica";
 
-export interface Secretmanager_getSecretReplicationUserManaged {
+export interface secretmanager_getSecretReplicationUserManaged {
   // The list of Replicas for this Secret. Cannot be empty.
-  Replicas?: Array<Secretmanager_getSecretReplicationUserManagedReplica>;
+  replicas?: Array<secretmanager_getSecretReplicationUserManagedReplica>;
 }
 
-export function Secretmanager_getSecretReplicationUserManaged_GetTypes(): DynamicUIProps[] {
+export function secretmanager_getSecretReplicationUserManaged_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Replicas",
+      "replicas",
       "The list of Replicas for this Secret. Cannot be empty.",
-      Secretmanager_getSecretReplicationUserManagedReplica_GetTypes(),
+      secretmanager_getSecretReplicationUserManagedReplica_GetTypes(),
       true,
       false,
     ),

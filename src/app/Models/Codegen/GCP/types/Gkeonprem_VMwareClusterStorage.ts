@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_VMwareClusterStorage {
+export interface gkeonprem_VMwareClusterStorage {
   /*
 Whether or not to deploy vSphere CSI components in the VMware User Cluster.
 Enabled by default.
 */
-  VsphereCsiDisabled?: boolean;
+  vsphereCsiDisabled?: boolean;
 }
 
-export function Gkeonprem_VMwareClusterStorage_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterStorage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "VsphereCsiDisabled",
+      "vsphereCsiDisabled",
       "Whether or not to deploy vSphere CSI components in the VMware User Cluster.\nEnabled by default.",
       [],
       true,

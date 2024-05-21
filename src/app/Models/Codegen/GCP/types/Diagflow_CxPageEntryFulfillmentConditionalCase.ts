@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxPageEntryFulfillmentConditionalCase {
+export interface diagflow_CxPageEntryFulfillmentConditionalCase {
   /*
 A JSON encoded list of cascading if-else conditions. Cases are mutually exclusive. The first one with a matching condition is selected, all the rest ignored.
 See [Case](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment#case) for the schema.
 */
-  Cases?: string;
+  cases?: string;
 }
 
-export function Diagflow_CxPageEntryFulfillmentConditionalCase_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxPageEntryFulfillmentConditionalCase_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Cases",
+      "cases",
       "A JSON encoded list of cascading if-else conditions. Cases are mutually exclusive. The first one with a matching condition is selected, all the rest ignored.\nSee [Case](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment#case) for the schema.",
       [],
       false,

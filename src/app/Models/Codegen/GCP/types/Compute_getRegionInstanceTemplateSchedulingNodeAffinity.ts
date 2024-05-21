@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getRegionInstanceTemplateSchedulingNodeAffinity {
+export interface compute_getRegionInstanceTemplateSchedulingNodeAffinity {
+  //
+  values?: Array<string>;
+
+  // The key for the node affinity label.
+  key?: string;
+
   /*
 The operator. Can be `IN` for node-affinities
 or `NOT_IN` for anti-affinities.
 */
-  Operator?: string;
-
-  //
-  Values?: Array<string>;
-
-  // The key for the node affinity label.
-  Key?: string;
+  operator?: string;
 }
 
-export function Compute_getRegionInstanceTemplateSchedulingNodeAffinity_GetTypes(): DynamicUIProps[] {
+export function compute_getRegionInstanceTemplateSchedulingNodeAffinity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Operator",
+      "key",
+      "The key for the node affinity label.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "operator",
       "The operator. Can be `IN` for node-affinities\nor `NOT_IN` for anti-affinities.",
       [],
       true,
@@ -32,17 +40,9 @@ export function Compute_getRegionInstanceTemplateSchedulingNodeAffinity_GetTypes
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Values",
+      "values",
       "",
       InputType_String_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Key",
-      "The key for the node affinity label.",
-      [],
       true,
       false,
     ),

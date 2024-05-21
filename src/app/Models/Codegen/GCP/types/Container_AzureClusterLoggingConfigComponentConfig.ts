@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AzureClusterLoggingConfigComponentConfig {
+export interface container_AzureClusterLoggingConfigComponentConfig {
   // Components of the logging configuration to be enabled.
-  EnableComponents?: Array<string>;
+  enableComponents?: Array<string>;
 }
 
-export function Container_AzureClusterLoggingConfigComponentConfig_GetTypes(): DynamicUIProps[] {
+export function container_AzureClusterLoggingConfigComponentConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "EnableComponents",
+      "enableComponents",
       "Components of the logging configuration to be enabled.",
       InputType_String_GetTypes(),
       false,

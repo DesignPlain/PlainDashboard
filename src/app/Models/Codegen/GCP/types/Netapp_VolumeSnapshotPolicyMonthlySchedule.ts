@@ -6,41 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Netapp_VolumeSnapshotPolicyMonthlySchedule {
+export interface netapp_VolumeSnapshotPolicyMonthlySchedule {
   // Set the day or days of the month to make a snapshot (1-31). Accepts a comma separated number of days. Defaults to '1'.
-  DaysOfMonth?: string;
+  daysOfMonth?: string;
 
   // Set the hour to create the snapshot (0-23), defaults to midnight (0).
-  Hour?: number;
+  hour?: number;
 
   // Set the minute of the hour to create the snapshot (0-59), defaults to the top of the hour (0).
-  Minute?: number;
+  minute?: number;
 
   // The maximum number of snapshots to keep for the monthly schedule
-  SnapshotsToKeep?: number;
+  snapshotsToKeep?: number;
 }
 
-export function Netapp_VolumeSnapshotPolicyMonthlySchedule_GetTypes(): DynamicUIProps[] {
+export function netapp_VolumeSnapshotPolicyMonthlySchedule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "DaysOfMonth",
-      "Set the day or days of the month to make a snapshot (1-31). Accepts a comma separated number of days. Defaults to '1'.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "Hour",
-      "Set the hour to create the snapshot (0-23), defaults to midnight (0).",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Minute",
+      "minute",
       "Set the minute of the hour to create the snapshot (0-59), defaults to the top of the hour (0).",
       [],
       false,
@@ -48,10 +32,26 @@ export function Netapp_VolumeSnapshotPolicyMonthlySchedule_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Number,
-      "SnapshotsToKeep",
+      "snapshotsToKeep",
       "The maximum number of snapshots to keep for the monthly schedule",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "daysOfMonth",
+      "Set the day or days of the month to make a snapshot (1-31). Accepts a comma separated number of days. Defaults to '1'.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "hour",
+      "Set the hour to create the snapshot (0-23), defaults to midnight (0).",
+      [],
+      false,
       false,
     ),
   ];

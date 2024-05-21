@@ -7,23 +7,37 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_MangedSslCertificateManaged,
-  Compute_MangedSslCertificateManaged_GetTypes,
-} from "../types/Compute_MangedSslCertificateManaged";
+  compute_MangedSslCertificateManaged,
+  compute_MangedSslCertificateManaged_GetTypes,
+} from "../types/compute_MangedSslCertificateManaged";
 
 export interface MangedSslCertificateArgs {
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  /*
+Enum field whose value is always `MANAGED` - used to signal to the API
+which type this is.
+Default value is `MANAGED`.
+Possible values are: `MANAGED`.
+*/
+  type?: string;
+
   // The unique identifier for the resource.
-  CertificateId?: number;
+  certificateId?: number;
 
   // An optional description of this resource.
-  Description?: string;
+  description?: string;
 
   /*
 Properties relevant to a managed certificate.  These will be used if the
 certificate is managed (as indicated by a value of `MANAGED` in `type`).
 Structure is documented below.
 */
-  Managed?: Compute_MangedSslCertificateManaged;
+  managed?: compute_MangedSslCertificateManaged;
 
   /*
 Name of the resource. Provided by the client when the resource is
@@ -36,32 +50,11 @@ character, which cannot be a dash.
 
 These are in the same namespace as the managed SSL certificates.
 */
-  Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  /*
-Enum field whose value is always `MANAGED` - used to signal to the API
-which type this is.
-Default value is `MANAGED`.
-Possible values are: `MANAGED`.
-*/
-  Type?: string;
+  name?: string;
 }
 export class MangedSslCertificate extends Resource {
-  // Expire time of the certificate in RFC3339 text format.
-  public ExpireTime?: string;
-
-  /*
-Properties relevant to a managed certificate.  These will be used if the
-certificate is managed (as indicated by a value of `MANAGED` in `type`).
-Structure is documented below.
-*/
-  public Managed?: Compute_MangedSslCertificateManaged;
+  // The unique identifier for the resource.
+  public certificateId?: number;
 
   /*
 Name of the resource. Provided by the client when the resource is
@@ -74,16 +67,7 @@ character, which cannot be a dash.
 
 These are in the same namespace as the managed SSL certificates.
 */
-  public Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  // Domains associated with the certificate via Subject Alternative Name.
-  public SubjectAlternativeNames?: Array<string>;
+  public name?: string;
 
   /*
 Enum field whose value is always `MANAGED` - used to signal to the API
@@ -91,41 +75,49 @@ which type this is.
 Default value is `MANAGED`.
 Possible values are: `MANAGED`.
 */
-  public Type?: string;
+  public type?: string;
 
   // Creation timestamp in RFC3339 text format.
-  public CreationTimestamp?: string;
+  public creationTimestamp?: string;
 
   // An optional description of this resource.
-  public Description?: string;
+  public description?: string;
+
+  // Expire time of the certificate in RFC3339 text format.
+  public expireTime?: string;
+
+  /*
+Properties relevant to a managed certificate.  These will be used if the
+certificate is managed (as indicated by a value of `MANAGED` in `type`).
+Structure is documented below.
+*/
+  public managed?: compute_MangedSslCertificateManaged;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   // The URI of the created resource.
-  public SelfLink?: string;
+  public selfLink?: string;
 
-  // The unique identifier for the resource.
-  public CertificateId?: number;
+  // Domains associated with the certificate via Subject Alternative Name.
+  public subjectAlternativeNames?: Array<string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "An optional description of this resource.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.Object,
-        "Managed",
+        "managed",
         "Properties relevant to a managed certificate.  These will be used if the\ncertificate is managed (as indicated by a value of `MANAGED` in `type`).\nStructure is documented below.",
-        Compute_MangedSslCertificateManaged_GetTypes(),
+        compute_MangedSslCertificateManaged_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.\n\nThese are in the same namespace as the managed SSL certificates.",
         [],
         false,
@@ -133,7 +125,7 @@ Possible values are: `MANAGED`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -141,7 +133,7 @@ Possible values are: `MANAGED`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Type",
+        "type",
         "Enum field whose value is always `MANAGED` - used to signal to the API\nwhich type this is.\nDefault value is `MANAGED`.\nPossible values are: `MANAGED`.",
         [],
         false,
@@ -149,11 +141,19 @@ Possible values are: `MANAGED`.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "CertificateId",
+        "certificateId",
         "The unique identifier for the resource.",
         [],
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "An optional description of this resource.",
+        [],
+        false,
+        true,
       ),
     ];
   }

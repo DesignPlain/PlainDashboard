@@ -7,140 +7,156 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_JobHiveConfig,
-  Dataproc_JobHiveConfig_GetTypes,
-} from "../types/Dataproc_JobHiveConfig";
+  dataproc_JobPysparkConfig,
+  dataproc_JobPysparkConfig_GetTypes,
+} from "../types/dataproc_JobPysparkConfig";
 import {
-  Dataproc_JobPysparkConfig,
-  Dataproc_JobPysparkConfig_GetTypes,
-} from "../types/Dataproc_JobPysparkConfig";
+  dataproc_JobHadoopConfig,
+  dataproc_JobHadoopConfig_GetTypes,
+} from "../types/dataproc_JobHadoopConfig";
 import {
-  Dataproc_JobHadoopConfig,
-  Dataproc_JobHadoopConfig_GetTypes,
-} from "../types/Dataproc_JobHadoopConfig";
+  dataproc_JobReference,
+  dataproc_JobReference_GetTypes,
+} from "../types/dataproc_JobReference";
 import {
-  Dataproc_JobPigConfig,
-  Dataproc_JobPigConfig_GetTypes,
-} from "../types/Dataproc_JobPigConfig";
+  dataproc_JobSparkConfig,
+  dataproc_JobSparkConfig_GetTypes,
+} from "../types/dataproc_JobSparkConfig";
 import {
-  Dataproc_JobSparksqlConfig,
-  Dataproc_JobSparksqlConfig_GetTypes,
-} from "../types/Dataproc_JobSparksqlConfig";
+  dataproc_JobSparksqlConfig,
+  dataproc_JobSparksqlConfig_GetTypes,
+} from "../types/dataproc_JobSparksqlConfig";
 import {
-  Dataproc_JobSparkConfig,
-  Dataproc_JobSparkConfig_GetTypes,
-} from "../types/Dataproc_JobSparkConfig";
+  dataproc_JobPigConfig,
+  dataproc_JobPigConfig_GetTypes,
+} from "../types/dataproc_JobPigConfig";
 import {
-  Dataproc_JobReference,
-  Dataproc_JobReference_GetTypes,
-} from "../types/Dataproc_JobReference";
+  dataproc_JobPlacement,
+  dataproc_JobPlacement_GetTypes,
+} from "../types/dataproc_JobPlacement";
 import {
-  Dataproc_JobScheduling,
-  Dataproc_JobScheduling_GetTypes,
-} from "../types/Dataproc_JobScheduling";
+  dataproc_JobPrestoConfig,
+  dataproc_JobPrestoConfig_GetTypes,
+} from "../types/dataproc_JobPrestoConfig";
 import {
-  Dataproc_JobPrestoConfig,
-  Dataproc_JobPrestoConfig_GetTypes,
-} from "../types/Dataproc_JobPrestoConfig";
+  dataproc_JobStatus,
+  dataproc_JobStatus_GetTypes,
+} from "../types/dataproc_JobStatus";
 import {
-  Dataproc_JobStatus,
-  Dataproc_JobStatus_GetTypes,
-} from "../types/Dataproc_JobStatus";
+  dataproc_JobHiveConfig,
+  dataproc_JobHiveConfig_GetTypes,
+} from "../types/dataproc_JobHiveConfig";
 import {
-  Dataproc_JobPlacement,
-  Dataproc_JobPlacement_GetTypes,
-} from "../types/Dataproc_JobPlacement";
+  dataproc_JobScheduling,
+  dataproc_JobScheduling_GetTypes,
+} from "../types/dataproc_JobScheduling";
 
 export interface JobArgs {
-  /*
-The Cloud Dataproc region. This essentially determines which clusters are available
-for this job to be submitted to. If not specified, defaults to `global`.
-*/
-  Region?: string;
-
-  // The config of the Spark job.
-  SparkConfig?: Dataproc_JobSparkConfig;
-
   /*
 By default, you can only delete inactive jobs within
 Dataproc. Setting this to true, and calling destroy, will ensure that the
 job is first cancelled before issuing the delete.
 */
-  ForceDelete?: boolean;
+  forceDelete?: boolean;
 
   // The config of job placement.
-  Placement?: Dataproc_JobPlacement;
+  placement?: dataproc_JobPlacement;
+
+  // The config of presto job
+  prestoConfig?: dataproc_JobPrestoConfig;
+
+  /*
+The Cloud Dataproc region. This essentially determines which clusters are available
+for this job to be submitted to. If not specified, defaults to `global`.
+*/
+  region?: string;
+
+  // The config of pySpark job.
+  pysparkConfig?: dataproc_JobPysparkConfig;
+
+  // The config of Hadoop job
+  hadoopConfig?: dataproc_JobHadoopConfig;
+
+  // The config of hive job
+  hiveConfig?: dataproc_JobHiveConfig;
 
   /*
 The project in which the `cluster` can be found and jobs
 subsequently run against. If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // The reference of the job
-  Reference?: Dataproc_JobReference;
+  reference?: dataproc_JobReference;
 
-  // The config of hive job
-  HiveConfig?: Dataproc_JobHiveConfig;
+  // The config of the Spark job.
+  sparkConfig?: dataproc_JobSparkConfig;
+
+  // The config of SparkSql job
+  sparksqlConfig?: dataproc_JobSparksqlConfig;
 
   /*
 The list of labels (key/value pairs) to add to the job.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field 'effective_labels' for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
-
-  // The config of pySpark job.
-  PysparkConfig?: Dataproc_JobPysparkConfig;
-
-  // Optional. Job scheduling configuration.
-  Scheduling?: Dataproc_JobScheduling;
-
-  // The config of Hadoop job
-  HadoopConfig?: Dataproc_JobHadoopConfig;
+  labels?: Map<string, string>;
 
   // The config of pag job.
-  PigConfig?: Dataproc_JobPigConfig;
+  pigConfig?: dataproc_JobPigConfig;
 
-  // The config of presto job
-  PrestoConfig?: Dataproc_JobPrestoConfig;
-
-  // The config of SparkSql job
-  SparksqlConfig?: Dataproc_JobSparksqlConfig;
+  // Optional. Job scheduling configuration.
+  scheduling?: dataproc_JobScheduling;
 }
 export class Job extends Resource {
-  // A URI pointing to the location of the stdout of the job's driver program.
-  public DriverOutputResourceUri?: string;
-
-  // The reference of the job
-  public Reference?: Dataproc_JobReference;
-
-  // The config of SparkSql job
-  public SparksqlConfig?: Dataproc_JobSparksqlConfig;
-
   // The status of the job.
-  public Statuses?: Array<Dataproc_JobStatus>;
+  public statuses?: Array<dataproc_JobStatus>;
 
-  // The config of Hadoop job
-  public HadoopConfig?: Dataproc_JobHadoopConfig;
+  // A URI pointing to the location of the stdout of the job's driver program.
+  public driverOutputResourceUri?: string;
+
+  // The config of hive job
+  public hiveConfig?: dataproc_JobHiveConfig;
+
+  // The config of job placement.
+  public placement?: dataproc_JobPlacement;
+
+  // The combination of labels configured directly on the resource and default labels configured on the provider.
+  public pulumiLabels?: Map<string, string>;
 
   /*
 The project in which the `cluster` can be found and jobs
 subsequently run against. If it is not provided, the provider project is used.
 */
-  public Project?: string;
-
-  // The config of presto job
-  public PrestoConfig?: Dataproc_JobPrestoConfig;
-
-  // The combination of labels configured directly on the resource and default labels configured on the provider.
-  public PulumiLabels?: Map<string, string>;
+  public project?: string;
 
   // The config of pySpark job.
-  public PysparkConfig?: Dataproc_JobPysparkConfig;
+  public pysparkConfig?: dataproc_JobPysparkConfig;
+
+  // Optional. Job scheduling configuration.
+  public scheduling?: dataproc_JobScheduling;
+
+  // The config of the Spark job.
+  public sparkConfig?: dataproc_JobSparkConfig;
 
   // If present, the location of miscellaneous control files which may be used as part of job setup and handling. If not present, control files may be placed in the same location as driver_output_uri.
-  public DriverControlsFilesUri?: string;
+  public driverControlsFilesUri?: string;
+
+  /*
+By default, you can only delete inactive jobs within
+Dataproc. Setting this to true, and calling destroy, will ensure that the
+job is first cancelled before issuing the delete.
+*/
+  public forceDelete?: boolean;
+
+  // The config of Hadoop job
+  public hadoopConfig?: dataproc_JobHadoopConfig;
+
+  // The config of presto job
+  public prestoConfig?: dataproc_JobPrestoConfig;
+
+  // The config of SparkSql job
+  public sparksqlConfig?: dataproc_JobSparksqlConfig;
 
   /*
 All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
@@ -149,72 +165,48 @@ All of labels (key/value pairs) present on the resource in GCP, including the la
 
 - `scheduling.max_failures_total` - (Required) Maximum number of times in total a driver may be restarted as a result of driver exiting with non-zero code before job is reported failed.
 */
-  public EffectiveLabels?: Map<string, string>;
-
-  // The config of hive job
-  public HiveConfig?: Dataproc_JobHiveConfig;
+  public effectiveLabels?: Map<string, string>;
 
   // The config of pag job.
-  public PigConfig?: Dataproc_JobPigConfig;
+  public pigConfig?: dataproc_JobPigConfig;
 
-  // The config of job placement.
-  public Placement?: Dataproc_JobPlacement;
+  // The reference of the job
+  public reference?: dataproc_JobReference;
 
   /*
 The Cloud Dataproc region. This essentially determines which clusters are available
 for this job to be submitted to. If not specified, defaults to `global`.
 */
-  public Region?: string;
-
-  // The config of the Spark job.
-  public SparkConfig?: Dataproc_JobSparkConfig;
-
-  /*
-By default, you can only delete inactive jobs within
-Dataproc. Setting this to true, and calling destroy, will ensure that the
-job is first cancelled before issuing the delete.
-*/
-  public ForceDelete?: boolean;
+  public region?: string;
 
   /*
 The list of labels (key/value pairs) to add to the job.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field 'effective_labels' for all of the labels present on the resource.
 */
-  public Labels?: Map<string, string>;
-
-  // Optional. Job scheduling configuration.
-  public Scheduling?: Dataproc_JobScheduling;
+  public labels?: Map<string, string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "HiveConfig",
-        "The config of hive job",
-        Dataproc_JobHiveConfig_GetTypes(),
+        "sparkConfig",
+        "The config of the Spark job.",
+        dataproc_JobSparkConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "PysparkConfig",
-        "The config of pySpark job.",
-        Dataproc_JobPysparkConfig_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "SparksqlConfig",
-        "The config of SparkSql job",
-        Dataproc_JobSparksqlConfig_GetTypes(),
+        "scheduling",
+        "Optional. Job scheduling configuration.",
+        dataproc_JobScheduling_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "ForceDelete",
+        "forceDelete",
         "By default, you can only delete inactive jobs within\nDataproc. Setting this to true, and calling destroy, will ensure that the\njob is first cancelled before issuing the delete.",
         [],
         false,
@@ -222,39 +214,23 @@ Please refer to the field 'effective_labels' for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Placement",
-        "The config of job placement.",
-        Dataproc_JobPlacement_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "PrestoConfig",
+        "prestoConfig",
         "The config of presto job",
-        Dataproc_JobPrestoConfig_GetTypes(),
+        dataproc_JobPrestoConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "SparkConfig",
-        "The config of the Spark job.",
-        Dataproc_JobSparkConfig_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "HadoopConfig",
-        "The config of Hadoop job",
-        Dataproc_JobHadoopConfig_GetTypes(),
+        "hiveConfig",
+        "The config of hive job",
+        dataproc_JobHiveConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The project in which the `cluster` can be found and jobs\nsubsequently run against. If it is not provided, the provider project is used.",
         [],
         false,
@@ -262,15 +238,15 @@ Please refer to the field 'effective_labels' for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.Object,
-        "PigConfig",
-        "The config of pag job.",
-        Dataproc_JobPigConfig_GetTypes(),
+        "reference",
+        "The reference of the job",
+        dataproc_JobReference_GetTypes(),
         false,
-        true,
+        false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "The list of labels (key/value pairs) to add to the job.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field 'effective_labels' for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
@@ -278,15 +254,39 @@ Please refer to the field 'effective_labels' for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Scheduling",
-        "Optional. Job scheduling configuration.",
-        Dataproc_JobScheduling_GetTypes(),
+        "placement",
+        "The config of job placement.",
+        dataproc_JobPlacement_GetTypes(),
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "hadoopConfig",
+        "The config of Hadoop job",
+        dataproc_JobHadoopConfig_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "sparksqlConfig",
+        "The config of SparkSql job",
+        dataproc_JobSparksqlConfig_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "pigConfig",
+        "The config of pag job.",
+        dataproc_JobPigConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "The Cloud Dataproc region. This essentially determines which clusters are available\nfor this job to be submitted to. If not specified, defaults to `global`.",
         [],
         false,
@@ -294,11 +294,11 @@ Please refer to the field 'effective_labels' for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Reference",
-        "The reference of the job",
-        Dataproc_JobReference_GetTypes(),
+        "pysparkConfig",
+        "The config of pySpark job.",
+        dataproc_JobPysparkConfig_GetTypes(),
         false,
-        false,
+        true,
       ),
     ];
   }

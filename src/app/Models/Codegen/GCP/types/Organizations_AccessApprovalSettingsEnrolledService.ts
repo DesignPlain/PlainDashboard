@@ -6,7 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Organizations_AccessApprovalSettingsEnrolledService {
+export interface organizations_AccessApprovalSettingsEnrolledService {
+  /*
+The enrollment level of the service.
+Default value is `BLOCK_ALL`.
+Possible values are: `BLOCK_ALL`.
+
+- - -
+*/
+  enrollmentLevel?: string;
+
   /*
 The product for which Access Approval will be enrolled. Allowed values are listed (case-sensitive):
 all
@@ -20,34 +29,25 @@ iam.googleapis.com
 pubsub.googleapis.com
 storage.googleapis.com
 */
-  CloudProduct?: string;
-
-  /*
-The enrollment level of the service.
-Default value is `BLOCK_ALL`.
-Possible values are: `BLOCK_ALL`.
-
-- - -
-*/
-  EnrollmentLevel?: string;
+  cloudProduct?: string;
 }
 
-export function Organizations_AccessApprovalSettingsEnrolledService_GetTypes(): DynamicUIProps[] {
+export function organizations_AccessApprovalSettingsEnrolledService_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CloudProduct",
-      "The product for which Access Approval will be enrolled. Allowed values are listed (case-sensitive):\nall\nappengine.googleapis.com\nbigquery.googleapis.com\nbigtable.googleapis.com\ncloudkms.googleapis.com\ncompute.googleapis.com\ndataflow.googleapis.com\niam.googleapis.com\npubsub.googleapis.com\nstorage.googleapis.com",
+      "enrollmentLevel",
+      "The enrollment level of the service.\nDefault value is `BLOCK_ALL`.\nPossible values are: `BLOCK_ALL`.\n\n- - -",
       [],
-      true,
+      false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "EnrollmentLevel",
-      "The enrollment level of the service.\nDefault value is `BLOCK_ALL`.\nPossible values are: `BLOCK_ALL`.\n\n- - -",
+      "cloudProduct",
+      "The product for which Access Approval will be enrolled. Allowed values are listed (case-sensitive):\nall\nappengine.googleapis.com\nbigquery.googleapis.com\nbigtable.googleapis.com\ncloudkms.googleapis.com\ncompute.googleapis.com\ndataflow.googleapis.com\niam.googleapis.com\npubsub.googleapis.com\nstorage.googleapis.com",
       [],
-      false,
+      true,
       false,
     ),
   ];

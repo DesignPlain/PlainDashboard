@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_JobLoadParquetOptions {
+export interface bigquery_JobLoadParquetOptions {
   // If sourceFormat is set to PARQUET, indicates whether to use schema inference specifically for Parquet LIST logical type.
-  EnableListInference?: boolean;
+  enableListInference?: boolean;
 
   // If sourceFormat is set to PARQUET, indicates whether to infer Parquet ENUM logical type as STRING instead of BYTES by default.
-  EnumAsString?: boolean;
+  enumAsString?: boolean;
 }
 
-export function Bigquery_JobLoadParquetOptions_GetTypes(): DynamicUIProps[] {
+export function bigquery_JobLoadParquetOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableListInference",
+      "enableListInference",
       "If sourceFormat is set to PARQUET, indicates whether to use schema inference specifically for Parquet LIST logical type.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Bigquery_JobLoadParquetOptions_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnumAsString",
+      "enumAsString",
       "If sourceFormat is set to PARQUET, indicates whether to infer Parquet ENUM logical type as STRING instead of BYTES by default.",
       [],
       false,

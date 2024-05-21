@@ -6,39 +6,39 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas,
-  Compute_RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas_GetTypes,
-} from "./Compute_RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas";
+  compute_RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas,
+  compute_RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas_GetTypes,
+} from "./compute_RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas";
 
-export interface Compute_RegionAutoscalerAutoscalingPolicyScaleDownControl {
-  /*
-How long back autoscaling should look when computing recommendations
-to include directives regarding slower scale down, as described above.
-*/
-  TimeWindowSec?: number;
-
+export interface compute_RegionAutoscalerAutoscalingPolicyScaleDownControl {
   /*
 A nested object resource
 Structure is documented below.
 */
-  MaxScaledDownReplicas?: Compute_RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas;
+  maxScaledDownReplicas?: compute_RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas;
+
+  /*
+How long back autoscaling should look when computing recommendations
+to include directives regarding slower scale down, as described above.
+*/
+  timeWindowSec?: number;
 }
 
-export function Compute_RegionAutoscalerAutoscalingPolicyScaleDownControl_GetTypes(): DynamicUIProps[] {
+export function compute_RegionAutoscalerAutoscalingPolicyScaleDownControl_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "TimeWindowSec",
-      "How long back autoscaling should look when computing recommendations\nto include directives regarding slower scale down, as described above.",
-      [],
+      InputType.Object,
+      "maxScaledDownReplicas",
+      "A nested object resource\nStructure is documented below.",
+      compute_RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "MaxScaledDownReplicas",
-      "A nested object resource\nStructure is documented below.",
-      Compute_RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas_GetTypes(),
+      InputType.Number,
+      "timeWindowSec",
+      "How long back autoscaling should look when computing recommendations\nto include directives regarding slower scale down, as described above.",
+      [],
       false,
       false,
     ),

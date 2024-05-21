@@ -6,11 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable,
-  Dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable";
+  dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable,
+  dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable";
 
-export interface Dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig {
+export interface dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig {
   /*
 Schema used for writing the findings for Inspect jobs. This field is only used for
 Inspect and must be unspecified for Risk jobs. Columns are derived from the Finding
@@ -21,20 +21,20 @@ table with no schema, and no changes will be made to an existing table that has 
 Only for use with external storage.
 Possible values are: `BASIC_COLUMNS`, `GCS_COLUMNS`, `DATASTORE_COLUMNS`, `BIG_QUERY_COLUMNS`, `ALL_COLUMNS`.
 */
-  OutputSchema?: string;
+  outputSchema?: string;
 
   /*
 Information on the location of the target BigQuery Table.
 Structure is documented below.
 */
-  Table?: Dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable;
+  table?: dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "OutputSchema",
+      "outputSchema",
       "Schema used for writing the findings for Inspect jobs. This field is only used for\nInspect and must be unspecified for Risk jobs. Columns are derived from the Finding\nobject. If appending to an existing table, any columns from the predefined schema\nthat are missing will be added. No columns in the existing table will be deleted.\nIf unspecified, then all available columns will be used for a new table or an (existing)\ntable with no schema, and no changes will be made to an existing table that has a schema.\nOnly for use with external storage.\nPossible values are: `BASIC_COLUMNS`, `GCS_COLUMNS`, `DATASTORE_COLUMNS`, `BIG_QUERY_COLUMNS`, `ALL_COLUMNS`.",
       [],
       false,
@@ -42,9 +42,9 @@ export function Dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputC
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Table",
+      "table",
       "Information on the location of the target BigQuery Table.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable_GetTypes(),
       true,
       false,
     ),

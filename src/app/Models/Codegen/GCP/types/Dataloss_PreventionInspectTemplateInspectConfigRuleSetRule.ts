@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRule,
-  Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRule_GetTypes,
-} from "./Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRule";
+  dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRule,
+  dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRule_GetTypes,
+} from "./dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRule";
 import {
-  Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule,
-  Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule_GetTypes,
-} from "./Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule";
+  dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule,
+  dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule_GetTypes,
+} from "./dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule";
 
-export interface Dataloss_PreventionInspectTemplateInspectConfigRuleSetRule {
+export interface dataloss_PreventionInspectTemplateInspectConfigRuleSetRule {
   /*
 The rule that specifies conditions when findings of infoTypes specified in InspectionRuleSet are removed from results.
 Structure is documented below.
 */
-  ExclusionRule?: Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRule;
+  exclusionRule?: dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRule;
 
   /*
 Hotword-based detection rule.
 Structure is documented below.
 */
-  HotwordRule?: Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule;
+  hotwordRule?: dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule;
 }
 
-export function Dataloss_PreventionInspectTemplateInspectConfigRuleSetRule_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionInspectTemplateInspectConfigRuleSetRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ExclusionRule",
+      "exclusionRule",
       "The rule that specifies conditions when findings of infoTypes specified in InspectionRuleSet are removed from results.\nStructure is documented below.",
-      Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRule_GetTypes(),
+      dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRule_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "HotwordRule",
+      "hotwordRule",
       "Hotword-based detection rule.\nStructure is documented below.",
-      Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule_GetTypes(),
+      dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule_GetTypes(),
       false,
       false,
     ),

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNotificationConfigPubsubFilter {
+export interface container_getClusterNotificationConfigPubsubFilter {
   // Can be used to filter what notifications are sent. Valid values include include UPGRADE_AVAILABLE_EVENT, UPGRADE_EVENT and SECURITY_BULLETIN_EVENT
-  EventTypes?: Array<string>;
+  eventTypes?: Array<string>;
 }
 
-export function Container_getClusterNotificationConfigPubsubFilter_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNotificationConfigPubsubFilter_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "EventTypes",
+      "eventTypes",
       "Can be used to filter what notifications are sent. Valid values include include UPGRADE_AVAILABLE_EVENT, UPGRADE_EVENT and SECURITY_BULLETIN_EVENT",
       InputType_String_GetTypes(),
       true,

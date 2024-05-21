@@ -6,20 +6,12 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Binaryauthorization_PolicyDefaultAdmissionRule {
-  /*
-The action when a pod creation is denied by the admission rule.
-Possible values are: `ENFORCED_BLOCK_AND_AUDIT_LOG`, `DRYRUN_AUDIT_LOG_ONLY`.
-
-- - -
-*/
-  EnforcementMode?: string;
-
+export interface binaryauthorization_PolicyDefaultAdmissionRule {
   /*
 How this admission rule will be evaluated.
 Possible values are: `ALWAYS_ALLOW`, `REQUIRE_ATTESTATION`, `ALWAYS_DENY`.
 */
-  EvaluationMode?: string;
+  evaluationMode?: string;
 
   /*
 The resource names of the attestors that must attest to a
@@ -31,22 +23,22 @@ request must be able to read the attestor resource.
 Note: this field must be non-empty when the evaluation_mode field
 specifies REQUIRE_ATTESTATION, otherwise it must be empty.
 */
-  RequireAttestationsBies?: Array<string>;
+  requireAttestationsBies?: Array<string>;
+
+  /*
+The action when a pod creation is denied by the admission rule.
+Possible values are: `ENFORCED_BLOCK_AND_AUDIT_LOG`, `DRYRUN_AUDIT_LOG_ONLY`.
+
+- - -
+*/
+  enforcementMode?: string;
 }
 
-export function Binaryauthorization_PolicyDefaultAdmissionRule_GetTypes(): DynamicUIProps[] {
+export function binaryauthorization_PolicyDefaultAdmissionRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "EnforcementMode",
-      "The action when a pod creation is denied by the admission rule.\nPossible values are: `ENFORCED_BLOCK_AND_AUDIT_LOG`, `DRYRUN_AUDIT_LOG_ONLY`.\n\n- - -",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "EvaluationMode",
+      "evaluationMode",
       "How this admission rule will be evaluated.\nPossible values are: `ALWAYS_ALLOW`, `REQUIRE_ATTESTATION`, `ALWAYS_DENY`.",
       [],
       true,
@@ -54,10 +46,18 @@ export function Binaryauthorization_PolicyDefaultAdmissionRule_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Array,
-      "RequireAttestationsBies",
+      "requireAttestationsBies",
       "The resource names of the attestors that must attest to a\ncontainer image. If the attestor is in a different project from the\npolicy, it should be specified in the format `projects/*/attestors/*`.\nEach attestor must exist before a policy can reference it. To add an\nattestor to a policy the principal issuing the policy change\nrequest must be able to read the attestor resource.\nNote: this field must be non-empty when the evaluation_mode field\nspecifies REQUIRE_ATTESTATION, otherwise it must be empty.",
       InputType_String_GetTypes(),
       false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "enforcementMode",
+      "The action when a pod creation is denied by the admission rule.\nPossible values are: `ENFORCED_BLOCK_AND_AUDIT_LOG`, `DRYRUN_AUDIT_LOG_ONLY`.\n\n- - -",
+      [],
+      true,
       false,
     ),
   ];

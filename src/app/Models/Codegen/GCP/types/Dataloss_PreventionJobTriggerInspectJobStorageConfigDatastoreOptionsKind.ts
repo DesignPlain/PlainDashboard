@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsKind {
+export interface dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsKind {
   // The name of the Datastore kind.
-  Name?: string;
+  name?: string;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsKind_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsKind_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of the Datastore kind.",
       [],
       true,

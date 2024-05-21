@@ -6,65 +6,41 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterPrivateClusterConfigMasterGlobalAccessConfig,
-  Container_getClusterPrivateClusterConfigMasterGlobalAccessConfig_GetTypes,
-} from "./Container_getClusterPrivateClusterConfigMasterGlobalAccessConfig";
+  container_getClusterPrivateClusterConfigMasterGlobalAccessConfig,
+  container_getClusterPrivateClusterConfigMasterGlobalAccessConfig_GetTypes,
+} from "./container_getClusterPrivateClusterConfigMasterGlobalAccessConfig";
 
-export interface Container_getClusterPrivateClusterConfig {
-  // The internal IP address of this cluster's master endpoint.
-  PrivateEndpoint?: string;
-
-  // Subnetwork in cluster's network where master's endpoint will be provisioned.
-  PrivateEndpointSubnetwork?: string;
-
-  // The external IP address of this cluster's master endpoint.
-  PublicEndpoint?: string;
-
-  // When true, the cluster's private endpoint is used as the cluster endpoint and access through the public endpoint is disabled. When false, either endpoint can be used.
-  EnablePrivateEndpoint?: boolean;
-
-  // Enables the private cluster feature, creating a private endpoint on the cluster. In a private cluster, nodes only have RFC 1918 private addresses and communicate with the master's private endpoint via private networking.
-  EnablePrivateNodes?: boolean;
-
+export interface container_getClusterPrivateClusterConfig {
   // Controls cluster master global access settings.
-  MasterGlobalAccessConfigs?: Array<Container_getClusterPrivateClusterConfigMasterGlobalAccessConfig>;
+  masterGlobalAccessConfigs?: Array<container_getClusterPrivateClusterConfigMasterGlobalAccessConfig>;
 
   // The IP range in CIDR notation to use for the hosted master network. This range will be used for assigning private IP addresses to the cluster master(s) and the ILB VIP. This range must not overlap with any other ranges in use within the cluster's network, and it must be a /28 subnet. See Private Cluster Limitations for more details. This field only applies to private clusters, when enable_private_nodes is true.
-  MasterIpv4CidrBlock?: string;
+  masterIpv4CidrBlock?: string;
 
   // The name of the peering between this cluster and the Google owned VPC.
-  PeeringName?: string;
+  peeringName?: string;
+
+  // The internal IP address of this cluster's master endpoint.
+  privateEndpoint?: string;
+
+  // Subnetwork in cluster's network where master's endpoint will be provisioned.
+  privateEndpointSubnetwork?: string;
+
+  // The external IP address of this cluster's master endpoint.
+  publicEndpoint?: string;
+
+  // When true, the cluster's private endpoint is used as the cluster endpoint and access through the public endpoint is disabled. When false, either endpoint can be used.
+  enablePrivateEndpoint?: boolean;
+
+  // Enables the private cluster feature, creating a private endpoint on the cluster. In a private cluster, nodes only have RFC 1918 private addresses and communicate with the master's private endpoint via private networking.
+  enablePrivateNodes?: boolean;
 }
 
-export function Container_getClusterPrivateClusterConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterPrivateClusterConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PeeringName",
-      "The name of the peering between this cluster and the Google owned VPC.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "PrivateEndpoint",
-      "The internal IP address of this cluster's master endpoint.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "PrivateEndpointSubnetwork",
-      "Subnetwork in cluster's network where master's endpoint will be provisioned.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "PublicEndpoint",
+      "publicEndpoint",
       "The external IP address of this cluster's master endpoint.",
       [],
       true,
@@ -72,7 +48,7 @@ export function Container_getClusterPrivateClusterConfig_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnablePrivateEndpoint",
+      "enablePrivateEndpoint",
       "When true, the cluster's private endpoint is used as the cluster endpoint and access through the public endpoint is disabled. When false, either endpoint can be used.",
       [],
       true,
@@ -80,7 +56,7 @@ export function Container_getClusterPrivateClusterConfig_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnablePrivateNodes",
+      "enablePrivateNodes",
       "Enables the private cluster feature, creating a private endpoint on the cluster. In a private cluster, nodes only have RFC 1918 private addresses and communicate with the master's private endpoint via private networking.",
       [],
       true,
@@ -88,16 +64,40 @@ export function Container_getClusterPrivateClusterConfig_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Array,
-      "MasterGlobalAccessConfigs",
+      "masterGlobalAccessConfigs",
       "Controls cluster master global access settings.",
-      Container_getClusterPrivateClusterConfigMasterGlobalAccessConfig_GetTypes(),
+      container_getClusterPrivateClusterConfigMasterGlobalAccessConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "MasterIpv4CidrBlock",
+      "masterIpv4CidrBlock",
       "The IP range in CIDR notation to use for the hosted master network. This range will be used for assigning private IP addresses to the cluster master(s) and the ILB VIP. This range must not overlap with any other ranges in use within the cluster's network, and it must be a /28 subnet. See Private Cluster Limitations for more details. This field only applies to private clusters, when enable_private_nodes is true.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "peeringName",
+      "The name of the peering between this cluster and the Google owned VPC.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "privateEndpoint",
+      "The internal IP address of this cluster's master endpoint.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "privateEndpointSubnetwork",
+      "Subnetwork in cluster's network where master's endpoint will be provisioned.",
       [],
       true,
       false,

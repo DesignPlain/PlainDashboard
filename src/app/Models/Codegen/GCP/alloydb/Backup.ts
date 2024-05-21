@@ -7,17 +7,17 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Alloydb_BackupEncryptionConfig,
-  Alloydb_BackupEncryptionConfig_GetTypes,
-} from "../types/Alloydb_BackupEncryptionConfig";
+  alloydb_BackupEncryptionConfig,
+  alloydb_BackupEncryptionConfig_GetTypes,
+} from "../types/alloydb_BackupEncryptionConfig";
 import {
-  Alloydb_BackupExpiryQuantity,
-  Alloydb_BackupExpiryQuantity_GetTypes,
-} from "../types/Alloydb_BackupExpiryQuantity";
+  alloydb_BackupEncryptionInfo,
+  alloydb_BackupEncryptionInfo_GetTypes,
+} from "../types/alloydb_BackupEncryptionInfo";
 import {
-  Alloydb_BackupEncryptionInfo,
-  Alloydb_BackupEncryptionInfo_GetTypes,
-} from "../types/Alloydb_BackupEncryptionInfo";
+  alloydb_BackupExpiryQuantity,
+  alloydb_BackupExpiryQuantity_GetTypes,
+} from "../types/alloydb_BackupExpiryQuantity";
 
 export interface BackupArgs {
   /*
@@ -26,25 +26,28 @@ User-defined labels for the alloydb backup. An object containing a list of "key"
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
+The backup type, which suggests the trigger for the backup.
+Possible values are: `TYPE_UNSPECIFIED`, `ON_DEMAND`, `AUTOMATED`, `CONTINUOUS`.
 */
-  Project?: string;
+  type?: string;
 
-  // The ID of the alloydb backup.
-  BackupId?: string;
+  // The full resource name of the backup source cluster (e.g., projects/{project}/locations/{location}/clusters/{clusterId}).
+  clusterName?: string;
+
+  // User-provided description of the backup.
+  description?: string;
 
   // User-settable and human-readable display name for the Backup.
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 EncryptionConfig describes the encryption config of a cluster or a backup that is encrypted with a CMEK (customer-managed encryption key).
 Structure is documented below.
 */
-  EncryptionConfig?: Alloydb_BackupEncryptionConfig;
+  encryptionConfig?: alloydb_BackupEncryptionConfig;
 
   /*
 The location where the alloydb backup should reside.
@@ -52,13 +55,13 @@ The location where the alloydb backup should reside.
 
 - - -
 */
-  Location?: string;
+  location?: string;
 
   /*
-The backup type, which suggests the trigger for the backup.
-Possible values are: `TYPE_UNSPECIFIED`, `ON_DEMAND`, `AUTOMATED`, `CONTINUOUS`.
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 */
-  Type?: string;
+  project?: string;
 
   /*
 Annotations to allow client tools to store small amount of arbitrary data. This is distinct from labels. https://google.aip.dev/128
@@ -67,24 +70,77 @@ An object containing a list of "key": value pairs. Example: { "name": "wrench", 
 --Note--: This field is non-authoritative, and will only manage the annotations present in your configuration.
 Please refer to the field `effective_annotations` for all of the annotations present on the resource.
 */
-  Annotations?: Map<string, string>;
+  annotations?: Map<string, string>;
 
-  // The full resource name of the backup source cluster (e.g., projects/{project}/locations/{location}/clusters/{clusterId}).
-  ClusterName?: string;
-
-  // User-provided description of the backup.
-  Description?: string;
+  // The ID of the alloydb backup.
+  backupId?: string;
 }
 export class Backup extends Resource {
-  // The ID of the alloydb backup.
-  public BackupId?: string;
+  /*
+The combination of labels configured directly on the resource
+and default labels configured on the provider.
+*/
+  public pulumiLabels?: Map<string, string>;
+
+  // Output only. The system-generated UID of the resource. The UID is assigned when the resource is created, and it is retained until it is deleted.
+  public uid?: string;
+
+  // User-settable and human-readable display name for the Backup.
+  public displayName?: string;
 
   /*
-Output only. The QuantityBasedExpiry of the backup, specified by the backup's retention policy.
-Once the expiry quantity is over retention, the backup is eligible to be garbage collected.
+All of annotations (key/value pairs) present on the resource in GCP, including the annotations configured through
+Terraform, other clients and services.
+*/
+  public effectiveAnnotations?: Map<string, string>;
+
+  /*
+EncryptionInfo describes the encryption information of a cluster or a backup.
 Structure is documented below.
 */
-  public ExpiryQuantities?: Array<Alloydb_BackupExpiryQuantity>;
+  public encryptionInfos?: Array<alloydb_BackupEncryptionInfo>;
+
+  // For Resource freshness validation (https://google.aip.dev/154)
+  public etag?: string;
+
+  /*
+The backup type, which suggests the trigger for the backup.
+Possible values are: `TYPE_UNSPECIFIED`, `ON_DEMAND`, `AUTOMATED`, `CONTINUOUS`.
+*/
+  public type?: string;
+
+  /*
+Output only. Update time stamp. A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
+Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
+*/
+  public updateTime?: string;
+
+  /*
+Annotations to allow client tools to store small amount of arbitrary data. This is distinct from labels. https://google.aip.dev/128
+An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
+
+--Note--: This field is non-authoritative, and will only manage the annotations present in your configuration.
+Please refer to the field `effective_annotations` for all of the annotations present on the resource.
+*/
+  public annotations?: Map<string, string>;
+
+  /*
+Output only. Create time stamp. A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
+Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
+*/
+  public createTime?: string;
+
+  // User-provided description of the backup.
+  public description?: string;
+
+  // Output only. The current state of the backup.
+  public state?: string;
+
+  /*
+Output only. The time at which after the backup is eligible to be garbage collected.
+It is the duration specified by the backup's retention policy, added to the backup's createTime.
+*/
+  public expiryTime?: string;
 
   /*
 User-defined labels for the alloydb backup. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
@@ -92,37 +148,56 @@ User-defined labels for the alloydb backup. An object containing a list of "key"
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  public Labels?: Map<string, string>;
+  public labels?: Map<string, string>;
 
   /*
 Output only. Reconciling (https://google.aip.dev/128#reconciliation), if true, indicates that the service is actively updating the resource.
 This can happen due to user-triggered updates or system actions like failover or maintenance.
 */
-  public Reconciling?: boolean;
+  public reconciling?: boolean;
 
-  // Output only. The current state of the backup.
-  public State?: string;
+  // Output only. The size of the backup in bytes.
+  public sizeBytes?: string;
+
+  // The ID of the alloydb backup.
+  public backupId?: string;
+
+  // The full resource name of the backup source cluster (e.g., projects/{project}/locations/{location}/clusters/{clusterId}).
+  public clusterName?: string;
 
   // Output only. The system-generated UID of the cluster which was used to create this resource.
-  public ClusterUid?: string;
+  public clusterUid?: string;
 
   /*
-Output only. Create time stamp. A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
+Output only. The QuantityBasedExpiry of the backup, specified by the backup's retention policy.
+Once the expiry quantity is over retention, the backup is eligible to be garbage collected.
+Structure is documented below.
+*/
+  public expiryQuantities?: Array<alloydb_BackupExpiryQuantity>;
+
+  // Output only. The name of the backup resource with the format: - projects/{project}/locations/{region}/backups/{backupId}
+  public name?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  /*
+Output only. Delete time stamp. A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
 Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  public CreateTime?: string;
+  public deleteTime?: string;
 
   // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
-
-  // For Resource freshness validation (https://google.aip.dev/154)
-  public Etag?: string;
+  public effectiveLabels?: Map<string, string>;
 
   /*
-Output only. The time at which after the backup is eligible to be garbage collected.
-It is the duration specified by the backup's retention policy, added to the backup's createTime.
+EncryptionConfig describes the encryption config of a cluster or a backup that is encrypted with a CMEK (customer-managed encryption key).
+Structure is documented below.
 */
-  public ExpiryTime?: string;
+  public encryptionConfig?: alloydb_BackupEncryptionConfig;
 
   /*
 The location where the alloydb backup should reside.
@@ -130,112 +205,29 @@ The location where the alloydb backup should reside.
 
 - - -
 */
-  public Location?: string;
-
-  // Output only. The name of the backup resource with the format: - projects/{project}/locations/{region}/backups/{backupId}
-  public Name?: string;
-
-  /*
-The backup type, which suggests the trigger for the backup.
-Possible values are: `TYPE_UNSPECIFIED`, `ON_DEMAND`, `AUTOMATED`, `CONTINUOUS`.
-*/
-  public Type?: string;
-
-  /*
-Output only. Update time stamp. A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
-Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
-*/
-  public UpdateTime?: string;
-
-  // Output only. The size of the backup in bytes.
-  public SizeBytes?: string;
-
-  // The full resource name of the backup source cluster (e.g., projects/{project}/locations/{location}/clusters/{clusterId}).
-  public ClusterName?: string;
-
-  /*
-Output only. Delete time stamp. A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
-Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
-*/
-  public DeleteTime?: string;
-
-  // User-provided description of the backup.
-  public Description?: string;
-
-  // User-settable and human-readable display name for the Backup.
-  public DisplayName?: string;
-
-  /*
-All of annotations (key/value pairs) present on the resource in GCP, including the annotations configured through
-Terraform, other clients and services.
-*/
-  public EffectiveAnnotations?: Map<string, string>;
-
-  /*
-EncryptionConfig describes the encryption config of a cluster or a backup that is encrypted with a CMEK (customer-managed encryption key).
-Structure is documented below.
-*/
-  public EncryptionConfig?: Alloydb_BackupEncryptionConfig;
-
-  /*
-The combination of labels configured directly on the resource
-and default labels configured on the provider.
-*/
-  public PulumiLabels?: Map<string, string>;
-
-  // Output only. The system-generated UID of the resource. The UID is assigned when the resource is created, and it is retained until it is deleted.
-  public Uid?: string;
-
-  /*
-Annotations to allow client tools to store small amount of arbitrary data. This is distinct from labels. https://google.aip.dev/128
-An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
-
---Note--: This field is non-authoritative, and will only manage the annotations present in your configuration.
-Please refer to the field `effective_annotations` for all of the annotations present on the resource.
-*/
-  public Annotations?: Map<string, string>;
-
-  /*
-EncryptionInfo describes the encryption information of a cluster or a backup.
-Structure is documented below.
-*/
-  public EncryptionInfos?: Array<Alloydb_BackupEncryptionInfo>;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
+  public location?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "BackupId",
-        "The ID of the alloydb backup.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "DisplayName",
-        "User-settable and human-readable display name for the Backup.",
-        [],
+        InputType.Object,
+        "encryptionConfig",
+        "EncryptionConfig describes the encryption config of a cluster or a backup that is encrypted with a CMEK (customer-managed encryption key).\nStructure is documented below.",
+        alloydb_BackupEncryptionConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Type",
-        "The backup type, which suggests the trigger for the backup.\nPossible values are: `TYPE_UNSPECIFIED`, `ON_DEMAND`, `AUTOMATED`, `CONTINUOUS`.",
+        "location",
+        "The location where the alloydb backup should reside.\n\n\n- - -",
         [],
-        false,
-        false,
+        true,
+        true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Annotations",
+        "annotations",
         'Annotations to allow client tools to store small amount of arbitrary data. This is distinct from labels. https://google.aip.dev/128\nAn object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.',
         InputType_Map_GetTypes(),
         false,
@@ -243,7 +235,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         'User-defined labels for the alloydb backup. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         InputType_Map_GetTypes(),
         false,
@@ -251,31 +243,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "EncryptionConfig",
-        "EncryptionConfig describes the encryption config of a cluster or a backup that is encrypted with a CMEK (customer-managed encryption key).\nStructure is documented below.",
-        Alloydb_BackupEncryptionConfig_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Location",
-        "The location where the alloydb backup should reside.\n\n\n- - -",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ClusterName",
+        "clusterName",
         "The full resource name of the backup source cluster (e.g., projects/{project}/locations/{location}/clusters/{clusterId}).",
         [],
         true,
@@ -283,11 +251,43 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "User-provided description of the backup.",
         [],
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "displayName",
+        "User-settable and human-readable display name for the Backup.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "type",
+        "The backup type, which suggests the trigger for the backup.\nPossible values are: `TYPE_UNSPECIFIED`, `ON_DEMAND`, `AUTOMATED`, `CONTINUOUS`.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "backupId",
+        "The ID of the alloydb backup.",
+        [],
+        true,
+        true,
       ),
     ];
   }

@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtensionObjectId,
-  Certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtensionObjectId_GetTypes,
-} from "./Certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtensionObjectId";
+  certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtensionObjectId,
+  certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtensionObjectId_GetTypes,
+} from "./certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtensionObjectId";
 
-export interface Certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtension {
+export interface certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtension {
   // Optional. Indicates whether or not this extension is critical (i.e., if the client does not know how to handle this extension, the client should consider this to be an error).
-  Critical?: boolean;
+  critical?: boolean;
 
   // Required. The OID for this X.509 extension.
-  ObjectId?: Certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtensionObjectId;
+  objectId?: certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtensionObjectId;
 
   // Required. The value of this X.509 extension.
-  Value?: string;
+  value?: string;
 }
 
-export function Certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtension_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtension_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Critical",
+      "critical",
       "Optional. Indicates whether or not this extension is critical (i.e., if the client does not know how to handle this extension, the client should consider this to be an error).",
       [],
       false,
@@ -33,15 +33,15 @@ export function Certificateauthority_CertificateTemplatePredefinedValuesAddition
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ObjectId",
+      "objectId",
       "Required. The OID for this X.509 extension.",
-      Certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtensionObjectId_GetTypes(),
+      certificateauthority_CertificateTemplatePredefinedValuesAdditionalExtensionObjectId_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "Required. The value of this X.509 extension.",
       [],
       true,

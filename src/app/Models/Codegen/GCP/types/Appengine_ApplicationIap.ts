@@ -6,39 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_ApplicationIap {
+export interface appengine_ApplicationIap {
   /*
 OAuth2 client secret to use for the authentication flow.
 The SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field.
 */
-  Oauth2ClientSecret?: string;
+  oauth2ClientSecret?: string;
 
   // Hex-encoded SHA-256 hash of the client secret.
-  Oauth2ClientSecretSha256?: string;
+  oauth2ClientSecretSha256?: string;
 
   /*
 (Optional) Whether the serving infrastructure will authenticate and authorize all incoming requests. 
 (default is false)
 */
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // OAuth2 client ID to use for the authentication flow.
-  Oauth2ClientId?: string;
+  oauth2ClientId?: string;
 }
 
-export function Appengine_ApplicationIap_GetTypes(): DynamicUIProps[] {
+export function appengine_ApplicationIap_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Oauth2ClientSecret",
-      "OAuth2 client secret to use for the authentication flow.\nThe SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Oauth2ClientSecretSha256",
+      "oauth2ClientSecretSha256",
       "Hex-encoded SHA-256 hash of the client secret.",
       [],
       false,
@@ -46,7 +38,7 @@ export function Appengine_ApplicationIap_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "(Optional) Whether the serving infrastructure will authenticate and authorize all incoming requests. \n(default is false)",
       [],
       false,
@@ -54,8 +46,16 @@ export function Appengine_ApplicationIap_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Oauth2ClientId",
+      "oauth2ClientId",
       "OAuth2 client ID to use for the authentication flow.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "oauth2ClientSecret",
+      "OAuth2 client secret to use for the authentication flow.\nThe SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field.",
       [],
       true,
       false,

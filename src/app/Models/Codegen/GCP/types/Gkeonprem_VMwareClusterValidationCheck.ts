@@ -6,36 +6,44 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_VMwareClusterValidationCheckStatus,
-  Gkeonprem_VMwareClusterValidationCheckStatus_GetTypes,
-} from "./Gkeonprem_VMwareClusterValidationCheckStatus";
+  gkeonprem_VMwareClusterValidationCheckStatus,
+  gkeonprem_VMwareClusterValidationCheckStatus_GetTypes,
+} from "./gkeonprem_VMwareClusterValidationCheckStatus";
 
-export interface Gkeonprem_VMwareClusterValidationCheck {
+export interface gkeonprem_VMwareClusterValidationCheck {
   /*
 (Output)
 Options used for the validation check.
 */
-  Options?: string;
+  options?: string;
 
   /*
 (Output)
 The scenario when the preflight checks were run..
 */
-  Scenario?: string;
+  scenario?: string;
 
   /*
 (Output)
 Specifies the detailed validation check status
 Structure is documented below.
 */
-  Statuses?: Array<Gkeonprem_VMwareClusterValidationCheckStatus>;
+  statuses?: Array<gkeonprem_VMwareClusterValidationCheckStatus>;
 }
 
-export function Gkeonprem_VMwareClusterValidationCheck_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterValidationCheck_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Array,
+      "statuses",
+      "(Output)\nSpecifies the detailed validation check status\nStructure is documented below.",
+      gkeonprem_VMwareClusterValidationCheckStatus_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "Options",
+      "options",
       "(Output)\nOptions used for the validation check.",
       [],
       false,
@@ -43,17 +51,9 @@ export function Gkeonprem_VMwareClusterValidationCheck_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "Scenario",
+      "scenario",
       "(Output)\nThe scenario when the preflight checks were run..",
       [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Statuses",
-      "(Output)\nSpecifies the detailed validation check status\nStructure is documented below.",
-      Gkeonprem_VMwareClusterValidationCheckStatus_GetTypes(),
       false,
       false,
     ),

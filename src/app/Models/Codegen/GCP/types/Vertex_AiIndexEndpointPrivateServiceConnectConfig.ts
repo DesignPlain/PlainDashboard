@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vertex_AiIndexEndpointPrivateServiceConnectConfig {
+export interface vertex_AiIndexEndpointPrivateServiceConnectConfig {
   // If set to true, the IndexEndpoint is created without private service access.
-  EnablePrivateServiceConnect?: boolean;
+  enablePrivateServiceConnect?: boolean;
 
   // A list of Projects from which the forwarding rule will target the service attachment.
-  ProjectAllowlists?: Array<string>;
+  projectAllowlists?: Array<string>;
 }
 
-export function Vertex_AiIndexEndpointPrivateServiceConnectConfig_GetTypes(): DynamicUIProps[] {
+export function vertex_AiIndexEndpointPrivateServiceConnectConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnablePrivateServiceConnect",
+      "enablePrivateServiceConnect",
       "If set to true, the IndexEndpoint is created without private service access.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Vertex_AiIndexEndpointPrivateServiceConnectConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ProjectAllowlists",
+      "projectAllowlists",
       "A list of Projects from which the forwarding rule will target the service attachment.",
       InputType_String_GetTypes(),
       false,

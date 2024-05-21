@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxFlowAdvancedSettingsAudioExportGcsDestination {
+export interface diagflow_CxFlowAdvancedSettingsAudioExportGcsDestination {
   /*
 The Google Cloud Storage URI for the exported objects. Whether a full object name, or just a prefix, its usage depends on the Dialogflow operation.
 Format: gs://bucket/object-name-or-prefix
 */
-  Uri?: string;
+  uri?: string;
 }
 
-export function Diagflow_CxFlowAdvancedSettingsAudioExportGcsDestination_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxFlowAdvancedSettingsAudioExportGcsDestination_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Uri",
+      "uri",
       "The Google Cloud Storage URI for the exported objects. Whether a full object name, or just a prefix, its usage depends on the Dialogflow operation.\nFormat: gs://bucket/object-name-or-prefix",
       [],
       false,

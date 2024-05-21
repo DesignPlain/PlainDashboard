@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterServiceExternalIpsConfig {
+export interface container_ClusterServiceExternalIpsConfig {
   // Controls whether external ips specified by a service will be allowed. It is enabled by default.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_ClusterServiceExternalIpsConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterServiceExternalIpsConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Controls whether external ips specified by a service will be allowed. It is enabled by default.",
       [],
       true,

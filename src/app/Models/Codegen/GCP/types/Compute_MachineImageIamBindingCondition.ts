@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_MachineImageIamBindingCondition {
-  // An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
-  Description?: string;
-
+export interface compute_MachineImageIamBindingCondition {
   // Textual representation of an expression in Common Expression Language syntax.
-  Expression?: string;
+  expression?: string;
 
   // A title for the expression, i.e. a short string describing its purpose.
-  Title?: string;
+  title?: string;
+
+  // An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
+  description?: string;
 }
 
-export function Compute_MachineImageIamBindingCondition_GetTypes(): DynamicUIProps[] {
+export function compute_MachineImageIamBindingCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Expression",
+      "expression",
       "Textual representation of an expression in Common Expression Language syntax.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Compute_MachineImageIamBindingCondition_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "Title",
+      "title",
       "A title for the expression, i.e. a short string describing its purpose.",
       [],
       true,
@@ -37,7 +37,7 @@ export function Compute_MachineImageIamBindingCondition_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.",
       [],
       false,

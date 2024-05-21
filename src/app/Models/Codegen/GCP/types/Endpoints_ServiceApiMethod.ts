@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Endpoints_ServiceApiMethod {
+export interface endpoints_ServiceApiMethod {
   // The simple name of the endpoint as described in the config.
-  Name?: string;
+  name?: string;
 
   // The type URL for the request to this API.
-  RequestType?: string;
+  requestType?: string;
 
   // The type URL for the response from this API.
-  ResponseType?: string;
+  responseType?: string;
 
   // `SYNTAX_PROTO2` or `SYNTAX_PROTO3`.
-  Syntax?: string;
+  syntax?: string;
 }
 
-export function Endpoints_ServiceApiMethod_GetTypes(): DynamicUIProps[] {
+export function endpoints_ServiceApiMethod_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Syntax",
+      "syntax",
       "`SYNTAX_PROTO2` or `SYNTAX_PROTO3`.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Endpoints_ServiceApiMethod_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The simple name of the endpoint as described in the config.",
       [],
       false,
@@ -40,7 +40,7 @@ export function Endpoints_ServiceApiMethod_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "RequestType",
+      "requestType",
       "The type URL for the request to this API.",
       [],
       false,
@@ -48,7 +48,7 @@ export function Endpoints_ServiceApiMethod_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ResponseType",
+      "responseType",
       "The type URL for the response from this API.",
       [],
       false,

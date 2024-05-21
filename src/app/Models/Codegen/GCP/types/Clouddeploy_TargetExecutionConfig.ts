@@ -6,28 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Clouddeploy_TargetExecutionConfig {
+export interface clouddeploy_TargetExecutionConfig {
   // Optional. Cloud Storage location in which to store execution outputs. This can either be a bucket ("gs://my-bucket") or a path within a bucket ("gs://my-bucket/my-dir"). If unspecified, a default bucket located in the same region will be used.
-  ArtifactStorage?: string;
+  artifactStorage?: string;
 
   // Optional. Execution timeout for a Cloud Build Execution. This must be between 10m and 24h in seconds format. If unspecified, a default timeout of 1h is used.
-  ExecutionTimeout?: string;
+  executionTimeout?: string;
 
   // Optional. Google service account to use for execution. If unspecified, the project execution service account (-compute@developer.gserviceaccount.com) is used.
-  ServiceAccount?: string;
+  serviceAccount?: string;
 
   // Required. Usages when this configuration should be applied.
-  Usages?: Array<string>;
+  usages?: Array<string>;
 
   // Optional. The resource name of the `WorkerPool`, with the format `projects/{project}/locations/{location}/workerPools/{worker_pool}`. If this optional field is unspecified, the default Cloud Build pool will be used.
-  WorkerPool?: string;
+  workerPool?: string;
 }
 
-export function Clouddeploy_TargetExecutionConfig_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_TargetExecutionConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ExecutionTimeout",
+      "artifactStorage",
+      'Optional. Cloud Storage location in which to store execution outputs. This can either be a bucket ("gs://my-bucket") or a path within a bucket ("gs://my-bucket/my-dir"). If unspecified, a default bucket located in the same region will be used.',
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "executionTimeout",
       "Optional. Execution timeout for a Cloud Build Execution. This must be between 10m and 24h in seconds format. If unspecified, a default timeout of 1h is used.",
       [],
       false,
@@ -35,7 +43,7 @@ export function Clouddeploy_TargetExecutionConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ServiceAccount",
+      "serviceAccount",
       "Optional. Google service account to use for execution. If unspecified, the project execution service account (-compute@developer.gserviceaccount.com) is used.",
       [],
       false,
@@ -43,7 +51,7 @@ export function Clouddeploy_TargetExecutionConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Usages",
+      "usages",
       "Required. Usages when this configuration should be applied.",
       InputType_String_GetTypes(),
       true,
@@ -51,16 +59,8 @@ export function Clouddeploy_TargetExecutionConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "WorkerPool",
+      "workerPool",
       "Optional. The resource name of the `WorkerPool`, with the format `projects/{project}/locations/{location}/workerPools/{worker_pool}`. If this optional field is unspecified, the default Cloud Build pool will be used.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ArtifactStorage",
-      'Optional. Cloud Storage location in which to store execution outputs. This can either be a bucket ("gs://my-bucket") or a path within a bucket ("gs://my-bucket/my-dir"). If unspecified, a default bucket located in the same region will be used.',
       [],
       false,
       false,

@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIp {
+export interface gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIp {
   // Hostname of the machine. VM's name will be used if this field is empty.
-  Hostname?: string;
+  hostname?: string;
 
   // IP could be an IP address (like 1.2.3.4) or a CIDR (like 1.2.3.0/24).
-  Ip?: string;
+  ip?: string;
 }
 
-export function Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIp_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIp_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Hostname",
+      "hostname",
       "Hostname of the machine. VM's name will be used if this field is empty.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlP
     ),
     new DynamicUIProps(
       InputType.String,
-      "Ip",
+      "ip",
       "IP could be an IP address (like 1.2.3.4) or a CIDR (like 1.2.3.0/24).",
       [],
       false,

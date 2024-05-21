@@ -6,62 +6,54 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionJobTriggerInspectJobAction,
-  Dataloss_PreventionJobTriggerInspectJobAction_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobAction";
+  dataloss_PreventionJobTriggerInspectJobInspectConfig,
+  dataloss_PreventionJobTriggerInspectJobInspectConfig_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobInspectConfig";
 import {
-  Dataloss_PreventionJobTriggerInspectJobInspectConfig,
-  Dataloss_PreventionJobTriggerInspectJobInspectConfig_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobInspectConfig";
+  dataloss_PreventionJobTriggerInspectJobStorageConfig,
+  dataloss_PreventionJobTriggerInspectJobStorageConfig_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobStorageConfig";
 import {
-  Dataloss_PreventionJobTriggerInspectJobStorageConfig,
-  Dataloss_PreventionJobTriggerInspectJobStorageConfig_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobStorageConfig";
+  dataloss_PreventionJobTriggerInspectJobAction,
+  dataloss_PreventionJobTriggerInspectJobAction_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobAction";
 
-export interface Dataloss_PreventionJobTriggerInspectJob {
+export interface dataloss_PreventionJobTriggerInspectJob {
+  /*
+Information on where to inspect
+Structure is documented below.
+*/
+  storageConfig?: dataloss_PreventionJobTriggerInspectJobStorageConfig;
+
   /*
 Configuration block for the actions to execute on the completion of a job. Can be specified multiple times, but only one for each type. Each action block supports fields documented below. This argument is processed in attribute-as-blocks mode.
 Structure is documented below.
 */
-  Actions?: Array<Dataloss_PreventionJobTriggerInspectJobAction>;
+  actions?: Array<dataloss_PreventionJobTriggerInspectJobAction>;
 
   /*
 The core content of the template.
 Structure is documented below.
 */
-  InspectConfig?: Dataloss_PreventionJobTriggerInspectJobInspectConfig;
+  inspectConfig?: dataloss_PreventionJobTriggerInspectJobInspectConfig;
 
   // The name of the template to run when this job is triggered.
-  InspectTemplateName?: string;
-
-  /*
-Information on where to inspect
-Structure is documented below.
-*/
-  StorageConfig?: Dataloss_PreventionJobTriggerInspectJobStorageConfig;
+  inspectTemplateName?: string;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJob_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJob_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "Actions",
-      "Configuration block for the actions to execute on the completion of a job. Can be specified multiple times, but only one for each type. Each action block supports fields documented below. This argument is processed in attribute-as-blocks mode.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobAction_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Object,
-      "InspectConfig",
+      "inspectConfig",
       "The core content of the template.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobInspectConfig_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobInspectConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "InspectTemplateName",
+      "inspectTemplateName",
       "The name of the template to run when this job is triggered.",
       [],
       false,
@@ -69,10 +61,18 @@ export function Dataloss_PreventionJobTriggerInspectJob_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Object,
-      "StorageConfig",
+      "storageConfig",
       "Information on where to inspect\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobStorageConfig_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobStorageConfig_GetTypes(),
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "actions",
+      "Configuration block for the actions to execute on the completion of a job. Can be specified multiple times, but only one for each type. Each action block supports fields documented below. This argument is processed in attribute-as-blocks mode.\nStructure is documented below.",
+      dataloss_PreventionJobTriggerInspectJobAction_GetTypes(),
+      false,
       false,
     ),
   ];

@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Edgecontainer_VpnConnectionDetailCloudVpn {
+export interface edgecontainer_VpnConnectionDetailCloudVpn {
   /*
 (Output)
 The created Cloud VPN gateway name.
 */
-  Gateway?: string;
+  gateway?: string;
 }
 
-export function Edgecontainer_VpnConnectionDetailCloudVpn_GetTypes(): DynamicUIProps[] {
+export function edgecontainer_VpnConnectionDetailCloudVpn_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Gateway",
+      "gateway",
       "(Output)\nThe created Cloud VPN gateway name.",
       [],
       false,

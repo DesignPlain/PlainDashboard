@@ -8,47 +8,41 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface NetworkArgs {
+  // Labels associated with this resource.
+  labels?: Map<string, string>;
+
+  // The Google Cloud region to which the target Distributed Cloud Edge zone belongs.
+  location?: string;
+
+  // IP (L3) MTU value of the network. Default value is `1500`. Possible values are: `1500`, `9000`.
+  mtu?: number;
+
   /*
 A unique ID that identifies this network.
 
 
 - - -
 */
-  NetworkId?: string;
+  networkId?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // The name of the target Distributed Cloud Edge zone.
-  Zone?: string;
+  zone?: string;
 
   // A free-text description of the resource. Max length 1024 characters.
-  Description?: string;
-
-  // Labels associated with this resource.
-  Labels?: Map<string, string>;
-
-  // The Google Cloud region to which the target Distributed Cloud Edge zone belongs.
-  Location?: string;
-
-  // IP (L3) MTU value of the network. Default value is `1500`. Possible values are: `1500`, `9000`.
-  Mtu?: number;
+  description?: string;
 }
 export class Network extends Resource {
-  // Labels associated with this resource.
-  public Labels?: Map<string, string>;
-
-  // IP (L3) MTU value of the network. Default value is `1500`. Possible values are: `1500`, `9000`.
-  public Mtu?: number;
-
   /*
 The canonical name of this resource, with format
 `projects/{{project}}/locations/{{location}}/zones/{{zone}}/networks/{{network_id}}`
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 A unique ID that identifies this network.
@@ -56,66 +50,48 @@ A unique ID that identifies this network.
 
 - - -
 */
-  public NetworkId?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
+  public networkId?: string;
 
   /*
 The time when the subnet was last updated.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine
 fractional digits. Examples: `2014-10-02T15:01:23Z` and `2014-10-02T15:01:23.045123456Z`.
 */
-  public UpdateTime?: string;
+  public updateTime?: string;
+
+  // The name of the target Distributed Cloud Edge zone.
+  public zone?: string;
+
+  // A free-text description of the resource. Max length 1024 characters.
+  public description?: string;
+
+  // Labels associated with this resource.
+  public labels?: Map<string, string>;
+
+  // IP (L3) MTU value of the network. Default value is `1500`. Possible values are: `1500`, `9000`.
+  public mtu?: number;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   /*
 The time when the subnet was created.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine
 fractional digits. Examples: `2014-10-02T15:01:23Z` and `2014-10-02T15:01:23.045123456Z`.
 */
-  public CreateTime?: string;
-
-  // A free-text description of the resource. Max length 1024 characters.
-  public Description?: string;
+  public createTime?: string;
 
   // The Google Cloud region to which the target Distributed Cloud Edge zone belongs.
-  public Location?: string;
-
-  // The name of the target Distributed Cloud Edge zone.
-  public Zone?: string;
+  public location?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Location",
-        "The Google Cloud region to which the target Distributed Cloud Edge zone belongs.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Number,
-        "Mtu",
-        "IP (L3) MTU value of the network. Default value is `1500`. Possible values are: `1500`, `9000`.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "NetworkId",
-        "A unique ID that identifies this network.\n\n\n- - -",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -123,7 +99,7 @@ fractional digits. Examples: `2014-10-02T15:01:23Z` and `2014-10-02T15:01:23.045
       ),
       new DynamicUIProps(
         InputType.String,
-        "Zone",
+        "zone",
         "The name of the target Distributed Cloud Edge zone.",
         [],
         true,
@@ -131,7 +107,7 @@ fractional digits. Examples: `2014-10-02T15:01:23Z` and `2014-10-02T15:01:23.045
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "A free-text description of the resource. Max length 1024 characters.",
         [],
         false,
@@ -139,10 +115,34 @@ fractional digits. Examples: `2014-10-02T15:01:23Z` and `2014-10-02T15:01:23.045
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "Labels associated with this resource.",
         InputType_Map_GetTypes(),
         false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "location",
+        "The Google Cloud region to which the target Distributed Cloud Edge zone belongs.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Number,
+        "mtu",
+        "IP (L3) MTU value of the network. Default value is `1500`. Possible values are: `1500`, `9000`.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "networkId",
+        "A unique ID that identifies this network.\n\n\n- - -",
+        [],
+        true,
         true,
       ),
     ];

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodePoolQueuedProvisioning {
+export interface container_getClusterNodePoolQueuedProvisioning {
   // Whether nodes in this node pool are obtainable solely through the ProvisioningRequest API
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_getClusterNodePoolQueuedProvisioning_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolQueuedProvisioning_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether nodes in this node pool are obtainable solely through the ProvisioningRequest API",
       [],
       true,

@@ -6,18 +6,18 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Tpu_V2VmNetworkConfig {
+export interface tpu_V2VmNetworkConfig {
   /*
 Allows the TPU node to send and receive packets with non-matching destination or source
 IPs. This is required if you plan to use the TPU workers to forward routes.
 */
-  CanIpForward?: boolean;
+  canIpForward?: boolean;
 
   /*
 Indicates that external IP addresses would be associated with the TPU workers. If set to
 false, the specified subnetwork or network should have Private Google Access enabled.
 */
-  EnableExternalIps?: boolean;
+  enableExternalIps?: boolean;
 
   /*
 The name of the network for the TPU node. It must be a preexisting Google Compute Engine
@@ -25,7 +25,7 @@ network. If both network and subnetwork are specified, the given subnetwork must
 to the given network. If network is not specified, it will be looked up from the
 subnetwork if one is provided, or otherwise use "default".
 */
-  Network?: string;
+  network?: string;
 
   /*
 The name of the subnetwork for the TPU node. It must be a preexisting Google Compute
@@ -33,14 +33,22 @@ Engine subnetwork. If both network and subnetwork are specified, the given subne
 must belong to the given network. If subnetwork is not specified, the subnetwork with the
 same name as the network will be used.
 */
-  Subnetwork?: string;
+  subnetwork?: string;
 }
 
-export function Tpu_V2VmNetworkConfig_GetTypes(): DynamicUIProps[] {
+export function tpu_V2VmNetworkConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Subnetwork",
+      "network",
+      'The name of the network for the TPU node. It must be a preexisting Google Compute Engine\nnetwork. If both network and subnetwork are specified, the given subnetwork must belong\nto the given network. If network is not specified, it will be looked up from the\nsubnetwork if one is provided, or otherwise use "default".',
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "subnetwork",
       "The name of the subnetwork for the TPU node. It must be a preexisting Google Compute\nEngine subnetwork. If both network and subnetwork are specified, the given subnetwork\nmust belong to the given network. If subnetwork is not specified, the subnetwork with the\nsame name as the network will be used.",
       [],
       false,
@@ -48,7 +56,7 @@ export function Tpu_V2VmNetworkConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "CanIpForward",
+      "canIpForward",
       "Allows the TPU node to send and receive packets with non-matching destination or source\nIPs. This is required if you plan to use the TPU workers to forward routes.",
       [],
       false,
@@ -56,16 +64,8 @@ export function Tpu_V2VmNetworkConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableExternalIps",
+      "enableExternalIps",
       "Indicates that external IP addresses would be associated with the TPU workers. If set to\nfalse, the specified subnetwork or network should have Private Google Access enabled.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Network",
-      'The name of the network for the TPU node. It must be a preexisting Google Compute Engine\nnetwork. If both network and subnetwork are specified, the given subnetwork must belong\nto the given network. If network is not specified, it will be looked up from the\nsubnetwork if one is provided, or otherwise use "default".',
       [],
       false,
       true,

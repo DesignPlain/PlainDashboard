@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getInstanceGroupManagerStatefulExternalIp {
+export interface compute_getInstanceGroupManagerStatefulExternalIp {
   // A value that prescribes what should happen to an associated static Address resource when a VM instance is permanently deleted. The available options are NEVER and ON_PERMANENT_INSTANCE_DELETION. NEVER - detach the IP when the VM is deleted, but do not delete the address resource. ON_PERMANENT_INSTANCE_DELETION will delete the stateful address when the VM is permanently deleted from the instance group. The default is NEVER.
-  DeleteRule?: string;
+  deleteRule?: string;
 
   // The network interface name
-  InterfaceName?: string;
+  interfaceName?: string;
 }
 
-export function Compute_getInstanceGroupManagerStatefulExternalIp_GetTypes(): DynamicUIProps[] {
+export function compute_getInstanceGroupManagerStatefulExternalIp_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DeleteRule",
+      "deleteRule",
       "A value that prescribes what should happen to an associated static Address resource when a VM instance is permanently deleted. The available options are NEVER and ON_PERMANENT_INSTANCE_DELETION. NEVER - detach the IP when the VM is deleted, but do not delete the address resource. ON_PERMANENT_INSTANCE_DELETION will delete the stateful address when the VM is permanently deleted from the instance group. The default is NEVER.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Compute_getInstanceGroupManagerStatefulExternalIp_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "InterfaceName",
+      "interfaceName",
       "The network interface name",
       [],
       true,

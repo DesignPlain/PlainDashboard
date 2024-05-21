@@ -6,44 +6,44 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_VMwareNodePoolStatusCondition {
+export interface gkeonprem_VMwareNodePoolStatusCondition {
   /*
 (Output)
 Last time the condition transit from one status to another.
 */
-  LastTransitionTime?: string;
+  lastTransitionTime?: string;
 
   /*
 (Output)
 Human-readable message indicating details about last transition.
 */
-  Message?: string;
+  message?: string;
 
   /*
 (Output)
 Machine-readable message indicating details about last transition.
 */
-  Reason?: string;
+  reason?: string;
 
   /*
 (Output)
 The lifecycle state of the condition.
 */
-  State?: string;
+  state?: string;
 
   /*
 (Output)
 Type of the condition.
 (e.g., ClusterRunning, NodePoolRunning or ServerSidePreflightReady)
 */
-  Type?: string;
+  type?: string;
 }
 
-export function Gkeonprem_VMwareNodePoolStatusCondition_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareNodePoolStatusCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "LastTransitionTime",
+      "lastTransitionTime",
       "(Output)\nLast time the condition transit from one status to another.",
       [],
       false,
@@ -51,7 +51,7 @@ export function Gkeonprem_VMwareNodePoolStatusCondition_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "Message",
+      "message",
       "(Output)\nHuman-readable message indicating details about last transition.",
       [],
       false,
@@ -59,7 +59,7 @@ export function Gkeonprem_VMwareNodePoolStatusCondition_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "Reason",
+      "reason",
       "(Output)\nMachine-readable message indicating details about last transition.",
       [],
       false,
@@ -67,7 +67,7 @@ export function Gkeonprem_VMwareNodePoolStatusCondition_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "(Output)\nThe lifecycle state of the condition.",
       [],
       false,
@@ -75,7 +75,7 @@ export function Gkeonprem_VMwareNodePoolStatusCondition_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "(Output)\nType of the condition.\n(e.g., ClusterRunning, NodePoolRunning or ServerSidePreflightReady)",
       [],
       false,

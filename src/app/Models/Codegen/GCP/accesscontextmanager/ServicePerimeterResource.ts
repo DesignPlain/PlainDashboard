@@ -14,14 +14,14 @@ The name of the Service Perimeter to add this resource to.
 
 - - -
 */
-  PerimeterName?: string;
+  perimeterName?: string;
 
   /*
 A GCP resource that is inside of the service perimeter.
 Currently only projects are allowed.
 Format: projects/{project_number}
 */
-  Resource?: string;
+  resource?: string;
 }
 export class ServicePerimeterResource extends Resource {
   /*
@@ -29,7 +29,7 @@ A GCP resource that is inside of the service perimeter.
 Currently only projects are allowed.
 Format: projects/{project_number}
 */
-  public Resource?: string;
+  public resource?: string;
 
   /*
 The name of the Service Perimeter to add this resource to.
@@ -37,13 +37,13 @@ The name of the Service Perimeter to add this resource to.
 
 - - -
 */
-  public PerimeterName?: string;
+  public perimeterName?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "PerimeterName",
+        "perimeterName",
         "The name of the Service Perimeter to add this resource to.\n\n\n- - -",
         [],
         true,
@@ -51,7 +51,7 @@ The name of the Service Perimeter to add this resource to.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Resource",
+        "resource",
         "A GCP resource that is inside of the service perimeter.\nCurrently only projects are allowed.\nFormat: projects/{project_number}",
         [],
         true,

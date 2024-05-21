@@ -6,52 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FeatureMembershipConfigmanagementConfigSyncOci {
+export interface gkehub_FeatureMembershipConfigmanagementConfigSyncOci {
   // The GCP Service Account Email used for auth when secret_type is gcpserviceaccount.
-  GcpServiceAccountEmail?: string;
+  gcpServiceAccountEmail?: string;
 
   // The absolute path of the directory that contains the local resources. Default: the root directory of the image.
-  PolicyDir?: string;
+  policyDir?: string;
 
   // Type of secret configured for access to the OCI Image. Must be one of gcenode, gcpserviceaccount or none.
-  SecretType?: string;
+  secretType?: string;
 
   // The OCI image repository URL for the package to sync from. e.g. LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY_NAME/PACKAGE_NAME.
-  SyncRepo?: string;
+  syncRepo?: string;
 
   // Period in seconds(int64 format) between consecutive syncs. Default: 15.
-  SyncWaitSecs?: string;
+  syncWaitSecs?: string;
 }
 
-export function Gkehub_FeatureMembershipConfigmanagementConfigSyncOci_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureMembershipConfigmanagementConfigSyncOci_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "GcpServiceAccountEmail",
-      "The GCP Service Account Email used for auth when secret_type is gcpserviceaccount.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "PolicyDir",
-      "The absolute path of the directory that contains the local resources. Default: the root directory of the image.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "SecretType",
-      "Type of secret configured for access to the OCI Image. Must be one of gcenode, gcpserviceaccount or none.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "SyncRepo",
+      "syncRepo",
       "The OCI image repository URL for the package to sync from. e.g. LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY_NAME/PACKAGE_NAME.",
       [],
       false,
@@ -59,8 +35,32 @@ export function Gkehub_FeatureMembershipConfigmanagementConfigSyncOci_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "SyncWaitSecs",
+      "syncWaitSecs",
       "Period in seconds(int64 format) between consecutive syncs. Default: 15.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "gcpServiceAccountEmail",
+      "The GCP Service Account Email used for auth when secret_type is gcpserviceaccount.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "policyDir",
+      "The absolute path of the directory that contains the local resources. Default: the root directory of the image.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "secretType",
+      "Type of secret configured for access to the OCI Image. Must be one of gcenode, gcpserviceaccount or none.",
       [],
       false,
       false,

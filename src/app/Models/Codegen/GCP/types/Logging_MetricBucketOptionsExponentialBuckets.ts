@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Logging_MetricBucketOptionsExponentialBuckets {
+export interface logging_MetricBucketOptionsExponentialBuckets {
   // Must be greater than 0.
-  NumFiniteBuckets?: number;
+  numFiniteBuckets?: number;
 
   // Must be greater than 0.
-  Scale?: number;
+  scale?: number;
 
   // Must be greater than 1.
-  GrowthFactor?: number;
+  growthFactor?: number;
 }
 
-export function Logging_MetricBucketOptionsExponentialBuckets_GetTypes(): DynamicUIProps[] {
+export function logging_MetricBucketOptionsExponentialBuckets_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "NumFiniteBuckets",
+      "numFiniteBuckets",
       "Must be greater than 0.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Logging_MetricBucketOptionsExponentialBuckets_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Scale",
+      "scale",
       "Must be greater than 0.",
       [],
       true,
@@ -37,7 +37,7 @@ export function Logging_MetricBucketOptionsExponentialBuckets_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Number,
-      "GrowthFactor",
+      "growthFactor",
       "Must be greater than 1.",
       [],
       true,

@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Apigee_TargetServerSSlInfoCommonName {
+export interface apigee_TargetServerSSlInfoCommonName {
   // The TLS Common Name string of the certificate.
-  Value?: string;
+  value?: string;
 
   // Indicates whether the cert should be matched against as a wildcard cert.
-  WildcardMatch?: boolean;
+  wildcardMatch?: boolean;
 }
 
-export function Apigee_TargetServerSSlInfoCommonName_GetTypes(): DynamicUIProps[] {
+export function apigee_TargetServerSSlInfoCommonName_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "Value",
-      "The TLS Common Name string of the certificate.",
+      InputType.Bool,
+      "wildcardMatch",
+      "Indicates whether the cert should be matched against as a wildcard cert.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Bool,
-      "WildcardMatch",
-      "Indicates whether the cert should be matched against as a wildcard cert.",
+      InputType.String,
+      "value",
+      "The TLS Common Name string of the certificate.",
       [],
       false,
       false,

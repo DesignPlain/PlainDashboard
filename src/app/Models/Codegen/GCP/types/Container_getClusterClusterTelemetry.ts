@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterClusterTelemetry {
+export interface container_getClusterClusterTelemetry {
   // Type of the integration.
-  Type?: string;
+  type?: string;
 }
 
-export function Container_getClusterClusterTelemetry_GetTypes(): DynamicUIProps[] {
+export function container_getClusterClusterTelemetry_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "Type of the integration.",
       [],
       true,

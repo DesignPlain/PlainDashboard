@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_getServiceTemplateContainerLivenessProbeHttpGetHttpHeader {
-  // The name of the Cloud Run v2 Service.
-  Name?: string;
-
+export interface cloudrunv2_getServiceTemplateContainerLivenessProbeHttpGetHttpHeader {
   // The header field value
-  Value?: string;
+  value?: string;
+
+  // The name of the Cloud Run v2 Service.
+  name?: string;
 }
 
-export function Cloudrunv2_getServiceTemplateContainerLivenessProbeHttpGetHttpHeader_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_getServiceTemplateContainerLivenessProbeHttpGetHttpHeader_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of the Cloud Run v2 Service.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Cloudrunv2_getServiceTemplateContainerLivenessProbeHttpGetHttpHe
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "The header field value",
       [],
       true,

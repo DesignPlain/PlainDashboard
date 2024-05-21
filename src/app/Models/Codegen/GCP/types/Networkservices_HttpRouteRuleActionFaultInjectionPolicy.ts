@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networkservices_HttpRouteRuleActionFaultInjectionPolicyAbort,
-  Networkservices_HttpRouteRuleActionFaultInjectionPolicyAbort_GetTypes,
-} from "./Networkservices_HttpRouteRuleActionFaultInjectionPolicyAbort";
+  networkservices_HttpRouteRuleActionFaultInjectionPolicyAbort,
+  networkservices_HttpRouteRuleActionFaultInjectionPolicyAbort_GetTypes,
+} from "./networkservices_HttpRouteRuleActionFaultInjectionPolicyAbort";
 import {
-  Networkservices_HttpRouteRuleActionFaultInjectionPolicyDelay,
-  Networkservices_HttpRouteRuleActionFaultInjectionPolicyDelay_GetTypes,
-} from "./Networkservices_HttpRouteRuleActionFaultInjectionPolicyDelay";
+  networkservices_HttpRouteRuleActionFaultInjectionPolicyDelay,
+  networkservices_HttpRouteRuleActionFaultInjectionPolicyDelay_GetTypes,
+} from "./networkservices_HttpRouteRuleActionFaultInjectionPolicyDelay";
 
-export interface Networkservices_HttpRouteRuleActionFaultInjectionPolicy {
+export interface networkservices_HttpRouteRuleActionFaultInjectionPolicy {
   /*
 Specification of how client requests are aborted as part of fault injection before being sent to a destination.
 Structure is documented below.
 */
-  Abort?: Networkservices_HttpRouteRuleActionFaultInjectionPolicyAbort;
+  abort?: networkservices_HttpRouteRuleActionFaultInjectionPolicyAbort;
 
   /*
 Specification of how client requests are delayed as part of fault injection before being sent to a destination.
 Structure is documented below.
 */
-  Delay?: Networkservices_HttpRouteRuleActionFaultInjectionPolicyDelay;
+  delay?: networkservices_HttpRouteRuleActionFaultInjectionPolicyDelay;
 }
 
-export function Networkservices_HttpRouteRuleActionFaultInjectionPolicy_GetTypes(): DynamicUIProps[] {
+export function networkservices_HttpRouteRuleActionFaultInjectionPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Abort",
+      "abort",
       "Specification of how client requests are aborted as part of fault injection before being sent to a destination.\nStructure is documented below.",
-      Networkservices_HttpRouteRuleActionFaultInjectionPolicyAbort_GetTypes(),
+      networkservices_HttpRouteRuleActionFaultInjectionPolicyAbort_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Delay",
+      "delay",
       "Specification of how client requests are delayed as part of fault injection before being sent to a destination.\nStructure is documented below.",
-      Networkservices_HttpRouteRuleActionFaultInjectionPolicyDelay_GetTypes(),
+      networkservices_HttpRouteRuleActionFaultInjectionPolicyDelay_GetTypes(),
       false,
       false,
     ),

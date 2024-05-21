@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getBackendServiceIap {
-  // OAuth2 Client ID for IAP
-  Oauth2ClientId?: string;
-
+export interface compute_getBackendServiceIap {
   // OAuth2 Client Secret for IAP
-  Oauth2ClientSecret?: string;
+  oauth2ClientSecret?: string;
 
   // OAuth2 Client Secret SHA-256 for IAP
-  Oauth2ClientSecretSha256?: string;
+  oauth2ClientSecretSha256?: string;
+
+  // OAuth2 Client ID for IAP
+  oauth2ClientId?: string;
 }
 
-export function Compute_getBackendServiceIap_GetTypes(): DynamicUIProps[] {
+export function compute_getBackendServiceIap_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Oauth2ClientSecretSha256",
+      "oauth2ClientSecretSha256",
       "OAuth2 Client Secret SHA-256 for IAP",
       [],
       true,
@@ -29,7 +29,7 @@ export function Compute_getBackendServiceIap_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Oauth2ClientId",
+      "oauth2ClientId",
       "OAuth2 Client ID for IAP",
       [],
       true,
@@ -37,7 +37,7 @@ export function Compute_getBackendServiceIap_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Oauth2ClientSecret",
+      "oauth2ClientSecret",
       "OAuth2 Client Secret for IAP",
       [],
       true,

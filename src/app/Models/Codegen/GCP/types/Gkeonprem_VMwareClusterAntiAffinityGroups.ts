@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_VMwareClusterAntiAffinityGroups {
+export interface gkeonprem_VMwareClusterAntiAffinityGroups {
   /*
 Spread nodes across at least three physical hosts (requires at least three
 hosts).
 Enabled by default.
 */
-  AagConfigDisabled?: boolean;
+  aagConfigDisabled?: boolean;
 }
 
-export function Gkeonprem_VMwareClusterAntiAffinityGroups_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterAntiAffinityGroups_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "AagConfigDisabled",
+      "aagConfigDisabled",
       "Spread nodes across at least three physical hosts (requires at least three\nhosts).\nEnabled by default.",
       [],
       true,

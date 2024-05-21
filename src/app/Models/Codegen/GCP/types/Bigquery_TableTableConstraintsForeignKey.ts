@@ -6,45 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Bigquery_TableTableConstraintsForeignKeyColumnReferences,
-  Bigquery_TableTableConstraintsForeignKeyColumnReferences_GetTypes,
-} from "./Bigquery_TableTableConstraintsForeignKeyColumnReferences";
+  bigquery_TableTableConstraintsForeignKeyColumnReferences,
+  bigquery_TableTableConstraintsForeignKeyColumnReferences_GetTypes,
+} from "./bigquery_TableTableConstraintsForeignKeyColumnReferences";
 import {
-  Bigquery_TableTableConstraintsForeignKeyReferencedTable,
-  Bigquery_TableTableConstraintsForeignKeyReferencedTable_GetTypes,
-} from "./Bigquery_TableTableConstraintsForeignKeyReferencedTable";
+  bigquery_TableTableConstraintsForeignKeyReferencedTable,
+  bigquery_TableTableConstraintsForeignKeyReferencedTable_GetTypes,
+} from "./bigquery_TableTableConstraintsForeignKeyReferencedTable";
 
-export interface Bigquery_TableTableConstraintsForeignKey {
+export interface bigquery_TableTableConstraintsForeignKey {
   /*
 The pair of the foreign key column and primary key column.
 Structure is documented below.
 */
-  ColumnReferences?: Bigquery_TableTableConstraintsForeignKeyColumnReferences;
+  columnReferences?: bigquery_TableTableConstraintsForeignKeyColumnReferences;
 
   // Set only if the foreign key constraint is named.
-  Name?: string;
+  name?: string;
 
   /*
 The table that holds the primary key
 and is referenced by this foreign key.
 Structure is documented below.
 */
-  ReferencedTable?: Bigquery_TableTableConstraintsForeignKeyReferencedTable;
+  referencedTable?: bigquery_TableTableConstraintsForeignKeyReferencedTable;
 }
 
-export function Bigquery_TableTableConstraintsForeignKey_GetTypes(): DynamicUIProps[] {
+export function bigquery_TableTableConstraintsForeignKey_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "ColumnReferences",
-      "The pair of the foreign key column and primary key column.\nStructure is documented below.",
-      Bigquery_TableTableConstraintsForeignKeyColumnReferences_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Set only if the foreign key constraint is named.",
       [],
       false,
@@ -52,9 +44,17 @@ export function Bigquery_TableTableConstraintsForeignKey_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ReferencedTable",
+      "referencedTable",
       "The table that holds the primary key\nand is referenced by this foreign key.\nStructure is documented below.",
-      Bigquery_TableTableConstraintsForeignKeyReferencedTable_GetTypes(),
+      bigquery_TableTableConstraintsForeignKeyReferencedTable_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "columnReferences",
+      "The pair of the foreign key column and primary key column.\nStructure is documented below.",
+      bigquery_TableTableConstraintsForeignKeyColumnReferences_GetTypes(),
       true,
       false,
     ),

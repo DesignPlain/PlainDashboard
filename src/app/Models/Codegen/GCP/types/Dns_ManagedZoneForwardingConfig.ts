@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dns_ManagedZoneForwardingConfigTargetNameServer,
-  Dns_ManagedZoneForwardingConfigTargetNameServer_GetTypes,
-} from "./Dns_ManagedZoneForwardingConfigTargetNameServer";
+  dns_ManagedZoneForwardingConfigTargetNameServer,
+  dns_ManagedZoneForwardingConfigTargetNameServer_GetTypes,
+} from "./dns_ManagedZoneForwardingConfigTargetNameServer";
 
-export interface Dns_ManagedZoneForwardingConfig {
+export interface dns_ManagedZoneForwardingConfig {
   /*
 List of target name servers to forward to. Cloud DNS will
 select the best available name server if more than
 one target is given.
 Structure is documented below.
 */
-  TargetNameServers?: Array<Dns_ManagedZoneForwardingConfigTargetNameServer>;
+  targetNameServers?: Array<dns_ManagedZoneForwardingConfigTargetNameServer>;
 }
 
-export function Dns_ManagedZoneForwardingConfig_GetTypes(): DynamicUIProps[] {
+export function dns_ManagedZoneForwardingConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "TargetNameServers",
+      "targetNameServers",
       "List of target name servers to forward to. Cloud DNS will\nselect the best available name server if more than\none target is given.\nStructure is documented below.",
-      Dns_ManagedZoneForwardingConfigTargetNameServer_GetTypes(),
+      dns_ManagedZoneForwardingConfigTargetNameServer_GetTypes(),
       true,
       false,
     ),

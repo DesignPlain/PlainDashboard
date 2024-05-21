@@ -9,11 +9,17 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface SchemaArgs {
   /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  /*
 The type of the schema definition
 Default value is `TYPE_UNSPECIFIED`.
 Possible values are: `TYPE_UNSPECIFIED`, `PROTOCOL_BUFFER`, `AVRO`.
 */
-  Type?: string;
+  type?: string;
 
   /*
 The definition of the schema.
@@ -24,7 +30,7 @@ A schema can only have up to 20 revisions, so updates that fail with an
 error indicating that the limit has been reached require manually
 [deleting old revisions](https://cloud.google.com/pubsub/docs/delete-schema-revision).
 */
-  Definition?: string;
+  definition?: string;
 
   /*
 The ID to use for the schema, which will become the final component of the schema's resource name.
@@ -32,16 +38,23 @@ The ID to use for the schema, which will become the final component of the schem
 
 - - -
 */
-  Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
+  name?: string;
 }
 export class Schema extends Resource {
   /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  /*
+The type of the schema definition
+Default value is `TYPE_UNSPECIFIED`.
+Possible values are: `TYPE_UNSPECIFIED`, `PROTOCOL_BUFFER`, `AVRO`.
+*/
+  public type?: string;
+
+  /*
 The definition of the schema.
 This should contain a string representing the full definition of the schema
 that is a valid schema definition of the type specified in type. Changes
@@ -50,7 +63,7 @@ A schema can only have up to 20 revisions, so updates that fail with an
 error indicating that the limit has been reached require manually
 [deleting old revisions](https://cloud.google.com/pubsub/docs/delete-schema-revision).
 */
-  public Definition?: string;
+  public definition?: string;
 
   /*
 The ID to use for the schema, which will become the final component of the schema's resource name.
@@ -58,42 +71,13 @@ The ID to use for the schema, which will become the final component of the schem
 
 - - -
 */
-  public Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  /*
-The type of the schema definition
-Default value is `TYPE_UNSPECIFIED`.
-Possible values are: `TYPE_UNSPECIFIED`, `PROTOCOL_BUFFER`, `AVRO`.
-*/
-  public Type?: string;
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Definition",
-        "The definition of the schema.\nThis should contain a string representing the full definition of the schema\nthat is a valid schema definition of the type specified in type. Changes\nto the definition commit new [schema revisions](https://cloud.google.com/pubsub/docs/commit-schema-revision).\nA schema can only have up to 20 revisions, so updates that fail with an\nerror indicating that the limit has been reached require manually\n[deleting old revisions](https://cloud.google.com/pubsub/docs/delete-schema-revision).",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "The ID to use for the schema, which will become the final component of the schema's resource name.\n\n\n- - -",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -101,11 +85,27 @@ Possible values are: `TYPE_UNSPECIFIED`, `PROTOCOL_BUFFER`, `AVRO`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Type",
+        "type",
         "The type of the schema definition\nDefault value is `TYPE_UNSPECIFIED`.\nPossible values are: `TYPE_UNSPECIFIED`, `PROTOCOL_BUFFER`, `AVRO`.",
         [],
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "definition",
+        "The definition of the schema.\nThis should contain a string representing the full definition of the schema\nthat is a valid schema definition of the type specified in type. Changes\nto the definition commit new [schema revisions](https://cloud.google.com/pubsub/docs/commit-schema-revision).\nA schema can only have up to 20 revisions, so updates that fail with an\nerror indicating that the limit has been reached require manually\n[deleting old revisions](https://cloud.google.com/pubsub/docs/delete-schema-revision).",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "The ID to use for the schema, which will become the final component of the schema's resource name.\n\n\n- - -",
+        [],
+        false,
+        true,
       ),
     ];
   }

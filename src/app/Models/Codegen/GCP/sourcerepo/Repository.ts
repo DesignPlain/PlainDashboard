@@ -7,11 +7,18 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Sourcerepo_RepositoryPubsubConfig,
-  Sourcerepo_RepositoryPubsubConfig_GetTypes,
-} from "../types/Sourcerepo_RepositoryPubsubConfig";
+  sourcerepo_RepositoryPubsubConfig,
+  sourcerepo_RepositoryPubsubConfig_GetTypes,
+} from "../types/sourcerepo_RepositoryPubsubConfig";
 
 export interface RepositoryArgs {
+  /*
+How this repository publishes a change in the repository through Cloud Pub/Sub.
+Keyed by the topic names.
+Structure is documented below.
+*/
+  pubsubConfigs?: Array<sourcerepo_RepositoryPubsubConfig>;
+
   /*
 Resource name of the repository, of the form `{{repo}}`.
 The repo name may contain slashes. eg, `name/with/slash`
@@ -19,20 +26,13 @@ The repo name may contain slashes. eg, `name/with/slash`
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
-
-  /*
-How this repository publishes a change in the repository through Cloud Pub/Sub.
-Keyed by the topic names.
-Structure is documented below.
-*/
-  PubsubConfigs?: Array<Sourcerepo_RepositoryPubsubConfig>;
+  project?: string;
 }
 export class Repository extends Resource {
   /*
@@ -42,32 +42,40 @@ The repo name may contain slashes. eg, `name/with/slash`
 
 - - -
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 How this repository publishes a change in the repository through Cloud Pub/Sub.
 Keyed by the topic names.
 Structure is documented below.
 */
-  public PubsubConfigs?: Array<Sourcerepo_RepositoryPubsubConfig>;
+  public pubsubConfigs?: Array<sourcerepo_RepositoryPubsubConfig>;
 
   // The disk usage of the repo, in bytes.
-  public Size?: number;
+  public size?: number;
 
   // URL to clone the repository from Google Cloud Source Repositories.
-  public Url?: string;
+  public url?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
+        InputType.Array,
+        "pubsubConfigs",
+        "How this repository publishes a change in the repository through Cloud Pub/Sub.\nKeyed by the topic names.\nStructure is documented below.",
+        sourcerepo_RepositoryPubsubConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Resource name of the repository, of the form `{{repo}}`.\nThe repo name may contain slashes. eg, `name/with/slash`\n\n\n- - -",
         [],
         false,
@@ -75,19 +83,11 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
         true,
-      ),
-      new DynamicUIProps(
-        InputType.Array,
-        "PubsubConfigs",
-        "How this repository publishes a change in the repository through Cloud Pub/Sub.\nKeyed by the topic names.\nStructure is documented below.",
-        Sourcerepo_RepositoryPubsubConfig_GetTypes(),
-        false,
-        false,
       ),
     ];
   }

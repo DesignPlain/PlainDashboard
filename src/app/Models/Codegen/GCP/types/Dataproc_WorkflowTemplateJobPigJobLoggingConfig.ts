@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_WorkflowTemplateJobPigJobLoggingConfig {
+export interface dataproc_WorkflowTemplateJobPigJobLoggingConfig {
   // The per-package log levels for the driver. This may include "root" package name to configure rootLogger. Examples: 'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
-  DriverLogLevels?: Map<string, string>;
+  driverLogLevels?: Map<string, string>;
 }
 
-export function Dataproc_WorkflowTemplateJobPigJobLoggingConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplateJobPigJobLoggingConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Map,
-      "DriverLogLevels",
+      "driverLogLevels",
       "The per-package log levels for the driver. This may include \"root\" package name to configure rootLogger. Examples: 'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'",
       InputType_Map_GetTypes(),
       false,

@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Orgpolicy_PolicyDryRunSpecRuleValues {
+export interface orgpolicy_PolicyDryRunSpecRuleValues {
   // List of values allowed at this resource.
-  AllowedValues?: Array<string>;
+  allowedValues?: Array<string>;
 
   // List of values denied at this resource.
-  DeniedValues?: Array<string>;
+  deniedValues?: Array<string>;
 }
 
-export function Orgpolicy_PolicyDryRunSpecRuleValues_GetTypes(): DynamicUIProps[] {
+export function orgpolicy_PolicyDryRunSpecRuleValues_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AllowedValues",
+      "allowedValues",
       "List of values allowed at this resource.",
       InputType_String_GetTypes(),
       false,
@@ -26,7 +26,7 @@ export function Orgpolicy_PolicyDryRunSpecRuleValues_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Array,
-      "DeniedValues",
+      "deniedValues",
       "List of values denied at this resource.",
       InputType_String_GetTypes(),
       false,

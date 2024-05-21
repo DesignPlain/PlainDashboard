@@ -6,53 +6,61 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects,
-  Datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects_GetTypes,
-} from "./Datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects";
+  datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects,
+  datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects_GetTypes,
+} from "./datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects";
 import {
-  Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects,
-  Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects_GetTypes,
-} from "./Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects";
+  datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects,
+  datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects_GetTypes,
+} from "./datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects";
 
-export interface Datastream_StreamSourceConfigMysqlSourceConfig {
+export interface datastream_StreamSourceConfigMysqlSourceConfig {
+  /*
+MySQL objects to exclude from the stream.
+Structure is documented below.
+*/
+  excludeObjects?: datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects;
+
   /*
 MySQL objects to retrieve from the source.
 Structure is documented below.
 */
-  IncludeObjects?: Datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects;
+  includeObjects?: datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects;
 
   /*
 Maximum number of concurrent backfill tasks. The number should be non negative.
 If not set (or set to 0), the system's default value will be used.
 */
-  MaxConcurrentBackfillTasks?: number;
+  maxConcurrentBackfillTasks?: number;
 
   /*
 Maximum number of concurrent CDC tasks. The number should be non negative.
 If not set (or set to 0), the system's default value will be used.
 */
-  MaxConcurrentCdcTasks?: number;
-
-  /*
-MySQL objects to exclude from the stream.
-Structure is documented below.
-*/
-  ExcludeObjects?: Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects;
+  maxConcurrentCdcTasks?: number;
 }
 
-export function Datastream_StreamSourceConfigMysqlSourceConfig_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamSourceConfigMysqlSourceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "IncludeObjects",
+      "excludeObjects",
+      "MySQL objects to exclude from the stream.\nStructure is documented below.",
+      datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "includeObjects",
       "MySQL objects to retrieve from the source.\nStructure is documented below.",
-      Datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects_GetTypes(),
+      datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxConcurrentBackfillTasks",
+      "maxConcurrentBackfillTasks",
       "Maximum number of concurrent backfill tasks. The number should be non negative.\nIf not set (or set to 0), the system's default value will be used.",
       [],
       false,
@@ -60,17 +68,9 @@ export function Datastream_StreamSourceConfigMysqlSourceConfig_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxConcurrentCdcTasks",
+      "maxConcurrentCdcTasks",
       "Maximum number of concurrent CDC tasks. The number should be non negative.\nIf not set (or set to 0), the system's default value will be used.",
       [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "ExcludeObjects",
-      "MySQL objects to exclude from the stream.\nStructure is documented below.",
-      Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects_GetTypes(),
       false,
       false,
     ),

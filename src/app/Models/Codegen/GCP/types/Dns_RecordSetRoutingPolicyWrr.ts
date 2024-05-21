@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dns_RecordSetRoutingPolicyWrrHealthCheckedTargets,
-  Dns_RecordSetRoutingPolicyWrrHealthCheckedTargets_GetTypes,
-} from "./Dns_RecordSetRoutingPolicyWrrHealthCheckedTargets";
+  dns_RecordSetRoutingPolicyWrrHealthCheckedTargets,
+  dns_RecordSetRoutingPolicyWrrHealthCheckedTargets_GetTypes,
+} from "./dns_RecordSetRoutingPolicyWrrHealthCheckedTargets";
 
-export interface Dns_RecordSetRoutingPolicyWrr {
+export interface dns_RecordSetRoutingPolicyWrr {
   /*
 The list of targets to be health checked. Note that if DNSSEC is enabled for this zone, only one of `rrdatas` or `health_checked_targets` can be set.
 Structure is document below.
 */
-  HealthCheckedTargets?: Dns_RecordSetRoutingPolicyWrrHealthCheckedTargets;
+  healthCheckedTargets?: dns_RecordSetRoutingPolicyWrrHealthCheckedTargets;
 
   // Same as `rrdatas` above.
-  Rrdatas?: Array<string>;
+  rrdatas?: Array<string>;
 
   // The ratio of traffic routed to the target.
-  Weight?: number;
+  weight?: number;
 }
 
-export function Dns_RecordSetRoutingPolicyWrr_GetTypes(): DynamicUIProps[] {
+export function dns_RecordSetRoutingPolicyWrr_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "HealthCheckedTargets",
+      "healthCheckedTargets",
       "The list of targets to be health checked. Note that if DNSSEC is enabled for this zone, only one of `rrdatas` or `health_checked_targets` can be set.\nStructure is document below.",
-      Dns_RecordSetRoutingPolicyWrrHealthCheckedTargets_GetTypes(),
+      dns_RecordSetRoutingPolicyWrrHealthCheckedTargets_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Rrdatas",
+      "rrdatas",
       "Same as `rrdatas` above.",
       InputType_String_GetTypes(),
       false,
@@ -44,7 +44,7 @@ export function Dns_RecordSetRoutingPolicyWrr_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Weight",
+      "weight",
       "The ratio of traffic routed to the target.",
       [],
       true,

@@ -6,39 +6,39 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayFixedDelay,
-  Compute_URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayFixedDelay_GetTypes,
-} from "./Compute_URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayFixedDelay";
+  compute_URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayFixedDelay,
+  compute_URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayFixedDelay_GetTypes,
+} from "./compute_URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayFixedDelay";
 
-export interface Compute_URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelay {
-  /*
-The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.
-The value must be between 0.0 and 100.0 inclusive.
-*/
-  Percentage?: number;
-
+export interface compute_URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelay {
   /*
 Specifies the value of the fixed delay interval.
 Structure is documented below.
 */
-  FixedDelay?: Compute_URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayFixedDelay;
+  fixedDelay?: compute_URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayFixedDelay;
+
+  /*
+The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.
+The value must be between 0.0 and 100.0 inclusive.
+*/
+  percentage?: number;
 }
 
-export function Compute_URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelay_GetTypes(): DynamicUIProps[] {
+export function compute_URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelay_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "Percentage",
-      "The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.\nThe value must be between 0.0 and 100.0 inclusive.",
-      [],
+      InputType.Object,
+      "fixedDelay",
+      "Specifies the value of the fixed delay interval.\nStructure is documented below.",
+      compute_URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayFixedDelay_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "FixedDelay",
-      "Specifies the value of the fixed delay interval.\nStructure is documented below.",
-      Compute_URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayFixedDelay_GetTypes(),
+      InputType.Number,
+      "percentage",
+      "The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.\nThe value must be between 0.0 and 100.0 inclusive.",
+      [],
       false,
       false,
     ),

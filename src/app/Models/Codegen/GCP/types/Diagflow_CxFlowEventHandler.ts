@@ -6,52 +6,52 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxFlowEventHandlerTriggerFulfillment,
-  Diagflow_CxFlowEventHandlerTriggerFulfillment_GetTypes,
-} from "./Diagflow_CxFlowEventHandlerTriggerFulfillment";
+  diagflow_CxFlowEventHandlerTriggerFulfillment,
+  diagflow_CxFlowEventHandlerTriggerFulfillment_GetTypes,
+} from "./diagflow_CxFlowEventHandlerTriggerFulfillment";
 
-export interface Diagflow_CxFlowEventHandler {
-  /*
-The fulfillment to call when the event occurs. Handling webhook errors with a fulfillment enabled with webhook could cause infinite loop. It is invalid to specify such fulfillment for a handler handling webhooks.
-Structure is documented below.
-*/
-  TriggerFulfillment?: Diagflow_CxFlowEventHandlerTriggerFulfillment;
-
+export interface diagflow_CxFlowEventHandler {
   // The name of the event to handle.
-  Event?: string;
+  event?: string;
 
   /*
 (Output)
 The unique identifier of this event handler.
 */
-  Name?: string;
+  name?: string;
 
   /*
 The target flow to transition to.
 Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>.
 */
-  TargetFlow?: string;
+  targetFlow?: string;
 
   /*
 The target page to transition to.
 Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.
 */
-  TargetPage?: string;
+  targetPage?: string;
+
+  /*
+The fulfillment to call when the event occurs. Handling webhook errors with a fulfillment enabled with webhook could cause infinite loop. It is invalid to specify such fulfillment for a handler handling webhooks.
+Structure is documented below.
+*/
+  triggerFulfillment?: diagflow_CxFlowEventHandlerTriggerFulfillment;
 }
 
-export function Diagflow_CxFlowEventHandler_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxFlowEventHandler_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "TriggerFulfillment",
+      "triggerFulfillment",
       "The fulfillment to call when the event occurs. Handling webhook errors with a fulfillment enabled with webhook could cause infinite loop. It is invalid to specify such fulfillment for a handler handling webhooks.\nStructure is documented below.",
-      Diagflow_CxFlowEventHandlerTriggerFulfillment_GetTypes(),
+      diagflow_CxFlowEventHandlerTriggerFulfillment_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Event",
+      "event",
       "The name of the event to handle.",
       [],
       false,
@@ -59,7 +59,7 @@ export function Diagflow_CxFlowEventHandler_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "(Output)\nThe unique identifier of this event handler.",
       [],
       false,
@@ -67,7 +67,7 @@ export function Diagflow_CxFlowEventHandler_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "TargetFlow",
+      "targetFlow",
       "The target flow to transition to.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>.",
       [],
       false,
@@ -75,7 +75,7 @@ export function Diagflow_CxFlowEventHandler_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "TargetPage",
+      "targetPage",
       "The target page to transition to.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.",
       [],
       false,

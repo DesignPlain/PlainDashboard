@@ -6,76 +6,68 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_InstanceFromMachineImageSchedulingLocalSsdRecoveryTimeout,
-  Compute_InstanceFromMachineImageSchedulingLocalSsdRecoveryTimeout_GetTypes,
-} from "./Compute_InstanceFromMachineImageSchedulingLocalSsdRecoveryTimeout";
+  compute_InstanceFromMachineImageSchedulingLocalSsdRecoveryTimeout,
+  compute_InstanceFromMachineImageSchedulingLocalSsdRecoveryTimeout_GetTypes,
+} from "./compute_InstanceFromMachineImageSchedulingLocalSsdRecoveryTimeout";
 import {
-  Compute_InstanceFromMachineImageSchedulingMaxRunDuration,
-  Compute_InstanceFromMachineImageSchedulingMaxRunDuration_GetTypes,
-} from "./Compute_InstanceFromMachineImageSchedulingMaxRunDuration";
+  compute_InstanceFromMachineImageSchedulingMaxRunDuration,
+  compute_InstanceFromMachineImageSchedulingMaxRunDuration_GetTypes,
+} from "./compute_InstanceFromMachineImageSchedulingMaxRunDuration";
 import {
-  Compute_InstanceFromMachineImageSchedulingNodeAffinity,
-  Compute_InstanceFromMachineImageSchedulingNodeAffinity_GetTypes,
-} from "./Compute_InstanceFromMachineImageSchedulingNodeAffinity";
+  compute_InstanceFromMachineImageSchedulingNodeAffinity,
+  compute_InstanceFromMachineImageSchedulingNodeAffinity_GetTypes,
+} from "./compute_InstanceFromMachineImageSchedulingNodeAffinity";
 
-export interface Compute_InstanceFromMachineImageScheduling {
+export interface compute_InstanceFromMachineImageScheduling {
+  // Specifies if the instance should be restarted if it was terminated by Compute Engine (not a user).
+  automaticRestart?: boolean;
+
+  //
+  minNodeCpus?: number;
+
+  // Whether the instance is preemptible.
+  preemptible?: boolean;
+
+  // Whether the instance is spot. If this is set as SPOT.
+  provisioningModel?: string;
+
+  // Specifies the action GCE should take when SPOT VM is preempted.
+  instanceTerminationAction?: string;
+
   /*
 Specifies the maximum amount of time a Local Ssd Vm should wait while
   recovery of the Local Ssd state is attempted. Its value should be in
   between 0 and 168 hours with hour granularity and the default value being 1
   hour.
 */
-  LocalSsdRecoveryTimeout?: Compute_InstanceFromMachineImageSchedulingLocalSsdRecoveryTimeout;
-
-  // The timeout for new network connections to hosts.
-  MaxRunDuration?: Compute_InstanceFromMachineImageSchedulingMaxRunDuration;
-
-  //
-  MinNodeCpus?: number;
-
-  // Specifies node affinities or anti-affinities to determine which sole-tenant nodes your instances and managed instance groups will use as host systems.
-  NodeAffinities?: Array<Compute_InstanceFromMachineImageSchedulingNodeAffinity>;
-
-  // Whether the instance is preemptible.
-  Preemptible?: boolean;
-
-  // Whether the instance is spot. If this is set as SPOT.
-  ProvisioningModel?: string;
-
-  // Specifies the action GCE should take when SPOT VM is preempted.
-  InstanceTerminationAction?: string;
+  localSsdRecoveryTimeout?: compute_InstanceFromMachineImageSchedulingLocalSsdRecoveryTimeout;
 
   // Specifies the frequency of planned maintenance events. The accepted values are: PERIODIC
-  MaintenanceInterval?: string;
+  maintenanceInterval?: string;
+
+  // The timeout for new network connections to hosts.
+  maxRunDuration?: compute_InstanceFromMachineImageSchedulingMaxRunDuration;
+
+  // Specifies node affinities or anti-affinities to determine which sole-tenant nodes your instances and managed instance groups will use as host systems.
+  nodeAffinities?: Array<compute_InstanceFromMachineImageSchedulingNodeAffinity>;
 
   // Describes maintenance behavior for the instance. One of MIGRATE or TERMINATE,
-  OnHostMaintenance?: string;
-
-  // Specifies if the instance should be restarted if it was terminated by Compute Engine (not a user).
-  AutomaticRestart?: boolean;
+  onHostMaintenance?: string;
 }
 
-export function Compute_InstanceFromMachineImageScheduling_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceFromMachineImageScheduling_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "LocalSsdRecoveryTimeout",
-      "Specifies the maximum amount of time a Local Ssd Vm should wait while\n  recovery of the Local Ssd state is attempted. Its value should be in\n  between 0 and 168 hours with hour granularity and the default value being 1\n  hour.",
-      Compute_InstanceFromMachineImageSchedulingLocalSsdRecoveryTimeout_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "NodeAffinities",
-      "Specifies node affinities or anti-affinities to determine which sole-tenant nodes your instances and managed instance groups will use as host systems.",
-      Compute_InstanceFromMachineImageSchedulingNodeAffinity_GetTypes(),
+      InputType.String,
+      "maintenanceInterval",
+      "Specifies the frequency of planned maintenance events. The accepted values are: PERIODIC",
+      [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "OnHostMaintenance",
+      "onHostMaintenance",
       "Describes maintenance behavior for the instance. One of MIGRATE or TERMINATE,",
       [],
       false,
@@ -83,24 +75,40 @@ export function Compute_InstanceFromMachineImageScheduling_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "AutomaticRestart",
+      "automaticRestart",
       "Specifies if the instance should be restarted if it was terminated by Compute Engine (not a user).",
       [],
       false,
       false,
     ),
+    new DynamicUIProps(InputType.Number, "minNodeCpus", "", [], false, false),
     new DynamicUIProps(
       InputType.Object,
-      "MaxRunDuration",
-      "The timeout for new network connections to hosts.",
-      Compute_InstanceFromMachineImageSchedulingMaxRunDuration_GetTypes(),
+      "localSsdRecoveryTimeout",
+      "Specifies the maximum amount of time a Local Ssd Vm should wait while\n  recovery of the Local Ssd state is attempted. Its value should be in\n  between 0 and 168 hours with hour granularity and the default value being 1\n  hour.",
+      compute_InstanceFromMachineImageSchedulingLocalSsdRecoveryTimeout_GetTypes(),
       false,
       true,
     ),
-    new DynamicUIProps(InputType.Number, "MinNodeCpus", "", [], false, false),
+    new DynamicUIProps(
+      InputType.Object,
+      "maxRunDuration",
+      "The timeout for new network connections to hosts.",
+      compute_InstanceFromMachineImageSchedulingMaxRunDuration_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "nodeAffinities",
+      "Specifies node affinities or anti-affinities to determine which sole-tenant nodes your instances and managed instance groups will use as host systems.",
+      compute_InstanceFromMachineImageSchedulingNodeAffinity_GetTypes(),
+      false,
+      false,
+    ),
     new DynamicUIProps(
       InputType.Bool,
-      "Preemptible",
+      "preemptible",
       "Whether the instance is preemptible.",
       [],
       false,
@@ -108,7 +116,7 @@ export function Compute_InstanceFromMachineImageScheduling_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProvisioningModel",
+      "provisioningModel",
       "Whether the instance is spot. If this is set as SPOT.",
       [],
       false,
@@ -116,16 +124,8 @@ export function Compute_InstanceFromMachineImageScheduling_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "InstanceTerminationAction",
+      "instanceTerminationAction",
       "Specifies the action GCE should take when SPOT VM is preempted.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "MaintenanceInterval",
-      "Specifies the frequency of planned maintenance events. The accepted values are: PERIODIC",
       [],
       false,
       false,

@@ -6,50 +6,74 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Bigquery_TableExternalDataConfigurationCsvOptions,
-  Bigquery_TableExternalDataConfigurationCsvOptions_GetTypes,
-} from "./Bigquery_TableExternalDataConfigurationCsvOptions";
+  bigquery_TableExternalDataConfigurationParquetOptions,
+  bigquery_TableExternalDataConfigurationParquetOptions_GetTypes,
+} from "./bigquery_TableExternalDataConfigurationParquetOptions";
 import {
-  Bigquery_TableExternalDataConfigurationGoogleSheetsOptions,
-  Bigquery_TableExternalDataConfigurationGoogleSheetsOptions_GetTypes,
-} from "./Bigquery_TableExternalDataConfigurationGoogleSheetsOptions";
+  bigquery_TableExternalDataConfigurationCsvOptions,
+  bigquery_TableExternalDataConfigurationCsvOptions_GetTypes,
+} from "./bigquery_TableExternalDataConfigurationCsvOptions";
 import {
-  Bigquery_TableExternalDataConfigurationAvroOptions,
-  Bigquery_TableExternalDataConfigurationAvroOptions_GetTypes,
-} from "./Bigquery_TableExternalDataConfigurationAvroOptions";
+  bigquery_TableExternalDataConfigurationHivePartitioningOptions,
+  bigquery_TableExternalDataConfigurationHivePartitioningOptions_GetTypes,
+} from "./bigquery_TableExternalDataConfigurationHivePartitioningOptions";
 import {
-  Bigquery_TableExternalDataConfigurationJsonOptions,
-  Bigquery_TableExternalDataConfigurationJsonOptions_GetTypes,
-} from "./Bigquery_TableExternalDataConfigurationJsonOptions";
+  bigquery_TableExternalDataConfigurationJsonOptions,
+  bigquery_TableExternalDataConfigurationJsonOptions_GetTypes,
+} from "./bigquery_TableExternalDataConfigurationJsonOptions";
 import {
-  Bigquery_TableExternalDataConfigurationHivePartitioningOptions,
-  Bigquery_TableExternalDataConfigurationHivePartitioningOptions_GetTypes,
-} from "./Bigquery_TableExternalDataConfigurationHivePartitioningOptions";
+  bigquery_TableExternalDataConfigurationAvroOptions,
+  bigquery_TableExternalDataConfigurationAvroOptions_GetTypes,
+} from "./bigquery_TableExternalDataConfigurationAvroOptions";
 import {
-  Bigquery_TableExternalDataConfigurationParquetOptions,
-  Bigquery_TableExternalDataConfigurationParquetOptions_GetTypes,
-} from "./Bigquery_TableExternalDataConfigurationParquetOptions";
+  bigquery_TableExternalDataConfigurationGoogleSheetsOptions,
+  bigquery_TableExternalDataConfigurationGoogleSheetsOptions_GetTypes,
+} from "./bigquery_TableExternalDataConfigurationGoogleSheetsOptions";
 
-export interface Bigquery_TableExternalDataConfiguration {
+export interface bigquery_TableExternalDataConfiguration {
   /*
-The data format. Please see sourceFormat under
-[ExternalDataConfiguration](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#externaldataconfiguration)
-in Bigquery's public API documentation for supported formats. To use "GOOGLE_SHEETS"
-the `scopes` must include "https://www.googleapis.com/auth/drive.readonly".
+Additional properties to set if
+`source_format` is set to "PARQUET". Structure is documented below.
 */
-  SourceFormat?: string;
+  parquetOptions?: bigquery_TableExternalDataConfigurationParquetOptions;
 
   /*
-A list of the fully-qualified URIs that point to
-your data in Google Cloud.
+Additional properties to set if
+`source_format` is set to "CSV". Structure is documented below.
 */
-  SourceUris?: Array<string>;
+  csvOptions?: bigquery_TableExternalDataConfigurationCsvOptions;
 
   /*
-Let BigQuery try to autodetect the schema
-and format of the table.
+When set, configures hive partitioning
+support. Not all storage formats support hive partitioning -- requesting hive
+partitioning on an unsupported format will lead to an error, as will providing
+an invalid specification. Structure is documented below.
 */
-  Autodetect?: boolean;
+  hivePartitioningOptions?: bigquery_TableExternalDataConfigurationHivePartitioningOptions;
+
+  // Metadata Cache Mode for the table. Set this to enable caching of metadata from external data source. Valid values are `AUTOMATIC` and `MANUAL`.
+  metadataCacheMode?: string;
+
+  /*
+Additional properties to set if
+`source_format` is set to "JSON". Structure is documented below.
+*/
+  jsonOptions?: bigquery_TableExternalDataConfigurationJsonOptions;
+
+  /*
+The maximum number of bad records that
+BigQuery can ignore when reading data.
+*/
+  maxBadRecords?: number;
+
+  // Object Metadata is used to create Object Tables. Object Tables contain a listing of objects (with their metadata) found at the sourceUris. If `object_metadata` is set, `source_format` should be omitted.
+  objectMetadata?: string;
+
+  /*
+Additional options if `source_format` is set to
+"AVRO".  Structure is documented below.
+*/
+  avroOptions?: bigquery_TableExternalDataConfigurationAvroOptions;
 
   /*
 The connection specifying the credentials to be used to read
@@ -61,30 +85,14 @@ or `projects/{{project}}/locations/{{location}}/connections/{{connection_id}}`.
 table schema must be specified using the top-level `schema` field
 documented above.
 */
-  ConnectionId?: string;
+  connectionId?: string;
 
   /*
 Specifies how source URIs are interpreted for constructing the file set to load.
 By default source URIs are expanded against the underlying storage.
 Other options include specifying manifest files. Only applicable to object storage systems. Docs
 */
-  FileSetSpecType?: string;
-
-  // Object Metadata is used to create Object Tables. Object Tables contain a listing of objects (with their metadata) found at the sourceUris. If `object_metadata` is set, `source_format` should be omitted.
-  ObjectMetadata?: string;
-
-  /*
-Additional properties to set if
-`source_format` is set to "CSV". Structure is documented below.
-*/
-  CsvOptions?: Bigquery_TableExternalDataConfigurationCsvOptions;
-
-  /*
-Additional options if
-`source_format` is set to "GOOGLE_SHEETS". Structure is
-documented below.
-*/
-  GoogleSheetsOptions?: Bigquery_TableExternalDataConfigurationGoogleSheetsOptions;
+  fileSetSpecType?: string;
 
   /*
 Indicates if BigQuery should
@@ -94,28 +102,7 @@ extra columns are treated as bad records, and if there are too
 many bad records, an invalid error is returned in the job result.
 The default value is false.
 */
-  IgnoreUnknownValues?: boolean;
-
-  /*
-Additional options if `source_format` is set to
-"AVRO".  Structure is documented below.
-*/
-  AvroOptions?: Bigquery_TableExternalDataConfigurationAvroOptions;
-
-  /*
-The compression type of the data source.
-Valid values are "NONE" or "GZIP".
-*/
-  Compression?: string;
-
-  /*
-Additional properties to set if
-`source_format` is set to "JSON". Structure is documented below.
-*/
-  JsonOptions?: Bigquery_TableExternalDataConfigurationJsonOptions;
-
-  // When creating an external table, the user can provide a reference file with the table schema. This is enabled for the following formats: AVRO, PARQUET, ORC.
-  ReferenceFileSchemaUri?: string;
+  ignoreUnknownValues?: boolean;
 
   /*
 A JSON schema for the external table. Schema is required
@@ -134,69 +121,50 @@ datasource, after creation the computed schema will be stored in
 table schema must be specified using the top-level `schema` field
 documented above.
 */
-  Schema?: string;
+  schema?: string;
+
+  // When creating an external table, the user can provide a reference file with the table schema. This is enabled for the following formats: AVRO, PARQUET, ORC.
+  referenceFileSchemaUri?: string;
 
   /*
-When set, configures hive partitioning
-support. Not all storage formats support hive partitioning -- requesting hive
-partitioning on an unsupported format will lead to an error, as will providing
-an invalid specification. Structure is documented below.
+The data format. Please see sourceFormat under
+[ExternalDataConfiguration](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#externaldataconfiguration)
+in Bigquery's public API documentation for supported formats. To use "GOOGLE_SHEETS"
+the `scopes` must include "https://www.googleapis.com/auth/drive.readonly".
 */
-  HivePartitioningOptions?: Bigquery_TableExternalDataConfigurationHivePartitioningOptions;
+  sourceFormat?: string;
 
   /*
-The maximum number of bad records that
-BigQuery can ignore when reading data.
+A list of the fully-qualified URIs that point to
+your data in Google Cloud.
 */
-  MaxBadRecords?: number;
-
-  // Metadata Cache Mode for the table. Set this to enable caching of metadata from external data source. Valid values are `AUTOMATIC` and `MANUAL`.
-  MetadataCacheMode?: string;
+  sourceUris?: Array<string>;
 
   /*
-Additional properties to set if
-`source_format` is set to "PARQUET". Structure is documented below.
+Let BigQuery try to autodetect the schema
+and format of the table.
 */
-  ParquetOptions?: Bigquery_TableExternalDataConfigurationParquetOptions;
+  autodetect?: boolean;
+
+  /*
+The compression type of the data source.
+Valid values are "NONE" or "GZIP".
+*/
+  compression?: string;
+
+  /*
+Additional options if
+`source_format` is set to "GOOGLE_SHEETS". Structure is
+documented below.
+*/
+  googleSheetsOptions?: bigquery_TableExternalDataConfigurationGoogleSheetsOptions;
 }
 
-export function Bigquery_TableExternalDataConfiguration_GetTypes(): DynamicUIProps[] {
+export function bigquery_TableExternalDataConfiguration_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "JsonOptions",
-      'Additional properties to set if\n`source_format` is set to "JSON". Structure is documented below.',
-      Bigquery_TableExternalDataConfigurationJsonOptions_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "ParquetOptions",
-      'Additional properties to set if\n`source_format` is set to "PARQUET". Structure is documented below.',
-      Bigquery_TableExternalDataConfigurationParquetOptions_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "Autodetect",
-      "Let BigQuery try to autodetect the schema\nand format of the table.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "ConnectionId",
-      "The connection specifying the credentials to be used to read\nexternal storage, such as Azure Blob, Cloud Storage, or S3. The `connection_id` can have\nthe form `{{project}}.{{location}}.{{connection_id}}`\nor `projects/{{project}}/locations/{{location}}/connections/{{connection_id}}`.\n\n~>**NOTE:** If you set `external_data_configuration.connection_id`, the\ntable schema must be specified using the top-level `schema` field\ndocumented above.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "FileSetSpecType",
+      "fileSetSpecType",
       "Specifies how source URIs are interpreted for constructing the file set to load.\nBy default source URIs are expanded against the underlying storage.\nOther options include specifying manifest files. Only applicable to object storage systems. Docs",
       [],
       false,
@@ -204,95 +172,31 @@ export function Bigquery_TableExternalDataConfiguration_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IgnoreUnknownValues",
+      "ignoreUnknownValues",
       "Indicates if BigQuery should\nallow extra values that are not represented in the table schema.\nIf true, the extra values are ignored. If false, records with\nextra columns are treated as bad records, and if there are too\nmany bad records, an invalid error is returned in the job result.\nThe default value is false.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "Compression",
-      'The compression type of the data source.\nValid values are "NONE" or "GZIP".',
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ReferenceFileSchemaUri",
-      "When creating an external table, the user can provide a reference file with the table schema. This is enabled for the following formats: AVRO, PARQUET, ORC.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "MaxBadRecords",
-      "The maximum number of bad records that\nBigQuery can ignore when reading data.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "SourceFormat",
-      'The data format. Please see sourceFormat under\n[ExternalDataConfiguration](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#externaldataconfiguration)\nin Bigquery\'s public API documentation for supported formats. To use "GOOGLE_SHEETS"\nthe `scopes` must include "https://www.googleapis.com/auth/drive.readonly".',
-      [],
+      InputType.Object,
+      "parquetOptions",
+      'Additional properties to set if\n`source_format` is set to "PARQUET". Structure is documented below.',
+      bigquery_TableExternalDataConfigurationParquetOptions_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "AvroOptions",
-      'Additional options if `source_format` is set to\n"AVRO".  Structure is documented below.',
-      Bigquery_TableExternalDataConfigurationAvroOptions_GetTypes(),
+      "jsonOptions",
+      'Additional properties to set if\n`source_format` is set to "JSON". Structure is documented below.',
+      bigquery_TableExternalDataConfigurationJsonOptions_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Schema",
-      "A JSON schema for the external table. Schema is required\nfor CSV and JSON formats if autodetect is not on. Schema is disallowed\nfor Google Cloud Bigtable, Cloud Datastore backups, Avro, Iceberg, ORC and Parquet formats.\n~>**NOTE:** Because this field expects a JSON string, any changes to the\nstring will create a diff, even if the JSON itself hasn't changed.\nFurthermore drift for this field cannot not be detected because BigQuery\nonly uses this schema to compute the effective schema for the table, therefore\nany changes on the configured value will force the table to be recreated.\nThis schema is effectively only applied when creating a table from an external\ndatasource, after creation the computed schema will be stored in\n`google_bigquery_table.schema`\n\n~>**NOTE:** If you set `external_data_configuration.connection_id`, the\ntable schema must be specified using the top-level `schema` field\ndocumented above.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "GoogleSheetsOptions",
-      'Additional options if\n`source_format` is set to "GOOGLE_SHEETS". Structure is\ndocumented below.',
-      Bigquery_TableExternalDataConfigurationGoogleSheetsOptions_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "HivePartitioningOptions",
-      "When set, configures hive partitioning\nsupport. Not all storage formats support hive partitioning -- requesting hive\npartitioning on an unsupported format will lead to an error, as will providing\nan invalid specification. Structure is documented below.",
-      Bigquery_TableExternalDataConfigurationHivePartitioningOptions_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "MetadataCacheMode",
-      "Metadata Cache Mode for the table. Set this to enable caching of metadata from external data source. Valid values are `AUTOMATIC` and `MANUAL`.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "SourceUris",
-      "A list of the fully-qualified URIs that point to\nyour data in Google Cloud.",
-      InputType_String_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ObjectMetadata",
+      "objectMetadata",
       "Object Metadata is used to create Object Tables. Object Tables contain a listing of objects (with their metadata) found at the sourceUris. If `object_metadata` is set, `source_format` should be omitted.",
       [],
       false,
@@ -300,9 +204,105 @@ export function Bigquery_TableExternalDataConfiguration_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Object,
-      "CsvOptions",
+      "avroOptions",
+      'Additional options if `source_format` is set to\n"AVRO".  Structure is documented below.',
+      bigquery_TableExternalDataConfigurationAvroOptions_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "compression",
+      'The compression type of the data source.\nValid values are "NONE" or "GZIP".',
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "csvOptions",
       'Additional properties to set if\n`source_format` is set to "CSV". Structure is documented below.',
-      Bigquery_TableExternalDataConfigurationCsvOptions_GetTypes(),
+      bigquery_TableExternalDataConfigurationCsvOptions_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "referenceFileSchemaUri",
+      "When creating an external table, the user can provide a reference file with the table schema. This is enabled for the following formats: AVRO, PARQUET, ORC.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "sourceUris",
+      "A list of the fully-qualified URIs that point to\nyour data in Google Cloud.",
+      InputType_String_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "autodetect",
+      "Let BigQuery try to autodetect the schema\nand format of the table.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "googleSheetsOptions",
+      'Additional options if\n`source_format` is set to "GOOGLE_SHEETS". Structure is\ndocumented below.',
+      bigquery_TableExternalDataConfigurationGoogleSheetsOptions_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "hivePartitioningOptions",
+      "When set, configures hive partitioning\nsupport. Not all storage formats support hive partitioning -- requesting hive\npartitioning on an unsupported format will lead to an error, as will providing\nan invalid specification. Structure is documented below.",
+      bigquery_TableExternalDataConfigurationHivePartitioningOptions_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "maxBadRecords",
+      "The maximum number of bad records that\nBigQuery can ignore when reading data.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "connectionId",
+      "The connection specifying the credentials to be used to read\nexternal storage, such as Azure Blob, Cloud Storage, or S3. The `connection_id` can have\nthe form `{{project}}.{{location}}.{{connection_id}}`\nor `projects/{{project}}/locations/{{location}}/connections/{{connection_id}}`.\n\n~>**NOTE:** If you set `external_data_configuration.connection_id`, the\ntable schema must be specified using the top-level `schema` field\ndocumented above.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "schema",
+      "A JSON schema for the external table. Schema is required\nfor CSV and JSON formats if autodetect is not on. Schema is disallowed\nfor Google Cloud Bigtable, Cloud Datastore backups, Avro, Iceberg, ORC and Parquet formats.\n~>**NOTE:** Because this field expects a JSON string, any changes to the\nstring will create a diff, even if the JSON itself hasn't changed.\nFurthermore drift for this field cannot not be detected because BigQuery\nonly uses this schema to compute the effective schema for the table, therefore\nany changes on the configured value will force the table to be recreated.\nThis schema is effectively only applied when creating a table from an external\ndatasource, after creation the computed schema will be stored in\n`google_bigquery_table.schema`\n\n~>**NOTE:** If you set `external_data_configuration.connection_id`, the\ntable schema must be specified using the top-level `schema` field\ndocumented above.",
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "metadataCacheMode",
+      "Metadata Cache Mode for the table. Set this to enable caching of metadata from external data source. Valid values are `AUTOMATIC` and `MANUAL`.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "sourceFormat",
+      'The data format. Please see sourceFormat under\n[ExternalDataConfiguration](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#externaldataconfiguration)\nin Bigquery\'s public API documentation for supported formats. To use "GOOGLE_SHEETS"\nthe `scopes` must include "https://www.googleapis.com/auth/drive.readonly".',
+      [],
       false,
       false,
     ),

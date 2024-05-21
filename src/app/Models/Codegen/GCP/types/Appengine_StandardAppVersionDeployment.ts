@@ -6,44 +6,44 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Appengine_StandardAppVersionDeploymentFile,
-  Appengine_StandardAppVersionDeploymentFile_GetTypes,
-} from "./Appengine_StandardAppVersionDeploymentFile";
+  appengine_StandardAppVersionDeploymentZip,
+  appengine_StandardAppVersionDeploymentZip_GetTypes,
+} from "./appengine_StandardAppVersionDeploymentZip";
 import {
-  Appengine_StandardAppVersionDeploymentZip,
-  Appengine_StandardAppVersionDeploymentZip_GetTypes,
-} from "./Appengine_StandardAppVersionDeploymentZip";
+  appengine_StandardAppVersionDeploymentFile,
+  appengine_StandardAppVersionDeploymentFile_GetTypes,
+} from "./appengine_StandardAppVersionDeploymentFile";
 
-export interface Appengine_StandardAppVersionDeployment {
+export interface appengine_StandardAppVersionDeployment {
   /*
 Manifest of the files stored in Google Cloud Storage that are included as part of this version.
 All files must be readable using the credentials supplied with this call.
 Structure is documented below.
 */
-  Files?: Array<Appengine_StandardAppVersionDeploymentFile>;
+  files?: Array<appengine_StandardAppVersionDeploymentFile>;
 
   /*
 Zip File
 Structure is documented below.
 */
-  Zip?: Appengine_StandardAppVersionDeploymentZip;
+  zip?: appengine_StandardAppVersionDeploymentZip;
 }
 
-export function Appengine_StandardAppVersionDeployment_GetTypes(): DynamicUIProps[] {
+export function appengine_StandardAppVersionDeployment_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Files",
+      "files",
       "Manifest of the files stored in Google Cloud Storage that are included as part of this version.\nAll files must be readable using the credentials supplied with this call.\nStructure is documented below.",
-      Appengine_StandardAppVersionDeploymentFile_GetTypes(),
+      appengine_StandardAppVersionDeploymentFile_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Zip",
+      "zip",
       "Zip File\nStructure is documented below.",
-      Appengine_StandardAppVersionDeploymentZip_GetTypes(),
+      appengine_StandardAppVersionDeploymentZip_GetTypes(),
       false,
       false,
     ),

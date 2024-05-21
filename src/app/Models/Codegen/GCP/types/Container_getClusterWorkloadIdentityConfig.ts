@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterWorkloadIdentityConfig {
+export interface container_getClusterWorkloadIdentityConfig {
   // The workload pool to attach all Kubernetes service accounts to.
-  WorkloadPool?: string;
+  workloadPool?: string;
 }
 
-export function Container_getClusterWorkloadIdentityConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterWorkloadIdentityConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "WorkloadPool",
+      "workloadPool",
       "The workload pool to attach all Kubernetes service accounts to.",
       [],
       true,

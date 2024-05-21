@@ -6,57 +6,41 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Bigquery_ConnectionCloudSqlCredential,
-  Bigquery_ConnectionCloudSqlCredential_GetTypes,
-} from "./Bigquery_ConnectionCloudSqlCredential";
+  bigquery_ConnectionCloudSqlCredential,
+  bigquery_ConnectionCloudSqlCredential_GetTypes,
+} from "./bigquery_ConnectionCloudSqlCredential";
 
-export interface Bigquery_ConnectionCloudSql {
+export interface bigquery_ConnectionCloudSql {
   /*
 Cloud SQL properties.
 Structure is documented below.
 */
-  Credential?: Bigquery_ConnectionCloudSqlCredential;
+  credential?: bigquery_ConnectionCloudSqlCredential;
 
   // Database name.
-  Database?: string;
+  database?: string;
 
   // Cloud SQL instance ID in the form project:location:instance.
-  InstanceId?: string;
+  instanceId?: string;
 
   /*
 (Output)
 When the connection is used in the context of an operation in BigQuery, this service account will serve as the identity being used for connecting to the CloudSQL instance specified in this connection.
 */
-  ServiceAccountId?: string;
+  serviceAccountId?: string;
 
   /*
 Type of the Cloud SQL database.
 Possible values are: `DATABASE_TYPE_UNSPECIFIED`, `POSTGRES`, `MYSQL`.
 */
-  Type?: string;
+  type?: string;
 }
 
-export function Bigquery_ConnectionCloudSql_GetTypes(): DynamicUIProps[] {
+export function bigquery_ConnectionCloudSql_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "Credential",
-      "Cloud SQL properties.\nStructure is documented below.",
-      Bigquery_ConnectionCloudSqlCredential_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Database",
-      "Database name.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "InstanceId",
+      "instanceId",
       "Cloud SQL instance ID in the form project:location:instance.",
       [],
       true,
@@ -64,7 +48,7 @@ export function Bigquery_ConnectionCloudSql_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ServiceAccountId",
+      "serviceAccountId",
       "(Output)\nWhen the connection is used in the context of an operation in BigQuery, this service account will serve as the identity being used for connecting to the CloudSQL instance specified in this connection.",
       [],
       false,
@@ -72,8 +56,24 @@ export function Bigquery_ConnectionCloudSql_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "Type of the Cloud SQL database.\nPossible values are: `DATABASE_TYPE_UNSPECIFIED`, `POSTGRES`, `MYSQL`.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "credential",
+      "Cloud SQL properties.\nStructure is documented below.",
+      bigquery_ConnectionCloudSqlCredential_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "database",
+      "Database name.",
       [],
       true,
       false,

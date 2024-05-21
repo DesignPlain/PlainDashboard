@@ -6,35 +6,42 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudidentity_getGroupsGroupAdditionalGroupKey,
-  Cloudidentity_getGroupsGroupAdditionalGroupKey_GetTypes,
-} from "./Cloudidentity_getGroupsGroupAdditionalGroupKey";
+  cloudidentity_getGroupsGroupAdditionalGroupKey,
+  cloudidentity_getGroupsGroupAdditionalGroupKey_GetTypes,
+} from "./cloudidentity_getGroupsGroupAdditionalGroupKey";
 import {
-  Cloudidentity_getGroupsGroupGroupKey,
-  Cloudidentity_getGroupsGroupGroupKey_GetTypes,
-} from "./Cloudidentity_getGroupsGroupGroupKey";
+  cloudidentity_getGroupsGroupGroupKey,
+  cloudidentity_getGroupsGroupGroupKey_GetTypes,
+} from "./cloudidentity_getGroupsGroupGroupKey";
 
-export interface Cloudidentity_getGroupsGroup {
+export interface cloudidentity_getGroupsGroup {
   // Additional group keys associated with the Group
-  AdditionalGroupKeys?: Array<Cloudidentity_getGroupsGroupAdditionalGroupKey>;
+  additionalGroupKeys?: Array<cloudidentity_getGroupsGroupAdditionalGroupKey>;
 
   // The time when the Group was created.
-  CreateTime?: string;
-
-  // The display name of the Group.
-  DisplayName?: string;
-
-  // The parent resource under which to list all Groups. Must be of the form identitysources/{identity_source_id} for external- identity-mapped groups or customers/{customer_id} for Google Groups.
-  Parent?: string;
-
-  // The time when the Group was last updated.
-  UpdateTime?: string;
+  createTime?: string;
 
   // An extended description to help users determine the purpose of a Group.
-  Description?: string;
+  description?: string;
+
+  /*
+The labels that apply to the Group.
+Contains 'cloudidentity.googleapis.com/groups.discussion_forum': '' if the Group is a Google Group or
+'system/groups/external': '' if the Group is an external-identity-mapped group.
+*/
+  labels?: Map<string, string>;
+
+  // Resource name of the Group in the format: groups/{group_id}, where `group_id` is the unique ID assigned to the Group.
+  name?: string;
+
+  // The time when the Group was last updated.
+  updateTime?: string;
+
+  // The display name of the Group.
+  displayName?: string;
 
   // EntityKey of the Group.  Structure is documented below.
-  GroupKeys?: Array<Cloudidentity_getGroupsGroupGroupKey>;
+  groupKeys?: Array<cloudidentity_getGroupsGroupGroupKey>;
 
   /*
 The initial configuration options for creating a Group.
@@ -43,72 +50,25 @@ See the
 [API reference](https://cloud.google.com/identity/docs/reference/rest/v1beta1/groups/create#initialgroupconfig)
 for possible values. Default value: "EMPTY" Possible values: ["INITIAL_GROUP_CONFIG_UNSPECIFIED", "WITH_INITIAL_OWNER", "EMPTY"]
 */
-  InitialGroupConfig?: string;
+  initialGroupConfig?: string;
 
-  /*
-The labels that apply to the Group.
-Contains 'cloudidentity.googleapis.com/groups.discussion_forum': '' if the Group is a Google Group or
-'system/groups/external': '' if the Group is an external-identity-mapped group.
-*/
-  Labels?: Map<string, string>;
-
-  // Resource name of the Group in the format: groups/{group_id}, where `group_id` is the unique ID assigned to the Group.
-  Name?: string;
+  // The parent resource under which to list all Groups. Must be of the form identitysources/{identity_source_id} for external- identity-mapped groups or customers/{customer_id} for Google Groups.
+  parent?: string;
 }
 
-export function Cloudidentity_getGroupsGroup_GetTypes(): DynamicUIProps[] {
+export function cloudidentity_getGroupsGroup_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "AdditionalGroupKeys",
-      "Additional group keys associated with the Group",
-      Cloudidentity_getGroupsGroupAdditionalGroupKey_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "CreateTime",
-      "The time when the Group was created.",
+      "name",
+      "Resource name of the Group in the format: groups/{group_id}, where `group_id` is the unique ID assigned to the Group.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Parent",
-      "The parent resource under which to list all Groups. Must be of the form identitysources/{identity_source_id} for external- identity-mapped groups or customers/{customer_id} for Google Groups.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "GroupKeys",
-      "EntityKey of the Group.  Structure is documented below.",
-      Cloudidentity_getGroupsGroupGroupKey_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "InitialGroupConfig",
-      'The initial configuration options for creating a Group.\n\nSee the\n[API reference](https://cloud.google.com/identity/docs/reference/rest/v1beta1/groups/create#initialgroupconfig)\nfor possible values. Default value: "EMPTY" Possible values: ["INITIAL_GROUP_CONFIG_UNSPECIFIED", "WITH_INITIAL_OWNER", "EMPTY"]',
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "DisplayName",
-      "The display name of the Group.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "UpdateTime",
+      "updateTime",
       "The time when the Group was last updated.",
       [],
       true,
@@ -116,7 +76,47 @@ export function Cloudidentity_getGroupsGroup_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "initialGroupConfig",
+      'The initial configuration options for creating a Group.\n\nSee the\n[API reference](https://cloud.google.com/identity/docs/reference/rest/v1beta1/groups/create#initialgroupconfig)\nfor possible values. Default value: "EMPTY" Possible values: ["INITIAL_GROUP_CONFIG_UNSPECIFIED", "WITH_INITIAL_OWNER", "EMPTY"]',
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "parent",
+      "The parent resource under which to list all Groups. Must be of the form identitysources/{identity_source_id} for external- identity-mapped groups or customers/{customer_id} for Google Groups.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "groupKeys",
+      "EntityKey of the Group.  Structure is documented below.",
+      cloudidentity_getGroupsGroupGroupKey_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "additionalGroupKeys",
+      "Additional group keys associated with the Group",
+      cloudidentity_getGroupsGroupAdditionalGroupKey_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "createTime",
+      "The time when the Group was created.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "description",
       "An extended description to help users determine the purpose of a Group.",
       [],
       true,
@@ -124,7 +124,7 @@ export function Cloudidentity_getGroupsGroup_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Labels",
+      "labels",
       "The labels that apply to the Group.\nContains 'cloudidentity.googleapis.com/groups.discussion_forum': '' if the Group is a Google Group or\n'system/groups/external': '' if the Group is an external-identity-mapped group.",
       InputType_Map_GetTypes(),
       true,
@@ -132,8 +132,8 @@ export function Cloudidentity_getGroupsGroup_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
-      "Resource name of the Group in the format: groups/{group_id}, where `group_id` is the unique ID assigned to the Group.",
+      "displayName",
+      "The display name of the Group.",
       [],
       true,
       false,

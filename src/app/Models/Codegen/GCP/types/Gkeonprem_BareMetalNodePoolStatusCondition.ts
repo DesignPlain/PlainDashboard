@@ -6,61 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalNodePoolStatusCondition {
+export interface gkeonprem_BareMetalNodePoolStatusCondition {
+  /*
+(Output)
+Last time the condition transit from one status to another.
+*/
+  lastTransitionTime?: string;
+
+  // Human-readable message indicating details about last transition.
+  message?: string;
+
   // Machine-readable message indicating details about last transition.
-  Reason?: string;
+  reason?: string;
 
   /*
 (Output)
 The lifecycle state of the condition.
 */
-  State?: string;
+  state?: string;
 
   /*
 Type of the condition.
 (e.g., ClusterRunning, NodePoolRunning or ServerSidePreflightReady)
 */
-  Type?: string;
-
-  /*
-(Output)
-Last time the condition transit from one status to another.
-*/
-  LastTransitionTime?: string;
-
-  // Human-readable message indicating details about last transition.
-  Message?: string;
+  type?: string;
 }
 
-export function Gkeonprem_BareMetalNodePoolStatusCondition_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalNodePoolStatusCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Reason",
-      "Machine-readable message indicating details about last transition.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "State",
-      "(Output)\nThe lifecycle state of the condition.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Type",
-      "Type of the condition.\n(e.g., ClusterRunning, NodePoolRunning or ServerSidePreflightReady)",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "LastTransitionTime",
+      "lastTransitionTime",
       "(Output)\nLast time the condition transit from one status to another.",
       [],
       false,
@@ -68,8 +44,32 @@ export function Gkeonprem_BareMetalNodePoolStatusCondition_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "Message",
+      "message",
       "Human-readable message indicating details about last transition.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "reason",
+      "Machine-readable message indicating details about last transition.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "state",
+      "(Output)\nThe lifecycle state of the condition.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "type",
+      "Type of the condition.\n(e.g., ClusterRunning, NodePoolRunning or ServerSidePreflightReady)",
       [],
       false,
       false,

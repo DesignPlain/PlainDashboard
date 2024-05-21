@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig,
-  Gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig_GetTypes,
-} from "./Gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig";
+  gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig,
+  gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig_GetTypes,
+} from "./gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig";
 import {
-  Gkehub_FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig,
-  Gkehub_FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig_GetTypes,
-} from "./Gkehub_FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig";
+  gkehub_FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig,
+  gkehub_FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig_GetTypes,
+} from "./gkehub_FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig";
 
-export interface Gkehub_FeatureSpecFleetobservabilityLoggingConfig {
+export interface gkehub_FeatureSpecFleetobservabilityLoggingConfig {
   /*
 Specified if applying the default routing config to logs not specified in other configs.
 Structure is documented below.
 */
-  DefaultConfig?: Gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig;
+  defaultConfig?: gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig;
 
   /*
 Specified if applying the routing config to all logs for all fleet scopes.
 Structure is documented below.
 */
-  FleetScopeLogsConfig?: Gkehub_FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig;
+  fleetScopeLogsConfig?: gkehub_FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig;
 }
 
-export function Gkehub_FeatureSpecFleetobservabilityLoggingConfig_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureSpecFleetobservabilityLoggingConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "DefaultConfig",
+      "defaultConfig",
       "Specified if applying the default routing config to logs not specified in other configs.\nStructure is documented below.",
-      Gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig_GetTypes(),
+      gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "FleetScopeLogsConfig",
+      "fleetScopeLogsConfig",
       "Specified if applying the routing config to all logs for all fleet scopes.\nStructure is documented below.",
-      Gkehub_FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig_GetTypes(),
+      gkehub_FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig_GetTypes(),
       false,
       false,
     ),

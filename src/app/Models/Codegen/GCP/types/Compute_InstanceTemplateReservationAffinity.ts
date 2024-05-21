@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_InstanceTemplateReservationAffinitySpecificReservation,
-  Compute_InstanceTemplateReservationAffinitySpecificReservation_GetTypes,
-} from "./Compute_InstanceTemplateReservationAffinitySpecificReservation";
+  compute_InstanceTemplateReservationAffinitySpecificReservation,
+  compute_InstanceTemplateReservationAffinitySpecificReservation_GetTypes,
+} from "./compute_InstanceTemplateReservationAffinitySpecificReservation";
 
-export interface Compute_InstanceTemplateReservationAffinity {
+export interface compute_InstanceTemplateReservationAffinity {
   /*
 Specifies the label selector for the reservation to use..
 Structure is documented below.
 */
-  SpecificReservation?: Compute_InstanceTemplateReservationAffinitySpecificReservation;
+  specificReservation?: compute_InstanceTemplateReservationAffinitySpecificReservation;
 
   // The type of reservation from which this instance can consume resources.
-  Type?: string;
+  type?: string;
 }
 
-export function Compute_InstanceTemplateReservationAffinity_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceTemplateReservationAffinity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "Type",
-      "The type of reservation from which this instance can consume resources.",
-      [],
-      true,
+      InputType.Object,
+      "specificReservation",
+      "Specifies the label selector for the reservation to use..\nStructure is documented below.",
+      compute_InstanceTemplateReservationAffinitySpecificReservation_GetTypes(),
+      false,
       true,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "SpecificReservation",
-      "Specifies the label selector for the reservation to use..\nStructure is documented below.",
-      Compute_InstanceTemplateReservationAffinitySpecificReservation_GetTypes(),
-      false,
+      InputType.String,
+      "type",
+      "The type of reservation from which this instance can consume resources.",
+      [],
+      true,
       true,
     ),
   ];

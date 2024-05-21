@@ -6,38 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_EdgeCacheKeysetPublicKey {
-  /*
-The base64-encoded value of the Ed25519 public key. The base64 encoding can be padded (44 bytes) or unpadded (43 bytes).
-Representations or encodings of the public key other than this will be rejected with an error.
---Note--: This property is sensitive and will not be displayed in the plan.
-*/
-  Value?: string;
-
+export interface networkservices_EdgeCacheKeysetPublicKey {
   /*
 The ID of the public key. The ID must be 1-63 characters long, and comply with RFC1035.
 The name must be 1-64 characters long, and match the regular expression [a-zA-Z][a-zA-Z0-9_-]-
 which means the first character must be a letter, and all following characters must be a dash, underscore, letter or digit.
 */
-  Id?: string;
+  id?: string;
 
   // Set to true to have the CDN automatically manage this public key value.
-  Managed?: boolean;
+  managed?: boolean;
+
+  /*
+The base64-encoded value of the Ed25519 public key. The base64 encoding can be padded (44 bytes) or unpadded (43 bytes).
+Representations or encodings of the public key other than this will be rejected with an error.
+--Note--: This property is sensitive and will not be displayed in the plan.
+*/
+  value?: string;
 }
 
-export function Networkservices_EdgeCacheKeysetPublicKey_GetTypes(): DynamicUIProps[] {
+export function networkservices_EdgeCacheKeysetPublicKey_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Value",
-      "The base64-encoded value of the Ed25519 public key. The base64 encoding can be padded (44 bytes) or unpadded (43 bytes).\nRepresentations or encodings of the public key other than this will be rejected with an error.\n**Note**: This property is sensitive and will not be displayed in the plan.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Id",
+      "id",
       "The ID of the public key. The ID must be 1-63 characters long, and comply with RFC1035.\nThe name must be 1-64 characters long, and match the regular expression [a-zA-Z][a-zA-Z0-9_-]*\nwhich means the first character must be a letter, and all following characters must be a dash, underscore, letter or digit.",
       [],
       true,
@@ -45,8 +37,16 @@ export function Networkservices_EdgeCacheKeysetPublicKey_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Managed",
+      "managed",
       "Set to true to have the CDN automatically manage this public key value.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "value",
+      "The base64-encoded value of the Ed25519 public key. The base64 encoding can be padded (44 bytes) or unpadded (43 bytes).\nRepresentations or encodings of the public key other than this will be rejected with an error.\n**Note**: This property is sensitive and will not be displayed in the plan.",
       [],
       false,
       false,

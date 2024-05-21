@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxPageTransitionRouteTriggerFulfillmentMessageOutputAudioText {
+export interface diagflow_CxPageTransitionRouteTriggerFulfillmentMessageOutputAudioText {
+  // The SSML text to be synthesized. For more information, see SSML.
+  ssml?: string;
+
+  // The raw text to be synthesized.
+  text?: string;
+
   /*
 (Output)
 Whether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.
 */
-  AllowPlaybackInterruption?: boolean;
-
-  // The SSML text to be synthesized. For more information, see SSML.
-  Ssml?: string;
-
-  // The raw text to be synthesized.
-  Text?: string;
+  allowPlaybackInterruption?: boolean;
 }
 
-export function Diagflow_CxPageTransitionRouteTriggerFulfillmentMessageOutputAudioText_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxPageTransitionRouteTriggerFulfillmentMessageOutputAudioText_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "text",
+      "The raw text to be synthesized.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Bool,
-      "AllowPlaybackInterruption",
+      "allowPlaybackInterruption",
       "(Output)\nWhether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.",
       [],
       false,
@@ -32,16 +40,8 @@ export function Diagflow_CxPageTransitionRouteTriggerFulfillmentMessageOutputAud
     ),
     new DynamicUIProps(
       InputType.String,
-      "Ssml",
+      "ssml",
       "The SSML text to be synthesized. For more information, see SSML.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Text",
-      "The raw text to be synthesized.",
       [],
       false,
       false,

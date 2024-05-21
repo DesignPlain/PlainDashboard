@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_PatchDeploymentRolloutDisruptionBudget {
+export interface osconfig_PatchDeploymentRolloutDisruptionBudget {
   // Specifies a fixed value.
-  Fixed?: number;
+  fixed?: number;
 
   // Specifies the relative value defined as a percentage, which will be multiplied by a reference value.
-  Percentage?: number;
+  percentage?: number;
 }
 
-export function Osconfig_PatchDeploymentRolloutDisruptionBudget_GetTypes(): DynamicUIProps[] {
+export function osconfig_PatchDeploymentRolloutDisruptionBudget_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Fixed",
+      "fixed",
       "Specifies a fixed value.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Osconfig_PatchDeploymentRolloutDisruptionBudget_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Percentage",
+      "percentage",
       "Specifies the relative value defined as a percentage, which will be multiplied by a reference value.",
       [],
       false,

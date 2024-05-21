@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Discoveryengine_SearchEngineCommonConfig {
+export interface discoveryengine_SearchEngineCommonConfig {
   // The name of the company, business or entity that is associated with the engine. Setting this may help improve LLM related features.cd
-  CompanyName?: string;
+  companyName?: string;
 }
 
-export function Discoveryengine_SearchEngineCommonConfig_GetTypes(): DynamicUIProps[] {
+export function discoveryengine_SearchEngineCommonConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CompanyName",
+      "companyName",
       "The name of the company, business or entity that is associated with the engine. Setting this may help improve LLM related features.cd",
       [],
       false,

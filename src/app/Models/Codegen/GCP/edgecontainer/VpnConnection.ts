@@ -7,24 +7,30 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Edgecontainer_VpnConnectionVpcProject,
-  Edgecontainer_VpnConnectionVpcProject_GetTypes,
-} from "../types/Edgecontainer_VpnConnectionVpcProject";
+  edgecontainer_VpnConnectionVpcProject,
+  edgecontainer_VpnConnectionVpcProject_GetTypes,
+} from "../types/edgecontainer_VpnConnectionVpcProject";
 import {
-  Edgecontainer_VpnConnectionDetail,
-  Edgecontainer_VpnConnectionDetail_GetTypes,
-} from "../types/Edgecontainer_VpnConnectionDetail";
+  edgecontainer_VpnConnectionDetail,
+  edgecontainer_VpnConnectionDetail_GetTypes,
+} from "../types/edgecontainer_VpnConnectionDetail";
 
 export interface VpnConnectionArgs {
-  // Whether this VPN connection has HA enabled on cluster side. If enabled, when creating VPN connection we will attempt to use 2 ANG floating IPs.
-  EnableHighAvailability?: boolean;
+  /*
+Project detail of the VPC network. Required if VPC is in a different project than the cluster project.
+Structure is documented below.
+*/
+  vpcProject?: edgecontainer_VpnConnectionVpcProject;
+
+  // The canonical Cluster name to connect to. It is in the form of projects/{project}/locations/{location}/clusters/{cluster}.
+  cluster?: string;
 
   /*
 Labels associated with this resource.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   /*
 Google Cloud Platform location.
@@ -32,78 +38,69 @@ Google Cloud Platform location.
 
 - - -
 */
-  Location?: string;
+  location?: string;
+
+  // The resource name of VPN connection
+  name?: string;
 
   /*
 NAT gateway IP, or WAN IP address. If a customer has multiple NAT IPs, the customer needs to configure NAT such that only one external IP maps to the GMEC Anthos cluster.
 This is empty if NAT is not used.
 */
-  NatGatewayIp?: string;
+  natGatewayIp?: string;
+
+  // The network ID of VPC to connect to.
+  vpc?: string;
+
+  // Whether this VPN connection has HA enabled on cluster side. If enabled, when creating VPN connection we will attempt to use 2 ANG floating IPs.
+  enableHighAvailability?: boolean;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // The VPN connection Cloud Router name.
-  Router?: string;
-
-  /*
-Project detail of the VPC network. Required if VPC is in a different project than the cluster project.
-Structure is documented below.
-*/
-  VpcProject?: Edgecontainer_VpnConnectionVpcProject;
-
-  // The canonical Cluster name to connect to. It is in the form of projects/{project}/locations/{location}/clusters/{cluster}.
-  Cluster?: string;
-
-  // The resource name of VPN connection
-  Name?: string;
-
-  // The network ID of VPC to connect to.
-  Vpc?: string;
+  router?: string;
 }
 export class VpnConnection extends Resource {
-  // Whether this VPN connection has HA enabled on cluster side. If enabled, when creating VPN connection we will attempt to use 2 ANG floating IPs.
-  public EnableHighAvailability?: boolean;
-
-  /*
-Labels associated with this resource.
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  public Labels?: Map<string, string>;
-
-  // The time when the VPN connection was created.
-  public CreateTime?: string;
-
   /*
 A nested object resource
 Structure is documented below.
 */
-  public Details?: Array<Edgecontainer_VpnConnectionDetail>;
+  public details?: Array<edgecontainer_VpnConnectionDetail>;
+
+  // The resource name of VPN connection
+  public name?: string;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
-
-  // The canonical Cluster name to connect to. It is in the form of projects/{project}/locations/{location}/clusters/{cluster}.
-  public Cluster?: string;
-
-  // The resource name of VPN connection
-  public Name?: string;
-
-  // The VPN connection Cloud Router name.
-  public Router?: string;
+  public pulumiLabels?: Map<string, string>;
 
   // The time when the VPN connection was last updated.
-  public UpdateTime?: string;
+  public updateTime?: string;
 
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
+  // Whether this VPN connection has HA enabled on cluster side. If enabled, when creating VPN connection we will attempt to use 2 ANG floating IPs.
+  public enableHighAvailability?: boolean;
+
+  /*
+Labels associated with this resource.
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
+
+  /*
+NAT gateway IP, or WAN IP address. If a customer has multiple NAT IPs, the customer needs to configure NAT such that only one external IP maps to the GMEC Anthos cluster.
+This is empty if NAT is not used.
+*/
+  public natGatewayIp?: string;
+
+  // The canonical Cluster name to connect to. It is in the form of projects/{project}/locations/{location}/clusters/{cluster}.
+  public cluster?: string;
 
   /*
 Google Cloud Platform location.
@@ -111,90 +108,45 @@ Google Cloud Platform location.
 
 - - -
 */
-  public Location?: string;
-
-  /*
-NAT gateway IP, or WAN IP address. If a customer has multiple NAT IPs, the customer needs to configure NAT such that only one external IP maps to the GMEC Anthos cluster.
-This is empty if NAT is not used.
-*/
-  public NatGatewayIp?: string;
+  public location?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
+
+  // The VPN connection Cloud Router name.
+  public router?: string;
+
+  // The time when the VPN connection was created.
+  public createTime?: string;
+
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
 
   // The network ID of VPC to connect to.
-  public Vpc?: string;
+  public vpc?: string;
 
   /*
 Project detail of the VPC network. Required if VPC is in a different project than the cluster project.
 Structure is documented below.
 */
-  public VpcProject?: Edgecontainer_VpnConnectionVpcProject;
+  public vpcProject?: edgecontainer_VpnConnectionVpcProject;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.Object,
-        "VpcProject",
+        "vpcProject",
         "Project detail of the VPC network. Required if VPC is in a different project than the cluster project.\nStructure is documented below.",
-        Edgecontainer_VpnConnectionVpcProject_GetTypes(),
+        edgecontainer_VpnConnectionVpcProject_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
-        "The resource name of VPN connection",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Vpc",
-        "The network ID of VPC to connect to.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Bool,
-        "EnableHighAvailability",
-        "Whether this VPN connection has HA enabled on cluster side. If enabled, when creating VPN connection we will attempt to use 2 ANG floating IPs.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Location",
-        "Google Cloud Platform location.\n\n\n- - -",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Router",
-        "The VPN connection Cloud Router name.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Cluster",
+        "cluster",
         "The canonical Cluster name to connect to. It is in the form of projects/{project}/locations/{location}/clusters/{cluster}.",
         [],
         true,
@@ -202,7 +154,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "Labels associated with this resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
@@ -210,8 +162,56 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "NatGatewayIp",
+        "natGatewayIp",
         "NAT gateway IP, or WAN IP address. If a customer has multiple NAT IPs, the customer needs to configure NAT such that only one external IP maps to the GMEC Anthos cluster.\nThis is empty if NAT is not used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "router",
+        "The VPN connection Cloud Router name.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "location",
+        "Google Cloud Platform location.\n\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "The resource name of VPN connection",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "vpc",
+        "The network ID of VPC to connect to.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "enableHighAvailability",
+        "Whether this VPN connection has HA enabled on cluster side. If enabled, when creating VPN connection we will attempt to use 2 ANG floating IPs.",
         [],
         false,
         true,

@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigtable_GCPolicyMaxAge {
+export interface bigtable_GCPolicyMaxAge {
   // Number of days before applying GC policy.
-  Days?: number;
+  days?: number;
 
   /*
 Duration before applying GC policy (ex. "8h"). This is required when `days` isn't set
 
 -----
 */
-  Duration?: string;
+  duration?: string;
 }
 
-export function Bigtable_GCPolicyMaxAge_GetTypes(): DynamicUIProps[] {
+export function bigtable_GCPolicyMaxAge_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Days",
+      "days",
       "Number of days before applying GC policy.",
       [],
       false,
@@ -30,7 +30,7 @@ export function Bigtable_GCPolicyMaxAge_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Duration",
+      "duration",
       'Duration before applying GC policy (ex. "8h"). This is required when `days` isn\'t set\n\n-----',
       [],
       false,

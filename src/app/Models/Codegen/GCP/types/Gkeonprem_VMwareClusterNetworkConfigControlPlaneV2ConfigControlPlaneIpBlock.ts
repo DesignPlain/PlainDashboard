@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIp,
-  Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIp_GetTypes,
-} from "./Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIp";
+  gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIp,
+  gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIp_GetTypes,
+} from "./gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIp";
 
-export interface Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock {
-  // The netmask used by the VMware User Cluster.
-  Netmask?: string;
-
+export interface gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock {
   // The network gateway used by the VMware User Cluster.
-  Gateway?: string;
+  gateway?: string;
 
   /*
 The node's network configurations used by the VMware User Cluster.
 Structure is documented below.
 */
-  Ips?: Array<Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIp>;
+  ips?: Array<gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIp>;
+
+  // The netmask used by the VMware User Cluster.
+  netmask?: string;
 }
 
-export function Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Netmask",
+      "netmask",
       "The netmask used by the VMware User Cluster.",
       [],
       false,
@@ -36,7 +36,7 @@ export function Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlP
     ),
     new DynamicUIProps(
       InputType.String,
-      "Gateway",
+      "gateway",
       "The network gateway used by the VMware User Cluster.",
       [],
       false,
@@ -44,9 +44,9 @@ export function Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlP
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Ips",
+      "ips",
       "The node's network configurations used by the VMware User Cluster.\nStructure is documented below.",
-      Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIp_GetTypes(),
+      gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIp_GetTypes(),
       false,
       false,
     ),

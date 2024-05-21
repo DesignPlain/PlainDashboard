@@ -7,66 +7,66 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Vertex_AiEndpointIamMemberCondition,
-  Vertex_AiEndpointIamMemberCondition_GetTypes,
-} from "../types/Vertex_AiEndpointIamMemberCondition";
+  vertex_AiEndpointIamMemberCondition,
+  vertex_AiEndpointIamMemberCondition_GetTypes,
+} from "../types/vertex_AiEndpointIamMemberCondition";
 
 export interface AiEndpointIamMemberArgs {
   //
-  Location?: string;
+  condition?: vertex_AiEndpointIamMemberCondition;
 
   //
-  Member?: string;
+  endpoint?: string;
 
   //
-  Project?: string;
+  location?: string;
 
   //
-  Role?: string;
+  member?: string;
 
   //
-  Condition?: Vertex_AiEndpointIamMemberCondition;
+  project?: string;
 
   //
-  Endpoint?: string;
+  role?: string;
 }
 export class AiEndpointIamMember extends Resource {
   //
-  public Location?: string;
+  public role?: string;
 
   //
-  public Member?: string;
+  public condition?: vertex_AiEndpointIamMemberCondition;
 
   //
-  public Project?: string;
+  public endpoint?: string;
 
   //
-  public Role?: string;
+  public etag?: string;
 
   //
-  public Condition?: Vertex_AiEndpointIamMemberCondition;
+  public location?: string;
 
   //
-  public Endpoint?: string;
+  public member?: string;
 
   //
-  public Etag?: string;
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
-      new DynamicUIProps(InputType.String, "Project", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
+      new DynamicUIProps(InputType.String, "project", "", [], false, true),
+      new DynamicUIProps(InputType.String, "role", "", [], true, true),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Vertex_AiEndpointIamMemberCondition_GetTypes(),
+        vertex_AiEndpointIamMemberCondition_GetTypes(),
         false,
         true,
       ),
-      new DynamicUIProps(InputType.String, "Endpoint", "", [], true, true),
-      new DynamicUIProps(InputType.String, "Location", "", [], false, true),
+      new DynamicUIProps(InputType.String, "endpoint", "", [], true, true),
+      new DynamicUIProps(InputType.String, "location", "", [], false, true),
+      new DynamicUIProps(InputType.String, "member", "", [], true, true),
     ];
   }
 }

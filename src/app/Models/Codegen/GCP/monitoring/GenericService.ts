@@ -7,32 +7,15 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Monitoring_GenericServiceTelemetry,
-  Monitoring_GenericServiceTelemetry_GetTypes,
-} from "../types/Monitoring_GenericServiceTelemetry";
+  monitoring_GenericServiceTelemetry,
+  monitoring_GenericServiceTelemetry_GetTypes,
+} from "../types/monitoring_GenericServiceTelemetry";
 import {
-  Monitoring_GenericServiceBasicService,
-  Monitoring_GenericServiceBasicService_GetTypes,
-} from "../types/Monitoring_GenericServiceBasicService";
+  monitoring_GenericServiceBasicService,
+  monitoring_GenericServiceBasicService_GetTypes,
+} from "../types/monitoring_GenericServiceBasicService";
 
 export interface GenericServiceArgs {
-  /*
-A well-known service type, defined by its service type and service labels.
-Valid values of service types and services labels are described at
-https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli
-Structure is documented below.
-*/
-  BasicService?: Monitoring_GenericServiceBasicService;
-
-  // Name used for UI elements listing this Service.
-  DisplayName?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
   /*
 An optional service ID to use. If not given, the server will generate a
 service ID.
@@ -40,7 +23,7 @@ service ID.
 
 - - -
 */
-  ServiceId?: string;
+  serviceId?: string;
 
   /*
 Labels which have been used to annotate the service. Label keys must start
@@ -50,7 +33,24 @@ length of 63 characters, and must be less than 128 bytes in size. Up to 64
 label entries may be stored. For labels which do not have a semantic value,
 the empty string may be supplied for the label value.
 */
-  UserLabels?: Map<string, string>;
+  userLabels?: Map<string, string>;
+
+  /*
+A well-known service type, defined by its service type and service labels.
+Valid values of service types and services labels are described at
+https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli
+Structure is documented below.
+*/
+  basicService?: monitoring_GenericServiceBasicService;
+
+  // Name used for UI elements listing this Service.
+  displayName?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
 }
 export class GenericService extends Resource {
   /*
@@ -59,22 +59,22 @@ Valid values of service types and services labels are described at
 https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli
 Structure is documented below.
 */
-  public BasicService?: Monitoring_GenericServiceBasicService;
+  public basicService?: monitoring_GenericServiceBasicService;
 
   // Name used for UI elements listing this Service.
-  public DisplayName?: string;
+  public displayName?: string;
 
   /*
 The full resource name for this service. The syntax is:
 projects/[PROJECT_ID]/services/[SERVICE_ID].
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 An optional service ID to use. If not given, the server will generate a
@@ -83,13 +83,13 @@ service ID.
 
 - - -
 */
-  public ServiceId?: string;
+  public serviceId?: string;
 
   /*
 Configuration for how to query telemetry on a Service.
 Structure is documented below.
 */
-  public Telemetries?: Array<Monitoring_GenericServiceTelemetry>;
+  public telemetries?: Array<monitoring_GenericServiceTelemetry>;
 
   /*
 Labels which have been used to annotate the service. Label keys must start
@@ -99,37 +99,13 @@ length of 63 characters, and must be less than 128 bytes in size. Up to 64
 label entries may be stored. For labels which do not have a semantic value,
 the empty string may be supplied for the label value.
 */
-  public UserLabels?: Map<string, string>;
+  public userLabels?: Map<string, string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "DisplayName",
-        "Name used for UI elements listing this Service.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ServiceId",
-        "An optional service ID to use. If not given, the server will generate a\nservice ID.\n\n\n- - -",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.Map,
-        "UserLabels",
+        "userLabels",
         "Labels which have been used to annotate the service. Label keys must start\nwith a letter. Label keys and values may contain lowercase letters,\nnumbers, underscores, and dashes. Label keys and values have a maximum\nlength of 63 characters, and must be less than 128 bytes in size. Up to 64\nlabel entries may be stored. For labels which do not have a semantic value,\nthe empty string may be supplied for the label value.",
         InputType_Map_GetTypes(),
         false,
@@ -137,10 +113,34 @@ the empty string may be supplied for the label value.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "BasicService",
+        "basicService",
         "A well-known service type, defined by its service type and service labels.\nValid values of service types and services labels are described at\nhttps://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli\nStructure is documented below.",
-        Monitoring_GenericServiceBasicService_GetTypes(),
+        monitoring_GenericServiceBasicService_GetTypes(),
         false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "displayName",
+        "Name used for UI elements listing this Service.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "serviceId",
+        "An optional service ID to use. If not given, the server will generate a\nservice ID.\n\n\n- - -",
+        [],
+        true,
         true,
       ),
     ];

@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuildv2_ConnectionGitlabConfigReadAuthorizerCredential {
+export interface cloudbuildv2_ConnectionGitlabConfigReadAuthorizerCredential {
   // Required. A SecretManager resource containing the user token that authorizes the Cloud Build connection. Format: `projects/-/secrets/-/versions/-`.
-  UserTokenSecretVersion?: string;
+  userTokenSecretVersion?: string;
 
   /*
 (Output)
 Output only. The username associated to this token.
 */
-  Username?: string;
+  username?: string;
 }
 
-export function Cloudbuildv2_ConnectionGitlabConfigReadAuthorizerCredential_GetTypes(): DynamicUIProps[] {
+export function cloudbuildv2_ConnectionGitlabConfigReadAuthorizerCredential_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "UserTokenSecretVersion",
+      "userTokenSecretVersion",
       "Required. A SecretManager resource containing the user token that authorizes the Cloud Build connection. Format: `projects/*/secrets/*/versions/*`.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Cloudbuildv2_ConnectionGitlabConfigReadAuthorizerCredential_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "Username",
+      "username",
       "(Output)\nOutput only. The username associated to this token.",
       [],
       false,

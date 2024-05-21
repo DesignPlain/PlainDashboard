@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Securityposture_PosturePolicySetPolicyComplianceStandard {
+export interface securityposture_PosturePolicySetPolicyComplianceStandard {
   // Mapping of security controls for the policy.
-  Control?: string;
+  control?: string;
 
   // Mapping of compliance standards for the policy.
-  Standard?: string;
+  standard?: string;
 }
 
-export function Securityposture_PosturePolicySetPolicyComplianceStandard_GetTypes(): DynamicUIProps[] {
+export function securityposture_PosturePolicySetPolicyComplianceStandard_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Standard",
-      "Mapping of compliance standards for the policy.",
+      "control",
+      "Mapping of security controls for the policy.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Control",
-      "Mapping of security controls for the policy.",
+      "standard",
+      "Mapping of compliance standards for the policy.",
       [],
       false,
       false,

@@ -6,59 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileRemote,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileRemote_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileRemote";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileGcs,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileGcs_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileGcs";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileGcs,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileGcs_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileGcs";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileRemote,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileRemote_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileRemote";
 
-export interface Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFile {
-  // A local path within the VM to use.
-  LocalPath?: string;
-
-  /*
-A generic remote file. Structure is
-documented below.
-*/
-  Remote?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileRemote;
-
+export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFile {
   /*
 Defaults to false. When false, files are
 subject to validations based on the file type: Remote: A checksum must be
 specified. Cloud Storage: An object generation number must be specified.
 */
-  AllowInsecure?: boolean;
+  allowInsecure?: boolean;
 
   /*
 A Cloud Storage object. Structure is
 documented below.
 */
-  Gcs?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileGcs;
+  gcs?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileGcs;
+
+  // A local path within the VM to use.
+  localPath?: string;
+
+  /*
+A generic remote file. Structure is
+documented below.
+*/
+  remote?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileRemote;
 }
 
-export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFile_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFile_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "LocalPath",
-      "A local path within the VM to use.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "Remote",
-      "A generic remote file. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileRemote_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "AllowInsecure",
+      "allowInsecure",
       "Defaults to false. When false, files are\nsubject to validations based on the file type: Remote: A checksum must be\nspecified. Cloud Storage: An object generation number must be specified.",
       [],
       false,
@@ -66,9 +50,25 @@ export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFile
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Gcs",
+      "gcs",
       "A Cloud Storage object. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileGcs_GetTypes(),
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileGcs_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "localPath",
+      "A local path within the VM to use.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "remote",
+      "A generic remote file. Structure is\ndocumented below.",
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileRemote_GetTypes(),
       false,
       false,
     ),

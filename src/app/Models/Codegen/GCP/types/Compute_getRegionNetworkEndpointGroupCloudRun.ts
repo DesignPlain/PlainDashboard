@@ -6,13 +6,13 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getRegionNetworkEndpointGroupCloudRun {
+export interface compute_getRegionNetworkEndpointGroupCloudRun {
   /*
 Cloud Run service is the main resource of Cloud Run.
 The service must be 1-63 characters long, and comply with RFC1035.
 Example value: "run-service".
 */
-  Service?: string;
+  service?: string;
 
   /*
 Cloud Run tag represents the "named-revision" to provide
@@ -20,7 +20,7 @@ additional fine-grained traffic routing information.
 The tag must be 1-63 characters long, and comply with RFC1035.
 Example value: "revision-0010".
 */
-  Tag?: string;
+  tag?: string;
 
   /*
 A template to parse service and tag fields from a request URL.
@@ -32,14 +32,14 @@ an be backed by the same Serverless Network Endpoint Group (NEG) with
 URL mask ".domain.com/". The URL mask will parse them to { service="bar1", tag="foo1" }
 and { service="bar2", tag="foo2" } respectively.
 */
-  UrlMask?: string;
+  urlMask?: string;
 }
 
-export function Compute_getRegionNetworkEndpointGroupCloudRun_GetTypes(): DynamicUIProps[] {
+export function compute_getRegionNetworkEndpointGroupCloudRun_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Service",
+      "service",
       'Cloud Run service is the main resource of Cloud Run.\nThe service must be 1-63 characters long, and comply with RFC1035.\nExample value: "run-service".',
       [],
       true,
@@ -47,7 +47,7 @@ export function Compute_getRegionNetworkEndpointGroupCloudRun_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "Tag",
+      "tag",
       'Cloud Run tag represents the "named-revision" to provide\nadditional fine-grained traffic routing information.\nThe tag must be 1-63 characters long, and comply with RFC1035.\nExample value: "revision-0010".',
       [],
       true,
@@ -55,7 +55,7 @@ export function Compute_getRegionNetworkEndpointGroupCloudRun_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "UrlMask",
+      "urlMask",
       'A template to parse service and tag fields from a request URL.\nURL mask allows for routing to multiple Run services without having\nto create multiple network endpoint groups and backend services.\n\nFor example, request URLs "foo1.domain.com/bar1" and "foo1.domain.com/bar2"\nan be backed by the same Serverless Network Endpoint Group (NEG) with\nURL mask ".domain.com/". The URL mask will parse them to { service="bar1", tag="foo1" }\nand { service="bar2", tag="foo2" } respectively.',
       [],
       true,

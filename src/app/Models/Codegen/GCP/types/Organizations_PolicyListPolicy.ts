@@ -6,38 +6,38 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Organizations_PolicyListPolicyAllow,
-  Organizations_PolicyListPolicyAllow_GetTypes,
-} from "./Organizations_PolicyListPolicyAllow";
+  organizations_PolicyListPolicyAllow,
+  organizations_PolicyListPolicyAllow_GetTypes,
+} from "./organizations_PolicyListPolicyAllow";
 import {
-  Organizations_PolicyListPolicyDeny,
-  Organizations_PolicyListPolicyDeny_GetTypes,
-} from "./Organizations_PolicyListPolicyDeny";
+  organizations_PolicyListPolicyDeny,
+  organizations_PolicyListPolicyDeny_GetTypes,
+} from "./organizations_PolicyListPolicyDeny";
 
-export interface Organizations_PolicyListPolicy {
+export interface organizations_PolicyListPolicy {
   /*
 If set to true, the values from the effective Policy of the parent resource
 are inherited, meaning the values set in this Policy are added to the values inherited up the hierarchy.
 
 The `allow` or `deny` blocks support:
 */
-  InheritFromParent?: boolean;
+  inheritFromParent?: boolean;
 
   // The Google Cloud Console will try to default to a configuration that matches the value specified in this field.
-  SuggestedValue?: string;
+  suggestedValue?: string;
 
   // or `deny` - (Optional) One or the other must be set.
-  Allow?: Organizations_PolicyListPolicyAllow;
+  allow?: organizations_PolicyListPolicyAllow;
 
   // One or the other must be set.
-  Deny?: Organizations_PolicyListPolicyDeny;
+  deny?: organizations_PolicyListPolicyDeny;
 }
 
-export function Organizations_PolicyListPolicy_GetTypes(): DynamicUIProps[] {
+export function organizations_PolicyListPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "InheritFromParent",
+      "inheritFromParent",
       "If set to true, the values from the effective Policy of the parent resource\nare inherited, meaning the values set in this Policy are added to the values inherited up the hierarchy.\n\nThe `allow` or `deny` blocks support:",
       [],
       false,
@@ -45,7 +45,7 @@ export function Organizations_PolicyListPolicy_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "SuggestedValue",
+      "suggestedValue",
       "The Google Cloud Console will try to default to a configuration that matches the value specified in this field.",
       [],
       false,
@@ -53,17 +53,17 @@ export function Organizations_PolicyListPolicy_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Allow",
+      "allow",
       "or `deny` - (Optional) One or the other must be set.",
-      Organizations_PolicyListPolicyAllow_GetTypes(),
+      organizations_PolicyListPolicyAllow_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Deny",
+      "deny",
       "One or the other must be set.",
-      Organizations_PolicyListPolicyDeny_GetTypes(),
+      organizations_PolicyListPolicyDeny_GetTypes(),
       false,
       false,
     ),

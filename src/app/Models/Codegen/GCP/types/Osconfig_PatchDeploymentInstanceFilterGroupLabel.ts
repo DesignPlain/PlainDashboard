@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_PatchDeploymentInstanceFilterGroupLabel {
+export interface osconfig_PatchDeploymentInstanceFilterGroupLabel {
   /*
 Compute Engine instance labels that must be present for a VM instance to be targeted by this filter
 
 - - -
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 }
 
-export function Osconfig_PatchDeploymentInstanceFilterGroupLabel_GetTypes(): DynamicUIProps[] {
+export function osconfig_PatchDeploymentInstanceFilterGroupLabel_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Map,
-      "Labels",
+      "labels",
       "Compute Engine instance labels that must be present for a VM instance to be targeted by this filter\n\n- - -",
       InputType_Map_GetTypes(),
       true,

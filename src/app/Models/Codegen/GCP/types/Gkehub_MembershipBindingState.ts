@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_MembershipBindingState {
+export interface gkehub_MembershipBindingState {
   /*
 (Output)
 Code describes the state of a MembershipBinding resource.
 */
-  Code?: string;
+  code?: string;
 }
 
-export function Gkehub_MembershipBindingState_GetTypes(): DynamicUIProps[] {
+export function gkehub_MembershipBindingState_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Code",
+      "code",
       "(Output)\nCode describes the state of a MembershipBinding resource.",
       [],
       false,

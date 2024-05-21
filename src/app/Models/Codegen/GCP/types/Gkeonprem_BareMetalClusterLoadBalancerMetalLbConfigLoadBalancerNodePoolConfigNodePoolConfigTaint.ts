@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfigTaint {
+export interface gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfigTaint {
   /*
 Specifies the nodes operating system (default: LINUX).
 Possible values are: `EFFECT_UNSPECIFIED`, `PREFER_NO_SCHEDULE`, `NO_EXECUTE`.
 */
-  Effect?: string;
+  effect?: string;
 
   // Key associated with the effect.
-  Key?: string;
+  key?: string;
 
   // Value associated with the effect.
-  Value?: string;
+  value?: string;
 }
 
-export function Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfigTaint_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfigTaint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Effect",
+      "value",
+      "Value associated with the effect.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "effect",
       "Specifies the nodes operating system (default: LINUX).\nPossible values are: `EFFECT_UNSPECIFIED`, `PREFER_NO_SCHEDULE`, `NO_EXECUTE`.",
       [],
       false,
@@ -32,16 +40,8 @@ export function Gkeonprem_BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerN
     ),
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "key",
       "Key associated with the effect.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Value",
-      "Value associated with the effect.",
       [],
       false,
       false,

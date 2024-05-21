@@ -6,9 +6,9 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Pubsub_getTopicSchemaSetting {
+export interface pubsub_getTopicSchemaSetting {
   // The encoding of messages validated against schema. Default value: "ENCODING_UNSPECIFIED" Possible values: ["ENCODING_UNSPECIFIED", "JSON", "BINARY"]
-  Encoding?: string;
+  encoding?: string;
 
   /*
 The name of the schema that messages published should be
@@ -16,23 +16,23 @@ validated against. Format is projects/{project}/schemas/{schema}.
 The value of this field will be _deleted-schema_
 if the schema has been deleted.
 */
-  Schema?: string;
+  schema?: string;
 }
 
-export function Pubsub_getTopicSchemaSetting_GetTypes(): DynamicUIProps[] {
+export function pubsub_getTopicSchemaSetting_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Schema",
-      "The name of the schema that messages published should be\nvalidated against. Format is projects/{project}/schemas/{schema}.\nThe value of this field will be _deleted-schema_\nif the schema has been deleted.",
+      "encoding",
+      'The encoding of messages validated against schema. Default value: "ENCODING_UNSPECIFIED" Possible values: ["ENCODING_UNSPECIFIED", "JSON", "BINARY"]',
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Encoding",
-      'The encoding of messages validated against schema. Default value: "ENCODING_UNSPECIFIED" Possible values: ["ENCODING_UNSPECIFIED", "JSON", "BINARY"]',
+      "schema",
+      "The name of the schema that messages published should be\nvalidated against. Format is projects/{project}/schemas/{schema}.\nThe value of this field will be _deleted-schema_\nif the schema has been deleted.",
       [],
       true,
       false,

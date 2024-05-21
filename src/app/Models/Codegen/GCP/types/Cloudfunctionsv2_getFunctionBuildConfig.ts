@@ -6,25 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudfunctionsv2_getFunctionBuildConfigSource,
-  Cloudfunctionsv2_getFunctionBuildConfigSource_GetTypes,
-} from "./Cloudfunctionsv2_getFunctionBuildConfigSource";
+  cloudfunctionsv2_getFunctionBuildConfigSource,
+  cloudfunctionsv2_getFunctionBuildConfigSource_GetTypes,
+} from "./cloudfunctionsv2_getFunctionBuildConfigSource";
 
-export interface Cloudfunctionsv2_getFunctionBuildConfig {
+export interface cloudfunctionsv2_getFunctionBuildConfig {
+  // User-provided build-time environment variables for the function.
+  environmentVariables?: Map<string, string>;
+
+  /*
+The runtime in which to run the function. Required when deploying a new
+function, optional when updating an existing function.
+*/
+  runtime?: string;
+
   // The location of the function source code.
-  Sources?: Array<Cloudfunctionsv2_getFunctionBuildConfigSource>;
+  sources?: Array<cloudfunctionsv2_getFunctionBuildConfigSource>;
 
   // Name of the Cloud Build Custom Worker Pool that should be used to build the function.
-  WorkerPool?: string;
+  workerPool?: string;
 
   /*
 The Cloud Build name of the latest successful
 deployment of the function.
 */
-  Build?: string;
+  build?: string;
 
   // User managed repository created in Artifact Registry optionally with a customer managed encryption key.
-  DockerRepository?: string;
+  dockerRepository?: string;
 
   /*
 The name of the function (as defined in source code) that will be executed.
@@ -33,39 +42,14 @@ compatibility, if function with given name is not found, then the system
 will try to use function named "function". For Node.js this is name of a
 function exported by the module specified in source_location.
 */
-  EntryPoint?: string;
-
-  // User-provided build-time environment variables for the function.
-  EnvironmentVariables?: Map<string, string>;
-
-  /*
-The runtime in which to run the function. Required when deploying a new
-function, optional when updating an existing function.
-*/
-  Runtime?: string;
+  entryPoint?: string;
 }
 
-export function Cloudfunctionsv2_getFunctionBuildConfig_GetTypes(): DynamicUIProps[] {
+export function cloudfunctionsv2_getFunctionBuildConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "Sources",
-      "The location of the function source code.",
-      Cloudfunctionsv2_getFunctionBuildConfigSource_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "WorkerPool",
-      "Name of the Cloud Build Custom Worker Pool that should be used to build the function.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Build",
+      "build",
       "The Cloud Build name of the latest successful\ndeployment of the function.",
       [],
       true,
@@ -73,7 +57,7 @@ export function Cloudfunctionsv2_getFunctionBuildConfig_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "DockerRepository",
+      "dockerRepository",
       "User managed repository created in Artifact Registry optionally with a customer managed encryption key.",
       [],
       true,
@@ -81,7 +65,7 @@ export function Cloudfunctionsv2_getFunctionBuildConfig_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "EntryPoint",
+      "entryPoint",
       'The name of the function (as defined in source code) that will be executed.\nDefaults to the resource name suffix, if not specified. For backward\ncompatibility, if function with given name is not found, then the system\nwill try to use function named "function". For Node.js this is name of a\nfunction exported by the module specified in source_location.',
       [],
       true,
@@ -89,7 +73,7 @@ export function Cloudfunctionsv2_getFunctionBuildConfig_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Map,
-      "EnvironmentVariables",
+      "environmentVariables",
       "User-provided build-time environment variables for the function.",
       InputType_Map_GetTypes(),
       true,
@@ -97,8 +81,24 @@ export function Cloudfunctionsv2_getFunctionBuildConfig_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "Runtime",
+      "runtime",
       "The runtime in which to run the function. Required when deploying a new\nfunction, optional when updating an existing function.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "sources",
+      "The location of the function source code.",
+      cloudfunctionsv2_getFunctionBuildConfigSource_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "workerPool",
+      "Name of the Cloud Build Custom Worker Pool that should be used to build the function.",
       [],
       true,
       false,

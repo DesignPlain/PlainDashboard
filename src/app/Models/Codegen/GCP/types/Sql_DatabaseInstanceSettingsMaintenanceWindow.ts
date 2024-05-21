@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_DatabaseInstanceSettingsMaintenanceWindow {
-  // Day of week (`1-7`), starting on Monday
-  Day?: number;
-
-  // Hour of day (`0-23`), ignored if `day` not set
-  Hour?: number;
-
+export interface sql_DatabaseInstanceSettingsMaintenanceWindow {
   /*
 Receive updates earlier (`canary`) or later
 (`stable`)
 
 The optional `settings.insights_config` subblock for instances declares Query Insights([MySQL](https://cloud.google.com/sql/docs/mysql/using-query-insights), [PostgreSQL](https://cloud.google.com/sql/docs/postgres/using-query-insights)) configuration. It contains:
 */
-  UpdateTrack?: string;
+  updateTrack?: string;
+
+  // Day of week (`1-7`), starting on Monday
+  day?: number;
+
+  // Hour of day (`0-23`), ignored if `day` not set
+  hour?: number;
 }
 
-export function Sql_DatabaseInstanceSettingsMaintenanceWindow_GetTypes(): DynamicUIProps[] {
+export function sql_DatabaseInstanceSettingsMaintenanceWindow_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Day",
+      "day",
       "Day of week (`1-7`), starting on Monday",
       [],
       false,
@@ -34,7 +34,7 @@ export function Sql_DatabaseInstanceSettingsMaintenanceWindow_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Hour",
+      "hour",
       "Hour of day (`0-23`), ignored if `day` not set",
       [],
       false,
@@ -42,7 +42,7 @@ export function Sql_DatabaseInstanceSettingsMaintenanceWindow_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "UpdateTrack",
+      "updateTrack",
       "Receive updates earlier (`canary`) or later\n(`stable`)\n\nThe optional `settings.insights_config` subblock for instances declares Query Insights([MySQL](https://cloud.google.com/sql/docs/mysql/using-query-insights), [PostgreSQL](https://cloud.google.com/sql/docs/postgres/using-query-insights)) configuration. It contains:",
       [],
       false,

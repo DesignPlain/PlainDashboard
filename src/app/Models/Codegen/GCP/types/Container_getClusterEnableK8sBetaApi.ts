@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterEnableK8sBetaApi {
+export interface container_getClusterEnableK8sBetaApi {
   // Enabled Kubernetes Beta APIs.
-  EnabledApis?: Array<string>;
+  enabledApis?: Array<string>;
 }
 
-export function Container_getClusterEnableK8sBetaApi_GetTypes(): DynamicUIProps[] {
+export function container_getClusterEnableK8sBetaApi_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "EnabledApis",
+      "enabledApis",
       "Enabled Kubernetes Beta APIs.",
       InputType_String_GetTypes(),
       true,

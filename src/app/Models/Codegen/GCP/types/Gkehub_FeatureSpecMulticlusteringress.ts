@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FeatureSpecMulticlusteringress {
+export interface gkehub_FeatureSpecMulticlusteringress {
   // Fully-qualified Membership name which hosts the MultiClusterIngress CRD. Example: `projects/foo-proj/locations/global/memberships/bar`
-  ConfigMembership?: string;
+  configMembership?: string;
 }
 
-export function Gkehub_FeatureSpecMulticlusteringress_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureSpecMulticlusteringress_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ConfigMembership",
+      "configMembership",
       "Fully-qualified Membership name which hosts the MultiClusterIngress CRD. Example: `projects/foo-proj/locations/global/memberships/bar`",
       [],
       true,

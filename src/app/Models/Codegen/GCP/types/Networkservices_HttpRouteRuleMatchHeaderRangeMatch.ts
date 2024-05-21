@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_HttpRouteRuleMatchHeaderRangeMatch {
+export interface networkservices_HttpRouteRuleMatchHeaderRangeMatch {
   // End of the range (exclusive).
-  End?: number;
+  end?: number;
 
   // Start of the range (inclusive).
-  Start?: number;
+  start?: number;
 }
 
-export function Networkservices_HttpRouteRuleMatchHeaderRangeMatch_GetTypes(): DynamicUIProps[] {
+export function networkservices_HttpRouteRuleMatchHeaderRangeMatch_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Start",
-      "Start of the range (inclusive).",
+      "end",
+      "End of the range (exclusive).",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "End",
-      "End of the range (exclusive).",
+      "start",
+      "Start of the range (inclusive).",
       [],
       true,
       false,

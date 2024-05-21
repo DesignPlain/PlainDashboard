@@ -16,10 +16,10 @@ is attached to. The format is
 
 - - -
 */
-  Brand?: string;
+  brand?: string;
 
   // Human-friendly name given to the OAuth client.
-  DisplayName?: string;
+  displayName?: string;
 }
 export class Client extends Resource {
   /*
@@ -30,25 +30,25 @@ is attached to. The format is
 
 - - -
 */
-  public Brand?: string;
+  public brand?: string;
 
   // The OAuth2 ID of the client.
-  public ClientId?: string;
+  public clientId?: string;
 
   // Human-friendly name given to the OAuth client.
-  public DisplayName?: string;
+  public displayName?: string;
 
   /*
 Output only. Client secret of the OAuth client.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  public Secret?: string;
+  public secret?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Brand",
+        "brand",
         "Identifier of the brand to which this client\nis attached to. The format is\n`projects/{project_number}/brands/{brand_id}/identityAwareProxyClients/{client_id}`.\n\n\n- - -",
         [],
         true,
@@ -56,7 +56,7 @@ Output only. Client secret of the OAuth client.
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "Human-friendly name given to the OAuth client.",
         [],
         true,

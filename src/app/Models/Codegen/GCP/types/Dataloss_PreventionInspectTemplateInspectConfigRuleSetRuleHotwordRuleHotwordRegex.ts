@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegex {
+export interface dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegex {
   /*
 The index of the submatch to extract as findings. When not specified,
 the entire match is returned. No more than 3 may be included.
 */
-  GroupIndexes?: Array<number>;
+  groupIndexes?: Array<number>;
 
   /*
 Pattern defining the regular expression. Its syntax
 (https://github.com/google/re2/wiki/Syntax) can be found under the google/re2 repository on GitHub.
 */
-  Pattern?: string;
+  pattern?: string;
 }
 
-export function Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegex_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegex_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "GroupIndexes",
+      "groupIndexes",
       "The index of the submatch to extract as findings. When not specified,\nthe entire match is returned. No more than 3 may be included.",
       InputType_Number_GetTypes(),
       false,
@@ -32,7 +32,7 @@ export function Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwor
     ),
     new DynamicUIProps(
       InputType.String,
-      "Pattern",
+      "pattern",
       "Pattern defining the regular expression. Its syntax\n(https://github.com/google/re2/wiki/Syntax) can be found under the google/re2 repository on GitHub.",
       [],
       true,

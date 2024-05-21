@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType,
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType";
+  dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType,
+  dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType";
 import {
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetRule,
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetRule_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetRule";
+  dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetRule,
+  dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetRule_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetRule";
 
-export interface Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet {
+export interface dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet {
   /*
 List of infoTypes this rule set is applied to.
 Structure is documented below.
 */
-  InfoTypes?: Array<Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType>;
+  infoTypes?: Array<dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType>;
 
   /*
 Set of rules to be applied to infoTypes. The rules are applied in order.
 Structure is documented below.
 */
-  Rules?: Array<Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetRule>;
+  rules?: Array<dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetRule>;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "InfoTypes",
+      "infoTypes",
       "List of infoTypes this rule set is applied to.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Rules",
+      "rules",
       "Set of rules to be applied to infoTypes. The rules are applied in order.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetRule_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetRule_GetTypes(),
       true,
       false,
     ),

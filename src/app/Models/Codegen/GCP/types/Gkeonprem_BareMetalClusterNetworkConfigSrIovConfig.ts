@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterNetworkConfigSrIovConfig {
+export interface gkeonprem_BareMetalClusterNetworkConfigSrIovConfig {
   // Whether to install the SR-IOV operator.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Gkeonprem_BareMetalClusterNetworkConfigSrIovConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterNetworkConfigSrIovConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether to install the SR-IOV operator.",
       [],
       false,

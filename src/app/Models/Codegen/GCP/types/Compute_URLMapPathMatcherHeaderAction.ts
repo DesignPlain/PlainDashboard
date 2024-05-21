@@ -6,61 +6,45 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_URLMapPathMatcherHeaderActionResponseHeadersToAdd,
-  Compute_URLMapPathMatcherHeaderActionResponseHeadersToAdd_GetTypes,
-} from "./Compute_URLMapPathMatcherHeaderActionResponseHeadersToAdd";
+  compute_URLMapPathMatcherHeaderActionRequestHeadersToAdd,
+  compute_URLMapPathMatcherHeaderActionRequestHeadersToAdd_GetTypes,
+} from "./compute_URLMapPathMatcherHeaderActionRequestHeadersToAdd";
 import {
-  Compute_URLMapPathMatcherHeaderActionRequestHeadersToAdd,
-  Compute_URLMapPathMatcherHeaderActionRequestHeadersToAdd_GetTypes,
-} from "./Compute_URLMapPathMatcherHeaderActionRequestHeadersToAdd";
+  compute_URLMapPathMatcherHeaderActionResponseHeadersToAdd,
+  compute_URLMapPathMatcherHeaderActionResponseHeadersToAdd_GetTypes,
+} from "./compute_URLMapPathMatcherHeaderActionResponseHeadersToAdd";
 
-export interface Compute_URLMapPathMatcherHeaderAction {
+export interface compute_URLMapPathMatcherHeaderAction {
+  /*
+Headers to add to a matching request prior to forwarding the request to the backendService.
+Structure is documented below.
+*/
+  requestHeadersToAdds?: Array<compute_URLMapPathMatcherHeaderActionRequestHeadersToAdd>;
+
   /*
 A list of header names for headers that need to be removed from the request prior to
 forwarding the request to the backendService.
 */
-  RequestHeadersToRemoves?: Array<string>;
+  requestHeadersToRemoves?: Array<string>;
 
   /*
 Headers to add the response prior to sending the response back to the client.
 Structure is documented below.
 */
-  ResponseHeadersToAdds?: Array<Compute_URLMapPathMatcherHeaderActionResponseHeadersToAdd>;
+  responseHeadersToAdds?: Array<compute_URLMapPathMatcherHeaderActionResponseHeadersToAdd>;
 
   /*
 A list of header names for headers that need to be removed from the response prior to sending the
 response back to the client.
 */
-  ResponseHeadersToRemoves?: Array<string>;
-
-  /*
-Headers to add to a matching request prior to forwarding the request to the backendService.
-Structure is documented below.
-*/
-  RequestHeadersToAdds?: Array<Compute_URLMapPathMatcherHeaderActionRequestHeadersToAdd>;
+  responseHeadersToRemoves?: Array<string>;
 }
 
-export function Compute_URLMapPathMatcherHeaderAction_GetTypes(): DynamicUIProps[] {
+export function compute_URLMapPathMatcherHeaderAction_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "RequestHeadersToRemoves",
-      "A list of header names for headers that need to be removed from the request prior to\nforwarding the request to the backendService.",
-      InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "ResponseHeadersToAdds",
-      "Headers to add the response prior to sending the response back to the client.\nStructure is documented below.",
-      Compute_URLMapPathMatcherHeaderActionResponseHeadersToAdd_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "ResponseHeadersToRemoves",
+      "responseHeadersToRemoves",
       "A list of header names for headers that need to be removed from the response prior to sending the\nresponse back to the client.",
       InputType_String_GetTypes(),
       false,
@@ -68,9 +52,25 @@ export function Compute_URLMapPathMatcherHeaderAction_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Array,
-      "RequestHeadersToAdds",
+      "requestHeadersToAdds",
       "Headers to add to a matching request prior to forwarding the request to the backendService.\nStructure is documented below.",
-      Compute_URLMapPathMatcherHeaderActionRequestHeadersToAdd_GetTypes(),
+      compute_URLMapPathMatcherHeaderActionRequestHeadersToAdd_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "requestHeadersToRemoves",
+      "A list of header names for headers that need to be removed from the request prior to\nforwarding the request to the backendService.",
+      InputType_String_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "responseHeadersToAdds",
+      "Headers to add the response prior to sending the response back to the client.\nStructure is documented below.",
+      compute_URLMapPathMatcherHeaderActionResponseHeadersToAdd_GetTypes(),
       false,
       false,
     ),

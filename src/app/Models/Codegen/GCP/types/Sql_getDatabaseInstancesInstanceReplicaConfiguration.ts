@@ -6,110 +6,70 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstancesInstanceReplicaConfiguration {
-  // Username for replication connection.
-  Username?: string;
-
-  // True if the master's common name value is checked during the SSL handshake.
-  VerifyServerCertificate?: boolean;
-
-  // PEM representation of the replica's x509 certificate.
-  ClientCertificate?: string;
-
-  // Path to a SQL file in Google Cloud Storage from which replica instances are created. Format is gs://bucket/filename.
-  DumpFilePath?: string;
-
-  // Time in ms between replication heartbeats.
-  MasterHeartbeatPeriod?: number;
-
-  // Permissible ciphers for use in SSL encryption.
-  SslCipher?: string;
-
-  // Password for the replication connection.
-  Password?: string;
-
+export interface sql_getDatabaseInstancesInstanceReplicaConfiguration {
   // PEM representation of the trusted CA's x509 certificate.
-  CaCertificate?: string;
+  caCertificate?: string;
 
   // PEM representation of the replica's private key. The corresponding public key in encoded in the client_certificate.
-  ClientKey?: string;
+  clientKey?: string;
+
+  // True if the master's common name value is checked during the SSL handshake.
+  verifyServerCertificate?: boolean;
+
+  // Permissible ciphers for use in SSL encryption.
+  sslCipher?: string;
+
+  // Username for replication connection.
+  username?: string;
+
+  // PEM representation of the replica's x509 certificate.
+  clientCertificate?: string;
 
   // The number of seconds between connect retries. MySQL's default is 60 seconds.
-  ConnectRetryInterval?: number;
+  connectRetryInterval?: number;
+
+  // Path to a SQL file in Google Cloud Storage from which replica instances are created. Format is gs://bucket/filename.
+  dumpFilePath?: string;
 
   // Specifies if the replica is the failover target. If the field is set to true the replica will be designated as a failover replica. If the master instance fails, the replica instance will be promoted as the new master instance. Not supported for Postgres
-  FailoverTarget?: boolean;
+  failoverTarget?: boolean;
+
+  // Time in ms between replication heartbeats.
+  masterHeartbeatPeriod?: number;
+
+  // Password for the replication connection.
+  password?: string;
 }
 
-export function Sql_getDatabaseInstancesInstanceReplicaConfiguration_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstancesInstanceReplicaConfiguration_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ClientCertificate",
+      "clientCertificate",
       "PEM representation of the replica's x509 certificate.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "SslCipher",
-      "Permissible ciphers for use in SSL encryption.",
+      InputType.Number,
+      "masterHeartbeatPeriod",
+      "Time in ms between replication heartbeats.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "CaCertificate",
-      "PEM representation of the trusted CA's x509 certificate.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ClientKey",
+      "clientKey",
       "PEM representation of the replica's private key. The corresponding public key in encoded in the client_certificate.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "Password",
-      "Password for the replication connection.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "ConnectRetryInterval",
-      "The number of seconds between connect retries. MySQL's default is 60 seconds.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "FailoverTarget",
-      "Specifies if the replica is the failover target. If the field is set to true the replica will be designated as a failover replica. If the master instance fails, the replica instance will be promoted as the new master instance. Not supported for Postgres",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Username",
-      "Username for replication connection.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "VerifyServerCertificate",
+      "verifyServerCertificate",
       "True if the master's common name value is checked during the SSL handshake.",
       [],
       true,
@@ -117,16 +77,56 @@ export function Sql_getDatabaseInstancesInstanceReplicaConfiguration_GetTypes():
     ),
     new DynamicUIProps(
       InputType.String,
-      "DumpFilePath",
-      "Path to a SQL file in Google Cloud Storage from which replica instances are created. Format is gs://bucket/filename.",
+      "username",
+      "Username for replication connection.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MasterHeartbeatPeriod",
-      "Time in ms between replication heartbeats.",
+      "connectRetryInterval",
+      "The number of seconds between connect retries. MySQL's default is 60 seconds.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "dumpFilePath",
+      "Path to a SQL file in Google Cloud Storage from which replica instances are created. Format is gs://bucket/filename.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "failoverTarget",
+      "Specifies if the replica is the failover target. If the field is set to true the replica will be designated as a failover replica. If the master instance fails, the replica instance will be promoted as the new master instance. Not supported for Postgres",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "password",
+      "Password for the replication connection.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "caCertificate",
+      "PEM representation of the trusted CA's x509 certificate.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "sslCipher",
+      "Permissible ciphers for use in SSL encryption.",
       [],
       true,
       false,

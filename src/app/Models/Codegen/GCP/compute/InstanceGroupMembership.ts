@@ -8,11 +8,17 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface InstanceGroupMembershipArgs {
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
   // A reference to the zone where the instance group resides.
-  Zone?: string;
+  zone?: string;
 
   // An instance being added to the InstanceGroup
-  Instance?: string;
+  instance?: string;
 
   /*
 Represents an Instance Group resource name that the instance belongs to.
@@ -20,17 +26,14 @@ Represents an Instance Group resource name that the instance belongs to.
 
 - - -
 */
-  InstanceGroup?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
+  instanceGroup?: string;
 }
 export class InstanceGroupMembership extends Resource {
+  // A reference to the zone where the instance group resides.
+  public zone?: string;
+
   // An instance being added to the InstanceGroup
-  public Instance?: string;
+  public instance?: string;
 
   /*
 Represents an Instance Group resource name that the instance belongs to.
@@ -38,30 +41,19 @@ Represents an Instance Group resource name that the instance belongs to.
 
 - - -
 */
-  public InstanceGroup?: string;
+  public instanceGroup?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
-
-  // A reference to the zone where the instance group resides.
-  public Zone?: string;
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "InstanceGroup",
-        "Represents an Instance Group resource name that the instance belongs to.\n\n\n- - -",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -69,7 +61,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Zone",
+        "zone",
         "A reference to the zone where the instance group resides.",
         [],
         false,
@@ -77,8 +69,16 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Instance",
+        "instance",
         "An instance being added to the InstanceGroup",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "instanceGroup",
+        "Represents an Instance Group resource name that the instance belongs to.\n\n\n- - -",
         [],
         true,
         true,

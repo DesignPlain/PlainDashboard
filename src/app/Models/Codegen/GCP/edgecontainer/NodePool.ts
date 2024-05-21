@@ -7,207 +7,159 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Edgecontainer_NodePoolLocalDiskEncryption,
-  Edgecontainer_NodePoolLocalDiskEncryption_GetTypes,
-} from "../types/Edgecontainer_NodePoolLocalDiskEncryption";
+  edgecontainer_NodePoolLocalDiskEncryption,
+  edgecontainer_NodePoolLocalDiskEncryption_GetTypes,
+} from "../types/edgecontainer_NodePoolLocalDiskEncryption";
 import {
-  Edgecontainer_NodePoolNodeConfig,
-  Edgecontainer_NodePoolNodeConfig_GetTypes,
-} from "../types/Edgecontainer_NodePoolNodeConfig";
+  edgecontainer_NodePoolNodeConfig,
+  edgecontainer_NodePoolNodeConfig_GetTypes,
+} from "../types/edgecontainer_NodePoolNodeConfig";
 
 export interface NodePoolArgs {
-  /*
-The name of the target Distributed Cloud Edge Cluster.
-
-
-- - -
-*/
-  Cluster?: string;
-
   /*
 Local disk encryption options. This field is only used when enabling CMEK support.
 Structure is documented below.
 */
-  LocalDiskEncryption?: Edgecontainer_NodePoolLocalDiskEncryption;
+  localDiskEncryption?: edgecontainer_NodePoolLocalDiskEncryption;
 
   /*
 Only machines matching this filter will be allowed to join the node pool.
 The filtering language accepts strings like "name=<name>", and is
 documented in more detail in [AIP-160](https://google.aip.dev/160).
 */
-  MachineFilter?: string;
+  machineFilter?: string;
+
+  // The resource name of the node pool.
+  name?: string;
 
   /*
 Configuration for each node in the NodePool
 Structure is documented below.
 */
-  NodeConfig?: Edgecontainer_NodePoolNodeConfig;
+  nodeConfig?: edgecontainer_NodePoolNodeConfig;
+
+  // The number of nodes in the pool.
+  nodeCount?: number;
 
   /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
+The name of the target Distributed Cloud Edge Cluster.
+
+
+- - -
 */
-  Project?: string;
+  cluster?: string;
 
   /*
 Labels associated with this resource.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   // The location of the resource.
-  Location?: string;
-
-  // The resource name of the node pool.
-  Name?: string;
-
-  // The number of nodes in the pool.
-  NodeCount?: number;
+  location?: string;
 
   // Name of the Google Distributed Cloud Edge zone where this node pool will be created. For example: `us-central1-edge-customer-a`.
-  NodeLocation?: string;
+  nodeLocation?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
 }
 export class NodePool extends Resource {
-  // The resource name of the node pool.
-  public Name?: string;
+  /*
+Local disk encryption options. This field is only used when enabling CMEK support.
+Structure is documented below.
+*/
+  public localDiskEncryption?: edgecontainer_NodePoolLocalDiskEncryption;
+
+  /*
+Only machines matching this filter will be allowed to join the node pool.
+The filtering language accepts strings like "name=<name>", and is
+documented in more detail in [AIP-160](https://google.aip.dev/160).
+*/
+  public machineFilter?: string;
 
   /*
 Configuration for each node in the NodePool
 Structure is documented below.
 */
-  public NodeConfig?: Edgecontainer_NodePoolNodeConfig;
+  public nodeConfig?: edgecontainer_NodePoolNodeConfig;
+
+  /*
+The name of the target Distributed Cloud Edge Cluster.
+
+
+- - -
+*/
+  public cluster?: string;
+
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
+
+  // The number of nodes in the pool.
+  public nodeCount?: number;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  /*
+Labels associated with this resource.
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
+
+  // The location of the resource.
+  public location?: string;
 
   // Name of the Google Distributed Cloud Edge zone where this node pool will be created. For example: `us-central1-edge-customer-a`.
-  public NodeLocation?: string;
+  public nodeLocation?: string;
+
+  // The lowest release version among all worker nodes.
+  public nodeVersion?: string;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
-
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
-
-  // The location of the resource.
-  public Location?: string;
-
-  /*
-Only machines matching this filter will be allowed to join the node pool.
-The filtering language accepts strings like "name=<name>", and is
-documented in more detail in [AIP-160](https://google.aip.dev/160).
-*/
-  public MachineFilter?: string;
+  public pulumiLabels?: Map<string, string>;
 
   // The time when the node pool was last updated.
-  public UpdateTime?: string;
-
-  /*
-The name of the target Distributed Cloud Edge Cluster.
-
-
-- - -
-*/
-  public Cluster?: string;
+  public updateTime?: string;
 
   // The time when the node pool was created.
-  public CreateTime?: string;
+  public createTime?: string;
 
-  /*
-Local disk encryption options. This field is only used when enabling CMEK support.
-Structure is documented below.
-*/
-  public LocalDiskEncryption?: Edgecontainer_NodePoolLocalDiskEncryption;
-
-  // The number of nodes in the pool.
-  public NodeCount?: number;
-
-  // The lowest release version among all worker nodes.
-  public NodeVersion?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  /*
-Labels associated with this resource.
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  public Labels?: Map<string, string>;
+  // The resource name of the node pool.
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
+        InputType.Object,
+        "localDiskEncryption",
+        "Local disk encryption options. This field is only used when enabling CMEK support.\nStructure is documented below.",
+        edgecontainer_NodePoolLocalDiskEncryption_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
         InputType.Number,
-        "NodeCount",
+        "nodeCount",
         "The number of nodes in the pool.",
         [],
         true,
         false,
       ),
       new DynamicUIProps(
-        InputType.String,
-        "Cluster",
-        "The name of the target Distributed Cloud Edge Cluster.\n\n\n- - -",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "LocalDiskEncryption",
-        "Local disk encryption options. This field is only used when enabling CMEK support.\nStructure is documented below.",
-        Edgecontainer_NodePoolLocalDiskEncryption_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "MachineFilter",
-        'Only machines matching this filter will be allowed to join the node pool.\nThe filtering language accepts strings like "name=<name>", and is\ndocumented in more detail in [AIP-160](https://google.aip.dev/160).',
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "NodeConfig",
-        "Configuration for each node in the NodePool\nStructure is documented below.",
-        Edgecontainer_NodePoolNodeConfig_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Location",
-        "The location of the resource.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "The resource name of the node pool.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "Labels associated with this resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
@@ -215,8 +167,56 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "NodeLocation",
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "location",
+        "The location of the resource.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "nodeLocation",
         "Name of the Google Distributed Cloud Edge zone where this node pool will be created. For example: `us-central1-edge-customer-a`.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "machineFilter",
+        'Only machines matching this filter will be allowed to join the node pool.\nThe filtering language accepts strings like "name=<name>", and is\ndocumented in more detail in [AIP-160](https://google.aip.dev/160).',
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "The resource name of the node pool.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "nodeConfig",
+        "Configuration for each node in the NodePool\nStructure is documented below.",
+        edgecontainer_NodePoolNodeConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "cluster",
+        "The name of the target Distributed Cloud Edge Cluster.\n\n\n- - -",
         [],
         true,
         true,

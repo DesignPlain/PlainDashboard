@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrun_ServiceTemplateSpecContainerLivenessProbeGrpc {
+export interface cloudrun_ServiceTemplateSpecContainerLivenessProbeGrpc {
+  /*
+Port number to access on the container. Number must be in the range 1 to 65535.
+If not specified, defaults to the same value as container.ports[0].containerPort.
+*/
+  port?: number;
+
   /*
 The name of the service to place in the gRPC HealthCheckRequest
 (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
 If this is not specified, the default behavior is defined by gRPC.
 */
-  Service?: string;
-
-  /*
-Port number to access on the container. Number must be in the range 1 to 65535.
-If not specified, defaults to the same value as container.ports[0].containerPort.
-*/
-  Port?: number;
+  service?: string;
 }
 
-export function Cloudrun_ServiceTemplateSpecContainerLivenessProbeGrpc_GetTypes(): DynamicUIProps[] {
+export function cloudrun_ServiceTemplateSpecContainerLivenessProbeGrpc_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Service",
+      "service",
       "The name of the service to place in the gRPC HealthCheckRequest\n(see https://github.com/grpc/grpc/blob/master/doc/health-checking.md).\nIf this is not specified, the default behavior is defined by gRPC.",
       [],
       false,
@@ -33,7 +33,7 @@ export function Cloudrun_ServiceTemplateSpecContainerLivenessProbeGrpc_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Port",
+      "port",
       "Port number to access on the container. Number must be in the range 1 to 65535.\nIf not specified, defaults to the same value as container.ports[0].containerPort.",
       [],
       false,

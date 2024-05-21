@@ -6,45 +6,24 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Edgecontainer_ClusterMaintenanceEvent {
-  /*
-The time that the window ends. The end time must take place after the
-start time.
-*/
-  EndTime?: string;
-
-  /*
-(Output)
-The schedule of the maintenance event.
-*/
-  Schedule?: string;
+export interface edgecontainer_ClusterMaintenanceEvent {
+  // The time that the window first starts.
+  startTime?: string;
 
   // The target cluster version. For example: "1.5.0".
-  TargetVersion?: string;
-
-  /*
-(Output)
-Indicates the maintenance event type.
-*/
-  Type?: string;
-
-  /*
-(Output)
-The time when the maintenance event message was updated.
-*/
-  UpdateTime?: string;
-
-  /*
-(Output)
-UUID of the maintenance event.
-*/
-  Uuid?: string;
+  targetVersion?: string;
 
   /*
 (Output)
 The time when the maintenance event request was created.
 */
-  CreateTime?: string;
+  createTime?: string;
+
+  /*
+The time that the window ends. The end time must take place after the
+start time.
+*/
+  endTime?: string;
 
   /*
 (Output)
@@ -53,55 +32,44 @@ projects/-/locations/-/operations/-. If the maintenance event is split
 into multiple operations (e.g. due to maintenance windows), the latest
 one is recorded.
 */
-  Operation?: string;
+  operation?: string;
 
-  // The time that the window first starts.
-  StartTime?: string;
+  /*
+(Output)
+The schedule of the maintenance event.
+*/
+  schedule?: string;
 
   /*
 (Output)
 Indicates the maintenance event state.
 */
-  State?: string;
+  state?: string;
+
+  /*
+(Output)
+Indicates the maintenance event type.
+*/
+  type?: string;
+
+  /*
+(Output)
+The time when the maintenance event message was updated.
+*/
+  updateTime?: string;
+
+  /*
+(Output)
+UUID of the maintenance event.
+*/
+  uuid?: string;
 }
 
-export function Edgecontainer_ClusterMaintenanceEvent_GetTypes(): DynamicUIProps[] {
+export function edgecontainer_ClusterMaintenanceEvent_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CreateTime",
-      "(Output)\nThe time when the maintenance event request was created.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "State",
-      "(Output)\nIndicates the maintenance event state.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Schedule",
-      "(Output)\nThe schedule of the maintenance event.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Type",
-      "(Output)\nIndicates the maintenance event type.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Uuid",
+      "uuid",
       "(Output)\nUUID of the maintenance event.",
       [],
       false,
@@ -109,31 +77,7 @@ export function Edgecontainer_ClusterMaintenanceEvent_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "Operation",
-      "(Output)\nThe operation for running the maintenance event. Specified in the format\nprojects/*/locations/*/operations/*. If the maintenance event is split\ninto multiple operations (e.g. due to maintenance windows), the latest\none is recorded.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "StartTime",
-      "The time that the window first starts.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "EndTime",
-      "The time that the window ends. The end time must take place after the\nstart time.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "TargetVersion",
+      "targetVersion",
       'The target cluster version. For example: "1.5.0".',
       [],
       false,
@@ -141,8 +85,64 @@ export function Edgecontainer_ClusterMaintenanceEvent_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "UpdateTime",
+      "schedule",
+      "(Output)\nThe schedule of the maintenance event.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "updateTime",
       "(Output)\nThe time when the maintenance event message was updated.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "operation",
+      "(Output)\nThe operation for running the maintenance event. Specified in the format\nprojects/*/locations/*/operations/*. If the maintenance event is split\ninto multiple operations (e.g. due to maintenance windows), the latest\none is recorded.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "state",
+      "(Output)\nIndicates the maintenance event state.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "type",
+      "(Output)\nIndicates the maintenance event type.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "startTime",
+      "The time that the window first starts.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "createTime",
+      "(Output)\nThe time when the maintenance event request was created.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "endTime",
+      "The time that the window ends. The end time must take place after the\nstart time.",
       [],
       false,
       false,

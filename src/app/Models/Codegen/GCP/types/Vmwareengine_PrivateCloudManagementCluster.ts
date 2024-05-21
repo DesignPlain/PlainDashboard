@@ -6,11 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Vmwareengine_PrivateCloudManagementClusterNodeTypeConfig,
-  Vmwareengine_PrivateCloudManagementClusterNodeTypeConfig_GetTypes,
-} from "./Vmwareengine_PrivateCloudManagementClusterNodeTypeConfig";
+  vmwareengine_PrivateCloudManagementClusterNodeTypeConfig,
+  vmwareengine_PrivateCloudManagementClusterNodeTypeConfig_GetTypes,
+} from "./vmwareengine_PrivateCloudManagementClusterNodeTypeConfig";
 
-export interface Vmwareengine_PrivateCloudManagementCluster {
+export interface vmwareengine_PrivateCloudManagementCluster {
   /*
 The user-provided identifier of the new Cluster. The identifier must meet the following requirements:
 - Only contains 1-63 alphanumeric characters and hyphens
@@ -19,21 +19,21 @@ The user-provided identifier of the new Cluster. The identifier must meet the fo
 - Not formatted as a UUID
 - Complies with RFC 1034 (https://datatracker.ietf.org/doc/html/rfc1034) (section 3.5)
 */
-  ClusterId?: string;
+  clusterId?: string;
 
   /*
 The map of cluster node types in this cluster,
 where the key is canonical identifier of the node type (corresponds to the NodeType).
 Structure is documented below.
 */
-  NodeTypeConfigs?: Array<Vmwareengine_PrivateCloudManagementClusterNodeTypeConfig>;
+  nodeTypeConfigs?: Array<vmwareengine_PrivateCloudManagementClusterNodeTypeConfig>;
 }
 
-export function Vmwareengine_PrivateCloudManagementCluster_GetTypes(): DynamicUIProps[] {
+export function vmwareengine_PrivateCloudManagementCluster_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ClusterId",
+      "clusterId",
       "The user-provided identifier of the new Cluster. The identifier must meet the following requirements:\n* Only contains 1-63 alphanumeric characters and hyphens\n* Begins with an alphabetical character\n* Ends with a non-hyphen character\n* Not formatted as a UUID\n* Complies with RFC 1034 (https://datatracker.ietf.org/doc/html/rfc1034) (section 3.5)",
       [],
       true,
@@ -41,9 +41,9 @@ export function Vmwareengine_PrivateCloudManagementCluster_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Array,
-      "NodeTypeConfigs",
+      "nodeTypeConfigs",
       "The map of cluster node types in this cluster,\nwhere the key is canonical identifier of the node type (corresponds to the NodeType).\nStructure is documented below.",
-      Vmwareengine_PrivateCloudManagementClusterNodeTypeConfig_GetTypes(),
+      vmwareengine_PrivateCloudManagementClusterNodeTypeConfig_GetTypes(),
       false,
       false,
     ),

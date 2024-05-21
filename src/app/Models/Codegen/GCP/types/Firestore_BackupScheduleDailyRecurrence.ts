@@ -6,8 +6,8 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Firestore_BackupScheduleDailyRecurrence {}
+export interface firestore_BackupScheduleDailyRecurrence {}
 
-export function Firestore_BackupScheduleDailyRecurrence_GetTypes(): DynamicUIProps[] {
+export function firestore_BackupScheduleDailyRecurrence_GetTypes(): DynamicUIProps[] {
   return [];
 }

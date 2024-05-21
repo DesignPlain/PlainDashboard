@@ -7,11 +7,20 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_DiskIamMemberCondition,
-  Compute_DiskIamMemberCondition_GetTypes,
-} from "../types/Compute_DiskIamMemberCondition";
+  compute_DiskIamMemberCondition,
+  compute_DiskIamMemberCondition_GetTypes,
+} from "../types/compute_DiskIamMemberCondition";
 
 export interface DiskIamMemberArgs {
+  //
+  condition?: compute_DiskIamMemberCondition;
+
+  //
+  member?: string;
+
+  // Used to find the parent resource to bind the IAM policy to
+  name?: string;
+
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the project will be parsed from the identifier of the parent resource. If no project is provided in the parent identifier and no project is specified, the provider project is used.
@@ -28,37 +37,41 @@ Each entry can have one of the following values:
 - --projectEditor:projectid--: Editors of the given project. For example, "projectEditor:my-example-project"
 - --projectViewer:projectid--: Viewers of the given project. For example, "projectViewer:my-example-project"
 */
-  Project?: string;
+  project?: string;
 
   /*
 The role that should be applied. Only one
 `gcp.compute.DiskIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
-  Role?: string;
+  role?: string;
 
   /*
 A reference to the zone where the disk resides. Used to find the parent resource to bind the IAM policy to. If not specified,
 the value will be parsed from the identifier of the parent resource. If no zone is provided in the parent identifier and no
 zone is specified, it is taken from the provider configuration.
 */
-  Zone?: string;
-
-  //
-  Condition?: Compute_DiskIamMemberCondition;
-
-  //
-  Member?: string;
-
-  // Used to find the parent resource to bind the IAM policy to
-  Name?: string;
+  zone?: string;
 }
 export class DiskIamMember extends Resource {
+  /*
+A reference to the zone where the disk resides. Used to find the parent resource to bind the IAM policy to. If not specified,
+the value will be parsed from the identifier of the parent resource. If no zone is provided in the parent identifier and no
+zone is specified, it is taken from the provider configuration.
+*/
+  public zone?: string;
+
   //
-  public Member?: string;
+  public condition?: compute_DiskIamMemberCondition;
+
+  // (Computed) The etag of the IAM policy.
+  public etag?: string;
+
+  //
+  public member?: string;
 
   // Used to find the parent resource to bind the IAM policy to
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
@@ -76,34 +89,20 @@ Each entry can have one of the following values:
 - --projectEditor:projectid--: Editors of the given project. For example, "projectEditor:my-example-project"
 - --projectViewer:projectid--: Viewers of the given project. For example, "projectViewer:my-example-project"
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 The role that should be applied. Only one
 `gcp.compute.DiskIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
-  public Role?: string;
-
-  /*
-A reference to the zone where the disk resides. Used to find the parent resource to bind the IAM policy to. If not specified,
-the value will be parsed from the identifier of the parent resource. If no zone is provided in the parent identifier and no
-zone is specified, it is taken from the provider configuration.
-*/
-  public Zone?: string;
-
-  //
-  public Condition?: Compute_DiskIamMemberCondition;
-
-  // (Computed) The etag of the IAM policy.
-  public Etag?: string;
+  public role?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Used to find the parent resource to bind the IAM policy to",
         [],
         false,
@@ -111,7 +110,7 @@ zone is specified, it is taken from the provider configuration.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         'The ID of the project in which the resource belongs.\nIf it is not provided, the project will be parsed from the identifier of the parent resource. If no project is provided in the parent identifier and no project is specified, the provider project is used.\n\n* `member/members` - (Required) Identities that will be granted the privilege in `role`.\nEach entry can have one of the following values:\n* **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.\n* **allAuthenticatedUsers**: A special identifier that represents anyone who is authenticated with a Google account or a service account.\n* **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.\n* **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.\n* **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.\n* **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.\n* **projectOwner:projectid**: Owners of the given project. For example, "projectOwner:my-example-project"\n* **projectEditor:projectid**: Editors of the given project. For example, "projectEditor:my-example-project"\n* **projectViewer:projectid**: Viewers of the given project. For example, "projectViewer:my-example-project"',
         [],
         false,
@@ -119,7 +118,7 @@ zone is specified, it is taken from the provider configuration.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Role",
+        "role",
         "The role that should be applied. Only one\n`gcp.compute.DiskIamBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
         [],
         true,
@@ -127,7 +126,7 @@ zone is specified, it is taken from the provider configuration.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Zone",
+        "zone",
         "A reference to the zone where the disk resides. Used to find the parent resource to bind the IAM policy to. If not specified,\nthe value will be parsed from the identifier of the parent resource. If no zone is provided in the parent identifier and no\nzone is specified, it is taken from the provider configuration.",
         [],
         false,
@@ -135,12 +134,13 @@ zone is specified, it is taken from the provider configuration.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Compute_DiskIamMemberCondition_GetTypes(),
+        compute_DiskIamMemberCondition_GetTypes(),
         false,
         true,
       ),
+      new DynamicUIProps(InputType.String, "member", "", [], true, true),
     ];
   }
 }

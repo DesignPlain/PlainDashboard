@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_NodeGroupShareSettingsProjectMap,
-  Compute_NodeGroupShareSettingsProjectMap_GetTypes,
-} from "./Compute_NodeGroupShareSettingsProjectMap";
+  compute_NodeGroupShareSettingsProjectMap,
+  compute_NodeGroupShareSettingsProjectMap_GetTypes,
+} from "./compute_NodeGroupShareSettingsProjectMap";
 
-export interface Compute_NodeGroupShareSettings {
+export interface compute_NodeGroupShareSettings {
   /*
 A map of project id and project config. This is only valid when shareType's value is SPECIFIC_PROJECTS.
 Structure is documented below.
 */
-  ProjectMaps?: Array<Compute_NodeGroupShareSettingsProjectMap>;
+  projectMaps?: Array<compute_NodeGroupShareSettingsProjectMap>;
 
   /*
 Node group sharing type.
 Possible values are: `ORGANIZATION`, `SPECIFIC_PROJECTS`, `LOCAL`.
 */
-  ShareType?: string;
+  shareType?: string;
 }
 
-export function Compute_NodeGroupShareSettings_GetTypes(): DynamicUIProps[] {
+export function compute_NodeGroupShareSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ProjectMaps",
+      "projectMaps",
       "A map of project id and project config. This is only valid when shareType's value is SPECIFIC_PROJECTS.\nStructure is documented below.",
-      Compute_NodeGroupShareSettingsProjectMap_GetTypes(),
+      compute_NodeGroupShareSettingsProjectMap_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ShareType",
+      "shareType",
       "Node group sharing type.\nPossible values are: `ORGANIZATION`, `SPECIFIC_PROJECTS`, `LOCAL`.",
       [],
       true,

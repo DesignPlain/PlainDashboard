@@ -6,8 +6,8 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeSurrogateType {}
+export interface dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeSurrogateType {}
 
-export function Dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeSurrogateType_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeSurrogateType_GetTypes(): DynamicUIProps[] {
   return [];
 }

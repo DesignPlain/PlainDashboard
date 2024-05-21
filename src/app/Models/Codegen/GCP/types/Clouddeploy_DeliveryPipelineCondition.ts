@@ -6,52 +6,52 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Clouddeploy_DeliveryPipelineConditionPipelineReadyCondition,
-  Clouddeploy_DeliveryPipelineConditionPipelineReadyCondition_GetTypes,
-} from "./Clouddeploy_DeliveryPipelineConditionPipelineReadyCondition";
+  clouddeploy_DeliveryPipelineConditionTargetsPresentCondition,
+  clouddeploy_DeliveryPipelineConditionTargetsPresentCondition_GetTypes,
+} from "./clouddeploy_DeliveryPipelineConditionTargetsPresentCondition";
 import {
-  Clouddeploy_DeliveryPipelineConditionTargetsPresentCondition,
-  Clouddeploy_DeliveryPipelineConditionTargetsPresentCondition_GetTypes,
-} from "./Clouddeploy_DeliveryPipelineConditionTargetsPresentCondition";
+  clouddeploy_DeliveryPipelineConditionTargetsTypeCondition,
+  clouddeploy_DeliveryPipelineConditionTargetsTypeCondition_GetTypes,
+} from "./clouddeploy_DeliveryPipelineConditionTargetsTypeCondition";
 import {
-  Clouddeploy_DeliveryPipelineConditionTargetsTypeCondition,
-  Clouddeploy_DeliveryPipelineConditionTargetsTypeCondition_GetTypes,
-} from "./Clouddeploy_DeliveryPipelineConditionTargetsTypeCondition";
+  clouddeploy_DeliveryPipelineConditionPipelineReadyCondition,
+  clouddeploy_DeliveryPipelineConditionPipelineReadyCondition_GetTypes,
+} from "./clouddeploy_DeliveryPipelineConditionPipelineReadyCondition";
 
-export interface Clouddeploy_DeliveryPipelineCondition {
-  // Details on the whether the targets enumerated in the pipeline are of the same type.
-  TargetsTypeConditions?: Array<Clouddeploy_DeliveryPipelineConditionTargetsTypeCondition>;
-
+export interface clouddeploy_DeliveryPipelineCondition {
   // Details around the Pipeline's overall status.
-  PipelineReadyConditions?: Array<Clouddeploy_DeliveryPipelineConditionPipelineReadyCondition>;
+  pipelineReadyConditions?: Array<clouddeploy_DeliveryPipelineConditionPipelineReadyCondition>;
 
   // Details around targets enumerated in the pipeline.
-  TargetsPresentConditions?: Array<Clouddeploy_DeliveryPipelineConditionTargetsPresentCondition>;
+  targetsPresentConditions?: Array<clouddeploy_DeliveryPipelineConditionTargetsPresentCondition>;
+
+  // Details on the whether the targets enumerated in the pipeline are of the same type.
+  targetsTypeConditions?: Array<clouddeploy_DeliveryPipelineConditionTargetsTypeCondition>;
 }
 
-export function Clouddeploy_DeliveryPipelineCondition_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_DeliveryPipelineCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "TargetsTypeConditions",
-      "Details on the whether the targets enumerated in the pipeline are of the same type.",
-      Clouddeploy_DeliveryPipelineConditionTargetsTypeCondition_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "PipelineReadyConditions",
+      "pipelineReadyConditions",
       "Details around the Pipeline's overall status.",
-      Clouddeploy_DeliveryPipelineConditionPipelineReadyCondition_GetTypes(),
+      clouddeploy_DeliveryPipelineConditionPipelineReadyCondition_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "TargetsPresentConditions",
+      "targetsPresentConditions",
       "Details around targets enumerated in the pipeline.",
-      Clouddeploy_DeliveryPipelineConditionTargetsPresentCondition_GetTypes(),
+      clouddeploy_DeliveryPipelineConditionTargetsPresentCondition_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "targetsTypeConditions",
+      "Details on the whether the targets enumerated in the pipeline are of the same type.",
+      clouddeploy_DeliveryPipelineConditionTargetsTypeCondition_GetTypes(),
       false,
       false,
     ),

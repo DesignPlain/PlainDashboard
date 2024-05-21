@@ -7,100 +7,100 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Databasemigrationservice_PrivateConnectionVpcPeeringConfig,
-  Databasemigrationservice_PrivateConnectionVpcPeeringConfig_GetTypes,
-} from "../types/Databasemigrationservice_PrivateConnectionVpcPeeringConfig";
+  databasemigrationservice_PrivateConnectionVpcPeeringConfig,
+  databasemigrationservice_PrivateConnectionVpcPeeringConfig_GetTypes,
+} from "../types/databasemigrationservice_PrivateConnectionVpcPeeringConfig";
 import {
-  Databasemigrationservice_PrivateConnectionError,
-  Databasemigrationservice_PrivateConnectionError_GetTypes,
-} from "../types/Databasemigrationservice_PrivateConnectionError";
+  databasemigrationservice_PrivateConnectionError,
+  databasemigrationservice_PrivateConnectionError_GetTypes,
+} from "../types/databasemigrationservice_PrivateConnectionError";
 
 export interface PrivateConnectionArgs {
   // Display name.
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 Labels.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   // The name of the location this private connection is located in.
-  Location?: string;
+  location?: string;
 
   // The private connectivity identifier.
-  PrivateConnectionId?: string;
+  privateConnectionId?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 The VPC Peering configuration is used to create VPC peering
 between databasemigrationservice and the consumer's VPC.
 Structure is documented below.
 */
-  VpcPeeringConfig?: Databasemigrationservice_PrivateConnectionVpcPeeringConfig;
+  vpcPeeringConfig?: databasemigrationservice_PrivateConnectionVpcPeeringConfig;
 }
 export class PrivateConnection extends Resource {
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  // State of the PrivateConnection.
-  public State?: string;
-
-  // Display name.
-  public DisplayName?: string;
-
   // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
-
-  /*
-Labels.
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  public Labels?: Map<string, string>;
-
-  // The name of the location this private connection is located in.
-  public Location?: string;
-
-  // The resource's name.
-  public Name?: string;
-
-  // The private connectivity identifier.
-  public PrivateConnectionId?: string;
-
-  /*
-The VPC Peering configuration is used to create VPC peering
-between databasemigrationservice and the consumer's VPC.
-Structure is documented below.
-*/
-  public VpcPeeringConfig?: Databasemigrationservice_PrivateConnectionVpcPeeringConfig;
+  public effectiveLabels?: Map<string, string>;
 
   /*
 The PrivateConnection error in case of failure.
 Structure is documented below.
 */
-  public Errors?: Array<Databasemigrationservice_PrivateConnectionError>;
+  public errors?: Array<databasemigrationservice_PrivateConnectionError>;
+
+  /*
+Labels.
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
+
+  // The private connectivity identifier.
+  public privateConnectionId?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  // State of the PrivateConnection.
+  public state?: string;
+
+  /*
+The VPC Peering configuration is used to create VPC peering
+between databasemigrationservice and the consumer's VPC.
+Structure is documented below.
+*/
+  public vpcPeeringConfig?: databasemigrationservice_PrivateConnectionVpcPeeringConfig;
+
+  // Display name.
+  public displayName?: string;
+
+  // The name of the location this private connection is located in.
+  public location?: string;
+
+  // The resource's name.
+  public name?: string;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
+  public pulumiLabels?: Map<string, string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The name of the location this private connection is located in.",
         [],
         true,
@@ -108,7 +108,7 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "PrivateConnectionId",
+        "privateConnectionId",
         "The private connectivity identifier.",
         [],
         true,
@@ -116,7 +116,7 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -124,15 +124,15 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "VpcPeeringConfig",
+        "vpcPeeringConfig",
         "The VPC Peering configuration is used to create VPC peering\nbetween databasemigrationservice and the consumer's VPC.\nStructure is documented below.",
-        Databasemigrationservice_PrivateConnectionVpcPeeringConfig_GetTypes(),
+        databasemigrationservice_PrivateConnectionVpcPeeringConfig_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "Display name.",
         [],
         false,
@@ -140,7 +140,7 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "Labels.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,

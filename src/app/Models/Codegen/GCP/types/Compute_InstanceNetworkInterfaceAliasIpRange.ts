@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceNetworkInterfaceAliasIpRange {
+export interface compute_InstanceNetworkInterfaceAliasIpRange {
   /*
 The IP CIDR range represented by this alias IP range. This IP CIDR range
 must belong to the specified subnetwork and cannot contain IP addresses reserved by
 system or used by other network interfaces. This range may be a single IP address
 (e.g. 10.2.3.4), a netmask (e.g. /24) or a CIDR format string (e.g. 10.1.2.0/24).
 */
-  IpCidrRange?: string;
+  ipCidrRange?: string;
 
   /*
 The subnetwork secondary range name specifying
 the secondary range from which to allocate the IP CIDR range for this alias IP
 range. If left unspecified, the primary range of the subnetwork will be used.
 */
-  SubnetworkRangeName?: string;
+  subnetworkRangeName?: string;
 }
 
-export function Compute_InstanceNetworkInterfaceAliasIpRange_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceNetworkInterfaceAliasIpRange_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "IpCidrRange",
+      "ipCidrRange",
       "The IP CIDR range represented by this alias IP range. This IP CIDR range\nmust belong to the specified subnetwork and cannot contain IP addresses reserved by\nsystem or used by other network interfaces. This range may be a single IP address\n(e.g. 10.2.3.4), a netmask (e.g. /24) or a CIDR format string (e.g. 10.1.2.0/24).",
       [],
       true,
@@ -35,7 +35,7 @@ export function Compute_InstanceNetworkInterfaceAliasIpRange_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "SubnetworkRangeName",
+      "subnetworkRangeName",
       "The subnetwork secondary range name specifying\nthe secondary range from which to allocate the IP CIDR range for this alias IP\nrange. If left unspecified, the primary range of the subnetwork will be used.",
       [],
       false,

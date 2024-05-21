@@ -6,33 +6,58 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudbuild_getTriggerBuildStep,
-  Cloudbuild_getTriggerBuildStep_GetTypes,
-} from "./Cloudbuild_getTriggerBuildStep";
+  cloudbuild_getTriggerBuildAvailableSecret,
+  cloudbuild_getTriggerBuildAvailableSecret_GetTypes,
+} from "./cloudbuild_getTriggerBuildAvailableSecret";
 import {
-  Cloudbuild_getTriggerBuildSource,
-  Cloudbuild_getTriggerBuildSource_GetTypes,
-} from "./Cloudbuild_getTriggerBuildSource";
+  cloudbuild_getTriggerBuildOption,
+  cloudbuild_getTriggerBuildOption_GetTypes,
+} from "./cloudbuild_getTriggerBuildOption";
 import {
-  Cloudbuild_getTriggerBuildArtifact,
-  Cloudbuild_getTriggerBuildArtifact_GetTypes,
-} from "./Cloudbuild_getTriggerBuildArtifact";
+  cloudbuild_getTriggerBuildSource,
+  cloudbuild_getTriggerBuildSource_GetTypes,
+} from "./cloudbuild_getTriggerBuildSource";
 import {
-  Cloudbuild_getTriggerBuildAvailableSecret,
-  Cloudbuild_getTriggerBuildAvailableSecret_GetTypes,
-} from "./Cloudbuild_getTriggerBuildAvailableSecret";
+  cloudbuild_getTriggerBuildStep,
+  cloudbuild_getTriggerBuildStep_GetTypes,
+} from "./cloudbuild_getTriggerBuildStep";
 import {
-  Cloudbuild_getTriggerBuildOption,
-  Cloudbuild_getTriggerBuildOption_GetTypes,
-} from "./Cloudbuild_getTriggerBuildOption";
+  cloudbuild_getTriggerBuildSecret,
+  cloudbuild_getTriggerBuildSecret_GetTypes,
+} from "./cloudbuild_getTriggerBuildSecret";
 import {
-  Cloudbuild_getTriggerBuildSecret,
-  Cloudbuild_getTriggerBuildSecret_GetTypes,
-} from "./Cloudbuild_getTriggerBuildSecret";
+  cloudbuild_getTriggerBuildArtifact,
+  cloudbuild_getTriggerBuildArtifact_GetTypes,
+} from "./cloudbuild_getTriggerBuildArtifact";
 
-export interface Cloudbuild_getTriggerBuild {
+export interface cloudbuild_getTriggerBuild {
+  // Substitutions data for Build resource.
+  substitutions?: Map<string, string>;
+
+  /*
+Google Cloud Storage bucket where logs should be written.
+Logs file names will be of the format ${logsBucket}/log-${build_id}.txt.
+*/
+  logsBucket?: string;
+
+  // Special options for this build.
+  options?: Array<cloudbuild_getTriggerBuildOption>;
+
+  /*
+The location of the source files to build.
+
+One of 'storageSource' or 'repoSource' must be provided.
+*/
+  sources?: Array<cloudbuild_getTriggerBuildSource>;
+
+  // The operations to be performed on the workspace.
+  steps?: Array<cloudbuild_getTriggerBuildStep>;
+
+  // Secrets to decrypt using Cloud Key Management Service.
+  secrets?: Array<cloudbuild_getTriggerBuildSecret>;
+
   // Tags for annotation of a Build. These are not docker tags.
-  Tags?: Array<string>;
+  tags?: Array<string>;
 
   /*
 Amount of time that this build should be allowed to run, to second granularity.
@@ -41,7 +66,13 @@ This timeout must be equal to or greater than the sum of the timeouts for build 
 The expected format is the number of seconds followed by s.
 Default time is ten minutes (600s).
 */
-  Timeout?: string;
+  timeout?: string;
+
+  // Artifacts produced by the build that should be uploaded upon successful completion of all build steps.
+  artifacts?: Array<cloudbuild_getTriggerBuildArtifact>;
+
+  // Secrets and secret environment variables.
+  availableSecrets?: Array<cloudbuild_getTriggerBuildAvailableSecret>;
 
   /*
 A list of images to be pushed upon the successful completion of all build steps.
@@ -49,13 +80,7 @@ The images are pushed using the builder service account's credentials.
 The digests of the pushed images will be stored in the Build resource's results field.
 If any of the images fail to be pushed, the build status is marked FAILURE.
 */
-  Images?: Array<string>;
-
-  /*
-Google Cloud Storage bucket where logs should be written.
-Logs file names will be of the format ${logsBucket}/log-${build_id}.txt.
-*/
-  LogsBucket?: string;
+  images?: Array<string>;
 
   /*
 TTL in queue for this build. If provided and the build is enqueued longer than this value,
@@ -63,39 +88,22 @@ the build will expire and the build status will be EXPIRED.
 The TTL starts ticking from createTime.
 A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
 */
-  QueueTtl?: string;
-
-  // The operations to be performed on the workspace.
-  Steps?: Array<Cloudbuild_getTriggerBuildStep>;
-
-  /*
-The location of the source files to build.
-
-One of 'storageSource' or 'repoSource' must be provided.
-*/
-  Sources?: Array<Cloudbuild_getTriggerBuildSource>;
-
-  // Substitutions data for Build resource.
-  Substitutions?: Map<string, string>;
-
-  // Artifacts produced by the build that should be uploaded upon successful completion of all build steps.
-  Artifacts?: Array<Cloudbuild_getTriggerBuildArtifact>;
-
-  // Secrets and secret environment variables.
-  AvailableSecrets?: Array<Cloudbuild_getTriggerBuildAvailableSecret>;
-
-  // Special options for this build.
-  Options?: Array<Cloudbuild_getTriggerBuildOption>;
-
-  // Secrets to decrypt using Cloud Key Management Service.
-  Secrets?: Array<Cloudbuild_getTriggerBuildSecret>;
+  queueTtl?: string;
 }
 
-export function Cloudbuild_getTriggerBuild_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_getTriggerBuild_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Tags",
+      "secrets",
+      "Secrets to decrypt using Cloud Key Management Service.",
+      cloudbuild_getTriggerBuildSecret_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "tags",
       "Tags for annotation of a Build. These are not docker tags.",
       InputType_String_GetTypes(),
       true,
@@ -103,7 +111,7 @@ export function Cloudbuild_getTriggerBuild_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Timeout",
+      "timeout",
       "Amount of time that this build should be allowed to run, to second granularity.\nIf this amount of time elapses, work on the build will cease and the build status will be TIMEOUT.\nThis timeout must be equal to or greater than the sum of the timeouts for build steps within the build.\nThe expected format is the number of seconds followed by s.\nDefault time is ten minutes (600s).",
       [],
       true,
@@ -111,7 +119,15 @@ export function Cloudbuild_getTriggerBuild_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Images",
+      "artifacts",
+      "Artifacts produced by the build that should be uploaded upon successful completion of all build steps.",
+      cloudbuild_getTriggerBuildArtifact_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "images",
       "A list of images to be pushed upon the successful completion of all build steps.\nThe images are pushed using the builder service account's credentials.\nThe digests of the pushed images will be stored in the Build resource's results field.\nIf any of the images fail to be pushed, the build status is marked FAILURE.",
       InputType_String_GetTypes(),
       true,
@@ -119,39 +135,23 @@ export function Cloudbuild_getTriggerBuild_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "QueueTtl",
+      "queueTtl",
       "TTL in queue for this build. If provided and the build is enqueued longer than this value,\nthe build will expire and the build status will be EXPIRED.\nThe TTL starts ticking from createTime.\nA duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\".",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "Steps",
-      "The operations to be performed on the workspace.",
-      Cloudbuild_getTriggerBuildStep_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Map,
-      "Substitutions",
+      "substitutions",
       "Substitutions data for Build resource.",
       InputType_Map_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "Secrets",
-      "Secrets to decrypt using Cloud Key Management Service.",
-      Cloudbuild_getTriggerBuildSecret_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "LogsBucket",
+      "logsBucket",
       "Google Cloud Storage bucket where logs should be written.\nLogs file names will be of the format ${logsBucket}/log-${build_id}.txt.",
       [],
       true,
@@ -159,33 +159,33 @@ export function Cloudbuild_getTriggerBuild_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Sources",
-      "The location of the source files to build.\n\nOne of 'storageSource' or 'repoSource' must be provided.",
-      Cloudbuild_getTriggerBuildSource_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Artifacts",
-      "Artifacts produced by the build that should be uploaded upon successful completion of all build steps.",
-      Cloudbuild_getTriggerBuildArtifact_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "AvailableSecrets",
-      "Secrets and secret environment variables.",
-      Cloudbuild_getTriggerBuildAvailableSecret_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Options",
+      "options",
       "Special options for this build.",
-      Cloudbuild_getTriggerBuildOption_GetTypes(),
+      cloudbuild_getTriggerBuildOption_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "sources",
+      "The location of the source files to build.\n\nOne of 'storageSource' or 'repoSource' must be provided.",
+      cloudbuild_getTriggerBuildSource_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "steps",
+      "The operations to be performed on the workspace.",
+      cloudbuild_getTriggerBuildStep_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "availableSecrets",
+      "Secrets and secret environment variables.",
+      cloudbuild_getTriggerBuildAvailableSecret_GetTypes(),
       true,
       false,
     ),

@@ -6,45 +6,53 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Kms_CryptoKeyVersionAttestationExternalProtectionLevelOptions,
-  Kms_CryptoKeyVersionAttestationExternalProtectionLevelOptions_GetTypes,
-} from "./Kms_CryptoKeyVersionAttestationExternalProtectionLevelOptions";
+  kms_CryptoKeyVersionAttestationCertChains,
+  kms_CryptoKeyVersionAttestationCertChains_GetTypes,
+} from "./kms_CryptoKeyVersionAttestationCertChains";
 import {
-  Kms_CryptoKeyVersionAttestationCertChains,
-  Kms_CryptoKeyVersionAttestationCertChains_GetTypes,
-} from "./Kms_CryptoKeyVersionAttestationCertChains";
+  kms_CryptoKeyVersionAttestationExternalProtectionLevelOptions,
+  kms_CryptoKeyVersionAttestationExternalProtectionLevelOptions_GetTypes,
+} from "./kms_CryptoKeyVersionAttestationExternalProtectionLevelOptions";
 
-export interface Kms_CryptoKeyVersionAttestation {
+export interface kms_CryptoKeyVersionAttestation {
+  /*
+The certificate chains needed to validate the attestation
+Structure is documented below.
+*/
+  certChains?: kms_CryptoKeyVersionAttestationCertChains;
+
   /*
 (Output)
 The attestation data provided by the HSM when the key operation was performed.
 */
-  Content?: string;
+  content?: string;
 
   /*
 ExternalProtectionLevelOptions stores a group of additional fields for configuring a CryptoKeyVersion that are specific to the EXTERNAL protection level and EXTERNAL_VPC protection levels.
 Structure is documented below.
 */
-  ExternalProtectionLevelOptions?: Kms_CryptoKeyVersionAttestationExternalProtectionLevelOptions;
+  externalProtectionLevelOptions?: kms_CryptoKeyVersionAttestationExternalProtectionLevelOptions;
 
   /*
 (Output)
 The format of the attestation data.
 */
-  Format?: string;
-
-  /*
-The certificate chains needed to validate the attestation
-Structure is documented below.
-*/
-  CertChains?: Kms_CryptoKeyVersionAttestationCertChains;
+  format?: string;
 }
 
-export function Kms_CryptoKeyVersionAttestation_GetTypes(): DynamicUIProps[] {
+export function kms_CryptoKeyVersionAttestation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Object,
+      "certChains",
+      "The certificate chains needed to validate the attestation\nStructure is documented below.",
+      kms_CryptoKeyVersionAttestationCertChains_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "Content",
+      "content",
       "(Output)\nThe attestation data provided by the HSM when the key operation was performed.",
       [],
       false,
@@ -52,25 +60,17 @@ export function Kms_CryptoKeyVersionAttestation_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ExternalProtectionLevelOptions",
+      "externalProtectionLevelOptions",
       "ExternalProtectionLevelOptions stores a group of additional fields for configuring a CryptoKeyVersion that are specific to the EXTERNAL protection level and EXTERNAL_VPC protection levels.\nStructure is documented below.",
-      Kms_CryptoKeyVersionAttestationExternalProtectionLevelOptions_GetTypes(),
+      kms_CryptoKeyVersionAttestationExternalProtectionLevelOptions_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Format",
+      "format",
       "(Output)\nThe format of the attestation data.",
       [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "CertChains",
-      "The certificate chains needed to validate the attestation\nStructure is documented below.",
-      Kms_CryptoKeyVersionAttestationCertChains_GetTypes(),
       false,
       false,
     ),

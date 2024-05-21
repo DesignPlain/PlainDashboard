@@ -6,64 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalAdminClusterValidationCheckStatusResult {
+export interface gkeonprem_BareMetalAdminClusterValidationCheckStatusResult {
   /*
 (Output)
 The category of the validation.
 */
-  Category?: string;
+  category?: string;
 
   // A human readable description of this Bare Metal Admin Cluster.
-  Description?: string;
+  description?: string;
 
   /*
 (Output)
 Detailed failure information, which might be unformatted.
 */
-  Details?: string;
+  details?: string;
 
   /*
 (Output)
 Options used for the validation check.
 */
-  Options?: string;
+  options?: string;
 
   /*
 (Output)
 A human-readable message of the check failure.
 */
-  Reason?: string;
+  reason?: string;
 }
 
-export function Gkeonprem_BareMetalAdminClusterValidationCheckStatusResult_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalAdminClusterValidationCheckStatusResult_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Category",
-      "(Output)\nThe category of the validation.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Description",
-      "A human readable description of this Bare Metal Admin Cluster.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Details",
-      "(Output)\nDetailed failure information, which might be unformatted.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Options",
+      "options",
       "(Output)\nOptions used for the validation check.",
       [],
       false,
@@ -71,8 +47,32 @@ export function Gkeonprem_BareMetalAdminClusterValidationCheckStatusResult_GetTy
     ),
     new DynamicUIProps(
       InputType.String,
-      "Reason",
+      "reason",
       "(Output)\nA human-readable message of the check failure.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "category",
+      "(Output)\nThe category of the validation.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "description",
+      "A human readable description of this Bare Metal Admin Cluster.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "details",
+      "(Output)\nDetailed failure information, which might be unformatted.",
       [],
       false,
       false,

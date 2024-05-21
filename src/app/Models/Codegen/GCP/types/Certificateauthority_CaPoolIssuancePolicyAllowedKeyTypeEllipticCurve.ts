@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve {
+export interface certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve {
   /*
 The algorithm used.
 Possible values are: `ECDSA_P256`, `ECDSA_P384`, `EDDSA_25519`.
 */
-  SignatureAlgorithm?: string;
+  signatureAlgorithm?: string;
 }
 
-export function Certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SignatureAlgorithm",
+      "signatureAlgorithm",
       "The algorithm used.\nPossible values are: `ECDSA_P256`, `ECDSA_P384`, `EDDSA_25519`.",
       [],
       true,

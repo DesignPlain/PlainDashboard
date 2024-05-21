@@ -6,41 +6,41 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datacatalog_EntryBigqueryTableSpecViewSpec,
-  Datacatalog_EntryBigqueryTableSpecViewSpec_GetTypes,
-} from "./Datacatalog_EntryBigqueryTableSpecViewSpec";
+  datacatalog_EntryBigqueryTableSpecTableSpec,
+  datacatalog_EntryBigqueryTableSpecTableSpec_GetTypes,
+} from "./datacatalog_EntryBigqueryTableSpecTableSpec";
 import {
-  Datacatalog_EntryBigqueryTableSpecTableSpec,
-  Datacatalog_EntryBigqueryTableSpecTableSpec_GetTypes,
-} from "./Datacatalog_EntryBigqueryTableSpecTableSpec";
+  datacatalog_EntryBigqueryTableSpecViewSpec,
+  datacatalog_EntryBigqueryTableSpecViewSpec_GetTypes,
+} from "./datacatalog_EntryBigqueryTableSpecViewSpec";
 
-export interface Datacatalog_EntryBigqueryTableSpec {
+export interface datacatalog_EntryBigqueryTableSpec {
   /*
 (Output)
 The table source type.
 */
-  TableSourceType?: string;
+  tableSourceType?: string;
 
   /*
 (Output)
 Spec of a BigQuery table. This field should only be populated if tableSourceType is BIGQUERY_TABLE.
 Structure is documented below.
 */
-  TableSpecs?: Array<Datacatalog_EntryBigqueryTableSpecTableSpec>;
+  tableSpecs?: Array<datacatalog_EntryBigqueryTableSpecTableSpec>;
 
   /*
 (Output)
 Table view specification. This field should only be populated if tableSourceType is BIGQUERY_VIEW.
 Structure is documented below.
 */
-  ViewSpecs?: Array<Datacatalog_EntryBigqueryTableSpecViewSpec>;
+  viewSpecs?: Array<datacatalog_EntryBigqueryTableSpecViewSpec>;
 }
 
-export function Datacatalog_EntryBigqueryTableSpec_GetTypes(): DynamicUIProps[] {
+export function datacatalog_EntryBigqueryTableSpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "TableSourceType",
+      "tableSourceType",
       "(Output)\nThe table source type.",
       [],
       false,
@@ -48,17 +48,17 @@ export function Datacatalog_EntryBigqueryTableSpec_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "TableSpecs",
+      "tableSpecs",
       "(Output)\nSpec of a BigQuery table. This field should only be populated if tableSourceType is BIGQUERY_TABLE.\nStructure is documented below.",
-      Datacatalog_EntryBigqueryTableSpecTableSpec_GetTypes(),
+      datacatalog_EntryBigqueryTableSpecTableSpec_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ViewSpecs",
+      "viewSpecs",
       "(Output)\nTable view specification. This field should only be populated if tableSourceType is BIGQUERY_VIEW.\nStructure is documented below.",
-      Datacatalog_EntryBigqueryTableSpecViewSpec_GetTypes(),
+      datacatalog_EntryBigqueryTableSpecViewSpec_GetTypes(),
       false,
       false,
     ),

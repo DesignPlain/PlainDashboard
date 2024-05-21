@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType,
-  Dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType_GetTypes,
-} from "./Dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType";
+  dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType,
+  dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType_GetTypes,
+} from "./dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType";
 
-export interface Dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoType {
-  // Max findings limit for the given infoType.
-  MaxFindings?: number;
-
+export interface dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoType {
   /*
 Type of information the findings limit applies to. Only one limit per infoType should be provided. If InfoTypeLimit does
 not have an infoType, the DLP API applies the limit against all infoTypes that are found but not
 specified in another InfoTypeLimit.
 Structure is documented below.
 */
-  InfoType?: Dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType;
+  infoType?: dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType;
+
+  // Max findings limit for the given infoType.
+  maxFindings?: number;
 }
 
-export function Dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoType_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoType_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "MaxFindings",
+      "maxFindings",
       "Max findings limit for the given infoType.",
       [],
       true,
@@ -35,9 +35,9 @@ export function Dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindings
     ),
     new DynamicUIProps(
       InputType.Object,
-      "InfoType",
+      "infoType",
       "Type of information the findings limit applies to. Only one limit per infoType should be provided. If InfoTypeLimit does\nnot have an infoType, the DLP API applies the limit against all infoTypes that are found but not\nspecified in another InfoTypeLimit.\nStructure is documented below.",
-      Dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType_GetTypes(),
+      dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType_GetTypes(),
       true,
       false,
     ),

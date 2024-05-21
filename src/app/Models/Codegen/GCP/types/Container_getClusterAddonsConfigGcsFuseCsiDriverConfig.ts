@@ -6,11 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterAddonsConfigGcsFuseCsiDriverConfig {
+export interface container_getClusterAddonsConfigGcsFuseCsiDriverConfig {
   //
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_getClusterAddonsConfigGcsFuseCsiDriverConfig_GetTypes(): DynamicUIProps[] {
-  return [new DynamicUIProps(InputType.Bool, "Enabled", "", [], true, false)];
+export function container_getClusterAddonsConfigGcsFuseCsiDriverConfig_GetTypes(): DynamicUIProps[] {
+  return [new DynamicUIProps(InputType.Bool, "enabled", "", [], true, false)];
 }

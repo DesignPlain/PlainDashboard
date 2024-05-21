@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Identityplatform_ConfigSmsRegionConfigAllowlistOnly {
+export interface identityplatform_ConfigSmsRegionConfigAllowlistOnly {
   // Two letter unicode region codes to allow as defined by https://cldr.unicode.org/ The full list of these region codes is here: https://github.com/unicode-cldr/cldr-localenames-full/blob/master/main/en/territories.json
-  AllowedRegions?: Array<string>;
+  allowedRegions?: Array<string>;
 }
 
-export function Identityplatform_ConfigSmsRegionConfigAllowlistOnly_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ConfigSmsRegionConfigAllowlistOnly_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AllowedRegions",
+      "allowedRegions",
       "Two letter unicode region codes to allow as defined by https://cldr.unicode.org/ The full list of these region codes is here: https://github.com/unicode-cldr/cldr-localenames-full/blob/master/main/en/territories.json",
       InputType_String_GetTypes(),
       false,

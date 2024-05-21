@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_getRegionInstanceTemplateReservationAffinitySpecificReservation,
-  Compute_getRegionInstanceTemplateReservationAffinitySpecificReservation_GetTypes,
-} from "./Compute_getRegionInstanceTemplateReservationAffinitySpecificReservation";
+  compute_getRegionInstanceTemplateReservationAffinitySpecificReservation,
+  compute_getRegionInstanceTemplateReservationAffinitySpecificReservation_GetTypes,
+} from "./compute_getRegionInstanceTemplateReservationAffinitySpecificReservation";
 
-export interface Compute_getRegionInstanceTemplateReservationAffinity {
+export interface compute_getRegionInstanceTemplateReservationAffinity {
   // Specifies the label selector for the reservation to use.
-  SpecificReservations?: Array<Compute_getRegionInstanceTemplateReservationAffinitySpecificReservation>;
+  specificReservations?: Array<compute_getRegionInstanceTemplateReservationAffinitySpecificReservation>;
 
   // The accelerator type resource to expose to this instance. E.g. `nvidia-tesla-k80`.
-  Type?: string;
+  type?: string;
 }
 
-export function Compute_getRegionInstanceTemplateReservationAffinity_GetTypes(): DynamicUIProps[] {
+export function compute_getRegionInstanceTemplateReservationAffinity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "SpecificReservations",
+      "specificReservations",
       "Specifies the label selector for the reservation to use.",
-      Compute_getRegionInstanceTemplateReservationAffinitySpecificReservation_GetTypes(),
+      compute_getRegionInstanceTemplateReservationAffinitySpecificReservation_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "The accelerator type resource to expose to this instance. E.g. `nvidia-tesla-k80`.",
       [],
       true,

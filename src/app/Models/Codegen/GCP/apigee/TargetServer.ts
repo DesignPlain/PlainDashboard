@@ -7,13 +7,37 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Apigee_TargetServerSSlInfo,
-  Apigee_TargetServerSSlInfo_GetTypes,
-} from "../types/Apigee_TargetServerSSlInfo";
+  apigee_TargetServerSSlInfo,
+  apigee_TargetServerSSlInfo_GetTypes,
+} from "../types/apigee_TargetServerSSlInfo";
 
 export interface TargetServerArgs {
+  // The host name this target connects to. Value must be a valid hostname as described by RFC-1123.
+  host?: string;
+
+  // Enabling/disabling a TargetServer is useful when TargetServers are used in load balancing configurations, and one or more TargetServers need to taken out of rotation periodically. Defaults to true.
+  isEnabled?: boolean;
+
+  // The resource id of this reference. Values must match the regular expression [\w\s-.]+.
+  name?: string;
+
+  // The port number this target connects to on the given host. Value must be between 1 and 65535, inclusive.
+  port?: number;
+
+  /*
+Immutable. The protocol used by this TargetServer.
+Possible values are: `HTTP`, `HTTP2`, `GRPC_TARGET`, `GRPC`, `EXTERNAL_CALLOUT`.
+*/
+  protocol?: string;
+
+  /*
+Specifies TLS configuration info for this TargetServer. The JSON name is sSLInfo for legacy/backwards compatibility reasons -- Edge originally supported SSL, and the name is still used for TLS configuration.
+Structure is documented below.
+*/
+  sSlInfo?: apigee_TargetServerSSlInfo;
+
   // A human-readable description of this TargetServer.
-  Description?: string;
+  description?: string;
 
   /*
 The Apigee environment group associated with the Apigee environment,
@@ -22,50 +46,26 @@ in the format `organizations/{{org_name}}/environments/{{env_name}}`.
 
 - - -
 */
-  EnvId?: string;
-
-  // The host name this target connects to. Value must be a valid hostname as described by RFC-1123.
-  Host?: string;
-
-  // Enabling/disabling a TargetServer is useful when TargetServers are used in load balancing configurations, and one or more TargetServers need to taken out of rotation periodically. Defaults to true.
-  IsEnabled?: boolean;
-
-  // The resource id of this reference. Values must match the regular expression [\w\s-.]+.
-  Name?: string;
-
-  // The port number this target connects to on the given host. Value must be between 1 and 65535, inclusive.
-  Port?: number;
-
-  /*
-Immutable. The protocol used by this TargetServer.
-Possible values are: `HTTP`, `HTTP2`, `GRPC_TARGET`, `GRPC`, `EXTERNAL_CALLOUT`.
-*/
-  Protocol?: string;
-
-  /*
-Specifies TLS configuration info for this TargetServer. The JSON name is sSLInfo for legacy/backwards compatibility reasons -- Edge originally supported SSL, and the name is still used for TLS configuration.
-Structure is documented below.
-*/
-  SSlInfo?: Apigee_TargetServerSSlInfo;
+  envId?: string;
 }
 export class TargetServer extends Resource {
   // The port number this target connects to on the given host. Value must be between 1 and 65535, inclusive.
-  public Port?: number;
+  public port?: number;
 
   /*
 Immutable. The protocol used by this TargetServer.
 Possible values are: `HTTP`, `HTTP2`, `GRPC_TARGET`, `GRPC`, `EXTERNAL_CALLOUT`.
 */
-  public Protocol?: string;
+  public protocol?: string;
 
   /*
 Specifies TLS configuration info for this TargetServer. The JSON name is sSLInfo for legacy/backwards compatibility reasons -- Edge originally supported SSL, and the name is still used for TLS configuration.
 Structure is documented below.
 */
-  public SSlInfo?: Apigee_TargetServerSSlInfo;
+  public sSlInfo?: apigee_TargetServerSSlInfo;
 
   // A human-readable description of this TargetServer.
-  public Description?: string;
+  public description?: string;
 
   /*
 The Apigee environment group associated with the Apigee environment,
@@ -74,62 +74,22 @@ in the format `organizations/{{org_name}}/environments/{{env_name}}`.
 
 - - -
 */
-  public EnvId?: string;
+  public envId?: string;
 
   // The host name this target connects to. Value must be a valid hostname as described by RFC-1123.
-  public Host?: string;
+  public host?: string;
 
   // Enabling/disabling a TargetServer is useful when TargetServers are used in load balancing configurations, and one or more TargetServers need to taken out of rotation periodically. Defaults to true.
-  public IsEnabled?: boolean;
+  public isEnabled?: boolean;
 
   // The resource id of this reference. Values must match the regular expression [\w\s-.]+.
-  public Name?: string;
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Object,
-        "SSlInfo",
-        "Specifies TLS configuration info for this TargetServer. The JSON name is sSLInfo for legacy/backwards compatibility reasons -- Edge originally supported SSL, and the name is still used for TLS configuration.\nStructure is documented below.",
-        Apigee_TargetServerSSlInfo_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Description",
-        "A human-readable description of this TargetServer.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "EnvId",
-        "The Apigee environment group associated with the Apigee environment,\nin the format `organizations/{{org_name}}/environments/{{env_name}}`.\n\n\n- - -",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Host",
-        "The host name this target connects to. Value must be a valid hostname as described by RFC-1123.",
-        [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Bool,
-        "IsEnabled",
-        "Enabling/disabling a TargetServer is useful when TargetServers are used in load balancing configurations, and one or more TargetServers need to taken out of rotation periodically. Defaults to true.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
+        "name",
         "The resource id of this reference. Values must match the regular expression [\\w\\s-.]+.",
         [],
         false,
@@ -137,7 +97,7 @@ in the format `organizations/{{org_name}}/environments/{{env_name}}`.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "Port",
+        "port",
         "The port number this target connects to on the given host. Value must be between 1 and 65535, inclusive.",
         [],
         true,
@@ -145,11 +105,51 @@ in the format `organizations/{{org_name}}/environments/{{env_name}}`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Protocol",
+        "protocol",
         "Immutable. The protocol used by this TargetServer.\nPossible values are: `HTTP`, `HTTP2`, `GRPC_TARGET`, `GRPC`, `EXTERNAL_CALLOUT`.",
         [],
         false,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "sSlInfo",
+        "Specifies TLS configuration info for this TargetServer. The JSON name is sSLInfo for legacy/backwards compatibility reasons -- Edge originally supported SSL, and the name is still used for TLS configuration.\nStructure is documented below.",
+        apigee_TargetServerSSlInfo_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "A human-readable description of this TargetServer.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "envId",
+        "The Apigee environment group associated with the Apigee environment,\nin the format `organizations/{{org_name}}/environments/{{env_name}}`.\n\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "host",
+        "The host name this target connects to. Value must be a valid hostname as described by RFC-1123.",
+        [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "isEnabled",
+        "Enabling/disabling a TargetServer is useful when TargetServers are used in load balancing configurations, and one or more TargetServers need to taken out of rotation periodically. Defaults to true.",
+        [],
+        false,
+        false,
       ),
     ];
   }

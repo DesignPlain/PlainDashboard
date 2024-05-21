@@ -6,28 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networksecurity_SecurityProfileThreatPreventionProfileThreatOverride {
+export interface networksecurity_SecurityProfileThreatPreventionProfileThreatOverride {
+  /*
+Threat action.
+Possible values are: `ALERT`, `ALLOW`, `DEFAULT_ACTION`, `DENY`.
+*/
+  action?: string;
+
   // Vendor-specific ID of a threat to override.
-  ThreatId?: string;
+  threatId?: string;
 
   /*
 (Output)
 Type of threat.
 */
-  Type?: string;
-
-  /*
-Threat action.
-Possible values are: `ALERT`, `ALLOW`, `DEFAULT_ACTION`, `DENY`.
-*/
-  Action?: string;
+  type?: string;
 }
 
-export function Networksecurity_SecurityProfileThreatPreventionProfileThreatOverride_GetTypes(): DynamicUIProps[] {
+export function networksecurity_SecurityProfileThreatPreventionProfileThreatOverride_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ThreatId",
+      "action",
+      "Threat action.\nPossible values are: `ALERT`, `ALLOW`, `DEFAULT_ACTION`, `DENY`.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "threatId",
       "Vendor-specific ID of a threat to override.",
       [],
       true,
@@ -35,18 +43,10 @@ export function Networksecurity_SecurityProfileThreatPreventionProfileThreatOver
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "(Output)\nType of threat.",
       [],
       false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Action",
-      "Threat action.\nPossible values are: `ALERT`, `ALLOW`, `DEFAULT_ACTION`, `DENY`.",
-      [],
-      true,
       false,
     ),
   ];

@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_UptimeCheckConfigHttpCheckAcceptedResponseStatusCode {
+export interface monitoring_UptimeCheckConfigHttpCheckAcceptedResponseStatusCode {
+  // A status code to accept.
+  statusValue?: number;
+
   /*
 A class of status codes to accept.
 Possible values are: `STATUS_CLASS_1XX`, `STATUS_CLASS_2XX`, `STATUS_CLASS_3XX`, `STATUS_CLASS_4XX`, `STATUS_CLASS_5XX`, `STATUS_CLASS_ANY`.
 */
-  StatusClass?: string;
-
-  // A status code to accept.
-  StatusValue?: number;
+  statusClass?: string;
 }
 
-export function Monitoring_UptimeCheckConfigHttpCheckAcceptedResponseStatusCode_GetTypes(): DynamicUIProps[] {
+export function monitoring_UptimeCheckConfigHttpCheckAcceptedResponseStatusCode_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "StatusClass",
-      "A class of status codes to accept.\nPossible values are: `STATUS_CLASS_1XX`, `STATUS_CLASS_2XX`, `STATUS_CLASS_3XX`, `STATUS_CLASS_4XX`, `STATUS_CLASS_5XX`, `STATUS_CLASS_ANY`.",
+      InputType.Number,
+      "statusValue",
+      "A status code to accept.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Number,
-      "StatusValue",
-      "A status code to accept.",
+      InputType.String,
+      "statusClass",
+      "A class of status codes to accept.\nPossible values are: `STATUS_CLASS_1XX`, `STATUS_CLASS_2XX`, `STATUS_CLASS_3XX`, `STATUS_CLASS_4XX`, `STATUS_CLASS_5XX`, `STATUS_CLASS_ANY`.",
       [],
       false,
       false,

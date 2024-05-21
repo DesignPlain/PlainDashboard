@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Firebaserules_RulesetMetadata {
+export interface firebaserules_RulesetMetadata {
   // Services that this ruleset has declarations for (e.g., "cloud.firestore"). There may be 0+ of these.
-  Services?: Array<string>;
+  services?: Array<string>;
 }
 
-export function Firebaserules_RulesetMetadata_GetTypes(): DynamicUIProps[] {
+export function firebaserules_RulesetMetadata_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Services",
+      "services",
       'Services that this ruleset has declarations for (e.g., "cloud.firestore"). There may be 0+ of these.',
       InputType_String_GetTypes(),
       false,

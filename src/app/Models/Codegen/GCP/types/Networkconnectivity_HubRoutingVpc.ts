@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkconnectivity_HubRoutingVpc {
+export interface networkconnectivity_HubRoutingVpc {
   // The URI of the VPC network.
-  Uri?: string;
+  uri?: string;
 }
 
-export function Networkconnectivity_HubRoutingVpc_GetTypes(): DynamicUIProps[] {
+export function networkconnectivity_HubRoutingVpc_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Uri",
+      "uri",
       "The URI of the VPC network.",
       [],
       false,

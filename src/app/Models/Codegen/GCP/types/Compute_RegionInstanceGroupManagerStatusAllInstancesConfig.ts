@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionInstanceGroupManagerStatusAllInstancesConfig {
+export interface compute_RegionInstanceGroupManagerStatusAllInstancesConfig {
   // A bit indicating whether this configuration has been applied to all managed instances in the group.
-  Effective?: boolean;
+  effective?: boolean;
 }
 
-export function Compute_RegionInstanceGroupManagerStatusAllInstancesConfig_GetTypes(): DynamicUIProps[] {
+export function compute_RegionInstanceGroupManagerStatusAllInstancesConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Effective",
+      "effective",
       "A bit indicating whether this configuration has been applied to all managed instances in the group.",
       [],
       false,

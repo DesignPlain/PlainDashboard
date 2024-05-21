@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_JobQueryUserDefinedFunctionResource {
+export interface bigquery_JobQueryUserDefinedFunctionResource {
   /*
 An inline resource that contains code for a user-defined function (UDF).
 Providing a inline code resource is equivalent to providing a URI for a file containing the same code.
 */
-  InlineCode?: string;
+  inlineCode?: string;
 
   // A code resource to load from a Google Cloud Storage URI (gs://bucket/path).
-  ResourceUri?: string;
+  resourceUri?: string;
 }
 
-export function Bigquery_JobQueryUserDefinedFunctionResource_GetTypes(): DynamicUIProps[] {
+export function bigquery_JobQueryUserDefinedFunctionResource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "InlineCode",
+      "inlineCode",
       "An inline resource that contains code for a user-defined function (UDF).\nProviding a inline code resource is equivalent to providing a URI for a file containing the same code.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Bigquery_JobQueryUserDefinedFunctionResource_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "ResourceUri",
+      "resourceUri",
       "A code resource to load from a Google Cloud Storage URI (gs://bucket/path).",
       [],
       false,

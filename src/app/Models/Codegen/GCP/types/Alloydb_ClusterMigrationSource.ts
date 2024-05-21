@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Alloydb_ClusterMigrationSource {
+export interface alloydb_ClusterMigrationSource {
   // Type of migration source.
-  SourceType?: string;
+  sourceType?: string;
 
   // The host and port of the on-premises instance in host:port format
-  HostPort?: string;
+  hostPort?: string;
 
   // Place holder for the external source identifier(e.g DMS job name) that created the cluster.
-  ReferenceId?: string;
+  referenceId?: string;
 }
 
-export function Alloydb_ClusterMigrationSource_GetTypes(): DynamicUIProps[] {
+export function alloydb_ClusterMigrationSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SourceType",
+      "referenceId",
+      "Place holder for the external source identifier(e.g DMS job name) that created the cluster.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "sourceType",
       "Type of migration source.",
       [],
       false,
@@ -29,16 +37,8 @@ export function Alloydb_ClusterMigrationSource_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "HostPort",
+      "hostPort",
       "The host and port of the on-premises instance in host:port format",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ReferenceId",
-      "Place holder for the external source identifier(e.g DMS job name) that created the cluster.",
       [],
       false,
       false,

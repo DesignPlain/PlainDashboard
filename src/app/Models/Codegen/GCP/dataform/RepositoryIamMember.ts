@@ -7,66 +7,66 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataform_RepositoryIamMemberCondition,
-  Dataform_RepositoryIamMemberCondition_GetTypes,
-} from "../types/Dataform_RepositoryIamMemberCondition";
+  dataform_RepositoryIamMemberCondition,
+  dataform_RepositoryIamMemberCondition_GetTypes,
+} from "../types/dataform_RepositoryIamMemberCondition";
 
 export interface RepositoryIamMemberArgs {
   //
-  Project?: string;
+  region?: string;
 
   //
-  Region?: string;
+  repository?: string;
 
   //
-  Repository?: string;
+  role?: string;
 
   //
-  Role?: string;
+  condition?: dataform_RepositoryIamMemberCondition;
 
   //
-  Condition?: Dataform_RepositoryIamMemberCondition;
+  member?: string;
 
   //
-  Member?: string;
+  project?: string;
 }
 export class RepositoryIamMember extends Resource {
   //
-  public Condition?: Dataform_RepositoryIamMemberCondition;
+  public etag?: string;
 
   //
-  public Etag?: string;
+  public member?: string;
 
   //
-  public Member?: string;
+  public project?: string;
 
   //
-  public Project?: string;
+  public region?: string;
 
   //
-  public Region?: string;
+  public repository?: string;
 
   //
-  public Repository?: string;
+  public role?: string;
 
   //
-  public Role?: string;
+  public condition?: dataform_RepositoryIamMemberCondition;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
+      new DynamicUIProps(InputType.String, "region", "", [], false, true),
+      new DynamicUIProps(InputType.String, "repository", "", [], true, true),
+      new DynamicUIProps(InputType.String, "role", "", [], true, true),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Dataform_RepositoryIamMemberCondition_GetTypes(),
+        dataform_RepositoryIamMemberCondition_GetTypes(),
         false,
         true,
       ),
-      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
-      new DynamicUIProps(InputType.String, "Project", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Region", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Repository", "", [], true, true),
-      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
+      new DynamicUIProps(InputType.String, "member", "", [], true, true),
+      new DynamicUIProps(InputType.String, "project", "", [], false, true),
     ];
   }
 }

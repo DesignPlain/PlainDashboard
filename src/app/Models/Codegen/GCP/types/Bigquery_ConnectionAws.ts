@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Bigquery_ConnectionAwsAccessRole,
-  Bigquery_ConnectionAwsAccessRole_GetTypes,
-} from "./Bigquery_ConnectionAwsAccessRole";
+  bigquery_ConnectionAwsAccessRole,
+  bigquery_ConnectionAwsAccessRole_GetTypes,
+} from "./bigquery_ConnectionAwsAccessRole";
 
-export interface Bigquery_ConnectionAws {
+export interface bigquery_ConnectionAws {
   /*
 Authentication using Google owned service account to assume into customer's AWS IAM Role.
 Structure is documented below.
 */
-  AccessRole?: Bigquery_ConnectionAwsAccessRole;
+  accessRole?: bigquery_ConnectionAwsAccessRole;
 }
 
-export function Bigquery_ConnectionAws_GetTypes(): DynamicUIProps[] {
+export function bigquery_ConnectionAws_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "AccessRole",
+      "accessRole",
       "Authentication using Google owned service account to assume into customer's AWS IAM Role.\nStructure is documented below.",
-      Bigquery_ConnectionAwsAccessRole_GetTypes(),
+      bigquery_ConnectionAwsAccessRole_GetTypes(),
       true,
       false,
     ),

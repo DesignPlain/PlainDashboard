@@ -6,36 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterMaintenancePolicyMaintenanceExclusionExclusionOption,
-  Container_getClusterMaintenancePolicyMaintenanceExclusionExclusionOption_GetTypes,
-} from "./Container_getClusterMaintenancePolicyMaintenanceExclusionExclusionOption";
+  container_getClusterMaintenancePolicyMaintenanceExclusionExclusionOption,
+  container_getClusterMaintenancePolicyMaintenanceExclusionExclusionOption_GetTypes,
+} from "./container_getClusterMaintenancePolicyMaintenanceExclusionExclusionOption";
 
-export interface Container_getClusterMaintenancePolicyMaintenanceExclusion {
+export interface container_getClusterMaintenancePolicyMaintenanceExclusion {
   //
-  ExclusionName?: string;
+  endTime?: string;
+
+  //
+  exclusionName?: string;
 
   // Maintenance exclusion related options.
-  ExclusionOptions?: Array<Container_getClusterMaintenancePolicyMaintenanceExclusionExclusionOption>;
+  exclusionOptions?: Array<container_getClusterMaintenancePolicyMaintenanceExclusionExclusionOption>;
 
   //
-  StartTime?: string;
-
-  //
-  EndTime?: string;
+  startTime?: string;
 }
 
-export function Container_getClusterMaintenancePolicyMaintenanceExclusion_GetTypes(): DynamicUIProps[] {
+export function container_getClusterMaintenancePolicyMaintenanceExclusion_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "ExclusionName", "", [], true, false),
+    new DynamicUIProps(InputType.String, "startTime", "", [], true, false),
+    new DynamicUIProps(InputType.String, "endTime", "", [], true, false),
+    new DynamicUIProps(InputType.String, "exclusionName", "", [], true, false),
     new DynamicUIProps(
       InputType.Array,
-      "ExclusionOptions",
+      "exclusionOptions",
       "Maintenance exclusion related options.",
-      Container_getClusterMaintenancePolicyMaintenanceExclusionExclusionOption_GetTypes(),
+      container_getClusterMaintenancePolicyMaintenanceExclusionExclusionOption_GetTypes(),
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "StartTime", "", [], true, false),
-    new DynamicUIProps(InputType.String, "EndTime", "", [], true, false),
   ];
 }

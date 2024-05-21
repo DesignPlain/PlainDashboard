@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Discoveryengine_ChatEngineChatEngineConfigAgentCreationConfig,
-  Discoveryengine_ChatEngineChatEngineConfigAgentCreationConfig_GetTypes,
-} from "./Discoveryengine_ChatEngineChatEngineConfigAgentCreationConfig";
+  discoveryengine_ChatEngineChatEngineConfigAgentCreationConfig,
+  discoveryengine_ChatEngineChatEngineConfigAgentCreationConfig_GetTypes,
+} from "./discoveryengine_ChatEngineChatEngineConfigAgentCreationConfig";
 
-export interface Discoveryengine_ChatEngineChatEngineConfig {
+export interface discoveryengine_ChatEngineChatEngineConfig {
   /*
 The configuration to generate the Dialogflow agent that is associated to this Engine.
 Structure is documented below.
 */
-  AgentCreationConfig?: Discoveryengine_ChatEngineChatEngineConfigAgentCreationConfig;
+  agentCreationConfig?: discoveryengine_ChatEngineChatEngineConfigAgentCreationConfig;
 }
 
-export function Discoveryengine_ChatEngineChatEngineConfig_GetTypes(): DynamicUIProps[] {
+export function discoveryengine_ChatEngineChatEngineConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "AgentCreationConfig",
+      "agentCreationConfig",
       "The configuration to generate the Dialogflow agent that is associated to this Engine.\nStructure is documented below.",
-      Discoveryengine_ChatEngineChatEngineConfigAgentCreationConfig_GetTypes(),
+      discoveryengine_ChatEngineChatEngineConfigAgentCreationConfig_GetTypes(),
       true,
       false,
     ),

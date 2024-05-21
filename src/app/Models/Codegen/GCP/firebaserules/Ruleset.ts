@@ -7,57 +7,57 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Firebaserules_RulesetSource,
-  Firebaserules_RulesetSource_GetTypes,
-} from "../types/Firebaserules_RulesetSource";
+  firebaserules_RulesetSource,
+  firebaserules_RulesetSource_GetTypes,
+} from "../types/firebaserules_RulesetSource";
 import {
-  Firebaserules_RulesetMetadata,
-  Firebaserules_RulesetMetadata_GetTypes,
-} from "../types/Firebaserules_RulesetMetadata";
+  firebaserules_RulesetMetadata,
+  firebaserules_RulesetMetadata_GetTypes,
+} from "../types/firebaserules_RulesetMetadata";
 
 export interface RulesetArgs {
   // The project for the resource
-  Project?: string;
+  project?: string;
 
   // `Source` for the `Ruleset`.
-  Source?: Firebaserules_RulesetSource;
+  source?: firebaserules_RulesetSource;
 }
 export class Ruleset extends Resource {
-  // The project for the resource
-  public Project?: string;
-
-  // `Source` for the `Ruleset`.
-  public Source?: Firebaserules_RulesetSource;
-
   // Output only. Time the `Ruleset` was created.
-  public CreateTime?: string;
+  public createTime?: string;
 
   // Output only. The metadata for this ruleset.
-  public Metadatas?: Array<Firebaserules_RulesetMetadata>;
+  public metadatas?: Array<firebaserules_RulesetMetadata>;
 
   /*
 File name.
 
 - - -
 */
-  public Name?: string;
+  public name?: string;
+
+  // The project for the resource
+  public project?: string;
+
+  // `Source` for the `Ruleset`.
+  public source?: firebaserules_RulesetSource;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Object,
-        "Source",
-        "`Source` for the `Ruleset`.",
-        Firebaserules_RulesetSource_GetTypes(),
-        true,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The project for the resource",
         [],
         false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "source",
+        "`Source` for the `Ruleset`.",
+        firebaserules_RulesetSource_GetTypes(),
+        true,
         true,
       ),
     ];

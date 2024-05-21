@@ -9,10 +9,10 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface EntryGroupArgs {
   // Entry group description, which can consist of several sentences or paragraphs that describe entry group contents.
-  Description?: string;
+  description?: string;
 
   // A short name to identify the entry group, for example, "analytics data - jan 2011".
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 The id of the entry group to create. The id must begin with a letter or underscore,
@@ -21,23 +21,23 @@ contain only English letters, numbers and underscores, and be at most 64 charact
 
 - - -
 */
-  EntryGroupId?: string;
+  entryGroupId?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // EntryGroup location region.
-  Region?: string;
+  region?: string;
 }
 export class EntryGroup extends Resource {
   // Entry group description, which can consist of several sentences or paragraphs that describe entry group contents.
-  public Description?: string;
+  public description?: string;
 
   // A short name to identify the entry group, for example, "analytics data - jan 2011".
-  public DisplayName?: string;
+  public displayName?: string;
 
   /*
 The id of the entry group to create. The id must begin with a letter or underscore,
@@ -46,25 +46,25 @@ contain only English letters, numbers and underscores, and be at most 64 charact
 
 - - -
 */
-  public EntryGroupId?: string;
+  public entryGroupId?: string;
 
   // The resource name of the entry group in URL format. Example: projects/{project}/locations/{location}/entryGroups/{entryGroupId}
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // EntryGroup location region.
-  public Region?: string;
+  public region?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Entry group description, which can consist of several sentences or paragraphs that describe entry group contents.",
         [],
         false,
@@ -72,7 +72,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         'A short name to identify the entry group, for example, "analytics data - jan 2011".',
         [],
         false,
@@ -80,7 +80,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "EntryGroupId",
+        "entryGroupId",
         "The id of the entry group to create. The id must begin with a letter or underscore,\ncontain only English letters, numbers and underscores, and be at most 64 characters.\n\n\n- - -",
         [],
         true,
@@ -88,7 +88,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -96,7 +96,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "EntryGroup location region.",
         [],
         false,

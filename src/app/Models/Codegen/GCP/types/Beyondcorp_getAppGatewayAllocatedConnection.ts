@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Beyondcorp_getAppGatewayAllocatedConnection {
-  // The ingress port of an allocated connection.
-  IngressPort?: number;
-
+export interface beyondcorp_getAppGatewayAllocatedConnection {
   // The PSC uri of an allocated connection.
-  PscUri?: string;
+  pscUri?: string;
+
+  // The ingress port of an allocated connection.
+  ingressPort?: number;
 }
 
-export function Beyondcorp_getAppGatewayAllocatedConnection_GetTypes(): DynamicUIProps[] {
+export function beyondcorp_getAppGatewayAllocatedConnection_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "IngressPort",
-      "The ingress port of an allocated connection.",
+      InputType.String,
+      "pscUri",
+      "The PSC uri of an allocated connection.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "PscUri",
-      "The PSC uri of an allocated connection.",
+      InputType.Number,
+      "ingressPort",
+      "The ingress port of an allocated connection.",
       [],
       true,
       false,

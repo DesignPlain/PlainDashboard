@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceFromMachineImageScratchDisk {
-  // Name with which the attached disk is accessible under /dev/disk/by-id/
-  DeviceName?: string;
-
+export interface compute_InstanceFromMachineImageScratchDisk {
   // The disk interface used for attaching this disk. One of SCSI or NVME.
-  Interface?: string;
+  interface?: string;
 
   // The size of the disk in gigabytes. One of 375 or 3000.
-  Size?: number;
+  size?: number;
+
+  // Name with which the attached disk is accessible under /dev/disk/by-id/
+  deviceName?: string;
 }
 
-export function Compute_InstanceFromMachineImageScratchDisk_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceFromMachineImageScratchDisk_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DeviceName",
-      "Name with which the attached disk is accessible under /dev/disk/by-id/",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Interface",
+      "interface",
       "The disk interface used for attaching this disk. One of SCSI or NVME.",
       [],
       true,
@@ -37,11 +29,19 @@ export function Compute_InstanceFromMachineImageScratchDisk_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Size",
+      "size",
       "The size of the disk in gigabytes. One of 375 or 3000.",
       [],
       false,
       true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "deviceName",
+      "Name with which the attached disk is accessible under /dev/disk/by-id/",
+      [],
+      false,
+      false,
     ),
   ];
 }

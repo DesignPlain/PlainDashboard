@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificateauthority_CertificateTemplateIdentityConstraintsCelExpression,
-  Certificateauthority_CertificateTemplateIdentityConstraintsCelExpression_GetTypes,
-} from "./Certificateauthority_CertificateTemplateIdentityConstraintsCelExpression";
+  certificateauthority_CertificateTemplateIdentityConstraintsCelExpression,
+  certificateauthority_CertificateTemplateIdentityConstraintsCelExpression_GetTypes,
+} from "./certificateauthority_CertificateTemplateIdentityConstraintsCelExpression";
 
-export interface Certificateauthority_CertificateTemplateIdentityConstraints {
+export interface certificateauthority_CertificateTemplateIdentityConstraints {
+  // Required. If this is true, the SubjectAltNames extension may be copied from a certificate request into the signed certificate. Otherwise, the requested SubjectAltNames will be discarded.
+  allowSubjectAltNamesPassthrough?: boolean;
+
   // Required. If this is true, the Subject field may be copied from a certificate request into the signed certificate. Otherwise, the requested Subject will be discarded.
-  AllowSubjectPassthrough?: boolean;
+  allowSubjectPassthrough?: boolean;
 
   // Optional. A CEL expression that may be used to validate the resolved X.509 Subject and/or Subject Alternative Name before a certificate is signed. To see the full allowed syntax and some examples, see https://cloud.google.com/certificate-authority-service/docs/using-cel
-  CelExpression?: Certificateauthority_CertificateTemplateIdentityConstraintsCelExpression;
-
-  // Required. If this is true, the SubjectAltNames extension may be copied from a certificate request into the signed certificate. Otherwise, the requested SubjectAltNames will be discarded.
-  AllowSubjectAltNamesPassthrough?: boolean;
+  celExpression?: certificateauthority_CertificateTemplateIdentityConstraintsCelExpression;
 }
 
-export function Certificateauthority_CertificateTemplateIdentityConstraints_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CertificateTemplateIdentityConstraints_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Object,
+      "celExpression",
+      "Optional. A CEL expression that may be used to validate the resolved X.509 Subject and/or Subject Alternative Name before a certificate is signed. To see the full allowed syntax and some examples, see https://cloud.google.com/certificate-authority-service/docs/using-cel",
+      certificateauthority_CertificateTemplateIdentityConstraintsCelExpression_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Bool,
-      "AllowSubjectPassthrough",
-      "Required. If this is true, the Subject field may be copied from a certificate request into the signed certificate. Otherwise, the requested Subject will be discarded.",
+      "allowSubjectAltNamesPassthrough",
+      "Required. If this is true, the SubjectAltNames extension may be copied from a certificate request into the signed certificate. Otherwise, the requested SubjectAltNames will be discarded.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "CelExpression",
-      "Optional. A CEL expression that may be used to validate the resolved X.509 Subject and/or Subject Alternative Name before a certificate is signed. To see the full allowed syntax and some examples, see https://cloud.google.com/certificate-authority-service/docs/using-cel",
-      Certificateauthority_CertificateTemplateIdentityConstraintsCelExpression_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "AllowSubjectAltNamesPassthrough",
-      "Required. If this is true, the SubjectAltNames extension may be copied from a certificate request into the signed certificate. Otherwise, the requested SubjectAltNames will be discarded.",
+      "allowSubjectPassthrough",
+      "Required. If this is true, the Subject field may be copied from a certificate request into the signed certificate. Otherwise, the requested Subject will be discarded.",
       [],
       true,
       false,

@@ -6,52 +6,68 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentConditionalCase,
-  Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentConditionalCase_GetTypes,
-} from "./Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentConditionalCase";
+  diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentConditionalCase,
+  diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentConditionalCase_GetTypes,
+} from "./diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentConditionalCase";
 import {
-  Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessage,
-  Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessage_GetTypes,
-} from "./Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessage";
+  diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessage,
+  diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessage_GetTypes,
+} from "./diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessage";
 import {
-  Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterAction,
-  Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterAction_GetTypes,
-} from "./Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterAction";
+  diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterAction,
+  diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterAction_GetTypes,
+} from "./diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterAction";
 
-export interface Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillment {
+export interface diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillment {
   /*
 Conditional cases for this fulfillment.
 Structure is documented below.
 */
-  ConditionalCases?: Array<Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentConditionalCase>;
+  conditionalCases?: Array<diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentConditionalCase>;
 
   /*
 The list of rich message responses to present to the user.
 Structure is documented below.
 */
-  Messages?: Array<Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessage>;
+  messages?: Array<diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessage>;
 
   // Whether Dialogflow should return currently queued fulfillment response messages in streaming APIs. If a webhook is specified, it happens before Dialogflow invokes webhook. Warning: 1) This flag only affects streaming API. Responses are still queued and returned once in non-streaming API. 2) The flag can be enabled in any fulfillment but only the first 3 partial responses will be returned. You may only want to apply it to fulfillments that have slow webhooks.
-  ReturnPartialResponses?: boolean;
+  returnPartialResponses?: boolean;
 
   /*
 Set parameter values before executing the webhook.
 Structure is documented below.
 */
-  SetParameterActions?: Array<Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterAction>;
+  setParameterActions?: Array<diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterAction>;
 
   // The tag used by the webhook to identify which fulfillment is being called. This field is required if webhook is specified.
-  Tag?: string;
+  tag?: string;
 
   // The webhook to call. Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/webhooks/<Webhook ID>.
-  Webhook?: string;
+  webhook?: string;
 }
 
-export function Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillment_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillment_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Array,
+      "setParameterActions",
+      "Set parameter values before executing the webhook.\nStructure is documented below.",
+      diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterAction_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "Webhook",
+      "tag",
+      "The tag used by the webhook to identify which fulfillment is being called. This field is required if webhook is specified.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "webhook",
       "The webhook to call. Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/webhooks/<Webhook ID>.",
       [],
       false,
@@ -59,40 +75,24 @@ export function Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTrig
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ConditionalCases",
+      "conditionalCases",
       "Conditional cases for this fulfillment.\nStructure is documented below.",
-      Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentConditionalCase_GetTypes(),
+      diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentConditionalCase_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Messages",
+      "messages",
       "The list of rich message responses to present to the user.\nStructure is documented below.",
-      Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessage_GetTypes(),
+      diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessage_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "ReturnPartialResponses",
+      "returnPartialResponses",
       "Whether Dialogflow should return currently queued fulfillment response messages in streaming APIs. If a webhook is specified, it happens before Dialogflow invokes webhook. Warning: 1) This flag only affects streaming API. Responses are still queued and returned once in non-streaming API. 2) The flag can be enabled in any fulfillment but only the first 3 partial responses will be returned. You may only want to apply it to fulfillments that have slow webhooks.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "SetParameterActions",
-      "Set parameter values before executing the webhook.\nStructure is documented below.",
-      Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterAction_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Tag",
-      "The tag used by the webhook to identify which fulfillment is being called. This field is required if webhook is specified.",
       [],
       false,
       false,

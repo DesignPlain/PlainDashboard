@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Composer_getEnvironmentConfigWorkloadsConfigScheduler {
+export interface composer_getEnvironmentConfigWorkloadsConfigScheduler {
+  // The number of schedulers.
+  count?: number;
+
   // CPU request and limit for a single Airflow scheduler replica
-  Cpu?: number;
+  cpu?: number;
 
   // Memory (GB) request and limit for a single Airflow scheduler replica.
-  MemoryGb?: number;
+  memoryGb?: number;
 
   // Storage (GB) request and limit for a single Airflow scheduler replica.
-  StorageGb?: number;
-
-  // The number of schedulers.
-  Count?: number;
+  storageGb?: number;
 }
 
-export function Composer_getEnvironmentConfigWorkloadsConfigScheduler_GetTypes(): DynamicUIProps[] {
+export function composer_getEnvironmentConfigWorkloadsConfigScheduler_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Count",
+      "count",
       "The number of schedulers.",
       [],
       true,
@@ -32,7 +32,7 @@ export function Composer_getEnvironmentConfigWorkloadsConfigScheduler_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Cpu",
+      "cpu",
       "CPU request and limit for a single Airflow scheduler replica",
       [],
       true,
@@ -40,7 +40,7 @@ export function Composer_getEnvironmentConfigWorkloadsConfigScheduler_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MemoryGb",
+      "memoryGb",
       "Memory (GB) request and limit for a single Airflow scheduler replica.",
       [],
       true,
@@ -48,7 +48,7 @@ export function Composer_getEnvironmentConfigWorkloadsConfigScheduler_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Number,
-      "StorageGb",
+      "storageGb",
       "Storage (GB) request and limit for a single Airflow scheduler replica.",
       [],
       true,

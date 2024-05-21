@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudasset_FolderFeedFeedOutputConfigPubsubDestination {
+export interface cloudasset_FolderFeedFeedOutputConfigPubsubDestination {
   /*
 Destination on Cloud Pubsub topic.
 
 - - -
 */
-  Topic?: string;
+  topic?: string;
 }
 
-export function Cloudasset_FolderFeedFeedOutputConfigPubsubDestination_GetTypes(): DynamicUIProps[] {
+export function cloudasset_FolderFeedFeedOutputConfigPubsubDestination_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Topic",
+      "topic",
       "Destination on Cloud Pubsub topic.\n\n- - -",
       [],
       true,

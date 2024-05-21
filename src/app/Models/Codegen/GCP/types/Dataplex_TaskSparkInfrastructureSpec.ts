@@ -6,61 +6,61 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataplex_TaskSparkInfrastructureSpecBatch,
-  Dataplex_TaskSparkInfrastructureSpecBatch_GetTypes,
-} from "./Dataplex_TaskSparkInfrastructureSpecBatch";
+  dataplex_TaskSparkInfrastructureSpecBatch,
+  dataplex_TaskSparkInfrastructureSpecBatch_GetTypes,
+} from "./dataplex_TaskSparkInfrastructureSpecBatch";
 import {
-  Dataplex_TaskSparkInfrastructureSpecContainerImage,
-  Dataplex_TaskSparkInfrastructureSpecContainerImage_GetTypes,
-} from "./Dataplex_TaskSparkInfrastructureSpecContainerImage";
+  dataplex_TaskSparkInfrastructureSpecContainerImage,
+  dataplex_TaskSparkInfrastructureSpecContainerImage_GetTypes,
+} from "./dataplex_TaskSparkInfrastructureSpecContainerImage";
 import {
-  Dataplex_TaskSparkInfrastructureSpecVpcNetwork,
-  Dataplex_TaskSparkInfrastructureSpecVpcNetwork_GetTypes,
-} from "./Dataplex_TaskSparkInfrastructureSpecVpcNetwork";
+  dataplex_TaskSparkInfrastructureSpecVpcNetwork,
+  dataplex_TaskSparkInfrastructureSpecVpcNetwork_GetTypes,
+} from "./dataplex_TaskSparkInfrastructureSpecVpcNetwork";
 
-export interface Dataplex_TaskSparkInfrastructureSpec {
+export interface dataplex_TaskSparkInfrastructureSpec {
   /*
 Compute resources needed for a Task when using Dataproc Serverless.
 Structure is documented below.
 */
-  Batch?: Dataplex_TaskSparkInfrastructureSpecBatch;
+  batch?: dataplex_TaskSparkInfrastructureSpecBatch;
 
   /*
 Container Image Runtime Configuration.
 Structure is documented below.
 */
-  ContainerImage?: Dataplex_TaskSparkInfrastructureSpecContainerImage;
+  containerImage?: dataplex_TaskSparkInfrastructureSpecContainerImage;
 
   /*
 Vpc network.
 Structure is documented below.
 */
-  VpcNetwork?: Dataplex_TaskSparkInfrastructureSpecVpcNetwork;
+  vpcNetwork?: dataplex_TaskSparkInfrastructureSpecVpcNetwork;
 }
 
-export function Dataplex_TaskSparkInfrastructureSpec_GetTypes(): DynamicUIProps[] {
+export function dataplex_TaskSparkInfrastructureSpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Batch",
+      "batch",
       "Compute resources needed for a Task when using Dataproc Serverless.\nStructure is documented below.",
-      Dataplex_TaskSparkInfrastructureSpecBatch_GetTypes(),
+      dataplex_TaskSparkInfrastructureSpecBatch_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ContainerImage",
+      "containerImage",
       "Container Image Runtime Configuration.\nStructure is documented below.",
-      Dataplex_TaskSparkInfrastructureSpecContainerImage_GetTypes(),
+      dataplex_TaskSparkInfrastructureSpecContainerImage_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "VpcNetwork",
+      "vpcNetwork",
       "Vpc network.\nStructure is documented below.",
-      Dataplex_TaskSparkInfrastructureSpecVpcNetwork_GetTypes(),
+      dataplex_TaskSparkInfrastructureSpecVpcNetwork_GetTypes(),
       false,
       false,
     ),

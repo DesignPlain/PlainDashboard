@@ -7,22 +7,16 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Securitycenter_SourceIamBindingCondition,
-  Securitycenter_SourceIamBindingCondition_GetTypes,
-} from "../types/Securitycenter_SourceIamBindingCondition";
+  securitycenter_SourceIamBindingCondition,
+  securitycenter_SourceIamBindingCondition_GetTypes,
+} from "../types/securitycenter_SourceIamBindingCondition";
 
 export interface SourceIamBindingArgs {
   //
-  Role?: string;
+  condition?: securitycenter_SourceIamBindingCondition;
 
   //
-  Source?: string;
-
-  //
-  Condition?: Securitycenter_SourceIamBindingCondition;
-
-  //
-  Members?: Array<string>;
+  members?: Array<string>;
 
   /*
 The organization whose Cloud Security Command Center the Source
@@ -31,23 +25,26 @@ lives in.
 
 - - -
 */
-  Organization?: string;
+  organization?: string;
+
+  //
+  role?: string;
+
+  //
+  source?: string;
 }
 export class SourceIamBinding extends Resource {
   //
-  public Role?: string;
+  public source?: string;
 
   //
-  public Source?: string;
+  public condition?: securitycenter_SourceIamBindingCondition;
 
   //
-  public Condition?: Securitycenter_SourceIamBindingCondition;
+  public etag?: string;
 
   //
-  public Etag?: string;
-
-  //
-  public Members?: Array<string>;
+  public members?: Array<string>;
 
   /*
 The organization whose Cloud Security Command Center the Source
@@ -56,23 +53,26 @@ lives in.
 
 - - -
 */
-  public Organization?: string;
+  public organization?: string;
+
+  //
+  public role?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
-      new DynamicUIProps(InputType.String, "Source", "", [], true, true),
+      new DynamicUIProps(InputType.String, "role", "", [], true, true),
+      new DynamicUIProps(InputType.String, "source", "", [], true, true),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Securitycenter_SourceIamBindingCondition_GetTypes(),
+        securitycenter_SourceIamBindingCondition_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "Members",
+        "members",
         "",
         InputType_String_GetTypes(),
         true,
@@ -80,7 +80,7 @@ lives in.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Organization",
+        "organization",
         "The organization whose Cloud Security Command Center the Source\nlives in.\n\n\n- - -",
         [],
         true,

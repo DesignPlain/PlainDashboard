@@ -6,32 +6,32 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxTestCaseLastTestResultConversationTurnUserInputInput,
-  Diagflow_CxTestCaseLastTestResultConversationTurnUserInputInput_GetTypes,
-} from "./Diagflow_CxTestCaseLastTestResultConversationTurnUserInputInput";
+  diagflow_CxTestCaseLastTestResultConversationTurnUserInputInput,
+  diagflow_CxTestCaseLastTestResultConversationTurnUserInputInput_GetTypes,
+} from "./diagflow_CxTestCaseLastTestResultConversationTurnUserInputInput";
 
-export interface Diagflow_CxTestCaseLastTestResultConversationTurnUserInput {
+export interface diagflow_CxTestCaseLastTestResultConversationTurnUserInput {
   // Whether sentiment analysis is enabled.
-  EnableSentimentAnalysis?: boolean;
+  enableSentimentAnalysis?: boolean;
 
   // Parameters that need to be injected into the conversation during intent detection.
-  InjectedParameters?: string;
+  injectedParameters?: string;
 
   /*
 User input. Supports text input, event input, dtmf input in the test case.
 Structure is documented below.
 */
-  Input?: Diagflow_CxTestCaseLastTestResultConversationTurnUserInputInput;
+  input?: diagflow_CxTestCaseLastTestResultConversationTurnUserInputInput;
 
   // If webhooks should be allowed to trigger in response to the user utterance. Often if parameters are injected, webhooks should not be enabled.
-  IsWebhookEnabled?: boolean;
+  isWebhookEnabled?: boolean;
 }
 
-export function Diagflow_CxTestCaseLastTestResultConversationTurnUserInput_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxTestCaseLastTestResultConversationTurnUserInput_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableSentimentAnalysis",
+      "enableSentimentAnalysis",
       "Whether sentiment analysis is enabled.",
       [],
       false,
@@ -39,7 +39,7 @@ export function Diagflow_CxTestCaseLastTestResultConversationTurnUserInput_GetTy
     ),
     new DynamicUIProps(
       InputType.String,
-      "InjectedParameters",
+      "injectedParameters",
       "Parameters that need to be injected into the conversation during intent detection.",
       [],
       false,
@@ -47,15 +47,15 @@ export function Diagflow_CxTestCaseLastTestResultConversationTurnUserInput_GetTy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Input",
+      "input",
       "User input. Supports text input, event input, dtmf input in the test case.\nStructure is documented below.",
-      Diagflow_CxTestCaseLastTestResultConversationTurnUserInputInput_GetTypes(),
+      diagflow_CxTestCaseLastTestResultConversationTurnUserInputInput_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IsWebhookEnabled",
+      "isWebhookEnabled",
       "If webhooks should be allowed to trigger in response to the user utterance. Often if parameters are injected, webhooks should not be enabled.",
       [],
       false,

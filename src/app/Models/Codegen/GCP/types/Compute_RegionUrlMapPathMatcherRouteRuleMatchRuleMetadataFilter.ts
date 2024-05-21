@@ -6,18 +6,18 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel,
-  Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel_GetTypes,
-} from "./Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel";
+  compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel,
+  compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel_GetTypes,
+} from "./compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel";
 
-export interface Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilter {
+export interface compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilter {
   /*
 The list of label value pairs that must match labels in the provided metadata
 based on filterMatchCriteria  This list must not be empty and can have at the
 most 64 entries.
 Structure is documented below.
 */
-  FilterLabels?: Array<Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel>;
+  filterLabels?: Array<compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel>;
 
   /*
 Specifies how individual filterLabel matches within the list of filterLabels
@@ -28,22 +28,22 @@ provided metadata.
 the provided metadata.
 Possible values are: `MATCH_ALL`, `MATCH_ANY`.
 */
-  FilterMatchCriteria?: string;
+  filterMatchCriteria?: string;
 }
 
-export function Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilter_GetTypes(): DynamicUIProps[] {
+export function compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilter_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "FilterLabels",
+      "filterLabels",
       "The list of label value pairs that must match labels in the provided metadata\nbased on filterMatchCriteria  This list must not be empty and can have at the\nmost 64 entries.\nStructure is documented below.",
-      Compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel_GetTypes(),
+      compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "FilterMatchCriteria",
+      "filterMatchCriteria",
       "Specifies how individual filterLabel matches within the list of filterLabels\ncontribute towards the overall metadataFilter match. Supported values are:\n* MATCH_ANY: At least one of the filterLabels must have a matching label in the\nprovided metadata.\n* MATCH_ALL: All filterLabels must have matching labels in\nthe provided metadata.\nPossible values are: `MATCH_ALL`, `MATCH_ANY`.",
       [],
       true,

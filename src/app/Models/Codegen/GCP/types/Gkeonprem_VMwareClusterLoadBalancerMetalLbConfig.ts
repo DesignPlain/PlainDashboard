@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_VMwareClusterLoadBalancerMetalLbConfigAddressPool,
-  Gkeonprem_VMwareClusterLoadBalancerMetalLbConfigAddressPool_GetTypes,
-} from "./Gkeonprem_VMwareClusterLoadBalancerMetalLbConfigAddressPool";
+  gkeonprem_VMwareClusterLoadBalancerMetalLbConfigAddressPool,
+  gkeonprem_VMwareClusterLoadBalancerMetalLbConfigAddressPool_GetTypes,
+} from "./gkeonprem_VMwareClusterLoadBalancerMetalLbConfigAddressPool";
 
-export interface Gkeonprem_VMwareClusterLoadBalancerMetalLbConfig {
+export interface gkeonprem_VMwareClusterLoadBalancerMetalLbConfig {
   /*
 AddressPools is a list of non-overlapping IP pools used by load balancer
 typed services. All addresses must be routable to load balancer nodes.
 IngressVIP must be included in the pools.
 Structure is documented below.
 */
-  AddressPools?: Array<Gkeonprem_VMwareClusterLoadBalancerMetalLbConfigAddressPool>;
+  addressPools?: Array<gkeonprem_VMwareClusterLoadBalancerMetalLbConfigAddressPool>;
 }
 
-export function Gkeonprem_VMwareClusterLoadBalancerMetalLbConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterLoadBalancerMetalLbConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AddressPools",
+      "addressPools",
       "AddressPools is a list of non-overlapping IP pools used by load balancer\ntyped services. All addresses must be routable to load balancer nodes.\nIngressVIP must be included in the pools.\nStructure is documented below.",
-      Gkeonprem_VMwareClusterLoadBalancerMetalLbConfigAddressPool_GetTypes(),
+      gkeonprem_VMwareClusterLoadBalancerMetalLbConfigAddressPool_GetTypes(),
       true,
       false,
     ),

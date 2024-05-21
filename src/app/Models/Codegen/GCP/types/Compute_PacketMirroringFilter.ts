@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_PacketMirroringFilter {
+export interface compute_PacketMirroringFilter {
   /*
 IP CIDR ranges that apply as a filter on the source (ingress) or
 destination (egress) IP in the IP header. Only IPv4 is supported.
 */
-  CidrRanges?: Array<string>;
+  cidrRanges?: Array<string>;
 
   /*
 Direction of traffic to mirror.
 Default value is `BOTH`.
 Possible values are: `INGRESS`, `EGRESS`, `BOTH`.
 */
-  Direction?: string;
+  direction?: string;
 
   // Possible IP protocols including tcp, udp, icmp and esp
-  IpProtocols?: Array<string>;
+  ipProtocols?: Array<string>;
 }
 
-export function Compute_PacketMirroringFilter_GetTypes(): DynamicUIProps[] {
+export function compute_PacketMirroringFilter_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "CidrRanges",
+      "cidrRanges",
       "IP CIDR ranges that apply as a filter on the source (ingress) or\ndestination (egress) IP in the IP header. Only IPv4 is supported.",
       InputType_String_GetTypes(),
       false,
@@ -36,7 +36,7 @@ export function Compute_PacketMirroringFilter_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Direction",
+      "direction",
       "Direction of traffic to mirror.\nDefault value is `BOTH`.\nPossible values are: `INGRESS`, `EGRESS`, `BOTH`.",
       [],
       false,
@@ -44,7 +44,7 @@ export function Compute_PacketMirroringFilter_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "IpProtocols",
+      "ipProtocols",
       "Possible IP protocols including tcp, udp, icmp and esp",
       InputType_String_GetTypes(),
       false,

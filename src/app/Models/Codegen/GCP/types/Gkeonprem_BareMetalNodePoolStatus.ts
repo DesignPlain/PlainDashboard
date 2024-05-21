@@ -6,17 +6,17 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_BareMetalNodePoolStatusCondition,
-  Gkeonprem_BareMetalNodePoolStatusCondition_GetTypes,
-} from "./Gkeonprem_BareMetalNodePoolStatusCondition";
+  gkeonprem_BareMetalNodePoolStatusCondition,
+  gkeonprem_BareMetalNodePoolStatusCondition_GetTypes,
+} from "./gkeonprem_BareMetalNodePoolStatusCondition";
 
-export interface Gkeonprem_BareMetalNodePoolStatus {
+export interface gkeonprem_BareMetalNodePoolStatus {
   /*
 (Output)
 ResourceConditions provide a standard mechanism for higher-level status reporting from user cluster controller.
 Structure is documented below.
 */
-  Conditions?: Array<Gkeonprem_BareMetalNodePoolStatusCondition>;
+  conditions?: Array<gkeonprem_BareMetalNodePoolStatusCondition>;
 
   /*
 (Output)
@@ -26,22 +26,22 @@ controller creates a cluster or node pool. If the error message persists
 for a longer period of time, it can be used to surface error message to
 indicate real problems requiring user intervention.
 */
-  ErrorMessage?: string;
+  errorMessage?: string;
 }
 
-export function Gkeonprem_BareMetalNodePoolStatus_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalNodePoolStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Conditions",
+      "conditions",
       "(Output)\nResourceConditions provide a standard mechanism for higher-level status reporting from user cluster controller.\nStructure is documented below.",
-      Gkeonprem_BareMetalNodePoolStatusCondition_GetTypes(),
+      gkeonprem_BareMetalNodePoolStatusCondition_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ErrorMessage",
+      "errorMessage",
       "(Output)\nHuman-friendly representation of the error message from the user cluster\ncontroller. The error message can be temporary as the user cluster\ncontroller creates a cluster or node pool. If the error message persists\nfor a longer period of time, it can be used to surface error message to\nindicate real problems requiring user intervention.",
       [],
       false,

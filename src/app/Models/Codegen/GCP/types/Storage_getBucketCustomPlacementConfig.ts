@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_getBucketCustomPlacementConfig {
+export interface storage_getBucketCustomPlacementConfig {
   // The list of individual regions that comprise a dual-region bucket. See the docs for a list of acceptable regions. Note: If any of the data_locations changes, it will recreate the bucket.
-  DataLocations?: Array<string>;
+  dataLocations?: Array<string>;
 }
 
-export function Storage_getBucketCustomPlacementConfig_GetTypes(): DynamicUIProps[] {
+export function storage_getBucketCustomPlacementConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "DataLocations",
+      "dataLocations",
       "The list of individual regions that comprise a dual-region bucket. See the docs for a list of acceptable regions. Note: If any of the data_locations changes, it will recreate the bucket.",
       InputType_String_GetTypes(),
       true,

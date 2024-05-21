@@ -6,44 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_GuestPoliciesPackageRepositoryZypper {
+export interface osconfig_GuestPoliciesPackageRepositoryZypper {
+  // The location of the repository directory.
+  baseUrl?: string;
+
+  // The display name of the repository.
+  displayName?: string;
+
+  // URIs of GPG keys.
+  gpgKeys?: Array<string>;
+
   /*
 A one word, unique name for this repository. This is the repo id in the zypper config file and also the displayName
 if displayName is omitted. This id is also used as the unique identifier when checking for guest policy conflicts.
 */
-  Id?: string;
-
-  // The location of the repository directory.
-  BaseUrl?: string;
-
-  // The display name of the repository.
-  DisplayName?: string;
-
-  // URIs of GPG keys.
-  GpgKeys?: Array<string>;
+  id?: string;
 }
 
-export function Osconfig_GuestPoliciesPackageRepositoryZypper_GetTypes(): DynamicUIProps[] {
+export function osconfig_GuestPoliciesPackageRepositoryZypper_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DisplayName",
-      "The display name of the repository.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "GpgKeys",
-      "URIs of GPG keys.",
-      InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Id",
+      "id",
       "A one word, unique name for this repository. This is the repo id in the zypper config file and also the displayName\nif displayName is omitted. This id is also used as the unique identifier when checking for guest policy conflicts.",
       [],
       true,
@@ -51,10 +35,26 @@ export function Osconfig_GuestPoliciesPackageRepositoryZypper_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "BaseUrl",
+      "baseUrl",
       "The location of the repository directory.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "displayName",
+      "The display name of the repository.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "gpgKeys",
+      "URIs of GPG keys.",
+      InputType_String_GetTypes(),
+      false,
       false,
     ),
   ];

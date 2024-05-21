@@ -6,55 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsage {
-  // Corresponds to OID 1.3.6.1.5.5.7.3.1. Officially described as "TLS WWW server authentication", though regularly used for non-WWW TLS.
-  ServerAuth?: boolean;
-
-  // Corresponds to OID 1.3.6.1.5.5.7.3.8. Officially described as "Binding the hash of an object to a time".
-  TimeStamping?: boolean;
-
+export interface certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsage {
   // Corresponds to OID 1.3.6.1.5.5.7.3.2. Officially described as "TLS WWW client authentication", though regularly used for non-WWW TLS.
-  ClientAuth?: boolean;
+  clientAuth?: boolean;
 
   // Corresponds to OID 1.3.6.1.5.5.7.3.3. Officially described as "Signing of downloadable executable code client authentication".
-  CodeSigning?: boolean;
+  codeSigning?: boolean;
 
   // Corresponds to OID 1.3.6.1.5.5.7.3.4. Officially described as "Email protection".
-  EmailProtection?: boolean;
+  emailProtection?: boolean;
 
   // Corresponds to OID 1.3.6.1.5.5.7.3.9. Officially described as "Signing OCSP responses".
-  OcspSigning?: boolean;
+  ocspSigning?: boolean;
+
+  // Corresponds to OID 1.3.6.1.5.5.7.3.1. Officially described as "TLS WWW server authentication", though regularly used for non-WWW TLS.
+  serverAuth?: boolean;
+
+  // Corresponds to OID 1.3.6.1.5.5.7.3.8. Officially described as "Binding the hash of an object to a time".
+  timeStamping?: boolean;
 }
 
-export function Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsage_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "OcspSigning",
-      'Corresponds to OID 1.3.6.1.5.5.7.3.9. Officially described as "Signing OCSP responses".',
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "ServerAuth",
-      'Corresponds to OID 1.3.6.1.5.5.7.3.1. Officially described as "TLS WWW server authentication", though regularly used for non-WWW TLS.',
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "TimeStamping",
-      'Corresponds to OID 1.3.6.1.5.5.7.3.8. Officially described as "Binding the hash of an object to a time".',
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "ClientAuth",
+      "clientAuth",
       'Corresponds to OID 1.3.6.1.5.5.7.3.2. Officially described as "TLS WWW client authentication", though regularly used for non-WWW TLS.',
       [],
       false,
@@ -62,7 +38,7 @@ export function Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageE
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "CodeSigning",
+      "codeSigning",
       'Corresponds to OID 1.3.6.1.5.5.7.3.3. Officially described as "Signing of downloadable executable code client authentication".',
       [],
       false,
@@ -70,8 +46,32 @@ export function Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageE
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EmailProtection",
+      "emailProtection",
       'Corresponds to OID 1.3.6.1.5.5.7.3.4. Officially described as "Email protection".',
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "ocspSigning",
+      'Corresponds to OID 1.3.6.1.5.5.7.3.9. Officially described as "Signing OCSP responses".',
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "serverAuth",
+      'Corresponds to OID 1.3.6.1.5.5.7.3.1. Officially described as "TLS WWW server authentication", though regularly used for non-WWW TLS.',
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "timeStamping",
+      'Corresponds to OID 1.3.6.1.5.5.7.3.8. Officially described as "Binding the hash of an object to a time".',
       [],
       false,
       false,

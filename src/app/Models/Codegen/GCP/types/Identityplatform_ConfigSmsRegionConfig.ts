@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Identityplatform_ConfigSmsRegionConfigAllowByDefault,
-  Identityplatform_ConfigSmsRegionConfigAllowByDefault_GetTypes,
-} from "./Identityplatform_ConfigSmsRegionConfigAllowByDefault";
+  identityplatform_ConfigSmsRegionConfigAllowByDefault,
+  identityplatform_ConfigSmsRegionConfigAllowByDefault_GetTypes,
+} from "./identityplatform_ConfigSmsRegionConfigAllowByDefault";
 import {
-  Identityplatform_ConfigSmsRegionConfigAllowlistOnly,
-  Identityplatform_ConfigSmsRegionConfigAllowlistOnly_GetTypes,
-} from "./Identityplatform_ConfigSmsRegionConfigAllowlistOnly";
+  identityplatform_ConfigSmsRegionConfigAllowlistOnly,
+  identityplatform_ConfigSmsRegionConfigAllowlistOnly_GetTypes,
+} from "./identityplatform_ConfigSmsRegionConfigAllowlistOnly";
 
-export interface Identityplatform_ConfigSmsRegionConfig {
+export interface identityplatform_ConfigSmsRegionConfig {
   /*
 A policy of allowing SMS to every region by default and adding disallowed regions to a disallow list.
 Structure is documented below.
 */
-  AllowByDefault?: Identityplatform_ConfigSmsRegionConfigAllowByDefault;
+  allowByDefault?: identityplatform_ConfigSmsRegionConfigAllowByDefault;
 
   /*
 A policy of only allowing regions by explicitly adding them to an allowlist.
 Structure is documented below.
 */
-  AllowlistOnly?: Identityplatform_ConfigSmsRegionConfigAllowlistOnly;
+  allowlistOnly?: identityplatform_ConfigSmsRegionConfigAllowlistOnly;
 }
 
-export function Identityplatform_ConfigSmsRegionConfig_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ConfigSmsRegionConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "AllowByDefault",
+      "allowByDefault",
       "A policy of allowing SMS to every region by default and adding disallowed regions to a disallow list.\nStructure is documented below.",
-      Identityplatform_ConfigSmsRegionConfigAllowByDefault_GetTypes(),
+      identityplatform_ConfigSmsRegionConfigAllowByDefault_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "AllowlistOnly",
+      "allowlistOnly",
       "A policy of only allowing regions by explicitly adding them to an allowlist.\nStructure is documented below.",
-      Identityplatform_ConfigSmsRegionConfigAllowlistOnly_GetTypes(),
+      identityplatform_ConfigSmsRegionConfigAllowlistOnly_GetTypes(),
       false,
       false,
     ),

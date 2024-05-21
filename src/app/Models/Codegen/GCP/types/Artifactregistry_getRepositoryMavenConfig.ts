@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Artifactregistry_getRepositoryMavenConfig {
+export interface artifactregistry_getRepositoryMavenConfig {
   /*
 The repository with this flag will allow publishing the same
 snapshot versions.
 */
-  AllowSnapshotOverwrites?: boolean;
+  allowSnapshotOverwrites?: boolean;
 
   // Version policy defines the versions that the registry will accept. Default value: "VERSION_POLICY_UNSPECIFIED" Possible values: ["VERSION_POLICY_UNSPECIFIED", "RELEASE", "SNAPSHOT"]
-  VersionPolicy?: string;
+  versionPolicy?: string;
 }
 
-export function Artifactregistry_getRepositoryMavenConfig_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_getRepositoryMavenConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "AllowSnapshotOverwrites",
+      "allowSnapshotOverwrites",
       "The repository with this flag will allow publishing the same\nsnapshot versions.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Artifactregistry_getRepositoryMavenConfig_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "VersionPolicy",
+      "versionPolicy",
       'Version policy defines the versions that the registry will accept. Default value: "VERSION_POLICY_UNSPECIFIED" Possible values: ["VERSION_POLICY_UNSPECIFIED", "RELEASE", "SNAPSHOT"]',
       [],
       true,

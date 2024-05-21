@@ -6,72 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_getInstanceTemplateNetworkInterfaceAccessConfig,
-  Compute_getInstanceTemplateNetworkInterfaceAccessConfig_GetTypes,
-} from "./Compute_getInstanceTemplateNetworkInterfaceAccessConfig";
+  compute_getInstanceTemplateNetworkInterfaceAliasIpRange,
+  compute_getInstanceTemplateNetworkInterfaceAliasIpRange_GetTypes,
+} from "./compute_getInstanceTemplateNetworkInterfaceAliasIpRange";
 import {
-  Compute_getInstanceTemplateNetworkInterfaceAliasIpRange,
-  Compute_getInstanceTemplateNetworkInterfaceAliasIpRange_GetTypes,
-} from "./Compute_getInstanceTemplateNetworkInterfaceAliasIpRange";
+  compute_getInstanceTemplateNetworkInterfaceAccessConfig,
+  compute_getInstanceTemplateNetworkInterfaceAccessConfig_GetTypes,
+} from "./compute_getInstanceTemplateNetworkInterfaceAccessConfig";
 import {
-  Compute_getInstanceTemplateNetworkInterfaceIpv6AccessConfig,
-  Compute_getInstanceTemplateNetworkInterfaceIpv6AccessConfig_GetTypes,
-} from "./Compute_getInstanceTemplateNetworkInterfaceIpv6AccessConfig";
+  compute_getInstanceTemplateNetworkInterfaceIpv6AccessConfig,
+  compute_getInstanceTemplateNetworkInterfaceIpv6AccessConfig_GetTypes,
+} from "./compute_getInstanceTemplateNetworkInterfaceIpv6AccessConfig";
 
-export interface Compute_getInstanceTemplateNetworkInterface {
+export interface compute_getInstanceTemplateNetworkInterface {
   /*
 An
 array of alias IP ranges for this network interface. Can only be specified for network
 interfaces on subnet-mode networks. Structure documented below.
 */
-  AliasIpRanges?: Array<Compute_getInstanceTemplateNetworkInterfaceAliasIpRange>;
+  aliasIpRanges?: Array<compute_getInstanceTemplateNetworkInterfaceAliasIpRange>;
 
-  // The prefix length of the primary internal IPv6 range.
-  InternalIpv6PrefixLength?: number;
+  // An IPv6 internal network address for this network interface. If not specified, Google Cloud will automatically assign an internal IPv6 address from the instance's subnetwork.
+  ipv6Address?: string;
 
-  // The name of the instance template. One of `name`, `filter` or `self_link_unique` must be provided.
-  Name?: string;
-
-  /*
-The name or self_link of the network to attach this interface to.
-Use `network` attribute for Legacy or Auto subnetted networks and
-`subnetwork` for custom subnetted networks.
-*/
-  Network?: string;
-
-  // The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used.
-  StackType?: string;
-
-  /*
-The ID of the project in which the subnetwork belongs.
-If it is not provided, the provider project is used.
-*/
-  SubnetworkProject?: string;
-
-  // An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
-  Ipv6AccessConfigs?: Array<Compute_getInstanceTemplateNetworkInterfaceIpv6AccessConfig>;
-
-  // One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork.
-  Ipv6AccessType?: string;
-
-  // The URL of the network attachment that this interface should connect to in the following format: projects/{projectNumber}/regions/{region_name}/networkAttachments/{network_attachment_name}.
-  NetworkAttachment?: string;
-
-  /*
-The private IP address to assign to the instance. If
-empty, the address will be automatically assigned.
-*/
-  NetworkIp?: string;
-
-  // The networking queue count that's specified by users for the network interface. Both Rx and Tx queues will be set to this number. It will be empty if not specified.
-  QueueCount?: number;
-
-  /*
-the name of the subnetwork to attach this interface
-to. The subnetwork must exist in the same `region` this instance will be
-created in. Either `network` or `subnetwork` must be provided.
-*/
-  Subnetwork?: string;
+  // The type of vNIC to be used on this interface. Possible values:GVNIC, VIRTIO_NET
+  nicType?: string;
 
   /*
 Access configurations, i.e. IPs via which this
@@ -81,44 +40,69 @@ not work unless you are running the provider can send traffic to the instance's
 network (e.g. via tunnel or because it is running on another cloud instance
 on that network). This block can be repeated multiple times. Structure documented below.
 */
-  AccessConfigs?: Array<Compute_getInstanceTemplateNetworkInterfaceAccessConfig>;
+  accessConfigs?: Array<compute_getInstanceTemplateNetworkInterfaceAccessConfig>;
 
-  // An IPv6 internal network address for this network interface. If not specified, Google Cloud will automatically assign an internal IPv6 address from the instance's subnetwork.
-  Ipv6Address?: string;
+  // An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+  ipv6AccessConfigs?: Array<compute_getInstanceTemplateNetworkInterfaceIpv6AccessConfig>;
 
-  // The type of vNIC to be used on this interface. Possible values:GVNIC, VIRTIO_NET
-  NicType?: string;
+  /*
+the name of the subnetwork to attach this interface
+to. The subnetwork must exist in the same `region` this instance will be
+created in. Either `network` or `subnetwork` must be provided.
+*/
+  subnetwork?: string;
+
+  // The prefix length of the primary internal IPv6 range.
+  internalIpv6PrefixLength?: number;
+
+  /*
+The private IP address to assign to the instance. If
+empty, the address will be automatically assigned.
+*/
+  networkIp?: string;
+
+  // The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used.
+  stackType?: string;
+
+  /*
+The ID of the project in which the subnetwork belongs.
+If it is not provided, the provider project is used.
+*/
+  subnetworkProject?: string;
+
+  /*
+The name or self_link of the network to attach this interface to.
+Use `network` attribute for Legacy or Auto subnetted networks and
+`subnetwork` for custom subnetted networks.
+*/
+  network?: string;
+
+  // The name of the instance template. One of `name`, `filter` or `self_link_unique` must be provided.
+  name?: string;
+
+  // The URL of the network attachment that this interface should connect to in the following format: projects/{projectNumber}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+  networkAttachment?: string;
+
+  // The networking queue count that's specified by users for the network interface. Both Rx and Tx queues will be set to this number. It will be empty if not specified.
+  queueCount?: number;
+
+  // One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork.
+  ipv6AccessType?: string;
 }
 
-export function Compute_getInstanceTemplateNetworkInterface_GetTypes(): DynamicUIProps[] {
+export function compute_getInstanceTemplateNetworkInterface_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "AliasIpRanges",
-      "An\narray of alias IP ranges for this network interface. Can only be specified for network\ninterfaces on subnet-mode networks. Structure documented below.",
-      Compute_getInstanceTemplateNetworkInterfaceAliasIpRange_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Ipv6AccessConfigs",
-      "An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.",
-      Compute_getInstanceTemplateNetworkInterfaceIpv6AccessConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Ipv6AccessType",
-      "One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork.",
+      "subnetwork",
+      "the name of the subnetwork to attach this interface\nto. The subnetwork must exist in the same `region` this instance will be\ncreated in. Either `network` or `subnetwork` must be provided.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "NetworkAttachment",
+      "networkAttachment",
       "The URL of the network attachment that this interface should connect to in the following format: projects/{projectNumber}/regions/{region_name}/networkAttachments/{network_attachment_name}.",
       [],
       true,
@@ -126,31 +110,63 @@ export function Compute_getInstanceTemplateNetworkInterface_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "SubnetworkProject",
-      "The ID of the project in which the subnetwork belongs.\nIf it is not provided, the provider project is used.",
+      "ipv6AccessType",
+      "One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Subnetwork",
-      "the name of the subnetwork to attach this interface\nto. The subnetwork must exist in the same `region` this instance will be\ncreated in. Either `network` or `subnetwork` must be provided.",
+      "nicType",
+      "The type of vNIC to be used on this interface. Possible values:GVNIC, VIRTIO_NET",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AccessConfigs",
+      "accessConfigs",
       "Access configurations, i.e. IPs via which this\ninstance can be accessed via the Internet. Omit to ensure that the instance\nis not accessible from the Internet (this means that ssh provisioners will\nnot work unless you are running the provider can send traffic to the instance's\nnetwork (e.g. via tunnel or because it is running on another cloud instance\non that network). This block can be repeated multiple times. Structure documented below.",
-      Compute_getInstanceTemplateNetworkInterfaceAccessConfig_GetTypes(),
+      compute_getInstanceTemplateNetworkInterfaceAccessConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "NetworkIp",
+      "name",
+      "The name of the instance template. One of `name`, `filter` or `self_link_unique` must be provided.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "queueCount",
+      "The networking queue count that's specified by users for the network interface. Both Rx and Tx queues will be set to this number. It will be empty if not specified.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "aliasIpRanges",
+      "An\narray of alias IP ranges for this network interface. Can only be specified for network\ninterfaces on subnet-mode networks. Structure documented below.",
+      compute_getInstanceTemplateNetworkInterfaceAliasIpRange_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "ipv6AccessConfigs",
+      "An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.",
+      compute_getInstanceTemplateNetworkInterfaceIpv6AccessConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "networkIp",
       "The private IP address to assign to the instance. If\nempty, the address will be automatically assigned.",
       [],
       true,
@@ -158,47 +174,7 @@ export function Compute_getInstanceTemplateNetworkInterface_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "Ipv6Address",
-      "An IPv6 internal network address for this network interface. If not specified, Google Cloud will automatically assign an internal IPv6 address from the instance's subnetwork.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "QueueCount",
-      "The networking queue count that's specified by users for the network interface. Both Rx and Tx queues will be set to this number. It will be empty if not specified.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "NicType",
-      "The type of vNIC to be used on this interface. Possible values:GVNIC, VIRTIO_NET",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "InternalIpv6PrefixLength",
-      "The prefix length of the primary internal IPv6 range.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Name",
-      "The name of the instance template. One of `name`, `filter` or `self_link_unique` must be provided.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Network",
+      "network",
       "The name or self_link of the network to attach this interface to.\nUse `network` attribute for Legacy or Auto subnetted networks and\n`subnetwork` for custom subnetted networks.",
       [],
       true,
@@ -206,8 +182,32 @@ export function Compute_getInstanceTemplateNetworkInterface_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "StackType",
+      "ipv6Address",
+      "An IPv6 internal network address for this network interface. If not specified, Google Cloud will automatically assign an internal IPv6 address from the instance's subnetwork.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "internalIpv6PrefixLength",
+      "The prefix length of the primary internal IPv6 range.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "stackType",
       "The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "subnetworkProject",
+      "The ID of the project in which the subnetwork belongs.\nIf it is not provided, the provider project is used.",
       [],
       true,
       false,

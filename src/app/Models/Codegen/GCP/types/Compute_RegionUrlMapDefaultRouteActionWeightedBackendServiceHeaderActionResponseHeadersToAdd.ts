@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionUrlMapDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAdd {
+export interface compute_RegionUrlMapDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAdd {
   // The name of the header.
-  HeaderName?: string;
+  headerName?: string;
 
   // The value of the header to add.
-  HeaderValue?: string;
+  headerValue?: string;
 
   /*
 If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header.
 The default value is false.
 */
-  Replace?: boolean;
+  replace?: boolean;
 }
 
-export function Compute_RegionUrlMapDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAdd_GetTypes(): DynamicUIProps[] {
+export function compute_RegionUrlMapDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAdd_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "HeaderValue",
+      "headerName",
+      "The name of the header.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "headerValue",
       "The value of the header to add.",
       [],
       false,
@@ -32,16 +40,8 @@ export function Compute_RegionUrlMapDefaultRouteActionWeightedBackendServiceHead
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Replace",
+      "replace",
       "If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header.\nThe default value is false.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "HeaderName",
-      "The name of the header.",
       [],
       false,
       false,

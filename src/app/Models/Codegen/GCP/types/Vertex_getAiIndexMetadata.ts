@@ -6,13 +6,13 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Vertex_getAiIndexMetadataConfig,
-  Vertex_getAiIndexMetadataConfig_GetTypes,
-} from "./Vertex_getAiIndexMetadataConfig";
+  vertex_getAiIndexMetadataConfig,
+  vertex_getAiIndexMetadataConfig_GetTypes,
+} from "./vertex_getAiIndexMetadataConfig";
 
-export interface Vertex_getAiIndexMetadata {
+export interface vertex_getAiIndexMetadata {
   // The configuration of the Matching Engine Index.
-  Configs?: Array<Vertex_getAiIndexMetadataConfig>;
+  configs?: Array<vertex_getAiIndexMetadataConfig>;
 
   /*
 Allows inserting, updating  or deleting the contents of the Matching Engine Index.
@@ -22,28 +22,20 @@ Index field can be also updated as part of the same call.
 The expected structure and format of the files this URI points to is
 described at https://cloud.google.com/vertex-ai/docs/matching-engine/using-matching-engine#input-data-format
 */
-  ContentsDeltaUri?: string;
+  contentsDeltaUri?: string;
 
   /*
 If this field is set together with contentsDeltaUri when calling IndexService.UpdateIndex,
 then existing content of the Index will be replaced by the data from the contentsDeltaUri.
 */
-  IsCompleteOverwrite?: boolean;
+  isCompleteOverwrite?: boolean;
 }
 
-export function Vertex_getAiIndexMetadata_GetTypes(): DynamicUIProps[] {
+export function vertex_getAiIndexMetadata_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "Configs",
-      "The configuration of the Matching Engine Index.",
-      Vertex_getAiIndexMetadataConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "ContentsDeltaUri",
+      "contentsDeltaUri",
       "Allows inserting, updating  or deleting the contents of the Matching Engine Index.\nThe string must be a valid Cloud Storage directory path. If this\nfield is set when calling IndexService.UpdateIndex, then no other\nIndex field can be also updated as part of the same call.\nThe expected structure and format of the files this URI points to is\ndescribed at https://cloud.google.com/vertex-ai/docs/matching-engine/using-matching-engine#input-data-format",
       [],
       true,
@@ -51,9 +43,17 @@ export function Vertex_getAiIndexMetadata_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IsCompleteOverwrite",
+      "isCompleteOverwrite",
       "If this field is set together with contentsDeltaUri when calling IndexService.UpdateIndex,\nthen existing content of the Index will be replaced by the data from the contentsDeltaUri.",
       [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "configs",
+      "The configuration of the Matching Engine Index.",
+      vertex_getAiIndexMetadataConfig_GetTypes(),
       true,
       false,
     ),

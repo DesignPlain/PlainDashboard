@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_SloBasicSliLatency {
+export interface monitoring_SloBasicSliLatency {
   /*
 A duration string, e.g. 10s.
 Good service is defined to be the count of requests made to
 this service that return in no more than threshold.
 */
-  Threshold?: string;
+  threshold?: string;
 }
 
-export function Monitoring_SloBasicSliLatency_GetTypes(): DynamicUIProps[] {
+export function monitoring_SloBasicSliLatency_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Threshold",
+      "threshold",
       "A duration string, e.g. 10s.\nGood service is defined to be the count of requests made to\nthis service that return in no more than threshold.",
       [],
       true,

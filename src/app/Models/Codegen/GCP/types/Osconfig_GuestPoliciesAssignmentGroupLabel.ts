@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_GuestPoliciesAssignmentGroupLabel {
+export interface osconfig_GuestPoliciesAssignmentGroupLabel {
   // Google Compute Engine instance labels that must be present for an instance to be included in this assignment group.
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 }
 
-export function Osconfig_GuestPoliciesAssignmentGroupLabel_GetTypes(): DynamicUIProps[] {
+export function osconfig_GuestPoliciesAssignmentGroupLabel_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Map,
-      "Labels",
+      "labels",
       "Google Compute Engine instance labels that must be present for an instance to be included in this assignment group.",
       InputType_Map_GetTypes(),
       true,

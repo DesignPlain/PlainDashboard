@@ -9,7 +9,7 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface InstanceAttachmentArgs {
   // The resource ID of the environment.
-  Environment?: string;
+  environment?: string;
 
   /*
 The Apigee instance associated with the Apigee environment,
@@ -18,11 +18,11 @@ in the format `organizations/{{org_name}}/instances/{{instance_name}}`.
 
 - - -
 */
-  InstanceId?: string;
+  instanceId?: string;
 }
 export class InstanceAttachment extends Resource {
   // The resource ID of the environment.
-  public Environment?: string;
+  public environment?: string;
 
   /*
 The Apigee instance associated with the Apigee environment,
@@ -31,16 +31,16 @@ in the format `organizations/{{org_name}}/instances/{{instance_name}}`.
 
 - - -
 */
-  public InstanceId?: string;
+  public instanceId?: string;
 
   // The name of the newly created  attachment (output parameter).
-  public Name?: string;
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Environment",
+        "environment",
         "The resource ID of the environment.",
         [],
         true,
@@ -48,7 +48,7 @@ in the format `organizations/{{org_name}}/instances/{{instance_name}}`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "InstanceId",
+        "instanceId",
         "The Apigee instance associated with the Apigee environment,\nin the format `organizations/{{org_name}}/instances/{{instance_name}}`.\n\n\n- - -",
         [],
         true,

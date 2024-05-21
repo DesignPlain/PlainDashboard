@@ -6,9 +6,9 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_ResourcePolicySnapshotSchedulePolicyRetentionPolicy {
+export interface compute_ResourcePolicySnapshotSchedulePolicyRetentionPolicy {
   // Maximum age of the snapshot that is allowed to be kept.
-  MaxRetentionDays?: number;
+  maxRetentionDays?: number;
 
   /*
 Specifies the behavior to apply to scheduled snapshots when
@@ -16,14 +16,14 @@ the source disk is deleted.
 Default value is `KEEP_AUTO_SNAPSHOTS`.
 Possible values are: `KEEP_AUTO_SNAPSHOTS`, `APPLY_RETENTION_POLICY`.
 */
-  OnSourceDiskDelete?: string;
+  onSourceDiskDelete?: string;
 }
 
-export function Compute_ResourcePolicySnapshotSchedulePolicyRetentionPolicy_GetTypes(): DynamicUIProps[] {
+export function compute_ResourcePolicySnapshotSchedulePolicyRetentionPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "MaxRetentionDays",
+      "maxRetentionDays",
       "Maximum age of the snapshot that is allowed to be kept.",
       [],
       true,
@@ -31,7 +31,7 @@ export function Compute_ResourcePolicySnapshotSchedulePolicyRetentionPolicy_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "OnSourceDiskDelete",
+      "onSourceDiskDelete",
       "Specifies the behavior to apply to scheduled snapshots when\nthe source disk is deleted.\nDefault value is `KEEP_AUTO_SNAPSHOTS`.\nPossible values are: `KEEP_AUTO_SNAPSHOTS`, `APPLY_RETENTION_POLICY`.",
       [],
       false,

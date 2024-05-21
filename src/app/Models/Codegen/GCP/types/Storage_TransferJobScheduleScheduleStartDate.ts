@@ -6,26 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_TransferJobScheduleScheduleStartDate {
+export interface storage_TransferJobScheduleScheduleStartDate {
+  // Year of date. Must be from 1 to 9999.
+  year?: number;
+
   /*
 Day of month. Must be from 1 to 31 and valid for the year and month.
 
 <a name="nested_start_time_of_day"></a>The `start_time_of_day` blocks support:
 */
-  Day?: number;
+  day?: number;
 
   // Month of year. Must be from 1 to 12.
-  Month?: number;
-
-  // Year of date. Must be from 1 to 9999.
-  Year?: number;
+  month?: number;
 }
 
-export function Storage_TransferJobScheduleScheduleStartDate_GetTypes(): DynamicUIProps[] {
+export function storage_TransferJobScheduleScheduleStartDate_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Year",
+      "month",
+      "Month of year. Must be from 1 to 12.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "year",
       "Year of date. Must be from 1 to 9999.",
       [],
       true,
@@ -33,16 +41,8 @@ export function Storage_TransferJobScheduleScheduleStartDate_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Day",
+      "day",
       'Day of month. Must be from 1 to 31 and valid for the year and month.\n\n<a name="nested_start_time_of_day"></a>The `start_time_of_day` blocks support:',
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Month",
-      "Month of year. Must be from 1 to 12.",
       [],
       true,
       false,

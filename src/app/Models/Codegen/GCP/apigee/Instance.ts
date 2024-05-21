@@ -8,87 +8,40 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface InstanceArgs {
-  // Display name of the instance.
-  DisplayName?: string;
+  // Description of the instance.
+  description?: string;
+
+  /*
+IP range represents the customer-provided CIDR block of length 22 that will be used for
+the Apigee instance creation. This optional range, if provided, should be freely
+available as part of larger named range the customer has allocated to the Service
+Networking peering. If this is not provided, Apigee will automatically request for any
+available /22 CIDR block from Service Networking. The customer should use this CIDR block
+for configuring their firewall needs to allow traffic from Apigee.
+Input format: "a.b.c.d/22"
+*/
+  ipRange?: string;
+
+  // Resource ID of the instance.
+  name?: string;
 
   // Required. Compute Engine location where the instance resides.
-  Location?: string;
+  location?: string;
 
   /*
-Optional. Customer accept list represents the list of projects (id/number) on customer
-side that can privately connect to the service attachment. It is an optional field
-which the customers can provide during the instance creation. By default, the customer
-project associated with the Apigee organization will be included to the list.
-*/
-  ConsumerAcceptLists?: Array<string>;
+The Apigee Organization associated with the Apigee instance,
+in the format `organizations/{{org_name}}`.
 
-  // Description of the instance.
-  Description?: string;
 
-  /*
-Customer Managed Encryption Key (CMEK) used for disk and volume encryption. Required for Apigee paid subscriptions only.
-Use the following format: `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`
+- - -
 */
-  DiskEncryptionKeyName?: string;
+  orgId?: string;
 
   /*
 The size of the CIDR block range that will be reserved by the instance. For valid values,
 see [CidrRange](https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.instances#CidrRange) on the documentation.
 */
-  PeeringCidrRange?: string;
-
-  /*
-IP range represents the customer-provided CIDR block of length 22 that will be used for
-the Apigee instance creation. This optional range, if provided, should be freely
-available as part of larger named range the customer has allocated to the Service
-Networking peering. If this is not provided, Apigee will automatically request for any
-available /22 CIDR block from Service Networking. The customer should use this CIDR block
-for configuring their firewall needs to allow traffic from Apigee.
-Input format: "a.b.c.d/22"
-*/
-  IpRange?: string;
-
-  // Resource ID of the instance.
-  Name?: string;
-
-  /*
-The Apigee Organization associated with the Apigee instance,
-in the format `organizations/{{org_name}}`.
-
-
-- - -
-*/
-  OrgId?: string;
-}
-export class Instance extends Resource {
-  // Display name of the instance.
-  public DisplayName?: string;
-
-  /*
-IP range represents the customer-provided CIDR block of length 22 that will be used for
-the Apigee instance creation. This optional range, if provided, should be freely
-available as part of larger named range the customer has allocated to the Service
-Networking peering. If this is not provided, Apigee will automatically request for any
-available /22 CIDR block from Service Networking. The customer should use this CIDR block
-for configuring their firewall needs to allow traffic from Apigee.
-Input format: "a.b.c.d/22"
-*/
-  public IpRange?: string;
-
-  // Required. Compute Engine location where the instance resides.
-  public Location?: string;
-
-  // Resource ID of the instance.
-  public Name?: string;
-
-  /*
-The Apigee Organization associated with the Apigee instance,
-in the format `organizations/{{org_name}}`.
-
-
-- - -
-*/
-  public OrgId?: string;
+  peeringCidrRange?: string;
 
   /*
 Optional. Customer accept list represents the list of projects (id/number) on customer
@@ -96,89 +49,88 @@ side that can privately connect to the service attachment. It is an optional fie
 which the customers can provide during the instance creation. By default, the customer
 project associated with the Apigee organization will be included to the list.
 */
-  public ConsumerAcceptLists?: Array<string>;
-
-  // Description of the instance.
-  public Description?: string;
+  consumerAcceptLists?: Array<string>;
 
   /*
 Customer Managed Encryption Key (CMEK) used for disk and volume encryption. Required for Apigee paid subscriptions only.
 Use the following format: `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`
 */
-  public DiskEncryptionKeyName?: string;
+  diskEncryptionKeyName?: string;
+
+  // Display name of the instance.
+  displayName?: string;
+}
+export class Instance extends Resource {
+  /*
+Optional. Customer accept list represents the list of projects (id/number) on customer
+side that can privately connect to the service attachment. It is an optional field
+which the customers can provide during the instance creation. By default, the customer
+project associated with the Apigee organization will be included to the list.
+*/
+  public consumerAcceptLists?: Array<string>;
+
+  // Description of the instance.
+  public description?: string;
+
+  /*
+Customer Managed Encryption Key (CMEK) used for disk and volume encryption. Required for Apigee paid subscriptions only.
+Use the following format: `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`
+*/
+  public diskEncryptionKeyName?: string;
+
+  // Output only. Hostname or IP address of the exposed Apigee endpoint used by clients to connect to the service.
+  public host?: string;
+
+  /*
+IP range represents the customer-provided CIDR block of length 22 that will be used for
+the Apigee instance creation. This optional range, if provided, should be freely
+available as part of larger named range the customer has allocated to the Service
+Networking peering. If this is not provided, Apigee will automatically request for any
+available /22 CIDR block from Service Networking. The customer should use this CIDR block
+for configuring their firewall needs to allow traffic from Apigee.
+Input format: "a.b.c.d/22"
+*/
+  public ipRange?: string;
+
+  // Output only. Port number of the exposed Apigee endpoint.
+  public port?: string;
+
+  // Display name of the instance.
+  public displayName?: string;
+
+  // Required. Compute Engine location where the instance resides.
+  public location?: string;
+
+  // Resource ID of the instance.
+  public name?: string;
+
+  /*
+The Apigee Organization associated with the Apigee instance,
+in the format `organizations/{{org_name}}`.
+
+
+- - -
+*/
+  public orgId?: string;
+
+  /*
+The size of the CIDR block range that will be reserved by the instance. For valid values,
+see [CidrRange](https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.instances#CidrRange) on the documentation.
+*/
+  public peeringCidrRange?: string;
 
   /*
 Output only. Resource name of the service attachment created for the instance in
 the format: projects/-/regions/-/serviceAttachments/- Apigee customers can privately
 forward traffic to this service attachment using the PSC endpoints.
 */
-  public ServiceAttachment?: string;
-
-  // Output only. Hostname or IP address of the exposed Apigee endpoint used by clients to connect to the service.
-  public Host?: string;
-
-  /*
-The size of the CIDR block range that will be reserved by the instance. For valid values,
-see [CidrRange](https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.instances#CidrRange) on the documentation.
-*/
-  public PeeringCidrRange?: string;
-
-  // Output only. Port number of the exposed Apigee endpoint.
-  public Port?: string;
+  public serviceAttachment?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "PeeringCidrRange",
-        "The size of the CIDR block range that will be reserved by the instance. For valid values,\nsee [CidrRange](https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.instances#CidrRange) on the documentation.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "DisplayName",
-        "Display name of the instance.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "Description of the instance.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "DiskEncryptionKeyName",
-        "Customer Managed Encryption Key (CMEK) used for disk and volume encryption. Required for Apigee paid subscriptions only.\nUse the following format: `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "IpRange",
-        'IP range represents the customer-provided CIDR block of length 22 that will be used for\nthe Apigee instance creation. This optional range, if provided, should be freely\navailable as part of larger named range the customer has allocated to the Service\nNetworking peering. If this is not provided, Apigee will automatically request for any\navailable /22 CIDR block from Service Networking. The customer should use this CIDR block\nfor configuring their firewall needs to allow traffic from Apigee.\nInput format: "a.b.c.d/22"',
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "Resource ID of the instance.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "OrgId",
+        "orgId",
         "The Apigee Organization associated with the Apigee instance,\nin the format `organizations/{{org_name}}`.\n\n\n- - -",
         [],
         true,
@@ -186,15 +138,63 @@ see [CidrRange](https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "peeringCidrRange",
+        "The size of the CIDR block range that will be reserved by the instance. For valid values,\nsee [CidrRange](https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.instances#CidrRange) on the documentation.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "diskEncryptionKeyName",
+        "Customer Managed Encryption Key (CMEK) used for disk and volume encryption. Required for Apigee paid subscriptions only.\nUse the following format: `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "displayName",
+        "Display name of the instance.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "Description of the instance.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "Resource ID of the instance.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "location",
         "Required. Compute Engine location where the instance resides.",
         [],
         true,
         true,
       ),
       new DynamicUIProps(
+        InputType.String,
+        "ipRange",
+        'IP range represents the customer-provided CIDR block of length 22 that will be used for\nthe Apigee instance creation. This optional range, if provided, should be freely\navailable as part of larger named range the customer has allocated to the Service\nNetworking peering. If this is not provided, Apigee will automatically request for any\navailable /22 CIDR block from Service Networking. The customer should use this CIDR block\nfor configuring their firewall needs to allow traffic from Apigee.\nInput format: "a.b.c.d/22"',
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
         InputType.Array,
-        "ConsumerAcceptLists",
+        "consumerAcceptLists",
         "Optional. Customer accept list represents the list of projects (id/number) on customer\nside that can privately connect to the service attachment. It is an optional field\nwhich the customers can provide during the instance creation. By default, the customer\nproject associated with the Apigee organization will be included to the list.",
         InputType_String_GetTypes(),
         false,

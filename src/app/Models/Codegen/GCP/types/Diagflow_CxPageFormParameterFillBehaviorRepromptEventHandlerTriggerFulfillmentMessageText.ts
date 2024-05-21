@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageText {
-  // A collection of text responses.
-  Texts?: Array<string>;
-
+export interface diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageText {
   /*
 (Output)
 Whether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.
 */
-  AllowPlaybackInterruption?: boolean;
+  allowPlaybackInterruption?: boolean;
+
+  // A collection of text responses.
+  texts?: Array<string>;
 }
 
-export function Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageText_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageText_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "AllowPlaybackInterruption",
+      "allowPlaybackInterruption",
       "(Output)\nWhether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTrig
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Texts",
+      "texts",
       "A collection of text responses.",
       InputType_String_GetTypes(),
       false,

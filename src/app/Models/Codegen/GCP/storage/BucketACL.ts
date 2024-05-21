@@ -8,21 +8,21 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface BucketACLArgs {
-  // The [canned GCS ACL](https://cloud.google.com/storage/docs/access-control/lists#predefined-acl) to apply. Must be set if `role_entity` is not.
-  PredefinedAcl?: string;
-
-  // List of role/entity pairs in the form `ROLE:entity`. See [GCS Bucket ACL documentation](https://cloud.google.com/storage/docs/json_api/v1/bucketAccessControls)  for more details. Must be set if `predefined_acl` is not.
-  RoleEntities?: Array<string>;
-
   /*
 The name of the bucket it applies to.
 
 - - -
 */
-  Bucket?: string;
+  bucket?: string;
 
   // Configure this ACL to be the default ACL.
-  DefaultAcl?: string;
+  defaultAcl?: string;
+
+  // The [canned GCS ACL](https://cloud.google.com/storage/docs/access-control/lists#predefined-acl) to apply. Must be set if `role_entity` is not.
+  predefinedAcl?: string;
+
+  // List of role/entity pairs in the form `ROLE:entity`. See [GCS Bucket ACL documentation](https://cloud.google.com/storage/docs/json_api/v1/bucketAccessControls)  for more details. Must be set if `predefined_acl` is not.
+  roleEntities?: Array<string>;
 }
 export class BucketACL extends Resource {
   /*
@@ -30,22 +30,22 @@ The name of the bucket it applies to.
 
 - - -
 */
-  public Bucket?: string;
+  public bucket?: string;
 
   // Configure this ACL to be the default ACL.
-  public DefaultAcl?: string;
+  public defaultAcl?: string;
 
   // The [canned GCS ACL](https://cloud.google.com/storage/docs/access-control/lists#predefined-acl) to apply. Must be set if `role_entity` is not.
-  public PredefinedAcl?: string;
+  public predefinedAcl?: string;
 
   // List of role/entity pairs in the form `ROLE:entity`. See [GCS Bucket ACL documentation](https://cloud.google.com/storage/docs/json_api/v1/bucketAccessControls)  for more details. Must be set if `predefined_acl` is not.
-  public RoleEntities?: Array<string>;
+  public roleEntities?: Array<string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "PredefinedAcl",
+        "predefinedAcl",
         "The [canned GCS ACL](https://cloud.google.com/storage/docs/access-control/lists#predefined-acl) to apply. Must be set if `role_entity` is not.",
         [],
         false,
@@ -53,7 +53,7 @@ The name of the bucket it applies to.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "RoleEntities",
+        "roleEntities",
         "List of role/entity pairs in the form `ROLE:entity`. See [GCS Bucket ACL documentation](https://cloud.google.com/storage/docs/json_api/v1/bucketAccessControls)  for more details. Must be set if `predefined_acl` is not.",
         InputType_String_GetTypes(),
         false,
@@ -61,7 +61,7 @@ The name of the bucket it applies to.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Bucket",
+        "bucket",
         "The name of the bucket it applies to.\n\n- - -",
         [],
         true,
@@ -69,7 +69,7 @@ The name of the bucket it applies to.
       ),
       new DynamicUIProps(
         InputType.String,
-        "DefaultAcl",
+        "defaultAcl",
         "Configure this ACL to be the default ACL.",
         [],
         false,

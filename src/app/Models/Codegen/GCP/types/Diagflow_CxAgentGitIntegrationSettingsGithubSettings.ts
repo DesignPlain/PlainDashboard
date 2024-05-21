@@ -6,39 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxAgentGitIntegrationSettingsGithubSettings {
+export interface diagflow_CxAgentGitIntegrationSettingsGithubSettings {
   /*
 The access token used to authenticate the access to the GitHub repository.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  AccessToken?: string;
+  accessToken?: string;
 
   // A list of branches configured to be used from Dialogflow.
-  Branches?: Array<string>;
+  branches?: Array<string>;
 
   // The unique repository display name for the GitHub repository.
-  DisplayName?: string;
+  displayName?: string;
 
   // The GitHub repository URI related to the agent.
-  RepositoryUri?: string;
+  repositoryUri?: string;
 
   // The branch of the GitHub repository tracked for this agent.
-  TrackingBranch?: string;
+  trackingBranch?: string;
 }
 
-export function Diagflow_CxAgentGitIntegrationSettingsGithubSettings_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxAgentGitIntegrationSettingsGithubSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "AccessToken",
-      "The access token used to authenticate the access to the GitHub repository.\n**Note**: This property is sensitive and will not be displayed in the plan.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "Branches",
+      "branches",
       "A list of branches configured to be used from Dialogflow.",
       InputType_String_GetTypes(),
       false,
@@ -46,7 +38,7 @@ export function Diagflow_CxAgentGitIntegrationSettingsGithubSettings_GetTypes():
     ),
     new DynamicUIProps(
       InputType.String,
-      "DisplayName",
+      "displayName",
       "The unique repository display name for the GitHub repository.",
       [],
       false,
@@ -54,7 +46,7 @@ export function Diagflow_CxAgentGitIntegrationSettingsGithubSettings_GetTypes():
     ),
     new DynamicUIProps(
       InputType.String,
-      "RepositoryUri",
+      "repositoryUri",
       "The GitHub repository URI related to the agent.",
       [],
       false,
@@ -62,8 +54,16 @@ export function Diagflow_CxAgentGitIntegrationSettingsGithubSettings_GetTypes():
     ),
     new DynamicUIProps(
       InputType.String,
-      "TrackingBranch",
+      "trackingBranch",
       "The branch of the GitHub repository tracked for this agent.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "accessToken",
+      "The access token used to authenticate the access to the GitHub repository.\n**Note**: This property is sensitive and will not be displayed in the plan.",
       [],
       false,
       false,

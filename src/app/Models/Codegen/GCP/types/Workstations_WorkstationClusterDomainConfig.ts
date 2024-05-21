@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Workstations_WorkstationClusterDomainConfig {
+export interface workstations_WorkstationClusterDomainConfig {
   // Domain used by Workstations for HTTP ingress.
-  Domain?: string;
+  domain?: string;
 }
 
-export function Workstations_WorkstationClusterDomainConfig_GetTypes(): DynamicUIProps[] {
+export function workstations_WorkstationClusterDomainConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Domain",
+      "domain",
       "Domain used by Workstations for HTTP ingress.",
       [],
       true,

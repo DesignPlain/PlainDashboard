@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_getNotificationChannelSensitiveLabel {
+export interface monitoring_getNotificationChannelSensitiveLabel {
   // An authorization token for a notification channel. Channel types that support this field include: slack
-  AuthToken?: string;
+  authToken?: string;
 
   // An password for a notification channel. Channel types that support this field include: webhook_basicauth
-  Password?: string;
+  password?: string;
 
   // An servicekey token for a notification channel. Channel types that support this field include: pagerduty
-  ServiceKey?: string;
+  serviceKey?: string;
 }
 
-export function Monitoring_getNotificationChannelSensitiveLabel_GetTypes(): DynamicUIProps[] {
+export function monitoring_getNotificationChannelSensitiveLabel_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "AuthToken",
+      "authToken",
       "An authorization token for a notification channel. Channel types that support this field include: slack",
       [],
       true,
@@ -29,7 +29,7 @@ export function Monitoring_getNotificationChannelSensitiveLabel_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.String,
-      "Password",
+      "password",
       "An password for a notification channel. Channel types that support this field include: webhook_basicauth",
       [],
       true,
@@ -37,7 +37,7 @@ export function Monitoring_getNotificationChannelSensitiveLabel_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.String,
-      "ServiceKey",
+      "serviceKey",
       "An servicekey token for a notification channel. Channel types that support this field include: pagerduty",
       [],
       true,

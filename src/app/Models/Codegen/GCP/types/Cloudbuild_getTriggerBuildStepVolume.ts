@@ -6,38 +6,38 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuild_getTriggerBuildStepVolume {
-  /*
-Path at which to mount the volume.
-
-Paths must be absolute and cannot conflict with other volume paths on
-the same build step or with certain reserved volume paths.
-*/
-  Path?: string;
-
+export interface cloudbuild_getTriggerBuildStepVolume {
   /*
 Name of the volume to mount.
 
 Volume names must be unique per build step and must be valid names for
 Docker volumes. Each named volume must be used by at least two build steps.
 */
-  Name?: string;
+  name?: string;
+
+  /*
+Path at which to mount the volume.
+
+Paths must be absolute and cannot conflict with other volume paths on
+the same build step or with certain reserved volume paths.
+*/
+  path?: string;
 }
 
-export function Cloudbuild_getTriggerBuildStepVolume_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_getTriggerBuildStepVolume_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Path",
-      "Path at which to mount the volume.\n\nPaths must be absolute and cannot conflict with other volume paths on\nthe same build step or with certain reserved volume paths.",
+      "name",
+      "Name of the volume to mount.\n\nVolume names must be unique per build step and must be valid names for\nDocker volumes. Each named volume must be used by at least two build steps.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
-      "Name of the volume to mount.\n\nVolume names must be unique per build step and must be valid names for\nDocker volumes. Each named volume must be used by at least two build steps.",
+      "path",
+      "Path at which to mount the volume.\n\nPaths must be absolute and cannot conflict with other volume paths on\nthe same build step or with certain reserved volume paths.",
       [],
       true,
       false,

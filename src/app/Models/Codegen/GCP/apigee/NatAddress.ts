@@ -15,10 +15,10 @@ in the format `organizations/{{org_name}}/instances/{{instance_name}}`.
 
 - - -
 */
-  InstanceId?: string;
+  instanceId?: string;
 
   // Resource ID of the NAT address.
-  Name?: string;
+  name?: string;
 }
 export class NatAddress extends Resource {
   /*
@@ -28,22 +28,22 @@ in the format `organizations/{{org_name}}/instances/{{instance_name}}`.
 
 - - -
 */
-  public InstanceId?: string;
+  public instanceId?: string;
 
   // The allocated NAT IP address.
-  public IpAddress?: string;
+  public ipAddress?: string;
 
   // Resource ID of the NAT address.
-  public Name?: string;
+  public name?: string;
 
   // State of the NAT IP address.
-  public State?: string;
+  public state?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "InstanceId",
+        "instanceId",
         "The Apigee instance associated with the Apigee environment,\nin the format `organizations/{{org_name}}/instances/{{instance_name}}`.\n\n\n- - -",
         [],
         true,
@@ -51,7 +51,7 @@ in the format `organizations/{{org_name}}/instances/{{instance_name}}`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Resource ID of the NAT address.",
         [],
         false,

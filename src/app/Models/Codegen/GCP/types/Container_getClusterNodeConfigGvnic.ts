@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodeConfigGvnic {
+export interface container_getClusterNodeConfigGvnic {
   // Whether or not gvnic is enabled
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_getClusterNodeConfigGvnic_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodeConfigGvnic_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether or not gvnic is enabled",
       [],
       true,

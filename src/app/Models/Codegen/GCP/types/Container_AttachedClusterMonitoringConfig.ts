@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_AttachedClusterMonitoringConfigManagedPrometheusConfig,
-  Container_AttachedClusterMonitoringConfigManagedPrometheusConfig_GetTypes,
-} from "./Container_AttachedClusterMonitoringConfigManagedPrometheusConfig";
+  container_AttachedClusterMonitoringConfigManagedPrometheusConfig,
+  container_AttachedClusterMonitoringConfigManagedPrometheusConfig_GetTypes,
+} from "./container_AttachedClusterMonitoringConfigManagedPrometheusConfig";
 
-export interface Container_AttachedClusterMonitoringConfig {
+export interface container_AttachedClusterMonitoringConfig {
   /*
 Enable Google Cloud Managed Service for Prometheus in the cluster.
 Structure is documented below.
 */
-  ManagedPrometheusConfig?: Container_AttachedClusterMonitoringConfigManagedPrometheusConfig;
+  managedPrometheusConfig?: container_AttachedClusterMonitoringConfigManagedPrometheusConfig;
 }
 
-export function Container_AttachedClusterMonitoringConfig_GetTypes(): DynamicUIProps[] {
+export function container_AttachedClusterMonitoringConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ManagedPrometheusConfig",
+      "managedPrometheusConfig",
       "Enable Google Cloud Managed Service for Prometheus in the cluster.\nStructure is documented below.",
-      Container_AttachedClusterMonitoringConfigManagedPrometheusConfig_GetTypes(),
+      container_AttachedClusterMonitoringConfigManagedPrometheusConfig_GetTypes(),
       false,
       false,
     ),

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterIpAllocationPolicyAdditionalPodRangesConfig {
+export interface container_getClusterIpAllocationPolicyAdditionalPodRangesConfig {
   // Name for pod secondary ipv4 range which has the actual range defined ahead.
-  PodRangeNames?: Array<string>;
+  podRangeNames?: Array<string>;
 }
 
-export function Container_getClusterIpAllocationPolicyAdditionalPodRangesConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterIpAllocationPolicyAdditionalPodRangesConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "PodRangeNames",
+      "podRangeNames",
       "Name for pod secondary ipv4 range which has the actual range defined ahead.",
       InputType_String_GetTypes(),
       true,

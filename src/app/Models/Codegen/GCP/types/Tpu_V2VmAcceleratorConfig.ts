@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Tpu_V2VmAcceleratorConfig {
-  // Topology of TPU in chips.
-  Topology?: string;
-
+export interface tpu_V2VmAcceleratorConfig {
   /*
 Type of TPU.
 Possible values are: `V2`, `V3`, `V4`.
 */
-  Type?: string;
+  type?: string;
+
+  // Topology of TPU in chips.
+  topology?: string;
 }
 
-export function Tpu_V2VmAcceleratorConfig_GetTypes(): DynamicUIProps[] {
+export function tpu_V2VmAcceleratorConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Topology",
-      "Topology of TPU in chips.",
+      "type",
+      "Type of TPU.\nPossible values are: `V2`, `V3`, `V4`.",
       [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
-      "Type of TPU.\nPossible values are: `V2`, `V3`, `V4`.",
+      "topology",
+      "Topology of TPU in chips.",
       [],
       true,
       true,

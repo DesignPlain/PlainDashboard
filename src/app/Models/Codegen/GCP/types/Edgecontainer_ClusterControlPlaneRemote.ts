@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Edgecontainer_ClusterControlPlaneRemote {
+export interface edgecontainer_ClusterControlPlaneRemote {
   /*
 Name of the Google Distributed Cloud Edge zones where this node pool
 will be created. For example: `us-central1-edge-customer-a`.
 */
-  NodeLocation?: string;
+  nodeLocation?: string;
 }
 
-export function Edgecontainer_ClusterControlPlaneRemote_GetTypes(): DynamicUIProps[] {
+export function edgecontainer_ClusterControlPlaneRemote_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "NodeLocation",
+      "nodeLocation",
       "Name of the Google Distributed Cloud Edge zones where this node pool\nwill be created. For example: `us-central1-edge-customer-a`.",
       [],
       false,

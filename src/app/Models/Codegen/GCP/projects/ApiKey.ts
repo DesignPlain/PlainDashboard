@@ -7,47 +7,47 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Projects_ApiKeyRestrictions,
-  Projects_ApiKeyRestrictions_GetTypes,
-} from "../types/Projects_ApiKeyRestrictions";
+  projects_ApiKeyRestrictions,
+  projects_ApiKeyRestrictions_GetTypes,
+} from "../types/projects_ApiKeyRestrictions";
 
 export interface ApiKeyArgs {
   // Human-readable display name of this API key. Modifiable by user.
-  DisplayName?: string;
+  displayName?: string;
 
   // The resource name of the key. The name must be unique within the project, must conform with RFC-1034, is restricted to lower-cased letters, and has a maximum length of 63 characters. In another word, the name must match the regular expression: `a-z?`.
-  Name?: string;
+  name?: string;
 
   // The project for the resource
-  Project?: string;
+  project?: string;
 
   // Key restrictions.
-  Restrictions?: Projects_ApiKeyRestrictions;
+  restrictions?: projects_ApiKeyRestrictions;
 }
 export class ApiKey extends Resource {
-  // The resource name of the key. The name must be unique within the project, must conform with RFC-1034, is restricted to lower-cased letters, and has a maximum length of 63 characters. In another word, the name must match the regular expression: `a-z?`.
-  public Name?: string;
-
-  // The project for the resource
-  public Project?: string;
-
-  // Key restrictions.
-  public Restrictions?: Projects_ApiKeyRestrictions;
-
   // Output only. Unique id in UUID4 format.
-  public Uid?: string;
+  public uid?: string;
 
   // Human-readable display name of this API key. Modifiable by user.
-  public DisplayName?: string;
+  public displayName?: string;
 
   // Output only. An encrypted and signed value held by this key. This field can be accessed only through the `GetKeyString` method.
-  public KeyString?: string;
+  public keyString?: string;
+
+  // The resource name of the key. The name must be unique within the project, must conform with RFC-1034, is restricted to lower-cased letters, and has a maximum length of 63 characters. In another word, the name must match the regular expression: `a-z?`.
+  public name?: string;
+
+  // The project for the resource
+  public project?: string;
+
+  // Key restrictions.
+  public restrictions?: projects_ApiKeyRestrictions;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "Human-readable display name of this API key. Modifiable by user.",
         [],
         false,
@@ -55,7 +55,7 @@ export class ApiKey extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The resource name of the key. The name must be unique within the project, must conform with RFC-1034, is restricted to lower-cased letters, and has a maximum length of 63 characters. In another word, the name must match the regular expression: `a-z?`.",
         [],
         false,
@@ -63,7 +63,7 @@ export class ApiKey extends Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The project for the resource",
         [],
         false,
@@ -71,9 +71,9 @@ export class ApiKey extends Resource {
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Restrictions",
+        "restrictions",
         "Key restrictions.",
-        Projects_ApiKeyRestrictions_GetTypes(),
+        projects_ApiKeyRestrictions_GetTypes(),
         false,
         false,
       ),

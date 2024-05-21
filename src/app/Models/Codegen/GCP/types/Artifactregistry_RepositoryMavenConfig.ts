@@ -6,35 +6,35 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Artifactregistry_RepositoryMavenConfig {
+export interface artifactregistry_RepositoryMavenConfig {
   /*
 The repository with this flag will allow publishing the same
 snapshot versions.
 */
-  AllowSnapshotOverwrites?: boolean;
+  allowSnapshotOverwrites?: boolean;
 
   /*
 Version policy defines the versions that the registry will accept.
 Default value is `VERSION_POLICY_UNSPECIFIED`.
 Possible values are: `VERSION_POLICY_UNSPECIFIED`, `RELEASE`, `SNAPSHOT`.
 */
-  VersionPolicy?: string;
+  versionPolicy?: string;
 }
 
-export function Artifactregistry_RepositoryMavenConfig_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_RepositoryMavenConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "VersionPolicy",
-      "Version policy defines the versions that the registry will accept.\nDefault value is `VERSION_POLICY_UNSPECIFIED`.\nPossible values are: `VERSION_POLICY_UNSPECIFIED`, `RELEASE`, `SNAPSHOT`.",
+      InputType.Bool,
+      "allowSnapshotOverwrites",
+      "The repository with this flag will allow publishing the same\nsnapshot versions.",
       [],
       false,
       true,
     ),
     new DynamicUIProps(
-      InputType.Bool,
-      "AllowSnapshotOverwrites",
-      "The repository with this flag will allow publishing the same\nsnapshot versions.",
+      InputType.String,
+      "versionPolicy",
+      "Version policy defines the versions that the registry will accept.\nDefault value is `VERSION_POLICY_UNSPECIFIED`.\nPossible values are: `VERSION_POLICY_UNSPECIFIED`, `RELEASE`, `SNAPSHOT`.",
       [],
       false,
       true,

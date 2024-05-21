@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getDiskAsyncPrimaryDisk {
+export interface compute_getDiskAsyncPrimaryDisk {
   // Primary disk for asynchronous disk replication.
-  Disk?: string;
+  disk?: string;
 }
 
-export function Compute_getDiskAsyncPrimaryDisk_GetTypes(): DynamicUIProps[] {
+export function compute_getDiskAsyncPrimaryDisk_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Disk",
+      "disk",
       "Primary disk for asynchronous disk replication.",
       [],
       true,

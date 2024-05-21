@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Tpu_NodeSchedulingConfig {
+export interface tpu_NodeSchedulingConfig {
   // Defines whether the TPU instance is preemptible.
-  Preemptible?: boolean;
+  preemptible?: boolean;
 }
 
-export function Tpu_NodeSchedulingConfig_GetTypes(): DynamicUIProps[] {
+export function tpu_NodeSchedulingConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Preemptible",
+      "preemptible",
       "Defines whether the TPU instance is preemptible.",
       [],
       true,

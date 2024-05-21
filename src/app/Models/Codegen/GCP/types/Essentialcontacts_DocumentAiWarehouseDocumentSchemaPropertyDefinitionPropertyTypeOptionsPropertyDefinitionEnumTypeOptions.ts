@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionEnumTypeOptions {
+export interface essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionEnumTypeOptions {
   // List of possible enum values.
-  PossibleValues?: Array<string>;
+  possibleValues?: Array<string>;
 
   /*
 Make sure the enum property value provided in the document is in the possile value list during document creation. The validation check runs by default.
 
 - - -
 */
-  ValidationCheckDisabled?: boolean;
+  validationCheckDisabled?: boolean;
 }
 
-export function Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionEnumTypeOptions_GetTypes(): DynamicUIProps[] {
+export function essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionEnumTypeOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "PossibleValues",
+      "possibleValues",
       "List of possible enum values.",
       InputType_String_GetTypes(),
       true,
@@ -30,7 +30,7 @@ export function Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefin
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "ValidationCheckDisabled",
+      "validationCheckDisabled",
       "Make sure the enum property value provided in the document is in the possile value list during document creation. The validation check runs by default.\n\n- - -",
       [],
       false,

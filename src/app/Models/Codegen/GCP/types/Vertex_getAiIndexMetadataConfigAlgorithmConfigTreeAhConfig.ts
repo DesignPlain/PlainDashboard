@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vertex_getAiIndexMetadataConfigAlgorithmConfigTreeAhConfig {
+export interface vertex_getAiIndexMetadataConfigAlgorithmConfigTreeAhConfig {
   // Number of embeddings on each leaf node. The default value is 1000 if not set.
-  LeafNodeEmbeddingCount?: number;
+  leafNodeEmbeddingCount?: number;
 
   /*
 The default percentage of leaf nodes that any query may be searched. Must be in
 range 1-100, inclusive. The default value is 10 (means 10%!!(MISSING))(MISSING) if not set.
 */
-  LeafNodesToSearchPercent?: number;
+  leafNodesToSearchPercent?: number;
 }
 
-export function Vertex_getAiIndexMetadataConfigAlgorithmConfigTreeAhConfig_GetTypes(): DynamicUIProps[] {
+export function vertex_getAiIndexMetadataConfigAlgorithmConfigTreeAhConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "LeafNodeEmbeddingCount",
+      "leafNodeEmbeddingCount",
       "Number of embeddings on each leaf node. The default value is 1000 if not set.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Vertex_getAiIndexMetadataConfigAlgorithmConfigTreeAhConfig_GetTy
     ),
     new DynamicUIProps(
       InputType.Number,
-      "LeafNodesToSearchPercent",
+      "leafNodesToSearchPercent",
       "The default percentage of leaf nodes that any query may be searched. Must be in\nrange 1-100, inclusive. The default value is 10 (means 10%!)(MISSING) if not set.",
       [],
       true,

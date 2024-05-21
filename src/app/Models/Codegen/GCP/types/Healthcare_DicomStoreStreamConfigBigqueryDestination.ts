@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Healthcare_DicomStoreStreamConfigBigqueryDestination {
+export interface healthcare_DicomStoreStreamConfigBigqueryDestination {
   // a fully qualified BigQuery table URI where DICOM instance metadata will be streamed.
-  TableUri?: string;
+  tableUri?: string;
 }
 
-export function Healthcare_DicomStoreStreamConfigBigqueryDestination_GetTypes(): DynamicUIProps[] {
+export function healthcare_DicomStoreStreamConfigBigqueryDestination_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "TableUri",
+      "tableUri",
       "a fully qualified BigQuery table URI where DICOM instance metadata will be streamed.",
       [],
       true,

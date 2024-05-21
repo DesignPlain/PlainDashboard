@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Integrationconnectors_ConnectionEventingRuntimeDataStatus,
-  Integrationconnectors_ConnectionEventingRuntimeDataStatus_GetTypes,
-} from "./Integrationconnectors_ConnectionEventingRuntimeDataStatus";
+  integrationconnectors_ConnectionEventingRuntimeDataStatus,
+  integrationconnectors_ConnectionEventingRuntimeDataStatus_GetTypes,
+} from "./integrationconnectors_ConnectionEventingRuntimeDataStatus";
 
-export interface Integrationconnectors_ConnectionEventingRuntimeData {
-  // Events listener endpoint. The value will populated after provisioning the events listener.
-  EventsListenerEndpoint?: string;
-
+export interface integrationconnectors_ConnectionEventingRuntimeData {
   /*
 (Output)
 Current status of eventing.
 Structure is documented below.
 */
-  Statuses?: Array<Integrationconnectors_ConnectionEventingRuntimeDataStatus>;
+  statuses?: Array<integrationconnectors_ConnectionEventingRuntimeDataStatus>;
+
+  // Events listener endpoint. The value will populated after provisioning the events listener.
+  eventsListenerEndpoint?: string;
 }
 
-export function Integrationconnectors_ConnectionEventingRuntimeData_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionEventingRuntimeData_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "EventsListenerEndpoint",
-      "Events listener endpoint. The value will populated after provisioning the events listener.",
-      [],
+      InputType.Array,
+      "statuses",
+      "(Output)\nCurrent status of eventing.\nStructure is documented below.",
+      integrationconnectors_ConnectionEventingRuntimeDataStatus_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "Statuses",
-      "(Output)\nCurrent status of eventing.\nStructure is documented below.",
-      Integrationconnectors_ConnectionEventingRuntimeDataStatus_GetTypes(),
+      InputType.String,
+      "eventsListenerEndpoint",
+      "Events listener endpoint. The value will populated after provisioning the events listener.",
+      [],
       false,
       false,
     ),

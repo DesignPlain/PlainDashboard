@@ -9,10 +9,10 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface NetworkFirewallPolicyAssociationArgs {
   // The target that the firewall policy is attached to.
-  AttachmentTarget?: string;
+  attachmentTarget?: string;
 
   // The firewall policy ID of the association.
-  FirewallPolicy?: string;
+  firewallPolicy?: string;
 
   /*
 The name for an association.
@@ -21,17 +21,17 @@ The name for an association.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   // The project for the resource
-  Project?: string;
+  project?: string;
 }
 export class NetworkFirewallPolicyAssociation extends Resource {
   // The target that the firewall policy is attached to.
-  public AttachmentTarget?: string;
+  public attachmentTarget?: string;
 
   // The firewall policy ID of the association.
-  public FirewallPolicy?: string;
+  public firewallPolicy?: string;
 
   /*
 The name for an association.
@@ -40,19 +40,27 @@ The name for an association.
 
 - - -
 */
-  public Name?: string;
+  public name?: string;
 
   // The project for the resource
-  public Project?: string;
+  public project?: string;
 
   // The short name of the firewall policy of the association.
-  public ShortName?: string;
+  public shortName?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "AttachmentTarget",
+        "project",
+        "The project for the resource",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "attachmentTarget",
         "The target that the firewall policy is attached to.",
         [],
         true,
@@ -60,7 +68,7 @@ The name for an association.
       ),
       new DynamicUIProps(
         InputType.String,
-        "FirewallPolicy",
+        "firewallPolicy",
         "The firewall policy ID of the association.",
         [],
         true,
@@ -68,16 +76,8 @@ The name for an association.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name for an association.\n\n\n\n- - -",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The project for the resource",
         [],
         false,
         true,

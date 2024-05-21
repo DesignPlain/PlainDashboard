@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_WorkflowTemplateParameterValidationValues {
+export interface dataproc_WorkflowTemplateParameterValidationValues {
   // Required. List of allowed values for the parameter.
-  Values?: Array<string>;
+  values?: Array<string>;
 }
 
-export function Dataproc_WorkflowTemplateParameterValidationValues_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplateParameterValidationValues_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Values",
+      "values",
       "Required. List of allowed values for the parameter.",
       InputType_String_GetTypes(),
       true,

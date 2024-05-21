@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_ApplicationFeatureSettings {
+export interface appengine_ApplicationFeatureSettings {
   /*
 Set to false to use the legacy health check instead of the readiness
 and liveness checks.
 */
-  SplitHealthChecks?: boolean;
+  splitHealthChecks?: boolean;
 }
 
-export function Appengine_ApplicationFeatureSettings_GetTypes(): DynamicUIProps[] {
+export function appengine_ApplicationFeatureSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "SplitHealthChecks",
+      "splitHealthChecks",
       "Set to false to use the legacy health check instead of the readiness\nand liveness checks.",
       [],
       true,

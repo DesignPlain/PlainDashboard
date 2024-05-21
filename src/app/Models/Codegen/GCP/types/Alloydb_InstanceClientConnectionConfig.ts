@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Alloydb_InstanceClientConnectionConfigSslConfig,
-  Alloydb_InstanceClientConnectionConfigSslConfig_GetTypes,
-} from "./Alloydb_InstanceClientConnectionConfigSslConfig";
+  alloydb_InstanceClientConnectionConfigSslConfig,
+  alloydb_InstanceClientConnectionConfigSslConfig_GetTypes,
+} from "./alloydb_InstanceClientConnectionConfigSslConfig";
 
-export interface Alloydb_InstanceClientConnectionConfig {
+export interface alloydb_InstanceClientConnectionConfig {
   // Configuration to enforce connectors only (ex: AuthProxy) connections to the database.
-  RequireConnectors?: boolean;
+  requireConnectors?: boolean;
 
   /*
 SSL config option for this instance.
 Structure is documented below.
 */
-  SslConfig?: Alloydb_InstanceClientConnectionConfigSslConfig;
+  sslConfig?: alloydb_InstanceClientConnectionConfigSslConfig;
 }
 
-export function Alloydb_InstanceClientConnectionConfig_GetTypes(): DynamicUIProps[] {
+export function alloydb_InstanceClientConnectionConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "RequireConnectors",
+      "requireConnectors",
       "Configuration to enforce connectors only (ex: AuthProxy) connections to the database.",
       [],
       false,
@@ -33,9 +33,9 @@ export function Alloydb_InstanceClientConnectionConfig_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Object,
-      "SslConfig",
+      "sslConfig",
       "SSL config option for this instance.\nStructure is documented below.",
-      Alloydb_InstanceClientConnectionConfigSslConfig_GetTypes(),
+      alloydb_InstanceClientConnectionConfigSslConfig_GetTypes(),
       false,
       false,
     ),

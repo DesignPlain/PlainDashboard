@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryCloudStorageFileSet {
+export interface dataloss_PreventionStoredInfoTypeLargeCustomDictionaryCloudStorageFileSet {
   // The url, in the format `gs://<bucket>/<path>`. Trailing wildcard in the path is allowed.
-  Url?: string;
+  url?: string;
 }
 
-export function Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryCloudStorageFileSet_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionStoredInfoTypeLargeCustomDictionaryCloudStorageFileSet_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Url",
+      "url",
       "The url, in the format `gs://<bucket>/<path>`. Trailing wildcard in the path is allowed.",
       [],
       true,

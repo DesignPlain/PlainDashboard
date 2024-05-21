@@ -8,31 +8,31 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface InstanceGroupNamedPortArgs {
+  // The zone of the instance group.
+  zone?: string;
+
   /*
 The name of the instance group.
 
 
 - - -
 */
-  Group?: string;
+  group?: string;
 
   /*
 The name for this named port. The name must be 1-63 characters
 long, and comply with RFC1035.
 */
-  Name?: string;
+  name?: string;
 
   // The port number, which can be a value between 1 and 65535.
-  Port?: number;
+  port?: number;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
-
-  // The zone of the instance group.
-  Zone?: string;
+  project?: string;
 }
 export class InstanceGroupNamedPort extends Resource {
   /*
@@ -41,31 +41,31 @@ The name of the instance group.
 
 - - -
 */
-  public Group?: string;
+  public group?: string;
 
   /*
 The name for this named port. The name must be 1-63 characters
 long, and comply with RFC1035.
 */
-  public Name?: string;
+  public name?: string;
 
   // The port number, which can be a value between 1 and 65535.
-  public Port?: number;
+  public port?: number;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // The zone of the instance group.
-  public Zone?: string;
+  public zone?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name for this named port. The name must be 1-63 characters\nlong, and comply with RFC1035.",
         [],
         false,
@@ -73,7 +73,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "Port",
+        "port",
         "The port number, which can be a value between 1 and 65535.",
         [],
         true,
@@ -81,7 +81,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -89,7 +89,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Zone",
+        "zone",
         "The zone of the instance group.",
         [],
         false,
@@ -97,7 +97,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Group",
+        "group",
         "The name of the instance group.\n\n\n- - -",
         [],
         true,

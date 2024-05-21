@@ -7,46 +7,46 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_BackendBucketCdnPolicy,
-  Compute_BackendBucketCdnPolicy_GetTypes,
-} from "../types/Compute_BackendBucketCdnPolicy";
+  compute_BackendBucketCdnPolicy,
+  compute_BackendBucketCdnPolicy_GetTypes,
+} from "../types/compute_BackendBucketCdnPolicy";
 
 export interface BackendBucketArgs {
   /*
-Cloud CDN configuration for this Backend Bucket.
-Structure is documented below.
-*/
-  CdnPolicy?: Compute_BackendBucketCdnPolicy;
-
-  /*
 An optional textual description of the resource; provided by the
 client when the resource is created.
 */
-  Description?: string;
-
-  // The security policy associated with this backend bucket.
-  EdgeSecurityPolicy?: string;
+  description?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // Cloud Storage bucket name.
-  BucketName?: string;
+  bucketName?: string;
+
+  /*
+Cloud CDN configuration for this Backend Bucket.
+Structure is documented below.
+*/
+  cdnPolicy?: compute_BackendBucketCdnPolicy;
 
   /*
 Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header.
 Possible values are: `AUTOMATIC`, `DISABLED`.
 */
-  CompressionMode?: string;
+  compressionMode?: string;
 
   // Headers that the HTTP/S load balancer should add to proxied responses.
-  CustomResponseHeaders?: Array<string>;
+  customResponseHeaders?: Array<string>;
+
+  // The security policy associated with this backend bucket.
+  edgeSecurityPolicy?: string;
 
   // If true, enable Cloud CDN for this BackendBucket.
-  EnableCdn?: boolean;
+  enableCdn?: boolean;
 
   /*
 Name of the resource. Provided by the client when the resource is
@@ -60,29 +60,20 @@ last character, which cannot be a dash.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 }
 export class BackendBucket extends Resource {
   // Cloud Storage bucket name.
-  public BucketName?: string;
+  public bucketName?: string;
 
   /*
 Cloud CDN configuration for this Backend Bucket.
 Structure is documented below.
 */
-  public CdnPolicy?: Compute_BackendBucketCdnPolicy;
-
-  /*
-Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header.
-Possible values are: `AUTOMATIC`, `DISABLED`.
-*/
-  public CompressionMode?: string;
+  public cdnPolicy?: compute_BackendBucketCdnPolicy;
 
   // Headers that the HTTP/S load balancer should add to proxied responses.
-  public CustomResponseHeaders?: Array<string>;
-
-  // The security policy associated with this backend bucket.
-  public EdgeSecurityPolicy?: string;
+  public customResponseHeaders?: Array<string>;
 
   /*
 Name of the resource. Provided by the client when the resource is
@@ -96,34 +87,67 @@ last character, which cannot be a dash.
 
 - - -
 */
-  public Name?: string;
-
-  // Creation timestamp in RFC3339 text format.
-  public CreationTimestamp?: string;
-
-  /*
-An optional textual description of the resource; provided by the
-client when the resource is created.
-*/
-  public Description?: string;
-
-  // If true, enable Cloud CDN for this BackendBucket.
-  public EnableCdn?: boolean;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
+
+  /*
+Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header.
+Possible values are: `AUTOMATIC`, `DISABLED`.
+*/
+  public compressionMode?: string;
+
+  // Creation timestamp in RFC3339 text format.
+  public creationTimestamp?: string;
+
+  /*
+An optional textual description of the resource; provided by the
+client when the resource is created.
+*/
+  public description?: string;
+
+  // The security policy associated with this backend bucket.
+  public edgeSecurityPolicy?: string;
+
+  // If true, enable Cloud CDN for this BackendBucket.
+  public enableCdn?: boolean;
 
   // The URI of the created resource.
-  public SelfLink?: string;
+  public selfLink?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
+        InputType.String,
+        "name",
+        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035.  Specifically, the name must be 1-63 characters long and\nmatch the regular expression `a-z?` which means\nthe first character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the\nlast character, which cannot be a dash.\n\n\n- - -",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "compressionMode",
+        "Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header.\nPossible values are: `AUTOMATIC`, `DISABLED`.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
         InputType.Array,
-        "CustomResponseHeaders",
+        "customResponseHeaders",
         "Headers that the HTTP/S load balancer should add to proxied responses.",
         InputType_String_GetTypes(),
         false,
@@ -131,55 +155,15 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
-        "An optional textual description of the resource; provided by the\nclient when the resource is created.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "EdgeSecurityPolicy",
+        "edgeSecurityPolicy",
         "The security policy associated with this backend bucket.",
         [],
         false,
         false,
       ),
       new DynamicUIProps(
-        InputType.String,
-        "BucketName",
-        "Cloud Storage bucket name.",
-        [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "CompressionMode",
-        "Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header.\nPossible values are: `AUTOMATIC`, `DISABLED`.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "CdnPolicy",
-        "Cloud CDN configuration for this Backend Bucket.\nStructure is documented below.",
-        Compute_BackendBucketCdnPolicy_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.Bool,
-        "EnableCdn",
+        "enableCdn",
         "If true, enable Cloud CDN for this BackendBucket.",
         [],
         false,
@@ -187,11 +171,27 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
-        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035.  Specifically, the name must be 1-63 characters long and\nmatch the regular expression `a-z?` which means\nthe first character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the\nlast character, which cannot be a dash.\n\n\n- - -",
+        "description",
+        "An optional textual description of the resource; provided by the\nclient when the resource is created.",
         [],
         false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "bucketName",
+        "Cloud Storage bucket name.",
+        [],
         true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "cdnPolicy",
+        "Cloud CDN configuration for this Backend Bucket.\nStructure is documented below.",
+        compute_BackendBucketCdnPolicy_GetTypes(),
+        false,
+        false,
       ),
     ];
   }

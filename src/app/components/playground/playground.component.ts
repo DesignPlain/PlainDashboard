@@ -143,7 +143,7 @@ export class PlaygroundComponent implements OnInit {
           resource.ResourceType
         );
 
-        item.IconSrc = resource.IconSrc;
+        item.iconSrc = resource.iconSrc;
         this.items.push(item);
         this._saveState();
       }
@@ -254,9 +254,13 @@ export class PlaygroundComponent implements OnInit {
       // console.log('Value', val.val);
       // console.log('Value type', InputType[val.type]);
 
-      console.log('\n\n', val.val, objMap);
-      let sen = objMap.get(val.val);
-      setDynamicUIMembers(sen, objMap.get(val.val), val, map, 1);
+      console.log('\n\n Base Type', val.val, objMap);
+
+      let baseObj = objMap.get(toCamel(val.val));
+      if (baseObj == undefined) {
+        baseObj = objMap.get(val.val);
+      }
+      setDynamicUIMembers(baseObj, baseObj, val, map, 1);
 
       objMap.set('Name', name);
 
@@ -272,33 +276,48 @@ export class PlaygroundComponent implements OnInit {
         )
       );
 
-      console.log(this.currentConfig);
+      console.log('Final load:', this.currentConfig);
     });
 
+    function toCamel(str: string): string {
+      return str[0].toLowerCase() + str.substring(1);
+    }
+
     function setDynamicUIMembers(
-      sen: any,
+      lastObj: any,
       objMap: Map<string, any>,
       val: DynamicUIProps,
       map: Map<any, any>,
       depth: number
     ) {
+      console.log('ObjMap: before null check ', objMap);
+      if (!(objMap instanceof Map) && (objMap != null || objMap != undefined)) {
+        objMap = new Map(Object.entries(objMap));
+      }
       val.members.forEach((obj) => {
         const lmap = new Map();
         let objVal = undefined;
 
         console.log('\n*****Call depth: ', depth);
         console.log('ObjMap: ', objMap);
+        console.log('sen: ', lastObj);
         console.log('obj', obj);
         console.log('Value type', InputType[obj.type]);
         if (val.type == InputType.Array || val.type == InputType.Map) {
           objVal = objMap;
-          sen = null;
+          lastObj = null;
         } else {
-          if (sen != null) {
-            objVal = objMap?.get(obj.val);
+          if (lastObj != null) {
+            objVal = objMap?.get(toCamel(obj.val));
+            if (objVal == undefined) {
+              objVal = objMap?.get(val.val);
+            }
           }
         }
-        setDynamicUIMembers(sen, objVal, obj, lmap, depth + 1);
+
+        console.log('Next ObjMap: ', objVal);
+        console.log('Next sen: ', lastObj);
+        setDynamicUIMembers(lastObj, objVal, obj, lmap, depth + 1);
 
         console.log('Parent:', val.val, obj.val, objVal);
 

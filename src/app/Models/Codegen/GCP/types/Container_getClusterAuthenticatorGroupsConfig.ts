@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterAuthenticatorGroupsConfig {
+export interface container_getClusterAuthenticatorGroupsConfig {
   // The name of the RBAC security group for use with Google security groups in Kubernetes RBAC. Group name must be in format gke-security-groups@yourdomain.com.
-  SecurityGroup?: string;
+  securityGroup?: string;
 }
 
-export function Container_getClusterAuthenticatorGroupsConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterAuthenticatorGroupsConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SecurityGroup",
+      "securityGroup",
       "The name of the RBAC security group for use with Google security groups in Kubernetes RBAC. Group name must be in format gke-security-groups@yourdomain.com.",
       [],
       true,

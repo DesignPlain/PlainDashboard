@@ -17,16 +17,16 @@ or [Android App](https://firebase.google.com/docs/reference/firebase-management/
 
 - - -
 */
-  AppId?: string;
+  appId?: string;
 
   // A human readable display name used to identify this debug token.
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 The secret token itself. Must be provided during creation, and must be a UUID4,
@@ -37,26 +37,9 @@ this debug token to revoke it.
 For security reasons, this field will never be populated in any response.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  Token?: string;
+  token?: string;
 }
 export class AppCheckDebugToken extends Resource {
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  /*
-The secret token itself. Must be provided during creation, and must be a UUID4,
-case insensitive. You may use a method of your choice such as random/random_uuid
-to generate the token.
-This field is immutable once set, and cannot be updated. You can, however, delete
-this debug token to revoke it.
-For security reasons, this field will never be populated in any response.
---Note--: This property is sensitive and will not be displayed in the plan.
-*/
-  public Token?: string;
-
   /*
 The ID of a
 [Web App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.webApps#WebApp.FIELDS.app_id),
@@ -66,19 +49,36 @@ or [Android App](https://firebase.google.com/docs/reference/firebase-management/
 
 - - -
 */
-  public AppId?: string;
+  public appId?: string;
 
   // The last segment of the resource name of the debug token.
-  public DebugTokenId?: string;
+  public debugTokenId?: string;
 
   // A human readable display name used to identify this debug token.
-  public DisplayName?: string;
+  public displayName?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  /*
+The secret token itself. Must be provided during creation, and must be a UUID4,
+case insensitive. You may use a method of your choice such as random/random_uuid
+to generate the token.
+This field is immutable once set, and cannot be updated. You can, however, delete
+this debug token to revoke it.
+For security reasons, this field will never be populated in any response.
+--Note--: This property is sensitive and will not be displayed in the plan.
+*/
+  public token?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "AppId",
+        "appId",
         "The ID of a\n[Web App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.webApps#WebApp.FIELDS.app_id),\n[Apple App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.iosApps#IosApp.FIELDS.app_id),\nor [Android App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.androidApps#AndroidApp.FIELDS.app_id)\n\n\n- - -",
         [],
         true,
@@ -86,7 +86,7 @@ or [Android App](https://firebase.google.com/docs/reference/firebase-management/
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "A human readable display name used to identify this debug token.",
         [],
         true,
@@ -94,7 +94,7 @@ or [Android App](https://firebase.google.com/docs/reference/firebase-management/
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -102,7 +102,7 @@ or [Android App](https://firebase.google.com/docs/reference/firebase-management/
       ),
       new DynamicUIProps(
         InputType.String,
-        "Token",
+        "token",
         "The secret token itself. Must be provided during creation, and must be a UUID4,\ncase insensitive. You may use a method of your choice such as random/random_uuid\nto generate the token.\nThis field is immutable once set, and cannot be updated. You can, however, delete\nthis debug token to revoke it.\nFor security reasons, this field will never be populated in any response.\n**Note**: This property is sensitive and will not be displayed in the plan.",
         [],
         true,

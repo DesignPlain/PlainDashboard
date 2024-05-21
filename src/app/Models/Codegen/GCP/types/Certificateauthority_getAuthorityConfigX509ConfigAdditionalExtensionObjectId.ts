@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificateauthority_getAuthorityConfigX509ConfigAdditionalExtensionObjectId {
+export interface certificateauthority_getAuthorityConfigX509ConfigAdditionalExtensionObjectId {
   // An ObjectId specifies an object identifier (OID). These provide context and describe types in ASN.1 messages.
-  ObjectIdPaths?: Array<number>;
+  objectIdPaths?: Array<number>;
 }
 
-export function Certificateauthority_getAuthorityConfigX509ConfigAdditionalExtensionObjectId_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_getAuthorityConfigX509ConfigAdditionalExtensionObjectId_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ObjectIdPaths",
+      "objectIdPaths",
       "An ObjectId specifies an object identifier (OID). These provide context and describe types in ASN.1 messages.",
       InputType_Number_GetTypes(),
       true,

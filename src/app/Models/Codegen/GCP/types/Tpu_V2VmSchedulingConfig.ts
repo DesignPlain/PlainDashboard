@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Tpu_V2VmSchedulingConfig {
+export interface tpu_V2VmSchedulingConfig {
   // Defines whether the node is preemptible.
-  Preemptible?: boolean;
+  preemptible?: boolean;
 
   // Whether the node is created under a reservation.
-  Reserved?: boolean;
+  reserved?: boolean;
 }
 
-export function Tpu_V2VmSchedulingConfig_GetTypes(): DynamicUIProps[] {
+export function tpu_V2VmSchedulingConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Preemptible",
+      "preemptible",
       "Defines whether the node is preemptible.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Tpu_V2VmSchedulingConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Reserved",
+      "reserved",
       "Whether the node is created under a reservation.",
       [],
       false,

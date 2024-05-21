@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigqueryanalyticshub_ListingRestrictedExportConfig {
+export interface bigqueryanalyticshub_ListingRestrictedExportConfig {
   // If true, enable restricted export.
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // If true, restrict export of query result derived from restricted linked dataset table.
-  RestrictQueryResult?: boolean;
+  restrictQueryResult?: boolean;
 }
 
-export function Bigqueryanalyticshub_ListingRestrictedExportConfig_GetTypes(): DynamicUIProps[] {
+export function bigqueryanalyticshub_ListingRestrictedExportConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
-      "If true, enable restricted export.",
+      "restrictQueryResult",
+      "If true, restrict export of query result derived from restricted linked dataset table.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "RestrictQueryResult",
-      "If true, restrict export of query result derived from restricted linked dataset table.",
+      "enabled",
+      "If true, enable restricted export.",
       [],
       false,
       false,

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_PacketMirroringNetwork {
+export interface compute_PacketMirroringNetwork {
   // The full self_link URL of the network where this rule is active.
-  Url?: string;
+  url?: string;
 }
 
-export function Compute_PacketMirroringNetwork_GetTypes(): DynamicUIProps[] {
+export function compute_PacketMirroringNetwork_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Url",
+      "url",
       "The full self_link URL of the network where this rule is active.",
       [],
       true,

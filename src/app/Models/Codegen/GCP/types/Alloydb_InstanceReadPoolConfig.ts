@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Alloydb_InstanceReadPoolConfig {
+export interface alloydb_InstanceReadPoolConfig {
   // Read capacity, i.e. number of nodes in a read pool instance.
-  NodeCount?: number;
+  nodeCount?: number;
 }
 
-export function Alloydb_InstanceReadPoolConfig_GetTypes(): DynamicUIProps[] {
+export function alloydb_InstanceReadPoolConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "NodeCount",
+      "nodeCount",
       "Read capacity, i.e. number of nodes in a read pool instance.",
       [],
       false,

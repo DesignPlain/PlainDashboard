@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_JobStatusError {
+export interface bigquery_JobStatusError {
+  // A short error code that summarizes the error.
+  reason?: string;
+
   // The geographic location of the job. The default value is US.
-  Location?: string;
+  location?: string;
 
   // A human-readable description of the error.
-  Message?: string;
-
-  // A short error code that summarizes the error.
-  Reason?: string;
+  message?: string;
 }
 
-export function Bigquery_JobStatusError_GetTypes(): DynamicUIProps[] {
+export function bigquery_JobStatusError_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       "The geographic location of the job. The default value is US.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Bigquery_JobStatusError_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Message",
+      "message",
       "A human-readable description of the error.",
       [],
       false,
@@ -37,7 +37,7 @@ export function Bigquery_JobStatusError_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Reason",
+      "reason",
       "A short error code that summarizes the error.",
       [],
       false,

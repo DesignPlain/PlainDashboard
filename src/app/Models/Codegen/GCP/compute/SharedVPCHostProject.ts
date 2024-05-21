@@ -9,17 +9,17 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface SharedVPCHostProjectArgs {
   // The ID of the project that will serve as a Shared VPC host project
-  Project?: string;
+  project?: string;
 }
 export class SharedVPCHostProject extends Resource {
   // The ID of the project that will serve as a Shared VPC host project
-  public Project?: string;
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project that will serve as a Shared VPC host project",
         [],
         true,

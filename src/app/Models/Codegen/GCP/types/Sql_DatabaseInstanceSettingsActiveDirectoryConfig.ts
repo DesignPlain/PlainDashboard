@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_DatabaseInstanceSettingsActiveDirectoryConfig {
+export interface sql_DatabaseInstanceSettingsActiveDirectoryConfig {
   /*
 The domain name for the active directory (e.g., mydomain.com).
 Can only be used with SQL Server.
 */
-  Domain?: string;
+  domain?: string;
 }
 
-export function Sql_DatabaseInstanceSettingsActiveDirectoryConfig_GetTypes(): DynamicUIProps[] {
+export function sql_DatabaseInstanceSettingsActiveDirectoryConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Domain",
+      "domain",
       "The domain name for the active directory (e.g., mydomain.com).\nCan only be used with SQL Server.",
       [],
       true,

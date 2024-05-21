@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterMaintenancePolicyRecurringWindow {
+export interface container_getClusterMaintenancePolicyRecurringWindow {
   //
-  EndTime?: string;
+  endTime?: string;
 
   //
-  Recurrence?: string;
+  recurrence?: string;
 
   //
-  StartTime?: string;
+  startTime?: string;
 }
 
-export function Container_getClusterMaintenancePolicyRecurringWindow_GetTypes(): DynamicUIProps[] {
+export function container_getClusterMaintenancePolicyRecurringWindow_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "EndTime", "", [], true, false),
-    new DynamicUIProps(InputType.String, "Recurrence", "", [], true, false),
-    new DynamicUIProps(InputType.String, "StartTime", "", [], true, false),
+    new DynamicUIProps(InputType.String, "endTime", "", [], true, false),
+    new DynamicUIProps(InputType.String, "recurrence", "", [], true, false),
+    new DynamicUIProps(InputType.String, "startTime", "", [], true, false),
   ];
 }

@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_ClusterClusterConfigGceClusterConfigReservationAffinity {
-  // Corresponds to the label values of reservation resource.
-  Values?: Array<string>;
-
+export interface dataproc_ClusterClusterConfigGceClusterConfigReservationAffinity {
   // Corresponds to the type of reservation consumption.
-  ConsumeReservationType?: string;
+  consumeReservationType?: string;
 
   // Corresponds to the label key of reservation resource.
-  Key?: string;
+  key?: string;
+
+  // Corresponds to the label values of reservation resource.
+  values?: Array<string>;
 }
 
-export function Dataproc_ClusterClusterConfigGceClusterConfigReservationAffinity_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterClusterConfigGceClusterConfigReservationAffinity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "key",
+      "Corresponds to the label key of reservation resource.",
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
       InputType.Array,
-      "Values",
+      "values",
       "Corresponds to the label values of reservation resource.",
       InputType_String_GetTypes(),
       false,
@@ -29,16 +37,8 @@ export function Dataproc_ClusterClusterConfigGceClusterConfigReservationAffinity
     ),
     new DynamicUIProps(
       InputType.String,
-      "ConsumeReservationType",
+      "consumeReservationType",
       "Corresponds to the type of reservation consumption.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Key",
-      "Corresponds to the label key of reservation resource.",
       [],
       false,
       true,

@@ -7,101 +7,77 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Logging_FolderBucketConfigCmekSettings,
-  Logging_FolderBucketConfigCmekSettings_GetTypes,
-} from "../types/Logging_FolderBucketConfigCmekSettings";
+  logging_FolderBucketConfigIndexConfig,
+  logging_FolderBucketConfigIndexConfig_GetTypes,
+} from "../types/logging_FolderBucketConfigIndexConfig";
 import {
-  Logging_FolderBucketConfigIndexConfig,
-  Logging_FolderBucketConfigIndexConfig_GetTypes,
-} from "../types/Logging_FolderBucketConfigIndexConfig";
+  logging_FolderBucketConfigCmekSettings,
+  logging_FolderBucketConfigCmekSettings_GetTypes,
+} from "../types/logging_FolderBucketConfigCmekSettings";
 
 export interface FolderBucketConfigArgs {
+  // Describes this bucket.
+  description?: string;
+
+  // The parent resource that contains the logging bucket.
+  folder?: string;
+
+  // A list of indexed fields and related configuration data. Structure is documented below.
+  indexConfigs?: Array<logging_FolderBucketConfigIndexConfig>;
+
+  // The location of the bucket.
+  location?: string;
+
   // Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used. Bucket retention can not be increased on buckets outside of projects.
-  RetentionDays?: number;
+  retentionDays?: number;
 
   // The name of the logging bucket. Logging automatically creates two log buckets: `_Required` and `_Default`.
-  BucketId?: string;
+  bucketId?: string;
 
   /*
 The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK
 key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by
 updating the log bucket. Changing the KMS key is allowed.
 */
-  CmekSettings?: Logging_FolderBucketConfigCmekSettings;
-
-  // Describes this bucket.
-  Description?: string;
-
-  // The parent resource that contains the logging bucket.
-  Folder?: string;
-
-  // A list of indexed fields and related configuration data. Structure is documented below.
-  IndexConfigs?: Array<Logging_FolderBucketConfigIndexConfig>;
-
-  // The location of the bucket.
-  Location?: string;
+  cmekSettings?: logging_FolderBucketConfigCmekSettings;
 }
 export class FolderBucketConfig extends Resource {
-  // A list of indexed fields and related configuration data. Structure is documented below.
-  public IndexConfigs?: Array<Logging_FolderBucketConfigIndexConfig>;
-
   // The name of the logging bucket. Logging automatically creates two log buckets: `_Required` and `_Default`.
-  public BucketId?: string;
+  public bucketId?: string;
 
   // Describes this bucket.
-  public Description?: string;
+  public description?: string;
+
+  // The parent resource that contains the logging bucket.
+  public folder?: string;
+
+  // A list of indexed fields and related configuration data. Structure is documented below.
+  public indexConfigs?: Array<logging_FolderBucketConfigIndexConfig>;
 
   // The bucket's lifecycle such as active or deleted. See [LifecycleState](https://cloud.google.com/logging/docs/reference/v2/rest/v2/billingAccounts.buckets#LogBucket.LifecycleState).
-  public LifecycleState?: string;
+  public lifecycleState?: string;
 
   // The location of the bucket.
-  public Location?: string;
-
-  // The resource name of the bucket. For example: "folders/my-folder-id/locations/my-location/buckets/my-bucket-id"
-  public Name?: string;
-
-  // Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used. Bucket retention can not be increased on buckets outside of projects.
-  public RetentionDays?: number;
+  public location?: string;
 
   /*
 The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK
 key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by
 updating the log bucket. Changing the KMS key is allowed.
 */
-  public CmekSettings?: Logging_FolderBucketConfigCmekSettings;
+  public cmekSettings?: logging_FolderBucketConfigCmekSettings;
 
-  // The parent resource that contains the logging bucket.
-  public Folder?: string;
+  // The resource name of the bucket. For example: "folders/my-folder-id/locations/my-location/buckets/my-bucket-id"
+  public name?: string;
+
+  // Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used. Bucket retention can not be increased on buckets outside of projects.
+  public retentionDays?: number;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "BucketId",
-        "The name of the logging bucket. Logging automatically creates two log buckets: `_Required` and `_Default`.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "CmekSettings",
-        "The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK\nkey provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by\nupdating the log bucket. Changing the KMS key is allowed.",
-        Logging_FolderBucketConfigCmekSettings_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "Describes this bucket.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Folder",
+        "folder",
         "The parent resource that contains the logging bucket.",
         [],
         true,
@@ -109,15 +85,15 @@ updating the log bucket. Changing the KMS key is allowed.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "IndexConfigs",
+        "indexConfigs",
         "A list of indexed fields and related configuration data. Structure is documented below.",
-        Logging_FolderBucketConfigIndexConfig_GetTypes(),
+        logging_FolderBucketConfigIndexConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location of the bucket.",
         [],
         true,
@@ -125,8 +101,32 @@ updating the log bucket. Changing the KMS key is allowed.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "RetentionDays",
+        "retentionDays",
         "Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used. Bucket retention can not be increased on buckets outside of projects.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "bucketId",
+        "The name of the logging bucket. Logging automatically creates two log buckets: `_Required` and `_Default`.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "cmekSettings",
+        "The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK\nkey provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by\nupdating the log bucket. Changing the KMS key is allowed.",
+        logging_FolderBucketConfigCmekSettings_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "Describes this bucket.",
         [],
         false,
         false,

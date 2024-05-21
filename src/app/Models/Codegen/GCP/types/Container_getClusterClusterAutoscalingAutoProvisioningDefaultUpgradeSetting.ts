@@ -6,29 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSetting,
-  Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSetting_GetTypes,
-} from "./Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSetting";
+  container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSetting,
+  container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSetting_GetTypes,
+} from "./container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSetting";
 
-export interface Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSetting {
+export interface container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSetting {
   // Settings for blue-green upgrade strategy.
-  BlueGreenSettings?: Array<Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSetting>;
+  blueGreenSettings?: Array<container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSetting>;
 
   // The maximum number of nodes that can be created beyond the current size of the node pool during the upgrade process.
-  MaxSurge?: number;
+  maxSurge?: number;
 
   // The maximum number of nodes that can be simultaneously unavailable during the upgrade process.
-  MaxUnavailable?: number;
+  maxUnavailable?: number;
 
   // Update strategy of the node pool.
-  Strategy?: string;
+  strategy?: string;
 }
 
-export function Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSetting_GetTypes(): DynamicUIProps[] {
+export function container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSetting_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Array,
+      "blueGreenSettings",
+      "Settings for blue-green upgrade strategy.",
+      container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSetting_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Number,
-      "MaxSurge",
+      "maxSurge",
       "The maximum number of nodes that can be created beyond the current size of the node pool during the upgrade process.",
       [],
       true,
@@ -36,7 +44,7 @@ export function Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpg
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxUnavailable",
+      "maxUnavailable",
       "The maximum number of nodes that can be simultaneously unavailable during the upgrade process.",
       [],
       true,
@@ -44,17 +52,9 @@ export function Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpg
     ),
     new DynamicUIProps(
       InputType.String,
-      "Strategy",
+      "strategy",
       "Update strategy of the node pool.",
       [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "BlueGreenSettings",
-      "Settings for blue-green upgrade strategy.",
-      Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSetting_GetTypes(),
       true,
       false,
     ),

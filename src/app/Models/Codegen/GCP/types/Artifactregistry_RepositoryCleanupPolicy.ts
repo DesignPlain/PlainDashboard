@@ -6,59 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Artifactregistry_RepositoryCleanupPolicyCondition,
-  Artifactregistry_RepositoryCleanupPolicyCondition_GetTypes,
-} from "./Artifactregistry_RepositoryCleanupPolicyCondition";
+  artifactregistry_RepositoryCleanupPolicyMostRecentVersions,
+  artifactregistry_RepositoryCleanupPolicyMostRecentVersions_GetTypes,
+} from "./artifactregistry_RepositoryCleanupPolicyMostRecentVersions";
 import {
-  Artifactregistry_RepositoryCleanupPolicyMostRecentVersions,
-  Artifactregistry_RepositoryCleanupPolicyMostRecentVersions_GetTypes,
-} from "./Artifactregistry_RepositoryCleanupPolicyMostRecentVersions";
+  artifactregistry_RepositoryCleanupPolicyCondition,
+  artifactregistry_RepositoryCleanupPolicyCondition_GetTypes,
+} from "./artifactregistry_RepositoryCleanupPolicyCondition";
 
-export interface Artifactregistry_RepositoryCleanupPolicy {
+export interface artifactregistry_RepositoryCleanupPolicy {
   /*
 Policy action.
 Possible values are: `DELETE`, `KEEP`.
 */
-  Action?: string;
+  action?: string;
 
   /*
 Policy condition for matching versions.
 Structure is documented below.
 */
-  Condition?: Artifactregistry_RepositoryCleanupPolicyCondition;
+  condition?: artifactregistry_RepositoryCleanupPolicyCondition;
 
   // The identifier for this object. Format specified above.
-  Id?: string;
+  id?: string;
 
   /*
 Policy condition for retaining a minimum number of versions. May only be
 specified with a Keep action.
 Structure is documented below.
 */
-  MostRecentVersions?: Artifactregistry_RepositoryCleanupPolicyMostRecentVersions;
+  mostRecentVersions?: artifactregistry_RepositoryCleanupPolicyMostRecentVersions;
 }
 
-export function Artifactregistry_RepositoryCleanupPolicy_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_RepositoryCleanupPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Action",
-      "Policy action.\nPossible values are: `DELETE`, `KEEP`.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "Condition",
-      "Policy condition for matching versions.\nStructure is documented below.",
-      Artifactregistry_RepositoryCleanupPolicyCondition_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Id",
+      "id",
       "The identifier for this object. Format specified above.",
       [],
       true,
@@ -66,9 +50,25 @@ export function Artifactregistry_RepositoryCleanupPolicy_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "MostRecentVersions",
+      "mostRecentVersions",
       "Policy condition for retaining a minimum number of versions. May only be\nspecified with a Keep action.\nStructure is documented below.",
-      Artifactregistry_RepositoryCleanupPolicyMostRecentVersions_GetTypes(),
+      artifactregistry_RepositoryCleanupPolicyMostRecentVersions_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "action",
+      "Policy action.\nPossible values are: `DELETE`, `KEEP`.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "condition",
+      "Policy condition for matching versions.\nStructure is documented below.",
+      artifactregistry_RepositoryCleanupPolicyCondition_GetTypes(),
       false,
       false,
     ),

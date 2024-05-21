@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getInstanceShieldedInstanceConfig {
+export interface compute_getInstanceShieldedInstanceConfig {
+  // - Whether integrity monitoring is enabled for the instance.
+  enableIntegrityMonitoring?: boolean;
+
   // - Whether secure boot is enabled for the instance.
-  EnableSecureBoot?: boolean;
+  enableSecureBoot?: boolean;
 
   // - Whether the instance uses vTPM.
-  EnableVtpm?: boolean;
-
-  // - Whether integrity monitoring is enabled for the instance.
-  EnableIntegrityMonitoring?: boolean;
+  enableVtpm?: boolean;
 }
 
-export function Compute_getInstanceShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
+export function compute_getInstanceShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableSecureBoot",
+      "enableIntegrityMonitoring",
+      "- Whether integrity monitoring is enabled for the instance.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "enableSecureBoot",
       "- Whether secure boot is enabled for the instance.",
       [],
       true,
@@ -29,16 +37,8 @@ export function Compute_getInstanceShieldedInstanceConfig_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableVtpm",
+      "enableVtpm",
       "- Whether the instance uses vTPM.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "EnableIntegrityMonitoring",
-      "- Whether integrity monitoring is enabled for the instance.",
       [],
       true,
       false,

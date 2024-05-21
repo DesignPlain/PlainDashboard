@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsIncludedField {
+export interface dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsIncludedField {
   // Name describing the field to which scanning is limited.
-  Name?: string;
+  name?: string;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsIncludedField_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsIncludedField_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Name describing the field to which scanning is limited.",
       [],
       true,

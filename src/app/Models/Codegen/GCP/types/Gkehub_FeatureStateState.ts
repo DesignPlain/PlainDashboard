@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FeatureStateState {
+export interface gkehub_FeatureStateState {
   /*
 (Output)
 The high-level, machine-readable status of this Feature.
 */
-  Code?: string;
+  code?: string;
 
   /*
 (Output)
 A human-readable description of the current status.
 */
-  Description?: string;
+  description?: string;
 
   /*
 (Output)
 The time this status and any related Feature-specific details were updated. A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"
 */
-  UpdateTime?: string;
+  updateTime?: string;
 }
 
-export function Gkehub_FeatureStateState_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureStateState_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Code",
+      "code",
       "(Output)\nThe high-level, machine-readable status of this Feature.",
       [],
       false,
@@ -38,7 +38,7 @@ export function Gkehub_FeatureStateState_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "(Output)\nA human-readable description of the current status.",
       [],
       false,
@@ -46,7 +46,7 @@ export function Gkehub_FeatureStateState_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "UpdateTime",
+      "updateTime",
       '(Output)\nThe time this status and any related Feature-specific details were updated. A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"',
       [],
       false,

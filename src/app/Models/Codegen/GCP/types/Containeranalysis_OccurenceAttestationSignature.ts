@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Containeranalysis_OccurenceAttestationSignature {
+export interface containeranalysis_OccurenceAttestationSignature {
   /*
 The identifier for the public key that verifies this
 signature. MUST be an RFC3986 conformant
@@ -21,7 +21,7 @@ for more details on this scheme.
 
 - - -
 */
-  PublicKeyId?: string;
+  publicKeyId?: string;
 
   /*
 The content of the signature, an opaque bytestring.
@@ -32,14 +32,14 @@ payload explicitly. Alternatively, a message might
 have a canonical serialization that can always be
 unambiguously computed to derive the payload.
 */
-  Signature?: string;
+  signature?: string;
 }
 
-export function Containeranalysis_OccurenceAttestationSignature_GetTypes(): DynamicUIProps[] {
+export function containeranalysis_OccurenceAttestationSignature_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PublicKeyId",
+      "publicKeyId",
       'The identifier for the public key that verifies this\nsignature. MUST be an RFC3986 conformant\nURI. * When possible, the key id should be an\nimmutable reference, such as a cryptographic digest.\nExamples of valid values:\n* OpenPGP V4 public key fingerprint. See https://www.iana.org/assignments/uri-schemes/prov/openpgp4fpr\nfor more details on this scheme.\n* `openpgp4fpr:74FAF3B861BDA0870C7B6DEF607E48D2A663AEEA`\n* RFC6920 digest-named SubjectPublicKeyInfo (digest of the DER serialization):\n* "ni:///sha-256;cD9o9Cq6LG3jD0iKXqEi_vdjJGecm_iXkbqVoScViaU"\n\n- - -',
       [],
       true,
@@ -47,7 +47,7 @@ export function Containeranalysis_OccurenceAttestationSignature_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.String,
-      "Signature",
+      "signature",
       "The content of the signature, an opaque bytestring.\nThe payload that this signature verifies MUST be\nunambiguously provided with the Signature during\nverification. A wrapper message might provide the\npayload explicitly. Alternatively, a message might\nhave a canonical serialization that can always be\nunambiguously computed to derive the payload.",
       [],
       false,

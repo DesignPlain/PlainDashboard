@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_TableTableConstraintsForeignKeyColumnReferences {
+export interface bigquery_TableTableConstraintsForeignKeyColumnReferences {
   /*
 The column in the primary key that are
 referenced by the referencingColumn
 */
-  ReferencedColumn?: string;
+  referencedColumn?: string;
 
   // The column that composes the foreign key.
-  ReferencingColumn?: string;
+  referencingColumn?: string;
 }
 
-export function Bigquery_TableTableConstraintsForeignKeyColumnReferences_GetTypes(): DynamicUIProps[] {
+export function bigquery_TableTableConstraintsForeignKeyColumnReferences_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ReferencedColumn",
+      "referencedColumn",
       "The column in the primary key that are\nreferenced by the referencingColumn",
       [],
       true,
@@ -29,7 +29,7 @@ export function Bigquery_TableTableConstraintsForeignKeyColumnReferences_GetType
     ),
     new DynamicUIProps(
       InputType.String,
-      "ReferencingColumn",
+      "referencingColumn",
       "The column that composes the foreign key.",
       [],
       true,

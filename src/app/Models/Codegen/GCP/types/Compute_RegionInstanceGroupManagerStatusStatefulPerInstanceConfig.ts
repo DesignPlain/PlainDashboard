@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionInstanceGroupManagerStatusStatefulPerInstanceConfig {
+export interface compute_RegionInstanceGroupManagerStatusStatefulPerInstanceConfig {
   // A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status `EFFECTIVE` or there are no per-instance-configs.
-  AllEffective?: boolean;
+  allEffective?: boolean;
 }
 
-export function Compute_RegionInstanceGroupManagerStatusStatefulPerInstanceConfig_GetTypes(): DynamicUIProps[] {
+export function compute_RegionInstanceGroupManagerStatusStatefulPerInstanceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "AllEffective",
+      "allEffective",
       "A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status `EFFECTIVE` or there are no per-instance-configs.",
       [],
       false,

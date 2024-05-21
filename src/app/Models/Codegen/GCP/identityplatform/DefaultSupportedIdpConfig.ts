@@ -9,7 +9,7 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface DefaultSupportedIdpConfigArgs {
   // OAuth client ID
-  ClientId?: string;
+  clientId?: string;
 
   /*
 OAuth client secret
@@ -17,10 +17,10 @@ OAuth client secret
 
 - - -
 */
-  ClientSecret?: string;
+  clientSecret?: string;
 
   // If this IDP allows the user to sign in
-  Enabled?: boolean;
+  enabled?: boolean;
 
   /*
 ID of the IDP. Possible values include:
@@ -35,17 +35,23 @@ ID of the IDP. Possible values include:
 - `twitter.com`
 - `yahoo.com`
 */
-  IdpId?: string;
+  idpId?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 }
 export class DefaultSupportedIdpConfig extends Resource {
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
   // OAuth client ID
-  public ClientId?: string;
+  public clientId?: string;
 
   /*
 OAuth client secret
@@ -53,10 +59,10 @@ OAuth client secret
 
 - - -
 */
-  public ClientSecret?: string;
+  public clientSecret?: string;
 
   // If this IDP allows the user to sign in
-  public Enabled?: boolean;
+  public enabled?: boolean;
 
   /*
 ID of the IDP. Possible values include:
@@ -71,38 +77,16 @@ ID of the IDP. Possible values include:
 - `twitter.com`
 - `yahoo.com`
 */
-  public IdpId?: string;
+  public idpId?: string;
 
   // The name of the DefaultSupportedIdpConfig resource
-  public Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "IdpId",
-        "ID of the IDP. Possible values include:\n* `apple.com`\n* `facebook.com`\n* `gc.apple.com`\n* `github.com`\n* `google.com`\n* `linkedin.com`\n* `microsoft.com`\n* `playgames.google.com`\n* `twitter.com`\n* `yahoo.com`",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ClientId",
+        "clientId",
         "OAuth client ID",
         [],
         true,
@@ -110,7 +94,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "ClientSecret",
+        "clientSecret",
         "OAuth client secret\n\n\n- - -",
         [],
         true,
@@ -118,11 +102,27 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "Enabled",
+        "enabled",
         "If this IDP allows the user to sign in",
         [],
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "idpId",
+        "ID of the IDP. Possible values include:\n* `apple.com`\n* `facebook.com`\n* `gc.apple.com`\n* `github.com`\n* `google.com`\n* `linkedin.com`\n* `microsoft.com`\n* `playgames.google.com`\n* `twitter.com`\n* `yahoo.com`",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
     ];
   }

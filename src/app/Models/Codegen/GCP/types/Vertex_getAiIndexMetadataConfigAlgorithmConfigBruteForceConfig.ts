@@ -6,8 +6,8 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vertex_getAiIndexMetadataConfigAlgorithmConfigBruteForceConfig {}
+export interface vertex_getAiIndexMetadataConfigAlgorithmConfigBruteForceConfig {}
 
-export function Vertex_getAiIndexMetadataConfigAlgorithmConfigBruteForceConfig_GetTypes(): DynamicUIProps[] {
+export function vertex_getAiIndexMetadataConfigAlgorithmConfigBruteForceConfig_GetTypes(): DynamicUIProps[] {
   return [];
 }

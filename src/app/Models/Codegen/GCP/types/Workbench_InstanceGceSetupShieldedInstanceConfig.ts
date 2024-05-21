@@ -6,21 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Workbench_InstanceGceSetupShieldedInstanceConfig {
-  /*
-Optional. Defines whether the VM instance has Secure Boot enabled.
-Secure Boot helps ensure that the system only runs authentic software by verifying
-the digital signature of all boot components, and halting the boot process
-if signature verification fails. Disabled by default.
-*/
-  EnableSecureBoot?: boolean;
-
-  /*
-Optional. Defines whether the VM instance has the vTPM enabled.
-Enabled by default.
-*/
-  EnableVtpm?: boolean;
-
+export interface workbench_InstanceGceSetupShieldedInstanceConfig {
   /*
 Optional. Defines whether the VM instance has integrity monitoring
 enabled. Enables monitoring and attestation of the boot integrity of the VM
@@ -28,14 +14,36 @@ instance. The attestation is performed against the integrity policy baseline.
 This baseline is initially derived from the implicitly trusted boot image
 when the VM instance is created. Enabled by default.
 */
-  EnableIntegrityMonitoring?: boolean;
+  enableIntegrityMonitoring?: boolean;
+
+  /*
+Optional. Defines whether the VM instance has Secure Boot enabled.
+Secure Boot helps ensure that the system only runs authentic software by verifying
+the digital signature of all boot components, and halting the boot process
+if signature verification fails. Disabled by default.
+*/
+  enableSecureBoot?: boolean;
+
+  /*
+Optional. Defines whether the VM instance has the vTPM enabled.
+Enabled by default.
+*/
+  enableVtpm?: boolean;
 }
 
-export function Workbench_InstanceGceSetupShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
+export function workbench_InstanceGceSetupShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableSecureBoot",
+      "enableIntegrityMonitoring",
+      "Optional. Defines whether the VM instance has integrity monitoring\nenabled. Enables monitoring and attestation of the boot integrity of the VM\ninstance. The attestation is performed against the integrity policy baseline.\nThis baseline is initially derived from the implicitly trusted boot image\nwhen the VM instance is created. Enabled by default.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "enableSecureBoot",
       "Optional. Defines whether the VM instance has Secure Boot enabled.\nSecure Boot helps ensure that the system only runs authentic software by verifying\nthe digital signature of all boot components, and halting the boot process\nif signature verification fails. Disabled by default.",
       [],
       false,
@@ -43,16 +51,8 @@ export function Workbench_InstanceGceSetupShieldedInstanceConfig_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableVtpm",
+      "enableVtpm",
       "Optional. Defines whether the VM instance has the vTPM enabled.\nEnabled by default.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "EnableIntegrityMonitoring",
-      "Optional. Defines whether the VM instance has integrity monitoring\nenabled. Enables monitoring and attestation of the boot integrity of the VM\ninstance. The attestation is performed against the integrity policy baseline.\nThis baseline is initially derived from the implicitly trusted boot image\nwhen the VM instance is created. Enabled by default.",
       [],
       false,
       false,

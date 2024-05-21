@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_getBucketObjectCustomerEncryption {
+export interface storage_getBucketObjectCustomerEncryption {
   // The encryption algorithm. Default: AES256
-  EncryptionAlgorithm?: string;
+  encryptionAlgorithm?: string;
 
   // Base64 encoded customer supplied encryption key.
-  EncryptionKey?: string;
+  encryptionKey?: string;
 }
 
-export function Storage_getBucketObjectCustomerEncryption_GetTypes(): DynamicUIProps[] {
+export function storage_getBucketObjectCustomerEncryption_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "EncryptionAlgorithm",
+      "encryptionAlgorithm",
       "The encryption algorithm. Default: AES256",
       [],
       true,
@@ -26,7 +26,7 @@ export function Storage_getBucketObjectCustomerEncryption_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "EncryptionKey",
+      "encryptionKey",
       "Base64 encoded customer supplied encryption key.",
       [],
       true,

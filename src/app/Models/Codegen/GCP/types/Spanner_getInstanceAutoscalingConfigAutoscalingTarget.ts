@@ -6,36 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Spanner_getInstanceAutoscalingConfigAutoscalingTarget {
-  /*
-Specifies the target storage utilization percentage that the autoscaler
-should be trying to achieve for the instance.
-This number is on a scale from 0 (no utilization) to 100 (full utilization).
-*/
-  StorageUtilizationPercent?: number;
-
+export interface spanner_getInstanceAutoscalingConfigAutoscalingTarget {
   /*
 Specifies the target high priority cpu utilization percentage that the autoscaler
 should be trying to achieve for the instance.
 This number is on a scale from 0 (no utilization) to 100 (full utilization)..
 */
-  HighPriorityCpuUtilizationPercent?: number;
+  highPriorityCpuUtilizationPercent?: number;
+
+  /*
+Specifies the target storage utilization percentage that the autoscaler
+should be trying to achieve for the instance.
+This number is on a scale from 0 (no utilization) to 100 (full utilization).
+*/
+  storageUtilizationPercent?: number;
 }
 
-export function Spanner_getInstanceAutoscalingConfigAutoscalingTarget_GetTypes(): DynamicUIProps[] {
+export function spanner_getInstanceAutoscalingConfigAutoscalingTarget_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "StorageUtilizationPercent",
-      "Specifies the target storage utilization percentage that the autoscaler\nshould be trying to achieve for the instance.\nThis number is on a scale from 0 (no utilization) to 100 (full utilization).",
+      "highPriorityCpuUtilizationPercent",
+      "Specifies the target high priority cpu utilization percentage that the autoscaler\nshould be trying to achieve for the instance.\nThis number is on a scale from 0 (no utilization) to 100 (full utilization)..",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "HighPriorityCpuUtilizationPercent",
-      "Specifies the target high priority cpu utilization percentage that the autoscaler\nshould be trying to achieve for the instance.\nThis number is on a scale from 0 (no utilization) to 100 (full utilization)..",
+      "storageUtilizationPercent",
+      "Specifies the target storage utilization percentage that the autoscaler\nshould be trying to achieve for the instance.\nThis number is on a scale from 0 (no utilization) to 100 (full utilization).",
       [],
       true,
       false,

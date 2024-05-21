@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Bigquery_DatasetAccessDatasetDataset,
-  Bigquery_DatasetAccessDatasetDataset_GetTypes,
-} from "./Bigquery_DatasetAccessDatasetDataset";
+  bigquery_DatasetAccessDatasetDataset,
+  bigquery_DatasetAccessDatasetDataset_GetTypes,
+} from "./bigquery_DatasetAccessDatasetDataset";
 
-export interface Bigquery_DatasetAccessDataset {
+export interface bigquery_DatasetAccessDataset {
   /*
 The dataset this entry applies to
 Structure is documented below.
 */
-  Dataset?: Bigquery_DatasetAccessDatasetDataset;
+  dataset?: bigquery_DatasetAccessDatasetDataset;
 
   /*
 Which resources in the dataset this entry applies to. Currently, only views are supported,
 but additional target types may be added in the future. Possible values: VIEWS
 */
-  TargetTypes?: Array<string>;
+  targetTypes?: Array<string>;
 }
 
-export function Bigquery_DatasetAccessDataset_GetTypes(): DynamicUIProps[] {
+export function bigquery_DatasetAccessDataset_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Dataset",
+      "dataset",
       "The dataset this entry applies to\nStructure is documented below.",
-      Bigquery_DatasetAccessDatasetDataset_GetTypes(),
+      bigquery_DatasetAccessDatasetDataset_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "TargetTypes",
+      "targetTypes",
       "Which resources in the dataset this entry applies to. Currently, only views are supported,\nbut additional target types may be added in the future. Possible values: VIEWS",
       InputType_String_GetTypes(),
       true,

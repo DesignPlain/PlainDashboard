@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Ml_EngineModelDefaultVersion {
+export interface ml_EngineModelDefaultVersion {
   // The name specified for the version when it was created.
-  Name?: string;
+  name?: string;
 }
 
-export function Ml_EngineModelDefaultVersion_GetTypes(): DynamicUIProps[] {
+export function ml_EngineModelDefaultVersion_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name specified for the version when it was created.",
       [],
       true,

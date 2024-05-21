@@ -6,119 +6,55 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterClusterAutoscalingAutoProvisioningDefaultManagement,
-  Container_getClusterClusterAutoscalingAutoProvisioningDefaultManagement_GetTypes,
-} from "./Container_getClusterClusterAutoscalingAutoProvisioningDefaultManagement";
+  container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSetting,
+  container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSetting_GetTypes,
+} from "./container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSetting";
 import {
-  Container_getClusterClusterAutoscalingAutoProvisioningDefaultShieldedInstanceConfig,
-  Container_getClusterClusterAutoscalingAutoProvisioningDefaultShieldedInstanceConfig_GetTypes,
-} from "./Container_getClusterClusterAutoscalingAutoProvisioningDefaultShieldedInstanceConfig";
+  container_getClusterClusterAutoscalingAutoProvisioningDefaultManagement,
+  container_getClusterClusterAutoscalingAutoProvisioningDefaultManagement_GetTypes,
+} from "./container_getClusterClusterAutoscalingAutoProvisioningDefaultManagement";
 import {
-  Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSetting,
-  Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSetting_GetTypes,
-} from "./Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSetting";
+  container_getClusterClusterAutoscalingAutoProvisioningDefaultShieldedInstanceConfig,
+  container_getClusterClusterAutoscalingAutoProvisioningDefaultShieldedInstanceConfig_GetTypes,
+} from "./container_getClusterClusterAutoscalingAutoProvisioningDefaultShieldedInstanceConfig";
 
-export interface Container_getClusterClusterAutoscalingAutoProvisioningDefault {
-  // NodeManagement configuration for this NodePool.
-  Managements?: Array<Container_getClusterClusterAutoscalingAutoProvisioningDefaultManagement>;
-
-  // Minimum CPU platform to be used by this instance. The instance may be scheduled on the specified or newer CPU platform. Applicable values are the friendly names of CPU platforms, such as Intel Haswell.
-  MinCpuPlatform?: string;
-
-  // Scopes that are used by NAP when creating node pools.
-  OauthScopes?: Array<string>;
-
-  // The Google Cloud Platform Service Account to be used by the node VMs.
-  ServiceAccount?: string;
-
-  // The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool.
-  BootDiskKmsKey?: string;
-
-  // Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB.
-  DiskSize?: number;
-
+export interface container_getClusterClusterAutoscalingAutoProvisioningDefault {
   // Type of the disk attached to each node.
-  DiskType?: string;
+  diskType?: string;
 
   // The default image type used by NAP once a new node pool is being created.
-  ImageType?: string;
+  imageType?: string;
 
-  // Shielded Instance options.
-  ShieldedInstanceConfigs?: Array<Container_getClusterClusterAutoscalingAutoProvisioningDefaultShieldedInstanceConfig>;
+  // Minimum CPU platform to be used by this instance. The instance may be scheduled on the specified or newer CPU platform. Applicable values are the friendly names of CPU platforms, such as Intel Haswell.
+  minCpuPlatform?: string;
 
   // Specifies the upgrade settings for NAP created node pools
-  UpgradeSettings?: Array<Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSetting>;
+  upgradeSettings?: Array<container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSetting>;
+
+  // The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool.
+  bootDiskKmsKey?: string;
+
+  // Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB.
+  diskSize?: number;
+
+  // NodeManagement configuration for this NodePool.
+  managements?: Array<container_getClusterClusterAutoscalingAutoProvisioningDefaultManagement>;
+
+  // Scopes that are used by NAP when creating node pools.
+  oauthScopes?: Array<string>;
+
+  // The Google Cloud Platform Service Account to be used by the node VMs.
+  serviceAccount?: string;
+
+  // Shielded Instance options.
+  shieldedInstanceConfigs?: Array<container_getClusterClusterAutoscalingAutoProvisioningDefaultShieldedInstanceConfig>;
 }
 
-export function Container_getClusterClusterAutoscalingAutoProvisioningDefault_GetTypes(): DynamicUIProps[] {
+export function container_getClusterClusterAutoscalingAutoProvisioningDefault_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "MinCpuPlatform",
-      "Minimum CPU platform to be used by this instance. The instance may be scheduled on the specified or newer CPU platform. Applicable values are the friendly names of CPU platforms, such as Intel Haswell.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ServiceAccount",
-      "The Google Cloud Platform Service Account to be used by the node VMs.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "DiskType",
-      "Type of the disk attached to each node.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ImageType",
-      "The default image type used by NAP once a new node pool is being created.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "UpgradeSettings",
-      "Specifies the upgrade settings for NAP created node pools",
-      Container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSetting_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Managements",
-      "NodeManagement configuration for this NodePool.",
-      Container_getClusterClusterAutoscalingAutoProvisioningDefaultManagement_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "OauthScopes",
-      "Scopes that are used by NAP when creating node pools.",
-      InputType_String_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "BootDiskKmsKey",
-      "The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "DiskSize",
+      "diskSize",
       "Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB.",
       [],
       true,
@@ -126,9 +62,73 @@ export function Container_getClusterClusterAutoscalingAutoProvisioningDefault_Ge
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ShieldedInstanceConfigs",
+      "managements",
+      "NodeManagement configuration for this NodePool.",
+      container_getClusterClusterAutoscalingAutoProvisioningDefaultManagement_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "oauthScopes",
+      "Scopes that are used by NAP when creating node pools.",
+      InputType_String_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "serviceAccount",
+      "The Google Cloud Platform Service Account to be used by the node VMs.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "shieldedInstanceConfigs",
       "Shielded Instance options.",
-      Container_getClusterClusterAutoscalingAutoProvisioningDefaultShieldedInstanceConfig_GetTypes(),
+      container_getClusterClusterAutoscalingAutoProvisioningDefaultShieldedInstanceConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "imageType",
+      "The default image type used by NAP once a new node pool is being created.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "minCpuPlatform",
+      "Minimum CPU platform to be used by this instance. The instance may be scheduled on the specified or newer CPU platform. Applicable values are the friendly names of CPU platforms, such as Intel Haswell.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "bootDiskKmsKey",
+      "The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "diskType",
+      "Type of the disk attached to each node.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "upgradeSettings",
+      "Specifies the upgrade settings for NAP created node pools",
+      container_getClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSetting_GetTypes(),
       true,
       false,
     ),

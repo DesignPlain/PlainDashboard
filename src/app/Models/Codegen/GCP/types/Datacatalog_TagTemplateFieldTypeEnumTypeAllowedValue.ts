@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datacatalog_TagTemplateFieldTypeEnumTypeAllowedValue {
+export interface datacatalog_TagTemplateFieldTypeEnumTypeAllowedValue {
   // The display name for this template.
-  DisplayName?: string;
+  displayName?: string;
 }
 
-export function Datacatalog_TagTemplateFieldTypeEnumTypeAllowedValue_GetTypes(): DynamicUIProps[] {
+export function datacatalog_TagTemplateFieldTypeEnumTypeAllowedValue_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DisplayName",
+      "displayName",
       "The display name for this template.",
       [],
       true,

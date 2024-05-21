@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_NodePoolNodeConfigSoleTenantConfigNodeAffinity {
+export interface container_NodePoolNodeConfigSoleTenantConfigNodeAffinity {
   // .
-  Key?: string;
+  key?: string;
 
   // .
-  Operator?: string;
+  operator?: string;
 
   // .
-  Values?: Array<string>;
+  values?: Array<string>;
 }
 
-export function Container_NodePoolNodeConfigSoleTenantConfigNodeAffinity_GetTypes(): DynamicUIProps[] {
+export function container_NodePoolNodeConfigSoleTenantConfigNodeAffinity_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Key", ".", [], true, true),
-    new DynamicUIProps(InputType.String, "Operator", ".", [], true, true),
     new DynamicUIProps(
       InputType.Array,
-      "Values",
+      "values",
       ".",
       InputType_String_GetTypes(),
       true,
       true,
     ),
+    new DynamicUIProps(InputType.String, "key", ".", [], true, true),
+    new DynamicUIProps(InputType.String, "operator", ".", [], true, true),
   ];
 }

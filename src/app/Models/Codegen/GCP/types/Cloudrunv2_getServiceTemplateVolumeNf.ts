@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_getServiceTemplateVolumeNf {
+export interface cloudrunv2_getServiceTemplateVolumeNf {
   // Path that is exported by the NFS server.
-  Path?: string;
+  path?: string;
 
   // If true, mount the NFS volume as read only
-  ReadOnly?: boolean;
+  readOnly?: boolean;
 
   // Hostname or IP address of the NFS server
-  Server?: string;
+  server?: string;
 }
 
-export function Cloudrunv2_getServiceTemplateVolumeNf_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_getServiceTemplateVolumeNf_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Path",
+      "path",
       "Path that is exported by the NFS server.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Cloudrunv2_getServiceTemplateVolumeNf_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "ReadOnly",
+      "readOnly",
       "If true, mount the NFS volume as read only",
       [],
       true,
@@ -37,7 +37,7 @@ export function Cloudrunv2_getServiceTemplateVolumeNf_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "Server",
+      "server",
       "Hostname or IP address of the NFS server",
       [],
       true,

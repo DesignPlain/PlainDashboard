@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterMeshCertificate {
+export interface container_getClusterMeshCertificate {
   // When enabled the GKE Workload Identity Certificates controller and node agent will be deployed in the cluster.
-  EnableCertificates?: boolean;
+  enableCertificates?: boolean;
 }
 
-export function Container_getClusterMeshCertificate_GetTypes(): DynamicUIProps[] {
+export function container_getClusterMeshCertificate_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableCertificates",
+      "enableCertificates",
       "When enabled the GKE Workload Identity Certificates controller and node agent will be deployed in the cluster.",
       [],
       true,

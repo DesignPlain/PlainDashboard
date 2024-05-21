@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig {
+export interface compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig {
   /*
 A list of custom Content-Type header values to apply the JSON parsing. The
 format of the Content-Type header values is defined in
 [RFC 1341](https://www.ietf.org/rfc/rfc1341.txt). When configuring a custom Content-Type header
 value, only the type/subtype needs to be specified, and the parameters should be excluded.
 */
-  ContentTypes?: Array<string>;
+  contentTypes?: Array<string>;
 }
 
-export function Compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig_GetTypes(): DynamicUIProps[] {
+export function compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ContentTypes",
+      "contentTypes",
       "A list of custom Content-Type header values to apply the JSON parsing. The\nformat of the Content-Type header values is defined in\n[RFC 1341](https://www.ietf.org/rfc/rfc1341.txt). When configuring a custom Content-Type header\nvalue, only the type/subtype needs to be specified, and the parameters should be excluded.",
       InputType_String_GetTypes(),
       true,

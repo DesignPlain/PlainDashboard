@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTable,
-  Dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTable_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTable";
+  dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTable,
+  dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTable_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTable";
 
-export interface Dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfig {
+export interface dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfig {
   /*
 The BigQuery table in which to store the output.
 Structure is documented below.
 */
-  Table?: Dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTable;
+  table?: dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTable;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfig_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Table",
+      "table",
       "The BigQuery table in which to store the output.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTable_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTable_GetTypes(),
       true,
       false,
     ),

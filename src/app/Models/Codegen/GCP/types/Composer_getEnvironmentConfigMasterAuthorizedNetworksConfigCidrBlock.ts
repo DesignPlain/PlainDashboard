@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Composer_getEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock {
+export interface composer_getEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock {
   // cidr_block must be specified in CIDR notation.
-  CidrBlock?: string;
+  cidrBlock?: string;
 
   // display_name is a field for users to identify CIDR blocks.
-  DisplayName?: string;
+  displayName?: string;
 }
 
-export function Composer_getEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock_GetTypes(): DynamicUIProps[] {
+export function composer_getEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CidrBlock",
+      "cidrBlock",
       "cidr_block must be specified in CIDR notation.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Composer_getEnvironmentConfigMasterAuthorizedNetworksConfigCidrB
     ),
     new DynamicUIProps(
       InputType.String,
-      "DisplayName",
+      "displayName",
       "display_name is a field for users to identify CIDR blocks.",
       [],
       true,

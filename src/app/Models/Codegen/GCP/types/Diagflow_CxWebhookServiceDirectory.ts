@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxWebhookServiceDirectoryGenericWebService,
-  Diagflow_CxWebhookServiceDirectoryGenericWebService_GetTypes,
-} from "./Diagflow_CxWebhookServiceDirectoryGenericWebService";
+  diagflow_CxWebhookServiceDirectoryGenericWebService,
+  diagflow_CxWebhookServiceDirectoryGenericWebService_GetTypes,
+} from "./diagflow_CxWebhookServiceDirectoryGenericWebService";
 
-export interface Diagflow_CxWebhookServiceDirectory {
+export interface diagflow_CxWebhookServiceDirectory {
   /*
 The name of Service Directory service.
 Structure is documented below.
 */
-  GenericWebService?: Diagflow_CxWebhookServiceDirectoryGenericWebService;
+  genericWebService?: diagflow_CxWebhookServiceDirectoryGenericWebService;
 
   // The name of Service Directory service.
-  Service?: string;
+  service?: string;
 }
 
-export function Diagflow_CxWebhookServiceDirectory_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxWebhookServiceDirectory_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "GenericWebService",
+      "genericWebService",
       "The name of Service Directory service.\nStructure is documented below.",
-      Diagflow_CxWebhookServiceDirectoryGenericWebService_GetTypes(),
+      diagflow_CxWebhookServiceDirectoryGenericWebService_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Service",
+      "service",
       "The name of Service Directory service.",
       [],
       true,

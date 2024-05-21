@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterNodeConfigSoleTenantConfigNodeAffinity,
-  Container_getClusterNodeConfigSoleTenantConfigNodeAffinity_GetTypes,
-} from "./Container_getClusterNodeConfigSoleTenantConfigNodeAffinity";
+  container_getClusterNodeConfigSoleTenantConfigNodeAffinity,
+  container_getClusterNodeConfigSoleTenantConfigNodeAffinity_GetTypes,
+} from "./container_getClusterNodeConfigSoleTenantConfigNodeAffinity";
 
-export interface Container_getClusterNodeConfigSoleTenantConfig {
+export interface container_getClusterNodeConfigSoleTenantConfig {
   // .
-  NodeAffinities?: Array<Container_getClusterNodeConfigSoleTenantConfigNodeAffinity>;
+  nodeAffinities?: Array<container_getClusterNodeConfigSoleTenantConfigNodeAffinity>;
 }
 
-export function Container_getClusterNodeConfigSoleTenantConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodeConfigSoleTenantConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "NodeAffinities",
+      "nodeAffinities",
       ".",
-      Container_getClusterNodeConfigSoleTenantConfigNodeAffinity_GetTypes(),
+      container_getClusterNodeConfigSoleTenantConfigNodeAffinity_GetTypes(),
       true,
       false,
     ),

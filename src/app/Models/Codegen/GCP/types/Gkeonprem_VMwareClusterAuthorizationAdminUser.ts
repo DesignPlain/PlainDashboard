@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_VMwareClusterAuthorizationAdminUser {
+export interface gkeonprem_VMwareClusterAuthorizationAdminUser {
   // The name of the user, e.g. `my-gcp-id@gmail.com`.
-  Username?: string;
+  username?: string;
 }
 
-export function Gkeonprem_VMwareClusterAuthorizationAdminUser_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterAuthorizationAdminUser_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Username",
+      "username",
       "The name of the user, e.g. `my-gcp-id@gmail.com`.",
       [],
       true,

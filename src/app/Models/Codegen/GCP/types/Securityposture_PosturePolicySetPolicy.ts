@@ -6,66 +6,66 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Securityposture_PosturePolicySetPolicyComplianceStandard,
-  Securityposture_PosturePolicySetPolicyComplianceStandard_GetTypes,
-} from "./Securityposture_PosturePolicySetPolicyComplianceStandard";
+  securityposture_PosturePolicySetPolicyComplianceStandard,
+  securityposture_PosturePolicySetPolicyComplianceStandard_GetTypes,
+} from "./securityposture_PosturePolicySetPolicyComplianceStandard";
 import {
-  Securityposture_PosturePolicySetPolicyConstraint,
-  Securityposture_PosturePolicySetPolicyConstraint_GetTypes,
-} from "./Securityposture_PosturePolicySetPolicyConstraint";
+  securityposture_PosturePolicySetPolicyConstraint,
+  securityposture_PosturePolicySetPolicyConstraint_GetTypes,
+} from "./securityposture_PosturePolicySetPolicyConstraint";
 
-export interface Securityposture_PosturePolicySetPolicy {
+export interface securityposture_PosturePolicySetPolicy {
   // ID of the policy.
-  PolicyId?: string;
+  policyId?: string;
 
   /*
 Mapping for policy to security standards and controls.
 Structure is documented below.
 */
-  ComplianceStandards?: Array<Securityposture_PosturePolicySetPolicyComplianceStandard>;
+  complianceStandards?: Array<securityposture_PosturePolicySetPolicyComplianceStandard>;
 
   /*
 Policy constraint definition.It can have the definition of one of following constraints: orgPolicyConstraint orgPolicyConstraintCustom securityHealthAnalyticsModule securityHealthAnalyticsCustomModule
 Structure is documented below.
 */
-  Constraint?: Securityposture_PosturePolicySetPolicyConstraint;
+  constraint?: securityposture_PosturePolicySetPolicyConstraint;
 
   // Description of the policy.
-  Description?: string;
+  description?: string;
 }
 
-export function Securityposture_PosturePolicySetPolicy_GetTypes(): DynamicUIProps[] {
+export function securityposture_PosturePolicySetPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "policyId",
+      "ID of the policy.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Array,
-      "ComplianceStandards",
+      "complianceStandards",
       "Mapping for policy to security standards and controls.\nStructure is documented below.",
-      Securityposture_PosturePolicySetPolicyComplianceStandard_GetTypes(),
+      securityposture_PosturePolicySetPolicyComplianceStandard_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Constraint",
+      "constraint",
       "Policy constraint definition.It can have the definition of one of following constraints: orgPolicyConstraint orgPolicyConstraintCustom securityHealthAnalyticsModule securityHealthAnalyticsCustomModule\nStructure is documented below.",
-      Securityposture_PosturePolicySetPolicyConstraint_GetTypes(),
+      securityposture_PosturePolicySetPolicyConstraint_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "Description of the policy.",
       [],
       false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "PolicyId",
-      "ID of the policy.",
-      [],
-      true,
       false,
     ),
   ];

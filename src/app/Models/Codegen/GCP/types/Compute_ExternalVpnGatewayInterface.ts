@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_ExternalVpnGatewayInterface {
+export interface compute_ExternalVpnGatewayInterface {
   /*
 The numeric ID for this interface. Allowed values are based on the redundancy type
 of this external VPN gateway
@@ -14,7 +14,7 @@ of this external VPN gateway
 - `0, 1 - TWO_IPS_REDUNDANCY`
 - `0, 1, 2, 3 - FOUR_IPS_REDUNDANCY`
 */
-  Id?: number;
+  id?: number;
 
   /*
 IP address of the interface in the external VPN gateway.
@@ -22,14 +22,14 @@ Only IPv4 is supported. This IP address can be either from
 your on-premise gateway or another Cloud provider's VPN gateway,
 it cannot be an IP address from Google Compute Engine.
 */
-  IpAddress?: string;
+  ipAddress?: string;
 }
 
-export function Compute_ExternalVpnGatewayInterface_GetTypes(): DynamicUIProps[] {
+export function compute_ExternalVpnGatewayInterface_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Id",
+      "id",
       "The numeric ID for this interface. Allowed values are based on the redundancy type\nof this external VPN gateway\n* `0 - SINGLE_IP_INTERNALLY_REDUNDANT`\n* `0, 1 - TWO_IPS_REDUNDANCY`\n* `0, 1, 2, 3 - FOUR_IPS_REDUNDANCY`",
       [],
       false,
@@ -37,7 +37,7 @@ export function Compute_ExternalVpnGatewayInterface_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "IpAddress",
+      "ipAddress",
       "IP address of the interface in the external VPN gateway.\nOnly IPv4 is supported. This IP address can be either from\nyour on-premise gateway or another Cloud provider's VPN gateway,\nit cannot be an IP address from Google Compute Engine.",
       [],
       false,

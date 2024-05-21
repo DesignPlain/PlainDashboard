@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datacatalog_EntryBigqueryTableSpecViewSpec {
+export interface datacatalog_EntryBigqueryTableSpecViewSpec {
   /*
 (Output)
 The query that defines the table view.
 */
-  ViewQuery?: string;
+  viewQuery?: string;
 }
 
-export function Datacatalog_EntryBigqueryTableSpecViewSpec_GetTypes(): DynamicUIProps[] {
+export function datacatalog_EntryBigqueryTableSpecViewSpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ViewQuery",
+      "viewQuery",
       "(Output)\nThe query that defines the table view.",
       [],
       false,

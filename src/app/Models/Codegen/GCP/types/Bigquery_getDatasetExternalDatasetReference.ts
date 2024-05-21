@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_getDatasetExternalDatasetReference {
+export interface bigquery_getDatasetExternalDatasetReference {
   /*
 The connection id that is used to access the externalSource.
 Format: projects/{projectId}/locations/{locationId}/connections/{connectionId}
 */
-  Connection?: string;
+  connection?: string;
 
   // External source that backs this dataset.
-  ExternalSource?: string;
+  externalSource?: string;
 }
 
-export function Bigquery_getDatasetExternalDatasetReference_GetTypes(): DynamicUIProps[] {
+export function bigquery_getDatasetExternalDatasetReference_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Connection",
+      "connection",
       "The connection id that is used to access the externalSource.\nFormat: projects/{projectId}/locations/{locationId}/connections/{connectionId}",
       [],
       true,
@@ -29,7 +29,7 @@ export function Bigquery_getDatasetExternalDatasetReference_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "ExternalSource",
+      "externalSource",
       "External source that backs this dataset.",
       [],
       true,

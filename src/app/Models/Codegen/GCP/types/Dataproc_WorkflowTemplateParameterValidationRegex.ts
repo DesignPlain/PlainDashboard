@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_WorkflowTemplateParameterValidationRegex {
+export interface dataproc_WorkflowTemplateParameterValidationRegex {
   // Required. RE2 regular expressions used to validate the parameter's value. The value must match the regex in its entirety (substring matches are not sufficient).
-  Regexes?: Array<string>;
+  regexes?: Array<string>;
 }
 
-export function Dataproc_WorkflowTemplateParameterValidationRegex_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplateParameterValidationRegex_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Regexes",
+      "regexes",
       "Required. RE2 regular expressions used to validate the parameter's value. The value must match the regex in its entirety (substring matches are not sufficient).",
       InputType_String_GetTypes(),
       true,

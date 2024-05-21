@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetRegexFileSet,
-  Dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetRegexFileSet_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetRegexFileSet";
+  dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetRegexFileSet,
+  dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetRegexFileSet_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetRegexFileSet";
 
-export interface Dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSet {
+export interface dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSet {
   /*
 The regex-filtered set of files to scan.
 Structure is documented below.
 */
-  RegexFileSet?: Dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetRegexFileSet;
+  regexFileSet?: dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetRegexFileSet;
 
   /*
 The Cloud Storage url of the file(s) to scan, in the format `gs://<bucket>/<path>`. Trailing wildcard
@@ -24,22 +24,22 @@ If the url ends in a trailing slash, the bucket or directory represented by the 
 non-recursively (content in sub-directories will not be scanned). This means that `gs://mybucket/` is
 equivalent to `gs://mybucket/-`, and `gs://mybucket/directory/` is equivalent to `gs://mybucket/directory/-`.
 */
-  Url?: string;
+  url?: string;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSet_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSet_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "RegexFileSet",
+      "regexFileSet",
       "The regex-filtered set of files to scan.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetRegexFileSet_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetRegexFileSet_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Url",
+      "url",
       "The Cloud Storage url of the file(s) to scan, in the format `gs://<bucket>/<path>`. Trailing wildcard\nin the path is allowed.\nIf the url ends in a trailing slash, the bucket or directory represented by the url will be scanned\nnon-recursively (content in sub-directories will not be scanned). This means that `gs://mybucket/` is\nequivalent to `gs://mybucket/*`, and `gs://mybucket/directory/` is equivalent to `gs://mybucket/directory/*`.",
       [],
       false,

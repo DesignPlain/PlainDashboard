@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_ClusterClusterAutoscalingAutoProvisioningDefaultsManagementUpgradeOption,
-  Container_ClusterClusterAutoscalingAutoProvisioningDefaultsManagementUpgradeOption_GetTypes,
-} from "./Container_ClusterClusterAutoscalingAutoProvisioningDefaultsManagementUpgradeOption";
+  container_ClusterClusterAutoscalingAutoProvisioningDefaultsManagementUpgradeOption,
+  container_ClusterClusterAutoscalingAutoProvisioningDefaultsManagementUpgradeOption_GetTypes,
+} from "./container_ClusterClusterAutoscalingAutoProvisioningDefaultsManagementUpgradeOption";
 
-export interface Container_ClusterClusterAutoscalingAutoProvisioningDefaultsManagement {
+export interface container_ClusterClusterAutoscalingAutoProvisioningDefaultsManagement {
+  // Specifies whether node auto-upgrade is enabled for the node pool. If enabled, node auto-upgrade helps keep the nodes in your node pool up to date with the latest release version of Kubernetes.
+  autoUpgrade?: boolean;
+
   // Specifies the Auto Upgrade knobs for the node pool.
-  UpgradeOptions?: Array<Container_ClusterClusterAutoscalingAutoProvisioningDefaultsManagementUpgradeOption>;
+  upgradeOptions?: Array<container_ClusterClusterAutoscalingAutoProvisioningDefaultsManagementUpgradeOption>;
 
   /*
 Specifies whether the node auto-repair is enabled for the node pool. If enabled, the nodes in this node pool will be monitored and, if they fail health checks too many times, an automatic repair action will be triggered.
 
 This block also contains several computed attributes, documented below.
 */
-  AutoRepair?: boolean;
-
-  // Specifies whether node auto-upgrade is enabled for the node pool. If enabled, node auto-upgrade helps keep the nodes in your node pool up to date with the latest release version of Kubernetes.
-  AutoUpgrade?: boolean;
+  autoRepair?: boolean;
 }
 
-export function Container_ClusterClusterAutoscalingAutoProvisioningDefaultsManagement_GetTypes(): DynamicUIProps[] {
+export function container_ClusterClusterAutoscalingAutoProvisioningDefaultsManagement_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "AutoUpgrade",
+      "autoUpgrade",
       "Specifies whether node auto-upgrade is enabled for the node pool. If enabled, node auto-upgrade helps keep the nodes in your node pool up to date with the latest release version of Kubernetes.",
       [],
       false,
@@ -37,15 +37,15 @@ export function Container_ClusterClusterAutoscalingAutoProvisioningDefaultsManag
     ),
     new DynamicUIProps(
       InputType.Array,
-      "UpgradeOptions",
+      "upgradeOptions",
       "Specifies the Auto Upgrade knobs for the node pool.",
-      Container_ClusterClusterAutoscalingAutoProvisioningDefaultsManagementUpgradeOption_GetTypes(),
+      container_ClusterClusterAutoscalingAutoProvisioningDefaultsManagementUpgradeOption_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "AutoRepair",
+      "autoRepair",
       "Specifies whether the node auto-repair is enabled for the node pool. If enabled, the nodes in this node pool will be monitored and, if they fail health checks too many times, an automatic repair action will be triggered.\n\nThis block also contains several computed attributes, documented below.",
       [],
       false,

@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Artifactregistry_RepositoryRemoteRepositoryConfigMavenRepository {
+export interface artifactregistry_RepositoryRemoteRepositoryConfigMavenRepository {
   /*
 Address of the remote repository.
 Default value is `MAVEN_CENTRAL`.
 Possible values are: `MAVEN_CENTRAL`.
 */
-  PublicRepository?: string;
+  publicRepository?: string;
 }
 
-export function Artifactregistry_RepositoryRemoteRepositoryConfigMavenRepository_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_RepositoryRemoteRepositoryConfigMavenRepository_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PublicRepository",
+      "publicRepository",
       "Address of the remote repository.\nDefault value is `MAVEN_CENTRAL`.\nPossible values are: `MAVEN_CENTRAL`.",
       [],
       false,

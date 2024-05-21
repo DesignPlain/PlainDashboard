@@ -9,10 +9,10 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface DocumentAiProcessorArgs {
   // The display name. Must be unique.
-  DisplayName?: string;
+  displayName?: string;
 
   // The KMS key used for encryption/decryption in CMEK scenarios. See https://cloud.google.com/security-key-management.
-  KmsKeyName?: string;
+  kmsKeyName?: string;
 
   /*
 The location of the resource.
@@ -20,16 +20,16 @@ The location of the resource.
 
 - - -
 */
-  Location?: string;
+  location?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // The type of processor. For possible types see the [official list](https://cloud.google.com/document-ai/docs/reference/rest/v1/projects.locations/fetchProcessorTypes#google.cloud.documentai.v1.DocumentProcessorService.FetchProcessorTypes)
-  Type?: string;
+  type?: string;
 }
 export class DocumentAiProcessor extends Resource {
   /*
@@ -38,31 +38,39 @@ The location of the resource.
 
 - - -
 */
-  public Location?: string;
+  public location?: string;
 
   // The resource name of the processor.
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // The type of processor. For possible types see the [official list](https://cloud.google.com/document-ai/docs/reference/rest/v1/projects.locations/fetchProcessorTypes#google.cloud.documentai.v1.DocumentProcessorService.FetchProcessorTypes)
-  public Type?: string;
+  public type?: string;
 
   // The display name. Must be unique.
-  public DisplayName?: string;
+  public displayName?: string;
 
   // The KMS key used for encryption/decryption in CMEK scenarios. See https://cloud.google.com/security-key-management.
-  public KmsKeyName?: string;
+  public kmsKeyName?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "kmsKeyName",
+        "The KMS key used for encryption/decryption in CMEK scenarios. See https://cloud.google.com/security-key-management.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "location",
         "The location of the resource.\n\n\n- - -",
         [],
         true,
@@ -70,7 +78,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -78,7 +86,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Type",
+        "type",
         "The type of processor. For possible types see the [official list](https://cloud.google.com/document-ai/docs/reference/rest/v1/projects.locations/fetchProcessorTypes#google.cloud.documentai.v1.DocumentProcessorService.FetchProcessorTypes)",
         [],
         true,
@@ -86,18 +94,10 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "The display name. Must be unique.",
         [],
         true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "KmsKeyName",
-        "The KMS key used for encryption/decryption in CMEK scenarios. See https://cloud.google.com/security-key-management.",
-        [],
-        false,
         true,
       ),
     ];

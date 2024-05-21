@@ -7,62 +7,71 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Securitycenter_InstanceIamMemberCondition,
-  Securitycenter_InstanceIamMemberCondition_GetTypes,
-} from "../types/Securitycenter_InstanceIamMemberCondition";
+  securitycenter_InstanceIamMemberCondition,
+  securitycenter_InstanceIamMemberCondition_GetTypes,
+} from "../types/securitycenter_InstanceIamMemberCondition";
 
 export interface InstanceIamMemberArgs {
+  //
+  member?: string;
+
+  // The ID of the instance or a fully qualified identifier for the instance.
+  name?: string;
+
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // The region of the Data Fusion instance.
-  Region?: string;
+  region?: string;
 
   //
-  Role?: string;
+  role?: string;
 
   //
-  Condition?: Securitycenter_InstanceIamMemberCondition;
-
-  //
-  Member?: string;
-
-  // The ID of the instance or a fully qualified identifier for the instance.
-  Name?: string;
+  condition?: securitycenter_InstanceIamMemberCondition;
 }
 export class InstanceIamMember extends Resource {
+  //
+  public member?: string;
+
+  // The ID of the instance or a fully qualified identifier for the instance.
+  public name?: string;
+
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // The region of the Data Fusion instance.
-  public Region?: string;
+  public region?: string;
 
   //
-  public Role?: string;
+  public role?: string;
 
   //
-  public Condition?: Securitycenter_InstanceIamMemberCondition;
+  public condition?: securitycenter_InstanceIamMemberCondition;
 
   //
-  public Etag?: string;
-
-  //
-  public Member?: string;
-
-  // The ID of the instance or a fully qualified identifier for the instance.
-  public Name?: string;
+  public etag?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
+      new DynamicUIProps(InputType.String, "member", "", [], true, true),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "name",
+        "The ID of the instance or a fully qualified identifier for the instance.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -70,27 +79,18 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "The region of the Data Fusion instance.",
         [],
         false,
         true,
       ),
-      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
+      new DynamicUIProps(InputType.String, "role", "", [], true, true),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Securitycenter_InstanceIamMemberCondition_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "The ID of the instance or a fully qualified identifier for the instance.",
-        [],
+        securitycenter_InstanceIamMemberCondition_GetTypes(),
         false,
         true,
       ),

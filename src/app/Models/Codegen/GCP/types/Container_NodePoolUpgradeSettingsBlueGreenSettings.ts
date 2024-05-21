@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_NodePoolUpgradeSettingsBlueGreenSettingsStandardRolloutPolicy,
-  Container_NodePoolUpgradeSettingsBlueGreenSettingsStandardRolloutPolicy_GetTypes,
-} from "./Container_NodePoolUpgradeSettingsBlueGreenSettingsStandardRolloutPolicy";
+  container_NodePoolUpgradeSettingsBlueGreenSettingsStandardRolloutPolicy,
+  container_NodePoolUpgradeSettingsBlueGreenSettingsStandardRolloutPolicy_GetTypes,
+} from "./container_NodePoolUpgradeSettingsBlueGreenSettingsStandardRolloutPolicy";
 
-export interface Container_NodePoolUpgradeSettingsBlueGreenSettings {
+export interface container_NodePoolUpgradeSettingsBlueGreenSettings {
   /*
 Time needed after draining the entire blue pool.
 After this period, the blue pool will be cleaned up.
 */
-  NodePoolSoakDuration?: string;
+  nodePoolSoakDuration?: string;
 
   // Specifies the standard policy settings for blue-green upgrades.
-  StandardRolloutPolicy?: Container_NodePoolUpgradeSettingsBlueGreenSettingsStandardRolloutPolicy;
+  standardRolloutPolicy?: container_NodePoolUpgradeSettingsBlueGreenSettingsStandardRolloutPolicy;
 }
 
-export function Container_NodePoolUpgradeSettingsBlueGreenSettings_GetTypes(): DynamicUIProps[] {
+export function container_NodePoolUpgradeSettingsBlueGreenSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "NodePoolSoakDuration",
-      "Time needed after draining the entire blue pool.\nAfter this period, the blue pool will be cleaned up.",
-      [],
-      false,
+      InputType.Object,
+      "standardRolloutPolicy",
+      "Specifies the standard policy settings for blue-green upgrades.",
+      container_NodePoolUpgradeSettingsBlueGreenSettingsStandardRolloutPolicy_GetTypes(),
+      true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "StandardRolloutPolicy",
-      "Specifies the standard policy settings for blue-green upgrades.",
-      Container_NodePoolUpgradeSettingsBlueGreenSettingsStandardRolloutPolicy_GetTypes(),
-      true,
+      InputType.String,
+      "nodePoolSoakDuration",
+      "Time needed after draining the entire blue pool.\nAfter this period, the blue pool will be cleaned up.",
+      [],
+      false,
       false,
     ),
   ];

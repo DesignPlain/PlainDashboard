@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_ClusterVirtualClusterConfigAuxiliaryServicesConfig,
-  Dataproc_ClusterVirtualClusterConfigAuxiliaryServicesConfig_GetTypes,
-} from "./Dataproc_ClusterVirtualClusterConfigAuxiliaryServicesConfig";
+  dataproc_ClusterVirtualClusterConfigAuxiliaryServicesConfig,
+  dataproc_ClusterVirtualClusterConfigAuxiliaryServicesConfig_GetTypes,
+} from "./dataproc_ClusterVirtualClusterConfigAuxiliaryServicesConfig";
 import {
-  Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig,
-  Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig_GetTypes,
-} from "./Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig";
+  dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig,
+  dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig_GetTypes,
+} from "./dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig";
 
-export interface Dataproc_ClusterVirtualClusterConfig {
+export interface dataproc_ClusterVirtualClusterConfig {
   /*
 Configuration of auxiliary services used by this cluster. 
 Structure defined below.
 */
-  AuxiliaryServicesConfig?: Dataproc_ClusterVirtualClusterConfigAuxiliaryServicesConfig;
+  auxiliaryServicesConfig?: dataproc_ClusterVirtualClusterConfigAuxiliaryServicesConfig;
 
   /*
 The configuration for running the Dataproc cluster on Kubernetes.
 Structure defined below.
 - - -
 */
-  KubernetesClusterConfig?: Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig;
+  kubernetesClusterConfig?: dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig;
 
   /*
 The Cloud Storage staging bucket used to stage files,
@@ -37,30 +37,30 @@ an auto generated bucket which is solely dedicated to your cluster; it may be sh
 with other clusters in the same region/zone also choosing to use the auto generation
 option.
 */
-  StagingBucket?: string;
+  stagingBucket?: string;
 }
 
-export function Dataproc_ClusterVirtualClusterConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterVirtualClusterConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "AuxiliaryServicesConfig",
+      "auxiliaryServicesConfig",
       "Configuration of auxiliary services used by this cluster. \nStructure defined below.",
-      Dataproc_ClusterVirtualClusterConfigAuxiliaryServicesConfig_GetTypes(),
+      dataproc_ClusterVirtualClusterConfigAuxiliaryServicesConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "KubernetesClusterConfig",
+      "kubernetesClusterConfig",
       "The configuration for running the Dataproc cluster on Kubernetes.\nStructure defined below.\n- - -",
-      Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig_GetTypes(),
+      dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "StagingBucket",
+      "stagingBucket",
       "The Cloud Storage staging bucket used to stage files,\nsuch as Hadoop jars, between client machines and the cluster.\nNote: If you don't explicitly specify a `staging_bucket`\nthen GCP will auto create / assign one for you. However, you are not guaranteed\nan auto generated bucket which is solely dedicated to your cluster; it may be shared\nwith other clusters in the same region/zone also choosing to use the auto generation\noption.",
       [],
       false,

@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_getBucketLifecycleRuleAction {
+export interface storage_getBucketLifecycleRuleAction {
   // The target Storage Class of objects affected by this Lifecycle Rule. Supported values include: MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE.
-  StorageClass?: string;
+  storageClass?: string;
 
   // The type of the action of this Lifecycle Rule. Supported values include: Delete, SetStorageClass and AbortIncompleteMultipartUpload.
-  Type?: string;
+  type?: string;
 }
 
-export function Storage_getBucketLifecycleRuleAction_GetTypes(): DynamicUIProps[] {
+export function storage_getBucketLifecycleRuleAction_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "StorageClass",
+      "storageClass",
       "The target Storage Class of objects affected by this Lifecycle Rule. Supported values include: MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Storage_getBucketLifecycleRuleAction_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "The type of the action of this Lifecycle Rule. Supported values include: Delete, SetStorageClass and AbortIncompleteMultipartUpload.",
       [],
       true,

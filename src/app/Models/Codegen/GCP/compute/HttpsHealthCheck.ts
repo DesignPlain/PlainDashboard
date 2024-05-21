@@ -9,22 +9,30 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface HttpsHealthCheckArgs {
   /*
-A so-far healthy instance will be marked unhealthy after this many
-consecutive failures. The default value is 2.
+How long (in seconds) to wait before claiming failure.
+The default value is 5 seconds.  It is invalid for timeoutSec to have
+greater value than checkIntervalSec.
 */
-  UnhealthyThreshold?: number;
+  timeoutSec?: number;
 
   /*
 An optional description of this resource. Provide this property when
 you create the resource.
 */
-  Description?: string;
+  description?: string;
 
   /*
-A so-far unhealthy instance will be marked healthy after this many
-consecutive successes. The default value is 2.
+The request path of the HTTPS health check request.
+The default value is /.
 */
-  HealthyThreshold?: number;
+  requestPath?: string;
+
+  /*
+The value of the host header in the HTTPS health check request. If
+left empty (default value), the public IP on behalf of which this
+health check is performed will be used.
+*/
+  host?: string;
 
   /*
 Name of the resource. Provided by the client when the resource is
@@ -38,108 +46,100 @@ last character, which cannot be a dash.
 
 - - -
 */
-  Name?: string;
-
-  /*
-The request path of the HTTPS health check request.
-The default value is /.
-*/
-  RequestPath?: string;
-
-  /*
-How long (in seconds) to wait before claiming failure.
-The default value is 5 seconds.  It is invalid for timeoutSec to have
-greater value than checkIntervalSec.
-*/
-  TimeoutSec?: number;
-
-  /*
-How often (in seconds) to send a health check. The default value is 5
-seconds.
-*/
-  CheckIntervalSec?: number;
-
-  /*
-The value of the host header in the HTTPS health check request. If
-left empty (default value), the public IP on behalf of which this
-health check is performed will be used.
-*/
-  Host?: string;
+  name?: string;
 
   /*
 The TCP port number for the HTTPS health check request.
 The default value is 443.
 */
-  Port?: number;
+  port?: number;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
+
+  /*
+A so-far healthy instance will be marked unhealthy after this many
+consecutive failures. The default value is 2.
+*/
+  unhealthyThreshold?: number;
+
+  /*
+How often (in seconds) to send a health check. The default value is 5
+seconds.
+*/
+  checkIntervalSec?: number;
+
+  /*
+A so-far unhealthy instance will be marked healthy after this many
+consecutive successes. The default value is 2.
+*/
+  healthyThreshold?: number;
 }
 export class HttpsHealthCheck extends Resource {
-  // The URI of the created resource.
-  public SelfLink?: string;
-
   /*
-A so-far healthy instance will be marked unhealthy after this many
-consecutive failures. The default value is 2.
+The TCP port number for the HTTPS health check request.
+The default value is 443.
 */
-  public UnhealthyThreshold?: number;
-
-  // Creation timestamp in RFC3339 text format.
-  public CreationTimestamp?: string;
-
-  /*
-An optional description of this resource. Provide this property when
-you create the resource.
-*/
-  public Description?: string;
+  public port?: number;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 The request path of the HTTPS health check request.
 The default value is /.
 */
-  public RequestPath?: string;
-
-  /*
-The TCP port number for the HTTPS health check request.
-The default value is 443.
-*/
-  public Port?: number;
+  public requestPath?: string;
 
   /*
 How long (in seconds) to wait before claiming failure.
 The default value is 5 seconds.  It is invalid for timeoutSec to have
 greater value than checkIntervalSec.
 */
-  public TimeoutSec?: number;
+  public timeoutSec?: number;
+
+  // Creation timestamp in RFC3339 text format.
+  public creationTimestamp?: string;
 
   /*
-How often (in seconds) to send a health check. The default value is 5
-seconds.
+An optional description of this resource. Provide this property when
+you create the resource.
 */
-  public CheckIntervalSec?: number;
+  public description?: string;
 
   /*
 A so-far unhealthy instance will be marked healthy after this many
 consecutive successes. The default value is 2.
 */
-  public HealthyThreshold?: number;
+  public healthyThreshold?: number;
+
+  // The URI of the created resource.
+  public selfLink?: string;
+
+  /*
+A so-far healthy instance will be marked unhealthy after this many
+consecutive failures. The default value is 2.
+*/
+  public unhealthyThreshold?: number;
+
+  /*
+How often (in seconds) to send a health check. The default value is 5
+seconds.
+*/
+  public checkIntervalSec?: number;
 
   /*
 The value of the host header in the HTTPS health check request. If
 left empty (default value), the public IP on behalf of which this
 health check is performed will be used.
 */
-  public Host?: string;
+  public host?: string;
 
   /*
 Name of the resource. Provided by the client when the resource is
@@ -153,29 +153,29 @@ last character, which cannot be a dash.
 
 - - -
 */
-  public Name?: string;
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "RequestPath",
-        "The request path of the HTTPS health check request.\nThe default value is /.",
+        "description",
+        "An optional description of this resource. Provide this property when\nyou create the resource.",
         [],
         false,
         false,
       ),
       new DynamicUIProps(
-        InputType.Number,
-        "TimeoutSec",
-        "How long (in seconds) to wait before claiming failure.\nThe default value is 5 seconds.  It is invalid for timeoutSec to have\ngreater value than checkIntervalSec.",
+        InputType.String,
+        "name",
+        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035.  Specifically, the name must be 1-63 characters long and\nmatch the regular expression `a-z?` which means\nthe first character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the\nlast character, which cannot be a dash.\n\n\n- - -",
         [],
         false,
-        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "Port",
+        "port",
         "The TCP port number for the HTTPS health check request.\nThe default value is 443.",
         [],
         false,
@@ -183,15 +183,31 @@ last character, which cannot be a dash.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "CheckIntervalSec",
-        "How often (in seconds) to send a health check. The default value is 5\nseconds.",
+        "healthyThreshold",
+        "A so-far unhealthy instance will be marked healthy after this many\nconsecutive successes. The default value is 2.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Number,
+        "timeoutSec",
+        "How long (in seconds) to wait before claiming failure.\nThe default value is 5 seconds.  It is invalid for timeoutSec to have\ngreater value than checkIntervalSec.",
         [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Host",
+        "requestPath",
+        "The request path of the HTTPS health check request.\nThe default value is /.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "host",
         "The value of the host header in the HTTPS health check request. If\nleft empty (default value), the public IP on behalf of which this\nhealth check is performed will be used.",
         [],
         false,
@@ -199,7 +215,7 @@ last character, which cannot be a dash.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -207,35 +223,19 @@ last character, which cannot be a dash.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "UnhealthyThreshold",
+        "unhealthyThreshold",
         "A so-far healthy instance will be marked unhealthy after this many\nconsecutive failures. The default value is 2.",
         [],
         false,
         false,
       ),
       new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "An optional description of this resource. Provide this property when\nyou create the resource.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.Number,
-        "HealthyThreshold",
-        "A so-far unhealthy instance will be marked healthy after this many\nconsecutive successes. The default value is 2.",
+        "checkIntervalSec",
+        "How often (in seconds) to send a health check. The default value is 5\nseconds.",
         [],
         false,
         false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035.  Specifically, the name must be 1-63 characters long and\nmatch the regular expression `a-z?` which means\nthe first character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the\nlast character, which cannot be a dash.\n\n\n- - -",
-        [],
-        false,
-        true,
       ),
     ];
   }

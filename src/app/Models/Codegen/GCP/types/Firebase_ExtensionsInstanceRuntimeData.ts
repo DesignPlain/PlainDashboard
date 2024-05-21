@@ -6,54 +6,54 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Firebase_ExtensionsInstanceRuntimeDataFatalError,
-  Firebase_ExtensionsInstanceRuntimeDataFatalError_GetTypes,
-} from "./Firebase_ExtensionsInstanceRuntimeDataFatalError";
+  firebase_ExtensionsInstanceRuntimeDataFatalError,
+  firebase_ExtensionsInstanceRuntimeDataFatalError_GetTypes,
+} from "./firebase_ExtensionsInstanceRuntimeDataFatalError";
 import {
-  Firebase_ExtensionsInstanceRuntimeDataProcessingState,
-  Firebase_ExtensionsInstanceRuntimeDataProcessingState_GetTypes,
-} from "./Firebase_ExtensionsInstanceRuntimeDataProcessingState";
+  firebase_ExtensionsInstanceRuntimeDataProcessingState,
+  firebase_ExtensionsInstanceRuntimeDataProcessingState_GetTypes,
+} from "./firebase_ExtensionsInstanceRuntimeDataProcessingState";
 
-export interface Firebase_ExtensionsInstanceRuntimeData {
+export interface firebase_ExtensionsInstanceRuntimeData {
   /*
 The fatal error state for the extension instance
 Structure is documented below.
 */
-  FatalError?: Firebase_ExtensionsInstanceRuntimeDataFatalError;
+  fatalError?: firebase_ExtensionsInstanceRuntimeDataFatalError;
 
   /*
 The processing state for the extension instance
 Structure is documented below.
 */
-  ProcessingState?: Firebase_ExtensionsInstanceRuntimeDataProcessingState;
+  processingState?: firebase_ExtensionsInstanceRuntimeDataProcessingState;
 
   // The time of the last state update.
-  StateUpdateTime?: string;
+  stateUpdateTime?: string;
 }
 
-export function Firebase_ExtensionsInstanceRuntimeData_GetTypes(): DynamicUIProps[] {
+export function firebase_ExtensionsInstanceRuntimeData_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ProcessingState",
+      "fatalError",
+      "The fatal error state for the extension instance\nStructure is documented below.",
+      firebase_ExtensionsInstanceRuntimeDataFatalError_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "processingState",
       "The processing state for the extension instance\nStructure is documented below.",
-      Firebase_ExtensionsInstanceRuntimeDataProcessingState_GetTypes(),
+      firebase_ExtensionsInstanceRuntimeDataProcessingState_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "StateUpdateTime",
+      "stateUpdateTime",
       "The time of the last state update.",
       [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "FatalError",
-      "The fatal error state for the extension instance\nStructure is documented below.",
-      Firebase_ExtensionsInstanceRuntimeDataFatalError_GetTypes(),
       false,
       false,
     ),

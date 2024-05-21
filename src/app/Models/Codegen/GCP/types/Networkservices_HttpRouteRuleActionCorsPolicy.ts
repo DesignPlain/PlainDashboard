@@ -6,57 +6,41 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_HttpRouteRuleActionCorsPolicy {
-  // Specifies the content for Access-Control-Expose-Headers header.
-  ExposeHeaders?: Array<string>;
-
-  // Specifies how long result of a preflight request can be cached in seconds.
-  MaxAge?: string;
-
-  // In response to a preflight request, setting this to true indicates that the actual request can include user credentials.
-  AllowCredentials?: boolean;
-
-  // Specifies the content for Access-Control-Allow-Headers header.
-  AllowHeaders?: Array<string>;
-
-  // Specifies the content for Access-Control-Allow-Methods header.
-  AllowMethods?: Array<string>;
-
+export interface networkservices_HttpRouteRuleActionCorsPolicy {
   // Specifies the regular expression patterns that match allowed origins.
-  AllowOriginRegexes?: Array<string>;
+  allowOriginRegexes?: Array<string>;
 
   // Specifies the list of origins that will be allowed to do CORS requests.
-  AllowOrigins?: Array<string>;
+  allowOrigins?: Array<string>;
 
   /*
 If true, the CORS policy is disabled. The default value is false, which indicates that the CORS policy is in effect.
 
 - - -
 */
-  Disabled?: boolean;
+  disabled?: boolean;
+
+  // Specifies the content for Access-Control-Expose-Headers header.
+  exposeHeaders?: Array<string>;
+
+  // Specifies how long result of a preflight request can be cached in seconds.
+  maxAge?: string;
+
+  // In response to a preflight request, setting this to true indicates that the actual request can include user credentials.
+  allowCredentials?: boolean;
+
+  // Specifies the content for Access-Control-Allow-Headers header.
+  allowHeaders?: Array<string>;
+
+  // Specifies the content for Access-Control-Allow-Methods header.
+  allowMethods?: Array<string>;
 }
 
-export function Networkservices_HttpRouteRuleActionCorsPolicy_GetTypes(): DynamicUIProps[] {
+export function networkservices_HttpRouteRuleActionCorsPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Bool,
-      "AllowCredentials",
-      "In response to a preflight request, setting this to true indicates that the actual request can include user credentials.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "AllowHeaders",
-      "Specifies the content for Access-Control-Allow-Headers header.",
-      InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "AllowMethods",
+      "allowMethods",
       "Specifies the content for Access-Control-Allow-Methods header.",
       InputType_String_GetTypes(),
       false,
@@ -64,7 +48,7 @@ export function Networkservices_HttpRouteRuleActionCorsPolicy_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AllowOriginRegexes",
+      "allowOriginRegexes",
       "Specifies the regular expression patterns that match allowed origins.",
       InputType_String_GetTypes(),
       false,
@@ -72,7 +56,7 @@ export function Networkservices_HttpRouteRuleActionCorsPolicy_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AllowOrigins",
+      "allowOrigins",
       "Specifies the list of origins that will be allowed to do CORS requests.",
       InputType_String_GetTypes(),
       false,
@@ -80,7 +64,7 @@ export function Networkservices_HttpRouteRuleActionCorsPolicy_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Disabled",
+      "disabled",
       "If true, the CORS policy is disabled. The default value is false, which indicates that the CORS policy is in effect.\n\n- - -",
       [],
       false,
@@ -88,7 +72,7 @@ export function Networkservices_HttpRouteRuleActionCorsPolicy_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ExposeHeaders",
+      "exposeHeaders",
       "Specifies the content for Access-Control-Expose-Headers header.",
       InputType_String_GetTypes(),
       false,
@@ -96,9 +80,25 @@ export function Networkservices_HttpRouteRuleActionCorsPolicy_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "MaxAge",
+      "maxAge",
       "Specifies how long result of a preflight request can be cached in seconds.",
       [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "allowCredentials",
+      "In response to a preflight request, setting this to true indicates that the actual request can include user credentials.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "allowHeaders",
+      "Specifies the content for Access-Control-Allow-Headers header.",
+      InputType_String_GetTypes(),
       false,
       false,
     ),

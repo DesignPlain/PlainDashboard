@@ -15,7 +15,7 @@ Uses "default" project network if unspecified.
 
 - - -
 */
-  Network?: string;
+  network?: string;
 
   /*
 Type of network endpoints in this network endpoint group.
@@ -29,31 +29,31 @@ Possible values include: GCE_VM_IP, GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INT
 Default value is `GCE_VM_IP_PORT`.
 Possible values are: `GCE_VM_IP`, `GCE_VM_IP_PORT`, `NON_GCP_PRIVATE_IP_PORT`, `INTERNET_IP_PORT`, `INTERNET_FQDN_PORT`, `SERVERLESS`, `PRIVATE_SERVICE_CONNECT`.
 */
-  NetworkEndpointType?: string;
+  networkEndpointType?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // Optional subnetwork to which all network endpoints in the NEG belong.
-  Subnetwork?: string;
+  subnetwork?: string;
 
   // Zone where the network endpoint group is located.
-  Zone?: string;
+  zone?: string;
 
   /*
 The default port used if the port number is not specified in the
 network endpoint.
 */
-  DefaultPort?: number;
+  defaultPort?: number;
 
   /*
 An optional description of this resource. Provide this property when
 you create the resource.
 */
-  Description?: string;
+  description?: string;
 
   /*
 Name of the resource; provided by the client when the resource is
@@ -64,44 +64,9 @@ first character must be a lowercase letter, and all following
 characters must be a dash, lowercase letter, or digit, except the last
 character, which cannot be a dash.
 */
-  Name?: string;
+  name?: string;
 }
 export class NetworkEndpointGroup extends Resource {
-  /*
-The default port used if the port number is not specified in the
-network endpoint.
-*/
-  public DefaultPort?: number;
-
-  /*
-An optional description of this resource. Provide this property when
-you create the resource.
-*/
-  public Description?: string;
-
-  /*
-Name of the resource; provided by the client when the resource is
-created. The name must be 1-63 characters long, and comply with
-RFC1035. Specifically, the name must be 1-63 characters long and match
-the regular expression `a-z?` which means the
-first character must be a lowercase letter, and all following
-characters must be a dash, lowercase letter, or digit, except the last
-character, which cannot be a dash.
-*/
-  public Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  // The URI of the created resource.
-  public SelfLink?: string;
-
-  // Zone where the network endpoint group is located.
-  public Zone?: string;
-
   /*
 The network to which all network endpoints in the NEG belong.
 Uses "default" project network if unspecified.
@@ -109,7 +74,45 @@ Uses "default" project network if unspecified.
 
 - - -
 */
-  public Network?: string;
+  public network?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  // The URI of the created resource.
+  public selfLink?: string;
+
+  // Optional subnetwork to which all network endpoints in the NEG belong.
+  public subnetwork?: string;
+
+  // Zone where the network endpoint group is located.
+  public zone?: string;
+
+  /*
+The default port used if the port number is not specified in the
+network endpoint.
+*/
+  public defaultPort?: number;
+
+  /*
+An optional description of this resource. Provide this property when
+you create the resource.
+*/
+  public description?: string;
+
+  /*
+Name of the resource; provided by the client when the resource is
+created. The name must be 1-63 characters long, and comply with
+RFC1035. Specifically, the name must be 1-63 characters long and match
+the regular expression `a-z?` which means the
+first character must be a lowercase letter, and all following
+characters must be a dash, lowercase letter, or digit, except the last
+character, which cannot be a dash.
+*/
+  public name?: string;
 
   /*
 Type of network endpoints in this network endpoint group.
@@ -123,51 +126,16 @@ Possible values include: GCE_VM_IP, GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INT
 Default value is `GCE_VM_IP_PORT`.
 Possible values are: `GCE_VM_IP`, `GCE_VM_IP_PORT`, `NON_GCP_PRIVATE_IP_PORT`, `INTERNET_IP_PORT`, `INTERNET_FQDN_PORT`, `SERVERLESS`, `PRIVATE_SERVICE_CONNECT`.
 */
-  public NetworkEndpointType?: string;
+  public networkEndpointType?: string;
 
   // Number of network endpoints in the network endpoint group.
-  public Size?: number;
-
-  // Optional subnetwork to which all network endpoints in the NEG belong.
-  public Subnetwork?: string;
+  public size?: number;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "NetworkEndpointType",
-        "Type of network endpoints in this network endpoint group.\nNON_GCP_PRIVATE_IP_PORT is used for hybrid connectivity network\nendpoint groups (see https://cloud.google.com/load-balancing/docs/hybrid).\nNote that NON_GCP_PRIVATE_IP_PORT can only be used with Backend Services\nthat 1) have the following load balancing schemes: EXTERNAL, EXTERNAL_MANAGED,\nINTERNAL_MANAGED, and INTERNAL_SELF_MANAGED and 2) support the RATE or\nCONNECTION balancing modes.\nPossible values include: GCE_VM_IP, GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_IP_PORT, INTERNET_FQDN_PORT, SERVERLESS, and PRIVATE_SERVICE_CONNECT.\nDefault value is `GCE_VM_IP_PORT`.\nPossible values are: `GCE_VM_IP`, `GCE_VM_IP_PORT`, `NON_GCP_PRIVATE_IP_PORT`, `INTERNET_IP_PORT`, `INTERNET_FQDN_PORT`, `SERVERLESS`, `PRIVATE_SERVICE_CONNECT`.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Subnetwork",
-        "Optional subnetwork to which all network endpoints in the NEG belong.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Zone",
-        "Zone where the network endpoint group is located.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.Number,
-        "DefaultPort",
+        "defaultPort",
         "The default port used if the port number is not specified in the\nnetwork endpoint.",
         [],
         false,
@@ -175,7 +143,7 @@ Possible values are: `GCE_VM_IP`, `GCE_VM_IP_PORT`, `NON_GCP_PRIVATE_IP_PORT`, `
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "An optional description of this resource. Provide this property when\nyou create the resource.",
         [],
         false,
@@ -183,7 +151,7 @@ Possible values are: `GCE_VM_IP`, `GCE_VM_IP_PORT`, `NON_GCP_PRIVATE_IP_PORT`, `
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name of the resource; provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.",
         [],
         false,
@@ -191,10 +159,42 @@ Possible values are: `GCE_VM_IP`, `GCE_VM_IP_PORT`, `NON_GCP_PRIVATE_IP_PORT`, `
       ),
       new DynamicUIProps(
         InputType.String,
-        "Network",
+        "network",
         'The network to which all network endpoints in the NEG belong.\nUses "default" project network if unspecified.\n\n\n- - -',
         [],
         true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "networkEndpointType",
+        "Type of network endpoints in this network endpoint group.\nNON_GCP_PRIVATE_IP_PORT is used for hybrid connectivity network\nendpoint groups (see https://cloud.google.com/load-balancing/docs/hybrid).\nNote that NON_GCP_PRIVATE_IP_PORT can only be used with Backend Services\nthat 1) have the following load balancing schemes: EXTERNAL, EXTERNAL_MANAGED,\nINTERNAL_MANAGED, and INTERNAL_SELF_MANAGED and 2) support the RATE or\nCONNECTION balancing modes.\nPossible values include: GCE_VM_IP, GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_IP_PORT, INTERNET_FQDN_PORT, SERVERLESS, and PRIVATE_SERVICE_CONNECT.\nDefault value is `GCE_VM_IP_PORT`.\nPossible values are: `GCE_VM_IP`, `GCE_VM_IP_PORT`, `NON_GCP_PRIVATE_IP_PORT`, `INTERNET_IP_PORT`, `INTERNET_FQDN_PORT`, `SERVERLESS`, `PRIVATE_SERVICE_CONNECT`.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "subnetwork",
+        "Optional subnetwork to which all network endpoints in the NEG belong.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "zone",
+        "Zone where the network endpoint group is located.",
+        [],
+        false,
         true,
       ),
     ];

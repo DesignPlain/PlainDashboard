@@ -7,64 +7,64 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Projects_IAMMemberCondition,
-  Projects_IAMMemberCondition_GetTypes,
-} from "../types/Projects_IAMMemberCondition";
+  projects_IAMMemberCondition,
+  projects_IAMMemberCondition_GetTypes,
+} from "../types/projects_IAMMemberCondition";
 
 export interface IAMMemberArgs {
   /*
+The role that should be applied. Only one
+`gcp.projects.IAMBinding` can be used per role. Note that custom roles must be of the format
+`[projects|organizations]/{parent-name}/roles/{role-name}`.
+*/
+  role?: string;
+
+  /*
 An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
 */
-  Condition?: Projects_IAMMemberCondition;
+  condition?: projects_IAMMemberCondition;
 
   //
-  Member?: string;
+  member?: string;
 
   /*
 The project id of the target project. This is not
 inferred from the provider.
 */
-  Project?: string;
-
-  /*
-The role that should be applied. Only one
-`gcp.projects.IAMBinding` can be used per role. Note that custom roles must be of the format
-`[projects|organizations]/{parent-name}/roles/{role-name}`.
-*/
-  Role?: string;
+  project?: string;
 }
 export class IAMMember extends Resource {
   /*
-An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
-Structure is documented below.
-*/
-  public Condition?: Projects_IAMMemberCondition;
-
-  // (Computed) The etag of the project's IAM policy.
-  public Etag?: string;
-
-  //
-  public Member?: string;
-
-  /*
 The project id of the target project. This is not
 inferred from the provider.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 The role that should be applied. Only one
 `gcp.projects.IAMBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
-  public Role?: string;
+  public role?: string;
+
+  /*
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+Structure is documented below.
+*/
+  public condition?: projects_IAMMemberCondition;
+
+  // (Computed) The etag of the project's IAM policy.
+  public etag?: string;
+
+  //
+  public member?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Role",
+        "role",
         "The role that should be applied. Only one\n`gcp.projects.IAMBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
         [],
         true,
@@ -72,16 +72,16 @@ The role that should be applied. Only one
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.\nStructure is documented below.",
-        Projects_IAMMemberCondition_GetTypes(),
+        projects_IAMMemberCondition_GetTypes(),
         false,
         true,
       ),
-      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
+      new DynamicUIProps(InputType.String, "member", "", [], true, true),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The project id of the target project. This is not\ninferred from the provider.",
         [],
         true,

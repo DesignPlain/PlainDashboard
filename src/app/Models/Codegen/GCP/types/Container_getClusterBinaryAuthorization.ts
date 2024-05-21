@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterBinaryAuthorization {
+export interface container_getClusterBinaryAuthorization {
   // Enable Binary Authorization for this cluster.
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // Mode of operation for Binary Authorization policy evaluation.
-  EvaluationMode?: string;
+  evaluationMode?: string;
 }
 
-export function Container_getClusterBinaryAuthorization_GetTypes(): DynamicUIProps[] {
+export function container_getClusterBinaryAuthorization_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Enable Binary Authorization for this cluster.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Container_getClusterBinaryAuthorization_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "EvaluationMode",
+      "evaluationMode",
       "Mode of operation for Binary Authorization policy evaluation.",
       [],
       true,

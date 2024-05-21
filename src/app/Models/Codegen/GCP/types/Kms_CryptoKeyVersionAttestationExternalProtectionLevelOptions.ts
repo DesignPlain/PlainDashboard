@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Kms_CryptoKeyVersionAttestationExternalProtectionLevelOptions {
+export interface kms_CryptoKeyVersionAttestationExternalProtectionLevelOptions {
   // The path to the external key material on the EKM when using EkmConnection e.g., "v0/my/key". Set this field instead of externalKeyUri when using an EkmConnection.
-  EkmConnectionKeyPath?: string;
+  ekmConnectionKeyPath?: string;
 
   // The URI for an external resource that this CryptoKeyVersion represents.
-  ExternalKeyUri?: string;
+  externalKeyUri?: string;
 }
 
-export function Kms_CryptoKeyVersionAttestationExternalProtectionLevelOptions_GetTypes(): DynamicUIProps[] {
+export function kms_CryptoKeyVersionAttestationExternalProtectionLevelOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "EkmConnectionKeyPath",
-      'The path to the external key material on the EKM when using EkmConnection e.g., "v0/my/key". Set this field instead of externalKeyUri when using an EkmConnection.',
+      "externalKeyUri",
+      "The URI for an external resource that this CryptoKeyVersion represents.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ExternalKeyUri",
-      "The URI for an external resource that this CryptoKeyVersion represents.",
+      "ekmConnectionKeyPath",
+      'The path to the external key material on the EKM when using EkmConnection e.g., "v0/my/key". Set this field instead of externalKeyUri when using an EkmConnection.',
       [],
       false,
       false,

@@ -8,29 +8,20 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface DataExchangeArgs {
-  // Documentation describing the data exchange.
-  Documentation?: string;
-
-  // Base64 encoded image representing the data exchange.
-  Icon?: string;
-
-  // The name of the location this data exchange.
-  Location?: string;
-
   // Email or URL of the primary point of contact of the data exchange.
-  PrimaryContact?: string;
+  primaryContact?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.
-  DataExchangeId?: string;
+  dataExchangeId?: string;
 
   // Description of the data exchange.
-  Description?: string;
+  description?: string;
 
   /*
 Human-readable display name of the data exchange. The display name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), and must not start or end with spaces.
@@ -38,63 +29,64 @@ Human-readable display name of the data exchange. The display name must contain 
 
 - - -
 */
-  DisplayName?: string;
-}
-export class DataExchange extends Resource {
-  // Email or URL of the primary point of contact of the data exchange.
-  public PrimaryContact?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  // Description of the data exchange.
-  public Description?: string;
+  displayName?: string;
 
   // Documentation describing the data exchange.
-  public Documentation?: string;
+  documentation?: string;
 
   // Base64 encoded image representing the data exchange.
-  public Icon?: string;
+  icon?: string;
 
   // The name of the location this data exchange.
-  public Location?: string;
+  location?: string;
+}
+export class DataExchange extends Resource {
+  /*
+Human-readable display name of the data exchange. The display name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), and must not start or end with spaces.
+
+
+- - -
+*/
+  public displayName?: string;
+
+  // Documentation describing the data exchange.
+  public documentation?: string;
+
+  // Base64 encoded image representing the data exchange.
+  public icon?: string;
 
   /*
 The resource name of the data exchange, for example:
 "projects/myproject/locations/US/dataExchanges/123"
 */
-  public Name?: string;
-
-  // The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.
-  public DataExchangeId?: string;
+  public name?: string;
 
   /*
-Human-readable display name of the data exchange. The display name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), and must not start or end with spaces.
-
-
-- - -
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 */
-  public DisplayName?: string;
+  public project?: string;
+
+  // The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.
+  public dataExchangeId?: string;
+
+  // Description of the data exchange.
+  public description?: string;
+
+  // Email or URL of the primary point of contact of the data exchange.
+  public primaryContact?: string;
 
   // Number of listings contained in the data exchange.
-  public ListingCount?: number;
+  public listingCount?: number;
+
+  // The name of the location this data exchange.
+  public location?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "DataExchangeId",
+        "dataExchangeId",
         "The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.",
         [],
         true,
@@ -102,7 +94,7 @@ Human-readable display name of the data exchange. The display name must contain 
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Description of the data exchange.",
         [],
         false,
@@ -110,7 +102,7 @@ Human-readable display name of the data exchange. The display name must contain 
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "Human-readable display name of the data exchange. The display name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), and must not start or end with spaces.\n\n\n- - -",
         [],
         true,
@@ -118,7 +110,7 @@ Human-readable display name of the data exchange. The display name must contain 
       ),
       new DynamicUIProps(
         InputType.String,
-        "Documentation",
+        "documentation",
         "Documentation describing the data exchange.",
         [],
         false,
@@ -126,7 +118,7 @@ Human-readable display name of the data exchange. The display name must contain 
       ),
       new DynamicUIProps(
         InputType.String,
-        "Icon",
+        "icon",
         "Base64 encoded image representing the data exchange.",
         [],
         false,
@@ -134,7 +126,7 @@ Human-readable display name of the data exchange. The display name must contain 
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The name of the location this data exchange.",
         [],
         true,
@@ -142,11 +134,19 @@ Human-readable display name of the data exchange. The display name must contain 
       ),
       new DynamicUIProps(
         InputType.String,
-        "PrimaryContact",
+        "primaryContact",
         "Email or URL of the primary point of contact of the data exchange.",
         [],
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
     ];
   }

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vertex_AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfig {
+export interface vertex_AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfig {
   // Specify a threshold value that can trigger the alert. For categorical feature, the distribution distance is calculated by L-inifinity norm. Each feature must have a non-zero threshold if they need to be monitored. Otherwise no alert will be triggered for that feature. The default value is 0.3.
-  Value?: number;
+  value?: number;
 }
 
-export function Vertex_AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfig_GetTypes(): DynamicUIProps[] {
+export function vertex_AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Value",
+      "value",
       "Specify a threshold value that can trigger the alert. For categorical feature, the distribution distance is calculated by L-inifinity norm. Each feature must have a non-zero threshold if they need to be monitored. Otherwise no alert will be triggered for that feature. The default value is 0.3.",
       [],
       true,

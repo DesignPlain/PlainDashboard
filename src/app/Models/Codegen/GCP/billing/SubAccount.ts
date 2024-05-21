@@ -9,52 +9,60 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface SubAccountArgs {
   /*
+The name of the master billing account that the subaccount
+will be created under in the form `{billing_account_id}` or `billingAccounts/{billing_account_id}`.
+*/
+  masterBillingAccount?: string;
+
+  /*
 If set to "RENAME_ON_DESTROY" the billing account display_name
 will be changed to "Destroyed" along with a timestamp.  If set to "" this will not occur.
 Default is "".
 */
-  DeletionPolicy?: string;
+  deletionPolicy?: string;
 
   // The display name of the billing account.
-  DisplayName?: string;
-
-  /*
-The name of the master billing account that the subaccount
-will be created under in the form `{billing_account_id}` or `billingAccounts/{billing_account_id}`.
-*/
-  MasterBillingAccount?: string;
+  displayName?: string;
 }
 export class SubAccount extends Resource {
   // The display name of the billing account.
-  public DisplayName?: string;
+  public displayName?: string;
 
   /*
 The name of the master billing account that the subaccount
 will be created under in the form `{billing_account_id}` or `billingAccounts/{billing_account_id}`.
 */
-  public MasterBillingAccount?: string;
+  public masterBillingAccount?: string;
 
   // The resource name of the billing account in the form `billingAccounts/{billing_account_id}`.
-  public Name?: string;
+  public name?: string;
 
   // `true` if the billing account is open, `false` if the billing account is closed.
-  public Open?: boolean;
+  public open?: boolean;
 
   // The billing account id.
-  public BillingAccountId?: string;
+  public billingAccountId?: string;
 
   /*
 If set to "RENAME_ON_DESTROY" the billing account display_name
 will be changed to "Destroyed" along with a timestamp.  If set to "" this will not occur.
 Default is "".
 */
-  public DeletionPolicy?: string;
+  public deletionPolicy?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "DeletionPolicy",
+        "masterBillingAccount",
+        "The name of the master billing account that the subaccount\nwill be created under in the form `{billing_account_id}` or `billingAccounts/{billing_account_id}`.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "deletionPolicy",
         'If set to "RENAME_ON_DESTROY" the billing account display_name\nwill be changed to "Destroyed" along with a timestamp.  If set to "" this will not occur.\nDefault is "".',
         [],
         false,
@@ -62,19 +70,11 @@ Default is "".
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "The display name of the billing account.",
         [],
         true,
         false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "MasterBillingAccount",
-        "The name of the master billing account that the subaccount\nwill be created under in the form `{billing_account_id}` or `billingAccounts/{billing_account_id}`.",
-        [],
-        true,
-        true,
       ),
     ];
   }

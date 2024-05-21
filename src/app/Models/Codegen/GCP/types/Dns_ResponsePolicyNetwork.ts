@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dns_ResponsePolicyNetwork {
+export interface dns_ResponsePolicyNetwork {
   /*
 The fully qualified URL of the VPC network to bind to.
 This should be formatted like
 `https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`
 */
-  NetworkUrl?: string;
+  networkUrl?: string;
 }
 
-export function Dns_ResponsePolicyNetwork_GetTypes(): DynamicUIProps[] {
+export function dns_ResponsePolicyNetwork_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "NetworkUrl",
+      "networkUrl",
       "The fully qualified URL of the VPC network to bind to.\nThis should be formatted like\n`https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`",
       [],
       true,

@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_getDatasetDefaultEncryptionConfiguration {
+export interface bigquery_getDatasetDefaultEncryptionConfiguration {
   /*
 Describes the Cloud KMS encryption key that will be used to protect destination
 BigQuery table. The BigQuery Service Account associated with your project requires
 access to this encryption key.
 */
-  KmsKeyName?: string;
+  kmsKeyName?: string;
 }
 
-export function Bigquery_getDatasetDefaultEncryptionConfiguration_GetTypes(): DynamicUIProps[] {
+export function bigquery_getDatasetDefaultEncryptionConfiguration_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyName",
+      "kmsKeyName",
       "Describes the Cloud KMS encryption key that will be used to protect destination\nBigQuery table. The BigQuery Service Account associated with your project requires\naccess to this encryption key.",
       [],
       true,

@@ -6,23 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionBackendServiceIamMemberCondition {
-  //
-  Description?: string;
-
+export interface compute_RegionBackendServiceIamMemberCondition {
   // Textual representation of an expression in Common Expression Language syntax.
-  Expression?: string;
+  expression?: string;
 
   // A title for the expression, i.e. a short string describing its purpose.
-  Title?: string;
+  title?: string;
+
+  //
+  description?: string;
 }
 
-export function Compute_RegionBackendServiceIamMemberCondition_GetTypes(): DynamicUIProps[] {
+export function compute_RegionBackendServiceIamMemberCondition_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Description", "", [], false, true),
     new DynamicUIProps(
       InputType.String,
-      "Expression",
+      "expression",
       "Textual representation of an expression in Common Expression Language syntax.",
       [],
       true,
@@ -30,11 +29,12 @@ export function Compute_RegionBackendServiceIamMemberCondition_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "Title",
+      "title",
       "A title for the expression, i.e. a short string describing its purpose.",
       [],
       true,
       true,
     ),
+    new DynamicUIProps(InputType.String, "description", "", [], false, true),
   ];
 }

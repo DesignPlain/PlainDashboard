@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudbuild_TriggerBuildArtifactsObjectsTiming,
-  Cloudbuild_TriggerBuildArtifactsObjectsTiming_GetTypes,
-} from "./Cloudbuild_TriggerBuildArtifactsObjectsTiming";
+  cloudbuild_TriggerBuildArtifactsObjectsTiming,
+  cloudbuild_TriggerBuildArtifactsObjectsTiming_GetTypes,
+} from "./cloudbuild_TriggerBuildArtifactsObjectsTiming";
 
-export interface Cloudbuild_TriggerBuildArtifactsObjects {
+export interface cloudbuild_TriggerBuildArtifactsObjects {
   /*
 Cloud Storage bucket and optional object path, in the form "gs://bucket/path/to/somewhere/".
 Files in the workspace matching any path pattern will be uploaded to Cloud Storage with
 this location as a prefix.
 */
-  Location?: string;
+  location?: string;
 
   // Path globs used to match files in the build's workspace.
-  Paths?: Array<string>;
+  paths?: Array<string>;
 
   /*
 (Output)
@@ -29,14 +29,14 @@ Structure is documented below.
 
 <a name="nested_timing"></a>The `timing` block contains:
 */
-  Timings?: Array<Cloudbuild_TriggerBuildArtifactsObjectsTiming>;
+  timings?: Array<cloudbuild_TriggerBuildArtifactsObjectsTiming>;
 }
 
-export function Cloudbuild_TriggerBuildArtifactsObjects_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_TriggerBuildArtifactsObjects_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Paths",
+      "paths",
       "Path globs used to match files in the build's workspace.",
       InputType_String_GetTypes(),
       false,
@@ -44,15 +44,15 @@ export function Cloudbuild_TriggerBuildArtifactsObjects_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Timings",
+      "timings",
       '(Output)\nOutput only. Stores timing information for pushing all artifact objects.\nStructure is documented below.\n\n\n<a name="nested_timing"></a>The `timing` block contains:',
-      Cloudbuild_TriggerBuildArtifactsObjectsTiming_GetTypes(),
+      cloudbuild_TriggerBuildArtifactsObjectsTiming_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       'Cloud Storage bucket and optional object path, in the form "gs://bucket/path/to/somewhere/".\nFiles in the workspace matching any path pattern will be uploaded to Cloud Storage with\nthis location as a prefix.',
       [],
       false,

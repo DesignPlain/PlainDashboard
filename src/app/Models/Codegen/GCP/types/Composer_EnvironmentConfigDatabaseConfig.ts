@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Composer_EnvironmentConfigDatabaseConfig {
+export interface composer_EnvironmentConfigDatabaseConfig {
   // Optional. Cloud SQL machine type used by Airflow database. It has to be one of: db-n1-standard-2, db-n1-standard-4, db-n1-standard-8 or db-n1-standard-16. If not specified, db-n1-standard-2 will be used.
-  MachineType?: string;
+  machineType?: string;
 
   // Optional. Cloud SQL database preferred zone.
-  Zone?: string;
+  zone?: string;
 }
 
-export function Composer_EnvironmentConfigDatabaseConfig_GetTypes(): DynamicUIProps[] {
+export function composer_EnvironmentConfigDatabaseConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "MachineType",
+      "machineType",
       "Optional. Cloud SQL machine type used by Airflow database. It has to be one of: db-n1-standard-2, db-n1-standard-4, db-n1-standard-8 or db-n1-standard-16. If not specified, db-n1-standard-2 will be used.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Composer_EnvironmentConfigDatabaseConfig_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "Zone",
+      "zone",
       "Optional. Cloud SQL database preferred zone.",
       [],
       false,

@@ -6,51 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_NetworkAttachmentConnectionEndpoint {
-  /*
-(Output)
-The status of a connected endpoint to this network attachment.
-*/
-  Status?: string;
-
-  /*
-(Output)
-The subnetwork used to assign the IP to the producer instance network interface.
-*/
-  Subnetwork?: string;
-
+export interface compute_NetworkAttachmentConnectionEndpoint {
   /*
 (Output)
 The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
 */
-  IpAddress?: string;
+  ipAddress?: string;
 
   /*
 (Output)
 The project id or number of the interface to which the IP was assigned.
 */
-  ProjectIdOrNum?: string;
+  projectIdOrNum?: string;
 
   /*
 (Output)
 Alias IP ranges from the same subnetwork.
 */
-  SecondaryIpCidrRanges?: string;
+  secondaryIpCidrRanges?: string;
+
+  /*
+(Output)
+The status of a connected endpoint to this network attachment.
+*/
+  status?: string;
+
+  /*
+(Output)
+The subnetwork used to assign the IP to the producer instance network interface.
+*/
+  subnetwork?: string;
 }
 
-export function Compute_NetworkAttachmentConnectionEndpoint_GetTypes(): DynamicUIProps[] {
+export function compute_NetworkAttachmentConnectionEndpoint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Subnetwork",
-      "(Output)\nThe subnetwork used to assign the IP to the producer instance network interface.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "IpAddress",
+      "ipAddress",
       "(Output)\nThe IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.",
       [],
       false,
@@ -58,7 +50,7 @@ export function Compute_NetworkAttachmentConnectionEndpoint_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProjectIdOrNum",
+      "projectIdOrNum",
       "(Output)\nThe project id or number of the interface to which the IP was assigned.",
       [],
       false,
@@ -66,7 +58,7 @@ export function Compute_NetworkAttachmentConnectionEndpoint_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "SecondaryIpCidrRanges",
+      "secondaryIpCidrRanges",
       "(Output)\nAlias IP ranges from the same subnetwork.",
       [],
       false,
@@ -74,8 +66,16 @@ export function Compute_NetworkAttachmentConnectionEndpoint_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "Status",
+      "status",
       "(Output)\nThe status of a connected endpoint to this network attachment.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "subnetwork",
+      "(Output)\nThe subnetwork used to assign the IP to the producer instance network interface.",
       [],
       false,
       false,

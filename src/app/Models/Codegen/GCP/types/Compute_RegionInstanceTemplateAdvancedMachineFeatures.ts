@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionInstanceTemplateAdvancedMachineFeatures {
-  // Defines whether the instance should have nested virtualization enabled. Defaults to false.
-  EnableNestedVirtualization?: boolean;
-
+export interface compute_RegionInstanceTemplateAdvancedMachineFeatures {
   // The number of threads per physical core. To disable [simultaneous multithreading (SMT)](https://cloud.google.com/compute/docs/instances/disabling-smt) set this to 1.
-  ThreadsPerCore?: number;
+  threadsPerCore?: number;
 
   // The number of physical cores to expose to an instance. [visible cores info (VC)](https://cloud.google.com/compute/docs/instances/customize-visible-cores).
-  VisibleCoreCount?: number;
+  visibleCoreCount?: number;
+
+  // Defines whether the instance should have nested virtualization enabled. Defaults to false.
+  enableNestedVirtualization?: boolean;
 }
 
-export function Compute_RegionInstanceTemplateAdvancedMachineFeatures_GetTypes(): DynamicUIProps[] {
+export function compute_RegionInstanceTemplateAdvancedMachineFeatures_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableNestedVirtualization",
+      "enableNestedVirtualization",
       "Defines whether the instance should have nested virtualization enabled. Defaults to false.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Compute_RegionInstanceTemplateAdvancedMachineFeatures_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Number,
-      "ThreadsPerCore",
+      "threadsPerCore",
       "The number of threads per physical core. To disable [simultaneous multithreading (SMT)](https://cloud.google.com/compute/docs/instances/disabling-smt) set this to 1.",
       [],
       false,
@@ -37,7 +37,7 @@ export function Compute_RegionInstanceTemplateAdvancedMachineFeatures_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Number,
-      "VisibleCoreCount",
+      "visibleCoreCount",
       "The number of physical cores to expose to an instance. [visible cores info (VC)](https://cloud.google.com/compute/docs/instances/customize-visible-cores).",
       [],
       false,

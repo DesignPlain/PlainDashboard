@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_TransferJobTransferSpecGcsDataSink {
-  // Root path to transfer objects. Must be an empty string or full path name that ends with a '/'. This field is treated as an object prefix. As such, it should generally not begin with a '/'.
-  Path?: string;
-
+export interface storage_TransferJobTransferSpecGcsDataSink {
   // Google Cloud Storage bucket name.
-  BucketName?: string;
+  bucketName?: string;
+
+  // Root path to transfer objects. Must be an empty string or full path name that ends with a '/'. This field is treated as an object prefix. As such, it should generally not begin with a '/'.
+  path?: string;
 }
 
-export function Storage_TransferJobTransferSpecGcsDataSink_GetTypes(): DynamicUIProps[] {
+export function storage_TransferJobTransferSpecGcsDataSink_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Path",
-      "Root path to transfer objects. Must be an empty string or full path name that ends with a '/'. This field is treated as an object prefix. As such, it should generally not begin with a '/'.",
+      "bucketName",
+      "Google Cloud Storage bucket name.",
       [],
-      false,
+      true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "BucketName",
-      "Google Cloud Storage bucket name.",
+      "path",
+      "Root path to transfer objects. Must be an empty string or full path name that ends with a '/'. This field is treated as an object prefix. As such, it should generally not begin with a '/'.",
       [],
-      true,
+      false,
       false,
     ),
   ];

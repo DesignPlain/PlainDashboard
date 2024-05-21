@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransform,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransform_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransform";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransform,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransform_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransform";
 
-export interface Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations {
+export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations {
   /*
 For determination of how redaction of images should occur.
 Structure is documented below.
 */
-  Transforms?: Array<Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransform>;
+  transforms?: Array<dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransform>;
 }
 
-export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Transforms",
+      "transforms",
       "For determination of how redaction of images should occur.\nStructure is documented below.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransform_GetTypes(),
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransform_GetTypes(),
       true,
       false,
     ),

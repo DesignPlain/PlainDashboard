@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Deploymentmanager_DeploymentTargetImport,
-  Deploymentmanager_DeploymentTargetImport_GetTypes,
-} from "./Deploymentmanager_DeploymentTargetImport";
+  deploymentmanager_DeploymentTargetImport,
+  deploymentmanager_DeploymentTargetImport_GetTypes,
+} from "./deploymentmanager_DeploymentTargetImport";
 import {
-  Deploymentmanager_DeploymentTargetConfig,
-  Deploymentmanager_DeploymentTargetConfig_GetTypes,
-} from "./Deploymentmanager_DeploymentTargetConfig";
+  deploymentmanager_DeploymentTargetConfig,
+  deploymentmanager_DeploymentTargetConfig_GetTypes,
+} from "./deploymentmanager_DeploymentTargetConfig";
 
-export interface Deploymentmanager_DeploymentTarget {
+export interface deploymentmanager_DeploymentTarget {
   /*
 The root configuration file to use for this deployment.
 Structure is documented below.
 */
-  Config?: Deploymentmanager_DeploymentTargetConfig;
+  config?: deploymentmanager_DeploymentTargetConfig;
 
   /*
 Specifies import files for this configuration. This can be
@@ -27,25 +27,25 @@ used to import templates or other files. For example, you might
 import a text file in order to use the file in a template.
 Structure is documented below.
 */
-  Imports?: Array<Deploymentmanager_DeploymentTargetImport>;
+  imports?: Array<deploymentmanager_DeploymentTargetImport>;
 }
 
-export function Deploymentmanager_DeploymentTarget_GetTypes(): DynamicUIProps[] {
+export function deploymentmanager_DeploymentTarget_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "Config",
-      "The root configuration file to use for this deployment.\nStructure is documented below.",
-      Deploymentmanager_DeploymentTargetConfig_GetTypes(),
-      true,
+      InputType.Array,
+      "imports",
+      "Specifies import files for this configuration. This can be\nused to import templates or other files. For example, you might\nimport a text file in order to use the file in a template.\nStructure is documented below.",
+      deploymentmanager_DeploymentTargetImport_GetTypes(),
+      false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "Imports",
-      "Specifies import files for this configuration. This can be\nused to import templates or other files. For example, you might\nimport a text file in order to use the file in a template.\nStructure is documented below.",
-      Deploymentmanager_DeploymentTargetImport_GetTypes(),
-      false,
+      InputType.Object,
+      "config",
+      "The root configuration file to use for this deployment.\nStructure is documented below.",
+      deploymentmanager_DeploymentTargetConfig_GetTypes(),
+      true,
       false,
     ),
   ];

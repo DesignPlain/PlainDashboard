@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterMasterAuthorizedNetworksConfigCidrBlock,
-  Container_getClusterMasterAuthorizedNetworksConfigCidrBlock_GetTypes,
-} from "./Container_getClusterMasterAuthorizedNetworksConfigCidrBlock";
+  container_getClusterMasterAuthorizedNetworksConfigCidrBlock,
+  container_getClusterMasterAuthorizedNetworksConfigCidrBlock_GetTypes,
+} from "./container_getClusterMasterAuthorizedNetworksConfigCidrBlock";
 
-export interface Container_getClusterMasterAuthorizedNetworksConfig {
+export interface container_getClusterMasterAuthorizedNetworksConfig {
   // External networks that can access the Kubernetes cluster master through HTTPS.
-  CidrBlocks?: Array<Container_getClusterMasterAuthorizedNetworksConfigCidrBlock>;
+  cidrBlocks?: Array<container_getClusterMasterAuthorizedNetworksConfigCidrBlock>;
 
   // Whether master is accessbile via Google Compute Engine Public IP addresses.
-  GcpPublicCidrsAccessEnabled?: boolean;
+  gcpPublicCidrsAccessEnabled?: boolean;
 }
 
-export function Container_getClusterMasterAuthorizedNetworksConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterMasterAuthorizedNetworksConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "CidrBlocks",
-      "External networks that can access the Kubernetes cluster master through HTTPS.",
-      Container_getClusterMasterAuthorizedNetworksConfigCidrBlock_GetTypes(),
+      InputType.Bool,
+      "gcpPublicCidrsAccessEnabled",
+      "Whether master is accessbile via Google Compute Engine Public IP addresses.",
+      [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Bool,
-      "GcpPublicCidrsAccessEnabled",
-      "Whether master is accessbile via Google Compute Engine Public IP addresses.",
-      [],
+      InputType.Array,
+      "cidrBlocks",
+      "External networks that can access the Kubernetes cluster master through HTTPS.",
+      container_getClusterMasterAuthorizedNetworksConfigCidrBlock_GetTypes(),
       true,
       false,
     ),

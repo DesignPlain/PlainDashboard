@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_ImageImageEncryptionKey {
+export interface compute_ImageImageEncryptionKey {
   /*
 The self link of the encryption key that is stored in Google Cloud
 KMS.
 */
-  KmsKeySelfLink?: string;
+  kmsKeySelfLink?: string;
 
   /*
 The service account being used for the encryption request for the
 given KMS key. If absent, the Compute Engine default service
 account is used.
 */
-  KmsKeyServiceAccount?: string;
+  kmsKeyServiceAccount?: string;
 }
 
-export function Compute_ImageImageEncryptionKey_GetTypes(): DynamicUIProps[] {
+export function compute_ImageImageEncryptionKey_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKeySelfLink",
+      "kmsKeySelfLink",
       "The self link of the encryption key that is stored in Google Cloud\nKMS.",
       [],
       false,
@@ -33,7 +33,7 @@ export function Compute_ImageImageEncryptionKey_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyServiceAccount",
+      "kmsKeyServiceAccount",
       "The service account being used for the encryption request for the\ngiven KMS key. If absent, the Compute Engine default service\naccount is used.",
       [],
       false,

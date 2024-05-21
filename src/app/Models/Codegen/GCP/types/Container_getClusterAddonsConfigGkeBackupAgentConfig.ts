@@ -6,11 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterAddonsConfigGkeBackupAgentConfig {
+export interface container_getClusterAddonsConfigGkeBackupAgentConfig {
   //
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_getClusterAddonsConfigGkeBackupAgentConfig_GetTypes(): DynamicUIProps[] {
-  return [new DynamicUIProps(InputType.Bool, "Enabled", "", [], true, false)];
+export function container_getClusterAddonsConfigGkeBackupAgentConfig_GetTypes(): DynamicUIProps[] {
+  return [new DynamicUIProps(InputType.Bool, "enabled", "", [], true, false)];
 }

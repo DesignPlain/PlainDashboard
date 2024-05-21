@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_ObjectAccessControlProjectTeam {
+export interface storage_ObjectAccessControlProjectTeam {
   // The project team associated with the entity
-  ProjectNumber?: string;
+  projectNumber?: string;
 
   /*
 The team.
 Possible values are: `editors`, `owners`, `viewers`.
 */
-  Team?: string;
+  team?: string;
 }
 
-export function Storage_ObjectAccessControlProjectTeam_GetTypes(): DynamicUIProps[] {
+export function storage_ObjectAccessControlProjectTeam_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ProjectNumber",
-      "The project team associated with the entity",
+      "team",
+      "The team.\nPossible values are: `editors`, `owners`, `viewers`.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Team",
-      "The team.\nPossible values are: `editors`, `owners`, `viewers`.",
+      "projectNumber",
+      "The project team associated with the entity",
       [],
       false,
       false,

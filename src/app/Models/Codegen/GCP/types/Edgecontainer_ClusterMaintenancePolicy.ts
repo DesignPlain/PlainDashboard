@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Edgecontainer_ClusterMaintenancePolicyWindow,
-  Edgecontainer_ClusterMaintenancePolicyWindow_GetTypes,
-} from "./Edgecontainer_ClusterMaintenancePolicyWindow";
+  edgecontainer_ClusterMaintenancePolicyWindow,
+  edgecontainer_ClusterMaintenancePolicyWindow_GetTypes,
+} from "./edgecontainer_ClusterMaintenancePolicyWindow";
 
-export interface Edgecontainer_ClusterMaintenancePolicy {
+export interface edgecontainer_ClusterMaintenancePolicy {
   /*
 Specifies the maintenance window in which maintenance may be performed.
 Structure is documented below.
 */
-  Window?: Edgecontainer_ClusterMaintenancePolicyWindow;
+  window?: edgecontainer_ClusterMaintenancePolicyWindow;
 }
 
-export function Edgecontainer_ClusterMaintenancePolicy_GetTypes(): DynamicUIProps[] {
+export function edgecontainer_ClusterMaintenancePolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Window",
+      "window",
       "Specifies the maintenance window in which maintenance may be performed.\nStructure is documented below.",
-      Edgecontainer_ClusterMaintenancePolicyWindow_GetTypes(),
+      edgecontainer_ClusterMaintenancePolicyWindow_GetTypes(),
       true,
       false,
     ),

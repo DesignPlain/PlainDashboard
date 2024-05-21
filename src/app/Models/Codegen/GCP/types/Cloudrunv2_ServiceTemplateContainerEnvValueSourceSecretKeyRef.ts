@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_ServiceTemplateContainerEnvValueSourceSecretKeyRef {
-  // The name of the secret in Cloud Secret Manager. Format: {secretName} if the secret is in the same project. projects/{project}/secrets/{secretName} if the secret is in a different project.
-  Secret?: string;
-
+export interface cloudrunv2_ServiceTemplateContainerEnvValueSourceSecretKeyRef {
   // The Cloud Secret Manager secret version. Can be 'latest' for the latest value or an integer for a specific version.
-  Version?: string;
+  version?: string;
+
+  // The name of the secret in Cloud Secret Manager. Format: {secretName} if the secret is in the same project. projects/{project}/secrets/{secretName} if the secret is in a different project.
+  secret?: string;
 }
 
-export function Cloudrunv2_ServiceTemplateContainerEnvValueSourceSecretKeyRef_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_ServiceTemplateContainerEnvValueSourceSecretKeyRef_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Secret",
-      "The name of the secret in Cloud Secret Manager. Format: {secretName} if the secret is in the same project. projects/{project}/secrets/{secretName} if the secret is in a different project.",
+      "version",
+      "The Cloud Secret Manager secret version. Can be 'latest' for the latest value or an integer for a specific version.",
       [],
-      true,
+      false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Version",
-      "The Cloud Secret Manager secret version. Can be 'latest' for the latest value or an integer for a specific version.",
+      "secret",
+      "The name of the secret in Cloud Secret Manager. Format: {secretName} if the secret is in the same project. projects/{project}/secrets/{secretName} if the secret is in a different project.",
       [],
-      false,
+      true,
       false,
     ),
   ];

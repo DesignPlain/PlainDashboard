@@ -13,13 +13,13 @@ A series of key value pairs.
 
 - - -
 */
-  Metadata?: Map<string, string>;
+  metadata?: Map<string, string>;
 
   /*
 The ID of the project in which the resource belongs. If it
 is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 }
 export class ProjectMetadata extends Resource {
   /*
@@ -27,31 +27,31 @@ A series of key value pairs.
 
 - - -
 */
-  public Metadata?: Map<string, string>;
+  public metadata?: Map<string, string>;
 
   /*
 The ID of the project in which the resource belongs. If it
 is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Map,
-        "Metadata",
-        "A series of key value pairs.\n\n- - -",
-        InputType_Map_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
         [],
         false,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.Map,
+        "metadata",
+        "A series of key value pairs.\n\n- - -",
+        InputType_Map_GetTypes(),
+        true,
+        false,
       ),
     ];
   }

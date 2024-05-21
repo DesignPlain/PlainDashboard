@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_InstanceGroupManagerStatusStatefulPerInstanceConfig,
-  Compute_InstanceGroupManagerStatusStatefulPerInstanceConfig_GetTypes,
-} from "./Compute_InstanceGroupManagerStatusStatefulPerInstanceConfig";
+  compute_InstanceGroupManagerStatusStatefulPerInstanceConfig,
+  compute_InstanceGroupManagerStatusStatefulPerInstanceConfig_GetTypes,
+} from "./compute_InstanceGroupManagerStatusStatefulPerInstanceConfig";
 
-export interface Compute_InstanceGroupManagerStatusStateful {
-  // Status of per-instance configs on the instance.
-  PerInstanceConfigs?: Array<Compute_InstanceGroupManagerStatusStatefulPerInstanceConfig>;
-
+export interface compute_InstanceGroupManagerStatusStateful {
   // A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.
-  HasStatefulConfig?: boolean;
+  hasStatefulConfig?: boolean;
+
+  // Status of per-instance configs on the instance.
+  perInstanceConfigs?: Array<compute_InstanceGroupManagerStatusStatefulPerInstanceConfig>;
 }
 
-export function Compute_InstanceGroupManagerStatusStateful_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceGroupManagerStatusStateful_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "PerInstanceConfigs",
-      "Status of per-instance configs on the instance.",
-      Compute_InstanceGroupManagerStatusStatefulPerInstanceConfig_GetTypes(),
+      InputType.Bool,
+      "hasStatefulConfig",
+      "A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.",
+      [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Bool,
-      "HasStatefulConfig",
-      "A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.",
-      [],
+      InputType.Array,
+      "perInstanceConfigs",
+      "Status of per-instance configs on the instance.",
+      compute_InstanceGroupManagerStatusStatefulPerInstanceConfig_GetTypes(),
       false,
       false,
     ),

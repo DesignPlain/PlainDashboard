@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_ReservationSpecificReservationInstancePropertiesLocalSsd {
-  /*
-The size of the disk in base-2 GB.
-
-- - -
-*/
-  DiskSizeGb?: number;
-
+export interface compute_ReservationSpecificReservationInstancePropertiesLocalSsd {
   /*
 The disk interface to use for attaching this disk.
 Default value is `SCSI`.
 Possible values are: `SCSI`, `NVME`.
 */
-  Interface?: string;
+  interface?: string;
+
+  /*
+The size of the disk in base-2 GB.
+
+- - -
+*/
+  diskSizeGb?: number;
 }
 
-export function Compute_ReservationSpecificReservationInstancePropertiesLocalSsd_GetTypes(): DynamicUIProps[] {
+export function compute_ReservationSpecificReservationInstancePropertiesLocalSsd_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Interface",
+      "interface",
       "The disk interface to use for attaching this disk.\nDefault value is `SCSI`.\nPossible values are: `SCSI`, `NVME`.",
       [],
       false,
@@ -34,7 +34,7 @@ export function Compute_ReservationSpecificReservationInstancePropertiesLocalSsd
     ),
     new DynamicUIProps(
       InputType.Number,
-      "DiskSizeGb",
+      "diskSizeGb",
       "The size of the disk in base-2 GB.\n\n- - -",
       [],
       true,

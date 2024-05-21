@@ -6,29 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Securityposture_PosturePolicySetPolicy,
-  Securityposture_PosturePolicySetPolicy_GetTypes,
-} from "./Securityposture_PosturePolicySetPolicy";
+  securityposture_PosturePolicySetPolicy,
+  securityposture_PosturePolicySetPolicy_GetTypes,
+} from "./securityposture_PosturePolicySetPolicy";
 
-export interface Securityposture_PosturePolicySet {
+export interface securityposture_PosturePolicySet {
   // Description of the policy set.
-  Description?: string;
+  description?: string;
 
   /*
 List of security policy
 Structure is documented below.
 */
-  Policies?: Array<Securityposture_PosturePolicySetPolicy>;
+  policies?: Array<securityposture_PosturePolicySetPolicy>;
 
   // ID of the policy set.
-  PolicySetId?: string;
+  policySetId?: string;
 }
 
-export function Securityposture_PosturePolicySet_GetTypes(): DynamicUIProps[] {
+export function securityposture_PosturePolicySet_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "policySetId",
+      "ID of the policy set.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "description",
       "Description of the policy set.",
       [],
       false,
@@ -36,17 +44,9 @@ export function Securityposture_PosturePolicySet_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Policies",
+      "policies",
       "List of security policy\nStructure is documented below.",
-      Securityposture_PosturePolicySetPolicy_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "PolicySetId",
-      "ID of the policy set.",
-      [],
+      securityposture_PosturePolicySetPolicy_GetTypes(),
       true,
       false,
     ),

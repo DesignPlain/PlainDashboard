@@ -8,9 +8,6 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface EnvGroupAttachmentArgs {
-  // The resource ID of the environment.
-  Environment?: string;
-
   /*
 The Apigee environment group associated with the Apigee environment,
 in the format `organizations/{{org_name}}/envgroups/{{envgroup_name}}`.
@@ -18,15 +15,12 @@ in the format `organizations/{{org_name}}/envgroups/{{envgroup_name}}`.
 
 - - -
 */
-  EnvgroupId?: string;
+  envgroupId?: string;
+
+  // The resource ID of the environment.
+  environment?: string;
 }
 export class EnvGroupAttachment extends Resource {
-  // The resource ID of the environment.
-  public Environment?: string;
-
-  // The name of the newly created  attachment (output parameter).
-  public Name?: string;
-
   /*
 The Apigee environment group associated with the Apigee environment,
 in the format `organizations/{{org_name}}/envgroups/{{envgroup_name}}`.
@@ -34,13 +28,19 @@ in the format `organizations/{{org_name}}/envgroups/{{envgroup_name}}`.
 
 - - -
 */
-  public EnvgroupId?: string;
+  public envgroupId?: string;
+
+  // The resource ID of the environment.
+  public environment?: string;
+
+  // The name of the newly created  attachment (output parameter).
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Environment",
+        "environment",
         "The resource ID of the environment.",
         [],
         true,
@@ -48,7 +48,7 @@ in the format `organizations/{{org_name}}/envgroups/{{envgroup_name}}`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "EnvgroupId",
+        "envgroupId",
         "The Apigee environment group associated with the Apigee environment,\nin the format `organizations/{{org_name}}/envgroups/{{envgroup_name}}`.\n\n\n- - -",
         [],
         true,

@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataplex_ZoneDiscoverySpecCsvOptions {
+export interface dataplex_ZoneDiscoverySpecCsvOptions {
   // Optional. The delimiter being used to separate values. This defaults to ','.
-  Delimiter?: string;
+  delimiter?: string;
 
   // Optional. Whether to disable the inference of data type for CSV data. If true, all columns will be registered as strings.
-  DisableTypeInference?: boolean;
+  disableTypeInference?: boolean;
 
   // Optional. The character encoding of the data. The default is UTF-8.
-  Encoding?: string;
+  encoding?: string;
 
   // Optional. The number of rows to interpret as header rows that should be skipped when reading data rows.
-  HeaderRows?: number;
+  headerRows?: number;
 }
 
-export function Dataplex_ZoneDiscoverySpecCsvOptions_GetTypes(): DynamicUIProps[] {
+export function dataplex_ZoneDiscoverySpecCsvOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Delimiter",
+      "delimiter",
       "Optional. The delimiter being used to separate values. This defaults to ','.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Dataplex_ZoneDiscoverySpecCsvOptions_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "DisableTypeInference",
+      "disableTypeInference",
       "Optional. Whether to disable the inference of data type for CSV data. If true, all columns will be registered as strings.",
       [],
       false,
@@ -40,7 +40,7 @@ export function Dataplex_ZoneDiscoverySpecCsvOptions_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "Encoding",
+      "encoding",
       "Optional. The character encoding of the data. The default is UTF-8.",
       [],
       false,
@@ -48,7 +48,7 @@ export function Dataplex_ZoneDiscoverySpecCsvOptions_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Number,
-      "HeaderRows",
+      "headerRows",
       "Optional. The number of rows to interpret as header rows that should be skipped when reading data rows.",
       [],
       false,

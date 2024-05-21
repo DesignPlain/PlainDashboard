@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_GuestPoliciesRecipeUpdateStepRpmInstallation {
+export interface osconfig_GuestPoliciesRecipeUpdateStepRpmInstallation {
   // The id of the relevant artifact in the recipe.
-  ArtifactId?: string;
+  artifactId?: string;
 }
 
-export function Osconfig_GuestPoliciesRecipeUpdateStepRpmInstallation_GetTypes(): DynamicUIProps[] {
+export function osconfig_GuestPoliciesRecipeUpdateStepRpmInstallation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ArtifactId",
+      "artifactId",
       "The id of the relevant artifact in the recipe.",
       [],
       true,

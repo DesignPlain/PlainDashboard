@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_MetastoreServiceNetworkConfigConsumer,
-  Dataproc_MetastoreServiceNetworkConfigConsumer_GetTypes,
-} from "./Dataproc_MetastoreServiceNetworkConfigConsumer";
+  dataproc_MetastoreServiceNetworkConfigConsumer,
+  dataproc_MetastoreServiceNetworkConfigConsumer_GetTypes,
+} from "./dataproc_MetastoreServiceNetworkConfigConsumer";
 
-export interface Dataproc_MetastoreServiceNetworkConfig {
+export interface dataproc_MetastoreServiceNetworkConfig {
   /*
 The consumer-side network configuration for the Dataproc Metastore instance.
 Structure is documented below.
 */
-  Consumers?: Array<Dataproc_MetastoreServiceNetworkConfigConsumer>;
+  consumers?: Array<dataproc_MetastoreServiceNetworkConfigConsumer>;
 
   // Enables custom routes to be imported and exported for the Dataproc Metastore service's peered VPC network.
-  CustomRoutesEnabled?: boolean;
+  customRoutesEnabled?: boolean;
 }
 
-export function Dataproc_MetastoreServiceNetworkConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_MetastoreServiceNetworkConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Consumers",
+      "consumers",
       "The consumer-side network configuration for the Dataproc Metastore instance.\nStructure is documented below.",
-      Dataproc_MetastoreServiceNetworkConfigConsumer_GetTypes(),
+      dataproc_MetastoreServiceNetworkConfigConsumer_GetTypes(),
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "CustomRoutesEnabled",
+      "customRoutesEnabled",
       "Enables custom routes to be imported and exported for the Dataproc Metastore service's peered VPC network.",
       [],
       false,

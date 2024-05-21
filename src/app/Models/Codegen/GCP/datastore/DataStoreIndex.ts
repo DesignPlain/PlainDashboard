@@ -7,23 +7,23 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastore_DataStoreIndexProperty,
-  Datastore_DataStoreIndexProperty_GetTypes,
-} from "../types/Datastore_DataStoreIndexProperty";
+  datastore_DataStoreIndexProperty,
+  datastore_DataStoreIndexProperty_GetTypes,
+} from "../types/datastore_DataStoreIndexProperty";
 
 export interface DataStoreIndexArgs {
   /*
 An ordered list of properties to index on.
 Structure is documented below.
 */
-  Properties?: Array<Datastore_DataStoreIndexProperty>;
+  properties?: Array<datastore_DataStoreIndexProperty>;
 
   /*
 Policy for including ancestors in the index.
 Default value is `NONE`.
 Possible values are: `NONE`, `ALL_ANCESTORS`.
 */
-  Ancestor?: string;
+  ancestor?: string;
 
   /*
 The entity kind which the index applies to.
@@ -31,50 +31,58 @@ The entity kind which the index applies to.
 
 - - -
 */
-  Kind?: string;
+  kind?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 }
 export class DataStoreIndex extends Resource {
+  /*
+Policy for including ancestors in the index.
+Default value is `NONE`.
+Possible values are: `NONE`, `ALL_ANCESTORS`.
+*/
+  public ancestor?: string;
+
+  // The index id.
+  public indexId?: string;
+
+  /*
+The entity kind which the index applies to.
+
+
+- - -
+*/
+  public kind?: string;
+
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 An ordered list of properties to index on.
 Structure is documented below.
 */
-  public Properties?: Array<Datastore_DataStoreIndexProperty>;
-
-  /*
-Policy for including ancestors in the index.
-Default value is `NONE`.
-Possible values are: `NONE`, `ALL_ANCESTORS`.
-*/
-  public Ancestor?: string;
-
-  // The index id.
-  public IndexId?: string;
-
-  /*
-The entity kind which the index applies to.
-
-
-- - -
-*/
-  public Kind?: string;
+  public properties?: Array<datastore_DataStoreIndexProperty>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
+        InputType.Array,
+        "properties",
+        "An ordered list of properties to index on.\nStructure is documented below.",
+        datastore_DataStoreIndexProperty_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
         InputType.String,
-        "Ancestor",
+        "ancestor",
         "Policy for including ancestors in the index.\nDefault value is `NONE`.\nPossible values are: `NONE`, `ALL_ANCESTORS`.",
         [],
         false,
@@ -82,7 +90,7 @@ The entity kind which the index applies to.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Kind",
+        "kind",
         "The entity kind which the index applies to.\n\n\n- - -",
         [],
         true,
@@ -90,17 +98,9 @@ The entity kind which the index applies to.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Array,
-        "Properties",
-        "An ordered list of properties to index on.\nStructure is documented below.",
-        Datastore_DataStoreIndexProperty_GetTypes(),
         false,
         true,
       ),

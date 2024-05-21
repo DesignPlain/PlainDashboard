@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Organizations_getIAMPolicyBindingCondition {
+export interface organizations_getIAMPolicyBindingCondition {
+  // An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
+  description?: string;
+
   // Textual representation of an expression in Common Expression Language syntax.
-  Expression?: string;
+  expression?: string;
 
   // A title for the expression, i.e. a short string describing its purpose.
-  Title?: string;
-
-  // An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
-  Description?: string;
+  title?: string;
 }
 
-export function Organizations_getIAMPolicyBindingCondition_GetTypes(): DynamicUIProps[] {
+export function organizations_getIAMPolicyBindingCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "title",
+      "A title for the expression, i.e. a short string describing its purpose.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "description",
       "An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.",
       [],
       false,
@@ -29,16 +37,8 @@ export function Organizations_getIAMPolicyBindingCondition_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "Expression",
+      "expression",
       "Textual representation of an expression in Common Expression Language syntax.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Title",
-      "A title for the expression, i.e. a short string describing its purpose.",
       [],
       true,
       false,

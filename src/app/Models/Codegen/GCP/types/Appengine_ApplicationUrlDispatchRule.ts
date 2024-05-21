@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_ApplicationUrlDispatchRule {
+export interface appengine_ApplicationUrlDispatchRule {
   //
-  Domain?: string;
+  path?: string;
 
   //
-  Path?: string;
+  service?: string;
 
   //
-  Service?: string;
+  domain?: string;
 }
 
-export function Appengine_ApplicationUrlDispatchRule_GetTypes(): DynamicUIProps[] {
+export function appengine_ApplicationUrlDispatchRule_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Service", "", [], false, false),
-    new DynamicUIProps(InputType.String, "Domain", "", [], false, false),
-    new DynamicUIProps(InputType.String, "Path", "", [], false, false),
+    new DynamicUIProps(InputType.String, "path", "", [], false, false),
+    new DynamicUIProps(InputType.String, "service", "", [], false, false),
+    new DynamicUIProps(InputType.String, "domain", "", [], false, false),
   ];
 }

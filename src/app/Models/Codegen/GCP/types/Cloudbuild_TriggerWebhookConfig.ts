@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuild_TriggerWebhookConfig {
+export interface cloudbuild_TriggerWebhookConfig {
   // Resource name for the secret required as a URL parameter.
-  Secret?: string;
+  secret?: string;
 
   /*
 (Output)
 Potential issues with the underlying Pub/Sub subscription configuration.
 Only populated on get requests.
 */
-  State?: string;
+  state?: string;
 }
 
-export function Cloudbuild_TriggerWebhookConfig_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_TriggerWebhookConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "State",
-      "(Output)\nPotential issues with the underlying Pub/Sub subscription configuration.\nOnly populated on get requests.",
+      "secret",
+      "Resource name for the secret required as a URL parameter.",
       [],
-      false,
+      true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Secret",
-      "Resource name for the secret required as a URL parameter.",
+      "state",
+      "(Output)\nPotential issues with the underlying Pub/Sub subscription configuration.\nOnly populated on get requests.",
       [],
-      true,
+      false,
       false,
     ),
   ];

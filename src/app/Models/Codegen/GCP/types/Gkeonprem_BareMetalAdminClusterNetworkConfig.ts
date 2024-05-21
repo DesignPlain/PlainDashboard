@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_BareMetalAdminClusterNetworkConfigIslandModeCidr,
-  Gkeonprem_BareMetalAdminClusterNetworkConfigIslandModeCidr_GetTypes,
-} from "./Gkeonprem_BareMetalAdminClusterNetworkConfigIslandModeCidr";
+  gkeonprem_BareMetalAdminClusterNetworkConfigIslandModeCidr,
+  gkeonprem_BareMetalAdminClusterNetworkConfigIslandModeCidr_GetTypes,
+} from "./gkeonprem_BareMetalAdminClusterNetworkConfigIslandModeCidr";
 
-export interface Gkeonprem_BareMetalAdminClusterNetworkConfig {
+export interface gkeonprem_BareMetalAdminClusterNetworkConfig {
   /*
 A nested object resource
 Structure is documented below.
 */
-  IslandModeCidr?: Gkeonprem_BareMetalAdminClusterNetworkConfigIslandModeCidr;
+  islandModeCidr?: gkeonprem_BareMetalAdminClusterNetworkConfigIslandModeCidr;
 }
 
-export function Gkeonprem_BareMetalAdminClusterNetworkConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalAdminClusterNetworkConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "IslandModeCidr",
+      "islandModeCidr",
       "A nested object resource\nStructure is documented below.",
-      Gkeonprem_BareMetalAdminClusterNetworkConfigIslandModeCidr_GetTypes(),
+      gkeonprem_BareMetalAdminClusterNetworkConfigIslandModeCidr_GetTypes(),
       false,
       false,
     ),

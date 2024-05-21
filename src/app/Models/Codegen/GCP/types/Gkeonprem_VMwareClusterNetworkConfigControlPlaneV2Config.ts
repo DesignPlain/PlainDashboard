@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock,
-  Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock_GetTypes,
-} from "./Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock";
+  gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock,
+  gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock_GetTypes,
+} from "./gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock";
 
-export interface Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config {
+export interface gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config {
   /*
 Static IP addresses for the control plane nodes.
 Structure is documented below.
 */
-  ControlPlaneIpBlock?: Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock;
+  controlPlaneIpBlock?: gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock;
 }
 
-export function Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ControlPlaneIpBlock",
+      "controlPlaneIpBlock",
       "Static IP addresses for the control plane nodes.\nStructure is documented below.",
-      Gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock_GetTypes(),
+      gkeonprem_VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock_GetTypes(),
       false,
       false,
     ),

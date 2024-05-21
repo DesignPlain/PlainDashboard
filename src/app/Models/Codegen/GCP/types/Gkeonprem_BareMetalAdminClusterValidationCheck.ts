@@ -6,44 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_BareMetalAdminClusterValidationCheckStatus,
-  Gkeonprem_BareMetalAdminClusterValidationCheckStatus_GetTypes,
-} from "./Gkeonprem_BareMetalAdminClusterValidationCheckStatus";
+  gkeonprem_BareMetalAdminClusterValidationCheckStatus,
+  gkeonprem_BareMetalAdminClusterValidationCheckStatus_GetTypes,
+} from "./gkeonprem_BareMetalAdminClusterValidationCheckStatus";
 
-export interface Gkeonprem_BareMetalAdminClusterValidationCheck {
-  /*
-(Output)
-Specifies the detailed validation check status
-Structure is documented below.
-*/
-  Statuses?: Array<Gkeonprem_BareMetalAdminClusterValidationCheckStatus>;
-
+export interface gkeonprem_BareMetalAdminClusterValidationCheck {
   /*
 (Output)
 Options used for the validation check.
 */
-  Options?: string;
+  options?: string;
 
   /*
 (Output)
 The scenario when the preflight checks were run..
 */
-  Scenario?: string;
+  scenario?: string;
+
+  /*
+(Output)
+Specifies the detailed validation check status
+Structure is documented below.
+*/
+  statuses?: Array<gkeonprem_BareMetalAdminClusterValidationCheckStatus>;
 }
 
-export function Gkeonprem_BareMetalAdminClusterValidationCheck_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalAdminClusterValidationCheck_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "Statuses",
-      "(Output)\nSpecifies the detailed validation check status\nStructure is documented below.",
-      Gkeonprem_BareMetalAdminClusterValidationCheckStatus_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Options",
+      "options",
       "(Output)\nOptions used for the validation check.",
       [],
       false,
@@ -51,9 +43,17 @@ export function Gkeonprem_BareMetalAdminClusterValidationCheck_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "Scenario",
+      "scenario",
       "(Output)\nThe scenario when the preflight checks were run..",
       [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "statuses",
+      "(Output)\nSpecifies the detailed validation check status\nStructure is documented below.",
+      gkeonprem_BareMetalAdminClusterValidationCheckStatus_GetTypes(),
       false,
       false,
     ),

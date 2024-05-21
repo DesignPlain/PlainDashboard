@@ -7,48 +7,30 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_AutoscalingPolicySecondaryWorkerConfig,
-  Dataproc_AutoscalingPolicySecondaryWorkerConfig_GetTypes,
-} from "../types/Dataproc_AutoscalingPolicySecondaryWorkerConfig";
+  dataproc_AutoscalingPolicyBasicAlgorithm,
+  dataproc_AutoscalingPolicyBasicAlgorithm_GetTypes,
+} from "../types/dataproc_AutoscalingPolicyBasicAlgorithm";
 import {
-  Dataproc_AutoscalingPolicyWorkerConfig,
-  Dataproc_AutoscalingPolicyWorkerConfig_GetTypes,
-} from "../types/Dataproc_AutoscalingPolicyWorkerConfig";
+  dataproc_AutoscalingPolicySecondaryWorkerConfig,
+  dataproc_AutoscalingPolicySecondaryWorkerConfig_GetTypes,
+} from "../types/dataproc_AutoscalingPolicySecondaryWorkerConfig";
 import {
-  Dataproc_AutoscalingPolicyBasicAlgorithm,
-  Dataproc_AutoscalingPolicyBasicAlgorithm_GetTypes,
-} from "../types/Dataproc_AutoscalingPolicyBasicAlgorithm";
+  dataproc_AutoscalingPolicyWorkerConfig,
+  dataproc_AutoscalingPolicyWorkerConfig_GetTypes,
+} from "../types/dataproc_AutoscalingPolicyWorkerConfig";
 
 export interface AutoscalingPolicyArgs {
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  /*
-Describes how the autoscaler will operate for secondary workers.
-Structure is documented below.
-*/
-  SecondaryWorkerConfig?: Dataproc_AutoscalingPolicySecondaryWorkerConfig;
-
-  /*
-Describes how the autoscaler will operate for primary workers.
-Structure is documented below.
-*/
-  WorkerConfig?: Dataproc_AutoscalingPolicyWorkerConfig;
-
   /*
 Basic algorithm for autoscaling.
 Structure is documented below.
 */
-  BasicAlgorithm?: Dataproc_AutoscalingPolicyBasicAlgorithm;
+  basicAlgorithm?: dataproc_AutoscalingPolicyBasicAlgorithm;
 
   /*
 The  location where the autoscaling policy should reside.
 The default value is `global`.
 */
-  Location?: string;
+  location?: string;
 
   /*
 The policy id. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_),
@@ -58,17 +40,35 @@ and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of 
 
 - - -
 */
-  PolicyId?: string;
+  policyId?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  /*
+Describes how the autoscaler will operate for secondary workers.
+Structure is documented below.
+*/
+  secondaryWorkerConfig?: dataproc_AutoscalingPolicySecondaryWorkerConfig;
+
+  /*
+Describes how the autoscaler will operate for primary workers.
+Structure is documented below.
+*/
+  workerConfig?: dataproc_AutoscalingPolicyWorkerConfig;
 }
 export class AutoscalingPolicy extends Resource {
   /*
 The  location where the autoscaling policy should reside.
 The default value is `global`.
 */
-  public Location?: string;
+  public location?: string;
 
   // The "resource name" of the autoscaling policy.
-  public Name?: string;
+  public name?: string;
 
   /*
 The policy id. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_),
@@ -78,45 +78,53 @@ and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of 
 
 - - -
 */
-  public PolicyId?: string;
+  public policyId?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 Describes how the autoscaler will operate for secondary workers.
 Structure is documented below.
 */
-  public SecondaryWorkerConfig?: Dataproc_AutoscalingPolicySecondaryWorkerConfig;
+  public secondaryWorkerConfig?: dataproc_AutoscalingPolicySecondaryWorkerConfig;
 
   /*
 Describes how the autoscaler will operate for primary workers.
 Structure is documented below.
 */
-  public WorkerConfig?: Dataproc_AutoscalingPolicyWorkerConfig;
+  public workerConfig?: dataproc_AutoscalingPolicyWorkerConfig;
 
   /*
 Basic algorithm for autoscaling.
 Structure is documented below.
 */
-  public BasicAlgorithm?: Dataproc_AutoscalingPolicyBasicAlgorithm;
+  public basicAlgorithm?: dataproc_AutoscalingPolicyBasicAlgorithm;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "BasicAlgorithm",
+        "workerConfig",
+        "Describes how the autoscaler will operate for primary workers.\nStructure is documented below.",
+        dataproc_AutoscalingPolicyWorkerConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "basicAlgorithm",
         "Basic algorithm for autoscaling.\nStructure is documented below.",
-        Dataproc_AutoscalingPolicyBasicAlgorithm_GetTypes(),
+        dataproc_AutoscalingPolicyBasicAlgorithm_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The  location where the autoscaling policy should reside.\nThe default value is `global`.",
         [],
         false,
@@ -124,7 +132,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "PolicyId",
+        "policyId",
         "The policy id. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_),\nand hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between\n3 and 50 characters.\n\n\n- - -",
         [],
         true,
@@ -132,7 +140,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -140,17 +148,9 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "SecondaryWorkerConfig",
+        "secondaryWorkerConfig",
         "Describes how the autoscaler will operate for secondary workers.\nStructure is documented below.",
-        Dataproc_AutoscalingPolicySecondaryWorkerConfig_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "WorkerConfig",
-        "Describes how the autoscaler will operate for primary workers.\nStructure is documented below.",
-        Dataproc_AutoscalingPolicyWorkerConfig_GetTypes(),
+        dataproc_AutoscalingPolicySecondaryWorkerConfig_GetTypes(),
         false,
         false,
       ),

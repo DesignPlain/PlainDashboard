@@ -6,18 +6,12 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkebackup_RestorePlanRestoreConfigTransformationRuleFieldAction {
-  /*
-Specifies the operation to perform.
-Possible values are: `REMOVE`, `MOVE`, `COPY`, `ADD`, `TEST`, `REPLACE`.
-*/
-  Op?: string;
-
+export interface gkebackup_RestorePlanRestoreConfigTransformationRuleFieldAction {
   /*
 A string containing a JSON-Pointer value that references a
 location within the target document where the operation is performed.
 */
-  Path?: string;
+  path?: string;
 
   /*
 A string that specifies the desired value in string format
@@ -25,20 +19,34 @@ to use for transformation.
 
 - - -
 */
-  Value?: string;
+  value?: string;
 
   /*
 A string containing a JSON Pointer value that references the
 location in the target document to move the value from.
 */
-  FromPath?: string;
+  fromPath?: string;
+
+  /*
+Specifies the operation to perform.
+Possible values are: `REMOVE`, `MOVE`, `COPY`, `ADD`, `TEST`, `REPLACE`.
+*/
+  op?: string;
 }
 
-export function Gkebackup_RestorePlanRestoreConfigTransformationRuleFieldAction_GetTypes(): DynamicUIProps[] {
+export function gkebackup_RestorePlanRestoreConfigTransformationRuleFieldAction_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "path",
+      "A string containing a JSON-Pointer value that references a\nlocation within the target document where the operation is performed.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "value",
       "A string that specifies the desired value in string format\nto use for transformation.\n\n- - -",
       [],
       false,
@@ -46,7 +54,7 @@ export function Gkebackup_RestorePlanRestoreConfigTransformationRuleFieldAction_
     ),
     new DynamicUIProps(
       InputType.String,
-      "FromPath",
+      "fromPath",
       "A string containing a JSON Pointer value that references the\nlocation in the target document to move the value from.",
       [],
       false,
@@ -54,18 +62,10 @@ export function Gkebackup_RestorePlanRestoreConfigTransformationRuleFieldAction_
     ),
     new DynamicUIProps(
       InputType.String,
-      "Op",
+      "op",
       "Specifies the operation to perform.\nPossible values are: `REMOVE`, `MOVE`, `COPY`, `ADD`, `TEST`, `REPLACE`.",
       [],
       true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Path",
-      "A string containing a JSON-Pointer value that references a\nlocation within the target document where the operation is performed.",
-      [],
-      false,
       false,
     ),
   ];

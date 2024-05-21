@@ -6,45 +6,45 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction,
-  Networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction_GetTypes,
-} from "./Networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction";
+  networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite,
+  networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite_GetTypes,
+} from "./networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite";
 import {
-  Networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite,
-  Networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite_GetTypes,
-} from "./Networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite";
+  networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction,
+  networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction_GetTypes,
+} from "./networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction";
 
-export interface Networkservices_EdgeCacheOriginOriginOverrideAction {
+export interface networkservices_EdgeCacheOriginOriginOverrideAction {
   /*
 The header actions, including adding and removing
 headers, for request handled by this origin.
 Structure is documented below.
 */
-  HeaderAction?: Networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction;
+  headerAction?: networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction;
 
   /*
 The URL rewrite configuration for request that are
 handled by this origin.
 Structure is documented below.
 */
-  UrlRewrite?: Networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite;
+  urlRewrite?: networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite;
 }
 
-export function Networkservices_EdgeCacheOriginOriginOverrideAction_GetTypes(): DynamicUIProps[] {
+export function networkservices_EdgeCacheOriginOriginOverrideAction_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "HeaderAction",
+      "headerAction",
       "The header actions, including adding and removing\nheaders, for request handled by this origin.\nStructure is documented below.",
-      Networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction_GetTypes(),
+      networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "UrlRewrite",
+      "urlRewrite",
       "The URL rewrite configuration for request that are\nhandled by this origin.\nStructure is documented below.",
-      Networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite_GetTypes(),
+      networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite_GetTypes(),
       false,
       false,
     ),

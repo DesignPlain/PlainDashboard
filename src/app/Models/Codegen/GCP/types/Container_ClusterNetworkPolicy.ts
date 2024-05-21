@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterNetworkPolicy {
-  // The selected network policy provider. Defaults to PROVIDER_UNSPECIFIED.
-  Provider?: string;
-
+export interface container_ClusterNetworkPolicy {
   // Whether network policy is enabled on the cluster.
-  Enabled?: boolean;
+  enabled?: boolean;
+
+  // The selected network policy provider. Defaults to PROVIDER_UNSPECIFIED.
+  provider?: string;
 }
 
-export function Container_ClusterNetworkPolicy_GetTypes(): DynamicUIProps[] {
+export function container_ClusterNetworkPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Provider",
+      "provider",
       "The selected network policy provider. Defaults to PROVIDER_UNSPECIFIED.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Container_ClusterNetworkPolicy_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether network policy is enabled on the cluster.",
       [],
       true,

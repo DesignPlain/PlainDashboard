@@ -6,39 +6,39 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AttachedClusterFleet {
+export interface container_AttachedClusterFleet {
   /*
 (Output)
 The name of the managed Hub Membership resource associated to this
 cluster. Membership names are formatted as
 projects/<project-number>/locations/global/membership/<cluster-id>.
 */
-  Membership?: string;
+  membership?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 }
 
-export function Container_AttachedClusterFleet_GetTypes(): DynamicUIProps[] {
+export function container_AttachedClusterFleet_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Membership",
-      "(Output)\nThe name of the managed Hub Membership resource associated to this\ncluster. Membership names are formatted as\nprojects/<project-number>/locations/global/membership/<cluster-id>.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Project",
+      "project",
       "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
       [],
       true,
       true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "membership",
+      "(Output)\nThe name of the managed Hub Membership resource associated to this\ncluster. Membership names are formatted as\nprojects/<project-number>/locations/global/membership/<cluster-id>.",
+      [],
+      false,
+      false,
     ),
   ];
 }

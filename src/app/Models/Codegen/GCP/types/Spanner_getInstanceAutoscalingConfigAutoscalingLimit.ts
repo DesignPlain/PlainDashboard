@@ -6,38 +6,38 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Spanner_getInstanceAutoscalingConfigAutoscalingLimit {
+export interface spanner_getInstanceAutoscalingConfigAutoscalingLimit {
   /*
 Specifies maximum number of nodes allocated to the instance. If set, this number
 should be greater than or equal to min_nodes.
 */
-  MaxNodes?: number;
+  maxNodes?: number;
 
   /*
 Specifies maximum number of processing units allocated to the instance.
 If set, this number should be multiples of 1000 and be greater than or equal to
 min_processing_units.
 */
-  MaxProcessingUnits?: number;
+  maxProcessingUnits?: number;
 
   /*
 Specifies number of nodes allocated to the instance. If set, this number
 should be greater than or equal to 1.
 */
-  MinNodes?: number;
+  minNodes?: number;
 
   /*
 Specifies minimum number of processing units allocated to the instance.
 If set, this number should be multiples of 1000.
 */
-  MinProcessingUnits?: number;
+  minProcessingUnits?: number;
 }
 
-export function Spanner_getInstanceAutoscalingConfigAutoscalingLimit_GetTypes(): DynamicUIProps[] {
+export function spanner_getInstanceAutoscalingConfigAutoscalingLimit_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "MaxNodes",
+      "maxNodes",
       "Specifies maximum number of nodes allocated to the instance. If set, this number\nshould be greater than or equal to min_nodes.",
       [],
       true,
@@ -45,7 +45,7 @@ export function Spanner_getInstanceAutoscalingConfigAutoscalingLimit_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxProcessingUnits",
+      "maxProcessingUnits",
       "Specifies maximum number of processing units allocated to the instance.\nIf set, this number should be multiples of 1000 and be greater than or equal to\nmin_processing_units.",
       [],
       true,
@@ -53,7 +53,7 @@ export function Spanner_getInstanceAutoscalingConfigAutoscalingLimit_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MinNodes",
+      "minNodes",
       "Specifies number of nodes allocated to the instance. If set, this number\nshould be greater than or equal to 1.",
       [],
       true,
@@ -61,7 +61,7 @@ export function Spanner_getInstanceAutoscalingConfigAutoscalingLimit_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MinProcessingUnits",
+      "minProcessingUnits",
       "Specifies minimum number of processing units allocated to the instance.\nIf set, this number should be multiples of 1000.",
       [],
       true,

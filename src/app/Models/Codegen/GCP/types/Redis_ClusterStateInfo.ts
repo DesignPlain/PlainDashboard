@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Redis_ClusterStateInfoUpdateInfo,
-  Redis_ClusterStateInfoUpdateInfo_GetTypes,
-} from "./Redis_ClusterStateInfoUpdateInfo";
+  redis_ClusterStateInfoUpdateInfo,
+  redis_ClusterStateInfoUpdateInfo_GetTypes,
+} from "./redis_ClusterStateInfoUpdateInfo";
 
-export interface Redis_ClusterStateInfo {
+export interface redis_ClusterStateInfo {
   /*
 A nested object resource
 Structure is documented below.
 */
-  UpdateInfo?: Redis_ClusterStateInfoUpdateInfo;
+  updateInfo?: redis_ClusterStateInfoUpdateInfo;
 }
 
-export function Redis_ClusterStateInfo_GetTypes(): DynamicUIProps[] {
+export function redis_ClusterStateInfo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "UpdateInfo",
+      "updateInfo",
       "A nested object resource\nStructure is documented below.",
-      Redis_ClusterStateInfoUpdateInfo_GetTypes(),
+      redis_ClusterStateInfoUpdateInfo_GetTypes(),
       false,
       false,
     ),

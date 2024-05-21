@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Composer_EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig,
-  Composer_EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig_GetTypes,
-} from "./Composer_EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig";
+  composer_EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig,
+  composer_EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig_GetTypes,
+} from "./composer_EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig";
 
-export interface Composer_EnvironmentConfigRecoveryConfig {
+export interface composer_EnvironmentConfigRecoveryConfig {
   // The configuration settings for scheduled snapshots.
-  ScheduledSnapshotsConfig?: Composer_EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig;
+  scheduledSnapshotsConfig?: composer_EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig;
 }
 
-export function Composer_EnvironmentConfigRecoveryConfig_GetTypes(): DynamicUIProps[] {
+export function composer_EnvironmentConfigRecoveryConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ScheduledSnapshotsConfig",
+      "scheduledSnapshotsConfig",
       "The configuration settings for scheduled snapshots.",
-      Composer_EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig_GetTypes(),
+      composer_EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig_GetTypes(),
       false,
       false,
     ),

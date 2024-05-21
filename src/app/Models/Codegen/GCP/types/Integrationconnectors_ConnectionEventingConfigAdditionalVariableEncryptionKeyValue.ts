@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Integrationconnectors_ConnectionEventingConfigAdditionalVariableEncryptionKeyValue {
+export interface integrationconnectors_ConnectionEventingConfigAdditionalVariableEncryptionKeyValue {
   /*
 The [KMS key name] with which the content of the Operation is encrypted. The expected
 format: projects/-/locations/-/keyRings/-/cryptoKeys/-.
 Will be empty string if google managed.
 */
-  KmsKeyName?: string;
+  kmsKeyName?: string;
 
   /*
 Type of Encryption Key
 Possible values are: `GOOGLE_MANAGED`, `CUSTOMER_MANAGED`.
 */
-  Type?: string;
+  type?: string;
 }
 
-export function Integrationconnectors_ConnectionEventingConfigAdditionalVariableEncryptionKeyValue_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionEventingConfigAdditionalVariableEncryptionKeyValue_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyName",
+      "kmsKeyName",
       "The [KMS key name] with which the content of the Operation is encrypted. The expected\nformat: projects/*/locations/*/keyRings/*/cryptoKeys/*.\nWill be empty string if google managed.",
       [],
       false,
@@ -33,7 +33,7 @@ export function Integrationconnectors_ConnectionEventingConfigAdditionalVariable
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "Type of Encryption Key\nPossible values are: `GOOGLE_MANAGED`, `CUSTOMER_MANAGED`.",
       [],
       false,

@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup,
-  Vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup_GetTypes,
-} from "./Vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup";
+  vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup,
+  vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup_GetTypes,
+} from "./vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup";
 
-export interface Vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySource {
+export interface vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySource {
   /*
 List of features that need to be synced to Online Store.
 Structure is documented below.
 */
-  FeatureGroups?: Array<Vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup>;
+  featureGroups?: Array<vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup>;
 }
 
-export function Vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySource_GetTypes(): DynamicUIProps[] {
+export function vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "FeatureGroups",
+      "featureGroups",
       "List of features that need to be synced to Online Store.\nStructure is documented below.",
-      Vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup_GetTypes(),
+      vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup_GetTypes(),
       true,
       false,
     ),

@@ -7,64 +7,73 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dns_RecordSetRoutingPolicy,
-  Dns_RecordSetRoutingPolicy_GetTypes,
-} from "../types/Dns_RecordSetRoutingPolicy";
+  dns_RecordSetRoutingPolicy,
+  dns_RecordSetRoutingPolicy_GetTypes,
+} from "../types/dns_RecordSetRoutingPolicy";
 
 export interface RecordSetArgs {
-  // The DNS name this record set will apply to.
-  Name?: string;
-
-  /*
-The ID of the project in which the resource belongs. If it
-is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  /*
-The configuration for steering traffic based on query.
-Now you can specify either Weighted Round Robin(WRR) type or Geolocation(GEO) type.
-Structure is documented below.
-*/
-  RoutingPolicy?: Dns_RecordSetRoutingPolicy;
-
   /*
 The string data for the records in this record set whose meaning depends on the DNS type. For TXT record, if the string
 data contains spaces, add surrounding \" if you don't want your string to get split on spaces. To specify a single
 record value longer than 255 characters such as a TXT record for DKIM, add \"\" inside the Terraform configuration
 string (e.g. "first255characters\"\"morecharacters").
 */
-  Rrdatas?: Array<string>;
+  rrdatas?: Array<string>;
 
   // The time-to-live of this record set (seconds).
-  Ttl?: number;
+  ttl?: number;
 
   /*
 The DNS record set type.
 
 - - -
 */
-  Type?: string;
+  type?: string;
 
   /*
 The name of the zone in which this record set will
 reside.
 */
-  ManagedZone?: string;
+  managedZone?: string;
+
+  // The DNS name this record set will apply to.
+  name?: string;
+
+  /*
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
+*/
+  project?: string;
+
+  /*
+The configuration for steering traffic based on query.
+Now you can specify either Weighted Round Robin(WRR) type or Geolocation(GEO) type.
+Structure is documented below.
+*/
+  routingPolicy?: dns_RecordSetRoutingPolicy;
 }
 export class RecordSet extends Resource {
   /*
+The name of the zone in which this record set will
+reside.
+*/
+  public managedZone?: string;
+
+  // The DNS name this record set will apply to.
+  public name?: string;
+
+  /*
 The ID of the project in which the resource belongs. If it
 is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 The configuration for steering traffic based on query.
 Now you can specify either Weighted Round Robin(WRR) type or Geolocation(GEO) type.
 Structure is documented below.
 */
-  public RoutingPolicy?: Dns_RecordSetRoutingPolicy;
+  public routingPolicy?: dns_RecordSetRoutingPolicy;
 
   /*
 The string data for the records in this record set whose meaning depends on the DNS type. For TXT record, if the string
@@ -72,32 +81,31 @@ data contains spaces, add surrounding \" if you don't want your string to get sp
 record value longer than 255 characters such as a TXT record for DKIM, add \"\" inside the Terraform configuration
 string (e.g. "first255characters\"\"morecharacters").
 */
-  public Rrdatas?: Array<string>;
+  public rrdatas?: Array<string>;
 
   // The time-to-live of this record set (seconds).
-  public Ttl?: number;
+  public ttl?: number;
 
   /*
 The DNS record set type.
 
 - - -
 */
-  public Type?: string;
-
-  /*
-The name of the zone in which this record set will
-reside.
-*/
-  public ManagedZone?: string;
-
-  // The DNS name this record set will apply to.
-  public Name?: string;
+  public type?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "managedZone",
+        "The name of the zone in which this record set will\nreside.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
         "The DNS name this record set will apply to.",
         [],
         true,
@@ -105,7 +113,7 @@ reside.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
         [],
         false,
@@ -113,15 +121,15 @@ reside.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "RoutingPolicy",
+        "routingPolicy",
         "The configuration for steering traffic based on query.\nNow you can specify either Weighted Round Robin(WRR) type or Geolocation(GEO) type.\nStructure is documented below.",
-        Dns_RecordSetRoutingPolicy_GetTypes(),
+        dns_RecordSetRoutingPolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "Rrdatas",
+        "rrdatas",
         'The string data for the records in this record set whose meaning depends on the DNS type. For TXT record, if the string\ndata contains spaces, add surrounding \\" if you don\'t want your string to get split on spaces. To specify a single\nrecord value longer than 255 characters such as a TXT record for DKIM, add \\"\\" inside the Terraform configuration\nstring (e.g. "first255characters\\"\\"morecharacters").',
         InputType_String_GetTypes(),
         false,
@@ -129,7 +137,7 @@ reside.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "Ttl",
+        "ttl",
         "The time-to-live of this record set (seconds).",
         [],
         false,
@@ -137,19 +145,11 @@ reside.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Type",
+        "type",
         "The DNS record set type.\n\n- - -",
         [],
         true,
         false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ManagedZone",
-        "The name of the zone in which this record set will\nreside.",
-        [],
-        true,
-        true,
       ),
     ];
   }

@@ -9,10 +9,10 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface VolumeSnapshotArgs {
   // The name of the volume to create the snapshot in.
-  VolumeName?: string;
+  volumeName?: string;
 
   // Description for the snapshot.
-  Description?: string;
+  description?: string;
 
   /*
 Labels as key value pairs. Example: `{ "owner": "Bob", "department": "finance", "purpose": "testing" }`.
@@ -20,10 +20,10 @@ Labels as key value pairs. Example: `{ "owner": "Bob", "department": "finance", 
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   // Name of the snapshot location. Snapshots are child resources of volumes and live in the same location.
-  Location?: string;
+  location?: string;
 
   /*
 The name of the snapshot.
@@ -31,63 +31,63 @@ The name of the snapshot.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 }
 export class VolumeSnapshot extends Resource {
-  // Description for the snapshot.
-  public Description?: string;
+  // The name of the volume to create the snapshot in.
+  public volumeName?: string;
 
-  // Storage used to store blocks unique to this snapshot.
-  public UsedBytes?: number;
+  // Description for the snapshot.
+  public description?: string;
 
   /*
-The name of the snapshot.
+Labels as key value pairs. Example: `{ "owner": "Bob", "department": "finance", "purpose": "testing" }`.
 
-
-- - -
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  public Name?: string;
+  public labels?: Map<string, string>;
+
+  // Name of the snapshot location. Snapshots are child resources of volumes and live in the same location.
+  public location?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
-
-  // The name of the volume to create the snapshot in.
-  public VolumeName?: string;
+  public pulumiLabels?: Map<string, string>;
 
   // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
+  public effectiveLabels?: Map<string, string>;
 
   /*
-Labels as key value pairs. Example: `{ "owner": "Bob", "department": "finance", "purpose": "testing" }`.
+The name of the snapshot.
 
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
+
+- - -
 */
-  public Labels?: Map<string, string>;
+  public name?: string;
 
-  // Name of the snapshot location. Snapshots are child resources of volumes and live in the same location.
-  public Location?: string;
+  // Storage used to store blocks unique to this snapshot.
+  public usedBytes?: number;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "Name of the snapshot location. Snapshots are child resources of volumes and live in the same location.",
         [],
         true,
@@ -95,7 +95,7 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name of the snapshot.\n\n\n- - -",
         [],
         false,
@@ -103,7 +103,7 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -111,7 +111,7 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "VolumeName",
+        "volumeName",
         "The name of the volume to create the snapshot in.",
         [],
         true,
@@ -119,7 +119,7 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Description for the snapshot.",
         [],
         false,
@@ -127,7 +127,7 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         'Labels as key value pairs. Example: `{ "owner": "Bob", "department": "finance", "purpose": "testing" }`.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         InputType_Map_GetTypes(),
         false,

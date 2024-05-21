@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryOutputPath {
+export interface dataloss_PreventionStoredInfoTypeLargeCustomDictionaryOutputPath {
   // A url representing a file or path (no wildcards) in Cloud Storage. Example: `gs://[BUCKET_NAME]/dictionary.txt`
-  Path?: string;
+  path?: string;
 }
 
-export function Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryOutputPath_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionStoredInfoTypeLargeCustomDictionaryOutputPath_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Path",
+      "path",
       "A url representing a file or path (no wildcards) in Cloud Storage. Example: `gs://[BUCKET_NAME]/dictionary.txt`",
       [],
       true,

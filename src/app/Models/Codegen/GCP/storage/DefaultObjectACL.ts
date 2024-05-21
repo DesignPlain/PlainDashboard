@@ -9,31 +9,31 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface DefaultObjectACLArgs {
   // The name of the bucket it applies to.
-  Bucket?: string;
+  bucket?: string;
 
   /*
 List of role/entity pairs in the form `ROLE:entity`.
 See [GCS Object ACL documentation](https://cloud.google.com/storage/docs/json_api/v1/objectAccessControls) for more details.
 Omitting the field is the same as providing an empty list.
 */
-  RoleEntities?: Array<string>;
+  roleEntities?: Array<string>;
 }
 export class DefaultObjectACL extends Resource {
   // The name of the bucket it applies to.
-  public Bucket?: string;
+  public bucket?: string;
 
   /*
 List of role/entity pairs in the form `ROLE:entity`.
 See [GCS Object ACL documentation](https://cloud.google.com/storage/docs/json_api/v1/objectAccessControls) for more details.
 Omitting the field is the same as providing an empty list.
 */
-  public RoleEntities?: Array<string>;
+  public roleEntities?: Array<string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Bucket",
+        "bucket",
         "The name of the bucket it applies to.",
         [],
         true,
@@ -41,7 +41,7 @@ Omitting the field is the same as providing an empty list.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "RoleEntities",
+        "roleEntities",
         "List of role/entity pairs in the form `ROLE:entity`.\nSee [GCS Object ACL documentation](https://cloud.google.com/storage/docs/json_api/v1/objectAccessControls) for more details.\nOmitting the field is the same as providing an empty list.",
         InputType_String_GetTypes(),
         false,

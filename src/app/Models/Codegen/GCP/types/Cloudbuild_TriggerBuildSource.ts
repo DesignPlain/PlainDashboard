@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudbuild_TriggerBuildSourceStorageSource,
-  Cloudbuild_TriggerBuildSourceStorageSource_GetTypes,
-} from "./Cloudbuild_TriggerBuildSourceStorageSource";
+  cloudbuild_TriggerBuildSourceRepoSource,
+  cloudbuild_TriggerBuildSourceRepoSource_GetTypes,
+} from "./cloudbuild_TriggerBuildSourceRepoSource";
 import {
-  Cloudbuild_TriggerBuildSourceRepoSource,
-  Cloudbuild_TriggerBuildSourceRepoSource_GetTypes,
-} from "./Cloudbuild_TriggerBuildSourceRepoSource";
+  cloudbuild_TriggerBuildSourceStorageSource,
+  cloudbuild_TriggerBuildSourceStorageSource_GetTypes,
+} from "./cloudbuild_TriggerBuildSourceStorageSource";
 
-export interface Cloudbuild_TriggerBuildSource {
+export interface cloudbuild_TriggerBuildSource {
   /*
 Location of the source in a Google Cloud Source Repository.
 Structure is documented below.
 */
-  RepoSource?: Cloudbuild_TriggerBuildSourceRepoSource;
+  repoSource?: cloudbuild_TriggerBuildSourceRepoSource;
 
   /*
 Location of the source in an archive file in Google Cloud Storage.
 Structure is documented below.
 */
-  StorageSource?: Cloudbuild_TriggerBuildSourceStorageSource;
+  storageSource?: cloudbuild_TriggerBuildSourceStorageSource;
 }
 
-export function Cloudbuild_TriggerBuildSource_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_TriggerBuildSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "StorageSource",
-      "Location of the source in an archive file in Google Cloud Storage.\nStructure is documented below.",
-      Cloudbuild_TriggerBuildSourceStorageSource_GetTypes(),
+      "repoSource",
+      "Location of the source in a Google Cloud Source Repository.\nStructure is documented below.",
+      cloudbuild_TriggerBuildSourceRepoSource_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "RepoSource",
-      "Location of the source in a Google Cloud Source Repository.\nStructure is documented below.",
-      Cloudbuild_TriggerBuildSourceRepoSource_GetTypes(),
+      "storageSource",
+      "Location of the source in an archive file in Google Cloud Storage.\nStructure is documented below.",
+      cloudbuild_TriggerBuildSourceStorageSource_GetTypes(),
       false,
       false,
     ),

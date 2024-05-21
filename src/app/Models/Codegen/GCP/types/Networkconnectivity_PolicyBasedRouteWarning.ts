@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkconnectivity_PolicyBasedRouteWarning {
+export interface networkconnectivity_PolicyBasedRouteWarning {
+  /*
+(Output)
+Metadata about this warning in key: value format. The key should provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement.
+*/
+  data?: Map<string, string>;
+
   /*
 (Output)
 A human-readable description of the warning code.
 */
-  WarningMessage?: string;
+  warningMessage?: string;
 
   /*
 (Output)
 A warning code, if applicable.
 */
-  Code?: string;
-
-  /*
-(Output)
-Metadata about this warning in key: value format. The key should provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement.
-*/
-  Data?: Map<string, string>;
+  code?: string;
 }
 
-export function Networkconnectivity_PolicyBasedRouteWarning_GetTypes(): DynamicUIProps[] {
+export function networkconnectivity_PolicyBasedRouteWarning_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Map,
-      "Data",
+      "data",
       "(Output)\nMetadata about this warning in key: value format. The key should provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement.",
       InputType_Map_GetTypes(),
       false,
@@ -38,7 +38,7 @@ export function Networkconnectivity_PolicyBasedRouteWarning_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "WarningMessage",
+      "warningMessage",
       "(Output)\nA human-readable description of the warning code.",
       [],
       false,
@@ -46,7 +46,7 @@ export function Networkconnectivity_PolicyBasedRouteWarning_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "Code",
+      "code",
       "(Output)\nA warning code, if applicable.",
       [],
       false,

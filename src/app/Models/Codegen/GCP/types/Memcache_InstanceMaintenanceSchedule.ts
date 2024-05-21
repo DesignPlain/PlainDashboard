@@ -6,14 +6,14 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Memcache_InstanceMaintenanceSchedule {
+export interface memcache_InstanceMaintenanceSchedule {
   /*
 (Output)
 Output only. The end time of any upcoming scheduled maintenance for this instance.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond
 resolution and up to nine fractional digits.
 */
-  EndTime?: string;
+  endTime?: string;
 
   /*
 (Output)
@@ -22,20 +22,20 @@ can not go beyond, including reschedule.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond
 resolution and up to nine fractional digits.
 */
-  ScheduleDeadlineTime?: string;
+  scheduleDeadlineTime?: string;
 
   /*
 Required. Start time of the window in UTC time.
 Structure is documented below.
 */
-  StartTime?: string;
+  startTime?: string;
 }
 
-export function Memcache_InstanceMaintenanceSchedule_GetTypes(): DynamicUIProps[] {
+export function memcache_InstanceMaintenanceSchedule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "EndTime",
+      "endTime",
       '(Output)\nOutput only. The end time of any upcoming scheduled maintenance for this instance.\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond\nresolution and up to nine fractional digits.',
       [],
       false,
@@ -43,7 +43,7 @@ export function Memcache_InstanceMaintenanceSchedule_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "ScheduleDeadlineTime",
+      "scheduleDeadlineTime",
       '(Output)\nOutput only. The deadline that the maintenance schedule start time\ncan not go beyond, including reschedule.\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond\nresolution and up to nine fractional digits.',
       [],
       false,
@@ -51,7 +51,7 @@ export function Memcache_InstanceMaintenanceSchedule_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "StartTime",
+      "startTime",
       "Required. Start time of the window in UTC time.\nStructure is documented below.",
       [],
       false,

@@ -6,38 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudfunctions_getFunctionEventTriggerFailurePolicy,
-  Cloudfunctions_getFunctionEventTriggerFailurePolicy_GetTypes,
-} from "./Cloudfunctions_getFunctionEventTriggerFailurePolicy";
+  cloudfunctions_getFunctionEventTriggerFailurePolicy,
+  cloudfunctions_getFunctionEventTriggerFailurePolicy_GetTypes,
+} from "./cloudfunctions_getFunctionEventTriggerFailurePolicy";
 
-export interface Cloudfunctions_getFunctionEventTrigger {
-  // The name of the resource whose events are being observed, for example, `"myBucket"`
-  Resource?: string;
-
+export interface cloudfunctions_getFunctionEventTrigger {
   /*
 The type of event to observe. For example: `"google.storage.object.finalize"`.
 See the documentation on [calling Cloud Functions](https://cloud.google.com/functions/docs/calling/)
 for a full reference of accepted triggers.
 */
-  EventType?: string;
+  eventType?: string;
 
   // Policy for failed executions. Structure is documented below.
-  FailurePolicies?: Array<Cloudfunctions_getFunctionEventTriggerFailurePolicy>;
+  failurePolicies?: Array<cloudfunctions_getFunctionEventTriggerFailurePolicy>;
+
+  // The name of the resource whose events are being observed, for example, `"myBucket"`
+  resource?: string;
 }
 
-export function Cloudfunctions_getFunctionEventTrigger_GetTypes(): DynamicUIProps[] {
+export function cloudfunctions_getFunctionEventTrigger_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Resource",
-      'The name of the resource whose events are being observed, for example, `"myBucket"`',
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "EventType",
+      "eventType",
       'The type of event to observe. For example: `"google.storage.object.finalize"`.\nSee the documentation on [calling Cloud Functions](https://cloud.google.com/functions/docs/calling/)\nfor a full reference of accepted triggers.',
       [],
       true,
@@ -45,9 +37,17 @@ export function Cloudfunctions_getFunctionEventTrigger_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Array,
-      "FailurePolicies",
+      "failurePolicies",
       "Policy for failed executions. Structure is documented below.",
-      Cloudfunctions_getFunctionEventTriggerFailurePolicy_GetTypes(),
+      cloudfunctions_getFunctionEventTriggerFailurePolicy_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "resource",
+      'The name of the resource whose events are being observed, for example, `"myBucket"`',
+      [],
       true,
       false,
     ),

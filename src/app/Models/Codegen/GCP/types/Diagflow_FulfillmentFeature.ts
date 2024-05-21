@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_FulfillmentFeature {
+export interface diagflow_FulfillmentFeature {
   /*
 The type of the feature that enabled for fulfillment.
 - SMALLTALK: Fulfillment is enabled for SmallTalk.
 Possible values are: `SMALLTALK`.
 */
-  Type?: string;
+  type?: string;
 }
 
-export function Diagflow_FulfillmentFeature_GetTypes(): DynamicUIProps[] {
+export function diagflow_FulfillmentFeature_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "The type of the feature that enabled for fulfillment.\n* SMALLTALK: Fulfillment is enabled for SmallTalk.\nPossible values are: `SMALLTALK`.",
       [],
       true,

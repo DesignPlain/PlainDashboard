@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuild_TriggerBuildAvailableSecretsSecretManager {
+export interface cloudbuild_TriggerBuildAvailableSecretsSecretManager {
   /*
 Environment variable name to associate with the secret. Secret environment
 variables must be unique across all of a build's secrets, and must be used
 by at least one build step.
 */
-  Env?: string;
+  env?: string;
 
   // Resource name of the SecretVersion. In format: projects/-/secrets/-/versions/-
-  VersionName?: string;
+  versionName?: string;
 }
 
-export function Cloudbuild_TriggerBuildAvailableSecretsSecretManager_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_TriggerBuildAvailableSecretsSecretManager_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "VersionName",
+      "versionName",
       "Resource name of the SecretVersion. In format: projects/*/secrets/*/versions/*",
       [],
       true,
@@ -30,7 +30,7 @@ export function Cloudbuild_TriggerBuildAvailableSecretsSecretManager_GetTypes():
     ),
     new DynamicUIProps(
       InputType.String,
-      "Env",
+      "env",
       "Environment variable name to associate with the secret. Secret environment\nvariables must be unique across all of a build's secrets, and must be used\nby at least one build step.",
       [],
       true,

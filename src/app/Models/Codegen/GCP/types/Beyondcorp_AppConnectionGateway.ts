@@ -6,51 +6,35 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Beyondcorp_AppConnectionGateway {
-  /*
-(Output)
-Ingress port reserved on the gateways for this AppConnection, if not specified or zero, the default port is 19443.
-*/
-  IngressPort?: number;
-
+export interface beyondcorp_AppConnectionGateway {
   /*
 The type of hosting used by the gateway. Refer to
 https://cloud.google.com/beyondcorp/docs/reference/rest/v1/projects.locations.appConnections#Type_1
 for a list of possible values.
 */
-  Type?: string;
+  type?: string;
 
   /*
 (Output)
 Server-defined URI for this resource.
 */
-  Uri?: string;
+  uri?: string;
 
   // AppGateway name in following format: projects/{project_id}/locations/{locationId}/appgateways/{gateway_id}.
-  AppGateway?: string;
+  appGateway?: string;
+
+  /*
+(Output)
+Ingress port reserved on the gateways for this AppConnection, if not specified or zero, the default port is 19443.
+*/
+  ingressPort?: number;
 }
 
-export function Beyondcorp_AppConnectionGateway_GetTypes(): DynamicUIProps[] {
+export function beyondcorp_AppConnectionGateway_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "IngressPort",
-      "(Output)\nIngress port reserved on the gateways for this AppConnection, if not specified or zero, the default port is 19443.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Type",
-      "The type of hosting used by the gateway. Refer to\nhttps://cloud.google.com/beyondcorp/docs/reference/rest/v1/projects.locations.appConnections#Type_1\nfor a list of possible values.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Uri",
+      "uri",
       "(Output)\nServer-defined URI for this resource.",
       [],
       false,
@@ -58,10 +42,26 @@ export function Beyondcorp_AppConnectionGateway_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "AppGateway",
+      "appGateway",
       "AppGateway name in following format: projects/{project_id}/locations/{locationId}/appgateways/{gateway_id}.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "ingressPort",
+      "(Output)\nIngress port reserved on the gateways for this AppConnection, if not specified or zero, the default port is 19443.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "type",
+      "The type of hosting used by the gateway. Refer to\nhttps://cloud.google.com/beyondcorp/docs/reference/rest/v1/projects.locations.appConnections#Type_1\nfor a list of possible values.",
+      [],
+      false,
       false,
     ),
   ];

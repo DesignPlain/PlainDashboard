@@ -8,8 +8,11 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface UrlListArgs {
+  // FQDNs and URLs.
+  values?: Array<string>;
+
   // Free-text description of the resource.
-  Description?: string;
+  description?: string;
 
   /*
 The location of the url lists.
@@ -17,36 +20,33 @@ The location of the url lists.
 
 - - -
 */
-  Location?: string;
+  location?: string;
 
   /*
 Short name of the UrlList resource to be created.
 This value should be 1-63 characters long, containing only letters, numbers, hyphens, and underscores, and should not start with a number. E.g. 'urlList'.
 */
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
-
-  // FQDNs and URLs.
-  Values?: Array<string>;
+  project?: string;
 }
 export class UrlList extends Resource {
   // FQDNs and URLs.
-  public Values?: Array<string>;
+  public values?: Array<string>;
 
   /*
 Output only. Time when the security policy was created.
 A timestamp in RFC3339 UTC 'Zulu' format, with nanosecond resolution and up to nine fractional digits.
 Examples: '2014-10-02T15:01:23Z' and '2014-10-02T15:01:23.045123456Z'
 */
-  public CreateTime?: string;
+  public createTime?: string;
 
   // Free-text description of the resource.
-  public Description?: string;
+  public description?: string;
 
   /*
 The location of the url lists.
@@ -54,40 +54,32 @@ The location of the url lists.
 
 - - -
 */
-  public Location?: string;
+  public location?: string;
 
   /*
 Short name of the UrlList resource to be created.
 This value should be 1-63 characters long, containing only letters, numbers, hyphens, and underscores, and should not start with a number. E.g. 'urlList'.
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 Output only. Time when the security policy was updated.
 A timestamp in RFC3339 UTC 'Zulu' format, with nanosecond resolution and up to nine fractional digits.
 Examples: '2014-10-02T15:01:23Z' and '2014-10-02T15:01:23.045123456Z'.
 */
-  public UpdateTime?: string;
+  public updateTime?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Description",
-        "Free-text description of the resource.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Location",
+        "location",
         "The location of the url lists.\n\n\n- - -",
         [],
         true,
@@ -95,7 +87,7 @@ Examples: '2014-10-02T15:01:23Z' and '2014-10-02T15:01:23.045123456Z'.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Short name of the UrlList resource to be created.\nThis value should be 1-63 characters long, containing only letters, numbers, hyphens, and underscores, and should not start with a number. E.g. 'urlList'.",
         [],
         false,
@@ -103,7 +95,7 @@ Examples: '2014-10-02T15:01:23Z' and '2014-10-02T15:01:23.045123456Z'.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -111,10 +103,18 @@ Examples: '2014-10-02T15:01:23Z' and '2014-10-02T15:01:23.045123456Z'.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "Values",
+        "values",
         "FQDNs and URLs.",
         InputType_String_GetTypes(),
         true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "Free-text description of the resource.",
+        [],
+        false,
         false,
       ),
     ];

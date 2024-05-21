@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstanceSettingDenyMaintenancePeriod {
-  // Time in UTC when the "deny maintenance period" starts on start_date and ends on end_date. The time is in format: HH:mm:SS, i.e., 00:00:00
-  Time?: string;
-
+export interface sql_getDatabaseInstanceSettingDenyMaintenancePeriod {
   // End date before which maintenance will not take place. The date is in format yyyy-mm-dd i.e., 2020-11-01, or mm-dd, i.e., 11-01
-  EndDate?: string;
+  endDate?: string;
 
   // Start date after which maintenance will not take place. The date is in format yyyy-mm-dd i.e., 2020-11-01, or mm-dd, i.e., 11-01
-  StartDate?: string;
+  startDate?: string;
+
+  // Time in UTC when the "deny maintenance period" starts on start_date and ends on end_date. The time is in format: HH:mm:SS, i.e., 00:00:00
+  time?: string;
 }
 
-export function Sql_getDatabaseInstanceSettingDenyMaintenancePeriod_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstanceSettingDenyMaintenancePeriod_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Time",
-      'Time in UTC when the "deny maintenance period" starts on start_date and ends on end_date. The time is in format: HH:mm:SS, i.e., 00:00:00',
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "EndDate",
+      "endDate",
       "End date before which maintenance will not take place. The date is in format yyyy-mm-dd i.e., 2020-11-01, or mm-dd, i.e., 11-01",
       [],
       true,
@@ -37,8 +29,16 @@ export function Sql_getDatabaseInstanceSettingDenyMaintenancePeriod_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "StartDate",
+      "startDate",
       "Start date after which maintenance will not take place. The date is in format yyyy-mm-dd i.e., 2020-11-01, or mm-dd, i.e., 11-01",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "time",
+      'Time in UTC when the "deny maintenance period" starts on start_date and ends on end_date. The time is in format: HH:mm:SS, i.e., 00:00:00',
       [],
       true,
       false,

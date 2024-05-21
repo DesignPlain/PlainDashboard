@@ -12,26 +12,26 @@ export interface ProjectArgs {
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 }
 export class Project extends Resource {
+  // The GCP project display name
+  public displayName?: string;
+
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // The number of the google project that firebase is enabled on.
-  public ProjectNumber?: string;
-
-  // The GCP project display name
-  public DisplayName?: string;
+  public projectNumber?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,

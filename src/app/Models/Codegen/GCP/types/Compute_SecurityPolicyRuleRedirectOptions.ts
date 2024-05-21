@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_SecurityPolicyRuleRedirectOptions {
+export interface compute_SecurityPolicyRuleRedirectOptions {
   // External redirection target when `EXTERNAL_302` is set in `type`.
-  Target?: string;
+  target?: string;
 
   // Type of redirect action.
-  Type?: string;
+  type?: string;
 }
 
-export function Compute_SecurityPolicyRuleRedirectOptions_GetTypes(): DynamicUIProps[] {
+export function compute_SecurityPolicyRuleRedirectOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Target",
+      "target",
       "External redirection target when `EXTERNAL_302` is set in `type`.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Compute_SecurityPolicyRuleRedirectOptions_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "Type of redirect action.",
       [],
       true,

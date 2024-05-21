@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_BareMetalAdminClusterSecurityConfigAuthorization,
-  Gkeonprem_BareMetalAdminClusterSecurityConfigAuthorization_GetTypes,
-} from "./Gkeonprem_BareMetalAdminClusterSecurityConfigAuthorization";
+  gkeonprem_BareMetalAdminClusterSecurityConfigAuthorization,
+  gkeonprem_BareMetalAdminClusterSecurityConfigAuthorization_GetTypes,
+} from "./gkeonprem_BareMetalAdminClusterSecurityConfigAuthorization";
 
-export interface Gkeonprem_BareMetalAdminClusterSecurityConfig {
+export interface gkeonprem_BareMetalAdminClusterSecurityConfig {
   /*
 Configures user access to the Bare Metal User cluster.
 Structure is documented below.
 */
-  Authorization?: Gkeonprem_BareMetalAdminClusterSecurityConfigAuthorization;
+  authorization?: gkeonprem_BareMetalAdminClusterSecurityConfigAuthorization;
 }
 
-export function Gkeonprem_BareMetalAdminClusterSecurityConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalAdminClusterSecurityConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Authorization",
+      "authorization",
       "Configures user access to the Bare Metal User cluster.\nStructure is documented below.",
-      Gkeonprem_BareMetalAdminClusterSecurityConfigAuthorization_GetTypes(),
+      gkeonprem_BareMetalAdminClusterSecurityConfigAuthorization_GetTypes(),
       false,
       false,
     ),

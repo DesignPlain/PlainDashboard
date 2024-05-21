@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_getMetastoreServiceNetworkConfigConsumer,
-  Dataproc_getMetastoreServiceNetworkConfigConsumer_GetTypes,
-} from "./Dataproc_getMetastoreServiceNetworkConfigConsumer";
+  dataproc_getMetastoreServiceNetworkConfigConsumer,
+  dataproc_getMetastoreServiceNetworkConfigConsumer_GetTypes,
+} from "./dataproc_getMetastoreServiceNetworkConfigConsumer";
 
-export interface Dataproc_getMetastoreServiceNetworkConfig {
-  // The consumer-side network configuration for the Dataproc Metastore instance.
-  Consumers?: Array<Dataproc_getMetastoreServiceNetworkConfigConsumer>;
-
+export interface dataproc_getMetastoreServiceNetworkConfig {
   // Enables custom routes to be imported and exported for the Dataproc Metastore service's peered VPC network.
-  CustomRoutesEnabled?: boolean;
+  customRoutesEnabled?: boolean;
+
+  // The consumer-side network configuration for the Dataproc Metastore instance.
+  consumers?: Array<dataproc_getMetastoreServiceNetworkConfigConsumer>;
 }
 
-export function Dataproc_getMetastoreServiceNetworkConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_getMetastoreServiceNetworkConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "Consumers",
-      "The consumer-side network configuration for the Dataproc Metastore instance.",
-      Dataproc_getMetastoreServiceNetworkConfigConsumer_GetTypes(),
+      InputType.Bool,
+      "customRoutesEnabled",
+      "Enables custom routes to be imported and exported for the Dataproc Metastore service's peered VPC network.",
+      [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Bool,
-      "CustomRoutesEnabled",
-      "Enables custom routes to be imported and exported for the Dataproc Metastore service's peered VPC network.",
-      [],
+      InputType.Array,
+      "consumers",
+      "The consumer-side network configuration for the Dataproc Metastore instance.",
+      dataproc_getMetastoreServiceNetworkConfigConsumer_GetTypes(),
       true,
       false,
     ),

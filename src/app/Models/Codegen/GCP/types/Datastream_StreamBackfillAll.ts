@@ -6,61 +6,61 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamBackfillAllOracleExcludedObjects,
-  Datastream_StreamBackfillAllOracleExcludedObjects_GetTypes,
-} from "./Datastream_StreamBackfillAllOracleExcludedObjects";
+  datastream_StreamBackfillAllOracleExcludedObjects,
+  datastream_StreamBackfillAllOracleExcludedObjects_GetTypes,
+} from "./datastream_StreamBackfillAllOracleExcludedObjects";
 import {
-  Datastream_StreamBackfillAllPostgresqlExcludedObjects,
-  Datastream_StreamBackfillAllPostgresqlExcludedObjects_GetTypes,
-} from "./Datastream_StreamBackfillAllPostgresqlExcludedObjects";
+  datastream_StreamBackfillAllPostgresqlExcludedObjects,
+  datastream_StreamBackfillAllPostgresqlExcludedObjects_GetTypes,
+} from "./datastream_StreamBackfillAllPostgresqlExcludedObjects";
 import {
-  Datastream_StreamBackfillAllMysqlExcludedObjects,
-  Datastream_StreamBackfillAllMysqlExcludedObjects_GetTypes,
-} from "./Datastream_StreamBackfillAllMysqlExcludedObjects";
+  datastream_StreamBackfillAllMysqlExcludedObjects,
+  datastream_StreamBackfillAllMysqlExcludedObjects_GetTypes,
+} from "./datastream_StreamBackfillAllMysqlExcludedObjects";
 
-export interface Datastream_StreamBackfillAll {
+export interface datastream_StreamBackfillAll {
+  /*
+PostgreSQL data source objects to avoid backfilling.
+Structure is documented below.
+*/
+  oracleExcludedObjects?: datastream_StreamBackfillAllOracleExcludedObjects;
+
+  /*
+PostgreSQL data source objects to avoid backfilling.
+Structure is documented below.
+*/
+  postgresqlExcludedObjects?: datastream_StreamBackfillAllPostgresqlExcludedObjects;
+
   /*
 MySQL data source objects to avoid backfilling.
 Structure is documented below.
 */
-  MysqlExcludedObjects?: Datastream_StreamBackfillAllMysqlExcludedObjects;
-
-  /*
-PostgreSQL data source objects to avoid backfilling.
-Structure is documented below.
-*/
-  OracleExcludedObjects?: Datastream_StreamBackfillAllOracleExcludedObjects;
-
-  /*
-PostgreSQL data source objects to avoid backfilling.
-Structure is documented below.
-*/
-  PostgresqlExcludedObjects?: Datastream_StreamBackfillAllPostgresqlExcludedObjects;
+  mysqlExcludedObjects?: datastream_StreamBackfillAllMysqlExcludedObjects;
 }
 
-export function Datastream_StreamBackfillAll_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamBackfillAll_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "MysqlExcludedObjects",
+      "mysqlExcludedObjects",
       "MySQL data source objects to avoid backfilling.\nStructure is documented below.",
-      Datastream_StreamBackfillAllMysqlExcludedObjects_GetTypes(),
+      datastream_StreamBackfillAllMysqlExcludedObjects_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "OracleExcludedObjects",
+      "oracleExcludedObjects",
       "PostgreSQL data source objects to avoid backfilling.\nStructure is documented below.",
-      Datastream_StreamBackfillAllOracleExcludedObjects_GetTypes(),
+      datastream_StreamBackfillAllOracleExcludedObjects_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "PostgresqlExcludedObjects",
+      "postgresqlExcludedObjects",
       "PostgreSQL data source objects to avoid backfilling.\nStructure is documented below.",
-      Datastream_StreamBackfillAllPostgresqlExcludedObjects_GetTypes(),
+      datastream_StreamBackfillAllPostgresqlExcludedObjects_GetTypes(),
       false,
       false,
     ),

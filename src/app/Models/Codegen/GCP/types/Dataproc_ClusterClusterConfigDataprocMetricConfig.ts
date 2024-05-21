@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_ClusterClusterConfigDataprocMetricConfigMetric,
-  Dataproc_ClusterClusterConfigDataprocMetricConfigMetric_GetTypes,
-} from "./Dataproc_ClusterClusterConfigDataprocMetricConfigMetric";
+  dataproc_ClusterClusterConfigDataprocMetricConfigMetric,
+  dataproc_ClusterClusterConfigDataprocMetricConfigMetric_GetTypes,
+} from "./dataproc_ClusterClusterConfigDataprocMetricConfigMetric";
 
-export interface Dataproc_ClusterClusterConfigDataprocMetricConfig {
+export interface dataproc_ClusterClusterConfigDataprocMetricConfig {
   // Metrics sources to enable.
-  Metrics?: Array<Dataproc_ClusterClusterConfigDataprocMetricConfigMetric>;
+  metrics?: Array<dataproc_ClusterClusterConfigDataprocMetricConfigMetric>;
 }
 
-export function Dataproc_ClusterClusterConfigDataprocMetricConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterClusterConfigDataprocMetricConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Metrics",
+      "metrics",
       "Metrics sources to enable.",
-      Dataproc_ClusterClusterConfigDataprocMetricConfigMetric_GetTypes(),
+      dataproc_ClusterClusterConfigDataprocMetricConfigMetric_GetTypes(),
       true,
       false,
     ),

@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceTemplateAdvancedMachineFeatures {
+export interface compute_InstanceTemplateAdvancedMachineFeatures {
+  // The number of physical cores to expose to an instance. [visible cores info (VC)](https://cloud.google.com/compute/docs/instances/customize-visible-cores).
+  visibleCoreCount?: number;
+
   // Defines whether the instance should have nested virtualization enabled. Defaults to false.
-  EnableNestedVirtualization?: boolean;
+  enableNestedVirtualization?: boolean;
 
   // The number of threads per physical core. To disable [simultaneous multithreading (SMT)](https://cloud.google.com/compute/docs/instances/disabling-smt) set this to 1.
-  ThreadsPerCore?: number;
-
-  // The number of physical cores to expose to an instance. [visible cores info (VC)](https://cloud.google.com/compute/docs/instances/customize-visible-cores).
-  VisibleCoreCount?: number;
+  threadsPerCore?: number;
 }
 
-export function Compute_InstanceTemplateAdvancedMachineFeatures_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceTemplateAdvancedMachineFeatures_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "ThreadsPerCore",
-      "The number of threads per physical core. To disable [simultaneous multithreading (SMT)](https://cloud.google.com/compute/docs/instances/disabling-smt) set this to 1.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "VisibleCoreCount",
+      "visibleCoreCount",
       "The number of physical cores to expose to an instance. [visible cores info (VC)](https://cloud.google.com/compute/docs/instances/customize-visible-cores).",
       [],
       false,
@@ -37,8 +29,16 @@ export function Compute_InstanceTemplateAdvancedMachineFeatures_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableNestedVirtualization",
+      "enableNestedVirtualization",
       "Defines whether the instance should have nested virtualization enabled. Defaults to false.",
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "threadsPerCore",
+      "The number of threads per physical core. To disable [simultaneous multithreading (SMT)](https://cloud.google.com/compute/docs/instances/disabling-smt) set this to 1.",
       [],
       false,
       true,

@@ -6,35 +6,35 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_OsPolicyAssignmentOsPolicyResourceGroupInventoryFilter {
+export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupInventoryFilter {
+  // The OS short name
+  osShortName?: string;
+
   /*
 The OS version Prefix matches are supported if
 asterisk(-) is provided as the last character. For example, to match all
 versions with a major version of `7`, specify the following value for this
 field `7.-` An empty string matches all OS versions.
 */
-  OsVersion?: string;
-
-  // The OS short name
-  OsShortName?: string;
+  osVersion?: string;
 }
 
-export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupInventoryFilter_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupInventoryFilter_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "OsVersion",
-      "The OS version Prefix matches are supported if\nasterisk(*) is provided as the last character. For example, to match all\nversions with a major version of `7`, specify the following value for this\nfield `7.*` An empty string matches all OS versions.",
+      "osShortName",
+      "The OS short name",
       [],
-      false,
+      true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "OsShortName",
-      "The OS short name",
+      "osVersion",
+      "The OS version Prefix matches are supported if\nasterisk(*) is provided as the last character. For example, to match all\nversions with a major version of `7`, specify the following value for this\nfield `7.*` An empty string matches all OS versions.",
       [],
-      true,
+      false,
       false,
     ),
   ];

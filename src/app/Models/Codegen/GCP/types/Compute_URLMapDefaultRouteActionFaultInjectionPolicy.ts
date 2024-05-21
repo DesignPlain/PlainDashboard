@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_URLMapDefaultRouteActionFaultInjectionPolicyAbort,
-  Compute_URLMapDefaultRouteActionFaultInjectionPolicyAbort_GetTypes,
-} from "./Compute_URLMapDefaultRouteActionFaultInjectionPolicyAbort";
+  compute_URLMapDefaultRouteActionFaultInjectionPolicyAbort,
+  compute_URLMapDefaultRouteActionFaultInjectionPolicyAbort_GetTypes,
+} from "./compute_URLMapDefaultRouteActionFaultInjectionPolicyAbort";
 import {
-  Compute_URLMapDefaultRouteActionFaultInjectionPolicyDelay,
-  Compute_URLMapDefaultRouteActionFaultInjectionPolicyDelay_GetTypes,
-} from "./Compute_URLMapDefaultRouteActionFaultInjectionPolicyDelay";
+  compute_URLMapDefaultRouteActionFaultInjectionPolicyDelay,
+  compute_URLMapDefaultRouteActionFaultInjectionPolicyDelay_GetTypes,
+} from "./compute_URLMapDefaultRouteActionFaultInjectionPolicyDelay";
 
-export interface Compute_URLMapDefaultRouteActionFaultInjectionPolicy {
+export interface compute_URLMapDefaultRouteActionFaultInjectionPolicy {
   /*
 The specification for how client requests are aborted as part of fault injection.
 Structure is documented below.
 */
-  Abort?: Compute_URLMapDefaultRouteActionFaultInjectionPolicyAbort;
+  abort?: compute_URLMapDefaultRouteActionFaultInjectionPolicyAbort;
 
   /*
 The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
 Structure is documented below.
 */
-  Delay?: Compute_URLMapDefaultRouteActionFaultInjectionPolicyDelay;
+  delay?: compute_URLMapDefaultRouteActionFaultInjectionPolicyDelay;
 }
 
-export function Compute_URLMapDefaultRouteActionFaultInjectionPolicy_GetTypes(): DynamicUIProps[] {
+export function compute_URLMapDefaultRouteActionFaultInjectionPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Abort",
+      "abort",
       "The specification for how client requests are aborted as part of fault injection.\nStructure is documented below.",
-      Compute_URLMapDefaultRouteActionFaultInjectionPolicyAbort_GetTypes(),
+      compute_URLMapDefaultRouteActionFaultInjectionPolicyAbort_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Delay",
+      "delay",
       "The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.\nStructure is documented below.",
-      Compute_URLMapDefaultRouteActionFaultInjectionPolicyDelay_GetTypes(),
+      compute_URLMapDefaultRouteActionFaultInjectionPolicyDelay_GetTypes(),
       false,
       false,
     ),

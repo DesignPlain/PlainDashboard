@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding,
-  Gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding_GetTypes,
-} from "./Gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding";
+  gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding,
+  gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding_GetTypes,
+} from "./gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding";
 
-export interface Gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig {
+export interface gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig {
   /*
 Mode of operation for binauthz policy evaluation.
 Possible values are: `DISABLED`, `POLICY_BINDINGS`.
 */
-  EvaluationMode?: string;
+  evaluationMode?: string;
 
   /*
 Binauthz policies that apply to this cluster.
 Structure is documented below.
 */
-  PolicyBindings?: Array<Gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding>;
+  policyBindings?: Array<gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding>;
 }
 
-export function Gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig_GetTypes(): DynamicUIProps[] {
+export function gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "EvaluationMode",
+      "evaluationMode",
       "Mode of operation for binauthz policy evaluation.\nPossible values are: `DISABLED`, `POLICY_BINDINGS`.",
       [],
       false,
@@ -36,9 +36,9 @@ export function Gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig_GetTyp
     ),
     new DynamicUIProps(
       InputType.Array,
-      "PolicyBindings",
+      "policyBindings",
       "Binauthz policies that apply to this cluster.\nStructure is documented below.",
-      Gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding_GetTypes(),
+      gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding_GetTypes(),
       false,
       false,
     ),

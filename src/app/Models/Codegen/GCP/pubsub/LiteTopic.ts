@@ -7,27 +7,33 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Pubsub_LiteTopicRetentionConfig,
-  Pubsub_LiteTopicRetentionConfig_GetTypes,
-} from "../types/Pubsub_LiteTopicRetentionConfig";
+  pubsub_LiteTopicReservationConfig,
+  pubsub_LiteTopicReservationConfig_GetTypes,
+} from "../types/pubsub_LiteTopicReservationConfig";
 import {
-  Pubsub_LiteTopicPartitionConfig,
-  Pubsub_LiteTopicPartitionConfig_GetTypes,
-} from "../types/Pubsub_LiteTopicPartitionConfig";
+  pubsub_LiteTopicRetentionConfig,
+  pubsub_LiteTopicRetentionConfig_GetTypes,
+} from "../types/pubsub_LiteTopicRetentionConfig";
 import {
-  Pubsub_LiteTopicReservationConfig,
-  Pubsub_LiteTopicReservationConfig_GetTypes,
-} from "../types/Pubsub_LiteTopicReservationConfig";
+  pubsub_LiteTopicPartitionConfig,
+  pubsub_LiteTopicPartitionConfig_GetTypes,
+} from "../types/pubsub_LiteTopicPartitionConfig";
 
 export interface LiteTopicArgs {
   /*
+The settings for this topic's Reservation usage.
+Structure is documented below.
+*/
+  reservationConfig?: pubsub_LiteTopicReservationConfig;
+
+  /*
 The settings for a topic's message retention.
 Structure is documented below.
 */
-  RetentionConfig?: Pubsub_LiteTopicRetentionConfig;
+  retentionConfig?: pubsub_LiteTopicRetentionConfig;
 
   // The zone of the pubsub lite topic.
-  Zone?: string;
+  zone?: string;
 
   /*
 Name of the topic.
@@ -35,47 +41,53 @@ Name of the topic.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   /*
 The settings for this topic's partitions.
 Structure is documented below.
 */
-  PartitionConfig?: Pubsub_LiteTopicPartitionConfig;
+  partitionConfig?: pubsub_LiteTopicPartitionConfig;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // The region of the pubsub lite topic.
-  Region?: string;
-
-  /*
-The settings for this topic's Reservation usage.
-Structure is documented below.
-*/
-  ReservationConfig?: Pubsub_LiteTopicReservationConfig;
+  region?: string;
 }
 export class LiteTopic extends Resource {
+  /*
+The settings for this topic's partitions.
+Structure is documented below.
+*/
+  public partitionConfig?: pubsub_LiteTopicPartitionConfig;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
   // The region of the pubsub lite topic.
-  public Region?: string;
+  public region?: string;
 
   /*
 The settings for this topic's Reservation usage.
 Structure is documented below.
 */
-  public ReservationConfig?: Pubsub_LiteTopicReservationConfig;
+  public reservationConfig?: pubsub_LiteTopicReservationConfig;
 
   /*
 The settings for a topic's message retention.
 Structure is documented below.
 */
-  public RetentionConfig?: Pubsub_LiteTopicRetentionConfig;
+  public retentionConfig?: pubsub_LiteTopicRetentionConfig;
 
   // The zone of the pubsub lite topic.
-  public Zone?: string;
+  public zone?: string;
 
   /*
 Name of the topic.
@@ -83,41 +95,29 @@ Name of the topic.
 
 - - -
 */
-  public Name?: string;
-
-  /*
-The settings for this topic's partitions.
-Structure is documented below.
-*/
-  public PartitionConfig?: Pubsub_LiteTopicPartitionConfig;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "ReservationConfig",
+        "reservationConfig",
         "The settings for this topic's Reservation usage.\nStructure is documented below.",
-        Pubsub_LiteTopicReservationConfig_GetTypes(),
+        pubsub_LiteTopicReservationConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "RetentionConfig",
+        "retentionConfig",
         "The settings for a topic's message retention.\nStructure is documented below.",
-        Pubsub_LiteTopicRetentionConfig_GetTypes(),
+        pubsub_LiteTopicRetentionConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Zone",
+        "zone",
         "The zone of the pubsub lite topic.",
         [],
         false,
@@ -125,7 +125,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name of the topic.\n\n\n- - -",
         [],
         false,
@@ -133,15 +133,15 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "PartitionConfig",
+        "partitionConfig",
         "The settings for this topic's partitions.\nStructure is documented below.",
-        Pubsub_LiteTopicPartitionConfig_GetTypes(),
+        pubsub_LiteTopicPartitionConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -149,7 +149,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "The region of the pubsub lite topic.",
         [],
         false,

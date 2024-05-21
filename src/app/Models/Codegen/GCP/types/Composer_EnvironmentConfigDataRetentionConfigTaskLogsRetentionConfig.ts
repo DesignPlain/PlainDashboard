@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Composer_EnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig {
+export interface composer_EnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig {
   // Whether logs in cloud logging only is enabled or not. This field is supported for Cloud Composer environments in versions composer-2.0.32-airflow-2.1.4 and newer.
-  StorageMode?: string;
+  storageMode?: string;
 }
 
-export function Composer_EnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig_GetTypes(): DynamicUIProps[] {
+export function composer_EnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "StorageMode",
+      "storageMode",
       "Whether logs in cloud logging only is enabled or not. This field is supported for Cloud Composer environments in versions composer-2.0.32-airflow-2.1.4 and newer.",
       [],
       false,

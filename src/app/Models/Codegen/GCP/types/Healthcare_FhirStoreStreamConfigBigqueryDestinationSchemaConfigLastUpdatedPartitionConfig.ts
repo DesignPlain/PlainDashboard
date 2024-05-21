@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfigLastUpdatedPartitionConfig {
+export interface healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfigLastUpdatedPartitionConfig {
   // Number of milliseconds for which to keep the storage for a partition.
-  ExpirationMs?: string;
+  expirationMs?: string;
 
   /*
 Type of partitioning.
 Possible values are: `PARTITION_TYPE_UNSPECIFIED`, `HOUR`, `DAY`, `MONTH`, `YEAR`.
 */
-  Type?: string;
+  type?: string;
 }
 
-export function Healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfigLastUpdatedPartitionConfig_GetTypes(): DynamicUIProps[] {
+export function healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfigLastUpdatedPartitionConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ExpirationMs",
+      "expirationMs",
       "Number of milliseconds for which to keep the storage for a partition.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfigL
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "Type of partitioning.\nPossible values are: `PARTITION_TYPE_UNSPECIFIED`, `HOUR`, `DAY`, `MONTH`, `YEAR`.",
       [],
       true,

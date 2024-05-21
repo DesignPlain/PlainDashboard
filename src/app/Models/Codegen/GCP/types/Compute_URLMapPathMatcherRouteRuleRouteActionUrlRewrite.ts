@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite {
+export interface compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite {
   /*
 Prior to forwarding the request to the selected service, the request's host header is replaced
 with contents of hostRewrite.
 The value must be between 1 and 255 characters.
 */
-  HostRewrite?: string;
+  hostRewrite?: string;
 
   /*
 Prior to forwarding the request to the selected backend service, the matching portion of the
 request's path is replaced by pathPrefixRewrite.
 The value must be between 1 and 1024 characters.
 */
-  PathPrefixRewrite?: string;
+  pathPrefixRewrite?: string;
 
   /*
 Prior to forwarding the request to the selected origin, if the
@@ -34,14 +34,14 @@ MatchRules specify pathTemplate.
 Only one of pathPrefixRewrite and pathTemplateRewrite may be
 specified.
 */
-  PathTemplateRewrite?: string;
+  pathTemplateRewrite?: string;
 }
 
-export function Compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite_GetTypes(): DynamicUIProps[] {
+export function compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "HostRewrite",
+      "hostRewrite",
       "Prior to forwarding the request to the selected service, the request's host header is replaced\nwith contents of hostRewrite.\nThe value must be between 1 and 255 characters.",
       [],
       false,
@@ -49,7 +49,7 @@ export function Compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite_GetTypes
     ),
     new DynamicUIProps(
       InputType.String,
-      "PathPrefixRewrite",
+      "pathPrefixRewrite",
       "Prior to forwarding the request to the selected backend service, the matching portion of the\nrequest's path is replaced by pathPrefixRewrite.\nThe value must be between 1 and 1024 characters.",
       [],
       false,
@@ -57,7 +57,7 @@ export function Compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite_GetTypes
     ),
     new DynamicUIProps(
       InputType.String,
-      "PathTemplateRewrite",
+      "pathTemplateRewrite",
       "Prior to forwarding the request to the selected origin, if the\nrequest matched a pathTemplateMatch, the matching portion of the\nrequest's path is replaced re-written using the pattern specified\nby pathTemplateRewrite.\npathTemplateRewrite must be between 1 and 255 characters\n(inclusive), must start with a '/', and must only use variables\ncaptured by the route's pathTemplate matchers.\npathTemplateRewrite may only be used when all of a route's\nMatchRules specify pathTemplate.\nOnly one of pathPrefixRewrite and pathTemplateRewrite may be\nspecified.",
       [],
       false,

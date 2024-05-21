@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_HttpRouteRuleActionRequestHeaderModifier {
+export interface networkservices_HttpRouteRuleActionRequestHeaderModifier {
   // Add the headers with given map where key is the name of the header, value is the value of the header.
-  Add?: Map<string, string>;
+  add?: Map<string, string>;
 
   // Remove headers (matching by header names) specified in the list.
-  Removes?: Array<string>;
+  removes?: Array<string>;
 
   // Completely overwrite/replace the headers with given map where key is the name of the header, value is the value of the header.
-  Set?: Map<string, string>;
+  set?: Map<string, string>;
 }
 
-export function Networkservices_HttpRouteRuleActionRequestHeaderModifier_GetTypes(): DynamicUIProps[] {
+export function networkservices_HttpRouteRuleActionRequestHeaderModifier_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Map,
-      "Add",
-      "Add the headers with given map where key is the name of the header, value is the value of the header.",
-      InputType_Map_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "Removes",
+      "removes",
       "Remove headers (matching by header names) specified in the list.",
       InputType_String_GetTypes(),
       false,
@@ -37,8 +29,16 @@ export function Networkservices_HttpRouteRuleActionRequestHeaderModifier_GetType
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Set",
+      "set",
       "Completely overwrite/replace the headers with given map where key is the name of the header, value is the value of the header.",
+      InputType_Map_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Map,
+      "add",
+      "Add the headers with given map where key is the name of the header, value is the value of the header.",
       InputType_Map_GetTypes(),
       false,
       false,

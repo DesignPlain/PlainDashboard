@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption {
+export interface secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption {
   // Describes the Cloud KMS encryption key that will be used to protect destination secret.
-  KmsKeyName?: string;
+  kmsKeyName?: string;
 }
 
-export function Secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption_GetTypes(): DynamicUIProps[] {
+export function secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyName",
+      "kmsKeyName",
       "Describes the Cloud KMS encryption key that will be used to protect destination secret.",
       [],
       true,

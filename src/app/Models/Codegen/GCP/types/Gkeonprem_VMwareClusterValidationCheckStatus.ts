@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_VMwareClusterValidationCheckStatusResult,
-  Gkeonprem_VMwareClusterValidationCheckStatusResult_GetTypes,
-} from "./Gkeonprem_VMwareClusterValidationCheckStatusResult";
+  gkeonprem_VMwareClusterValidationCheckStatusResult,
+  gkeonprem_VMwareClusterValidationCheckStatusResult_GetTypes,
+} from "./gkeonprem_VMwareClusterValidationCheckStatusResult";
 
-export interface Gkeonprem_VMwareClusterValidationCheckStatus {
+export interface gkeonprem_VMwareClusterValidationCheckStatus {
   /*
 (Output)
 Individual checks which failed as part of the Preflight check execution.
 Structure is documented below.
 */
-  Results?: Array<Gkeonprem_VMwareClusterValidationCheckStatusResult>;
+  results?: Array<gkeonprem_VMwareClusterValidationCheckStatusResult>;
 }
 
-export function Gkeonprem_VMwareClusterValidationCheckStatus_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterValidationCheckStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Results",
+      "results",
       "(Output)\nIndividual checks which failed as part of the Preflight check execution.\nStructure is documented below.",
-      Gkeonprem_VMwareClusterValidationCheckStatusResult_GetTypes(),
+      gkeonprem_VMwareClusterValidationCheckStatusResult_GetTypes(),
       false,
       false,
     ),

@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_HttpRouteRuleActionFaultInjectionPolicyDelay {
+export interface networkservices_HttpRouteRuleActionFaultInjectionPolicyDelay {
   // Specify a fixed delay before forwarding the request.
-  FixedDelay?: string;
+  fixedDelay?: string;
 
   // The percentage of traffic on which delay will be injected.
-  Percentage?: number;
+  percentage?: number;
 }
 
-export function Networkservices_HttpRouteRuleActionFaultInjectionPolicyDelay_GetTypes(): DynamicUIProps[] {
+export function networkservices_HttpRouteRuleActionFaultInjectionPolicyDelay_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "FixedDelay",
+      "fixedDelay",
       "Specify a fixed delay before forwarding the request.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Networkservices_HttpRouteRuleActionFaultInjectionPolicyDelay_Get
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Percentage",
+      "percentage",
       "The percentage of traffic on which delay will be injected.",
       [],
       false,

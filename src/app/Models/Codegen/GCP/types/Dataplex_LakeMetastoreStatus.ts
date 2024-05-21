@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataplex_LakeMetastoreStatus {
-  // Output only. Current state of the lake. Possible values: STATE_UNSPECIFIED, ACTIVE, CREATING, DELETING, ACTION_REQUIRED
-  State?: string;
-
+export interface dataplex_LakeMetastoreStatus {
   // Output only. The time when the lake was last updated.
-  UpdateTime?: string;
+  updateTime?: string;
 
   // The URI of the endpoint used to access the Metastore service.
-  Endpoint?: string;
+  endpoint?: string;
 
   // Additional information about the current status.
-  Message?: string;
+  message?: string;
+
+  // Output only. Current state of the lake. Possible values: STATE_UNSPECIFIED, ACTIVE, CREATING, DELETING, ACTION_REQUIRED
+  state?: string;
 }
 
-export function Dataplex_LakeMetastoreStatus_GetTypes(): DynamicUIProps[] {
+export function dataplex_LakeMetastoreStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Endpoint",
+      "updateTime",
+      "Output only. The time when the lake was last updated.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "endpoint",
       "The URI of the endpoint used to access the Metastore service.",
       [],
       false,
@@ -32,7 +40,7 @@ export function Dataplex_LakeMetastoreStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Message",
+      "message",
       "Additional information about the current status.",
       [],
       false,
@@ -40,16 +48,8 @@ export function Dataplex_LakeMetastoreStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "Output only. Current state of the lake. Possible values: STATE_UNSPECIFIED, ACTIVE, CREATING, DELETING, ACTION_REQUIRED",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "UpdateTime",
-      "Output only. The time when the lake was last updated.",
       [],
       false,
       false,

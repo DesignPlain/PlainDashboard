@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Kms_getKMSCryptoKeyPrimary {
+export interface kms_getKMSCryptoKeyPrimary {
   /*
 The CryptoKey's name.
 A CryptoKey’s name belonging to the specified Google Cloud Platform KeyRing and match the regular expression `[a-zA-Z0-9_-]{1,63}`
 */
-  Name?: string;
+  name?: string;
 
   // The current state of the CryptoKeyVersion.
-  State?: string;
+  state?: string;
 }
 
-export function Kms_getKMSCryptoKeyPrimary_GetTypes(): DynamicUIProps[] {
+export function kms_getKMSCryptoKeyPrimary_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The CryptoKey's name.\nA CryptoKey’s name belonging to the specified Google Cloud Platform KeyRing and match the regular expression `[a-zA-Z0-9_-]{1,63}`",
       [],
       true,
@@ -29,7 +29,7 @@ export function Kms_getKMSCryptoKeyPrimary_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "The current state of the CryptoKeyVersion.",
       [],
       true,

@@ -6,19 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Monitoring_SloRequestBasedSliDistributionCutRange,
-  Monitoring_SloRequestBasedSliDistributionCutRange_GetTypes,
-} from "./Monitoring_SloRequestBasedSliDistributionCutRange";
+  monitoring_SloRequestBasedSliDistributionCutRange,
+  monitoring_SloRequestBasedSliDistributionCutRange_GetTypes,
+} from "./monitoring_SloRequestBasedSliDistributionCutRange";
 
-export interface Monitoring_SloRequestBasedSliDistributionCut {
-  /*
-A TimeSeries [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
-aggregating values to quantify the good service provided.
-Must have ValueType = DISTRIBUTION and
-MetricKind = DELTA or MetricKind = CUMULATIVE.
-*/
-  DistributionFilter?: string;
-
+export interface monitoring_SloRequestBasedSliDistributionCut {
   /*
 Range of numerical values. The computed good_service
 will be the count of values x in the Distribution such
@@ -27,24 +19,32 @@ max. Open ranges can be defined by setting
 just one of min or max.
 Structure is documented below.
 */
-  Range?: Monitoring_SloRequestBasedSliDistributionCutRange;
+  range?: monitoring_SloRequestBasedSliDistributionCutRange;
+
+  /*
+A TimeSeries [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+aggregating values to quantify the good service provided.
+Must have ValueType = DISTRIBUTION and
+MetricKind = DELTA or MetricKind = CUMULATIVE.
+*/
+  distributionFilter?: string;
 }
 
-export function Monitoring_SloRequestBasedSliDistributionCut_GetTypes(): DynamicUIProps[] {
+export function monitoring_SloRequestBasedSliDistributionCut_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "DistributionFilter",
-      "A TimeSeries [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)\naggregating values to quantify the good service provided.\nMust have ValueType = DISTRIBUTION and\nMetricKind = DELTA or MetricKind = CUMULATIVE.",
-      [],
+      InputType.Object,
+      "range",
+      "Range of numerical values. The computed good_service\nwill be the count of values x in the Distribution such\nthat range.min <= x <= range.max. inclusive of min and\nmax. Open ranges can be defined by setting\njust one of min or max.\nStructure is documented below.",
+      monitoring_SloRequestBasedSliDistributionCutRange_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "Range",
-      "Range of numerical values. The computed good_service\nwill be the count of values x in the Distribution such\nthat range.min <= x <= range.max. inclusive of min and\nmax. Open ranges can be defined by setting\njust one of min or max.\nStructure is documented below.",
-      Monitoring_SloRequestBasedSliDistributionCutRange_GetTypes(),
+      InputType.String,
+      "distributionFilter",
+      "A TimeSeries [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)\naggregating values to quantify the good service provided.\nMust have ValueType = DISTRIBUTION and\nMetricKind = DELTA or MetricKind = CUMULATIVE.",
+      [],
       true,
       false,
     ),

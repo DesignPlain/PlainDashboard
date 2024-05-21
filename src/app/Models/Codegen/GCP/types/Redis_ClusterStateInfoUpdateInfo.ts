@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Redis_ClusterStateInfoUpdateInfo {
+export interface redis_ClusterStateInfoUpdateInfo {
   // Target number of replica nodes per shard.
-  TargetReplicaCount?: number;
+  targetReplicaCount?: number;
 
   // Target number of shards for redis cluster.
-  TargetShardCount?: number;
+  targetShardCount?: number;
 }
 
-export function Redis_ClusterStateInfoUpdateInfo_GetTypes(): DynamicUIProps[] {
+export function redis_ClusterStateInfoUpdateInfo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "TargetReplicaCount",
+      "targetReplicaCount",
       "Target number of replica nodes per shard.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Redis_ClusterStateInfoUpdateInfo_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "TargetShardCount",
+      "targetShardCount",
       "Target number of shards for redis cluster.",
       [],
       false,

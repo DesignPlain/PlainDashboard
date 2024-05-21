@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Secretmanager_getSecretReplicationAutoCustomerManagedEncryption,
-  Secretmanager_getSecretReplicationAutoCustomerManagedEncryption_GetTypes,
-} from "./Secretmanager_getSecretReplicationAutoCustomerManagedEncryption";
+  secretmanager_getSecretReplicationAutoCustomerManagedEncryption,
+  secretmanager_getSecretReplicationAutoCustomerManagedEncryption_GetTypes,
+} from "./secretmanager_getSecretReplicationAutoCustomerManagedEncryption";
 
-export interface Secretmanager_getSecretReplicationAuto {
+export interface secretmanager_getSecretReplicationAuto {
   /*
 The customer-managed encryption configuration of the Secret.
 If no configuration is provided, Google-managed default
 encryption is used.
 */
-  CustomerManagedEncryptions?: Array<Secretmanager_getSecretReplicationAutoCustomerManagedEncryption>;
+  customerManagedEncryptions?: Array<secretmanager_getSecretReplicationAutoCustomerManagedEncryption>;
 }
 
-export function Secretmanager_getSecretReplicationAuto_GetTypes(): DynamicUIProps[] {
+export function secretmanager_getSecretReplicationAuto_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "CustomerManagedEncryptions",
+      "customerManagedEncryptions",
       "The customer-managed encryption configuration of the Secret.\nIf no configuration is provided, Google-managed default\nencryption is used.",
-      Secretmanager_getSecretReplicationAutoCustomerManagedEncryption_GetTypes(),
+      secretmanager_getSecretReplicationAutoCustomerManagedEncryption_GetTypes(),
       true,
       false,
     ),

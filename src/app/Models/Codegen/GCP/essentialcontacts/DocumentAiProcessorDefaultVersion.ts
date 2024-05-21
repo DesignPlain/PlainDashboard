@@ -14,34 +14,34 @@ The processor to set the version on.
 
 - - -
 */
-  Processor?: string;
+  processor?: string;
 
   /*
 The version to set. Using `stable` or `rc` will cause the API to return the latest version in that release channel.
 Apply `lifecycle.ignore_changes` to the `version` field to suppress this diff.
 */
-  Version?: string;
+  version?: string;
 }
 export class DocumentAiProcessorDefaultVersion extends Resource {
+  /*
+The version to set. Using `stable` or `rc` will cause the API to return the latest version in that release channel.
+Apply `lifecycle.ignore_changes` to the `version` field to suppress this diff.
+*/
+  public version?: string;
+
   /*
 The processor to set the version on.
 
 
 - - -
 */
-  public Processor?: string;
-
-  /*
-The version to set. Using `stable` or `rc` will cause the API to return the latest version in that release channel.
-Apply `lifecycle.ignore_changes` to the `version` field to suppress this diff.
-*/
-  public Version?: string;
+  public processor?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Processor",
+        "processor",
         "The processor to set the version on.\n\n\n- - -",
         [],
         true,
@@ -49,7 +49,7 @@ Apply `lifecycle.ignore_changes` to the `version` field to suppress this diff.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Version",
+        "version",
         "The version to set. Using `stable` or `rc` will cause the API to return the latest version in that release channel.\nApply `lifecycle.ignore_changes` to the `version` field to suppress this diff.",
         [],
         true,

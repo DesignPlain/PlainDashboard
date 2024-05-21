@@ -6,61 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit {
-  // The Google Cloud Service Account Email used for auth when secretType is gcpServiceAccount
-  GcpServiceAccountEmail?: string;
-
-  // URL for the HTTPS Proxy to be used when communicating with the Git repo
-  HttpsProxy?: string;
-
-  // The path within the Git repository that represents the top level of the repo to sync
-  PolicyDir?: string;
-
-  // Type of secret configured for access to the Git repo
-  SecretType?: string;
-
+export interface gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit {
   // The branch of the repository to sync from. Default: master
-  SyncBranch?: string;
+  syncBranch?: string;
 
   // The URL of the Git repository to use as the source of truth
-  SyncRepo?: string;
+  syncRepo?: string;
 
   // Git revision (tag or hash) to check out. Default HEAD
-  SyncRev?: string;
+  syncRev?: string;
 
   // Period in seconds between consecutive syncs. Default: 15
-  SyncWaitSecs?: string;
+  syncWaitSecs?: string;
+
+  // The Google Cloud Service Account Email used for auth when secretType is gcpServiceAccount
+  gcpServiceAccountEmail?: string;
+
+  // URL for the HTTPS Proxy to be used when communicating with the Git repo
+  httpsProxy?: string;
+
+  // The path within the Git repository that represents the top level of the repo to sync
+  policyDir?: string;
+
+  // Type of secret configured for access to the Git repo
+  secretType?: string;
 }
 
-export function Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PolicyDir",
-      "The path within the Git repository that represents the top level of the repo to sync",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "SecretType",
-      "Type of secret configured for access to the Git repo",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "SyncBranch",
-      "The branch of the repository to sync from. Default: master",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "SyncRepo",
+      "syncRepo",
       "The URL of the Git repository to use as the source of truth",
       [],
       false,
@@ -68,7 +44,7 @@ export function Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSync
     ),
     new DynamicUIProps(
       InputType.String,
-      "SyncRev",
+      "syncRev",
       "Git revision (tag or hash) to check out. Default HEAD",
       [],
       false,
@@ -76,7 +52,7 @@ export function Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSync
     ),
     new DynamicUIProps(
       InputType.String,
-      "SyncWaitSecs",
+      "syncWaitSecs",
       "Period in seconds between consecutive syncs. Default: 15",
       [],
       false,
@@ -84,7 +60,7 @@ export function Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSync
     ),
     new DynamicUIProps(
       InputType.String,
-      "GcpServiceAccountEmail",
+      "gcpServiceAccountEmail",
       "The Google Cloud Service Account Email used for auth when secretType is gcpServiceAccount",
       [],
       false,
@@ -92,8 +68,32 @@ export function Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSync
     ),
     new DynamicUIProps(
       InputType.String,
-      "HttpsProxy",
+      "httpsProxy",
       "URL for the HTTPS Proxy to be used when communicating with the Git repo",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "policyDir",
+      "The path within the Git repository that represents the top level of the repo to sync",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "secretType",
+      "Type of secret configured for access to the Git repo",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "syncBranch",
+      "The branch of the repository to sync from. Default: master",
       [],
       false,
       false,

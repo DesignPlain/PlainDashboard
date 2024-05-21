@@ -6,28 +6,47 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionInspectTemplateInspectConfigLimits,
-  Dataloss_PreventionInspectTemplateInspectConfigLimits_GetTypes,
-} from "./Dataloss_PreventionInspectTemplateInspectConfigLimits";
+  dataloss_PreventionInspectTemplateInspectConfigLimits,
+  dataloss_PreventionInspectTemplateInspectConfigLimits_GetTypes,
+} from "./dataloss_PreventionInspectTemplateInspectConfigLimits";
 import {
-  Dataloss_PreventionInspectTemplateInspectConfigRuleSet,
-  Dataloss_PreventionInspectTemplateInspectConfigRuleSet_GetTypes,
-} from "./Dataloss_PreventionInspectTemplateInspectConfigRuleSet";
+  dataloss_PreventionInspectTemplateInspectConfigRuleSet,
+  dataloss_PreventionInspectTemplateInspectConfigRuleSet_GetTypes,
+} from "./dataloss_PreventionInspectTemplateInspectConfigRuleSet";
 import {
-  Dataloss_PreventionInspectTemplateInspectConfigCustomInfoType,
-  Dataloss_PreventionInspectTemplateInspectConfigCustomInfoType_GetTypes,
-} from "./Dataloss_PreventionInspectTemplateInspectConfigCustomInfoType";
+  dataloss_PreventionInspectTemplateInspectConfigCustomInfoType,
+  dataloss_PreventionInspectTemplateInspectConfigCustomInfoType_GetTypes,
+} from "./dataloss_PreventionInspectTemplateInspectConfigCustomInfoType";
 import {
-  Dataloss_PreventionInspectTemplateInspectConfigInfoType,
-  Dataloss_PreventionInspectTemplateInspectConfigInfoType_GetTypes,
-} from "./Dataloss_PreventionInspectTemplateInspectConfigInfoType";
+  dataloss_PreventionInspectTemplateInspectConfigInfoType,
+  dataloss_PreventionInspectTemplateInspectConfigInfoType_GetTypes,
+} from "./dataloss_PreventionInspectTemplateInspectConfigInfoType";
 
-export interface Dataloss_PreventionInspectTemplateInspectConfig {
+export interface dataloss_PreventionInspectTemplateInspectConfig {
+  /*
+Set of rules to apply to the findings for this InspectConfig. Exclusion rules, contained in the set are executed in the end,
+other rules are executed in the order they are specified for each info type.
+Structure is documented below.
+*/
+  ruleSets?: Array<dataloss_PreventionInspectTemplateInspectConfigRuleSet>;
+
+  /*
+List of options defining data content to scan. If empty, text, images, and other content will be included.
+Each value may be one of: `CONTENT_TEXT`, `CONTENT_IMAGE`.
+*/
+  contentOptions?: Array<string>;
+
+  /*
+Custom info types to be used. See https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
+Structure is documented below.
+*/
+  customInfoTypes?: Array<dataloss_PreventionInspectTemplateInspectConfigCustomInfoType>;
+
   // When true, excludes type information of the findings.
-  ExcludeInfoTypes?: boolean;
+  excludeInfoTypes?: boolean;
 
   // When true, a contextual quote from the data that triggered a finding is included in the response.
-  IncludeQuote?: boolean;
+  includeQuote?: boolean;
 
   /*
 Restricts what infoTypes to look for. The values must correspond to InfoType values returned by infoTypes.list
@@ -36,46 +55,43 @@ When no InfoTypes or CustomInfoTypes are specified in a request, the system may 
 By default this may be all types, but may change over time as detectors are updated.
 Structure is documented below.
 */
-  InfoTypes?: Array<Dataloss_PreventionInspectTemplateInspectConfigInfoType>;
+  infoTypes?: Array<dataloss_PreventionInspectTemplateInspectConfigInfoType>;
 
   /*
 Configuration to control the number of findings returned.
 Structure is documented below.
 */
-  Limits?: Dataloss_PreventionInspectTemplateInspectConfigLimits;
+  limits?: dataloss_PreventionInspectTemplateInspectConfigLimits;
 
   /*
 Only returns findings equal or above this threshold. See https://cloud.google.com/dlp/docs/likelihood for more info
 Default value is `POSSIBLE`.
 Possible values are: `VERY_UNLIKELY`, `UNLIKELY`, `POSSIBLE`, `LIKELY`, `VERY_LIKELY`.
 */
-  MinLikelihood?: string;
-
-  /*
-Set of rules to apply to the findings for this InspectConfig. Exclusion rules, contained in the set are executed in the end,
-other rules are executed in the order they are specified for each info type.
-Structure is documented below.
-*/
-  RuleSets?: Array<Dataloss_PreventionInspectTemplateInspectConfigRuleSet>;
-
-  /*
-List of options defining data content to scan. If empty, text, images, and other content will be included.
-Each value may be one of: `CONTENT_TEXT`, `CONTENT_IMAGE`.
-*/
-  ContentOptions?: Array<string>;
-
-  /*
-Custom info types to be used. See https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
-Structure is documented below.
-*/
-  CustomInfoTypes?: Array<Dataloss_PreventionInspectTemplateInspectConfigCustomInfoType>;
+  minLikelihood?: string;
 }
 
-export function Dataloss_PreventionInspectTemplateInspectConfig_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionInspectTemplateInspectConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Array,
+      "infoTypes",
+      "Restricts what infoTypes to look for. The values must correspond to InfoType values returned by infoTypes.list\nor listed at https://cloud.google.com/dlp/docs/infotypes-reference.\nWhen no InfoTypes or CustomInfoTypes are specified in a request, the system may automatically choose what detectors to run.\nBy default this may be all types, but may change over time as detectors are updated.\nStructure is documented below.",
+      dataloss_PreventionInspectTemplateInspectConfigInfoType_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "limits",
+      "Configuration to control the number of findings returned.\nStructure is documented below.",
+      dataloss_PreventionInspectTemplateInspectConfigLimits_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "MinLikelihood",
+      "minLikelihood",
       "Only returns findings equal or above this threshold. See https://cloud.google.com/dlp/docs/likelihood for more info\nDefault value is `POSSIBLE`.\nPossible values are: `VERY_UNLIKELY`, `UNLIKELY`, `POSSIBLE`, `LIKELY`, `VERY_LIKELY`.",
       [],
       false,
@@ -83,15 +99,15 @@ export function Dataloss_PreventionInspectTemplateInspectConfig_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Array,
-      "RuleSets",
+      "ruleSets",
       "Set of rules to apply to the findings for this InspectConfig. Exclusion rules, contained in the set are executed in the end,\nother rules are executed in the order they are specified for each info type.\nStructure is documented below.",
-      Dataloss_PreventionInspectTemplateInspectConfigRuleSet_GetTypes(),
+      dataloss_PreventionInspectTemplateInspectConfigRuleSet_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ContentOptions",
+      "contentOptions",
       "List of options defining data content to scan. If empty, text, images, and other content will be included.\nEach value may be one of: `CONTENT_TEXT`, `CONTENT_IMAGE`.",
       InputType_String_GetTypes(),
       false,
@@ -99,15 +115,15 @@ export function Dataloss_PreventionInspectTemplateInspectConfig_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Array,
-      "CustomInfoTypes",
+      "customInfoTypes",
       "Custom info types to be used. See https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.\nStructure is documented below.",
-      Dataloss_PreventionInspectTemplateInspectConfigCustomInfoType_GetTypes(),
+      dataloss_PreventionInspectTemplateInspectConfigCustomInfoType_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "ExcludeInfoTypes",
+      "excludeInfoTypes",
       "When true, excludes type information of the findings.",
       [],
       false,
@@ -115,25 +131,9 @@ export function Dataloss_PreventionInspectTemplateInspectConfig_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IncludeQuote",
+      "includeQuote",
       "When true, a contextual quote from the data that triggered a finding is included in the response.",
       [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "InfoTypes",
-      "Restricts what infoTypes to look for. The values must correspond to InfoType values returned by infoTypes.list\nor listed at https://cloud.google.com/dlp/docs/infotypes-reference.\nWhen no InfoTypes or CustomInfoTypes are specified in a request, the system may automatically choose what detectors to run.\nBy default this may be all types, but may change over time as detectors are updated.\nStructure is documented below.",
-      Dataloss_PreventionInspectTemplateInspectConfigInfoType_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "Limits",
-      "Configuration to control the number of findings returned.\nStructure is documented below.",
-      Dataloss_PreventionInspectTemplateInspectConfigLimits_GetTypes(),
       false,
       false,
     ),

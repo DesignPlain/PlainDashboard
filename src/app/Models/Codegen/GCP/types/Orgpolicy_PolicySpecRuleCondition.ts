@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Orgpolicy_PolicySpecRuleCondition {
+export interface orgpolicy_PolicySpecRuleCondition {
+  // Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
+  description?: string;
+
   // Textual representation of an expression in Common Expression Language syntax.
-  Expression?: string;
+  expression?: string;
 
   // Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
-  Location?: string;
+  location?: string;
 
   // Optional. Title for the expression, i.e. a short string describing its purpose. This can be used e.g. in UIs which allow to enter the expression.
-  Title?: string;
-
-  // Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
-  Description?: string;
+  title?: string;
 }
 
-export function Orgpolicy_PolicySpecRuleCondition_GetTypes(): DynamicUIProps[] {
+export function orgpolicy_PolicySpecRuleCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Orgpolicy_PolicySpecRuleCondition_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Expression",
+      "expression",
       "Textual representation of an expression in Common Expression Language syntax.",
       [],
       false,
@@ -40,7 +40,7 @@ export function Orgpolicy_PolicySpecRuleCondition_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       "Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.",
       [],
       false,
@@ -48,7 +48,7 @@ export function Orgpolicy_PolicySpecRuleCondition_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Title",
+      "title",
       "Optional. Title for the expression, i.e. a short string describing its purpose. This can be used e.g. in UIs which allow to enter the expression.",
       [],
       false,

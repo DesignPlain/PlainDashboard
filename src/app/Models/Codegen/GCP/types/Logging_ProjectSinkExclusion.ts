@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Logging_ProjectSinkExclusion {
+export interface logging_ProjectSinkExclusion {
   // A description of this exclusion.
-  Description?: string;
+  description?: string;
 
   // If set to True, then this exclusion is disabled and it does not exclude any log entries.
-  Disabled?: boolean;
+  disabled?: boolean;
 
   /*
 An advanced logs filter that matches the log entries to be excluded. By using the sample function, you can exclude less than 100%!!(MISSING)o(MISSING)f the matching log entries. See [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced_filters) for information on how to
 write a filter.
 */
-  Filter?: string;
+  filter?: string;
 
   // A client-assigned identifier, such as `load-balancer-exclusion`. Identifiers are limited to 100 characters and can include only letters, digits, underscores, hyphens, and periods. First character has to be alphanumeric.
-  Name?: string;
+  name?: string;
 }
 
-export function Logging_ProjectSinkExclusion_GetTypes(): DynamicUIProps[] {
+export function logging_ProjectSinkExclusion_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "A description of this exclusion.",
       [],
       false,
@@ -35,7 +35,7 @@ export function Logging_ProjectSinkExclusion_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Disabled",
+      "disabled",
       "If set to True, then this exclusion is disabled and it does not exclude any log entries.",
       [],
       false,
@@ -43,7 +43,7 @@ export function Logging_ProjectSinkExclusion_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Filter",
+      "filter",
       "An advanced logs filter that matches the log entries to be excluded. By using the sample function, you can exclude less than 100%!o(MISSING)f the matching log entries. See [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced_filters) for information on how to\nwrite a filter.",
       [],
       true,
@@ -51,7 +51,7 @@ export function Logging_ProjectSinkExclusion_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "A client-assigned identifier, such as `load-balancer-exclusion`. Identifiers are limited to 100 characters and can include only letters, digits, underscores, hyphens, and periods. First character has to be alphanumeric.",
       [],
       true,

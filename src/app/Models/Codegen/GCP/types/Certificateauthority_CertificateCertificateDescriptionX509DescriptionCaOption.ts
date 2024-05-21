@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificateauthority_CertificateCertificateDescriptionX509DescriptionCaOption {
+export interface certificateauthority_CertificateCertificateDescriptionX509DescriptionCaOption {
   // When true, the "CA" in Basic Constraints extension will be set to true.
-  IsCa?: boolean;
+  isCa?: boolean;
 
   /*
 Refers to the "path length constraint" in Basic Constraints extension. For a CA certificate, this value describes the depth of
 subordinate CA certificates that are allowed. If this value is less than 0, the request will fail.
 */
-  MaxIssuerPathLength?: number;
+  maxIssuerPathLength?: number;
 }
 
-export function Certificateauthority_CertificateCertificateDescriptionX509DescriptionCaOption_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CertificateCertificateDescriptionX509DescriptionCaOption_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "IsCa",
+      "isCa",
       'When true, the "CA" in Basic Constraints extension will be set to true.',
       [],
       false,
@@ -29,7 +29,7 @@ export function Certificateauthority_CertificateCertificateDescriptionX509Descri
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxIssuerPathLength",
+      "maxIssuerPathLength",
       'Refers to the "path length constraint" in Basic Constraints extension. For a CA certificate, this value describes the depth of\nsubordinate CA certificates that are allowed. If this value is less than 0, the request will fail.',
       [],
       false,

@@ -6,44 +6,44 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificatemanager_TrustConfigTrustStoreIntermediateCa,
-  Certificatemanager_TrustConfigTrustStoreIntermediateCa_GetTypes,
-} from "./Certificatemanager_TrustConfigTrustStoreIntermediateCa";
+  certificatemanager_TrustConfigTrustStoreIntermediateCa,
+  certificatemanager_TrustConfigTrustStoreIntermediateCa_GetTypes,
+} from "./certificatemanager_TrustConfigTrustStoreIntermediateCa";
 import {
-  Certificatemanager_TrustConfigTrustStoreTrustAnchor,
-  Certificatemanager_TrustConfigTrustStoreTrustAnchor_GetTypes,
-} from "./Certificatemanager_TrustConfigTrustStoreTrustAnchor";
+  certificatemanager_TrustConfigTrustStoreTrustAnchor,
+  certificatemanager_TrustConfigTrustStoreTrustAnchor_GetTypes,
+} from "./certificatemanager_TrustConfigTrustStoreTrustAnchor";
 
-export interface Certificatemanager_TrustConfigTrustStore {
+export interface certificatemanager_TrustConfigTrustStore {
   /*
 Set of intermediate CA certificates used for the path building phase of chain validation.
 The field is currently not supported if trust config is used for the workload certificate feature.
 Structure is documented below.
 */
-  IntermediateCas?: Array<Certificatemanager_TrustConfigTrustStoreIntermediateCa>;
+  intermediateCas?: Array<certificatemanager_TrustConfigTrustStoreIntermediateCa>;
 
   /*
 List of Trust Anchors to be used while performing validation against a given TrustStore.
 Structure is documented below.
 */
-  TrustAnchors?: Array<Certificatemanager_TrustConfigTrustStoreTrustAnchor>;
+  trustAnchors?: Array<certificatemanager_TrustConfigTrustStoreTrustAnchor>;
 }
 
-export function Certificatemanager_TrustConfigTrustStore_GetTypes(): DynamicUIProps[] {
+export function certificatemanager_TrustConfigTrustStore_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "IntermediateCas",
+      "intermediateCas",
       "Set of intermediate CA certificates used for the path building phase of chain validation.\nThe field is currently not supported if trust config is used for the workload certificate feature.\nStructure is documented below.",
-      Certificatemanager_TrustConfigTrustStoreIntermediateCa_GetTypes(),
+      certificatemanager_TrustConfigTrustStoreIntermediateCa_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "TrustAnchors",
+      "trustAnchors",
       "List of Trust Anchors to be used while performing validation against a given TrustStore.\nStructure is documented below.",
-      Certificatemanager_TrustConfigTrustStoreTrustAnchor_GetTypes(),
+      certificatemanager_TrustConfigTrustStoreTrustAnchor_GetTypes(),
       false,
       false,
     ),

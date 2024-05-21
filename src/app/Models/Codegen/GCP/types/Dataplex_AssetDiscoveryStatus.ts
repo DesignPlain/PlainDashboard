@@ -6,35 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataplex_AssetDiscoveryStatusStat,
-  Dataplex_AssetDiscoveryStatusStat_GetTypes,
-} from "./Dataplex_AssetDiscoveryStatusStat";
+  dataplex_AssetDiscoveryStatusStat,
+  dataplex_AssetDiscoveryStatusStat_GetTypes,
+} from "./dataplex_AssetDiscoveryStatusStat";
 
-export interface Dataplex_AssetDiscoveryStatus {
+export interface dataplex_AssetDiscoveryStatus {
   // The start time of the last discovery run.
-  LastRunTime?: string;
+  lastRunTime?: string;
 
   // Additional information about the current state.
-  Message?: string;
+  message?: string;
 
   // Output only. Current state of the asset. Possible values: STATE_UNSPECIFIED, ACTIVE, CREATING, DELETING, ACTION_REQUIRED
-  State?: string;
+  state?: string;
 
   // Data Stats of the asset reported by discovery.
-  Stats?: Array<Dataplex_AssetDiscoveryStatusStat>;
+  stats?: Array<dataplex_AssetDiscoveryStatusStat>;
 
   // Output only. The time when the asset was last updated.
-  UpdateTime?: string;
+  updateTime?: string;
 
   // The duration of the last discovery run.
-  LastRunDuration?: string;
+  lastRunDuration?: string;
 }
 
-export function Dataplex_AssetDiscoveryStatus_GetTypes(): DynamicUIProps[] {
+export function dataplex_AssetDiscoveryStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "LastRunDuration",
+      "updateTime",
+      "Output only. The time when the asset was last updated.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "lastRunDuration",
       "The duration of the last discovery run.",
       [],
       false,
@@ -42,7 +50,7 @@ export function Dataplex_AssetDiscoveryStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "LastRunTime",
+      "lastRunTime",
       "The start time of the last discovery run.",
       [],
       false,
@@ -50,7 +58,7 @@ export function Dataplex_AssetDiscoveryStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Message",
+      "message",
       "Additional information about the current state.",
       [],
       false,
@@ -58,7 +66,7 @@ export function Dataplex_AssetDiscoveryStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "Output only. Current state of the asset. Possible values: STATE_UNSPECIFIED, ACTIVE, CREATING, DELETING, ACTION_REQUIRED",
       [],
       false,
@@ -66,17 +74,9 @@ export function Dataplex_AssetDiscoveryStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Stats",
+      "stats",
       "Data Stats of the asset reported by discovery.",
-      Dataplex_AssetDiscoveryStatusStat_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "UpdateTime",
-      "Output only. The time when the asset was last updated.",
-      [],
+      dataplex_AssetDiscoveryStatusStat_GetTypes(),
       false,
       false,
     ),

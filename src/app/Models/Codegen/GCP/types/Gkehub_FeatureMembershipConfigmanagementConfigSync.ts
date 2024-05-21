@@ -6,56 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkehub_FeatureMembershipConfigmanagementConfigSyncGit,
-  Gkehub_FeatureMembershipConfigmanagementConfigSyncGit_GetTypes,
-} from "./Gkehub_FeatureMembershipConfigmanagementConfigSyncGit";
+  gkehub_FeatureMembershipConfigmanagementConfigSyncOci,
+  gkehub_FeatureMembershipConfigmanagementConfigSyncOci_GetTypes,
+} from "./gkehub_FeatureMembershipConfigmanagementConfigSyncOci";
 import {
-  Gkehub_FeatureMembershipConfigmanagementConfigSyncOci,
-  Gkehub_FeatureMembershipConfigmanagementConfigSyncOci_GetTypes,
-} from "./Gkehub_FeatureMembershipConfigmanagementConfigSyncOci";
+  gkehub_FeatureMembershipConfigmanagementConfigSyncGit,
+  gkehub_FeatureMembershipConfigmanagementConfigSyncGit_GetTypes,
+} from "./gkehub_FeatureMembershipConfigmanagementConfigSyncGit";
 
-export interface Gkehub_FeatureMembershipConfigmanagementConfigSync {
-  // (Optional) Structure is documented below.
-  Git?: Gkehub_FeatureMembershipConfigmanagementConfigSyncGit;
-
+export interface gkehub_FeatureMembershipConfigmanagementConfigSync {
   // The Email of the Google Cloud Service Account (GSA) used for exporting Config Sync metrics to Cloud Monitoring. The GSA should have the Monitoring Metric Writer(roles/monitoring.metricWriter) IAM role. The Kubernetes ServiceAccount `default` in the namespace `config-management-monitoring` should be bound to the GSA.
-  MetricsGcpServiceAccountEmail?: string;
+  metricsGcpServiceAccountEmail?: string;
 
   /*
 (Optional) Supported from ACM versions 1.12.0 onwards. Structure is documented below.
 
 Use either `git` or `oci` config option.
 */
-  Oci?: Gkehub_FeatureMembershipConfigmanagementConfigSyncOci;
+  oci?: gkehub_FeatureMembershipConfigmanagementConfigSyncOci;
 
   // Supported from ACM versions 1.10.0 onwards. Set to true to enable the Config Sync admission webhook to prevent drifts. If set to "false", disables the Config Sync admission webhook and does not prevent drifts.
-  PreventDrift?: boolean;
+  preventDrift?: boolean;
 
   // Specifies whether the Config Sync Repo is in "hierarchical" or "unstructured" mode.
-  SourceFormat?: string;
+  sourceFormat?: string;
+
+  // (Optional) Structure is documented below.
+  git?: gkehub_FeatureMembershipConfigmanagementConfigSyncGit;
 }
 
-export function Gkehub_FeatureMembershipConfigmanagementConfigSync_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureMembershipConfigmanagementConfigSync_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "Oci",
-      "(Optional) Supported from ACM versions 1.12.0 onwards. Structure is documented below.\n\nUse either `git` or `oci` config option.",
-      Gkehub_FeatureMembershipConfigmanagementConfigSyncOci_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "PreventDrift",
-      'Supported from ACM versions 1.10.0 onwards. Set to true to enable the Config Sync admission webhook to prevent drifts. If set to "false", disables the Config Sync admission webhook and does not prevent drifts.',
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "SourceFormat",
+      "sourceFormat",
       'Specifies whether the Config Sync Repo is in "hierarchical" or "unstructured" mode.',
       [],
       false,
@@ -63,16 +47,32 @@ export function Gkehub_FeatureMembershipConfigmanagementConfigSync_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Git",
+      "git",
       "(Optional) Structure is documented below.",
-      Gkehub_FeatureMembershipConfigmanagementConfigSyncGit_GetTypes(),
+      gkehub_FeatureMembershipConfigmanagementConfigSyncGit_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "MetricsGcpServiceAccountEmail",
+      "metricsGcpServiceAccountEmail",
       "The Email of the Google Cloud Service Account (GSA) used for exporting Config Sync metrics to Cloud Monitoring. The GSA should have the Monitoring Metric Writer(roles/monitoring.metricWriter) IAM role. The Kubernetes ServiceAccount `default` in the namespace `config-management-monitoring` should be bound to the GSA.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "oci",
+      "(Optional) Supported from ACM versions 1.12.0 onwards. Structure is documented below.\n\nUse either `git` or `oci` config option.",
+      gkehub_FeatureMembershipConfigmanagementConfigSyncOci_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "preventDrift",
+      'Supported from ACM versions 1.10.0 onwards. Set to true to enable the Config Sync admission webhook to prevent drifts. If set to "false", disables the Config Sync admission webhook and does not prevent drifts.',
       [],
       false,
       false,

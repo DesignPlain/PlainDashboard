@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Secretmanager_getSecretsSecretReplicationAuto,
-  Secretmanager_getSecretsSecretReplicationAuto_GetTypes,
-} from "./Secretmanager_getSecretsSecretReplicationAuto";
+  secretmanager_getSecretsSecretReplicationAuto,
+  secretmanager_getSecretsSecretReplicationAuto_GetTypes,
+} from "./secretmanager_getSecretsSecretReplicationAuto";
 import {
-  Secretmanager_getSecretsSecretReplicationUserManaged,
-  Secretmanager_getSecretsSecretReplicationUserManaged_GetTypes,
-} from "./Secretmanager_getSecretsSecretReplicationUserManaged";
+  secretmanager_getSecretsSecretReplicationUserManaged,
+  secretmanager_getSecretsSecretReplicationUserManaged_GetTypes,
+} from "./secretmanager_getSecretsSecretReplicationUserManaged";
 
-export interface Secretmanager_getSecretsSecretReplication {
+export interface secretmanager_getSecretsSecretReplication {
   /*
 The Secret will automatically be replicated without any restrictions.
 Structure is documented below.
 */
-  Autos?: Array<Secretmanager_getSecretsSecretReplicationAuto>;
+  autos?: Array<secretmanager_getSecretsSecretReplicationAuto>;
 
   /*
 The Secret will be replicated to the regions specified by the user.
 Structure is documented below.
 */
-  UserManageds?: Array<Secretmanager_getSecretsSecretReplicationUserManaged>;
+  userManageds?: Array<secretmanager_getSecretsSecretReplicationUserManaged>;
 }
 
-export function Secretmanager_getSecretsSecretReplication_GetTypes(): DynamicUIProps[] {
+export function secretmanager_getSecretsSecretReplication_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Autos",
+      "autos",
       "The Secret will automatically be replicated without any restrictions.\nStructure is documented below.",
-      Secretmanager_getSecretsSecretReplicationAuto_GetTypes(),
+      secretmanager_getSecretsSecretReplicationAuto_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "UserManageds",
+      "userManageds",
       "The Secret will be replicated to the regions specified by the user.\nStructure is documented below.",
-      Secretmanager_getSecretsSecretReplicationUserManaged_GetTypes(),
+      secretmanager_getSecretsSecretReplicationUserManaged_GetTypes(),
       true,
       false,
     ),

@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_StandardAppVersionDeploymentZip {
-  // files count
-  FilesCount?: number;
-
+export interface appengine_StandardAppVersionDeploymentZip {
   // Source URL
-  SourceUrl?: string;
+  sourceUrl?: string;
+
+  // files count
+  filesCount?: number;
 }
 
-export function Appengine_StandardAppVersionDeploymentZip_GetTypes(): DynamicUIProps[] {
+export function appengine_StandardAppVersionDeploymentZip_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SourceUrl",
+      "sourceUrl",
       "Source URL",
       [],
       true,
@@ -26,7 +26,7 @@ export function Appengine_StandardAppVersionDeploymentZip_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Number,
-      "FilesCount",
+      "filesCount",
       "files count",
       [],
       false,

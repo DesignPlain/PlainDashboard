@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_ServiceAttachmentConnectedEndpoint {
+export interface compute_ServiceAttachmentConnectedEndpoint {
   /*
 (Output)
 The URL of the consumer forwarding rule.
 */
-  Endpoint?: string;
+  endpoint?: string;
 
   /*
 (Output)
 The status of the connection from the consumer forwarding rule to
 this service attachment.
 */
-  Status?: string;
+  status?: string;
 }
 
-export function Compute_ServiceAttachmentConnectedEndpoint_GetTypes(): DynamicUIProps[] {
+export function compute_ServiceAttachmentConnectedEndpoint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Endpoint",
+      "endpoint",
       "(Output)\nThe URL of the consumer forwarding rule.",
       [],
       false,
@@ -33,7 +33,7 @@ export function Compute_ServiceAttachmentConnectedEndpoint_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "Status",
+      "status",
       "(Output)\nThe status of the connection from the consumer forwarding rule to\nthis service attachment.",
       [],
       false,

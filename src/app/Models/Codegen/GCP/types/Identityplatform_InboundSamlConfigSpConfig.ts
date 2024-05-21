@@ -6,13 +6,13 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Identityplatform_InboundSamlConfigSpConfigSpCertificate,
-  Identityplatform_InboundSamlConfigSpConfigSpCertificate_GetTypes,
-} from "./Identityplatform_InboundSamlConfigSpConfigSpCertificate";
+  identityplatform_InboundSamlConfigSpConfigSpCertificate,
+  identityplatform_InboundSamlConfigSpConfigSpCertificate_GetTypes,
+} from "./identityplatform_InboundSamlConfigSpConfigSpCertificate";
 
-export interface Identityplatform_InboundSamlConfigSpConfig {
+export interface identityplatform_InboundSamlConfigSpConfig {
   // Callback URI where responses from IDP are handled. Must start with `https://`.
-  CallbackUri?: string;
+  callbackUri?: string;
 
   /*
 (Output)
@@ -22,17 +22,17 @@ Structure is documented below.
 
 <a name="nested_sp_certificates"></a>The `sp_certificates` block contains:
 */
-  SpCertificates?: Array<Identityplatform_InboundSamlConfigSpConfigSpCertificate>;
+  spCertificates?: Array<identityplatform_InboundSamlConfigSpConfigSpCertificate>;
 
   // Unique identifier for all SAML entities.
-  SpEntityId?: string;
+  spEntityId?: string;
 }
 
-export function Identityplatform_InboundSamlConfigSpConfig_GetTypes(): DynamicUIProps[] {
+export function identityplatform_InboundSamlConfigSpConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CallbackUri",
+      "callbackUri",
       "Callback URI where responses from IDP are handled. Must start with `https://`.",
       [],
       false,
@@ -40,15 +40,15 @@ export function Identityplatform_InboundSamlConfigSpConfig_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Array,
-      "SpCertificates",
+      "spCertificates",
       '(Output)\nThe IDP\'s certificate data to verify the signature in the SAMLResponse issued by the IDP.\nStructure is documented below.\n\n\n<a name="nested_sp_certificates"></a>The `sp_certificates` block contains:',
-      Identityplatform_InboundSamlConfigSpConfigSpCertificate_GetTypes(),
+      identityplatform_InboundSamlConfigSpConfigSpCertificate_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "SpEntityId",
+      "spEntityId",
       "Unique identifier for all SAML entities.",
       [],
       false,

@@ -8,27 +8,11 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface AiFeatureGroupFeatureArgs {
-  // The description of the FeatureGroup.
-  Description?: string;
-
-  // The name of the Feature Group.
-  FeatureGroup?: string;
-
-  /*
-The labels with user-defined metadata to organize your FeatureGroup.
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  Labels?: Map<string, string>;
-
-  // The resource name of the Feature Group Feature.
-  Name?: string;
-
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 The region for the resource. It should be the same as the feature group's region.
@@ -36,65 +20,81 @@ The region for the resource. It should be the same as the feature group's region
 
 - - -
 */
-  Region?: string;
+  region?: string;
 
   // The name of the BigQuery Table/View column hosting data for this version. If no value is provided, will use featureId.
-  VersionColumnName?: string;
+  versionColumnName?: string;
+
+  // The description of the FeatureGroup.
+  description?: string;
+
+  // The name of the Feature Group.
+  featureGroup?: string;
+
+  /*
+The labels with user-defined metadata to organize your FeatureGroup.
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  labels?: Map<string, string>;
+
+  // The resource name of the Feature Group Feature.
+  name?: string;
 }
 export class AiFeatureGroupFeature extends Resource {
   /*
-The labels with user-defined metadata to organize your FeatureGroup.
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  public Labels?: Map<string, string>;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  /*
 The region for the resource. It should be the same as the feature group's region.
 
 
 - - -
 */
-  public Region?: string;
+  public region?: string;
+
+  // The timestamp of when the FeatureGroup was last updated in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
+  public updateTime?: string;
 
   // The name of the BigQuery Table/View column hosting data for this version. If no value is provided, will use featureId.
-  public VersionColumnName?: string;
-
-  // The description of the FeatureGroup.
-  public Description?: string;
+  public versionColumnName?: string;
 
   // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
+  public effectiveLabels?: Map<string, string>;
+
+  // The name of the Feature Group.
+  public featureGroup?: string;
+
+  /*
+The labels with user-defined metadata to organize your FeatureGroup.
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  // The timestamp of when the FeatureGroup was created in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
+  public createTime?: string;
+
+  // The description of the FeatureGroup.
+  public description?: string;
 
   // The resource name of the Feature Group Feature.
-  public Name?: string;
+  public name?: string;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
-
-  // The timestamp of when the FeatureGroup was last updated in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
-  public UpdateTime?: string;
-
-  // The timestamp of when the FeatureGroup was created in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
-  public CreateTime?: string;
-
-  // The name of the Feature Group.
-  public FeatureGroup?: string;
+  public pulumiLabels?: Map<string, string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "The labels with user-defined metadata to organize your FeatureGroup.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
@@ -102,7 +102,7 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The resource name of the Feature Group Feature.",
         [],
         false,
@@ -110,7 +110,7 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -118,7 +118,7 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "The region for the resource. It should be the same as the feature group's region.\n\n\n- - -",
         [],
         true,
@@ -126,7 +126,7 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "VersionColumnName",
+        "versionColumnName",
         "The name of the BigQuery Table/View column hosting data for this version. If no value is provided, will use featureId.",
         [],
         false,
@@ -134,7 +134,7 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "The description of the FeatureGroup.",
         [],
         false,
@@ -142,7 +142,7 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "FeatureGroup",
+        "featureGroup",
         "The name of the Feature Group.",
         [],
         true,

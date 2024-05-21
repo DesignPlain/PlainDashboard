@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Identityplatform_ConfigSignInEmail {
+export interface identityplatform_ConfigSignInEmail {
   // Whether email auth is enabled for the project or not.
-  Enabled?: boolean;
+  enabled?: boolean;
 
   /*
 Whether a password is required for email auth or not. If true, both an email and
 password must be provided to sign in. If false, a user may sign in via either
 email/password or email link.
 */
-  PasswordRequired?: boolean;
+  passwordRequired?: boolean;
 }
 
-export function Identityplatform_ConfigSignInEmail_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ConfigSignInEmail_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether email auth is enabled for the project or not.",
       [],
       true,
@@ -30,7 +30,7 @@ export function Identityplatform_ConfigSignInEmail_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "PasswordRequired",
+      "passwordRequired",
       "Whether a password is required for email auth or not. If true, both an email and\npassword must be provided to sign in. If false, a user may sign in via either\nemail/password or email link.",
       [],
       false,

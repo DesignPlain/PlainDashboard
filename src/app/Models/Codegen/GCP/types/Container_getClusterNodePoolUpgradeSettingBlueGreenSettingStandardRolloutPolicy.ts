@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy {
+export interface container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy {
   // Number of blue nodes to drain in a batch.
-  BatchNodeCount?: number;
+  batchNodeCount?: number;
 
   // Percentage of the blue pool nodes to drain in a batch.
-  BatchPercentage?: number;
+  batchPercentage?: number;
 
   // Soak time after each batch gets drained.
-  BatchSoakDuration?: string;
+  batchSoakDuration?: string;
 }
 
-export function Container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "BatchNodeCount",
-      "Number of blue nodes to drain in a batch.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "BatchPercentage",
+      "batchPercentage",
       "Percentage of the blue pool nodes to drain in a batch.",
       [],
       true,
@@ -37,8 +29,16 @@ export function Container_getClusterNodePoolUpgradeSettingBlueGreenSettingStanda
     ),
     new DynamicUIProps(
       InputType.String,
-      "BatchSoakDuration",
+      "batchSoakDuration",
       "Soak time after each batch gets drained.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "batchNodeCount",
+      "Number of blue nodes to drain in a batch.",
       [],
       true,
       false,

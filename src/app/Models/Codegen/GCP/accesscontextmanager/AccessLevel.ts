@@ -7,17 +7,24 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Accesscontextmanager_AccessLevelCustom,
-  Accesscontextmanager_AccessLevelCustom_GetTypes,
-} from "../types/Accesscontextmanager_AccessLevelCustom";
+  accesscontextmanager_AccessLevelCustom,
+  accesscontextmanager_AccessLevelCustom_GetTypes,
+} from "../types/accesscontextmanager_AccessLevelCustom";
 import {
-  Accesscontextmanager_AccessLevelBasic,
-  Accesscontextmanager_AccessLevelBasic_GetTypes,
-} from "../types/Accesscontextmanager_AccessLevelBasic";
+  accesscontextmanager_AccessLevelBasic,
+  accesscontextmanager_AccessLevelBasic_GetTypes,
+} from "../types/accesscontextmanager_AccessLevelBasic";
 
 export interface AccessLevelArgs {
+  /*
+Custom access level conditions are set using the Cloud Common Expression Language to represent the necessary conditions for the level to apply to a request.
+See CEL spec at: https://github.com/google/cel-spec.
+Structure is documented below.
+*/
+  custom?: accesscontextmanager_AccessLevelCustom;
+
   // Description of the AccessLevel and its use. Does not affect behavior.
-  Description?: string;
+  description?: string;
 
   /*
 Resource name for the Access Level. The short_name component must begin
@@ -27,33 +34,26 @@ Format: accessPolicies/{policy_id}/accessLevels/{short_name}
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   /*
 The AccessPolicy this AccessLevel lives in.
 Format: accessPolicies/{policy_id}
 */
-  Parent?: string;
+  parent?: string;
 
   // Human readable title. Must be unique within the Policy.
-  Title?: string;
+  title?: string;
 
   /*
 A set of predefined conditions for the access level and a combining function.
 Structure is documented below.
 */
-  Basic?: Accesscontextmanager_AccessLevelBasic;
-
-  /*
-Custom access level conditions are set using the Cloud Common Expression Language to represent the necessary conditions for the level to apply to a request.
-See CEL spec at: https://github.com/google/cel-spec.
-Structure is documented below.
-*/
-  Custom?: Accesscontextmanager_AccessLevelCustom;
+  basic?: accesscontextmanager_AccessLevelBasic;
 }
 export class AccessLevel extends Resource {
   // Description of the AccessLevel and its use. Does not affect behavior.
-  public Description?: string;
+  public description?: string;
 
   /*
 Resource name for the Access Level. The short_name component must begin
@@ -63,43 +63,43 @@ Format: accessPolicies/{policy_id}/accessLevels/{short_name}
 
 - - -
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The AccessPolicy this AccessLevel lives in.
 Format: accessPolicies/{policy_id}
 */
-  public Parent?: string;
+  public parent?: string;
 
   // Human readable title. Must be unique within the Policy.
-  public Title?: string;
+  public title?: string;
 
   /*
 A set of predefined conditions for the access level and a combining function.
 Structure is documented below.
 */
-  public Basic?: Accesscontextmanager_AccessLevelBasic;
+  public basic?: accesscontextmanager_AccessLevelBasic;
 
   /*
 Custom access level conditions are set using the Cloud Common Expression Language to represent the necessary conditions for the level to apply to a request.
 See CEL spec at: https://github.com/google/cel-spec.
 Structure is documented below.
 */
-  public Custom?: Accesscontextmanager_AccessLevelCustom;
+  public custom?: accesscontextmanager_AccessLevelCustom;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "Custom",
+        "custom",
         "Custom access level conditions are set using the Cloud Common Expression Language to represent the necessary conditions for the level to apply to a request.\nSee CEL spec at: https://github.com/google/cel-spec.\nStructure is documented below.",
-        Accesscontextmanager_AccessLevelCustom_GetTypes(),
+        accesscontextmanager_AccessLevelCustom_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Description of the AccessLevel and its use. Does not affect behavior.",
         [],
         false,
@@ -107,7 +107,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Resource name for the Access Level. The short_name component must begin\nwith a letter and only include alphanumeric and '_'.\nFormat: accessPolicies/{policy_id}/accessLevels/{short_name}\n\n\n- - -",
         [],
         false,
@@ -115,7 +115,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Parent",
+        "parent",
         "The AccessPolicy this AccessLevel lives in.\nFormat: accessPolicies/{policy_id}",
         [],
         true,
@@ -123,7 +123,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Title",
+        "title",
         "Human readable title. Must be unique within the Policy.",
         [],
         true,
@@ -131,9 +131,9 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Basic",
+        "basic",
         "A set of predefined conditions for the access level and a combining function.\nStructure is documented below.",
-        Accesscontextmanager_AccessLevelBasic_GetTypes(),
+        accesscontextmanager_AccessLevelBasic_GetTypes(),
         false,
         false,
       ),

@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataplex_LakeAssetStatus {
+export interface dataplex_LakeAssetStatus {
   // Number of active assets.
-  ActiveAssets?: number;
+  activeAssets?: number;
 
   // Number of assets that are in process of updating the security policy on attached resources.
-  SecurityPolicyApplyingAssets?: number;
+  securityPolicyApplyingAssets?: number;
 
   // Output only. The time when the lake was last updated.
-  UpdateTime?: string;
+  updateTime?: string;
 }
 
-export function Dataplex_LakeAssetStatus_GetTypes(): DynamicUIProps[] {
+export function dataplex_LakeAssetStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "SecurityPolicyApplyingAssets",
+      "activeAssets",
+      "Number of active assets.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "securityPolicyApplyingAssets",
       "Number of assets that are in process of updating the security policy on attached resources.",
       [],
       false,
@@ -29,16 +37,8 @@ export function Dataplex_LakeAssetStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "UpdateTime",
+      "updateTime",
       "Output only. The time when the lake was last updated.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "ActiveAssets",
-      "Number of active assets.",
       [],
       false,
       false,

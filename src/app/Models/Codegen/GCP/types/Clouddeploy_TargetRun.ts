@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Clouddeploy_TargetRun {
+export interface clouddeploy_TargetRun {
   // Required. The location where the Cloud Run Service should be located. Format is `projects/{project}/locations/{location}`.
-  Location?: string;
+  location?: string;
 }
 
-export function Clouddeploy_TargetRun_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_TargetRun_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       "Required. The location where the Cloud Run Service should be located. Format is `projects/{project}/locations/{location}`.",
       [],
       true,

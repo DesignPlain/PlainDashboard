@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionInstanceGroupManagerAllInstancesConfig {
+export interface compute_RegionInstanceGroupManagerAllInstancesConfig {
   /*
 , The label key-value pairs that you want to patch onto the instance.
 
 - - -
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   // , The metadata key-value pairs that you want to patch onto the instance. For more information, see [Project and instance metadata](https://cloud.google.com/compute/docs/metadata#project_and_instance_metadata).
-  Metadata?: Map<string, string>;
+  metadata?: Map<string, string>;
 }
 
-export function Compute_RegionInstanceGroupManagerAllInstancesConfig_GetTypes(): DynamicUIProps[] {
+export function compute_RegionInstanceGroupManagerAllInstancesConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Map,
-      "Labels",
+      "labels",
       ", The label key-value pairs that you want to patch onto the instance.\n\n- - -",
       InputType_Map_GetTypes(),
       false,
@@ -30,7 +30,7 @@ export function Compute_RegionInstanceGroupManagerAllInstancesConfig_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Metadata",
+      "metadata",
       ", The metadata key-value pairs that you want to patch onto the instance. For more information, see [Project and instance metadata](https://cloud.google.com/compute/docs/metadata#project_and_instance_metadata).",
       InputType_Map_GetTypes(),
       false,

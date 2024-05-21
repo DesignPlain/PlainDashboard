@@ -6,79 +6,79 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Vertex_AiFeatureStoreEntityTypeMonitoringConfigImportFeaturesAnalysis,
-  Vertex_AiFeatureStoreEntityTypeMonitoringConfigImportFeaturesAnalysis_GetTypes,
-} from "./Vertex_AiFeatureStoreEntityTypeMonitoringConfigImportFeaturesAnalysis";
+  vertex_AiFeatureStoreEntityTypeMonitoringConfigImportFeaturesAnalysis,
+  vertex_AiFeatureStoreEntityTypeMonitoringConfigImportFeaturesAnalysis_GetTypes,
+} from "./vertex_AiFeatureStoreEntityTypeMonitoringConfigImportFeaturesAnalysis";
 import {
-  Vertex_AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfig,
-  Vertex_AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfig_GetTypes,
-} from "./Vertex_AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfig";
+  vertex_AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfig,
+  vertex_AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfig_GetTypes,
+} from "./vertex_AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfig";
 import {
-  Vertex_AiFeatureStoreEntityTypeMonitoringConfigSnapshotAnalysis,
-  Vertex_AiFeatureStoreEntityTypeMonitoringConfigSnapshotAnalysis_GetTypes,
-} from "./Vertex_AiFeatureStoreEntityTypeMonitoringConfigSnapshotAnalysis";
+  vertex_AiFeatureStoreEntityTypeMonitoringConfigSnapshotAnalysis,
+  vertex_AiFeatureStoreEntityTypeMonitoringConfigSnapshotAnalysis_GetTypes,
+} from "./vertex_AiFeatureStoreEntityTypeMonitoringConfigSnapshotAnalysis";
 import {
-  Vertex_AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfig,
-  Vertex_AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfig_GetTypes,
-} from "./Vertex_AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfig";
+  vertex_AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfig,
+  vertex_AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfig_GetTypes,
+} from "./vertex_AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfig";
 
-export interface Vertex_AiFeatureStoreEntityTypeMonitoringConfig {
+export interface vertex_AiFeatureStoreEntityTypeMonitoringConfig {
   /*
 Threshold for categorical features of anomaly detection. This is shared by all types of Featurestore Monitoring for categorical features (i.e. Features with type (Feature.ValueType) BOOL or STRING).
 Structure is documented below.
 */
-  CategoricalThresholdConfig?: Vertex_AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfig;
+  categoricalThresholdConfig?: vertex_AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfig;
 
   /*
 The config for ImportFeatures Analysis Based Feature Monitoring.
 Structure is documented below.
 */
-  ImportFeaturesAnalysis?: Vertex_AiFeatureStoreEntityTypeMonitoringConfigImportFeaturesAnalysis;
+  importFeaturesAnalysis?: vertex_AiFeatureStoreEntityTypeMonitoringConfigImportFeaturesAnalysis;
 
   /*
 Threshold for numerical features of anomaly detection. This is shared by all objectives of Featurestore Monitoring for numerical features (i.e. Features with type (Feature.ValueType) DOUBLE or INT64).
 Structure is documented below.
 */
-  NumericalThresholdConfig?: Vertex_AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfig;
+  numericalThresholdConfig?: vertex_AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfig;
 
   /*
 The config for Snapshot Analysis Based Feature Monitoring.
 Structure is documented below.
 */
-  SnapshotAnalysis?: Vertex_AiFeatureStoreEntityTypeMonitoringConfigSnapshotAnalysis;
+  snapshotAnalysis?: vertex_AiFeatureStoreEntityTypeMonitoringConfigSnapshotAnalysis;
 }
 
-export function Vertex_AiFeatureStoreEntityTypeMonitoringConfig_GetTypes(): DynamicUIProps[] {
+export function vertex_AiFeatureStoreEntityTypeMonitoringConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "NumericalThresholdConfig",
-      "Threshold for numerical features of anomaly detection. This is shared by all objectives of Featurestore Monitoring for numerical features (i.e. Features with type (Feature.ValueType) DOUBLE or INT64).\nStructure is documented below.",
-      Vertex_AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "SnapshotAnalysis",
-      "The config for Snapshot Analysis Based Feature Monitoring.\nStructure is documented below.",
-      Vertex_AiFeatureStoreEntityTypeMonitoringConfigSnapshotAnalysis_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "CategoricalThresholdConfig",
+      "categoricalThresholdConfig",
       "Threshold for categorical features of anomaly detection. This is shared by all types of Featurestore Monitoring for categorical features (i.e. Features with type (Feature.ValueType) BOOL or STRING).\nStructure is documented below.",
-      Vertex_AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfig_GetTypes(),
+      vertex_AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ImportFeaturesAnalysis",
+      "importFeaturesAnalysis",
       "The config for ImportFeatures Analysis Based Feature Monitoring.\nStructure is documented below.",
-      Vertex_AiFeatureStoreEntityTypeMonitoringConfigImportFeaturesAnalysis_GetTypes(),
+      vertex_AiFeatureStoreEntityTypeMonitoringConfigImportFeaturesAnalysis_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "numericalThresholdConfig",
+      "Threshold for numerical features of anomaly detection. This is shared by all objectives of Featurestore Monitoring for numerical features (i.e. Features with type (Feature.ValueType) DOUBLE or INT64).\nStructure is documented below.",
+      vertex_AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "snapshotAnalysis",
+      "The config for Snapshot Analysis Based Feature Monitoring.\nStructure is documented below.",
+      vertex_AiFeatureStoreEntityTypeMonitoringConfigSnapshotAnalysis_GetTypes(),
       false,
       false,
     ),

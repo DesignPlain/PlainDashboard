@@ -6,49 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter,
-  Dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter_GetTypes,
-} from "./Dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter";
+  dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter,
+  dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter_GetTypes,
+} from "./dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter";
 
-export interface Dataflow_PipelineWorkloadDataflowFlexTemplateRequest {
+export interface dataflow_PipelineWorkloadDataflowFlexTemplateRequest {
+  // The ID of the Cloud Platform project that the job belongs to.
+  projectId?: string;
+
+  // If true, the request is validated but not actually executed. Defaults to false.
+  validateOnly?: boolean;
+
   /*
 Parameter to launch a job from a Flex Template.
 https://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#launchflextemplateparameter
 Structure is documented below.
 */
-  LaunchParameter?: Dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter;
+  launchParameter?: dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter;
 
   // The regional endpoint to which to direct the request. For example, us-central1, us-west1.
-  Location?: string;
-
-  // The ID of the Cloud Platform project that the job belongs to.
-  ProjectId?: string;
-
-  // If true, the request is validated but not actually executed. Defaults to false.
-  ValidateOnly?: boolean;
+  location?: string;
 }
 
-export function Dataflow_PipelineWorkloadDataflowFlexTemplateRequest_GetTypes(): DynamicUIProps[] {
+export function dataflow_PipelineWorkloadDataflowFlexTemplateRequest_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "LaunchParameter",
-      "Parameter to launch a job from a Flex Template.\nhttps://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#launchflextemplateparameter\nStructure is documented below.",
-      Dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Location",
-      "The regional endpoint to which to direct the request. For example, us-central1, us-west1.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ProjectId",
+      "projectId",
       "The ID of the Cloud Platform project that the job belongs to.",
       [],
       true,
@@ -56,10 +40,26 @@ export function Dataflow_PipelineWorkloadDataflowFlexTemplateRequest_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "ValidateOnly",
+      "validateOnly",
       "If true, the request is validated but not actually executed. Defaults to false.",
       [],
       false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "launchParameter",
+      "Parameter to launch a job from a Flex Template.\nhttps://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#launchflextemplateparameter\nStructure is documented below.",
+      dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "location",
+      "The regional endpoint to which to direct the request. For example, us-central1, us-west1.",
+      [],
+      true,
       false,
     ),
   ];

@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudscheduler_JobHttpTargetOidcToken {
+export interface cloudscheduler_JobHttpTargetOidcToken {
   /*
 Audience to be used when generating OIDC token. If not specified,
 the URI specified in target will be used.
 */
-  Audience?: string;
+  audience?: string;
 
   /*
 Service account email to be used for generating OAuth token.
 The service account must be within the same project as the job.
 */
-  ServiceAccountEmail?: string;
+  serviceAccountEmail?: string;
 }
 
-export function Cloudscheduler_JobHttpTargetOidcToken_GetTypes(): DynamicUIProps[] {
+export function cloudscheduler_JobHttpTargetOidcToken_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Audience",
+      "audience",
       "Audience to be used when generating OIDC token. If not specified,\nthe URI specified in target will be used.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Cloudscheduler_JobHttpTargetOidcToken_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "ServiceAccountEmail",
+      "serviceAccountEmail",
       "Service account email to be used for generating OAuth token.\nThe service account must be within the same project as the job.",
       [],
       true,

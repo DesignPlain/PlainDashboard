@@ -7,159 +7,111 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_SecurityPolicyAdvancedOptionsConfig,
-  Compute_SecurityPolicyAdvancedOptionsConfig_GetTypes,
-} from "../types/Compute_SecurityPolicyAdvancedOptionsConfig";
+  compute_SecurityPolicyRecaptchaOptionsConfig,
+  compute_SecurityPolicyRecaptchaOptionsConfig_GetTypes,
+} from "../types/compute_SecurityPolicyRecaptchaOptionsConfig";
 import {
-  Compute_SecurityPolicyRecaptchaOptionsConfig,
-  Compute_SecurityPolicyRecaptchaOptionsConfig_GetTypes,
-} from "../types/Compute_SecurityPolicyRecaptchaOptionsConfig";
+  compute_SecurityPolicyRule,
+  compute_SecurityPolicyRule_GetTypes,
+} from "../types/compute_SecurityPolicyRule";
 import {
-  Compute_SecurityPolicyRule,
-  Compute_SecurityPolicyRule_GetTypes,
-} from "../types/Compute_SecurityPolicyRule";
+  compute_SecurityPolicyAdaptiveProtectionConfig,
+  compute_SecurityPolicyAdaptiveProtectionConfig_GetTypes,
+} from "../types/compute_SecurityPolicyAdaptiveProtectionConfig";
 import {
-  Compute_SecurityPolicyAdaptiveProtectionConfig,
-  Compute_SecurityPolicyAdaptiveProtectionConfig_GetTypes,
-} from "../types/Compute_SecurityPolicyAdaptiveProtectionConfig";
+  compute_SecurityPolicyAdvancedOptionsConfig,
+  compute_SecurityPolicyAdvancedOptionsConfig_GetTypes,
+} from "../types/compute_SecurityPolicyAdvancedOptionsConfig";
 
 export interface SecurityPolicyArgs {
   /*
 [Advanced Configuration Options](https://cloud.google.com/armor/docs/security-policy-overview#json-parsing).
 Structure is documented below.
 */
-  AdvancedOptionsConfig?: Compute_SecurityPolicyAdvancedOptionsConfig;
+  advancedOptionsConfig?: compute_SecurityPolicyAdvancedOptionsConfig;
 
   // An optional description of this security policy. Max size is 2048.
-  Description?: string;
+  description?: string;
 
   /*
 The name of the security policy.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   /*
 The project in which the resource belongs. If it
 is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // [reCAPTCHA Configuration Options](https://cloud.google.com/armor/docs/configure-security-policies?hl=en#use_a_manual_challenge_to_distinguish_between_human_or_automated_clients). Structure is documented below.
-  RecaptchaOptionsConfig?: Compute_SecurityPolicyRecaptchaOptionsConfig;
+  recaptchaOptionsConfig?: compute_SecurityPolicyRecaptchaOptionsConfig;
 
   /*
 The set of rules that belong to this policy. There must always be a default
 rule (rule with priority 2147483647 and match "\-"). If no rules are provided when creating a
 security policy, a default rule with action "allow" will be added. Structure is documented below.
 */
-  Rules?: Array<Compute_SecurityPolicyRule>;
+  rules?: Array<compute_SecurityPolicyRule>;
 
   // The type indicates the intended use of the security policy. This field can be set only at resource creation time.
-  Type?: string;
+  type?: string;
 
   // Configuration for [Google Cloud Armor Adaptive Protection](https://cloud.google.com/armor/docs/adaptive-protection-overview?hl=en). Structure is documented below.
-  AdaptiveProtectionConfig?: Compute_SecurityPolicyAdaptiveProtectionConfig;
+  adaptiveProtectionConfig?: compute_SecurityPolicyAdaptiveProtectionConfig;
 }
 export class SecurityPolicy extends Resource {
-  /*
-The project in which the resource belongs. If it
-is not provided, the provider project is used.
-*/
-  public Project?: string;
+  // Fingerprint of this resource.
+  public fingerprint?: string;
 
-  // [reCAPTCHA Configuration Options](https://cloud.google.com/armor/docs/configure-security-policies?hl=en#use_a_manual_challenge_to_distinguish_between_human_or_automated_clients). Structure is documented below.
-  public RecaptchaOptionsConfig?: Compute_SecurityPolicyRecaptchaOptionsConfig;
+  /*
+The set of rules that belong to this policy. There must always be a default
+rule (rule with priority 2147483647 and match "\-"). If no rules are provided when creating a
+security policy, a default rule with action "allow" will be added. Structure is documented below.
+*/
+  public rules?: Array<compute_SecurityPolicyRule>;
 
   // The URI of the created resource.
-  public SelfLink?: string;
+  public selfLink?: string;
 
-  // The type indicates the intended use of the security policy. This field can be set only at resource creation time.
-  public Type?: string;
+  // Configuration for [Google Cloud Armor Adaptive Protection](https://cloud.google.com/armor/docs/adaptive-protection-overview?hl=en). Structure is documented below.
+  public adaptiveProtectionConfig?: compute_SecurityPolicyAdaptiveProtectionConfig;
 
   /*
 [Advanced Configuration Options](https://cloud.google.com/armor/docs/security-policy-overview#json-parsing).
 Structure is documented below.
 */
-  public AdvancedOptionsConfig?: Compute_SecurityPolicyAdvancedOptionsConfig;
+  public advancedOptionsConfig?: compute_SecurityPolicyAdvancedOptionsConfig;
 
-  // Fingerprint of this resource.
-  public Fingerprint?: string;
+  // An optional description of this security policy. Max size is 2048.
+  public description?: string;
 
   /*
 The name of the security policy.
 
 - - -
 */
-  public Name?: string;
+  public name?: string;
 
   /*
-The set of rules that belong to this policy. There must always be a default
-rule (rule with priority 2147483647 and match "\-"). If no rules are provided when creating a
-security policy, a default rule with action "allow" will be added. Structure is documented below.
+The project in which the resource belongs. If it
+is not provided, the provider project is used.
 */
-  public Rules?: Array<Compute_SecurityPolicyRule>;
+  public project?: string;
 
-  // Configuration for [Google Cloud Armor Adaptive Protection](https://cloud.google.com/armor/docs/adaptive-protection-overview?hl=en). Structure is documented below.
-  public AdaptiveProtectionConfig?: Compute_SecurityPolicyAdaptiveProtectionConfig;
+  // [reCAPTCHA Configuration Options](https://cloud.google.com/armor/docs/configure-security-policies?hl=en#use_a_manual_challenge_to_distinguish_between_human_or_automated_clients). Structure is documented below.
+  public recaptchaOptionsConfig?: compute_SecurityPolicyRecaptchaOptionsConfig;
 
-  // An optional description of this security policy. Max size is 2048.
-  public Description?: string;
+  // The type indicates the intended use of the security policy. This field can be set only at resource creation time.
+  public type?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Object,
-        "RecaptchaOptionsConfig",
-        "[reCAPTCHA Configuration Options](https://cloud.google.com/armor/docs/configure-security-policies?hl=en#use_a_manual_challenge_to_distinguish_between_human_or_automated_clients). Structure is documented below.",
-        Compute_SecurityPolicyRecaptchaOptionsConfig_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Array,
-        "Rules",
-        'The set of rules that belong to this policy. There must always be a default\nrule (rule with priority 2147483647 and match "\\*"). If no rules are provided when creating a\nsecurity policy, a default rule with action "allow" will be added. Structure is documented below.',
-        Compute_SecurityPolicyRule_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Type",
-        "The type indicates the intended use of the security policy. This field can be set only at resource creation time.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "AdaptiveProtectionConfig",
-        "Configuration for [Google Cloud Armor Adaptive Protection](https://cloud.google.com/armor/docs/adaptive-protection-overview?hl=en). Structure is documented below.",
-        Compute_SecurityPolicyAdaptiveProtectionConfig_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "AdvancedOptionsConfig",
-        "[Advanced Configuration Options](https://cloud.google.com/armor/docs/security-policy-overview#json-parsing).\nStructure is documented below.",
-        Compute_SecurityPolicyAdvancedOptionsConfig_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "An optional description of this security policy. Max size is 2048.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
+        "name",
         "The name of the security policy.\n\n- - -",
         [],
         false,
@@ -167,11 +119,59 @@ security policy, a default rule with action "allow" will be added. Structure is 
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The project in which the resource belongs. If it\nis not provided, the provider project is used.",
         [],
         false,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "recaptchaOptionsConfig",
+        "[reCAPTCHA Configuration Options](https://cloud.google.com/armor/docs/configure-security-policies?hl=en#use_a_manual_challenge_to_distinguish_between_human_or_automated_clients). Structure is documented below.",
+        compute_SecurityPolicyRecaptchaOptionsConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "rules",
+        'The set of rules that belong to this policy. There must always be a default\nrule (rule with priority 2147483647 and match "\\*"). If no rules are provided when creating a\nsecurity policy, a default rule with action "allow" will be added. Structure is documented below.',
+        compute_SecurityPolicyRule_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "type",
+        "The type indicates the intended use of the security policy. This field can be set only at resource creation time.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "adaptiveProtectionConfig",
+        "Configuration for [Google Cloud Armor Adaptive Protection](https://cloud.google.com/armor/docs/adaptive-protection-overview?hl=en). Structure is documented below.",
+        compute_SecurityPolicyAdaptiveProtectionConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "advancedOptionsConfig",
+        "[Advanced Configuration Options](https://cloud.google.com/armor/docs/security-policy-overview#json-parsing).\nStructure is documented below.",
+        compute_SecurityPolicyAdvancedOptionsConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "An optional description of this security policy. Max size is 2048.",
+        [],
+        false,
+        false,
       ),
     ];
   }

@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_ClusterIAMMemberCondition {
+export interface dataproc_ClusterIAMMemberCondition {
   //
-  Title?: string;
+  expression?: string;
 
   //
-  Description?: string;
+  title?: string;
 
   //
-  Expression?: string;
+  description?: string;
 }
 
-export function Dataproc_ClusterIAMMemberCondition_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterIAMMemberCondition_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Title", "", [], true, true),
-    new DynamicUIProps(InputType.String, "Description", "", [], false, true),
-    new DynamicUIProps(InputType.String, "Expression", "", [], true, true),
+    new DynamicUIProps(InputType.String, "expression", "", [], true, true),
+    new DynamicUIProps(InputType.String, "title", "", [], true, true),
+    new DynamicUIProps(InputType.String, "description", "", [], false, true),
   ];
 }

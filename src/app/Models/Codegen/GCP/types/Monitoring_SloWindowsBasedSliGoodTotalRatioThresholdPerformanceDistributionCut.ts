@@ -6,18 +6,18 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRange,
-  Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRange_GetTypes,
-} from "./Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRange";
+  monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRange,
+  monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRange_GetTypes,
+} from "./monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRange";
 
-export interface Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCut {
+export interface monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCut {
   /*
 A TimeSeries [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
 aggregating values to quantify the good service provided.
 Must have ValueType = DISTRIBUTION and
 MetricKind = DELTA or MetricKind = CUMULATIVE.
 */
-  DistributionFilter?: string;
+  distributionFilter?: string;
 
   /*
 Range of numerical values. The computed good_service
@@ -27,14 +27,14 @@ max. Open ranges can be defined by setting
 just one of min or max.
 Structure is documented below.
 */
-  Range?: Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRange;
+  range?: monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRange;
 }
 
-export function Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCut_GetTypes(): DynamicUIProps[] {
+export function monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCut_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DistributionFilter",
+      "distributionFilter",
       "A TimeSeries [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)\naggregating values to quantify the good service provided.\nMust have ValueType = DISTRIBUTION and\nMetricKind = DELTA or MetricKind = CUMULATIVE.",
       [],
       true,
@@ -42,9 +42,9 @@ export function Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceD
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Range",
+      "range",
       "Range of numerical values. The computed good_service\nwill be the count of values x in the Distribution such\nthat range.min <= x <= range.max. inclusive of min and\nmax. Open ranges can be defined by setting\njust one of min or max.\nStructure is documented below.",
-      Monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRange_GetTypes(),
+      monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRange_GetTypes(),
       true,
       false,
     ),

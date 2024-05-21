@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxAgentTextToSpeechSettings {
+export interface diagflow_CxAgentTextToSpeechSettings {
   /*
 Configuration of how speech should be synthesized, mapping from [language](https://cloud.google.com/dialogflow/cx/docs/reference/language) to [SynthesizeSpeechConfig](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents#synthesizespeechconfig).
 These settings affect:
 - The phone gateway synthesize configuration set via Agent.text_to_speech_settings.
 - How speech is synthesized when invoking session APIs. `Agent.text_to_speech_settings` only applies if `OutputAudioConfig.synthesize_speech_config` is not specified.
 */
-  SynthesizeSpeechConfigs?: string;
+  synthesizeSpeechConfigs?: string;
 }
 
-export function Diagflow_CxAgentTextToSpeechSettings_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxAgentTextToSpeechSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SynthesizeSpeechConfigs",
+      "synthesizeSpeechConfigs",
       "Configuration of how speech should be synthesized, mapping from [language](https://cloud.google.com/dialogflow/cx/docs/reference/language) to [SynthesizeSpeechConfig](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents#synthesizespeechconfig).\nThese settings affect:\n* The phone gateway synthesize configuration set via Agent.text_to_speech_settings.\n* How speech is synthesized when invoking session APIs. `Agent.text_to_speech_settings` only applies if `OutputAudioConfig.synthesize_speech_config` is not specified.",
       [],
       false,

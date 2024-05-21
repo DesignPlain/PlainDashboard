@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Notebooks_RuntimeVirtualMachineVirtualMachineConfigAcceleratorConfig {
+export interface notebooks_RuntimeVirtualMachineVirtualMachineConfigAcceleratorConfig {
   // Count of cores of this accelerator.
-  CoreCount?: number;
+  coreCount?: number;
 
   /*
 Accelerator model. For valid values, see
 `https://cloud.google.com/vertex-ai/docs/workbench/reference/
 rest/v1/projects.locations.runtimes#AcceleratorType`
 */
-  Type?: string;
+  type?: string;
 }
 
-export function Notebooks_RuntimeVirtualMachineVirtualMachineConfigAcceleratorConfig_GetTypes(): DynamicUIProps[] {
+export function notebooks_RuntimeVirtualMachineVirtualMachineConfigAcceleratorConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "CoreCount",
+      "coreCount",
       "Count of cores of this accelerator.",
       [],
       false,
@@ -30,7 +30,7 @@ export function Notebooks_RuntimeVirtualMachineVirtualMachineConfigAcceleratorCo
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "Accelerator model. For valid values, see\n`https://cloud.google.com/vertex-ai/docs/workbench/reference/\nrest/v1/projects.locations.runtimes#AcceleratorType`",
       [],
       false,

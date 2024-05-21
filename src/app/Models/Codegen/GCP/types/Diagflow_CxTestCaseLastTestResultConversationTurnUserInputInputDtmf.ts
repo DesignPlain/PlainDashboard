@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputDtmf {
+export interface diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputDtmf {
   // The dtmf digits.
-  Digits?: string;
+  digits?: string;
 
   // The finish digit (if any).
-  FinishDigit?: string;
+  finishDigit?: string;
 }
 
-export function Diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputDtmf_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputDtmf_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Digits",
-      "The dtmf digits.",
+      "finishDigit",
+      "The finish digit (if any).",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "FinishDigit",
-      "The finish digit (if any).",
+      "digits",
+      "The dtmf digits.",
       [],
       false,
       false,

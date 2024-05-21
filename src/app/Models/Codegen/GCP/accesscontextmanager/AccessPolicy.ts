@@ -9,16 +9,10 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface AccessPolicyArgs {
   /*
-The parent of this AccessPolicy in the Cloud Resource Hierarchy.
-Format: organizations/{organization_id}
-*/
-  Parent?: string;
-
-  /*
 Folder or project on which this policy is applicable.
 Format: folders/{{folder_id}} or projects/{{project_id}}
 */
-  Scopes?: string;
+  scopes?: string;
 
   /*
 Human readable title. Does not affect behavior.
@@ -26,14 +20,20 @@ Human readable title. Does not affect behavior.
 
 - - -
 */
-  Title?: string;
+  title?: string;
+
+  /*
+The parent of this AccessPolicy in the Cloud Resource Hierarchy.
+Format: organizations/{organization_id}
+*/
+  parent?: string;
 }
 export class AccessPolicy extends Resource {
   /*
 Folder or project on which this policy is applicable.
 Format: folders/{{folder_id}} or projects/{{project_id}}
 */
-  public Scopes?: string;
+  public scopes?: string;
 
   /*
 Human readable title. Does not affect behavior.
@@ -41,36 +41,28 @@ Human readable title. Does not affect behavior.
 
 - - -
 */
-  public Title?: string;
+  public title?: string;
 
   // Time the AccessPolicy was updated in UTC.
-  public UpdateTime?: string;
+  public updateTime?: string;
 
   // Time the AccessPolicy was created in UTC.
-  public CreateTime?: string;
+  public createTime?: string;
 
   // Resource name of the AccessPolicy. Format: {policy_id}
-  public Name?: string;
+  public name?: string;
 
   /*
 The parent of this AccessPolicy in the Cloud Resource Hierarchy.
 Format: organizations/{organization_id}
 */
-  public Parent?: string;
+  public parent?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Parent",
-        "The parent of this AccessPolicy in the Cloud Resource Hierarchy.\nFormat: organizations/{organization_id}",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Scopes",
+        "scopes",
         "Folder or project on which this policy is applicable.\nFormat: folders/{{folder_id}} or projects/{{project_id}}",
         [],
         false,
@@ -78,11 +70,19 @@ Format: organizations/{organization_id}
       ),
       new DynamicUIProps(
         InputType.String,
-        "Title",
+        "title",
         "Human readable title. Does not affect behavior.\n\n\n- - -",
         [],
         true,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "parent",
+        "The parent of this AccessPolicy in the Cloud Resource Hierarchy.\nFormat: organizations/{organization_id}",
+        [],
+        true,
+        true,
       ),
     ];
   }

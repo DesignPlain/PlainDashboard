@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudbuild_getTriggerBuildSourceRepoSource,
-  Cloudbuild_getTriggerBuildSourceRepoSource_GetTypes,
-} from "./Cloudbuild_getTriggerBuildSourceRepoSource";
+  cloudbuild_getTriggerBuildSourceRepoSource,
+  cloudbuild_getTriggerBuildSourceRepoSource_GetTypes,
+} from "./cloudbuild_getTriggerBuildSourceRepoSource";
 import {
-  Cloudbuild_getTriggerBuildSourceStorageSource,
-  Cloudbuild_getTriggerBuildSourceStorageSource_GetTypes,
-} from "./Cloudbuild_getTriggerBuildSourceStorageSource";
+  cloudbuild_getTriggerBuildSourceStorageSource,
+  cloudbuild_getTriggerBuildSourceStorageSource_GetTypes,
+} from "./cloudbuild_getTriggerBuildSourceStorageSource";
 
-export interface Cloudbuild_getTriggerBuildSource {
+export interface cloudbuild_getTriggerBuildSource {
   // Location of the source in a Google Cloud Source Repository.
-  RepoSources?: Array<Cloudbuild_getTriggerBuildSourceRepoSource>;
+  repoSources?: Array<cloudbuild_getTriggerBuildSourceRepoSource>;
 
   // Location of the source in an archive file in Google Cloud Storage.
-  StorageSources?: Array<Cloudbuild_getTriggerBuildSourceStorageSource>;
+  storageSources?: Array<cloudbuild_getTriggerBuildSourceStorageSource>;
 }
 
-export function Cloudbuild_getTriggerBuildSource_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_getTriggerBuildSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "RepoSources",
+      "repoSources",
       "Location of the source in a Google Cloud Source Repository.",
-      Cloudbuild_getTriggerBuildSourceRepoSource_GetTypes(),
+      cloudbuild_getTriggerBuildSourceRepoSource_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "StorageSources",
+      "storageSources",
       "Location of the source in an archive file in Google Cloud Storage.",
-      Cloudbuild_getTriggerBuildSourceStorageSource_GetTypes(),
+      cloudbuild_getTriggerBuildSourceStorageSource_GetTypes(),
       true,
       false,
     ),

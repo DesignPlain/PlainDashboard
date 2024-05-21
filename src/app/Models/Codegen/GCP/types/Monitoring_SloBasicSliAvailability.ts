@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_SloBasicSliAvailability {
+export interface monitoring_SloBasicSliAvailability {
   // Whether an availability SLI is enabled or not. Must be set to `true. Defaults to `true`.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Monitoring_SloBasicSliAvailability_GetTypes(): DynamicUIProps[] {
+export function monitoring_SloBasicSliAvailability_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether an availability SLI is enabled or not. Must be set to `true. Defaults to `true`.",
       [],
       false,

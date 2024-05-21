@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_WorkflowTemplatePlacementClusterSelector,
-  Dataproc_WorkflowTemplatePlacementClusterSelector_GetTypes,
-} from "./Dataproc_WorkflowTemplatePlacementClusterSelector";
+  dataproc_WorkflowTemplatePlacementClusterSelector,
+  dataproc_WorkflowTemplatePlacementClusterSelector_GetTypes,
+} from "./dataproc_WorkflowTemplatePlacementClusterSelector";
 import {
-  Dataproc_WorkflowTemplatePlacementManagedCluster,
-  Dataproc_WorkflowTemplatePlacementManagedCluster_GetTypes,
-} from "./Dataproc_WorkflowTemplatePlacementManagedCluster";
+  dataproc_WorkflowTemplatePlacementManagedCluster,
+  dataproc_WorkflowTemplatePlacementManagedCluster_GetTypes,
+} from "./dataproc_WorkflowTemplatePlacementManagedCluster";
 
-export interface Dataproc_WorkflowTemplatePlacement {
+export interface dataproc_WorkflowTemplatePlacement {
   // A selector that chooses target cluster for jobs based on metadata. The selector is evaluated at the time each job is submitted.
-  ClusterSelector?: Dataproc_WorkflowTemplatePlacementClusterSelector;
+  clusterSelector?: dataproc_WorkflowTemplatePlacementClusterSelector;
 
   // A cluster that is managed by the workflow.
-  ManagedCluster?: Dataproc_WorkflowTemplatePlacementManagedCluster;
+  managedCluster?: dataproc_WorkflowTemplatePlacementManagedCluster;
 }
 
-export function Dataproc_WorkflowTemplatePlacement_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplatePlacement_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ClusterSelector",
+      "clusterSelector",
       "A selector that chooses target cluster for jobs based on metadata. The selector is evaluated at the time each job is submitted.",
-      Dataproc_WorkflowTemplatePlacementClusterSelector_GetTypes(),
+      dataproc_WorkflowTemplatePlacementClusterSelector_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ManagedCluster",
+      "managedCluster",
       "A cluster that is managed by the workflow.",
-      Dataproc_WorkflowTemplatePlacementManagedCluster_GetTypes(),
+      dataproc_WorkflowTemplatePlacementManagedCluster_GetTypes(),
       false,
       true,
     ),

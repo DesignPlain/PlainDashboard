@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimits {
+export interface gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimits {
   // CPU requirement expressed in Kubernetes resource units.
-  Cpu?: string;
+  cpu?: string;
 
   // Memory requirement expressed in Kubernetes resource units.
-  Memory?: string;
+  memory?: string;
 }
 
-export function Gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimits_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimits_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Memory",
-      "Memory requirement expressed in Kubernetes resource units.",
+      "cpu",
+      "CPU requirement expressed in Kubernetes resource units.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Cpu",
-      "CPU requirement expressed in Kubernetes resource units.",
+      "memory",
+      "Memory requirement expressed in Kubernetes resource units.",
       [],
       false,
       false,

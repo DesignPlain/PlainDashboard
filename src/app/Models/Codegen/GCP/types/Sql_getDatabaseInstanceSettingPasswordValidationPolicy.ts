@@ -6,55 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstanceSettingPasswordValidationPolicy {
-  // Password complexity.
-  Complexity?: string;
-
-  // Disallow username as a part of the password.
-  DisallowUsernameSubstring?: boolean;
-
-  // Whether the password policy is enabled or not.
-  EnablePasswordPolicy?: boolean;
-
+export interface sql_getDatabaseInstanceSettingPasswordValidationPolicy {
   // Minimum number of characters allowed.
-  MinLength?: number;
+  minLength?: number;
 
   // Minimum interval after which the password can be changed. This flag is only supported for PostgresSQL.
-  PasswordChangeInterval?: string;
+  passwordChangeInterval?: string;
 
   // Number of previous passwords that cannot be reused.
-  ReuseInterval?: number;
+  reuseInterval?: number;
+
+  // Password complexity.
+  complexity?: string;
+
+  // Disallow username as a part of the password.
+  disallowUsernameSubstring?: boolean;
+
+  // Whether the password policy is enabled or not.
+  enablePasswordPolicy?: boolean;
 }
 
-export function Sql_getDatabaseInstanceSettingPasswordValidationPolicy_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstanceSettingPasswordValidationPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "Complexity",
-      "Password complexity.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "DisallowUsernameSubstring",
-      "Disallow username as a part of the password.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "EnablePasswordPolicy",
-      "Whether the password policy is enabled or not.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "MinLength",
+      "minLength",
       "Minimum number of characters allowed.",
       [],
       true,
@@ -62,7 +38,7 @@ export function Sql_getDatabaseInstanceSettingPasswordValidationPolicy_GetTypes(
     ),
     new DynamicUIProps(
       InputType.String,
-      "PasswordChangeInterval",
+      "passwordChangeInterval",
       "Minimum interval after which the password can be changed. This flag is only supported for PostgresSQL.",
       [],
       true,
@@ -70,8 +46,32 @@ export function Sql_getDatabaseInstanceSettingPasswordValidationPolicy_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Number,
-      "ReuseInterval",
+      "reuseInterval",
       "Number of previous passwords that cannot be reused.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "complexity",
+      "Password complexity.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "disallowUsernameSubstring",
+      "Disallow username as a part of the password.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "enablePasswordPolicy",
+      "Whether the password policy is enabled or not.",
       [],
       true,
       false,

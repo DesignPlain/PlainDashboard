@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_TransferJobTransferSpecHttpDataSource {
+export interface storage_TransferJobTransferSpecHttpDataSource {
   // The URL that points to the file that stores the object list entries. This file must allow public access. Currently, only URLs with HTTP and HTTPS schemes are supported.
-  ListUrl?: string;
+  listUrl?: string;
 }
 
-export function Storage_TransferJobTransferSpecHttpDataSource_GetTypes(): DynamicUIProps[] {
+export function storage_TransferJobTransferSpecHttpDataSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ListUrl",
+      "listUrl",
       "The URL that points to the file that stores the object list entries. This file must allow public access. Currently, only URLs with HTTP and HTTPS schemes are supported.",
       [],
       true,

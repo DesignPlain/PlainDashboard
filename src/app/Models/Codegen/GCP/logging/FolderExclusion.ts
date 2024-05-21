@@ -8,86 +8,62 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface FolderExclusionArgs {
-  // A human-readable description.
-  Description?: string;
-
-  /*
-Whether this exclusion rule should be disabled or not. This defaults to
-false.
-*/
-  Disabled?: boolean;
-
   /*
 The filter to apply when excluding logs. Only log entries that match the filter are excluded.
 See [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced-filters) for information on how to
 write a filter.
 */
-  Filter?: string;
+  filter?: string;
 
   /*
 The folder to be exported to the sink. Note that either [FOLDER_ID] or "folders/[FOLDER_ID]" is
 accepted.
 */
-  Folder?: string;
+  folder?: string;
 
   // The name of the logging exclusion.
-  Name?: string;
+  name?: string;
+
+  // A human-readable description.
+  description?: string;
+
+  /*
+Whether this exclusion rule should be disabled or not. This defaults to
+false.
+*/
+  disabled?: boolean;
 }
 export class FolderExclusion extends Resource {
-  /*
-The folder to be exported to the sink. Note that either [FOLDER_ID] or "folders/[FOLDER_ID]" is
-accepted.
-*/
-  public Folder?: string;
-
-  // The name of the logging exclusion.
-  public Name?: string;
-
   // A human-readable description.
-  public Description?: string;
+  public description?: string;
 
   /*
 Whether this exclusion rule should be disabled or not. This defaults to
 false.
 */
-  public Disabled?: boolean;
+  public disabled?: boolean;
 
   /*
 The filter to apply when excluding logs. Only log entries that match the filter are excluded.
 See [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced-filters) for information on how to
 write a filter.
 */
-  public Filter?: string;
+  public filter?: string;
+
+  /*
+The folder to be exported to the sink. Note that either [FOLDER_ID] or "folders/[FOLDER_ID]" is
+accepted.
+*/
+  public folder?: string;
+
+  // The name of the logging exclusion.
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Description",
-        "A human-readable description.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Bool,
-        "Disabled",
-        "Whether this exclusion rule should be disabled or not. This defaults to\nfalse.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Filter",
-        "The filter to apply when excluding logs. Only log entries that match the filter are excluded.\nSee [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced-filters) for information on how to\nwrite a filter.",
-        [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Folder",
+        "folder",
         'The folder to be exported to the sink. Note that either [FOLDER_ID] or "folders/[FOLDER_ID]" is\naccepted.',
         [],
         true,
@@ -95,11 +71,35 @@ write a filter.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name of the logging exclusion.",
         [],
         false,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "A human-readable description.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "disabled",
+        "Whether this exclusion rule should be disabled or not. This defaults to\nfalse.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "filter",
+        "The filter to apply when excluding logs. Only log entries that match the filter are excluded.\nSee [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced-filters) for information on how to\nwrite a filter.",
+        [],
+        true,
+        false,
       ),
     ];
   }

@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkebackup_BackupPlanBackupConfigSelectedApplicationsNamespacedName {
+export interface gkebackup_BackupPlanBackupConfigSelectedApplicationsNamespacedName {
   // The name of a Kubernetes Resource.
-  Name?: string;
+  name?: string;
 
   // The namespace of a Kubernetes Resource.
-  Namespace?: string;
+  namespace?: string;
 }
 
-export function Gkebackup_BackupPlanBackupConfigSelectedApplicationsNamespacedName_GetTypes(): DynamicUIProps[] {
+export function gkebackup_BackupPlanBackupConfigSelectedApplicationsNamespacedName_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of a Kubernetes Resource.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Gkebackup_BackupPlanBackupConfigSelectedApplicationsNamespacedNa
     ),
     new DynamicUIProps(
       InputType.String,
-      "Namespace",
+      "namespace",
       "The namespace of a Kubernetes Resource.",
       [],
       true,

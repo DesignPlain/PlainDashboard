@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Bigquery_TableTableConstraintsForeignKey,
-  Bigquery_TableTableConstraintsForeignKey_GetTypes,
-} from "./Bigquery_TableTableConstraintsForeignKey";
+  bigquery_TableTableConstraintsForeignKey,
+  bigquery_TableTableConstraintsForeignKey_GetTypes,
+} from "./bigquery_TableTableConstraintsForeignKey";
 import {
-  Bigquery_TableTableConstraintsPrimaryKey,
-  Bigquery_TableTableConstraintsPrimaryKey_GetTypes,
-} from "./Bigquery_TableTableConstraintsPrimaryKey";
+  bigquery_TableTableConstraintsPrimaryKey,
+  bigquery_TableTableConstraintsPrimaryKey_GetTypes,
+} from "./bigquery_TableTableConstraintsPrimaryKey";
 
-export interface Bigquery_TableTableConstraints {
+export interface bigquery_TableTableConstraints {
   /*
 Present only if the table has a foreign key.
 The foreign key is not enforced.
 Structure is documented below.
 */
-  ForeignKeys?: Array<Bigquery_TableTableConstraintsForeignKey>;
+  foreignKeys?: Array<bigquery_TableTableConstraintsForeignKey>;
 
   /*
 Represents the primary key constraint
@@ -28,24 +28,24 @@ on a table's columns. Present only if the table has a primary key.
 The primary key is not enforced.
 Structure is documented below.
 */
-  PrimaryKey?: Bigquery_TableTableConstraintsPrimaryKey;
+  primaryKey?: bigquery_TableTableConstraintsPrimaryKey;
 }
 
-export function Bigquery_TableTableConstraints_GetTypes(): DynamicUIProps[] {
+export function bigquery_TableTableConstraints_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ForeignKeys",
+      "foreignKeys",
       "Present only if the table has a foreign key.\nThe foreign key is not enforced.\nStructure is documented below.",
-      Bigquery_TableTableConstraintsForeignKey_GetTypes(),
+      bigquery_TableTableConstraintsForeignKey_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "PrimaryKey",
+      "primaryKey",
       "Represents the primary key constraint\non a table's columns. Present only if the table has a primary key.\nThe primary key is not enforced.\nStructure is documented below.",
-      Bigquery_TableTableConstraintsPrimaryKey_GetTypes(),
+      bigquery_TableTableConstraintsPrimaryKey_GetTypes(),
       false,
       false,
     ),

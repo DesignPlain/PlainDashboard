@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_ClusterClusterConfigEncryptionConfig {
+export interface dataproc_ClusterClusterConfigEncryptionConfig {
   /*
 The Cloud KMS key name to use for PD disk encryption for
 all instances in the cluster.
 
 - - -
 */
-  KmsKeyName?: string;
+  kmsKeyName?: string;
 }
 
-export function Dataproc_ClusterClusterConfigEncryptionConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterClusterConfigEncryptionConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyName",
+      "kmsKeyName",
       "The Cloud KMS key name to use for PD disk encryption for\nall instances in the cluster.\n\n- - -",
       [],
       true,

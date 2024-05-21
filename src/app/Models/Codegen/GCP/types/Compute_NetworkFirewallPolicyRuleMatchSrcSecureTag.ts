@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_NetworkFirewallPolicyRuleMatchSrcSecureTag {
+export interface compute_NetworkFirewallPolicyRuleMatchSrcSecureTag {
   // Name of the secure tag, created with TagManager's TagValue API. @pattern tagValues/[0-9]+
-  Name?: string;
+  name?: string;
 
   // [Output Only] State of the secure tag, either `EFFECTIVE` or `INEFFECTIVE`. A secure tag is `INEFFECTIVE` when it is deleted or its network is deleted.
-  State?: string;
+  state?: string;
 }
 
-export function Compute_NetworkFirewallPolicyRuleMatchSrcSecureTag_GetTypes(): DynamicUIProps[] {
+export function compute_NetworkFirewallPolicyRuleMatchSrcSecureTag_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "[Output Only] State of the secure tag, either `EFFECTIVE` or `INEFFECTIVE`. A secure tag is `INEFFECTIVE` when it is deleted or its network is deleted.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Compute_NetworkFirewallPolicyRuleMatchSrcSecureTag_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Name of the secure tag, created with TagManager's TagValue API. @pattern tagValues/[0-9]+",
       [],
       true,

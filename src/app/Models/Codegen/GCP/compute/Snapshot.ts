@@ -7,57 +7,15 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_SnapshotSourceDiskEncryptionKey,
-  Compute_SnapshotSourceDiskEncryptionKey_GetTypes,
-} from "../types/Compute_SnapshotSourceDiskEncryptionKey";
+  compute_SnapshotSourceDiskEncryptionKey,
+  compute_SnapshotSourceDiskEncryptionKey_GetTypes,
+} from "../types/compute_SnapshotSourceDiskEncryptionKey";
 import {
-  Compute_SnapshotSnapshotEncryptionKey,
-  Compute_SnapshotSnapshotEncryptionKey_GetTypes,
-} from "../types/Compute_SnapshotSnapshotEncryptionKey";
+  compute_SnapshotSnapshotEncryptionKey,
+  compute_SnapshotSnapshotEncryptionKey_GetTypes,
+} from "../types/compute_SnapshotSnapshotEncryptionKey";
 
 export interface SnapshotArgs {
-  /*
-Labels to apply to this Snapshot.
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  Labels?: Map<string, string>;
-
-  /*
-The customer-supplied encryption key of the source snapshot. Required
-if the source snapshot is protected by a customer-supplied encryption
-key.
-Structure is documented below.
-*/
-  SourceDiskEncryptionKey?: Compute_SnapshotSourceDiskEncryptionKey;
-
-  /*
-Creates the new snapshot in the snapshot chain labeled with the
-specified name. The chain name must be 1-63 characters long and
-comply with RFC1035. This is an uncommon option only for advanced
-service owners who needs to create separate snapshot chains, for
-example, for chargeback tracking.  When you describe your snapshot
-resource, this field is visible only if it has a non-empty value.
-*/
-  ChainName?: string;
-
-  /*
-Name of the resource; provided by the client when the resource is
-created. The name must be 1-63 characters long, and comply with
-RFC1035. Specifically, the name must be 1-63 characters long and match
-the regular expression `a-z?` which means the
-first character must be a lowercase letter, and all following
-characters must be a dash, lowercase letter, or digit, except the last
-character, which cannot be a dash.
-*/
-  Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
   /*
 Encrypts the snapshot using a customer-supplied encryption key.
 After you encrypt a snapshot using a customer-supplied key, you must
@@ -71,7 +29,7 @@ then the snapshot will be encrypted using an automatically generated
 key and you do not need to provide a key to use the snapshot later.
 Structure is documented below.
 */
-  SnapshotEncryptionKey?: Compute_SnapshotSnapshotEncryptionKey;
+  snapshotEncryptionKey?: compute_SnapshotSnapshotEncryptionKey;
 
   /*
 A reference to the disk used to create this snapshot.
@@ -79,28 +37,76 @@ A reference to the disk used to create this snapshot.
 
 - - -
 */
-  SourceDisk?: string;
+  sourceDisk?: string;
 
-  // Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
-  StorageLocations?: Array<string>;
-
-  // A reference to the zone where the disk is hosted.
-  Zone?: string;
-
-  // An optional description of this resource.
-  Description?: string;
-}
-export class Snapshot extends Resource {
   /*
 The customer-supplied encryption key of the source snapshot. Required
 if the source snapshot is protected by a customer-supplied encryption
 key.
 Structure is documented below.
 */
-  public SourceDiskEncryptionKey?: Compute_SnapshotSourceDiskEncryptionKey;
+  sourceDiskEncryptionKey?: compute_SnapshotSourceDiskEncryptionKey;
 
   // Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
-  public StorageLocations?: Array<string>;
+  storageLocations?: Array<string>;
+
+  /*
+Creates the new snapshot in the snapshot chain labeled with the
+specified name. The chain name must be 1-63 characters long and
+comply with RFC1035. This is an uncommon option only for advanced
+service owners who needs to create separate snapshot chains, for
+example, for chargeback tracking.  When you describe your snapshot
+resource, this field is visible only if it has a non-empty value.
+*/
+  chainName?: string;
+
+  // An optional description of this resource.
+  description?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  /*
+Labels to apply to this Snapshot.
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  labels?: Map<string, string>;
+
+  /*
+Name of the resource; provided by the client when the resource is
+created. The name must be 1-63 characters long, and comply with
+RFC1035. Specifically, the name must be 1-63 characters long and match
+the regular expression `a-z?` which means the
+first character must be a lowercase letter, and all following
+characters must be a dash, lowercase letter, or digit, except the last
+character, which cannot be a dash.
+*/
+  name?: string;
+
+  // A reference to the zone where the disk is hosted.
+  zone?: string;
+}
+export class Snapshot extends Resource {
+  // An optional description of this resource.
+  public description?: string;
+
+  /*
+A reference to the disk used to create this snapshot.
+
+
+- - -
+*/
+  public sourceDisk?: string;
+
+  // Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
+  public storageLocations?: Array<string>;
+
+  // Size of the snapshot, specified in GB.
+  public diskSizeGb?: number;
 
   /*
 A list of public visible licenses that apply to this snapshot. This
@@ -108,29 +114,16 @@ can be because the original image had licenses attached (such as a
 Windows image).  snapshotEncryptionKey nested object Encrypts the
 snapshot using a customer-supplied encryption key.
 */
-  public Licenses?: Array<string>;
+  public licenses?: Array<string>;
 
   /*
-Name of the resource; provided by the client when the resource is
-created. The name must be 1-63 characters long, and comply with
-RFC1035. Specifically, the name must be 1-63 characters long and match
-the regular expression `a-z?` which means the
-first character must be a lowercase letter, and all following
-characters must be a dash, lowercase letter, or digit, except the last
-character, which cannot be a dash.
+The combination of labels configured directly on the resource
+and default labels configured on the provider.
 */
-  public Name?: string;
+  public pulumiLabels?: Map<string, string>;
 
   // The URI of the created resource.
-  public SelfLink?: string;
-
-  /*
-A reference to the disk used to create this snapshot.
-
-
-- - -
-*/
-  public SourceDisk?: string;
+  public selfLink?: string;
 
   /*
 Encrypts the snapshot using a customer-supplied encryption key.
@@ -145,48 +138,32 @@ then the snapshot will be encrypted using an automatically generated
 key and you do not need to provide a key to use the snapshot later.
 Structure is documented below.
 */
-  public SnapshotEncryptionKey?: Compute_SnapshotSnapshotEncryptionKey;
+  public snapshotEncryptionKey?: compute_SnapshotSnapshotEncryptionKey;
 
   // A reference to the zone where the disk is hosted.
-  public Zone?: string;
+  public zone?: string;
+
+  // Creation timestamp in RFC3339 text format.
+  public creationTimestamp?: string;
+
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
 
   /*
-The fingerprint used for optimistic locking of this resource. Used
-internally during updates.
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 */
-  public LabelFingerprint?: string;
+  public project?: string;
 
-  /*
-Labels to apply to this Snapshot.
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  public Labels?: Map<string, string>;
-
-  /*
-The combination of labels configured directly on the resource
-and default labels configured on the provider.
-*/
-  public PulumiLabels?: Map<string, string>;
+  // The unique identifier for the resource.
+  public snapshotId?: number;
 
   /*
 A size of the storage used by the snapshot. As snapshots share
 storage, this number is expected to change with snapshot
 creation/deletion.
 */
-  public StorageBytes?: number;
-
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  // The unique identifier for the resource.
-  public SnapshotId?: number;
+  public storageBytes?: number;
 
   /*
 Creates the new snapshot in the snapshot chain labeled with the
@@ -196,54 +173,69 @@ service owners who needs to create separate snapshot chains, for
 example, for chargeback tracking.  When you describe your snapshot
 resource, this field is visible only if it has a non-empty value.
 */
-  public ChainName?: string;
+  public chainName?: string;
 
-  // Creation timestamp in RFC3339 text format.
-  public CreationTimestamp?: string;
+  /*
+The fingerprint used for optimistic locking of this resource. Used
+internally during updates.
+*/
+  public labelFingerprint?: string;
 
-  // An optional description of this resource.
-  public Description?: string;
+  /*
+Labels to apply to this Snapshot.
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
 
-  // Size of the snapshot, specified in GB.
-  public DiskSizeGb?: number;
+  /*
+Name of the resource; provided by the client when the resource is
+created. The name must be 1-63 characters long, and comply with
+RFC1035. Specifically, the name must be 1-63 characters long and match
+the regular expression `a-z?` which means the
+first character must be a lowercase letter, and all following
+characters must be a dash, lowercase letter, or digit, except the last
+character, which cannot be a dash.
+*/
+  public name?: string;
+
+  /*
+The customer-supplied encryption key of the source snapshot. Required
+if the source snapshot is protected by a customer-supplied encryption
+key.
+Structure is documented below.
+*/
+  public sourceDiskEncryptionKey?: compute_SnapshotSourceDiskEncryptionKey;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Zone",
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "zone",
         "A reference to the zone where the disk is hosted.",
         [],
         false,
         true,
       ),
       new DynamicUIProps(
-        InputType.Map,
-        "Labels",
-        "Labels to apply to this Snapshot.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
-        InputType_Map_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ChainName",
-        "Creates the new snapshot in the snapshot chain labeled with the\nspecified name. The chain name must be 1-63 characters long and\ncomply with RFC1035. This is an uncommon option only for advanced\nservice owners who needs to create separate snapshot chains, for\nexample, for chargeback tracking.  When you describe your snapshot\nresource, this field is visible only if it has a non-empty value.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.Object,
-        "SnapshotEncryptionKey",
+        "snapshotEncryptionKey",
         "Encrypts the snapshot using a customer-supplied encryption key.\nAfter you encrypt a snapshot using a customer-supplied key, you must\nprovide the same key if you use the snapshot later. For example, you\nmust provide the encryption key when you create a disk from the\nencrypted snapshot in a future request.\nCustomer-supplied encryption keys do not protect access to metadata of\nthe snapshot.\nIf you do not provide an encryption key when creating the snapshot,\nthen the snapshot will be encrypted using an automatically generated\nkey and you do not need to provide a key to use the snapshot later.\nStructure is documented below.",
-        Compute_SnapshotSnapshotEncryptionKey_GetTypes(),
+        compute_SnapshotSnapshotEncryptionKey_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "SourceDisk",
+        "sourceDisk",
         "A reference to the disk used to create this snapshot.\n\n\n- - -",
         [],
         true,
@@ -251,7 +243,7 @@ resource, this field is visible only if it has a non-empty value.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "StorageLocations",
+        "storageLocations",
         "Cloud Storage bucket storage location of the snapshot (regional or multi-regional).",
         InputType_String_GetTypes(),
         false,
@@ -259,7 +251,15 @@ resource, this field is visible only if it has a non-empty value.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "chainName",
+        "Creates the new snapshot in the snapshot chain labeled with the\nspecified name. The chain name must be 1-63 characters long and\ncomply with RFC1035. This is an uncommon option only for advanced\nservice owners who needs to create separate snapshot chains, for\nexample, for chargeback tracking.  When you describe your snapshot\nresource, this field is visible only if it has a non-empty value.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
         "An optional description of this resource.",
         [],
         false,
@@ -267,24 +267,24 @@ resource, this field is visible only if it has a non-empty value.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "SourceDiskEncryptionKey",
+        "sourceDiskEncryptionKey",
         "The customer-supplied encryption key of the source snapshot. Required\nif the source snapshot is protected by a customer-supplied encryption\nkey.\nStructure is documented below.",
-        Compute_SnapshotSourceDiskEncryptionKey_GetTypes(),
+        compute_SnapshotSourceDiskEncryptionKey_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
+        InputType.Map,
+        "labels",
+        "Labels to apply to this Snapshot.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        InputType_Map_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name of the resource; provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
         true,

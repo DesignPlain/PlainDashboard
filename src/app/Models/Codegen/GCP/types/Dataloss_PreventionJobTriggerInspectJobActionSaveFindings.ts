@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig,
-  Dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig";
+  dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig,
+  dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig";
 
-export interface Dataloss_PreventionJobTriggerInspectJobActionSaveFindings {
+export interface dataloss_PreventionJobTriggerInspectJobActionSaveFindings {
   /*
 Information on where to store output
 Structure is documented below.
 */
-  OutputConfig?: Dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig;
+  outputConfig?: dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJobActionSaveFindings_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobActionSaveFindings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "OutputConfig",
+      "outputConfig",
       "Information on where to store output\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig_GetTypes(),
       true,
       false,
     ),

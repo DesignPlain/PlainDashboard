@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfigDestination {
+export interface integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfigDestination {
   // Host
-  Host?: string;
+  host?: string;
 
   // port number
-  Port?: number;
+  port?: number;
 
   // Service Attachment
-  ServiceAttachment?: string;
+  serviceAttachment?: string;
 }
 
-export function Integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfigDestination_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfigDestination_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Host", "Host", [], false, false),
+    new DynamicUIProps(InputType.String, "host", "Host", [], false, false),
     new DynamicUIProps(
       InputType.Number,
-      "Port",
+      "port",
       "port number",
       [],
       false,
@@ -30,7 +30,7 @@ export function Integrationconnectors_ConnectionEventingConfigRegistrationDestin
     ),
     new DynamicUIProps(
       InputType.String,
-      "ServiceAttachment",
+      "serviceAttachment",
       "Service Attachment",
       [],
       false,

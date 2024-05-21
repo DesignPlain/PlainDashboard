@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Assuredworkloads_WorkloadKmsSettings {
+export interface assuredworkloads_WorkloadKmsSettings {
   // Required. Input only. Immutable. The time at which the Key Management Service will automatically create a new version of the crypto key and mark it as the primary.
-  NextRotationTime?: string;
+  nextRotationTime?: string;
 
   // Required. Input only. Immutable. will be advanced by this period when the Key Management Service automatically rotates a key. Must be at least 24 hours and at most 876,000 hours.
-  RotationPeriod?: string;
+  rotationPeriod?: string;
 }
 
-export function Assuredworkloads_WorkloadKmsSettings_GetTypes(): DynamicUIProps[] {
+export function assuredworkloads_WorkloadKmsSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "NextRotationTime",
+      "nextRotationTime",
       "Required. Input only. Immutable. The time at which the Key Management Service will automatically create a new version of the crypto key and mark it as the primary.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Assuredworkloads_WorkloadKmsSettings_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "RotationPeriod",
+      "rotationPeriod",
       "Required. Input only. Immutable. will be advanced by this period when the Key Management Service automatically rotates a key. Must be at least 24 hours and at most 876,000 hours.",
       [],
       true,

@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel {
+export interface networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel {
   // Required. Label name presented as key in xDS Node Metadata.
-  LabelName?: string;
+  labelName?: string;
 
   /*
 Required. Label value presented as value corresponding to the above key, in xDS Node Metadata.
 
 - - -
 */
-  LabelValue?: string;
+  labelValue?: string;
 }
 
-export function Networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel_GetTypes(): DynamicUIProps[] {
+export function networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "LabelName",
+      "labelName",
       "Required. Label name presented as key in xDS Node Metadata.",
       [],
       true,
@@ -30,7 +30,7 @@ export function Networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatche
     ),
     new DynamicUIProps(
       InputType.String,
-      "LabelValue",
+      "labelValue",
       "Required. Label value presented as value corresponding to the above key, in xDS Node Metadata.\n\n- - -",
       [],
       true,

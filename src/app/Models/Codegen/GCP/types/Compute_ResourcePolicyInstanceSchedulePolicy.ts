@@ -6,45 +6,45 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_ResourcePolicyInstanceSchedulePolicyVmStartSchedule,
-  Compute_ResourcePolicyInstanceSchedulePolicyVmStartSchedule_GetTypes,
-} from "./Compute_ResourcePolicyInstanceSchedulePolicyVmStartSchedule";
+  compute_ResourcePolicyInstanceSchedulePolicyVmStartSchedule,
+  compute_ResourcePolicyInstanceSchedulePolicyVmStartSchedule_GetTypes,
+} from "./compute_ResourcePolicyInstanceSchedulePolicyVmStartSchedule";
 import {
-  Compute_ResourcePolicyInstanceSchedulePolicyVmStopSchedule,
-  Compute_ResourcePolicyInstanceSchedulePolicyVmStopSchedule_GetTypes,
-} from "./Compute_ResourcePolicyInstanceSchedulePolicyVmStopSchedule";
+  compute_ResourcePolicyInstanceSchedulePolicyVmStopSchedule,
+  compute_ResourcePolicyInstanceSchedulePolicyVmStopSchedule_GetTypes,
+} from "./compute_ResourcePolicyInstanceSchedulePolicyVmStopSchedule";
 
-export interface Compute_ResourcePolicyInstanceSchedulePolicy {
-  // The expiration time of the schedule. The timestamp is an RFC3339 string.
-  ExpirationTime?: string;
-
+export interface compute_ResourcePolicyInstanceSchedulePolicy {
   // The start time of the schedule. The timestamp is an RFC3339 string.
-  StartTime?: string;
+  startTime?: string;
 
   /*
 Specifies the time zone to be used in interpreting the schedule. The value of this field must be a time zone name
 from the tz database: http://en.wikipedia.org/wiki/Tz_database.
 */
-  TimeZone?: string;
+  timeZone?: string;
 
   /*
 Specifies the schedule for starting instances.
 Structure is documented below.
 */
-  VmStartSchedule?: Compute_ResourcePolicyInstanceSchedulePolicyVmStartSchedule;
+  vmStartSchedule?: compute_ResourcePolicyInstanceSchedulePolicyVmStartSchedule;
 
   /*
 Specifies the schedule for stopping instances.
 Structure is documented below.
 */
-  VmStopSchedule?: Compute_ResourcePolicyInstanceSchedulePolicyVmStopSchedule;
+  vmStopSchedule?: compute_ResourcePolicyInstanceSchedulePolicyVmStopSchedule;
+
+  // The expiration time of the schedule. The timestamp is an RFC3339 string.
+  expirationTime?: string;
 }
 
-export function Compute_ResourcePolicyInstanceSchedulePolicy_GetTypes(): DynamicUIProps[] {
+export function compute_ResourcePolicyInstanceSchedulePolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ExpirationTime",
+      "expirationTime",
       "The expiration time of the schedule. The timestamp is an RFC3339 string.",
       [],
       false,
@@ -52,7 +52,7 @@ export function Compute_ResourcePolicyInstanceSchedulePolicy_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "StartTime",
+      "startTime",
       "The start time of the schedule. The timestamp is an RFC3339 string.",
       [],
       false,
@@ -60,7 +60,7 @@ export function Compute_ResourcePolicyInstanceSchedulePolicy_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "TimeZone",
+      "timeZone",
       "Specifies the time zone to be used in interpreting the schedule. The value of this field must be a time zone name\nfrom the tz database: http://en.wikipedia.org/wiki/Tz_database.",
       [],
       true,
@@ -68,17 +68,17 @@ export function Compute_ResourcePolicyInstanceSchedulePolicy_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Object,
-      "VmStartSchedule",
+      "vmStartSchedule",
       "Specifies the schedule for starting instances.\nStructure is documented below.",
-      Compute_ResourcePolicyInstanceSchedulePolicyVmStartSchedule_GetTypes(),
+      compute_ResourcePolicyInstanceSchedulePolicyVmStartSchedule_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "VmStopSchedule",
+      "vmStopSchedule",
       "Specifies the schedule for stopping instances.\nStructure is documented below.",
-      Compute_ResourcePolicyInstanceSchedulePolicyVmStopSchedule_GetTypes(),
+      compute_ResourcePolicyInstanceSchedulePolicyVmStopSchedule_GetTypes(),
       false,
       true,
     ),

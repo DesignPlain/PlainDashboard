@@ -6,79 +6,79 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Osconfig_GuestPoliciesPackageRepositoryApt,
-  Osconfig_GuestPoliciesPackageRepositoryApt_GetTypes,
-} from "./Osconfig_GuestPoliciesPackageRepositoryApt";
+  osconfig_GuestPoliciesPackageRepositoryGoo,
+  osconfig_GuestPoliciesPackageRepositoryGoo_GetTypes,
+} from "./osconfig_GuestPoliciesPackageRepositoryGoo";
 import {
-  Osconfig_GuestPoliciesPackageRepositoryGoo,
-  Osconfig_GuestPoliciesPackageRepositoryGoo_GetTypes,
-} from "./Osconfig_GuestPoliciesPackageRepositoryGoo";
+  osconfig_GuestPoliciesPackageRepositoryYum,
+  osconfig_GuestPoliciesPackageRepositoryYum_GetTypes,
+} from "./osconfig_GuestPoliciesPackageRepositoryYum";
 import {
-  Osconfig_GuestPoliciesPackageRepositoryYum,
-  Osconfig_GuestPoliciesPackageRepositoryYum_GetTypes,
-} from "./Osconfig_GuestPoliciesPackageRepositoryYum";
+  osconfig_GuestPoliciesPackageRepositoryZypper,
+  osconfig_GuestPoliciesPackageRepositoryZypper_GetTypes,
+} from "./osconfig_GuestPoliciesPackageRepositoryZypper";
 import {
-  Osconfig_GuestPoliciesPackageRepositoryZypper,
-  Osconfig_GuestPoliciesPackageRepositoryZypper_GetTypes,
-} from "./Osconfig_GuestPoliciesPackageRepositoryZypper";
+  osconfig_GuestPoliciesPackageRepositoryApt,
+  osconfig_GuestPoliciesPackageRepositoryApt_GetTypes,
+} from "./osconfig_GuestPoliciesPackageRepositoryApt";
 
-export interface Osconfig_GuestPoliciesPackageRepository {
-  /*
-An Apt Repository.
-Structure is documented below.
-*/
-  Apt?: Osconfig_GuestPoliciesPackageRepositoryApt;
-
+export interface osconfig_GuestPoliciesPackageRepository {
   /*
 A Goo Repository.
 Structure is documented below.
 */
-  Goo?: Osconfig_GuestPoliciesPackageRepositoryGoo;
+  goo?: osconfig_GuestPoliciesPackageRepositoryGoo;
 
   /*
 A Yum Repository.
 Structure is documented below.
 */
-  Yum?: Osconfig_GuestPoliciesPackageRepositoryYum;
+  yum?: osconfig_GuestPoliciesPackageRepositoryYum;
 
   /*
 A Zypper Repository.
 Structure is documented below.
 */
-  Zypper?: Osconfig_GuestPoliciesPackageRepositoryZypper;
+  zypper?: osconfig_GuestPoliciesPackageRepositoryZypper;
+
+  /*
+An Apt Repository.
+Structure is documented below.
+*/
+  apt?: osconfig_GuestPoliciesPackageRepositoryApt;
 }
 
-export function Osconfig_GuestPoliciesPackageRepository_GetTypes(): DynamicUIProps[] {
+export function osconfig_GuestPoliciesPackageRepository_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Apt",
-      "An Apt Repository.\nStructure is documented below.",
-      Osconfig_GuestPoliciesPackageRepositoryApt_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "Goo",
+      "goo",
       "A Goo Repository.\nStructure is documented below.",
-      Osconfig_GuestPoliciesPackageRepositoryGoo_GetTypes(),
+      osconfig_GuestPoliciesPackageRepositoryGoo_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Yum",
+      "yum",
       "A Yum Repository.\nStructure is documented below.",
-      Osconfig_GuestPoliciesPackageRepositoryYum_GetTypes(),
+      osconfig_GuestPoliciesPackageRepositoryYum_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Zypper",
+      "zypper",
       "A Zypper Repository.\nStructure is documented below.",
-      Osconfig_GuestPoliciesPackageRepositoryZypper_GetTypes(),
+      osconfig_GuestPoliciesPackageRepositoryZypper_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "apt",
+      "An Apt Repository.\nStructure is documented below.",
+      osconfig_GuestPoliciesPackageRepositoryApt_GetTypes(),
       false,
       false,
     ),

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromSource {
+export interface accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromSource {
   // An AccessLevel resource name that allows resources outside the ServicePerimeter to be accessed from the inside.
-  AccessLevel?: string;
+  accessLevel?: string;
 }
 
-export function Accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromSource_GetTypes(): DynamicUIProps[] {
+export function accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "AccessLevel",
+      "accessLevel",
       "An AccessLevel resource name that allows resources outside the ServicePerimeter to be accessed from the inside.",
       [],
       false,

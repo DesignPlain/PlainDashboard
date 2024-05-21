@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxWebhookServiceDirectoryGenericWebService {
+export interface diagflow_CxWebhookServiceDirectoryGenericWebService {
   // Specifies a list of allowed custom CA certificates (in DER format) for HTTPS verification.
-  AllowedCaCerts?: Array<string>;
+  allowedCaCerts?: Array<string>;
 
   // The HTTP request headers to send together with webhook requests.
-  RequestHeaders?: Map<string, string>;
+  requestHeaders?: Map<string, string>;
 
   // Whether to use speech adaptation for speech recognition.
-  Uri?: string;
+  uri?: string;
 }
 
-export function Diagflow_CxWebhookServiceDirectoryGenericWebService_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxWebhookServiceDirectoryGenericWebService_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Uri",
+      "uri",
       "Whether to use speech adaptation for speech recognition.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Diagflow_CxWebhookServiceDirectoryGenericWebService_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AllowedCaCerts",
+      "allowedCaCerts",
       "Specifies a list of allowed custom CA certificates (in DER format) for HTTPS verification.",
       InputType_String_GetTypes(),
       false,
@@ -37,7 +37,7 @@ export function Diagflow_CxWebhookServiceDirectoryGenericWebService_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Map,
-      "RequestHeaders",
+      "requestHeaders",
       "The HTTP request headers to send together with webhook requests.",
       InputType_Map_GetTypes(),
       false,

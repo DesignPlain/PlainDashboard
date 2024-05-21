@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldField,
-  Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldField_GetTypes,
-} from "./Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldField";
+  dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldField,
+  dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldField_GetTypes,
+} from "./dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldField";
 import {
-  Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable,
-  Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable_GetTypes,
-} from "./Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable";
+  dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable,
+  dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable_GetTypes,
+} from "./dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable";
 
-export interface Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryField {
+export interface dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryField {
   /*
 Designated field in the BigQuery table.
 Structure is documented below.
 */
-  Field?: Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldField;
+  field?: dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldField;
 
   /*
 Field in a BigQuery table where each cell represents a dictionary phrase.
 Structure is documented below.
 */
-  Table?: Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable;
+  table?: dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable;
 }
 
-export function Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryField_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryField_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Field",
+      "field",
       "Designated field in the BigQuery table.\nStructure is documented below.",
-      Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldField_GetTypes(),
+      dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldField_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Table",
+      "table",
       "Field in a BigQuery table where each cell represents a dictionary phrase.\nStructure is documented below.",
-      Dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable_GetTypes(),
+      dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable_GetTypes(),
       true,
       false,
     ),

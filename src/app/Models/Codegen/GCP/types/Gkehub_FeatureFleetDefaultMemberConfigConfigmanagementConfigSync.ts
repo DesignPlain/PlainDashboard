@@ -6,52 +6,52 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit,
-  Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit_GetTypes,
-} from "./Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit";
+  gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit,
+  gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit_GetTypes,
+} from "./gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit";
 import {
-  Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOci,
-  Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOci_GetTypes,
-} from "./Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOci";
+  gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOci,
+  gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOci_GetTypes,
+} from "./gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOci";
 
-export interface Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSync {
+export interface gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSync {
   /*
 Git repo configuration for the cluster
 Structure is documented below.
 */
-  Git?: Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit;
+  git?: gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit;
 
   /*
 OCI repo configuration for the cluster
 Structure is documented below.
 */
-  Oci?: Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOci;
+  oci?: gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOci;
 
   // Specifies whether the Config Sync Repo is in hierarchical or unstructured mode
-  SourceFormat?: string;
+  sourceFormat?: string;
 }
 
-export function Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSync_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSync_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Git",
+      "git",
       "Git repo configuration for the cluster\nStructure is documented below.",
-      Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit_GetTypes(),
+      gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Oci",
+      "oci",
       "OCI repo configuration for the cluster\nStructure is documented below.",
-      Gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOci_GetTypes(),
+      gkehub_FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOci_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "SourceFormat",
+      "sourceFormat",
       "Specifies whether the Config Sync Repo is in hierarchical or unstructured mode",
       [],
       false,

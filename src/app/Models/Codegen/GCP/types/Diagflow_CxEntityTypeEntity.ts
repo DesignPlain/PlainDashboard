@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxEntityTypeEntity {
+export interface diagflow_CxEntityTypeEntity {
   /*
 A collection of value synonyms. For example, if the entity type is vegetable, and value is scallions, a synonym could be green onions.
 For KIND_LIST entity types: This collection must contain exactly one synonym equal to value.
 
 - - -
 */
-  Synonyms?: Array<string>;
+  synonyms?: Array<string>;
 
   /*
 The primary value associated with this entity entry. For example, if the entity type is vegetable, the value could be scallions.
 For KIND_MAP entity types: A canonical value to be used in place of synonyms.
 For KIND_LIST entity types: A string that can contain references to other entity types (with or without aliases).
 */
-  Value?: string;
+  value?: string;
 }
 
-export function Diagflow_CxEntityTypeEntity_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxEntityTypeEntity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Synonyms",
+      "synonyms",
       "A collection of value synonyms. For example, if the entity type is vegetable, and value is scallions, a synonym could be green onions.\nFor KIND_LIST entity types: This collection must contain exactly one synonym equal to value.\n\n- - -",
       InputType_String_GetTypes(),
       false,
@@ -35,7 +35,7 @@ export function Diagflow_CxEntityTypeEntity_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "The primary value associated with this entity entry. For example, if the entity type is vegetable, the value could be scallions.\nFor KIND_MAP entity types: A canonical value to be used in place of synonyms.\nFor KIND_LIST entity types: A string that can contain references to other entity types (with or without aliases).",
       [],
       false,

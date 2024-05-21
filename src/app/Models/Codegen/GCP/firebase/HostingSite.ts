@@ -9,33 +9,33 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface HostingSiteArgs {
   /*
-Optional. The [ID of a Web App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.webApps#WebApp.FIELDS.app_id)
-associated with the Hosting site.
-*/
-  AppId?: string;
-
-  /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 Required. Immutable. A globally unique identifier for the Hosting site. This identifier is
 used to construct the Firebase-provisioned subdomains for the site, so it must also be a valid
 domain name label.
 */
-  SiteId?: string;
+  siteId?: string;
+
+  /*
+Optional. The [ID of a Web App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.webApps#WebApp.FIELDS.app_id)
+associated with the Hosting site.
+*/
+  appId?: string;
 }
 export class HostingSite extends Resource {
   /*
 Optional. The [ID of a Web App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.webApps#WebApp.FIELDS.app_id)
 associated with the Hosting site.
 */
-  public AppId?: string;
+  public appId?: string;
 
   // The default URL for the site in the form of https://{name}.web.app
-  public DefaultUrl?: string;
+  public defaultUrl?: string;
 
   /*
 Output only. The fully-qualified resource name of the Hosting site, in the
@@ -46,34 +46,26 @@ Firebase project's
 Learn more about using project identifiers in Google's
 [AIP 2510 standard](https://google.aip.dev/cloud/2510).
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 Required. Immutable. A globally unique identifier for the Hosting site. This identifier is
 used to construct the Firebase-provisioned subdomains for the site, so it must also be a valid
 domain name label.
 */
-  public SiteId?: string;
+  public siteId?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "AppId",
-        "Optional. The [ID of a Web App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.webApps#WebApp.FIELDS.app_id)\nassociated with the Hosting site.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -81,11 +73,19 @@ domain name label.
       ),
       new DynamicUIProps(
         InputType.String,
-        "SiteId",
+        "siteId",
         "Required. Immutable. A globally unique identifier for the Hosting site. This identifier is\nused to construct the Firebase-provisioned subdomains for the site, so it must also be a valid\ndomain name label.",
         [],
         false,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "appId",
+        "Optional. The [ID of a Web App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.webApps#WebApp.FIELDS.app_id)\nassociated with the Hosting site.",
+        [],
+        false,
+        false,
       ),
     ];
   }

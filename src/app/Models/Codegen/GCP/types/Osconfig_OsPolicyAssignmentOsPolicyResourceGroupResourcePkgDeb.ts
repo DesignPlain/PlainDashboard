@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource";
 
-export interface Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb {
+export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb {
   /*
 Whether dependencies should also be installed. -
 install when false: `dpkg -i package` - install when true: `apt-get update
 && apt-get -y install package.deb`
 */
-  PullDeps?: boolean;
+  pullDeps?: boolean;
 
   /*
 A deb package. Structure is
 documented below.
 */
-  Source?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource;
+  source?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource;
 }
 
-export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "PullDeps",
+      "pullDeps",
       "Whether dependencies should also be installed. -\ninstall when false: `dpkg -i package` - install when true: `apt-get update\n&& apt-get -y install package.deb`",
       [],
       false,
@@ -37,9 +37,9 @@ export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb_G
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Source",
+      "source",
       "A deb package. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource_GetTypes(),
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource_GetTypes(),
       true,
       false,
     ),

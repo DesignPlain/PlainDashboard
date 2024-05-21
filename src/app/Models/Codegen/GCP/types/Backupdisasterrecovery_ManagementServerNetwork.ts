@@ -6,9 +6,9 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Backupdisasterrecovery_ManagementServerNetwork {
+export interface backupdisasterrecovery_ManagementServerNetwork {
   // Network with format `projects/{{project_id}}/global/networks/{{network_id}}`
-  Network?: string;
+  network?: string;
 
   /*
 Type of Network peeringMode
@@ -17,14 +17,14 @@ Possible values are: `PRIVATE_SERVICE_ACCESS`.
 
 - - -
 */
-  PeeringMode?: string;
+  peeringMode?: string;
 }
 
-export function Backupdisasterrecovery_ManagementServerNetwork_GetTypes(): DynamicUIProps[] {
+export function backupdisasterrecovery_ManagementServerNetwork_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Network",
+      "network",
       "Network with format `projects/{{project_id}}/global/networks/{{network_id}}`",
       [],
       true,
@@ -32,7 +32,7 @@ export function Backupdisasterrecovery_ManagementServerNetwork_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "PeeringMode",
+      "peeringMode",
       "Type of Network peeringMode\nDefault value is `PRIVATE_SERVICE_ACCESS`.\nPossible values are: `PRIVATE_SERVICE_ACCESS`.\n\n- - -",
       [],
       false,

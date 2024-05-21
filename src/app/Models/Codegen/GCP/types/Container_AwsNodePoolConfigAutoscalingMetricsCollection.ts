@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AwsNodePoolConfigAutoscalingMetricsCollection {
+export interface container_AwsNodePoolConfigAutoscalingMetricsCollection {
   // The frequency at which EC2 Auto Scaling sends aggregated data to AWS CloudWatch. The only valid value is "1Minute".
-  Granularity?: string;
+  granularity?: string;
 
   // The metrics to enable. For a list of valid metrics, see https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_EnableMetricsCollection.html. If you specify granularity and don't specify any metrics, all metrics are enabled.
-  Metrics?: Array<string>;
+  metrics?: Array<string>;
 }
 
-export function Container_AwsNodePoolConfigAutoscalingMetricsCollection_GetTypes(): DynamicUIProps[] {
+export function container_AwsNodePoolConfigAutoscalingMetricsCollection_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Granularity",
+      "granularity",
       'The frequency at which EC2 Auto Scaling sends aggregated data to AWS CloudWatch. The only valid value is "1Minute".',
       [],
       true,
@@ -26,7 +26,7 @@ export function Container_AwsNodePoolConfigAutoscalingMetricsCollection_GetTypes
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Metrics",
+      "metrics",
       "The metrics to enable. For a list of valid metrics, see https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_EnableMetricsCollection.html. If you specify granularity and don't specify any metrics, all metrics are enabled.",
       InputType_String_GetTypes(),
       false,

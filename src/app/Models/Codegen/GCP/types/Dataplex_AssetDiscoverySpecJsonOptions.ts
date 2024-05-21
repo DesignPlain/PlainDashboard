@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataplex_AssetDiscoverySpecJsonOptions {
+export interface dataplex_AssetDiscoverySpecJsonOptions {
   // Optional. Whether to disable the inference of data type for Json data. If true, all columns will be registered as their primitive types (strings, number or boolean).
-  DisableTypeInference?: boolean;
+  disableTypeInference?: boolean;
 
   // Optional. The character encoding of the data. The default is UTF-8.
-  Encoding?: string;
+  encoding?: string;
 }
 
-export function Dataplex_AssetDiscoverySpecJsonOptions_GetTypes(): DynamicUIProps[] {
+export function dataplex_AssetDiscoverySpecJsonOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "DisableTypeInference",
+      "disableTypeInference",
       "Optional. Whether to disable the inference of data type for Json data. If true, all columns will be registered as their primitive types (strings, number or boolean).",
       [],
       false,
@@ -26,7 +26,7 @@ export function Dataplex_AssetDiscoverySpecJsonOptions_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "Encoding",
+      "encoding",
       "Optional. The character encoding of the data. The default is UTF-8.",
       [],
       false,

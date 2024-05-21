@@ -6,52 +6,52 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Vertex_AiFeatureOnlineStoreDedicatedServingEndpointPrivateServiceConnectConfig,
-  Vertex_AiFeatureOnlineStoreDedicatedServingEndpointPrivateServiceConnectConfig_GetTypes,
-} from "./Vertex_AiFeatureOnlineStoreDedicatedServingEndpointPrivateServiceConnectConfig";
+  vertex_AiFeatureOnlineStoreDedicatedServingEndpointPrivateServiceConnectConfig,
+  vertex_AiFeatureOnlineStoreDedicatedServingEndpointPrivateServiceConnectConfig_GetTypes,
+} from "./vertex_AiFeatureOnlineStoreDedicatedServingEndpointPrivateServiceConnectConfig";
 
-export interface Vertex_AiFeatureOnlineStoreDedicatedServingEndpoint {
-  /*
-(Output)
-Name of the service attachment resource. Applicable only if private service connect is enabled and after FeatureViewSync is created.
-*/
-  ServiceAttachment?: string;
-
+export interface vertex_AiFeatureOnlineStoreDedicatedServingEndpoint {
   /*
 Private service connect config.
 Structure is documented below.
 */
-  PrivateServiceConnectConfig?: Vertex_AiFeatureOnlineStoreDedicatedServingEndpointPrivateServiceConnectConfig;
+  privateServiceConnectConfig?: vertex_AiFeatureOnlineStoreDedicatedServingEndpointPrivateServiceConnectConfig;
 
   /*
 (Output)
 Domain name to use for this FeatureOnlineStore
 */
-  PublicEndpointDomainName?: string;
+  publicEndpointDomainName?: string;
+
+  /*
+(Output)
+Name of the service attachment resource. Applicable only if private service connect is enabled and after FeatureViewSync is created.
+*/
+  serviceAttachment?: string;
 }
 
-export function Vertex_AiFeatureOnlineStoreDedicatedServingEndpoint_GetTypes(): DynamicUIProps[] {
+export function vertex_AiFeatureOnlineStoreDedicatedServingEndpoint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Object,
+      "privateServiceConnectConfig",
+      "Private service connect config.\nStructure is documented below.",
+      vertex_AiFeatureOnlineStoreDedicatedServingEndpointPrivateServiceConnectConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "ServiceAttachment",
-      "(Output)\nName of the service attachment resource. Applicable only if private service connect is enabled and after FeatureViewSync is created.",
+      "publicEndpointDomainName",
+      "(Output)\nDomain name to use for this FeatureOnlineStore",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "PrivateServiceConnectConfig",
-      "Private service connect config.\nStructure is documented below.",
-      Vertex_AiFeatureOnlineStoreDedicatedServingEndpointPrivateServiceConnectConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "PublicEndpointDomainName",
-      "(Output)\nDomain name to use for this FeatureOnlineStore",
+      "serviceAttachment",
+      "(Output)\nName of the service attachment resource. Applicable only if private service connect is enabled and after FeatureViewSync is created.",
       [],
       false,
       false,

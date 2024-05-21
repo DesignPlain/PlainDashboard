@@ -7,79 +7,79 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrun_DomainMappingSpec,
-  Cloudrun_DomainMappingSpec_GetTypes,
-} from "../types/Cloudrun_DomainMappingSpec";
+  cloudrun_DomainMappingSpec,
+  cloudrun_DomainMappingSpec_GetTypes,
+} from "../types/cloudrun_DomainMappingSpec";
 import {
-  Cloudrun_DomainMappingStatus,
-  Cloudrun_DomainMappingStatus_GetTypes,
-} from "../types/Cloudrun_DomainMappingStatus";
+  cloudrun_DomainMappingMetadata,
+  cloudrun_DomainMappingMetadata_GetTypes,
+} from "../types/cloudrun_DomainMappingMetadata";
 import {
-  Cloudrun_DomainMappingMetadata,
-  Cloudrun_DomainMappingMetadata_GetTypes,
-} from "../types/Cloudrun_DomainMappingMetadata";
+  cloudrun_DomainMappingStatus,
+  cloudrun_DomainMappingStatus_GetTypes,
+} from "../types/cloudrun_DomainMappingStatus";
 
 export interface DomainMappingArgs {
+  /*
+The spec for this DomainMapping.
+Structure is documented below.
+*/
+  spec?: cloudrun_DomainMappingSpec;
+
   // The location of the cloud run instance. eg us-central1
-  Location?: string;
+  location?: string;
 
   /*
 Metadata associated with this DomainMapping.
 Structure is documented below.
 */
-  Metadata?: Cloudrun_DomainMappingMetadata;
+  metadata?: cloudrun_DomainMappingMetadata;
 
   // Name should be a [verified](https://support.google.com/webmasters/answer/9008080) domain
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
-
-  /*
-The spec for this DomainMapping.
-Structure is documented below.
-*/
-  Spec?: Cloudrun_DomainMappingSpec;
+  project?: string;
 }
 export class DomainMapping extends Resource {
-  // The location of the cloud run instance. eg us-central1
-  public Location?: string;
-
-  /*
-Metadata associated with this DomainMapping.
-Structure is documented below.
-*/
-  public Metadata?: Cloudrun_DomainMappingMetadata;
-
-  // Name should be a [verified](https://support.google.com/webmasters/answer/9008080) domain
-  public Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  /*
-The spec for this DomainMapping.
-Structure is documented below.
-*/
-  public Spec?: Cloudrun_DomainMappingSpec;
-
   /*
 (Output)
 Status of the condition, one of True, False, Unknown.
 */
-  public Statuses?: Array<Cloudrun_DomainMappingStatus>;
+  public statuses?: Array<cloudrun_DomainMappingStatus>;
+
+  // The location of the cloud run instance. eg us-central1
+  public location?: string;
+
+  /*
+Metadata associated with this DomainMapping.
+Structure is documented below.
+*/
+  public metadata?: cloudrun_DomainMappingMetadata;
+
+  // Name should be a [verified](https://support.google.com/webmasters/answer/9008080) domain
+  public name?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  /*
+The spec for this DomainMapping.
+Structure is documented below.
+*/
+  public spec?: cloudrun_DomainMappingSpec;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location of the cloud run instance. eg us-central1",
         [],
         true,
@@ -87,15 +87,15 @@ Status of the condition, one of True, False, Unknown.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Metadata",
+        "metadata",
         "Metadata associated with this DomainMapping.\nStructure is documented below.",
-        Cloudrun_DomainMappingMetadata_GetTypes(),
+        cloudrun_DomainMappingMetadata_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name should be a [verified](https://support.google.com/webmasters/answer/9008080) domain",
         [],
         false,
@@ -103,7 +103,7 @@ Status of the condition, one of True, False, Unknown.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -111,9 +111,9 @@ Status of the condition, one of True, False, Unknown.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Spec",
+        "spec",
         "The spec for this DomainMapping.\nStructure is documented below.",
-        Cloudrun_DomainMappingSpec_GetTypes(),
+        cloudrun_DomainMappingSpec_GetTypes(),
         true,
         true,
       ),

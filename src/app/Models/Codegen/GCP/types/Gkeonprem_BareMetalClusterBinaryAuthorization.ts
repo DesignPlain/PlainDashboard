@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterBinaryAuthorization {
+export interface gkeonprem_BareMetalClusterBinaryAuthorization {
   /*
 Mode of operation for binauthz policy evaluation. If unspecified,
 defaults to DISABLED.
 Possible values are: `DISABLED`, `PROJECT_SINGLETON_POLICY_ENFORCE`.
 */
-  EvaluationMode?: string;
+  evaluationMode?: string;
 }
 
-export function Gkeonprem_BareMetalClusterBinaryAuthorization_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterBinaryAuthorization_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "EvaluationMode",
+      "evaluationMode",
       "Mode of operation for binauthz policy evaluation. If unspecified,\ndefaults to DISABLED.\nPossible values are: `DISABLED`, `PROJECT_SINGLETON_POLICY_ENFORCE`.",
       [],
       false,

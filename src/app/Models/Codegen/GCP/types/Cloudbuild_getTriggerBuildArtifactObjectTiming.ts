@@ -6,14 +6,14 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuild_getTriggerBuildArtifactObjectTiming {
+export interface cloudbuild_getTriggerBuildArtifactObjectTiming {
   /*
 End of time span.
 
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to
 nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  EndTime?: string;
+  endTime?: string;
 
   /*
 Start of time span.
@@ -21,23 +21,23 @@ Start of time span.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to
 nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  StartTime?: string;
+  startTime?: string;
 }
 
-export function Cloudbuild_getTriggerBuildArtifactObjectTiming_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_getTriggerBuildArtifactObjectTiming_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "EndTime",
-      'End of time span.\n\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to\nnine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
+      "startTime",
+      'Start of time span.\n\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to\nnine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "StartTime",
-      'Start of time span.\n\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to\nnine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
+      "endTime",
+      'End of time span.\n\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to\nnine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
       [],
       true,
       false,

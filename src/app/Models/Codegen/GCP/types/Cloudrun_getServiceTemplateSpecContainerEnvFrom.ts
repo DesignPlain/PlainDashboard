@@ -6,38 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef,
-  Cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef_GetTypes,
-} from "./Cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef";
+  cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef,
+  cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef_GetTypes,
+} from "./cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef";
 import {
-  Cloudrun_getServiceTemplateSpecContainerEnvFromSecretRef,
-  Cloudrun_getServiceTemplateSpecContainerEnvFromSecretRef_GetTypes,
-} from "./Cloudrun_getServiceTemplateSpecContainerEnvFromSecretRef";
+  cloudrun_getServiceTemplateSpecContainerEnvFromSecretRef,
+  cloudrun_getServiceTemplateSpecContainerEnvFromSecretRef_GetTypes,
+} from "./cloudrun_getServiceTemplateSpecContainerEnvFromSecretRef";
 
-export interface Cloudrun_getServiceTemplateSpecContainerEnvFrom {
-  // The ConfigMap to select from.
-  ConfigMapReves?: Array<Cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef>;
-
+export interface cloudrun_getServiceTemplateSpecContainerEnvFrom {
   // An optional identifier to prepend to each key in the ConfigMap.
-  Prefix?: string;
+  prefix?: string;
 
   // The Secret to select from.
-  SecretReves?: Array<Cloudrun_getServiceTemplateSpecContainerEnvFromSecretRef>;
+  secretReves?: Array<cloudrun_getServiceTemplateSpecContainerEnvFromSecretRef>;
+
+  // The ConfigMap to select from.
+  configMapReves?: Array<cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef>;
 }
 
-export function Cloudrun_getServiceTemplateSpecContainerEnvFrom_GetTypes(): DynamicUIProps[] {
+export function cloudrun_getServiceTemplateSpecContainerEnvFrom_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "ConfigMapReves",
-      "The ConfigMap to select from.",
-      Cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Prefix",
+      "prefix",
       "An optional identifier to prepend to each key in the ConfigMap.",
       [],
       true,
@@ -45,9 +37,17 @@ export function Cloudrun_getServiceTemplateSpecContainerEnvFrom_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Array,
-      "SecretReves",
+      "secretReves",
       "The Secret to select from.",
-      Cloudrun_getServiceTemplateSpecContainerEnvFromSecretRef_GetTypes(),
+      cloudrun_getServiceTemplateSpecContainerEnvFromSecretRef_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "configMapReves",
+      "The ConfigMap to select from.",
+      cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef_GetTypes(),
       true,
       false,
     ),

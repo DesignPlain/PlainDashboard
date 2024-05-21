@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Edgecontainer_NodePoolNodeConfig {
+export interface edgecontainer_NodePoolNodeConfig {
   // "The Kubernetes node labels"
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 }
 
-export function Edgecontainer_NodePoolNodeConfig_GetTypes(): DynamicUIProps[] {
+export function edgecontainer_NodePoolNodeConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Map,
-      "Labels",
+      "labels",
       '"The Kubernetes node labels"',
       InputType_Map_GetTypes(),
       false,

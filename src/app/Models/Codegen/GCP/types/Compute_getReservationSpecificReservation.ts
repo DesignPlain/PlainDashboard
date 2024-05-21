@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_getReservationSpecificReservationInstanceProperty,
-  Compute_getReservationSpecificReservationInstanceProperty_GetTypes,
-} from "./Compute_getReservationSpecificReservationInstanceProperty";
+  compute_getReservationSpecificReservationInstanceProperty,
+  compute_getReservationSpecificReservationInstanceProperty_GetTypes,
+} from "./compute_getReservationSpecificReservationInstanceProperty";
 
-export interface Compute_getReservationSpecificReservation {
-  // The number of resources that are allocated.
-  Count?: number;
-
+export interface compute_getReservationSpecificReservation {
   // How many instances are in use.
-  InUseCount?: number;
+  inUseCount?: number;
 
   // The instance properties for the reservation.
-  InstanceProperties?: Array<Compute_getReservationSpecificReservationInstanceProperty>;
+  instanceProperties?: Array<compute_getReservationSpecificReservationInstanceProperty>;
+
+  // The number of resources that are allocated.
+  count?: number;
 }
 
-export function Compute_getReservationSpecificReservation_GetTypes(): DynamicUIProps[] {
+export function compute_getReservationSpecificReservation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "InUseCount",
+      "inUseCount",
       "How many instances are in use.",
       [],
       true,
@@ -33,15 +33,15 @@ export function Compute_getReservationSpecificReservation_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Array,
-      "InstanceProperties",
+      "instanceProperties",
       "The instance properties for the reservation.",
-      Compute_getReservationSpecificReservationInstanceProperty_GetTypes(),
+      compute_getReservationSpecificReservationInstanceProperty_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Count",
+      "count",
       "The number of resources that are allocated.",
       [],
       true,

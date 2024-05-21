@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_URLMapHeaderActionRequestHeadersToAdd {
+export interface compute_URLMapHeaderActionRequestHeadersToAdd {
+  // The name of the header to add.
+  headerName?: string;
+
+  // The value of the header to add.
+  headerValue?: string;
+
   /*
 If false, headerValue is appended to any values that already exist for the header.
 If true, headerValue is set for the header, discarding any values that were set for that header.
 */
-  Replace?: boolean;
-
-  // The name of the header to add.
-  HeaderName?: string;
-
-  // The value of the header to add.
-  HeaderValue?: string;
+  replace?: boolean;
 }
 
-export function Compute_URLMapHeaderActionRequestHeadersToAdd_GetTypes(): DynamicUIProps[] {
+export function compute_URLMapHeaderActionRequestHeadersToAdd_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "HeaderValue",
+      "headerName",
+      "The name of the header to add.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "headerValue",
       "The value of the header to add.",
       [],
       true,
@@ -32,16 +40,8 @@ export function Compute_URLMapHeaderActionRequestHeadersToAdd_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Replace",
+      "replace",
       "If false, headerValue is appended to any values that already exist for the header.\nIf true, headerValue is set for the header, discarding any values that were set for that header.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "HeaderName",
-      "The name of the header to add.",
       [],
       true,
       false,

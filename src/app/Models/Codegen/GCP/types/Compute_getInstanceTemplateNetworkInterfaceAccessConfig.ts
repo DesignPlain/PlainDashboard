@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getInstanceTemplateNetworkInterfaceAccessConfig {
+export interface compute_getInstanceTemplateNetworkInterfaceAccessConfig {
   /*
 The IP address that will be 1:1 mapped to the instance's
 network ip. If not given, one will be generated.
 */
-  NatIp?: string;
+  natIp?: string;
 
   /*
 The [networking tier][network-tier] used for configuring
 this instance template. This field can take the following values: PREMIUM or
 STANDARD. If this field is not specified, it is assumed to be PREMIUM.
 */
-  NetworkTier?: string;
+  networkTier?: string;
 
   // The DNS domain name for the public PTR record.The DNS domain name for the public PTR record.
-  PublicPtrDomainName?: string;
+  publicPtrDomainName?: string;
 }
 
-export function Compute_getInstanceTemplateNetworkInterfaceAccessConfig_GetTypes(): DynamicUIProps[] {
+export function compute_getInstanceTemplateNetworkInterfaceAccessConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "NatIp",
+      "natIp",
       "The IP address that will be 1:1 mapped to the instance's\nnetwork ip. If not given, one will be generated.",
       [],
       true,
@@ -36,7 +36,7 @@ export function Compute_getInstanceTemplateNetworkInterfaceAccessConfig_GetTypes
     ),
     new DynamicUIProps(
       InputType.String,
-      "NetworkTier",
+      "networkTier",
       "The [networking tier][network-tier] used for configuring\nthis instance template. This field can take the following values: PREMIUM or\nSTANDARD. If this field is not specified, it is assumed to be PREMIUM.",
       [],
       true,
@@ -44,7 +44,7 @@ export function Compute_getInstanceTemplateNetworkInterfaceAccessConfig_GetTypes
     ),
     new DynamicUIProps(
       InputType.String,
-      "PublicPtrDomainName",
+      "publicPtrDomainName",
       "The DNS domain name for the public PTR record.The DNS domain name for the public PTR record.",
       [],
       true,

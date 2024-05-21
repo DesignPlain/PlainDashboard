@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterNodePoolDefaultNodeConfigDefault,
-  Container_getClusterNodePoolDefaultNodeConfigDefault_GetTypes,
-} from "./Container_getClusterNodePoolDefaultNodeConfigDefault";
+  container_getClusterNodePoolDefaultNodeConfigDefault,
+  container_getClusterNodePoolDefaultNodeConfigDefault_GetTypes,
+} from "./container_getClusterNodePoolDefaultNodeConfigDefault";
 
-export interface Container_getClusterNodePoolDefault {
+export interface container_getClusterNodePoolDefault {
   // Subset of NodeConfig message that has defaults.
-  NodeConfigDefaults?: Array<Container_getClusterNodePoolDefaultNodeConfigDefault>;
+  nodeConfigDefaults?: Array<container_getClusterNodePoolDefaultNodeConfigDefault>;
 }
 
-export function Container_getClusterNodePoolDefault_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolDefault_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "NodeConfigDefaults",
+      "nodeConfigDefaults",
       "Subset of NodeConfig message that has defaults.",
-      Container_getClusterNodePoolDefaultNodeConfigDefault_GetTypes(),
+      container_getClusterNodePoolDefaultNodeConfigDefault_GetTypes(),
       true,
       false,
     ),

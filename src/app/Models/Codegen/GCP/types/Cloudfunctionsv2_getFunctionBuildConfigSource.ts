@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource,
-  Cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource_GetTypes,
-} from "./Cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource";
+  cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource,
+  cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource_GetTypes,
+} from "./cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource";
 import {
-  Cloudfunctionsv2_getFunctionBuildConfigSourceStorageSource,
-  Cloudfunctionsv2_getFunctionBuildConfigSourceStorageSource_GetTypes,
-} from "./Cloudfunctionsv2_getFunctionBuildConfigSourceStorageSource";
+  cloudfunctionsv2_getFunctionBuildConfigSourceStorageSource,
+  cloudfunctionsv2_getFunctionBuildConfigSourceStorageSource_GetTypes,
+} from "./cloudfunctionsv2_getFunctionBuildConfigSourceStorageSource";
 
-export interface Cloudfunctionsv2_getFunctionBuildConfigSource {
+export interface cloudfunctionsv2_getFunctionBuildConfigSource {
   // If provided, get the source from this location in a Cloud Source Repository.
-  RepoSources?: Array<Cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource>;
+  repoSources?: Array<cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource>;
 
   // If provided, get the source from this location in Google Cloud Storage.
-  StorageSources?: Array<Cloudfunctionsv2_getFunctionBuildConfigSourceStorageSource>;
+  storageSources?: Array<cloudfunctionsv2_getFunctionBuildConfigSourceStorageSource>;
 }
 
-export function Cloudfunctionsv2_getFunctionBuildConfigSource_GetTypes(): DynamicUIProps[] {
+export function cloudfunctionsv2_getFunctionBuildConfigSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "RepoSources",
+      "repoSources",
       "If provided, get the source from this location in a Cloud Source Repository.",
-      Cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource_GetTypes(),
+      cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "StorageSources",
+      "storageSources",
       "If provided, get the source from this location in Google Cloud Storage.",
-      Cloudfunctionsv2_getFunctionBuildConfigSourceStorageSource_GetTypes(),
+      cloudfunctionsv2_getFunctionBuildConfigSourceStorageSource_GetTypes(),
       true,
       false,
     ),

@@ -6,40 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Appengine_FlexibleAppVersionResourcesVolume,
-  Appengine_FlexibleAppVersionResourcesVolume_GetTypes,
-} from "./Appengine_FlexibleAppVersionResourcesVolume";
+  appengine_FlexibleAppVersionResourcesVolume,
+  appengine_FlexibleAppVersionResourcesVolume_GetTypes,
+} from "./appengine_FlexibleAppVersionResourcesVolume";
 
-export interface Appengine_FlexibleAppVersionResources {
+export interface appengine_FlexibleAppVersionResources {
+  // Number of CPU cores needed.
+  cpu?: number;
+
+  // Disk size (GB) needed.
+  diskGb?: number;
+
+  // Memory (GB) needed.
+  memoryGb?: number;
+
   /*
 List of ports, or port pairs, to forward from the virtual machine to the application container.
 Structure is documented below.
 */
-  Volumes?: Array<Appengine_FlexibleAppVersionResourcesVolume>;
-
-  // Number of CPU cores needed.
-  Cpu?: number;
-
-  // Disk size (GB) needed.
-  DiskGb?: number;
-
-  // Memory (GB) needed.
-  MemoryGb?: number;
+  volumes?: Array<appengine_FlexibleAppVersionResourcesVolume>;
 }
 
-export function Appengine_FlexibleAppVersionResources_GetTypes(): DynamicUIProps[] {
+export function appengine_FlexibleAppVersionResources_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Volumes",
+      "volumes",
       "List of ports, or port pairs, to forward from the virtual machine to the application container.\nStructure is documented below.",
-      Appengine_FlexibleAppVersionResourcesVolume_GetTypes(),
+      appengine_FlexibleAppVersionResourcesVolume_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Cpu",
+      "cpu",
       "Number of CPU cores needed.",
       [],
       false,
@@ -47,7 +47,7 @@ export function Appengine_FlexibleAppVersionResources_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Number,
-      "DiskGb",
+      "diskGb",
       "Disk size (GB) needed.",
       [],
       false,
@@ -55,7 +55,7 @@ export function Appengine_FlexibleAppVersionResources_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MemoryGb",
+      "memoryGb",
       "Memory (GB) needed.",
       [],
       false,

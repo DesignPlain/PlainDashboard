@@ -3,10 +3,8 @@ import { CloudResource } from '../Models/CloudResource';
 
 export function replacer(key: any, value: any) {
   if (value instanceof Map) {
-    return {
-      dataType: 'Map',
-      value: Array.from(value.entries()), // or with spread: value: [...value]
-    };
+    value.set('dataType', 'Map');
+    return Object.fromEntries(value);
   } else {
     return value;
   }
@@ -15,7 +13,9 @@ export function replacer(key: any, value: any) {
 export function reviver(key: any, value: any) {
   if (typeof value === 'object' && value !== null) {
     if (value.dataType === 'Map') {
-      return new Map(value.value);
+      let map = new Map(Object.entries(value));
+      map.delete('dataType');
+      return map;
     }
   }
   return value;

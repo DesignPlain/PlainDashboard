@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificateauthority_CertificateConfigSubjectConfig,
-  Certificateauthority_CertificateConfigSubjectConfig_GetTypes,
-} from "./Certificateauthority_CertificateConfigSubjectConfig";
+  certificateauthority_CertificateConfigPublicKey,
+  certificateauthority_CertificateConfigPublicKey_GetTypes,
+} from "./certificateauthority_CertificateConfigPublicKey";
 import {
-  Certificateauthority_CertificateConfigX509Config,
-  Certificateauthority_CertificateConfigX509Config_GetTypes,
-} from "./Certificateauthority_CertificateConfigX509Config";
+  certificateauthority_CertificateConfigSubjectConfig,
+  certificateauthority_CertificateConfigSubjectConfig_GetTypes,
+} from "./certificateauthority_CertificateConfigSubjectConfig";
 import {
-  Certificateauthority_CertificateConfigPublicKey,
-  Certificateauthority_CertificateConfigPublicKey_GetTypes,
-} from "./Certificateauthority_CertificateConfigPublicKey";
+  certificateauthority_CertificateConfigX509Config,
+  certificateauthority_CertificateConfigX509Config_GetTypes,
+} from "./certificateauthority_CertificateConfigX509Config";
 
-export interface Certificateauthority_CertificateConfig {
+export interface certificateauthority_CertificateConfig {
   /*
 A PublicKey describes a public key.
 Structure is documented below.
@@ -26,44 +26,44 @@ Structure is documented below.
 
 <a name="nested_x509_config"></a>The `x509_config` block supports:
 */
-  PublicKey?: Certificateauthority_CertificateConfigPublicKey;
+  publicKey?: certificateauthority_CertificateConfigPublicKey;
 
   /*
 Specifies some of the values in a certificate that are related to the subject.
 Structure is documented below.
 */
-  SubjectConfig?: Certificateauthority_CertificateConfigSubjectConfig;
+  subjectConfig?: certificateauthority_CertificateConfigSubjectConfig;
 
   /*
 Describes how some of the technical X.509 fields in a certificate should be populated.
 Structure is documented below.
 */
-  X509Config?: Certificateauthority_CertificateConfigX509Config;
+  x509Config?: certificateauthority_CertificateConfigX509Config;
 }
 
-export function Certificateauthority_CertificateConfig_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CertificateConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "PublicKey",
-      'A PublicKey describes a public key.\nStructure is documented below.\n\n\n<a name="nested_x509_config"></a>The `x509_config` block supports:',
-      Certificateauthority_CertificateConfigPublicKey_GetTypes(),
-      true,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "SubjectConfig",
-      "Specifies some of the values in a certificate that are related to the subject.\nStructure is documented below.",
-      Certificateauthority_CertificateConfigSubjectConfig_GetTypes(),
-      true,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "X509Config",
+      "x509Config",
       "Describes how some of the technical X.509 fields in a certificate should be populated.\nStructure is documented below.",
-      Certificateauthority_CertificateConfigX509Config_GetTypes(),
+      certificateauthority_CertificateConfigX509Config_GetTypes(),
+      true,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "publicKey",
+      'A PublicKey describes a public key.\nStructure is documented below.\n\n\n<a name="nested_x509_config"></a>The `x509_config` block supports:',
+      certificateauthority_CertificateConfigPublicKey_GetTypes(),
+      true,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "subjectConfig",
+      "Specifies some of the values in a certificate that are related to the subject.\nStructure is documented below.",
+      certificateauthority_CertificateConfigSubjectConfig_GetTypes(),
       true,
       true,
     ),

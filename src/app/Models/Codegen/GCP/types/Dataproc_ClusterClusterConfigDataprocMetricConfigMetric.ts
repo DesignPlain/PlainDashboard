@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_ClusterClusterConfigDataprocMetricConfigMetric {
+export interface dataproc_ClusterClusterConfigDataprocMetricConfigMetric {
   /*
 One or more [available OSS metrics] (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics) to collect for the metric course.
 
 - - -
 */
-  MetricOverrides?: Array<string>;
+  metricOverrides?: Array<string>;
 
   // A source for the collection of Dataproc OSS metrics (see [available OSS metrics](https://cloud.google.com//dataproc/docs/guides/monitoring#available_oss_metrics)).
-  MetricSource?: string;
+  metricSource?: string;
 }
 
-export function Dataproc_ClusterClusterConfigDataprocMetricConfigMetric_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterClusterConfigDataprocMetricConfigMetric_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "MetricOverrides",
+      "metricOverrides",
       "One or more [available OSS metrics] (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics) to collect for the metric course.\n\n- - -",
       InputType_String_GetTypes(),
       false,
@@ -30,7 +30,7 @@ export function Dataproc_ClusterClusterConfigDataprocMetricConfigMetric_GetTypes
     ),
     new DynamicUIProps(
       InputType.String,
-      "MetricSource",
+      "metricSource",
       "A source for the collection of Dataproc OSS metrics (see [available OSS metrics](https://cloud.google.com//dataproc/docs/guides/monitoring#available_oss_metrics)).",
       [],
       true,

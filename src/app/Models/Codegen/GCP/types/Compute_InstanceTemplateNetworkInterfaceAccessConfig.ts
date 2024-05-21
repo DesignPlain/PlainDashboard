@@ -6,36 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceTemplateNetworkInterfaceAccessConfig {
-  /*
-The IP address that will be 1:1 mapped to the instance's
-network ip. If not given, one will be generated.
-*/
-  NatIp?: string;
-
+export interface compute_InstanceTemplateNetworkInterfaceAccessConfig {
   /*
 The service-level to be provided for IPv6 traffic when the
 subnet has an external subnet. Only PREMIUM and STANDARD tier is valid for IPv6.
 */
-  NetworkTier?: string;
+  networkTier?: string;
 
   // The DNS domain name for the public PTR record.The DNS domain name for the public PTR record.
-  PublicPtrDomainName?: string;
+  publicPtrDomainName?: string;
+
+  /*
+The IP address that will be 1:1 mapped to the instance's
+network ip. If not given, one will be generated.
+*/
+  natIp?: string;
 }
 
-export function Compute_InstanceTemplateNetworkInterfaceAccessConfig_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceTemplateNetworkInterfaceAccessConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "NatIp",
-      "The IP address that will be 1:1 mapped to the instance's\nnetwork ip. If not given, one will be generated.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "NetworkTier",
+      "networkTier",
       "The service-level to be provided for IPv6 traffic when the\nsubnet has an external subnet. Only PREMIUM and STANDARD tier is valid for IPv6.",
       [],
       false,
@@ -43,8 +35,16 @@ export function Compute_InstanceTemplateNetworkInterfaceAccessConfig_GetTypes():
     ),
     new DynamicUIProps(
       InputType.String,
-      "PublicPtrDomainName",
+      "publicPtrDomainName",
       "The DNS domain name for the public PTR record.The DNS domain name for the public PTR record.",
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "natIp",
+      "The IP address that will be 1:1 mapped to the instance's\nnetwork ip. If not given, one will be generated.",
       [],
       false,
       true,

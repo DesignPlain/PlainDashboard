@@ -8,14 +8,8 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface SharedflowDeploymentArgs {
-  // Id of the Sharedflow to be deployed.
-  SharedflowId?: string;
-
-  // The resource ID of the environment.
-  Environment?: string;
-
   // The Apigee Organization associated with the Sharedflow
-  OrgId?: string;
+  orgId?: string;
 
   /*
 Revision of the Sharedflow to be deployed.
@@ -23,23 +17,29 @@ Revision of the Sharedflow to be deployed.
 
 - - -
 */
-  Revision?: string;
+  revision?: string;
 
   // The service account represents the identity of the deployed proxy, and determines what permissions it has. The format must be {ACCOUNT_ID}@{PROJECT}.iam.gserviceaccount.com.
-  ServiceAccount?: string;
+  serviceAccount?: string;
+
+  // Id of the Sharedflow to be deployed.
+  sharedflowId?: string;
+
+  // The resource ID of the environment.
+  environment?: string;
 }
 export class SharedflowDeployment extends Resource {
   // The service account represents the identity of the deployed proxy, and determines what permissions it has. The format must be {ACCOUNT_ID}@{PROJECT}.iam.gserviceaccount.com.
-  public ServiceAccount?: string;
+  public serviceAccount?: string;
 
   // Id of the Sharedflow to be deployed.
-  public SharedflowId?: string;
+  public sharedflowId?: string;
 
   // The resource ID of the environment.
-  public Environment?: string;
+  public environment?: string;
 
   // The Apigee Organization associated with the Sharedflow
-  public OrgId?: string;
+  public orgId?: string;
 
   /*
 Revision of the Sharedflow to be deployed.
@@ -47,13 +47,13 @@ Revision of the Sharedflow to be deployed.
 
 - - -
 */
-  public Revision?: string;
+  public revision?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "ServiceAccount",
+        "serviceAccount",
         "The service account represents the identity of the deployed proxy, and determines what permissions it has. The format must be {ACCOUNT_ID}@{PROJECT}.iam.gserviceaccount.com.",
         [],
         false,
@@ -61,7 +61,7 @@ Revision of the Sharedflow to be deployed.
       ),
       new DynamicUIProps(
         InputType.String,
-        "SharedflowId",
+        "sharedflowId",
         "Id of the Sharedflow to be deployed.",
         [],
         true,
@@ -69,7 +69,7 @@ Revision of the Sharedflow to be deployed.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Environment",
+        "environment",
         "The resource ID of the environment.",
         [],
         true,
@@ -77,7 +77,7 @@ Revision of the Sharedflow to be deployed.
       ),
       new DynamicUIProps(
         InputType.String,
-        "OrgId",
+        "orgId",
         "The Apigee Organization associated with the Sharedflow",
         [],
         true,
@@ -85,7 +85,7 @@ Revision of the Sharedflow to be deployed.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Revision",
+        "revision",
         "Revision of the Sharedflow to be deployed.\n\n\n- - -",
         [],
         true,

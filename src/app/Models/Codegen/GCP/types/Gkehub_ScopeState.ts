@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_ScopeState {
+export interface gkehub_ScopeState {
   /*
 (Output)
 Code describes the state of a Scope resource.
 */
-  Code?: string;
+  code?: string;
 }
 
-export function Gkehub_ScopeState_GetTypes(): DynamicUIProps[] {
+export function gkehub_ScopeState_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Code",
+      "code",
       "(Output)\nCode describes the state of a Scope resource.",
       [],
       false,

@@ -6,26 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_ClusterClusterConfigGceClusterConfigShieldedInstanceConfig {
+export interface dataproc_ClusterClusterConfigGceClusterConfigShieldedInstanceConfig {
+  // Defines whether instances have the [vTPM](https://cloud.google.com/security/shielded-cloud/shielded-vm#vtpm) enabled.
+  enableVtpm?: boolean;
+
   /*
 Defines whether instances have integrity monitoring enabled.
 
 - - -
 */
-  EnableIntegrityMonitoring?: boolean;
+  enableIntegrityMonitoring?: boolean;
 
   // Defines whether instances have Secure Boot enabled.
-  EnableSecureBoot?: boolean;
-
-  // Defines whether instances have the [vTPM](https://cloud.google.com/security/shielded-cloud/shielded-vm#vtpm) enabled.
-  EnableVtpm?: boolean;
+  enableSecureBoot?: boolean;
 }
 
-export function Dataproc_ClusterClusterConfigGceClusterConfigShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterClusterConfigGceClusterConfigShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableIntegrityMonitoring",
+      "enableVtpm",
+      "Defines whether instances have the [vTPM](https://cloud.google.com/security/shielded-cloud/shielded-vm#vtpm) enabled.",
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "enableIntegrityMonitoring",
       "Defines whether instances have integrity monitoring enabled.\n\n- - -",
       [],
       false,
@@ -33,16 +41,8 @@ export function Dataproc_ClusterClusterConfigGceClusterConfigShieldedInstanceCon
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableSecureBoot",
+      "enableSecureBoot",
       "Defines whether instances have Secure Boot enabled.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "EnableVtpm",
-      "Defines whether instances have the [vTPM](https://cloud.google.com/security/shielded-cloud/shielded-vm#vtpm) enabled.",
       [],
       false,
       true,

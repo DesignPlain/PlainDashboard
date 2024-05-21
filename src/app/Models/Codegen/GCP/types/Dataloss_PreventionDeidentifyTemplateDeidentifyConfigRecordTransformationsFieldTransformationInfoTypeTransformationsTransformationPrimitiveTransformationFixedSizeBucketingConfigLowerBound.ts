@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBound {
-  // A float value.
-  FloatValue?: number;
-
+export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBound {
   // An integer value (int64 format)
-  IntegerValue?: string;
+  integerValue?: string;
+
+  // A float value.
+  floatValue?: number;
 }
 
-export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBound_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBound_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "FloatValue",
-      "A float value.",
+      InputType.String,
+      "integerValue",
+      "An integer value (int64 format)",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "IntegerValue",
-      "An integer value (int64 format)",
+      InputType.Number,
+      "floatValue",
+      "A float value.",
       [],
       false,
       false,

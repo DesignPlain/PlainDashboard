@@ -6,38 +6,46 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Workstations_WorkstationClusterPrivateClusterConfig {
-  /*
-(Output)
-Service attachment URI for the workstation cluster.
-The service attachment is created when private endpoint is enabled.
-To access workstations in the cluster, configure access to the managed service using (Private Service Connect)[https://cloud.google.com/vpc/docs/configure-private-service-connect-services].
-*/
-  ServiceAttachmentUri?: string;
-
-  /*
-Additional project IDs that are allowed to attach to the workstation cluster's service attachment.
-By default, the workstation cluster's project and the VPC host project (if different) are allowed.
-*/
-  AllowedProjects?: Array<string>;
-
+export interface workstations_WorkstationClusterPrivateClusterConfig {
   /*
 (Output)
 Hostname for the workstation cluster.
 This field will be populated only when private endpoint is enabled.
 To access workstations in the cluster, create a new DNS zone mapping this domain name to an internal IP address and a forwarding rule mapping that address to the service attachment.
 */
-  ClusterHostname?: string;
+  clusterHostname?: string;
 
   // Whether Workstations endpoint is private.
-  EnablePrivateEndpoint?: boolean;
+  enablePrivateEndpoint?: boolean;
+
+  /*
+(Output)
+Service attachment URI for the workstation cluster.
+The service attachment is created when private endpoint is enabled.
+To access workstations in the cluster, configure access to the managed service using (Private Service Connect)[https://cloud.google.com/vpc/docs/configure-private-service-connect-services].
+*/
+  serviceAttachmentUri?: string;
+
+  /*
+Additional project IDs that are allowed to attach to the workstation cluster's service attachment.
+By default, the workstation cluster's project and the VPC host project (if different) are allowed.
+*/
+  allowedProjects?: Array<string>;
 }
 
-export function Workstations_WorkstationClusterPrivateClusterConfig_GetTypes(): DynamicUIProps[] {
+export function workstations_WorkstationClusterPrivateClusterConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "clusterHostname",
+      "(Output)\nHostname for the workstation cluster.\nThis field will be populated only when private endpoint is enabled.\nTo access workstations in the cluster, create a new DNS zone mapping this domain name to an internal IP address and a forwarding rule mapping that address to the service attachment.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Bool,
-      "EnablePrivateEndpoint",
+      "enablePrivateEndpoint",
       "Whether Workstations endpoint is private.",
       [],
       true,
@@ -45,7 +53,7 @@ export function Workstations_WorkstationClusterPrivateClusterConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "ServiceAttachmentUri",
+      "serviceAttachmentUri",
       "(Output)\nService attachment URI for the workstation cluster.\nThe service attachment is created when private endpoint is enabled.\nTo access workstations in the cluster, configure access to the managed service using (Private Service Connect)[https://cloud.google.com/vpc/docs/configure-private-service-connect-services].",
       [],
       false,
@@ -53,17 +61,9 @@ export function Workstations_WorkstationClusterPrivateClusterConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AllowedProjects",
+      "allowedProjects",
       "Additional project IDs that are allowed to attach to the workstation cluster's service attachment.\nBy default, the workstation cluster's project and the VPC host project (if different) are allowed.",
       InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ClusterHostname",
-      "(Output)\nHostname for the workstation cluster.\nThis field will be populated only when private endpoint is enabled.\nTo access workstations in the cluster, create a new DNS zone mapping this domain name to an internal IP address and a forwarding rule mapping that address to the service attachment.",
-      [],
       false,
       false,
     ),

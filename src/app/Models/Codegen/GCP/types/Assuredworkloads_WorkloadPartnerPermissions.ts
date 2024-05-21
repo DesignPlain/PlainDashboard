@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Assuredworkloads_WorkloadPartnerPermissions {
+export interface assuredworkloads_WorkloadPartnerPermissions {
   // Allow the partner to view inspectability logs and monitoring violations.
-  DataLogsViewer?: boolean;
+  dataLogsViewer?: boolean;
 
   // Optional. Allow partner to view access approval logs.
-  ServiceAccessApprover?: boolean;
+  serviceAccessApprover?: boolean;
 
   // Optional. Allow partner to view violation alerts.
-  AssuredWorkloadsMonitoring?: boolean;
+  assuredWorkloadsMonitoring?: boolean;
 }
 
-export function Assuredworkloads_WorkloadPartnerPermissions_GetTypes(): DynamicUIProps[] {
+export function assuredworkloads_WorkloadPartnerPermissions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "DataLogsViewer",
+      "dataLogsViewer",
       "Allow the partner to view inspectability logs and monitoring violations.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Assuredworkloads_WorkloadPartnerPermissions_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "ServiceAccessApprover",
+      "serviceAccessApprover",
       "Optional. Allow partner to view access approval logs.",
       [],
       false,
@@ -37,7 +37,7 @@ export function Assuredworkloads_WorkloadPartnerPermissions_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "AssuredWorkloadsMonitoring",
+      "assuredWorkloadsMonitoring",
       "Optional. Allow partner to view violation alerts.",
       [],
       false,

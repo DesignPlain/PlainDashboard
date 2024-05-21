@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networksecurity_ClientTlsPolicyServerValidationCaCertificateProviderInstance,
-  Networksecurity_ClientTlsPolicyServerValidationCaCertificateProviderInstance_GetTypes,
-} from "./Networksecurity_ClientTlsPolicyServerValidationCaCertificateProviderInstance";
+  networksecurity_ClientTlsPolicyServerValidationCaCertificateProviderInstance,
+  networksecurity_ClientTlsPolicyServerValidationCaCertificateProviderInstance_GetTypes,
+} from "./networksecurity_ClientTlsPolicyServerValidationCaCertificateProviderInstance";
 import {
-  Networksecurity_ClientTlsPolicyServerValidationCaGrpcEndpoint,
-  Networksecurity_ClientTlsPolicyServerValidationCaGrpcEndpoint_GetTypes,
-} from "./Networksecurity_ClientTlsPolicyServerValidationCaGrpcEndpoint";
+  networksecurity_ClientTlsPolicyServerValidationCaGrpcEndpoint,
+  networksecurity_ClientTlsPolicyServerValidationCaGrpcEndpoint_GetTypes,
+} from "./networksecurity_ClientTlsPolicyServerValidationCaGrpcEndpoint";
 
-export interface Networksecurity_ClientTlsPolicyServerValidationCa {
-  /*
-gRPC specific configuration to access the gRPC server to obtain the cert and private key.
-Structure is documented below.
-*/
-  GrpcEndpoint?: Networksecurity_ClientTlsPolicyServerValidationCaGrpcEndpoint;
-
+export interface networksecurity_ClientTlsPolicyServerValidationCa {
   /*
 The certificate provider instance specification that will be passed to the data plane, which will be used to load necessary credential information.
 Structure is documented below.
 */
-  CertificateProviderInstance?: Networksecurity_ClientTlsPolicyServerValidationCaCertificateProviderInstance;
+  certificateProviderInstance?: networksecurity_ClientTlsPolicyServerValidationCaCertificateProviderInstance;
+
+  /*
+gRPC specific configuration to access the gRPC server to obtain the cert and private key.
+Structure is documented below.
+*/
+  grpcEndpoint?: networksecurity_ClientTlsPolicyServerValidationCaGrpcEndpoint;
 }
 
-export function Networksecurity_ClientTlsPolicyServerValidationCa_GetTypes(): DynamicUIProps[] {
+export function networksecurity_ClientTlsPolicyServerValidationCa_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "GrpcEndpoint",
-      "gRPC specific configuration to access the gRPC server to obtain the cert and private key.\nStructure is documented below.",
-      Networksecurity_ClientTlsPolicyServerValidationCaGrpcEndpoint_GetTypes(),
+      "certificateProviderInstance",
+      "The certificate provider instance specification that will be passed to the data plane, which will be used to load necessary credential information.\nStructure is documented below.",
+      networksecurity_ClientTlsPolicyServerValidationCaCertificateProviderInstance_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "CertificateProviderInstance",
-      "The certificate provider instance specification that will be passed to the data plane, which will be used to load necessary credential information.\nStructure is documented below.",
-      Networksecurity_ClientTlsPolicyServerValidationCaCertificateProviderInstance_GetTypes(),
+      "grpcEndpoint",
+      "gRPC specific configuration to access the gRPC server to obtain the cert and private key.\nStructure is documented below.",
+      networksecurity_ClientTlsPolicyServerValidationCaGrpcEndpoint_GetTypes(),
       false,
       false,
     ),

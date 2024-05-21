@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_GrpcRouteRuleActionFaultInjectionPolicyAbort {
+export interface networkservices_GrpcRouteRuleActionFaultInjectionPolicyAbort {
   // The HTTP status code used to abort the request.
-  HttpStatus?: number;
+  httpStatus?: number;
 
   // The percentage of traffic which will be aborted.
-  Percentage?: number;
+  percentage?: number;
 }
 
-export function Networkservices_GrpcRouteRuleActionFaultInjectionPolicyAbort_GetTypes(): DynamicUIProps[] {
+export function networkservices_GrpcRouteRuleActionFaultInjectionPolicyAbort_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "HttpStatus",
+      "httpStatus",
       "The HTTP status code used to abort the request.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Networkservices_GrpcRouteRuleActionFaultInjectionPolicyAbort_Get
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Percentage",
+      "percentage",
       "The percentage of traffic which will be aborted.",
       [],
       false,

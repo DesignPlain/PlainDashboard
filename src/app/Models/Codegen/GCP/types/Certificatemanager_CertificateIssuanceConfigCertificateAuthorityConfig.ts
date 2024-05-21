@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig,
-  Certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig_GetTypes,
-} from "./Certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig";
+  certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig,
+  certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig_GetTypes,
+} from "./certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig";
 
-export interface Certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfig {
+export interface certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfig {
   /*
 Defines a CertificateAuthorityServiceConfig.
 Structure is documented below.
 */
-  CertificateAuthorityServiceConfig?: Certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig;
+  certificateAuthorityServiceConfig?: certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig;
 }
 
-export function Certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfig_GetTypes(): DynamicUIProps[] {
+export function certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "CertificateAuthorityServiceConfig",
+      "certificateAuthorityServiceConfig",
       "Defines a CertificateAuthorityServiceConfig.\nStructure is documented below.",
-      Certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig_GetTypes(),
+      certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig_GetTypes(),
       false,
       true,
     ),

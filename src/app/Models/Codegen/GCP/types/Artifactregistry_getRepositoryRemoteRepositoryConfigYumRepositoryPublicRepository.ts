@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Artifactregistry_getRepositoryRemoteRepositoryConfigYumRepositoryPublicRepository {
+export interface artifactregistry_getRepositoryRemoteRepositoryConfigYumRepositoryPublicRepository {
   // A common public repository base for Yum. Possible values: ["CENTOS", "CENTOS_DEBUG", "CENTOS_VAULT", "CENTOS_STREAM", "ROCKY", "EPEL"]
-  RepositoryBase?: string;
+  repositoryBase?: string;
 
   // Specific repository from the base, e.g. '"centos/8-stream/BaseOS/x86_64/os"'
-  RepositoryPath?: string;
+  repositoryPath?: string;
 }
 
-export function Artifactregistry_getRepositoryRemoteRepositoryConfigYumRepositoryPublicRepository_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_getRepositoryRemoteRepositoryConfigYumRepositoryPublicRepository_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "RepositoryBase",
+      "repositoryBase",
       'A common public repository base for Yum. Possible values: ["CENTOS", "CENTOS_DEBUG", "CENTOS_VAULT", "CENTOS_STREAM", "ROCKY", "EPEL"]',
       [],
       true,
@@ -26,7 +26,7 @@ export function Artifactregistry_getRepositoryRemoteRepositoryConfigYumRepositor
     ),
     new DynamicUIProps(
       InputType.String,
-      "RepositoryPath",
+      "repositoryPath",
       "Specific repository from the base, e.g. '\"centos/8-stream/BaseOS/x86_64/os\"'",
       [],
       true,

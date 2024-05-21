@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionDiskDiskEncryptionKey {
+export interface compute_RegionDiskDiskEncryptionKey {
   // The name of the encryption key that is stored in Google Cloud KMS.
-  KmsKeyName?: string;
+  kmsKeyName?: string;
 
   /*
 Specifies a 256-bit customer-supplied encryption key, encoded in
 RFC 4648 base64 to either encrypt or decrypt this resource.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  RawKey?: string;
+  rawKey?: string;
 
   /*
 (Output)
 The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied
 encryption key that protects this resource.
 */
-  Sha256?: string;
+  sha256?: string;
 }
 
-export function Compute_RegionDiskDiskEncryptionKey_GetTypes(): DynamicUIProps[] {
+export function compute_RegionDiskDiskEncryptionKey_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KmsKeyName",
+      "kmsKeyName",
       "The name of the encryption key that is stored in Google Cloud KMS.",
       [],
       false,
@@ -37,7 +37,7 @@ export function Compute_RegionDiskDiskEncryptionKey_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "RawKey",
+      "rawKey",
       "Specifies a 256-bit customer-supplied encryption key, encoded in\nRFC 4648 base64 to either encrypt or decrypt this resource.\n**Note**: This property is sensitive and will not be displayed in the plan.",
       [],
       false,
@@ -45,7 +45,7 @@ export function Compute_RegionDiskDiskEncryptionKey_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "Sha256",
+      "sha256",
       "(Output)\nThe RFC 4648 base64 encoded SHA-256 hash of the customer-supplied\nencryption key that protects this resource.",
       [],
       false,

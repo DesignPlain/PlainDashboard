@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkebackup_BackupPlanRetentionPolicy {
+export interface gkebackup_BackupPlanRetentionPolicy {
   /*
 Minimum age for a Backup created via this BackupPlan (in days).
 Must be an integer value between 0-90 (inclusive).
@@ -15,7 +15,7 @@ until it reaches Backup's (create time + backup_delete_lock_days).
 Updating this field of a BackupPlan does not affect existing Backups.
 Backups created after a successful update will inherit this new value.
 */
-  BackupDeleteLockDays?: number;
+  backupDeleteLockDays?: number;
 
   /*
 The default maximum age of a Backup created via this BackupPlan.
@@ -29,21 +29,21 @@ will automatically pick up the new value.
 NOTE: backupRetainDays must be >= backupDeleteLockDays.
 If cronSchedule is defined, then this must be <= 360 - the creation interval.]
 */
-  BackupRetainDays?: number;
+  backupRetainDays?: number;
 
   /*
 This flag denotes whether the retention policy of this BackupPlan is locked.
 If set to True, no further update is allowed on this policy, including
 the locked field itself.
 */
-  Locked?: boolean;
+  locked?: boolean;
 }
 
-export function Gkebackup_BackupPlanRetentionPolicy_GetTypes(): DynamicUIProps[] {
+export function gkebackup_BackupPlanRetentionPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "BackupDeleteLockDays",
+      "backupDeleteLockDays",
       "Minimum age for a Backup created via this BackupPlan (in days).\nMust be an integer value between 0-90 (inclusive).\nA Backup created under this BackupPlan will not be deletable\nuntil it reaches Backup's (create time + backup_delete_lock_days).\nUpdating this field of a BackupPlan does not affect existing Backups.\nBackups created after a successful update will inherit this new value.",
       [],
       false,
@@ -51,7 +51,7 @@ export function Gkebackup_BackupPlanRetentionPolicy_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.Number,
-      "BackupRetainDays",
+      "backupRetainDays",
       "The default maximum age of a Backup created via this BackupPlan.\nThis field MUST be an integer value >= 0 and <= 365. If specified,\na Backup created under this BackupPlan will be automatically deleted\nafter its age reaches (createTime + backupRetainDays).\nIf not specified, Backups created under this BackupPlan will NOT be\nsubject to automatic deletion. Updating this field does NOT affect\nexisting Backups under it. Backups created AFTER a successful update\nwill automatically pick up the new value.\nNOTE: backupRetainDays must be >= backupDeleteLockDays.\nIf cronSchedule is defined, then this must be <= 360 * the creation interval.]",
       [],
       false,
@@ -59,7 +59,7 @@ export function Gkebackup_BackupPlanRetentionPolicy_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Locked",
+      "locked",
       "This flag denotes whether the retention policy of this BackupPlan is locked.\nIf set to True, no further update is allowed on this policy, including\nthe locked field itself.",
       [],
       false,

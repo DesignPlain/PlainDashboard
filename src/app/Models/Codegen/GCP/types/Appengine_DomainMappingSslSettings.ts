@@ -6,7 +6,14 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_DomainMappingSslSettings {
+export interface appengine_DomainMappingSslSettings {
+  /*
+SSL management type for this domain. If `AUTOMATIC`, a managed certificate is automatically provisioned.
+If `MANUAL`, `certificateId` must be manually specified in order to configure SSL for this domain.
+Possible values are: `AUTOMATIC`, `MANUAL`.
+*/
+  sslManagementType?: string;
+
   /*
 ID of the AuthorizedCertificate resource configuring SSL for the application. Clearing this field will
 remove SSL support.
@@ -15,7 +22,7 @@ or to configure SSL manually, specify `SslManagementType.MANUAL` on a `CREATE` o
 authorized to administer the `AuthorizedCertificate` resource to manually map it to a DomainMapping resource.
 Example: 12345.
 */
-  CertificateId?: string;
+  certificateId?: string;
 
   /*
 (Output)
@@ -25,21 +32,22 @@ provisioning process completes, the `certificateId` field will reflect the new m
 field will be left empty. To remove SSL support while there is still a pending managed certificate, clear the
 `certificateId` field with an update request.
 */
-  PendingManagedCertificateId?: string;
-
-  /*
-SSL management type for this domain. If `AUTOMATIC`, a managed certificate is automatically provisioned.
-If `MANUAL`, `certificateId` must be manually specified in order to configure SSL for this domain.
-Possible values are: `AUTOMATIC`, `MANUAL`.
-*/
-  SslManagementType?: string;
+  pendingManagedCertificateId?: string;
 }
 
-export function Appengine_DomainMappingSslSettings_GetTypes(): DynamicUIProps[] {
+export function appengine_DomainMappingSslSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CertificateId",
+      "sslManagementType",
+      "SSL management type for this domain. If `AUTOMATIC`, a managed certificate is automatically provisioned.\nIf `MANUAL`, `certificateId` must be manually specified in order to configure SSL for this domain.\nPossible values are: `AUTOMATIC`, `MANUAL`.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "certificateId",
       "ID of the AuthorizedCertificate resource configuring SSL for the application. Clearing this field will\nremove SSL support.\nBy default, a managed certificate is automatically created for every domain mapping. To omit SSL support\nor to configure SSL manually, specify `SslManagementType.MANUAL` on a `CREATE` or `UPDATE` request. You must be\nauthorized to administer the `AuthorizedCertificate` resource to manually map it to a DomainMapping resource.\nExample: 12345.",
       [],
       false,
@@ -47,18 +55,10 @@ export function Appengine_DomainMappingSslSettings_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.String,
-      "PendingManagedCertificateId",
+      "pendingManagedCertificateId",
       "(Output)\nID of the managed `AuthorizedCertificate` resource currently being provisioned, if applicable. Until the new\nmanaged certificate has been successfully provisioned, the previous SSL state will be preserved. Once the\nprovisioning process completes, the `certificateId` field will reflect the new managed certificate and this\nfield will be left empty. To remove SSL support while there is still a pending managed certificate, clear the\n`certificateId` field with an update request.",
       [],
       false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "SslManagementType",
-      "SSL management type for this domain. If `AUTOMATIC`, a managed certificate is automatically provisioned.\nIf `MANUAL`, `certificateId` must be manually specified in order to configure SSL for this domain.\nPossible values are: `AUTOMATIC`, `MANUAL`.",
-      [],
-      true,
       false,
     ),
   ];

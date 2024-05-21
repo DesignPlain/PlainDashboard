@@ -7,47 +7,30 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudasset_OrganizationFeedFeedOutputConfig,
-  Cloudasset_OrganizationFeedFeedOutputConfig_GetTypes,
-} from "../types/Cloudasset_OrganizationFeedFeedOutputConfig";
+  cloudasset_OrganizationFeedCondition,
+  cloudasset_OrganizationFeedCondition_GetTypes,
+} from "../types/cloudasset_OrganizationFeedCondition";
 import {
-  Cloudasset_OrganizationFeedCondition,
-  Cloudasset_OrganizationFeedCondition_GetTypes,
-} from "../types/Cloudasset_OrganizationFeedCondition";
+  cloudasset_OrganizationFeedFeedOutputConfig,
+  cloudasset_OrganizationFeedFeedOutputConfig_GetTypes,
+} from "../types/cloudasset_OrganizationFeedFeedOutputConfig";
 
 export interface OrganizationFeedArgs {
   /*
-Output configuration for asset feed destination.
-Structure is documented below.
-*/
-  FeedOutputConfig?: Cloudasset_OrganizationFeedFeedOutputConfig;
-
-  // The organization this feed should be created in.
-  OrgId?: string;
-
-  /*
-A list of the full names of the assets to receive updates. You must specify either or both of
-assetNames and assetTypes. Only asset updates matching specified assetNames and assetTypes are
-exported to the feed. For example: //compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1.
-See https://cloud.google.com/apis/design/resourceNames#fullResourceName for more info.
-*/
-  AssetNames?: Array<string>;
-
-  /*
 A list of types of the assets to receive updates. You must specify either or both of assetNames
 and assetTypes. Only asset updates matching specified assetNames and assetTypes are exported to
 the feed. For example: "compute.googleapis.com/Disk"
 See https://cloud.google.com/asset-inventory/docs/supported-asset-types for a list of all
 supported asset types.
 */
-  AssetTypes?: Array<string>;
+  assetTypes?: Array<string>;
 
   /*
 The project whose identity will be used when sending messages to the
 destination pubsub topic. It also specifies the project for API
 enablement check, quota, and billing.
 */
-  BillingProject?: string;
+  billingProject?: string;
 
   /*
 A condition which determines whether an asset update should be published. If specified, an asset
@@ -57,42 +40,55 @@ expression "temporal_asset.deleted == true" will only publish Asset deletions. O
 condition are optional.
 Structure is documented below.
 */
-  Condition?: Cloudasset_OrganizationFeedCondition;
+  condition?: cloudasset_OrganizationFeedCondition;
 
   /*
 Asset content type. If not specified, no content but the asset name and type will be returned.
 Possible values are: `CONTENT_TYPE_UNSPECIFIED`, `RESOURCE`, `IAM_POLICY`, `ORG_POLICY`, `OS_INVENTORY`, `ACCESS_POLICY`.
 */
-  ContentType?: string;
+  contentType?: string;
 
   // This is the client-assigned asset feed identifier and it needs to be unique under a specific parent.
-  FeedId?: string;
+  feedId?: string;
+
+  /*
+Output configuration for asset feed destination.
+Structure is documented below.
+*/
+  feedOutputConfig?: cloudasset_OrganizationFeedFeedOutputConfig;
+
+  // The organization this feed should be created in.
+  orgId?: string;
+
+  /*
+A list of the full names of the assets to receive updates. You must specify either or both of
+assetNames and assetTypes. Only asset updates matching specified assetNames and assetTypes are
+exported to the feed. For example: //compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1.
+See https://cloud.google.com/apis/design/resourceNames#fullResourceName for more info.
+*/
+  assetNames?: Array<string>;
 }
 export class OrganizationFeed extends Resource {
-  /*
-Asset content type. If not specified, no content but the asset name and type will be returned.
-Possible values are: `CONTENT_TYPE_UNSPECIFIED`, `RESOURCE`, `IAM_POLICY`, `ORG_POLICY`, `OS_INVENTORY`, `ACCESS_POLICY`.
-*/
-  public ContentType?: string;
-
   // This is the client-assigned asset feed identifier and it needs to be unique under a specific parent.
-  public FeedId?: string;
+  public feedId?: string;
 
   /*
 Output configuration for asset feed destination.
 Structure is documented below.
 */
-  public FeedOutputConfig?: Cloudasset_OrganizationFeedFeedOutputConfig;
+  public feedOutputConfig?: cloudasset_OrganizationFeedFeedOutputConfig;
+
+  // The format will be organizations/{organization_number}/feeds/{client-assigned_feed_identifier}.
+  public name?: string;
 
   // The organization this feed should be created in.
-  public OrgId?: string;
+  public orgId?: string;
 
   /*
-The project whose identity will be used when sending messages to the
-destination pubsub topic. It also specifies the project for API
-enablement check, quota, and billing.
+Asset content type. If not specified, no content but the asset name and type will be returned.
+Possible values are: `CONTENT_TYPE_UNSPECIFIED`, `RESOURCE`, `IAM_POLICY`, `ORG_POLICY`, `OS_INVENTORY`, `ACCESS_POLICY`.
 */
-  public BillingProject?: string;
+  public contentType?: string;
 
   /*
 A list of types of the assets to receive updates. You must specify either or both of assetNames
@@ -101,7 +97,14 @@ the feed. For example: "compute.googleapis.com/Disk"
 See https://cloud.google.com/asset-inventory/docs/supported-asset-types for a list of all
 supported asset types.
 */
-  public AssetTypes?: Array<string>;
+  public assetTypes?: Array<string>;
+
+  /*
+The project whose identity will be used when sending messages to the
+destination pubsub topic. It also specifies the project for API
+enablement check, quota, and billing.
+*/
+  public billingProject?: string;
 
   /*
 A condition which determines whether an asset update should be published. If specified, an asset
@@ -111,10 +114,7 @@ expression "temporal_asset.deleted == true" will only publish Asset deletions. O
 condition are optional.
 Structure is documented below.
 */
-  public Condition?: Cloudasset_OrganizationFeedCondition;
-
-  // The format will be organizations/{organization_number}/feeds/{client-assigned_feed_identifier}.
-  public Name?: string;
+  public condition?: cloudasset_OrganizationFeedCondition;
 
   /*
 A list of the full names of the assets to receive updates. You must specify either or both of
@@ -122,13 +122,13 @@ assetNames and assetTypes. Only asset updates matching specified assetNames and 
 exported to the feed. For example: //compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1.
 See https://cloud.google.com/apis/design/resourceNames#fullResourceName for more info.
 */
-  public AssetNames?: Array<string>;
+  public assetNames?: Array<string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "FeedId",
+        "feedId",
         "This is the client-assigned asset feed identifier and it needs to be unique under a specific parent.",
         [],
         true,
@@ -136,15 +136,15 @@ See https://cloud.google.com/apis/design/resourceNames#fullResourceName for more
       ),
       new DynamicUIProps(
         InputType.Object,
-        "FeedOutputConfig",
+        "feedOutputConfig",
         "Output configuration for asset feed destination.\nStructure is documented below.",
-        Cloudasset_OrganizationFeedFeedOutputConfig_GetTypes(),
+        cloudasset_OrganizationFeedFeedOutputConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "OrgId",
+        "orgId",
         "The organization this feed should be created in.",
         [],
         true,
@@ -152,7 +152,7 @@ See https://cloud.google.com/apis/design/resourceNames#fullResourceName for more
       ),
       new DynamicUIProps(
         InputType.Array,
-        "AssetNames",
+        "assetNames",
         "A list of the full names of the assets to receive updates. You must specify either or both of\nassetNames and assetTypes. Only asset updates matching specified assetNames and assetTypes are\nexported to the feed. For example: //compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1.\nSee https://cloud.google.com/apis/design/resourceNames#fullResourceName for more info.",
         InputType_String_GetTypes(),
         false,
@@ -160,7 +160,7 @@ See https://cloud.google.com/apis/design/resourceNames#fullResourceName for more
       ),
       new DynamicUIProps(
         InputType.Array,
-        "AssetTypes",
+        "assetTypes",
         'A list of types of the assets to receive updates. You must specify either or both of assetNames\nand assetTypes. Only asset updates matching specified assetNames and assetTypes are exported to\nthe feed. For example: "compute.googleapis.com/Disk"\nSee https://cloud.google.com/asset-inventory/docs/supported-asset-types for a list of all\nsupported asset types.',
         InputType_String_GetTypes(),
         false,
@@ -168,7 +168,7 @@ See https://cloud.google.com/apis/design/resourceNames#fullResourceName for more
       ),
       new DynamicUIProps(
         InputType.String,
-        "BillingProject",
+        "billingProject",
         "The project whose identity will be used when sending messages to the\ndestination pubsub topic. It also specifies the project for API\nenablement check, quota, and billing.",
         [],
         true,
@@ -176,15 +176,15 @@ See https://cloud.google.com/apis/design/resourceNames#fullResourceName for more
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         'A condition which determines whether an asset update should be published. If specified, an asset\nwill be returned only when the expression evaluates to true. When set, expression field\nmust be a valid CEL expression on a TemporalAsset with name temporal_asset. Example: a Feed with\nexpression "temporal_asset.deleted == true" will only publish Asset deletions. Other fields of\ncondition are optional.\nStructure is documented below.',
-        Cloudasset_OrganizationFeedCondition_GetTypes(),
+        cloudasset_OrganizationFeedCondition_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ContentType",
+        "contentType",
         "Asset content type. If not specified, no content but the asset name and type will be returned.\nPossible values are: `CONTENT_TYPE_UNSPECIFIED`, `RESOURCE`, `IAM_POLICY`, `ORG_POLICY`, `OS_INVENTORY`, `ACCESS_POLICY`.",
         [],
         false,

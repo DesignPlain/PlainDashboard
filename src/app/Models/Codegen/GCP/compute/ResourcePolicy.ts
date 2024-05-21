@@ -7,43 +7,58 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_ResourcePolicySnapshotSchedulePolicy,
-  Compute_ResourcePolicySnapshotSchedulePolicy_GetTypes,
-} from "../types/Compute_ResourcePolicySnapshotSchedulePolicy";
+  compute_ResourcePolicySnapshotSchedulePolicy,
+  compute_ResourcePolicySnapshotSchedulePolicy_GetTypes,
+} from "../types/compute_ResourcePolicySnapshotSchedulePolicy";
 import {
-  Compute_ResourcePolicyDiskConsistencyGroupPolicy,
-  Compute_ResourcePolicyDiskConsistencyGroupPolicy_GetTypes,
-} from "../types/Compute_ResourcePolicyDiskConsistencyGroupPolicy";
+  compute_ResourcePolicyDiskConsistencyGroupPolicy,
+  compute_ResourcePolicyDiskConsistencyGroupPolicy_GetTypes,
+} from "../types/compute_ResourcePolicyDiskConsistencyGroupPolicy";
 import {
-  Compute_ResourcePolicyGroupPlacementPolicy,
-  Compute_ResourcePolicyGroupPlacementPolicy_GetTypes,
-} from "../types/Compute_ResourcePolicyGroupPlacementPolicy";
+  compute_ResourcePolicyGroupPlacementPolicy,
+  compute_ResourcePolicyGroupPlacementPolicy_GetTypes,
+} from "../types/compute_ResourcePolicyGroupPlacementPolicy";
 import {
-  Compute_ResourcePolicyInstanceSchedulePolicy,
-  Compute_ResourcePolicyInstanceSchedulePolicy_GetTypes,
-} from "../types/Compute_ResourcePolicyInstanceSchedulePolicy";
+  compute_ResourcePolicyInstanceSchedulePolicy,
+  compute_ResourcePolicyInstanceSchedulePolicy_GetTypes,
+} from "../types/compute_ResourcePolicyInstanceSchedulePolicy";
 
 export interface ResourcePolicyArgs {
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  // Region where resource policy resides.
+  region?: string;
+
+  /*
+Policy for creating snapshots of persistent disks.
+Structure is documented below.
+*/
+  snapshotSchedulePolicy?: compute_ResourcePolicySnapshotSchedulePolicy;
+
   // An optional description of this resource. Provide this property when you create the resource.
-  Description?: string;
+  description?: string;
 
   /*
 Replication consistency group for asynchronous disk replication.
 Structure is documented below.
 */
-  DiskConsistencyGroupPolicy?: Compute_ResourcePolicyDiskConsistencyGroupPolicy;
+  diskConsistencyGroupPolicy?: compute_ResourcePolicyDiskConsistencyGroupPolicy;
 
   /*
 Resource policy for instances used for placement configuration.
 Structure is documented below.
 */
-  GroupPlacementPolicy?: Compute_ResourcePolicyGroupPlacementPolicy;
+  groupPlacementPolicy?: compute_ResourcePolicyGroupPlacementPolicy;
 
   /*
 Resource policy for scheduling instance operations.
 Structure is documented below.
 */
-  InstanceSchedulePolicy?: Compute_ResourcePolicyInstanceSchedulePolicy;
+  instanceSchedulePolicy?: compute_ResourcePolicyInstanceSchedulePolicy;
 
   /*
 The name of the resource, provided by the client when initially creating
@@ -57,44 +72,44 @@ which cannot be a dash.
 
 - - -
 */
-  Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  // Region where resource policy resides.
-  Region?: string;
-
-  /*
-Policy for creating snapshots of persistent disks.
-Structure is documented below.
-*/
-  SnapshotSchedulePolicy?: Compute_ResourcePolicySnapshotSchedulePolicy;
+  name?: string;
 }
 export class ResourcePolicy extends Resource {
+  // An optional description of this resource. Provide this property when you create the resource.
+  public description?: string;
+
+  /*
+Resource policy for instances used for placement configuration.
+Structure is documented below.
+*/
+  public groupPlacementPolicy?: compute_ResourcePolicyGroupPlacementPolicy;
+
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // Region where resource policy resides.
-  public Region?: string;
+  public region?: string;
+
+  /*
+Policy for creating snapshots of persistent disks.
+Structure is documented below.
+*/
+  public snapshotSchedulePolicy?: compute_ResourcePolicySnapshotSchedulePolicy;
 
   /*
 Replication consistency group for asynchronous disk replication.
 Structure is documented below.
 */
-  public DiskConsistencyGroupPolicy?: Compute_ResourcePolicyDiskConsistencyGroupPolicy;
+  public diskConsistencyGroupPolicy?: compute_ResourcePolicyDiskConsistencyGroupPolicy;
 
   /*
 Resource policy for scheduling instance operations.
 Structure is documented below.
 */
-  public InstanceSchedulePolicy?: Compute_ResourcePolicyInstanceSchedulePolicy;
+  public instanceSchedulePolicy?: compute_ResourcePolicyInstanceSchedulePolicy;
 
   /*
 The name of the resource, provided by the client when initially creating
@@ -108,63 +123,40 @@ which cannot be a dash.
 
 - - -
 */
-  public Name?: string;
-
-  /*
-Policy for creating snapshots of persistent disks.
-Structure is documented below.
-*/
-  public SnapshotSchedulePolicy?: Compute_ResourcePolicySnapshotSchedulePolicy;
-
-  // An optional description of this resource. Provide this property when you create the resource.
-  public Description?: string;
-
-  /*
-Resource policy for instances used for placement configuration.
-Structure is documented below.
-*/
-  public GroupPlacementPolicy?: Compute_ResourcePolicyGroupPlacementPolicy;
+  public name?: string;
 
   // The URI of the created resource.
-  public SelfLink?: string;
+  public selfLink?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "An optional description of this resource. Provide this property when you create the resource.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.Object,
-        "DiskConsistencyGroupPolicy",
+        "diskConsistencyGroupPolicy",
         "Replication consistency group for asynchronous disk replication.\nStructure is documented below.",
-        Compute_ResourcePolicyDiskConsistencyGroupPolicy_GetTypes(),
+        compute_ResourcePolicyDiskConsistencyGroupPolicy_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "GroupPlacementPolicy",
+        "groupPlacementPolicy",
         "Resource policy for instances used for placement configuration.\nStructure is documented below.",
-        Compute_ResourcePolicyGroupPlacementPolicy_GetTypes(),
+        compute_ResourcePolicyGroupPlacementPolicy_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "InstanceSchedulePolicy",
+        "instanceSchedulePolicy",
         "Resource policy for scheduling instance operations.\nStructure is documented below.",
-        Compute_ResourcePolicyInstanceSchedulePolicy_GetTypes(),
+        compute_ResourcePolicyInstanceSchedulePolicy_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name of the resource, provided by the client when initially creating\nthe resource. The resource name must be 1-63 characters long, and comply\nwith RFC1035. Specifically, the name must be 1-63 characters long and\nmatch the regular expression `a-z`? which means the\nfirst character must be a lowercase letter, and all following characters\nmust be a dash, lowercase letter, or digit, except the last character,\nwhich cannot be a dash.\n\n\n- - -",
         [],
         false,
@@ -172,7 +164,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -180,7 +172,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "Region where resource policy resides.",
         [],
         false,
@@ -188,9 +180,17 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "SnapshotSchedulePolicy",
+        "snapshotSchedulePolicy",
         "Policy for creating snapshots of persistent disks.\nStructure is documented below.",
-        Compute_ResourcePolicySnapshotSchedulePolicy_GetTypes(),
+        compute_ResourcePolicySnapshotSchedulePolicy_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "An optional description of this resource. Provide this property when you create the resource.",
+        [],
         false,
         true,
       ),

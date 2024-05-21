@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Accesscontextmanager_AccessLevelBasicConditionVpcNetworkSourceVpcSubnetwork {
-  // CIDR block IP subnetwork specification. Must be IPv4.
-  VpcIpSubnetworks?: Array<string>;
-
+export interface accesscontextmanager_AccessLevelBasicConditionVpcNetworkSourceVpcSubnetwork {
   // Required. Network name to be allowed by this Access Level. Networks of foreign organizations requires `compute.network.get` permission to be granted to caller.
-  Network?: string;
+  network?: string;
+
+  // CIDR block IP subnetwork specification. Must be IPv4.
+  vpcIpSubnetworks?: Array<string>;
 }
 
-export function Accesscontextmanager_AccessLevelBasicConditionVpcNetworkSourceVpcSubnetwork_GetTypes(): DynamicUIProps[] {
+export function accesscontextmanager_AccessLevelBasicConditionVpcNetworkSourceVpcSubnetwork_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "VpcIpSubnetworks",
-      "CIDR block IP subnetwork specification. Must be IPv4.",
-      InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Network",
+      "network",
       "Required. Network name to be allowed by this Access Level. Networks of foreign organizations requires `compute.network.get` permission to be granted to caller.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "vpcIpSubnetworks",
+      "CIDR block IP subnetwork specification. Must be IPv4.",
+      InputType_String_GetTypes(),
+      false,
       false,
     ),
   ];

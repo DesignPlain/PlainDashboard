@@ -6,11 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterIpAllocationPolicyPodCidrOverprovisionConfig {
+export interface container_getClusterIpAllocationPolicyPodCidrOverprovisionConfig {
   //
-  Disabled?: boolean;
+  disabled?: boolean;
 }
 
-export function Container_getClusterIpAllocationPolicyPodCidrOverprovisionConfig_GetTypes(): DynamicUIProps[] {
-  return [new DynamicUIProps(InputType.Bool, "Disabled", "", [], true, false)];
+export function container_getClusterIpAllocationPolicyPodCidrOverprovisionConfig_GetTypes(): DynamicUIProps[] {
+  return [new DynamicUIProps(InputType.Bool, "disabled", "", [], true, false)];
 }

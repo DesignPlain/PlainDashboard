@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions,
-  Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions_GetTypes,
-} from "./Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions";
+  gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions,
+  gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions_GetTypes,
+} from "./gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions";
 import {
-  Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade,
-  Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade_GetTypes,
-} from "./Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade";
+  gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade,
+  gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade_GetTypes,
+} from "./gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade";
 
-export interface Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverride {
+export interface gkehub_FeatureSpecClusterupgradeGkeUpgradeOverride {
   /*
 Post conditions to override for the specified upgrade.
 Structure is documented below.
 */
-  PostConditions?: Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions;
+  postConditions?: gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions;
 
   /*
 Which upgrade to override.
 Structure is documented below.
 */
-  Upgrade?: Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade;
+  upgrade?: gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade;
 }
 
-export function Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverride_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureSpecClusterupgradeGkeUpgradeOverride_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "PostConditions",
+      "postConditions",
       "Post conditions to override for the specified upgrade.\nStructure is documented below.",
-      Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions_GetTypes(),
+      gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Upgrade",
+      "upgrade",
       "Which upgrade to override.\nStructure is documented below.",
-      Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade_GetTypes(),
+      gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade_GetTypes(),
       true,
       false,
     ),

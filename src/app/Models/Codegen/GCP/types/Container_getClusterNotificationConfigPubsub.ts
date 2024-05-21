@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterNotificationConfigPubsubFilter,
-  Container_getClusterNotificationConfigPubsubFilter_GetTypes,
-} from "./Container_getClusterNotificationConfigPubsubFilter";
+  container_getClusterNotificationConfigPubsubFilter,
+  container_getClusterNotificationConfigPubsubFilter_GetTypes,
+} from "./container_getClusterNotificationConfigPubsubFilter";
 
-export interface Container_getClusterNotificationConfigPubsub {
+export interface container_getClusterNotificationConfigPubsub {
   // Whether or not the notification config is enabled
-  Enabled?: boolean;
+  enabled?: boolean;
 
   // Allows filtering to one or more specific event types. If event types are present, those and only those event types will be transmitted to the cluster. Other types will be skipped. If no filter is specified, or no event types are present, all event types will be sent
-  Filters?: Array<Container_getClusterNotificationConfigPubsubFilter>;
+  filters?: Array<container_getClusterNotificationConfigPubsubFilter>;
 
   // The pubsub topic to push upgrade notifications to. Must be in the same project as the cluster. Must be in the format: projects/{project}/topics/{topic}.
-  Topic?: string;
+  topic?: string;
 }
 
-export function Container_getClusterNotificationConfigPubsub_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNotificationConfigPubsub_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether or not the notification config is enabled",
       [],
       true,
@@ -33,15 +33,15 @@ export function Container_getClusterNotificationConfigPubsub_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Filters",
+      "filters",
       "Allows filtering to one or more specific event types. If event types are present, those and only those event types will be transmitted to the cluster. Other types will be skipped. If no filter is specified, or no event types are present, all event types will be sent",
-      Container_getClusterNotificationConfigPubsubFilter_GetTypes(),
+      container_getClusterNotificationConfigPubsubFilter_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Topic",
+      "topic",
       "The pubsub topic to push upgrade notifications to. Must be in the same project as the cluster. Must be in the format: projects/{project}/topics/{topic}.",
       [],
       true,

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_ConnectionSparkMetastoreServiceConfig {
+export interface bigquery_ConnectionSparkMetastoreServiceConfig {
   // Resource name of an existing Dataproc Metastore service in the form of projects/[projectId]/locations/[region]/services/[serviceId].
-  MetastoreService?: string;
+  metastoreService?: string;
 }
 
-export function Bigquery_ConnectionSparkMetastoreServiceConfig_GetTypes(): DynamicUIProps[] {
+export function bigquery_ConnectionSparkMetastoreServiceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "MetastoreService",
+      "metastoreService",
       "Resource name of an existing Dataproc Metastore service in the form of projects/[projectId]/locations/[region]/services/[serviceId].",
       [],
       false,

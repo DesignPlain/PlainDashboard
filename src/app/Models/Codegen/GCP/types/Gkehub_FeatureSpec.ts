@@ -6,61 +6,61 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkehub_FeatureSpecClusterupgrade,
-  Gkehub_FeatureSpecClusterupgrade_GetTypes,
-} from "./Gkehub_FeatureSpecClusterupgrade";
+  gkehub_FeatureSpecClusterupgrade,
+  gkehub_FeatureSpecClusterupgrade_GetTypes,
+} from "./gkehub_FeatureSpecClusterupgrade";
 import {
-  Gkehub_FeatureSpecFleetobservability,
-  Gkehub_FeatureSpecFleetobservability_GetTypes,
-} from "./Gkehub_FeatureSpecFleetobservability";
+  gkehub_FeatureSpecFleetobservability,
+  gkehub_FeatureSpecFleetobservability_GetTypes,
+} from "./gkehub_FeatureSpecFleetobservability";
 import {
-  Gkehub_FeatureSpecMulticlusteringress,
-  Gkehub_FeatureSpecMulticlusteringress_GetTypes,
-} from "./Gkehub_FeatureSpecMulticlusteringress";
+  gkehub_FeatureSpecMulticlusteringress,
+  gkehub_FeatureSpecMulticlusteringress_GetTypes,
+} from "./gkehub_FeatureSpecMulticlusteringress";
 
-export interface Gkehub_FeatureSpec {
+export interface gkehub_FeatureSpec {
   /*
 Clusterupgrade feature spec.
 Structure is documented below.
 */
-  Clusterupgrade?: Gkehub_FeatureSpecClusterupgrade;
+  clusterupgrade?: gkehub_FeatureSpecClusterupgrade;
 
   /*
 Fleet Observability feature spec.
 Structure is documented below.
 */
-  Fleetobservability?: Gkehub_FeatureSpecFleetobservability;
+  fleetobservability?: gkehub_FeatureSpecFleetobservability;
 
   /*
 Multicluster Ingress-specific spec.
 Structure is documented below.
 */
-  Multiclusteringress?: Gkehub_FeatureSpecMulticlusteringress;
+  multiclusteringress?: gkehub_FeatureSpecMulticlusteringress;
 }
 
-export function Gkehub_FeatureSpec_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureSpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Clusterupgrade",
+      "clusterupgrade",
       "Clusterupgrade feature spec.\nStructure is documented below.",
-      Gkehub_FeatureSpecClusterupgrade_GetTypes(),
+      gkehub_FeatureSpecClusterupgrade_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Fleetobservability",
+      "fleetobservability",
       "Fleet Observability feature spec.\nStructure is documented below.",
-      Gkehub_FeatureSpecFleetobservability_GetTypes(),
+      gkehub_FeatureSpecFleetobservability_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Multiclusteringress",
+      "multiclusteringress",
       "Multicluster Ingress-specific spec.\nStructure is documented below.",
-      Gkehub_FeatureSpecMulticlusteringress_GetTypes(),
+      gkehub_FeatureSpecMulticlusteringress_GetTypes(),
       false,
       false,
     ),

@@ -6,61 +6,61 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageBaseKeyUsage,
-  Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageBaseKeyUsage_GetTypes,
-} from "./Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageBaseKeyUsage";
+  certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageBaseKeyUsage,
+  certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageBaseKeyUsage_GetTypes,
+} from "./certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageBaseKeyUsage";
 import {
-  Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsage,
-  Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsage_GetTypes,
-} from "./Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsage";
+  certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsage,
+  certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsage_GetTypes,
+} from "./certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsage";
 import {
-  Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsage,
-  Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsage_GetTypes,
-} from "./Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsage";
+  certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsage,
+  certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsage_GetTypes,
+} from "./certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsage";
 
-export interface Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsage {
+export interface certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsage {
   /*
 Describes high-level ways in which a key may be used.
 Structure is documented below.
 */
-  BaseKeyUsage?: Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageBaseKeyUsage;
+  baseKeyUsage?: certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageBaseKeyUsage;
 
   /*
 Describes high-level ways in which a key may be used.
 Structure is documented below.
 */
-  ExtendedKeyUsage?: Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsage;
+  extendedKeyUsage?: certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsage;
 
   /*
 An ObjectId specifies an object identifier (OID). These provide context and describe types in ASN.1 messages.
 Structure is documented below.
 */
-  UnknownExtendedKeyUsages?: Array<Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsage>;
+  unknownExtendedKeyUsages?: Array<certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsage>;
 }
 
-export function Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsage_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "BaseKeyUsage",
+      "baseKeyUsage",
       "Describes high-level ways in which a key may be used.\nStructure is documented below.",
-      Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageBaseKeyUsage_GetTypes(),
+      certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageBaseKeyUsage_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ExtendedKeyUsage",
+      "extendedKeyUsage",
       "Describes high-level ways in which a key may be used.\nStructure is documented below.",
-      Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsage_GetTypes(),
+      certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsage_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "UnknownExtendedKeyUsages",
+      "unknownExtendedKeyUsages",
       "An ObjectId specifies an object identifier (OID). These provide context and describe types in ASN.1 messages.\nStructure is documented below.",
-      Certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsage_GetTypes(),
+      certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsage_GetTypes(),
       false,
       false,
     ),

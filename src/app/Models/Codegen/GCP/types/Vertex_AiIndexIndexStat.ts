@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vertex_AiIndexIndexStat {
+export interface vertex_AiIndexIndexStat {
   /*
 (Output)
 The number of shards in the Index.
 */
-  ShardsCount?: number;
+  shardsCount?: number;
 
   /*
 (Output)
 The number of vectors in the Index.
 */
-  VectorsCount?: string;
+  vectorsCount?: string;
 }
 
-export function Vertex_AiIndexIndexStat_GetTypes(): DynamicUIProps[] {
+export function vertex_AiIndexIndexStat_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "ShardsCount",
+      "shardsCount",
       "(Output)\nThe number of shards in the Index.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Vertex_AiIndexIndexStat_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "VectorsCount",
+      "vectorsCount",
       "(Output)\nThe number of vectors in the Index.",
       [],
       false,

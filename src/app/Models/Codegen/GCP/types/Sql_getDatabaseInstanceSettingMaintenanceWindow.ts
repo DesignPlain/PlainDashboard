@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstanceSettingMaintenanceWindow {
+export interface sql_getDatabaseInstanceSettingMaintenanceWindow {
+  // Day of week (1-7), starting on Monday
+  day?: number;
+
   // Hour of day (0-23), ignored if day not set
-  Hour?: number;
+  hour?: number;
 
   // Receive updates earlier (canary) or later (stable)
-  UpdateTrack?: string;
-
-  // Day of week (1-7), starting on Monday
-  Day?: number;
+  updateTrack?: string;
 }
 
-export function Sql_getDatabaseInstanceSettingMaintenanceWindow_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstanceSettingMaintenanceWindow_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Hour",
+      "day",
+      "Day of week (1-7), starting on Monday",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "hour",
       "Hour of day (0-23), ignored if day not set",
       [],
       true,
@@ -29,16 +37,8 @@ export function Sql_getDatabaseInstanceSettingMaintenanceWindow_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.String,
-      "UpdateTrack",
+      "updateTrack",
       "Receive updates earlier (canary) or later (stable)",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Day",
-      "Day of week (1-7), starting on Monday",
       [],
       true,
       false,

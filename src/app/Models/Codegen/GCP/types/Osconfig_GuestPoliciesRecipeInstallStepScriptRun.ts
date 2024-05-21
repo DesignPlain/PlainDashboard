@@ -6,34 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Osconfig_GuestPoliciesRecipeInstallStepScriptRun {
+export interface osconfig_GuestPoliciesRecipeInstallStepScriptRun {
+  // The shell script to be executed.
+  script?: string;
+
   // Return codes that indicate that the software installed or updated successfully. Behaviour defaults to [0]
-  AllowedExitCodes?: Array<number>;
+  allowedExitCodes?: Array<number>;
 
   /*
 The script interpreter to use to run the script. If no interpreter is specified the script is executed directly,
 which likely only succeed for scripts with shebang lines.
 Possible values are: `SHELL`, `POWERSHELL`.
 */
-  Interpreter?: string;
-
-  // The shell script to be executed.
-  Script?: string;
+  interpreter?: string;
 }
 
-export function Osconfig_GuestPoliciesRecipeInstallStepScriptRun_GetTypes(): DynamicUIProps[] {
+export function osconfig_GuestPoliciesRecipeInstallStepScriptRun_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Interpreter",
-      "The script interpreter to use to run the script. If no interpreter is specified the script is executed directly,\nwhich likely only succeed for scripts with shebang lines.\nPossible values are: `SHELL`, `POWERSHELL`.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Script",
+      "script",
       "The shell script to be executed.",
       [],
       true,
@@ -41,9 +33,17 @@ export function Osconfig_GuestPoliciesRecipeInstallStepScriptRun_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AllowedExitCodes",
+      "allowedExitCodes",
       "Return codes that indicate that the software installed or updated successfully. Behaviour defaults to [0]",
       InputType_Number_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "interpreter",
+      "The script interpreter to use to run the script. If no interpreter is specified the script is executed directly,\nwhich likely only succeed for scripts with shebang lines.\nPossible values are: `SHELL`, `POWERSHELL`.",
+      [],
       false,
       false,
     ),

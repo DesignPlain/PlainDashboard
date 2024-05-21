@@ -7,20 +7,20 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Kms_CryptoKeyVersionTemplate,
-  Kms_CryptoKeyVersionTemplate_GetTypes,
-} from "../types/Kms_CryptoKeyVersionTemplate";
+  kms_CryptoKeyVersionTemplate,
+  kms_CryptoKeyVersionTemplate_GetTypes,
+} from "../types/kms_CryptoKeyVersionTemplate";
 import {
-  Kms_CryptoKeyPrimary,
-  Kms_CryptoKeyPrimary_GetTypes,
-} from "../types/Kms_CryptoKeyPrimary";
+  kms_CryptoKeyPrimary,
+  kms_CryptoKeyPrimary_GetTypes,
+} from "../types/kms_CryptoKeyPrimary";
 
 export interface CryptoKeyArgs {
   /*
 The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED.
 If not specified at creation time, the default duration is 24 hours.
 */
-  DestroyScheduledDuration?: string;
+  destroyScheduledDuration?: string;
 
   /*
 The KeyRing that this key belongs to.
@@ -29,24 +29,7 @@ Format: `'projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}'`.
 
 - - -
 */
-  KeyRing?: string;
-
-  /*
-Every time this period passes, generate a new CryptoKeyVersion and set it as the primary.
-The first rotation will take place after the specified period. The rotation period has
-the format of a decimal number with up to 9 fractional digits, followed by the
-letter `s` (seconds). It must be greater than a day (ie, 86400).
-*/
-  RotationPeriod?: string;
-
-  /*
-A template describing settings for new crypto key versions.
-Structure is documented below.
-*/
-  VersionTemplate?: Kms_CryptoKeyVersionTemplate;
-
-  // Whether this key may contain imported versions only.
-  ImportOnly?: boolean;
+  keyRing?: string;
 
   /*
 Labels with user-defined metadata to apply to this resource.
@@ -54,10 +37,10 @@ Labels with user-defined metadata to apply to this resource.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   // The resource name for the CryptoKey.
-  Name?: string;
+  name?: string;
 
   /*
 The immutable purpose of this CryptoKey. See the
@@ -65,38 +48,96 @@ The immutable purpose of this CryptoKey. See the
 for possible inputs.
 Default value is "ENCRYPT_DECRYPT".
 */
-  Purpose?: string;
+  purpose?: string;
 
   /*
 If set to true, the request will create a CryptoKey without any CryptoKeyVersions.
 You must use the `gcp.kms.KeyRingImportJob` resource to import the CryptoKeyVersion.
 */
-  SkipInitialVersionCreation?: boolean;
+  skipInitialVersionCreation?: boolean;
+
+  // Whether this key may contain imported versions only.
+  importOnly?: boolean;
+
+  /*
+Every time this period passes, generate a new CryptoKeyVersion and set it as the primary.
+The first rotation will take place after the specified period. The rotation period has
+the format of a decimal number with up to 9 fractional digits, followed by the
+letter `s` (seconds). It must be greater than a day (ie, 86400).
+*/
+  rotationPeriod?: string;
+
+  /*
+A template describing settings for new crypto key versions.
+Structure is documented below.
+*/
+  versionTemplate?: kms_CryptoKeyVersionTemplate;
 }
 export class CryptoKey extends Resource {
+  /*
+The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED.
+If not specified at creation time, the default duration is 24 hours.
+*/
+  public destroyScheduledDuration?: string;
+
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
+
+  /*
+The KeyRing that this key belongs to.
+Format: `'projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}'`.
+
+
+- - -
+*/
+  public keyRing?: string;
+
+  /*
+The combination of labels configured directly on the resource
+and default labels configured on the provider.
+*/
+  public pulumiLabels?: Map<string, string>;
+
+  /*
+The immutable purpose of this CryptoKey. See the
+[purpose reference](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys#CryptoKeyPurpose)
+for possible inputs.
+Default value is "ENCRYPT_DECRYPT".
+*/
+  public purpose?: string;
+
+  /*
+If set to true, the request will create a CryptoKey without any CryptoKeyVersions.
+You must use the `gcp.kms.KeyRingImportJob` resource to import the CryptoKeyVersion.
+*/
+  public skipInitialVersionCreation?: boolean;
+
+  /*
+A template describing settings for new crypto key versions.
+Structure is documented below.
+*/
+  public versionTemplate?: kms_CryptoKeyVersionTemplate;
+
+  // Whether this key may contain imported versions only.
+  public importOnly?: boolean;
+
   /*
 Labels with user-defined metadata to apply to this resource.
 
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  public Labels?: Map<string, string>;
+  public labels?: Map<string, string>;
 
   // The resource name for the CryptoKey.
-  public Name?: string;
+  public name?: string;
 
   /*
 A copy of the primary CryptoKeyVersion that will be used by cryptoKeys.encrypt when this CryptoKey is given in EncryptRequest.name.
 Keys with purpose ENCRYPT_DECRYPT may have a primary. For other keys, this field will be unset.
 Structure is documented below.
 */
-  public Primaries?: Array<Kms_CryptoKeyPrimary>;
-
-  /*
-The combination of labels configured directly on the resource
-and default labels configured on the provider.
-*/
-  public PulumiLabels?: Map<string, string>;
+  public primaries?: Array<kms_CryptoKeyPrimary>;
 
   /*
 Every time this period passes, generate a new CryptoKeyVersion and set it as the primary.
@@ -104,102 +145,45 @@ The first rotation will take place after the specified period. The rotation peri
 the format of a decimal number with up to 9 fractional digits, followed by the
 letter `s` (seconds). It must be greater than a day (ie, 86400).
 */
-  public RotationPeriod?: string;
-
-  /*
-The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED.
-If not specified at creation time, the default duration is 24 hours.
-*/
-  public DestroyScheduledDuration?: string;
-
-  // Whether this key may contain imported versions only.
-  public ImportOnly?: boolean;
-
-  /*
-The KeyRing that this key belongs to.
-Format: `'projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}'`.
-
-
-- - -
-*/
-  public KeyRing?: string;
-
-  /*
-The immutable purpose of this CryptoKey. See the
-[purpose reference](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys#CryptoKeyPurpose)
-for possible inputs.
-Default value is "ENCRYPT_DECRYPT".
-*/
-  public Purpose?: string;
-
-  /*
-If set to true, the request will create a CryptoKey without any CryptoKeyVersions.
-You must use the `gcp.kms.KeyRingImportJob` resource to import the CryptoKeyVersion.
-*/
-  public SkipInitialVersionCreation?: boolean;
-
-  /*
-A template describing settings for new crypto key versions.
-Structure is documented below.
-*/
-  public VersionTemplate?: Kms_CryptoKeyVersionTemplate;
-
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
+  public rotationPeriod?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "DestroyScheduledDuration",
-        "The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED.\nIf not specified at creation time, the default duration is 24 hours.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "KeyRing",
+        "keyRing",
         "The KeyRing that this key belongs to.\nFormat: `'projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}'`.\n\n\n- - -",
         [],
         true,
         true,
       ),
       new DynamicUIProps(
-        InputType.String,
-        "RotationPeriod",
-        "Every time this period passes, generate a new CryptoKeyVersion and set it as the primary.\nThe first rotation will take place after the specified period. The rotation period has\nthe format of a decimal number with up to 9 fractional digits, followed by the\nletter `s` (seconds). It must be greater than a day (ie, 86400).",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Map,
-        "Labels",
-        "Labels with user-defined metadata to apply to this resource.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
-        InputType_Map_GetTypes(),
+        InputType.Object,
+        "versionTemplate",
+        "A template describing settings for new crypto key versions.\nStructure is documented below.",
+        kms_CryptoKeyVersionTemplate_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Purpose",
+        "purpose",
         'The immutable purpose of this CryptoKey. See the\n[purpose reference](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys#CryptoKeyPurpose)\nfor possible inputs.\nDefault value is "ENCRYPT_DECRYPT".',
         [],
         false,
         true,
       ),
       new DynamicUIProps(
-        InputType.Object,
-        "VersionTemplate",
-        "A template describing settings for new crypto key versions.\nStructure is documented below.",
-        Kms_CryptoKeyVersionTemplate_GetTypes(),
+        InputType.Bool,
+        "skipInitialVersionCreation",
+        "If set to true, the request will create a CryptoKey without any CryptoKeyVersions.\nYou must use the `gcp.kms.KeyRingImportJob` resource to import the CryptoKeyVersion.",
+        [],
         false,
-        false,
+        true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "ImportOnly",
+        "importOnly",
         "Whether this key may contain imported versions only.",
         [],
         false,
@@ -207,16 +191,32 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
-        "The resource name for the CryptoKey.",
+        "rotationPeriod",
+        "Every time this period passes, generate a new CryptoKeyVersion and set it as the primary.\nThe first rotation will take place after the specified period. The rotation period has\nthe format of a decimal number with up to 9 fractional digits, followed by the\nletter `s` (seconds). It must be greater than a day (ie, 86400).",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "destroyScheduledDuration",
+        "The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED.\nIf not specified at creation time, the default duration is 24 hours.",
         [],
         false,
         true,
       ),
       new DynamicUIProps(
-        InputType.Bool,
-        "SkipInitialVersionCreation",
-        "If set to true, the request will create a CryptoKey without any CryptoKeyVersions.\nYou must use the `gcp.kms.KeyRingImportJob` resource to import the CryptoKeyVersion.",
+        InputType.Map,
+        "labels",
+        "Labels with user-defined metadata to apply to this resource.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        InputType_Map_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "The resource name for the CryptoKey.",
         [],
         false,
         true,

@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsPartitionId {
+export interface dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsPartitionId {
   // If not empty, the ID of the namespace to which the entities belong.
-  NamespaceId?: string;
+  namespaceId?: string;
 
   // The ID of the project to which the entities belong.
-  ProjectId?: string;
+  projectId?: string;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsPartitionId_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsPartitionId_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ProjectId",
-      "The ID of the project to which the entities belong.",
+      "namespaceId",
+      "If not empty, the ID of the namespace to which the entities belong.",
       [],
-      true,
+      false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "NamespaceId",
-      "If not empty, the ID of the namespace to which the entities belong.",
+      "projectId",
+      "The ID of the project to which the entities belong.",
       [],
-      false,
+      true,
       false,
     ),
   ];

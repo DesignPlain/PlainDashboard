@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_AutoscalingPolicyBasicAlgorithmYarnConfig,
-  Dataproc_AutoscalingPolicyBasicAlgorithmYarnConfig_GetTypes,
-} from "./Dataproc_AutoscalingPolicyBasicAlgorithmYarnConfig";
+  dataproc_AutoscalingPolicyBasicAlgorithmYarnConfig,
+  dataproc_AutoscalingPolicyBasicAlgorithmYarnConfig_GetTypes,
+} from "./dataproc_AutoscalingPolicyBasicAlgorithmYarnConfig";
 
-export interface Dataproc_AutoscalingPolicyBasicAlgorithm {
+export interface dataproc_AutoscalingPolicyBasicAlgorithm {
   /*
 Duration between scaling events. A scaling period starts after the
 update operation from the previous event has completed.
 Bounds: [2m, 1d]. Default: 2m.
 */
-  CooldownPeriod?: string;
+  cooldownPeriod?: string;
 
   /*
 YARN autoscaling configuration.
 Structure is documented below.
 */
-  YarnConfig?: Dataproc_AutoscalingPolicyBasicAlgorithmYarnConfig;
+  yarnConfig?: dataproc_AutoscalingPolicyBasicAlgorithmYarnConfig;
 }
 
-export function Dataproc_AutoscalingPolicyBasicAlgorithm_GetTypes(): DynamicUIProps[] {
+export function dataproc_AutoscalingPolicyBasicAlgorithm_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CooldownPeriod",
+      "cooldownPeriod",
       "Duration between scaling events. A scaling period starts after the\nupdate operation from the previous event has completed.\nBounds: [2m, 1d]. Default: 2m.",
       [],
       false,
@@ -37,9 +37,9 @@ export function Dataproc_AutoscalingPolicyBasicAlgorithm_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "YarnConfig",
+      "yarnConfig",
       "YARN autoscaling configuration.\nStructure is documented below.",
-      Dataproc_AutoscalingPolicyBasicAlgorithmYarnConfig_GetTypes(),
+      dataproc_AutoscalingPolicyBasicAlgorithmYarnConfig_GetTypes(),
       true,
       false,
     ),

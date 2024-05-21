@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networksecurity_ServerTlsPolicyServerCertificateGrpcEndpoint {
+export interface networksecurity_ServerTlsPolicyServerCertificateGrpcEndpoint {
   // The target URI of the gRPC endpoint. Only UDS path is supported, and should start with "unix:".
-  TargetUri?: string;
+  targetUri?: string;
 }
 
-export function Networksecurity_ServerTlsPolicyServerCertificateGrpcEndpoint_GetTypes(): DynamicUIProps[] {
+export function networksecurity_ServerTlsPolicyServerCertificateGrpcEndpoint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "TargetUri",
+      "targetUri",
       'The target URI of the gRPC endpoint. Only UDS path is supported, and should start with "unix:".',
       [],
       true,

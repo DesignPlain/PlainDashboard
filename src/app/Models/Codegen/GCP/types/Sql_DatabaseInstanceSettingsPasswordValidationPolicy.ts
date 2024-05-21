@@ -6,9 +6,9 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_DatabaseInstanceSettingsPasswordValidationPolicy {
+export interface sql_DatabaseInstanceSettingsPasswordValidationPolicy {
   // Prevents the use of the username in the password.
-  DisallowUsernameSubstring?: boolean;
+  disallowUsernameSubstring?: boolean;
 
   /*
 Enables or disable the password validation policy.
@@ -16,50 +16,26 @@ Enables or disable the password validation policy.
 The optional `replica_configuration` block must have `master_instance_name` set
 to work, cannot be updated, and supports:
 */
-  EnablePasswordPolicy?: boolean;
+  enablePasswordPolicy?: boolean;
 
   // Specifies the minimum number of characters that the password must have.
-  MinLength?: number;
+  minLength?: number;
 
   // Specifies the minimum duration after which you can change the password.
-  PasswordChangeInterval?: string;
+  passwordChangeInterval?: string;
 
   // Specifies the number of previous passwords that you can't reuse.
-  ReuseInterval?: number;
+  reuseInterval?: number;
 
   // Checks if the password is a combination of lowercase, uppercase, numeric, and non-alphanumeric characters.
-  Complexity?: string;
+  complexity?: string;
 }
 
-export function Sql_DatabaseInstanceSettingsPasswordValidationPolicy_GetTypes(): DynamicUIProps[] {
+export function sql_DatabaseInstanceSettingsPasswordValidationPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "MinLength",
-      "Specifies the minimum number of characters that the password must have.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "PasswordChangeInterval",
-      "Specifies the minimum duration after which you can change the password.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "ReuseInterval",
-      "Specifies the number of previous passwords that you can't reuse.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Complexity",
+      "complexity",
       "Checks if the password is a combination of lowercase, uppercase, numeric, and non-alphanumeric characters.",
       [],
       false,
@@ -67,7 +43,7 @@ export function Sql_DatabaseInstanceSettingsPasswordValidationPolicy_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "DisallowUsernameSubstring",
+      "disallowUsernameSubstring",
       "Prevents the use of the username in the password.",
       [],
       false,
@@ -75,10 +51,34 @@ export function Sql_DatabaseInstanceSettingsPasswordValidationPolicy_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnablePasswordPolicy",
+      "enablePasswordPolicy",
       "Enables or disable the password validation policy.\n\nThe optional `replica_configuration` block must have `master_instance_name` set\nto work, cannot be updated, and supports:",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "minLength",
+      "Specifies the minimum number of characters that the password must have.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "passwordChangeInterval",
+      "Specifies the minimum duration after which you can change the password.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "reuseInterval",
+      "Specifies the number of previous passwords that you can't reuse.",
+      [],
+      false,
       false,
     ),
   ];

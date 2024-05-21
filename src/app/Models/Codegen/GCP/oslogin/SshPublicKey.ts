@@ -8,14 +8,11 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface SshPublicKeyArgs {
-  // An expiration time in microseconds since epoch.
-  ExpirationTimeUsec?: string;
-
   // Public key text in SSH format, defined by RFC4253 section 6.6.
-  Key?: string;
+  key?: string;
 
   // The project ID of the Google Cloud Platform project.
-  Project?: string;
+  project?: string;
 
   /*
 The user email.
@@ -23,20 +20,17 @@ The user email.
 
 - - -
 */
-  User?: string;
+  user?: string;
+
+  // An expiration time in microseconds since epoch.
+  expirationTimeUsec?: string;
 }
 export class SshPublicKey extends Resource {
-  // An expiration time in microseconds since epoch.
-  public ExpirationTimeUsec?: string;
-
-  // The SHA-256 fingerprint of the SSH public key.
-  public Fingerprint?: string;
-
   // Public key text in SSH format, defined by RFC4253 section 6.6.
-  public Key?: string;
+  public key?: string;
 
   // The project ID of the Google Cloud Platform project.
-  public Project?: string;
+  public project?: string;
 
   /*
 The user email.
@@ -44,13 +38,27 @@ The user email.
 
 - - -
 */
-  public User?: string;
+  public user?: string;
+
+  // An expiration time in microseconds since epoch.
+  public expirationTimeUsec?: string;
+
+  // The SHA-256 fingerprint of the SSH public key.
+  public fingerprint?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "ExpirationTimeUsec",
+        "user",
+        "The user email.\n\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "expirationTimeUsec",
         "An expiration time in microseconds since epoch.",
         [],
         false,
@@ -58,7 +66,7 @@ The user email.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Key",
+        "key",
         "Public key text in SSH format, defined by RFC4253 section 6.6.",
         [],
         true,
@@ -66,18 +74,10 @@ The user email.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The project ID of the Google Cloud Platform project.",
         [],
         false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "User",
-        "The user email.\n\n\n- - -",
-        [],
-        true,
         true,
       ),
     ];

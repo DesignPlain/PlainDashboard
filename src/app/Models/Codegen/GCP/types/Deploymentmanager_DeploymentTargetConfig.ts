@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Deploymentmanager_DeploymentTargetConfig {
+export interface deploymentmanager_DeploymentTargetConfig {
   // The full YAML contents of your configuration file.
-  Content?: string;
+  content?: string;
 }
 
-export function Deploymentmanager_DeploymentTargetConfig_GetTypes(): DynamicUIProps[] {
+export function deploymentmanager_DeploymentTargetConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Content",
+      "content",
       "The full YAML contents of your configuration file.",
       [],
       true,

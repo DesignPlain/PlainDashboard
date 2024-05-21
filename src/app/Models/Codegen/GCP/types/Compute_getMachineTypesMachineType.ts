@@ -6,114 +6,58 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_getMachineTypesMachineTypeAccelerator,
-  Compute_getMachineTypesMachineTypeAccelerator_GetTypes,
-} from "./Compute_getMachineTypesMachineTypeAccelerator";
+  compute_getMachineTypesMachineTypeDeprecated,
+  compute_getMachineTypesMachineTypeDeprecated_GetTypes,
+} from "./compute_getMachineTypesMachineTypeDeprecated";
 import {
-  Compute_getMachineTypesMachineTypeBundledLocalSsd,
-  Compute_getMachineTypesMachineTypeBundledLocalSsd_GetTypes,
-} from "./Compute_getMachineTypesMachineTypeBundledLocalSsd";
+  compute_getMachineTypesMachineTypeAccelerator,
+  compute_getMachineTypesMachineTypeAccelerator_GetTypes,
+} from "./compute_getMachineTypesMachineTypeAccelerator";
 import {
-  Compute_getMachineTypesMachineTypeDeprecated,
-  Compute_getMachineTypesMachineTypeDeprecated_GetTypes,
-} from "./Compute_getMachineTypesMachineTypeDeprecated";
+  compute_getMachineTypesMachineTypeBundledLocalSsd,
+  compute_getMachineTypesMachineTypeBundledLocalSsd_GetTypes,
+} from "./compute_getMachineTypesMachineTypeBundledLocalSsd";
 
-export interface Compute_getMachineTypesMachineType {
-  // The maximum total persistent disks size (GB) allowed.
-  MaximumPersistentDisksSizeGb?: number;
-
-  // The amount of physical memory available to the instance, defined in MB.
-  MemoryMb?: number;
-
-  // The name of the machine type.
-  Name?: string;
+export interface compute_getMachineTypesMachineType {
+  // The number of virtual CPUs that are available to the instance.
+  guestCpus?: number;
 
   // The server-defined URL for the machine type.
-  SelfLink?: string;
-
-  // A list of accelerator configurations assigned to this machine type. Structure is documented below.
-  Accelerators?: Array<Compute_getMachineTypesMachineTypeAccelerator>;
-
-  // Whether this machine type has a shared CPU.
-  IsSharedCpus?: boolean;
+  selfLink?: string;
 
   // The maximum persistent disks allowed.
-  MaximumPersistentDisks?: number;
+  maximumPersistentDisks?: number;
 
-  // The number of virtual CPUs that are available to the instance.
-  GuestCpus?: number;
+  // The maximum total persistent disks size (GB) allowed.
+  maximumPersistentDisksSizeGb?: number;
+
+  // The amount of physical memory available to the instance, defined in MB.
+  memoryMb?: number;
+
+  // A list of accelerator configurations assigned to this machine type. Structure is documented below.
+  accelerators?: Array<compute_getMachineTypesMachineTypeAccelerator>;
 
   // The configuration of bundled local SSD for the machine type. Structure is documented below.
-  BundledLocalSsds?: Array<Compute_getMachineTypesMachineTypeBundledLocalSsd>;
+  bundledLocalSsds?: Array<compute_getMachineTypesMachineTypeBundledLocalSsd>;
 
   // The deprecation status associated with this machine type. Structure is documented below.
-  Deprecateds?: Array<Compute_getMachineTypesMachineTypeDeprecated>;
+  deprecateds?: Array<compute_getMachineTypesMachineTypeDeprecated>;
 
   // A textual description of the machine type.
-  Description?: string;
+  description?: string;
+
+  // Whether this machine type has a shared CPU.
+  isSharedCpus?: boolean;
+
+  // The name of the machine type.
+  name?: string;
 }
 
-export function Compute_getMachineTypesMachineType_GetTypes(): DynamicUIProps[] {
+export function compute_getMachineTypesMachineType_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "SelfLink",
-      "The server-defined URL for the machine type.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "IsSharedCpus",
-      "Whether this machine type has a shared CPU.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "MaximumPersistentDisks",
-      "The maximum persistent disks allowed.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "BundledLocalSsds",
-      "The configuration of bundled local SSD for the machine type. Structure is documented below.",
-      Compute_getMachineTypesMachineTypeBundledLocalSsd_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Deprecateds",
-      "The deprecation status associated with this machine type. Structure is documented below.",
-      Compute_getMachineTypesMachineTypeDeprecated_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Description",
-      "A textual description of the machine type.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "MaximumPersistentDisksSizeGb",
-      "The maximum total persistent disks size (GB) allowed.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "MemoryMb",
+      "memoryMb",
       "The amount of physical memory available to the instance, defined in MB.",
       [],
       true,
@@ -121,24 +65,80 @@ export function Compute_getMachineTypesMachineType_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
-      "The name of the machine type.",
+      "description",
+      "A textual description of the machine type.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Accelerators",
-      "A list of accelerator configurations assigned to this machine type. Structure is documented below.",
-      Compute_getMachineTypesMachineTypeAccelerator_GetTypes(),
+      "bundledLocalSsds",
+      "The configuration of bundled local SSD for the machine type. Structure is documented below.",
+      compute_getMachineTypesMachineTypeBundledLocalSsd_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "deprecateds",
+      "The deprecation status associated with this machine type. Structure is documented below.",
+      compute_getMachineTypesMachineTypeDeprecated_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "isSharedCpus",
+      "Whether this machine type has a shared CPU.",
+      [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "GuestCpus",
+      "guestCpus",
       "The number of virtual CPUs that are available to the instance.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "selfLink",
+      "The server-defined URL for the machine type.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "maximumPersistentDisks",
+      "The maximum persistent disks allowed.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "maximumPersistentDisksSizeGb",
+      "The maximum total persistent disks size (GB) allowed.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "accelerators",
+      "A list of accelerator configurations assigned to this machine type. Structure is documented below.",
+      compute_getMachineTypesMachineTypeAccelerator_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "name",
+      "The name of the machine type.",
       [],
       true,
       false,

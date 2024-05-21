@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Integrationconnectors_ConnectionAuthConfigOauth2JwtBearerJwtClaims {
+export interface integrationconnectors_ConnectionAuthConfigOauth2JwtBearerJwtClaims {
   /*
 Value for the "aud" claim.
 
 <a name="nested_oauth2_client_credentials"></a>The `oauth2_client_credentials` block supports:
 */
-  Audience?: string;
+  audience?: string;
 
   // Value for the "iss" claim.
-  Issuer?: string;
+  issuer?: string;
 
   // Value for the "sub" claim.
-  Subject?: string;
+  subject?: string;
 }
 
-export function Integrationconnectors_ConnectionAuthConfigOauth2JwtBearerJwtClaims_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionAuthConfigOauth2JwtBearerJwtClaims_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Audience",
+      "audience",
       'Value for the "aud" claim.\n\n<a name="nested_oauth2_client_credentials"></a>The `oauth2_client_credentials` block supports:',
       [],
       false,
@@ -33,7 +33,7 @@ export function Integrationconnectors_ConnectionAuthConfigOauth2JwtBearerJwtClai
     ),
     new DynamicUIProps(
       InputType.String,
-      "Issuer",
+      "issuer",
       'Value for the "iss" claim.',
       [],
       false,
@@ -41,7 +41,7 @@ export function Integrationconnectors_ConnectionAuthConfigOauth2JwtBearerJwtClai
     ),
     new DynamicUIProps(
       InputType.String,
-      "Subject",
+      "subject",
       'Value for the "sub" claim.',
       [],
       false,

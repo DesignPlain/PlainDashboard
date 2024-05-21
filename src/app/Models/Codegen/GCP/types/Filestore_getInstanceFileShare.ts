@@ -6,40 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Filestore_getInstanceFileShareNfsExportOption,
-  Filestore_getInstanceFileShareNfsExportOption_GetTypes,
-} from "./Filestore_getInstanceFileShareNfsExportOption";
+  filestore_getInstanceFileShareNfsExportOption,
+  filestore_getInstanceFileShareNfsExportOption_GetTypes,
+} from "./filestore_getInstanceFileShareNfsExportOption";
 
-export interface Filestore_getInstanceFileShare {
+export interface filestore_getInstanceFileShare {
   /*
 File share capacity in GiB. This must be at least 1024 GiB
 for the standard tier, or 2560 GiB for the premium tier.
 */
-  CapacityGb?: number;
+  capacityGb?: number;
 
   /*
 The name of a Filestore instance.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   // Nfs Export Options. There is a limit of 10 export options per file share.
-  NfsExportOptions?: Array<Filestore_getInstanceFileShareNfsExportOption>;
+  nfsExportOptions?: Array<filestore_getInstanceFileShareNfsExportOption>;
 
   /*
 The resource name of the backup, in the format
 projects/{projectId}/locations/{locationId}/backups/{backupId},
 that this file share has been restored from.
 */
-  SourceBackup?: string;
+  sourceBackup?: string;
 }
 
-export function Filestore_getInstanceFileShare_GetTypes(): DynamicUIProps[] {
+export function filestore_getInstanceFileShare_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "CapacityGb",
+      "capacityGb",
       "File share capacity in GiB. This must be at least 1024 GiB\nfor the standard tier, or 2560 GiB for the premium tier.",
       [],
       true,
@@ -47,7 +47,7 @@ export function Filestore_getInstanceFileShare_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of a Filestore instance.\n\n- - -",
       [],
       true,
@@ -55,15 +55,15 @@ export function Filestore_getInstanceFileShare_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "NfsExportOptions",
+      "nfsExportOptions",
       "Nfs Export Options. There is a limit of 10 export options per file share.",
-      Filestore_getInstanceFileShareNfsExportOption_GetTypes(),
+      filestore_getInstanceFileShareNfsExportOption_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "SourceBackup",
+      "sourceBackup",
       "The resource name of the backup, in the format\nprojects/{projectId}/locations/{locationId}/backups/{backupId},\nthat this file share has been restored from.",
       [],
       true,

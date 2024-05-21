@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstancesInstanceSettingIpConfigurationPscConfig {
+export interface sql_getDatabaseInstancesInstanceSettingIpConfigurationPscConfig {
   // List of consumer projects that are allow-listed for PSC connections to this instance. This instance can be connected to with PSC from any network in these projects. Each consumer project in this list may be represented by a project number (numeric) or by a project id (alphanumeric).
-  AllowedConsumerProjects?: Array<string>;
+  allowedConsumerProjects?: Array<string>;
 
   // Whether PSC connectivity is enabled for this instance.
-  PscEnabled?: boolean;
+  pscEnabled?: boolean;
 }
 
-export function Sql_getDatabaseInstancesInstanceSettingIpConfigurationPscConfig_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstancesInstanceSettingIpConfigurationPscConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AllowedConsumerProjects",
+      "allowedConsumerProjects",
       "List of consumer projects that are allow-listed for PSC connections to this instance. This instance can be connected to with PSC from any network in these projects. Each consumer project in this list may be represented by a project number (numeric) or by a project id (alphanumeric).",
       InputType_String_GetTypes(),
       true,
@@ -26,7 +26,7 @@ export function Sql_getDatabaseInstancesInstanceSettingIpConfigurationPscConfig_
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "PscEnabled",
+      "pscEnabled",
       "Whether PSC connectivity is enabled for this instance.",
       [],
       true,

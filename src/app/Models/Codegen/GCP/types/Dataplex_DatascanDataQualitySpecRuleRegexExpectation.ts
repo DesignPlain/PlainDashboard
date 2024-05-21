@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataplex_DatascanDataQualitySpecRuleRegexExpectation {
+export interface dataplex_DatascanDataQualitySpecRuleRegexExpectation {
   // A regular expression the column value is expected to match.
-  Regex?: string;
+  regex?: string;
 }
 
-export function Dataplex_DatascanDataQualitySpecRuleRegexExpectation_GetTypes(): DynamicUIProps[] {
+export function dataplex_DatascanDataQualitySpecRuleRegexExpectation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Regex",
+      "regex",
       "A regular expression the column value is expected to match.",
       [],
       true,

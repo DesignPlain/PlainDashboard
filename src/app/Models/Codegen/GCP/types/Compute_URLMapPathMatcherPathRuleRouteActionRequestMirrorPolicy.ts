@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_URLMapPathMatcherPathRuleRouteActionRequestMirrorPolicy {
+export interface compute_URLMapPathMatcherPathRuleRouteActionRequestMirrorPolicy {
   // The full or partial URL to the BackendService resource being mirrored to.
-  BackendService?: string;
+  backendService?: string;
 }
 
-export function Compute_URLMapPathMatcherPathRuleRouteActionRequestMirrorPolicy_GetTypes(): DynamicUIProps[] {
+export function compute_URLMapPathMatcherPathRuleRouteActionRequestMirrorPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "BackendService",
+      "backendService",
       "The full or partial URL to the BackendService resource being mirrored to.",
       [],
       true,

@@ -7,31 +7,34 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Bigquery_ConnectionSpark,
-  Bigquery_ConnectionSpark_GetTypes,
-} from "../types/Bigquery_ConnectionSpark";
+  bigquery_ConnectionCloudResource,
+  bigquery_ConnectionCloudResource_GetTypes,
+} from "../types/bigquery_ConnectionCloudResource";
 import {
-  Bigquery_ConnectionAws,
-  Bigquery_ConnectionAws_GetTypes,
-} from "../types/Bigquery_ConnectionAws";
+  bigquery_ConnectionCloudSql,
+  bigquery_ConnectionCloudSql_GetTypes,
+} from "../types/bigquery_ConnectionCloudSql";
 import {
-  Bigquery_ConnectionAzure,
-  Bigquery_ConnectionAzure_GetTypes,
-} from "../types/Bigquery_ConnectionAzure";
+  bigquery_ConnectionCloudSpanner,
+  bigquery_ConnectionCloudSpanner_GetTypes,
+} from "../types/bigquery_ConnectionCloudSpanner";
 import {
-  Bigquery_ConnectionCloudResource,
-  Bigquery_ConnectionCloudResource_GetTypes,
-} from "../types/Bigquery_ConnectionCloudResource";
+  bigquery_ConnectionSpark,
+  bigquery_ConnectionSpark_GetTypes,
+} from "../types/bigquery_ConnectionSpark";
 import {
-  Bigquery_ConnectionCloudSpanner,
-  Bigquery_ConnectionCloudSpanner_GetTypes,
-} from "../types/Bigquery_ConnectionCloudSpanner";
+  bigquery_ConnectionAws,
+  bigquery_ConnectionAws_GetTypes,
+} from "../types/bigquery_ConnectionAws";
 import {
-  Bigquery_ConnectionCloudSql,
-  Bigquery_ConnectionCloudSql_GetTypes,
-} from "../types/Bigquery_ConnectionCloudSql";
+  bigquery_ConnectionAzure,
+  bigquery_ConnectionAzure_GetTypes,
+} from "../types/bigquery_ConnectionAzure";
 
 export interface ConnectionArgs {
+  // A descriptive name for the connection
+  friendlyName?: string;
+
   /*
 The geographic location where the connection should reside.
 Cloud SQL instance must be in the same location as the connection
@@ -41,200 +44,133 @@ Spanner Connections same as spanner region
 AWS allowed regions are aws-us-east-1
 Azure allowed regions are azure-eastus2
 */
-  Location?: string;
+  location?: string;
 
   /*
 Container for connection properties to execute stored procedures for Apache Spark. resources.
 Structure is documented below.
 */
-  Spark?: Bigquery_ConnectionSpark;
+  spark?: bigquery_ConnectionSpark;
 
   /*
 Connection properties specific to Amazon Web Services.
 Structure is documented below.
 */
-  Aws?: Bigquery_ConnectionAws;
+  aws?: bigquery_ConnectionAws;
 
   /*
 Container for connection properties specific to Azure.
 Structure is documented below.
 */
-  Azure?: Bigquery_ConnectionAzure;
+  azure?: bigquery_ConnectionAzure;
 
   /*
 Container for connection properties for delegation of access to GCP resources.
 Structure is documented below.
 */
-  CloudResource?: Bigquery_ConnectionCloudResource;
-
-  // Optional connection id that should be assigned to the created connection.
-  ConnectionId?: string;
-
-  // A descriptive name for the connection
-  FriendlyName?: string;
-
-  /*
-Connection properties specific to Cloud Spanner
-Structure is documented below.
-*/
-  CloudSpanner?: Bigquery_ConnectionCloudSpanner;
+  cloudResource?: bigquery_ConnectionCloudResource;
 
   /*
 Connection properties specific to the Cloud SQL.
 Structure is documented below.
 */
-  CloudSql?: Bigquery_ConnectionCloudSql;
-
-  // A descriptive description for the connection
-  Description?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-}
-export class Connection extends Resource {
-  /*
-Container for connection properties for delegation of access to GCP resources.
-Structure is documented below.
-*/
-  public CloudResource?: Bigquery_ConnectionCloudResource;
+  cloudSql?: bigquery_ConnectionCloudSql;
 
   /*
 Connection properties specific to Cloud Spanner
 Structure is documented below.
 */
-  public CloudSpanner?: Bigquery_ConnectionCloudSpanner;
+  cloudSpanner?: bigquery_ConnectionCloudSpanner;
 
   // Optional connection id that should be assigned to the created connection.
-  public ConnectionId?: string;
+  connectionId?: string;
 
   // A descriptive description for the connection
-  public Description?: string;
+  description?: string;
 
-  // A descriptive name for the connection
-  public FriendlyName?: string;
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+}
+export class Connection extends Resource {
+  /*
+Connection properties specific to the Cloud SQL.
+Structure is documented below.
+*/
+  public cloudSql?: bigquery_ConnectionCloudSql;
 
   // True if the connection has credential assigned.
-  public HasCredential?: boolean;
+  public hasCredential?: boolean;
 
   /*
-Connection properties specific to Amazon Web Services.
-Structure is documented below.
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 */
-  public Aws?: Bigquery_ConnectionAws;
-
-  /*
-Container for connection properties specific to Azure.
-Structure is documented below.
-*/
-  public Azure?: Bigquery_ConnectionAzure;
+  public project?: string;
 
   /*
 Container for connection properties to execute stored procedures for Apache Spark. resources.
 Structure is documented below.
 */
-  public Spark?: Bigquery_ConnectionSpark;
+  public spark?: bigquery_ConnectionSpark;
+
+  // A descriptive name for the connection
+  public friendlyName?: string;
+
+  /*
+The geographic location where the connection should reside.
+Cloud SQL instance must be in the same location as the connection
+with following exceptions: Cloud SQL us-central1 maps to BigQuery US, Cloud SQL europe-west1 maps to BigQuery EU.
+Examples: US, EU, asia-northeast1, us-central1, europe-west1.
+Spanner Connections same as spanner region
+AWS allowed regions are aws-us-east-1
+Azure allowed regions are azure-eastus2
+*/
+  public location?: string;
+
+  /*
+Connection properties specific to Amazon Web Services.
+Structure is documented below.
+*/
+  public aws?: bigquery_ConnectionAws;
+
+  /*
+Container for connection properties specific to Azure.
+Structure is documented below.
+*/
+  public azure?: bigquery_ConnectionAzure;
+
+  /*
+Container for connection properties for delegation of access to GCP resources.
+Structure is documented below.
+*/
+  public cloudResource?: bigquery_ConnectionCloudResource;
+
+  /*
+Connection properties specific to Cloud Spanner
+Structure is documented below.
+*/
+  public cloudSpanner?: bigquery_ConnectionCloudSpanner;
+
+  // Optional connection id that should be assigned to the created connection.
+  public connectionId?: string;
+
+  // A descriptive description for the connection
+  public description?: string;
 
   /*
 The resource name of the connection in the form of:
 "projects/{project_id}/locations/{location_id}/connections/{connectionId}"
 */
-  public Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  /*
-Connection properties specific to the Cloud SQL.
-Structure is documented below.
-*/
-  public CloudSql?: Bigquery_ConnectionCloudSql;
-
-  /*
-The geographic location where the connection should reside.
-Cloud SQL instance must be in the same location as the connection
-with following exceptions: Cloud SQL us-central1 maps to BigQuery US, Cloud SQL europe-west1 maps to BigQuery EU.
-Examples: US, EU, asia-northeast1, us-central1, europe-west1.
-Spanner Connections same as spanner region
-AWS allowed regions are aws-us-east-1
-Azure allowed regions are azure-eastus2
-*/
-  public Location?: string;
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "ConnectionId",
-        "Optional connection id that should be assigned to the created connection.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "A descriptive description for the connection",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "Spark",
-        "Container for connection properties to execute stored procedures for Apache Spark. resources.\nStructure is documented below.",
-        Bigquery_ConnectionSpark_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "Aws",
-        "Connection properties specific to Amazon Web Services.\nStructure is documented below.",
-        Bigquery_ConnectionAws_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "Azure",
-        "Container for connection properties specific to Azure.\nStructure is documented below.",
-        Bigquery_ConnectionAzure_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "CloudResource",
-        "Container for connection properties for delegation of access to GCP resources.\nStructure is documented below.",
-        Bigquery_ConnectionCloudResource_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Location",
-        "The geographic location where the connection should reside.\nCloud SQL instance must be in the same location as the connection\nwith following exceptions: Cloud SQL us-central1 maps to BigQuery US, Cloud SQL europe-west1 maps to BigQuery EU.\nExamples: US, EU, asia-northeast1, us-central1, europe-west1.\nSpanner Connections same as spanner region\nAWS allowed regions are aws-us-east-1\nAzure allowed regions are azure-eastus2",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "FriendlyName",
+        "friendlyName",
         "A descriptive name for the connection",
         [],
         false,
@@ -242,17 +178,81 @@ Azure allowed regions are azure-eastus2
       ),
       new DynamicUIProps(
         InputType.Object,
-        "CloudSpanner",
-        "Connection properties specific to Cloud Spanner\nStructure is documented below.",
-        Bigquery_ConnectionCloudSpanner_GetTypes(),
+        "aws",
+        "Connection properties specific to Amazon Web Services.\nStructure is documented below.",
+        bigquery_ConnectionAws_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "CloudSql",
+        "azure",
+        "Container for connection properties specific to Azure.\nStructure is documented below.",
+        bigquery_ConnectionAzure_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "cloudResource",
+        "Container for connection properties for delegation of access to GCP resources.\nStructure is documented below.",
+        bigquery_ConnectionCloudResource_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "connectionId",
+        "Optional connection id that should be assigned to the created connection.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "A descriptive description for the connection",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "location",
+        "The geographic location where the connection should reside.\nCloud SQL instance must be in the same location as the connection\nwith following exceptions: Cloud SQL us-central1 maps to BigQuery US, Cloud SQL europe-west1 maps to BigQuery EU.\nExamples: US, EU, asia-northeast1, us-central1, europe-west1.\nSpanner Connections same as spanner region\nAWS allowed regions are aws-us-east-1\nAzure allowed regions are azure-eastus2",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "spark",
+        "Container for connection properties to execute stored procedures for Apache Spark. resources.\nStructure is documented below.",
+        bigquery_ConnectionSpark_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "cloudSql",
         "Connection properties specific to the Cloud SQL.\nStructure is documented below.",
-        Bigquery_ConnectionCloudSql_GetTypes(),
+        bigquery_ConnectionCloudSql_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "cloudSpanner",
+        "Connection properties specific to Cloud Spanner\nStructure is documented below.",
+        bigquery_ConnectionCloudSpanner_GetTypes(),
         false,
         false,
       ),

@@ -7,11 +7,14 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Securitycenter_SourceIamMemberCondition,
-  Securitycenter_SourceIamMemberCondition_GetTypes,
-} from "../types/Securitycenter_SourceIamMemberCondition";
+  securitycenter_SourceIamMemberCondition,
+  securitycenter_SourceIamMemberCondition_GetTypes,
+} from "../types/securitycenter_SourceIamMemberCondition";
 
 export interface SourceIamMemberArgs {
+  //
+  member?: string;
+
   /*
 The organization whose Cloud Security Command Center the Source
 lives in.
@@ -19,23 +22,26 @@ lives in.
 
 - - -
 */
-  Organization?: string;
+  organization?: string;
 
   //
-  Role?: string;
+  role?: string;
 
   //
-  Source?: string;
+  source?: string;
 
   //
-  Condition?: Securitycenter_SourceIamMemberCondition;
-
-  //
-  Member?: string;
+  condition?: securitycenter_SourceIamMemberCondition;
 }
 export class SourceIamMember extends Resource {
   //
-  public Member?: string;
+  public condition?: securitycenter_SourceIamMemberCondition;
+
+  //
+  public etag?: string;
+
+  //
+  public member?: string;
 
   /*
 The organization whose Cloud Security Command Center the Source
@@ -44,41 +50,35 @@ lives in.
 
 - - -
 */
-  public Organization?: string;
+  public organization?: string;
 
   //
-  public Role?: string;
+  public role?: string;
 
   //
-  public Source?: string;
-
-  //
-  public Condition?: Securitycenter_SourceIamMemberCondition;
-
-  //
-  public Etag?: string;
+  public source?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
+      new DynamicUIProps(InputType.String, "member", "", [], true, true),
       new DynamicUIProps(
         InputType.String,
-        "Organization",
+        "organization",
         "The organization whose Cloud Security Command Center the Source\nlives in.\n\n\n- - -",
         [],
         true,
         true,
       ),
-      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
-      new DynamicUIProps(InputType.String, "Source", "", [], true, true),
+      new DynamicUIProps(InputType.String, "role", "", [], true, true),
+      new DynamicUIProps(InputType.String, "source", "", [], true, true),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Securitycenter_SourceIamMemberCondition_GetTypes(),
+        securitycenter_SourceIamMemberCondition_GetTypes(),
         false,
         true,
       ),
-      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
     ];
   }
 }

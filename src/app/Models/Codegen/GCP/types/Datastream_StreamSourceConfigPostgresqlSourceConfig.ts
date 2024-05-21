@@ -6,59 +6,51 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamSourceConfigPostgresqlSourceConfigIncludeObjects,
-  Datastream_StreamSourceConfigPostgresqlSourceConfigIncludeObjects_GetTypes,
-} from "./Datastream_StreamSourceConfigPostgresqlSourceConfigIncludeObjects";
+  datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjects,
+  datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjects_GetTypes,
+} from "./datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjects";
 import {
-  Datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjects,
-  Datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjects_GetTypes,
-} from "./Datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjects";
+  datastream_StreamSourceConfigPostgresqlSourceConfigIncludeObjects,
+  datastream_StreamSourceConfigPostgresqlSourceConfigIncludeObjects_GetTypes,
+} from "./datastream_StreamSourceConfigPostgresqlSourceConfigIncludeObjects";
 
-export interface Datastream_StreamSourceConfigPostgresqlSourceConfig {
+export interface datastream_StreamSourceConfigPostgresqlSourceConfig {
+  /*
+PostgreSQL objects to exclude from the stream.
+Structure is documented below.
+*/
+  excludeObjects?: datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjects;
+
   /*
 PostgreSQL objects to retrieve from the source.
 Structure is documented below.
 */
-  IncludeObjects?: Datastream_StreamSourceConfigPostgresqlSourceConfigIncludeObjects;
+  includeObjects?: datastream_StreamSourceConfigPostgresqlSourceConfigIncludeObjects;
 
   /*
 Maximum number of concurrent backfill tasks. The number should be non
 negative. If not set (or set to 0), the system's default value will be used.
 */
-  MaxConcurrentBackfillTasks?: number;
+  maxConcurrentBackfillTasks?: number;
 
   /*
 The name of the publication that includes the set of all tables
 that are defined in the stream's include_objects.
 */
-  Publication?: string;
+  publication?: string;
 
   /*
 The name of the logical replication slot that's configured with
 the pgoutput plugin.
 */
-  ReplicationSlot?: string;
-
-  /*
-PostgreSQL objects to exclude from the stream.
-Structure is documented below.
-*/
-  ExcludeObjects?: Datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjects;
+  replicationSlot?: string;
 }
 
-export function Datastream_StreamSourceConfigPostgresqlSourceConfig_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamSourceConfigPostgresqlSourceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "IncludeObjects",
-      "PostgreSQL objects to retrieve from the source.\nStructure is documented below.",
-      Datastream_StreamSourceConfigPostgresqlSourceConfigIncludeObjects_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "MaxConcurrentBackfillTasks",
+      "maxConcurrentBackfillTasks",
       "Maximum number of concurrent backfill tasks. The number should be non\nnegative. If not set (or set to 0), the system's default value will be used.",
       [],
       false,
@@ -66,7 +58,7 @@ export function Datastream_StreamSourceConfigPostgresqlSourceConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "Publication",
+      "publication",
       "The name of the publication that includes the set of all tables\nthat are defined in the stream's include_objects.",
       [],
       true,
@@ -74,7 +66,7 @@ export function Datastream_StreamSourceConfigPostgresqlSourceConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "ReplicationSlot",
+      "replicationSlot",
       "The name of the logical replication slot that's configured with\nthe pgoutput plugin.",
       [],
       true,
@@ -82,9 +74,17 @@ export function Datastream_StreamSourceConfigPostgresqlSourceConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ExcludeObjects",
+      "excludeObjects",
       "PostgreSQL objects to exclude from the stream.\nStructure is documented below.",
-      Datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjects_GetTypes(),
+      datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjects_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "includeObjects",
+      "PostgreSQL objects to retrieve from the source.\nStructure is documented below.",
+      datastream_StreamSourceConfigPostgresqlSourceConfigIncludeObjects_GetTypes(),
       false,
       false,
     ),

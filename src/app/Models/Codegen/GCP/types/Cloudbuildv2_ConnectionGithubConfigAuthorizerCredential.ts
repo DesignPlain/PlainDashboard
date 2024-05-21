@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuildv2_ConnectionGithubConfigAuthorizerCredential {
-  // A SecretManager resource containing the OAuth token that authorizes the Cloud Build connection. Format: `projects/-/secrets/-/versions/-`.
-  OauthTokenSecretVersion?: string;
-
+export interface cloudbuildv2_ConnectionGithubConfigAuthorizerCredential {
   /*
 (Output)
 Output only. The username associated to this token.
 */
-  Username?: string;
+  username?: string;
+
+  // A SecretManager resource containing the OAuth token that authorizes the Cloud Build connection. Format: `projects/-/secrets/-/versions/-`.
+  oauthTokenSecretVersion?: string;
 }
 
-export function Cloudbuildv2_ConnectionGithubConfigAuthorizerCredential_GetTypes(): DynamicUIProps[] {
+export function cloudbuildv2_ConnectionGithubConfigAuthorizerCredential_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "OauthTokenSecretVersion",
-      "A SecretManager resource containing the OAuth token that authorizes the Cloud Build connection. Format: `projects/*/secrets/*/versions/*`.",
+      "username",
+      "(Output)\nOutput only. The username associated to this token.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Username",
-      "(Output)\nOutput only. The username associated to this token.",
+      "oauthTokenSecretVersion",
+      "A SecretManager resource containing the OAuth token that authorizes the Cloud Build connection. Format: `projects/*/secrets/*/versions/*`.",
       [],
       false,
       false,

@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_getServiceTrafficStatus {
-  // Specifies percent of the traffic to this Revision.
-  Percent?: number;
-
-  // Revision to which this traffic is sent.
-  Revision?: string;
-
+export interface cloudrunv2_getServiceTrafficStatus {
   // Indicates the string used in the URI to exclusively reference this target.
-  Tag?: string;
+  tag?: string;
 
   // The allocation type for this traffic target.
-  Type?: string;
+  type?: string;
 
   // Displays the target URI.
-  Uri?: string;
+  uri?: string;
+
+  // Specifies percent of the traffic to this Revision.
+  percent?: number;
+
+  // Revision to which this traffic is sent.
+  revision?: string;
 }
 
-export function Cloudrunv2_getServiceTrafficStatus_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_getServiceTrafficStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Revision",
+      "revision",
       "Revision to which this traffic is sent.",
       [],
       true,
@@ -35,7 +35,7 @@ export function Cloudrunv2_getServiceTrafficStatus_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.String,
-      "Tag",
+      "tag",
       "Indicates the string used in the URI to exclusively reference this target.",
       [],
       true,
@@ -43,7 +43,7 @@ export function Cloudrunv2_getServiceTrafficStatus_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "The allocation type for this traffic target.",
       [],
       true,
@@ -51,7 +51,7 @@ export function Cloudrunv2_getServiceTrafficStatus_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.String,
-      "Uri",
+      "uri",
       "Displays the target URI.",
       [],
       true,
@@ -59,7 +59,7 @@ export function Cloudrunv2_getServiceTrafficStatus_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Percent",
+      "percent",
       "Specifies percent of the traffic to this Revision.",
       [],
       true,

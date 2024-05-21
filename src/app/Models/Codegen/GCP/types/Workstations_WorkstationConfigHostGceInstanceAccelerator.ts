@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Workstations_WorkstationConfigHostGceInstanceAccelerator {
-  // Number of accelerator cards exposed to the instance.
-  Count?: number;
-
+export interface workstations_WorkstationConfigHostGceInstanceAccelerator {
   // Type of accelerator resource to attach to the instance, for example, "nvidia-tesla-p100".
-  Type?: string;
+  type?: string;
+
+  // Number of accelerator cards exposed to the instance.
+  count?: number;
 }
 
-export function Workstations_WorkstationConfigHostGceInstanceAccelerator_GetTypes(): DynamicUIProps[] {
+export function workstations_WorkstationConfigHostGceInstanceAccelerator_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "Count",
-      "Number of accelerator cards exposed to the instance.",
+      InputType.String,
+      "type",
+      'Type of accelerator resource to attach to the instance, for example, "nvidia-tesla-p100".',
       [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "Type",
-      'Type of accelerator resource to attach to the instance, for example, "nvidia-tesla-p100".',
+      InputType.Number,
+      "count",
+      "Number of accelerator cards exposed to the instance.",
       [],
       true,
       false,

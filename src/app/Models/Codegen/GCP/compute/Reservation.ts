@@ -7,27 +7,20 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_ReservationShareSettings,
-  Compute_ReservationShareSettings_GetTypes,
-} from "../types/Compute_ReservationShareSettings";
+  compute_ReservationShareSettings,
+  compute_ReservationShareSettings_GetTypes,
+} from "../types/compute_ReservationShareSettings";
 import {
-  Compute_ReservationSpecificReservation,
-  Compute_ReservationSpecificReservation_GetTypes,
-} from "../types/Compute_ReservationSpecificReservation";
+  compute_ReservationSpecificReservation,
+  compute_ReservationSpecificReservation_GetTypes,
+} from "../types/compute_ReservationSpecificReservation";
 
 export interface ReservationArgs {
-  /*
-When set to true, only VMs that target this reservation by name can
-consume this reservation. Otherwise, it can be consumed by VMs with
-affinity for any reservation. Defaults to false.
-*/
-  SpecificReservationRequired?: boolean;
-
   // The zone where the reservation is made.
-  Zone?: string;
+  zone?: string;
 
   // An optional description of this resource.
-  Description?: string;
+  description?: string;
 
   /*
 Name of the resource. Provided by the client when the resource is
@@ -38,27 +31,37 @@ first character must be a lowercase letter, and all following
 characters must be a dash, lowercase letter, or digit, except the last
 character, which cannot be a dash.
 */
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 The share setting for reservations.
 Structure is documented below.
 */
-  ShareSettings?: Compute_ReservationShareSettings;
+  shareSettings?: compute_ReservationShareSettings;
 
   /*
 Reservation for instances with specific machine shapes.
 Structure is documented below.
 */
-  SpecificReservation?: Compute_ReservationSpecificReservation;
+  specificReservation?: compute_ReservationSpecificReservation;
+
+  /*
+When set to true, only VMs that target this reservation by name can
+consume this reservation. Otherwise, it can be consumed by VMs with
+affinity for any reservation. Defaults to false.
+*/
+  specificReservationRequired?: boolean;
 }
 export class Reservation extends Resource {
+  // An optional description of this resource.
+  public description?: string;
+
   /*
 Name of the resource. Provided by the client when the resource is
 created. The name must be 1-63 characters long, and comply with
@@ -68,59 +71,56 @@ first character must be a lowercase letter, and all following
 characters must be a dash, lowercase letter, or digit, except the last
 character, which cannot be a dash.
 */
-  public Name?: string;
+  public name?: string;
 
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
+  // The URI of the created resource.
+  public selfLink?: string;
 
   /*
 The share setting for reservations.
 Structure is documented below.
 */
-  public ShareSettings?: Compute_ReservationShareSettings;
-
-  // The status of the reservation.
-  public Status?: string;
+  public shareSettings?: compute_ReservationShareSettings;
 
   /*
 When set to true, only VMs that target this reservation by name can
 consume this reservation. Otherwise, it can be consumed by VMs with
 affinity for any reservation. Defaults to false.
 */
-  public SpecificReservationRequired?: boolean;
+  public specificReservationRequired?: boolean;
 
-  // The zone where the reservation is made.
-  public Zone?: string;
+  // The status of the reservation.
+  public status?: string;
 
   /*
 Full or partial URL to a parent commitment. This field displays for
 reservations that are tied to a commitment.
 */
-  public Commitment?: string;
+  public commitment?: string;
 
   // Creation timestamp in RFC3339 text format.
-  public CreationTimestamp?: string;
+  public creationTimestamp?: string;
 
-  // An optional description of this resource.
-  public Description?: string;
-
-  // The URI of the created resource.
-  public SelfLink?: string;
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   /*
 Reservation for instances with specific machine shapes.
 Structure is documented below.
 */
-  public SpecificReservation?: Compute_ReservationSpecificReservation;
+  public specificReservation?: compute_ReservationSpecificReservation;
+
+  // The zone where the reservation is made.
+  public zone?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Zone",
+        "zone",
         "The zone where the reservation is made.",
         [],
         true,
@@ -128,7 +128,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "An optional description of this resource.",
         [],
         false,
@@ -136,7 +136,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.",
         [],
         false,
@@ -144,7 +144,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -152,23 +152,23 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "ShareSettings",
+        "shareSettings",
         "The share setting for reservations.\nStructure is documented below.",
-        Compute_ReservationShareSettings_GetTypes(),
+        compute_ReservationShareSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "SpecificReservation",
+        "specificReservation",
         "Reservation for instances with specific machine shapes.\nStructure is documented below.",
-        Compute_ReservationSpecificReservation_GetTypes(),
+        compute_ReservationSpecificReservation_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "SpecificReservationRequired",
+        "specificReservationRequired",
         "When set to true, only VMs that target this reservation by name can\nconsume this reservation. Otherwise, it can be consumed by VMs with\naffinity for any reservation. Defaults to false.",
         [],
         false,

@@ -6,45 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dns_getManagedZonesManagedZone {
-  // The zone's visibility: public zones are exposed to the Internet, while private zones are visible only to Virtual Private Cloud resources.
-  Visibility?: string;
-
-  // A textual description field.
-  Description?: string;
-
-  // The fully qualified DNS name of this zone.
-  DnsName?: string;
-
-  // DNS managed zone identifier
-  Id?: string;
-
-  // Unique identifier for the resource; defined by the server.
-  ManagedZoneId?: number;
-
-  // A unique name for the resource.
-  Name?: string;
-
+export interface dns_getManagedZonesManagedZone {
   // The list of nameservers that will be authoritative for this domain. Use NS records to redirect from your DNS provider to these names, thus making Google Cloud DNS authoritative for this zone.
-  NameServers?: Array<string>;
+  nameServers?: Array<string>;
 
   // The ID of the project containing Google Cloud DNS zones. If this is not provided the default project will be used.
-  Project?: string;
+  project?: string;
+
+  // The zone's visibility: public zones are exposed to the Internet, while private zones are visible only to Virtual Private Cloud resources.
+  visibility?: string;
+
+  // A textual description field.
+  description?: string;
+
+  // The fully qualified DNS name of this zone.
+  dnsName?: string;
+
+  // DNS managed zone identifier
+  id?: string;
+
+  // Unique identifier for the resource; defined by the server.
+  managedZoneId?: number;
+
+  // A unique name for the resource.
+  name?: string;
 }
 
-export function Dns_getManagedZonesManagedZone_GetTypes(): DynamicUIProps[] {
+export function dns_getManagedZonesManagedZone_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "NameServers",
-      "The list of nameservers that will be authoritative for this domain. Use NS records to redirect from your DNS provider to these names, thus making Google Cloud DNS authoritative for this zone.",
-      InputType_String_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Project",
+      "project",
       "The ID of the project containing Google Cloud DNS zones. If this is not provided the default project will be used.",
       [],
       true,
@@ -52,7 +44,7 @@ export function Dns_getManagedZonesManagedZone_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Visibility",
+      "visibility",
       "The zone's visibility: public zones are exposed to the Internet, while private zones are visible only to Virtual Private Cloud resources.",
       [],
       true,
@@ -60,7 +52,7 @@ export function Dns_getManagedZonesManagedZone_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "A textual description field.",
       [],
       true,
@@ -68,7 +60,7 @@ export function Dns_getManagedZonesManagedZone_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "DnsName",
+      "dnsName",
       "The fully qualified DNS name of this zone.",
       [],
       true,
@@ -76,7 +68,7 @@ export function Dns_getManagedZonesManagedZone_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Id",
+      "id",
       "DNS managed zone identifier",
       [],
       true,
@@ -84,7 +76,7 @@ export function Dns_getManagedZonesManagedZone_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "ManagedZoneId",
+      "managedZoneId",
       "Unique identifier for the resource; defined by the server.",
       [],
       true,
@@ -92,9 +84,17 @@ export function Dns_getManagedZonesManagedZone_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "A unique name for the resource.",
       [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "nameServers",
+      "The list of nameservers that will be authoritative for this domain. Use NS records to redirect from your DNS provider to these names, thus making Google Cloud DNS authoritative for this zone.",
+      InputType_String_GetTypes(),
       true,
       false,
     ),

@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodToleration {
+export interface gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodToleration {
+  // Matches a taint value.
+  value?: string;
+
   // Matches a taint effect.
-  Effect?: string;
+  effect?: string;
 
   // Matches a taint key (not necessarily unique).
-  Key?: string;
+  key?: string;
 
   // Matches a taint operator.
-  Operator?: string;
-
-  // Matches a taint value.
-  Value?: string;
+  operator?: string;
 }
 
-export function Gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodToleration_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodToleration_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Effect",
+      "effect",
       "Matches a taint effect.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyCont
     ),
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "key",
       "Matches a taint key (not necessarily unique).",
       [],
       false,
@@ -40,7 +40,7 @@ export function Gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyCont
     ),
     new DynamicUIProps(
       InputType.String,
-      "Operator",
+      "operator",
       "Matches a taint operator.",
       [],
       false,
@@ -48,7 +48,7 @@ export function Gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyCont
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "Matches a taint value.",
       [],
       false,

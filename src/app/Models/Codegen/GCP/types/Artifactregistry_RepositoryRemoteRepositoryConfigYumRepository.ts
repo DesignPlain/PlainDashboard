@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Artifactregistry_RepositoryRemoteRepositoryConfigYumRepositoryPublicRepository,
-  Artifactregistry_RepositoryRemoteRepositoryConfigYumRepositoryPublicRepository_GetTypes,
-} from "./Artifactregistry_RepositoryRemoteRepositoryConfigYumRepositoryPublicRepository";
+  artifactregistry_RepositoryRemoteRepositoryConfigYumRepositoryPublicRepository,
+  artifactregistry_RepositoryRemoteRepositoryConfigYumRepositoryPublicRepository_GetTypes,
+} from "./artifactregistry_RepositoryRemoteRepositoryConfigYumRepositoryPublicRepository";
 
-export interface Artifactregistry_RepositoryRemoteRepositoryConfigYumRepository {
+export interface artifactregistry_RepositoryRemoteRepositoryConfigYumRepository {
   /*
 One of the publicly available Yum repositories supported by Artifact Registry.
 Structure is documented below.
 */
-  PublicRepository?: Artifactregistry_RepositoryRemoteRepositoryConfigYumRepositoryPublicRepository;
+  publicRepository?: artifactregistry_RepositoryRemoteRepositoryConfigYumRepositoryPublicRepository;
 }
 
-export function Artifactregistry_RepositoryRemoteRepositoryConfigYumRepository_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_RepositoryRemoteRepositoryConfigYumRepository_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "PublicRepository",
+      "publicRepository",
       "One of the publicly available Yum repositories supported by Artifact Registry.\nStructure is documented below.",
-      Artifactregistry_RepositoryRemoteRepositoryConfigYumRepositoryPublicRepository_GetTypes(),
+      artifactregistry_RepositoryRemoteRepositoryConfigYumRepositoryPublicRepository_GetTypes(),
       false,
       true,
     ),

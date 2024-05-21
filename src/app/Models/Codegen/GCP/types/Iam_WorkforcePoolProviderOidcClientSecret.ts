@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Iam_WorkforcePoolProviderOidcClientSecretValue,
-  Iam_WorkforcePoolProviderOidcClientSecretValue_GetTypes,
-} from "./Iam_WorkforcePoolProviderOidcClientSecretValue";
+  iam_WorkforcePoolProviderOidcClientSecretValue,
+  iam_WorkforcePoolProviderOidcClientSecretValue_GetTypes,
+} from "./iam_WorkforcePoolProviderOidcClientSecretValue";
 
-export interface Iam_WorkforcePoolProviderOidcClientSecret {
+export interface iam_WorkforcePoolProviderOidcClientSecret {
   /*
 The value of the client secret.
 Structure is documented below.
 */
-  Value?: Iam_WorkforcePoolProviderOidcClientSecretValue;
+  value?: iam_WorkforcePoolProviderOidcClientSecretValue;
 }
 
-export function Iam_WorkforcePoolProviderOidcClientSecret_GetTypes(): DynamicUIProps[] {
+export function iam_WorkforcePoolProviderOidcClientSecret_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Value",
+      "value",
       "The value of the client secret.\nStructure is documented below.",
-      Iam_WorkforcePoolProviderOidcClientSecretValue_GetTypes(),
+      iam_WorkforcePoolProviderOidcClientSecretValue_GetTypes(),
       false,
       false,
     ),

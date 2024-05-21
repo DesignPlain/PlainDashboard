@@ -6,17 +6,17 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Logging_MetricMetricDescriptorLabel,
-  Logging_MetricMetricDescriptorLabel_GetTypes,
-} from "./Logging_MetricMetricDescriptorLabel";
+  logging_MetricMetricDescriptorLabel,
+  logging_MetricMetricDescriptorLabel_GetTypes,
+} from "./logging_MetricMetricDescriptorLabel";
 
-export interface Logging_MetricMetricDescriptor {
+export interface logging_MetricMetricDescriptor {
   /*
 A concise name for the metric, which can be displayed in user interfaces. Use sentence case
 without an ending period, for example "Request count". This field is optional but it is
 recommended to be set for any metrics associated with user-visible concepts, such as Quota.
 */
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 The set of labels that can be used to describe a specific instance of this metric type. For
@@ -25,7 +25,7 @@ for the HTTP response code, response_code, so you can look at latencies for succ
 or just for responses that failed.
 Structure is documented below.
 */
-  Labels?: Array<Logging_MetricMetricDescriptorLabel>;
+  labels?: Array<logging_MetricMetricDescriptorLabel>;
 
   /*
 Whether the metric records instantaneous values, changes to a value, etc.
@@ -33,14 +33,14 @@ Some combinations of metricKind and valueType might not be supported.
 For counter metrics, set this to DELTA.
 Possible values are: `DELTA`, `GAUGE`, `CUMULATIVE`.
 */
-  MetricKind?: string;
+  metricKind?: string;
 
   /*
 The unit in which the metric value is reported. It is only applicable if the valueType is
 `INT64`, `DOUBLE`, or `DISTRIBUTION`. The supported units are a subset of
 [The Unified Code for Units of Measure](http://unitsofmeasure.org/ucum.html) standard
 */
-  Unit?: string;
+  unit?: string;
 
   /*
 Whether the measurement is an integer, a floating-point number, etc.
@@ -48,14 +48,14 @@ Some combinations of metricKind and valueType might not be supported.
 For counter metrics, set this to INT64.
 Possible values are: `BOOL`, `INT64`, `DOUBLE`, `STRING`, `DISTRIBUTION`, `MONEY`.
 */
-  ValueType?: string;
+  valueType?: string;
 }
 
-export function Logging_MetricMetricDescriptor_GetTypes(): DynamicUIProps[] {
+export function logging_MetricMetricDescriptor_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DisplayName",
+      "displayName",
       'A concise name for the metric, which can be displayed in user interfaces. Use sentence case\nwithout an ending period, for example "Request count". This field is optional but it is\nrecommended to be set for any metrics associated with user-visible concepts, such as Quota.',
       [],
       false,
@@ -63,15 +63,15 @@ export function Logging_MetricMetricDescriptor_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Labels",
+      "labels",
       "The set of labels that can be used to describe a specific instance of this metric type. For\nexample, the appengine.googleapis.com/http/server/response_latencies metric type has a label\nfor the HTTP response code, response_code, so you can look at latencies for successful responses\nor just for responses that failed.\nStructure is documented below.",
-      Logging_MetricMetricDescriptorLabel_GetTypes(),
+      logging_MetricMetricDescriptorLabel_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "MetricKind",
+      "metricKind",
       "Whether the metric records instantaneous values, changes to a value, etc.\nSome combinations of metricKind and valueType might not be supported.\nFor counter metrics, set this to DELTA.\nPossible values are: `DELTA`, `GAUGE`, `CUMULATIVE`.",
       [],
       true,
@@ -79,7 +79,7 @@ export function Logging_MetricMetricDescriptor_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Unit",
+      "unit",
       "The unit in which the metric value is reported. It is only applicable if the valueType is\n`INT64`, `DOUBLE`, or `DISTRIBUTION`. The supported units are a subset of\n[The Unified Code for Units of Measure](http://unitsofmeasure.org/ucum.html) standard",
       [],
       false,
@@ -87,7 +87,7 @@ export function Logging_MetricMetricDescriptor_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ValueType",
+      "valueType",
       "Whether the measurement is an integer, a floating-point number, etc.\nSome combinations of metricKind and valueType might not be supported.\nFor counter metrics, set this to INT64.\nPossible values are: `BOOL`, `INT64`, `DOUBLE`, `STRING`, `DISTRIBUTION`, `MONEY`.",
       [],
       true,

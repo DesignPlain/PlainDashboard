@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Endpoints_ServiceEndpoint {
+export interface endpoints_ServiceEndpoint {
   // The FQDN of the endpoint as described in the config.
-  Address?: string;
+  address?: string;
 
   // The simple name of the endpoint as described in the config.
-  Name?: string;
+  name?: string;
 }
 
-export function Endpoints_ServiceEndpoint_GetTypes(): DynamicUIProps[] {
+export function endpoints_ServiceEndpoint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Address",
+      "address",
       "The FQDN of the endpoint as described in the config.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Endpoints_ServiceEndpoint_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The simple name of the endpoint as described in the config.",
       [],
       false,

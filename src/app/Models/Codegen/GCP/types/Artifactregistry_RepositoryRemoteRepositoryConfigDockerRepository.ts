@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Artifactregistry_RepositoryRemoteRepositoryConfigDockerRepository {
+export interface artifactregistry_RepositoryRemoteRepositoryConfigDockerRepository {
   /*
 Address of the remote repository.
 Default value is `DOCKER_HUB`.
 Possible values are: `DOCKER_HUB`.
 */
-  PublicRepository?: string;
+  publicRepository?: string;
 }
 
-export function Artifactregistry_RepositoryRemoteRepositoryConfigDockerRepository_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_RepositoryRemoteRepositoryConfigDockerRepository_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PublicRepository",
+      "publicRepository",
       "Address of the remote repository.\nDefault value is `DOCKER_HUB`.\nPossible values are: `DOCKER_HUB`.",
       [],
       false,

@@ -6,8 +6,8 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_ConnectionProfileBigqueryProfile {}
+export interface datastream_ConnectionProfileBigqueryProfile {}
 
-export function Datastream_ConnectionProfileBigqueryProfile_GetTypes(): DynamicUIProps[] {
+export function datastream_ConnectionProfileBigqueryProfile_GetTypes(): DynamicUIProps[] {
   return [];
 }

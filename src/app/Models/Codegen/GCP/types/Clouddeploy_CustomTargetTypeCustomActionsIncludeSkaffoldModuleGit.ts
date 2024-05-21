@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGit {
-  // Relative path from the repository root to the Skaffold file.
-  Path?: string;
-
+export interface clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGit {
   // Git ref the package should be cloned from.
-  Ref?: string;
+  ref?: string;
 
   // Git repository the package should be cloned from.
-  Repo?: string;
+  repo?: string;
+
+  // Relative path from the repository root to the Skaffold file.
+  path?: string;
 }
 
-export function Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGit_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGit_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Path",
+      "repo",
+      "Git repository the package should be cloned from.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "path",
       "Relative path from the repository root to the Skaffold file.",
       [],
       false,
@@ -29,18 +37,10 @@ export function Clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGi
     ),
     new DynamicUIProps(
       InputType.String,
-      "Ref",
+      "ref",
       "Git ref the package should be cloned from.",
       [],
       false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Repo",
-      "Git repository the package should be cloned from.",
-      [],
-      true,
       false,
     ),
   ];

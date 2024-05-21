@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesNodeType {
+export interface migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesNodeType {
   // Name of the Sole Tenant node. Consult https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes
-  NodeName?: string;
+  nodeName?: string;
 }
 
-export function Migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesNodeType_GetTypes(): DynamicUIProps[] {
+export function migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesNodeType_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "NodeName",
+      "nodeName",
       "Name of the Sole Tenant node. Consult https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes",
       [],
       false,

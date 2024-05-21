@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_FlexibleAppVersionResourcesVolume {
+export interface appengine_FlexibleAppVersionResourcesVolume {
+  // Underlying volume type, e.g. 'tmpfs'.
+  volumeType?: string;
+
   // Unique name for the volume.
-  Name?: string;
+  name?: string;
 
   // Volume size in gigabytes.
-  SizeGb?: number;
-
-  // Underlying volume type, e.g. 'tmpfs'.
-  VolumeType?: string;
+  sizeGb?: number;
 }
 
-export function Appengine_FlexibleAppVersionResourcesVolume_GetTypes(): DynamicUIProps[] {
+export function appengine_FlexibleAppVersionResourcesVolume_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "volumeType",
+      "Underlying volume type, e.g. 'tmpfs'.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "name",
       "Unique name for the volume.",
       [],
       true,
@@ -29,16 +37,8 @@ export function Appengine_FlexibleAppVersionResourcesVolume_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Number,
-      "SizeGb",
+      "sizeGb",
       "Volume size in gigabytes.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "VolumeType",
-      "Underlying volume type, e.g. 'tmpfs'.",
       [],
       true,
       false,

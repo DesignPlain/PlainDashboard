@@ -6,7 +6,10 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Migrationcenter_PreferenceSetVirtualMachinePreferencesVmwareEnginePreferences {
+export interface migrationcenter_PreferenceSetVirtualMachinePreferencesVmwareEnginePreferences {
+  // The Deduplication and Compression ratio is based on the logical (Used Before) space required to store data before applying deduplication and compression, in relation to the physical (Used After) space required after applying deduplication and compression. Specifically, the ratio is the Used Before space divided by the Used After space. For example, if the Used Before space is 3 GB, but the physical Used After space is 1 GB, the deduplication and compression ratio is 3x. Acceptable values are between 1.0 and 4.0.
+  storageDeduplicationCompressionRatio?: number;
+
   /*
 Commitment plan to consider when calculating costs for virtual machine insights and recommendations. If you are unsure which value to set, a 3 year commitment plan is often a good value to start with.
 Possible values:
@@ -17,23 +20,28 @@ COMMITMENT_3_YEAR_MONTHLY_PAYMENTS
 COMMITMENT_1_YEAR_UPFRONT_PAYMENT
 COMMITMENT_3_YEAR_UPFRONT_PAYMENT
 */
-  CommitmentPlan?: string;
+  commitmentPlan?: string;
 
   // CPU overcommit ratio. Acceptable values are between 1.0 and 8.0, with 0.1 increment.
-  CpuOvercommitRatio?: number;
+  cpuOvercommitRatio?: number;
 
   // Memory overcommit ratio. Acceptable values are 1.0, 1.25, 1.5, 1.75 and 2.0.
-  MemoryOvercommitRatio?: number;
-
-  // The Deduplication and Compression ratio is based on the logical (Used Before) space required to store data before applying deduplication and compression, in relation to the physical (Used After) space required after applying deduplication and compression. Specifically, the ratio is the Used Before space divided by the Used After space. For example, if the Used Before space is 3 GB, but the physical Used After space is 1 GB, the deduplication and compression ratio is 3x. Acceptable values are between 1.0 and 4.0.
-  StorageDeduplicationCompressionRatio?: number;
+  memoryOvercommitRatio?: number;
 }
 
-export function Migrationcenter_PreferenceSetVirtualMachinePreferencesVmwareEnginePreferences_GetTypes(): DynamicUIProps[] {
+export function migrationcenter_PreferenceSetVirtualMachinePreferencesVmwareEnginePreferences_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "MemoryOvercommitRatio",
+      "cpuOvercommitRatio",
+      "CPU overcommit ratio. Acceptable values are between 1.0 and 8.0, with 0.1 increment.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "memoryOvercommitRatio",
       "Memory overcommit ratio. Acceptable values are 1.0, 1.25, 1.5, 1.75 and 2.0.",
       [],
       false,
@@ -41,7 +49,7 @@ export function Migrationcenter_PreferenceSetVirtualMachinePreferencesVmwareEngi
     ),
     new DynamicUIProps(
       InputType.Number,
-      "StorageDeduplicationCompressionRatio",
+      "storageDeduplicationCompressionRatio",
       "The Deduplication and Compression ratio is based on the logical (Used Before) space required to store data before applying deduplication and compression, in relation to the physical (Used After) space required after applying deduplication and compression. Specifically, the ratio is the Used Before space divided by the Used After space. For example, if the Used Before space is 3 GB, but the physical Used After space is 1 GB, the deduplication and compression ratio is 3x. Acceptable values are between 1.0 and 4.0.",
       [],
       false,
@@ -49,16 +57,8 @@ export function Migrationcenter_PreferenceSetVirtualMachinePreferencesVmwareEngi
     ),
     new DynamicUIProps(
       InputType.String,
-      "CommitmentPlan",
+      "commitmentPlan",
       "Commitment plan to consider when calculating costs for virtual machine insights and recommendations. If you are unsure which value to set, a 3 year commitment plan is often a good value to start with.\nPossible values:\nCOMMITMENT_PLAN_UNSPECIFIED\nON_DEMAND\nCOMMITMENT_1_YEAR_MONTHLY_PAYMENTS\nCOMMITMENT_3_YEAR_MONTHLY_PAYMENTS\nCOMMITMENT_1_YEAR_UPFRONT_PAYMENT\nCOMMITMENT_3_YEAR_UPFRONT_PAYMENT",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "CpuOvercommitRatio",
-      "CPU overcommit ratio. Acceptable values are between 1.0 and 8.0, with 0.1 increment.",
       [],
       false,
       false,

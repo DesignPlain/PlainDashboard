@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Securitycenter_ProjectCustomModuleCustomConfigCustomOutputPropertyValueExpression {
+export interface securitycenter_ProjectCustomModuleCustomConfigCustomOutputPropertyValueExpression {
   /*
 Description of the expression. This is a longer text which describes the
 expression, e.g. when hovered over it in a UI.
 */
-  Description?: string;
+  description?: string;
 
   // Textual representation of an expression in Common Expression Language syntax.
-  Expression?: string;
+  expression?: string;
 
   /*
 String indicating the location of the expression for error reporting, e.g. a
 file name and a position in the file.
 */
-  Location?: string;
+  location?: string;
 
   /*
 Title for the expression, i.e. a short string describing its purpose. This can
 be used e.g. in UIs which allow to enter the expression.
 */
-  Title?: string;
+  title?: string;
 }
 
-export function Securitycenter_ProjectCustomModuleCustomConfigCustomOutputPropertyValueExpression_GetTypes(): DynamicUIProps[] {
+export function securitycenter_ProjectCustomModuleCustomConfigCustomOutputPropertyValueExpression_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "Description of the expression. This is a longer text which describes the\nexpression, e.g. when hovered over it in a UI.",
       [],
       false,
@@ -41,7 +41,7 @@ export function Securitycenter_ProjectCustomModuleCustomConfigCustomOutputProper
     ),
     new DynamicUIProps(
       InputType.String,
-      "Expression",
+      "expression",
       "Textual representation of an expression in Common Expression Language syntax.",
       [],
       true,
@@ -49,7 +49,7 @@ export function Securitycenter_ProjectCustomModuleCustomConfigCustomOutputProper
     ),
     new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       "String indicating the location of the expression for error reporting, e.g. a\nfile name and a position in the file.",
       [],
       false,
@@ -57,7 +57,7 @@ export function Securitycenter_ProjectCustomModuleCustomConfigCustomOutputProper
     ),
     new DynamicUIProps(
       InputType.String,
-      "Title",
+      "title",
       "Title for the expression, i.e. a short string describing its purpose. This can\nbe used e.g. in UIs which allow to enter the expression.",
       [],
       false,

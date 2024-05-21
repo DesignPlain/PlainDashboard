@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_TransferJobTransferSpecAwsS3DataSourceAwsAccessKey {
-  // AWS Secret Access Key.
-  SecretAccessKey?: string;
-
+export interface storage_TransferJobTransferSpecAwsS3DataSourceAwsAccessKey {
   // AWS Key ID.
-  AccessKeyId?: string;
+  accessKeyId?: string;
+
+  // AWS Secret Access Key.
+  secretAccessKey?: string;
 }
 
-export function Storage_TransferJobTransferSpecAwsS3DataSourceAwsAccessKey_GetTypes(): DynamicUIProps[] {
+export function storage_TransferJobTransferSpecAwsS3DataSourceAwsAccessKey_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SecretAccessKey",
+      "secretAccessKey",
       "AWS Secret Access Key.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Storage_TransferJobTransferSpecAwsS3DataSourceAwsAccessKey_GetTy
     ),
     new DynamicUIProps(
       InputType.String,
-      "AccessKeyId",
+      "accessKeyId",
       "AWS Key ID.",
       [],
       true,

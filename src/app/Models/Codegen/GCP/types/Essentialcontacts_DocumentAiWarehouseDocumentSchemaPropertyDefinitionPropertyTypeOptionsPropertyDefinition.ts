@@ -6,182 +6,190 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionMapTypeOptions,
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionMapTypeOptions_GetTypes,
-} from "./Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionMapTypeOptions";
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionIntegerTypeOptions,
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionIntegerTypeOptions_GetTypes,
+} from "./essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionIntegerTypeOptions";
 import {
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionDateTimeTypeOptions,
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionDateTimeTypeOptions_GetTypes,
-} from "./Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionDateTimeTypeOptions";
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTextTypeOptions,
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTextTypeOptions_GetTypes,
+} from "./essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTextTypeOptions";
 import {
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionEnumTypeOptions,
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionEnumTypeOptions_GetTypes,
-} from "./Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionEnumTypeOptions";
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionDateTimeTypeOptions,
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionDateTimeTypeOptions_GetTypes,
+} from "./essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionDateTimeTypeOptions";
 import {
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTextTypeOptions,
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTextTypeOptions_GetTypes,
-} from "./Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTextTypeOptions";
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionFloatTypeOptions,
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionFloatTypeOptions_GetTypes,
+} from "./essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionFloatTypeOptions";
 import {
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTimestampTypeOptions,
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTimestampTypeOptions_GetTypes,
-} from "./Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTimestampTypeOptions";
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionMapTypeOptions,
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionMapTypeOptions_GetTypes,
+} from "./essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionMapTypeOptions";
 import {
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionSchemaSource,
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionSchemaSource_GetTypes,
-} from "./Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionSchemaSource";
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTimestampTypeOptions,
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTimestampTypeOptions_GetTypes,
+} from "./essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTimestampTypeOptions";
 import {
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionFloatTypeOptions,
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionFloatTypeOptions_GetTypes,
-} from "./Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionFloatTypeOptions";
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionEnumTypeOptions,
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionEnumTypeOptions_GetTypes,
+} from "./essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionEnumTypeOptions";
 import {
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionIntegerTypeOptions,
-  Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionIntegerTypeOptions_GetTypes,
-} from "./Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionIntegerTypeOptions";
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionSchemaSource,
+  essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionSchemaSource_GetTypes,
+} from "./essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionSchemaSource";
 
-export interface Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinition {
-  // Float property.
-  FloatTypeOptions?: Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionFloatTypeOptions;
-
-  // Integer property.
-  IntegerTypeOptions?: Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionIntegerTypeOptions;
-
-  // Map property.
-  MapTypeOptions?: Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionMapTypeOptions;
+export interface essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinition {
+  // Whether the property is user supplied metadata.
+  isMetadata?: boolean;
 
   // The name of the metadata property.
-  Name?: string;
-
-  // Date time property. Not supported by CMEK compliant deployment.
-  DateTimeTypeOptions?: Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionDateTimeTypeOptions;
-
-  // Whether the property can have multiple values.
-  IsRepeatable?: boolean;
-
-  // Whether the property is mandatory.
-  IsRequired?: boolean;
-
-  /*
-Enum/categorical property.
-Structure is documented below.
-*/
-  EnumTypeOptions?: Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionEnumTypeOptions;
-
-  // Whether the property can be filtered. If this is a sub-property, all the parent properties must be marked filterable.
-  IsFilterable?: boolean;
-
-  // Indicates that the property should be included in a global search.
-  IsSearchable?: boolean;
-
-  // Text property.
-  TextTypeOptions?: Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTextTypeOptions;
-
-  // Timestamp property. Not supported by CMEK compliant deployment.
-  TimestampTypeOptions?: Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTimestampTypeOptions;
-
-  // The display-name for the property, used for front-end.
-  DisplayName?: string;
-
-  /*
-Stores the retrieval importance.
-Possible values are: `HIGHEST`, `HIGHER`, `HIGH`, `MEDIUM`, `LOW`, `LOWEST`.
-*/
-  RetrievalImportance?: string;
+  name?: string;
 
   /*
 The schema source information.
 Structure is documented below.
 */
-  SchemaSources?: Array<Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionSchemaSource>;
+  schemaSources?: Array<essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionSchemaSource>;
 
-  // Whether the property is user supplied metadata.
-  IsMetadata?: boolean;
+  // The display-name for the property, used for front-end.
+  displayName?: string;
+
+  // Integer property.
+  integerTypeOptions?: essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionIntegerTypeOptions;
+
+  // Whether the property can have multiple values.
+  isRepeatable?: boolean;
+
+  // Text property.
+  textTypeOptions?: essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTextTypeOptions;
+
+  // Date time property. Not supported by CMEK compliant deployment.
+  dateTimeTypeOptions?: essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionDateTimeTypeOptions;
+
+  // Float property.
+  floatTypeOptions?: essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionFloatTypeOptions;
+
+  // Whether the property is mandatory.
+  isRequired?: boolean;
+
+  // Indicates that the property should be included in a global search.
+  isSearchable?: boolean;
+
+  // Map property.
+  mapTypeOptions?: essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionMapTypeOptions;
+
+  /*
+Stores the retrieval importance.
+Possible values are: `HIGHEST`, `HIGHER`, `HIGH`, `MEDIUM`, `LOW`, `LOWEST`.
+*/
+  retrievalImportance?: string;
+
+  // Timestamp property. Not supported by CMEK compliant deployment.
+  timestampTypeOptions?: essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTimestampTypeOptions;
+
+  /*
+Enum/categorical property.
+Structure is documented below.
+*/
+  enumTypeOptions?: essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionEnumTypeOptions;
+
+  // Whether the property can be filtered. If this is a sub-property, all the parent properties must be marked filterable.
+  isFilterable?: boolean;
 }
 
-export function Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinition_GetTypes(): DynamicUIProps[] {
+export function essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "FloatTypeOptions",
-      "Float property.",
-      Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionFloatTypeOptions_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "MapTypeOptions",
-      "Map property.",
-      Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionMapTypeOptions_GetTypes(),
+      "integerTypeOptions",
+      "Integer property.",
+      essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionIntegerTypeOptions_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IsRepeatable",
+      "isRepeatable",
       "Whether the property can have multiple values.",
       [],
       false,
       true,
     ),
     new DynamicUIProps(
-      InputType.Bool,
-      "IsRequired",
-      "Whether the property is mandatory.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "RetrievalImportance",
-      "Stores the retrieval importance.\nPossible values are: `HIGHEST`, `HIGHER`, `HIGH`, `MEDIUM`, `LOW`, `LOWEST`.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Name",
-      "The name of the metadata property.",
-      [],
-      true,
-      true,
-    ),
-    new DynamicUIProps(
       InputType.Object,
-      "DateTimeTypeOptions",
+      "dateTimeTypeOptions",
       "Date time property. Not supported by CMEK compliant deployment.",
-      Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionDateTimeTypeOptions_GetTypes(),
+      essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionDateTimeTypeOptions_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IsSearchable",
+      "isSearchable",
       "Indicates that the property should be included in a global search.",
       [],
       false,
       true,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "TextTypeOptions",
-      "Text property.",
-      Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTextTypeOptions_GetTypes(),
+      InputType.String,
+      "retrievalImportance",
+      "Stores the retrieval importance.\nPossible values are: `HIGHEST`, `HIGHER`, `HIGH`, `MEDIUM`, `LOW`, `LOWEST`.",
+      [],
       false,
       true,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "TimestampTypeOptions",
-      "Timestamp property. Not supported by CMEK compliant deployment.",
-      Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTimestampTypeOptions_GetTypes(),
+      InputType.Bool,
+      "isFilterable",
+      "Whether the property can be filtered. If this is a sub-property, all the parent properties must be marked filterable.",
+      [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "DisplayName",
+      "name",
+      "The name of the metadata property.",
+      [],
+      true,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "schemaSources",
+      "The schema source information.\nStructure is documented below.",
+      essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionSchemaSource_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "floatTypeOptions",
+      "Float property.",
+      essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionFloatTypeOptions_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "mapTypeOptions",
+      "Map property.",
+      essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionMapTypeOptions_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "enumTypeOptions",
+      "Enum/categorical property.\nStructure is documented below.",
+      essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionEnumTypeOptions_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "displayName",
       "The display-name for the property, used for front-end.",
       [],
       false,
@@ -189,23 +197,15 @@ export function Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefin
     ),
     new DynamicUIProps(
       InputType.Object,
-      "IntegerTypeOptions",
-      "Integer property.",
-      Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionIntegerTypeOptions_GetTypes(),
+      "timestampTypeOptions",
+      "Timestamp property. Not supported by CMEK compliant deployment.",
+      essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTimestampTypeOptions_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IsFilterable",
-      "Whether the property can be filtered. If this is a sub-property, all the parent properties must be marked filterable.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "IsMetadata",
+      "isMetadata",
       "Whether the property is user supplied metadata.",
       [],
       false,
@@ -213,17 +213,17 @@ export function Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefin
     ),
     new DynamicUIProps(
       InputType.Object,
-      "EnumTypeOptions",
-      "Enum/categorical property.\nStructure is documented below.",
-      Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionEnumTypeOptions_GetTypes(),
+      "textTypeOptions",
+      "Text property.",
+      essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionTextTypeOptions_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "SchemaSources",
-      "The schema source information.\nStructure is documented below.",
-      Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionSchemaSource_GetTypes(),
+      InputType.Bool,
+      "isRequired",
+      "Whether the property is mandatory.",
+      [],
       false,
       true,
     ),

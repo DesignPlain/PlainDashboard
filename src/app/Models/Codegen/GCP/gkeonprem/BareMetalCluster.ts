@@ -7,245 +7,154 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_BareMetalClusterOsEnvironmentConfig,
-  Gkeonprem_BareMetalClusterOsEnvironmentConfig_GetTypes,
-} from "../types/Gkeonprem_BareMetalClusterOsEnvironmentConfig";
+  gkeonprem_BareMetalClusterSecurityConfig,
+  gkeonprem_BareMetalClusterSecurityConfig_GetTypes,
+} from "../types/gkeonprem_BareMetalClusterSecurityConfig";
 import {
-  Gkeonprem_BareMetalClusterProxy,
-  Gkeonprem_BareMetalClusterProxy_GetTypes,
-} from "../types/Gkeonprem_BareMetalClusterProxy";
+  gkeonprem_BareMetalClusterUpgradePolicy,
+  gkeonprem_BareMetalClusterUpgradePolicy_GetTypes,
+} from "../types/gkeonprem_BareMetalClusterUpgradePolicy";
 import {
-  Gkeonprem_BareMetalClusterMaintenanceConfig,
-  Gkeonprem_BareMetalClusterMaintenanceConfig_GetTypes,
-} from "../types/Gkeonprem_BareMetalClusterMaintenanceConfig";
+  gkeonprem_BareMetalClusterValidationCheck,
+  gkeonprem_BareMetalClusterValidationCheck_GetTypes,
+} from "../types/gkeonprem_BareMetalClusterValidationCheck";
 import {
-  Gkeonprem_BareMetalClusterValidationCheck,
-  Gkeonprem_BareMetalClusterValidationCheck_GetTypes,
-} from "../types/Gkeonprem_BareMetalClusterValidationCheck";
+  gkeonprem_BareMetalClusterLoadBalancer,
+  gkeonprem_BareMetalClusterLoadBalancer_GetTypes,
+} from "../types/gkeonprem_BareMetalClusterLoadBalancer";
 import {
-  Gkeonprem_BareMetalClusterStatus,
-  Gkeonprem_BareMetalClusterStatus_GetTypes,
-} from "../types/Gkeonprem_BareMetalClusterStatus";
+  gkeonprem_BareMetalClusterClusterOperations,
+  gkeonprem_BareMetalClusterClusterOperations_GetTypes,
+} from "../types/gkeonprem_BareMetalClusterClusterOperations";
 import {
-  Gkeonprem_BareMetalClusterNodeConfig,
-  Gkeonprem_BareMetalClusterNodeConfig_GetTypes,
-} from "../types/Gkeonprem_BareMetalClusterNodeConfig";
+  gkeonprem_BareMetalClusterMaintenanceConfig,
+  gkeonprem_BareMetalClusterMaintenanceConfig_GetTypes,
+} from "../types/gkeonprem_BareMetalClusterMaintenanceConfig";
 import {
-  Gkeonprem_BareMetalClusterBinaryAuthorization,
-  Gkeonprem_BareMetalClusterBinaryAuthorization_GetTypes,
-} from "../types/Gkeonprem_BareMetalClusterBinaryAuthorization";
+  gkeonprem_BareMetalClusterNodeConfig,
+  gkeonprem_BareMetalClusterNodeConfig_GetTypes,
+} from "../types/gkeonprem_BareMetalClusterNodeConfig";
 import {
-  Gkeonprem_BareMetalClusterFleet,
-  Gkeonprem_BareMetalClusterFleet_GetTypes,
-} from "../types/Gkeonprem_BareMetalClusterFleet";
+  gkeonprem_BareMetalClusterOsEnvironmentConfig,
+  gkeonprem_BareMetalClusterOsEnvironmentConfig_GetTypes,
+} from "../types/gkeonprem_BareMetalClusterOsEnvironmentConfig";
 import {
-  Gkeonprem_BareMetalClusterNodeAccessConfig,
-  Gkeonprem_BareMetalClusterNodeAccessConfig_GetTypes,
-} from "../types/Gkeonprem_BareMetalClusterNodeAccessConfig";
+  gkeonprem_BareMetalClusterNodeAccessConfig,
+  gkeonprem_BareMetalClusterNodeAccessConfig_GetTypes,
+} from "../types/gkeonprem_BareMetalClusterNodeAccessConfig";
 import {
-  Gkeonprem_BareMetalClusterNetworkConfig,
-  Gkeonprem_BareMetalClusterNetworkConfig_GetTypes,
-} from "../types/Gkeonprem_BareMetalClusterNetworkConfig";
+  gkeonprem_BareMetalClusterProxy,
+  gkeonprem_BareMetalClusterProxy_GetTypes,
+} from "../types/gkeonprem_BareMetalClusterProxy";
 import {
-  Gkeonprem_BareMetalClusterUpgradePolicy,
-  Gkeonprem_BareMetalClusterUpgradePolicy_GetTypes,
-} from "../types/Gkeonprem_BareMetalClusterUpgradePolicy";
+  gkeonprem_BareMetalClusterFleet,
+  gkeonprem_BareMetalClusterFleet_GetTypes,
+} from "../types/gkeonprem_BareMetalClusterFleet";
 import {
-  Gkeonprem_BareMetalClusterStorage,
-  Gkeonprem_BareMetalClusterStorage_GetTypes,
-} from "../types/Gkeonprem_BareMetalClusterStorage";
+  gkeonprem_BareMetalClusterControlPlane,
+  gkeonprem_BareMetalClusterControlPlane_GetTypes,
+} from "../types/gkeonprem_BareMetalClusterControlPlane";
 import {
-  Gkeonprem_BareMetalClusterControlPlane,
-  Gkeonprem_BareMetalClusterControlPlane_GetTypes,
-} from "../types/Gkeonprem_BareMetalClusterControlPlane";
+  gkeonprem_BareMetalClusterBinaryAuthorization,
+  gkeonprem_BareMetalClusterBinaryAuthorization_GetTypes,
+} from "../types/gkeonprem_BareMetalClusterBinaryAuthorization";
 import {
-  Gkeonprem_BareMetalClusterLoadBalancer,
-  Gkeonprem_BareMetalClusterLoadBalancer_GetTypes,
-} from "../types/Gkeonprem_BareMetalClusterLoadBalancer";
+  gkeonprem_BareMetalClusterStorage,
+  gkeonprem_BareMetalClusterStorage_GetTypes,
+} from "../types/gkeonprem_BareMetalClusterStorage";
 import {
-  Gkeonprem_BareMetalClusterClusterOperations,
-  Gkeonprem_BareMetalClusterClusterOperations_GetTypes,
-} from "../types/Gkeonprem_BareMetalClusterClusterOperations";
+  gkeonprem_BareMetalClusterStatus,
+  gkeonprem_BareMetalClusterStatus_GetTypes,
+} from "../types/gkeonprem_BareMetalClusterStatus";
 import {
-  Gkeonprem_BareMetalClusterSecurityConfig,
-  Gkeonprem_BareMetalClusterSecurityConfig_GetTypes,
-} from "../types/Gkeonprem_BareMetalClusterSecurityConfig";
+  gkeonprem_BareMetalClusterNetworkConfig,
+  gkeonprem_BareMetalClusterNetworkConfig_GetTypes,
+} from "../types/gkeonprem_BareMetalClusterNetworkConfig";
 
 export interface BareMetalClusterArgs {
-  /*
-Specifies the workload node configurations.
-Structure is documented below.
-*/
-  NodeConfig?: Gkeonprem_BareMetalClusterNodeConfig;
-
-  /*
-Specifies the cluster storage configuration.
-Structure is documented below.
-*/
-  Storage?: Gkeonprem_BareMetalClusterStorage;
-
-  /*
-Specifies the control plane configuration.
-Structure is documented below.
-*/
-  ControlPlane?: Gkeonprem_BareMetalClusterControlPlane;
-
-  /*
-Specifies the load balancer configuration.
-Structure is documented below.
-*/
-  LoadBalancer?: Gkeonprem_BareMetalClusterLoadBalancer;
-
   // The bare metal cluster name.
-  Name?: string;
-
-  /*
-Specifies the User Cluster's observability infrastructure.
-Structure is documented below.
-*/
-  ClusterOperations?: Gkeonprem_BareMetalClusterClusterOperations;
-
-  /*
-OS environment related configurations.
-Structure is documented below.
-*/
-  OsEnvironmentConfig?: Gkeonprem_BareMetalClusterOsEnvironmentConfig;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
+  name?: string;
 
   /*
 The Admin Cluster this Bare Metal User Cluster belongs to.
 This is the full resource name of the Admin Cluster's hub membership.
 */
-  AdminClusterMembership?: string;
+  adminClusterMembership?: string;
 
   /*
-Annotations on the Bare Metal User Cluster.
-This field has the same restrictions as Kubernetes annotations.
-The total size of all keys and values combined is limited to 256k.
-Key can have 2 segments: prefix (optional) and name (required),
-separated by a slash (/).
-Prefix must be a DNS subdomain.
-Name must be 63 characters or less, begin and end with alphanumerics,
-with dashes (-), underscores (_), dots (.), and alphanumerics between.
-
---Note--: This field is non-authoritative, and will only manage the annotations present in your configuration.
-Please refer to the field `effective_annotations` for all of the annotations present on the resource.
-*/
-  Annotations?: Map<string, string>;
-
-  // A human readable description of this Bare Metal User Cluster.
-  BareMetalVersion?: string;
-
-  /*
-Specifies the security related settings for the Bare Metal User Cluster.
+Specifies the control plane configuration.
 Structure is documented below.
 */
-  SecurityConfig?: Gkeonprem_BareMetalClusterSecurityConfig;
+  controlPlane?: gkeonprem_BareMetalClusterControlPlane;
 
   /*
-Binary Authorization related configurations.
+Specifies the load balancer configuration.
 Structure is documented below.
 */
-  BinaryAuthorization?: Gkeonprem_BareMetalClusterBinaryAuthorization;
-
-  // A human readable description of this Bare Metal User Cluster.
-  Description?: string;
+  loadBalancer?: gkeonprem_BareMetalClusterLoadBalancer;
 
   /*
 Network configuration.
 Structure is documented below.
 */
-  NetworkConfig?: Gkeonprem_BareMetalClusterNetworkConfig;
+  networkConfig?: gkeonprem_BareMetalClusterNetworkConfig;
+
+  /*
+Specifies the security related settings for the Bare Metal User Cluster.
+Structure is documented below.
+*/
+  securityConfig?: gkeonprem_BareMetalClusterSecurityConfig;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
 
   /*
 Specifies the cluster proxy configuration.
 Structure is documented below.
 */
-  Proxy?: Gkeonprem_BareMetalClusterProxy;
-
-  /*
-The cluster upgrade policy.
-Structure is documented below.
-*/
-  UpgradePolicy?: Gkeonprem_BareMetalClusterUpgradePolicy;
-
-  // The location of the resource.
-  Location?: string;
-
-  /*
-Specifies the workload node configurations.
-Structure is documented below.
-*/
-  MaintenanceConfig?: Gkeonprem_BareMetalClusterMaintenanceConfig;
-
-  /*
-Specifies the node access related settings for the bare metal user cluster.
-Structure is documented below.
-*/
-  NodeAccessConfig?: Gkeonprem_BareMetalClusterNodeAccessConfig;
-}
-export class BareMetalCluster extends Resource {
-  // The IP address name of Bare Metal User Cluster's API server.
-  public Endpoint?: string;
-
-  /*
-Specifies the workload node configurations.
-Structure is documented below.
-*/
-  public NodeConfig?: Gkeonprem_BareMetalClusterNodeConfig;
-
-  /*
-The cluster upgrade policy.
-Structure is documented below.
-*/
-  public UpgradePolicy?: Gkeonprem_BareMetalClusterUpgradePolicy;
+  proxy?: gkeonprem_BareMetalClusterProxy;
 
   /*
 Binary Authorization related configurations.
 Structure is documented below.
 */
-  public BinaryAuthorization?: Gkeonprem_BareMetalClusterBinaryAuthorization;
-
-  // The time the cluster was deleted, in RFC3339 text format.
-  public DeleteTime?: string;
+  binaryAuthorization?: gkeonprem_BareMetalClusterBinaryAuthorization;
 
   /*
-All of annotations (key/value pairs) present on the resource in GCP, including the annotations configured through
-Terraform, other clients and services.
-*/
-  public EffectiveAnnotations?: Map<string, string>;
-
-  /*
-Specifies the load balancer configuration.
+Specifies the User Cluster's observability infrastructure.
 Structure is documented below.
 */
-  public LoadBalancer?: Gkeonprem_BareMetalClusterLoadBalancer;
+  clusterOperations?: gkeonprem_BareMetalClusterClusterOperations;
 
-  // The bare metal cluster name.
-  public Name?: string;
+  // A human readable description of this Bare Metal User Cluster.
+  description?: string;
 
   /*
 Specifies the workload node configurations.
 Structure is documented below.
 */
-  public MaintenanceConfig?: Gkeonprem_BareMetalClusterMaintenanceConfig;
+  maintenanceConfig?: gkeonprem_BareMetalClusterMaintenanceConfig;
 
   /*
-Specifies the node access related settings for the bare metal user cluster.
+Specifies the workload node configurations.
 Structure is documented below.
 */
-  public NodeAccessConfig?: Gkeonprem_BareMetalClusterNodeAccessConfig;
+  nodeConfig?: gkeonprem_BareMetalClusterNodeConfig;
+
+  /*
+OS environment related configurations.
+Structure is documented below.
+*/
+  osEnvironmentConfig?: gkeonprem_BareMetalClusterOsEnvironmentConfig;
 
   /*
 Specifies the cluster storage configuration.
 Structure is documented below.
 */
-  public Storage?: Gkeonprem_BareMetalClusterStorage;
+  storage?: gkeonprem_BareMetalClusterStorage;
 
   /*
 Annotations on the Bare Metal User Cluster.
@@ -260,57 +169,29 @@ with dashes (-), underscores (_), dots (.), and alphanumerics between.
 --Note--: This field is non-authoritative, and will only manage the annotations present in your configuration.
 Please refer to the field `effective_annotations` for all of the annotations present on the resource.
 */
-  public Annotations?: Map<string, string>;
-
-  /*
-Specifies the control plane configuration.
-Structure is documented below.
-*/
-  public ControlPlane?: Gkeonprem_BareMetalClusterControlPlane;
-
-  /*
-Specifies the cluster proxy configuration.
-Structure is documented below.
-*/
-  public Proxy?: Gkeonprem_BareMetalClusterProxy;
-
-  /*
-The Admin Cluster this Bare Metal User Cluster belongs to.
-This is the full resource name of the Admin Cluster's hub membership.
-*/
-  public AdminClusterMembership?: string;
-
-  // The time the cluster was created, in RFC3339 text format.
-  public CreateTime?: string;
+  annotations?: Map<string, string>;
 
   // A human readable description of this Bare Metal User Cluster.
-  public Description?: string;
+  bareMetalVersion?: string;
+
+  // The location of the resource.
+  location?: string;
 
   /*
-Fleet related configuration.
-Fleets are a Google Cloud concept for logically organizing clusters,
-letting you use and manage multi-cluster capabilities and apply
-consistent policies across your systems.
-See [Anthos Fleets](https://cloud.google.com/anthos/multicluster-management/fleets) for
-more details on Anthos multi-cluster capabilities using Fleets.
+Specifies the node access related settings for the bare metal user cluster.
 Structure is documented below.
 */
-  public Fleets?: Array<Gkeonprem_BareMetalClusterFleet>;
+  nodeAccessConfig?: gkeonprem_BareMetalClusterNodeAccessConfig;
 
   /*
-OS environment related configurations.
+The cluster upgrade policy.
 Structure is documented below.
 */
-  public OsEnvironmentConfig?: Gkeonprem_BareMetalClusterOsEnvironmentConfig;
-
-  // If set, there are currently changes in flight to the Bare Metal User Cluster.
-  public Reconciling?: boolean;
-
-  /*
-(Output)
-The lifecycle state of the condition.
-*/
-  public State?: string;
+  upgradePolicy?: gkeonprem_BareMetalClusterUpgradePolicy;
+}
+export class BareMetalCluster extends Resource {
+  // A human readable description of this Bare Metal User Cluster.
+  public description?: string;
 
   /*
 This checksum is computed by the server based on the value of other
@@ -319,7 +200,16 @@ client has an up-to-date value before proceeding.
 Allows clients to perform consistent read-modify-writes
 through optimistic concurrency control.
 */
-  public Etag?: string;
+  public etag?: string;
+
+  // The unique identifier of the Bare Metal User Cluster.
+  public uid?: string;
+
+  // If set, there are currently changes in flight to the Bare Metal User Cluster.
+  public reconciling?: boolean;
+
+  // The IP address name of Bare Metal User Cluster's API server.
+  public endpoint?: string;
 
   /*
 The object name of the Bare Metal Cluster custom resource on the
@@ -333,190 +223,180 @@ All users should use this name to access their cluster using gkectl or
 kubectl and should expect to see the local name when viewing admin
 cluster controller logs.
 */
-  public LocalName?: string;
+  public localName?: string;
+
+  /*
+Specifies the workload node configurations.
+Structure is documented below.
+*/
+  public maintenanceConfig?: gkeonprem_BareMetalClusterMaintenanceConfig;
 
   /*
 Network configuration.
 Structure is documented below.
 */
-  public NetworkConfig?: Gkeonprem_BareMetalClusterNetworkConfig;
-
-  /*
-Specifies the security related settings for the Bare Metal User Cluster.
-Structure is documented below.
-*/
-  public SecurityConfig?: Gkeonprem_BareMetalClusterSecurityConfig;
-
-  /*
-Specifies the security related settings for the Bare Metal User Cluster.
-Structure is documented below.
-*/
-  public ValidationChecks?: Array<Gkeonprem_BareMetalClusterValidationCheck>;
+  public networkConfig?: gkeonprem_BareMetalClusterNetworkConfig;
 
   // A human readable description of this Bare Metal User Cluster.
-  public BareMetalVersion?: string;
+  public bareMetalVersion?: string;
 
   /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
+All of annotations (key/value pairs) present on the resource in GCP, including the annotations configured through
+Terraform, other clients and services.
 */
-  public Project?: string;
+  public effectiveAnnotations?: Map<string, string>;
 
   /*
-Specifies the User Cluster's observability infrastructure.
+Specifies the load balancer configuration.
 Structure is documented below.
 */
-  public ClusterOperations?: Gkeonprem_BareMetalClusterClusterOperations;
-
-  // The location of the resource.
-  public Location?: string;
+  public loadBalancer?: gkeonprem_BareMetalClusterLoadBalancer;
 
   /*
 (Output)
 Specifies the detailed validation check status
 Structure is documented below.
 */
-  public Statuses?: Array<Gkeonprem_BareMetalClusterStatus>;
+  public statuses?: Array<gkeonprem_BareMetalClusterStatus>;
 
-  // The unique identifier of the Bare Metal User Cluster.
-  public Uid?: string;
+  /*
+The cluster upgrade policy.
+Structure is documented below.
+*/
+  public upgradePolicy?: gkeonprem_BareMetalClusterUpgradePolicy;
+
+  /*
+Specifies the User Cluster's observability infrastructure.
+Structure is documented below.
+*/
+  public clusterOperations?: gkeonprem_BareMetalClusterClusterOperations;
+
+  // The time the cluster was created, in RFC3339 text format.
+  public createTime?: string;
+
+  // The location of the resource.
+  public location?: string;
+
+  /*
+Specifies the node access related settings for the bare metal user cluster.
+Structure is documented below.
+*/
+  public nodeAccessConfig?: gkeonprem_BareMetalClusterNodeAccessConfig;
+
+  /*
+Specifies the security related settings for the Bare Metal User Cluster.
+Structure is documented below.
+*/
+  public securityConfig?: gkeonprem_BareMetalClusterSecurityConfig;
+
+  /*
+Specifies the control plane configuration.
+Structure is documented below.
+*/
+  public controlPlane?: gkeonprem_BareMetalClusterControlPlane;
+
+  /*
+Fleet related configuration.
+Fleets are a Google Cloud concept for logically organizing clusters,
+letting you use and manage multi-cluster capabilities and apply
+consistent policies across your systems.
+See [Anthos Fleets](https://cloud.google.com/anthos/multicluster-management/fleets) for
+more details on Anthos multi-cluster capabilities using Fleets.
+Structure is documented below.
+*/
+  public fleets?: Array<gkeonprem_BareMetalClusterFleet>;
+
+  // The bare metal cluster name.
+  public name?: string;
+
+  /*
+OS environment related configurations.
+Structure is documented below.
+*/
+  public osEnvironmentConfig?: gkeonprem_BareMetalClusterOsEnvironmentConfig;
+
+  /*
+Specifies the security related settings for the Bare Metal User Cluster.
+Structure is documented below.
+*/
+  public validationChecks?: Array<gkeonprem_BareMetalClusterValidationCheck>;
+
+  /*
+Binary Authorization related configurations.
+Structure is documented below.
+*/
+  public binaryAuthorization?: gkeonprem_BareMetalClusterBinaryAuthorization;
+
+  // The time the cluster was deleted, in RFC3339 text format.
+  public deleteTime?: string;
+
+  /*
+Specifies the workload node configurations.
+Structure is documented below.
+*/
+  public nodeConfig?: gkeonprem_BareMetalClusterNodeConfig;
 
   // The time the cluster was last updated, in RFC3339 text format.
-  public UpdateTime?: string;
+  public updateTime?: string;
+
+  /*
+Specifies the cluster proxy configuration.
+Structure is documented below.
+*/
+  public proxy?: gkeonprem_BareMetalClusterProxy;
+
+  /*
+(Output)
+The lifecycle state of the condition.
+*/
+  public state?: string;
+
+  /*
+Specifies the cluster storage configuration.
+Structure is documented below.
+*/
+  public storage?: gkeonprem_BareMetalClusterStorage;
+
+  /*
+The Admin Cluster this Bare Metal User Cluster belongs to.
+This is the full resource name of the Admin Cluster's hub membership.
+*/
+  public adminClusterMembership?: string;
+
+  /*
+Annotations on the Bare Metal User Cluster.
+This field has the same restrictions as Kubernetes annotations.
+The total size of all keys and values combined is limited to 256k.
+Key can have 2 segments: prefix (optional) and name (required),
+separated by a slash (/).
+Prefix must be a DNS subdomain.
+Name must be 63 characters or less, begin and end with alphanumerics,
+with dashes (-), underscores (_), dots (.), and alphanumerics between.
+
+--Note--: This field is non-authoritative, and will only manage the annotations present in your configuration.
+Please refer to the field `effective_annotations` for all of the annotations present on the resource.
+*/
+  public annotations?: Map<string, string>;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "OsEnvironmentConfig",
-        "OS environment related configurations.\nStructure is documented below.",
-        Gkeonprem_BareMetalClusterOsEnvironmentConfig_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "AdminClusterMembership",
-        "The Admin Cluster this Bare Metal User Cluster belongs to.\nThis is the full resource name of the Admin Cluster's hub membership.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "SecurityConfig",
-        "Specifies the security related settings for the Bare Metal User Cluster.\nStructure is documented below.",
-        Gkeonprem_BareMetalClusterSecurityConfig_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "BinaryAuthorization",
-        "Binary Authorization related configurations.\nStructure is documented below.",
-        Gkeonprem_BareMetalClusterBinaryAuthorization_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "NodeConfig",
-        "Specifies the workload node configurations.\nStructure is documented below.",
-        Gkeonprem_BareMetalClusterNodeConfig_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "ControlPlane",
-        "Specifies the control plane configuration.\nStructure is documented below.",
-        Gkeonprem_BareMetalClusterControlPlane_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "The bare metal cluster name.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Map,
-        "Annotations",
-        "Annotations on the Bare Metal User Cluster.\nThis field has the same restrictions as Kubernetes annotations.\nThe total size of all keys and values combined is limited to 256k.\nKey can have 2 segments: prefix (optional) and name (required),\nseparated by a slash (/).\nPrefix must be a DNS subdomain.\nName must be 63 characters or less, begin and end with alphanumerics,\nwith dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
-        InputType_Map_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "NetworkConfig",
-        "Network configuration.\nStructure is documented below.",
-        Gkeonprem_BareMetalClusterNetworkConfig_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "A human readable description of this Bare Metal User Cluster.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "Proxy",
-        "Specifies the cluster proxy configuration.\nStructure is documented below.",
-        Gkeonprem_BareMetalClusterProxy_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "UpgradePolicy",
-        "The cluster upgrade policy.\nStructure is documented below.",
-        Gkeonprem_BareMetalClusterUpgradePolicy_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Location",
-        "The location of the resource.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "NodeAccessConfig",
-        "Specifies the node access related settings for the bare metal user cluster.\nStructure is documented below.",
-        Gkeonprem_BareMetalClusterNodeAccessConfig_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "LoadBalancer",
+        "loadBalancer",
         "Specifies the load balancer configuration.\nStructure is documented below.",
-        Gkeonprem_BareMetalClusterLoadBalancer_GetTypes(),
+        gkeonprem_BareMetalClusterLoadBalancer_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
-        InputType.Object,
-        "ClusterOperations",
-        "Specifies the User Cluster's observability infrastructure.\nStructure is documented below.",
-        Gkeonprem_BareMetalClusterClusterOperations_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -524,15 +404,95 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Storage",
-        "Specifies the cluster storage configuration.\nStructure is documented below.",
-        Gkeonprem_BareMetalClusterStorage_GetTypes(),
-        true,
+        "binaryAuthorization",
+        "Binary Authorization related configurations.\nStructure is documented below.",
+        gkeonprem_BareMetalClusterBinaryAuthorization_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "clusterOperations",
+        "Specifies the User Cluster's observability infrastructure.\nStructure is documented below.",
+        gkeonprem_BareMetalClusterClusterOperations_GetTypes(),
+        false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "BareMetalVersion",
+        "description",
+        "A human readable description of this Bare Metal User Cluster.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "controlPlane",
+        "Specifies the control plane configuration.\nStructure is documented below.",
+        gkeonprem_BareMetalClusterControlPlane_GetTypes(),
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "maintenanceConfig",
+        "Specifies the workload node configurations.\nStructure is documented below.",
+        gkeonprem_BareMetalClusterMaintenanceConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "osEnvironmentConfig",
+        "OS environment related configurations.\nStructure is documented below.",
+        gkeonprem_BareMetalClusterOsEnvironmentConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "location",
+        "The location of the resource.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "securityConfig",
+        "Specifies the security related settings for the Bare Metal User Cluster.\nStructure is documented below.",
+        gkeonprem_BareMetalClusterSecurityConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "adminClusterMembership",
+        "The Admin Cluster this Bare Metal User Cluster belongs to.\nThis is the full resource name of the Admin Cluster's hub membership.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "networkConfig",
+        "Network configuration.\nStructure is documented below.",
+        gkeonprem_BareMetalClusterNetworkConfig_GetTypes(),
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "nodeConfig",
+        "Specifies the workload node configurations.\nStructure is documented below.",
+        gkeonprem_BareMetalClusterNodeConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "bareMetalVersion",
         "A human readable description of this Bare Metal User Cluster.",
         [],
         true,
@@ -540,9 +500,49 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "MaintenanceConfig",
-        "Specifies the workload node configurations.\nStructure is documented below.",
-        Gkeonprem_BareMetalClusterMaintenanceConfig_GetTypes(),
+        "upgradePolicy",
+        "The cluster upgrade policy.\nStructure is documented below.",
+        gkeonprem_BareMetalClusterUpgradePolicy_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "The bare metal cluster name.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "storage",
+        "Specifies the cluster storage configuration.\nStructure is documented below.",
+        gkeonprem_BareMetalClusterStorage_GetTypes(),
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Map,
+        "annotations",
+        "Annotations on the Bare Metal User Cluster.\nThis field has the same restrictions as Kubernetes annotations.\nThe total size of all keys and values combined is limited to 256k.\nKey can have 2 segments: prefix (optional) and name (required),\nseparated by a slash (/).\nPrefix must be a DNS subdomain.\nName must be 63 characters or less, begin and end with alphanumerics,\nwith dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
+        InputType_Map_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "nodeAccessConfig",
+        "Specifies the node access related settings for the bare metal user cluster.\nStructure is documented below.",
+        gkeonprem_BareMetalClusterNodeAccessConfig_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "proxy",
+        "Specifies the cluster proxy configuration.\nStructure is documented below.",
+        gkeonprem_BareMetalClusterProxy_GetTypes(),
         false,
         false,
       ),

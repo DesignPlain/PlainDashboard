@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfig,
-  Gkeonprem_BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfig_GetTypes,
-} from "./Gkeonprem_BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfig";
+  gkeonprem_BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfig,
+  gkeonprem_BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfig_GetTypes,
+} from "./gkeonprem_BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfig";
 
-export interface Gkeonprem_BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfig {
+export interface gkeonprem_BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfig {
   /*
 The generic configuration for a node pool running the control plane.
 Structure is documented below.
 */
-  NodePoolConfig?: Gkeonprem_BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfig;
+  nodePoolConfig?: gkeonprem_BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfig;
 }
 
-export function Gkeonprem_BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "NodePoolConfig",
+      "nodePoolConfig",
       "The generic configuration for a node pool running the control plane.\nStructure is documented below.",
-      Gkeonprem_BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfig_GetTypes(),
+      gkeonprem_BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfig_GetTypes(),
       true,
       false,
     ),

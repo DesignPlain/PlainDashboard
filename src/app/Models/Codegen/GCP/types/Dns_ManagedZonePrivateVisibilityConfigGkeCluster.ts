@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dns_ManagedZonePrivateVisibilityConfigGkeCluster {
+export interface dns_ManagedZonePrivateVisibilityConfigGkeCluster {
   /*
 The resource name of the cluster to bind this ManagedZone to.
 This should be specified in the format like
 `projects/-/locations/-/clusters/-`
 */
-  GkeClusterName?: string;
+  gkeClusterName?: string;
 }
 
-export function Dns_ManagedZonePrivateVisibilityConfigGkeCluster_GetTypes(): DynamicUIProps[] {
+export function dns_ManagedZonePrivateVisibilityConfigGkeCluster_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "GkeClusterName",
+      "gkeClusterName",
       "The resource name of the cluster to bind this ManagedZone to.\nThis should be specified in the format like\n`projects/*/locations/*/clusters/*`",
       [],
       true,

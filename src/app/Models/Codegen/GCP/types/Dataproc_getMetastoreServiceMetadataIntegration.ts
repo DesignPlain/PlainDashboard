@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_getMetastoreServiceMetadataIntegrationDataCatalogConfig,
-  Dataproc_getMetastoreServiceMetadataIntegrationDataCatalogConfig_GetTypes,
-} from "./Dataproc_getMetastoreServiceMetadataIntegrationDataCatalogConfig";
+  dataproc_getMetastoreServiceMetadataIntegrationDataCatalogConfig,
+  dataproc_getMetastoreServiceMetadataIntegrationDataCatalogConfig_GetTypes,
+} from "./dataproc_getMetastoreServiceMetadataIntegrationDataCatalogConfig";
 
-export interface Dataproc_getMetastoreServiceMetadataIntegration {
+export interface dataproc_getMetastoreServiceMetadataIntegration {
   // The integration config for the Data Catalog service.
-  DataCatalogConfigs?: Array<Dataproc_getMetastoreServiceMetadataIntegrationDataCatalogConfig>;
+  dataCatalogConfigs?: Array<dataproc_getMetastoreServiceMetadataIntegrationDataCatalogConfig>;
 }
 
-export function Dataproc_getMetastoreServiceMetadataIntegration_GetTypes(): DynamicUIProps[] {
+export function dataproc_getMetastoreServiceMetadataIntegration_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "DataCatalogConfigs",
+      "dataCatalogConfigs",
       "The integration config for the Data Catalog service.",
-      Dataproc_getMetastoreServiceMetadataIntegrationDataCatalogConfig_GetTypes(),
+      dataproc_getMetastoreServiceMetadataIntegrationDataCatalogConfig_GetTypes(),
       true,
       false,
     ),

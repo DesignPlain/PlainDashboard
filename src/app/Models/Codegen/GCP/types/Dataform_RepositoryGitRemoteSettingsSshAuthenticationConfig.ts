@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataform_RepositoryGitRemoteSettingsSshAuthenticationConfig {
+export interface dataform_RepositoryGitRemoteSettingsSshAuthenticationConfig {
   // Content of a public SSH key to verify an identity of a remote Git host.
-  HostPublicKey?: string;
+  hostPublicKey?: string;
 
   // The name of the Secret Manager secret version to use as a ssh private key for Git operations. Must be in the format projects/-/secrets/-/versions/-.
-  UserPrivateKeySecretVersion?: string;
+  userPrivateKeySecretVersion?: string;
 }
 
-export function Dataform_RepositoryGitRemoteSettingsSshAuthenticationConfig_GetTypes(): DynamicUIProps[] {
+export function dataform_RepositoryGitRemoteSettingsSshAuthenticationConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "HostPublicKey",
+      "hostPublicKey",
       "Content of a public SSH key to verify an identity of a remote Git host.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Dataform_RepositoryGitRemoteSettingsSshAuthenticationConfig_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "UserPrivateKeySecretVersion",
+      "userPrivateKeySecretVersion",
       "The name of the Secret Manager secret version to use as a ssh private key for Git operations. Must be in the format projects/*/secrets/*/versions/*.",
       [],
       true,

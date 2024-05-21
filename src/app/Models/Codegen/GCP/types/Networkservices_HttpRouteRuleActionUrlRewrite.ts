@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_HttpRouteRuleActionUrlRewrite {
+export interface networkservices_HttpRouteRuleActionUrlRewrite {
   // Prior to forwarding the request to the selected destination, the requests host header is replaced by this value.
-  HostRewrite?: string;
+  hostRewrite?: string;
 
   // Prior to forwarding the request to the selected destination, the matching portion of the requests path is replaced by this value.
-  PathPrefixRewrite?: string;
+  pathPrefixRewrite?: string;
 }
 
-export function Networkservices_HttpRouteRuleActionUrlRewrite_GetTypes(): DynamicUIProps[] {
+export function networkservices_HttpRouteRuleActionUrlRewrite_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "HostRewrite",
+      "hostRewrite",
       "Prior to forwarding the request to the selected destination, the requests host header is replaced by this value.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Networkservices_HttpRouteRuleActionUrlRewrite_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "PathPrefixRewrite",
+      "pathPrefixRewrite",
       "Prior to forwarding the request to the selected destination, the matching portion of the requests path is replaced by this value.",
       [],
       false,

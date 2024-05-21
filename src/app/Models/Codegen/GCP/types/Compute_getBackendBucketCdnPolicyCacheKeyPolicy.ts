@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getBackendBucketCdnPolicyCacheKeyPolicy {
+export interface compute_getBackendBucketCdnPolicyCacheKeyPolicy {
   /*
 Allows HTTP request headers (by name) to be used in the
 cache key.
 */
-  IncludeHttpHeaders?: Array<string>;
+  includeHttpHeaders?: Array<string>;
 
   /*
 Names of query string parameters to include in cache keys.
 Default parameters are always included. '&' and '=' will
 be percent encoded and not treated as delimiters.
 */
-  QueryStringWhitelists?: Array<string>;
+  queryStringWhitelists?: Array<string>;
 }
 
-export function Compute_getBackendBucketCdnPolicyCacheKeyPolicy_GetTypes(): DynamicUIProps[] {
+export function compute_getBackendBucketCdnPolicyCacheKeyPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "IncludeHttpHeaders",
+      "includeHttpHeaders",
       "Allows HTTP request headers (by name) to be used in the\ncache key.",
       InputType_String_GetTypes(),
       true,
@@ -33,7 +33,7 @@ export function Compute_getBackendBucketCdnPolicyCacheKeyPolicy_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Array,
-      "QueryStringWhitelists",
+      "queryStringWhitelists",
       "Names of query string parameters to include in cache keys.\nDefault parameters are always included. '&' and '=' will\nbe percent encoded and not treated as delimiters.",
       InputType_String_GetTypes(),
       true,

@@ -6,64 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_VMwareClusterValidationCheckStatusResult {
-  /*
-(Output)
-The category of the validation.
-*/
-  Category?: string;
-
-  // A human readable description of this VMware User Cluster.
-  Description?: string;
-
-  /*
-(Output)
-Detailed failure information, which might be unformatted.
-*/
-  Details?: string;
-
+export interface gkeonprem_VMwareClusterValidationCheckStatusResult {
   /*
 (Output)
 Options used for the validation check.
 */
-  Options?: string;
+  options?: string;
 
   /*
 (Output)
 Machine-readable message indicating details about last transition.
 */
-  Reason?: string;
+  reason?: string;
+
+  /*
+(Output)
+The category of the validation.
+*/
+  category?: string;
+
+  // A human readable description of this VMware User Cluster.
+  description?: string;
+
+  /*
+(Output)
+Detailed failure information, which might be unformatted.
+*/
+  details?: string;
 }
 
-export function Gkeonprem_VMwareClusterValidationCheckStatusResult_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterValidationCheckStatusResult_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Category",
-      "(Output)\nThe category of the validation.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Description",
-      "A human readable description of this VMware User Cluster.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Details",
-      "(Output)\nDetailed failure information, which might be unformatted.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Options",
+      "options",
       "(Output)\nOptions used for the validation check.",
       [],
       false,
@@ -71,8 +47,32 @@ export function Gkeonprem_VMwareClusterValidationCheckStatusResult_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.String,
-      "Reason",
+      "reason",
       "(Output)\nMachine-readable message indicating details about last transition.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "category",
+      "(Output)\nThe category of the validation.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "description",
+      "A human readable description of this VMware User Cluster.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "details",
+      "(Output)\nDetailed failure information, which might be unformatted.",
       [],
       false,
       false,

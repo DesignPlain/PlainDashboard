@@ -6,55 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Artifactregistry_getRepositoryCleanupPolicyCondition {
+export interface artifactregistry_getRepositoryCleanupPolicyCondition {
   // Match versions by tag status. Default value: "ANY" Possible values: ["TAGGED", "UNTAGGED", "ANY"]
-  TagState?: string;
+  tagState?: string;
 
   // Match versions by version name prefix. Applied on any prefix match.
-  VersionNamePrefixes?: Array<string>;
+  versionNamePrefixes?: Array<string>;
 
   // Match versions newer than a duration.
-  NewerThan?: string;
+  newerThan?: string;
 
   // Match versions older than a duration.
-  OlderThan?: string;
+  olderThan?: string;
 
   // Match versions by package prefix. Applied on any prefix match.
-  PackageNamePrefixes?: Array<string>;
+  packageNamePrefixes?: Array<string>;
 
   // Match versions by tag prefix. Applied on any prefix match.
-  TagPrefixes?: Array<string>;
+  tagPrefixes?: Array<string>;
 }
 
-export function Artifactregistry_getRepositoryCleanupPolicyCondition_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_getRepositoryCleanupPolicyCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "PackageNamePrefixes",
-      "Match versions by package prefix. Applied on any prefix match.",
-      InputType_String_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "TagPrefixes",
-      "Match versions by tag prefix. Applied on any prefix match.",
-      InputType_String_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "TagState",
-      'Match versions by tag status. Default value: "ANY" Possible values: ["TAGGED", "UNTAGGED", "ANY"]',
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "VersionNamePrefixes",
+      "versionNamePrefixes",
       "Match versions by version name prefix. Applied on any prefix match.",
       InputType_String_GetTypes(),
       true,
@@ -62,7 +38,7 @@ export function Artifactregistry_getRepositoryCleanupPolicyCondition_GetTypes():
     ),
     new DynamicUIProps(
       InputType.String,
-      "NewerThan",
+      "newerThan",
       "Match versions newer than a duration.",
       [],
       true,
@@ -70,8 +46,32 @@ export function Artifactregistry_getRepositoryCleanupPolicyCondition_GetTypes():
     ),
     new DynamicUIProps(
       InputType.String,
-      "OlderThan",
+      "olderThan",
       "Match versions older than a duration.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "packageNamePrefixes",
+      "Match versions by package prefix. Applied on any prefix match.",
+      InputType_String_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "tagPrefixes",
+      "Match versions by tag prefix. Applied on any prefix match.",
+      InputType_String_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "tagState",
+      'Match versions by tag status. Default value: "ANY" Possible values: ["TAGGED", "UNTAGGED", "ANY"]',
       [],
       true,
       false,

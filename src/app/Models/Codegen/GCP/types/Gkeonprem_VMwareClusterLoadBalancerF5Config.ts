@@ -6,29 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_VMwareClusterLoadBalancerF5Config {
+export interface gkeonprem_VMwareClusterLoadBalancerF5Config {
+  // The pool name. Only necessary, if using SNAT.
+  snatPool?: string;
+
   /*
 (Output)
 The vCenter IP address.
 */
-  Address?: string;
+  address?: string;
 
   /*
 he preexisting partition to be used by the load balancer. T
 his partition is usually created for the admin cluster for example:
 'my-f5-admin-partition'.
 */
-  Partition?: string;
-
-  // The pool name. Only necessary, if using SNAT.
-  SnatPool?: string;
+  partition?: string;
 }
 
-export function Gkeonprem_VMwareClusterLoadBalancerF5Config_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterLoadBalancerF5Config_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Address",
+      "snatPool",
+      "The pool name. Only necessary, if using SNAT.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "address",
       "(Output)\nThe vCenter IP address.",
       [],
       false,
@@ -36,16 +44,8 @@ export function Gkeonprem_VMwareClusterLoadBalancerF5Config_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "Partition",
+      "partition",
       "he preexisting partition to be used by the load balancer. T\nhis partition is usually created for the admin cluster for example:\n'my-f5-admin-partition'.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "SnatPool",
-      "The pool name. Only necessary, if using SNAT.",
       [],
       false,
       false,

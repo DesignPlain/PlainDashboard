@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Folder_getOrganizationPolicyRestorePolicy {
+export interface folder_getOrganizationPolicyRestorePolicy {
   // May only be set to true. If set, then the default Policy is restored.
-  Default?: boolean;
+  default?: boolean;
 }
 
-export function Folder_getOrganizationPolicyRestorePolicy_GetTypes(): DynamicUIProps[] {
+export function folder_getOrganizationPolicyRestorePolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Default",
+      "default",
       "May only be set to true. If set, then the default Policy is restored.",
       [],
       true,

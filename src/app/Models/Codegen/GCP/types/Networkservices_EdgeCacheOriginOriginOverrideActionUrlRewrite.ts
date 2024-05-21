@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite {
+export interface networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite {
   /*
 Prior to forwarding the request to the selected
 origin, the request's host header is replaced with
 contents of the hostRewrite.
 This value must be between 1 and 255 characters.
 */
-  HostRewrite?: string;
+  hostRewrite?: string;
 }
 
-export function Networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite_GetTypes(): DynamicUIProps[] {
+export function networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "HostRewrite",
+      "hostRewrite",
       "Prior to forwarding the request to the selected\norigin, the request's host header is replaced with\ncontents of the hostRewrite.\nThis value must be between 1 and 255 characters.",
       [],
       false,

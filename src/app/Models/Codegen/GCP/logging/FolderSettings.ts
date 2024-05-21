@@ -8,11 +8,14 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface FolderSettingsArgs {
+  // The resource name for the configured Cloud KMS key.
+  kmsKeyName?: string;
+
   // The storage location that Cloud Logging will use to create new resources when a location is needed but not explicitly provided.
-  StorageLocation?: string;
+  storageLocation?: string;
 
   // If set to true, the _Default sink in newly created projects and folders will created in a disabled state. This can be used to automatically disable log storage if there is already an aggregated sink configured in the hierarchy. The _Default sink can be re-enabled manually if needed.
-  DisableDefaultSink?: boolean;
+  disableDefaultSink?: boolean;
 
   /*
 The folder for which to retrieve settings.
@@ -20,29 +23,14 @@ The folder for which to retrieve settings.
 
 - - -
 */
-  Folder?: string;
-
-  // The resource name for the configured Cloud KMS key.
-  KmsKeyName?: string;
+  folder?: string;
 }
 export class FolderSettings extends Resource {
-  // The resource name for the configured Cloud KMS key.
-  public KmsKeyName?: string;
-
-  // The service account that will be used by the Log Router to access your Cloud KMS key.
-  public KmsServiceAccountId?: string;
-
-  // The service account for the given container. Sinks use this service account as their writerIdentity if no custom service account is provided.
-  public LoggingServiceAccountId?: string;
-
-  // The resource name of the settings.
-  public Name?: string;
-
   // The storage location that Cloud Logging will use to create new resources when a location is needed but not explicitly provided.
-  public StorageLocation?: string;
+  public storageLocation?: string;
 
   // If set to true, the _Default sink in newly created projects and folders will created in a disabled state. This can be used to automatically disable log storage if there is already an aggregated sink configured in the hierarchy. The _Default sink can be re-enabled manually if needed.
-  public DisableDefaultSink?: boolean;
+  public disableDefaultSink?: boolean;
 
   /*
 The folder for which to retrieve settings.
@@ -50,21 +38,25 @@ The folder for which to retrieve settings.
 
 - - -
 */
-  public Folder?: string;
+  public folder?: string;
+
+  // The resource name for the configured Cloud KMS key.
+  public kmsKeyName?: string;
+
+  // The service account that will be used by the Log Router to access your Cloud KMS key.
+  public kmsServiceAccountId?: string;
+
+  // The service account for the given container. Sinks use this service account as their writerIdentity if no custom service account is provided.
+  public loggingServiceAccountId?: string;
+
+  // The resource name of the settings.
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "StorageLocation",
-        "The storage location that Cloud Logging will use to create new resources when a location is needed but not explicitly provided.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.Bool,
-        "DisableDefaultSink",
+        "disableDefaultSink",
         "If set to true, the _Default sink in newly created projects and folders will created in a disabled state. This can be used to automatically disable log storage if there is already an aggregated sink configured in the hierarchy. The _Default sink can be re-enabled manually if needed.",
         [],
         false,
@@ -72,7 +64,7 @@ The folder for which to retrieve settings.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Folder",
+        "folder",
         "The folder for which to retrieve settings.\n\n\n- - -",
         [],
         true,
@@ -80,8 +72,16 @@ The folder for which to retrieve settings.
       ),
       new DynamicUIProps(
         InputType.String,
-        "KmsKeyName",
+        "kmsKeyName",
         "The resource name for the configured Cloud KMS key.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "storageLocation",
+        "The storage location that Cloud Logging will use to create new resources when a location is needed but not explicitly provided.",
         [],
         false,
         false,

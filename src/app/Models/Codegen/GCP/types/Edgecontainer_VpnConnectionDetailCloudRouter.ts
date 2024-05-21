@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Edgecontainer_VpnConnectionDetailCloudRouter {
+export interface edgecontainer_VpnConnectionDetailCloudRouter {
   // The resource name of VPN connection
-  Name?: string;
+  name?: string;
 }
 
-export function Edgecontainer_VpnConnectionDetailCloudRouter_GetTypes(): DynamicUIProps[] {
+export function edgecontainer_VpnConnectionDetailCloudRouter_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The resource name of VPN connection",
       [],
       false,

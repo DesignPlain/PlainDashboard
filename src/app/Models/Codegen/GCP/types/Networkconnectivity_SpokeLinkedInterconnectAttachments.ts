@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkconnectivity_SpokeLinkedInterconnectAttachments {
+export interface networkconnectivity_SpokeLinkedInterconnectAttachments {
   // A value that controls whether site-to-site data transfer is enabled for these resources. Note that data transfer is available only in supported locations.
-  SiteToSiteDataTransfer?: boolean;
+  siteToSiteDataTransfer?: boolean;
 
   // The URIs of linked interconnect attachment resources
-  Uris?: Array<string>;
+  uris?: Array<string>;
 }
 
-export function Networkconnectivity_SpokeLinkedInterconnectAttachments_GetTypes(): DynamicUIProps[] {
+export function networkconnectivity_SpokeLinkedInterconnectAttachments_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "SiteToSiteDataTransfer",
+      "siteToSiteDataTransfer",
       "A value that controls whether site-to-site data transfer is enabled for these resources. Note that data transfer is available only in supported locations.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Networkconnectivity_SpokeLinkedInterconnectAttachments_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Uris",
+      "uris",
       "The URIs of linked interconnect attachment resources",
       InputType_String_GetTypes(),
       true,

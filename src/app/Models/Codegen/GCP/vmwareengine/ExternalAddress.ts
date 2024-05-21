@@ -9,10 +9,10 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface ExternalAddressArgs {
   // User-provided description for this resource.
-  Description?: string;
+  description?: string;
 
   // The internal IP address of a workload VM.
-  InternalIp?: string;
+  internalIp?: string;
 
   /*
 The ID of the external IP Address.
@@ -20,65 +20,65 @@ The ID of the external IP Address.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   /*
 The resource name of the private cloud to create a new external address in.
 Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.
 For example: projects/my-project/locations/us-west1-a/privateClouds/my-cloud
 */
-  Parent?: string;
+  parent?: string;
 }
 export class ExternalAddress extends Resource {
-  /*
-The ID of the external IP Address.
-
-
-- - -
-*/
-  public Name?: string;
-
-  /*
-The resource name of the private cloud to create a new external address in.
-Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.
-For example: projects/my-project/locations/us-west1-a/privateClouds/my-cloud
-*/
-  public Parent?: string;
-
-  // System-generated unique identifier for the resource.
-  public Uid?: string;
-
-  /*
-Creation time of this resource.
-A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and
-up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
-*/
-  public CreateTime?: string;
-
   // The external IP address of a workload VM.
-  public ExternalIp?: string;
+  public externalIp?: string;
 
   // State of the resource.
-  public State?: string;
+  public state?: string;
 
   /*
 Last updated time of this resource.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine
 fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  public UpdateTime?: string;
+  public updateTime?: string;
+
+  /*
+Creation time of this resource.
+A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and
+up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
+*/
+  public createTime?: string;
 
   // User-provided description for this resource.
-  public Description?: string;
+  public description?: string;
 
   // The internal IP address of a workload VM.
-  public InternalIp?: string;
+  public internalIp?: string;
+
+  /*
+The ID of the external IP Address.
+
+
+- - -
+*/
+  public name?: string;
+
+  /*
+The resource name of the private cloud to create a new external address in.
+Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.
+For example: projects/my-project/locations/us-west1-a/privateClouds/my-cloud
+*/
+  public parent?: string;
+
+  // System-generated unique identifier for the resource.
+  public uid?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "User-provided description for this resource.",
         [],
         false,
@@ -86,7 +86,7 @@ fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045
       ),
       new DynamicUIProps(
         InputType.String,
-        "InternalIp",
+        "internalIp",
         "The internal IP address of a workload VM.",
         [],
         true,
@@ -94,7 +94,7 @@ fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The ID of the external IP Address.\n\n\n- - -",
         [],
         false,
@@ -102,7 +102,7 @@ fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045
       ),
       new DynamicUIProps(
         InputType.String,
-        "Parent",
+        "parent",
         "The resource name of the private cloud to create a new external address in.\nResource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.\nFor example: projects/my-project/locations/us-west1-a/privateClouds/my-cloud",
         [],
         true,

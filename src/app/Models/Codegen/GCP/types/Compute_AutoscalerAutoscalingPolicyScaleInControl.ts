@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_AutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas,
-  Compute_AutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas_GetTypes,
-} from "./Compute_AutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas";
+  compute_AutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas,
+  compute_AutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas_GetTypes,
+} from "./compute_AutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas";
 
-export interface Compute_AutoscalerAutoscalingPolicyScaleInControl {
+export interface compute_AutoscalerAutoscalingPolicyScaleInControl {
   /*
 A nested object resource
 Structure is documented below.
 */
-  MaxScaledInReplicas?: Compute_AutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas;
+  maxScaledInReplicas?: compute_AutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas;
 
   /*
 How long back autoscaling should look when computing recommendations
 to include directives regarding slower scale down, as described above.
 */
-  TimeWindowSec?: number;
+  timeWindowSec?: number;
 }
 
-export function Compute_AutoscalerAutoscalingPolicyScaleInControl_GetTypes(): DynamicUIProps[] {
+export function compute_AutoscalerAutoscalingPolicyScaleInControl_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "MaxScaledInReplicas",
+      "maxScaledInReplicas",
       "A nested object resource\nStructure is documented below.",
-      Compute_AutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas_GetTypes(),
+      compute_AutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "TimeWindowSec",
+      "timeWindowSec",
       "How long back autoscaling should look when computing recommendations\nto include directives regarding slower scale down, as described above.",
       [],
       false,

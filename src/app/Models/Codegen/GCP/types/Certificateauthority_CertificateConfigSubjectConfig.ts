@@ -6,44 +6,44 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificateauthority_CertificateConfigSubjectConfigSubject,
-  Certificateauthority_CertificateConfigSubjectConfigSubject_GetTypes,
-} from "./Certificateauthority_CertificateConfigSubjectConfigSubject";
+  certificateauthority_CertificateConfigSubjectConfigSubjectAltName,
+  certificateauthority_CertificateConfigSubjectConfigSubjectAltName_GetTypes,
+} from "./certificateauthority_CertificateConfigSubjectConfigSubjectAltName";
 import {
-  Certificateauthority_CertificateConfigSubjectConfigSubjectAltName,
-  Certificateauthority_CertificateConfigSubjectConfigSubjectAltName_GetTypes,
-} from "./Certificateauthority_CertificateConfigSubjectConfigSubjectAltName";
+  certificateauthority_CertificateConfigSubjectConfigSubject,
+  certificateauthority_CertificateConfigSubjectConfigSubject_GetTypes,
+} from "./certificateauthority_CertificateConfigSubjectConfigSubject";
 
-export interface Certificateauthority_CertificateConfigSubjectConfig {
+export interface certificateauthority_CertificateConfigSubjectConfig {
   /*
 Contains distinguished name fields such as the location and organization.
 Structure is documented below.
 */
-  Subject?: Certificateauthority_CertificateConfigSubjectConfigSubject;
+  subject?: certificateauthority_CertificateConfigSubjectConfigSubject;
 
   /*
 The subject alternative name fields.
 Structure is documented below.
 */
-  SubjectAltName?: Certificateauthority_CertificateConfigSubjectConfigSubjectAltName;
+  subjectAltName?: certificateauthority_CertificateConfigSubjectConfigSubjectAltName;
 }
 
-export function Certificateauthority_CertificateConfigSubjectConfig_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CertificateConfigSubjectConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Subject",
-      "Contains distinguished name fields such as the location and organization.\nStructure is documented below.",
-      Certificateauthority_CertificateConfigSubjectConfigSubject_GetTypes(),
-      true,
+      "subjectAltName",
+      "The subject alternative name fields.\nStructure is documented below.",
+      certificateauthority_CertificateConfigSubjectConfigSubjectAltName_GetTypes(),
+      false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "SubjectAltName",
-      "The subject alternative name fields.\nStructure is documented below.",
-      Certificateauthority_CertificateConfigSubjectConfigSubjectAltName_GetTypes(),
-      false,
+      "subject",
+      "Contains distinguished name fields such as the location and organization.\nStructure is documented below.",
+      certificateauthority_CertificateConfigSubjectConfigSubject_GetTypes(),
+      true,
       true,
     ),
   ];

@@ -6,32 +6,32 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxPageTransitionRouteTriggerFulfillmentMessageText {
+export interface diagflow_CxPageTransitionRouteTriggerFulfillmentMessageText {
   /*
 (Output)
 Whether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.
 */
-  AllowPlaybackInterruption?: boolean;
+  allowPlaybackInterruption?: boolean;
 
   // A collection of text responses.
-  Texts?: Array<string>;
+  texts?: Array<string>;
 }
 
-export function Diagflow_CxPageTransitionRouteTriggerFulfillmentMessageText_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxPageTransitionRouteTriggerFulfillmentMessageText_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "Texts",
-      "A collection of text responses.",
-      InputType_String_GetTypes(),
+      InputType.Bool,
+      "allowPlaybackInterruption",
+      "(Output)\nWhether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.",
+      [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Bool,
-      "AllowPlaybackInterruption",
-      "(Output)\nWhether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.",
-      [],
+      InputType.Array,
+      "texts",
+      "A collection of text responses.",
+      InputType_String_GetTypes(),
       false,
       false,
     ),

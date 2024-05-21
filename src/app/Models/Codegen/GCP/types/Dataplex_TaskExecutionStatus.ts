@@ -6,38 +6,38 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataplex_TaskExecutionStatusLatestJob,
-  Dataplex_TaskExecutionStatusLatestJob_GetTypes,
-} from "./Dataplex_TaskExecutionStatusLatestJob";
+  dataplex_TaskExecutionStatusLatestJob,
+  dataplex_TaskExecutionStatusLatestJob_GetTypes,
+} from "./dataplex_TaskExecutionStatusLatestJob";
 
-export interface Dataplex_TaskExecutionStatus {
+export interface dataplex_TaskExecutionStatus {
   /*
 (Output)
 latest job execution.
 Structure is documented below.
 */
-  LatestJobs?: Array<Dataplex_TaskExecutionStatusLatestJob>;
+  latestJobs?: Array<dataplex_TaskExecutionStatusLatestJob>;
 
   /*
 (Output)
 Last update time of the status.
 */
-  UpdateTime?: string;
+  updateTime?: string;
 }
 
-export function Dataplex_TaskExecutionStatus_GetTypes(): DynamicUIProps[] {
+export function dataplex_TaskExecutionStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "LatestJobs",
+      "latestJobs",
       "(Output)\nlatest job execution.\nStructure is documented below.",
-      Dataplex_TaskExecutionStatusLatestJob_GetTypes(),
+      dataplex_TaskExecutionStatusLatestJob_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "UpdateTime",
+      "updateTime",
       "(Output)\nLast update time of the status.",
       [],
       false,

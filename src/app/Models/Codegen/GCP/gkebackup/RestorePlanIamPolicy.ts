@@ -8,45 +8,54 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface RestorePlanIamPolicyArgs {
+  // The region of the Restore Plan.
+  location?: string;
+
+  // The full name of the BackupPlan Resource.
+  name?: string;
+
+  //
+  policyData?: string;
+
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
-
-  // The region of the Restore Plan.
-  Location?: string;
-
-  // The full name of the BackupPlan Resource.
-  Name?: string;
-
-  //
-  PolicyData?: string;
+  project?: string;
 }
 export class RestorePlanIamPolicy extends Resource {
   //
-  public PolicyData?: string;
+  public etag?: string;
+
+  // The region of the Restore Plan.
+  public location?: string;
+
+  // The full name of the BackupPlan Resource.
+  public name?: string;
+
+  //
+  public policyData?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
-
-  //
-  public Etag?: string;
-
-  // The region of the Restore Plan.
-  public Location?: string;
-
-  // The full name of the BackupPlan Resource.
-  public Name?: string;
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "name",
+        "The full name of the BackupPlan Resource.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(InputType.String, "policyData", "", [], true, false),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -54,21 +63,12 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The region of the Restore Plan.",
         [],
         false,
         true,
       ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "The full name of the BackupPlan Resource.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(InputType.String, "PolicyData", "", [], true, false),
     ];
   }
 }

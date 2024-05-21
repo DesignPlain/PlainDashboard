@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getMachineTypesMachineTypeDeprecated {
+export interface compute_getMachineTypesMachineTypeDeprecated {
   // The URL of the suggested replacement for a deprecated machine type.
-  Replacement?: string;
+  replacement?: string;
 
   // The deprecation state of this resource. This can be `ACTIVE`, `DEPRECATED`, `OBSOLETE`, or `DELETED`.
-  State?: string;
+  state?: string;
 }
 
-export function Compute_getMachineTypesMachineTypeDeprecated_GetTypes(): DynamicUIProps[] {
+export function compute_getMachineTypesMachineTypeDeprecated_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Replacement",
+      "replacement",
       "The URL of the suggested replacement for a deprecated machine type.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Compute_getMachineTypesMachineTypeDeprecated_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "The deprecation state of this resource. This can be `ACTIVE`, `DEPRECATED`, `OBSOLETE`, or `DELETED`.",
       [],
       true,

@@ -6,60 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterNodeConfigGuestAcceleratorGpuSharingConfig,
-  Container_getClusterNodeConfigGuestAcceleratorGpuSharingConfig_GetTypes,
-} from "./Container_getClusterNodeConfigGuestAcceleratorGpuSharingConfig";
+  container_getClusterNodeConfigGuestAcceleratorGpuSharingConfig,
+  container_getClusterNodeConfigGuestAcceleratorGpuSharingConfig_GetTypes,
+} from "./container_getClusterNodeConfigGuestAcceleratorGpuSharingConfig";
 import {
-  Container_getClusterNodeConfigGuestAcceleratorGpuDriverInstallationConfig,
-  Container_getClusterNodeConfigGuestAcceleratorGpuDriverInstallationConfig_GetTypes,
-} from "./Container_getClusterNodeConfigGuestAcceleratorGpuDriverInstallationConfig";
+  container_getClusterNodeConfigGuestAcceleratorGpuDriverInstallationConfig,
+  container_getClusterNodeConfigGuestAcceleratorGpuDriverInstallationConfig_GetTypes,
+} from "./container_getClusterNodeConfigGuestAcceleratorGpuDriverInstallationConfig";
 
-export interface Container_getClusterNodeConfigGuestAccelerator {
+export interface container_getClusterNodeConfigGuestAccelerator {
+  // Size of partitions to create on the GPU. Valid values are described in the NVIDIA mig user guide (https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning)
+  gpuPartitionSize?: string;
+
   // Configuration for GPU sharing.
-  GpuSharingConfigs?: Array<Container_getClusterNodeConfigGuestAcceleratorGpuSharingConfig>;
+  gpuSharingConfigs?: Array<container_getClusterNodeConfigGuestAcceleratorGpuSharingConfig>;
 
   // The accelerator type resource name.
-  Type?: string;
+  type?: string;
 
   // The number of the accelerator cards exposed to an instance.
-  Count?: number;
+  count?: number;
 
   // Configuration for auto installation of GPU driver.
-  GpuDriverInstallationConfigs?: Array<Container_getClusterNodeConfigGuestAcceleratorGpuDriverInstallationConfig>;
-
-  // Size of partitions to create on the GPU. Valid values are described in the NVIDIA mig user guide (https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning)
-  GpuPartitionSize?: string;
+  gpuDriverInstallationConfigs?: Array<container_getClusterNodeConfigGuestAcceleratorGpuDriverInstallationConfig>;
 }
 
-export function Container_getClusterNodeConfigGuestAccelerator_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodeConfigGuestAccelerator_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Type",
-      "The accelerator type resource name.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Count",
-      "The number of the accelerator cards exposed to an instance.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "GpuDriverInstallationConfigs",
-      "Configuration for auto installation of GPU driver.",
-      Container_getClusterNodeConfigGuestAcceleratorGpuDriverInstallationConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "GpuPartitionSize",
+      "gpuPartitionSize",
       "Size of partitions to create on the GPU. Valid values are described in the NVIDIA mig user guide (https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning)",
       [],
       true,
@@ -67,9 +43,33 @@ export function Container_getClusterNodeConfigGuestAccelerator_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Array,
-      "GpuSharingConfigs",
+      "gpuSharingConfigs",
       "Configuration for GPU sharing.",
-      Container_getClusterNodeConfigGuestAcceleratorGpuSharingConfig_GetTypes(),
+      container_getClusterNodeConfigGuestAcceleratorGpuSharingConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "type",
+      "The accelerator type resource name.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "count",
+      "The number of the accelerator cards exposed to an instance.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "gpuDriverInstallationConfigs",
+      "Configuration for auto installation of GPU driver.",
+      container_getClusterNodeConfigGuestAcceleratorGpuDriverInstallationConfig_GetTypes(),
       true,
       false,
     ),

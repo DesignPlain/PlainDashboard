@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterMonitoringConfigManagedPrometheus {
+export interface container_ClusterMonitoringConfigManagedPrometheus {
   // Whether or not the managed collection is enabled.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_ClusterMonitoringConfigManagedPrometheus_GetTypes(): DynamicUIProps[] {
+export function container_ClusterMonitoringConfigManagedPrometheus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether or not the managed collection is enabled.",
       [],
       true,

@@ -7,129 +7,97 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataform_RepositoryReleaseConfigCodeCompilationConfig,
-  Dataform_RepositoryReleaseConfigCodeCompilationConfig_GetTypes,
-} from "../types/Dataform_RepositoryReleaseConfigCodeCompilationConfig";
+  dataform_RepositoryReleaseConfigCodeCompilationConfig,
+  dataform_RepositoryReleaseConfigCodeCompilationConfig_GetTypes,
+} from "../types/dataform_RepositoryReleaseConfigCodeCompilationConfig";
 import {
-  Dataform_RepositoryReleaseConfigRecentScheduledReleaseRecord,
-  Dataform_RepositoryReleaseConfigRecentScheduledReleaseRecord_GetTypes,
-} from "../types/Dataform_RepositoryReleaseConfigRecentScheduledReleaseRecord";
+  dataform_RepositoryReleaseConfigRecentScheduledReleaseRecord,
+  dataform_RepositoryReleaseConfigRecentScheduledReleaseRecord_GetTypes,
+} from "../types/dataform_RepositoryReleaseConfigRecentScheduledReleaseRecord";
 
 export interface RepositoryReleaseConfigArgs {
+  // Optional. Optional schedule (in cron format) for automatic creation of compilation results.
+  cronSchedule?: string;
+
   /*
 Git commit/tag/branch name at which the repository should be compiled. Must exist in the remote repository.
 
 
 - - -
 */
-  GitCommitish?: string;
+  gitCommitish?: string;
 
   // The release's name.
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // A reference to the region
-  Region?: string;
+  region?: string;
 
   // A reference to the Dataform repository
-  Repository?: string;
+  repository?: string;
 
   // Optional. Specifies the time zone to be used when interpreting cronSchedule. Must be a time zone name from the time zone database (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is UTC.
-  TimeZone?: string;
+  timeZone?: string;
 
   /*
 Optional. If set, fields of codeCompilationConfig override the default compilation settings that are specified in dataform.json.
 Structure is documented below.
 */
-  CodeCompilationConfig?: Dataform_RepositoryReleaseConfigCodeCompilationConfig;
-
-  // Optional. Optional schedule (in cron format) for automatic creation of compilation results.
-  CronSchedule?: string;
+  codeCompilationConfig?: dataform_RepositoryReleaseConfigCodeCompilationConfig;
 }
 export class RepositoryReleaseConfig extends Resource {
   /*
-Optional. If set, fields of codeCompilationConfig override the default compilation settings that are specified in dataform.json.
-Structure is documented below.
-*/
-  public CodeCompilationConfig?: Dataform_RepositoryReleaseConfigCodeCompilationConfig;
-
-  /*
-Git commit/tag/branch name at which the repository should be compiled. Must exist in the remote repository.
-
-
-- - -
-*/
-  public GitCommitish?: string;
-
-  /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
-
-  // A reference to the region
-  public Region?: string;
-
-  // Optional. Optional schedule (in cron format) for automatic creation of compilation results.
-  public CronSchedule?: string;
-
-  // The release's name.
-  public Name?: string;
+  public project?: string;
 
   /*
 Records of the 10 most recent scheduled release attempts, ordered in in descending order of releaseTime. Updated whenever automatic creation of a compilation result is triggered by cronSchedule.
 Structure is documented below.
 */
-  public RecentScheduledReleaseRecords?: Array<Dataform_RepositoryReleaseConfigRecentScheduledReleaseRecord>;
-
-  // A reference to the Dataform repository
-  public Repository?: string;
+  public recentScheduledReleaseRecords?: Array<dataform_RepositoryReleaseConfigRecentScheduledReleaseRecord>;
 
   // Optional. Specifies the time zone to be used when interpreting cronSchedule. Must be a time zone name from the time zone database (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is UTC.
-  public TimeZone?: string;
+  public timeZone?: string;
+
+  /*
+Optional. If set, fields of codeCompilationConfig override the default compilation settings that are specified in dataform.json.
+Structure is documented below.
+*/
+  public codeCompilationConfig?: dataform_RepositoryReleaseConfigCodeCompilationConfig;
+
+  // Optional. Optional schedule (in cron format) for automatic creation of compilation results.
+  public cronSchedule?: string;
+
+  /*
+Git commit/tag/branch name at which the repository should be compiled. Must exist in the remote repository.
+
+
+- - -
+*/
+  public gitCommitish?: string;
+
+  // The release's name.
+  public name?: string;
+
+  // A reference to the region
+  public region?: string;
+
+  // A reference to the Dataform repository
+  public repository?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Name",
-        "The release's name.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Region",
-        "A reference to the region",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Repository",
-        "A reference to the Dataform repository",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "TimeZone",
+        "timeZone",
         "Optional. Specifies the time zone to be used when interpreting cronSchedule. Must be a time zone name from the time zone database (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is UTC.",
         [],
         false,
@@ -137,15 +105,15 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "CodeCompilationConfig",
+        "codeCompilationConfig",
         "Optional. If set, fields of codeCompilationConfig override the default compilation settings that are specified in dataform.json.\nStructure is documented below.",
-        Dataform_RepositoryReleaseConfigCodeCompilationConfig_GetTypes(),
+        dataform_RepositoryReleaseConfigCodeCompilationConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "CronSchedule",
+        "cronSchedule",
         "Optional. Optional schedule (in cron format) for automatic creation of compilation results.",
         [],
         false,
@@ -153,11 +121,43 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "GitCommitish",
+        "gitCommitish",
         "Git commit/tag/branch name at which the repository should be compiled. Must exist in the remote repository.\n\n\n- - -",
         [],
         true,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "The release's name.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "region",
+        "A reference to the region",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "repository",
+        "A reference to the Dataform repository",
+        [],
+        false,
+        true,
       ),
     ];
   }

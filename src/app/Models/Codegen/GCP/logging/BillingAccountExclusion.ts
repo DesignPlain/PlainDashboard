@@ -8,64 +8,56 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface BillingAccountExclusionArgs {
-  /*
-The filter to apply when excluding logs. Only log entries that match the filter are excluded.
-See [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced-filters) for information on how to
-write a filter.
-*/
-  Filter?: string;
-
-  // The name of the logging exclusion.
-  Name?: string;
-
   // The billing account to create the exclusion for.
-  BillingAccount?: string;
+  billingAccount?: string;
 
   // A human-readable description.
-  Description?: string;
+  description?: string;
 
   /*
 Whether this exclusion rule should be disabled or not. This defaults to
 false.
 */
-  Disabled?: boolean;
+  disabled?: boolean;
+
+  /*
+The filter to apply when excluding logs. Only log entries that match the filter are excluded.
+See [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced-filters) for information on how to
+write a filter.
+*/
+  filter?: string;
+
+  // The name of the logging exclusion.
+  name?: string;
 }
 export class BillingAccountExclusion extends Resource {
+  // The name of the logging exclusion.
+  public name?: string;
+
   // The billing account to create the exclusion for.
-  public BillingAccount?: string;
+  public billingAccount?: string;
 
   // A human-readable description.
-  public Description?: string;
+  public description?: string;
 
   /*
 Whether this exclusion rule should be disabled or not. This defaults to
 false.
 */
-  public Disabled?: boolean;
+  public disabled?: boolean;
 
   /*
 The filter to apply when excluding logs. Only log entries that match the filter are excluded.
 See [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced-filters) for information on how to
 write a filter.
 */
-  public Filter?: string;
-
-  // The name of the logging exclusion.
-  public Name?: string;
+  public filter?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Bool,
-        "Disabled",
-        "Whether this exclusion rule should be disabled or not. This defaults to\nfalse.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Filter",
+        "filter",
         "The filter to apply when excluding logs. Only log entries that match the filter are excluded.\nSee [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced-filters) for information on how to\nwrite a filter.",
         [],
         true,
@@ -73,7 +65,7 @@ write a filter.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name of the logging exclusion.",
         [],
         false,
@@ -81,7 +73,7 @@ write a filter.
       ),
       new DynamicUIProps(
         InputType.String,
-        "BillingAccount",
+        "billingAccount",
         "The billing account to create the exclusion for.",
         [],
         true,
@@ -89,8 +81,16 @@ write a filter.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "A human-readable description.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "disabled",
+        "Whether this exclusion rule should be disabled or not. This defaults to\nfalse.",
         [],
         false,
         false,

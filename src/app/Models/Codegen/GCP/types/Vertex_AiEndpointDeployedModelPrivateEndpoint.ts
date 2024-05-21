@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vertex_AiEndpointDeployedModelPrivateEndpoint {
-  /*
-(Output)
-Output only. The name of the service attachment resource. Populated if private service connect is enabled.
-*/
-  ServiceAttachment?: string;
-
+export interface vertex_AiEndpointDeployedModelPrivateEndpoint {
   /*
 (Output)
 Output only. Http(s) path to send explain requests.
 */
-  ExplainHttpUri?: string;
+  explainHttpUri?: string;
 
   /*
 (Output)
 Output only. Http(s) path to send health check requests.
 */
-  HealthHttpUri?: string;
+  healthHttpUri?: string;
 
   /*
 (Output)
 Output only. Http(s) path to send prediction requests.
 */
-  PredictHttpUri?: string;
+  predictHttpUri?: string;
+
+  /*
+(Output)
+Output only. The name of the service attachment resource. Populated if private service connect is enabled.
+*/
+  serviceAttachment?: string;
 }
 
-export function Vertex_AiEndpointDeployedModelPrivateEndpoint_GetTypes(): DynamicUIProps[] {
+export function vertex_AiEndpointDeployedModelPrivateEndpoint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ServiceAttachment",
+      "serviceAttachment",
       "(Output)\nOutput only. The name of the service attachment resource. Populated if private service connect is enabled.",
       [],
       false,
@@ -44,7 +44,7 @@ export function Vertex_AiEndpointDeployedModelPrivateEndpoint_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "ExplainHttpUri",
+      "explainHttpUri",
       "(Output)\nOutput only. Http(s) path to send explain requests.",
       [],
       false,
@@ -52,7 +52,7 @@ export function Vertex_AiEndpointDeployedModelPrivateEndpoint_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "HealthHttpUri",
+      "healthHttpUri",
       "(Output)\nOutput only. Http(s) path to send health check requests.",
       [],
       false,
@@ -60,7 +60,7 @@ export function Vertex_AiEndpointDeployedModelPrivateEndpoint_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "PredictHttpUri",
+      "predictHttpUri",
       "(Output)\nOutput only. Http(s) path to send prediction requests.",
       [],
       false,

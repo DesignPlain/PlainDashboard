@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionSchemaSource {
-  // The Doc AI processor type name.
-  ProcessorType?: string;
-
+export interface essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionSchemaSource {
   // The schema name in the source.
-  Name?: string;
+  name?: string;
+
+  // The Doc AI processor type name.
+  processorType?: string;
 }
 
-export function Essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionSchemaSource_GetTypes(): DynamicUIProps[] {
+export function essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinitionSchemaSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ProcessorType",
-      "The Doc AI processor type name.",
+      "name",
+      "The schema name in the source.",
       [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
-      "The schema name in the source.",
+      "processorType",
+      "The Doc AI processor type name.",
       [],
       false,
       true,

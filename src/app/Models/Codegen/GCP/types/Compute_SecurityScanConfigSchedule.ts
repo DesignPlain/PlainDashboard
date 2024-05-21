@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_SecurityScanConfigSchedule {
+export interface compute_SecurityScanConfigSchedule {
   /*
 A timestamp indicates when the next run will be scheduled. The value is refreshed
 by the server after each run. If unspecified, it will default to current server time,
 which means the scan will be scheduled to start immediately.
 */
-  ScheduleTime?: string;
+  scheduleTime?: string;
 
   // The duration of time between executions in days
-  IntervalDurationDays?: number;
+  intervalDurationDays?: number;
 }
 
-export function Compute_SecurityScanConfigSchedule_GetTypes(): DynamicUIProps[] {
+export function compute_SecurityScanConfigSchedule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "ScheduleTime",
-      "A timestamp indicates when the next run will be scheduled. The value is refreshed\nby the server after each run. If unspecified, it will default to current server time,\nwhich means the scan will be scheduled to start immediately.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "IntervalDurationDays",
+      "intervalDurationDays",
       "The duration of time between executions in days",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "scheduleTime",
+      "A timestamp indicates when the next run will be scheduled. The value is refreshed\nby the server after each run. If unspecified, it will default to current server time,\nwhich means the scan will be scheduled to start immediately.",
+      [],
+      false,
       false,
     ),
   ];

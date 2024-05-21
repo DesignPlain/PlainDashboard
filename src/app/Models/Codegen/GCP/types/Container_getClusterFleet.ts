@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterFleet {
-  // Full resource name of the registered fleet membership of the cluster.
-  Membership?: string;
-
+export interface container_getClusterFleet {
   // Short name of the fleet membership, for example "member-1".
-  MembershipId?: string;
+  membershipId?: string;
 
   // Location of the fleet membership, for example "us-central1".
-  MembershipLocation?: string;
+  membershipLocation?: string;
 
   // Whether the cluster has been registered via the fleet API.
-  PreRegistered?: boolean;
+  preRegistered?: boolean;
 
   /*
 The project in which the resource belongs. If it
 is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
+
+  // Full resource name of the registered fleet membership of the cluster.
+  membership?: string;
 }
 
-export function Container_getClusterFleet_GetTypes(): DynamicUIProps[] {
+export function container_getClusterFleet_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Membership",
+      "membership",
       "Full resource name of the registered fleet membership of the cluster.",
       [],
       true,
@@ -38,7 +38,7 @@ export function Container_getClusterFleet_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "MembershipId",
+      "membershipId",
       'Short name of the fleet membership, for example "member-1".',
       [],
       true,
@@ -46,7 +46,7 @@ export function Container_getClusterFleet_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "MembershipLocation",
+      "membershipLocation",
       'Location of the fleet membership, for example "us-central1".',
       [],
       true,
@@ -54,7 +54,7 @@ export function Container_getClusterFleet_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "PreRegistered",
+      "preRegistered",
       "Whether the cluster has been registered via the fleet API.",
       [],
       true,
@@ -62,7 +62,7 @@ export function Container_getClusterFleet_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Project",
+      "project",
       "The project in which the resource belongs. If it\nis not provided, the provider project is used.",
       [],
       true,

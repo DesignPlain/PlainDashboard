@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_ConnectionProfilePrivateConnectivity {
+export interface datastream_ConnectionProfilePrivateConnectivity {
   // A reference to a private connection resource. Format: `projects/{project}/locations/{location}/privateConnections/{name}`
-  PrivateConnection?: string;
+  privateConnection?: string;
 }
 
-export function Datastream_ConnectionProfilePrivateConnectivity_GetTypes(): DynamicUIProps[] {
+export function datastream_ConnectionProfilePrivateConnectivity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PrivateConnection",
+      "privateConnection",
       "A reference to a private connection resource. Format: `projects/{project}/locations/{location}/privateConnections/{name}`",
       [],
       true,

@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxEnvironmentVersionConfig {
+export interface diagflow_CxEnvironmentVersionConfig {
   /*
 Format: projects/{{project}}/locations/{{location}}/agents/{{agent}}/flows/{{flow}}/versions/{{version}}.
 
 - - -
 */
-  Version?: string;
+  version?: string;
 }
 
-export function Diagflow_CxEnvironmentVersionConfig_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxEnvironmentVersionConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Version",
+      "version",
       "Format: projects/{{project}}/locations/{{location}}/agents/{{agent}}/flows/{{flow}}/versions/{{version}}.\n\n- - -",
       [],
       true,

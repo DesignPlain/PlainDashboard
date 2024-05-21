@@ -6,33 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterNodePoolDefaultNodeConfigDefaultGcfsConfig,
-  Container_getClusterNodePoolDefaultNodeConfigDefaultGcfsConfig_GetTypes,
-} from "./Container_getClusterNodePoolDefaultNodeConfigDefaultGcfsConfig";
+  container_getClusterNodePoolDefaultNodeConfigDefaultGcfsConfig,
+  container_getClusterNodePoolDefaultNodeConfigDefaultGcfsConfig_GetTypes,
+} from "./container_getClusterNodePoolDefaultNodeConfigDefaultGcfsConfig";
 
-export interface Container_getClusterNodePoolDefaultNodeConfigDefault {
-  // GCFS configuration for this node.
-  GcfsConfigs?: Array<Container_getClusterNodePoolDefaultNodeConfigDefaultGcfsConfig>;
-
+export interface container_getClusterNodePoolDefaultNodeConfigDefault {
   // Type of logging agent that is used as the default value for node pools in the cluster. Valid values include DEFAULT and MAX_THROUGHPUT.
-  LoggingVariant?: string;
+  loggingVariant?: string;
+
+  // GCFS configuration for this node.
+  gcfsConfigs?: Array<container_getClusterNodePoolDefaultNodeConfigDefaultGcfsConfig>;
 }
 
-export function Container_getClusterNodePoolDefaultNodeConfigDefault_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolDefaultNodeConfigDefault_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "GcfsConfigs",
-      "GCFS configuration for this node.",
-      Container_getClusterNodePoolDefaultNodeConfigDefaultGcfsConfig_GetTypes(),
+      InputType.String,
+      "loggingVariant",
+      "Type of logging agent that is used as the default value for node pools in the cluster. Valid values include DEFAULT and MAX_THROUGHPUT.",
+      [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "LoggingVariant",
-      "Type of logging agent that is used as the default value for node pools in the cluster. Valid values include DEFAULT and MAX_THROUGHPUT.",
-      [],
+      InputType.Array,
+      "gcfsConfigs",
+      "GCFS configuration for this node.",
+      container_getClusterNodePoolDefaultNodeConfigDefaultGcfsConfig_GetTypes(),
       true,
       false,
     ),

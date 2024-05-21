@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Apigee_KeystoresAliasesSelfSignedCertCertsInfoCertInfo,
-  Apigee_KeystoresAliasesSelfSignedCertCertsInfoCertInfo_GetTypes,
-} from "./Apigee_KeystoresAliasesSelfSignedCertCertsInfoCertInfo";
+  apigee_KeystoresAliasesSelfSignedCertCertsInfoCertInfo,
+  apigee_KeystoresAliasesSelfSignedCertCertsInfoCertInfo_GetTypes,
+} from "./apigee_KeystoresAliasesSelfSignedCertCertsInfoCertInfo";
 
-export interface Apigee_KeystoresAliasesSelfSignedCertCertsInfo {
+export interface apigee_KeystoresAliasesSelfSignedCertCertsInfo {
   /*
 (Output)
 List of all properties in the object.
 Structure is documented below.
 */
-  CertInfos?: Array<Apigee_KeystoresAliasesSelfSignedCertCertsInfoCertInfo>;
+  certInfos?: Array<apigee_KeystoresAliasesSelfSignedCertCertsInfoCertInfo>;
 }
 
-export function Apigee_KeystoresAliasesSelfSignedCertCertsInfo_GetTypes(): DynamicUIProps[] {
+export function apigee_KeystoresAliasesSelfSignedCertCertsInfo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "CertInfos",
+      "certInfos",
       "(Output)\nList of all properties in the object.\nStructure is documented below.",
-      Apigee_KeystoresAliasesSelfSignedCertCertsInfoCertInfo_GetTypes(),
+      apigee_KeystoresAliasesSelfSignedCertCertsInfoCertInfo_GetTypes(),
       false,
       false,
     ),

@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Identityplatform_ConfigSignInHashConfig {
-  /*
-(Output)
-Different password hash algorithms used in Identity Toolkit.
-*/
-  Algorithm?: string;
-
+export interface identityplatform_ConfigSignInHashConfig {
   /*
 (Output)
 Memory cost for hash calculation. Used by scrypt and other similar password derivation algorithms. See https://tools.ietf.org/html/rfc7914 for explanation of field.
 */
-  MemoryCost?: number;
+  memoryCost?: number;
 
   /*
 (Output)
 How many rounds for hash calculation. Used by scrypt and other similar password derivation algorithms.
 */
-  Rounds?: number;
+  rounds?: number;
 
   /*
 (Output)
 Non-printable character to be inserted between the salt and plain text password in base64.
 */
-  SaltSeparator?: string;
+  saltSeparator?: string;
 
   /*
 (Output)
 Signer key in base64.
 */
-  SignerKey?: string;
+  signerKey?: string;
+
+  /*
+(Output)
+Different password hash algorithms used in Identity Toolkit.
+*/
+  algorithm?: string;
 }
 
-export function Identityplatform_ConfigSignInHashConfig_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ConfigSignInHashConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Algorithm",
+      "algorithm",
       "(Output)\nDifferent password hash algorithms used in Identity Toolkit.",
       [],
       false,
@@ -50,7 +50,7 @@ export function Identityplatform_ConfigSignInHashConfig_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MemoryCost",
+      "memoryCost",
       "(Output)\nMemory cost for hash calculation. Used by scrypt and other similar password derivation algorithms. See https://tools.ietf.org/html/rfc7914 for explanation of field.",
       [],
       false,
@@ -58,7 +58,7 @@ export function Identityplatform_ConfigSignInHashConfig_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Rounds",
+      "rounds",
       "(Output)\nHow many rounds for hash calculation. Used by scrypt and other similar password derivation algorithms.",
       [],
       false,
@@ -66,7 +66,7 @@ export function Identityplatform_ConfigSignInHashConfig_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "SaltSeparator",
+      "saltSeparator",
       "(Output)\nNon-printable character to be inserted between the salt and plain text password in base64.",
       [],
       false,
@@ -74,7 +74,7 @@ export function Identityplatform_ConfigSignInHashConfig_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "SignerKey",
+      "signerKey",
       "(Output)\nSigner key in base64.",
       [],
       false,

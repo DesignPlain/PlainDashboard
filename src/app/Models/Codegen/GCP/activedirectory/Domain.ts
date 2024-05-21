@@ -9,34 +9,16 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface DomainArgs {
   /*
-Locations where domain needs to be provisioned. [regions][compute/docs/regions-zones/]
-e.g. us-west1 or us-east4 Service supports up to 4 locations at once. Each location will use a /26 block.
-*/
-  Locations?: Array<string>;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  /*
-The CIDR range of internal addresses that are reserved for this domain. Reserved networks must be /24 or larger.
-Ranges must be unique and non-overlapping with existing subnets in authorizedNetworks
-*/
-  ReservedIpRange?: string;
-
-  /*
 The name of delegated administrator account used to perform Active Directory operations.
 If not specified, setupadmin will be used.
 */
-  Admin?: string;
+  admin?: string;
 
   /*
 The full names of the Google Compute Engine networks the domain instance is connected to. The domain is only available on networks listed in authorizedNetworks.
 If CIDR subnets overlap between networks, domain creation will fail.
 */
-  AuthorizedNetworks?: Array<string>;
+  authorizedNetworks?: Array<string>;
 
   /*
 The fully qualified domain name. e.g. mydomain.myorganization.com, with the restrictions,
@@ -45,37 +27,57 @@ https://cloud.google.com/managed-microsoft-ad/reference/rest/v1/projects.locatio
 
 - - -
 */
-  DomainName?: string;
+  domainName?: string;
 
   /*
 Resource labels that can contain user-provided metadata
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
-}
-export class Domain extends Resource {
-  /*
-Resource labels that can contain user-provided metadata
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  public Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
-  // The unique name of the domain using the format: `projects/{project}/locations/global/domains/{domainName}`.
-  public Name?: string;
+  /*
+Locations where domain needs to be provisioned. [regions][compute/docs/regions-zones/]
+e.g. us-west1 or us-east4 Service supports up to 4 locations at once. Each location will use a /26 block.
+*/
+  locations?: Array<string>;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  project?: string;
 
   /*
-The name of delegated administrator account used to perform Active Directory operations.
-If not specified, setupadmin will be used.
+The CIDR range of internal addresses that are reserved for this domain. Reserved networks must be /24 or larger.
+Ranges must be unique and non-overlapping with existing subnets in authorizedNetworks
 */
-  public Admin?: string;
+  reservedIpRange?: string;
+}
+export class Domain extends Resource {
+  /*
+The fully-qualified domain name of the exposed domain used by clients to connect to the service.
+Similar to what would be chosen for an Active Directory set up on an internal network.
+*/
+  public fqdn?: string;
+
+  /*
+Locations where domain needs to be provisioned. [regions][compute/docs/regions-zones/]
+e.g. us-west1 or us-east4 Service supports up to 4 locations at once. Each location will use a /26 block.
+*/
+  public locations?: Array<string>;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  /*
+The CIDR range of internal addresses that are reserved for this domain. Reserved networks must be /24 or larger.
+Ranges must be unique and non-overlapping with existing subnets in authorizedNetworks
+*/
+  public reservedIpRange?: string;
 
   /*
 The fully qualified domain name. e.g. mydomain.myorganization.com, with the restrictions,
@@ -84,70 +86,44 @@ https://cloud.google.com/managed-microsoft-ad/reference/rest/v1/projects.locatio
 
 - - -
 */
-  public DomainName?: string;
+  public domainName?: string;
 
   /*
-The fully-qualified domain name of the exposed domain used by clients to connect to the service.
-Similar to what would be chosen for an Active Directory set up on an internal network.
+The full names of the Google Compute Engine networks the domain instance is connected to. The domain is only available on networks listed in authorizedNetworks.
+If CIDR subnets overlap between networks, domain creation will fail.
 */
-  public Fqdn?: string;
+  public authorizedNetworks?: Array<string>;
+
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
+
+  /*
+Resource labels that can contain user-provided metadata
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
+
+  // The unique name of the domain using the format: `projects/{project}/locations/global/domains/{domainName}`.
+  public name?: string;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
+  public pulumiLabels?: Map<string, string>;
 
   /*
-The CIDR range of internal addresses that are reserved for this domain. Reserved networks must be /24 or larger.
-Ranges must be unique and non-overlapping with existing subnets in authorizedNetworks
+The name of delegated administrator account used to perform Active Directory operations.
+If not specified, setupadmin will be used.
 */
-  public ReservedIpRange?: string;
-
-  /*
-The full names of the Google Compute Engine networks the domain instance is connected to. The domain is only available on networks listed in authorizedNetworks.
-If CIDR subnets overlap between networks, domain creation will fail.
-*/
-  public AuthorizedNetworks?: Array<string>;
-
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
-
-  /*
-Locations where domain needs to be provisioned. [regions][compute/docs/regions-zones/]
-e.g. us-west1 or us-east4 Service supports up to 4 locations at once. Each location will use a /26 block.
-*/
-  public Locations?: Array<string>;
+  public admin?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Array,
-        "Locations",
-        "Locations where domain needs to be provisioned. [regions][compute/docs/regions-zones/]\ne.g. us-west1 or us-east4 Service supports up to 4 locations at once. Each location will use a /26 block.",
-        InputType_String_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ReservedIpRange",
-        "The CIDR range of internal addresses that are reserved for this domain. Reserved networks must be /24 or larger.\nRanges must be unique and non-overlapping with existing subnets in authorizedNetworks",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Admin",
+        "admin",
         "The name of delegated administrator account used to perform Active Directory operations.\nIf not specified, setupadmin will be used.",
         [],
         false,
@@ -155,7 +131,7 @@ e.g. us-west1 or us-east4 Service supports up to 4 locations at once. Each locat
       ),
       new DynamicUIProps(
         InputType.Array,
-        "AuthorizedNetworks",
+        "authorizedNetworks",
         "The full names of the Google Compute Engine networks the domain instance is connected to. The domain is only available on networks listed in authorizedNetworks.\nIf CIDR subnets overlap between networks, domain creation will fail.",
         InputType_String_GetTypes(),
         false,
@@ -163,7 +139,7 @@ e.g. us-west1 or us-east4 Service supports up to 4 locations at once. Each locat
       ),
       new DynamicUIProps(
         InputType.String,
-        "DomainName",
+        "domainName",
         "The fully qualified domain name. e.g. mydomain.myorganization.com, with the restrictions,\nhttps://cloud.google.com/managed-microsoft-ad/reference/rest/v1/projects.locations.global.domains.\n\n\n- - -",
         [],
         true,
@@ -171,11 +147,35 @@ e.g. us-west1 or us-east4 Service supports up to 4 locations at once. Each locat
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "Resource labels that can contain user-provided metadata\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "locations",
+        "Locations where domain needs to be provisioned. [regions][compute/docs/regions-zones/]\ne.g. us-west1 or us-east4 Service supports up to 4 locations at once. Each location will use a /26 block.",
+        InputType_String_GetTypes(),
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "reservedIpRange",
+        "The CIDR range of internal addresses that are reserved for this domain. Reserved networks must be /24 or larger.\nRanges must be unique and non-overlapping with existing subnets in authorizedNetworks",
+        [],
+        true,
+        true,
       ),
     ];
   }

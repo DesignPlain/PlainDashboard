@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AwsNodePoolManagement {
+export interface container_AwsNodePoolManagement {
   // Optional. Whether or not the nodes will be automatically repaired.
-  AutoRepair?: boolean;
+  autoRepair?: boolean;
 }
 
-export function Container_AwsNodePoolManagement_GetTypes(): DynamicUIProps[] {
+export function container_AwsNodePoolManagement_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "AutoRepair",
+      "autoRepair",
       "Optional. Whether or not the nodes will be automatically repaired.",
       [],
       false,

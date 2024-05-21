@@ -6,45 +6,45 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressFrom,
-  Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressFrom_GetTypes,
-} from "./Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressFrom";
+  accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressTo,
+  accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressTo_GetTypes,
+} from "./accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressTo";
 import {
-  Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressTo,
-  Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressTo_GetTypes,
-} from "./Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressTo";
+  accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressFrom,
+  accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressFrom_GetTypes,
+} from "./accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressFrom";
 
-export interface Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicy {
+export interface accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicy {
   /*
 Defines the conditions on the source of a request causing this `IngressPolicy`
 to apply.
 Structure is documented below.
 */
-  IngressFrom?: Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressFrom;
+  ingressFrom?: accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressFrom;
 
   /*
 Defines the conditions on the `ApiOperation` and request destination that cause
 this `IngressPolicy` to apply.
 Structure is documented below.
 */
-  IngressTo?: Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressTo;
+  ingressTo?: accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressTo;
 }
 
-export function Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicy_GetTypes(): DynamicUIProps[] {
+export function accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "IngressFrom",
+      "ingressFrom",
       "Defines the conditions on the source of a request causing this `IngressPolicy`\nto apply.\nStructure is documented below.",
-      Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressFrom_GetTypes(),
+      accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressFrom_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "IngressTo",
+      "ingressTo",
       "Defines the conditions on the `ApiOperation` and request destination that cause\nthis `IngressPolicy` to apply.\nStructure is documented below.",
-      Accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressTo_GetTypes(),
+      accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicyIngressTo_GetTypes(),
       false,
       false,
     ),

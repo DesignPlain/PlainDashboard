@@ -6,53 +6,53 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus,
-  Dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus_GetTypes,
-} from "./Dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus";
+  dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus,
+  dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus_GetTypes,
+} from "./dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus";
 
-export interface Dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecord {
+export interface dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecord {
+  /*
+(Output)
+The name of the created workflow invocation, if one was successfully created. In the format projects/-/locations/-/repositories/-/workflowInvocations/-.
+*/
+  workflowInvocation?: string;
+
   /*
 (Output)
 The error status encountered upon this attempt to create the workflow invocation, if the attempt was unsuccessful.
 Structure is documented below.
 */
-  ErrorStatuses?: Array<Dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus>;
+  errorStatuses?: Array<dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus>;
 
   /*
 (Output)
 The timestamp of this workflow attempt.
 */
-  ExecutionTime?: string;
-
-  /*
-(Output)
-The name of the created workflow invocation, if one was successfully created. In the format projects/-/locations/-/repositories/-/workflowInvocations/-.
-*/
-  WorkflowInvocation?: string;
+  executionTime?: string;
 }
 
-export function Dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecord_GetTypes(): DynamicUIProps[] {
+export function dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecord_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "ErrorStatuses",
-      "(Output)\nThe error status encountered upon this attempt to create the workflow invocation, if the attempt was unsuccessful.\nStructure is documented below.",
-      Dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "ExecutionTime",
-      "(Output)\nThe timestamp of this workflow attempt.",
+      "workflowInvocation",
+      "(Output)\nThe name of the created workflow invocation, if one was successfully created. In the format projects/*/locations/*/repositories/*/workflowInvocations/*.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
+      InputType.Array,
+      "errorStatuses",
+      "(Output)\nThe error status encountered upon this attempt to create the workflow invocation, if the attempt was unsuccessful.\nStructure is documented below.",
+      dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "WorkflowInvocation",
-      "(Output)\nThe name of the created workflow invocation, if one was successfully created. In the format projects/*/locations/*/repositories/*/workflowInvocations/*.",
+      "executionTime",
+      "(Output)\nThe timestamp of this workflow attempt.",
       [],
       false,
       false,

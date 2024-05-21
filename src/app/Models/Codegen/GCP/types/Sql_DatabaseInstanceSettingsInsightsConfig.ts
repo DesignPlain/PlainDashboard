@@ -6,32 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_DatabaseInstanceSettingsInsightsConfig {
+export interface sql_DatabaseInstanceSettingsInsightsConfig {
+  // True if Query Insights will record application tags from query when enabled.
+  recordApplicationTags?: boolean;
+
+  // True if Query Insights will record client address when enabled.
+  recordClientAddress?: boolean;
+
   // True if Query Insights feature is enabled.
-  QueryInsightsEnabled?: boolean;
+  queryInsightsEnabled?: boolean;
 
   /*
 Number of query execution plans captured by Insights per minute for all queries combined. Between 0 and 20. Default to 5.
 
 The optional `settings.password_validation_policy` subblock for instances declares [Password Validation Policy](https://cloud.google.com/sql/docs/postgres/built-in-authentication) configuration. It contains:
 */
-  QueryPlansPerMinute?: number;
+  queryPlansPerMinute?: number;
 
   // Maximum query length stored in bytes. Between 256 and 4500. Default to 1024. Higher query lengths are more useful for analytical queries, but they also require more memory. Changing the query length requires you to restart the instance. You can still add tags to queries that exceed the length limit.
-  QueryStringLength?: number;
-
-  // True if Query Insights will record application tags from query when enabled.
-  RecordApplicationTags?: boolean;
-
-  // True if Query Insights will record client address when enabled.
-  RecordClientAddress?: boolean;
+  queryStringLength?: number;
 }
 
-export function Sql_DatabaseInstanceSettingsInsightsConfig_GetTypes(): DynamicUIProps[] {
+export function sql_DatabaseInstanceSettingsInsightsConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "QueryInsightsEnabled",
+      "recordClientAddress",
+      "True if Query Insights will record client address when enabled.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "queryInsightsEnabled",
       "True if Query Insights feature is enabled.",
       [],
       false,
@@ -39,7 +47,7 @@ export function Sql_DatabaseInstanceSettingsInsightsConfig_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Number,
-      "QueryPlansPerMinute",
+      "queryPlansPerMinute",
       "Number of query execution plans captured by Insights per minute for all queries combined. Between 0 and 20. Default to 5.\n\nThe optional `settings.password_validation_policy` subblock for instances declares [Password Validation Policy](https://cloud.google.com/sql/docs/postgres/built-in-authentication) configuration. It contains:",
       [],
       false,
@@ -47,7 +55,7 @@ export function Sql_DatabaseInstanceSettingsInsightsConfig_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Number,
-      "QueryStringLength",
+      "queryStringLength",
       "Maximum query length stored in bytes. Between 256 and 4500. Default to 1024. Higher query lengths are more useful for analytical queries, but they also require more memory. Changing the query length requires you to restart the instance. You can still add tags to queries that exceed the length limit.",
       [],
       false,
@@ -55,16 +63,8 @@ export function Sql_DatabaseInstanceSettingsInsightsConfig_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "RecordApplicationTags",
+      "recordApplicationTags",
       "True if Query Insights will record application tags from query when enabled.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "RecordClientAddress",
-      "True if Query Insights will record client address when enabled.",
       [],
       false,
       false,

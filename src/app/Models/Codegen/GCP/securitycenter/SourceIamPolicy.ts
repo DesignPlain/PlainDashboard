@@ -15,17 +15,17 @@ lives in.
 
 - - -
 */
-  Organization?: string;
+  organization?: string;
 
   //
-  PolicyData?: string;
+  policyData?: string;
 
   //
-  Source?: string;
+  source?: string;
 }
 export class SourceIamPolicy extends Resource {
   //
-  public Etag?: string;
+  public etag?: string;
 
   /*
 The organization whose Cloud Security Command Center the Source
@@ -34,26 +34,26 @@ lives in.
 
 - - -
 */
-  public Organization?: string;
+  public organization?: string;
 
   //
-  public PolicyData?: string;
+  public policyData?: string;
 
   //
-  public Source?: string;
+  public source?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Organization",
+        "organization",
         "The organization whose Cloud Security Command Center the Source\nlives in.\n\n\n- - -",
         [],
         true,
         true,
       ),
-      new DynamicUIProps(InputType.String, "PolicyData", "", [], true, false),
-      new DynamicUIProps(InputType.String, "Source", "", [], true, true),
+      new DynamicUIProps(InputType.String, "policyData", "", [], true, false),
+      new DynamicUIProps(InputType.String, "source", "", [], true, true),
     ];
   }
 }

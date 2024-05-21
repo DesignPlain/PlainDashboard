@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataplex_TaskNotebookInfrastructureSpecVpcNetwork {
-  // List of network tags to apply to the job.
-  NetworkTags?: Array<string>;
-
+export interface dataplex_TaskNotebookInfrastructureSpecVpcNetwork {
   // The Cloud VPC sub-network in which the job is run.
-  SubNetwork?: string;
+  subNetwork?: string;
 
   // The Cloud VPC network in which the job is run. By default, the Cloud VPC network named Default within the project is used.
-  Network?: string;
+  network?: string;
+
+  // List of network tags to apply to the job.
+  networkTags?: Array<string>;
 }
 
-export function Dataplex_TaskNotebookInfrastructureSpecVpcNetwork_GetTypes(): DynamicUIProps[] {
+export function dataplex_TaskNotebookInfrastructureSpecVpcNetwork_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "NetworkTags",
-      "List of network tags to apply to the job.",
-      InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "SubNetwork",
+      "subNetwork",
       "The Cloud VPC sub-network in which the job is run.",
       [],
       false,
@@ -37,9 +29,17 @@ export function Dataplex_TaskNotebookInfrastructureSpecVpcNetwork_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "Network",
+      "network",
       "The Cloud VPC network in which the job is run. By default, the Cloud VPC network named Default within the project is used.",
       [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "networkTags",
+      "List of network tags to apply to the job.",
+      InputType_String_GetTypes(),
       false,
       false,
     ),

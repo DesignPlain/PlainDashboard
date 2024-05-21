@@ -6,36 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfig,
-  Healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfig_GetTypes,
-} from "./Healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfig";
+  healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfig,
+  healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfig_GetTypes,
+} from "./healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfig";
 
-export interface Healthcare_FhirStoreStreamConfigBigqueryDestination {
-  // BigQuery URI to a dataset, up to 2000 characters long, in the format bq://projectId.bqDatasetId
-  DatasetUri?: string;
-
+export interface healthcare_FhirStoreStreamConfigBigqueryDestination {
   /*
 The configuration for the exported BigQuery schema.
 Structure is documented below.
 */
-  SchemaConfig?: Healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfig;
+  schemaConfig?: healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfig;
+
+  // BigQuery URI to a dataset, up to 2000 characters long, in the format bq://projectId.bqDatasetId
+  datasetUri?: string;
 }
 
-export function Healthcare_FhirStoreStreamConfigBigqueryDestination_GetTypes(): DynamicUIProps[] {
+export function healthcare_FhirStoreStreamConfigBigqueryDestination_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "DatasetUri",
-      "BigQuery URI to a dataset, up to 2000 characters long, in the format bq://projectId.bqDatasetId",
-      [],
+      InputType.Object,
+      "schemaConfig",
+      "The configuration for the exported BigQuery schema.\nStructure is documented below.",
+      healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "SchemaConfig",
-      "The configuration for the exported BigQuery schema.\nStructure is documented below.",
-      Healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfig_GetTypes(),
+      InputType.String,
+      "datasetUri",
+      "BigQuery URI to a dataset, up to 2000 characters long, in the format bq://projectId.bqDatasetId",
+      [],
       true,
       false,
     ),

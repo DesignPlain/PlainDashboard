@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Discoveryengine_ChatEngineChatEngineMetadata {
+export interface discoveryengine_ChatEngineChatEngineMetadata {
   /*
 (Output)
 The resource name of a Dialogflow agent, that this Chat Engine refers to.
 */
-  DialogflowAgent?: string;
+  dialogflowAgent?: string;
 }
 
-export function Discoveryengine_ChatEngineChatEngineMetadata_GetTypes(): DynamicUIProps[] {
+export function discoveryengine_ChatEngineChatEngineMetadata_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DialogflowAgent",
+      "dialogflowAgent",
       "(Output)\nThe resource name of a Dialogflow agent, that this Chat Engine refers to.",
       [],
       false,

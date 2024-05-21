@@ -7,66 +7,66 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Clouddeploy_DeliveryPipelineIamMemberCondition,
-  Clouddeploy_DeliveryPipelineIamMemberCondition_GetTypes,
-} from "../types/Clouddeploy_DeliveryPipelineIamMemberCondition";
+  clouddeploy_DeliveryPipelineIamMemberCondition,
+  clouddeploy_DeliveryPipelineIamMemberCondition_GetTypes,
+} from "../types/clouddeploy_DeliveryPipelineIamMemberCondition";
 
 export interface DeliveryPipelineIamMemberArgs {
   //
-  Name?: string;
+  name?: string;
 
   //
-  Project?: string;
+  project?: string;
 
   //
-  Role?: string;
+  role?: string;
 
   //
-  Condition?: Clouddeploy_DeliveryPipelineIamMemberCondition;
+  condition?: clouddeploy_DeliveryPipelineIamMemberCondition;
 
   //
-  Location?: string;
+  location?: string;
 
   //
-  Member?: string;
+  member?: string;
 }
 export class DeliveryPipelineIamMember extends Resource {
   //
-  public Condition?: Clouddeploy_DeliveryPipelineIamMemberCondition;
+  public project?: string;
 
   //
-  public Etag?: string;
+  public role?: string;
 
   //
-  public Location?: string;
+  public condition?: clouddeploy_DeliveryPipelineIamMemberCondition;
 
   //
-  public Member?: string;
+  public etag?: string;
 
   //
-  public Name?: string;
+  public location?: string;
 
   //
-  public Project?: string;
+  public member?: string;
 
   //
-  public Role?: string;
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "Name", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Project", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Role", "", [], true, true),
+      new DynamicUIProps(InputType.String, "name", "", [], false, true),
+      new DynamicUIProps(InputType.String, "project", "", [], false, true),
+      new DynamicUIProps(InputType.String, "role", "", [], true, true),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Clouddeploy_DeliveryPipelineIamMemberCondition_GetTypes(),
+        clouddeploy_DeliveryPipelineIamMemberCondition_GetTypes(),
         false,
         true,
       ),
-      new DynamicUIProps(InputType.String, "Location", "", [], false, true),
-      new DynamicUIProps(InputType.String, "Member", "", [], true, true),
+      new DynamicUIProps(InputType.String, "location", "", [], false, true),
+      new DynamicUIProps(InputType.String, "member", "", [], true, true),
     ];
   }
 }

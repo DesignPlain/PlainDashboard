@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_SloRequestBasedSliDistributionCutRange {
+export interface monitoring_SloRequestBasedSliDistributionCutRange {
   /*
 max value for the range (inclusive). If not given,
 will be set to "infinity", defining an open range
 ">= range.min"
 */
-  Max?: number;
+  max?: number;
 
   /*
 Min value for the range (inclusive). If not given,
 will be set to "-infinity", defining an open range
 "< range.max"
 */
-  Min?: number;
+  min?: number;
 }
 
-export function Monitoring_SloRequestBasedSliDistributionCutRange_GetTypes(): DynamicUIProps[] {
+export function monitoring_SloRequestBasedSliDistributionCutRange_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Max",
+      "max",
       'max value for the range (inclusive). If not given,\nwill be set to "infinity", defining an open range\n">= range.min"',
       [],
       false,
@@ -34,7 +34,7 @@ export function Monitoring_SloRequestBasedSliDistributionCutRange_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Min",
+      "min",
       'Min value for the range (inclusive). If not given,\nwill be set to "-infinity", defining an open range\n"< range.max"',
       [],
       false,

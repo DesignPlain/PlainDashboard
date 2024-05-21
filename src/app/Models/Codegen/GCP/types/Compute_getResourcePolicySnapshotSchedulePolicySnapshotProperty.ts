@@ -6,32 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getResourcePolicySnapshotSchedulePolicySnapshotProperty {
-  /*
-Creates the new snapshot in the snapshot chain labeled with the
-specified name. The chain name must be 1-63 characters long and comply
-with RFC1035.
-*/
-  ChainName?: string;
-
+export interface compute_getResourcePolicySnapshotSchedulePolicySnapshotProperty {
   // Whether to perform a 'guest aware' snapshot.
-  GuestFlush?: boolean;
+  guestFlush?: boolean;
 
   // A set of key-value pairs.
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   /*
 Cloud Storage bucket location to store the auto snapshot
 (regional or multi-regional)
 */
-  StorageLocations?: Array<string>;
+  storageLocations?: Array<string>;
+
+  /*
+Creates the new snapshot in the snapshot chain labeled with the
+specified name. The chain name must be 1-63 characters long and comply
+with RFC1035.
+*/
+  chainName?: string;
 }
 
-export function Compute_getResourcePolicySnapshotSchedulePolicySnapshotProperty_GetTypes(): DynamicUIProps[] {
+export function compute_getResourcePolicySnapshotSchedulePolicySnapshotProperty_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Array,
+      "storageLocations",
+      "Cloud Storage bucket location to store the auto snapshot\n(regional or multi-regional)",
+      InputType_String_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "ChainName",
+      "chainName",
       "Creates the new snapshot in the snapshot chain labeled with the\nspecified name. The chain name must be 1-63 characters long and comply\nwith RFC1035.",
       [],
       true,
@@ -39,7 +47,7 @@ export function Compute_getResourcePolicySnapshotSchedulePolicySnapshotProperty_
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "GuestFlush",
+      "guestFlush",
       "Whether to perform a 'guest aware' snapshot.",
       [],
       true,
@@ -47,17 +55,9 @@ export function Compute_getResourcePolicySnapshotSchedulePolicySnapshotProperty_
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Labels",
+      "labels",
       "A set of key-value pairs.",
       InputType_Map_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "StorageLocations",
-      "Cloud Storage bucket location to store the auto snapshot\n(regional or multi-regional)",
-      InputType_String_GetTypes(),
       true,
       false,
     ),

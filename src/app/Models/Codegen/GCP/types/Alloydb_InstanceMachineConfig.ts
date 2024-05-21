@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Alloydb_InstanceMachineConfig {
+export interface alloydb_InstanceMachineConfig {
   // The number of CPU's in the VM instance.
-  CpuCount?: number;
+  cpuCount?: number;
 }
 
-export function Alloydb_InstanceMachineConfig_GetTypes(): DynamicUIProps[] {
+export function alloydb_InstanceMachineConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "CpuCount",
+      "cpuCount",
       "The number of CPU's in the VM instance.",
       [],
       false,

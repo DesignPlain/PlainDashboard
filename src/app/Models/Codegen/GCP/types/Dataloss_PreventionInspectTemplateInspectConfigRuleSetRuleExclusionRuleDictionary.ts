@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePath,
-  Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePath_GetTypes,
-} from "./Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePath";
+  dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryWordList,
+  dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryWordList_GetTypes,
+} from "./dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryWordList";
 import {
-  Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryWordList,
-  Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryWordList_GetTypes,
-} from "./Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryWordList";
+  dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePath,
+  dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePath_GetTypes,
+} from "./dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePath";
 
-export interface Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionary {
+export interface dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionary {
   /*
 Newline-delimited file of words in Cloud Storage. Only a single file is accepted.
 Structure is documented below.
 */
-  CloudStoragePath?: Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePath;
+  cloudStoragePath?: dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePath;
 
   /*
 List of words or phrases to search for.
 Structure is documented below.
 */
-  WordList?: Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryWordList;
+  wordList?: dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryWordList;
 }
 
-export function Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionary_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionary_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "CloudStoragePath",
+      "cloudStoragePath",
       "Newline-delimited file of words in Cloud Storage. Only a single file is accepted.\nStructure is documented below.",
-      Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePath_GetTypes(),
+      dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePath_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "WordList",
+      "wordList",
       "List of words or phrases to search for.\nStructure is documented below.",
-      Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryWordList_GetTypes(),
+      dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryWordList_GetTypes(),
       false,
       false,
     ),

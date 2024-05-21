@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfigKerberosConfig,
-  Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfigKerberosConfig_GetTypes,
-} from "./Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfigKerberosConfig";
+  dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfigKerberosConfig,
+  dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfigKerberosConfig_GetTypes,
+} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfigKerberosConfig";
 
-export interface Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfig {
+export interface dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfig {
   // Kerberos related configuration.
-  KerberosConfig?: Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfigKerberosConfig;
+  kerberosConfig?: dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfigKerberosConfig;
 }
 
-export function Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "KerberosConfig",
+      "kerberosConfig",
       "Kerberos related configuration.",
-      Dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfigKerberosConfig_GetTypes(),
+      dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfigKerberosConfig_GetTypes(),
       false,
       true,
     ),

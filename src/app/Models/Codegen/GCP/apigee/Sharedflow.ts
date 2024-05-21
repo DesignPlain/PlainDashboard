@@ -7,9 +7,9 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Apigee_SharedflowMetaData,
-  Apigee_SharedflowMetaData_GetTypes,
-} from "../types/Apigee_SharedflowMetaData";
+  apigee_SharedflowMetaData,
+  apigee_SharedflowMetaData_GetTypes,
+} from "../types/apigee_SharedflowMetaData";
 
 export interface SharedflowArgs {
   /*
@@ -17,60 +17,60 @@ Path to the config zip bundle.
 
 - - -
 */
-  ConfigBundle?: string;
+  configBundle?: string;
 
   /*
 A hash of local config bundle in string, user needs to use a Terraform Hash function of their choice. A change in hash
 will trigger an update.
 */
-  DetectMd5hash?: string;
+  detectMd5hash?: string;
 
   // The ID of the shared flow.
-  Name?: string;
+  name?: string;
 
   // The Apigee Organization name associated with the Apigee instance.
-  OrgId?: string;
+  orgId?: string;
 }
 export class Sharedflow extends Resource {
+  // The Apigee Organization name associated with the Apigee instance.
+  public orgId?: string;
+
   // A list of revisions of this shared flow.
-  public Revisions?: Array<string>;
+  public revisions?: Array<string>;
 
   /*
 Path to the config zip bundle.
 
 - - -
 */
-  public ConfigBundle?: string;
+  public configBundle?: string;
 
   /*
 A hash of local config bundle in string, user needs to use a Terraform Hash function of their choice. A change in hash
 will trigger an update.
 */
-  public DetectMd5hash?: string;
+  public detectMd5hash?: string;
 
   // The id of the most recently created revision for this shared flow.
-  public LatestRevisionId?: string;
+  public latestRevisionId?: string;
 
   // (Computed) Base 64 MD5 hash of the uploaded data. It is speculative as remote does not return hash of the bundle. Remote changes are detected using returned last_modified timestamp.
-  public Md5hash?: string;
+  public md5hash?: string;
 
   /*
 Metadata describing the shared flow.
 Structure is documented below.
 */
-  public MetaDatas?: Array<Apigee_SharedflowMetaData>;
+  public metaDatas?: Array<apigee_SharedflowMetaData>;
 
   // The ID of the shared flow.
-  public Name?: string;
-
-  // The Apigee Organization name associated with the Apigee instance.
-  public OrgId?: string;
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "ConfigBundle",
+        "configBundle",
         "Path to the config zip bundle.\n\n- - -",
         [],
         true,
@@ -78,7 +78,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "DetectMd5hash",
+        "detectMd5hash",
         "A hash of local config bundle in string, user needs to use a Terraform Hash function of their choice. A change in hash\nwill trigger an update.",
         [],
         false,
@@ -86,7 +86,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The ID of the shared flow.",
         [],
         false,
@@ -94,7 +94,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "OrgId",
+        "orgId",
         "The Apigee Organization name associated with the Apigee instance.",
         [],
         true,

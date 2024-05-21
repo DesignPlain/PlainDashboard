@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Netapp_VolumeExportPolicyRule,
-  Netapp_VolumeExportPolicyRule_GetTypes,
-} from "./Netapp_VolumeExportPolicyRule";
+  netapp_VolumeExportPolicyRule,
+  netapp_VolumeExportPolicyRule_GetTypes,
+} from "./netapp_VolumeExportPolicyRule";
 
-export interface Netapp_VolumeExportPolicy {
+export interface netapp_VolumeExportPolicy {
   /*
 Export rules (up to 5) control NFS volume access.
 Structure is documented below.
 */
-  Rules?: Array<Netapp_VolumeExportPolicyRule>;
+  rules?: Array<netapp_VolumeExportPolicyRule>;
 }
 
-export function Netapp_VolumeExportPolicy_GetTypes(): DynamicUIProps[] {
+export function netapp_VolumeExportPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Rules",
+      "rules",
       "Export rules (up to 5) control NFS volume access.\nStructure is documented below.",
-      Netapp_VolumeExportPolicyRule_GetTypes(),
+      netapp_VolumeExportPolicyRule_GetTypes(),
       true,
       false,
     ),

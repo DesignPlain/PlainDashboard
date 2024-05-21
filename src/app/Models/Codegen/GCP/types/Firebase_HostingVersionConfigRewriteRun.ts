@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Firebase_HostingVersionConfigRewriteRun {
-  // Optional. User-provided region where the Cloud Run service is hosted. Defaults to `us-central1` if not supplied.
-  Region?: string;
-
+export interface firebase_HostingVersionConfigRewriteRun {
   // User-defined ID of the Cloud Run service.
-  ServiceId?: string;
+  serviceId?: string;
+
+  // Optional. User-provided region where the Cloud Run service is hosted. Defaults to `us-central1` if not supplied.
+  region?: string;
 }
 
-export function Firebase_HostingVersionConfigRewriteRun_GetTypes(): DynamicUIProps[] {
+export function firebase_HostingVersionConfigRewriteRun_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Region",
-      "Optional. User-provided region where the Cloud Run service is hosted. Defaults to `us-central1` if not supplied.",
+      "serviceId",
+      "User-defined ID of the Cloud Run service.",
       [],
-      false,
+      true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ServiceId",
-      "User-defined ID of the Cloud Run service.",
+      "region",
+      "Optional. User-provided region where the Cloud Run service is hosted. Defaults to `us-central1` if not supplied.",
       [],
-      true,
+      false,
       true,
     ),
   ];

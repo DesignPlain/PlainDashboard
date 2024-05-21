@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Clouddeploy_AutomationSelectorTarget,
-  Clouddeploy_AutomationSelectorTarget_GetTypes,
-} from "./Clouddeploy_AutomationSelectorTarget";
+  clouddeploy_AutomationSelectorTarget,
+  clouddeploy_AutomationSelectorTarget_GetTypes,
+} from "./clouddeploy_AutomationSelectorTarget";
 
-export interface Clouddeploy_AutomationSelector {
+export interface clouddeploy_AutomationSelector {
   /*
 Contains attributes about a target.
 Structure is documented below.
 */
-  Targets?: Array<Clouddeploy_AutomationSelectorTarget>;
+  targets?: Array<clouddeploy_AutomationSelectorTarget>;
 }
 
-export function Clouddeploy_AutomationSelector_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_AutomationSelector_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Targets",
+      "targets",
       "Contains attributes about a target.\nStructure is documented below.",
-      Clouddeploy_AutomationSelectorTarget_GetTypes(),
+      clouddeploy_AutomationSelectorTarget_GetTypes(),
       true,
       false,
     ),

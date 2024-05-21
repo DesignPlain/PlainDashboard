@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Composer_getEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock,
-  Composer_getEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock_GetTypes,
-} from "./Composer_getEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock";
+  composer_getEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock,
+  composer_getEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock_GetTypes,
+} from "./composer_getEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock";
 
-export interface Composer_getEnvironmentConfigMasterAuthorizedNetworksConfig {
+export interface composer_getEnvironmentConfigMasterAuthorizedNetworksConfig {
   // cidr_blocks define up to 50 external networks that could access Kubernetes master through HTTPS.
-  CidrBlocks?: Array<Composer_getEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock>;
+  cidrBlocks?: Array<composer_getEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock>;
 
   // Whether or not master authorized networks is enabled.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Composer_getEnvironmentConfigMasterAuthorizedNetworksConfig_GetTypes(): DynamicUIProps[] {
+export function composer_getEnvironmentConfigMasterAuthorizedNetworksConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "CidrBlocks",
+      "cidrBlocks",
       "cidr_blocks define up to 50 external networks that could access Kubernetes master through HTTPS.",
-      Composer_getEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock_GetTypes(),
+      composer_getEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether or not master authorized networks is enabled.",
       [],
       true,

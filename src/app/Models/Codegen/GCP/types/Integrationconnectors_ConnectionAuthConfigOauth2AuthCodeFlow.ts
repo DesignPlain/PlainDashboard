@@ -6,59 +6,35 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlowClientSecret,
-  Integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlowClientSecret_GetTypes,
-} from "./Integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlowClientSecret";
+  integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlowClientSecret,
+  integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlowClientSecret_GetTypes,
+} from "./integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlowClientSecret";
 
-export interface Integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlow {
+export interface integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlow {
+  // Whether to enable PKCE when the user performs the auth code flow.
+  enablePkce?: boolean;
+
+  // Scopes the connection will request when the user performs the auth code flow.
+  scopes?: Array<string>;
+
   // Auth URL for Authorization Code Flow.
-  AuthUri?: string;
+  authUri?: string;
 
   // Secret version of Password for Authentication.
-  ClientId?: string;
+  clientId?: string;
 
   /*
 Secret version reference containing the client secret.
 Structure is documented below.
 */
-  ClientSecret?: Integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlowClientSecret;
-
-  // Whether to enable PKCE when the user performs the auth code flow.
-  EnablePkce?: boolean;
-
-  // Scopes the connection will request when the user performs the auth code flow.
-  Scopes?: Array<string>;
+  clientSecret?: integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlowClientSecret;
 }
 
-export function Integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlow_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlow_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "AuthUri",
-      "Auth URL for Authorization Code Flow.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ClientId",
-      "Secret version of Password for Authentication.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "ClientSecret",
-      "Secret version reference containing the client secret.\nStructure is documented below.",
-      Integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlowClientSecret_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "EnablePkce",
+      "enablePkce",
       "Whether to enable PKCE when the user performs the auth code flow.",
       [],
       false,
@@ -66,9 +42,33 @@ export function Integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlow_Get
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Scopes",
+      "scopes",
       "Scopes the connection will request when the user performs the auth code flow.",
       InputType_String_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "authUri",
+      "Auth URL for Authorization Code Flow.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "clientId",
+      "Secret version of Password for Authentication.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "clientSecret",
+      "Secret version reference containing the client secret.\nStructure is documented below.",
+      integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlowClientSecret_GetTypes(),
       false,
       false,
     ),

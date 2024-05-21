@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTable,
-  Datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTable_GetTypes,
-} from "./Datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTable";
+  datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTable,
+  datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTable_GetTypes,
+} from "./datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTable";
 
-export interface Datastream_StreamBackfillAllOracleExcludedObjectsOracleSchema {
+export interface datastream_StreamBackfillAllOracleExcludedObjectsOracleSchema {
   /*
 Tables in the database.
 Structure is documented below.
 */
-  OracleTables?: Array<Datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTable>;
+  oracleTables?: Array<datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTable>;
 
   // Schema name.
-  Schema?: string;
+  schema?: string;
 }
 
-export function Datastream_StreamBackfillAllOracleExcludedObjectsOracleSchema_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamBackfillAllOracleExcludedObjectsOracleSchema_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "OracleTables",
+      "oracleTables",
       "Tables in the database.\nStructure is documented below.",
-      Datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTable_GetTypes(),
+      datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTable_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Schema",
+      "schema",
       "Schema name.",
       [],
       true,

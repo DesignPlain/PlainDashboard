@@ -6,45 +6,45 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Billing_BudgetBudgetFilterCustomPeriodEndDate,
-  Billing_BudgetBudgetFilterCustomPeriodEndDate_GetTypes,
-} from "./Billing_BudgetBudgetFilterCustomPeriodEndDate";
+  billing_BudgetBudgetFilterCustomPeriodStartDate,
+  billing_BudgetBudgetFilterCustomPeriodStartDate_GetTypes,
+} from "./billing_BudgetBudgetFilterCustomPeriodStartDate";
 import {
-  Billing_BudgetBudgetFilterCustomPeriodStartDate,
-  Billing_BudgetBudgetFilterCustomPeriodStartDate_GetTypes,
-} from "./Billing_BudgetBudgetFilterCustomPeriodStartDate";
+  billing_BudgetBudgetFilterCustomPeriodEndDate,
+  billing_BudgetBudgetFilterCustomPeriodEndDate_GetTypes,
+} from "./billing_BudgetBudgetFilterCustomPeriodEndDate";
 
-export interface Billing_BudgetBudgetFilterCustomPeriod {
+export interface billing_BudgetBudgetFilterCustomPeriod {
+  /*
+A start date is required. The start date must be after January 1, 2017.
+Structure is documented below.
+*/
+  startDate?: billing_BudgetBudgetFilterCustomPeriodStartDate;
+
   /*
 Optional. The end date of the time period. Budgets with elapsed end date won't be processed.
 If unset, specifies to track all usage incurred since the startDate.
 Structure is documented below.
 */
-  EndDate?: Billing_BudgetBudgetFilterCustomPeriodEndDate;
-
-  /*
-A start date is required. The start date must be after January 1, 2017.
-Structure is documented below.
-*/
-  StartDate?: Billing_BudgetBudgetFilterCustomPeriodStartDate;
+  endDate?: billing_BudgetBudgetFilterCustomPeriodEndDate;
 }
 
-export function Billing_BudgetBudgetFilterCustomPeriod_GetTypes(): DynamicUIProps[] {
+export function billing_BudgetBudgetFilterCustomPeriod_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "EndDate",
-      "Optional. The end date of the time period. Budgets with elapsed end date won't be processed.\nIf unset, specifies to track all usage incurred since the startDate.\nStructure is documented below.",
-      Billing_BudgetBudgetFilterCustomPeriodEndDate_GetTypes(),
-      false,
+      "startDate",
+      "A start date is required. The start date must be after January 1, 2017.\nStructure is documented below.",
+      billing_BudgetBudgetFilterCustomPeriodStartDate_GetTypes(),
+      true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "StartDate",
-      "A start date is required. The start date must be after January 1, 2017.\nStructure is documented below.",
-      Billing_BudgetBudgetFilterCustomPeriodStartDate_GetTypes(),
-      true,
+      "endDate",
+      "Optional. The end date of the time period. Budgets with elapsed end date won't be processed.\nIf unset, specifies to track all usage incurred since the startDate.\nStructure is documented below.",
+      billing_BudgetBudgetFilterCustomPeriodEndDate_GetTypes(),
+      false,
       false,
     ),
   ];

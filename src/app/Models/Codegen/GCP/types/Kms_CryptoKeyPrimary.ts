@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Kms_CryptoKeyPrimary {
+export interface kms_CryptoKeyPrimary {
   // The resource name for the CryptoKey.
-  Name?: string;
+  name?: string;
 
   /*
 (Output)
 The current state of the CryptoKeyVersion.
 */
-  State?: string;
+  state?: string;
 }
 
-export function Kms_CryptoKeyPrimary_GetTypes(): DynamicUIProps[] {
+export function kms_CryptoKeyPrimary_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "State",
-      "(Output)\nThe current state of the CryptoKeyVersion.",
+      "name",
+      "The resource name for the CryptoKey.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
-      "The resource name for the CryptoKey.",
+      "state",
+      "(Output)\nThe current state of the CryptoKeyVersion.",
       [],
       false,
       false,

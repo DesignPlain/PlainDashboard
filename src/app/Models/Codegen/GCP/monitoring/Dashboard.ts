@@ -9,35 +9,35 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface DashboardArgs {
   /*
-The JSON representation of a dashboard, following the format at
-https://cloud.google.com/monitoring/api/ref_v3/rest/v1/projects.dashboards.
-*/
-  DashboardJson?: string;
-
-  /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
+
+  /*
+The JSON representation of a dashboard, following the format at
+https://cloud.google.com/monitoring/api/ref_v3/rest/v1/projects.dashboards.
+*/
+  dashboardJson?: string;
 }
 export class Dashboard extends Resource {
   /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  /*
 The JSON representation of a dashboard, following the format at
 https://cloud.google.com/monitoring/api/ref_v3/rest/v1/projects.dashboards.
 */
-  public DashboardJson?: string;
+  public dashboardJson?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -45,7 +45,7 @@ https://cloud.google.com/monitoring/api/ref_v3/rest/v1/projects.dashboards.
       ),
       new DynamicUIProps(
         InputType.String,
-        "DashboardJson",
+        "dashboardJson",
         "The JSON representation of a dashboard, following the format at\nhttps://cloud.google.com/monitoring/api/ref_v3/rest/v1/projects.dashboards.",
         [],
         true,

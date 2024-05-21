@@ -7,116 +7,108 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Storage_TransferJobSchedule,
-  Storage_TransferJobSchedule_GetTypes,
-} from "../types/Storage_TransferJobSchedule";
+  storage_TransferJobTransferSpec,
+  storage_TransferJobTransferSpec_GetTypes,
+} from "../types/storage_TransferJobTransferSpec";
 import {
-  Storage_TransferJobTransferSpec,
-  Storage_TransferJobTransferSpec_GetTypes,
-} from "../types/Storage_TransferJobTransferSpec";
+  storage_TransferJobEventStream,
+  storage_TransferJobEventStream_GetTypes,
+} from "../types/storage_TransferJobEventStream";
 import {
-  Storage_TransferJobEventStream,
-  Storage_TransferJobEventStream_GetTypes,
-} from "../types/Storage_TransferJobEventStream";
+  storage_TransferJobNotificationConfig,
+  storage_TransferJobNotificationConfig_GetTypes,
+} from "../types/storage_TransferJobNotificationConfig";
 import {
-  Storage_TransferJobNotificationConfig,
-  Storage_TransferJobNotificationConfig_GetTypes,
-} from "../types/Storage_TransferJobNotificationConfig";
+  storage_TransferJobSchedule,
+  storage_TransferJobSchedule_GetTypes,
+} from "../types/storage_TransferJobSchedule";
 
 export interface TransferJobArgs {
+  // Notification configuration. This is not supported for transfers involving PosixFilesystem. Structure documented below.
+  notificationConfig?: storage_TransferJobNotificationConfig;
+
   /*
 The project in which the resource belongs. If it
 is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // Schedule specification defining when the Transfer Job should be scheduled to start, end and what time to run. Structure documented below. Either `schedule` or `event_stream` must be set.
-  Schedule?: Storage_TransferJobSchedule;
+  schedule?: storage_TransferJobSchedule;
 
   // Status of the job. Default: `ENABLED`. --NOTE: The effect of the new job status takes place during a subsequent job run. For example, if you change the job status from ENABLED to DISABLED, and an operation spawned by the transfer is running, the status change would not affect the current operation.--
-  Status?: string;
+  status?: string;
 
   /*
 Transfer specification. Structure documented below.
 
 - - -
 */
-  TransferSpec?: Storage_TransferJobTransferSpec;
+  transferSpec?: storage_TransferJobTransferSpec;
 
   // Unique description to identify the Transfer Job.
-  Description?: string;
+  description?: string;
 
   // Specifies the Event-driven transfer options. Event-driven transfers listen to an event stream to transfer updated files. Structure documented below Either `event_stream` or `schedule` must be set.
-  EventStream?: Storage_TransferJobEventStream;
+  eventStream?: storage_TransferJobEventStream;
 
   // The name of the Transfer Job. This name must start with "transferJobs/" prefix and end with a letter or a number, and should be no more than 128 characters ( `transferJobs/^(?!OPI)[A-Za-z0-9-._~]-[A-Za-z0-9]$` ). For transfers involving PosixFilesystem, this name must start with transferJobs/OPI specifically ( `transferJobs/OPI^[A-Za-z0-9-._~]-[A-Za-z0-9]$` ). For all other transfer types, this name must not start with transferJobs/OPI. Default the provider will assign a random unique name with `transferJobs/{{name}}` format, where `name` is a numeric value.
-  Name?: string;
-
-  // Notification configuration. This is not supported for transfers involving PosixFilesystem. Structure documented below.
-  NotificationConfig?: Storage_TransferJobNotificationConfig;
+  name?: string;
 }
 export class TransferJob extends Resource {
-  // Specifies the Event-driven transfer options. Event-driven transfers listen to an event stream to transfer updated files. Structure documented below Either `event_stream` or `schedule` must be set.
-  public EventStream?: Storage_TransferJobEventStream;
-
-  // When the Transfer Job was last modified.
-  public LastModificationTime?: string;
-
   // The name of the Transfer Job. This name must start with "transferJobs/" prefix and end with a letter or a number, and should be no more than 128 characters ( `transferJobs/^(?!OPI)[A-Za-z0-9-._~]-[A-Za-z0-9]$` ). For transfers involving PosixFilesystem, this name must start with transferJobs/OPI specifically ( `transferJobs/OPI^[A-Za-z0-9-._~]-[A-Za-z0-9]$` ). For all other transfer types, this name must not start with transferJobs/OPI. Default the provider will assign a random unique name with `transferJobs/{{name}}` format, where `name` is a numeric value.
-  public Name?: string;
-
-  // Schedule specification defining when the Transfer Job should be scheduled to start, end and what time to run. Structure documented below. Either `schedule` or `event_stream` must be set.
-  public Schedule?: Storage_TransferJobSchedule;
+  public name?: string;
 
   // Status of the job. Default: `ENABLED`. --NOTE: The effect of the new job status takes place during a subsequent job run. For example, if you change the job status from ENABLED to DISABLED, and an operation spawned by the transfer is running, the status change would not affect the current operation.--
-  public Status?: string;
+  public status?: string;
+
+  // When the Transfer Job was created.
+  public creationTime?: string;
 
   // Unique description to identify the Transfer Job.
-  public Description?: string;
+  public description?: string;
 
-  // When the Transfer Job was deleted.
-  public DeletionTime?: string;
+  // When the Transfer Job was last modified.
+  public lastModificationTime?: string;
 
   // Notification configuration. This is not supported for transfers involving PosixFilesystem. Structure documented below.
-  public NotificationConfig?: Storage_TransferJobNotificationConfig;
+  public notificationConfig?: storage_TransferJobNotificationConfig;
 
   /*
 The project in which the resource belongs. If it
 is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
+
+  // Schedule specification defining when the Transfer Job should be scheduled to start, end and what time to run. Structure documented below. Either `schedule` or `event_stream` must be set.
+  public schedule?: storage_TransferJobSchedule;
 
   /*
 Transfer specification. Structure documented below.
 
 - - -
 */
-  public TransferSpec?: Storage_TransferJobTransferSpec;
+  public transferSpec?: storage_TransferJobTransferSpec;
 
-  // When the Transfer Job was created.
-  public CreationTime?: string;
+  // When the Transfer Job was deleted.
+  public deletionTime?: string;
+
+  // Specifies the Event-driven transfer options. Event-driven transfers listen to an event stream to transfer updated files. Structure documented below Either `event_stream` or `schedule` must be set.
+  public eventStream?: storage_TransferJobEventStream;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "Status",
-        "Status of the job. Default: `ENABLED`. **NOTE: The effect of the new job status takes place during a subsequent job run. For example, if you change the job status from ENABLED to DISABLED, and an operation spawned by the transfer is running, the status change would not affect the current operation.**",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.Object,
-        "TransferSpec",
+        "transferSpec",
         "Transfer specification. Structure documented below.\n\n- - -",
-        Storage_TransferJobTransferSpec_GetTypes(),
+        storage_TransferJobTransferSpec_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Unique description to identify the Transfer Job.",
         [],
         true,
@@ -124,15 +116,15 @@ Transfer specification. Structure documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "EventStream",
+        "eventStream",
         "Specifies the Event-driven transfer options. Event-driven transfers listen to an event stream to transfer updated files. Structure documented below Either `event_stream` or `schedule` must be set.",
-        Storage_TransferJobEventStream_GetTypes(),
+        storage_TransferJobEventStream_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         'The name of the Transfer Job. This name must start with "transferJobs/" prefix and end with a letter or a number, and should be no more than 128 characters ( `transferJobs/^(?!OPI)[A-Za-z0-9-._~]*[A-Za-z0-9]$` ). For transfers involving PosixFilesystem, this name must start with transferJobs/OPI specifically ( `transferJobs/OPI^[A-Za-z0-9-._~]*[A-Za-z0-9]$` ). For all other transfer types, this name must not start with transferJobs/OPI. Default the provider will assign a random unique name with `transferJobs/{{name}}` format, where `name` is a numeric value.',
         [],
         false,
@@ -140,15 +132,15 @@ Transfer specification. Structure documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "NotificationConfig",
+        "notificationConfig",
         "Notification configuration. This is not supported for transfers involving PosixFilesystem. Structure documented below.",
-        Storage_TransferJobNotificationConfig_GetTypes(),
+        storage_TransferJobNotificationConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The project in which the resource belongs. If it\nis not provided, the provider project is used.",
         [],
         false,
@@ -156,9 +148,17 @@ Transfer specification. Structure documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Schedule",
+        "schedule",
         "Schedule specification defining when the Transfer Job should be scheduled to start, end and what time to run. Structure documented below. Either `schedule` or `event_stream` must be set.",
-        Storage_TransferJobSchedule_GetTypes(),
+        storage_TransferJobSchedule_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "status",
+        "Status of the job. Default: `ENABLED`. **NOTE: The effect of the new job status takes place during a subsequent job run. For example, if you change the job status from ENABLED to DISABLED, and an operation spawned by the transfer is running, the status change would not affect the current operation.**",
+        [],
         false,
         false,
       ),

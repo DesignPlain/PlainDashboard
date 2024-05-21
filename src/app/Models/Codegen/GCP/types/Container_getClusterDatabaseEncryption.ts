@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterDatabaseEncryption {
+export interface container_getClusterDatabaseEncryption {
   // The key to use to encrypt/decrypt secrets.
-  KeyName?: string;
+  keyName?: string;
 
   // ENCRYPTED or DECRYPTED.
-  State?: string;
+  state?: string;
 }
 
-export function Container_getClusterDatabaseEncryption_GetTypes(): DynamicUIProps[] {
+export function container_getClusterDatabaseEncryption_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "KeyName",
+      "keyName",
       "The key to use to encrypt/decrypt secrets.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Container_getClusterDatabaseEncryption_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "ENCRYPTED or DECRYPTED.",
       [],
       true,

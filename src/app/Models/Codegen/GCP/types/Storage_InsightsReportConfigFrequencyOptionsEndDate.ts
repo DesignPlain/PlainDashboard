@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Storage_InsightsReportConfigFrequencyOptionsEndDate {
-  // The month to stop generating inventory reports.
-  Month?: number;
-
+export interface storage_InsightsReportConfigFrequencyOptionsEndDate {
   // The year to stop generating inventory reports
-  Year?: number;
+  year?: number;
 
   // The day of the month to stop generating inventory reports.
-  Day?: number;
+  day?: number;
+
+  // The month to stop generating inventory reports.
+  month?: number;
 }
 
-export function Storage_InsightsReportConfigFrequencyOptionsEndDate_GetTypes(): DynamicUIProps[] {
+export function storage_InsightsReportConfigFrequencyOptionsEndDate_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Month",
-      "The month to stop generating inventory reports.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Year",
+      "year",
       "The year to stop generating inventory reports",
       [],
       true,
@@ -37,8 +29,16 @@ export function Storage_InsightsReportConfigFrequencyOptionsEndDate_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Day",
+      "day",
       "The day of the month to stop generating inventory reports.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "month",
+      "The month to stop generating inventory reports.",
       [],
       true,
       false,

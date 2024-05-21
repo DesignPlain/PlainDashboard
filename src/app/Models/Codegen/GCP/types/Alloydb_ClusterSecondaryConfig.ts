@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Alloydb_ClusterSecondaryConfig {
+export interface alloydb_ClusterSecondaryConfig {
   /*
 Name of the primary cluster must be in the format
 'projects/{project}/locations/{location}/clusters/{cluster_id}'
 */
-  PrimaryClusterName?: string;
+  primaryClusterName?: string;
 }
 
-export function Alloydb_ClusterSecondaryConfig_GetTypes(): DynamicUIProps[] {
+export function alloydb_ClusterSecondaryConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PrimaryClusterName",
+      "primaryClusterName",
       "Name of the primary cluster must be in the format\n'projects/{project}/locations/{location}/clusters/{cluster_id}'",
       [],
       true,

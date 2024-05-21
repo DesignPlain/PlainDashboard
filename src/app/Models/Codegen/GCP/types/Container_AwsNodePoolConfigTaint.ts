@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AwsNodePoolConfigTaint {
+export interface container_AwsNodePoolConfigTaint {
+  // The taint effect. Possible values: EFFECT_UNSPECIFIED, NO_SCHEDULE, PREFER_NO_SCHEDULE, NO_EXECUTE
+  effect?: string;
+
   // Key for the taint.
-  Key?: string;
+  key?: string;
 
   // Value for the taint.
-  Value?: string;
-
-  // The taint effect. Possible values: EFFECT_UNSPECIFIED, NO_SCHEDULE, PREFER_NO_SCHEDULE, NO_EXECUTE
-  Effect?: string;
+  value?: string;
 }
 
-export function Container_AwsNodePoolConfigTaint_GetTypes(): DynamicUIProps[] {
+export function container_AwsNodePoolConfigTaint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "effect",
+      "The taint effect. Possible values: EFFECT_UNSPECIFIED, NO_SCHEDULE, PREFER_NO_SCHEDULE, NO_EXECUTE",
+      [],
+      true,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "key",
       "Key for the taint.",
       [],
       true,
@@ -29,16 +37,8 @@ export function Container_AwsNodePoolConfigTaint_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "Value for the taint.",
-      [],
-      true,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Effect",
-      "The taint effect. Possible values: EFFECT_UNSPECIFIED, NO_SCHEDULE, PREFER_NO_SCHEDULE, NO_EXECUTE",
       [],
       true,
       true,

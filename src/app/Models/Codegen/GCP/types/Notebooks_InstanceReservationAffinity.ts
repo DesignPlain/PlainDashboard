@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Notebooks_InstanceReservationAffinity {
+export interface notebooks_InstanceReservationAffinity {
   /*
 The type of Compute Reservation.
 Possible values are: `NO_RESERVATION`, `ANY_RESERVATION`, `SPECIFIC_RESERVATION`.
 */
-  ConsumeReservationType?: string;
+  consumeReservationType?: string;
 
   // Corresponds to the label key of reservation resource.
-  Key?: string;
+  key?: string;
 
   // Corresponds to the label values of reservation resource.
-  Values?: Array<string>;
+  values?: Array<string>;
 }
 
-export function Notebooks_InstanceReservationAffinity_GetTypes(): DynamicUIProps[] {
+export function notebooks_InstanceReservationAffinity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ConsumeReservationType",
+      "consumeReservationType",
       "The type of Compute Reservation.\nPossible values are: `NO_RESERVATION`, `ANY_RESERVATION`, `SPECIFIC_RESERVATION`.",
       [],
       true,
@@ -32,7 +32,7 @@ export function Notebooks_InstanceReservationAffinity_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "key",
       "Corresponds to the label key of reservation resource.",
       [],
       false,
@@ -40,7 +40,7 @@ export function Notebooks_InstanceReservationAffinity_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Values",
+      "values",
       "Corresponds to the label values of reservation resource.",
       InputType_String_GetTypes(),
       false,

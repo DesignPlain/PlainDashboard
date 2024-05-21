@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Iam_getWorkloadIdentityPoolProviderAw {
+export interface iam_getWorkloadIdentityPoolProviderAw {
   // The AWS account ID.
-  AccountId?: string;
+  accountId?: string;
 }
 
-export function Iam_getWorkloadIdentityPoolProviderAw_GetTypes(): DynamicUIProps[] {
+export function iam_getWorkloadIdentityPoolProviderAw_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "AccountId",
+      "accountId",
       "The AWS account ID.",
       [],
       true,

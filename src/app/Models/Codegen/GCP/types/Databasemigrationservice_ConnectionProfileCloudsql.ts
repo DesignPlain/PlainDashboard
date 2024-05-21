@@ -6,49 +6,41 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Databasemigrationservice_ConnectionProfileCloudsqlSettings,
-  Databasemigrationservice_ConnectionProfileCloudsqlSettings_GetTypes,
-} from "./Databasemigrationservice_ConnectionProfileCloudsqlSettings";
+  databasemigrationservice_ConnectionProfileCloudsqlSettings,
+  databasemigrationservice_ConnectionProfileCloudsqlSettings_GetTypes,
+} from "./databasemigrationservice_ConnectionProfileCloudsqlSettings";
 
-export interface Databasemigrationservice_ConnectionProfileCloudsql {
-  /*
-(Output)
-Output only. The Cloud SQL instance ID that this connection profile is associated with.
-*/
-  CloudSqlId?: string;
-
+export interface databasemigrationservice_ConnectionProfileCloudsql {
   /*
 (Output)
 Output only. The Cloud SQL database instance's private IP.
 */
-  PrivateIp?: string;
+  privateIp?: string;
 
   /*
 (Output)
 Output only. The Cloud SQL database instance's public IP.
 */
-  PublicIp?: string;
+  publicIp?: string;
 
   /*
 Immutable. Metadata used to create the destination Cloud SQL database.
 Structure is documented below.
 */
-  Settings?: Databasemigrationservice_ConnectionProfileCloudsqlSettings;
+  settings?: databasemigrationservice_ConnectionProfileCloudsqlSettings;
+
+  /*
+(Output)
+Output only. The Cloud SQL instance ID that this connection profile is associated with.
+*/
+  cloudSqlId?: string;
 }
 
-export function Databasemigrationservice_ConnectionProfileCloudsql_GetTypes(): DynamicUIProps[] {
+export function databasemigrationservice_ConnectionProfileCloudsql_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CloudSqlId",
-      "(Output)\nOutput only. The Cloud SQL instance ID that this connection profile is associated with.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "PrivateIp",
+      "privateIp",
       "(Output)\nOutput only. The Cloud SQL database instance's private IP.",
       [],
       false,
@@ -56,7 +48,7 @@ export function Databasemigrationservice_ConnectionProfileCloudsql_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.String,
-      "PublicIp",
+      "publicIp",
       "(Output)\nOutput only. The Cloud SQL database instance's public IP.",
       [],
       false,
@@ -64,11 +56,19 @@ export function Databasemigrationservice_ConnectionProfileCloudsql_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Settings",
+      "settings",
       "Immutable. Metadata used to create the destination Cloud SQL database.\nStructure is documented below.",
-      Databasemigrationservice_ConnectionProfileCloudsqlSettings_GetTypes(),
+      databasemigrationservice_ConnectionProfileCloudsqlSettings_GetTypes(),
       false,
       true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "cloudSqlId",
+      "(Output)\nOutput only. The Cloud SQL instance ID that this connection profile is associated with.",
+      [],
+      false,
+      false,
     ),
   ];
 }

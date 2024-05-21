@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_ClusterNotificationConfigPubsub,
-  Container_ClusterNotificationConfigPubsub_GetTypes,
-} from "./Container_ClusterNotificationConfigPubsub";
+  container_ClusterNotificationConfigPubsub,
+  container_ClusterNotificationConfigPubsub_GetTypes,
+} from "./container_ClusterNotificationConfigPubsub";
 
-export interface Container_ClusterNotificationConfig {
+export interface container_ClusterNotificationConfig {
   // The pubsub config for the cluster's upgrade notifications.
-  Pubsub?: Container_ClusterNotificationConfigPubsub;
+  pubsub?: container_ClusterNotificationConfigPubsub;
 }
 
-export function Container_ClusterNotificationConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterNotificationConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Pubsub",
+      "pubsub",
       "The pubsub config for the cluster's upgrade notifications.",
-      Container_ClusterNotificationConfigPubsub_GetTypes(),
+      container_ClusterNotificationConfigPubsub_GetTypes(),
       true,
       false,
     ),

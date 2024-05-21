@@ -6,36 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudscheduler_JobHttpTargetOauthToken {
+export interface cloudscheduler_JobHttpTargetOauthToken {
   /*
 OAuth scope to be used for generating OAuth access token. If not specified,
 "https://www.googleapis.com/auth/cloud-platform" will be used.
 */
-  Scope?: string;
+  scope?: string;
 
   /*
 Service account email to be used for generating OAuth token.
 The service account must be within the same project as the job.
 */
-  ServiceAccountEmail?: string;
+  serviceAccountEmail?: string;
 }
 
-export function Cloudscheduler_JobHttpTargetOauthToken_GetTypes(): DynamicUIProps[] {
+export function cloudscheduler_JobHttpTargetOauthToken_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Scope",
-      'OAuth scope to be used for generating OAuth access token. If not specified,\n"https://www.googleapis.com/auth/cloud-platform" will be used.',
+      "serviceAccountEmail",
+      "Service account email to be used for generating OAuth token.\nThe service account must be within the same project as the job.",
       [],
-      false,
+      true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ServiceAccountEmail",
-      "Service account email to be used for generating OAuth token.\nThe service account must be within the same project as the job.",
+      "scope",
+      'OAuth scope to be used for generating OAuth access token. If not specified,\n"https://www.googleapis.com/auth/cloud-platform" will be used.',
       [],
-      true,
+      false,
       false,
     ),
   ];

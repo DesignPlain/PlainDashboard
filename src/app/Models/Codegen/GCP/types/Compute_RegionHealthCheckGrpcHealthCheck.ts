@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionHealthCheckGrpcHealthCheck {
+export interface compute_RegionHealthCheckGrpcHealthCheck {
   /*
 The gRPC service name for the health check.
 The value of grpcServiceName has the following meanings by convention:
@@ -14,41 +14,33 @@ The value of grpcServiceName has the following meanings by convention:
 - Non-empty serviceName means the health of that gRPC service, as defined by the owner of the service.
 The grpcServiceName can only be ASCII.
 */
-  GrpcServiceName?: string;
+  grpcServiceName?: string;
 
   /*
 The port number for the health check request.
 Must be specified if portName and portSpecification are not set
 or if port_specification is USE_FIXED_PORT. Valid values are 1 through 65535.
 */
-  Port?: number;
+  port?: number;
 
   /*
 Port name as defined in InstanceGroup#NamedPort#name. If both port and
 port_name are defined, port takes precedence.
 */
-  PortName?: string;
+  portName?: string;
 
   /*
 Specifies how port is selected for health checking, can be one of the
 following values:
 */
-  PortSpecification?: string;
+  portSpecification?: string;
 }
 
-export function Compute_RegionHealthCheckGrpcHealthCheck_GetTypes(): DynamicUIProps[] {
+export function compute_RegionHealthCheckGrpcHealthCheck_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PortSpecification",
-      "Specifies how port is selected for health checking, can be one of the\nfollowing values:",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "GrpcServiceName",
+      "grpcServiceName",
       "The gRPC service name for the health check.\nThe value of grpcServiceName has the following meanings by convention:\n* Empty serviceName means the overall status of all services at the backend.\n* Non-empty serviceName means the health of that gRPC service, as defined by the owner of the service.\nThe grpcServiceName can only be ASCII.",
       [],
       false,
@@ -56,7 +48,7 @@ export function Compute_RegionHealthCheckGrpcHealthCheck_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Port",
+      "port",
       "The port number for the health check request.\nMust be specified if portName and portSpecification are not set\nor if port_specification is USE_FIXED_PORT. Valid values are 1 through 65535.",
       [],
       false,
@@ -64,8 +56,16 @@ export function Compute_RegionHealthCheckGrpcHealthCheck_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "PortName",
+      "portName",
       "Port name as defined in InstanceGroup#NamedPort#name. If both port and\nport_name are defined, port takes precedence.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "portSpecification",
+      "Specifies how port is selected for health checking, can be one of the\nfollowing values:",
       [],
       false,
       false,

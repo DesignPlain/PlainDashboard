@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_SecurityPolicyRuleHeaderActionRequestHeadersToAdd,
-  Compute_SecurityPolicyRuleHeaderActionRequestHeadersToAdd_GetTypes,
-} from "./Compute_SecurityPolicyRuleHeaderActionRequestHeadersToAdd";
+  compute_SecurityPolicyRuleHeaderActionRequestHeadersToAdd,
+  compute_SecurityPolicyRuleHeaderActionRequestHeadersToAdd_GetTypes,
+} from "./compute_SecurityPolicyRuleHeaderActionRequestHeadersToAdd";
 
-export interface Compute_SecurityPolicyRuleHeaderAction {
+export interface compute_SecurityPolicyRuleHeaderAction {
   // The list of request headers to add or overwrite if they're already present. Structure is documented below.
-  RequestHeadersToAdds?: Array<Compute_SecurityPolicyRuleHeaderActionRequestHeadersToAdd>;
+  requestHeadersToAdds?: Array<compute_SecurityPolicyRuleHeaderActionRequestHeadersToAdd>;
 }
 
-export function Compute_SecurityPolicyRuleHeaderAction_GetTypes(): DynamicUIProps[] {
+export function compute_SecurityPolicyRuleHeaderAction_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "RequestHeadersToAdds",
+      "requestHeadersToAdds",
       "The list of request headers to add or overwrite if they're already present. Structure is documented below.",
-      Compute_SecurityPolicyRuleHeaderActionRequestHeadersToAdd_GetTypes(),
+      compute_SecurityPolicyRuleHeaderActionRequestHeadersToAdd_GetTypes(),
       true,
       false,
     ),

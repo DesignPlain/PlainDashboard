@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigqueryanalyticshub_ListingBigqueryDataset {
+export interface bigqueryanalyticshub_ListingBigqueryDataset {
   /*
 Resource name of the dataset source for this listing. e.g. projects/myproject/datasets/123
 
 - - -
 */
-  Dataset?: string;
+  dataset?: string;
 }
 
-export function Bigqueryanalyticshub_ListingBigqueryDataset_GetTypes(): DynamicUIProps[] {
+export function bigqueryanalyticshub_ListingBigqueryDataset_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Dataset",
+      "dataset",
       "Resource name of the dataset source for this listing. e.g. projects/myproject/datasets/123\n\n- - -",
       [],
       true,

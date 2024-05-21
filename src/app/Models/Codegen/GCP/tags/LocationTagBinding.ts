@@ -13,36 +13,36 @@ Location of the target resource.
 
 - - -
 */
-  Location?: string;
+  location?: string;
 
   // The full resource name of the resource the TagValue is bound to. E.g. //cloudresourcemanager.googleapis.com/projects/123
-  Parent?: string;
+  parent?: string;
 
   // The TagValue of the TagBinding. Must be of the form tagValues/456.
-  TagValue?: string;
+  tagValue?: string;
 }
 export class LocationTagBinding extends Resource {
+  // The generated id for the TagBinding. This is a string of the form: `tagBindings/{parent}/{tag-value-name}`
+  public name?: string;
+
+  // The full resource name of the resource the TagValue is bound to. E.g. //cloudresourcemanager.googleapis.com/projects/123
+  public parent?: string;
+
+  // The TagValue of the TagBinding. Must be of the form tagValues/456.
+  public tagValue?: string;
+
   /*
 Location of the target resource.
 
 - - -
 */
-  public Location?: string;
-
-  // The generated id for the TagBinding. This is a string of the form: `tagBindings/{parent}/{tag-value-name}`
-  public Name?: string;
-
-  // The full resource name of the resource the TagValue is bound to. E.g. //cloudresourcemanager.googleapis.com/projects/123
-  public Parent?: string;
-
-  // The TagValue of the TagBinding. Must be of the form tagValues/456.
-  public TagValue?: string;
+  public location?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "Location of the target resource.\n\n- - -",
         [],
         false,
@@ -50,7 +50,7 @@ Location of the target resource.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Parent",
+        "parent",
         "The full resource name of the resource the TagValue is bound to. E.g. //cloudresourcemanager.googleapis.com/projects/123",
         [],
         true,
@@ -58,7 +58,7 @@ Location of the target resource.
       ),
       new DynamicUIProps(
         InputType.String,
-        "TagValue",
+        "tagValue",
         "The TagValue of the TagBinding. Must be of the form tagValues/456.",
         [],
         true,

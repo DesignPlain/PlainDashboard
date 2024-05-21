@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_TableExternalDataConfigurationParquetOptions {
+export interface bigquery_TableExternalDataConfigurationParquetOptions {
   // Indicates whether to use schema inference specifically for Parquet LIST logical type.
-  EnableListInference?: boolean;
+  enableListInference?: boolean;
 
   // Indicates whether to infer Parquet ENUM logical type as STRING instead of BYTES by default.
-  EnumAsString?: boolean;
+  enumAsString?: boolean;
 }
 
-export function Bigquery_TableExternalDataConfigurationParquetOptions_GetTypes(): DynamicUIProps[] {
+export function bigquery_TableExternalDataConfigurationParquetOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableListInference",
+      "enableListInference",
       "Indicates whether to use schema inference specifically for Parquet LIST logical type.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Bigquery_TableExternalDataConfigurationParquetOptions_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnumAsString",
+      "enumAsString",
       "Indicates whether to infer Parquet ENUM logical type as STRING instead of BYTES by default.",
       [],
       false,

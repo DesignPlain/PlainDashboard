@@ -6,36 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_SloWindowsBasedSliMetricSumInRangeRange {
-  /*
-Min value for the range (inclusive). If not given,
-will be set to "-infinity", defining an open range
-"< range.max"
-*/
-  Min?: number;
-
+export interface monitoring_SloWindowsBasedSliMetricSumInRangeRange {
   /*
 max value for the range (inclusive). If not given,
 will be set to "infinity", defining an open range
 ">= range.min"
 */
-  Max?: number;
+  max?: number;
+
+  /*
+Min value for the range (inclusive). If not given,
+will be set to "-infinity", defining an open range
+"< range.max"
+*/
+  min?: number;
 }
 
-export function Monitoring_SloWindowsBasedSliMetricSumInRangeRange_GetTypes(): DynamicUIProps[] {
+export function monitoring_SloWindowsBasedSliMetricSumInRangeRange_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Min",
-      'Min value for the range (inclusive). If not given,\nwill be set to "-infinity", defining an open range\n"< range.max"',
+      "max",
+      'max value for the range (inclusive). If not given,\nwill be set to "infinity", defining an open range\n">= range.min"',
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Max",
-      'max value for the range (inclusive). If not given,\nwill be set to "infinity", defining an open range\n">= range.min"',
+      "min",
+      'Min value for the range (inclusive). If not given,\nwill be set to "-infinity", defining an open range\n"< range.max"',
       [],
       false,
       false,

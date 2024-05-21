@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_VMwareClusterAutoRepairConfig {
+export interface gkeonprem_VMwareClusterAutoRepairConfig {
   // Whether auto repair is enabled.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Gkeonprem_VMwareClusterAutoRepairConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterAutoRepairConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether auto repair is enabled.",
       [],
       true,

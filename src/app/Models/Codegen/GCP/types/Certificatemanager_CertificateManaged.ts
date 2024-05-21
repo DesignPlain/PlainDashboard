@@ -6,40 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificatemanager_CertificateManagedProvisioningIssue,
-  Certificatemanager_CertificateManagedProvisioningIssue_GetTypes,
-} from "./Certificatemanager_CertificateManagedProvisioningIssue";
+  certificatemanager_CertificateManagedAuthorizationAttemptInfo,
+  certificatemanager_CertificateManagedAuthorizationAttemptInfo_GetTypes,
+} from "./certificatemanager_CertificateManagedAuthorizationAttemptInfo";
 import {
-  Certificatemanager_CertificateManagedAuthorizationAttemptInfo,
-  Certificatemanager_CertificateManagedAuthorizationAttemptInfo_GetTypes,
-} from "./Certificatemanager_CertificateManagedAuthorizationAttemptInfo";
+  certificatemanager_CertificateManagedProvisioningIssue,
+  certificatemanager_CertificateManagedProvisioningIssue_GetTypes,
+} from "./certificatemanager_CertificateManagedProvisioningIssue";
 
-export interface Certificatemanager_CertificateManaged {
-  /*
-The domains for which a managed SSL certificate will be generated.
-Wildcard domains are only supported with DNS challenge resolution
-*/
-  Domains?: Array<string>;
-
-  /*
-The resource name for a CertificateIssuanceConfig used to configure private PKI certificates in the format projects/-/locations/-/certificateIssuanceConfigs/-.
-If this field is not set, the certificates will instead be publicly signed as documented at https://cloud.google.com/load-balancing/docs/ssl-certificates/google-managed-certs#caa.
-Either issuanceConfig or dnsAuthorizations should be specificed, but not both.
-*/
-  IssuanceConfig?: string;
-
-  /*
-(Output)
-Information about issues with provisioning this Managed Certificate.
-Structure is documented below.
-*/
-  ProvisioningIssues?: Array<Certificatemanager_CertificateManagedProvisioningIssue>;
-
+export interface certificatemanager_CertificateManaged {
   /*
 (Output)
 State of the domain for managed certificate issuance.
 */
-  State?: string;
+  state?: string;
 
   /*
 (Output)
@@ -50,17 +30,37 @@ Structure is documented below.
 
 <a name="nested_provisioning_issue"></a>The `provisioning_issue` block contains:
 */
-  AuthorizationAttemptInfos?: Array<Certificatemanager_CertificateManagedAuthorizationAttemptInfo>;
+  authorizationAttemptInfos?: Array<certificatemanager_CertificateManagedAuthorizationAttemptInfo>;
 
   // Authorizations that will be used for performing domain authorization. Either issuanceConfig or dnsAuthorizations should be specificed, but not both.
-  DnsAuthorizations?: Array<string>;
+  dnsAuthorizations?: Array<string>;
+
+  /*
+The domains for which a managed SSL certificate will be generated.
+Wildcard domains are only supported with DNS challenge resolution
+*/
+  domains?: Array<string>;
+
+  /*
+The resource name for a CertificateIssuanceConfig used to configure private PKI certificates in the format projects/-/locations/-/certificateIssuanceConfigs/-.
+If this field is not set, the certificates will instead be publicly signed as documented at https://cloud.google.com/load-balancing/docs/ssl-certificates/google-managed-certs#caa.
+Either issuanceConfig or dnsAuthorizations should be specificed, but not both.
+*/
+  issuanceConfig?: string;
+
+  /*
+(Output)
+Information about issues with provisioning this Managed Certificate.
+Structure is documented below.
+*/
+  provisioningIssues?: Array<certificatemanager_CertificateManagedProvisioningIssue>;
 }
 
-export function Certificatemanager_CertificateManaged_GetTypes(): DynamicUIProps[] {
+export function certificatemanager_CertificateManaged_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Domains",
+      "domains",
       "The domains for which a managed SSL certificate will be generated.\nWildcard domains are only supported with DNS challenge resolution",
       InputType_String_GetTypes(),
       false,
@@ -68,7 +68,7 @@ export function Certificatemanager_CertificateManaged_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "IssuanceConfig",
+      "issuanceConfig",
       "The resource name for a CertificateIssuanceConfig used to configure private PKI certificates in the format projects/*/locations/*/certificateIssuanceConfigs/*.\nIf this field is not set, the certificates will instead be publicly signed as documented at https://cloud.google.com/load-balancing/docs/ssl-certificates/google-managed-certs#caa.\nEither issuanceConfig or dnsAuthorizations should be specificed, but not both.",
       [],
       false,
@@ -76,15 +76,15 @@ export function Certificatemanager_CertificateManaged_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ProvisioningIssues",
+      "provisioningIssues",
       "(Output)\nInformation about issues with provisioning this Managed Certificate.\nStructure is documented below.",
-      Certificatemanager_CertificateManagedProvisioningIssue_GetTypes(),
+      certificatemanager_CertificateManagedProvisioningIssue_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "(Output)\nState of the domain for managed certificate issuance.",
       [],
       false,
@@ -92,15 +92,15 @@ export function Certificatemanager_CertificateManaged_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AuthorizationAttemptInfos",
+      "authorizationAttemptInfos",
       '(Output)\nDetailed state of the latest authorization attempt for each domain\nspecified for this Managed Certificate.\nStructure is documented below.\n\n\n<a name="nested_provisioning_issue"></a>The `provisioning_issue` block contains:',
-      Certificatemanager_CertificateManagedAuthorizationAttemptInfo_GetTypes(),
+      certificatemanager_CertificateManagedAuthorizationAttemptInfo_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "DnsAuthorizations",
+      "dnsAuthorizations",
       "Authorizations that will be used for performing domain authorization. Either issuanceConfig or dnsAuthorizations should be specificed, but not both.",
       InputType_String_GetTypes(),
       false,

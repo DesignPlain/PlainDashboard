@@ -6,40 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig,
-  Compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig_GetTypes,
-} from "./Compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig";
+  compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig,
+  compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig_GetTypes,
+} from "./compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig";
 
-export interface Compute_SecurityPolicyAdvancedOptionsConfig {
+export interface compute_SecurityPolicyAdvancedOptionsConfig {
   /*
 Custom configuration to apply the JSON parsing. Only applicable when
 `json_parsing` is set to `STANDARD`. Structure is documented below.
 */
-  JsonCustomConfig?: Compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig;
+  jsonCustomConfig?: compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig;
 
   // Whether or not to JSON parse the payload body. Defaults to `DISABLED`.
-  JsonParsing?: string;
+  jsonParsing?: string;
 
   // Log level to use. Defaults to `NORMAL`.
-  LogLevel?: string;
+  logLevel?: string;
 
   // An optional list of case-insensitive request header names to use for resolving the callers client IP address.
-  UserIpRequestHeaders?: Array<string>;
+  userIpRequestHeaders?: Array<string>;
 }
 
-export function Compute_SecurityPolicyAdvancedOptionsConfig_GetTypes(): DynamicUIProps[] {
+export function compute_SecurityPolicyAdvancedOptionsConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "JsonCustomConfig",
+      "jsonCustomConfig",
       "Custom configuration to apply the JSON parsing. Only applicable when\n`json_parsing` is set to `STANDARD`. Structure is documented below.",
-      Compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig_GetTypes(),
+      compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "JsonParsing",
+      "jsonParsing",
       "Whether or not to JSON parse the payload body. Defaults to `DISABLED`.",
       [],
       false,
@@ -47,7 +47,7 @@ export function Compute_SecurityPolicyAdvancedOptionsConfig_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "LogLevel",
+      "logLevel",
       "Log level to use. Defaults to `NORMAL`.",
       [],
       false,
@@ -55,7 +55,7 @@ export function Compute_SecurityPolicyAdvancedOptionsConfig_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Array,
-      "UserIpRequestHeaders",
+      "userIpRequestHeaders",
       "An optional list of case-insensitive request header names to use for resolving the callers client IP address.",
       InputType_String_GetTypes(),
       false,

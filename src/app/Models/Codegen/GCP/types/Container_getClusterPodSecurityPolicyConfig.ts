@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterPodSecurityPolicyConfig {
+export interface container_getClusterPodSecurityPolicyConfig {
   // Enable the PodSecurityPolicy controller for this cluster. If enabled, pods must be valid under a PodSecurityPolicy to be created.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_getClusterPodSecurityPolicyConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterPodSecurityPolicyConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Enable the PodSecurityPolicy controller for this cluster. If enabled, pods must be valid under a PodSecurityPolicy to be created.",
       [],
       true,

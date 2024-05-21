@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_ClusterMasterAuthorizedNetworksConfigCidrBlock,
-  Container_ClusterMasterAuthorizedNetworksConfigCidrBlock_GetTypes,
-} from "./Container_ClusterMasterAuthorizedNetworksConfigCidrBlock";
+  container_ClusterMasterAuthorizedNetworksConfigCidrBlock,
+  container_ClusterMasterAuthorizedNetworksConfigCidrBlock_GetTypes,
+} from "./container_ClusterMasterAuthorizedNetworksConfigCidrBlock";
 
-export interface Container_ClusterMasterAuthorizedNetworksConfig {
+export interface container_ClusterMasterAuthorizedNetworksConfig {
   /*
 External networks that can access the
 Kubernetes cluster master through HTTPS.
 */
-  CidrBlocks?: Array<Container_ClusterMasterAuthorizedNetworksConfigCidrBlock>;
+  cidrBlocks?: Array<container_ClusterMasterAuthorizedNetworksConfigCidrBlock>;
 
   /*
 Whether Kubernetes master is
 accessible via Google Compute Engine Public IPs.
 */
-  GcpPublicCidrsAccessEnabled?: boolean;
+  gcpPublicCidrsAccessEnabled?: boolean;
 }
 
-export function Container_ClusterMasterAuthorizedNetworksConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterMasterAuthorizedNetworksConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "CidrBlocks",
+      "cidrBlocks",
       "External networks that can access the\nKubernetes cluster master through HTTPS.",
-      Container_ClusterMasterAuthorizedNetworksConfigCidrBlock_GetTypes(),
+      container_ClusterMasterAuthorizedNetworksConfigCidrBlock_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "GcpPublicCidrsAccessEnabled",
+      "gcpPublicCidrsAccessEnabled",
       "Whether Kubernetes master is\naccessible via Google Compute Engine Public IPs.",
       [],
       false,

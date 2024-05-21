@@ -6,34 +6,54 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigInfoType,
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigInfoType_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobInspectConfigInfoType";
+  dataloss_PreventionJobTriggerInspectJobInspectConfigLimits,
+  dataloss_PreventionJobTriggerInspectJobInspectConfigLimits_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigLimits";
 import {
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigLimits,
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigLimits_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobInspectConfigLimits";
+  dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet,
+  dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet";
 import {
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet,
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet";
+  dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoType,
+  dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoType_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoType";
 import {
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoType,
-  Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoType_GetTypes,
-} from "./Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoType";
+  dataloss_PreventionJobTriggerInspectJobInspectConfigInfoType,
+  dataloss_PreventionJobTriggerInspectJobInspectConfigInfoType_GetTypes,
+} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigInfoType";
 
-export interface Dataloss_PreventionJobTriggerInspectJobInspectConfig {
+export interface dataloss_PreventionJobTriggerInspectJobInspectConfig {
+  /*
+Configuration to control the number of findings returned.
+Structure is documented below.
+*/
+  limits?: dataloss_PreventionJobTriggerInspectJobInspectConfigLimits;
+
+  /*
+Only returns findings equal or above this threshold. See https://cloud.google.com/dlp/docs/likelihood for more info
+Default value is `POSSIBLE`.
+Possible values are: `VERY_UNLIKELY`, `UNLIKELY`, `POSSIBLE`, `LIKELY`, `VERY_LIKELY`.
+*/
+  minLikelihood?: string;
+
+  /*
+Set of rules to apply to the findings for this InspectConfig. Exclusion rules, contained in the set are executed in the end,
+other rules are executed in the order they are specified for each info type.
+Structure is documented below.
+*/
+  ruleSets?: Array<dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet>;
+
   /*
 Custom info types to be used. See https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
 Structure is documented below.
 */
-  CustomInfoTypes?: Array<Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoType>;
+  customInfoTypes?: Array<dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoType>;
 
   // When true, excludes type information of the findings.
-  ExcludeInfoTypes?: boolean;
+  excludeInfoTypes?: boolean;
 
   // When true, a contextual quote from the data that triggered a finding is included in the response.
-  IncludeQuote?: boolean;
+  includeQuote?: boolean;
 
   /*
 Restricts what infoTypes to look for. The values must correspond to InfoType values returned by infoTypes.list
@@ -42,42 +62,14 @@ When no InfoTypes or CustomInfoTypes are specified in a request, the system may 
 By default this may be all types, but may change over time as detectors are updated.
 Structure is documented below.
 */
-  InfoTypes?: Array<Dataloss_PreventionJobTriggerInspectJobInspectConfigInfoType>;
-
-  /*
-Configuration to control the number of findings returned.
-Structure is documented below.
-*/
-  Limits?: Dataloss_PreventionJobTriggerInspectJobInspectConfigLimits;
-
-  /*
-Only returns findings equal or above this threshold. See https://cloud.google.com/dlp/docs/likelihood for more info
-Default value is `POSSIBLE`.
-Possible values are: `VERY_UNLIKELY`, `UNLIKELY`, `POSSIBLE`, `LIKELY`, `VERY_LIKELY`.
-*/
-  MinLikelihood?: string;
-
-  /*
-Set of rules to apply to the findings for this InspectConfig. Exclusion rules, contained in the set are executed in the end,
-other rules are executed in the order they are specified for each info type.
-Structure is documented below.
-*/
-  RuleSets?: Array<Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet>;
+  infoTypes?: Array<dataloss_PreventionJobTriggerInspectJobInspectConfigInfoType>;
 }
 
-export function Dataloss_PreventionJobTriggerInspectJobInspectConfig_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobInspectConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "CustomInfoTypes",
-      "Custom info types to be used. See https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoType_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "ExcludeInfoTypes",
+      "excludeInfoTypes",
       "When true, excludes type information of the findings.",
       [],
       false,
@@ -85,7 +77,7 @@ export function Dataloss_PreventionJobTriggerInspectJobInspectConfig_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IncludeQuote",
+      "includeQuote",
       "When true, a contextual quote from the data that triggered a finding is included in the response.",
       [],
       false,
@@ -93,23 +85,23 @@ export function Dataloss_PreventionJobTriggerInspectJobInspectConfig_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Array,
-      "InfoTypes",
+      "infoTypes",
       "Restricts what infoTypes to look for. The values must correspond to InfoType values returned by infoTypes.list\nor listed at https://cloud.google.com/dlp/docs/infotypes-reference.\nWhen no InfoTypes or CustomInfoTypes are specified in a request, the system may automatically choose what detectors to run.\nBy default this may be all types, but may change over time as detectors are updated.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobInspectConfigInfoType_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobInspectConfigInfoType_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Limits",
+      "limits",
       "Configuration to control the number of findings returned.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobInspectConfigLimits_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobInspectConfigLimits_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "MinLikelihood",
+      "minLikelihood",
       "Only returns findings equal or above this threshold. See https://cloud.google.com/dlp/docs/likelihood for more info\nDefault value is `POSSIBLE`.\nPossible values are: `VERY_UNLIKELY`, `UNLIKELY`, `POSSIBLE`, `LIKELY`, `VERY_LIKELY`.",
       [],
       false,
@@ -117,9 +109,17 @@ export function Dataloss_PreventionJobTriggerInspectJobInspectConfig_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Array,
-      "RuleSets",
+      "ruleSets",
       "Set of rules to apply to the findings for this InspectConfig. Exclusion rules, contained in the set are executed in the end,\nother rules are executed in the order they are specified for each info type.\nStructure is documented below.",
-      Dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet_GetTypes(),
+      dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "customInfoTypes",
+      "Custom info types to be used. See https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.\nStructure is documented below.",
+      dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoType_GetTypes(),
       false,
       false,
     ),

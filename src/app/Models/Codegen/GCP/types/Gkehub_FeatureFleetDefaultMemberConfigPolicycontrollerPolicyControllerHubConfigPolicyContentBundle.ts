@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentBundle {
-  // The set of namespaces to be exempted from the bundle.
-  ExemptedNamespaces?: Array<string>;
-
+export interface gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentBundle {
   // The identifier for this object. Format specified above.
-  Bundle?: string;
+  bundle?: string;
+
+  // The set of namespaces to be exempted from the bundle.
+  exemptedNamespaces?: Array<string>;
 }
 
-export function Gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentBundle_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentBundle_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "ExemptedNamespaces",
-      "The set of namespaces to be exempted from the bundle.",
-      InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Bundle",
+      "bundle",
       "The identifier for this object. Format specified above.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "exemptedNamespaces",
+      "The set of namespaces to be exempted from the bundle.",
+      InputType_String_GetTypes(),
+      false,
       false,
     ),
   ];

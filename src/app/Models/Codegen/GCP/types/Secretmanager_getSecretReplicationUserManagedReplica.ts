@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption,
-  Secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption_GetTypes,
-} from "./Secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption";
+  secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption,
+  secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption_GetTypes,
+} from "./secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption";
 
-export interface Secretmanager_getSecretReplicationUserManagedReplica {
+export interface secretmanager_getSecretReplicationUserManagedReplica {
   // Customer Managed Encryption for the secret.
-  CustomerManagedEncryptions?: Array<Secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption>;
+  customerManagedEncryptions?: Array<secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption>;
 
   // The canonical IDs of the location to replicate data. For example: "us-east1".
-  Location?: string;
+  location?: string;
 }
 
-export function Secretmanager_getSecretReplicationUserManagedReplica_GetTypes(): DynamicUIProps[] {
+export function secretmanager_getSecretReplicationUserManagedReplica_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "CustomerManagedEncryptions",
+      "customerManagedEncryptions",
       "Customer Managed Encryption for the secret.",
-      Secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption_GetTypes(),
+      secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       'The canonical IDs of the location to replicate data. For example: "us-east1".',
       [],
       true,

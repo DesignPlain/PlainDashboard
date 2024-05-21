@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Iam_DenyPolicyRuleDenyRule,
-  Iam_DenyPolicyRuleDenyRule_GetTypes,
-} from "./Iam_DenyPolicyRuleDenyRule";
+  iam_DenyPolicyRuleDenyRule,
+  iam_DenyPolicyRuleDenyRule_GetTypes,
+} from "./iam_DenyPolicyRuleDenyRule";
 
-export interface Iam_DenyPolicyRule {
+export interface iam_DenyPolicyRule {
   /*
 A deny rule in an IAM deny policy.
 Structure is documented below.
 */
-  DenyRule?: Iam_DenyPolicyRuleDenyRule;
+  denyRule?: iam_DenyPolicyRuleDenyRule;
 
   // The description of the rule.
-  Description?: string;
+  description?: string;
 }
 
-export function Iam_DenyPolicyRule_GetTypes(): DynamicUIProps[] {
+export function iam_DenyPolicyRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "DenyRule",
+      "denyRule",
       "A deny rule in an IAM deny policy.\nStructure is documented below.",
-      Iam_DenyPolicyRuleDenyRule_GetTypes(),
+      iam_DenyPolicyRuleDenyRule_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "The description of the rule.",
       [],
       false,

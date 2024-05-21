@@ -6,18 +6,18 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getHealthCheckTcpHealthCheck {
+export interface compute_getHealthCheckTcpHealthCheck {
   /*
 The TCP port number for the TCP health check request.
 The default value is 443.
 */
-  Port?: number;
+  port?: number;
 
   /*
 Port name as defined in InstanceGroup#NamedPort#name. If both port and
 port_name are defined, port takes precedence.
 */
-  PortName?: string;
+  portName?: string;
 
   /*
 Specifies how port is selected for health checking, can be one of the
@@ -35,13 +35,13 @@ following values:
 If not specified, TCP health check follows behavior specified in 'port' and
 'portName' fields. Possible values: ["USE_FIXED_PORT", "USE_NAMED_PORT", "USE_SERVING_PORT"]
 */
-  PortSpecification?: string;
+  portSpecification?: string;
 
   /*
 Specifies the type of proxy header to append before sending data to the
 backend. Default value: "NONE" Possible values: ["NONE", "PROXY_V1"]
 */
-  ProxyHeader?: string;
+  proxyHeader?: string;
 
   /*
 The application data to send once the TCP connection has been
@@ -49,29 +49,21 @@ established (default value is empty). If both request and response are
 empty, the connection establishment alone will indicate health. The request
 data can only be ASCII.
 */
-  Request?: string;
+  request?: string;
 
   /*
 The bytes to match against the beginning of the response data. If left empty
 (the default value), any response will indicate health. The response data
 can only be ASCII.
 */
-  Response?: string;
+  response?: string;
 }
 
-export function Compute_getHealthCheckTcpHealthCheck_GetTypes(): DynamicUIProps[] {
+export function compute_getHealthCheckTcpHealthCheck_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "Response",
-      "The bytes to match against the beginning of the response data. If left empty\n(the default value), any response will indicate health. The response data\ncan only be ASCII.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "Port",
+      "port",
       "The TCP port number for the TCP health check request.\nThe default value is 443.",
       [],
       true,
@@ -79,7 +71,7 @@ export function Compute_getHealthCheckTcpHealthCheck_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "PortName",
+      "portName",
       "Port name as defined in InstanceGroup#NamedPort#name. If both port and\nport_name are defined, port takes precedence.",
       [],
       true,
@@ -87,7 +79,7 @@ export function Compute_getHealthCheckTcpHealthCheck_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "PortSpecification",
+      "portSpecification",
       "Specifies how port is selected for health checking, can be one of the\nfollowing values:\n\n  * 'USE_FIXED_PORT': The port number in 'port' is used for health checking.\n\n  * 'USE_NAMED_PORT': The 'portName' is used for health checking.\n\n  * 'USE_SERVING_PORT': For NetworkEndpointGroup, the port specified for each\n  network endpoint is used for health checking. For other backends, the\n  port or named port specified in the Backend Service is used for health\n  checking.\n\nIf not specified, TCP health check follows behavior specified in 'port' and\n'portName' fields. Possible values: [\"USE_FIXED_PORT\", \"USE_NAMED_PORT\", \"USE_SERVING_PORT\"]",
       [],
       true,
@@ -95,7 +87,7 @@ export function Compute_getHealthCheckTcpHealthCheck_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "ProxyHeader",
+      "proxyHeader",
       'Specifies the type of proxy header to append before sending data to the\nbackend. Default value: "NONE" Possible values: ["NONE", "PROXY_V1"]',
       [],
       true,
@@ -103,8 +95,16 @@ export function Compute_getHealthCheckTcpHealthCheck_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "Request",
+      "request",
       "The application data to send once the TCP connection has been\nestablished (default value is empty). If both request and response are\nempty, the connection establishment alone will indicate health. The request\ndata can only be ASCII.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "response",
+      "The bytes to match against the beginning of the response data. If left empty\n(the default value), any response will indicate health. The response data\ncan only be ASCII.",
       [],
       true,
       false,

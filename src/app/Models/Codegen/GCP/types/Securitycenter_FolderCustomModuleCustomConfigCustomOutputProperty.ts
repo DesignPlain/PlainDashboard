@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Securitycenter_FolderCustomModuleCustomConfigCustomOutputPropertyValueExpression,
-  Securitycenter_FolderCustomModuleCustomConfigCustomOutputPropertyValueExpression_GetTypes,
-} from "./Securitycenter_FolderCustomModuleCustomConfigCustomOutputPropertyValueExpression";
+  securitycenter_FolderCustomModuleCustomConfigCustomOutputPropertyValueExpression,
+  securitycenter_FolderCustomModuleCustomConfigCustomOutputPropertyValueExpression_GetTypes,
+} from "./securitycenter_FolderCustomModuleCustomConfigCustomOutputPropertyValueExpression";
 
-export interface Securitycenter_FolderCustomModuleCustomConfigCustomOutputProperty {
+export interface securitycenter_FolderCustomModuleCustomConfigCustomOutputProperty {
   // Name of the property for the custom output.
-  Name?: string;
+  name?: string;
 
   /*
 The CEL expression for the custom output. A resource property can be specified
 to return the value of the property or a text string enclosed in quotation marks.
 Structure is documented below.
 */
-  ValueExpression?: Securitycenter_FolderCustomModuleCustomConfigCustomOutputPropertyValueExpression;
+  valueExpression?: securitycenter_FolderCustomModuleCustomConfigCustomOutputPropertyValueExpression;
 }
 
-export function Securitycenter_FolderCustomModuleCustomConfigCustomOutputProperty_GetTypes(): DynamicUIProps[] {
+export function securitycenter_FolderCustomModuleCustomConfigCustomOutputProperty_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Name of the property for the custom output.",
       [],
       false,
@@ -34,9 +34,9 @@ export function Securitycenter_FolderCustomModuleCustomConfigCustomOutputPropert
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ValueExpression",
+      "valueExpression",
       "The CEL expression for the custom output. A resource property can be specified\nto return the value of the property or a text string enclosed in quotation marks.\nStructure is documented below.",
-      Securitycenter_FolderCustomModuleCustomConfigCustomOutputPropertyValueExpression_GetTypes(),
+      securitycenter_FolderCustomModuleCustomConfigCustomOutputPropertyValueExpression_GetTypes(),
       false,
       false,
     ),

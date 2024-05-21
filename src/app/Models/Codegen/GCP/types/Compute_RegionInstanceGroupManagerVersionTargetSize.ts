@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionInstanceGroupManagerVersionTargetSize {
+export interface compute_RegionInstanceGroupManagerVersionTargetSize {
   // , The number of instances which are managed for this version. Conflicts with `percent`.
-  Fixed?: number;
+  fixed?: number;
 
   /*
 , The number of instances (calculated as percentage) which are managed for this version. Conflicts with `fixed`.
 Note that when using `percent`, rounding will be in favor of explicitly set `target_size` values; a managed instance group with 2 instances and 2 `version`s,
 one of which has a `target_size.percent` of `60` will create 2 instances of that `version`.
 */
-  Percent?: number;
+  percent?: number;
 }
 
-export function Compute_RegionInstanceGroupManagerVersionTargetSize_GetTypes(): DynamicUIProps[] {
+export function compute_RegionInstanceGroupManagerVersionTargetSize_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Fixed",
+      "fixed",
       ", The number of instances which are managed for this version. Conflicts with `percent`.",
       [],
       false,
@@ -30,7 +30,7 @@ export function Compute_RegionInstanceGroupManagerVersionTargetSize_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Percent",
+      "percent",
       ", The number of instances (calculated as percentage) which are managed for this version. Conflicts with `fixed`.\nNote that when using `percent`, rounding will be in favor of explicitly set `target_size` values; a managed instance group with 2 instances and 2 `version`s,\none of which has a `target_size.percent` of `60` will create 2 instances of that `version`.",
       [],
       false,

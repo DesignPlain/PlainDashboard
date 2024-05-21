@@ -6,37 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrun_ServiceStatusCondition,
-  Cloudrun_ServiceStatusCondition_GetTypes,
-} from "./Cloudrun_ServiceStatusCondition";
+  cloudrun_ServiceStatusTraffic,
+  cloudrun_ServiceStatusTraffic_GetTypes,
+} from "./cloudrun_ServiceStatusTraffic";
 import {
-  Cloudrun_ServiceStatusTraffic,
-  Cloudrun_ServiceStatusTraffic_GetTypes,
-} from "./Cloudrun_ServiceStatusTraffic";
+  cloudrun_ServiceStatusCondition,
+  cloudrun_ServiceStatusCondition_GetTypes,
+} from "./cloudrun_ServiceStatusCondition";
 
-export interface Cloudrun_ServiceStatus {
-  /*
-(Output)
-Array of observed Service Conditions, indicating the current ready state of the service.
-Structure is documented below.
-*/
-  Conditions?: Array<Cloudrun_ServiceStatusCondition>;
-
-  /*
-(Output)
-From ConfigurationStatus. LatestCreatedRevisionName is the last revision that was created
-from this Service's Configuration. It might not be ready yet, for that use
-LatestReadyRevisionName.
-*/
-  LatestCreatedRevisionName?: string;
-
+export interface cloudrun_ServiceStatus {
   /*
 (Output)
 From ConfigurationStatus. LatestReadyRevisionName holds the name of the latest Revision
 stamped out from this Service's Configuration that has had its "Ready" condition become
 "True".
 */
-  LatestReadyRevisionName?: string;
+  latestReadyRevisionName?: string;
 
   /*
 (Output)
@@ -45,14 +30,14 @@ controller.
 Clients polling for completed reconciliation should poll until observedGeneration =
 metadata.generation and the Ready condition's status is True or False.
 */
-  ObservedGeneration?: number;
+  observedGeneration?: number;
 
   /*
 Traffic specifies how to distribute traffic over a collection of Knative Revisions
 and Configurations
 Structure is documented below.
 */
-  Traffics?: Array<Cloudrun_ServiceStatusTraffic>;
+  traffics?: Array<cloudrun_ServiceStatusTraffic>;
 
   /*
 (Output)
@@ -60,22 +45,37 @@ URL displays the URL for accessing tagged traffic targets. URL is displayed in s
 and is disallowed on spec. URL must contain a scheme (e.g. http://) and a hostname,
 but may not contain anything else (e.g. basic auth, url path, etc.)
 */
-  Url?: string;
+  url?: string;
+
+  /*
+(Output)
+Array of observed Service Conditions, indicating the current ready state of the service.
+Structure is documented below.
+*/
+  conditions?: Array<cloudrun_ServiceStatusCondition>;
+
+  /*
+(Output)
+From ConfigurationStatus. LatestCreatedRevisionName is the last revision that was created
+from this Service's Configuration. It might not be ready yet, for that use
+LatestReadyRevisionName.
+*/
+  latestCreatedRevisionName?: string;
 }
 
-export function Cloudrun_ServiceStatus_GetTypes(): DynamicUIProps[] {
+export function cloudrun_ServiceStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Conditions",
+      "conditions",
       "(Output)\nArray of observed Service Conditions, indicating the current ready state of the service.\nStructure is documented below.",
-      Cloudrun_ServiceStatusCondition_GetTypes(),
+      cloudrun_ServiceStatusCondition_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "LatestCreatedRevisionName",
+      "latestCreatedRevisionName",
       "(Output)\nFrom ConfigurationStatus. LatestCreatedRevisionName is the last revision that was created\nfrom this Service's Configuration. It might not be ready yet, for that use\nLatestReadyRevisionName.",
       [],
       false,
@@ -83,7 +83,7 @@ export function Cloudrun_ServiceStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "LatestReadyRevisionName",
+      "latestReadyRevisionName",
       '(Output)\nFrom ConfigurationStatus. LatestReadyRevisionName holds the name of the latest Revision\nstamped out from this Service\'s Configuration that has had its "Ready" condition become\n"True".',
       [],
       false,
@@ -91,7 +91,7 @@ export function Cloudrun_ServiceStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "ObservedGeneration",
+      "observedGeneration",
       "(Output)\nObservedGeneration is the 'Generation' of the Route that was last processed by the\ncontroller.\nClients polling for completed reconciliation should poll until observedGeneration =\nmetadata.generation and the Ready condition's status is True or False.",
       [],
       false,
@@ -99,15 +99,15 @@ export function Cloudrun_ServiceStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Traffics",
+      "traffics",
       "Traffic specifies how to distribute traffic over a collection of Knative Revisions\nand Configurations\nStructure is documented below.",
-      Cloudrun_ServiceStatusTraffic_GetTypes(),
+      cloudrun_ServiceStatusTraffic_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Url",
+      "url",
       "(Output)\nURL displays the URL for accessing tagged traffic targets. URL is displayed in status,\nand is disallowed on spec. URL must contain a scheme (e.g. http://) and a hostname,\nbut may not contain anything else (e.g. basic auth, url path, etc.)",
       [],
       false,

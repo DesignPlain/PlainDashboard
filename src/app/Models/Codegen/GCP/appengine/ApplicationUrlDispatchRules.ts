@@ -7,49 +7,49 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Appengine_ApplicationUrlDispatchRulesDispatchRule,
-  Appengine_ApplicationUrlDispatchRulesDispatchRule_GetTypes,
-} from "../types/Appengine_ApplicationUrlDispatchRulesDispatchRule";
+  appengine_ApplicationUrlDispatchRulesDispatchRule,
+  appengine_ApplicationUrlDispatchRulesDispatchRule_GetTypes,
+} from "../types/appengine_ApplicationUrlDispatchRulesDispatchRule";
 
 export interface ApplicationUrlDispatchRulesArgs {
   /*
 Rules to match an HTTP request and dispatch that request to a service.
 Structure is documented below.
 */
-  DispatchRules?: Array<Appengine_ApplicationUrlDispatchRulesDispatchRule>;
+  dispatchRules?: Array<appengine_ApplicationUrlDispatchRulesDispatchRule>;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 }
 export class ApplicationUrlDispatchRules extends Resource {
   /*
 Rules to match an HTTP request and dispatch that request to a service.
 Structure is documented below.
 */
-  public DispatchRules?: Array<Appengine_ApplicationUrlDispatchRulesDispatchRule>;
+  public dispatchRules?: Array<appengine_ApplicationUrlDispatchRulesDispatchRule>;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "DispatchRules",
+        "dispatchRules",
         "Rules to match an HTTP request and dispatch that request to a service.\nStructure is documented below.",
-        Appengine_ApplicationUrlDispatchRulesDispatchRule_GetTypes(),
+        appengine_ApplicationUrlDispatchRulesDispatchRule_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,

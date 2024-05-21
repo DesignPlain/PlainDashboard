@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigtable_GCPolicyMaxVersion {
+export interface bigtable_GCPolicyMaxVersion {
   /*
 Number of version before applying the GC policy.
 
 -----
 `gc_rules` include 2 fields:
 */
-  Number?: number;
+  number?: number;
 }
 
-export function Bigtable_GCPolicyMaxVersion_GetTypes(): DynamicUIProps[] {
+export function bigtable_GCPolicyMaxVersion_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Number",
+      "number",
       "Number of version before applying the GC policy.\n\n-----\n`gc_rules` include 2 fields:",
       [],
       true,

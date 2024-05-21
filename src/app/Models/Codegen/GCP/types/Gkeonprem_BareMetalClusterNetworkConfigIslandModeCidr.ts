@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterNetworkConfigIslandModeCidr {
-  // All pods in the cluster are assigned an RFC1918 IPv4 address from these ranges. This field cannot be changed after creation.
-  PodAddressCidrBlocks?: Array<string>;
-
+export interface gkeonprem_BareMetalClusterNetworkConfigIslandModeCidr {
   // All services in the cluster are assigned an RFC1918 IPv4 address from these ranges. This field cannot be changed after creation.
-  ServiceAddressCidrBlocks?: Array<string>;
+  serviceAddressCidrBlocks?: Array<string>;
+
+  // All pods in the cluster are assigned an RFC1918 IPv4 address from these ranges. This field cannot be changed after creation.
+  podAddressCidrBlocks?: Array<string>;
 }
 
-export function Gkeonprem_BareMetalClusterNetworkConfigIslandModeCidr_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterNetworkConfigIslandModeCidr_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "PodAddressCidrBlocks",
-      "All pods in the cluster are assigned an RFC1918 IPv4 address from these ranges. This field cannot be changed after creation.",
+      "serviceAddressCidrBlocks",
+      "All services in the cluster are assigned an RFC1918 IPv4 address from these ranges. This field cannot be changed after creation.",
       InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ServiceAddressCidrBlocks",
-      "All services in the cluster are assigned an RFC1918 IPv4 address from these ranges. This field cannot be changed after creation.",
+      "podAddressCidrBlocks",
+      "All pods in the cluster are assigned an RFC1918 IPv4 address from these ranges. This field cannot be changed after creation.",
       InputType_String_GetTypes(),
       true,
       false,

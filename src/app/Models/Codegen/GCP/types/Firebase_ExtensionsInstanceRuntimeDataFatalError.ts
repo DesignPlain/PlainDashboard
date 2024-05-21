@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Firebase_ExtensionsInstanceRuntimeDataFatalError {
+export interface firebase_ExtensionsInstanceRuntimeDataFatalError {
   /*
 The error message. This is set by the extension developer to give
 more detail on why the extension is unusable and must be re-installed
 or reconfigured.
 */
-  ErrorMessage?: string;
+  errorMessage?: string;
 }
 
-export function Firebase_ExtensionsInstanceRuntimeDataFatalError_GetTypes(): DynamicUIProps[] {
+export function firebase_ExtensionsInstanceRuntimeDataFatalError_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ErrorMessage",
+      "errorMessage",
       "The error message. This is set by the extension developer to give\nmore detail on why the extension is unusable and must be re-installed\nor reconfigured.",
       [],
       false,

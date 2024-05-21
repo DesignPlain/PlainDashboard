@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_NodePoolQueuedProvisioning {
+export interface container_NodePoolQueuedProvisioning {
   // Makes nodes obtainable through the [ProvisioningRequest API](https://cloud.google.com/kubernetes-engine/docs/how-to/provisioningrequest) exclusively.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_NodePoolQueuedProvisioning_GetTypes(): DynamicUIProps[] {
+export function container_NodePoolQueuedProvisioning_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Makes nodes obtainable through the [ProvisioningRequest API](https://cloud.google.com/kubernetes-engine/docs/how-to/provisioningrequest) exclusively.",
       [],
       true,

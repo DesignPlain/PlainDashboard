@@ -6,61 +6,61 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformations,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformations_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformations";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformations,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformations_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformations";
 import {
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations,
-  Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations_GetTypes,
-} from "./Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations";
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations,
+  dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations_GetTypes,
+} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations";
 
-export interface Dataloss_PreventionDeidentifyTemplateDeidentifyConfig {
+export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfig {
   /*
 Treat the dataset as an image and redact.
 Structure is documented below.
 */
-  ImageTransformations?: Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations;
+  imageTransformations?: dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations;
 
   /*
 Treat the dataset as free-form text and apply the same free text transformation everywhere
 Structure is documented below.
 */
-  InfoTypeTransformations?: Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformations;
+  infoTypeTransformations?: dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformations;
 
   /*
 Treat the dataset as structured. Transformations can be applied to specific locations within structured datasets, such as transforming a column within a table.
 Structure is documented below.
 */
-  RecordTransformations?: Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations;
+  recordTransformations?: dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations;
 }
 
-export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfig_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionDeidentifyTemplateDeidentifyConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ImageTransformations",
+      "imageTransformations",
       "Treat the dataset as an image and redact.\nStructure is documented below.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations_GetTypes(),
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "InfoTypeTransformations",
+      "infoTypeTransformations",
       "Treat the dataset as free-form text and apply the same free text transformation everywhere\nStructure is documented below.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformations_GetTypes(),
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformations_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "RecordTransformations",
+      "recordTransformations",
       "Treat the dataset as structured. Transformations can be applied to specific locations within structured datasets, such as transforming a column within a table.\nStructure is documented below.",
-      Dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations_GetTypes(),
+      dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations_GetTypes(),
       false,
       false,
     ),

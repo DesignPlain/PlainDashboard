@@ -7,25 +7,25 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RouterBgp,
-  Compute_RouterBgp_GetTypes,
-} from "../types/Compute_RouterBgp";
+  compute_RouterBgp,
+  compute_RouterBgp_GetTypes,
+} from "../types/compute_RouterBgp";
 
 export interface RouterArgs {
   /*
 BGP information specific to this router.
 Structure is documented below.
 */
-  Bgp?: Compute_RouterBgp;
+  bgp?: compute_RouterBgp;
 
   // An optional description of this resource.
-  Description?: string;
+  description?: string;
 
   /*
 Indicates if a router is dedicated for use with encrypted VLAN
 attachments (interconnectAttachments).
 */
-  EncryptedInterconnectRouter?: boolean;
+  encryptedInterconnectRouter?: boolean;
 
   /*
 Name of the resource. The name must be 1-63 characters long, and
@@ -35,7 +35,7 @@ which means the first character must be a lowercase letter, and all
 following characters must be a dash, lowercase letter, or digit,
 except the last character, which cannot be a dash.
 */
-  Name?: string;
+  name?: string;
 
   /*
 A reference to the network to which this router belongs.
@@ -43,48 +43,48 @@ A reference to the network to which this router belongs.
 
 - - -
 */
-  Network?: string;
+  network?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // Region where the router resides.
-  Region?: string;
+  region?: string;
 }
 export class Router extends Resource {
   /*
-Indicates if a router is dedicated for use with encrypted VLAN
-attachments (interconnectAttachments).
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 */
-  public EncryptedInterconnectRouter?: boolean;
+  public project?: string;
 
-  /*
-Name of the resource. The name must be 1-63 characters long, and
-comply with RFC1035. Specifically, the name must be 1-63 characters
-long and match the regular expression `a-z?`
-which means the first character must be a lowercase letter, and all
-following characters must be a dash, lowercase letter, or digit,
-except the last character, which cannot be a dash.
-*/
-  public Name?: string;
-
-  // The URI of the created resource.
-  public SelfLink?: string;
+  // Region where the router resides.
+  public region?: string;
 
   /*
 BGP information specific to this router.
 Structure is documented below.
 */
-  public Bgp?: Compute_RouterBgp;
+  public bgp?: compute_RouterBgp;
 
-  // Creation timestamp in RFC3339 text format.
-  public CreationTimestamp?: string;
+  /*
+Name of the resource. The name must be 1-63 characters long, and
+comply with RFC1035. Specifically, the name must be 1-63 characters
+long and match the regular expression `a-z?`
+which means the first character must be a lowercase letter, and all
+following characters must be a dash, lowercase letter, or digit,
+except the last character, which cannot be a dash.
+*/
+  public name?: string;
 
-  // An optional description of this resource.
-  public Description?: string;
+  /*
+Indicates if a router is dedicated for use with encrypted VLAN
+attachments (interconnectAttachments).
+*/
+  public encryptedInterconnectRouter?: boolean;
 
   /*
 A reference to the network to which this router belongs.
@@ -92,22 +92,22 @@ A reference to the network to which this router belongs.
 
 - - -
 */
-  public Network?: string;
+  public network?: string;
 
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
+  // The URI of the created resource.
+  public selfLink?: string;
 
-  // Region where the router resides.
-  public Region?: string;
+  // Creation timestamp in RFC3339 text format.
+  public creationTimestamp?: string;
+
+  // An optional description of this resource.
+  public description?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name of the resource. The name must be 1-63 characters long, and\ncomply with RFC1035. Specifically, the name must be 1-63 characters\nlong and match the regular expression `a-z?`\nwhich means the first character must be a lowercase letter, and all\nfollowing characters must be a dash, lowercase letter, or digit,\nexcept the last character, which cannot be a dash.",
         [],
         false,
@@ -115,7 +115,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Network",
+        "network",
         "A reference to the network to which this router belongs.\n\n\n- - -",
         [],
         true,
@@ -123,7 +123,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -131,7 +131,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "Region where the router resides.",
         [],
         false,
@@ -139,15 +139,15 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Bgp",
+        "bgp",
         "BGP information specific to this router.\nStructure is documented below.",
-        Compute_RouterBgp_GetTypes(),
+        compute_RouterBgp_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "An optional description of this resource.",
         [],
         false,
@@ -155,7 +155,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "EncryptedInterconnectRouter",
+        "encryptedInterconnectRouter",
         "Indicates if a router is dedicated for use with encrypted VLAN\nattachments (interconnectAttachments).",
         [],
         false,

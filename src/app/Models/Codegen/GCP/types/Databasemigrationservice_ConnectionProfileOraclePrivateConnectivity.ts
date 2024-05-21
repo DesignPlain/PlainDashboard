@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Databasemigrationservice_ConnectionProfileOraclePrivateConnectivity {
+export interface databasemigrationservice_ConnectionProfileOraclePrivateConnectivity {
   // Required. The resource name (URI) of the private connection.
-  PrivateConnection?: string;
+  privateConnection?: string;
 }
 
-export function Databasemigrationservice_ConnectionProfileOraclePrivateConnectivity_GetTypes(): DynamicUIProps[] {
+export function databasemigrationservice_ConnectionProfileOraclePrivateConnectivity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PrivateConnection",
+      "privateConnection",
       "Required. The resource name (URI) of the private connection.",
       [],
       true,

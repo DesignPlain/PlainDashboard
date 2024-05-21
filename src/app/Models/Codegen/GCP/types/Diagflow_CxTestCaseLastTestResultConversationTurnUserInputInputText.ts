@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputText {
+export interface diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputText {
   // The natural language text to be processed. Text length must not exceed 256 characters.
-  Text?: string;
+  text?: string;
 }
 
-export function Diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputText_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputText_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Text",
+      "text",
       "The natural language text to be processed. Text length must not exceed 256 characters.",
       [],
       true,

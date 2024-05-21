@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getRegionNetworkEndpointGroupServerlessDeployment {
+export interface compute_getRegionNetworkEndpointGroupServerlessDeployment {
   /*
 The platform of the NEG backend target(s). Possible values:
 API Gateway: apigateway.googleapis.com
 */
-  Platform?: string;
+  platform?: string;
 
   /*
 The user-defined name of the workload/instance. This value must be provided explicitly or in the urlMask.
 The resource identified by this value is platform-specific and is as follows: API Gateway: The gateway ID, App Engine: The service name,
 Cloud Functions: The function name, Cloud Run: The service name
 */
-  Resource?: string;
+  resource?: string;
 
   /*
 A template to parse platform-specific fields from a request URL. URL mask allows for routing to multiple resources
@@ -26,20 +26,28 @@ on the same serverless platform without having to create multiple Network Endpoi
 The fields parsed by this template are platform-specific and are as follows: API Gateway: The gateway ID,
 App Engine: The service and version, Cloud Functions: The function name, Cloud Run: The service and tag
 */
-  UrlMask?: string;
+  urlMask?: string;
 
   /*
 The optional resource version. The version identified by this value is platform-specific and is follows:
 API Gateway: Unused, App Engine: The service version, Cloud Functions: Unused, Cloud Run: The service tag
 */
-  Version?: string;
+  version?: string;
 }
 
-export function Compute_getRegionNetworkEndpointGroupServerlessDeployment_GetTypes(): DynamicUIProps[] {
+export function compute_getRegionNetworkEndpointGroupServerlessDeployment_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Platform",
+      "version",
+      "The optional resource version. The version identified by this value is platform-specific and is follows:\nAPI Gateway: Unused, App Engine: The service version, Cloud Functions: Unused, Cloud Run: The service tag",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "platform",
       "The platform of the NEG backend target(s). Possible values:\nAPI Gateway: apigateway.googleapis.com",
       [],
       true,
@@ -47,7 +55,7 @@ export function Compute_getRegionNetworkEndpointGroupServerlessDeployment_GetTyp
     ),
     new DynamicUIProps(
       InputType.String,
-      "Resource",
+      "resource",
       "The user-defined name of the workload/instance. This value must be provided explicitly or in the urlMask.\nThe resource identified by this value is platform-specific and is as follows: API Gateway: The gateway ID, App Engine: The service name,\nCloud Functions: The function name, Cloud Run: The service name",
       [],
       true,
@@ -55,16 +63,8 @@ export function Compute_getRegionNetworkEndpointGroupServerlessDeployment_GetTyp
     ),
     new DynamicUIProps(
       InputType.String,
-      "UrlMask",
+      "urlMask",
       "A template to parse platform-specific fields from a request URL. URL mask allows for routing to multiple resources\non the same serverless platform without having to create multiple Network Endpoint Groups and backend resources.\nThe fields parsed by this template are platform-specific and are as follows: API Gateway: The gateway ID,\nApp Engine: The service and version, Cloud Functions: The function name, Cloud Run: The service and tag",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Version",
-      "The optional resource version. The version identified by this value is platform-specific and is follows:\nAPI Gateway: Unused, App Engine: The service version, Cloud Functions: Unused, Cloud Run: The service tag",
       [],
       true,
       false,

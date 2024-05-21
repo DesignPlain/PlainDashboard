@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableOracleColumn,
-  Datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableOracleColumn_GetTypes,
-} from "./Datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableOracleColumn";
+  datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableOracleColumn,
+  datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableOracleColumn_GetTypes,
+} from "./datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableOracleColumn";
 
-export interface Datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTable {
-  // Table name.
-  Table?: string;
-
+export interface datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTable {
   /*
 Oracle columns in the schema. When unspecified as part of include/exclude objects, includes/excludes everything.
 Structure is documented below.
 */
-  OracleColumns?: Array<Datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableOracleColumn>;
+  oracleColumns?: Array<datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableOracleColumn>;
+
+  // Table name.
+  table?: string;
 }
 
-export function Datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTable_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTable_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "Table",
-      "Table name.",
-      [],
-      true,
+      InputType.Array,
+      "oracleColumns",
+      "Oracle columns in the schema. When unspecified as part of include/exclude objects, includes/excludes everything.\nStructure is documented below.",
+      datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableOracleColumn_GetTypes(),
+      false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "OracleColumns",
-      "Oracle columns in the schema. When unspecified as part of include/exclude objects, includes/excludes everything.\nStructure is documented below.",
-      Datastream_StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableOracleColumn_GetTypes(),
-      false,
+      InputType.String,
+      "table",
+      "Table name.",
+      [],
+      true,
       false,
     ),
   ];

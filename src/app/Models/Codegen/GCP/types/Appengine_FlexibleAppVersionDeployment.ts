@@ -6,80 +6,80 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Appengine_FlexibleAppVersionDeploymentFile,
-  Appengine_FlexibleAppVersionDeploymentFile_GetTypes,
-} from "./Appengine_FlexibleAppVersionDeploymentFile";
+  appengine_FlexibleAppVersionDeploymentCloudBuildOptions,
+  appengine_FlexibleAppVersionDeploymentCloudBuildOptions_GetTypes,
+} from "./appengine_FlexibleAppVersionDeploymentCloudBuildOptions";
 import {
-  Appengine_FlexibleAppVersionDeploymentZip,
-  Appengine_FlexibleAppVersionDeploymentZip_GetTypes,
-} from "./Appengine_FlexibleAppVersionDeploymentZip";
+  appengine_FlexibleAppVersionDeploymentContainer,
+  appengine_FlexibleAppVersionDeploymentContainer_GetTypes,
+} from "./appengine_FlexibleAppVersionDeploymentContainer";
 import {
-  Appengine_FlexibleAppVersionDeploymentCloudBuildOptions,
-  Appengine_FlexibleAppVersionDeploymentCloudBuildOptions_GetTypes,
-} from "./Appengine_FlexibleAppVersionDeploymentCloudBuildOptions";
+  appengine_FlexibleAppVersionDeploymentFile,
+  appengine_FlexibleAppVersionDeploymentFile_GetTypes,
+} from "./appengine_FlexibleAppVersionDeploymentFile";
 import {
-  Appengine_FlexibleAppVersionDeploymentContainer,
-  Appengine_FlexibleAppVersionDeploymentContainer_GetTypes,
-} from "./Appengine_FlexibleAppVersionDeploymentContainer";
+  appengine_FlexibleAppVersionDeploymentZip,
+  appengine_FlexibleAppVersionDeploymentZip_GetTypes,
+} from "./appengine_FlexibleAppVersionDeploymentZip";
 
-export interface Appengine_FlexibleAppVersionDeployment {
-  /*
-Manifest of the files stored in Google Cloud Storage that are included as part of this version.
-All files must be readable using the credentials supplied with this call.
-Structure is documented below.
-*/
-  Files?: Array<Appengine_FlexibleAppVersionDeploymentFile>;
-
-  /*
-Zip File
-Structure is documented below.
-*/
-  Zip?: Appengine_FlexibleAppVersionDeploymentZip;
-
+export interface appengine_FlexibleAppVersionDeployment {
   /*
 Options for the build operations performed as a part of the version deployment. Only applicable when creating a version using source code directly.
 Structure is documented below.
 */
-  CloudBuildOptions?: Appengine_FlexibleAppVersionDeploymentCloudBuildOptions;
+  cloudBuildOptions?: appengine_FlexibleAppVersionDeploymentCloudBuildOptions;
 
   /*
 The Docker image for the container that runs the version.
 Structure is documented below.
 */
-  Container?: Appengine_FlexibleAppVersionDeploymentContainer;
+  container?: appengine_FlexibleAppVersionDeploymentContainer;
+
+  /*
+Manifest of the files stored in Google Cloud Storage that are included as part of this version.
+All files must be readable using the credentials supplied with this call.
+Structure is documented below.
+*/
+  files?: Array<appengine_FlexibleAppVersionDeploymentFile>;
+
+  /*
+Zip File
+Structure is documented below.
+*/
+  zip?: appengine_FlexibleAppVersionDeploymentZip;
 }
 
-export function Appengine_FlexibleAppVersionDeployment_GetTypes(): DynamicUIProps[] {
+export function appengine_FlexibleAppVersionDeployment_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "Files",
-      "Manifest of the files stored in Google Cloud Storage that are included as part of this version.\nAll files must be readable using the credentials supplied with this call.\nStructure is documented below.",
-      Appengine_FlexibleAppVersionDeploymentFile_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Object,
-      "Zip",
-      "Zip File\nStructure is documented below.",
-      Appengine_FlexibleAppVersionDeploymentZip_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "CloudBuildOptions",
+      "cloudBuildOptions",
       "Options for the build operations performed as a part of the version deployment. Only applicable when creating a version using source code directly.\nStructure is documented below.",
-      Appengine_FlexibleAppVersionDeploymentCloudBuildOptions_GetTypes(),
+      appengine_FlexibleAppVersionDeploymentCloudBuildOptions_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Container",
+      "container",
       "The Docker image for the container that runs the version.\nStructure is documented below.",
-      Appengine_FlexibleAppVersionDeploymentContainer_GetTypes(),
+      appengine_FlexibleAppVersionDeploymentContainer_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "files",
+      "Manifest of the files stored in Google Cloud Storage that are included as part of this version.\nAll files must be readable using the credentials supplied with this call.\nStructure is documented below.",
+      appengine_FlexibleAppVersionDeploymentFile_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "zip",
+      "Zip File\nStructure is documented below.",
+      appengine_FlexibleAppVersionDeploymentZip_GetTypes(),
       false,
       false,
     ),

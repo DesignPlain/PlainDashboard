@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionBackendServiceSubsetting {
+export interface compute_RegionBackendServiceSubsetting {
   /*
 The algorithm used for subsetting.
 Possible values are: `CONSISTENT_HASH_SUBSETTING`.
 */
-  Policy?: string;
+  policy?: string;
 }
 
-export function Compute_RegionBackendServiceSubsetting_GetTypes(): DynamicUIProps[] {
+export function compute_RegionBackendServiceSubsetting_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Policy",
+      "policy",
       "The algorithm used for subsetting.\nPossible values are: `CONSISTENT_HASH_SUBSETTING`.",
       [],
       true,

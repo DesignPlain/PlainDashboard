@@ -6,52 +6,52 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxFlowEventHandlerTriggerFulfillmentSetParameterAction,
-  Diagflow_CxFlowEventHandlerTriggerFulfillmentSetParameterAction_GetTypes,
-} from "./Diagflow_CxFlowEventHandlerTriggerFulfillmentSetParameterAction";
+  diagflow_CxFlowEventHandlerTriggerFulfillmentConditionalCase,
+  diagflow_CxFlowEventHandlerTriggerFulfillmentConditionalCase_GetTypes,
+} from "./diagflow_CxFlowEventHandlerTriggerFulfillmentConditionalCase";
 import {
-  Diagflow_CxFlowEventHandlerTriggerFulfillmentConditionalCase,
-  Diagflow_CxFlowEventHandlerTriggerFulfillmentConditionalCase_GetTypes,
-} from "./Diagflow_CxFlowEventHandlerTriggerFulfillmentConditionalCase";
+  diagflow_CxFlowEventHandlerTriggerFulfillmentMessage,
+  diagflow_CxFlowEventHandlerTriggerFulfillmentMessage_GetTypes,
+} from "./diagflow_CxFlowEventHandlerTriggerFulfillmentMessage";
 import {
-  Diagflow_CxFlowEventHandlerTriggerFulfillmentMessage,
-  Diagflow_CxFlowEventHandlerTriggerFulfillmentMessage_GetTypes,
-} from "./Diagflow_CxFlowEventHandlerTriggerFulfillmentMessage";
+  diagflow_CxFlowEventHandlerTriggerFulfillmentSetParameterAction,
+  diagflow_CxFlowEventHandlerTriggerFulfillmentSetParameterAction_GetTypes,
+} from "./diagflow_CxFlowEventHandlerTriggerFulfillmentSetParameterAction";
 
-export interface Diagflow_CxFlowEventHandlerTriggerFulfillment {
-  /*
-Set parameter values before executing the webhook.
-Structure is documented below.
-*/
-  SetParameterActions?: Array<Diagflow_CxFlowEventHandlerTriggerFulfillmentSetParameterAction>;
-
-  // The tag used by the webhook to identify which fulfillment is being called. This field is required if webhook is specified.
-  Tag?: string;
-
-  // The webhook to call. Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/webhooks/<Webhook ID>.
-  Webhook?: string;
-
+export interface diagflow_CxFlowEventHandlerTriggerFulfillment {
   /*
 Conditional cases for this fulfillment.
 Structure is documented below.
 */
-  ConditionalCases?: Array<Diagflow_CxFlowEventHandlerTriggerFulfillmentConditionalCase>;
+  conditionalCases?: Array<diagflow_CxFlowEventHandlerTriggerFulfillmentConditionalCase>;
 
   /*
 The list of rich message responses to present to the user.
 Structure is documented below.
 */
-  Messages?: Array<Diagflow_CxFlowEventHandlerTriggerFulfillmentMessage>;
+  messages?: Array<diagflow_CxFlowEventHandlerTriggerFulfillmentMessage>;
 
   // Whether Dialogflow should return currently queued fulfillment response messages in streaming APIs. If a webhook is specified, it happens before Dialogflow invokes webhook. Warning: 1) This flag only affects streaming API. Responses are still queued and returned once in non-streaming API. 2) The flag can be enabled in any fulfillment but only the first 3 partial responses will be returned. You may only want to apply it to fulfillments that have slow webhooks.
-  ReturnPartialResponses?: boolean;
+  returnPartialResponses?: boolean;
+
+  /*
+Set parameter values before executing the webhook.
+Structure is documented below.
+*/
+  setParameterActions?: Array<diagflow_CxFlowEventHandlerTriggerFulfillmentSetParameterAction>;
+
+  // The tag used by the webhook to identify which fulfillment is being called. This field is required if webhook is specified.
+  tag?: string;
+
+  // The webhook to call. Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/webhooks/<Webhook ID>.
+  webhook?: string;
 }
 
-export function Diagflow_CxFlowEventHandlerTriggerFulfillment_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxFlowEventHandlerTriggerFulfillment_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "ReturnPartialResponses",
+      "returnPartialResponses",
       "Whether Dialogflow should return currently queued fulfillment response messages in streaming APIs. If a webhook is specified, it happens before Dialogflow invokes webhook. Warning: 1) This flag only affects streaming API. Responses are still queued and returned once in non-streaming API. 2) The flag can be enabled in any fulfillment but only the first 3 partial responses will be returned. You may only want to apply it to fulfillments that have slow webhooks.",
       [],
       false,
@@ -59,15 +59,15 @@ export function Diagflow_CxFlowEventHandlerTriggerFulfillment_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Array,
-      "SetParameterActions",
+      "setParameterActions",
       "Set parameter values before executing the webhook.\nStructure is documented below.",
-      Diagflow_CxFlowEventHandlerTriggerFulfillmentSetParameterAction_GetTypes(),
+      diagflow_CxFlowEventHandlerTriggerFulfillmentSetParameterAction_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Tag",
+      "tag",
       "The tag used by the webhook to identify which fulfillment is being called. This field is required if webhook is specified.",
       [],
       false,
@@ -75,7 +75,7 @@ export function Diagflow_CxFlowEventHandlerTriggerFulfillment_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "Webhook",
+      "webhook",
       "The webhook to call. Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/webhooks/<Webhook ID>.",
       [],
       false,
@@ -83,17 +83,17 @@ export function Diagflow_CxFlowEventHandlerTriggerFulfillment_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ConditionalCases",
+      "conditionalCases",
       "Conditional cases for this fulfillment.\nStructure is documented below.",
-      Diagflow_CxFlowEventHandlerTriggerFulfillmentConditionalCase_GetTypes(),
+      diagflow_CxFlowEventHandlerTriggerFulfillmentConditionalCase_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Messages",
+      "messages",
       "The list of rich message responses to present to the user.\nStructure is documented below.",
-      Diagflow_CxFlowEventHandlerTriggerFulfillmentMessage_GetTypes(),
+      diagflow_CxFlowEventHandlerTriggerFulfillmentMessage_GetTypes(),
       false,
       false,
     ),

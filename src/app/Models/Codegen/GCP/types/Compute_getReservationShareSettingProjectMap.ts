@@ -6,24 +6,24 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getReservationShareSettingProjectMap {
+export interface compute_getReservationShareSettingProjectMap {
   //
-  Id?: string;
+  id?: string;
 
   // The project id/number, should be same as the key of this project config in the project map.
-  ProjectId?: string;
+  projectId?: string;
 }
 
-export function Compute_getReservationShareSettingProjectMap_GetTypes(): DynamicUIProps[] {
+export function compute_getReservationShareSettingProjectMap_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Id", "", [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "ProjectId",
+      "projectId",
       "The project id/number, should be same as the key of this project config in the project map.",
       [],
       true,
       false,
     ),
+    new DynamicUIProps(InputType.String, "id", "", [], true, false),
   ];
 }

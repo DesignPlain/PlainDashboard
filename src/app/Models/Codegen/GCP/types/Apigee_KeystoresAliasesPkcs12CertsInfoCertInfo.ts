@@ -6,152 +6,80 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Apigee_KeystoresAliasesPkcs12CertsInfoCertInfo {
+export interface apigee_KeystoresAliasesPkcs12CertsInfoCertInfo {
   /*
 (Output)
 X.509 basic constraints extension.
 */
-  BasicConstraints?: string;
-
-  /*
-(Output)
-X.509 notAfter validity period in milliseconds since epoch.
-*/
-  ExpiryDate?: string;
+  basicConstraints?: string;
 
   /*
 (Output)
 Flag that specifies whether the certificate is valid.
 Flag is set to Yes if the certificate is valid, No if expired, or Not yet if not yet valid.
 */
-  IsValid?: string;
+  isValid?: string;
 
   /*
 (Output)
 Public key component of the X.509 subject public key info.
 */
-  PublicKey?: string;
-
-  /*
-(Output)
-X.509 subject.
-*/
-  Subject?: string;
-
-  /*
-(Output)
-X.509 version.
-*/
-  Version?: number;
-
-  /*
-(Output)
-X.509 issuer.
-*/
-  Issuer?: string;
-
-  /*
-(Output)
-X.509 serial number.
-*/
-  SerialNumber?: string;
-
-  /*
-(Output)
-X.509 signatureAlgorithm.
-*/
-  SigAlgName?: string;
+  publicKey?: string;
 
   /*
 (Output)
 X.509 subject alternative names (SANs) extension.
 */
-  SubjectAlternativeNames?: Array<string>;
+  subjectAlternativeNames?: Array<string>;
+
+  /*
+(Output)
+X.509 subject.
+*/
+  subject?: string;
 
   /*
 (Output)
 X.509 notBefore validity period in milliseconds since epoch.
 */
-  ValidFrom?: string;
+  validFrom?: string;
+
+  /*
+(Output)
+X.509 version.
+*/
+  version?: number;
+
+  /*
+(Output)
+X.509 notAfter validity period in milliseconds since epoch.
+*/
+  expiryDate?: string;
+
+  /*
+(Output)
+X.509 issuer.
+*/
+  issuer?: string;
+
+  /*
+(Output)
+X.509 serial number.
+*/
+  serialNumber?: string;
+
+  /*
+(Output)
+X.509 signatureAlgorithm.
+*/
+  sigAlgName?: string;
 }
 
-export function Apigee_KeystoresAliasesPkcs12CertsInfoCertInfo_GetTypes(): DynamicUIProps[] {
+export function apigee_KeystoresAliasesPkcs12CertsInfoCertInfo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "IsValid",
-      "(Output)\nFlag that specifies whether the certificate is valid.\nFlag is set to Yes if the certificate is valid, No if expired, or Not yet if not yet valid.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "PublicKey",
-      "(Output)\nPublic key component of the X.509 subject public key info.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Issuer",
-      "(Output)\nX.509 issuer.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "SubjectAlternativeNames",
-      "(Output)\nX.509 subject alternative names (SANs) extension.",
-      InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ValidFrom",
-      "(Output)\nX.509 notBefore validity period in milliseconds since epoch.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "BasicConstraints",
-      "(Output)\nX.509 basic constraints extension.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ExpiryDate",
-      "(Output)\nX.509 notAfter validity period in milliseconds since epoch.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Subject",
-      "(Output)\nX.509 subject.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Version",
-      "(Output)\nX.509 version.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "SerialNumber",
+      "serialNumber",
       "(Output)\nX.509 serial number.",
       [],
       false,
@@ -159,9 +87,81 @@ export function Apigee_KeystoresAliasesPkcs12CertsInfoCertInfo_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "SigAlgName",
+      "publicKey",
+      "(Output)\nPublic key component of the X.509 subject public key info.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "subject",
+      "(Output)\nX.509 subject.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "issuer",
+      "(Output)\nX.509 issuer.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "validFrom",
+      "(Output)\nX.509 notBefore validity period in milliseconds since epoch.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "version",
+      "(Output)\nX.509 version.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "expiryDate",
+      "(Output)\nX.509 notAfter validity period in milliseconds since epoch.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "sigAlgName",
       "(Output)\nX.509 signatureAlgorithm.",
       [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "basicConstraints",
+      "(Output)\nX.509 basic constraints extension.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "isValid",
+      "(Output)\nFlag that specifies whether the certificate is valid.\nFlag is set to Yes if the certificate is valid, No if expired, or Not yet if not yet valid.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "subjectAlternativeNames",
+      "(Output)\nX.509 subject alternative names (SANs) extension.",
+      InputType_String_GetTypes(),
       false,
       false,
     ),

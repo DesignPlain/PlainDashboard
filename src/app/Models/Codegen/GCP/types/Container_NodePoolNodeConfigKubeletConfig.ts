@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_NodePoolNodeConfigKubeletConfig {
+export interface container_NodePoolNodeConfigKubeletConfig {
   // Enable CPU CFS quota enforcement for containers that specify CPU limits.
-  CpuCfsQuota?: boolean;
+  cpuCfsQuota?: boolean;
 
   // Set the CPU CFS quota period value 'cpu.cfs_period_us'.
-  CpuCfsQuotaPeriod?: string;
+  cpuCfsQuotaPeriod?: string;
 
   // Control the CPU management policy on the node.
-  CpuManagerPolicy?: string;
+  cpuManagerPolicy?: string;
 
   // Controls the maximum number of processes allowed to run in a pod.
-  PodPidsLimit?: number;
+  podPidsLimit?: number;
 }
 
-export function Container_NodePoolNodeConfigKubeletConfig_GetTypes(): DynamicUIProps[] {
+export function container_NodePoolNodeConfigKubeletConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "CpuCfsQuota",
+      "cpuCfsQuota",
       "Enable CPU CFS quota enforcement for containers that specify CPU limits.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Container_NodePoolNodeConfigKubeletConfig_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "CpuCfsQuotaPeriod",
+      "cpuCfsQuotaPeriod",
       "Set the CPU CFS quota period value 'cpu.cfs_period_us'.",
       [],
       false,
@@ -40,7 +40,7 @@ export function Container_NodePoolNodeConfigKubeletConfig_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "CpuManagerPolicy",
+      "cpuManagerPolicy",
       "Control the CPU management policy on the node.",
       [],
       true,
@@ -48,7 +48,7 @@ export function Container_NodePoolNodeConfigKubeletConfig_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Number,
-      "PodPidsLimit",
+      "podPidsLimit",
       "Controls the maximum number of processes allowed to run in a pod.",
       [],
       false,

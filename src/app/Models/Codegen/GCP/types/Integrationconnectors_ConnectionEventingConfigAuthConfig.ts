@@ -6,58 +6,42 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable,
-  Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable_GetTypes,
-} from "./Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable";
+  integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable,
+  integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable_GetTypes,
+} from "./integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable";
 import {
-  Integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword,
-  Integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword_GetTypes,
-} from "./Integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword";
+  integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword,
+  integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword_GetTypes,
+} from "./integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword";
 
-export interface Integrationconnectors_ConnectionEventingConfigAuthConfig {
+export interface integrationconnectors_ConnectionEventingConfigAuthConfig {
   /*
 List containing additional auth configs.
 Structure is documented below.
 */
-  AdditionalVariables?: Array<Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable>;
+  additionalVariables?: Array<integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable>;
 
   // The type of authentication configured.
-  AuthKey?: string;
+  authKey?: string;
 
   /*
 authType of the Connection
 Possible values are: `USER_PASSWORD`.
 */
-  AuthType?: string;
+  authType?: string;
 
   /*
 User password for Authentication.
 Structure is documented below.
 */
-  UserPassword?: Integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword;
+  userPassword?: integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword;
 }
 
-export function Integrationconnectors_ConnectionEventingConfigAuthConfig_GetTypes(): DynamicUIProps[] {
+export function integrationconnectors_ConnectionEventingConfigAuthConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "AdditionalVariables",
-      "List containing additional auth configs.\nStructure is documented below.",
-      Integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "AuthKey",
-      "The type of authentication configured.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "AuthType",
+      "authType",
       "authType of the Connection\nPossible values are: `USER_PASSWORD`.",
       [],
       true,
@@ -65,10 +49,26 @@ export function Integrationconnectors_ConnectionEventingConfigAuthConfig_GetType
     ),
     new DynamicUIProps(
       InputType.Object,
-      "UserPassword",
+      "userPassword",
       "User password for Authentication.\nStructure is documented below.",
-      Integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword_GetTypes(),
+      integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword_GetTypes(),
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "additionalVariables",
+      "List containing additional auth configs.\nStructure is documented below.",
+      integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "authKey",
+      "The type of authentication configured.",
+      [],
+      false,
       false,
     ),
   ];

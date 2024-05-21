@@ -6,40 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Identityplatform_TenantInboundSamlConfigIdpConfigIdpCertificate,
-  Identityplatform_TenantInboundSamlConfigIdpConfigIdpCertificate_GetTypes,
-} from "./Identityplatform_TenantInboundSamlConfigIdpConfigIdpCertificate";
+  identityplatform_TenantInboundSamlConfigIdpConfigIdpCertificate,
+  identityplatform_TenantInboundSamlConfigIdpConfigIdpCertificate_GetTypes,
+} from "./identityplatform_TenantInboundSamlConfigIdpConfigIdpCertificate";
 
-export interface Identityplatform_TenantInboundSamlConfigIdpConfig {
+export interface identityplatform_TenantInboundSamlConfigIdpConfig {
   /*
 The IDP's certificate data to verify the signature in the SAMLResponse issued by the IDP.
 Structure is documented below.
 */
-  IdpCertificates?: Array<Identityplatform_TenantInboundSamlConfigIdpConfigIdpCertificate>;
+  idpCertificates?: Array<identityplatform_TenantInboundSamlConfigIdpConfigIdpCertificate>;
 
   // Unique identifier for all SAML entities
-  IdpEntityId?: string;
+  idpEntityId?: string;
 
   // Indicates if outbounding SAMLRequest should be signed.
-  SignRequest?: boolean;
+  signRequest?: boolean;
 
   // URL to send Authentication request to.
-  SsoUrl?: string;
+  ssoUrl?: string;
 }
 
-export function Identityplatform_TenantInboundSamlConfigIdpConfig_GetTypes(): DynamicUIProps[] {
+export function identityplatform_TenantInboundSamlConfigIdpConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "IdpCertificates",
+      "idpCertificates",
       "The IDP's certificate data to verify the signature in the SAMLResponse issued by the IDP.\nStructure is documented below.",
-      Identityplatform_TenantInboundSamlConfigIdpConfigIdpCertificate_GetTypes(),
+      identityplatform_TenantInboundSamlConfigIdpConfigIdpCertificate_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "IdpEntityId",
+      "idpEntityId",
       "Unique identifier for all SAML entities",
       [],
       true,
@@ -47,7 +47,7 @@ export function Identityplatform_TenantInboundSamlConfigIdpConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "SignRequest",
+      "signRequest",
       "Indicates if outbounding SAMLRequest should be signed.",
       [],
       false,
@@ -55,7 +55,7 @@ export function Identityplatform_TenantInboundSamlConfigIdpConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "SsoUrl",
+      "ssoUrl",
       "URL to send Authentication request to.",
       [],
       true,

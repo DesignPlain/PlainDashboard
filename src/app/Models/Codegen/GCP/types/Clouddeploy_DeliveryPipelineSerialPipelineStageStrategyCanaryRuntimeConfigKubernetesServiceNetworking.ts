@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesServiceNetworking {
+export interface clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesServiceNetworking {
+  // Required. Name of the Kubernetes Deployment whose traffic is managed by the specified Service.
+  deployment?: string;
+
   // Optional. Whether to disable Pod overprovisioning. If Pod overprovisioning is disabled then Cloud Deploy will limit the number of total Pods used for the deployment strategy to the number of Pods the Deployment has on the cluster.
-  DisablePodOverprovisioning?: boolean;
+  disablePodOverprovisioning?: boolean;
 
   // Required. Name of the Kubernetes Service.
-  Service?: string;
-
-  // Required. Name of the Kubernetes Deployment whose traffic is managed by the specified Service.
-  Deployment?: string;
+  service?: string;
 }
 
-export function Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesServiceNetworking_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesServiceNetworking_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "deployment",
+      "Required. Name of the Kubernetes Deployment whose traffic is managed by the specified Service.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Bool,
-      "DisablePodOverprovisioning",
+      "disablePodOverprovisioning",
       "Optional. Whether to disable Pod overprovisioning. If Pod overprovisioning is disabled then Cloud Deploy will limit the number of total Pods used for the deployment strategy to the number of Pods the Deployment has on the cluster.",
       [],
       false,
@@ -29,16 +37,8 @@ export function Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRun
     ),
     new DynamicUIProps(
       InputType.String,
-      "Service",
+      "service",
       "Required. Name of the Kubernetes Service.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Deployment",
-      "Required. Name of the Kubernetes Deployment whose traffic is managed by the specified Service.",
       [],
       true,
       false,

@@ -6,45 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Endpoints_ServiceApiMethod,
-  Endpoints_ServiceApiMethod_GetTypes,
-} from "./Endpoints_ServiceApiMethod";
+  endpoints_ServiceApiMethod,
+  endpoints_ServiceApiMethod_GetTypes,
+} from "./endpoints_ServiceApiMethod";
 
-export interface Endpoints_ServiceApi {
+export interface endpoints_ServiceApi {
   // A list of Method objects; structure is documented below.
-  Methods?: Array<Endpoints_ServiceApiMethod>;
+  methods?: Array<endpoints_ServiceApiMethod>;
 
   // The simple name of the endpoint as described in the config.
-  Name?: string;
+  name?: string;
 
   // `SYNTAX_PROTO2` or `SYNTAX_PROTO3`.
-  Syntax?: string;
+  syntax?: string;
 
   // A version string for this api. If specified, will have the form major-version.minor-version, e.g. `1.10`.
-  Version?: string;
+  version?: string;
 }
 
-export function Endpoints_ServiceApi_GetTypes(): DynamicUIProps[] {
+export function endpoints_ServiceApi_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "Version",
-      "A version string for this api. If specified, will have the form major-version.minor-version, e.g. `1.10`.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "Methods",
+      "methods",
       "A list of Method objects; structure is documented below.",
-      Endpoints_ServiceApiMethod_GetTypes(),
+      endpoints_ServiceApiMethod_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The simple name of the endpoint as described in the config.",
       [],
       false,
@@ -52,8 +44,16 @@ export function Endpoints_ServiceApi_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Syntax",
+      "syntax",
       "`SYNTAX_PROTO2` or `SYNTAX_PROTO3`.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "version",
+      "A version string for this api. If specified, will have the form major-version.minor-version, e.g. `1.10`.",
       [],
       false,
       false,

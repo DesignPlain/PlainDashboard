@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus {
+export interface diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus {
   // The status code, which should be an enum value of google.rpc.Code.
-  Code?: number;
+  code?: number;
 
   // A JSON encoded list of messages that carry the error details.
-  Details?: string;
+  details?: string;
 
   // A developer-facing error message.
-  Message?: string;
+  message?: string;
 }
 
-export function Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Code",
+      "code",
       "The status code, which should be an enum value of google.rpc.Code.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOut
     ),
     new DynamicUIProps(
       InputType.String,
-      "Details",
+      "details",
       "A JSON encoded list of messages that carry the error details.",
       [],
       false,
@@ -37,7 +37,7 @@ export function Diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOut
     ),
     new DynamicUIProps(
       InputType.String,
-      "Message",
+      "message",
       "A developer-facing error message.",
       [],
       false,

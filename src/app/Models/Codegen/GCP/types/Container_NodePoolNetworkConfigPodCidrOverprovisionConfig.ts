@@ -6,11 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_NodePoolNetworkConfigPodCidrOverprovisionConfig {
+export interface container_NodePoolNetworkConfigPodCidrOverprovisionConfig {
   //
-  Disabled?: boolean;
+  disabled?: boolean;
 }
 
-export function Container_NodePoolNetworkConfigPodCidrOverprovisionConfig_GetTypes(): DynamicUIProps[] {
-  return [new DynamicUIProps(InputType.Bool, "Disabled", "", [], true, false)];
+export function container_NodePoolNetworkConfigPodCidrOverprovisionConfig_GetTypes(): DynamicUIProps[] {
+  return [new DynamicUIProps(InputType.Bool, "disabled", "", [], true, false)];
 }

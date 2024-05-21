@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_AlertPolicyAlertStrategyNotificationRateLimit {
+export interface monitoring_AlertPolicyAlertStrategyNotificationRateLimit {
   // Not more than one notification per period.
-  Period?: string;
+  period?: string;
 }
 
-export function Monitoring_AlertPolicyAlertStrategyNotificationRateLimit_GetTypes(): DynamicUIProps[] {
+export function monitoring_AlertPolicyAlertStrategyNotificationRateLimit_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Period",
+      "period",
       "Not more than one notification per period.",
       [],
       false,

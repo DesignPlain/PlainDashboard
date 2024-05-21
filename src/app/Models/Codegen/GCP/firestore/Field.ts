@@ -7,20 +7,20 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Firestore_FieldIndexConfig,
-  Firestore_FieldIndexConfig_GetTypes,
-} from "../types/Firestore_FieldIndexConfig";
+  firestore_FieldIndexConfig,
+  firestore_FieldIndexConfig_GetTypes,
+} from "../types/firestore_FieldIndexConfig";
 import {
-  Firestore_FieldTtlConfig,
-  Firestore_FieldTtlConfig_GetTypes,
-} from "../types/Firestore_FieldTtlConfig";
+  firestore_FieldTtlConfig,
+  firestore_FieldTtlConfig_GetTypes,
+} from "../types/firestore_FieldTtlConfig";
 
 export interface FieldArgs {
   // The id of the collection group to configure.
-  Collection?: string;
+  collection?: string;
 
   // The Firestore database id. Defaults to `"(default)"`.
-  Database?: string;
+  database?: string;
 
   /*
 The id of the field to configure.
@@ -28,7 +28,7 @@ The id of the field to configure.
 
 - - -
 */
-  Field?: string;
+  field?: string;
 
   /*
 The single field index configuration for this field.
@@ -37,23 +37,26 @@ indexes specified. Configuring the index configuration with an empty block disab
 the field.
 Structure is documented below.
 */
-  IndexConfig?: Firestore_FieldIndexConfig;
+  indexConfig?: firestore_FieldIndexConfig;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 The TTL configuration for this Field. If set to an empty block (i.e. `ttl_config {}`), a TTL policy is configured based on the field. If unset, a TTL policy is not configured (or will be disabled upon updating the resource).
 Structure is documented below.
 */
-  TtlConfig?: Firestore_FieldTtlConfig;
+  ttlConfig?: firestore_FieldTtlConfig;
 }
 export class Field extends Resource {
+  // The id of the collection group to configure.
+  public collection?: string;
+
   // The Firestore database id. Defaults to `"(default)"`.
-  public Database?: string;
+  public database?: string;
 
   /*
 The id of the field to configure.
@@ -61,7 +64,7 @@ The id of the field to configure.
 
 - - -
 */
-  public Field?: string;
+  public field?: string;
 
   /*
 The single field index configuration for this field.
@@ -70,66 +73,39 @@ indexes specified. Configuring the index configuration with an empty block disab
 the field.
 Structure is documented below.
 */
-  public IndexConfig?: Firestore_FieldIndexConfig;
+  public indexConfig?: firestore_FieldIndexConfig;
 
   /*
 The name of this field. Format:
 `projects/{{project}}/databases/{{database}}/collectionGroups/{{collection}}/fields/{{field}}`
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 The TTL configuration for this Field. If set to an empty block (i.e. `ttl_config {}`), a TTL policy is configured based on the field. If unset, a TTL policy is not configured (or will be disabled upon updating the resource).
 Structure is documented below.
 */
-  public TtlConfig?: Firestore_FieldTtlConfig;
-
-  // The id of the collection group to configure.
-  public Collection?: string;
+  public ttlConfig?: firestore_FieldTtlConfig;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "Collection",
-        "The id of the collection group to configure.",
-        [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Database",
-        'The Firestore database id. Defaults to `"(default)"`.',
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Field",
-        "The id of the field to configure.\n\n\n- - -",
-        [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.Object,
-        "IndexConfig",
+        "indexConfig",
         "The single field index configuration for this field.\nCreating an index configuration for this field will override any inherited configuration with the\nindexes specified. Configuring the index configuration with an empty block disables all indexes on\nthe field.\nStructure is documented below.",
-        Firestore_FieldIndexConfig_GetTypes(),
+        firestore_FieldIndexConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -137,10 +113,34 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "TtlConfig",
+        "ttlConfig",
         "The TTL configuration for this Field. If set to an empty block (i.e. `ttl_config {}`), a TTL policy is configured based on the field. If unset, a TTL policy is not configured (or will be disabled upon updating the resource).\nStructure is documented below.",
-        Firestore_FieldTtlConfig_GetTypes(),
+        firestore_FieldTtlConfig_GetTypes(),
         false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "collection",
+        "The id of the collection group to configure.",
+        [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "database",
+        'The Firestore database id. Defaults to `"(default)"`.',
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "field",
+        "The id of the field to configure.\n\n\n- - -",
+        [],
+        true,
         false,
       ),
     ];

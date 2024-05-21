@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_BareMetalAdminClusterStorageLvpShareConfigLvpConfig,
-  Gkeonprem_BareMetalAdminClusterStorageLvpShareConfigLvpConfig_GetTypes,
-} from "./Gkeonprem_BareMetalAdminClusterStorageLvpShareConfigLvpConfig";
+  gkeonprem_BareMetalAdminClusterStorageLvpShareConfigLvpConfig,
+  gkeonprem_BareMetalAdminClusterStorageLvpShareConfigLvpConfig_GetTypes,
+} from "./gkeonprem_BareMetalAdminClusterStorageLvpShareConfigLvpConfig";
 
-export interface Gkeonprem_BareMetalAdminClusterStorageLvpShareConfig {
+export interface gkeonprem_BareMetalAdminClusterStorageLvpShareConfig {
   /*
 Defines the machine path and storage class for the LVP Share.
 Structure is documented below.
 */
-  LvpConfig?: Gkeonprem_BareMetalAdminClusterStorageLvpShareConfigLvpConfig;
+  lvpConfig?: gkeonprem_BareMetalAdminClusterStorageLvpShareConfigLvpConfig;
 
   // The number of subdirectories to create under path.
-  SharedPathPvCount?: number;
+  sharedPathPvCount?: number;
 }
 
-export function Gkeonprem_BareMetalAdminClusterStorageLvpShareConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalAdminClusterStorageLvpShareConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "SharedPathPvCount",
-      "The number of subdirectories to create under path.",
-      [],
-      false,
+      InputType.Object,
+      "lvpConfig",
+      "Defines the machine path and storage class for the LVP Share.\nStructure is documented below.",
+      gkeonprem_BareMetalAdminClusterStorageLvpShareConfigLvpConfig_GetTypes(),
+      true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "LvpConfig",
-      "Defines the machine path and storage class for the LVP Share.\nStructure is documented below.",
-      Gkeonprem_BareMetalAdminClusterStorageLvpShareConfigLvpConfig_GetTypes(),
-      true,
+      InputType.Number,
+      "sharedPathPvCount",
+      "The number of subdirectories to create under path.",
+      [],
+      false,
       false,
     ),
   ];

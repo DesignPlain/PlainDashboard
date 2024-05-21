@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getSubnetworkSecondaryIpRange {
+export interface compute_getSubnetworkSecondaryIpRange {
   /*
 The range of IP addresses belonging to this subnetwork
 secondary range.
 */
-  IpCidrRange?: string;
+  ipCidrRange?: string;
 
   /*
 The name associated with this subnetwork secondary range, used
 when adding an alias IP range to a VM instance.
 */
-  RangeName?: string;
+  rangeName?: string;
 }
 
-export function Compute_getSubnetworkSecondaryIpRange_GetTypes(): DynamicUIProps[] {
+export function compute_getSubnetworkSecondaryIpRange_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "IpCidrRange",
+      "ipCidrRange",
       "The range of IP addresses belonging to this subnetwork\nsecondary range.",
       [],
       true,
@@ -32,7 +32,7 @@ export function Compute_getSubnetworkSecondaryIpRange_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "RangeName",
+      "rangeName",
       "The name associated with this subnetwork secondary range, used\nwhen adding an alias IP range to a VM instance.",
       [],
       true,

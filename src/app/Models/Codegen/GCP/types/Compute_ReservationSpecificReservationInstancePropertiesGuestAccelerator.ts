@@ -6,12 +6,12 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_ReservationSpecificReservationInstancePropertiesGuestAccelerator {
+export interface compute_ReservationSpecificReservationInstancePropertiesGuestAccelerator {
   /*
 The number of the guest accelerator cards exposed to
 this instance.
 */
-  AcceleratorCount?: number;
+  acceleratorCount?: number;
 
   /*
 The full or partial URL of the accelerator type to
@@ -19,14 +19,14 @@ attach to this instance. For example:
 `projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100`
 If you are creating an instance template, specify only the accelerator name.
 */
-  AcceleratorType?: string;
+  acceleratorType?: string;
 }
 
-export function Compute_ReservationSpecificReservationInstancePropertiesGuestAccelerator_GetTypes(): DynamicUIProps[] {
+export function compute_ReservationSpecificReservationInstancePropertiesGuestAccelerator_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "AcceleratorCount",
+      "acceleratorCount",
       "The number of the guest accelerator cards exposed to\nthis instance.",
       [],
       true,
@@ -34,7 +34,7 @@ export function Compute_ReservationSpecificReservationInstancePropertiesGuestAcc
     ),
     new DynamicUIProps(
       InputType.String,
-      "AcceleratorType",
+      "acceleratorType",
       "The full or partial URL of the accelerator type to\nattach to this instance. For example:\n`projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100`\nIf you are creating an instance template, specify only the accelerator name.",
       [],
       true,

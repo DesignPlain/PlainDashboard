@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentialsUsernamePasswordCredentials {
+export interface artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentialsUsernamePasswordCredentials {
   /*
 The Secret Manager key version that holds the password to access the
 remote repository. Must be in the format of
 `projects/{project}/secrets/{secret}/versions/{version}`.
 */
-  PasswordSecretVersion?: string;
+  passwordSecretVersion?: string;
 
   // The username to access the remote repository.
-  Username?: string;
+  username?: string;
 }
 
-export function Artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentialsUsernamePasswordCredentials_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentialsUsernamePasswordCredentials_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PasswordSecretVersion",
+      "passwordSecretVersion",
       "The Secret Manager key version that holds the password to access the\nremote repository. Must be in the format of\n`projects/{project}/secrets/{secret}/versions/{version}`.",
       [],
       false,
@@ -30,7 +30,7 @@ export function Artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredent
     ),
     new DynamicUIProps(
       InputType.String,
-      "Username",
+      "username",
       "The username to access the remote repository.",
       [],
       false,

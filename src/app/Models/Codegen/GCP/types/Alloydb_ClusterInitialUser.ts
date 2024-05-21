@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Alloydb_ClusterInitialUser {
+export interface alloydb_ClusterInitialUser {
   /*
 The initial password for the user.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  Password?: string;
+  password?: string;
 
   // The database username.
-  User?: string;
+  user?: string;
 }
 
-export function Alloydb_ClusterInitialUser_GetTypes(): DynamicUIProps[] {
+export function alloydb_ClusterInitialUser_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Password",
+      "password",
       "The initial password for the user.\n**Note**: This property is sensitive and will not be displayed in the plan.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Alloydb_ClusterInitialUser_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "User",
+      "user",
       "The database username.",
       [],
       false,

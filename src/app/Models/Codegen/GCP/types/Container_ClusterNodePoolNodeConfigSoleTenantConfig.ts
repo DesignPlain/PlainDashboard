@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_ClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity,
-  Container_ClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity_GetTypes,
-} from "./Container_ClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity";
+  container_ClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity,
+  container_ClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity_GetTypes,
+} from "./container_ClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity";
 
-export interface Container_ClusterNodePoolNodeConfigSoleTenantConfig {
+export interface container_ClusterNodePoolNodeConfigSoleTenantConfig {
   // .
-  NodeAffinities?: Array<Container_ClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity>;
+  nodeAffinities?: Array<container_ClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity>;
 }
 
-export function Container_ClusterNodePoolNodeConfigSoleTenantConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterNodePoolNodeConfigSoleTenantConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "NodeAffinities",
+      "nodeAffinities",
       ".",
-      Container_ClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity_GetTypes(),
+      container_ClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity_GetTypes(),
       true,
       true,
     ),

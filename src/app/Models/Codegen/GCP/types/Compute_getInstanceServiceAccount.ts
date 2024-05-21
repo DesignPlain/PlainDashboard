@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getInstanceServiceAccount {
+export interface compute_getInstanceServiceAccount {
   // The service account e-mail address.
-  Email?: string;
+  email?: string;
 
   // A list of service scopes.
-  Scopes?: Array<string>;
+  scopes?: Array<string>;
 }
 
-export function Compute_getInstanceServiceAccount_GetTypes(): DynamicUIProps[] {
+export function compute_getInstanceServiceAccount_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Email",
+      "email",
       "The service account e-mail address.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Compute_getInstanceServiceAccount_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Scopes",
+      "scopes",
       "A list of service scopes.",
       InputType_String_GetTypes(),
       true,

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterMeshCertificates {
+export interface container_ClusterMeshCertificates {
   // Controls the issuance of workload mTLS certificates. It is enabled by default. Workload Identity is required, see workload_config.
-  EnableCertificates?: boolean;
+  enableCertificates?: boolean;
 }
 
-export function Container_ClusterMeshCertificates_GetTypes(): DynamicUIProps[] {
+export function container_ClusterMeshCertificates_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableCertificates",
+      "enableCertificates",
       "Controls the issuance of workload mTLS certificates. It is enabled by default. Workload Identity is required, see workload_config.",
       [],
       true,

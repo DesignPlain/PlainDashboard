@@ -6,79 +6,79 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryZypper,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryZypper_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryZypper";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryZypper,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryZypper_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryZypper";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo";
 
-export interface Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepository {
-  /*
-An Apt Repository. Structure is
-documented below.
-*/
-  Apt?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt;
-
-  /*
-A Goo Repository. Structure is
-documented below.
-*/
-  Goo?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo;
-
+export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepository {
   /*
 A Yum Repository. Structure is
 documented below.
 */
-  Yum?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum;
+  yum?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum;
 
   /*
 A Zypper Repository. Structure is
 documented below.
 */
-  Zypper?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryZypper;
+  zypper?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryZypper;
+
+  /*
+An Apt Repository. Structure is
+documented below.
+*/
+  apt?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt;
+
+  /*
+A Goo Repository. Structure is
+documented below.
+*/
+  goo?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo;
 }
 
-export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepository_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepository_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Apt",
+      "apt",
       "An Apt Repository. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt_GetTypes(),
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Goo",
+      "goo",
       "A Goo Repository. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo_GetTypes(),
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Yum",
+      "yum",
       "A Yum Repository. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum_GetTypes(),
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Zypper",
+      "zypper",
       "A Zypper Repository. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryZypper_GetTypes(),
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryZypper_GetTypes(),
       false,
       false,
     ),

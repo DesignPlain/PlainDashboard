@@ -9,10 +9,10 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface OrganizationSettingsArgs {
   // If set to true, the _Default sink in newly created projects and folders will created in a disabled state. This can be used to automatically disable log storage if there is already an aggregated sink configured in the hierarchy. The _Default sink can be re-enabled manually if needed.
-  DisableDefaultSink?: boolean;
+  disableDefaultSink?: boolean;
 
   // The resource name for the configured Cloud KMS key.
-  KmsKeyName?: string;
+  kmsKeyName?: string;
 
   /*
 The organization for which to retrieve or configure settings.
@@ -20,10 +20,10 @@ The organization for which to retrieve or configure settings.
 
 - - -
 */
-  Organization?: string;
+  organization?: string;
 
   // The storage location that Cloud Logging will use to create new resources when a location is needed but not explicitly provided.
-  StorageLocation?: string;
+  storageLocation?: string;
 }
 export class OrganizationSettings extends Resource {
   /*
@@ -32,31 +32,31 @@ The organization for which to retrieve or configure settings.
 
 - - -
 */
-  public Organization?: string;
+  public organization?: string;
 
   // The storage location that Cloud Logging will use to create new resources when a location is needed but not explicitly provided.
-  public StorageLocation?: string;
+  public storageLocation?: string;
 
   // If set to true, the _Default sink in newly created projects and folders will created in a disabled state. This can be used to automatically disable log storage if there is already an aggregated sink configured in the hierarchy. The _Default sink can be re-enabled manually if needed.
-  public DisableDefaultSink?: boolean;
+  public disableDefaultSink?: boolean;
 
   // The resource name for the configured Cloud KMS key.
-  public KmsKeyName?: string;
+  public kmsKeyName?: string;
 
   // The service account that will be used by the Log Router to access your Cloud KMS key.
-  public KmsServiceAccountId?: string;
+  public kmsServiceAccountId?: string;
 
   // The service account for the given container. Sinks use this service account as their writerIdentity if no custom service account is provided.
-  public LoggingServiceAccountId?: string;
+  public loggingServiceAccountId?: string;
 
   // The resource name of the settings.
-  public Name?: string;
+  public name?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "DisableDefaultSink",
+        "disableDefaultSink",
         "If set to true, the _Default sink in newly created projects and folders will created in a disabled state. This can be used to automatically disable log storage if there is already an aggregated sink configured in the hierarchy. The _Default sink can be re-enabled manually if needed.",
         [],
         false,
@@ -64,7 +64,7 @@ The organization for which to retrieve or configure settings.
       ),
       new DynamicUIProps(
         InputType.String,
-        "KmsKeyName",
+        "kmsKeyName",
         "The resource name for the configured Cloud KMS key.",
         [],
         false,
@@ -72,7 +72,7 @@ The organization for which to retrieve or configure settings.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Organization",
+        "organization",
         "The organization for which to retrieve or configure settings.\n\n\n- - -",
         [],
         true,
@@ -80,7 +80,7 @@ The organization for which to retrieve or configure settings.
       ),
       new DynamicUIProps(
         InputType.String,
-        "StorageLocation",
+        "storageLocation",
         "The storage location that Cloud Logging will use to create new resources when a location is needed but not explicitly provided.",
         [],
         false,

@@ -6,14 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionNetworkEndpointGroupAppEngine {
-  /*
-Optional serving service.
-The service name must be 1-63 characters long, and comply with RFC1035.
-Example value: "default", "my-service".
-*/
-  Service?: string;
-
+export interface compute_RegionNetworkEndpointGroupAppEngine {
   /*
 A template to parse service and version fields from a request URL.
 URL mask allows for routing to multiple App Engine services without
@@ -23,29 +16,28 @@ For example, the request URLs "foo1-dot-appname.appspot.com/v1" and
 URL mask "-dot-appname.appspot.com/". The URL mask will parse
 them to { service = "foo1", version = "v1" } and { service = "foo1", version = "v2" } respectively.
 */
-  UrlMask?: string;
+  urlMask?: string;
 
   /*
 Optional serving version.
 The version must be 1-63 characters long, and comply with RFC1035.
 Example value: "v1", "v2".
 */
-  Version?: string;
+  version?: string;
+
+  /*
+Optional serving service.
+The service name must be 1-63 characters long, and comply with RFC1035.
+Example value: "default", "my-service".
+*/
+  service?: string;
 }
 
-export function Compute_RegionNetworkEndpointGroupAppEngine_GetTypes(): DynamicUIProps[] {
+export function compute_RegionNetworkEndpointGroupAppEngine_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Service",
-      'Optional serving service.\nThe service name must be 1-63 characters long, and comply with RFC1035.\nExample value: "default", "my-service".',
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "UrlMask",
+      "urlMask",
       'A template to parse service and version fields from a request URL.\nURL mask allows for routing to multiple App Engine services without\nhaving to create multiple Network Endpoint Groups and backend services.\nFor example, the request URLs "foo1-dot-appname.appspot.com/v1" and\n"foo1-dot-appname.appspot.com/v2" can be backed by the same Serverless NEG with\nURL mask "-dot-appname.appspot.com/". The URL mask will parse\nthem to { service = "foo1", version = "v1" } and { service = "foo1", version = "v2" } respectively.',
       [],
       false,
@@ -53,8 +45,16 @@ export function Compute_RegionNetworkEndpointGroupAppEngine_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "Version",
+      "version",
       'Optional serving version.\nThe version must be 1-63 characters long, and comply with RFC1035.\nExample value: "v1", "v2".',
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "service",
+      'Optional serving service.\nThe service name must be 1-63 characters long, and comply with RFC1035.\nExample value: "default", "my-service".',
       [],
       false,
       true,

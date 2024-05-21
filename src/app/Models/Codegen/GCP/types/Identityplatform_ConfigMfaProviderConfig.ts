@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Identityplatform_ConfigMfaProviderConfigTotpProviderConfig,
-  Identityplatform_ConfigMfaProviderConfigTotpProviderConfig_GetTypes,
-} from "./Identityplatform_ConfigMfaProviderConfigTotpProviderConfig";
+  identityplatform_ConfigMfaProviderConfigTotpProviderConfig,
+  identityplatform_ConfigMfaProviderConfigTotpProviderConfig_GetTypes,
+} from "./identityplatform_ConfigMfaProviderConfigTotpProviderConfig";
 
-export interface Identityplatform_ConfigMfaProviderConfig {
+export interface identityplatform_ConfigMfaProviderConfig {
   /*
 Whether MultiFactor Authentication has been enabled for this project.
 Possible values are: `DISABLED`, `ENABLED`, `MANDATORY`.
 */
-  State?: string;
+  state?: string;
 
   /*
 TOTP MFA provider config for this project.
 Structure is documented below.
 */
-  TotpProviderConfig?: Identityplatform_ConfigMfaProviderConfigTotpProviderConfig;
+  totpProviderConfig?: identityplatform_ConfigMfaProviderConfigTotpProviderConfig;
 }
 
-export function Identityplatform_ConfigMfaProviderConfig_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ConfigMfaProviderConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "Whether MultiFactor Authentication has been enabled for this project.\nPossible values are: `DISABLED`, `ENABLED`, `MANDATORY`.",
       [],
       false,
@@ -36,9 +36,9 @@ export function Identityplatform_ConfigMfaProviderConfig_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "TotpProviderConfig",
+      "totpProviderConfig",
       "TOTP MFA provider config for this project.\nStructure is documented below.",
-      Identityplatform_ConfigMfaProviderConfigTotpProviderConfig_GetTypes(),
+      identityplatform_ConfigMfaProviderConfigTotpProviderConfig_GetTypes(),
       false,
       false,
     ),

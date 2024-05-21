@@ -8,22 +8,19 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface TaxonomyArgs {
-  // Taxonomy location region.
-  Region?: string;
-
   /*
 A list of policy types that are activated for this taxonomy. If not set,
 defaults to an empty list.
 Each value may be one of: `POLICY_TYPE_UNSPECIFIED`, `FINE_GRAINED_ACCESS_CONTROL`.
 */
-  ActivatedPolicyTypes?: Array<string>;
+  activatedPolicyTypes?: Array<string>;
 
   /*
 Description of this taxonomy. It must: contain only unicode characters,
 tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
 long when encoded in UTF-8. If not set, defaults to an empty description.
 */
-  Description?: string;
+  description?: string;
 
   /*
 User defined name of this taxonomy.
@@ -35,61 +32,72 @@ long when encoded in UTF-8.
 
 - - -
 */
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
+
+  // Taxonomy location region.
+  region?: string;
 }
 export class Taxonomy extends Resource {
-  /*
-A list of policy types that are activated for this taxonomy. If not set,
-defaults to an empty list.
-Each value may be one of: `POLICY_TYPE_UNSPECIFIED`, `FINE_GRAINED_ACCESS_CONTROL`.
-*/
-  public ActivatedPolicyTypes?: Array<string>;
-
-  /*
-Description of this taxonomy. It must: contain only unicode characters,
-tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
-long when encoded in UTF-8. If not set, defaults to an empty description.
-*/
-  public Description?: string;
-
-  /*
-User defined name of this taxonomy.
-The taxonomy display name must be unique within an organization.
-It must: contain only unicode letters, numbers, underscores, dashes
-and spaces; not start or end with spaces; and be at most 200 bytes
-long when encoded in UTF-8.
-
-
-- - -
-*/
-  public DisplayName?: string;
-
   /*
 Resource name of this taxonomy, whose format is:
 "projects/{project}/locations/{region}/taxonomies/{taxonomy}".
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // Taxonomy location region.
-  public Region?: string;
+  public region?: string;
+
+  /*
+A list of policy types that are activated for this taxonomy. If not set,
+defaults to an empty list.
+Each value may be one of: `POLICY_TYPE_UNSPECIFIED`, `FINE_GRAINED_ACCESS_CONTROL`.
+*/
+  public activatedPolicyTypes?: Array<string>;
+
+  /*
+Description of this taxonomy. It must: contain only unicode characters,
+tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
+long when encoded in UTF-8. If not set, defaults to an empty description.
+*/
+  public description?: string;
+
+  /*
+User defined name of this taxonomy.
+The taxonomy display name must be unique within an organization.
+It must: contain only unicode letters, numbers, underscores, dashes
+and spaces; not start or end with spaces; and be at most 200 bytes
+long when encoded in UTF-8.
+
+
+- - -
+*/
+  public displayName?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "region",
         "Taxonomy location region.",
         [],
         false,
@@ -97,7 +105,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ActivatedPolicyTypes",
+        "activatedPolicyTypes",
         "A list of policy types that are activated for this taxonomy. If not set,\ndefaults to an empty list.\nEach value may be one of: `POLICY_TYPE_UNSPECIFIED`, `FINE_GRAINED_ACCESS_CONTROL`.",
         InputType_String_GetTypes(),
         false,
@@ -105,7 +113,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Description of this taxonomy. It must: contain only unicode characters,\ntabs, newlines, carriage returns and page breaks; and be at most 2000 bytes\nlong when encoded in UTF-8. If not set, defaults to an empty description.",
         [],
         false,
@@ -113,19 +121,11 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "User defined name of this taxonomy.\nThe taxonomy display name must be unique within an organization.\nIt must: contain only unicode letters, numbers, underscores, dashes\nand spaces; not start or end with spaces; and be at most 200 bytes\nlong when encoded in UTF-8.\n\n\n- - -",
         [],
         true,
         false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
       ),
     ];
   }

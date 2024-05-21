@@ -6,13 +6,13 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Identityplatform_TenantInboundSamlConfigSpConfigSpCertificate,
-  Identityplatform_TenantInboundSamlConfigSpConfigSpCertificate_GetTypes,
-} from "./Identityplatform_TenantInboundSamlConfigSpConfigSpCertificate";
+  identityplatform_TenantInboundSamlConfigSpConfigSpCertificate,
+  identityplatform_TenantInboundSamlConfigSpConfigSpCertificate_GetTypes,
+} from "./identityplatform_TenantInboundSamlConfigSpConfigSpCertificate";
 
-export interface Identityplatform_TenantInboundSamlConfigSpConfig {
+export interface identityplatform_TenantInboundSamlConfigSpConfig {
   // Callback URI where responses from IDP are handled. Must start with `https://`.
-  CallbackUri?: string;
+  callbackUri?: string;
 
   /*
 (Output)
@@ -22,34 +22,34 @@ Structure is documented below.
 
 <a name="nested_sp_certificates"></a>The `sp_certificates` block contains:
 */
-  SpCertificates?: Array<Identityplatform_TenantInboundSamlConfigSpConfigSpCertificate>;
+  spCertificates?: Array<identityplatform_TenantInboundSamlConfigSpConfigSpCertificate>;
 
   // Unique identifier for all SAML entities.
-  SpEntityId?: string;
+  spEntityId?: string;
 }
 
-export function Identityplatform_TenantInboundSamlConfigSpConfig_GetTypes(): DynamicUIProps[] {
+export function identityplatform_TenantInboundSamlConfigSpConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Array,
+      "spCertificates",
+      '(Output)\nThe IDP\'s certificate data to verify the signature in the SAMLResponse issued by the IDP.\nStructure is documented below.\n\n\n<a name="nested_sp_certificates"></a>The `sp_certificates` block contains:',
+      identityplatform_TenantInboundSamlConfigSpConfigSpCertificate_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "CallbackUri",
-      "Callback URI where responses from IDP are handled. Must start with `https://`.",
+      "spEntityId",
+      "Unique identifier for all SAML entities.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "SpCertificates",
-      '(Output)\nThe IDP\'s certificate data to verify the signature in the SAMLResponse issued by the IDP.\nStructure is documented below.\n\n\n<a name="nested_sp_certificates"></a>The `sp_certificates` block contains:',
-      Identityplatform_TenantInboundSamlConfigSpConfigSpCertificate_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "SpEntityId",
-      "Unique identifier for all SAML entities.",
+      "callbackUri",
+      "Callback URI where responses from IDP are handled. Must start with `https://`.",
       [],
       true,
       false,

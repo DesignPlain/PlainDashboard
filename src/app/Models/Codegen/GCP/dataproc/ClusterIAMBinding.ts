@@ -7,22 +7,22 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_ClusterIAMBindingCondition,
-  Dataproc_ClusterIAMBindingCondition_GetTypes,
-} from "../types/Dataproc_ClusterIAMBindingCondition";
+  dataproc_ClusterIAMBindingCondition,
+  dataproc_ClusterIAMBindingCondition_GetTypes,
+} from "../types/dataproc_ClusterIAMBindingCondition";
 
 export interface ClusterIAMBindingArgs {
   /*
 The project in which the cluster belongs. If it
 is not provided, the provider will use a default.
 */
-  Project?: string;
+  project?: string;
 
   /*
 The region in which the cluster belongs. If it
 is not provided, the provider will use a default.
 */
-  Region?: string;
+  region?: string;
 
   /*
 The role that should be applied. Only one
@@ -31,7 +31,7 @@ The role that should be applied. Only one
 
 `gcp.dataproc.ClusterIAMPolicy` only:
 */
-  Role?: string;
+  role?: string;
 
   /*
 The name or relative resource id of the cluster to manage IAM policies for.
@@ -47,32 +47,32 @@ Each entry can have one of the following values:
 - --group:{emailid}--: An email address that represents a Google group. For example, admins@example.com.
 - --domain:{domain}--: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
 */
-  Cluster?: string;
+  cluster?: string;
 
   //
-  Condition?: Dataproc_ClusterIAMBindingCondition;
+  condition?: dataproc_ClusterIAMBindingCondition;
 
   //
-  Members?: Array<string>;
+  members?: Array<string>;
 }
 export class ClusterIAMBinding extends Resource {
   // (Computed) The etag of the clusters's IAM policy.
-  public Etag?: string;
+  public etag?: string;
 
   //
-  public Members?: Array<string>;
+  public members?: Array<string>;
 
   /*
 The project in which the cluster belongs. If it
 is not provided, the provider will use a default.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 The region in which the cluster belongs. If it
 is not provided, the provider will use a default.
 */
-  public Region?: string;
+  public region?: string;
 
   /*
 The role that should be applied. Only one
@@ -81,7 +81,7 @@ The role that should be applied. Only one
 
 `gcp.dataproc.ClusterIAMPolicy` only:
 */
-  public Role?: string;
+  public role?: string;
 
   /*
 The name or relative resource id of the cluster to manage IAM policies for.
@@ -97,16 +97,16 @@ Each entry can have one of the following values:
 - --group:{emailid}--: An email address that represents a Google group. For example, admins@example.com.
 - --domain:{domain}--: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
 */
-  public Cluster?: string;
+  public cluster?: string;
 
   //
-  public Condition?: Dataproc_ClusterIAMBindingCondition;
+  public condition?: dataproc_ClusterIAMBindingCondition;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Role",
+        "role",
         "The role that should be applied. Only one\n`gcp.dataproc.ClusterIAMBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.\n\n`gcp.dataproc.ClusterIAMPolicy` only:",
         [],
         true,
@@ -114,7 +114,7 @@ Each entry can have one of the following values:
       ),
       new DynamicUIProps(
         InputType.String,
-        "Cluster",
+        "cluster",
         "The name or relative resource id of the cluster to manage IAM policies for.\n\nFor `gcp.dataproc.ClusterIAMMember` or `gcp.dataproc.ClusterIAMBinding`:\n\n* `member/members` - (Required) Identities that will be granted the privilege in `role`.\nEach entry can have one of the following values:\n* **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.\n* **allAuthenticatedUsers**: A special identifier that represents anyone who is authenticated with a Google account or a service account.\n* **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.\n* **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.\n* **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.\n* **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.",
         [],
         true,
@@ -122,15 +122,15 @@ Each entry can have one of the following values:
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Dataproc_ClusterIAMBindingCondition_GetTypes(),
+        dataproc_ClusterIAMBindingCondition_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "Members",
+        "members",
         "",
         InputType_String_GetTypes(),
         true,
@@ -138,7 +138,7 @@ Each entry can have one of the following values:
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The project in which the cluster belongs. If it\nis not provided, the provider will use a default.",
         [],
         false,
@@ -146,7 +146,7 @@ Each entry can have one of the following values:
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
+        "region",
         "The region in which the cluster belongs. If it\nis not provided, the provider will use a default.",
         [],
         false,

@@ -9,16 +9,16 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface ReservationAssignmentArgs {
   // The resource which will use the reservation. E.g. projects/myproject, folders/123, organizations/456.
-  Assignee?: string;
+  assignee?: string;
 
   // Types of job, which could be specified when using the reservation. Possible values: JOB_TYPE_UNSPECIFIED, PIPELINE, QUERY
-  JobType?: string;
+  jobType?: string;
 
   // The location for the resource
-  Location?: string;
+  location?: string;
 
   // The project for the resource
-  Project?: string;
+  project?: string;
 
   /*
 The reservation for the resource
@@ -27,14 +27,14 @@ The reservation for the resource
 
 - - -
 */
-  Reservation?: string;
+  reservation?: string;
 }
 export class ReservationAssignment extends Resource {
   // Output only. The resource name of the assignment.
-  public Name?: string;
+  public name?: string;
 
   // The project for the resource
-  public Project?: string;
+  public project?: string;
 
   /*
 The reservation for the resource
@@ -43,25 +43,25 @@ The reservation for the resource
 
 - - -
 */
-  public Reservation?: string;
+  public reservation?: string;
 
   // Assignment will remain in PENDING state if no active capacity commitment is present. It will become ACTIVE when some capacity commitment becomes active. Possible values: STATE_UNSPECIFIED, PENDING, ACTIVE
-  public State?: string;
+  public state?: string;
 
   // The resource which will use the reservation. E.g. projects/myproject, folders/123, organizations/456.
-  public Assignee?: string;
+  public assignee?: string;
 
   // Types of job, which could be specified when using the reservation. Possible values: JOB_TYPE_UNSPECIFIED, PIPELINE, QUERY
-  public JobType?: string;
+  public jobType?: string;
 
   // The location for the resource
-  public Location?: string;
+  public location?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Assignee",
+        "assignee",
         "The resource which will use the reservation. E.g. projects/myproject, folders/123, organizations/456.",
         [],
         true,
@@ -69,7 +69,7 @@ The reservation for the resource
       ),
       new DynamicUIProps(
         InputType.String,
-        "JobType",
+        "jobType",
         "Types of job, which could be specified when using the reservation. Possible values: JOB_TYPE_UNSPECIFIED, PIPELINE, QUERY",
         [],
         true,
@@ -77,7 +77,7 @@ The reservation for the resource
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location for the resource",
         [],
         false,
@@ -85,7 +85,7 @@ The reservation for the resource
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The project for the resource",
         [],
         false,
@@ -93,7 +93,7 @@ The reservation for the resource
       ),
       new DynamicUIProps(
         InputType.String,
-        "Reservation",
+        "reservation",
         "The reservation for the resource\n\n\n\n- - -",
         [],
         true,

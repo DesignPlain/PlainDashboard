@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datacatalog_TagField {
+export interface datacatalog_TagField {
   // Holds the value for a tag field with boolean type.
-  BoolValue?: boolean;
+  boolValue?: boolean;
 
   /*
 (Output)
 The display name of this field
 */
-  DisplayName?: string;
+  displayName?: string;
 
   // Holds the value for a tag field with double type.
-  DoubleValue?: number;
+  doubleValue?: number;
 
   /*
 Holds the value for a tag field with enum type. This value must be one of the allowed values in the definition of this enum.
 
 - - -
 */
-  EnumValue?: string;
+  enumValue?: string;
 
   // The identifier for this object. Format specified above.
-  FieldName?: string;
+  fieldName?: string;
 
   /*
 (Output)
@@ -35,36 +35,20 @@ The order of this field with respect to other fields in this tag. For example, a
 a more important field. The value can be negative. Multiple fields can have the same order, and field orders
 within a tag do not have to be sequential.
 */
-  Order?: number;
+  order?: number;
 
   // Holds the value for a tag field with string type.
-  StringValue?: string;
+  stringValue?: string;
 
   // Holds the value for a tag field with timestamp type.
-  TimestampValue?: string;
+  timestampValue?: string;
 }
 
-export function Datacatalog_TagField_GetTypes(): DynamicUIProps[] {
+export function datacatalog_TagField_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "Order",
-      "(Output)\nThe order of this field with respect to other fields in this tag. For example, a higher value can indicate\na more important field. The value can be negative. Multiple fields can have the same order, and field orders\nwithin a tag do not have to be sequential.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "StringValue",
-      "Holds the value for a tag field with string type.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "TimestampValue",
+      "timestampValue",
       "Holds the value for a tag field with timestamp type.",
       [],
       false,
@@ -72,7 +56,7 @@ export function Datacatalog_TagField_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "BoolValue",
+      "boolValue",
       "Holds the value for a tag field with boolean type.",
       [],
       false,
@@ -80,7 +64,7 @@ export function Datacatalog_TagField_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "DisplayName",
+      "displayName",
       "(Output)\nThe display name of this field",
       [],
       false,
@@ -88,7 +72,7 @@ export function Datacatalog_TagField_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "DoubleValue",
+      "doubleValue",
       "Holds the value for a tag field with double type.",
       [],
       false,
@@ -96,7 +80,7 @@ export function Datacatalog_TagField_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "EnumValue",
+      "enumValue",
       "Holds the value for a tag field with enum type. This value must be one of the allowed values in the definition of this enum.\n\n- - -",
       [],
       false,
@@ -104,10 +88,26 @@ export function Datacatalog_TagField_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "FieldName",
+      "fieldName",
       "The identifier for this object. Format specified above.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "order",
+      "(Output)\nThe order of this field with respect to other fields in this tag. For example, a higher value can indicate\na more important field. The value can be negative. Multiple fields can have the same order, and field orders\nwithin a tag do not have to be sequential.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "stringValue",
+      "Holds the value for a tag field with string type.",
+      [],
+      false,
       false,
     ),
   ];

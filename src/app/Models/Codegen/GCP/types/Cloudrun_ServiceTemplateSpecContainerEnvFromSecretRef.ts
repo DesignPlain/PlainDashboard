@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudrun_ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference,
-  Cloudrun_ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference_GetTypes,
-} from "./Cloudrun_ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference";
+  cloudrun_ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference,
+  cloudrun_ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference_GetTypes,
+} from "./cloudrun_ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference";
 
-export interface Cloudrun_ServiceTemplateSpecContainerEnvFromSecretRef {
+export interface cloudrun_ServiceTemplateSpecContainerEnvFromSecretRef {
   /*
 The Secret to select from.
 Structure is documented below.
 */
-  LocalObjectReference?: Cloudrun_ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference;
+  localObjectReference?: cloudrun_ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference;
 
   // Specify whether the Secret must be defined
-  Optional?: boolean;
+  optional?: boolean;
 }
 
-export function Cloudrun_ServiceTemplateSpecContainerEnvFromSecretRef_GetTypes(): DynamicUIProps[] {
+export function cloudrun_ServiceTemplateSpecContainerEnvFromSecretRef_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "LocalObjectReference",
+      "localObjectReference",
       "The Secret to select from.\nStructure is documented below.",
-      Cloudrun_ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference_GetTypes(),
+      cloudrun_ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "Optional",
+      "optional",
       "Specify whether the Secret must be defined",
       [],
       false,

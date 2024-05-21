@@ -12,19 +12,19 @@ export interface RegionNetworkEndpointArgs {
 IPv4 address external endpoint.
 This can only be specified when network_endpoint_type of the NEG is INTERNET_IP_PORT.
 */
-  IpAddress?: string;
+  ipAddress?: string;
 
   // Port number of network endpoint.
-  Port?: number;
+  port?: number;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // Region where the containing network endpoint group is located.
-  Region?: string;
+  region?: string;
 
   /*
 The network endpoint group this endpoint is part of.
@@ -32,38 +32,38 @@ The network endpoint group this endpoint is part of.
 
 - - -
 */
-  RegionNetworkEndpointGroup?: string;
+  regionNetworkEndpointGroup?: string;
 
   /*
 Fully qualified domain name of network endpoint.
 This can only be specified when network_endpoint_type of the NEG is INTERNET_FQDN_PORT.
 */
-  Fqdn?: string;
+  fqdn?: string;
 }
 export class RegionNetworkEndpoint extends Resource {
   /*
 Fully qualified domain name of network endpoint.
 This can only be specified when network_endpoint_type of the NEG is INTERNET_FQDN_PORT.
 */
-  public Fqdn?: string;
+  public fqdn?: string;
 
   /*
 IPv4 address external endpoint.
 This can only be specified when network_endpoint_type of the NEG is INTERNET_IP_PORT.
 */
-  public IpAddress?: string;
+  public ipAddress?: string;
 
   // Port number of network endpoint.
-  public Port?: number;
+  public port?: number;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // Region where the containing network endpoint group is located.
-  public Region?: string;
+  public region?: string;
 
   /*
 The network endpoint group this endpoint is part of.
@@ -71,37 +71,13 @@ The network endpoint group this endpoint is part of.
 
 - - -
 */
-  public RegionNetworkEndpointGroup?: string;
+  public regionNetworkEndpointGroup?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "IpAddress",
-        "IPv4 address external endpoint.\nThis can only be specified when network_endpoint_type of the NEG is INTERNET_IP_PORT.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Number,
-        "Port",
-        "Port number of network endpoint.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Region",
+        "region",
         "Region where the containing network endpoint group is located.",
         [],
         false,
@@ -109,7 +85,7 @@ The network endpoint group this endpoint is part of.
       ),
       new DynamicUIProps(
         InputType.String,
-        "RegionNetworkEndpointGroup",
+        "regionNetworkEndpointGroup",
         "The network endpoint group this endpoint is part of.\n\n\n- - -",
         [],
         true,
@@ -117,8 +93,32 @@ The network endpoint group this endpoint is part of.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Fqdn",
+        "fqdn",
         "Fully qualified domain name of network endpoint.\nThis can only be specified when network_endpoint_type of the NEG is INTERNET_FQDN_PORT.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "ipAddress",
+        "IPv4 address external endpoint.\nThis can only be specified when network_endpoint_type of the NEG is INTERNET_IP_PORT.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Number,
+        "port",
+        "Port number of network endpoint.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
         true,

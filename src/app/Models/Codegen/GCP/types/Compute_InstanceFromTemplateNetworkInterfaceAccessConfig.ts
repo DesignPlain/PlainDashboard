@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceFromTemplateNetworkInterfaceAccessConfig {
+export interface compute_InstanceFromTemplateNetworkInterfaceAccessConfig {
   // The IP address that is be 1:1 mapped to the instance's network ip.
-  NatIp?: string;
+  natIp?: string;
 
   // The networking tier used for configuring this instance. One of PREMIUM or STANDARD.
-  NetworkTier?: string;
+  networkTier?: string;
 
   // The DNS domain name for the public PTR record.
-  PublicPtrDomainName?: string;
+  publicPtrDomainName?: string;
 
   // A full or partial URL to a security policy to add to this instance. If this field is set to an empty string it will remove the associated security policy.
-  SecurityPolicy?: string;
+  securityPolicy?: string;
 }
 
-export function Compute_InstanceFromTemplateNetworkInterfaceAccessConfig_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceFromTemplateNetworkInterfaceAccessConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PublicPtrDomainName",
+      "publicPtrDomainName",
       "The DNS domain name for the public PTR record.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Compute_InstanceFromTemplateNetworkInterfaceAccessConfig_GetType
     ),
     new DynamicUIProps(
       InputType.String,
-      "SecurityPolicy",
+      "securityPolicy",
       "A full or partial URL to a security policy to add to this instance. If this field is set to an empty string it will remove the associated security policy.",
       [],
       false,
@@ -40,7 +40,7 @@ export function Compute_InstanceFromTemplateNetworkInterfaceAccessConfig_GetType
     ),
     new DynamicUIProps(
       InputType.String,
-      "NatIp",
+      "natIp",
       "The IP address that is be 1:1 mapped to the instance's network ip.",
       [],
       false,
@@ -48,7 +48,7 @@ export function Compute_InstanceFromTemplateNetworkInterfaceAccessConfig_GetType
     ),
     new DynamicUIProps(
       InputType.String,
-      "NetworkTier",
+      "networkTier",
       "The networking tier used for configuring this instance. One of PREMIUM or STANDARD.",
       [],
       false,

@@ -6,56 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTableMysqlColumn {
+export interface datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTableMysqlColumn {
   // Whether or not the column can accept a null value.
-  Nullable?: boolean;
+  nullable?: boolean;
 
   // The ordinal position of the column in the table.
-  OrdinalPosition?: number;
+  ordinalPosition?: number;
 
   // Whether or not the column represents a primary key.
-  PrimaryKey?: boolean;
+  primaryKey?: boolean;
 
   // Column collation.
-  Collation?: string;
+  collation?: string;
 
   // Column name.
-  Column?: string;
+  column?: string;
 
   /*
 The MySQL data type. Full data types list can be found here:
 https://dev.mysql.com/doc/refman/8.0/en/data-types.html
 */
-  DataType?: string;
+  dataType?: string;
 
   /*
 (Output)
 Column length.
 */
-  Length?: number;
+  length?: number;
 }
 
-export function Datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTableMysqlColumn_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTableMysqlColumn_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "DataType",
-      "The MySQL data type. Full data types list can be found here:\nhttps://dev.mysql.com/doc/refman/8.0/en/data-types.html",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Length",
-      "(Output)\nColumn length.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "Nullable",
+      "nullable",
       "Whether or not the column can accept a null value.",
       [],
       false,
@@ -63,7 +47,7 @@ export function Datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMys
     ),
     new DynamicUIProps(
       InputType.Number,
-      "OrdinalPosition",
+      "ordinalPosition",
       "The ordinal position of the column in the table.",
       [],
       false,
@@ -71,7 +55,7 @@ export function Datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMys
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "PrimaryKey",
+      "primaryKey",
       "Whether or not the column represents a primary key.",
       [],
       false,
@@ -79,7 +63,7 @@ export function Datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMys
     ),
     new DynamicUIProps(
       InputType.String,
-      "Collation",
+      "collation",
       "Column collation.",
       [],
       false,
@@ -87,8 +71,24 @@ export function Datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMys
     ),
     new DynamicUIProps(
       InputType.String,
-      "Column",
+      "column",
       "Column name.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "dataType",
+      "The MySQL data type. Full data types list can be found here:\nhttps://dev.mysql.com/doc/refman/8.0/en/data-types.html",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "length",
+      "(Output)\nColumn length.",
       [],
       false,
       false,

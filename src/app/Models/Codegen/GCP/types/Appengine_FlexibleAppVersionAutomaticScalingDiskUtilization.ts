@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_FlexibleAppVersionAutomaticScalingDiskUtilization {
+export interface appengine_FlexibleAppVersionAutomaticScalingDiskUtilization {
   // Target bytes read per second.
-  TargetReadBytesPerSecond?: number;
+  targetReadBytesPerSecond?: number;
 
   // Target ops read per seconds.
-  TargetReadOpsPerSecond?: number;
+  targetReadOpsPerSecond?: number;
 
   // Target bytes written per second.
-  TargetWriteBytesPerSecond?: number;
+  targetWriteBytesPerSecond?: number;
 
   // Target ops written per second.
-  TargetWriteOpsPerSecond?: number;
+  targetWriteOpsPerSecond?: number;
 }
 
-export function Appengine_FlexibleAppVersionAutomaticScalingDiskUtilization_GetTypes(): DynamicUIProps[] {
+export function appengine_FlexibleAppVersionAutomaticScalingDiskUtilization_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "TargetReadBytesPerSecond",
+      "targetReadBytesPerSecond",
       "Target bytes read per second.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Appengine_FlexibleAppVersionAutomaticScalingDiskUtilization_GetT
     ),
     new DynamicUIProps(
       InputType.Number,
-      "TargetReadOpsPerSecond",
+      "targetReadOpsPerSecond",
       "Target ops read per seconds.",
       [],
       false,
@@ -40,7 +40,7 @@ export function Appengine_FlexibleAppVersionAutomaticScalingDiskUtilization_GetT
     ),
     new DynamicUIProps(
       InputType.Number,
-      "TargetWriteBytesPerSecond",
+      "targetWriteBytesPerSecond",
       "Target bytes written per second.",
       [],
       false,
@@ -48,7 +48,7 @@ export function Appengine_FlexibleAppVersionAutomaticScalingDiskUtilization_GetT
     ),
     new DynamicUIProps(
       InputType.Number,
-      "TargetWriteOpsPerSecond",
+      "targetWriteOpsPerSecond",
       "Target ops written per second.",
       [],
       false,

@@ -7,38 +7,26 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_ExternalVpnGatewayInterface,
-  Compute_ExternalVpnGatewayInterface_GetTypes,
-} from "../types/Compute_ExternalVpnGatewayInterface";
+  compute_ExternalVpnGatewayInterface,
+  compute_ExternalVpnGatewayInterface_GetTypes,
+} from "../types/compute_ExternalVpnGatewayInterface";
 
 export interface ExternalVpnGatewayArgs {
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  /*
-Indicates the redundancy type of this external VPN gateway
-Possible values are: `FOUR_IPS_REDUNDANCY`, `SINGLE_IP_INTERNALLY_REDUNDANT`, `TWO_IPS_REDUNDANCY`.
-*/
-  RedundancyType?: string;
-
   // An optional description of this resource.
-  Description?: string;
+  description?: string;
 
   /*
 A list of interfaces on this external VPN gateway.
 Structure is documented below.
 */
-  Interfaces?: Array<Compute_ExternalVpnGatewayInterface>;
+  interfaces?: Array<compute_ExternalVpnGatewayInterface>;
 
   /*
 Labels for the external VPN gateway resource.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   /*
 Name of the resource. Provided by the client when the resource is
@@ -52,82 +40,86 @@ character, which cannot be a dash.
 
 - - -
 */
-  Name?: string;
-}
-export class ExternalVpnGateway extends Resource {
+  name?: string;
+
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
-
-  /*
-The combination of labels configured directly on the resource
-and default labels configured on the provider.
-*/
-  public PulumiLabels?: Map<string, string>;
-
-  // The URI of the created resource.
-  public SelfLink?: string;
-
-  // An optional description of this resource.
-  public Description?: string;
-
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
-
-  /*
-Name of the resource. Provided by the client when the resource is
-created. The name must be 1-63 characters long, and comply with
-RFC1035.  Specifically, the name must be 1-63 characters long and
-match the regular expression `a-z?` which means
-the first character must be a lowercase letter, and all following
-characters must be a dash, lowercase letter, or digit, except the last
-character, which cannot be a dash.
-
-
-- - -
-*/
-  public Name?: string;
+  project?: string;
 
   /*
 Indicates the redundancy type of this external VPN gateway
 Possible values are: `FOUR_IPS_REDUNDANCY`, `SINGLE_IP_INTERNALLY_REDUNDANT`, `TWO_IPS_REDUNDANCY`.
 */
-  public RedundancyType?: string;
-
-  /*
-A list of interfaces on this external VPN gateway.
-Structure is documented below.
-*/
-  public Interfaces?: Array<Compute_ExternalVpnGatewayInterface>;
+  redundancyType?: string;
+}
+export class ExternalVpnGateway extends Resource {
+  // An optional description of this resource.
+  public description?: string;
 
   /*
 The fingerprint used for optimistic locking of this resource.  Used
 internally during updates.
 */
-  public LabelFingerprint?: string;
+  public labelFingerprint?: string;
+
+  /*
+Name of the resource. Provided by the client when the resource is
+created. The name must be 1-63 characters long, and comply with
+RFC1035.  Specifically, the name must be 1-63 characters long and
+match the regular expression `a-z?` which means
+the first character must be a lowercase letter, and all following
+characters must be a dash, lowercase letter, or digit, except the last
+character, which cannot be a dash.
+
+
+- - -
+*/
+  public name?: string;
+
+  /*
+Indicates the redundancy type of this external VPN gateway
+Possible values are: `FOUR_IPS_REDUNDANCY`, `SINGLE_IP_INTERNALLY_REDUNDANT`, `TWO_IPS_REDUNDANCY`.
+*/
+  public redundancyType?: string;
+
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
+
+  /*
+A list of interfaces on this external VPN gateway.
+Structure is documented below.
+*/
+  public interfaces?: Array<compute_ExternalVpnGatewayInterface>;
 
   /*
 Labels for the external VPN gateway resource.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  public Labels?: Map<string, string>;
+  public labels?: Map<string, string>;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  /*
+The combination of labels configured directly on the resource
+and default labels configured on the provider.
+*/
+  public pulumiLabels?: Map<string, string>;
+
+  // The URI of the created resource.
+  public selfLink?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "RedundancyType",
+        "redundancyType",
         "Indicates the redundancy type of this external VPN gateway\nPossible values are: `FOUR_IPS_REDUNDANCY`, `SINGLE_IP_INTERNALLY_REDUNDANT`, `TWO_IPS_REDUNDANCY`.",
         [],
         false,
@@ -135,7 +127,7 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "An optional description of this resource.",
         [],
         false,
@@ -143,15 +135,15 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.Array,
-        "Interfaces",
+        "interfaces",
         "A list of interfaces on this external VPN gateway.\nStructure is documented below.",
-        Compute_ExternalVpnGatewayInterface_GetTypes(),
+        compute_ExternalVpnGatewayInterface_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "Labels for the external VPN gateway resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
@@ -159,8 +151,16 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035.  Specifically, the name must be 1-63 characters long and\nmatch the regular expression `a-z?` which means\nthe first character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.\n\n\n- - -",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
         true,

@@ -6,35 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Accesscontextmanager_ServicePerimetersServicePerimeterStatusVpcAccessibleServices,
-  Accesscontextmanager_ServicePerimetersServicePerimeterStatusVpcAccessibleServices_GetTypes,
-} from "./Accesscontextmanager_ServicePerimetersServicePerimeterStatusVpcAccessibleServices";
+  accesscontextmanager_ServicePerimetersServicePerimeterStatusVpcAccessibleServices,
+  accesscontextmanager_ServicePerimetersServicePerimeterStatusVpcAccessibleServices_GetTypes,
+} from "./accesscontextmanager_ServicePerimetersServicePerimeterStatusVpcAccessibleServices";
 import {
-  Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicy,
-  Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicy_GetTypes,
-} from "./Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicy";
+  accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicy,
+  accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicy_GetTypes,
+} from "./accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicy";
 import {
-  Accesscontextmanager_ServicePerimetersServicePerimeterStatusIngressPolicy,
-  Accesscontextmanager_ServicePerimetersServicePerimeterStatusIngressPolicy_GetTypes,
-} from "./Accesscontextmanager_ServicePerimetersServicePerimeterStatusIngressPolicy";
+  accesscontextmanager_ServicePerimetersServicePerimeterStatusIngressPolicy,
+  accesscontextmanager_ServicePerimetersServicePerimeterStatusIngressPolicy_GetTypes,
+} from "./accesscontextmanager_ServicePerimetersServicePerimeterStatusIngressPolicy";
 
-export interface Accesscontextmanager_ServicePerimetersServicePerimeterStatus {
-  /*
-GCP services that are subject to the Service Perimeter
-restrictions. Must contain a list of services. For example, if
-`storage.googleapis.com` is specified, access to the storage
-buckets inside the perimeter must meet the perimeter's access
-restrictions.
-*/
-  RestrictedServices?: Array<string>;
-
-  /*
-Specifies how APIs are allowed to communicate within the Service
-Perimeter.
-Structure is documented below.
-*/
-  VpcAccessibleServices?: Accesscontextmanager_ServicePerimetersServicePerimeterStatusVpcAccessibleServices;
-
+export interface accesscontextmanager_ServicePerimetersServicePerimeterStatus {
   /*
 A list of AccessLevel resource names that allow resources within
 the ServicePerimeter to be accessed from the internet.
@@ -46,7 +30,7 @@ origins within the perimeter. For Service Perimeter Bridge, must
 be empty.
 Format: accessPolicies/{policy_id}/accessLevels/{access_level_name}
 */
-  AccessLevels?: Array<string>;
+  accessLevels?: Array<string>;
 
   /*
 List of EgressPolicies to apply to the perimeter. A perimeter may
@@ -55,7 +39,7 @@ Access is granted if any EgressPolicy grants it. Must be empty for
 a perimeter bridge.
 Structure is documented below.
 */
-  EgressPolicies?: Array<Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicy>;
+  egressPolicies?: Array<accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicy>;
 
   /*
 List of `IngressPolicies` to apply to the perimeter. A perimeter may
@@ -64,21 +48,53 @@ separately. Access is granted if any `Ingress Policy` grants it.
 Must be empty for a perimeter bridge.
 Structure is documented below.
 */
-  IngressPolicies?: Array<Accesscontextmanager_ServicePerimetersServicePerimeterStatusIngressPolicy>;
+  ingressPolicies?: Array<accesscontextmanager_ServicePerimetersServicePerimeterStatusIngressPolicy>;
 
   /*
 A list of GCP resources that are inside of the service perimeter.
 Currently only projects are allowed.
 Format: projects/{project_number}
 */
-  Resources?: Array<string>;
+  resources?: Array<string>;
+
+  /*
+GCP services that are subject to the Service Perimeter
+restrictions. Must contain a list of services. For example, if
+`storage.googleapis.com` is specified, access to the storage
+buckets inside the perimeter must meet the perimeter's access
+restrictions.
+*/
+  restrictedServices?: Array<string>;
+
+  /*
+Specifies how APIs are allowed to communicate within the Service
+Perimeter.
+Structure is documented below.
+*/
+  vpcAccessibleServices?: accesscontextmanager_ServicePerimetersServicePerimeterStatusVpcAccessibleServices;
 }
 
-export function Accesscontextmanager_ServicePerimetersServicePerimeterStatus_GetTypes(): DynamicUIProps[] {
+export function accesscontextmanager_ServicePerimetersServicePerimeterStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "RestrictedServices",
+      "ingressPolicies",
+      "List of `IngressPolicies` to apply to the perimeter. A perimeter may\nhave multiple `IngressPolicies`, each of which is evaluated\nseparately. Access is granted if any `Ingress Policy` grants it.\nMust be empty for a perimeter bridge.\nStructure is documented below.",
+      accesscontextmanager_ServicePerimetersServicePerimeterStatusIngressPolicy_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "resources",
+      "A list of GCP resources that are inside of the service perimeter.\nCurrently only projects are allowed.\nFormat: projects/{project_number}",
+      InputType_String_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "restrictedServices",
       "GCP services that are subject to the Service Perimeter\nrestrictions. Must contain a list of services. For example, if\n`storage.googleapis.com` is specified, access to the storage\nbuckets inside the perimeter must meet the perimeter's access\nrestrictions.",
       InputType_String_GetTypes(),
       false,
@@ -86,15 +102,15 @@ export function Accesscontextmanager_ServicePerimetersServicePerimeterStatus_Get
     ),
     new DynamicUIProps(
       InputType.Object,
-      "VpcAccessibleServices",
+      "vpcAccessibleServices",
       "Specifies how APIs are allowed to communicate within the Service\nPerimeter.\nStructure is documented below.",
-      Accesscontextmanager_ServicePerimetersServicePerimeterStatusVpcAccessibleServices_GetTypes(),
+      accesscontextmanager_ServicePerimetersServicePerimeterStatusVpcAccessibleServices_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AccessLevels",
+      "accessLevels",
       "A list of AccessLevel resource names that allow resources within\nthe ServicePerimeter to be accessed from the internet.\nAccessLevels listed must be in the same policy as this\nServicePerimeter. Referencing a nonexistent AccessLevel is a\nsyntax error. If no AccessLevel names are listed, resources within\nthe perimeter can only be accessed via GCP calls with request\norigins within the perimeter. For Service Perimeter Bridge, must\nbe empty.\nFormat: accessPolicies/{policy_id}/accessLevels/{access_level_name}",
       InputType_String_GetTypes(),
       false,
@@ -102,25 +118,9 @@ export function Accesscontextmanager_ServicePerimetersServicePerimeterStatus_Get
     ),
     new DynamicUIProps(
       InputType.Array,
-      "EgressPolicies",
+      "egressPolicies",
       "List of EgressPolicies to apply to the perimeter. A perimeter may\nhave multiple EgressPolicies, each of which is evaluated separately.\nAccess is granted if any EgressPolicy grants it. Must be empty for\na perimeter bridge.\nStructure is documented below.",
-      Accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicy_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "IngressPolicies",
-      "List of `IngressPolicies` to apply to the perimeter. A perimeter may\nhave multiple `IngressPolicies`, each of which is evaluated\nseparately. Access is granted if any `Ingress Policy` grants it.\nMust be empty for a perimeter bridge.\nStructure is documented below.",
-      Accesscontextmanager_ServicePerimetersServicePerimeterStatusIngressPolicy_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Resources",
-      "A list of GCP resources that are inside of the service perimeter.\nCurrently only projects are allowed.\nFormat: projects/{project_number}",
-      InputType_String_GetTypes(),
+      accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicy_GetTypes(),
       false,
       false,
     ),

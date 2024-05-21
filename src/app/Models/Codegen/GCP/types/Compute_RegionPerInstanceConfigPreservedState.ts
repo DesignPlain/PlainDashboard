@@ -6,46 +6,62 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionPerInstanceConfigPreservedStateDisk,
-  Compute_RegionPerInstanceConfigPreservedStateDisk_GetTypes,
-} from "./Compute_RegionPerInstanceConfigPreservedStateDisk";
+  compute_RegionPerInstanceConfigPreservedStateDisk,
+  compute_RegionPerInstanceConfigPreservedStateDisk_GetTypes,
+} from "./compute_RegionPerInstanceConfigPreservedStateDisk";
 import {
-  Compute_RegionPerInstanceConfigPreservedStateExternalIp,
-  Compute_RegionPerInstanceConfigPreservedStateExternalIp_GetTypes,
-} from "./Compute_RegionPerInstanceConfigPreservedStateExternalIp";
+  compute_RegionPerInstanceConfigPreservedStateExternalIp,
+  compute_RegionPerInstanceConfigPreservedStateExternalIp_GetTypes,
+} from "./compute_RegionPerInstanceConfigPreservedStateExternalIp";
 import {
-  Compute_RegionPerInstanceConfigPreservedStateInternalIp,
-  Compute_RegionPerInstanceConfigPreservedStateInternalIp_GetTypes,
-} from "./Compute_RegionPerInstanceConfigPreservedStateInternalIp";
+  compute_RegionPerInstanceConfigPreservedStateInternalIp,
+  compute_RegionPerInstanceConfigPreservedStateInternalIp_GetTypes,
+} from "./compute_RegionPerInstanceConfigPreservedStateInternalIp";
 
-export interface Compute_RegionPerInstanceConfigPreservedState {
+export interface compute_RegionPerInstanceConfigPreservedState {
+  /*
+Stateful disks for the instance.
+Structure is documented below.
+*/
+  disks?: Array<compute_RegionPerInstanceConfigPreservedStateDisk>;
+
   /*
 Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
 Structure is documented below.
 */
-  ExternalIps?: Array<Compute_RegionPerInstanceConfigPreservedStateExternalIp>;
+  externalIps?: Array<compute_RegionPerInstanceConfigPreservedStateExternalIp>;
 
   /*
 Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
 Structure is documented below.
 */
-  InternalIps?: Array<Compute_RegionPerInstanceConfigPreservedStateInternalIp>;
+  internalIps?: Array<compute_RegionPerInstanceConfigPreservedStateInternalIp>;
 
   // Preserved metadata defined for this instance. This is a list of key->value pairs.
-  Metadata?: Map<string, string>;
-
-  /*
-Stateful disks for the instance.
-Structure is documented below.
-*/
-  Disks?: Array<Compute_RegionPerInstanceConfigPreservedStateDisk>;
+  metadata?: Map<string, string>;
 }
 
-export function Compute_RegionPerInstanceConfigPreservedState_GetTypes(): DynamicUIProps[] {
+export function compute_RegionPerInstanceConfigPreservedState_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.Array,
+      "externalIps",
+      "Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.\nStructure is documented below.",
+      compute_RegionPerInstanceConfigPreservedStateExternalIp_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "internalIps",
+      "Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.\nStructure is documented below.",
+      compute_RegionPerInstanceConfigPreservedStateInternalIp_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Map,
-      "Metadata",
+      "metadata",
       "Preserved metadata defined for this instance. This is a list of key->value pairs.",
       InputType_Map_GetTypes(),
       false,
@@ -53,25 +69,9 @@ export function Compute_RegionPerInstanceConfigPreservedState_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Disks",
+      "disks",
       "Stateful disks for the instance.\nStructure is documented below.",
-      Compute_RegionPerInstanceConfigPreservedStateDisk_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "ExternalIps",
-      "Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.\nStructure is documented below.",
-      Compute_RegionPerInstanceConfigPreservedStateExternalIp_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "InternalIps",
-      "Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.\nStructure is documented below.",
-      Compute_RegionPerInstanceConfigPreservedStateInternalIp_GetTypes(),
+      compute_RegionPerInstanceConfigPreservedStateDisk_GetTypes(),
       false,
       false,
     ),

@@ -6,57 +6,57 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_getBackendServiceCdnPolicyBypassCacheOnRequestHeader,
-  Compute_getBackendServiceCdnPolicyBypassCacheOnRequestHeader_GetTypes,
-} from "./Compute_getBackendServiceCdnPolicyBypassCacheOnRequestHeader";
+  compute_getBackendServiceCdnPolicyNegativeCachingPolicy,
+  compute_getBackendServiceCdnPolicyNegativeCachingPolicy_GetTypes,
+} from "./compute_getBackendServiceCdnPolicyNegativeCachingPolicy";
 import {
-  Compute_getBackendServiceCdnPolicyCacheKeyPolicy,
-  Compute_getBackendServiceCdnPolicyCacheKeyPolicy_GetTypes,
-} from "./Compute_getBackendServiceCdnPolicyCacheKeyPolicy";
+  compute_getBackendServiceCdnPolicyBypassCacheOnRequestHeader,
+  compute_getBackendServiceCdnPolicyBypassCacheOnRequestHeader_GetTypes,
+} from "./compute_getBackendServiceCdnPolicyBypassCacheOnRequestHeader";
 import {
-  Compute_getBackendServiceCdnPolicyNegativeCachingPolicy,
-  Compute_getBackendServiceCdnPolicyNegativeCachingPolicy_GetTypes,
-} from "./Compute_getBackendServiceCdnPolicyNegativeCachingPolicy";
+  compute_getBackendServiceCdnPolicyCacheKeyPolicy,
+  compute_getBackendServiceCdnPolicyCacheKeyPolicy_GetTypes,
+} from "./compute_getBackendServiceCdnPolicyCacheKeyPolicy";
 
-export interface Compute_getBackendServiceCdnPolicy {
+export interface compute_getBackendServiceCdnPolicy {
   /*
-Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified.
-The cache is bypassed for all cdnPolicy.cacheMode settings.
+Specifies the default TTL for cached content served by this origin for responses
+that do not have an existing valid TTL (max-age or s-max-age).
 */
-  BypassCacheOnRequestHeaders?: Array<Compute_getBackendServiceCdnPolicyBypassCacheOnRequestHeader>;
-
-  // The CacheKeyPolicy for this CdnPolicy.
-  CacheKeyPolicies?: Array<Compute_getBackendServiceCdnPolicyCacheKeyPolicy>;
-
-  /*
-Specifies the cache setting for all responses from this backend.
-The possible values are: USE_ORIGIN_HEADERS, FORCE_CACHE_ALL and CACHE_ALL_STATIC Possible values: ["USE_ORIGIN_HEADERS", "FORCE_CACHE_ALL", "CACHE_ALL_STATIC"]
-*/
-  CacheMode?: string;
-
-  // Specifies the maximum allowed TTL for cached content served by this origin.
-  MaxTtl?: number;
+  defaultTtl?: number;
 
   /*
 Sets a cache TTL for the specified HTTP status code. negativeCaching must be enabled to configure negativeCachingPolicy.
 Omitting the policy and leaving negativeCaching enabled will use Cloud CDN's default cache TTLs.
 */
-  NegativeCachingPolicies?: Array<Compute_getBackendServiceCdnPolicyNegativeCachingPolicy>;
-
-  // Specifies the maximum allowed TTL for cached content served by this origin.
-  ClientTtl?: number;
+  negativeCachingPolicies?: Array<compute_getBackendServiceCdnPolicyNegativeCachingPolicy>;
 
   /*
-Specifies the default TTL for cached content served by this origin for responses
-that do not have an existing valid TTL (max-age or s-max-age).
+Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified.
+The cache is bypassed for all cdnPolicy.cacheMode settings.
 */
-  DefaultTtl?: number;
+  bypassCacheOnRequestHeaders?: Array<compute_getBackendServiceCdnPolicyBypassCacheOnRequestHeader>;
+
+  // The CacheKeyPolicy for this CdnPolicy.
+  cacheKeyPolicies?: Array<compute_getBackendServiceCdnPolicyCacheKeyPolicy>;
+
+  /*
+Specifies the cache setting for all responses from this backend.
+The possible values are: USE_ORIGIN_HEADERS, FORCE_CACHE_ALL and CACHE_ALL_STATIC Possible values: ["USE_ORIGIN_HEADERS", "FORCE_CACHE_ALL", "CACHE_ALL_STATIC"]
+*/
+  cacheMode?: string;
+
+  // Specifies the maximum allowed TTL for cached content served by this origin.
+  clientTtl?: number;
+
+  // Specifies the maximum allowed TTL for cached content served by this origin.
+  maxTtl?: number;
 
   // Negative caching allows per-status code TTLs to be set, in order to apply fine-grained caching for common errors or redirects.
-  NegativeCaching?: boolean;
+  negativeCaching?: boolean;
 
   // Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache.
-  ServeWhileStale?: number;
+  serveWhileStale?: number;
 
   /*
 Maximum number of seconds the response to a signed URL request
@@ -70,46 +70,22 @@ internally behave as though all responses from this backend had a
 existing Cache-Control header. The actual headers served in
 responses will not be altered.
 */
-  SignedUrlCacheMaxAgeSec?: number;
+  signedUrlCacheMaxAgeSec?: number;
 }
 
-export function Compute_getBackendServiceCdnPolicy_GetTypes(): DynamicUIProps[] {
+export function compute_getBackendServiceCdnPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "CacheKeyPolicies",
-      "The CacheKeyPolicy for this CdnPolicy.",
-      Compute_getBackendServiceCdnPolicyCacheKeyPolicy_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "NegativeCachingPolicies",
-      "Sets a cache TTL for the specified HTTP status code. negativeCaching must be enabled to configure negativeCachingPolicy.\nOmitting the policy and leaving negativeCaching enabled will use Cloud CDN's default cache TTLs.",
-      Compute_getBackendServiceCdnPolicyNegativeCachingPolicy_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "DefaultTtl",
-      "Specifies the default TTL for cached content served by this origin for responses\nthat do not have an existing valid TTL (max-age or s-max-age).",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "NegativeCaching",
-      "Negative caching allows per-status code TTLs to be set, in order to apply fine-grained caching for common errors or redirects.",
+      "maxTtl",
+      "Specifies the maximum allowed TTL for cached content served by this origin.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "ServeWhileStale",
+      "serveWhileStale",
       "Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache.",
       [],
       true,
@@ -117,23 +93,39 @@ export function Compute_getBackendServiceCdnPolicy_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Number,
-      "SignedUrlCacheMaxAgeSec",
-      'Maximum number of seconds the response to a signed URL request\nwill be considered fresh, defaults to 1hr (3600s). After this\ntime period, the response will be revalidated before\nbeing served.\n\nWhen serving responses to signed URL requests, Cloud CDN will\ninternally behave as though all responses from this backend had a\n"Cache-Control: public, max-age=[TTL]" header, regardless of any\nexisting Cache-Control header. The actual headers served in\nresponses will not be altered.',
+      "defaultTtl",
+      "Specifies the default TTL for cached content served by this origin for responses\nthat do not have an existing valid TTL (max-age or s-max-age).",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "BypassCacheOnRequestHeaders",
+      "negativeCachingPolicies",
+      "Sets a cache TTL for the specified HTTP status code. negativeCaching must be enabled to configure negativeCachingPolicy.\nOmitting the policy and leaving negativeCaching enabled will use Cloud CDN's default cache TTLs.",
+      compute_getBackendServiceCdnPolicyNegativeCachingPolicy_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "bypassCacheOnRequestHeaders",
       "Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified.\nThe cache is bypassed for all cdnPolicy.cacheMode settings.",
-      Compute_getBackendServiceCdnPolicyBypassCacheOnRequestHeader_GetTypes(),
+      compute_getBackendServiceCdnPolicyBypassCacheOnRequestHeader_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "cacheKeyPolicies",
+      "The CacheKeyPolicy for this CdnPolicy.",
+      compute_getBackendServiceCdnPolicyCacheKeyPolicy_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "CacheMode",
+      "cacheMode",
       'Specifies the cache setting for all responses from this backend.\nThe possible values are: USE_ORIGIN_HEADERS, FORCE_CACHE_ALL and CACHE_ALL_STATIC Possible values: ["USE_ORIGIN_HEADERS", "FORCE_CACHE_ALL", "CACHE_ALL_STATIC"]',
       [],
       true,
@@ -141,16 +133,24 @@ export function Compute_getBackendServiceCdnPolicy_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MaxTtl",
+      "clientTtl",
       "Specifies the maximum allowed TTL for cached content served by this origin.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
+      InputType.Bool,
+      "negativeCaching",
+      "Negative caching allows per-status code TTLs to be set, in order to apply fine-grained caching for common errors or redirects.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.Number,
-      "ClientTtl",
-      "Specifies the maximum allowed TTL for cached content served by this origin.",
+      "signedUrlCacheMaxAgeSec",
+      'Maximum number of seconds the response to a signed URL request\nwill be considered fresh, defaults to 1hr (3600s). After this\ntime period, the response will be revalidated before\nbeing served.\n\nWhen serving responses to signed URL requests, Cloud CDN will\ninternally behave as though all responses from this backend had a\n"Cache-Control: public, max-age=[TTL]" header, regardless of any\nexisting Cache-Control header. The actual headers served in\nresponses will not be altered.',
       [],
       true,
       false,

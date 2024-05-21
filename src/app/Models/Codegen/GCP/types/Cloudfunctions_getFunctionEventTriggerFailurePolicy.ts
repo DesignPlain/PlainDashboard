@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudfunctions_getFunctionEventTriggerFailurePolicy {
+export interface cloudfunctions_getFunctionEventTriggerFailurePolicy {
   // Whether the function should be retried on failure.
-  Retry?: boolean;
+  retry?: boolean;
 }
 
-export function Cloudfunctions_getFunctionEventTriggerFailurePolicy_GetTypes(): DynamicUIProps[] {
+export function cloudfunctions_getFunctionEventTriggerFailurePolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Retry",
+      "retry",
       "Whether the function should be retried on failure.",
       [],
       true,

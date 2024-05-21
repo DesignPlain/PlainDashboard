@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networkservices_GrpcRouteRuleMatchHeader,
-  Networkservices_GrpcRouteRuleMatchHeader_GetTypes,
-} from "./Networkservices_GrpcRouteRuleMatchHeader";
+  networkservices_GrpcRouteRuleMatchHeader,
+  networkservices_GrpcRouteRuleMatchHeader_GetTypes,
+} from "./networkservices_GrpcRouteRuleMatchHeader";
 import {
-  Networkservices_GrpcRouteRuleMatchMethod,
-  Networkservices_GrpcRouteRuleMatchMethod_GetTypes,
-} from "./Networkservices_GrpcRouteRuleMatchMethod";
+  networkservices_GrpcRouteRuleMatchMethod,
+  networkservices_GrpcRouteRuleMatchMethod_GetTypes,
+} from "./networkservices_GrpcRouteRuleMatchMethod";
 
-export interface Networkservices_GrpcRouteRuleMatch {
+export interface networkservices_GrpcRouteRuleMatch {
   /*
 Specifies a list of HTTP request headers to match against.
 Structure is documented below.
 */
-  Headers?: Array<Networkservices_GrpcRouteRuleMatchHeader>;
+  headers?: Array<networkservices_GrpcRouteRuleMatchHeader>;
 
   /*
 A gRPC method to match against. If this field is empty or omitted, will match all methods.
 Structure is documented below.
 */
-  Method?: Networkservices_GrpcRouteRuleMatchMethod;
+  method?: networkservices_GrpcRouteRuleMatchMethod;
 }
 
-export function Networkservices_GrpcRouteRuleMatch_GetTypes(): DynamicUIProps[] {
+export function networkservices_GrpcRouteRuleMatch_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "Method",
-      "A gRPC method to match against. If this field is empty or omitted, will match all methods.\nStructure is documented below.",
-      Networkservices_GrpcRouteRuleMatchMethod_GetTypes(),
+      InputType.Array,
+      "headers",
+      "Specifies a list of HTTP request headers to match against.\nStructure is documented below.",
+      networkservices_GrpcRouteRuleMatchHeader_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "Headers",
-      "Specifies a list of HTTP request headers to match against.\nStructure is documented below.",
-      Networkservices_GrpcRouteRuleMatchHeader_GetTypes(),
+      InputType.Object,
+      "method",
+      "A gRPC method to match against. If this field is empty or omitted, will match all methods.\nStructure is documented below.",
+      networkservices_GrpcRouteRuleMatchMethod_GetTypes(),
       false,
       false,
     ),

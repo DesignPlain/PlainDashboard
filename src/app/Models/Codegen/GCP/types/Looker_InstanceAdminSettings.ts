@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Looker_InstanceAdminSettings {
+export interface looker_InstanceAdminSettings {
   //
-  AllowedEmailDomains?: Array<string>;
+  allowedEmailDomains?: Array<string>;
 }
 
-export function Looker_InstanceAdminSettings_GetTypes(): DynamicUIProps[] {
+export function looker_InstanceAdminSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AllowedEmailDomains",
+      "allowedEmailDomains",
       "",
       InputType_String_GetTypes(),
       false,

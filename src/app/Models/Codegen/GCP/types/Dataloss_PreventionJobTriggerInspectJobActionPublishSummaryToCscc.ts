@@ -6,8 +6,8 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionJobTriggerInspectJobActionPublishSummaryToCscc {}
+export interface dataloss_PreventionJobTriggerInspectJobActionPublishSummaryToCscc {}
 
-export function Dataloss_PreventionJobTriggerInspectJobActionPublishSummaryToCscc_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobActionPublishSummaryToCscc_GetTypes(): DynamicUIProps[] {
   return [];
 }

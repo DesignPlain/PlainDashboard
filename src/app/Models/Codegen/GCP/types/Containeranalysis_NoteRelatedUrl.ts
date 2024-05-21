@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Containeranalysis_NoteRelatedUrl {
+export interface containeranalysis_NoteRelatedUrl {
   // Label to describe usage of the URL
-  Label?: string;
+  label?: string;
 
   // Specific URL associated with the resource.
-  Url?: string;
+  url?: string;
 }
 
-export function Containeranalysis_NoteRelatedUrl_GetTypes(): DynamicUIProps[] {
+export function containeranalysis_NoteRelatedUrl_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Label",
+      "label",
       "Label to describe usage of the URL",
       [],
       false,
@@ -26,7 +26,7 @@ export function Containeranalysis_NoteRelatedUrl_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Url",
+      "url",
       "Specific URL associated with the resource.",
       [],
       true,

@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Vmwareengine_PrivateCloudVcenter {
+export interface vmwareengine_PrivateCloudVcenter {
   // Fully qualified domain name of the appliance.
-  Fqdn?: string;
+  fqdn?: string;
 
   // Internal IP address of the appliance.
-  InternalIp?: string;
+  internalIp?: string;
 
   /*
 State of the appliance.
 Possible values are: `ACTIVE`, `CREATING`.
 */
-  State?: string;
+  state?: string;
 
   // Version of the appliance.
-  Version?: string;
+  version?: string;
 }
 
-export function Vmwareengine_PrivateCloudVcenter_GetTypes(): DynamicUIProps[] {
+export function vmwareengine_PrivateCloudVcenter_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Fqdn",
+      "fqdn",
       "Fully qualified domain name of the appliance.",
       [],
       false,
@@ -35,7 +35,7 @@ export function Vmwareengine_PrivateCloudVcenter_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "InternalIp",
+      "internalIp",
       "Internal IP address of the appliance.",
       [],
       false,
@@ -43,7 +43,7 @@ export function Vmwareengine_PrivateCloudVcenter_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "State of the appliance.\nPossible values are: `ACTIVE`, `CREATING`.",
       [],
       false,
@@ -51,7 +51,7 @@ export function Vmwareengine_PrivateCloudVcenter_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Version",
+      "version",
       "Version of the appliance.",
       [],
       false,

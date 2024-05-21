@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Assuredworkloads_WorkloadSaaEnrollmentResponse {
+export interface assuredworkloads_WorkloadSaaEnrollmentResponse {
   // Indicates SAA enrollment setup error if any.
-  SetupErrors?: Array<string>;
+  setupErrors?: Array<string>;
 
   // Indicates SAA enrollment status of a given workload. Possible values: SETUP_STATE_UNSPECIFIED, STATUS_PENDING, STATUS_COMPLETE
-  SetupStatus?: string;
+  setupStatus?: string;
 }
 
-export function Assuredworkloads_WorkloadSaaEnrollmentResponse_GetTypes(): DynamicUIProps[] {
+export function assuredworkloads_WorkloadSaaEnrollmentResponse_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "SetupErrors",
+      "setupErrors",
       "Indicates SAA enrollment setup error if any.",
       InputType_String_GetTypes(),
       false,
@@ -26,7 +26,7 @@ export function Assuredworkloads_WorkloadSaaEnrollmentResponse_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "SetupStatus",
+      "setupStatus",
       "Indicates SAA enrollment status of a given workload. Possible values: SETUP_STATE_UNSPECIFIED, STATUS_PENDING, STATUS_COMPLETE",
       [],
       false,

@@ -6,22 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_StandardAppVersionDeploymentFile {
+export interface appengine_StandardAppVersionDeploymentFile {
+  // Source URL
+  sourceUrl?: string;
+
   // The identifier for this object. Format specified above.
-  Name?: string;
+  name?: string;
 
   // SHA1 checksum of the file
-  Sha1Sum?: string;
-
-  // Source URL
-  SourceUrl?: string;
+  sha1Sum?: string;
 }
 
-export function Appengine_StandardAppVersionDeploymentFile_GetTypes(): DynamicUIProps[] {
+export function appengine_StandardAppVersionDeploymentFile_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "sourceUrl",
+      "Source URL",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "name",
       "The identifier for this object. Format specified above.",
       [],
       true,
@@ -29,18 +37,10 @@ export function Appengine_StandardAppVersionDeploymentFile_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "Sha1Sum",
+      "sha1Sum",
       "SHA1 checksum of the file",
       [],
       false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "SourceUrl",
-      "Source URL",
-      [],
-      true,
       false,
     ),
   ];

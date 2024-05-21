@@ -6,315 +6,259 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterNodePoolNodeConfigSoleTenantConfig,
-  Container_getClusterNodePoolNodeConfigSoleTenantConfig_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigSoleTenantConfig";
+  container_getClusterNodePoolNodeConfigHostMaintenancePolicy,
+  container_getClusterNodePoolNodeConfigHostMaintenancePolicy_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigHostMaintenancePolicy";
 import {
-  Container_getClusterNodePoolNodeConfigHostMaintenancePolicy,
-  Container_getClusterNodePoolNodeConfigHostMaintenancePolicy_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigHostMaintenancePolicy";
+  container_getClusterNodePoolNodeConfigTaint,
+  container_getClusterNodePoolNodeConfigTaint_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigTaint";
 import {
-  Container_getClusterNodePoolNodeConfigKubeletConfig,
-  Container_getClusterNodePoolNodeConfigKubeletConfig_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigKubeletConfig";
+  container_getClusterNodePoolNodeConfigGvnic,
+  container_getClusterNodePoolNodeConfigGvnic_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigGvnic";
 import {
-  Container_getClusterNodePoolNodeConfigReservationAffinity,
-  Container_getClusterNodePoolNodeConfigReservationAffinity_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigReservationAffinity";
+  container_getClusterNodePoolNodeConfigSoleTenantConfig,
+  container_getClusterNodePoolNodeConfigSoleTenantConfig_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigSoleTenantConfig";
 import {
-  Container_getClusterNodePoolNodeConfigEphemeralStorageConfig,
-  Container_getClusterNodePoolNodeConfigEphemeralStorageConfig_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigEphemeralStorageConfig";
+  container_getClusterNodePoolNodeConfigEphemeralStorageLocalSsdConfig,
+  container_getClusterNodePoolNodeConfigEphemeralStorageLocalSsdConfig_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigEphemeralStorageLocalSsdConfig";
 import {
-  Container_getClusterNodePoolNodeConfigSandboxConfig,
-  Container_getClusterNodePoolNodeConfigSandboxConfig_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigSandboxConfig";
+  container_getClusterNodePoolNodeConfigWorkloadMetadataConfig,
+  container_getClusterNodePoolNodeConfigWorkloadMetadataConfig_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigWorkloadMetadataConfig";
 import {
-  Container_getClusterNodePoolNodeConfigWorkloadMetadataConfig,
-  Container_getClusterNodePoolNodeConfigWorkloadMetadataConfig_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigWorkloadMetadataConfig";
+  container_getClusterNodePoolNodeConfigEffectiveTaint,
+  container_getClusterNodePoolNodeConfigEffectiveTaint_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigEffectiveTaint";
 import {
-  Container_getClusterNodePoolNodeConfigGvnic,
-  Container_getClusterNodePoolNodeConfigGvnic_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigGvnic";
+  container_getClusterNodePoolNodeConfigGuestAccelerator,
+  container_getClusterNodePoolNodeConfigGuestAccelerator_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigGuestAccelerator";
 import {
-  Container_getClusterNodePoolNodeConfigAdvancedMachineFeature,
-  Container_getClusterNodePoolNodeConfigAdvancedMachineFeature_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigAdvancedMachineFeature";
+  container_getClusterNodePoolNodeConfigGcfsConfig,
+  container_getClusterNodePoolNodeConfigGcfsConfig_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigGcfsConfig";
 import {
-  Container_getClusterNodePoolNodeConfigEffectiveTaint,
-  Container_getClusterNodePoolNodeConfigEffectiveTaint_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigEffectiveTaint";
+  container_getClusterNodePoolNodeConfigLinuxNodeConfig,
+  container_getClusterNodePoolNodeConfigLinuxNodeConfig_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigLinuxNodeConfig";
 import {
-  Container_getClusterNodePoolNodeConfigFastSocket,
-  Container_getClusterNodePoolNodeConfigFastSocket_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigFastSocket";
+  container_getClusterNodePoolNodeConfigReservationAffinity,
+  container_getClusterNodePoolNodeConfigReservationAffinity_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigReservationAffinity";
 import {
-  Container_getClusterNodePoolNodeConfigGcfsConfig,
-  Container_getClusterNodePoolNodeConfigGcfsConfig_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigGcfsConfig";
+  container_getClusterNodePoolNodeConfigSandboxConfig,
+  container_getClusterNodePoolNodeConfigSandboxConfig_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigSandboxConfig";
 import {
-  Container_getClusterNodePoolNodeConfigGuestAccelerator,
-  Container_getClusterNodePoolNodeConfigGuestAccelerator_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigGuestAccelerator";
+  container_getClusterNodePoolNodeConfigShieldedInstanceConfig,
+  container_getClusterNodePoolNodeConfigShieldedInstanceConfig_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigShieldedInstanceConfig";
 import {
-  Container_getClusterNodePoolNodeConfigTaint,
-  Container_getClusterNodePoolNodeConfigTaint_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigTaint";
+  container_getClusterNodePoolNodeConfigLocalNvmeSsdBlockConfig,
+  container_getClusterNodePoolNodeConfigLocalNvmeSsdBlockConfig_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigLocalNvmeSsdBlockConfig";
 import {
-  Container_getClusterNodePoolNodeConfigLinuxNodeConfig,
-  Container_getClusterNodePoolNodeConfigLinuxNodeConfig_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigLinuxNodeConfig";
+  container_getClusterNodePoolNodeConfigConfidentialNode,
+  container_getClusterNodePoolNodeConfigConfidentialNode_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigConfidentialNode";
 import {
-  Container_getClusterNodePoolNodeConfigEphemeralStorageLocalSsdConfig,
-  Container_getClusterNodePoolNodeConfigEphemeralStorageLocalSsdConfig_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigEphemeralStorageLocalSsdConfig";
+  container_getClusterNodePoolNodeConfigAdvancedMachineFeature,
+  container_getClusterNodePoolNodeConfigAdvancedMachineFeature_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigAdvancedMachineFeature";
 import {
-  Container_getClusterNodePoolNodeConfigLocalNvmeSsdBlockConfig,
-  Container_getClusterNodePoolNodeConfigLocalNvmeSsdBlockConfig_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigLocalNvmeSsdBlockConfig";
+  container_getClusterNodePoolNodeConfigFastSocket,
+  container_getClusterNodePoolNodeConfigFastSocket_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigFastSocket";
 import {
-  Container_getClusterNodePoolNodeConfigShieldedInstanceConfig,
-  Container_getClusterNodePoolNodeConfigShieldedInstanceConfig_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigShieldedInstanceConfig";
+  container_getClusterNodePoolNodeConfigKubeletConfig,
+  container_getClusterNodePoolNodeConfigKubeletConfig_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigKubeletConfig";
 import {
-  Container_getClusterNodePoolNodeConfigConfidentialNode,
-  Container_getClusterNodePoolNodeConfigConfidentialNode_GetTypes,
-} from "./Container_getClusterNodePoolNodeConfigConfidentialNode";
+  container_getClusterNodePoolNodeConfigEphemeralStorageConfig,
+  container_getClusterNodePoolNodeConfigEphemeralStorageConfig_GetTypes,
+} from "./container_getClusterNodePoolNodeConfigEphemeralStorageConfig";
 
-export interface Container_getClusterNodePoolNodeConfig {
-  // Type of logging agent that is used as the default value for node pools in the cluster. Valid values include DEFAULT and MAX_THROUGHPUT.
-  LoggingVariant?: string;
-
-  // The workload metadata configuration for this node.
-  WorkloadMetadataConfigs?: Array<Container_getClusterNodePoolNodeConfigWorkloadMetadataConfig>;
-
-  // Node kubelet configs.
-  KubeletConfigs?: Array<Container_getClusterNodePoolNodeConfigKubeletConfig>;
-
-  // The reservation affinity configuration for the node pool.
-  ReservationAffinities?: Array<Container_getClusterNodePoolNodeConfigReservationAffinity>;
-
-  // Node affinity options for sole tenant node pools.
-  SoleTenantConfigs?: Array<Container_getClusterNodePoolNodeConfigSoleTenantConfig>;
-
-  // Whether the nodes are created as preemptible VM instances.
-  Preemptible?: boolean;
-
-  // A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.
-  ResourceManagerTags?: Map<string, InputType.String>;
-
-  // List of Kubernetes taints to be applied to each node.
-  Taints?: Array<Container_getClusterNodePoolNodeConfigTaint>;
-
-  // Type of the disk attached to each node. Such as pd-standard, pd-balanced or pd-ssd
-  DiskType?: string;
-
-  // The number of local SSD disks to be attached to the node.
-  LocalSsdCount?: number;
-
-  // Minimum CPU platform to be used by this instance. The instance may be scheduled on the specified or newer CPU platform.
-  MinCpuPlatform?: string;
-
-  // Parameters that can be configured on Linux nodes.
-  LinuxNodeConfigs?: Array<Container_getClusterNodePoolNodeConfigLinuxNodeConfig>;
+export interface container_getClusterNodePoolNodeConfig {
+  // The maintenance policy for the hosts on which the GKE VMs run on.
+  hostMaintenancePolicies?: Array<container_getClusterNodePoolNodeConfigHostMaintenancePolicy>;
 
   // The GCE resource labels (a map of key/value pairs) to be applied to the node pool.
-  ResourceLabels?: Map<string, string>;
-
-  // If enabled boot disks are configured with confidential mode.
-  EnableConfidentialStorage?: boolean;
-
-  // Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk.
-  EphemeralStorageLocalSsdConfigs?: Array<Container_getClusterNodePoolNodeConfigEphemeralStorageLocalSsdConfig>;
-
-  // Enable or disable gvnic in the node pool.
-  Gvnics?: Array<Container_getClusterNodePoolNodeConfigGvnic>;
-
-  // Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk.
-  EphemeralStorageConfigs?: Array<Container_getClusterNodePoolNodeConfigEphemeralStorageConfig>;
-
-  // The name of a Google Compute Engine machine type.
-  MachineType?: string;
-
-  // Specifies options for controlling advanced machine features.
-  AdvancedMachineFeatures?: Array<Container_getClusterNodePoolNodeConfigAdvancedMachineFeature>;
-
-  // Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB.
-  DiskSizeGb?: number;
-
-  // List of kubernetes taints applied to each node.
-  EffectiveTaints?: Array<Container_getClusterNodePoolNodeConfigEffectiveTaint>;
-
-  // Parameters for raw-block local NVMe SSDs.
-  LocalNvmeSsdBlockConfigs?: Array<Container_getClusterNodePoolNodeConfigLocalNvmeSsdBlockConfig>;
-
-  // The metadata key/value pairs assigned to instances in the cluster.
-  Metadata?: Map<string, string>;
-
-  // Shielded Instance options.
-  ShieldedInstanceConfigs?: Array<Container_getClusterNodePoolNodeConfigShieldedInstanceConfig>;
-
-  // Enable or disable NCCL Fast Socket in the node pool.
-  FastSockets?: Array<Container_getClusterNodePoolNodeConfigFastSocket>;
-
-  // GCFS configuration for this node.
-  GcfsConfigs?: Array<Container_getClusterNodePoolNodeConfigGcfsConfig>;
-
-  // The map of Kubernetes labels (key/value pairs) to be applied to each node. These will added in addition to any default label(s) that Kubernetes may apply to the node.
-  Labels?: Map<string, string>;
-
-  // The Google Cloud Platform Service Account to be used by the node VMs.
-  ServiceAccount?: string;
-
-  // The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool.
-  BootDiskKmsKey?: string;
-
-  // Configuration for the confidential nodes feature, which makes nodes run on confidential VMs. Warning: This configuration can't be changed (or added/removed) after pool creation without deleting and recreating the entire pool.
-  ConfidentialNodes?: Array<Container_getClusterNodePoolNodeConfigConfidentialNode>;
-
-  // Sandbox configuration for this node.
-  SandboxConfigs?: Array<Container_getClusterNodePoolNodeConfigSandboxConfig>;
-
-  // Setting this field will assign instances of this pool to run on the specified node group. This is useful for running workloads on sole tenant nodes.
-  NodeGroup?: string;
-
-  // The set of Google API scopes to be made available on all of the node VMs.
-  OauthScopes?: Array<string>;
-
-  // Whether the nodes are created as spot VM instances.
-  Spot?: boolean;
+  resourceLabels?: Map<string, string>;
 
   // The list of instance tags applied to all nodes.
-  Tags?: Array<string>;
+  tags?: Array<string>;
+
+  // List of Kubernetes taints to be applied to each node.
+  taints?: Array<container_getClusterNodePoolNodeConfigTaint>;
+
+  // The Google Cloud Platform Service Account to be used by the node VMs.
+  serviceAccount?: string;
+
+  // Enable or disable NCCL Fast Socket in the node pool.
+  fastSockets?: Array<container_getClusterNodePoolNodeConfigFastSocket>;
 
   // List of the type and count of accelerator cards attached to the instance.
-  GuestAccelerators?: Array<Container_getClusterNodePoolNodeConfigGuestAccelerator>;
+  guestAccelerators?: Array<container_getClusterNodePoolNodeConfigGuestAccelerator>;
 
-  // The maintenance policy for the hosts on which the GKE VMs run on.
-  HostMaintenancePolicies?: Array<Container_getClusterNodePoolNodeConfigHostMaintenancePolicy>;
+  // Enable or disable gvnic in the node pool.
+  gvnics?: Array<container_getClusterNodePoolNodeConfigGvnic>;
+
+  // Node kubelet configs.
+  kubeletConfigs?: Array<container_getClusterNodePoolNodeConfigKubeletConfig>;
+
+  // The name of a Google Compute Engine machine type.
+  machineType?: string;
+
+  // Sandbox configuration for this node.
+  sandboxConfigs?: Array<container_getClusterNodePoolNodeConfigSandboxConfig>;
+
+  // Type of the disk attached to each node. Such as pd-standard, pd-balanced or pd-ssd
+  diskType?: string;
+
+  // GCFS configuration for this node.
+  gcfsConfigs?: Array<container_getClusterNodePoolNodeConfigGcfsConfig>;
+
+  // Parameters that can be configured on Linux nodes.
+  linuxNodeConfigs?: Array<container_getClusterNodePoolNodeConfigLinuxNodeConfig>;
+
+  // The number of local SSD disks to be attached to the node.
+  localSsdCount?: number;
+
+  // Node affinity options for sole tenant node pools.
+  soleTenantConfigs?: Array<container_getClusterNodePoolNodeConfigSoleTenantConfig>;
+
+  // Whether the nodes are created as spot VM instances.
+  spot?: boolean;
+
+  // The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool.
+  bootDiskKmsKey?: string;
 
   // The image type to use for this node. Note that for a given image type, the latest version of it will be used.
-  ImageType?: string;
+  imageType?: string;
+
+  // Type of logging agent that is used as the default value for node pools in the cluster. Valid values include DEFAULT and MAX_THROUGHPUT.
+  loggingVariant?: string;
+
+  // Shielded Instance options.
+  shieldedInstanceConfigs?: Array<container_getClusterNodePoolNodeConfigShieldedInstanceConfig>;
+
+  // Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB.
+  diskSizeGb?: number;
+
+  // The map of Kubernetes labels (key/value pairs) to be applied to each node. These will added in addition to any default label(s) that Kubernetes may apply to the node.
+  labels?: Map<string, string>;
+
+  // Parameters for raw-block local NVMe SSDs.
+  localNvmeSsdBlockConfigs?: Array<container_getClusterNodePoolNodeConfigLocalNvmeSsdBlockConfig>;
+
+  // Configuration for the confidential nodes feature, which makes nodes run on confidential VMs. Warning: This configuration can't be changed (or added/removed) after pool creation without deleting and recreating the entire pool.
+  confidentialNodes?: Array<container_getClusterNodePoolNodeConfigConfidentialNode>;
+
+  // Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk.
+  ephemeralStorageLocalSsdConfigs?: Array<container_getClusterNodePoolNodeConfigEphemeralStorageLocalSsdConfig>;
+
+  // The set of Google API scopes to be made available on all of the node VMs.
+  oauthScopes?: Array<string>;
+
+  // The reservation affinity configuration for the node pool.
+  reservationAffinities?: Array<container_getClusterNodePoolNodeConfigReservationAffinity>;
+
+  // The workload metadata configuration for this node.
+  workloadMetadataConfigs?: Array<container_getClusterNodePoolNodeConfigWorkloadMetadataConfig>;
+
+  // Specifies options for controlling advanced machine features.
+  advancedMachineFeatures?: Array<container_getClusterNodePoolNodeConfigAdvancedMachineFeature>;
+
+  // List of kubernetes taints applied to each node.
+  effectiveTaints?: Array<container_getClusterNodePoolNodeConfigEffectiveTaint>;
+
+  // If enabled boot disks are configured with confidential mode.
+  enableConfidentialStorage?: boolean;
+
+  // The metadata key/value pairs assigned to instances in the cluster.
+  metadata?: Map<string, string>;
+
+  // Setting this field will assign instances of this pool to run on the specified node group. This is useful for running workloads on sole tenant nodes.
+  nodeGroup?: string;
+
+  // Whether the nodes are created as preemptible VM instances.
+  preemptible?: boolean;
+
+  // Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk.
+  ephemeralStorageConfigs?: Array<container_getClusterNodePoolNodeConfigEphemeralStorageConfig>;
+
+  // Minimum CPU platform to be used by this instance. The instance may be scheduled on the specified or newer CPU platform.
+  minCpuPlatform?: string;
+
+  // A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.
+  resourceManagerTags?: Map<string, string>;
 }
 
-export function Container_getClusterNodePoolNodeConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolNodeConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "LinuxNodeConfigs",
-      "Parameters that can be configured on Linux nodes.",
-      Container_getClusterNodePoolNodeConfigLinuxNodeConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "EphemeralStorageLocalSsdConfigs",
-      "Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk.",
-      Container_getClusterNodePoolNodeConfigEphemeralStorageLocalSsdConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "GcfsConfigs",
-      "GCFS configuration for this node.",
-      Container_getClusterNodePoolNodeConfigGcfsConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ServiceAccount",
-      "The Google Cloud Platform Service Account to be used by the node VMs.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "Spot",
-      "Whether the nodes are created as spot VM instances.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "WorkloadMetadataConfigs",
-      "The workload metadata configuration for this node.",
-      Container_getClusterNodePoolNodeConfigWorkloadMetadataConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "KubeletConfigs",
-      "Node kubelet configs.",
-      Container_getClusterNodePoolNodeConfigKubeletConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "SoleTenantConfigs",
-      "Node affinity options for sole tenant node pools.",
-      Container_getClusterNodePoolNodeConfigSoleTenantConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "Preemptible",
-      "Whether the nodes are created as preemptible VM instances.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Map,
-      "ResourceLabels",
+      "resourceLabels",
       "The GCE resource labels (a map of key/value pairs) to be applied to the node pool.",
       InputType_Map_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Bool,
-      "EnableConfidentialStorage",
-      "If enabled boot disks are configured with confidential mode.",
-      [],
+      InputType.Array,
+      "taints",
+      "List of Kubernetes taints to be applied to each node.",
+      container_getClusterNodePoolNodeConfigTaint_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "BootDiskKmsKey",
-      "The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool.",
+      InputType.Bool,
+      "preemptible",
+      "Whether the nodes are created as preemptible VM instances.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "SandboxConfigs",
-      "Sandbox configuration for this node.",
-      Container_getClusterNodePoolNodeConfigSandboxConfig_GetTypes(),
+      "hostMaintenancePolicies",
+      "The maintenance policy for the hosts on which the GKE VMs run on.",
+      container_getClusterNodePoolNodeConfigHostMaintenancePolicy_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "gcfsConfigs",
+      "GCFS configuration for this node.",
+      container_getClusterNodePoolNodeConfigGcfsConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "shieldedInstanceConfigs",
+      "Shielded Instance options.",
+      container_getClusterNodePoolNodeConfigShieldedInstanceConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "localNvmeSsdBlockConfigs",
+      "Parameters for raw-block local NVMe SSDs.",
+      container_getClusterNodePoolNodeConfigLocalNvmeSsdBlockConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "LoggingVariant",
-      "Type of logging agent that is used as the default value for node pools in the cluster. Valid values include DEFAULT and MAX_THROUGHPUT.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "MinCpuPlatform",
+      "minCpuPlatform",
       "Minimum CPU platform to be used by this instance. The instance may be scheduled on the specified or newer CPU platform.",
       [],
       true,
@@ -322,71 +266,15 @@ export function Container_getClusterNodePoolNodeConfig_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AdvancedMachineFeatures",
-      "Specifies options for controlling advanced machine features.",
-      Container_getClusterNodePoolNodeConfigAdvancedMachineFeature_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Map,
-      "Metadata",
-      "The metadata key/value pairs assigned to instances in the cluster.",
-      InputType_Map_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "GuestAccelerators",
-      "List of the type and count of accelerator cards attached to the instance.",
-      Container_getClusterNodePoolNodeConfigGuestAccelerator_GetTypes(),
+      "gvnics",
+      "Enable or disable gvnic in the node pool.",
+      container_getClusterNodePoolNodeConfigGvnic_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ImageType",
-      "The image type to use for this node. Note that for a given image type, the latest version of it will be used.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "LocalSsdCount",
-      "The number of local SSD disks to be attached to the node.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "DiskSizeGb",
-      "Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "EffectiveTaints",
-      "List of kubernetes taints applied to each node.",
-      Container_getClusterNodePoolNodeConfigEffectiveTaint_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "FastSockets",
-      "Enable or disable NCCL Fast Socket in the node pool.",
-      Container_getClusterNodePoolNodeConfigFastSocket_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "NodeGroup",
+      "nodeGroup",
       "Setting this field will assign instances of this pool to run on the specified node group. This is useful for running workloads on sole tenant nodes.",
       [],
       true,
@@ -394,103 +282,47 @@ export function Container_getClusterNodePoolNodeConfig_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ReservationAffinities",
-      "The reservation affinity configuration for the node pool.",
-      Container_getClusterNodePoolNodeConfigReservationAffinity_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Map,
-      "ResourceManagerTags",
-      "A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.",
-      InputType_Map_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "ShieldedInstanceConfigs",
-      "Shielded Instance options.",
-      Container_getClusterNodePoolNodeConfigShieldedInstanceConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "DiskType",
-      "Type of the disk attached to each node. Such as pd-standard, pd-balanced or pd-ssd",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "LocalNvmeSsdBlockConfigs",
-      "Parameters for raw-block local NVMe SSDs.",
-      Container_getClusterNodePoolNodeConfigLocalNvmeSsdBlockConfig_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "OauthScopes",
-      "The set of Google API scopes to be made available on all of the node VMs.",
-      InputType_String_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Gvnics",
-      "Enable or disable gvnic in the node pool.",
-      Container_getClusterNodePoolNodeConfigGvnic_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "EphemeralStorageConfigs",
+      "ephemeralStorageConfigs",
       "Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk.",
-      Container_getClusterNodePoolNodeConfigEphemeralStorageConfig_GetTypes(),
+      container_getClusterNodePoolNodeConfigEphemeralStorageConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "ConfidentialNodes",
-      "Configuration for the confidential nodes feature, which makes nodes run on confidential VMs. Warning: This configuration can't be changed (or added/removed) after pool creation without deleting and recreating the entire pool.",
-      Container_getClusterNodePoolNodeConfigConfidentialNode_GetTypes(),
+      InputType.Number,
+      "localSsdCount",
+      "The number of local SSD disks to be attached to the node.",
+      [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "HostMaintenancePolicies",
-      "The maintenance policy for the hosts on which the GKE VMs run on.",
-      Container_getClusterNodePoolNodeConfigHostMaintenancePolicy_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "Taints",
-      "List of Kubernetes taints to be applied to each node.",
-      Container_getClusterNodePoolNodeConfigTaint_GetTypes(),
+      InputType.Bool,
+      "spot",
+      "Whether the nodes are created as spot VM instances.",
+      [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "MachineType",
-      "The name of a Google Compute Engine machine type.",
+      "imageType",
+      "The image type to use for this node. Note that for a given image type, the latest version of it will be used.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "loggingVariant",
+      "Type of logging agent that is used as the default value for node pools in the cluster. Valid values include DEFAULT and MAX_THROUGHPUT.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Labels",
+      "labels",
       "The map of Kubernetes labels (key/value pairs) to be applied to each node. These will added in addition to any default label(s) that Kubernetes may apply to the node.",
       InputType_Map_GetTypes(),
       true,
@@ -498,9 +330,177 @@ export function Container_getClusterNodePoolNodeConfig_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Tags",
+      "ephemeralStorageLocalSsdConfigs",
+      "Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk.",
+      container_getClusterNodePoolNodeConfigEphemeralStorageLocalSsdConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "fastSockets",
+      "Enable or disable NCCL Fast Socket in the node pool.",
+      container_getClusterNodePoolNodeConfigFastSocket_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "soleTenantConfigs",
+      "Node affinity options for sole tenant node pools.",
+      container_getClusterNodePoolNodeConfigSoleTenantConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "bootDiskKmsKey",
+      "The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "enableConfidentialStorage",
+      "If enabled boot disks are configured with confidential mode.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "serviceAccount",
+      "The Google Cloud Platform Service Account to be used by the node VMs.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "diskType",
+      "Type of the disk attached to each node. Such as pd-standard, pd-balanced or pd-ssd",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "tags",
       "The list of instance tags applied to all nodes.",
       InputType_String_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "guestAccelerators",
+      "List of the type and count of accelerator cards attached to the instance.",
+      container_getClusterNodePoolNodeConfigGuestAccelerator_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "kubeletConfigs",
+      "Node kubelet configs.",
+      container_getClusterNodePoolNodeConfigKubeletConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "machineType",
+      "The name of a Google Compute Engine machine type.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "linuxNodeConfigs",
+      "Parameters that can be configured on Linux nodes.",
+      container_getClusterNodePoolNodeConfigLinuxNodeConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Map,
+      "metadata",
+      "The metadata key/value pairs assigned to instances in the cluster.",
+      InputType_Map_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "advancedMachineFeatures",
+      "Specifies options for controlling advanced machine features.",
+      container_getClusterNodePoolNodeConfigAdvancedMachineFeature_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "effectiveTaints",
+      "List of kubernetes taints applied to each node.",
+      container_getClusterNodePoolNodeConfigEffectiveTaint_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "sandboxConfigs",
+      "Sandbox configuration for this node.",
+      container_getClusterNodePoolNodeConfigSandboxConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "diskSizeGb",
+      "Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "confidentialNodes",
+      "Configuration for the confidential nodes feature, which makes nodes run on confidential VMs. Warning: This configuration can't be changed (or added/removed) after pool creation without deleting and recreating the entire pool.",
+      container_getClusterNodePoolNodeConfigConfidentialNode_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "oauthScopes",
+      "The set of Google API scopes to be made available on all of the node VMs.",
+      InputType_String_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "reservationAffinities",
+      "The reservation affinity configuration for the node pool.",
+      container_getClusterNodePoolNodeConfigReservationAffinity_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "workloadMetadataConfigs",
+      "The workload metadata configuration for this node.",
+      container_getClusterNodePoolNodeConfigWorkloadMetadataConfig_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Map,
+      "resourceManagerTags",
+      "A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.",
+      InputType_Map_GetTypes(),
       true,
       false,
     ),

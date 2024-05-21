@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudasset_ProjectFeedFeedOutputConfigPubsubDestination,
-  Cloudasset_ProjectFeedFeedOutputConfigPubsubDestination_GetTypes,
-} from "./Cloudasset_ProjectFeedFeedOutputConfigPubsubDestination";
+  cloudasset_ProjectFeedFeedOutputConfigPubsubDestination,
+  cloudasset_ProjectFeedFeedOutputConfigPubsubDestination_GetTypes,
+} from "./cloudasset_ProjectFeedFeedOutputConfigPubsubDestination";
 
-export interface Cloudasset_ProjectFeedFeedOutputConfig {
+export interface cloudasset_ProjectFeedFeedOutputConfig {
   /*
 Destination on Cloud Pubsub.
 Structure is documented below.
 */
-  PubsubDestination?: Cloudasset_ProjectFeedFeedOutputConfigPubsubDestination;
+  pubsubDestination?: cloudasset_ProjectFeedFeedOutputConfigPubsubDestination;
 }
 
-export function Cloudasset_ProjectFeedFeedOutputConfig_GetTypes(): DynamicUIProps[] {
+export function cloudasset_ProjectFeedFeedOutputConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "PubsubDestination",
+      "pubsubDestination",
       "Destination on Cloud Pubsub.\nStructure is documented below.",
-      Cloudasset_ProjectFeedFeedOutputConfigPubsubDestination_GetTypes(),
+      cloudasset_ProjectFeedFeedOutputConfigPubsubDestination_GetTypes(),
       true,
       false,
     ),

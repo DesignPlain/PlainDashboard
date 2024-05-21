@@ -12,65 +12,57 @@ export interface ConnectionArgs {
 When set to ABANDON, terraform will abandon management of the resource instead of deleting it. Prevents terraform apply
 failures with CloudSQL. Note: The resource will still exist.
 */
-  DeletionPolicy?: string;
+  deletionPolicy?: string;
 
   // Name of VPC network connected with service producers using VPC peering.
-  Network?: string;
+  network?: string;
 
   /*
 Named IP address range(s) of PEERING type reserved for
 this service provider. Note that invoking this method with a different range when connection
 is already established will not reallocate already provisioned service producer subnetworks.
 */
-  ReservedPeeringRanges?: Array<string>;
+  reservedPeeringRanges?: Array<string>;
 
   /*
 Provider peering service that is managing peering connectivity for a
 service provider organization. For Google services that support this functionality it is
 'servicenetworking.googleapis.com'.
 */
-  Service?: string;
+  service?: string;
 }
 export class Connection extends Resource {
-  // (Computed) The name of the VPC Network Peering connection that was created by the service producer.
-  public Peering?: string;
-
-  /*
-Named IP address range(s) of PEERING type reserved for
-this service provider. Note that invoking this method with a different range when connection
-is already established will not reallocate already provisioned service producer subnetworks.
-*/
-  public ReservedPeeringRanges?: Array<string>;
-
-  /*
-Provider peering service that is managing peering connectivity for a
-service provider organization. For Google services that support this functionality it is
-'servicenetworking.googleapis.com'.
-*/
-  public Service?: string;
-
   /*
 When set to ABANDON, terraform will abandon management of the resource instead of deleting it. Prevents terraform apply
 failures with CloudSQL. Note: The resource will still exist.
 */
-  public DeletionPolicy?: string;
+  public deletionPolicy?: string;
 
   // Name of VPC network connected with service producers using VPC peering.
-  public Network?: string;
+  public network?: string;
+
+  // (Computed) The name of the VPC Network Peering connection that was created by the service producer.
+  public peering?: string;
+
+  /*
+Named IP address range(s) of PEERING type reserved for
+this service provider. Note that invoking this method with a different range when connection
+is already established will not reallocate already provisioned service producer subnetworks.
+*/
+  public reservedPeeringRanges?: Array<string>;
+
+  /*
+Provider peering service that is managing peering connectivity for a
+service provider organization. For Google services that support this functionality it is
+'servicenetworking.googleapis.com'.
+*/
+  public service?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "DeletionPolicy",
-        "When set to ABANDON, terraform will abandon management of the resource instead of deleting it. Prevents terraform apply\nfailures with CloudSQL. Note: The resource will still exist.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Network",
+        "network",
         "Name of VPC network connected with service producers using VPC peering.",
         [],
         true,
@@ -78,7 +70,7 @@ failures with CloudSQL. Note: The resource will still exist.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ReservedPeeringRanges",
+        "reservedPeeringRanges",
         "Named IP address range(s) of PEERING type reserved for\nthis service provider. Note that invoking this method with a different range when connection\nis already established will not reallocate already provisioned service producer subnetworks.",
         InputType_String_GetTypes(),
         true,
@@ -86,11 +78,19 @@ failures with CloudSQL. Note: The resource will still exist.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Service",
+        "service",
         "Provider peering service that is managing peering connectivity for a\nservice provider organization. For Google services that support this functionality it is\n'servicenetworking.googleapis.com'.",
         [],
         true,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "deletionPolicy",
+        "When set to ABANDON, terraform will abandon management of the resource instead of deleting it. Prevents terraform apply\nfailures with CloudSQL. Note: The resource will still exist.",
+        [],
+        false,
+        false,
       ),
     ];
   }

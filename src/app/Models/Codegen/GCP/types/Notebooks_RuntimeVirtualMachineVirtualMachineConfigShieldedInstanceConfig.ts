@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Notebooks_RuntimeVirtualMachineVirtualMachineConfigShieldedInstanceConfig {
+export interface notebooks_RuntimeVirtualMachineVirtualMachineConfigShieldedInstanceConfig {
   /*
 Defines whether the instance has integrity monitoring enabled.
 Enables monitoring and attestation of the boot integrity of
@@ -15,7 +15,7 @@ integrity policy baseline. This baseline is initially derived
 from the implicitly trusted boot image when the instance is
 created. Enabled by default.
 */
-  EnableIntegrityMonitoring?: boolean;
+  enableIntegrityMonitoring?: boolean;
 
   /*
 Defines whether the instance has Secure Boot enabled.Secure
@@ -24,20 +24,20 @@ by verifying the digital signature of all boot components, and
 halting the boot process if signature verification fails.
 Disabled by default.
 */
-  EnableSecureBoot?: boolean;
+  enableSecureBoot?: boolean;
 
   /*
 Defines whether the instance has the vTPM enabled. Enabled by
 default.
 */
-  EnableVtpm?: boolean;
+  enableVtpm?: boolean;
 }
 
-export function Notebooks_RuntimeVirtualMachineVirtualMachineConfigShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
+export function notebooks_RuntimeVirtualMachineVirtualMachineConfigShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableIntegrityMonitoring",
+      "enableIntegrityMonitoring",
       "Defines whether the instance has integrity monitoring enabled.\nEnables monitoring and attestation of the boot integrity of\nthe instance. The attestation is performed against the\nintegrity policy baseline. This baseline is initially derived\nfrom the implicitly trusted boot image when the instance is\ncreated. Enabled by default.",
       [],
       false,
@@ -45,7 +45,7 @@ export function Notebooks_RuntimeVirtualMachineVirtualMachineConfigShieldedInsta
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableSecureBoot",
+      "enableSecureBoot",
       "Defines whether the instance has Secure Boot enabled.Secure\nBoot helps ensure that the system only runs authentic software\nby verifying the digital signature of all boot components, and\nhalting the boot process if signature verification fails.\nDisabled by default.",
       [],
       false,
@@ -53,7 +53,7 @@ export function Notebooks_RuntimeVirtualMachineVirtualMachineConfigShieldedInsta
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableVtpm",
+      "enableVtpm",
       "Defines whether the instance has the vTPM enabled. Enabled by\ndefault.",
       [],
       false,

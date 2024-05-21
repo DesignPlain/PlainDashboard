@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Alloydb_getSupportedDatabaseFlagsSupportedDatabaseFlagStringRestrictions {
+export interface alloydb_getSupportedDatabaseFlagsSupportedDatabaseFlagStringRestrictions {
   // The list of allowed values, if bounded. This field will be empty if there is a unbounded number of allowed values.
-  AllowedValues?: Array<string>;
+  allowedValues?: Array<string>;
 }
 
-export function Alloydb_getSupportedDatabaseFlagsSupportedDatabaseFlagStringRestrictions_GetTypes(): DynamicUIProps[] {
+export function alloydb_getSupportedDatabaseFlagsSupportedDatabaseFlagStringRestrictions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AllowedValues",
+      "allowedValues",
       "The list of allowed values, if bounded. This field will be empty if there is a unbounded number of allowed values.",
       InputType_String_GetTypes(),
       true,

@@ -6,52 +6,52 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfig,
-  Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfig_GetTypes,
-} from "./Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfig";
+  dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfig,
+  dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfig_GetTypes,
+} from "./dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfig";
 
-export interface Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTarget {
+export interface dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTarget {
+  // The target GKE node pool.
+  nodePool?: string;
+
   /*
 The configuration for the GKE node pool. 
 If specified, Dataproc attempts to create a node pool with the specified shape.
 If one with the same name already exists, it is verified against all specified fields.
 If a field differs, the virtual cluster creation will fail.
 */
-  NodePoolConfig?: Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfig;
+  nodePoolConfig?: dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfig;
 
   /*
 Node group roles. 
 One of `"DRIVER"`.
 */
-  Roles?: Array<string>;
-
-  // The target GKE node pool.
-  NodePool?: string;
+  roles?: Array<string>;
 }
 
-export function Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTarget_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTarget_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
+      InputType.String,
+      "nodePool",
+      "The target GKE node pool.",
+      [],
+      true,
+      true,
+    ),
+    new DynamicUIProps(
       InputType.Object,
-      "NodePoolConfig",
+      "nodePoolConfig",
       "The configuration for the GKE node pool. \nIf specified, Dataproc attempts to create a node pool with the specified shape.\nIf one with the same name already exists, it is verified against all specified fields.\nIf a field differs, the virtual cluster creation will fail.",
-      Dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfig_GetTypes(),
+      dataproc_ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Roles",
+      "roles",
       'Node group roles. \nOne of `"DRIVER"`.',
       InputType_String_GetTypes(),
-      true,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "NodePool",
-      "The target GKE node pool.",
-      [],
       true,
       true,
     ),

@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_BareMetalClusterMaintenanceConfig {
+export interface gkeonprem_BareMetalClusterMaintenanceConfig {
   /*
 All IPv4 address from these ranges will be placed into maintenance mode.
 Nodes in maintenance mode will be cordoned and drained. When both of these
 are true, the "baremetal.cluster.gke.io/maintenance" annotation will be set
 on the node resource.
 */
-  MaintenanceAddressCidrBlocks?: Array<string>;
+  maintenanceAddressCidrBlocks?: Array<string>;
 }
 
-export function Gkeonprem_BareMetalClusterMaintenanceConfig_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_BareMetalClusterMaintenanceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "MaintenanceAddressCidrBlocks",
+      "maintenanceAddressCidrBlocks",
       'All IPv4 address from these ranges will be placed into maintenance mode.\nNodes in maintenance mode will be cordoned and drained. When both of these\nare true, the "baremetal.cluster.gke.io/maintenance" annotation will be set\non the node resource.',
       InputType_String_GetTypes(),
       true,

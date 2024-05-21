@@ -6,39 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Securesourcemanager_InstancePrivateConfig {
+export interface securesourcemanager_InstancePrivateConfig {
   // CA pool resource, resource must in the format of `projects/{project}/locations/{location}/caPools/{ca_pool}`.
-  CaPool?: string;
+  caPool?: string;
 
   /*
 (Output)
 Service Attachment for HTTP, resource is in the format of `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
 */
-  HttpServiceAttachment?: string;
+  httpServiceAttachment?: string;
 
   // 'Indicate if it's private instance.'
-  IsPrivate?: boolean;
+  isPrivate?: boolean;
 
   /*
 (Output)
 Service Attachment for SSH, resource is in the format of `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
 */
-  SshServiceAttachment?: string;
+  sshServiceAttachment?: string;
 }
 
-export function Securesourcemanager_InstancePrivateConfig_GetTypes(): DynamicUIProps[] {
+export function securesourcemanager_InstancePrivateConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CaPool",
-      "CA pool resource, resource must in the format of `projects/{project}/locations/{location}/caPools/{ca_pool}`.",
-      [],
-      true,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "HttpServiceAttachment",
+      "httpServiceAttachment",
       "(Output)\nService Attachment for HTTP, resource is in the format of `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.",
       [],
       false,
@@ -46,7 +38,7 @@ export function Securesourcemanager_InstancePrivateConfig_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "IsPrivate",
+      "isPrivate",
       "'Indicate if it's private instance.'",
       [],
       true,
@@ -54,11 +46,19 @@ export function Securesourcemanager_InstancePrivateConfig_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "SshServiceAttachment",
+      "sshServiceAttachment",
       "(Output)\nService Attachment for SSH, resource is in the format of `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.",
       [],
       false,
       false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "caPool",
+      "CA pool resource, resource must in the format of `projects/{project}/locations/{location}/caPools/{ca_pool}`.",
+      [],
+      true,
+      true,
     ),
   ];
 }

@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_getJobBinaryAuthorization {
+export interface cloudrunv2_getJobBinaryAuthorization {
   // If present, indicates to use Breakglass using this justification. If useDefault is False, then it must be empty. For more information on breakglass, see https://cloud.google.com/binary-authorization/docs/using-breakglass
-  BreakglassJustification?: string;
+  breakglassJustification?: string;
 
   // If True, indicates to use the default project's binary authorization policy. If False, binary authorization will be disabled.
-  UseDefault?: boolean;
+  useDefault?: boolean;
 }
 
-export function Cloudrunv2_getJobBinaryAuthorization_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_getJobBinaryAuthorization_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "BreakglassJustification",
+      "breakglassJustification",
       "If present, indicates to use Breakglass using this justification. If useDefault is False, then it must be empty. For more information on breakglass, see https://cloud.google.com/binary-authorization/docs/using-breakglass",
       [],
       true,
@@ -26,7 +26,7 @@ export function Cloudrunv2_getJobBinaryAuthorization_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "UseDefault",
+      "useDefault",
       "If True, indicates to use the default project's binary authorization policy. If False, binary authorization will be disabled.",
       [],
       true,

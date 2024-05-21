@@ -6,31 +6,39 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Firebase_HostingCustomDomainCertVerificationHttp {
-  // The path to the file.
-  Path?: string;
-
-  // A text string to serve at the path.
-  Desired?: string;
-
+export interface firebase_HostingCustomDomainCertVerificationHttp {
   /*
 Whether Hosting was able to find the required file contents on the
 specified path during its last check.
 */
-  Discovered?: string;
+  discovered?: string;
 
   /*
 (Output)
 The last time Hosting systems checked for the file contents.
 */
-  LastCheckTime?: string;
+  lastCheckTime?: string;
+
+  // The path to the file.
+  path?: string;
+
+  // A text string to serve at the path.
+  desired?: string;
 }
 
-export function Firebase_HostingCustomDomainCertVerificationHttp_GetTypes(): DynamicUIProps[] {
+export function firebase_HostingCustomDomainCertVerificationHttp_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Discovered",
+      "desired",
+      "A text string to serve at the path.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "discovered",
       "Whether Hosting was able to find the required file contents on the\nspecified path during its last check.",
       [],
       false,
@@ -38,7 +46,7 @@ export function Firebase_HostingCustomDomainCertVerificationHttp_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "LastCheckTime",
+      "lastCheckTime",
       "(Output)\nThe last time Hosting systems checked for the file contents.",
       [],
       false,
@@ -46,16 +54,8 @@ export function Firebase_HostingCustomDomainCertVerificationHttp_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "Path",
+      "path",
       "The path to the file.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Desired",
-      "A text string to serve at the path.",
       [],
       false,
       false,

@@ -6,38 +6,38 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Billing_BudgetThresholdRule {
+export interface billing_BudgetThresholdRule {
   /*
 The type of basis used to determine if spend has passed
 the threshold.
 Default value is `CURRENT_SPEND`.
 Possible values are: `CURRENT_SPEND`, `FORECASTED_SPEND`.
 */
-  SpendBasis?: string;
+  spendBasis?: string;
 
   /*
 Send an alert when this threshold is exceeded. This is a
 1.0-based percentage, so 0.5 = 50%!!(MISSING) (MISSING)Must be >= 0.
 */
-  ThresholdPercent?: number;
+  thresholdPercent?: number;
 }
 
-export function Billing_BudgetThresholdRule_GetTypes(): DynamicUIProps[] {
+export function billing_BudgetThresholdRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "SpendBasis",
-      "The type of basis used to determine if spend has passed\nthe threshold.\nDefault value is `CURRENT_SPEND`.\nPossible values are: `CURRENT_SPEND`, `FORECASTED_SPEND`.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Number,
-      "ThresholdPercent",
+      "thresholdPercent",
       "Send an alert when this threshold is exceeded. This is a\n1.0-based percentage, so 0.5 = 50%! (MISSING)Must be >= 0.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "spendBasis",
+      "The type of basis used to determine if spend has passed\nthe threshold.\nDefault value is `CURRENT_SPEND`.\nPossible values are: `CURRENT_SPEND`, `FORECASTED_SPEND`.",
+      [],
+      false,
       false,
     ),
   ];

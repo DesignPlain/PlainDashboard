@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigqueryanalyticshub_ListingPublisher {
+export interface bigqueryanalyticshub_ListingPublisher {
   // Name of the listing publisher.
-  Name?: string;
+  name?: string;
 
   // Email or URL of the listing publisher.
-  PrimaryContact?: string;
+  primaryContact?: string;
 }
 
-export function Bigqueryanalyticshub_ListingPublisher_GetTypes(): DynamicUIProps[] {
+export function bigqueryanalyticshub_ListingPublisher_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Name of the listing publisher.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Bigqueryanalyticshub_ListingPublisher_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "PrimaryContact",
+      "primaryContact",
       "Email or URL of the listing publisher.",
       [],
       false,

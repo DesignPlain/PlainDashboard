@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudfunctions_getFunctionSourceRepository {
+export interface cloudfunctions_getFunctionSourceRepository {
   // The URL pointing to the hosted repository where the function was defined at the time of deployment.
-  DeployedUrl?: string;
+  deployedUrl?: string;
 
   // The URL pointing to the hosted repository where the function is defined.
-  Url?: string;
+  url?: string;
 }
 
-export function Cloudfunctions_getFunctionSourceRepository_GetTypes(): DynamicUIProps[] {
+export function cloudfunctions_getFunctionSourceRepository_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DeployedUrl",
+      "deployedUrl",
       "The URL pointing to the hosted repository where the function was defined at the time of deployment.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Cloudfunctions_getFunctionSourceRepository_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "Url",
+      "url",
       "The URL pointing to the hosted repository where the function is defined.",
       [],
       true,

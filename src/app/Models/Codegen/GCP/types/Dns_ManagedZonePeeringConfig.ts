@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dns_ManagedZonePeeringConfigTargetNetwork,
-  Dns_ManagedZonePeeringConfigTargetNetwork_GetTypes,
-} from "./Dns_ManagedZonePeeringConfigTargetNetwork";
+  dns_ManagedZonePeeringConfigTargetNetwork,
+  dns_ManagedZonePeeringConfigTargetNetwork_GetTypes,
+} from "./dns_ManagedZonePeeringConfigTargetNetwork";
 
-export interface Dns_ManagedZonePeeringConfig {
+export interface dns_ManagedZonePeeringConfig {
   /*
 The network with which to peer.
 Structure is documented below.
 */
-  TargetNetwork?: Dns_ManagedZonePeeringConfigTargetNetwork;
+  targetNetwork?: dns_ManagedZonePeeringConfigTargetNetwork;
 }
 
-export function Dns_ManagedZonePeeringConfig_GetTypes(): DynamicUIProps[] {
+export function dns_ManagedZonePeeringConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "TargetNetwork",
+      "targetNetwork",
       "The network with which to peer.\nStructure is documented below.",
-      Dns_ManagedZonePeeringConfigTargetNetwork_GetTypes(),
+      dns_ManagedZonePeeringConfigTargetNetwork_GetTypes(),
       true,
       false,
     ),

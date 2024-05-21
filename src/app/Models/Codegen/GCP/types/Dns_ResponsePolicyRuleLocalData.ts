@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dns_ResponsePolicyRuleLocalDataLocalData,
-  Dns_ResponsePolicyRuleLocalDataLocalData_GetTypes,
-} from "./Dns_ResponsePolicyRuleLocalDataLocalData";
+  dns_ResponsePolicyRuleLocalDataLocalData,
+  dns_ResponsePolicyRuleLocalDataLocalData_GetTypes,
+} from "./dns_ResponsePolicyRuleLocalDataLocalData";
 
-export interface Dns_ResponsePolicyRuleLocalData {
+export interface dns_ResponsePolicyRuleLocalData {
   /*
 All resource record sets for this selector, one per resource record type. The name must match the dns_name.
 Structure is documented below.
 */
-  LocalDatas?: Array<Dns_ResponsePolicyRuleLocalDataLocalData>;
+  localDatas?: Array<dns_ResponsePolicyRuleLocalDataLocalData>;
 }
 
-export function Dns_ResponsePolicyRuleLocalData_GetTypes(): DynamicUIProps[] {
+export function dns_ResponsePolicyRuleLocalData_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "LocalDatas",
+      "localDatas",
       "All resource record sets for this selector, one per resource record type. The name must match the dns_name.\nStructure is documented below.",
-      Dns_ResponsePolicyRuleLocalDataLocalData_GetTypes(),
+      dns_ResponsePolicyRuleLocalDataLocalData_GetTypes(),
       true,
       false,
     ),

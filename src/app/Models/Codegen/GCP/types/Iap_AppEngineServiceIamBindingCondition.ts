@@ -6,10 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Iap_AppEngineServiceIamBindingCondition {
-  // A title for the expression, i.e. a short string describing its purpose.
-  Title?: string;
-
+export interface iap_AppEngineServiceIamBindingCondition {
   /*
 An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
 
@@ -17,25 +14,20 @@ An optional description of the expression. This is a longer text which describes
 identifier for the binding. This means that if any part of the condition is changed out-of-band, the provider will
 consider it to be an entirely different resource and will treat it as such.
 */
-  Description?: string;
+  description?: string;
 
   // Textual representation of an expression in Common Expression Language syntax.
-  Expression?: string;
+  expression?: string;
+
+  // A title for the expression, i.e. a short string describing its purpose.
+  title?: string;
 }
 
-export function Iap_AppEngineServiceIamBindingCondition_GetTypes(): DynamicUIProps[] {
+export function iap_AppEngineServiceIamBindingCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Title",
-      "A title for the expression, i.e. a short string describing its purpose.",
-      [],
-      true,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Description",
+      "description",
       "An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.\n\n> **Warning:** The provider considers the `role` and condition contents (`title`+`description`+`expression`) as the\nidentifier for the binding. This means that if any part of the condition is changed out-of-band, the provider will\nconsider it to be an entirely different resource and will treat it as such.",
       [],
       false,
@@ -43,8 +35,16 @@ export function Iap_AppEngineServiceIamBindingCondition_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "Expression",
+      "expression",
       "Textual representation of an expression in Common Expression Language syntax.",
+      [],
+      true,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "title",
+      "A title for the expression, i.e. a short string describing its purpose.",
       [],
       true,
       true,

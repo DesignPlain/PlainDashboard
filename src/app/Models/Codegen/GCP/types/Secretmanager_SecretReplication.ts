@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Secretmanager_SecretReplicationAuto,
-  Secretmanager_SecretReplicationAuto_GetTypes,
-} from "./Secretmanager_SecretReplicationAuto";
+  secretmanager_SecretReplicationAuto,
+  secretmanager_SecretReplicationAuto_GetTypes,
+} from "./secretmanager_SecretReplicationAuto";
 import {
-  Secretmanager_SecretReplicationUserManaged,
-  Secretmanager_SecretReplicationUserManaged_GetTypes,
-} from "./Secretmanager_SecretReplicationUserManaged";
+  secretmanager_SecretReplicationUserManaged,
+  secretmanager_SecretReplicationUserManaged_GetTypes,
+} from "./secretmanager_SecretReplicationUserManaged";
 
-export interface Secretmanager_SecretReplication {
+export interface secretmanager_SecretReplication {
   /*
 The Secret will automatically be replicated without any restrictions.
 Structure is documented below.
 */
-  Auto?: Secretmanager_SecretReplicationAuto;
+  auto?: secretmanager_SecretReplicationAuto;
 
   /*
 The Secret will be replicated to the regions specified by the user.
 Structure is documented below.
 */
-  UserManaged?: Secretmanager_SecretReplicationUserManaged;
+  userManaged?: secretmanager_SecretReplicationUserManaged;
 }
 
-export function Secretmanager_SecretReplication_GetTypes(): DynamicUIProps[] {
+export function secretmanager_SecretReplication_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Auto",
+      "auto",
       "The Secret will automatically be replicated without any restrictions.\nStructure is documented below.",
-      Secretmanager_SecretReplicationAuto_GetTypes(),
+      secretmanager_SecretReplicationAuto_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "UserManaged",
+      "userManaged",
       "The Secret will be replicated to the regions specified by the user.\nStructure is documented below.",
-      Secretmanager_SecretReplicationUserManaged_GetTypes(),
+      secretmanager_SecretReplicationUserManaged_GetTypes(),
       false,
       true,
     ),

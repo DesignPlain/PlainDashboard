@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Beyondcorp_getAppConnectorPrincipalInfoServiceAccount {
+export interface beyondcorp_getAppConnectorPrincipalInfoServiceAccount {
   // Email address of the service account.
-  Email?: string;
+  email?: string;
 }
 
-export function Beyondcorp_getAppConnectorPrincipalInfoServiceAccount_GetTypes(): DynamicUIProps[] {
+export function beyondcorp_getAppConnectorPrincipalInfoServiceAccount_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Email",
+      "email",
       "Email address of the service account.",
       [],
       true,

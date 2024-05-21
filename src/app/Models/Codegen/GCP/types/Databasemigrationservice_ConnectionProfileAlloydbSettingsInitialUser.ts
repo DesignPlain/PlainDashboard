@@ -6,36 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Databasemigrationservice_ConnectionProfileAlloydbSettingsInitialUser {
-  /*
-The initial password for the user.
---Note--: This property is sensitive and will not be displayed in the plan.
-*/
-  Password?: string;
-
+export interface databasemigrationservice_ConnectionProfileAlloydbSettingsInitialUser {
   /*
 (Output)
 Output only. Indicates if the initialUser.password field has been set.
 */
-  PasswordSet?: boolean;
+  passwordSet?: boolean;
 
   // The database username.
-  User?: string;
+  user?: string;
+
+  /*
+The initial password for the user.
+--Note--: This property is sensitive and will not be displayed in the plan.
+*/
+  password?: string;
 }
 
-export function Databasemigrationservice_ConnectionProfileAlloydbSettingsInitialUser_GetTypes(): DynamicUIProps[] {
+export function databasemigrationservice_ConnectionProfileAlloydbSettingsInitialUser_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "Password",
-      "The initial password for the user.\n**Note**: This property is sensitive and will not be displayed in the plan.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "PasswordSet",
+      "passwordSet",
       "(Output)\nOutput only. Indicates if the initialUser.password field has been set.",
       [],
       false,
@@ -43,8 +35,16 @@ export function Databasemigrationservice_ConnectionProfileAlloydbSettingsInitial
     ),
     new DynamicUIProps(
       InputType.String,
-      "User",
+      "user",
       "The database username.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "password",
+      "The initial password for the user.\n**Note**: This property is sensitive and will not be displayed in the plan.",
       [],
       true,
       false,

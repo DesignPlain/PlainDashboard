@@ -7,25 +7,22 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Bigqueryanalyticshub_ListingIamBindingCondition,
-  Bigqueryanalyticshub_ListingIamBindingCondition_GetTypes,
-} from "../types/Bigqueryanalyticshub_ListingIamBindingCondition";
+  bigqueryanalyticshub_ListingIamBindingCondition,
+  bigqueryanalyticshub_ListingIamBindingCondition_GetTypes,
+} from "../types/bigqueryanalyticshub_ListingIamBindingCondition";
 
 export interface ListingIamBindingArgs {
-  // The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces. Used to find the parent resource to bind the IAM policy to
-  DataExchangeId?: string;
-
   // The ID of the listing. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces. Used to find the parent resource to bind the IAM policy to
-  ListingId?: string;
+  listingId?: string;
 
   /*
 The name of the location this data exchange listing.
 Used to find the parent resource to bind the IAM policy to
 */
-  Location?: string;
+  location?: string;
 
   //
-  Members?: Array<string>;
+  members?: Array<string>;
 
   /*
 The ID of the project in which the resource belongs.
@@ -43,19 +40,37 @@ Each entry can have one of the following values:
 - --projectEditor:projectid--: Editors of the given project. For example, "projectEditor:my-example-project"
 - --projectViewer:projectid--: Viewers of the given project. For example, "projectViewer:my-example-project"
 */
-  Project?: string;
+  project?: string;
 
   /*
 The role that should be applied. Only one
 `gcp.bigqueryanalyticshub.ListingIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
-  Role?: string;
+  role?: string;
 
   //
-  Condition?: Bigqueryanalyticshub_ListingIamBindingCondition;
+  condition?: bigqueryanalyticshub_ListingIamBindingCondition;
+
+  // The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces. Used to find the parent resource to bind the IAM policy to
+  dataExchangeId?: string;
 }
 export class ListingIamBinding extends Resource {
+  // (Computed) The etag of the IAM policy.
+  public etag?: string;
+
+  // The ID of the listing. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces. Used to find the parent resource to bind the IAM policy to
+  public listingId?: string;
+
+  /*
+The name of the location this data exchange listing.
+Used to find the parent resource to bind the IAM policy to
+*/
+  public location?: string;
+
+  //
+  public members?: Array<string>;
+
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the project will be parsed from the identifier of the parent resource. If no project is provided in the parent identifier and no project is specified, the provider project is used.
@@ -72,41 +87,26 @@ Each entry can have one of the following values:
 - --projectEditor:projectid--: Editors of the given project. For example, "projectEditor:my-example-project"
 - --projectViewer:projectid--: Viewers of the given project. For example, "projectViewer:my-example-project"
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 The role that should be applied. Only one
 `gcp.bigqueryanalyticshub.ListingIamBinding` can be used per role. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 */
-  public Role?: string;
+  public role?: string;
 
   //
-  public Condition?: Bigqueryanalyticshub_ListingIamBindingCondition;
+  public condition?: bigqueryanalyticshub_ListingIamBindingCondition;
 
   // The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces. Used to find the parent resource to bind the IAM policy to
-  public DataExchangeId?: string;
-
-  // (Computed) The etag of the IAM policy.
-  public Etag?: string;
-
-  // The ID of the listing. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces. Used to find the parent resource to bind the IAM policy to
-  public ListingId?: string;
-
-  /*
-The name of the location this data exchange listing.
-Used to find the parent resource to bind the IAM policy to
-*/
-  public Location?: string;
-
-  //
-  public Members?: Array<string>;
+  public dataExchangeId?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "DataExchangeId",
+        "dataExchangeId",
         "The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces. Used to find the parent resource to bind the IAM policy to",
         [],
         true,
@@ -114,7 +114,7 @@ Used to find the parent resource to bind the IAM policy to
       ),
       new DynamicUIProps(
         InputType.String,
-        "ListingId",
+        "listingId",
         "The ID of the listing. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces. Used to find the parent resource to bind the IAM policy to",
         [],
         true,
@@ -122,7 +122,7 @@ Used to find the parent resource to bind the IAM policy to
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The name of the location this data exchange listing.\nUsed to find the parent resource to bind the IAM policy to",
         [],
         false,
@@ -130,7 +130,7 @@ Used to find the parent resource to bind the IAM policy to
       ),
       new DynamicUIProps(
         InputType.Array,
-        "Members",
+        "members",
         "",
         InputType_String_GetTypes(),
         true,
@@ -138,7 +138,7 @@ Used to find the parent resource to bind the IAM policy to
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         'The ID of the project in which the resource belongs.\nIf it is not provided, the project will be parsed from the identifier of the parent resource. If no project is provided in the parent identifier and no project is specified, the provider project is used.\n\n* `member/members` - (Required) Identities that will be granted the privilege in `role`.\nEach entry can have one of the following values:\n* **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.\n* **allAuthenticatedUsers**: A special identifier that represents anyone who is authenticated with a Google account or a service account.\n* **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.\n* **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.\n* **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.\n* **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.\n* **projectOwner:projectid**: Owners of the given project. For example, "projectOwner:my-example-project"\n* **projectEditor:projectid**: Editors of the given project. For example, "projectEditor:my-example-project"\n* **projectViewer:projectid**: Viewers of the given project. For example, "projectViewer:my-example-project"',
         [],
         false,
@@ -146,7 +146,7 @@ Used to find the parent resource to bind the IAM policy to
       ),
       new DynamicUIProps(
         InputType.String,
-        "Role",
+        "role",
         "The role that should be applied. Only one\n`gcp.bigqueryanalyticshub.ListingIamBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
         [],
         true,
@@ -154,9 +154,9 @@ Used to find the parent resource to bind the IAM policy to
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Condition",
+        "condition",
         "",
-        Bigqueryanalyticshub_ListingIamBindingCondition_GetTypes(),
+        bigqueryanalyticshub_ListingIamBindingCondition_GetTypes(),
         false,
         true,
       ),

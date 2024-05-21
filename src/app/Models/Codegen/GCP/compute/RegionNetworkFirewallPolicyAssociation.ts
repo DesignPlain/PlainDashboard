@@ -9,10 +9,10 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface RegionNetworkFirewallPolicyAssociationArgs {
   // The target that the firewall policy is attached to.
-  AttachmentTarget?: string;
+  attachmentTarget?: string;
 
   // The firewall policy ID of the association.
-  FirewallPolicy?: string;
+  firewallPolicy?: string;
 
   /*
 The name for an association.
@@ -21,20 +21,23 @@ The name for an association.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   // The project for the resource
-  Project?: string;
+  project?: string;
 
   // The location of this resource.
-  Region?: string;
+  region?: string;
 }
 export class RegionNetworkFirewallPolicyAssociation extends Resource {
+  // The short name of the firewall policy of the association.
+  public shortName?: string;
+
   // The target that the firewall policy is attached to.
-  public AttachmentTarget?: string;
+  public attachmentTarget?: string;
 
   // The firewall policy ID of the association.
-  public FirewallPolicy?: string;
+  public firewallPolicy?: string;
 
   /*
 The name for an association.
@@ -43,46 +46,19 @@ The name for an association.
 
 - - -
 */
-  public Name?: string;
+  public name?: string;
 
   // The project for the resource
-  public Project?: string;
+  public project?: string;
 
   // The location of this resource.
-  public Region?: string;
-
-  // The short name of the firewall policy of the association.
-  public ShortName?: string;
+  public region?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "FirewallPolicy",
-        "The firewall policy ID of the association.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "The name for an association.\n\n\n\n- - -",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The project for the resource",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Region",
+        "region",
         "The location of this resource.",
         [],
         false,
@@ -90,10 +66,34 @@ The name for an association.
       ),
       new DynamicUIProps(
         InputType.String,
-        "AttachmentTarget",
+        "attachmentTarget",
         "The target that the firewall policy is attached to.",
         [],
         true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "firewallPolicy",
+        "The firewall policy ID of the association.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "The name for an association.\n\n\n\n- - -",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The project for the resource",
+        [],
+        false,
         true,
       ),
     ];

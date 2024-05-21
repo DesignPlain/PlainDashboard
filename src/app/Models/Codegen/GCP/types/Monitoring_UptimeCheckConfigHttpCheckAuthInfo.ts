@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_UptimeCheckConfigHttpCheckAuthInfo {
+export interface monitoring_UptimeCheckConfigHttpCheckAuthInfo {
   /*
 The password to authenticate.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  Password?: string;
+  password?: string;
 
   // The username to authenticate.
-  Username?: string;
+  username?: string;
 }
 
-export function Monitoring_UptimeCheckConfigHttpCheckAuthInfo_GetTypes(): DynamicUIProps[] {
+export function monitoring_UptimeCheckConfigHttpCheckAuthInfo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Password",
-      "The password to authenticate.\n**Note**: This property is sensitive and will not be displayed in the plan.",
+      "username",
+      "The username to authenticate.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Username",
-      "The username to authenticate.",
+      "password",
+      "The password to authenticate.\n**Note**: This property is sensitive and will not be displayed in the plan.",
       [],
       true,
       false,

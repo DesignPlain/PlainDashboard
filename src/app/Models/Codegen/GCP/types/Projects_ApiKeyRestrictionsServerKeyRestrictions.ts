@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Projects_ApiKeyRestrictionsServerKeyRestrictions {
+export interface projects_ApiKeyRestrictionsServerKeyRestrictions {
   // A list of the caller IP addresses that are allowed to make API calls with this key.
-  AllowedIps?: Array<string>;
+  allowedIps?: Array<string>;
 }
 
-export function Projects_ApiKeyRestrictionsServerKeyRestrictions_GetTypes(): DynamicUIProps[] {
+export function projects_ApiKeyRestrictionsServerKeyRestrictions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AllowedIps",
+      "allowedIps",
       "A list of the caller IP addresses that are allowed to make API calls with this key.",
       InputType_String_GetTypes(),
       true,

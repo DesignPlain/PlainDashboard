@@ -6,118 +6,110 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Artifactregistry_RepositoryRemoteRepositoryConfigPythonRepository,
-  Artifactregistry_RepositoryRemoteRepositoryConfigPythonRepository_GetTypes,
-} from "./Artifactregistry_RepositoryRemoteRepositoryConfigPythonRepository";
+  artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentials,
+  artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentials_GetTypes,
+} from "./artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentials";
 import {
-  Artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentials,
-  Artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentials_GetTypes,
-} from "./Artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentials";
+  artifactregistry_RepositoryRemoteRepositoryConfigYumRepository,
+  artifactregistry_RepositoryRemoteRepositoryConfigYumRepository_GetTypes,
+} from "./artifactregistry_RepositoryRemoteRepositoryConfigYumRepository";
 import {
-  Artifactregistry_RepositoryRemoteRepositoryConfigYumRepository,
-  Artifactregistry_RepositoryRemoteRepositoryConfigYumRepository_GetTypes,
-} from "./Artifactregistry_RepositoryRemoteRepositoryConfigYumRepository";
+  artifactregistry_RepositoryRemoteRepositoryConfigAptRepository,
+  artifactregistry_RepositoryRemoteRepositoryConfigAptRepository_GetTypes,
+} from "./artifactregistry_RepositoryRemoteRepositoryConfigAptRepository";
 import {
-  Artifactregistry_RepositoryRemoteRepositoryConfigAptRepository,
-  Artifactregistry_RepositoryRemoteRepositoryConfigAptRepository_GetTypes,
-} from "./Artifactregistry_RepositoryRemoteRepositoryConfigAptRepository";
+  artifactregistry_RepositoryRemoteRepositoryConfigDockerRepository,
+  artifactregistry_RepositoryRemoteRepositoryConfigDockerRepository_GetTypes,
+} from "./artifactregistry_RepositoryRemoteRepositoryConfigDockerRepository";
 import {
-  Artifactregistry_RepositoryRemoteRepositoryConfigDockerRepository,
-  Artifactregistry_RepositoryRemoteRepositoryConfigDockerRepository_GetTypes,
-} from "./Artifactregistry_RepositoryRemoteRepositoryConfigDockerRepository";
+  artifactregistry_RepositoryRemoteRepositoryConfigMavenRepository,
+  artifactregistry_RepositoryRemoteRepositoryConfigMavenRepository_GetTypes,
+} from "./artifactregistry_RepositoryRemoteRepositoryConfigMavenRepository";
 import {
-  Artifactregistry_RepositoryRemoteRepositoryConfigMavenRepository,
-  Artifactregistry_RepositoryRemoteRepositoryConfigMavenRepository_GetTypes,
-} from "./Artifactregistry_RepositoryRemoteRepositoryConfigMavenRepository";
+  artifactregistry_RepositoryRemoteRepositoryConfigNpmRepository,
+  artifactregistry_RepositoryRemoteRepositoryConfigNpmRepository_GetTypes,
+} from "./artifactregistry_RepositoryRemoteRepositoryConfigNpmRepository";
 import {
-  Artifactregistry_RepositoryRemoteRepositoryConfigNpmRepository,
-  Artifactregistry_RepositoryRemoteRepositoryConfigNpmRepository_GetTypes,
-} from "./Artifactregistry_RepositoryRemoteRepositoryConfigNpmRepository";
+  artifactregistry_RepositoryRemoteRepositoryConfigPythonRepository,
+  artifactregistry_RepositoryRemoteRepositoryConfigPythonRepository_GetTypes,
+} from "./artifactregistry_RepositoryRemoteRepositoryConfigPythonRepository";
 
-export interface Artifactregistry_RepositoryRemoteRepositoryConfig {
-  /*
-Specific settings for a Python remote repository.
-Structure is documented below.
-*/
-  PythonRepository?: Artifactregistry_RepositoryRemoteRepositoryConfigPythonRepository;
-
-  /*
-The credentials used to access the remote repository.
-Structure is documented below.
-*/
-  UpstreamCredentials?: Artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentials;
-
+export interface artifactregistry_RepositoryRemoteRepositoryConfig {
   /*
 Specific settings for an Yum remote repository.
 Structure is documented below.
 */
-  YumRepository?: Artifactregistry_RepositoryRemoteRepositoryConfigYumRepository;
+  yumRepository?: artifactregistry_RepositoryRemoteRepositoryConfigYumRepository;
 
   /*
 Specific settings for an Apt remote repository.
 Structure is documented below.
 */
-  AptRepository?: Artifactregistry_RepositoryRemoteRepositoryConfigAptRepository;
+  aptRepository?: artifactregistry_RepositoryRemoteRepositoryConfigAptRepository;
 
   // The description of the remote source.
-  Description?: string;
+  description?: string;
 
   /*
 Specific settings for a Docker remote repository.
 Structure is documented below.
 */
-  DockerRepository?: Artifactregistry_RepositoryRemoteRepositoryConfigDockerRepository;
+  dockerRepository?: artifactregistry_RepositoryRemoteRepositoryConfigDockerRepository;
 
   /*
 Specific settings for a Maven remote repository.
 Structure is documented below.
 */
-  MavenRepository?: Artifactregistry_RepositoryRemoteRepositoryConfigMavenRepository;
+  mavenRepository?: artifactregistry_RepositoryRemoteRepositoryConfigMavenRepository;
 
   /*
 Specific settings for an Npm remote repository.
 Structure is documented below.
 */
-  NpmRepository?: Artifactregistry_RepositoryRemoteRepositoryConfigNpmRepository;
+  npmRepository?: artifactregistry_RepositoryRemoteRepositoryConfigNpmRepository;
+
+  /*
+Specific settings for a Python remote repository.
+Structure is documented below.
+*/
+  pythonRepository?: artifactregistry_RepositoryRemoteRepositoryConfigPythonRepository;
+
+  /*
+The credentials used to access the remote repository.
+Structure is documented below.
+*/
+  upstreamCredentials?: artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentials;
 }
 
-export function Artifactregistry_RepositoryRemoteRepositoryConfig_GetTypes(): DynamicUIProps[] {
+export function artifactregistry_RepositoryRemoteRepositoryConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "PythonRepository",
-      "Specific settings for a Python remote repository.\nStructure is documented below.",
-      Artifactregistry_RepositoryRemoteRepositoryConfigPythonRepository_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "UpstreamCredentials",
+      "upstreamCredentials",
       "The credentials used to access the remote repository.\nStructure is documented below.",
-      Artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentials_GetTypes(),
+      artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentials_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "YumRepository",
+      "yumRepository",
       "Specific settings for an Yum remote repository.\nStructure is documented below.",
-      Artifactregistry_RepositoryRemoteRepositoryConfigYumRepository_GetTypes(),
+      artifactregistry_RepositoryRemoteRepositoryConfigYumRepository_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "AptRepository",
+      "aptRepository",
       "Specific settings for an Apt remote repository.\nStructure is documented below.",
-      Artifactregistry_RepositoryRemoteRepositoryConfigAptRepository_GetTypes(),
+      artifactregistry_RepositoryRemoteRepositoryConfigAptRepository_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "The description of the remote source.",
       [],
       false,
@@ -125,25 +117,33 @@ export function Artifactregistry_RepositoryRemoteRepositoryConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "DockerRepository",
+      "dockerRepository",
       "Specific settings for a Docker remote repository.\nStructure is documented below.",
-      Artifactregistry_RepositoryRemoteRepositoryConfigDockerRepository_GetTypes(),
+      artifactregistry_RepositoryRemoteRepositoryConfigDockerRepository_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "MavenRepository",
+      "mavenRepository",
       "Specific settings for a Maven remote repository.\nStructure is documented below.",
-      Artifactregistry_RepositoryRemoteRepositoryConfigMavenRepository_GetTypes(),
+      artifactregistry_RepositoryRemoteRepositoryConfigMavenRepository_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "NpmRepository",
+      "npmRepository",
       "Specific settings for an Npm remote repository.\nStructure is documented below.",
-      Artifactregistry_RepositoryRemoteRepositoryConfigNpmRepository_GetTypes(),
+      artifactregistry_RepositoryRemoteRepositoryConfigNpmRepository_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "pythonRepository",
+      "Specific settings for a Python remote repository.\nStructure is documented below.",
+      artifactregistry_RepositoryRemoteRepositoryConfigPythonRepository_GetTypes(),
       false,
       true,
     ),

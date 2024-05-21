@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_ServiceTemplateContainerPort {
-  // Port number the container listens on. This must be a valid TCP port number, 0 < containerPort < 65536.
-  ContainerPort?: number;
-
+export interface cloudrunv2_ServiceTemplateContainerPort {
   // If specified, used to specify which protocol to use. Allowed values are "http1" and "h2c".
-  Name?: string;
+  name?: string;
+
+  // Port number the container listens on. This must be a valid TCP port number, 0 < containerPort < 65536.
+  containerPort?: number;
 }
 
-export function Cloudrunv2_ServiceTemplateContainerPort_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_ServiceTemplateContainerPort_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Number,
-      "ContainerPort",
-      "Port number the container listens on. This must be a valid TCP port number, 0 < containerPort < 65536.",
+      InputType.String,
+      "name",
+      'If specified, used to specify which protocol to use. Allowed values are "http1" and "h2c".',
       [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "Name",
-      'If specified, used to specify which protocol to use. Allowed values are "http1" and "h2c".',
+      InputType.Number,
+      "containerPort",
+      "Port number the container listens on. This must be a valid TCP port number, 0 < containerPort < 65536.",
       [],
       false,
       false,

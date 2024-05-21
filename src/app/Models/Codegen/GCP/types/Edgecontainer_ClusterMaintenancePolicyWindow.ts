@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Edgecontainer_ClusterMaintenancePolicyWindowRecurringWindow,
-  Edgecontainer_ClusterMaintenancePolicyWindowRecurringWindow_GetTypes,
-} from "./Edgecontainer_ClusterMaintenancePolicyWindowRecurringWindow";
+  edgecontainer_ClusterMaintenancePolicyWindowRecurringWindow,
+  edgecontainer_ClusterMaintenancePolicyWindowRecurringWindow_GetTypes,
+} from "./edgecontainer_ClusterMaintenancePolicyWindowRecurringWindow";
 
-export interface Edgecontainer_ClusterMaintenancePolicyWindow {
+export interface edgecontainer_ClusterMaintenancePolicyWindow {
   /*
 Represents an arbitrary window of time that recurs.
 Structure is documented below.
 */
-  RecurringWindow?: Edgecontainer_ClusterMaintenancePolicyWindowRecurringWindow;
+  recurringWindow?: edgecontainer_ClusterMaintenancePolicyWindowRecurringWindow;
 }
 
-export function Edgecontainer_ClusterMaintenancePolicyWindow_GetTypes(): DynamicUIProps[] {
+export function edgecontainer_ClusterMaintenancePolicyWindow_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "RecurringWindow",
+      "recurringWindow",
       "Represents an arbitrary window of time that recurs.\nStructure is documented below.",
-      Edgecontainer_ClusterMaintenancePolicyWindowRecurringWindow_GetTypes(),
+      edgecontainer_ClusterMaintenancePolicyWindowRecurringWindow_GetTypes(),
       true,
       false,
     ),

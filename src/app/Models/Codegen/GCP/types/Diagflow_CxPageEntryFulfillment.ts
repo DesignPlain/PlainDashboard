@@ -6,76 +6,60 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxPageEntryFulfillmentConditionalCase,
-  Diagflow_CxPageEntryFulfillmentConditionalCase_GetTypes,
-} from "./Diagflow_CxPageEntryFulfillmentConditionalCase";
+  diagflow_CxPageEntryFulfillmentMessage,
+  diagflow_CxPageEntryFulfillmentMessage_GetTypes,
+} from "./diagflow_CxPageEntryFulfillmentMessage";
 import {
-  Diagflow_CxPageEntryFulfillmentMessage,
-  Diagflow_CxPageEntryFulfillmentMessage_GetTypes,
-} from "./Diagflow_CxPageEntryFulfillmentMessage";
+  diagflow_CxPageEntryFulfillmentSetParameterAction,
+  diagflow_CxPageEntryFulfillmentSetParameterAction_GetTypes,
+} from "./diagflow_CxPageEntryFulfillmentSetParameterAction";
 import {
-  Diagflow_CxPageEntryFulfillmentSetParameterAction,
-  Diagflow_CxPageEntryFulfillmentSetParameterAction_GetTypes,
-} from "./Diagflow_CxPageEntryFulfillmentSetParameterAction";
+  diagflow_CxPageEntryFulfillmentConditionalCase,
+  diagflow_CxPageEntryFulfillmentConditionalCase_GetTypes,
+} from "./diagflow_CxPageEntryFulfillmentConditionalCase";
 
-export interface Diagflow_CxPageEntryFulfillment {
+export interface diagflow_CxPageEntryFulfillment {
+  // The tag used by the webhook to identify which fulfillment is being called. This field is required if webhook is specified.
+  tag?: string;
+
   // The webhook to call. Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/webhooks/<Webhook ID>.
-  Webhook?: string;
+  webhook?: string;
 
   /*
 Conditional cases for this fulfillment.
 Structure is documented below.
 */
-  ConditionalCases?: Array<Diagflow_CxPageEntryFulfillmentConditionalCase>;
+  conditionalCases?: Array<diagflow_CxPageEntryFulfillmentConditionalCase>;
 
   /*
 The list of rich message responses to present to the user.
 Structure is documented below.
 */
-  Messages?: Array<Diagflow_CxPageEntryFulfillmentMessage>;
+  messages?: Array<diagflow_CxPageEntryFulfillmentMessage>;
 
   // Whether Dialogflow should return currently queued fulfillment response messages in streaming APIs. If a webhook is specified, it happens before Dialogflow invokes webhook. Warning: 1) This flag only affects streaming API. Responses are still queued and returned once in non-streaming API. 2) The flag can be enabled in any fulfillment but only the first 3 partial responses will be returned. You may only want to apply it to fulfillments that have slow webhooks.
-  ReturnPartialResponses?: boolean;
+  returnPartialResponses?: boolean;
 
   /*
 Set parameter values before executing the webhook.
 Structure is documented below.
 */
-  SetParameterActions?: Array<Diagflow_CxPageEntryFulfillmentSetParameterAction>;
-
-  // The tag used by the webhook to identify which fulfillment is being called. This field is required if webhook is specified.
-  Tag?: string;
+  setParameterActions?: Array<diagflow_CxPageEntryFulfillmentSetParameterAction>;
 }
 
-export function Diagflow_CxPageEntryFulfillment_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxPageEntryFulfillment_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Messages",
-      "The list of rich message responses to present to the user.\nStructure is documented below.",
-      Diagflow_CxPageEntryFulfillmentMessage_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "ReturnPartialResponses",
-      "Whether Dialogflow should return currently queued fulfillment response messages in streaming APIs. If a webhook is specified, it happens before Dialogflow invokes webhook. Warning: 1) This flag only affects streaming API. Responses are still queued and returned once in non-streaming API. 2) The flag can be enabled in any fulfillment but only the first 3 partial responses will be returned. You may only want to apply it to fulfillments that have slow webhooks.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "SetParameterActions",
+      "setParameterActions",
       "Set parameter values before executing the webhook.\nStructure is documented below.",
-      Diagflow_CxPageEntryFulfillmentSetParameterAction_GetTypes(),
+      diagflow_CxPageEntryFulfillmentSetParameterAction_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Tag",
+      "tag",
       "The tag used by the webhook to identify which fulfillment is being called. This field is required if webhook is specified.",
       [],
       false,
@@ -83,7 +67,7 @@ export function Diagflow_CxPageEntryFulfillment_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Webhook",
+      "webhook",
       "The webhook to call. Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/webhooks/<Webhook ID>.",
       [],
       false,
@@ -91,9 +75,25 @@ export function Diagflow_CxPageEntryFulfillment_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ConditionalCases",
+      "conditionalCases",
       "Conditional cases for this fulfillment.\nStructure is documented below.",
-      Diagflow_CxPageEntryFulfillmentConditionalCase_GetTypes(),
+      diagflow_CxPageEntryFulfillmentConditionalCase_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "messages",
+      "The list of rich message responses to present to the user.\nStructure is documented below.",
+      diagflow_CxPageEntryFulfillmentMessage_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "returnPartialResponses",
+      "Whether Dialogflow should return currently queued fulfillment response messages in streaming APIs. If a webhook is specified, it happens before Dialogflow invokes webhook. Warning: 1) This flag only affects streaming API. Responses are still queued and returned once in non-streaming API. 2) The flag can be enabled in any fulfillment but only the first 3 partial responses will be returned. You may only want to apply it to fulfillments that have slow webhooks.",
+      [],
       false,
       false,
     ),

@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_DatabaseInstanceSettingsIpConfigurationAuthorizedNetwork {
+export interface sql_DatabaseInstanceSettingsIpConfigurationAuthorizedNetwork {
   /*
 The [RFC 3339](https://tools.ietf.org/html/rfc3339)
 formatted date time string indicating when this whitelist expires.
 */
-  ExpirationTime?: string;
+  expirationTime?: string;
 
   // A name for this whitelist entry.
-  Name?: string;
+  name?: string;
 
   /*
 A CIDR notation IPv4 or IPv6 address that is allowed to
 access this instance. Must be set even if other two attributes are not for
 the whitelist to become active.
 */
-  Value?: string;
+  value?: string;
 }
 
-export function Sql_DatabaseInstanceSettingsIpConfigurationAuthorizedNetwork_GetTypes(): DynamicUIProps[] {
+export function sql_DatabaseInstanceSettingsIpConfigurationAuthorizedNetwork_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ExpirationTime",
+      "expirationTime",
       "The [RFC 3339](https://tools.ietf.org/html/rfc3339)\nformatted date time string indicating when this whitelist expires.",
       [],
       false,
@@ -36,7 +36,7 @@ export function Sql_DatabaseInstanceSettingsIpConfigurationAuthorizedNetwork_Get
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "A name for this whitelist entry.",
       [],
       false,
@@ -44,7 +44,7 @@ export function Sql_DatabaseInstanceSettingsIpConfigurationAuthorizedNetwork_Get
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "A CIDR notation IPv4 or IPv6 address that is allowed to\naccess this instance. Must be set even if other two attributes are not for\nthe whitelist to become active.",
       [],
       true,

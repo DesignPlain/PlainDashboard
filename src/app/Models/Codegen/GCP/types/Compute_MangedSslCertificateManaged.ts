@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_MangedSslCertificateManaged {
+export interface compute_MangedSslCertificateManaged {
   /*
 Domains for which a managed SSL certificate will be valid.  Currently,
 there can be up to 100 domains in this list.
 */
-  Domains?: Array<string>;
+  domains?: Array<string>;
 }
 
-export function Compute_MangedSslCertificateManaged_GetTypes(): DynamicUIProps[] {
+export function compute_MangedSslCertificateManaged_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Domains",
+      "domains",
       "Domains for which a managed SSL certificate will be valid.  Currently,\nthere can be up to 100 domains in this list.",
       InputType_String_GetTypes(),
       true,

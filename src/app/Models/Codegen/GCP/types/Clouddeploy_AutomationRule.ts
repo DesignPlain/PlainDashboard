@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Clouddeploy_AutomationRuleAdvanceRolloutRule,
-  Clouddeploy_AutomationRuleAdvanceRolloutRule_GetTypes,
-} from "./Clouddeploy_AutomationRuleAdvanceRolloutRule";
+  clouddeploy_AutomationRulePromoteReleaseRule,
+  clouddeploy_AutomationRulePromoteReleaseRule_GetTypes,
+} from "./clouddeploy_AutomationRulePromoteReleaseRule";
 import {
-  Clouddeploy_AutomationRulePromoteReleaseRule,
-  Clouddeploy_AutomationRulePromoteReleaseRule_GetTypes,
-} from "./Clouddeploy_AutomationRulePromoteReleaseRule";
+  clouddeploy_AutomationRuleAdvanceRolloutRule,
+  clouddeploy_AutomationRuleAdvanceRolloutRule_GetTypes,
+} from "./clouddeploy_AutomationRuleAdvanceRolloutRule";
 
-export interface Clouddeploy_AutomationRule {
-  /*
-Optional. The `AdvanceRolloutRule` will automatically advance a successful Rollout.
-Structure is documented below.
-*/
-  AdvanceRolloutRule?: Clouddeploy_AutomationRuleAdvanceRolloutRule;
-
+export interface clouddeploy_AutomationRule {
   /*
 Optional. `PromoteReleaseRule` will automatically promote a release from the current target to a specified target.
 Structure is documented below.
 */
-  PromoteReleaseRule?: Clouddeploy_AutomationRulePromoteReleaseRule;
+  promoteReleaseRule?: clouddeploy_AutomationRulePromoteReleaseRule;
+
+  /*
+Optional. The `AdvanceRolloutRule` will automatically advance a successful Rollout.
+Structure is documented below.
+*/
+  advanceRolloutRule?: clouddeploy_AutomationRuleAdvanceRolloutRule;
 }
 
-export function Clouddeploy_AutomationRule_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_AutomationRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "AdvanceRolloutRule",
-      "Optional. The `AdvanceRolloutRule` will automatically advance a successful Rollout.\nStructure is documented below.",
-      Clouddeploy_AutomationRuleAdvanceRolloutRule_GetTypes(),
+      "promoteReleaseRule",
+      "Optional. `PromoteReleaseRule` will automatically promote a release from the current target to a specified target.\nStructure is documented below.",
+      clouddeploy_AutomationRulePromoteReleaseRule_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "PromoteReleaseRule",
-      "Optional. `PromoteReleaseRule` will automatically promote a release from the current target to a specified target.\nStructure is documented below.",
-      Clouddeploy_AutomationRulePromoteReleaseRule_GetTypes(),
+      "advanceRolloutRule",
+      "Optional. The `AdvanceRolloutRule` will automatically advance a successful Rollout.\nStructure is documented below.",
+      clouddeploy_AutomationRuleAdvanceRolloutRule_GetTypes(),
       false,
       false,
     ),

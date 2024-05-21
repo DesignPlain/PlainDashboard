@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getBackendServiceLocalityLbPolicyCustomPolicy {
+export interface compute_getBackendServiceLocalityLbPolicyCustomPolicy {
   /*
 An optional, arbitrary JSON object with configuration data, understood
 by a locally installed custom policy implementation.
 */
-  Data?: string;
+  data?: string;
 
   /*
 The name of the Backend Service.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 }
 
-export function Compute_getBackendServiceLocalityLbPolicyCustomPolicy_GetTypes(): DynamicUIProps[] {
+export function compute_getBackendServiceLocalityLbPolicyCustomPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Data",
+      "data",
       "An optional, arbitrary JSON object with configuration data, understood\nby a locally installed custom policy implementation.",
       [],
       true,
@@ -33,7 +33,7 @@ export function Compute_getBackendServiceLocalityLbPolicyCustomPolicy_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of the Backend Service.\n\n- - -",
       [],
       true,

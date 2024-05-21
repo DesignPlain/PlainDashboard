@@ -8,96 +8,80 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface PeeringArgs {
+  // Additional information about the current status of this peering, if available.
+  statusMessage?: string;
+
   // The full names of the Google Compute Engine networks to which the instance is connected. Caller needs to make sure that CIDR subnets do not overlap between networks, else peering creation will fail.
-  AuthorizedNetwork?: string;
+  authorizedNetwork?: string;
 
   // Full domain resource path for the Managed AD Domain involved in peering. The resource path should be in the form projects/{projectId}/locations/global/domains/{domainName}
-  DomainResource?: string;
+  domainResource?: string;
 
   /*
 Resource labels that can contain user-provided metadata
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   // - - -
-  PeeringId?: string;
+  peeringId?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // The current state of this Peering.
-  Status?: string;
-
-  // Additional information about the current status of this peering, if available.
-  StatusMessage?: string;
+  status?: string;
 }
 export class Peering extends Resource {
   // The full names of the Google Compute Engine networks to which the instance is connected. Caller needs to make sure that CIDR subnets do not overlap between networks, else peering creation will fail.
-  public AuthorizedNetwork?: string;
+  public authorizedNetwork?: string;
 
   // Full domain resource path for the Managed AD Domain involved in peering. The resource path should be in the form projects/{projectId}/locations/global/domains/{domainName}
-  public DomainResource?: string;
+  public domainResource?: string;
 
   // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
+  public effectiveLabels?: Map<string, string>;
+
+  // Unique name of the peering in this scope including projects and location using the form: projects/{projectId}/locations/global/peerings/{peeringId}.
+  public name?: string;
+
+  // The current state of this Peering.
+  public status?: string;
+
+  // Additional information about the current status of this peering, if available.
+  public statusMessage?: string;
 
   /*
 Resource labels that can contain user-provided metadata
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  public Labels?: Map<string, string>;
+  public labels?: Map<string, string>;
 
   // - - -
-  public PeeringId?: string;
-
-  // The current state of this Peering.
-  public Status?: string;
-
-  // Additional information about the current status of this peering, if available.
-  public StatusMessage?: string;
-
-  // Unique name of the peering in this scope including projects and location using the form: projects/{projectId}/locations/global/peerings/{peeringId}.
-  public Name?: string;
+  public peeringId?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
+  public pulumiLabels?: Map<string, string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "StatusMessage",
-        "Additional information about the current status of this peering, if available.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "AuthorizedNetwork",
-        "The full names of the Google Compute Engine networks to which the instance is connected. Caller needs to make sure that CIDR subnets do not overlap between networks, else peering creation will fail.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "DomainResource",
+        "domainResource",
         "Full domain resource path for the Managed AD Domain involved in peering. The resource path should be in the form projects/{projectId}/locations/global/domains/{domainName}",
         [],
         true,
@@ -105,7 +89,7 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "Resource labels that can contain user-provided metadata\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
@@ -113,7 +97,7 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "PeeringId",
+        "peeringId",
         "- - -",
         [],
         true,
@@ -121,7 +105,7 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -129,11 +113,27 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Status",
+        "status",
         "The current state of this Peering.",
         [],
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "statusMessage",
+        "Additional information about the current status of this peering, if available.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "authorizedNetwork",
+        "The full names of the Google Compute Engine networks to which the instance is connected. Caller needs to make sure that CIDR subnets do not overlap between networks, else peering creation will fail.",
+        [],
+        true,
+        true,
       ),
     ];
   }

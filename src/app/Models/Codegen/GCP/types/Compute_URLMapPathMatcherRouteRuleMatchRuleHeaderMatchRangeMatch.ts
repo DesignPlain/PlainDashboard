@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_URLMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch {
+export interface compute_URLMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch {
   // The end of the range (exclusive).
-  RangeEnd?: number;
+  rangeEnd?: number;
 
   // The start of the range (inclusive).
-  RangeStart?: number;
+  rangeStart?: number;
 }
 
-export function Compute_URLMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch_GetTypes(): DynamicUIProps[] {
+export function compute_URLMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "RangeEnd",
+      "rangeEnd",
       "The end of the range (exclusive).",
       [],
       true,
@@ -26,7 +26,7 @@ export function Compute_URLMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch
     ),
     new DynamicUIProps(
       InputType.Number,
-      "RangeStart",
+      "rangeStart",
       "The start of the range (inclusive).",
       [],
       true,

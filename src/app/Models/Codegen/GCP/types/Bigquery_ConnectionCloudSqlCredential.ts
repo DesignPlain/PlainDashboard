@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Bigquery_ConnectionCloudSqlCredential {
+export interface bigquery_ConnectionCloudSqlCredential {
+  // Username for database.
+  username?: string;
+
   /*
 Password for database.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  Password?: string;
-
-  // Username for database.
-  Username?: string;
+  password?: string;
 }
 
-export function Bigquery_ConnectionCloudSqlCredential_GetTypes(): DynamicUIProps[] {
+export function bigquery_ConnectionCloudSqlCredential_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Password",
-      "Password for database.\n**Note**: This property is sensitive and will not be displayed in the plan.",
+      "username",
+      "Username for database.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Username",
-      "Username for database.",
+      "password",
+      "Password for database.\n**Note**: This property is sensitive and will not be displayed in the plan.",
       [],
       true,
       false,

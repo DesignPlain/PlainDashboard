@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_UptimeCheckConfigTcpCheckPingConfig {
+export interface monitoring_UptimeCheckConfigTcpCheckPingConfig {
   // Number of ICMP pings. A maximum of 3 ICMP pings is currently supported.
-  PingsCount?: number;
+  pingsCount?: number;
 }
 
-export function Monitoring_UptimeCheckConfigTcpCheckPingConfig_GetTypes(): DynamicUIProps[] {
+export function monitoring_UptimeCheckConfigTcpCheckPingConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "PingsCount",
+      "pingsCount",
       "Number of ICMP pings. A maximum of 3 ICMP pings is currently supported.",
       [],
       true,

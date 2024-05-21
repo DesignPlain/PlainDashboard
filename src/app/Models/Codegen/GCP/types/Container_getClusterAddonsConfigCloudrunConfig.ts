@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterAddonsConfigCloudrunConfig {
+export interface container_getClusterAddonsConfigCloudrunConfig {
   //
-  Disabled?: boolean;
+  disabled?: boolean;
 
   //
-  LoadBalancerType?: string;
+  loadBalancerType?: string;
 }
 
-export function Container_getClusterAddonsConfigCloudrunConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterAddonsConfigCloudrunConfig_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.Bool, "Disabled", "", [], true, false),
+    new DynamicUIProps(InputType.Bool, "disabled", "", [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "LoadBalancerType",
+      "loadBalancerType",
       "",
       [],
       true,

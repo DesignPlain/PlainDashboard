@@ -7,13 +7,13 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Identityplatform_TenantInboundSamlConfigSpConfig,
-  Identityplatform_TenantInboundSamlConfigSpConfig_GetTypes,
-} from "../types/Identityplatform_TenantInboundSamlConfigSpConfig";
+  identityplatform_TenantInboundSamlConfigSpConfig,
+  identityplatform_TenantInboundSamlConfigSpConfig_GetTypes,
+} from "../types/identityplatform_TenantInboundSamlConfigSpConfig";
 import {
-  Identityplatform_TenantInboundSamlConfigIdpConfig,
-  Identityplatform_TenantInboundSamlConfigIdpConfig_GetTypes,
-} from "../types/Identityplatform_TenantInboundSamlConfigIdpConfig";
+  identityplatform_TenantInboundSamlConfigIdpConfig,
+  identityplatform_TenantInboundSamlConfigIdpConfig_GetTypes,
+} from "../types/identityplatform_TenantInboundSamlConfigIdpConfig";
 
 export interface TenantInboundSamlConfigArgs {
   /*
@@ -21,101 +21,77 @@ SAML SP (Service Provider) configuration when the project acts as the relying pa
 and accept an authentication assertion issued by a SAML identity provider.
 Structure is documented below.
 */
-  SpConfig?: Identityplatform_TenantInboundSamlConfigSpConfig;
+  spConfig?: identityplatform_TenantInboundSamlConfigSpConfig;
 
   // The name of the tenant where this inbound SAML config resource exists
-  Tenant?: string;
+  tenant?: string;
 
   // Human friendly display name.
-  DisplayName?: string;
+  displayName?: string;
 
   // If this config allows users to sign in with the provider.
-  Enabled?: boolean;
+  enabled?: boolean;
 
   /*
 SAML IdP configuration when the project acts as the relying party
 Structure is documented below.
 */
-  IdpConfig?: Identityplatform_TenantInboundSamlConfigIdpConfig;
+  idpConfig?: identityplatform_TenantInboundSamlConfigIdpConfig;
 
   /*
 The name of the InboundSamlConfig resource. Must start with 'saml.' and can only have alphanumeric characters,
 hyphens, underscores or periods. The part after 'saml.' must also start with a lowercase letter, end with an
 alphanumeric character, and have at least 2 characters.
 */
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 }
 export class TenantInboundSamlConfig extends Resource {
-  // The name of the tenant where this inbound SAML config resource exists
-  public Tenant?: string;
-
   // Human friendly display name.
-  public DisplayName?: string;
+  public displayName?: string;
 
   // If this config allows users to sign in with the provider.
-  public Enabled?: boolean;
+  public enabled?: boolean;
 
   /*
 SAML IdP configuration when the project acts as the relying party
 Structure is documented below.
 */
-  public IdpConfig?: Identityplatform_TenantInboundSamlConfigIdpConfig;
+  public idpConfig?: identityplatform_TenantInboundSamlConfigIdpConfig;
 
   /*
 The name of the InboundSamlConfig resource. Must start with 'saml.' and can only have alphanumeric characters,
 hyphens, underscores or periods. The part after 'saml.' must also start with a lowercase letter, end with an
 alphanumeric character, and have at least 2 characters.
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 SAML SP (Service Provider) configuration when the project acts as the relying party to receive
 and accept an authentication assertion issued by a SAML identity provider.
 Structure is documented below.
 */
-  public SpConfig?: Identityplatform_TenantInboundSamlConfigSpConfig;
+  public spConfig?: identityplatform_TenantInboundSamlConfigSpConfig;
+
+  // The name of the tenant where this inbound SAML config resource exists
+  public tenant?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "SpConfig",
-        "SAML SP (Service Provider) configuration when the project acts as the relying party to receive\nand accept an authentication assertion issued by a SAML identity provider.\nStructure is documented below.",
-        Identityplatform_TenantInboundSamlConfigSpConfig_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Tenant",
-        "The name of the tenant where this inbound SAML config resource exists",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "DisplayName",
+        "displayName",
         "Human friendly display name.",
         [],
         true,
@@ -123,7 +99,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "Enabled",
+        "enabled",
         "If this config allows users to sign in with the provider.",
         [],
         false,
@@ -131,18 +107,42 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "IdpConfig",
+        "idpConfig",
         "SAML IdP configuration when the project acts as the relying party\nStructure is documented below.",
-        Identityplatform_TenantInboundSamlConfigIdpConfig_GetTypes(),
+        identityplatform_TenantInboundSamlConfigIdpConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name of the InboundSamlConfig resource. Must start with 'saml.' and can only have alphanumeric characters,\nhyphens, underscores or periods. The part after 'saml.' must also start with a lowercase letter, end with an\nalphanumeric character, and have at least 2 characters.",
         [],
         false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "spConfig",
+        "SAML SP (Service Provider) configuration when the project acts as the relying party to receive\nand accept an authentication assertion issued by a SAML identity provider.\nStructure is documented below.",
+        identityplatform_TenantInboundSamlConfigSpConfig_GetTypes(),
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "tenant",
+        "The name of the tenant where this inbound SAML config resource exists",
+        [],
+        true,
         true,
       ),
     ];

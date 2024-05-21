@@ -7,27 +7,39 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Ml_EngineModelDefaultVersion,
-  Ml_EngineModelDefaultVersion_GetTypes,
-} from "../types/Ml_EngineModelDefaultVersion";
+  ml_EngineModelDefaultVersion,
+  ml_EngineModelDefaultVersion_GetTypes,
+} from "../types/ml_EngineModelDefaultVersion";
 
 export interface EngineModelArgs {
   /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  /*
+The list of regions where the model is going to be deployed.
+Currently only one region per model is supported
+*/
+  regions?: string;
+
+  /*
 The default version of the model. This version will be used to handle
 prediction requests that do not specify a version.
 Structure is documented below.
 */
-  DefaultVersion?: Ml_EngineModelDefaultVersion;
+  defaultVersion?: ml_EngineModelDefaultVersion;
 
   // The description specified for the model when it was created.
-  Description?: string;
+  description?: string;
 
   /*
 One or more labels that you can add, to organize your models.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   /*
 The name specified for the model.
@@ -35,84 +47,80 @@ The name specified for the model.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   // If true, online prediction nodes send stderr and stdout streams to Stackdriver Logging
-  OnlinePredictionConsoleLogging?: boolean;
+  onlinePredictionConsoleLogging?: boolean;
 
   // If true, online prediction access logs are sent to StackDriver Logging.
-  OnlinePredictionLogging?: boolean;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  /*
-The list of regions where the model is going to be deployed.
-Currently only one region per model is supported
-*/
-  Regions?: string;
+  onlinePredictionLogging?: boolean;
 }
 export class EngineModel extends Resource {
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  /*
-The default version of the model. This version will be used to handle
-prediction requests that do not specify a version.
-Structure is documented below.
-*/
-  public DefaultVersion?: Ml_EngineModelDefaultVersion;
-
-  // The description specified for the model when it was created.
-  public Description?: string;
-
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
-
-  /*
-One or more labels that you can add, to organize your models.
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  public Labels?: Map<string, string>;
-
-  /*
-The list of regions where the model is going to be deployed.
-Currently only one region per model is supported
-*/
-  public Regions?: string;
-
-  /*
-The name specified for the model.
-
-
-- - -
-*/
-  public Name?: string;
-
-  // If true, online prediction nodes send stderr and stdout streams to Stackdriver Logging
-  public OnlinePredictionConsoleLogging?: boolean;
-
-  // If true, online prediction access logs are sent to StackDriver Logging.
-  public OnlinePredictionLogging?: boolean;
-
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
+  public pulumiLabels?: Map<string, string>;
+
+  /*
+The list of regions where the model is going to be deployed.
+Currently only one region per model is supported
+*/
+  public regions?: string;
+
+  /*
+The default version of the model. This version will be used to handle
+prediction requests that do not specify a version.
+Structure is documented below.
+*/
+  public defaultVersion?: ml_EngineModelDefaultVersion;
+
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
+
+  // If true, online prediction access logs are sent to StackDriver Logging.
+  public onlinePredictionLogging?: boolean;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  // The description specified for the model when it was created.
+  public description?: string;
+
+  /*
+One or more labels that you can add, to organize your models.
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
+
+  /*
+The name specified for the model.
+
+
+- - -
+*/
+  public name?: string;
+
+  // If true, online prediction nodes send stderr and stdout streams to Stackdriver Logging
+  public onlinePredictionConsoleLogging?: boolean;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Regions",
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "regions",
         "The list of regions where the model is going to be deployed.\nCurrently only one region per model is supported",
         [],
         false,
@@ -120,15 +128,15 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "DefaultVersion",
+        "defaultVersion",
         "The default version of the model. This version will be used to handle\nprediction requests that do not specify a version.\nStructure is documented below.",
-        Ml_EngineModelDefaultVersion_GetTypes(),
+        ml_EngineModelDefaultVersion_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "The description specified for the model when it was created.",
         [],
         false,
@@ -136,7 +144,7 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "One or more labels that you can add, to organize your models.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
@@ -144,7 +152,7 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name specified for the model.\n\n\n- - -",
         [],
         false,
@@ -152,7 +160,7 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "OnlinePredictionConsoleLogging",
+        "onlinePredictionConsoleLogging",
         "If true, online prediction nodes send stderr and stdout streams to Stackdriver Logging",
         [],
         false,
@@ -160,16 +168,8 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "OnlinePredictionLogging",
+        "onlinePredictionLogging",
         "If true, online prediction access logs are sent to StackDriver Logging.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
         true,

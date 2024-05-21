@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionUrlMapTest {
+export interface compute_RegionUrlMapTest {
   // Description of this test case.
-  Description?: string;
+  description?: string;
 
   // Host portion of the URL.
-  Host?: string;
+  host?: string;
 
   // Path portion of the URL.
-  Path?: string;
+  path?: string;
 
   // A reference to expected RegionBackendService resource the given URL should be mapped to.
-  Service?: string;
+  service?: string;
 }
 
-export function Compute_RegionUrlMapTest_GetTypes(): DynamicUIProps[] {
+export function compute_RegionUrlMapTest_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "Description of this test case.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Compute_RegionUrlMapTest_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Host",
+      "host",
       "Host portion of the URL.",
       [],
       true,
@@ -40,7 +40,7 @@ export function Compute_RegionUrlMapTest_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Path",
+      "path",
       "Path portion of the URL.",
       [],
       true,
@@ -48,7 +48,7 @@ export function Compute_RegionUrlMapTest_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Service",
+      "service",
       "A reference to expected RegionBackendService resource the given URL should be mapped to.",
       [],
       true,

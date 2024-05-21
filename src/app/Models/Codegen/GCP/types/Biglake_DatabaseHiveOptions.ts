@@ -6,9 +6,9 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Biglake_DatabaseHiveOptions {
+export interface biglake_DatabaseHiveOptions {
   // Cloud Storage folder URI where the database data is stored, starting with "gs://".
-  LocationUri?: string;
+  locationUri?: string;
 
   /*
 Stores user supplied Hive database parameters. An object containing a
@@ -17,14 +17,14 @@ Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
 
 - - -
 */
-  Parameters?: Map<string, string>;
+  parameters?: Map<string, string>;
 }
 
-export function Biglake_DatabaseHiveOptions_GetTypes(): DynamicUIProps[] {
+export function biglake_DatabaseHiveOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "LocationUri",
+      "locationUri",
       'Cloud Storage folder URI where the database data is stored, starting with "gs://".',
       [],
       false,
@@ -32,7 +32,7 @@ export function Biglake_DatabaseHiveOptions_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Parameters",
+      "parameters",
       'Stores user supplied Hive database parameters. An object containing a\nlist of"key": value pairs.\nExample: { "name": "wrench", "mass": "1.3kg", "count": "3" }.\n\n- - -',
       InputType_Map_GetTypes(),
       false,

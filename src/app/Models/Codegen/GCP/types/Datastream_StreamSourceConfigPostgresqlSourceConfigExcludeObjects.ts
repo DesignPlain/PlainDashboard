@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchema,
-  Datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchema_GetTypes,
-} from "./Datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchema";
+  datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchema,
+  datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchema_GetTypes,
+} from "./datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchema";
 
-export interface Datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjects {
+export interface datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjects {
   /*
 PostgreSQL schemas on the server
 Structure is documented below.
 */
-  PostgresqlSchemas?: Array<Datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchema>;
+  postgresqlSchemas?: Array<datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchema>;
 }
 
-export function Datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjects_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjects_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "PostgresqlSchemas",
+      "postgresqlSchemas",
       "PostgreSQL schemas on the server\nStructure is documented below.",
-      Datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchema_GetTypes(),
+      datastream_StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchema_GetTypes(),
       true,
       false,
     ),

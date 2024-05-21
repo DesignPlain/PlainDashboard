@@ -6,37 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_ReservationShareSettingsProjectMap,
-  Compute_ReservationShareSettingsProjectMap_GetTypes,
-} from "./Compute_ReservationShareSettingsProjectMap";
+  compute_ReservationShareSettingsProjectMap,
+  compute_ReservationShareSettingsProjectMap_GetTypes,
+} from "./compute_ReservationShareSettingsProjectMap";
 
-export interface Compute_ReservationShareSettings {
+export interface compute_ReservationShareSettings {
   /*
 A map of project number and project config. This is only valid when shareType's value is SPECIFIC_PROJECTS.
 Structure is documented below.
 */
-  ProjectMaps?: Array<Compute_ReservationShareSettingsProjectMap>;
+  projectMaps?: Array<compute_ReservationShareSettingsProjectMap>;
 
   /*
 Type of sharing for this shared-reservation
 Possible values are: `LOCAL`, `SPECIFIC_PROJECTS`.
 */
-  ShareType?: string;
+  shareType?: string;
 }
 
-export function Compute_ReservationShareSettings_GetTypes(): DynamicUIProps[] {
+export function compute_ReservationShareSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ProjectMaps",
+      "projectMaps",
       "A map of project number and project config. This is only valid when shareType's value is SPECIFIC_PROJECTS.\nStructure is documented below.",
-      Compute_ReservationShareSettingsProjectMap_GetTypes(),
+      compute_ReservationShareSettingsProjectMap_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ShareType",
+      "shareType",
       "Type of sharing for this shared-reservation\nPossible values are: `LOCAL`, `SPECIFIC_PROJECTS`.",
       [],
       false,

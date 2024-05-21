@@ -14,10 +14,10 @@ The name of the Service Perimeter to add this resource to.
 
 - - -
 */
-  EgressPolicyName?: string;
+  egressPolicyName?: string;
 
   // A GCP resource that is inside of the service perimeter.
-  Resource?: string;
+  resource?: string;
 }
 export class EgressPolicy extends Resource {
   /*
@@ -26,16 +26,16 @@ The name of the Service Perimeter to add this resource to.
 
 - - -
 */
-  public EgressPolicyName?: string;
+  public egressPolicyName?: string;
 
   // A GCP resource that is inside of the service perimeter.
-  public Resource?: string;
+  public resource?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "EgressPolicyName",
+        "egressPolicyName",
         "The name of the Service Perimeter to add this resource to.\n\n\n- - -",
         [],
         true,
@@ -43,7 +43,7 @@ The name of the Service Perimeter to add this resource to.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Resource",
+        "resource",
         "A GCP resource that is inside of the service perimeter.",
         [],
         true,

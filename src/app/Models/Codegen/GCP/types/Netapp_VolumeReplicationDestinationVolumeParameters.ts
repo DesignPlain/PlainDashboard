@@ -6,25 +6,33 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Netapp_VolumeReplicationDestinationVolumeParameters {
-  // Name of an existing storage pool for the destination volume with format: `projects/{{project}}/locations/{{location}}/storagePools/{{poolId}}`
-  StoragePool?: string;
-
-  // Name for the destination volume to be created. If not specified, the name of the source volume will be used.
-  VolumeId?: string;
-
+export interface netapp_VolumeReplicationDestinationVolumeParameters {
   // Description for the destination volume.
-  Description?: string;
+  description?: string;
 
   // Share name for destination volume. If not specified, name of source volume's share name will be used.
-  ShareName?: string;
+  shareName?: string;
+
+  // Name of an existing storage pool for the destination volume with format: `projects/{{project}}/locations/{{location}}/storagePools/{{poolId}}`
+  storagePool?: string;
+
+  // Name for the destination volume to be created. If not specified, the name of the source volume will be used.
+  volumeId?: string;
 }
 
-export function Netapp_VolumeReplicationDestinationVolumeParameters_GetTypes(): DynamicUIProps[] {
+export function netapp_VolumeReplicationDestinationVolumeParameters_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ShareName",
+      "description",
+      "Description for the destination volume.",
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "shareName",
       "Share name for destination volume. If not specified, name of source volume's share name will be used.",
       [],
       false,
@@ -32,7 +40,7 @@ export function Netapp_VolumeReplicationDestinationVolumeParameters_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "StoragePool",
+      "storagePool",
       "Name of an existing storage pool for the destination volume with format: `projects/{{project}}/locations/{{location}}/storagePools/{{poolId}}`",
       [],
       true,
@@ -40,16 +48,8 @@ export function Netapp_VolumeReplicationDestinationVolumeParameters_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "VolumeId",
+      "volumeId",
       "Name for the destination volume to be created. If not specified, the name of the source volume will be used.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Description",
-      "Description for the destination volume.",
       [],
       false,
       true,

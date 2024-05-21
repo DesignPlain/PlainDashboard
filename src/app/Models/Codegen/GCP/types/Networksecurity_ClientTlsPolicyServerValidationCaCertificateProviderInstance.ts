@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networksecurity_ClientTlsPolicyServerValidationCaCertificateProviderInstance {
+export interface networksecurity_ClientTlsPolicyServerValidationCaCertificateProviderInstance {
   // Plugin instance name, used to locate and load CertificateProvider instance configuration. Set to "google_cloud_private_spiffe" to use Certificate Authority Service certificate provider instance.
-  PluginInstance?: string;
+  pluginInstance?: string;
 }
 
-export function Networksecurity_ClientTlsPolicyServerValidationCaCertificateProviderInstance_GetTypes(): DynamicUIProps[] {
+export function networksecurity_ClientTlsPolicyServerValidationCaCertificateProviderInstance_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PluginInstance",
+      "pluginInstance",
       'Plugin instance name, used to locate and load CertificateProvider instance configuration. Set to "google_cloud_private_spiffe" to use Certificate Authority Service certificate provider instance.',
       [],
       true,

@@ -6,28 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Alloydb_getLocationsLocation {
-  // Resource name for the location, which may vary between implementations. For example: "projects/example-project/locations/us-east1".
-  Name?: string;
-
+export interface alloydb_getLocationsLocation {
   // The friendly name for this location, typically a nearby city name. For example, "Tokyo".
-  DisplayName?: string;
+  displayName?: string;
 
   // Cross-service attributes for the location. For example `{"cloud.googleapis.com/region": "us-east1"}`.
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   // The canonical id for this location. For example: "us-east1"..
-  LocationId?: string;
+  locationId?: string;
 
   // Service-specific metadata. For example the available capacity at the given location.
-  Metadata?: Map<string, string>;
+  metadata?: Map<string, string>;
+
+  // Resource name for the location, which may vary between implementations. For example: "projects/example-project/locations/us-east1".
+  name?: string;
 }
 
-export function Alloydb_getLocationsLocation_GetTypes(): DynamicUIProps[] {
+export function alloydb_getLocationsLocation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DisplayName",
+      "name",
+      'Resource name for the location, which may vary between implementations. For example: "projects/example-project/locations/us-east1".',
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "displayName",
       'The friendly name for this location, typically a nearby city name. For example, "Tokyo".',
       [],
       true,
@@ -35,7 +43,7 @@ export function Alloydb_getLocationsLocation_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Labels",
+      "labels",
       'Cross-service attributes for the location. For example `{"cloud.googleapis.com/region": "us-east1"}`.',
       InputType_Map_GetTypes(),
       true,
@@ -43,7 +51,7 @@ export function Alloydb_getLocationsLocation_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "LocationId",
+      "locationId",
       'The canonical id for this location. For example: "us-east1"..',
       [],
       true,
@@ -51,17 +59,9 @@ export function Alloydb_getLocationsLocation_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Metadata",
+      "metadata",
       "Service-specific metadata. For example the available capacity at the given location.",
       InputType_Map_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Name",
-      'Resource name for the location, which may vary between implementations. For example: "projects/example-project/locations/us-east1".',
-      [],
       true,
       false,
     ),

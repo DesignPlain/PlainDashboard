@@ -7,70 +7,51 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Storage_BucketObjectRetention,
-  Storage_BucketObjectRetention_GetTypes,
-} from "../types/Storage_BucketObjectRetention";
+  storage_BucketObjectRetention,
+  storage_BucketObjectRetention_GetTypes,
+} from "../types/storage_BucketObjectRetention";
 import {
-  Storage_BucketObjectCustomerEncryption,
-  Storage_BucketObjectCustomerEncryption_GetTypes,
-} from "../types/Storage_BucketObjectCustomerEncryption";
+  storage_BucketObjectCustomerEncryption,
+  storage_BucketObjectCustomerEncryption_GetTypes,
+} from "../types/storage_BucketObjectCustomerEncryption";
 
 export interface BucketObjectArgs {
-  // [Content-Encoding](https://tools.ietf.org/html/rfc7231#section-3.1.2.2) of the object data.
-  ContentEncoding?: string;
-
-  //
-  DetectMd5hash?: string;
-
-  // Whether an object is under [event-based hold](https://cloud.google.com/storage/docs/object-holds#hold-types). Event-based hold is a way to retain objects until an event occurs, which is signified by the hold's release (i.e. this value is set to false). After being released (set to false), such objects will be subject to bucket-level retention (if any).
-  EventBasedHold?: boolean;
-
-  // Whether an object is under [temporary hold](https://cloud.google.com/storage/docs/object-holds#hold-types). While this flag is set to true, the object is protected against deletion and overwrites.
-  TemporaryHold?: boolean;
-
   /*
 [Cache-Control](https://tools.ietf.org/html/rfc7234#section-5.2)
 directive to specify caching behavior of object data. If omitted and object is accessible to all anonymous users, the default will be public, max-age=3600
 */
-  CacheControl?: string;
+  cacheControl?: string;
 
-  // Data as `string` to be uploaded. Must be defined if `source` is not. --Note--: The `content` field is marked as sensitive.
-  Content?: string;
-
-  /*
-The [StorageClass](https://cloud.google.com/storage/docs/storage-classes) of the new bucket object.
-Supported values include: `MULTI_REGIONAL`, `REGIONAL`, `NEARLINE`, `COLDLINE`, `ARCHIVE`. If not provided, this defaults to the bucket's default
-storage class or to a [standard](https://cloud.google.com/storage/docs/storage-classes#standard) class.
-*/
-  StorageClass?: string;
-
-  // [Content-Type](https://tools.ietf.org/html/rfc7231#section-3.1.1.5) of the object data. Defaults to "application/octet-stream" or "text/plain; charset=utf-8".
-  ContentType?: string;
+  //
+  detectMd5hash?: string;
 
   // The [object retention](http://cloud.google.com/storage/docs/object-lock) settings for the object. The retention settings allow an object to be retained until a provided date. Structure is documented below.
-  Retention?: Storage_BucketObjectRetention;
+  retention?: storage_BucketObjectRetention;
 
-  // [Content-Language](https://tools.ietf.org/html/rfc7231#section-3.1.3.2) of the object data.
-  ContentLanguage?: string;
+  // The name of the containing bucket.
+  bucket?: string;
 
-  // The name of the object. If you're interpolating the name of this object, see `output_name` instead.
-  Name?: string;
+  // Data as `string` to be uploaded. Must be defined if `source` is not. --Note--: The `content` field is marked as sensitive.
+  content?: string;
+
+  // [Content-Disposition](https://tools.ietf.org/html/rfc6266) of the object data.
+  contentDisposition?: string;
+
+  // [Content-Type](https://tools.ietf.org/html/rfc7231#section-3.1.1.5) of the object data. Defaults to "application/octet-stream" or "text/plain; charset=utf-8".
+  contentType?: string;
 
   /*
 Enables object encryption with Customer-Supplied Encryption Key (CSEK). Google [documentation about CSEK.](https://cloud.google.com/storage/docs/encryption/customer-supplied-keys)
 Structure is documented below.
 */
-  CustomerEncryption?: Storage_BucketObjectCustomerEncryption;
-
-  // The resource name of the Cloud KMS key that will be used to [encrypt](https://cloud.google.com/storage/docs/encryption/using-customer-managed-keys) the object.
-  KmsKeyName?: string;
+  customerEncryption?: storage_BucketObjectCustomerEncryption;
 
   /*
 User-provided metadata, in key/value pairs.
 
 One of the following is required:
 */
-  Metadata?: Map<string, string>;
+  metadata?: Map<string, string>;
 
   /*
 A path to the data you want to upload. Must be defined
@@ -78,140 +59,127 @@ if `content` is not.
 
 - - -
 */
-  Source?: InputType.String;
+  source?: string;
 
-  // The name of the containing bucket.
-  Bucket?: string;
+  // [Content-Encoding](https://tools.ietf.org/html/rfc7231#section-3.1.2.2) of the object data.
+  contentEncoding?: string;
 
-  // [Content-Disposition](https://tools.ietf.org/html/rfc6266) of the object data.
-  ContentDisposition?: string;
-}
-export class BucketObject extends Resource {
-  // Data as `string` to be uploaded. Must be defined if `source` is not. --Note--: The `content` field is marked as sensitive.
-  public Content?: string;
+  // [Content-Language](https://tools.ietf.org/html/rfc7231#section-3.1.3.2) of the object data.
+  contentLanguage?: string;
 
   // Whether an object is under [event-based hold](https://cloud.google.com/storage/docs/object-holds#hold-types). Event-based hold is a way to retain objects until an event occurs, which is signified by the hold's release (i.e. this value is set to false). After being released (set to false), such objects will be subject to bucket-level retention (if any).
-  public EventBasedHold?: boolean;
+  eventBasedHold?: boolean;
 
-  // The [object retention](http://cloud.google.com/storage/docs/object-lock) settings for the object. The retention settings allow an object to be retained until a provided date. Structure is documented below.
-  public Retention?: Storage_BucketObjectRetention;
+  // The resource name of the Cloud KMS key that will be used to [encrypt](https://cloud.google.com/storage/docs/encryption/using-customer-managed-keys) the object.
+  kmsKeyName?: string;
+
+  // The name of the object. If you're interpolating the name of this object, see `output_name` instead.
+  name?: string;
 
   /*
 The [StorageClass](https://cloud.google.com/storage/docs/storage-classes) of the new bucket object.
 Supported values include: `MULTI_REGIONAL`, `REGIONAL`, `NEARLINE`, `COLDLINE`, `ARCHIVE`. If not provided, this defaults to the bucket's default
 storage class or to a [standard](https://cloud.google.com/storage/docs/storage-classes#standard) class.
 */
-  public StorageClass?: string;
+  storageClass?: string;
 
-  // The name of the containing bucket.
-  public Bucket?: string;
+  // Whether an object is under [temporary hold](https://cloud.google.com/storage/docs/object-holds#hold-types). While this flag is set to true, the object is protected against deletion and overwrites.
+  temporaryHold?: boolean;
+}
+export class BucketObject extends Resource {
+  /*
+User-provided metadata, in key/value pairs.
 
-  // (Computed) A url reference to download this object.
-  public MediaLink?: string;
+One of the following is required:
+*/
+  public metadata?: Map<string, string>;
 
-  // The name of the object. If you're interpolating the name of this object, see `output_name` instead.
-  public Name?: string;
+  /*
+A path to the data you want to upload. Must be defined
+if `content` is not.
+
+- - -
+*/
+  public source?: string;
+
+  // Whether an object is under [temporary hold](https://cloud.google.com/storage/docs/object-holds#hold-types). While this flag is set to true, the object is protected against deletion and overwrites.
+  public temporaryHold?: boolean;
 
   /*
 (Computed) The name of the object. Use this field in interpolations with `gcp.storage.ObjectACL` to recreate
 `gcp.storage.ObjectACL` resources when your `gcp.storage.BucketObject` is recreated.
 */
-  public OutputName?: string;
+  public outputName?: string;
 
   // (Computed) A url reference to this object.
-  public SelfLink?: string;
-
-  // [Content-Encoding](https://tools.ietf.org/html/rfc7231#section-3.1.2.2) of the object data.
-  public ContentEncoding?: string;
-
-  // [Content-Type](https://tools.ietf.org/html/rfc7231#section-3.1.1.5) of the object data. Defaults to "application/octet-stream" or "text/plain; charset=utf-8".
-  public ContentType?: string;
-
-  /*
-Enables object encryption with Customer-Supplied Encryption Key (CSEK). Google [documentation about CSEK.](https://cloud.google.com/storage/docs/encryption/customer-supplied-keys)
-Structure is documented below.
-*/
-  public CustomerEncryption?: Storage_BucketObjectCustomerEncryption;
-
-  //
-  public DetectMd5hash?: string;
-
-  // The resource name of the Cloud KMS key that will be used to [encrypt](https://cloud.google.com/storage/docs/encryption/using-customer-managed-keys) the object.
-  public KmsKeyName?: string;
-
-  // (Computed) Base 64 MD5 hash of the uploaded data.
-  public Md5hash?: string;
-
-  /*
-A path to the data you want to upload. Must be defined
-if `content` is not.
-
-- - -
-*/
-  public Source?: InputType.String;
+  public selfLink?: string;
 
   /*
 [Cache-Control](https://tools.ietf.org/html/rfc7234#section-5.2)
 directive to specify caching behavior of object data. If omitted and object is accessible to all anonymous users, the default will be public, max-age=3600
 */
-  public CacheControl?: string;
+  public cacheControl?: string;
 
-  // [Content-Language](https://tools.ietf.org/html/rfc7231#section-3.1.3.2) of the object data.
-  public ContentLanguage?: string;
+  // [Content-Encoding](https://tools.ietf.org/html/rfc7231#section-3.1.2.2) of the object data.
+  public contentEncoding?: string;
 
   // (Computed) Base 64 CRC32 hash of the uploaded data.
-  public Crc32c?: string;
+  public crc32c?: string;
 
-  /*
-User-provided metadata, in key/value pairs.
+  //
+  public detectMd5hash?: string;
 
-One of the following is required:
-*/
-  public Metadata?: Map<string, string>;
+  // The name of the object. If you're interpolating the name of this object, see `output_name` instead.
+  public name?: string;
 
-  // Whether an object is under [temporary hold](https://cloud.google.com/storage/docs/object-holds#hold-types). While this flag is set to true, the object is protected against deletion and overwrites.
-  public TemporaryHold?: boolean;
+  // (Computed) A url reference to download this object.
+  public mediaLink?: string;
 
   // [Content-Disposition](https://tools.ietf.org/html/rfc6266) of the object data.
-  public ContentDisposition?: string;
+  public contentDisposition?: string;
+
+  // [Content-Type](https://tools.ietf.org/html/rfc7231#section-3.1.1.5) of the object data. Defaults to "application/octet-stream" or "text/plain; charset=utf-8".
+  public contentType?: string;
+
+  /*
+Enables object encryption with Customer-Supplied Encryption Key (CSEK). Google [documentation about CSEK.](https://cloud.google.com/storage/docs/encryption/customer-supplied-keys)
+Structure is documented below.
+*/
+  public customerEncryption?: storage_BucketObjectCustomerEncryption;
+
+  // The resource name of the Cloud KMS key that will be used to [encrypt](https://cloud.google.com/storage/docs/encryption/using-customer-managed-keys) the object.
+  public kmsKeyName?: string;
+
+  // (Computed) Base 64 MD5 hash of the uploaded data.
+  public md5hash?: string;
+
+  /*
+The [StorageClass](https://cloud.google.com/storage/docs/storage-classes) of the new bucket object.
+Supported values include: `MULTI_REGIONAL`, `REGIONAL`, `NEARLINE`, `COLDLINE`, `ARCHIVE`. If not provided, this defaults to the bucket's default
+storage class or to a [standard](https://cloud.google.com/storage/docs/storage-classes#standard) class.
+*/
+  public storageClass?: string;
+
+  // The name of the containing bucket.
+  public bucket?: string;
+
+  // Data as `string` to be uploaded. Must be defined if `source` is not. --Note--: The `content` field is marked as sensitive.
+  public content?: string;
+
+  // [Content-Language](https://tools.ietf.org/html/rfc7231#section-3.1.3.2) of the object data.
+  public contentLanguage?: string;
+
+  // Whether an object is under [event-based hold](https://cloud.google.com/storage/docs/object-holds#hold-types). Event-based hold is a way to retain objects until an event occurs, which is signified by the hold's release (i.e. this value is set to false). After being released (set to false), such objects will be subject to bucket-level retention (if any).
+  public eventBasedHold?: boolean;
+
+  // The [object retention](http://cloud.google.com/storage/docs/object-lock) settings for the object. The retention settings allow an object to be retained until a provided date. Structure is documented below.
+  public retention?: storage_BucketObjectRetention;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "ContentEncoding",
-        "[Content-Encoding](https://tools.ietf.org/html/rfc7231#section-3.1.2.2) of the object data.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "DetectMd5hash",
-        "",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "StorageClass",
-        "The [StorageClass](https://cloud.google.com/storage/docs/storage-classes) of the new bucket object.\nSupported values include: `MULTI_REGIONAL`, `REGIONAL`, `NEARLINE`, `COLDLINE`, `ARCHIVE`. If not provided, this defaults to the bucket's default\nstorage class or to a [standard](https://cloud.google.com/storage/docs/storage-classes#standard) class.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Bucket",
-        "The name of the containing bucket.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "CacheControl",
+        "cacheControl",
         "[Cache-Control](https://tools.ietf.org/html/rfc7234#section-5.2)\ndirective to specify caching behavior of object data. If omitted and object is accessible to all anonymous users, the default will be public, max-age=3600",
         [],
         false,
@@ -219,63 +187,23 @@ One of the following is required:
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Retention",
-        "The [object retention](http://cloud.google.com/storage/docs/object-lock) settings for the object. The retention settings allow an object to be retained until a provided date. Structure is documented below.",
-        Storage_BucketObjectRetention_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Map,
-        "Metadata",
-        "User-provided metadata, in key/value pairs.\n\nOne of the following is required:",
-        InputType_Map_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Bool,
-        "TemporaryHold",
-        "Whether an object is under [temporary hold](https://cloud.google.com/storage/docs/object-holds#hold-types). While this flag is set to true, the object is protected against deletion and overwrites.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "KmsKeyName",
-        "The resource name of the Cloud KMS key that will be used to [encrypt](https://cloud.google.com/storage/docs/encryption/using-customer-managed-keys) the object.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "Source",
+        "source",
         "A path to the data you want to upload. Must be defined\nif `content` is not.\n\n- - -",
         InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
-        InputType.Object,
-        "CustomerEncryption",
-        "Enables object encryption with Customer-Supplied Encryption Key (CSEK). Google [documentation about CSEK.](https://cloud.google.com/storage/docs/encryption/customer-supplied-keys)\nStructure is documented below.",
-        Storage_BucketObjectCustomerEncryption_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "ContentDisposition",
-        "[Content-Disposition](https://tools.ietf.org/html/rfc6266) of the object data.",
+        "contentLanguage",
+        "[Content-Language](https://tools.ietf.org/html/rfc7231#section-3.1.3.2) of the object data.",
         [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "EventBasedHold",
+        "eventBasedHold",
         "Whether an object is under [event-based hold](https://cloud.google.com/storage/docs/object-holds#hold-types). Event-based hold is a way to retain objects until an event occurs, which is signified by the hold's release (i.e. this value is set to false). After being released (set to false), such objects will be subject to bucket-level retention (if any).",
         [],
         false,
@@ -283,7 +211,79 @@ One of the following is required:
       ),
       new DynamicUIProps(
         InputType.String,
-        "Content",
+        "name",
+        "The name of the object. If you're interpolating the name of this object, see `output_name` instead.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "retention",
+        "The [object retention](http://cloud.google.com/storage/docs/object-lock) settings for the object. The retention settings allow an object to be retained until a provided date. Structure is documented below.",
+        storage_BucketObjectRetention_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "contentDisposition",
+        "[Content-Disposition](https://tools.ietf.org/html/rfc6266) of the object data.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "kmsKeyName",
+        "The resource name of the Cloud KMS key that will be used to [encrypt](https://cloud.google.com/storage/docs/encryption/using-customer-managed-keys) the object.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "storageClass",
+        "The [StorageClass](https://cloud.google.com/storage/docs/storage-classes) of the new bucket object.\nSupported values include: `MULTI_REGIONAL`, `REGIONAL`, `NEARLINE`, `COLDLINE`, `ARCHIVE`. If not provided, this defaults to the bucket's default\nstorage class or to a [standard](https://cloud.google.com/storage/docs/storage-classes#standard) class.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "customerEncryption",
+        "Enables object encryption with Customer-Supplied Encryption Key (CSEK). Google [documentation about CSEK.](https://cloud.google.com/storage/docs/encryption/customer-supplied-keys)\nStructure is documented below.",
+        storage_BucketObjectCustomerEncryption_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Bool,
+        "temporaryHold",
+        "Whether an object is under [temporary hold](https://cloud.google.com/storage/docs/object-holds#hold-types). While this flag is set to true, the object is protected against deletion and overwrites.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "detectMd5hash",
+        "",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "bucket",
+        "The name of the containing bucket.",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "content",
         "Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive.",
         [],
         false,
@@ -291,24 +291,24 @@ One of the following is required:
       ),
       new DynamicUIProps(
         InputType.String,
-        "ContentType",
+        "contentType",
         '[Content-Type](https://tools.ietf.org/html/rfc7231#section-3.1.1.5) of the object data. Defaults to "application/octet-stream" or "text/plain; charset=utf-8".',
         [],
         false,
         true,
       ),
       new DynamicUIProps(
-        InputType.String,
-        "ContentLanguage",
-        "[Content-Language](https://tools.ietf.org/html/rfc7231#section-3.1.3.2) of the object data.",
-        [],
+        InputType.Map,
+        "metadata",
+        "User-provided metadata, in key/value pairs.\n\nOne of the following is required:",
+        InputType_Map_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
-        "The name of the object. If you're interpolating the name of this object, see `output_name` instead.",
+        "contentEncoding",
+        "[Content-Encoding](https://tools.ietf.org/html/rfc7231#section-3.1.2.2) of the object data.",
         [],
         false,
         true,

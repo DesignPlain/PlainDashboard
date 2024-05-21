@@ -6,69 +6,37 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudrunv2_getServiceTerminalCondition {
-  // A common (service-level) reason for this condition.
-  Reason?: string;
-
+export interface cloudrunv2_getServiceTerminalCondition {
   // A reason for the revision condition.
-  RevisionReason?: string;
+  revisionReason?: string;
 
   // How to interpret failures of this condition, one of Error, Warning, Info
-  Severity?: string;
+  severity?: string;
 
   // State of the condition.
-  State?: string;
+  state?: string;
 
   // type is used to communicate the status of the reconciliation process. See also: https://github.com/knative/serving/blob/main/docs/spec/errors.md#error-conditions-and-reporting Types common to all resources include: - "Ready": True when the Resource is ready.
-  Type?: string;
+  type?: string;
 
   // A reason for the execution condition.
-  ExecutionReason?: string;
+  executionReason?: string;
 
   // Last time the condition transitioned from one status to another.
-  LastTransitionTime?: string;
+  lastTransitionTime?: string;
 
   // Human readable message indicating details about the current status.
-  Message?: string;
+  message?: string;
+
+  // A common (service-level) reason for this condition.
+  reason?: string;
 }
 
-export function Cloudrunv2_getServiceTerminalCondition_GetTypes(): DynamicUIProps[] {
+export function cloudrunv2_getServiceTerminalCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ExecutionReason",
-      "A reason for the execution condition.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "LastTransitionTime",
-      "Last time the condition transitioned from one status to another.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Message",
-      "Human readable message indicating details about the current status.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Reason",
-      "A common (service-level) reason for this condition.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "RevisionReason",
+      "revisionReason",
       "A reason for the revision condition.",
       [],
       true,
@@ -76,7 +44,7 @@ export function Cloudrunv2_getServiceTerminalCondition_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "Severity",
+      "severity",
       "How to interpret failures of this condition, one of Error, Warning, Info",
       [],
       true,
@@ -84,7 +52,7 @@ export function Cloudrunv2_getServiceTerminalCondition_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "State of the condition.",
       [],
       true,
@@ -92,8 +60,40 @@ export function Cloudrunv2_getServiceTerminalCondition_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       'type is used to communicate the status of the reconciliation process. See also: https://github.com/knative/serving/blob/main/docs/spec/errors.md#error-conditions-and-reporting Types common to all resources include: * "Ready": True when the Resource is ready.',
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "executionReason",
+      "A reason for the execution condition.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "lastTransitionTime",
+      "Last time the condition transitioned from one status to another.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "message",
+      "Human readable message indicating details about the current status.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "reason",
+      "A common (service-level) reason for this condition.",
       [],
       true,
       false,

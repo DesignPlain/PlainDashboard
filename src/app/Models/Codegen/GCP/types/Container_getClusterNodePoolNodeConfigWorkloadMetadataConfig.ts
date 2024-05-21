@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodePoolNodeConfigWorkloadMetadataConfig {
+export interface container_getClusterNodePoolNodeConfigWorkloadMetadataConfig {
   // Mode is the configuration for how to expose metadata to workloads running on the node.
-  Mode?: string;
+  mode?: string;
 }
 
-export function Container_getClusterNodePoolNodeConfigWorkloadMetadataConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolNodeConfigWorkloadMetadataConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Mode",
+      "mode",
       "Mode is the configuration for how to expose metadata to workloads running on the node.",
       [],
       true,

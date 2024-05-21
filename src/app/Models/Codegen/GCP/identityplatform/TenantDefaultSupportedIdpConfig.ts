@@ -8,6 +8,20 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface TenantDefaultSupportedIdpConfigArgs {
+  // OAuth client ID
+  clientId?: string;
+
+  /*
+OAuth client secret
+
+
+- - -
+*/
+  clientSecret?: string;
+
+  // If this IDP allows the user to sign in
+  enabled?: boolean;
+
   /*
 ID of the IDP. Possible values include:
 - `apple.com`
@@ -21,43 +35,20 @@ ID of the IDP. Possible values include:
 - `twitter.com`
 - `yahoo.com`
 */
-  IdpId?: string;
+  idpId?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // The name of the tenant where this DefaultSupportedIdpConfig resource exists
-  Tenant?: string;
-
-  // OAuth client ID
-  ClientId?: string;
-
-  /*
-OAuth client secret
-
-
-- - -
-*/
-  ClientSecret?: string;
-
-  // If this IDP allows the user to sign in
-  Enabled?: boolean;
+  tenant?: string;
 }
 export class TenantDefaultSupportedIdpConfig extends Resource {
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  // The name of the tenant where this DefaultSupportedIdpConfig resource exists
-  public Tenant?: string;
-
   // OAuth client ID
-  public ClientId?: string;
+  public clientId?: string;
 
   /*
 OAuth client secret
@@ -65,10 +56,10 @@ OAuth client secret
 
 - - -
 */
-  public ClientSecret?: string;
+  public clientSecret?: string;
 
   // If this IDP allows the user to sign in
-  public Enabled?: boolean;
+  public enabled?: boolean;
 
   /*
 ID of the IDP. Possible values include:
@@ -83,24 +74,25 @@ ID of the IDP. Possible values include:
 - `twitter.com`
 - `yahoo.com`
 */
-  public IdpId?: string;
+  public idpId?: string;
 
   // The name of the default supported IDP config resource
-  public Name?: string;
+  public name?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  // The name of the tenant where this DefaultSupportedIdpConfig resource exists
+  public tenant?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "ClientId",
-        "OAuth client ID",
-        [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ClientSecret",
+        "clientSecret",
         "OAuth client secret\n\n\n- - -",
         [],
         true,
@@ -108,7 +100,7 @@ ID of the IDP. Possible values include:
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "Enabled",
+        "enabled",
         "If this IDP allows the user to sign in",
         [],
         false,
@@ -116,7 +108,7 @@ ID of the IDP. Possible values include:
       ),
       new DynamicUIProps(
         InputType.String,
-        "IdpId",
+        "idpId",
         "ID of the IDP. Possible values include:\n* `apple.com`\n* `facebook.com`\n* `gc.apple.com`\n* `github.com`\n* `google.com`\n* `linkedin.com`\n* `microsoft.com`\n* `playgames.google.com`\n* `twitter.com`\n* `yahoo.com`",
         [],
         true,
@@ -124,7 +116,7 @@ ID of the IDP. Possible values include:
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -132,11 +124,19 @@ ID of the IDP. Possible values include:
       ),
       new DynamicUIProps(
         InputType.String,
-        "Tenant",
+        "tenant",
         "The name of the tenant where this DefaultSupportedIdpConfig resource exists",
         [],
         true,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "clientId",
+        "OAuth client ID",
+        [],
+        true,
+        false,
       ),
     ];
   }

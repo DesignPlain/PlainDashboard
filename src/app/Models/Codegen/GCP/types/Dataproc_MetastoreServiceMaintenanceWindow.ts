@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_MetastoreServiceMaintenanceWindow {
+export interface dataproc_MetastoreServiceMaintenanceWindow {
   /*
 The day of week, when the window starts.
 Possible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
 */
-  DayOfWeek?: string;
+  dayOfWeek?: string;
 
   // The hour of day (0-23) when the window starts.
-  HourOfDay?: number;
+  hourOfDay?: number;
 }
 
-export function Dataproc_MetastoreServiceMaintenanceWindow_GetTypes(): DynamicUIProps[] {
+export function dataproc_MetastoreServiceMaintenanceWindow_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DayOfWeek",
+      "dayOfWeek",
       "The day of week, when the window starts.\nPossible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Dataproc_MetastoreServiceMaintenanceWindow_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Number,
-      "HourOfDay",
+      "hourOfDay",
       "The hour of day (0-23) when the window starts.",
       [],
       true,

@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabase,
-  Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabase_GetTypes,
-} from "./Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabase";
+  datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabase,
+  datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabase_GetTypes,
+} from "./datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabase";
 
-export interface Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects {
+export interface datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects {
   /*
 MySQL databases on the server
 Structure is documented below.
 */
-  MysqlDatabases?: Array<Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabase>;
+  mysqlDatabases?: Array<datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabase>;
 }
 
-export function Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "MysqlDatabases",
+      "mysqlDatabases",
       "MySQL databases on the server\nStructure is documented below.",
-      Datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabase_GetTypes(),
+      datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabase_GetTypes(),
       true,
       false,
     ),

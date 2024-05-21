@@ -6,50 +6,58 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Accesscontextmanager_AccessLevelBasicConditionDevicePolicyOsConstraint,
-  Accesscontextmanager_AccessLevelBasicConditionDevicePolicyOsConstraint_GetTypes,
-} from "./Accesscontextmanager_AccessLevelBasicConditionDevicePolicyOsConstraint";
+  accesscontextmanager_AccessLevelBasicConditionDevicePolicyOsConstraint,
+  accesscontextmanager_AccessLevelBasicConditionDevicePolicyOsConstraint_GetTypes,
+} from "./accesscontextmanager_AccessLevelBasicConditionDevicePolicyOsConstraint";
 
-export interface Accesscontextmanager_AccessLevelBasicConditionDevicePolicy {
-  /*
-Whether or not screenlock is required for the DevicePolicy
-to be true. Defaults to false.
-*/
-  RequireScreenLock?: boolean;
-
+export interface accesscontextmanager_AccessLevelBasicConditionDevicePolicy {
   /*
 A list of allowed device management levels.
 An empty list allows all management levels.
 Each value may be one of: `MANAGEMENT_UNSPECIFIED`, `NONE`, `BASIC`, `COMPLETE`.
 */
-  AllowedDeviceManagementLevels?: Array<string>;
+  allowedDeviceManagementLevels?: Array<string>;
 
   /*
 A list of allowed encryptions statuses.
 An empty list allows all statuses.
 Each value may be one of: `ENCRYPTION_UNSPECIFIED`, `ENCRYPTION_UNSUPPORTED`, `UNENCRYPTED`, `ENCRYPTED`.
 */
-  AllowedEncryptionStatuses?: Array<string>;
+  allowedEncryptionStatuses?: Array<string>;
 
   /*
 A list of allowed OS versions.
 An empty list allows all types and all versions.
 Structure is documented below.
 */
-  OsConstraints?: Array<Accesscontextmanager_AccessLevelBasicConditionDevicePolicyOsConstraint>;
+  osConstraints?: Array<accesscontextmanager_AccessLevelBasicConditionDevicePolicyOsConstraint>;
 
   // Whether the device needs to be approved by the customer admin.
-  RequireAdminApproval?: boolean;
+  requireAdminApproval?: boolean;
 
   // Whether the device needs to be corp owned.
-  RequireCorpOwned?: boolean;
+  requireCorpOwned?: boolean;
+
+  /*
+Whether or not screenlock is required for the DevicePolicy
+to be true. Defaults to false.
+*/
+  requireScreenLock?: boolean;
 }
 
-export function Accesscontextmanager_AccessLevelBasicConditionDevicePolicy_GetTypes(): DynamicUIProps[] {
+export function accesscontextmanager_AccessLevelBasicConditionDevicePolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "RequireScreenLock",
+      "requireCorpOwned",
+      "Whether the device needs to be corp owned.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "requireScreenLock",
       "Whether or not screenlock is required for the DevicePolicy\nto be true. Defaults to false.",
       [],
       false,
@@ -57,7 +65,7 @@ export function Accesscontextmanager_AccessLevelBasicConditionDevicePolicy_GetTy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AllowedDeviceManagementLevels",
+      "allowedDeviceManagementLevels",
       "A list of allowed device management levels.\nAn empty list allows all management levels.\nEach value may be one of: `MANAGEMENT_UNSPECIFIED`, `NONE`, `BASIC`, `COMPLETE`.",
       InputType_String_GetTypes(),
       false,
@@ -65,7 +73,7 @@ export function Accesscontextmanager_AccessLevelBasicConditionDevicePolicy_GetTy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "AllowedEncryptionStatuses",
+      "allowedEncryptionStatuses",
       "A list of allowed encryptions statuses.\nAn empty list allows all statuses.\nEach value may be one of: `ENCRYPTION_UNSPECIFIED`, `ENCRYPTION_UNSUPPORTED`, `UNENCRYPTED`, `ENCRYPTED`.",
       InputType_String_GetTypes(),
       false,
@@ -73,24 +81,16 @@ export function Accesscontextmanager_AccessLevelBasicConditionDevicePolicy_GetTy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "OsConstraints",
+      "osConstraints",
       "A list of allowed OS versions.\nAn empty list allows all types and all versions.\nStructure is documented below.",
-      Accesscontextmanager_AccessLevelBasicConditionDevicePolicyOsConstraint_GetTypes(),
+      accesscontextmanager_AccessLevelBasicConditionDevicePolicyOsConstraint_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "RequireAdminApproval",
+      "requireAdminApproval",
       "Whether the device needs to be approved by the customer admin.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "RequireCorpOwned",
-      "Whether the device needs to be corp owned.",
       [],
       false,
       false,

@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_VMwareNodePoolConfigVsphereConfigTag {
+export interface gkeonprem_VMwareNodePoolConfigVsphereConfigTag {
   // The Vsphere tag category.
-  Category?: string;
+  category?: string;
 
   /*
 The Vsphere tag name.
 
 - - -
 */
-  Tag?: string;
+  tag?: string;
 }
 
-export function Gkeonprem_VMwareNodePoolConfigVsphereConfigTag_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareNodePoolConfigVsphereConfigTag_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Category",
+      "category",
       "The Vsphere tag category.",
       [],
       false,
@@ -30,7 +30,7 @@ export function Gkeonprem_VMwareNodePoolConfigVsphereConfigTag_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "Tag",
+      "tag",
       "The Vsphere tag name.\n\n- - -",
       [],
       false,

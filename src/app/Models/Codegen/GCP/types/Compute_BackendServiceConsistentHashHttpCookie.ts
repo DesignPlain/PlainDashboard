@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_BackendServiceConsistentHashHttpCookieTtl,
-  Compute_BackendServiceConsistentHashHttpCookieTtl_GetTypes,
-} from "./Compute_BackendServiceConsistentHashHttpCookieTtl";
+  compute_BackendServiceConsistentHashHttpCookieTtl,
+  compute_BackendServiceConsistentHashHttpCookieTtl_GetTypes,
+} from "./compute_BackendServiceConsistentHashHttpCookieTtl";
 
-export interface Compute_BackendServiceConsistentHashHttpCookie {
+export interface compute_BackendServiceConsistentHashHttpCookie {
   // Name of the cookie.
-  Name?: string;
+  name?: string;
 
   // Path to set for the cookie.
-  Path?: string;
+  path?: string;
 
   /*
 Lifetime of the cookie.
 Structure is documented below.
 */
-  Ttl?: Compute_BackendServiceConsistentHashHttpCookieTtl;
+  ttl?: compute_BackendServiceConsistentHashHttpCookieTtl;
 }
 
-export function Compute_BackendServiceConsistentHashHttpCookie_GetTypes(): DynamicUIProps[] {
+export function compute_BackendServiceConsistentHashHttpCookie_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "Name of the cookie.",
       [],
       false,
@@ -36,7 +36,7 @@ export function Compute_BackendServiceConsistentHashHttpCookie_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "Path",
+      "path",
       "Path to set for the cookie.",
       [],
       false,
@@ -44,9 +44,9 @@ export function Compute_BackendServiceConsistentHashHttpCookie_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Ttl",
+      "ttl",
       "Lifetime of the cookie.\nStructure is documented below.",
-      Compute_BackendServiceConsistentHashHttpCookieTtl_GetTypes(),
+      compute_BackendServiceConsistentHashHttpCookieTtl_GetTypes(),
       false,
       false,
     ),

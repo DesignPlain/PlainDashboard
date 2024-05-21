@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Redis_getInstanceNode {
+export interface redis_getInstanceNode {
   // Node identifying string. e.g. 'node-0', 'node-1'
-  Id?: string;
+  id?: string;
 
   // Location of the node.
-  Zone?: string;
+  zone?: string;
 }
 
-export function Redis_getInstanceNode_GetTypes(): DynamicUIProps[] {
+export function redis_getInstanceNode_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Id",
+      "id",
       "Node identifying string. e.g. 'node-0', 'node-1'",
       [],
       true,
@@ -26,7 +26,7 @@ export function Redis_getInstanceNode_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Zone",
+      "zone",
       "Location of the node.",
       [],
       true,

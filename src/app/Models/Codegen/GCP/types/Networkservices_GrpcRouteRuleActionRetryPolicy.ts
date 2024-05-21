@@ -6,36 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_GrpcRouteRuleActionRetryPolicy {
-  /*
-Specifies one or more conditions when this retry policy applies.
-Each value may be one of: `connect-failure`, `refused-stream`, `cancelled`, `deadline-exceeded`, `resource-exhausted`, `unavailable`.
-*/
-  RetryConditions?: Array<string>;
-
+export interface networkservices_GrpcRouteRuleActionRetryPolicy {
   /*
 Specifies the allowed number of retries.
 
 - - -
 */
-  NumRetries?: number;
+  numRetries?: number;
+
+  /*
+Specifies one or more conditions when this retry policy applies.
+Each value may be one of: `connect-failure`, `refused-stream`, `cancelled`, `deadline-exceeded`, `resource-exhausted`, `unavailable`.
+*/
+  retryConditions?: Array<string>;
 }
 
-export function Networkservices_GrpcRouteRuleActionRetryPolicy_GetTypes(): DynamicUIProps[] {
+export function networkservices_GrpcRouteRuleActionRetryPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "RetryConditions",
-      "Specifies one or more conditions when this retry policy applies.\nEach value may be one of: `connect-failure`, `refused-stream`, `cancelled`, `deadline-exceeded`, `resource-exhausted`, `unavailable`.",
-      InputType_String_GetTypes(),
+      InputType.Number,
+      "numRetries",
+      "Specifies the allowed number of retries.\n\n- - -",
+      [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Number,
-      "NumRetries",
-      "Specifies the allowed number of retries.\n\n- - -",
-      [],
+      InputType.Array,
+      "retryConditions",
+      "Specifies one or more conditions when this retry policy applies.\nEach value may be one of: `connect-failure`, `refused-stream`, `cancelled`, `deadline-exceeded`, `resource-exhausted`, `unavailable`.",
+      InputType_String_GetTypes(),
       false,
       false,
     ),

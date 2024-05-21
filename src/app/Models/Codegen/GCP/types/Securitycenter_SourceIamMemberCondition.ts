@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Securitycenter_SourceIamMemberCondition {
+export interface securitycenter_SourceIamMemberCondition {
+  //
+  title?: string;
+
   // The description of the source (max of 1024 characters).
-  Description?: string;
+  description?: string;
 
   //
-  Expression?: string;
-
-  //
-  Title?: string;
+  expression?: string;
 }
 
-export function Securitycenter_SourceIamMemberCondition_GetTypes(): DynamicUIProps[] {
+export function securitycenter_SourceIamMemberCondition_GetTypes(): DynamicUIProps[] {
   return [
+    new DynamicUIProps(InputType.String, "title", "", [], true, true),
     new DynamicUIProps(
       InputType.String,
-      "Description",
+      "description",
       "The description of the source (max of 1024 characters).",
       [],
       false,
       true,
     ),
-    new DynamicUIProps(InputType.String, "Expression", "", [], true, true),
-    new DynamicUIProps(InputType.String, "Title", "", [], true, true),
+    new DynamicUIProps(InputType.String, "expression", "", [], true, true),
   ];
 }

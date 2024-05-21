@@ -6,90 +6,82 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Blockchainnodeengine_BlockchainNodesEthereumDetailsGethDetails,
-  Blockchainnodeengine_BlockchainNodesEthereumDetailsGethDetails_GetTypes,
-} from "./Blockchainnodeengine_BlockchainNodesEthereumDetailsGethDetails";
+  blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEndpoint,
+  blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEndpoint_GetTypes,
+} from "./blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEndpoint";
 import {
-  Blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEndpoint,
-  Blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEndpoint_GetTypes,
-} from "./Blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEndpoint";
+  blockchainnodeengine_BlockchainNodesEthereumDetailsGethDetails,
+  blockchainnodeengine_BlockchainNodesEthereumDetailsGethDetails_GetTypes,
+} from "./blockchainnodeengine_BlockchainNodesEthereumDetailsGethDetails";
 import {
-  Blockchainnodeengine_BlockchainNodesEthereumDetailsValidatorConfig,
-  Blockchainnodeengine_BlockchainNodesEthereumDetailsValidatorConfig_GetTypes,
-} from "./Blockchainnodeengine_BlockchainNodesEthereumDetailsValidatorConfig";
+  blockchainnodeengine_BlockchainNodesEthereumDetailsValidatorConfig,
+  blockchainnodeengine_BlockchainNodesEthereumDetailsValidatorConfig_GetTypes,
+} from "./blockchainnodeengine_BlockchainNodesEthereumDetailsValidatorConfig";
 
-export interface Blockchainnodeengine_BlockchainNodesEthereumDetails {
+export interface blockchainnodeengine_BlockchainNodesEthereumDetails {
   /*
 The execution client
 Possible values are: `EXECUTION_CLIENT_UNSPECIFIED`, `GETH`, `ERIGON`.
 */
-  ExecutionClient?: string;
-
-  /*
-Configuration for validator-related parameters on the beacon client, and for any managed validator client.
-Structure is documented below.
-*/
-  ValidatorConfig?: Blockchainnodeengine_BlockchainNodesEthereumDetailsValidatorConfig;
-
-  // Enables JSON-RPC access to functions in the admin namespace. Defaults to false.
-  ApiEnableAdmin?: boolean;
-
-  /*
-The consensus client
-Possible values are: `CONSENSUS_CLIENT_UNSPECIFIED`, `LIGHTHOUSE`.
-*/
-  ConsensusClient?: string;
-
-  /*
-User-provided key-value pairs
-Structure is documented below.
-*/
-  GethDetails?: Blockchainnodeengine_BlockchainNodesEthereumDetailsGethDetails;
+  executionClient?: string;
 
   /*
 The Ethereum environment being accessed.
 Possible values are: `MAINNET`, `TESTNET_GOERLI_PRATER`, `TESTNET_SEPOLIA`.
 */
-  Network?: string;
+  network?: string;
 
   /*
 The type of Ethereum node.
 Possible values are: `LIGHT`, `FULL`, `ARCHIVE`.
 */
-  NodeType?: string;
+  nodeType?: string;
+
+  /*
+Configuration for validator-related parameters on the beacon client, and for any managed validator client.
+Structure is documented below.
+*/
+  validatorConfig?: blockchainnodeengine_BlockchainNodesEthereumDetailsValidatorConfig;
 
   /*
 (Output)
 User-provided key-value pairs
 Structure is documented below.
 */
-  AdditionalEndpoints?: Array<Blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEndpoint>;
+  additionalEndpoints?: Array<blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEndpoint>;
+
+  // Enables JSON-RPC access to functions in the admin namespace. Defaults to false.
+  apiEnableAdmin?: boolean;
 
   // Enables JSON-RPC access to functions in the debug namespace. Defaults to false.
-  ApiEnableDebug?: boolean;
+  apiEnableDebug?: boolean;
+
+  /*
+The consensus client
+Possible values are: `CONSENSUS_CLIENT_UNSPECIFIED`, `LIGHTHOUSE`.
+*/
+  consensusClient?: string;
+
+  /*
+User-provided key-value pairs
+Structure is documented below.
+*/
+  gethDetails?: blockchainnodeengine_BlockchainNodesEthereumDetailsGethDetails;
 }
 
-export function Blockchainnodeengine_BlockchainNodesEthereumDetails_GetTypes(): DynamicUIProps[] {
+export function blockchainnodeengine_BlockchainNodesEthereumDetails_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "ExecutionClient",
-      "The execution client\nPossible values are: `EXECUTION_CLIENT_UNSPECIFIED`, `GETH`, `ERIGON`.",
-      [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "ApiEnableAdmin",
-      "Enables JSON-RPC access to functions in the admin namespace. Defaults to false.",
+      "apiEnableDebug",
+      "Enables JSON-RPC access to functions in the debug namespace. Defaults to false.",
       [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ConsensusClient",
+      "consensusClient",
       "The consensus client\nPossible values are: `CONSENSUS_CLIENT_UNSPECIFIED`, `LIGHTHOUSE`.",
       [],
       false,
@@ -97,48 +89,56 @@ export function Blockchainnodeengine_BlockchainNodesEthereumDetails_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "Network",
+      "executionClient",
+      "The execution client\nPossible values are: `EXECUTION_CLIENT_UNSPECIFIED`, `GETH`, `ERIGON`.",
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "validatorConfig",
+      "Configuration for validator-related parameters on the beacon client, and for any managed validator client.\nStructure is documented below.",
+      blockchainnodeengine_BlockchainNodesEthereumDetailsValidatorConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "additionalEndpoints",
+      "(Output)\nUser-provided key-value pairs\nStructure is documented below.",
+      blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEndpoint_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "gethDetails",
+      "User-provided key-value pairs\nStructure is documented below.",
+      blockchainnodeengine_BlockchainNodesEthereumDetailsGethDetails_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "network",
       "The Ethereum environment being accessed.\nPossible values are: `MAINNET`, `TESTNET_GOERLI_PRATER`, `TESTNET_SEPOLIA`.",
       [],
       false,
       true,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "ValidatorConfig",
-      "Configuration for validator-related parameters on the beacon client, and for any managed validator client.\nStructure is documented below.",
-      Blockchainnodeengine_BlockchainNodesEthereumDetailsValidatorConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "GethDetails",
-      "User-provided key-value pairs\nStructure is documented below.",
-      Blockchainnodeengine_BlockchainNodesEthereumDetailsGethDetails_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "NodeType",
+      "nodeType",
       "The type of Ethereum node.\nPossible values are: `LIGHT`, `FULL`, `ARCHIVE`.",
       [],
       false,
       true,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "AdditionalEndpoints",
-      "(Output)\nUser-provided key-value pairs\nStructure is documented below.",
-      Blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEndpoint_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "ApiEnableDebug",
-      "Enables JSON-RPC access to functions in the debug namespace. Defaults to false.",
+      "apiEnableAdmin",
+      "Enables JSON-RPC access to functions in the admin namespace. Defaults to false.",
       [],
       false,
       true,

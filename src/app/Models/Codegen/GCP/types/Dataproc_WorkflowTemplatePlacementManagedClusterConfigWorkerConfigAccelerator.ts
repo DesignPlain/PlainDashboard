@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_WorkflowTemplatePlacementManagedClusterConfigWorkerConfigAccelerator {
-  // Full URL, partial URI, or short name of the accelerator type resource to expose to this instance. See (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement) feature, you must use the short name of the accelerator type resource, for example, `nvidia-tesla-k80`.
-  AcceleratorType?: string;
-
+export interface dataproc_WorkflowTemplatePlacementManagedClusterConfigWorkerConfigAccelerator {
   // The number of the accelerator cards of this type exposed to this instance.
-  AcceleratorCount?: number;
+  acceleratorCount?: number;
+
+  // Full URL, partial URI, or short name of the accelerator type resource to expose to this instance. See (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement) feature, you must use the short name of the accelerator type resource, for example, `nvidia-tesla-k80`.
+  acceleratorType?: string;
 }
 
-export function Dataproc_WorkflowTemplatePlacementManagedClusterConfigWorkerConfigAccelerator_GetTypes(): DynamicUIProps[] {
+export function dataproc_WorkflowTemplatePlacementManagedClusterConfigWorkerConfigAccelerator_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "AcceleratorType",
+      "acceleratorType",
       "Full URL, partial URI, or short name of the accelerator type resource to expose to this instance. See (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement) feature, you must use the short name of the accelerator type resource, for example, `nvidia-tesla-k80`.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Dataproc_WorkflowTemplatePlacementManagedClusterConfigWorkerConf
     ),
     new DynamicUIProps(
       InputType.Number,
-      "AcceleratorCount",
+      "acceleratorCount",
       "The number of the accelerator cards of this type exposed to this instance.",
       [],
       false,

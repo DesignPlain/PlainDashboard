@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterNodePoolAutoConfigNetworkTags {
+export interface container_ClusterNodePoolAutoConfigNetworkTags {
   // List of network tags applied to auto-provisioned node pools.
-  Tags?: Array<string>;
+  tags?: Array<string>;
 }
 
-export function Container_ClusterNodePoolAutoConfigNetworkTags_GetTypes(): DynamicUIProps[] {
+export function container_ClusterNodePoolAutoConfigNetworkTags_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Tags",
+      "tags",
       "List of network tags applied to auto-provisioned node pools.",
       InputType_String_GetTypes(),
       false,

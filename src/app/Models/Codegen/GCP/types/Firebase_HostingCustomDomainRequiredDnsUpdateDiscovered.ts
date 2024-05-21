@@ -6,36 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Firebase_HostingCustomDomainRequiredDnsUpdateDiscoveredRecord,
-  Firebase_HostingCustomDomainRequiredDnsUpdateDiscoveredRecord_GetTypes,
-} from "./Firebase_HostingCustomDomainRequiredDnsUpdateDiscoveredRecord";
+  firebase_HostingCustomDomainRequiredDnsUpdateDiscoveredRecord,
+  firebase_HostingCustomDomainRequiredDnsUpdateDiscoveredRecord_GetTypes,
+} from "./firebase_HostingCustomDomainRequiredDnsUpdateDiscoveredRecord";
 
-export interface Firebase_HostingCustomDomainRequiredDnsUpdateDiscovered {
+export interface firebase_HostingCustomDomainRequiredDnsUpdateDiscovered {
   // The domain name the record pertains to, e.g. `foo.bar.com.`.
-  DomainName?: string;
+  domainName?: string;
 
   /*
 Records on the domain
 Structure is documented below.
 */
-  Records?: Array<Firebase_HostingCustomDomainRequiredDnsUpdateDiscoveredRecord>;
+  records?: Array<firebase_HostingCustomDomainRequiredDnsUpdateDiscoveredRecord>;
 }
 
-export function Firebase_HostingCustomDomainRequiredDnsUpdateDiscovered_GetTypes(): DynamicUIProps[] {
+export function firebase_HostingCustomDomainRequiredDnsUpdateDiscovered_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "Records",
-      "Records on the domain\nStructure is documented below.",
-      Firebase_HostingCustomDomainRequiredDnsUpdateDiscoveredRecord_GetTypes(),
+      InputType.String,
+      "domainName",
+      "The domain name the record pertains to, e.g. `foo.bar.com.`.",
+      [],
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "DomainName",
-      "The domain name the record pertains to, e.g. `foo.bar.com.`.",
-      [],
+      InputType.Array,
+      "records",
+      "Records on the domain\nStructure is documented below.",
+      firebase_HostingCustomDomainRequiredDnsUpdateDiscoveredRecord_GetTypes(),
       false,
       false,
     ),

@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Monitoring_AlertPolicyConditionConditionAbsent,
-  Monitoring_AlertPolicyConditionConditionAbsent_GetTypes,
-} from "./Monitoring_AlertPolicyConditionConditionAbsent";
+  monitoring_AlertPolicyConditionConditionMonitoringQueryLanguage,
+  monitoring_AlertPolicyConditionConditionMonitoringQueryLanguage_GetTypes,
+} from "./monitoring_AlertPolicyConditionConditionMonitoringQueryLanguage";
 import {
-  Monitoring_AlertPolicyConditionConditionMatchedLog,
-  Monitoring_AlertPolicyConditionConditionMatchedLog_GetTypes,
-} from "./Monitoring_AlertPolicyConditionConditionMatchedLog";
+  monitoring_AlertPolicyConditionConditionPrometheusQueryLanguage,
+  monitoring_AlertPolicyConditionConditionPrometheusQueryLanguage_GetTypes,
+} from "./monitoring_AlertPolicyConditionConditionPrometheusQueryLanguage";
 import {
-  Monitoring_AlertPolicyConditionConditionMonitoringQueryLanguage,
-  Monitoring_AlertPolicyConditionConditionMonitoringQueryLanguage_GetTypes,
-} from "./Monitoring_AlertPolicyConditionConditionMonitoringQueryLanguage";
+  monitoring_AlertPolicyConditionConditionThreshold,
+  monitoring_AlertPolicyConditionConditionThreshold_GetTypes,
+} from "./monitoring_AlertPolicyConditionConditionThreshold";
 import {
-  Monitoring_AlertPolicyConditionConditionPrometheusQueryLanguage,
-  Monitoring_AlertPolicyConditionConditionPrometheusQueryLanguage_GetTypes,
-} from "./Monitoring_AlertPolicyConditionConditionPrometheusQueryLanguage";
+  monitoring_AlertPolicyConditionConditionAbsent,
+  monitoring_AlertPolicyConditionConditionAbsent_GetTypes,
+} from "./monitoring_AlertPolicyConditionConditionAbsent";
 import {
-  Monitoring_AlertPolicyConditionConditionThreshold,
-  Monitoring_AlertPolicyConditionConditionThreshold_GetTypes,
-} from "./Monitoring_AlertPolicyConditionConditionThreshold";
+  monitoring_AlertPolicyConditionConditionMatchedLog,
+  monitoring_AlertPolicyConditionConditionMatchedLog_GetTypes,
+} from "./monitoring_AlertPolicyConditionConditionMatchedLog";
 
-export interface Monitoring_AlertPolicyCondition {
+export interface monitoring_AlertPolicyCondition {
   /*
 (Output)
 The unique resource name for this condition.
@@ -36,27 +36,27 @@ projects/[PROJECT_ID]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
 the condition is created as part of a new or updated alerting
 policy.
 */
-  Name?: string;
+  name?: string;
 
   /*
 A condition that checks that a time series
 continues to receive new data points.
 Structure is documented below.
 */
-  ConditionAbsent?: Monitoring_AlertPolicyConditionConditionAbsent;
+  conditionAbsent?: monitoring_AlertPolicyConditionConditionAbsent;
 
   /*
 A condition that checks for log messages matching given constraints.
 If set, no other conditions can be present.
 Structure is documented below.
 */
-  ConditionMatchedLog?: Monitoring_AlertPolicyConditionConditionMatchedLog;
+  conditionMatchedLog?: monitoring_AlertPolicyConditionConditionMatchedLog;
 
   /*
 A Monitoring Query Language query that outputs a boolean stream
 Structure is documented below.
 */
-  ConditionMonitoringQueryLanguage?: Monitoring_AlertPolicyConditionConditionMonitoringQueryLanguage;
+  conditionMonitoringQueryLanguage?: monitoring_AlertPolicyConditionConditionMonitoringQueryLanguage;
 
   /*
 A condition type that allows alert policies to be defined using
@@ -65,14 +65,14 @@ The PrometheusQueryLanguageCondition message contains information
 from a Prometheus alerting rule and its associated rule group.
 Structure is documented below.
 */
-  ConditionPrometheusQueryLanguage?: Monitoring_AlertPolicyConditionConditionPrometheusQueryLanguage;
+  conditionPrometheusQueryLanguage?: monitoring_AlertPolicyConditionConditionPrometheusQueryLanguage;
 
   /*
 A condition that compares a time series against a
 threshold.
 Structure is documented below.
 */
-  ConditionThreshold?: Monitoring_AlertPolicyConditionConditionThreshold;
+  conditionThreshold?: monitoring_AlertPolicyConditionConditionThreshold;
 
   /*
 A short name or phrase used to identify the
@@ -81,30 +81,54 @@ incidents. To avoid confusion, don't use the same
 display name for multiple conditions in the same
 policy.
 */
-  DisplayName?: string;
+  displayName?: string;
 }
 
-export function Monitoring_AlertPolicyCondition_GetTypes(): DynamicUIProps[] {
+export function monitoring_AlertPolicyCondition_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ConditionPrometheusQueryLanguage",
-      "A condition type that allows alert policies to be defined using\nPrometheus Query Language (PromQL).\nThe PrometheusQueryLanguageCondition message contains information\nfrom a Prometheus alerting rule and its associated rule group.\nStructure is documented below.",
-      Monitoring_AlertPolicyConditionConditionPrometheusQueryLanguage_GetTypes(),
+      "conditionAbsent",
+      "A condition that checks that a time series\ncontinues to receive new data points.\nStructure is documented below.",
+      monitoring_AlertPolicyConditionConditionAbsent_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ConditionThreshold",
+      "conditionMatchedLog",
+      "A condition that checks for log messages matching given constraints.\nIf set, no other conditions can be present.\nStructure is documented below.",
+      monitoring_AlertPolicyConditionConditionMatchedLog_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "conditionMonitoringQueryLanguage",
+      "A Monitoring Query Language query that outputs a boolean stream\nStructure is documented below.",
+      monitoring_AlertPolicyConditionConditionMonitoringQueryLanguage_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "conditionPrometheusQueryLanguage",
+      "A condition type that allows alert policies to be defined using\nPrometheus Query Language (PromQL).\nThe PrometheusQueryLanguageCondition message contains information\nfrom a Prometheus alerting rule and its associated rule group.\nStructure is documented below.",
+      monitoring_AlertPolicyConditionConditionPrometheusQueryLanguage_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "conditionThreshold",
       "A condition that compares a time series against a\nthreshold.\nStructure is documented below.",
-      Monitoring_AlertPolicyConditionConditionThreshold_GetTypes(),
+      monitoring_AlertPolicyConditionConditionThreshold_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "DisplayName",
+      "displayName",
       "A short name or phrase used to identify the\ncondition in dashboards, notifications, and\nincidents. To avoid confusion, don't use the same\ndisplay name for multiple conditions in the same\npolicy.",
       [],
       true,
@@ -112,33 +136,9 @@ export function Monitoring_AlertPolicyCondition_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "(Output)\nThe unique resource name for this condition.\nIts syntax is:\nprojects/[PROJECT_ID]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]\n[CONDITION_ID] is assigned by Stackdriver Monitoring when\nthe condition is created as part of a new or updated alerting\npolicy.",
       [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "ConditionAbsent",
-      "A condition that checks that a time series\ncontinues to receive new data points.\nStructure is documented below.",
-      Monitoring_AlertPolicyConditionConditionAbsent_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "ConditionMatchedLog",
-      "A condition that checks for log messages matching given constraints.\nIf set, no other conditions can be present.\nStructure is documented below.",
-      Monitoring_AlertPolicyConditionConditionMatchedLog_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "ConditionMonitoringQueryLanguage",
-      "A Monitoring Query Language query that outputs a boolean stream\nStructure is documented below.",
-      Monitoring_AlertPolicyConditionConditionMonitoringQueryLanguage_GetTypes(),
       false,
       false,
     ),

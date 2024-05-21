@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Clouddomains_RegistrationYearlyPrice {
+export interface clouddomains_RegistrationYearlyPrice {
   // The three-letter currency code defined in ISO 4217.
-  CurrencyCode?: string;
+  currencyCode?: string;
 
   // The whole units of the amount. For example if currencyCode is "USD", then 1 unit is one US dollar.
-  Units?: string;
+  units?: string;
 }
 
-export function Clouddomains_RegistrationYearlyPrice_GetTypes(): DynamicUIProps[] {
+export function clouddomains_RegistrationYearlyPrice_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CurrencyCode",
+      "currencyCode",
       "The three-letter currency code defined in ISO 4217.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Clouddomains_RegistrationYearlyPrice_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "Units",
+      "units",
       'The whole units of the amount. For example if currencyCode is "USD", then 1 unit is one US dollar.',
       [],
       false,

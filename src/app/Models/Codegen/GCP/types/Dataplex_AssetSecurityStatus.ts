@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataplex_AssetSecurityStatus {
-  // Output only. The time when the asset was last updated.
-  UpdateTime?: string;
-
+export interface dataplex_AssetSecurityStatus {
   // Additional information about the current state.
-  Message?: string;
+  message?: string;
 
   // Output only. Current state of the asset. Possible values: STATE_UNSPECIFIED, ACTIVE, CREATING, DELETING, ACTION_REQUIRED
-  State?: string;
+  state?: string;
+
+  // Output only. The time when the asset was last updated.
+  updateTime?: string;
 }
 
-export function Dataplex_AssetSecurityStatus_GetTypes(): DynamicUIProps[] {
+export function dataplex_AssetSecurityStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Message",
+      "message",
       "Additional information about the current state.",
       [],
       false,
@@ -29,7 +29,7 @@ export function Dataplex_AssetSecurityStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "State",
+      "state",
       "Output only. Current state of the asset. Possible values: STATE_UNSPECIFIED, ACTIVE, CREATING, DELETING, ACTION_REQUIRED",
       [],
       false,
@@ -37,7 +37,7 @@ export function Dataplex_AssetSecurityStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "UpdateTime",
+      "updateTime",
       "Output only. The time when the asset was last updated.",
       [],
       false,

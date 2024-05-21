@@ -6,44 +6,44 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_BackendServiceLocalityLbPolicyCustomPolicy,
-  Compute_BackendServiceLocalityLbPolicyCustomPolicy_GetTypes,
-} from "./Compute_BackendServiceLocalityLbPolicyCustomPolicy";
+  compute_BackendServiceLocalityLbPolicyCustomPolicy,
+  compute_BackendServiceLocalityLbPolicyCustomPolicy_GetTypes,
+} from "./compute_BackendServiceLocalityLbPolicyCustomPolicy";
 import {
-  Compute_BackendServiceLocalityLbPolicyPolicy,
-  Compute_BackendServiceLocalityLbPolicyPolicy_GetTypes,
-} from "./Compute_BackendServiceLocalityLbPolicyPolicy";
+  compute_BackendServiceLocalityLbPolicyPolicy,
+  compute_BackendServiceLocalityLbPolicyPolicy_GetTypes,
+} from "./compute_BackendServiceLocalityLbPolicyPolicy";
 
-export interface Compute_BackendServiceLocalityLbPolicy {
+export interface compute_BackendServiceLocalityLbPolicy {
   /*
 The configuration for a custom policy implemented by the user and
 deployed with the client.
 Structure is documented below.
 */
-  CustomPolicy?: Compute_BackendServiceLocalityLbPolicyCustomPolicy;
+  customPolicy?: compute_BackendServiceLocalityLbPolicyCustomPolicy;
 
   /*
 The configuration for a built-in load balancing policy.
 Structure is documented below.
 */
-  Policy?: Compute_BackendServiceLocalityLbPolicyPolicy;
+  policy?: compute_BackendServiceLocalityLbPolicyPolicy;
 }
 
-export function Compute_BackendServiceLocalityLbPolicy_GetTypes(): DynamicUIProps[] {
+export function compute_BackendServiceLocalityLbPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "CustomPolicy",
+      "customPolicy",
       "The configuration for a custom policy implemented by the user and\ndeployed with the client.\nStructure is documented below.",
-      Compute_BackendServiceLocalityLbPolicyCustomPolicy_GetTypes(),
+      compute_BackendServiceLocalityLbPolicyCustomPolicy_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Policy",
+      "policy",
       "The configuration for a built-in load balancing policy.\nStructure is documented below.",
-      Compute_BackendServiceLocalityLbPolicyPolicy_GetTypes(),
+      compute_BackendServiceLocalityLbPolicyPolicy_GetTypes(),
       false,
       false,
     ),

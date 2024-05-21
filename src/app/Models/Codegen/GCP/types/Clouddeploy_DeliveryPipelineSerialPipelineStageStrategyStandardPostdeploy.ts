@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPostdeploy {
+export interface clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPostdeploy {
   // Optional. A sequence of skaffold custom actions to invoke during execution of the postdeploy job.
-  Actions?: Array<string>;
+  actions?: Array<string>;
 }
 
-export function Clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPostdeploy_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_DeliveryPipelineSerialPipelineStageStrategyStandardPostdeploy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Actions",
+      "actions",
       "Optional. A sequence of skaffold custom actions to invoke during execution of the postdeploy job.",
       InputType_String_GetTypes(),
       false,

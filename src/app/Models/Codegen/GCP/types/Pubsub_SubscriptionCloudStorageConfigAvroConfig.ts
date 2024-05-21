@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Pubsub_SubscriptionCloudStorageConfigAvroConfig {
+export interface pubsub_SubscriptionCloudStorageConfigAvroConfig {
   // When true, write the subscription name, messageId, publishTime, attributes, and orderingKey as additional fields in the output.
-  WriteMetadata?: boolean;
+  writeMetadata?: boolean;
 }
 
-export function Pubsub_SubscriptionCloudStorageConfigAvroConfig_GetTypes(): DynamicUIProps[] {
+export function pubsub_SubscriptionCloudStorageConfigAvroConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "WriteMetadata",
+      "writeMetadata",
       "When true, write the subscription name, messageId, publishTime, attributes, and orderingKey as additional fields in the output.",
       [],
       false,

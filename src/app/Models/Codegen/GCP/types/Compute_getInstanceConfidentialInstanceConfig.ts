@@ -6,32 +6,32 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getInstanceConfidentialInstanceConfig {
+export interface compute_getInstanceConfidentialInstanceConfig {
   /*
 Specifies which confidential computing technology to use.
 								This could be one of the following values: SEV, SEV_SNP.
 								If SEV_SNP, min_cpu_platform = "AMD Milan" is currently required.
 */
-  ConfidentialInstanceType?: string;
+  confidentialInstanceType?: string;
 
   // Defines whether the instance should have confidential compute enabled. Field will be deprecated in a future release
-  EnableConfidentialCompute?: boolean;
+  enableConfidentialCompute?: boolean;
 }
 
-export function Compute_getInstanceConfidentialInstanceConfig_GetTypes(): DynamicUIProps[] {
+export function compute_getInstanceConfidentialInstanceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Bool,
-      "EnableConfidentialCompute",
-      "Defines whether the instance should have confidential compute enabled. Field will be deprecated in a future release",
+      InputType.String,
+      "confidentialInstanceType",
+      'Specifies which confidential computing technology to use.\n\t\t\t\t\t\t\t\tThis could be one of the following values: SEV, SEV_SNP.\n\t\t\t\t\t\t\t\tIf SEV_SNP, min_cpu_platform = "AMD Milan" is currently required.',
       [],
       true,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "ConfidentialInstanceType",
-      'Specifies which confidential computing technology to use.\n\t\t\t\t\t\t\t\tThis could be one of the following values: SEV, SEV_SNP.\n\t\t\t\t\t\t\t\tIf SEV_SNP, min_cpu_platform = "AMD Milan" is currently required.',
+      InputType.Bool,
+      "enableConfidentialCompute",
+      "Defines whether the instance should have confidential compute enabled. Field will be deprecated in a future release",
       [],
       true,
       false,

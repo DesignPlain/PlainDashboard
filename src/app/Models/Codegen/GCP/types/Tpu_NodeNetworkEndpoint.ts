@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Tpu_NodeNetworkEndpoint {
+export interface tpu_NodeNetworkEndpoint {
   /*
 (Output)
 The IP address of this network endpoint.
 */
-  IpAddress?: string;
+  ipAddress?: string;
 
   /*
 (Output)
 The port of this network endpoint.
 */
-  Port?: number;
+  port?: number;
 }
 
-export function Tpu_NodeNetworkEndpoint_GetTypes(): DynamicUIProps[] {
+export function tpu_NodeNetworkEndpoint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Port",
+      "port",
       "(Output)\nThe port of this network endpoint.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Tpu_NodeNetworkEndpoint_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "IpAddress",
+      "ipAddress",
       "(Output)\nThe IP address of this network endpoint.",
       [],
       false,

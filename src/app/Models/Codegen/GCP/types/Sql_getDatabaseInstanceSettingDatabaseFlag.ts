@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstanceSettingDatabaseFlag {
+export interface sql_getDatabaseInstanceSettingDatabaseFlag {
   // The name of the instance.
-  Name?: string;
+  name?: string;
 
   // Value of the flag.
-  Value?: string;
+  value?: string;
 }
 
-export function Sql_getDatabaseInstanceSettingDatabaseFlag_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstanceSettingDatabaseFlag_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "The name of the instance.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Sql_getDatabaseInstanceSettingDatabaseFlag_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "Value of the flag.",
       [],
       true,

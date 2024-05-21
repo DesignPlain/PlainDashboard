@@ -6,82 +6,82 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Projects_ApiKeyRestrictionsAndroidKeyRestrictions,
-  Projects_ApiKeyRestrictionsAndroidKeyRestrictions_GetTypes,
-} from "./Projects_ApiKeyRestrictionsAndroidKeyRestrictions";
+  projects_ApiKeyRestrictionsIosKeyRestrictions,
+  projects_ApiKeyRestrictionsIosKeyRestrictions_GetTypes,
+} from "./projects_ApiKeyRestrictionsIosKeyRestrictions";
 import {
-  Projects_ApiKeyRestrictionsApiTarget,
-  Projects_ApiKeyRestrictionsApiTarget_GetTypes,
-} from "./Projects_ApiKeyRestrictionsApiTarget";
+  projects_ApiKeyRestrictionsServerKeyRestrictions,
+  projects_ApiKeyRestrictionsServerKeyRestrictions_GetTypes,
+} from "./projects_ApiKeyRestrictionsServerKeyRestrictions";
 import {
-  Projects_ApiKeyRestrictionsBrowserKeyRestrictions,
-  Projects_ApiKeyRestrictionsBrowserKeyRestrictions_GetTypes,
-} from "./Projects_ApiKeyRestrictionsBrowserKeyRestrictions";
+  projects_ApiKeyRestrictionsAndroidKeyRestrictions,
+  projects_ApiKeyRestrictionsAndroidKeyRestrictions_GetTypes,
+} from "./projects_ApiKeyRestrictionsAndroidKeyRestrictions";
 import {
-  Projects_ApiKeyRestrictionsIosKeyRestrictions,
-  Projects_ApiKeyRestrictionsIosKeyRestrictions_GetTypes,
-} from "./Projects_ApiKeyRestrictionsIosKeyRestrictions";
+  projects_ApiKeyRestrictionsApiTarget,
+  projects_ApiKeyRestrictionsApiTarget_GetTypes,
+} from "./projects_ApiKeyRestrictionsApiTarget";
 import {
-  Projects_ApiKeyRestrictionsServerKeyRestrictions,
-  Projects_ApiKeyRestrictionsServerKeyRestrictions_GetTypes,
-} from "./Projects_ApiKeyRestrictionsServerKeyRestrictions";
+  projects_ApiKeyRestrictionsBrowserKeyRestrictions,
+  projects_ApiKeyRestrictionsBrowserKeyRestrictions_GetTypes,
+} from "./projects_ApiKeyRestrictionsBrowserKeyRestrictions";
 
-export interface Projects_ApiKeyRestrictions {
-  // The Android apps that are allowed to use the key.
-  AndroidKeyRestrictions?: Projects_ApiKeyRestrictionsAndroidKeyRestrictions;
-
-  // A restriction for a specific service and optionally one or more specific methods. Requests are allowed if they match any of these restrictions. If no restrictions are specified, all targets are allowed.
-  ApiTargets?: Array<Projects_ApiKeyRestrictionsApiTarget>;
-
-  // The HTTP referrers (websites) that are allowed to use the key.
-  BrowserKeyRestrictions?: Projects_ApiKeyRestrictionsBrowserKeyRestrictions;
-
+export interface projects_ApiKeyRestrictions {
   // The iOS apps that are allowed to use the key.
-  IosKeyRestrictions?: Projects_ApiKeyRestrictionsIosKeyRestrictions;
+  iosKeyRestrictions?: projects_ApiKeyRestrictionsIosKeyRestrictions;
 
   // The IP addresses of callers that are allowed to use the key.
-  ServerKeyRestrictions?: Projects_ApiKeyRestrictionsServerKeyRestrictions;
+  serverKeyRestrictions?: projects_ApiKeyRestrictionsServerKeyRestrictions;
+
+  // The Android apps that are allowed to use the key.
+  androidKeyRestrictions?: projects_ApiKeyRestrictionsAndroidKeyRestrictions;
+
+  // A restriction for a specific service and optionally one or more specific methods. Requests are allowed if they match any of these restrictions. If no restrictions are specified, all targets are allowed.
+  apiTargets?: Array<projects_ApiKeyRestrictionsApiTarget>;
+
+  // The HTTP referrers (websites) that are allowed to use the key.
+  browserKeyRestrictions?: projects_ApiKeyRestrictionsBrowserKeyRestrictions;
 }
 
-export function Projects_ApiKeyRestrictions_GetTypes(): DynamicUIProps[] {
+export function projects_ApiKeyRestrictions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "AndroidKeyRestrictions",
+      "iosKeyRestrictions",
+      "The iOS apps that are allowed to use the key.",
+      projects_ApiKeyRestrictionsIosKeyRestrictions_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "serverKeyRestrictions",
+      "The IP addresses of callers that are allowed to use the key.",
+      projects_ApiKeyRestrictionsServerKeyRestrictions_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "androidKeyRestrictions",
       "The Android apps that are allowed to use the key.",
-      Projects_ApiKeyRestrictionsAndroidKeyRestrictions_GetTypes(),
+      projects_ApiKeyRestrictionsAndroidKeyRestrictions_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ApiTargets",
+      "apiTargets",
       "A restriction for a specific service and optionally one or more specific methods. Requests are allowed if they match any of these restrictions. If no restrictions are specified, all targets are allowed.",
-      Projects_ApiKeyRestrictionsApiTarget_GetTypes(),
+      projects_ApiKeyRestrictionsApiTarget_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "BrowserKeyRestrictions",
+      "browserKeyRestrictions",
       "The HTTP referrers (websites) that are allowed to use the key.",
-      Projects_ApiKeyRestrictionsBrowserKeyRestrictions_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "IosKeyRestrictions",
-      "The iOS apps that are allowed to use the key.",
-      Projects_ApiKeyRestrictionsIosKeyRestrictions_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "ServerKeyRestrictions",
-      "The IP addresses of callers that are allowed to use the key.",
-      Projects_ApiKeyRestrictionsServerKeyRestrictions_GetTypes(),
+      projects_ApiKeyRestrictionsBrowserKeyRestrictions_GetTypes(),
       false,
       false,
     ),

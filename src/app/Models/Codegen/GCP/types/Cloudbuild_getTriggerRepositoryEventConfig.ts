@@ -6,46 +6,46 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Cloudbuild_getTriggerRepositoryEventConfigPush,
-  Cloudbuild_getTriggerRepositoryEventConfigPush_GetTypes,
-} from "./Cloudbuild_getTriggerRepositoryEventConfigPush";
+  cloudbuild_getTriggerRepositoryEventConfigPullRequest,
+  cloudbuild_getTriggerRepositoryEventConfigPullRequest_GetTypes,
+} from "./cloudbuild_getTriggerRepositoryEventConfigPullRequest";
 import {
-  Cloudbuild_getTriggerRepositoryEventConfigPullRequest,
-  Cloudbuild_getTriggerRepositoryEventConfigPullRequest_GetTypes,
-} from "./Cloudbuild_getTriggerRepositoryEventConfigPullRequest";
+  cloudbuild_getTriggerRepositoryEventConfigPush,
+  cloudbuild_getTriggerRepositoryEventConfigPush_GetTypes,
+} from "./cloudbuild_getTriggerRepositoryEventConfigPush";
 
-export interface Cloudbuild_getTriggerRepositoryEventConfig {
+export interface cloudbuild_getTriggerRepositoryEventConfig {
+  // Contains filter properties for matching Pull Requests.
+  pullRequests?: Array<cloudbuild_getTriggerRepositoryEventConfigPullRequest>;
+
   // Contains filter properties for matching git pushes.
-  Pushes?: Array<Cloudbuild_getTriggerRepositoryEventConfigPush>;
+  pushes?: Array<cloudbuild_getTriggerRepositoryEventConfigPush>;
 
   // The resource name of the Repo API resource.
-  Repository?: string;
-
-  // Contains filter properties for matching Pull Requests.
-  PullRequests?: Array<Cloudbuild_getTriggerRepositoryEventConfigPullRequest>;
+  repository?: string;
 }
 
-export function Cloudbuild_getTriggerRepositoryEventConfig_GetTypes(): DynamicUIProps[] {
+export function cloudbuild_getTriggerRepositoryEventConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "PullRequests",
+      "pullRequests",
       "Contains filter properties for matching Pull Requests.",
-      Cloudbuild_getTriggerRepositoryEventConfigPullRequest_GetTypes(),
+      cloudbuild_getTriggerRepositoryEventConfigPullRequest_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Pushes",
+      "pushes",
       "Contains filter properties for matching git pushes.",
-      Cloudbuild_getTriggerRepositoryEventConfigPush_GetTypes(),
+      cloudbuild_getTriggerRepositoryEventConfigPush_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Repository",
+      "repository",
       "The resource name of the Repo API resource.",
       [],
       true,

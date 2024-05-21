@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Accesscontextmanager_ServicePerimeterIngressPolicyIngressFromSource {
+export interface accesscontextmanager_ServicePerimeterIngressPolicyIngressFromSource {
   /*
 An `AccessLevel` resource name that allow resources within the
 `ServicePerimeters` to be accessed from the internet. `AccessLevels` listed
@@ -17,7 +17,7 @@ with request origins within the perimeter.
 Example `accessPolicies/MY_POLICY/accessLevels/MY_LEVEL.`
 If - is specified, then all IngressSources will be allowed.
 */
-  AccessLevel?: string;
+  accessLevel?: string;
 
   /*
 A Google Cloud resource that is allowed to ingress the perimeter.
@@ -27,23 +27,23 @@ The project may be in any Google Cloud organization, not just the
 organization that the perimeter is defined in. `-` is not allowed, the case
 of allowing all Google Cloud resources only is not supported.
 */
-  Resource?: string;
+  resource?: string;
 }
 
-export function Accesscontextmanager_ServicePerimeterIngressPolicyIngressFromSource_GetTypes(): DynamicUIProps[] {
+export function accesscontextmanager_ServicePerimeterIngressPolicyIngressFromSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "AccessLevel",
-      "An `AccessLevel` resource name that allow resources within the\n`ServicePerimeters` to be accessed from the internet. `AccessLevels` listed\nmust be in the same policy as this `ServicePerimeter`. Referencing a nonexistent\n`AccessLevel` will cause an error. If no `AccessLevel` names are listed,\nresources within the perimeter can only be accessed via Google Cloud calls\nwith request origins within the perimeter.\nExample `accessPolicies/MY_POLICY/accessLevels/MY_LEVEL.`\nIf * is specified, then all IngressSources will be allowed.",
+      "resource",
+      "A Google Cloud resource that is allowed to ingress the perimeter.\nRequests from these resources will be allowed to access perimeter data.\nCurrently only projects are allowed. Format `projects/{project_number}`\nThe project may be in any Google Cloud organization, not just the\norganization that the perimeter is defined in. `*` is not allowed, the case\nof allowing all Google Cloud resources only is not supported.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Resource",
-      "A Google Cloud resource that is allowed to ingress the perimeter.\nRequests from these resources will be allowed to access perimeter data.\nCurrently only projects are allowed. Format `projects/{project_number}`\nThe project may be in any Google Cloud organization, not just the\norganization that the perimeter is defined in. `*` is not allowed, the case\nof allowing all Google Cloud resources only is not supported.",
+      "accessLevel",
+      "An `AccessLevel` resource name that allow resources within the\n`ServicePerimeters` to be accessed from the internet. `AccessLevels` listed\nmust be in the same policy as this `ServicePerimeter`. Referencing a nonexistent\n`AccessLevel` will cause an error. If no `AccessLevel` names are listed,\nresources within the perimeter can only be accessed via Google Cloud calls\nwith request origins within the perimeter.\nExample `accessPolicies/MY_POLICY/accessLevels/MY_LEVEL.`\nIf * is specified, then all IngressSources will be allowed.",
       [],
       false,
       false,

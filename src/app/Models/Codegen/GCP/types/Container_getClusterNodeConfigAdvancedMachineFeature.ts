@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodeConfigAdvancedMachineFeature {
+export interface container_getClusterNodeConfigAdvancedMachineFeature {
   // The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
-  ThreadsPerCore?: number;
+  threadsPerCore?: number;
 }
 
-export function Container_getClusterNodeConfigAdvancedMachineFeature_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodeConfigAdvancedMachineFeature_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "ThreadsPerCore",
+      "threadsPerCore",
       "The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.",
       [],
       true,

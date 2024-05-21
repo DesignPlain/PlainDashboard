@@ -6,42 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Workstations_WorkstationConfigContainer {
+export interface workstations_WorkstationConfigContainer {
   // Arguments passed to the entrypoint.
-  Args?: Array<string>;
+  args?: Array<string>;
 
   // If set, overrides the default ENTRYPOINT specified by the image.
-  Commands?: Array<string>;
+  commands?: Array<string>;
 
   /*
 Environment variables passed to the container.
 The elements are of the form "KEY=VALUE" for the environment variable "KEY" being given the value "VALUE".
 */
-  Env?: Map<string, string>;
+  env?: Map<string, string>;
 
   // Docker image defining the container. This image must be accessible by the config's service account.
-  Image?: string;
+  image?: string;
 
   // If set, overrides the USER specified in the image with the given uid.
-  RunAsUser?: number;
+  runAsUser?: number;
 
   // If set, overrides the default DIR specified by the image.
-  WorkingDir?: string;
+  workingDir?: string;
 }
 
-export function Workstations_WorkstationConfigContainer_GetTypes(): DynamicUIProps[] {
+export function workstations_WorkstationConfigContainer_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "WorkingDir",
-      "If set, overrides the default DIR specified by the image.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Array,
-      "Args",
+      "args",
       "Arguments passed to the entrypoint.",
       InputType_String_GetTypes(),
       false,
@@ -49,7 +41,7 @@ export function Workstations_WorkstationConfigContainer_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Commands",
+      "commands",
       "If set, overrides the default ENTRYPOINT specified by the image.",
       InputType_String_GetTypes(),
       false,
@@ -57,7 +49,7 @@ export function Workstations_WorkstationConfigContainer_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Map,
-      "Env",
+      "env",
       'Environment variables passed to the container.\nThe elements are of the form "KEY=VALUE" for the environment variable "KEY" being given the value "VALUE".',
       InputType_Map_GetTypes(),
       false,
@@ -65,7 +57,7 @@ export function Workstations_WorkstationConfigContainer_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "Image",
+      "image",
       "Docker image defining the container. This image must be accessible by the config's service account.",
       [],
       false,
@@ -73,8 +65,16 @@ export function Workstations_WorkstationConfigContainer_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Number,
-      "RunAsUser",
+      "runAsUser",
       "If set, overrides the USER specified in the image with the given uid.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "workingDir",
+      "If set, overrides the default DIR specified by the image.",
       [],
       false,
       false,

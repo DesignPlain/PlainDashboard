@@ -6,41 +6,41 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets,
-  Datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets_GetTypes,
-} from "./Datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets";
+  datastream_StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset,
+  datastream_StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset_GetTypes,
+} from "./datastream_StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset";
 import {
-  Datastream_StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset,
-  Datastream_StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset_GetTypes,
-} from "./Datastream_StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset";
+  datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets,
+  datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets_GetTypes,
+} from "./datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets";
 
-export interface Datastream_StreamDestinationConfigBigqueryDestinationConfig {
+export interface datastream_StreamDestinationConfigBigqueryDestinationConfig {
   /*
 The guaranteed data freshness (in seconds) when querying tables created by the stream.
 Editing this field will only affect new tables created in the future, but existing tables
 will not be impacted. Lower values mean that queries will return fresher data, but may result in higher cost.
 A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s". Defaults to 900s.
 */
-  DataFreshness?: string;
+  dataFreshness?: string;
 
   /*
 A single target dataset to which all data will be streamed.
 Structure is documented below.
 */
-  SingleTargetDataset?: Datastream_StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset;
+  singleTargetDataset?: datastream_StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset;
 
   /*
 Destination datasets are created so that hierarchy of the destination data objects matches the source hierarchy.
 Structure is documented below.
 */
-  SourceHierarchyDatasets?: Datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets;
+  sourceHierarchyDatasets?: datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets;
 }
 
-export function Datastream_StreamDestinationConfigBigqueryDestinationConfig_GetTypes(): DynamicUIProps[] {
+export function datastream_StreamDestinationConfigBigqueryDestinationConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DataFreshness",
+      "dataFreshness",
       "The guaranteed data freshness (in seconds) when querying tables created by the stream.\nEditing this field will only affect new tables created in the future, but existing tables\nwill not be impacted. Lower values mean that queries will return fresher data, but may result in higher cost.\nA duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\". Defaults to 900s.",
       [],
       false,
@@ -48,17 +48,17 @@ export function Datastream_StreamDestinationConfigBigqueryDestinationConfig_GetT
     ),
     new DynamicUIProps(
       InputType.Object,
-      "SingleTargetDataset",
+      "singleTargetDataset",
       "A single target dataset to which all data will be streamed.\nStructure is documented below.",
-      Datastream_StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset_GetTypes(),
+      datastream_StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "SourceHierarchyDatasets",
+      "sourceHierarchyDatasets",
       "Destination datasets are created so that hierarchy of the destination data objects matches the source hierarchy.\nStructure is documented below.",
-      Datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets_GetTypes(),
+      datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets_GetTypes(),
       false,
       false,
     ),

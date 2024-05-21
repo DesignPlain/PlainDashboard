@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dns_getKeysZoneSigningKeyDigest {
+export interface dns_getKeysZoneSigningKeyDigest {
   // The base-16 encoded bytes of this digest. Suitable for use in a DS resource record.
-  Digest?: string;
+  digest?: string;
 
   // Specifies the algorithm used to calculate this digest. Possible values are `sha1`, `sha256` and `sha384`
-  Type?: string;
+  type?: string;
 }
 
-export function Dns_getKeysZoneSigningKeyDigest_GetTypes(): DynamicUIProps[] {
+export function dns_getKeysZoneSigningKeyDigest_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Digest",
+      "digest",
       "The base-16 encoded bytes of this digest. Suitable for use in a DS resource record.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Dns_getKeysZoneSigningKeyDigest_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Type",
+      "type",
       "Specifies the algorithm used to calculate this digest. Possible values are `sha1`, `sha256` and `sha384`",
       [],
       true,

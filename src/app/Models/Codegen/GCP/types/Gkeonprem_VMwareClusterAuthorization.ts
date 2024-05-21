@@ -6,26 +6,26 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkeonprem_VMwareClusterAuthorizationAdminUser,
-  Gkeonprem_VMwareClusterAuthorizationAdminUser_GetTypes,
-} from "./Gkeonprem_VMwareClusterAuthorizationAdminUser";
+  gkeonprem_VMwareClusterAuthorizationAdminUser,
+  gkeonprem_VMwareClusterAuthorizationAdminUser_GetTypes,
+} from "./gkeonprem_VMwareClusterAuthorizationAdminUser";
 
-export interface Gkeonprem_VMwareClusterAuthorization {
+export interface gkeonprem_VMwareClusterAuthorization {
   /*
 Users that will be granted the cluster-admin role on the cluster, providing
 full access to the cluster.
 Structure is documented below.
 */
-  AdminUsers?: Array<Gkeonprem_VMwareClusterAuthorizationAdminUser>;
+  adminUsers?: Array<gkeonprem_VMwareClusterAuthorizationAdminUser>;
 }
 
-export function Gkeonprem_VMwareClusterAuthorization_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterAuthorization_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AdminUsers",
+      "adminUsers",
       "Users that will be granted the cluster-admin role on the cluster, providing\nfull access to the cluster.\nStructure is documented below.",
-      Gkeonprem_VMwareClusterAuthorizationAdminUser_GetTypes(),
+      gkeonprem_VMwareClusterAuthorizationAdminUser_GetTypes(),
       false,
       false,
     ),

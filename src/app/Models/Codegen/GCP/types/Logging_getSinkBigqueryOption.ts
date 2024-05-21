@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Logging_getSinkBigqueryOption {
+export interface logging_getSinkBigqueryOption {
   // Whether [BigQuery's partition tables](https://cloud.google.com/bigquery/docs/partitioned-tables) are used.
-  UsePartitionedTables?: boolean;
+  usePartitionedTables?: boolean;
 }
 
-export function Logging_getSinkBigqueryOption_GetTypes(): DynamicUIProps[] {
+export function logging_getSinkBigqueryOption_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "UsePartitionedTables",
+      "usePartitionedTables",
       "Whether [BigQuery's partition tables](https://cloud.google.com/bigquery/docs/partitioned-tables) are used.",
       [],
       true,

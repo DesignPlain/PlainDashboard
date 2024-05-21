@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_IntentFollowupIntentInfo {
+export interface diagflow_IntentFollowupIntentInfo {
   /*
 The unique identifier of the followup intent.
 Format: projects/<Project ID>/agent/intents/<Intent ID>.
 */
-  FollowupIntentName?: string;
+  followupIntentName?: string;
 
   /*
 The unique identifier of the parent intent in the chain of followup intents.
 Format: projects/<Project ID>/agent/intents/<Intent ID>.
 */
-  ParentFollowupIntentName?: string;
+  parentFollowupIntentName?: string;
 }
 
-export function Diagflow_IntentFollowupIntentInfo_GetTypes(): DynamicUIProps[] {
+export function diagflow_IntentFollowupIntentInfo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "FollowupIntentName",
+      "followupIntentName",
       "The unique identifier of the followup intent.\nFormat: projects/<Project ID>/agent/intents/<Intent ID>.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Diagflow_IntentFollowupIntentInfo_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ParentFollowupIntentName",
+      "parentFollowupIntentName",
       "The unique identifier of the parent intent in the chain of followup intents.\nFormat: projects/<Project ID>/agent/intents/<Intent ID>.",
       [],
       false,

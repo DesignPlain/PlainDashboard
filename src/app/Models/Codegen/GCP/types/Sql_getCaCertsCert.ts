@@ -6,52 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getCaCertsCert {
-  // Expiration time of the CA cert.
-  ExpirationTime?: string;
-
+export interface sql_getCaCertsCert {
   // SHA1 fingerprint of the CA cert.
-  Sha1Fingerprint?: string;
+  sha1Fingerprint?: string;
 
   // The CA certificate used to connect to the SQL instance via SSL.
-  Cert?: string;
+  cert?: string;
 
   // The CN valid for the CA cert.
-  CommonName?: string;
+  commonName?: string;
 
   // Creation time of the CA cert.
-  CreateTime?: string;
+  createTime?: string;
+
+  // Expiration time of the CA cert.
+  expirationTime?: string;
 }
 
-export function Sql_getCaCertsCert_GetTypes(): DynamicUIProps[] {
+export function sql_getCaCertsCert_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ExpirationTime",
-      "Expiration time of the CA cert.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Sha1Fingerprint",
-      "SHA1 fingerprint of the CA cert.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Cert",
-      "The CA certificate used to connect to the SQL instance via SSL.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "CommonName",
+      "commonName",
       "The CN valid for the CA cert.",
       [],
       true,
@@ -59,8 +35,32 @@ export function Sql_getCaCertsCert_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "CreateTime",
+      "createTime",
       "Creation time of the CA cert.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "expirationTime",
+      "Expiration time of the CA cert.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "sha1Fingerprint",
+      "SHA1 fingerprint of the CA cert.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "cert",
+      "The CA certificate used to connect to the SQL instance via SSL.",
       [],
       true,
       false,

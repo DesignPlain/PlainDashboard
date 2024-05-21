@@ -6,14 +6,14 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudidentity_getGroupLookupGroupKey {
+export interface cloudidentity_getGroupLookupGroupKey {
   /*
 (Required) The ID of the entity.
 For Google-managed entities, the id is the email address of an existing group or user.
 For external-identity-mapped entities, the id is a string conforming
 to the Identity Source's requirements.
 */
-  Id?: string;
+  id?: string;
 
   /*
 (Optional) The namespace in which the entity exists.
@@ -23,14 +23,14 @@ If populated, the EntityKey represents an external-identity-mapped group.
 The namespace must correspond to an identity source created in Admin Console
 and must be in the form of `identitysources/{identity_source_id}`.
 */
-  Namespace?: string;
+  namespace?: string;
 }
 
-export function Cloudidentity_getGroupLookupGroupKey_GetTypes(): DynamicUIProps[] {
+export function cloudidentity_getGroupLookupGroupKey_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Id",
+      "id",
       "(Required) The ID of the entity.\nFor Google-managed entities, the id is the email address of an existing group or user.\nFor external-identity-mapped entities, the id is a string conforming\nto the Identity Source's requirements.",
       [],
       true,
@@ -38,7 +38,7 @@ export function Cloudidentity_getGroupLookupGroupKey_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "Namespace",
+      "namespace",
       "(Optional) The namespace in which the entity exists.\nIf not populated, the EntityKey represents a Google-managed entity\nsuch as a Google user or a Google Group.\nIf populated, the EntityKey represents an external-identity-mapped group.\nThe namespace must correspond to an identity source created in Admin Console\nand must be in the form of `identitysources/{identity_source_id}`.",
       [],
       false,

@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_AutoscalerAutoscalingPolicyLoadBalancingUtilization {
+export interface compute_AutoscalerAutoscalingPolicyLoadBalancingUtilization {
   /*
 Fraction of backend capacity utilization (set in HTTP(s) load
 balancing configuration) that autoscaler should maintain. Must
 be a positive float value. If not defined, the default is 0.8.
 */
-  Target?: number;
+  target?: number;
 }
 
-export function Compute_AutoscalerAutoscalingPolicyLoadBalancingUtilization_GetTypes(): DynamicUIProps[] {
+export function compute_AutoscalerAutoscalingPolicyLoadBalancingUtilization_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Target",
+      "target",
       "Fraction of backend capacity utilization (set in HTTP(s) load\nbalancing configuration) that autoscaler should maintain. Must\nbe a positive float value. If not defined, the default is 0.8.",
       [],
       true,

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_getClusterNodeConfigSandboxConfig {
+export interface container_getClusterNodeConfigSandboxConfig {
   // Type of the sandbox to use for the node (e.g. 'gvisor')
-  SandboxType?: string;
+  sandboxType?: string;
 }
 
-export function Container_getClusterNodeConfigSandboxConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodeConfigSandboxConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SandboxType",
+      "sandboxType",
       "Type of the sandbox to use for the node (e.g. 'gvisor')",
       [],
       true,

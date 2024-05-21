@@ -7,13 +7,13 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Vertex_AiFeatureStoreEntityTypeMonitoringConfig,
-  Vertex_AiFeatureStoreEntityTypeMonitoringConfig_GetTypes,
-} from "../types/Vertex_AiFeatureStoreEntityTypeMonitoringConfig";
+  vertex_AiFeatureStoreEntityTypeMonitoringConfig,
+  vertex_AiFeatureStoreEntityTypeMonitoringConfig_GetTypes,
+} from "../types/vertex_AiFeatureStoreEntityTypeMonitoringConfig";
 
 export interface AiFeatureStoreEntityTypeArgs {
   // Optional. Description of the EntityType.
-  Description?: string;
+  description?: string;
 
   /*
 The name of the Featurestore to use, in the format projects/{project}/locations/{location}/featurestores/{featurestore}.
@@ -21,7 +21,7 @@ The name of the Featurestore to use, in the format projects/{project}/locations/
 
 - - -
 */
-  Featurestore?: string;
+  featurestore?: string;
 
   /*
 A set of key/value label pairs to assign to this EntityType.
@@ -29,40 +29,35 @@ A set of key/value label pairs to assign to this EntityType.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   /*
 The default monitoring configuration for all Features under this EntityType.
 If this is populated with [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is disabled.
 Structure is documented below.
 */
-  MonitoringConfig?: Vertex_AiFeatureStoreEntityTypeMonitoringConfig;
+  monitoringConfig?: vertex_AiFeatureStoreEntityTypeMonitoringConfig;
 
   // The name of the EntityType. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.
-  Name?: string;
+  name?: string;
 
   // Config for data retention policy in offline storage. TTL in days for feature values that will be stored in offline storage. The Feature Store offline storage periodically removes obsolete feature values older than offlineStorageTtlDays since the feature generation time. If unset (or explicitly set to 0), default to 4000 days TTL.
-  OfflineStorageTtlDays?: number;
+  offlineStorageTtlDays?: number;
 }
 export class AiFeatureStoreEntityType extends Resource {
   /*
-The default monitoring configuration for all Features under this EntityType.
-If this is populated with [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is disabled.
-Structure is documented below.
+The name of the Featurestore to use, in the format projects/{project}/locations/{location}/featurestores/{featurestore}.
+
+
+- - -
 */
-  public MonitoringConfig?: Vertex_AiFeatureStoreEntityTypeMonitoringConfig;
+  public featurestore?: string;
 
-  // The name of the EntityType. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.
-  public Name?: string;
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
 
-  // Config for data retention policy in offline storage. TTL in days for feature values that will be stored in offline storage. The Feature Store offline storage periodically removes obsolete feature values older than offlineStorageTtlDays since the feature generation time. If unset (or explicitly set to 0), default to 4000 days TTL.
-  public OfflineStorageTtlDays?: number;
-
-  // The timestamp of when the featurestore was created in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
-  public CreateTime?: string;
-
-  // Optional. Description of the EntityType.
-  public Description?: string;
+  // Used to perform consistent read-modify-write updates.
+  public etag?: string;
 
   /*
 A set of key/value label pairs to assign to this EntityType.
@@ -70,39 +65,44 @@ A set of key/value label pairs to assign to this EntityType.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  public Labels?: Map<string, string>;
+  public labels?: Map<string, string>;
+
+  /*
+The default monitoring configuration for all Features under this EntityType.
+If this is populated with [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is disabled.
+Structure is documented below.
+*/
+  public monitoringConfig?: vertex_AiFeatureStoreEntityTypeMonitoringConfig;
+
+  // The name of the EntityType. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.
+  public name?: string;
+
+  // Config for data retention policy in offline storage. TTL in days for feature values that will be stored in offline storage. The Feature Store offline storage periodically removes obsolete feature values older than offlineStorageTtlDays since the feature generation time. If unset (or explicitly set to 0), default to 4000 days TTL.
+  public offlineStorageTtlDays?: number;
+
+  // The timestamp of when the featurestore was created in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
+  public createTime?: string;
+
+  // Optional. Description of the EntityType.
+  public description?: string;
+
+  // The timestamp of when the featurestore was last updated in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
+  public updateTime?: string;
 
   /*
 The combination of labels configured directly on the resource
 and default labels configured on the provider.
 */
-  public PulumiLabels?: Map<string, string>;
+  public pulumiLabels?: Map<string, string>;
 
   // The region of the EntityType.
-  public Region?: string;
-
-  // The timestamp of when the featurestore was last updated in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
-  public UpdateTime?: string;
-
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
-
-  // Used to perform consistent read-modify-write updates.
-  public Etag?: string;
-
-  /*
-The name of the Featurestore to use, in the format projects/{project}/locations/{location}/featurestores/{featurestore}.
-
-
-- - -
-*/
-  public Featurestore?: string;
+  public region?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "Optional. Description of the EntityType.",
         [],
         false,
@@ -110,7 +110,7 @@ The name of the Featurestore to use, in the format projects/{project}/locations/
       ),
       new DynamicUIProps(
         InputType.String,
-        "Featurestore",
+        "featurestore",
         "The name of the Featurestore to use, in the format projects/{project}/locations/{location}/featurestores/{featurestore}.\n\n\n- - -",
         [],
         true,
@@ -118,7 +118,7 @@ The name of the Featurestore to use, in the format projects/{project}/locations/
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "A set of key/value label pairs to assign to this EntityType.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
@@ -126,15 +126,15 @@ The name of the Featurestore to use, in the format projects/{project}/locations/
       ),
       new DynamicUIProps(
         InputType.Object,
-        "MonitoringConfig",
+        "monitoringConfig",
         "The default monitoring configuration for all Features under this EntityType.\nIf this is populated with [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is disabled.\nStructure is documented below.",
-        Vertex_AiFeatureStoreEntityTypeMonitoringConfig_GetTypes(),
+        vertex_AiFeatureStoreEntityTypeMonitoringConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name of the EntityType. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.",
         [],
         false,
@@ -142,7 +142,7 @@ The name of the Featurestore to use, in the format projects/{project}/locations/
       ),
       new DynamicUIProps(
         InputType.Number,
-        "OfflineStorageTtlDays",
+        "offlineStorageTtlDays",
         "Config for data retention policy in offline storage. TTL in days for feature values that will be stored in offline storage. The Feature Store offline storage periodically removes obsolete feature values older than offlineStorageTtlDays since the feature generation time. If unset (or explicitly set to 0), default to 4000 days TTL.",
         [],
         false,

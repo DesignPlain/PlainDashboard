@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkservices_HttpRouteRuleMatchQueryParameter {
+export interface networkservices_HttpRouteRuleMatchQueryParameter {
   // The value of the query parameter must exactly match the contents of exactMatch.
-  ExactMatch?: string;
+  exactMatch?: string;
 
   // Specifies that the QueryParameterMatcher matches if request contains query parameter, irrespective of whether the parameter has a value or not.
-  PresentMatch?: boolean;
+  presentMatch?: boolean;
 
   // The name of the query parameter to match.
-  QueryParameter?: string;
+  queryParameter?: string;
 
   // The value of the query parameter must match the regular expression specified by regexMatch.For regular expression grammar, please see https://github.com/google/re2/wiki/Syntax
-  RegexMatch?: string;
+  regexMatch?: string;
 }
 
-export function Networkservices_HttpRouteRuleMatchQueryParameter_GetTypes(): DynamicUIProps[] {
+export function networkservices_HttpRouteRuleMatchQueryParameter_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ExactMatch",
+      "exactMatch",
       "The value of the query parameter must exactly match the contents of exactMatch.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Networkservices_HttpRouteRuleMatchQueryParameter_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "PresentMatch",
+      "presentMatch",
       "Specifies that the QueryParameterMatcher matches if request contains query parameter, irrespective of whether the parameter has a value or not.",
       [],
       false,
@@ -40,7 +40,7 @@ export function Networkservices_HttpRouteRuleMatchQueryParameter_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "QueryParameter",
+      "queryParameter",
       "The name of the query parameter to match.",
       [],
       false,
@@ -48,7 +48,7 @@ export function Networkservices_HttpRouteRuleMatchQueryParameter_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "RegexMatch",
+      "regexMatch",
       "The value of the query parameter must match the regular expression specified by regexMatch.For regular expression grammar, please see https://github.com/google/re2/wiki/Syntax",
       [],
       false,

@@ -6,72 +6,72 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networkservices_GrpcRouteRuleActionDestination,
-  Networkservices_GrpcRouteRuleActionDestination_GetTypes,
-} from "./Networkservices_GrpcRouteRuleActionDestination";
+  networkservices_GrpcRouteRuleActionDestination,
+  networkservices_GrpcRouteRuleActionDestination_GetTypes,
+} from "./networkservices_GrpcRouteRuleActionDestination";
 import {
-  Networkservices_GrpcRouteRuleActionFaultInjectionPolicy,
-  Networkservices_GrpcRouteRuleActionFaultInjectionPolicy_GetTypes,
-} from "./Networkservices_GrpcRouteRuleActionFaultInjectionPolicy";
+  networkservices_GrpcRouteRuleActionFaultInjectionPolicy,
+  networkservices_GrpcRouteRuleActionFaultInjectionPolicy_GetTypes,
+} from "./networkservices_GrpcRouteRuleActionFaultInjectionPolicy";
 import {
-  Networkservices_GrpcRouteRuleActionRetryPolicy,
-  Networkservices_GrpcRouteRuleActionRetryPolicy_GetTypes,
-} from "./Networkservices_GrpcRouteRuleActionRetryPolicy";
+  networkservices_GrpcRouteRuleActionRetryPolicy,
+  networkservices_GrpcRouteRuleActionRetryPolicy_GetTypes,
+} from "./networkservices_GrpcRouteRuleActionRetryPolicy";
 
-export interface Networkservices_GrpcRouteRuleAction {
+export interface networkservices_GrpcRouteRuleAction {
   /*
 The destination to which traffic should be forwarded.
 Structure is documented below.
 */
-  Destinations?: Array<Networkservices_GrpcRouteRuleActionDestination>;
+  destinations?: Array<networkservices_GrpcRouteRuleActionDestination>;
 
   /*
 The specification for fault injection introduced into traffic to test the resiliency of clients to backend service failure.
 Structure is documented below.
 */
-  FaultInjectionPolicy?: Networkservices_GrpcRouteRuleActionFaultInjectionPolicy;
+  faultInjectionPolicy?: networkservices_GrpcRouteRuleActionFaultInjectionPolicy;
 
   /*
 Specifies the retry policy associated with this route.
 Structure is documented below.
 */
-  RetryPolicy?: Networkservices_GrpcRouteRuleActionRetryPolicy;
+  retryPolicy?: networkservices_GrpcRouteRuleActionRetryPolicy;
 
   // Specifies the timeout for selected route.
-  Timeout?: string;
+  timeout?: string;
 }
 
-export function Networkservices_GrpcRouteRuleAction_GetTypes(): DynamicUIProps[] {
+export function networkservices_GrpcRouteRuleAction_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "Destinations",
-      "The destination to which traffic should be forwarded.\nStructure is documented below.",
-      Networkservices_GrpcRouteRuleActionDestination_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "FaultInjectionPolicy",
-      "The specification for fault injection introduced into traffic to test the resiliency of clients to backend service failure.\nStructure is documented below.",
-      Networkservices_GrpcRouteRuleActionFaultInjectionPolicy_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "RetryPolicy",
-      "Specifies the retry policy associated with this route.\nStructure is documented below.",
-      Networkservices_GrpcRouteRuleActionRetryPolicy_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Timeout",
+      "timeout",
       "Specifies the timeout for selected route.",
       [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "destinations",
+      "The destination to which traffic should be forwarded.\nStructure is documented below.",
+      networkservices_GrpcRouteRuleActionDestination_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "faultInjectionPolicy",
+      "The specification for fault injection introduced into traffic to test the resiliency of clients to backend service failure.\nStructure is documented below.",
+      networkservices_GrpcRouteRuleActionFaultInjectionPolicy_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "retryPolicy",
+      "Specifies the retry policy associated with this route.\nStructure is documented below.",
+      networkservices_GrpcRouteRuleActionRetryPolicy_GetTypes(),
       false,
       false,
     ),

@@ -8,30 +8,30 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface IAMCustomRoleArgs {
+  // A human-readable description for the role.
+  description?: string;
+
   // The names of the permissions this role grants when bound in an IAM policy. At least one permission must be specified.
-  Permissions?: Array<string>;
+  permissions?: Array<string>;
 
   /*
 The project that the custom role will be created in.
 Defaults to the provider project configuration.
 */
-  Project?: string;
+  project?: string;
 
   // The camel case role id to use for this role. Cannot contain `-` characters.
-  RoleId?: string;
+  roleId?: string;
 
   /*
 The current launch stage of the role.
 Defaults to `GA`.
 List of possible stages is [here](https://cloud.google.com/iam/reference/rest/v1/organizations.roles#Role.RoleLaunchStage).
 */
-  Stage?: string;
+  stage?: string;
 
   // A human-readable title for the role.
-  Title?: string;
-
-  // A human-readable description for the role.
-  Description?: string;
+  title?: string;
 }
 export class IAMCustomRole extends Resource {
   /*
@@ -39,61 +39,37 @@ The current launch stage of the role.
 Defaults to `GA`.
 List of possible stages is [here](https://cloud.google.com/iam/reference/rest/v1/organizations.roles#Role.RoleLaunchStage).
 */
-  public Stage?: string;
+  public stage?: string;
 
   // A human-readable title for the role.
-  public Title?: string;
+  public title?: string;
 
   // (Optional) The current deleted state of the role.
-  public Deleted?: boolean;
+  public deleted?: boolean;
 
   // A human-readable description for the role.
-  public Description?: string;
+  public description?: string;
 
   // The name of the role in the format `projects/{{project}}/roles/{{role_id}}`. Like `id`, this field can be used as a reference in other resources such as IAM role bindings.
-  public Name?: string;
+  public name?: string;
 
   // The names of the permissions this role grants when bound in an IAM policy. At least one permission must be specified.
-  public Permissions?: Array<string>;
+  public permissions?: Array<string>;
 
   /*
 The project that the custom role will be created in.
 Defaults to the provider project configuration.
 */
-  public Project?: string;
+  public project?: string;
 
   // The camel case role id to use for this role. Cannot contain `-` characters.
-  public RoleId?: string;
+  public roleId?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Array,
-        "Permissions",
-        "The names of the permissions this role grants when bound in an IAM policy. At least one permission must be specified.",
-        InputType_String_GetTypes(),
-        true,
-        false,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "Project",
-        "The project that the custom role will be created in.\nDefaults to the provider project configuration.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "RoleId",
-        "The camel case role id to use for this role. Cannot contain `-` characters.",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Stage",
+        "stage",
         "The current launch stage of the role.\nDefaults to `GA`.\nList of possible stages is [here](https://cloud.google.com/iam/reference/rest/v1/organizations.roles#Role.RoleLaunchStage).",
         [],
         false,
@@ -101,7 +77,7 @@ Defaults to the provider project configuration.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Title",
+        "title",
         "A human-readable title for the role.",
         [],
         true,
@@ -109,11 +85,35 @@ Defaults to the provider project configuration.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Description",
+        "description",
         "A human-readable description for the role.",
         [],
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.Array,
+        "permissions",
+        "The names of the permissions this role grants when bound in an IAM policy. At least one permission must be specified.",
+        InputType_String_GetTypes(),
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The project that the custom role will be created in.\nDefaults to the provider project configuration.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "roleId",
+        "The camel case role id to use for this role. Cannot contain `-` characters.",
+        [],
+        true,
+        true,
       ),
     ];
   }

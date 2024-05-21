@@ -6,43 +6,35 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Healthcare_Hl7StoreParserConfig {
+export interface healthcare_Hl7StoreParserConfig {
   // Determines whether messages with no header are allowed.
-  AllowNullHeader?: boolean;
+  allowNullHeader?: boolean;
 
   /*
 JSON encoded string for schemas used to parse messages in this
 store if schematized parsing is desired.
 */
-  Schema?: string;
+  schema?: string;
 
   /*
 Byte(s) to be used as the segment terminator. If this is unset, '\r' will be used as segment terminator.
 A base64-encoded string.
 */
-  SegmentTerminator?: string;
+  segmentTerminator?: string;
 
   /*
 The version of the unschematized parser to be used when a custom `schema` is not set.
 Default value is `V1`.
 Possible values are: `V1`, `V2`, `V3`.
 */
-  Version?: string;
+  version?: string;
 }
 
-export function Healthcare_Hl7StoreParserConfig_GetTypes(): DynamicUIProps[] {
+export function healthcare_Hl7StoreParserConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SegmentTerminator",
-      "Byte(s) to be used as the segment terminator. If this is unset, '\\r' will be used as segment terminator.\nA base64-encoded string.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Version",
+      "version",
       "The version of the unschematized parser to be used when a custom `schema` is not set.\nDefault value is `V1`.\nPossible values are: `V1`, `V2`, `V3`.",
       [],
       false,
@@ -50,7 +42,7 @@ export function Healthcare_Hl7StoreParserConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "AllowNullHeader",
+      "allowNullHeader",
       "Determines whether messages with no header are allowed.",
       [],
       false,
@@ -58,8 +50,16 @@ export function Healthcare_Hl7StoreParserConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Schema",
+      "schema",
       "JSON encoded string for schemas used to parse messages in this\nstore if schematized parsing is desired.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "segmentTerminator",
+      "Byte(s) to be used as the segment terminator. If this is unset, '\\r' will be used as segment terminator.\nA base64-encoded string.",
       [],
       false,
       false,

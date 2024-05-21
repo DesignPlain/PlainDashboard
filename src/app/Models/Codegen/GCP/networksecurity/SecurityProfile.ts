@@ -7,19 +7,13 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networksecurity_SecurityProfileThreatPreventionProfile,
-  Networksecurity_SecurityProfileThreatPreventionProfile_GetTypes,
-} from "../types/Networksecurity_SecurityProfileThreatPreventionProfile";
+  networksecurity_SecurityProfileThreatPreventionProfile,
+  networksecurity_SecurityProfileThreatPreventionProfile_GetTypes,
+} from "../types/networksecurity_SecurityProfileThreatPreventionProfile";
 
 export interface SecurityProfileArgs {
-  /*
-The type of security profile.
-Possible values are: `THREAT_PREVENTION`.
-*/
-  Type?: string;
-
   // An optional description of the security profile. The Max length is 512 characters.
-  Description?: string;
+  description?: string;
 
   /*
 A map of key/value label pairs to assign to the resource.
@@ -27,13 +21,13 @@ A map of key/value label pairs to assign to the resource.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   /*
 The location of the security profile.
 The default value is `global`.
 */
-  Location?: string;
+  location?: string;
 
   /*
 The name of the security profile resource.
@@ -41,94 +35,108 @@ The name of the security profile resource.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   /*
 The name of the parent this security profile belongs to.
 Format: organizations/{organization_id}.
 */
-  Parent?: string;
+  parent?: string;
 
   /*
 The threat prevention configuration for the security profile.
 Structure is documented below.
 */
-  ThreatPreventionProfile?: Networksecurity_SecurityProfileThreatPreventionProfile;
+  threatPreventionProfile?: networksecurity_SecurityProfileThreatPreventionProfile;
+
+  /*
+The type of security profile.
+Possible values are: `THREAT_PREVENTION`.
+*/
+  type?: string;
 }
 export class SecurityProfile extends Resource {
-  /*
-A map of key/value label pairs to assign to the resource.
-
---Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
-Please refer to the field `effective_labels` for all of the labels present on the resource.
-*/
-  public Labels?: Map<string, string>;
-
-  /*
-The location of the security profile.
-The default value is `global`.
-*/
-  public Location?: string;
-
-  /*
-The name of the security profile resource.
-
-
-- - -
-*/
-  public Name?: string;
-
-  /*
-The name of the parent this security profile belongs to.
-Format: organizations/{organization_id}.
-*/
-  public Parent?: string;
-
-  /*
-The combination of labels configured directly on the resource
-and default labels configured on the provider.
-*/
-  public PulumiLabels?: Map<string, string>;
-
-  // Server-defined URL of this resource.
-  public SelfLink?: string;
-
   // Time the security profile was created in UTC.
-  public CreateTime?: string;
+  public createTime?: string;
 
   // An optional description of the security profile. The Max length is 512 characters.
-  public Description?: string;
-
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
+  public description?: string;
 
   /*
 This checksum is computed by the server based on the value of other fields,
 and may be sent on update and delete requests to ensure the client has an up-to-date
 value before proceeding.
 */
-  public Etag?: string;
+  public etag?: string;
+
+  /*
+The name of the security profile resource.
+
+
+- - -
+*/
+  public name?: string;
+
+  /*
+The name of the parent this security profile belongs to.
+Format: organizations/{organization_id}.
+*/
+  public parent?: string;
+
+  /*
+The combination of labels configured directly on the resource
+and default labels configured on the provider.
+*/
+  public pulumiLabels?: Map<string, string>;
+
+  // Server-defined URL of this resource.
+  public selfLink?: string;
+
+  // Time the security profile was updated in UTC.
+  public updateTime?: string;
+
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
+
+  /*
+A map of key/value label pairs to assign to the resource.
+
+--Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field `effective_labels` for all of the labels present on the resource.
+*/
+  public labels?: Map<string, string>;
+
+  /*
+The location of the security profile.
+The default value is `global`.
+*/
+  public location?: string;
 
   /*
 The threat prevention configuration for the security profile.
 Structure is documented below.
 */
-  public ThreatPreventionProfile?: Networksecurity_SecurityProfileThreatPreventionProfile;
+  public threatPreventionProfile?: networksecurity_SecurityProfileThreatPreventionProfile;
 
   /*
 The type of security profile.
 Possible values are: `THREAT_PREVENTION`.
 */
-  public Type?: string;
-
-  // Time the security profile was updated in UTC.
-  public UpdateTime?: string;
+  public type?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
+        InputType.String,
+        "description",
+        "An optional description of the security profile. The Max length is 512 characters.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
         InputType.Map,
-        "Labels",
+        "labels",
         "A map of key/value label pairs to assign to the resource.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         InputType_Map_GetTypes(),
         false,
@@ -136,7 +144,7 @@ Possible values are: `THREAT_PREVENTION`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "location",
         "The location of the security profile.\nThe default value is `global`.",
         [],
         false,
@@ -144,7 +152,7 @@ Possible values are: `THREAT_PREVENTION`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name of the security profile resource.\n\n\n- - -",
         [],
         false,
@@ -152,7 +160,7 @@ Possible values are: `THREAT_PREVENTION`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Parent",
+        "parent",
         "The name of the parent this security profile belongs to.\nFormat: organizations/{organization_id}.",
         [],
         false,
@@ -160,27 +168,19 @@ Possible values are: `THREAT_PREVENTION`.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "ThreatPreventionProfile",
+        "threatPreventionProfile",
         "The threat prevention configuration for the security profile.\nStructure is documented below.",
-        Networksecurity_SecurityProfileThreatPreventionProfile_GetTypes(),
+        networksecurity_SecurityProfileThreatPreventionProfile_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Type",
+        "type",
         "The type of security profile.\nPossible values are: `THREAT_PREVENTION`.",
         [],
         true,
         true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "An optional description of the security profile. The Max length is 512 characters.",
-        [],
-        false,
-        false,
       ),
     ];
   }

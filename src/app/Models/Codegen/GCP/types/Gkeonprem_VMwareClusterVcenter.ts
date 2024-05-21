@@ -6,64 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkeonprem_VMwareClusterVcenter {
+export interface gkeonprem_VMwareClusterVcenter {
+  // The name of the vCenter folder for the user cluster.
+  folder?: string;
+
+  // The name of the vCenter resource pool for the user cluster.
+  resourcePool?: string;
+
+  // The name of the vCenter storage policy for the user cluster.
+  storagePolicyName?: string;
+
   /*
 (Output)
 The vCenter IP address.
 */
-  Address?: string;
+  address?: string;
 
   // Contains the vCenter CA certificate public key for SSL verification.
-  CaCertData?: string;
+  caCertData?: string;
 
   // The name of the vCenter cluster for the user cluster.
-  Cluster?: string;
+  cluster?: string;
 
   // The name of the vCenter datacenter for the user cluster.
-  Datacenter?: string;
+  datacenter?: string;
 
   // The name of the vCenter datastore for the user cluster.
-  Datastore?: string;
-
-  // The name of the vCenter folder for the user cluster.
-  Folder?: string;
-
-  // The name of the vCenter resource pool for the user cluster.
-  ResourcePool?: string;
-
-  // The name of the vCenter storage policy for the user cluster.
-  StoragePolicyName?: string;
+  datastore?: string;
 }
 
-export function Gkeonprem_VMwareClusterVcenter_GetTypes(): DynamicUIProps[] {
+export function gkeonprem_VMwareClusterVcenter_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CaCertData",
-      "Contains the vCenter CA certificate public key for SSL verification.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Cluster",
-      "The name of the vCenter cluster for the user cluster.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Datacenter",
-      "The name of the vCenter datacenter for the user cluster.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Datastore",
+      "datastore",
       "The name of the vCenter datastore for the user cluster.",
       [],
       false,
@@ -71,7 +47,7 @@ export function Gkeonprem_VMwareClusterVcenter_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Folder",
+      "folder",
       "The name of the vCenter folder for the user cluster.",
       [],
       false,
@@ -79,7 +55,7 @@ export function Gkeonprem_VMwareClusterVcenter_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "ResourcePool",
+      "resourcePool",
       "The name of the vCenter resource pool for the user cluster.",
       [],
       false,
@@ -87,7 +63,7 @@ export function Gkeonprem_VMwareClusterVcenter_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "StoragePolicyName",
+      "storagePolicyName",
       "The name of the vCenter storage policy for the user cluster.",
       [],
       false,
@@ -95,8 +71,32 @@ export function Gkeonprem_VMwareClusterVcenter_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Address",
+      "address",
       "(Output)\nThe vCenter IP address.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "caCertData",
+      "Contains the vCenter CA certificate public key for SSL verification.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "cluster",
+      "The name of the vCenter cluster for the user cluster.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "datacenter",
+      "The name of the vCenter datacenter for the user cluster.",
       [],
       false,
       false,

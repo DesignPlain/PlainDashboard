@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Deploymentmanager_DeploymentLabel {
+export interface deploymentmanager_DeploymentLabel {
   // Key for label.
-  Key?: string;
+  key?: string;
 
   // Value of label.
-  Value?: string;
+  value?: string;
 }
 
-export function Deploymentmanager_DeploymentLabel_GetTypes(): DynamicUIProps[] {
+export function deploymentmanager_DeploymentLabel_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "key",
       "Key for label.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Deploymentmanager_DeploymentLabel_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "Value of label.",
       [],
       false,

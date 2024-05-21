@@ -6,167 +6,119 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_AwsNodePoolConfigSshConfig,
-  Container_AwsNodePoolConfigSshConfig_GetTypes,
-} from "./Container_AwsNodePoolConfigSshConfig";
+  container_AwsNodePoolConfigInstancePlacement,
+  container_AwsNodePoolConfigInstancePlacement_GetTypes,
+} from "./container_AwsNodePoolConfigInstancePlacement";
 import {
-  Container_AwsNodePoolConfigAutoscalingMetricsCollection,
-  Container_AwsNodePoolConfigAutoscalingMetricsCollection_GetTypes,
-} from "./Container_AwsNodePoolConfigAutoscalingMetricsCollection";
+  container_AwsNodePoolConfigSpotConfig,
+  container_AwsNodePoolConfigSpotConfig_GetTypes,
+} from "./container_AwsNodePoolConfigSpotConfig";
 import {
-  Container_AwsNodePoolConfigTaint,
-  Container_AwsNodePoolConfigTaint_GetTypes,
-} from "./Container_AwsNodePoolConfigTaint";
+  container_AwsNodePoolConfigConfigEncryption,
+  container_AwsNodePoolConfigConfigEncryption_GetTypes,
+} from "./container_AwsNodePoolConfigConfigEncryption";
 import {
-  Container_AwsNodePoolConfigConfigEncryption,
-  Container_AwsNodePoolConfigConfigEncryption_GetTypes,
-} from "./Container_AwsNodePoolConfigConfigEncryption";
+  container_AwsNodePoolConfigRootVolume,
+  container_AwsNodePoolConfigRootVolume_GetTypes,
+} from "./container_AwsNodePoolConfigRootVolume";
 import {
-  Container_AwsNodePoolConfigSpotConfig,
-  Container_AwsNodePoolConfigSpotConfig_GetTypes,
-} from "./Container_AwsNodePoolConfigSpotConfig";
+  container_AwsNodePoolConfigSshConfig,
+  container_AwsNodePoolConfigSshConfig_GetTypes,
+} from "./container_AwsNodePoolConfigSshConfig";
 import {
-  Container_AwsNodePoolConfigInstancePlacement,
-  Container_AwsNodePoolConfigInstancePlacement_GetTypes,
-} from "./Container_AwsNodePoolConfigInstancePlacement";
+  container_AwsNodePoolConfigTaint,
+  container_AwsNodePoolConfigTaint_GetTypes,
+} from "./container_AwsNodePoolConfigTaint";
 import {
-  Container_AwsNodePoolConfigProxyConfig,
-  Container_AwsNodePoolConfigProxyConfig_GetTypes,
-} from "./Container_AwsNodePoolConfigProxyConfig";
+  container_AwsNodePoolConfigProxyConfig,
+  container_AwsNodePoolConfigProxyConfig_GetTypes,
+} from "./container_AwsNodePoolConfigProxyConfig";
 import {
-  Container_AwsNodePoolConfigRootVolume,
-  Container_AwsNodePoolConfigRootVolume_GetTypes,
-} from "./Container_AwsNodePoolConfigRootVolume";
+  container_AwsNodePoolConfigAutoscalingMetricsCollection,
+  container_AwsNodePoolConfigAutoscalingMetricsCollection_GetTypes,
+} from "./container_AwsNodePoolConfigAutoscalingMetricsCollection";
 
-export interface Container_AwsNodePoolConfig {
-  // The name of the AWS IAM role assigned to nodes in the pool.
-  IamInstanceProfile?: string;
-
+export interface container_AwsNodePoolConfig {
   // The OS image type to use on node pool instances.
-  ImageType?: string;
-
-  // Optional. The initial labels assigned to nodes of this node pool. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
-  Labels?: Map<string, string>;
-
-  // Optional. The IDs of additional security groups to add to nodes in this pool. The manager will automatically create security groups with minimum rules needed for a functioning cluster.
-  SecurityGroupIds?: Array<string>;
+  imageType?: string;
 
   // Details of placement information for an instance.
-  InstancePlacement?: Container_AwsNodePoolConfigInstancePlacement;
+  instancePlacement?: container_AwsNodePoolConfigInstancePlacement;
 
-  // Proxy configuration for outbound HTTP(S) traffic.
-  ProxyConfig?: Container_AwsNodePoolConfigProxyConfig;
-
-  // Optional. Template for the root volume provisioned for node pool nodes. Volumes will be provisioned in the availability zone assigned to the node pool subnet. When unspecified, it defaults to 32 GiB with the GP2 volume type.
-  RootVolume?: Container_AwsNodePoolConfigRootVolume;
-
-  // Optional. The SSH configuration.
-  SshConfig?: Container_AwsNodePoolConfigSshConfig;
-
-  // Optional. Configuration related to CloudWatch metrics collection on the Auto Scaling group of the node pool. When unspecified, metrics collection is disabled.
-  AutoscalingMetricsCollection?: Container_AwsNodePoolConfigAutoscalingMetricsCollection;
-
-  // Optional. The initial taints assigned to nodes of this node pool.
-  Taints?: Array<Container_AwsNodePoolConfigTaint>;
-
-  // The ARN of the AWS KMS key used to encrypt node pool configuration.
-  ConfigEncryption?: Container_AwsNodePoolConfigConfigEncryption;
-
-  // Optional. The AWS instance type. When unspecified, it defaults to `m5.large`.
-  InstanceType?: string;
+  // Optional. The initial labels assigned to nodes of this node pool. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
+  labels?: Map<string, string>;
 
   // Optional. When specified, the node pool will provision Spot instances from the set of spot_config.instance_types. This field is mutually exclusive with `instance_type`
-  SpotConfig?: Container_AwsNodePoolConfigSpotConfig;
+  spotConfig?: container_AwsNodePoolConfigSpotConfig;
 
   // Optional. Key/value metadata to assign to each underlying AWS resource. Specify at most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:@/). Keys can be up to 127 Unicode characters. Values can be up to 255 Unicode characters.
-  Tags?: Map<string, string>;
+  tags?: Map<string, string>;
+
+  // The ARN of the AWS KMS key used to encrypt node pool configuration.
+  configEncryption?: container_AwsNodePoolConfigConfigEncryption;
+
+  // Optional. Template for the root volume provisioned for node pool nodes. Volumes will be provisioned in the availability zone assigned to the node pool subnet. When unspecified, it defaults to 32 GiB with the GP2 volume type.
+  rootVolume?: container_AwsNodePoolConfigRootVolume;
+
+  // Optional. The SSH configuration.
+  sshConfig?: container_AwsNodePoolConfigSshConfig;
+
+  // Optional. The initial taints assigned to nodes of this node pool.
+  taints?: Array<container_AwsNodePoolConfigTaint>;
+
+  // The name of the AWS IAM role assigned to nodes in the pool.
+  iamInstanceProfile?: string;
+
+  // Optional. The IDs of additional security groups to add to nodes in this pool. The manager will automatically create security groups with minimum rules needed for a functioning cluster.
+  securityGroupIds?: Array<string>;
+
+  // Optional. The AWS instance type. When unspecified, it defaults to `m5.large`.
+  instanceType?: string;
+
+  // Proxy configuration for outbound HTTP(S) traffic.
+  proxyConfig?: container_AwsNodePoolConfigProxyConfig;
+
+  // Optional. Configuration related to CloudWatch metrics collection on the Auto Scaling group of the node pool. When unspecified, metrics collection is disabled.
+  autoscalingMetricsCollection?: container_AwsNodePoolConfigAutoscalingMetricsCollection;
 }
 
-export function Container_AwsNodePoolConfig_GetTypes(): DynamicUIProps[] {
+export function container_AwsNodePoolConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Map,
-      "Labels",
-      'Optional. The initial labels assigned to nodes of this node pool. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.',
-      InputType_Map_GetTypes(),
+      InputType.Object,
+      "sshConfig",
+      "Optional. The SSH configuration.",
+      container_AwsNodePoolConfigSshConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ProxyConfig",
-      "Proxy configuration for outbound HTTP(S) traffic.",
-      Container_AwsNodePoolConfigProxyConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "AutoscalingMetricsCollection",
-      "Optional. Configuration related to CloudWatch metrics collection on the Auto Scaling group of the node pool. When unspecified, metrics collection is disabled.",
-      Container_AwsNodePoolConfigAutoscalingMetricsCollection_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Map,
-      "Tags",
-      "Optional. Key/value metadata to assign to each underlying AWS resource. Specify at most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:@/). Keys can be up to 127 Unicode characters. Values can be up to 255 Unicode characters.",
-      InputType_Map_GetTypes(),
-      false,
+      "configEncryption",
+      "The ARN of the AWS KMS key used to encrypt node pool configuration.",
+      container_AwsNodePoolConfigConfigEncryption_GetTypes(),
+      true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "SecurityGroupIds",
-      "Optional. The IDs of additional security groups to add to nodes in this pool. The manager will automatically create security groups with minimum rules needed for a functioning cluster.",
-      InputType_String_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "SpotConfig",
-      "Optional. When specified, the node pool will provision Spot instances from the set of spot_config.instance_types. This field is mutually exclusive with `instance_type`",
-      Container_AwsNodePoolConfigSpotConfig_GetTypes(),
+      "taints",
+      "Optional. The initial taints assigned to nodes of this node pool.",
+      container_AwsNodePoolConfigTaint_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "RootVolume",
-      "Optional. Template for the root volume provisioned for node pool nodes. Volumes will be provisioned in the availability zone assigned to the node pool subnet. When unspecified, it defaults to 32 GiB with the GP2 volume type.",
-      Container_AwsNodePoolConfigRootVolume_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "SshConfig",
-      "Optional. The SSH configuration.",
-      Container_AwsNodePoolConfigSshConfig_GetTypes(),
+      "proxyConfig",
+      "Proxy configuration for outbound HTTP(S) traffic.",
+      container_AwsNodePoolConfigProxyConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "InstanceType",
-      "Optional. The AWS instance type. When unspecified, it defaults to `m5.large`.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "IamInstanceProfile",
-      "The name of the AWS IAM role assigned to nodes in the pool.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "ImageType",
+      "imageType",
       "The OS image type to use on node pool instances.",
       [],
       false,
@@ -174,26 +126,74 @@ export function Container_AwsNodePoolConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "InstancePlacement",
-      "Details of placement information for an instance.",
-      Container_AwsNodePoolConfigInstancePlacement_GetTypes(),
+      "spotConfig",
+      "Optional. When specified, the node pool will provision Spot instances from the set of spot_config.instance_types. This field is mutually exclusive with `instance_type`",
+      container_AwsNodePoolConfigSpotConfig_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "Taints",
-      "Optional. The initial taints assigned to nodes of this node pool.",
-      Container_AwsNodePoolConfigTaint_GetTypes(),
+      InputType.String,
+      "instanceType",
+      "Optional. The AWS instance type. When unspecified, it defaults to `m5.large`.",
+      [],
       false,
-      true,
+      false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ConfigEncryption",
-      "The ARN of the AWS KMS key used to encrypt node pool configuration.",
-      Container_AwsNodePoolConfigConfigEncryption_GetTypes(),
+      "autoscalingMetricsCollection",
+      "Optional. Configuration related to CloudWatch metrics collection on the Auto Scaling group of the node pool. When unspecified, metrics collection is disabled.",
+      container_AwsNodePoolConfigAutoscalingMetricsCollection_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "rootVolume",
+      "Optional. Template for the root volume provisioned for node pool nodes. Volumes will be provisioned in the availability zone assigned to the node pool subnet. When unspecified, it defaults to 32 GiB with the GP2 volume type.",
+      container_AwsNodePoolConfigRootVolume_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "iamInstanceProfile",
+      "The name of the AWS IAM role assigned to nodes in the pool.",
+      [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Map,
+      "tags",
+      "Optional. Key/value metadata to assign to each underlying AWS resource. Specify at most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:@/). Keys can be up to 127 Unicode characters. Values can be up to 255 Unicode characters.",
+      InputType_Map_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "securityGroupIds",
+      "Optional. The IDs of additional security groups to add to nodes in this pool. The manager will automatically create security groups with minimum rules needed for a functioning cluster.",
+      InputType_String_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "instancePlacement",
+      "Details of placement information for an instance.",
+      container_AwsNodePoolConfigInstancePlacement_GetTypes(),
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.Map,
+      "labels",
+      'Optional. The initial labels assigned to nodes of this node pool. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.',
+      InputType_Map_GetTypes(),
+      false,
       false,
     ),
   ];

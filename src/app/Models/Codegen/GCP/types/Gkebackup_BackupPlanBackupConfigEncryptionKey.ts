@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkebackup_BackupPlanBackupConfigEncryptionKey {
+export interface gkebackup_BackupPlanBackupConfigEncryptionKey {
   // Google Cloud KMS encryption key. Format: projects/-/locations/-/keyRings/-/cryptoKeys/-
-  GcpKmsEncryptionKey?: string;
+  gcpKmsEncryptionKey?: string;
 }
 
-export function Gkebackup_BackupPlanBackupConfigEncryptionKey_GetTypes(): DynamicUIProps[] {
+export function gkebackup_BackupPlanBackupConfigEncryptionKey_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "GcpKmsEncryptionKey",
+      "gcpKmsEncryptionKey",
       "Google Cloud KMS encryption key. Format: projects/*/locations/*/keyRings/*/cryptoKeys/*",
       [],
       true,

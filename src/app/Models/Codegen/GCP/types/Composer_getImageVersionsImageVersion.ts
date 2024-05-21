@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Composer_getImageVersionsImageVersion {
+export interface composer_getImageVersionsImageVersion {
   // The string identifier of the image version, in the form: "composer-x.y.z-airflow-a.b.c"
-  ImageVersionId?: string;
+  imageVersionId?: string;
 
   // Supported python versions for this image version
-  SupportedPythonVersions?: Array<string>;
+  supportedPythonVersions?: Array<string>;
 }
 
-export function Composer_getImageVersionsImageVersion_GetTypes(): DynamicUIProps[] {
+export function composer_getImageVersionsImageVersion_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ImageVersionId",
+      "imageVersionId",
       'The string identifier of the image version, in the form: "composer-x.y.z-airflow-a.b.c"',
       [],
       true,
@@ -26,7 +26,7 @@ export function Composer_getImageVersionsImageVersion_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Array,
-      "SupportedPythonVersions",
+      "supportedPythonVersions",
       "Supported python versions for this image version",
       InputType_String_GetTypes(),
       true,

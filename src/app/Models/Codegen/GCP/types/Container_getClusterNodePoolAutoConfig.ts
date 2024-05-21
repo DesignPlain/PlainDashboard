@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Container_getClusterNodePoolAutoConfigNetworkTag,
-  Container_getClusterNodePoolAutoConfigNetworkTag_GetTypes,
-} from "./Container_getClusterNodePoolAutoConfigNetworkTag";
+  container_getClusterNodePoolAutoConfigNetworkTag,
+  container_getClusterNodePoolAutoConfigNetworkTag_GetTypes,
+} from "./container_getClusterNodePoolAutoConfigNetworkTag";
 
-export interface Container_getClusterNodePoolAutoConfig {
+export interface container_getClusterNodePoolAutoConfig {
   // Collection of Compute Engine network tags that can be applied to a node's underlying VM instance.
-  NetworkTags?: Array<Container_getClusterNodePoolAutoConfigNetworkTag>;
+  networkTags?: Array<container_getClusterNodePoolAutoConfigNetworkTag>;
 }
 
-export function Container_getClusterNodePoolAutoConfig_GetTypes(): DynamicUIProps[] {
+export function container_getClusterNodePoolAutoConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "NetworkTags",
+      "networkTags",
       "Collection of Compute Engine network tags that can be applied to a node's underlying VM instance.",
-      Container_getClusterNodePoolAutoConfigNetworkTag_GetTypes(),
+      container_getClusterNodePoolAutoConfigNetworkTag_GetTypes(),
       true,
       false,
     ),

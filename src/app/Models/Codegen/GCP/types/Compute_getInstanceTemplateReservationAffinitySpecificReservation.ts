@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getInstanceTemplateReservationAffinitySpecificReservation {
+export interface compute_getInstanceTemplateReservationAffinitySpecificReservation {
   // The key for the node affinity label.
-  Key?: string;
+  key?: string;
 
   // Corresponds to the label values of a reservation resource.
-  Values?: Array<string>;
+  values?: Array<string>;
 }
 
-export function Compute_getInstanceTemplateReservationAffinitySpecificReservation_GetTypes(): DynamicUIProps[] {
+export function compute_getInstanceTemplateReservationAffinitySpecificReservation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "key",
       "The key for the node affinity label.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Compute_getInstanceTemplateReservationAffinitySpecificReservatio
     ),
     new DynamicUIProps(
       InputType.Array,
-      "Values",
+      "values",
       "Corresponds to the label values of a reservation resource.",
       InputType_String_GetTypes(),
       true,

@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage {
+export interface diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage {
   /*
 (Output)
 The human-readable name of the page, unique within the flow.
 */
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 The unique identifier of the page.
 Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.
 */
-  Name?: string;
+  name?: string;
 }
 
-export function Diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DisplayName",
-      "(Output)\nThe human-readable name of the page, unique within the flow.",
+      "name",
+      "The unique identifier of the page.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.",
       [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
-      "The unique identifier of the page.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.",
+      "displayName",
+      "(Output)\nThe human-readable name of the page, unique within the flow.",
       [],
       false,
       false,

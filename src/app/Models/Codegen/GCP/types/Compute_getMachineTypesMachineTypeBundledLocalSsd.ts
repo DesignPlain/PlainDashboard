@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_getMachineTypesMachineTypeBundledLocalSsd {
+export interface compute_getMachineTypesMachineTypeBundledLocalSsd {
   // The number of partitions.
-  PartitionCount?: number;
+  partitionCount?: number;
 
   // The default disk interface if the interface is not specified.
-  DefaultInterface?: string;
+  defaultInterface?: string;
 }
 
-export function Compute_getMachineTypesMachineTypeBundledLocalSsd_GetTypes(): DynamicUIProps[] {
+export function compute_getMachineTypesMachineTypeBundledLocalSsd_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "PartitionCount",
+      "partitionCount",
       "The number of partitions.",
       [],
       true,
@@ -26,7 +26,7 @@ export function Compute_getMachineTypesMachineTypeBundledLocalSsd_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "DefaultInterface",
+      "defaultInterface",
       "The default disk interface if the interface is not specified.",
       [],
       true,

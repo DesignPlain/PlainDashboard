@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Clouddeploy_DeliveryPipelineSerialPipelineStage,
-  Clouddeploy_DeliveryPipelineSerialPipelineStage_GetTypes,
-} from "./Clouddeploy_DeliveryPipelineSerialPipelineStage";
+  clouddeploy_DeliveryPipelineSerialPipelineStage,
+  clouddeploy_DeliveryPipelineSerialPipelineStage_GetTypes,
+} from "./clouddeploy_DeliveryPipelineSerialPipelineStage";
 
-export interface Clouddeploy_DeliveryPipelineSerialPipeline {
+export interface clouddeploy_DeliveryPipelineSerialPipeline {
   // Each stage specifies configuration for a `Target`. The ordering of this list defines the promotion flow.
-  Stages?: Array<Clouddeploy_DeliveryPipelineSerialPipelineStage>;
+  stages?: Array<clouddeploy_DeliveryPipelineSerialPipelineStage>;
 }
 
-export function Clouddeploy_DeliveryPipelineSerialPipeline_GetTypes(): DynamicUIProps[] {
+export function clouddeploy_DeliveryPipelineSerialPipeline_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "Stages",
+      "stages",
       "Each stage specifies configuration for a `Target`. The ordering of this list defines the promotion flow.",
-      Clouddeploy_DeliveryPipelineSerialPipelineStage_GetTypes(),
+      clouddeploy_DeliveryPipelineSerialPipelineStage_GetTypes(),
       false,
       false,
     ),

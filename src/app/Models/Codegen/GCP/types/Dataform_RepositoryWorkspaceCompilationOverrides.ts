@@ -6,30 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataform_RepositoryWorkspaceCompilationOverrides {
-  // The default database (Google Cloud project ID).
-  DefaultDatabase?: string;
-
+export interface dataform_RepositoryWorkspaceCompilationOverrides {
   // The suffix that should be appended to all schema (BigQuery dataset ID) names.
-  SchemaSuffix?: string;
+  schemaSuffix?: string;
 
   // The prefix that should be prepended to all table names.
-  TablePrefix?: string;
+  tablePrefix?: string;
+
+  // The default database (Google Cloud project ID).
+  defaultDatabase?: string;
 }
 
-export function Dataform_RepositoryWorkspaceCompilationOverrides_GetTypes(): DynamicUIProps[] {
+export function dataform_RepositoryWorkspaceCompilationOverrides_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DefaultDatabase",
-      "The default database (Google Cloud project ID).",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "SchemaSuffix",
+      "schemaSuffix",
       "The suffix that should be appended to all schema (BigQuery dataset ID) names.",
       [],
       false,
@@ -37,8 +29,16 @@ export function Dataform_RepositoryWorkspaceCompilationOverrides_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "TablePrefix",
+      "tablePrefix",
       "The prefix that should be prepended to all table names.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "defaultDatabase",
+      "The default database (Google Cloud project ID).",
       [],
       false,
       false,

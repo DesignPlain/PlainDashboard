@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterNodeConfigTaint {
+export interface container_ClusterNodeConfigTaint {
   // Effect for taint. Accepted values are `NO_SCHEDULE`, `PREFER_NO_SCHEDULE`, and `NO_EXECUTE`.
-  Effect?: string;
+  effect?: string;
 
   // Key for taint.
-  Key?: string;
+  key?: string;
 
   // Value for taint.
-  Value?: string;
+  value?: string;
 }
 
-export function Container_ClusterNodeConfigTaint_GetTypes(): DynamicUIProps[] {
+export function container_ClusterNodeConfigTaint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Key",
+      "key",
       "Key for taint.",
       [],
       true,
@@ -29,7 +29,7 @@ export function Container_ClusterNodeConfigTaint_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Value",
+      "value",
       "Value for taint.",
       [],
       true,
@@ -37,7 +37,7 @@ export function Container_ClusterNodeConfigTaint_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Effect",
+      "effect",
       "Effect for taint. Accepted values are `NO_SCHEDULE`, `PREFER_NO_SCHEDULE`, and `NO_EXECUTE`.",
       [],
       true,

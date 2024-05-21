@@ -6,31 +6,39 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificateauthority_CertificateCertificateDescriptionX509DescriptionKeyUsageExtendedKeyUsage {
+export interface certificateauthority_CertificateCertificateDescriptionX509DescriptionKeyUsageExtendedKeyUsage {
+  // Corresponds to OID 1.3.6.1.5.5.7.3.9. Officially described as "Signing OCSP responses".
+  ocspSigning?: boolean;
+
   // Corresponds to OID 1.3.6.1.5.5.7.3.1. Officially described as "TLS WWW server authentication", though regularly used for non-WWW TLS.
-  ServerAuth?: boolean;
+  serverAuth?: boolean;
 
   // Corresponds to OID 1.3.6.1.5.5.7.3.8. Officially described as "Binding the hash of an object to a time".
-  TimeStamping?: boolean;
+  timeStamping?: boolean;
 
   // Corresponds to OID 1.3.6.1.5.5.7.3.2. Officially described as "TLS WWW client authentication", though regularly used for non-WWW TLS.
-  ClientAuth?: boolean;
+  clientAuth?: boolean;
 
   // Corresponds to OID 1.3.6.1.5.5.7.3.3. Officially described as "Signing of downloadable executable code client authentication".
-  CodeSigning?: boolean;
+  codeSigning?: boolean;
 
   // Corresponds to OID 1.3.6.1.5.5.7.3.4. Officially described as "Email protection".
-  EmailProtection?: boolean;
-
-  // Corresponds to OID 1.3.6.1.5.5.7.3.9. Officially described as "Signing OCSP responses".
-  OcspSigning?: boolean;
+  emailProtection?: boolean;
 }
 
-export function Certificateauthority_CertificateCertificateDescriptionX509DescriptionKeyUsageExtendedKeyUsage_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_CertificateCertificateDescriptionX509DescriptionKeyUsageExtendedKeyUsage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "ServerAuth",
+      "ocspSigning",
+      'Corresponds to OID 1.3.6.1.5.5.7.3.9. Officially described as "Signing OCSP responses".',
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "serverAuth",
       'Corresponds to OID 1.3.6.1.5.5.7.3.1. Officially described as "TLS WWW server authentication", though regularly used for non-WWW TLS.',
       [],
       false,
@@ -38,7 +46,7 @@ export function Certificateauthority_CertificateCertificateDescriptionX509Descri
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "TimeStamping",
+      "timeStamping",
       'Corresponds to OID 1.3.6.1.5.5.7.3.8. Officially described as "Binding the hash of an object to a time".',
       [],
       false,
@@ -46,7 +54,7 @@ export function Certificateauthority_CertificateCertificateDescriptionX509Descri
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "ClientAuth",
+      "clientAuth",
       'Corresponds to OID 1.3.6.1.5.5.7.3.2. Officially described as "TLS WWW client authentication", though regularly used for non-WWW TLS.',
       [],
       false,
@@ -54,7 +62,7 @@ export function Certificateauthority_CertificateCertificateDescriptionX509Descri
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "CodeSigning",
+      "codeSigning",
       'Corresponds to OID 1.3.6.1.5.5.7.3.3. Officially described as "Signing of downloadable executable code client authentication".',
       [],
       false,
@@ -62,16 +70,8 @@ export function Certificateauthority_CertificateCertificateDescriptionX509Descri
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EmailProtection",
+      "emailProtection",
       'Corresponds to OID 1.3.6.1.5.5.7.3.4. Officially described as "Email protection".',
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "OcspSigning",
-      'Corresponds to OID 1.3.6.1.5.5.7.3.9. Officially described as "Signing OCSP responses".',
       [],
       false,
       false,

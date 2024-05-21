@@ -6,59 +6,51 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileGcs,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileGcs_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileGcs";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileGcs,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileGcs_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileGcs";
 import {
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileRemote,
-  Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileRemote_GetTypes,
-} from "./Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileRemote";
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileRemote,
+  osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileRemote_GetTypes,
+} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileRemote";
 
-export interface Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFile {
+export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFile {
   /*
 Defaults to false. When false, files are
 subject to validations based on the file type: Remote: A checksum must be
 specified. Cloud Storage: An object generation number must be specified.
 */
-  AllowInsecure?: boolean;
+  allowInsecure?: boolean;
 
   /*
 A Cloud Storage object. Structure is
 documented below.
 */
-  Gcs?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileGcs;
+  gcs?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileGcs;
 
   // A local path within the VM to use.
-  LocalPath?: string;
+  localPath?: string;
 
   /*
 A generic remote file. Structure is
 documented below.
 */
-  Remote?: Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileRemote;
+  remote?: osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileRemote;
 }
 
-export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFile_GetTypes(): DynamicUIProps[] {
+export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFile_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Bool,
-      "AllowInsecure",
-      "Defaults to false. When false, files are\nsubject to validations based on the file type: Remote: A checksum must be\nspecified. Cloud Storage: An object generation number must be specified.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Object,
-      "Gcs",
+      "gcs",
       "A Cloud Storage object. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileGcs_GetTypes(),
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileGcs_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "LocalPath",
+      "localPath",
       "A local path within the VM to use.",
       [],
       false,
@@ -66,9 +58,17 @@ export function Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnfo
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Remote",
+      "remote",
       "A generic remote file. Structure is\ndocumented below.",
-      Osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileRemote_GetTypes(),
+      osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFileRemote_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "allowInsecure",
+      "Defaults to false. When false, files are\nsubject to validations based on the file type: Remote: A checksum must be\nspecified. Cloud Storage: An object generation number must be specified.",
+      [],
       false,
       false,
     ),

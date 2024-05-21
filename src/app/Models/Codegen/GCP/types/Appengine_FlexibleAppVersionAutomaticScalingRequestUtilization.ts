@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_FlexibleAppVersionAutomaticScalingRequestUtilization {
+export interface appengine_FlexibleAppVersionAutomaticScalingRequestUtilization {
   // Target number of concurrent requests.
-  TargetConcurrentRequests?: number;
+  targetConcurrentRequests?: number;
 
   // Target requests per second.
-  TargetRequestCountPerSecond?: string;
+  targetRequestCountPerSecond?: string;
 }
 
-export function Appengine_FlexibleAppVersionAutomaticScalingRequestUtilization_GetTypes(): DynamicUIProps[] {
+export function appengine_FlexibleAppVersionAutomaticScalingRequestUtilization_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "TargetConcurrentRequests",
+      "targetConcurrentRequests",
       "Target number of concurrent requests.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Appengine_FlexibleAppVersionAutomaticScalingRequestUtilization_G
     ),
     new DynamicUIProps(
       InputType.String,
-      "TargetRequestCountPerSecond",
+      "targetRequestCountPerSecond",
       "Target requests per second.",
       [],
       false,

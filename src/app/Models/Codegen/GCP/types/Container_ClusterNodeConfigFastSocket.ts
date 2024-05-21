@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterNodeConfigFastSocket {
+export interface container_ClusterNodeConfigFastSocket {
   // Whether or not the NCCL Fast Socket is enabled
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_ClusterNodeConfigFastSocket_GetTypes(): DynamicUIProps[] {
+export function container_ClusterNodeConfigFastSocket_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether or not the NCCL Fast Socket is enabled",
       [],
       true,

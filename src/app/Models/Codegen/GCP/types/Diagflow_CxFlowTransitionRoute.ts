@@ -6,53 +6,53 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxFlowTransitionRouteTriggerFulfillment,
-  Diagflow_CxFlowTransitionRouteTriggerFulfillment_GetTypes,
-} from "./Diagflow_CxFlowTransitionRouteTriggerFulfillment";
+  diagflow_CxFlowTransitionRouteTriggerFulfillment,
+  diagflow_CxFlowTransitionRouteTriggerFulfillment_GetTypes,
+} from "./diagflow_CxFlowTransitionRouteTriggerFulfillment";
 
-export interface Diagflow_CxFlowTransitionRoute {
+export interface diagflow_CxFlowTransitionRoute {
   /*
 The condition to evaluate against form parameters or session parameters.
 At least one of intent or condition must be specified. When both intent and condition are specified, the transition can only happen when both are fulfilled.
 */
-  Condition?: string;
+  condition?: string;
 
   /*
 The unique identifier of an Intent.
 Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/intents/<Intent ID>. Indicates that the transition can only happen when the given intent is matched. At least one of intent or condition must be specified. When both intent and condition are specified, the transition can only happen when both are fulfilled.
 */
-  Intent?: string;
+  intent?: string;
 
   /*
 (Output)
 The unique identifier of this transition route.
 */
-  Name?: string;
+  name?: string;
 
   /*
 The target flow to transition to.
 Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>.
 */
-  TargetFlow?: string;
+  targetFlow?: string;
 
   /*
 The target page to transition to.
 Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.
 */
-  TargetPage?: string;
+  targetPage?: string;
 
   /*
 The fulfillment to call when the condition is satisfied. At least one of triggerFulfillment and target must be specified. When both are defined, triggerFulfillment is executed first.
 Structure is documented below.
 */
-  TriggerFulfillment?: Diagflow_CxFlowTransitionRouteTriggerFulfillment;
+  triggerFulfillment?: diagflow_CxFlowTransitionRouteTriggerFulfillment;
 }
 
-export function Diagflow_CxFlowTransitionRoute_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxFlowTransitionRoute_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "TargetPage",
+      "targetPage",
       "The target page to transition to.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.",
       [],
       false,
@@ -60,15 +60,15 @@ export function Diagflow_CxFlowTransitionRoute_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "TriggerFulfillment",
+      "triggerFulfillment",
       "The fulfillment to call when the condition is satisfied. At least one of triggerFulfillment and target must be specified. When both are defined, triggerFulfillment is executed first.\nStructure is documented below.",
-      Diagflow_CxFlowTransitionRouteTriggerFulfillment_GetTypes(),
+      diagflow_CxFlowTransitionRouteTriggerFulfillment_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Condition",
+      "condition",
       "The condition to evaluate against form parameters or session parameters.\nAt least one of intent or condition must be specified. When both intent and condition are specified, the transition can only happen when both are fulfilled.",
       [],
       false,
@@ -76,7 +76,7 @@ export function Diagflow_CxFlowTransitionRoute_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Intent",
+      "intent",
       "The unique identifier of an Intent.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/intents/<Intent ID>. Indicates that the transition can only happen when the given intent is matched. At least one of intent or condition must be specified. When both intent and condition are specified, the transition can only happen when both are fulfilled.",
       [],
       false,
@@ -84,7 +84,7 @@ export function Diagflow_CxFlowTransitionRoute_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       "(Output)\nThe unique identifier of this transition route.",
       [],
       false,
@@ -92,7 +92,7 @@ export function Diagflow_CxFlowTransitionRoute_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "TargetFlow",
+      "targetFlow",
       "The target flow to transition to.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>.",
       [],
       false,

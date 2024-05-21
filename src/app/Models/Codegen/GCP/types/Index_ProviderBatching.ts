@@ -6,17 +6,17 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Index_ProviderBatching {
+export interface index_ProviderBatching {
   //
-  EnableBatching?: boolean;
+  enableBatching?: boolean;
 
   //
-  SendAfter?: string;
+  sendAfter?: string;
 }
 
-export function Index_ProviderBatching_GetTypes(): DynamicUIProps[] {
+export function index_ProviderBatching_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.Bool, "EnableBatching", "", [], false, false),
-    new DynamicUIProps(InputType.String, "SendAfter", "", [], false, false),
+    new DynamicUIProps(InputType.String, "sendAfter", "", [], false, false),
+    new DynamicUIProps(InputType.Bool, "enableBatching", "", [], false, false),
   ];
 }

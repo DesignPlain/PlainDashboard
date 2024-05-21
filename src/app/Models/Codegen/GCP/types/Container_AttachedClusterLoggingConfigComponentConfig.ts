@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AttachedClusterLoggingConfigComponentConfig {
+export interface container_AttachedClusterLoggingConfigComponentConfig {
   /*
 The components to be enabled.
 Each value may be one of: `SYSTEM_COMPONENTS`, `WORKLOADS`.
 */
-  EnableComponents?: Array<string>;
+  enableComponents?: Array<string>;
 }
 
-export function Container_AttachedClusterLoggingConfigComponentConfig_GetTypes(): DynamicUIProps[] {
+export function container_AttachedClusterLoggingConfigComponentConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "EnableComponents",
+      "enableComponents",
       "The components to be enabled.\nEach value may be one of: `SYSTEM_COMPONENTS`, `WORKLOADS`.",
       InputType_String_GetTypes(),
       false,

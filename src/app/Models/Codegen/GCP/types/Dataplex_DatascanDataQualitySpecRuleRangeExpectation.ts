@@ -6,47 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataplex_DatascanDataQualitySpecRuleRangeExpectation {
-  // The maximum column value allowed for a row to pass this validation. At least one of minValue and maxValue need to be provided.
-  MaxValue?: string;
-
-  // The minimum column value allowed for a row to pass this validation. At least one of minValue and maxValue need to be provided.
-  MinValue?: string;
-
+export interface dataplex_DatascanDataQualitySpecRuleRangeExpectation {
   /*
 Whether each value needs to be strictly lesser than ('<') the maximum, or if equality is allowed.
 Only relevant if a maxValue has been defined. Default = false.
 */
-  StrictMaxEnabled?: boolean;
+  strictMaxEnabled?: boolean;
 
   /*
 Whether each value needs to be strictly greater than ('>') the minimum, or if equality is allowed.
 Only relevant if a minValue has been defined. Default = false.
 */
-  StrictMinEnabled?: boolean;
+  strictMinEnabled?: boolean;
+
+  // The maximum column value allowed for a row to pass this validation. At least one of minValue and maxValue need to be provided.
+  maxValue?: string;
+
+  // The minimum column value allowed for a row to pass this validation. At least one of minValue and maxValue need to be provided.
+  minValue?: string;
 }
 
-export function Dataplex_DatascanDataQualitySpecRuleRangeExpectation_GetTypes(): DynamicUIProps[] {
+export function dataplex_DatascanDataQualitySpecRuleRangeExpectation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "MaxValue",
-      "The maximum column value allowed for a row to pass this validation. At least one of minValue and maxValue need to be provided.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "MinValue",
-      "The minimum column value allowed for a row to pass this validation. At least one of minValue and maxValue need to be provided.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "StrictMaxEnabled",
+      "strictMaxEnabled",
       "Whether each value needs to be strictly lesser than ('<') the maximum, or if equality is allowed.\nOnly relevant if a maxValue has been defined. Default = false.",
       [],
       false,
@@ -54,8 +38,24 @@ export function Dataplex_DatascanDataQualitySpecRuleRangeExpectation_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "StrictMinEnabled",
+      "strictMinEnabled",
       "Whether each value needs to be strictly greater than ('>') the minimum, or if equality is allowed.\nOnly relevant if a minValue has been defined. Default = false.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "maxValue",
+      "The maximum column value allowed for a row to pass this validation. At least one of minValue and maxValue need to be provided.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "minValue",
+      "The minimum column value allowed for a row to pass this validation. At least one of minValue and maxValue need to be provided.",
       [],
       false,
       false,

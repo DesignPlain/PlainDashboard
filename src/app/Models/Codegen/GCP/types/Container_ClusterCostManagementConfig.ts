@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterCostManagementConfig {
+export interface container_ClusterCostManagementConfig {
   // Whether to enable the [cost allocation](https://cloud.google.com/kubernetes-engine/docs/how-to/cost-allocations) feature.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Container_ClusterCostManagementConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterCostManagementConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether to enable the [cost allocation](https://cloud.google.com/kubernetes-engine/docs/how-to/cost-allocations) feature.",
       [],
       true,

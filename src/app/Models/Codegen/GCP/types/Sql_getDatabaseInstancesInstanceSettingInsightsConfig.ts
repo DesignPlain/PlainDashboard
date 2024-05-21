@@ -6,28 +6,28 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Sql_getDatabaseInstancesInstanceSettingInsightsConfig {
+export interface sql_getDatabaseInstancesInstanceSettingInsightsConfig {
+  // Maximum query length stored in bytes. Between 256 and 4500. Default to 1024.
+  queryStringLength?: number;
+
   // True if Query Insights will record application tags from query when enabled.
-  RecordApplicationTags?: boolean;
+  recordApplicationTags?: boolean;
 
   // True if Query Insights will record client address when enabled.
-  RecordClientAddress?: boolean;
+  recordClientAddress?: boolean;
 
   // True if Query Insights feature is enabled.
-  QueryInsightsEnabled?: boolean;
+  queryInsightsEnabled?: boolean;
 
   // Number of query execution plans captured by Insights per minute for all queries combined. Between 0 and 20. Default to 5.
-  QueryPlansPerMinute?: number;
-
-  // Maximum query length stored in bytes. Between 256 and 4500. Default to 1024.
-  QueryStringLength?: number;
+  queryPlansPerMinute?: number;
 }
 
-export function Sql_getDatabaseInstancesInstanceSettingInsightsConfig_GetTypes(): DynamicUIProps[] {
+export function sql_getDatabaseInstancesInstanceSettingInsightsConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "RecordApplicationTags",
+      "recordApplicationTags",
       "True if Query Insights will record application tags from query when enabled.",
       [],
       true,
@@ -35,7 +35,7 @@ export function Sql_getDatabaseInstancesInstanceSettingInsightsConfig_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "RecordClientAddress",
+      "recordClientAddress",
       "True if Query Insights will record client address when enabled.",
       [],
       true,
@@ -43,7 +43,7 @@ export function Sql_getDatabaseInstancesInstanceSettingInsightsConfig_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "QueryInsightsEnabled",
+      "queryInsightsEnabled",
       "True if Query Insights feature is enabled.",
       [],
       true,
@@ -51,7 +51,7 @@ export function Sql_getDatabaseInstancesInstanceSettingInsightsConfig_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Number,
-      "QueryPlansPerMinute",
+      "queryPlansPerMinute",
       "Number of query execution plans captured by Insights per minute for all queries combined. Between 0 and 20. Default to 5.",
       [],
       true,
@@ -59,7 +59,7 @@ export function Sql_getDatabaseInstancesInstanceSettingInsightsConfig_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Number,
-      "QueryStringLength",
+      "queryStringLength",
       "Maximum query length stored in bytes. Between 256 and 4500. Default to 1024.",
       [],
       true,

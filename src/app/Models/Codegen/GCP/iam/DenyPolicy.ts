@@ -7,50 +7,50 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Iam_DenyPolicyRule,
-  Iam_DenyPolicyRule_GetTypes,
-} from "../types/Iam_DenyPolicyRule";
+  iam_DenyPolicyRule,
+  iam_DenyPolicyRule_GetTypes,
+} from "../types/iam_DenyPolicyRule";
 
 export interface DenyPolicyArgs {
   // The display name of the rule.
-  DisplayName?: string;
+  displayName?: string;
 
   // The name of the policy.
-  Name?: string;
+  name?: string;
 
   // The attachment point is identified by its URL-encoded full resource name.
-  Parent?: string;
+  parent?: string;
 
   /*
 Rules to be applied.
 Structure is documented below.
 */
-  Rules?: Array<Iam_DenyPolicyRule>;
+  rules?: Array<iam_DenyPolicyRule>;
 }
 export class DenyPolicy extends Resource {
+  // The display name of the rule.
+  public displayName?: string;
+
   // The hash of the resource. Used internally during updates.
-  public Etag?: string;
+  public etag?: string;
 
   // The name of the policy.
-  public Name?: string;
+  public name?: string;
 
   // The attachment point is identified by its URL-encoded full resource name.
-  public Parent?: string;
+  public parent?: string;
 
   /*
 Rules to be applied.
 Structure is documented below.
 */
-  public Rules?: Array<Iam_DenyPolicyRule>;
-
-  // The display name of the rule.
-  public DisplayName?: string;
+  public rules?: Array<iam_DenyPolicyRule>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "The display name of the rule.",
         [],
         false,
@@ -58,7 +58,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The name of the policy.",
         [],
         false,
@@ -66,7 +66,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Parent",
+        "parent",
         "The attachment point is identified by its URL-encoded full resource name.",
         [],
         true,
@@ -74,9 +74,9 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "Rules",
+        "rules",
         "Rules to be applied.\nStructure is documented below.",
-        Iam_DenyPolicyRule_GetTypes(),
+        iam_DenyPolicyRule_GetTypes(),
         true,
         false,
       ),

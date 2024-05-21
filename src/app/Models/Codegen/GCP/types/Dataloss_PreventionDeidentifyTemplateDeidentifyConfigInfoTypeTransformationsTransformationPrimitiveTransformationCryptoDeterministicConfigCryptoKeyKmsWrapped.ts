@@ -6,31 +6,31 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyKmsWrapped {
+export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyKmsWrapped {
   // The resource name of the KMS CryptoKey to use for unwrapping.
-  CryptoKeyName?: string;
+  cryptoKeyName?: string;
 
   /*
 The wrapped data crypto key.
 A base64-encoded string.
 */
-  WrappedKey?: string;
+  wrappedKey?: string;
 }
 
-export function Dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyKmsWrapped_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyKmsWrapped_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CryptoKeyName",
-      "The resource name of the KMS CryptoKey to use for unwrapping.",
+      "wrappedKey",
+      "The wrapped data crypto key.\nA base64-encoded string.",
       [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "WrappedKey",
-      "The wrapped data crypto key.\nA base64-encoded string.",
+      "cryptoKeyName",
+      "The resource name of the KMS CryptoKey to use for unwrapping.",
       [],
       true,
       false,

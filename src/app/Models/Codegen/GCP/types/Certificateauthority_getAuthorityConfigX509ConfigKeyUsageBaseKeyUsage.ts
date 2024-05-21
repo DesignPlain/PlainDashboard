@@ -6,48 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Certificateauthority_getAuthorityConfigX509ConfigKeyUsageBaseKeyUsage {
-  // The key may be used to sign certificates.
-  CertSign?: boolean;
-
-  // The key may be used sign certificate revocation lists.
-  CrlSign?: boolean;
+export interface certificateauthority_getAuthorityConfigX509ConfigKeyUsageBaseKeyUsage {
+  // The key may be used for cryptographic commitments. Note that this may also be referred to as "non-repudiation".
+  contentCommitment?: boolean;
 
   // The key may be used to encipher data.
-  DataEncipherment?: boolean;
-
-  // The key may be used in a key agreement protocol.
-  KeyAgreement?: boolean;
-
-  // The key may be used to encipher other keys.
-  KeyEncipherment?: boolean;
-
-  // The key may be used for cryptographic commitments. Note that this may also be referred to as "non-repudiation".
-  ContentCommitment?: boolean;
-
-  // The key may be used to decipher only.
-  DecipherOnly?: boolean;
-
-  // The key may be used for digital signatures.
-  DigitalSignature?: boolean;
+  dataEncipherment?: boolean;
 
   // The key may be used to encipher only.
-  EncipherOnly?: boolean;
+  encipherOnly?: boolean;
+
+  // The key may be used to encipher other keys.
+  keyEncipherment?: boolean;
+
+  // The key may be used to sign certificates.
+  certSign?: boolean;
+
+  // The key may be used sign certificate revocation lists.
+  crlSign?: boolean;
+
+  // The key may be used to decipher only.
+  decipherOnly?: boolean;
+
+  // The key may be used for digital signatures.
+  digitalSignature?: boolean;
+
+  // The key may be used in a key agreement protocol.
+  keyAgreement?: boolean;
 }
 
-export function Certificateauthority_getAuthorityConfigX509ConfigKeyUsageBaseKeyUsage_GetTypes(): DynamicUIProps[] {
+export function certificateauthority_getAuthorityConfigX509ConfigKeyUsageBaseKeyUsage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "DataEncipherment",
-      "The key may be used to encipher data.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "ContentCommitment",
+      "contentCommitment",
       'The key may be used for cryptographic commitments. Note that this may also be referred to as "non-repudiation".',
       [],
       true,
@@ -55,39 +47,7 @@ export function Certificateauthority_getAuthorityConfigX509ConfigKeyUsageBaseKey
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "DigitalSignature",
-      "The key may be used for digital signatures.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "CertSign",
-      "The key may be used to sign certificates.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "CrlSign",
-      "The key may be used sign certificate revocation lists.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "KeyAgreement",
-      "The key may be used in a key agreement protocol.",
-      [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Bool,
-      "KeyEncipherment",
+      "keyEncipherment",
       "The key may be used to encipher other keys.",
       [],
       true,
@@ -95,7 +55,39 @@ export function Certificateauthority_getAuthorityConfigX509ConfigKeyUsageBaseKey
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "DecipherOnly",
+      "dataEncipherment",
+      "The key may be used to encipher data.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "encipherOnly",
+      "The key may be used to encipher only.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "certSign",
+      "The key may be used to sign certificates.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "crlSign",
+      "The key may be used sign certificate revocation lists.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "decipherOnly",
       "The key may be used to decipher only.",
       [],
       true,
@@ -103,8 +95,16 @@ export function Certificateauthority_getAuthorityConfigX509ConfigKeyUsageBaseKey
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EncipherOnly",
-      "The key may be used to encipher only.",
+      "digitalSignature",
+      "The key may be used for digital signatures.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Bool,
+      "keyAgreement",
+      "The key may be used in a key agreement protocol.",
       [],
       true,
       false,

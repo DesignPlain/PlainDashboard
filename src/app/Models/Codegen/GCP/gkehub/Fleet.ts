@@ -7,99 +7,99 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Gkehub_FleetDefaultClusterConfig,
-  Gkehub_FleetDefaultClusterConfig_GetTypes,
-} from "../types/Gkehub_FleetDefaultClusterConfig";
+  gkehub_FleetState,
+  gkehub_FleetState_GetTypes,
+} from "../types/gkehub_FleetState";
 import {
-  Gkehub_FleetState,
-  Gkehub_FleetState_GetTypes,
-} from "../types/Gkehub_FleetState";
+  gkehub_FleetDefaultClusterConfig,
+  gkehub_FleetDefaultClusterConfig_GetTypes,
+} from "../types/gkehub_FleetDefaultClusterConfig";
 
 export interface FleetArgs {
   /*
 The default cluster configurations to apply across the fleet.
 Structure is documented below.
 */
-  DefaultClusterConfig?: Gkehub_FleetDefaultClusterConfig;
+  defaultClusterConfig?: gkehub_FleetDefaultClusterConfig;
 
   /*
 A user-assigned display name of the Fleet. When present, it must be between 4 to 30 characters.
 Allowed characters are: lowercase and uppercase letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point.
 */
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 }
 export class Fleet extends Resource {
-  // The time the fleet was last updated, in RFC3339 text format.
-  public UpdateTime?: string;
-
-  // The time the fleet was created, in RFC3339 text format.
-  public CreateTime?: string;
-
   /*
 The default cluster configurations to apply across the fleet.
 Structure is documented below.
 */
-  public DefaultClusterConfig?: Gkehub_FleetDefaultClusterConfig;
+  public defaultClusterConfig?: gkehub_FleetDefaultClusterConfig;
 
   // The time the fleet was deleted, in RFC3339 text format.
-  public DeleteTime?: string;
+  public deleteTime?: string;
 
   /*
 A user-assigned display name of the Fleet. When present, it must be between 4 to 30 characters.
 Allowed characters are: lowercase and uppercase letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point.
 */
-  public DisplayName?: string;
+  public displayName?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   /*
 The state of the fleet resource.
 Structure is documented below.
 */
-  public States?: Array<Gkehub_FleetState>;
+  public states?: Array<gkehub_FleetState>;
 
   /*
 Google-generated UUID for this resource. This is unique across all
 Fleet resources. If a Fleet resource is deleted and another
 resource with the same name is created, it gets a different uid.
 */
-  public Uid?: string;
+  public uid?: string;
+
+  // The time the fleet was last updated, in RFC3339 text format.
+  public updateTime?: string;
+
+  // The time the fleet was created, in RFC3339 text format.
+  public createTime?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.Object,
-        "DefaultClusterConfig",
+        "defaultClusterConfig",
         "The default cluster configurations to apply across the fleet.\nStructure is documented below.",
-        Gkehub_FleetDefaultClusterConfig_GetTypes(),
+        gkehub_FleetDefaultClusterConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "A user-assigned display name of the Fleet. When present, it must be between 4 to 30 characters.\nAllowed characters are: lowercase and uppercase letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point.",
         [],
         false,
         false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
+        false,
+        true,
       ),
     ];
   }

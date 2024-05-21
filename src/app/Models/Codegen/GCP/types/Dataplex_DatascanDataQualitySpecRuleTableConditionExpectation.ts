@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataplex_DatascanDataQualitySpecRuleTableConditionExpectation {
+export interface dataplex_DatascanDataQualitySpecRuleTableConditionExpectation {
   // The SQL expression.
-  SqlExpression?: string;
+  sqlExpression?: string;
 }
 
-export function Dataplex_DatascanDataQualitySpecRuleTableConditionExpectation_GetTypes(): DynamicUIProps[] {
+export function dataplex_DatascanDataQualitySpecRuleTableConditionExpectation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "SqlExpression",
+      "sqlExpression",
       "The SQL expression.",
       [],
       true,

@@ -7,58 +7,20 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_NodeTemplateServerBinding,
-  Compute_NodeTemplateServerBinding_GetTypes,
-} from "../types/Compute_NodeTemplateServerBinding";
+  compute_NodeTemplateNodeTypeFlexibility,
+  compute_NodeTemplateNodeTypeFlexibility_GetTypes,
+} from "../types/compute_NodeTemplateNodeTypeFlexibility";
 import {
-  Compute_NodeTemplateNodeTypeFlexibility,
-  Compute_NodeTemplateNodeTypeFlexibility_GetTypes,
-} from "../types/Compute_NodeTemplateNodeTypeFlexibility";
+  compute_NodeTemplateServerBinding,
+  compute_NodeTemplateServerBinding_GetTypes,
+} from "../types/compute_NodeTemplateServerBinding";
 
 export interface NodeTemplateArgs {
-  /*
-The server binding policy for nodes using this template. Determines
-where the nodes should restart following a maintenance event.
-Structure is documented below.
-*/
-  ServerBinding?: Compute_NodeTemplateServerBinding;
-
-  /*
-CPU overcommit.
-Default value is `NONE`.
-Possible values are: `ENABLED`, `NONE`.
-*/
-  CpuOvercommitType?: string;
-
   // An optional textual description of the resource.
-  Description?: string;
+  description?: string;
 
   // Name of the resource.
-  Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  Project?: string;
-
-  /*
-Region where nodes using the node template will be created.
-If it is not provided, the provider region is used.
-*/
-  Region?: string;
-
-  /*
-Labels to use for node affinity, which will be used in
-instance scheduling.
-*/
-  NodeAffinityLabels?: Map<string, string>;
-
-  /*
-Node type to use for nodes group that are created from this template.
-Only one of nodeTypeFlexibility and nodeType can be specified.
-*/
-  NodeType?: string;
+  name?: string;
 
   /*
 Flexible properties for the desired node type. Node groups that
@@ -67,7 +29,45 @@ these properties. Only one of nodeTypeFlexibility and nodeType can
 be specified.
 Structure is documented below.
 */
-  NodeTypeFlexibility?: Compute_NodeTemplateNodeTypeFlexibility;
+  nodeTypeFlexibility?: compute_NodeTemplateNodeTypeFlexibility;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  project?: string;
+
+  /*
+Region where nodes using the node template will be created.
+If it is not provided, the provider region is used.
+*/
+  region?: string;
+
+  /*
+CPU overcommit.
+Default value is `NONE`.
+Possible values are: `ENABLED`, `NONE`.
+*/
+  cpuOvercommitType?: string;
+
+  /*
+Labels to use for node affinity, which will be used in
+instance scheduling.
+*/
+  nodeAffinityLabels?: Map<string, string>;
+
+  /*
+Node type to use for nodes group that are created from this template.
+Only one of nodeTypeFlexibility and nodeType can be specified.
+*/
+  nodeType?: string;
+
+  /*
+The server binding policy for nodes using this template. Determines
+where the nodes should restart following a maintenance event.
+Structure is documented below.
+*/
+  serverBinding?: compute_NodeTemplateServerBinding;
 }
 export class NodeTemplate extends Resource {
   /*
@@ -77,103 +77,63 @@ these properties. Only one of nodeTypeFlexibility and nodeType can
 be specified.
 Structure is documented below.
 */
-  public NodeTypeFlexibility?: Compute_NodeTemplateNodeTypeFlexibility;
+  public nodeTypeFlexibility?: compute_NodeTemplateNodeTypeFlexibility;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
-
-  // The URI of the created resource.
-  public SelfLink?: string;
-
-  /*
-CPU overcommit.
-Default value is `NONE`.
-Possible values are: `ENABLED`, `NONE`.
-*/
-  public CpuOvercommitType?: string;
-
-  // An optional textual description of the resource.
-  public Description?: string;
-
-  /*
-Node type to use for nodes group that are created from this template.
-Only one of nodeTypeFlexibility and nodeType can be specified.
-*/
-  public NodeType?: string;
+  public project?: string;
 
   /*
 Region where nodes using the node template will be created.
 If it is not provided, the provider region is used.
 */
-  public Region?: string;
+  public region?: string;
+
+  // The URI of the created resource.
+  public selfLink?: string;
 
   /*
 The server binding policy for nodes using this template. Determines
 where the nodes should restart following a maintenance event.
 Structure is documented below.
 */
-  public ServerBinding?: Compute_NodeTemplateServerBinding;
+  public serverBinding?: compute_NodeTemplateServerBinding;
+
+  /*
+CPU overcommit.
+Default value is `NONE`.
+Possible values are: `ENABLED`, `NONE`.
+*/
+  public cpuOvercommitType?: string;
 
   // Creation timestamp in RFC3339 text format.
-  public CreationTimestamp?: string;
+  public creationTimestamp?: string;
+
+  // An optional textual description of the resource.
+  public description?: string;
 
   // Name of the resource.
-  public Name?: string;
+  public name?: string;
 
   /*
 Labels to use for node affinity, which will be used in
 instance scheduling.
 */
-  public NodeAffinityLabels?: Map<string, string>;
+  public nodeAffinityLabels?: Map<string, string>;
+
+  /*
+Node type to use for nodes group that are created from this template.
+Only one of nodeTypeFlexibility and nodeType can be specified.
+*/
+  public nodeType?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
-        InputType.Map,
-        "NodeAffinityLabels",
-        "Labels to use for node affinity, which will be used in\ninstance scheduling.",
-        InputType_Map_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(
         InputType.String,
-        "NodeType",
-        "Node type to use for nodes group that are created from this template.\nOnly one of nodeTypeFlexibility and nodeType can be specified.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "NodeTypeFlexibility",
-        "Flexible properties for the desired node type. Node groups that\nuse this node template will create nodes of a type that matches\nthese properties. Only one of nodeTypeFlexibility and nodeType can\nbe specified.\nStructure is documented below.",
-        Compute_NodeTemplateNodeTypeFlexibility_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "ServerBinding",
-        "The server binding policy for nodes using this template. Determines\nwhere the nodes should restart following a maintenance event.\nStructure is documented below.",
-        Compute_NodeTemplateServerBinding_GetTypes(),
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "CpuOvercommitType",
-        "CPU overcommit.\nDefault value is `NONE`.\nPossible values are: `ENABLED`, `NONE`.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
+        "description",
         "An optional textual description of the resource.",
         [],
         false,
@@ -181,15 +141,47 @@ instance scheduling.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
-        "Name of the resource.",
+        "region",
+        "Region where nodes using the node template will be created.\nIf it is not provided, the provider region is used.",
         [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "nodeType",
+        "Node type to use for nodes group that are created from this template.\nOnly one of nodeTypeFlexibility and nodeType can be specified.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "serverBinding",
+        "The server binding policy for nodes using this template. Determines\nwhere the nodes should restart following a maintenance event.\nStructure is documented below.",
+        compute_NodeTemplateServerBinding_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "Name of the resource.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Object,
+        "nodeTypeFlexibility",
+        "Flexible properties for the desired node type. Node groups that\nuse this node template will create nodes of a type that matches\nthese properties. Only one of nodeTypeFlexibility and nodeType can\nbe specified.\nStructure is documented below.",
+        compute_NodeTemplateNodeTypeFlexibility_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -197,9 +189,17 @@ instance scheduling.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Region",
-        "Region where nodes using the node template will be created.\nIf it is not provided, the provider region is used.",
+        "cpuOvercommitType",
+        "CPU overcommit.\nDefault value is `NONE`.\nPossible values are: `ENABLED`, `NONE`.",
         [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Map,
+        "nodeAffinityLabels",
+        "Labels to use for node affinity, which will be used in\ninstance scheduling.",
+        InputType_Map_GetTypes(),
         false,
         true,
       ),

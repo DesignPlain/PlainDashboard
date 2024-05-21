@@ -6,17 +6,11 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Redis_InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTime,
-  Redis_InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTime_GetTypes,
-} from "./Redis_InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTime";
+  redis_InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTime,
+  redis_InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTime_GetTypes,
+} from "./redis_InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTime";
 
-export interface Redis_InstanceMaintenancePolicyWeeklyMaintenanceWindow {
-  /*
-Required. Start time of the window in UTC time.
-Structure is documented below.
-*/
-  StartTime?: Redis_InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTime;
-
+export interface redis_InstanceMaintenancePolicyWeeklyMaintenanceWindow {
   /*
 Required. The day of week that maintenance updates occur.
 - DAY_OF_WEEK_UNSPECIFIED: The day of the week is unspecified.
@@ -29,7 +23,7 @@ Required. The day of week that maintenance updates occur.
 - SUNDAY: Sunday
 Possible values are: `DAY_OF_WEEK_UNSPECIFIED`, `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
 */
-  Day?: string;
+  day?: string;
 
   /*
 (Output)
@@ -38,22 +32,20 @@ The current window is fixed at 1 hour.
 A duration in seconds with up to nine fractional digits,
 terminated by 's'. Example: "3.5s".
 */
-  Duration?: string;
+  duration?: string;
+
+  /*
+Required. Start time of the window in UTC time.
+Structure is documented below.
+*/
+  startTime?: redis_InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTime;
 }
 
-export function Redis_InstanceMaintenancePolicyWeeklyMaintenanceWindow_GetTypes(): DynamicUIProps[] {
+export function redis_InstanceMaintenancePolicyWeeklyMaintenanceWindow_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "StartTime",
-      "Required. Start time of the window in UTC time.\nStructure is documented below.",
-      Redis_InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTime_GetTypes(),
-      true,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.String,
-      "Day",
+      "day",
       "Required. The day of week that maintenance updates occur.\n- DAY_OF_WEEK_UNSPECIFIED: The day of the week is unspecified.\n- MONDAY: Monday\n- TUESDAY: Tuesday\n- WEDNESDAY: Wednesday\n- THURSDAY: Thursday\n- FRIDAY: Friday\n- SATURDAY: Saturday\n- SUNDAY: Sunday\nPossible values are: `DAY_OF_WEEK_UNSPECIFIED`, `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.",
       [],
       true,
@@ -61,10 +53,18 @@ export function Redis_InstanceMaintenancePolicyWeeklyMaintenanceWindow_GetTypes(
     ),
     new DynamicUIProps(
       InputType.String,
-      "Duration",
+      "duration",
       "(Output)\nOutput only. Duration of the maintenance window.\nThe current window is fixed at 1 hour.\nA duration in seconds with up to nine fractional digits,\nterminated by 's'. Example: \"3.5s\".",
       [],
       false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "startTime",
+      "Required. Start time of the window in UTC time.\nStructure is documented below.",
+      redis_InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTime_GetTypes(),
+      true,
       false,
     ),
   ];

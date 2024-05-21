@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Monitoring_AlertPolicyConditionConditionMonitoringQueryLanguageTrigger {
+export interface monitoring_AlertPolicyConditionConditionMonitoringQueryLanguageTrigger {
   /*
 The absolute number of time series
 that must fail the predicate for the
 condition to be triggered.
 */
-  Count?: number;
+  count?: number;
 
   /*
 The percentage of time series that
 must fail the predicate for the
 condition to be triggered.
 */
-  Percent?: number;
+  percent?: number;
 }
 
-export function Monitoring_AlertPolicyConditionConditionMonitoringQueryLanguageTrigger_GetTypes(): DynamicUIProps[] {
+export function monitoring_AlertPolicyConditionConditionMonitoringQueryLanguageTrigger_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Count",
+      "count",
       "The absolute number of time series\nthat must fail the predicate for the\ncondition to be triggered.",
       [],
       false,
@@ -34,7 +34,7 @@ export function Monitoring_AlertPolicyConditionConditionMonitoringQueryLanguageT
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Percent",
+      "percent",
       "The percentage of time series that\nmust fail the predicate for the\ncondition to be triggered.",
       [],
       false,

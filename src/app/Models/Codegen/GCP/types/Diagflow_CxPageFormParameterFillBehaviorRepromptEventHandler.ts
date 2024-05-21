@@ -6,60 +6,44 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillment,
-  Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillment_GetTypes,
-} from "./Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillment";
+  diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillment,
+  diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillment_GetTypes,
+} from "./diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillment";
 
-export interface Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandler {
-  /*
-The fulfillment to call when the event occurs. Handling webhook errors with a fulfillment enabled with webhook could cause infinite loop. It is invalid to specify such fulfillment for a handler handling webhooks.
-Structure is documented below.
-*/
-  TriggerFulfillment?: Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillment;
-
-  // The name of the event to handle.
-  Event?: string;
-
-  /*
-(Output)
-The unique identifier of this event handler.
-*/
-  Name?: string;
-
+export interface diagflow_CxPageFormParameterFillBehaviorRepromptEventHandler {
   /*
 The target flow to transition to.
 Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>.
 */
-  TargetFlow?: string;
+  targetFlow?: string;
 
   /*
 The target page to transition to.
 Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.
 */
-  TargetPage?: string;
+  targetPage?: string;
+
+  /*
+The fulfillment to call when the event occurs. Handling webhook errors with a fulfillment enabled with webhook could cause infinite loop. It is invalid to specify such fulfillment for a handler handling webhooks.
+Structure is documented below.
+*/
+  triggerFulfillment?: diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillment;
+
+  // The name of the event to handle.
+  event?: string;
+
+  /*
+(Output)
+The unique identifier of this event handler.
+*/
+  name?: string;
 }
 
-export function Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandler_GetTypes(): DynamicUIProps[] {
+export function diagflow_CxPageFormParameterFillBehaviorRepromptEventHandler_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Event",
-      "The name of the event to handle.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Name",
-      "(Output)\nThe unique identifier of this event handler.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "TargetFlow",
+      "targetFlow",
       "The target flow to transition to.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>.",
       [],
       false,
@@ -67,7 +51,7 @@ export function Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandler_Get
     ),
     new DynamicUIProps(
       InputType.String,
-      "TargetPage",
+      "targetPage",
       "The target page to transition to.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.",
       [],
       false,
@@ -75,9 +59,25 @@ export function Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandler_Get
     ),
     new DynamicUIProps(
       InputType.Object,
-      "TriggerFulfillment",
+      "triggerFulfillment",
       "The fulfillment to call when the event occurs. Handling webhook errors with a fulfillment enabled with webhook could cause infinite loop. It is invalid to specify such fulfillment for a handler handling webhooks.\nStructure is documented below.",
-      Diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillment_GetTypes(),
+      diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillment_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "event",
+      "The name of the event to handle.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "name",
+      "(Output)\nThe unique identifier of this event handler.",
+      [],
       false,
       false,
     ),

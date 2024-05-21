@@ -6,7 +6,7 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_ClusterClusterConfigMetastoreConfig {
+export interface dataproc_ClusterClusterConfigMetastoreConfig {
   /*
 Resource name of an existing Dataproc Metastore service.
 
@@ -14,14 +14,14 @@ Only resource names including projectid and location (region) are valid. Example
 
 `projects/[projectId]/locations/[dataproc_region]/services/[service-name]`
 */
-  DataprocMetastoreService?: string;
+  dataprocMetastoreService?: string;
 }
 
-export function Dataproc_ClusterClusterConfigMetastoreConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterClusterConfigMetastoreConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "DataprocMetastoreService",
+      "dataprocMetastoreService",
       "Resource name of an existing Dataproc Metastore service.\n\nOnly resource names including projectid and location (region) are valid. Examples:\n\n`projects/[projectId]/locations/[dataproc_region]/services/[service-name]`",
       [],
       true,

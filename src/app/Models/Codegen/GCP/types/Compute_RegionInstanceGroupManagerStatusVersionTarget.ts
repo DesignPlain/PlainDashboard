@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_RegionInstanceGroupManagerStatusVersionTarget {
+export interface compute_RegionInstanceGroupManagerStatusVersionTarget {
   // A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
-  IsReached?: boolean;
+  isReached?: boolean;
 }
 
-export function Compute_RegionInstanceGroupManagerStatusVersionTarget_GetTypes(): DynamicUIProps[] {
+export function compute_RegionInstanceGroupManagerStatusVersionTarget_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "IsReached",
+      "isReached",
       "A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.",
       [],
       false,

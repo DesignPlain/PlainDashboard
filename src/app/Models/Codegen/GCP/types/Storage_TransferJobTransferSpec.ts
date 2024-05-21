@@ -6,138 +6,114 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Storage_TransferJobTransferSpecTransferOptions,
-  Storage_TransferJobTransferSpecTransferOptions_GetTypes,
-} from "./Storage_TransferJobTransferSpecTransferOptions";
+  storage_TransferJobTransferSpecPosixDataSource,
+  storage_TransferJobTransferSpecPosixDataSource_GetTypes,
+} from "./storage_TransferJobTransferSpecPosixDataSource";
 import {
-  Storage_TransferJobTransferSpecGcsDataSink,
-  Storage_TransferJobTransferSpecGcsDataSink_GetTypes,
-} from "./Storage_TransferJobTransferSpecGcsDataSink";
+  storage_TransferJobTransferSpecTransferOptions,
+  storage_TransferJobTransferSpecTransferOptions_GetTypes,
+} from "./storage_TransferJobTransferSpecTransferOptions";
 import {
-  Storage_TransferJobTransferSpecPosixDataSink,
-  Storage_TransferJobTransferSpecPosixDataSink_GetTypes,
-} from "./Storage_TransferJobTransferSpecPosixDataSink";
+  storage_TransferJobTransferSpecAzureBlobStorageDataSource,
+  storage_TransferJobTransferSpecAzureBlobStorageDataSource_GetTypes,
+} from "./storage_TransferJobTransferSpecAzureBlobStorageDataSource";
 import {
-  Storage_TransferJobTransferSpecAwsS3DataSource,
-  Storage_TransferJobTransferSpecAwsS3DataSource_GetTypes,
-} from "./Storage_TransferJobTransferSpecAwsS3DataSource";
+  storage_TransferJobTransferSpecGcsDataSink,
+  storage_TransferJobTransferSpecGcsDataSink_GetTypes,
+} from "./storage_TransferJobTransferSpecGcsDataSink";
 import {
-  Storage_TransferJobTransferSpecAzureBlobStorageDataSource,
-  Storage_TransferJobTransferSpecAzureBlobStorageDataSource_GetTypes,
-} from "./Storage_TransferJobTransferSpecAzureBlobStorageDataSource";
+  storage_TransferJobTransferSpecGcsDataSource,
+  storage_TransferJobTransferSpecGcsDataSource_GetTypes,
+} from "./storage_TransferJobTransferSpecGcsDataSource";
 import {
-  Storage_TransferJobTransferSpecGcsDataSource,
-  Storage_TransferJobTransferSpecGcsDataSource_GetTypes,
-} from "./Storage_TransferJobTransferSpecGcsDataSource";
+  storage_TransferJobTransferSpecHttpDataSource,
+  storage_TransferJobTransferSpecHttpDataSource_GetTypes,
+} from "./storage_TransferJobTransferSpecHttpDataSource";
 import {
-  Storage_TransferJobTransferSpecHttpDataSource,
-  Storage_TransferJobTransferSpecHttpDataSource_GetTypes,
-} from "./Storage_TransferJobTransferSpecHttpDataSource";
+  storage_TransferJobTransferSpecObjectConditions,
+  storage_TransferJobTransferSpecObjectConditions_GetTypes,
+} from "./storage_TransferJobTransferSpecObjectConditions";
 import {
-  Storage_TransferJobTransferSpecObjectConditions,
-  Storage_TransferJobTransferSpecObjectConditions_GetTypes,
-} from "./Storage_TransferJobTransferSpecObjectConditions";
+  storage_TransferJobTransferSpecAwsS3DataSource,
+  storage_TransferJobTransferSpecAwsS3DataSource_GetTypes,
+} from "./storage_TransferJobTransferSpecAwsS3DataSource";
 import {
-  Storage_TransferJobTransferSpecPosixDataSource,
-  Storage_TransferJobTransferSpecPosixDataSource_GetTypes,
-} from "./Storage_TransferJobTransferSpecPosixDataSource";
+  storage_TransferJobTransferSpecPosixDataSink,
+  storage_TransferJobTransferSpecPosixDataSink_GetTypes,
+} from "./storage_TransferJobTransferSpecPosixDataSink";
 
-export interface Storage_TransferJobTransferSpec {
-  // A POSIX data sink. Structure documented below.
-  PosixDataSink?: Storage_TransferJobTransferSpecPosixDataSink;
-
-  // Characteristics of how to treat files from datasource and sink during job. If the option `delete_objects_unique_in_sink` is true, object conditions based on objects' `last_modification_time` are ignored and do not exclude objects in a data source or a data sink. Structure documented below.
-  TransferOptions?: Storage_TransferJobTransferSpecTransferOptions;
-
-  // An AWS S3 data source. Structure documented below.
-  AwsS3DataSource?: Storage_TransferJobTransferSpecAwsS3DataSource;
-
-  // An Azure Blob Storage data source. Structure documented below.
-  AzureBlobStorageDataSource?: Storage_TransferJobTransferSpecAzureBlobStorageDataSource;
-
+export interface storage_TransferJobTransferSpec {
   // A Google Cloud Storage data sink. Structure documented below.
-  GcsDataSink?: Storage_TransferJobTransferSpecGcsDataSink;
+  gcsDataSink?: storage_TransferJobTransferSpecGcsDataSink;
 
   // A Google Cloud Storage data source. Structure documented below.
-  GcsDataSource?: Storage_TransferJobTransferSpecGcsDataSource;
-
-  // A HTTP URL data source. Structure documented below.
-  HttpDataSource?: Storage_TransferJobTransferSpecHttpDataSource;
+  gcsDataSource?: storage_TransferJobTransferSpecGcsDataSource;
 
   // Only objects that satisfy these object conditions are included in the set of data source and data sink objects. Object conditions based on objects' `last_modification_time` do not exclude objects in a data sink. Structure documented below.
-  ObjectConditions?: Storage_TransferJobTransferSpecObjectConditions;
-
-  // A POSIX filesystem data source. Structure documented below.
-  PosixDataSource?: Storage_TransferJobTransferSpecPosixDataSource;
-
-  // Specifies the agent pool name associated with the posix data sink. When unspecified, the default name is used.
-  SinkAgentPoolName?: string;
+  objectConditions?: storage_TransferJobTransferSpecObjectConditions;
 
   // Specifies the agent pool name associated with the posix data source. When unspecified, the default name is used.
-  SourceAgentPoolName?: string;
+  sourceAgentPoolName?: string;
+
+  // An AWS S3 data source. Structure documented below.
+  awsS3DataSource?: storage_TransferJobTransferSpecAwsS3DataSource;
+
+  // A HTTP URL data source. Structure documented below.
+  httpDataSource?: storage_TransferJobTransferSpecHttpDataSource;
+
+  // A POSIX data sink. Structure documented below.
+  posixDataSink?: storage_TransferJobTransferSpecPosixDataSink;
+
+  // A POSIX filesystem data source. Structure documented below.
+  posixDataSource?: storage_TransferJobTransferSpecPosixDataSource;
+
+  // Specifies the agent pool name associated with the posix data sink. When unspecified, the default name is used.
+  sinkAgentPoolName?: string;
+
+  // Characteristics of how to treat files from datasource and sink during job. If the option `delete_objects_unique_in_sink` is true, object conditions based on objects' `last_modification_time` are ignored and do not exclude objects in a data source or a data sink. Structure documented below.
+  transferOptions?: storage_TransferJobTransferSpecTransferOptions;
+
+  // An Azure Blob Storage data source. Structure documented below.
+  azureBlobStorageDataSource?: storage_TransferJobTransferSpecAzureBlobStorageDataSource;
 }
 
-export function Storage_TransferJobTransferSpec_GetTypes(): DynamicUIProps[] {
+export function storage_TransferJobTransferSpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "PosixDataSource",
-      "A POSIX filesystem data source. Structure documented below.",
-      Storage_TransferJobTransferSpecPosixDataSource_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "PosixDataSink",
-      "A POSIX data sink. Structure documented below.",
-      Storage_TransferJobTransferSpecPosixDataSink_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "AwsS3DataSource",
-      "An AWS S3 data source. Structure documented below.",
-      Storage_TransferJobTransferSpecAwsS3DataSource_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "HttpDataSource",
+      "httpDataSource",
       "A HTTP URL data source. Structure documented below.",
-      Storage_TransferJobTransferSpecHttpDataSource_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "GcsDataSource",
-      "A Google Cloud Storage data source. Structure documented below.",
-      Storage_TransferJobTransferSpecGcsDataSource_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "ObjectConditions",
-      "Only objects that satisfy these object conditions are included in the set of data source and data sink objects. Object conditions based on objects' `last_modification_time` do not exclude objects in a data sink. Structure documented below.",
-      Storage_TransferJobTransferSpecObjectConditions_GetTypes(),
+      storage_TransferJobTransferSpecHttpDataSource_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "SinkAgentPoolName",
+      "sinkAgentPoolName",
       "Specifies the agent pool name associated with the posix data sink. When unspecified, the default name is used.",
       [],
       false,
       true,
     ),
     new DynamicUIProps(
+      InputType.Object,
+      "gcsDataSink",
+      "A Google Cloud Storage data sink. Structure documented below.",
+      storage_TransferJobTransferSpecGcsDataSink_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "gcsDataSource",
+      "A Google Cloud Storage data source. Structure documented below.",
+      storage_TransferJobTransferSpecGcsDataSource_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
       InputType.String,
-      "SourceAgentPoolName",
+      "sourceAgentPoolName",
       "Specifies the agent pool name associated with the posix data source. When unspecified, the default name is used.",
       [],
       false,
@@ -145,25 +121,49 @@ export function Storage_TransferJobTransferSpec_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "TransferOptions",
+      "posixDataSource",
+      "A POSIX filesystem data source. Structure documented below.",
+      storage_TransferJobTransferSpecPosixDataSource_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "transferOptions",
       "Characteristics of how to treat files from datasource and sink during job. If the option `delete_objects_unique_in_sink` is true, object conditions based on objects' `last_modification_time` are ignored and do not exclude objects in a data source or a data sink. Structure documented below.",
-      Storage_TransferJobTransferSpecTransferOptions_GetTypes(),
+      storage_TransferJobTransferSpecTransferOptions_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "AzureBlobStorageDataSource",
+      "azureBlobStorageDataSource",
       "An Azure Blob Storage data source. Structure documented below.",
-      Storage_TransferJobTransferSpecAzureBlobStorageDataSource_GetTypes(),
+      storage_TransferJobTransferSpecAzureBlobStorageDataSource_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "GcsDataSink",
-      "A Google Cloud Storage data sink. Structure documented below.",
-      Storage_TransferJobTransferSpecGcsDataSink_GetTypes(),
+      "objectConditions",
+      "Only objects that satisfy these object conditions are included in the set of data source and data sink objects. Object conditions based on objects' `last_modification_time` do not exclude objects in a data sink. Structure documented below.",
+      storage_TransferJobTransferSpecObjectConditions_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "awsS3DataSource",
+      "An AWS S3 data source. Structure documented below.",
+      storage_TransferJobTransferSpecAwsS3DataSource_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "posixDataSink",
+      "A POSIX data sink. Structure documented below.",
+      storage_TransferJobTransferSpecPosixDataSink_GetTypes(),
       false,
       false,
     ),

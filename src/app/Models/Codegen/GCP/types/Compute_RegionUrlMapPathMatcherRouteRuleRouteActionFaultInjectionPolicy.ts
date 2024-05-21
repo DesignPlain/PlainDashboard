@@ -6,43 +6,43 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbort,
-  Compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbort_GetTypes,
-} from "./Compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbort";
+  compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbort,
+  compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbort_GetTypes,
+} from "./compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbort";
 import {
-  Compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay,
-  Compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay_GetTypes,
-} from "./Compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay";
+  compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay,
+  compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay_GetTypes,
+} from "./compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay";
 
-export interface Compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy {
+export interface compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy {
   /*
 The specification for how client requests are aborted as part of fault injection.
 Structure is documented below.
 */
-  Abort?: Compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbort;
+  abort?: compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbort;
 
   /*
 The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
 Structure is documented below.
 */
-  Delay?: Compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay;
+  delay?: compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay;
 }
 
-export function Compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy_GetTypes(): DynamicUIProps[] {
+export function compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "Abort",
+      "abort",
       "The specification for how client requests are aborted as part of fault injection.\nStructure is documented below.",
-      Compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbort_GetTypes(),
+      compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbort_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Delay",
+      "delay",
       "The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.\nStructure is documented below.",
-      Compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay_GetTypes(),
+      compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay_GetTypes(),
       false,
       false,
     ),

@@ -6,88 +6,63 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_ClusterClusterConfigSoftwareConfig,
-  Dataproc_ClusterClusterConfigSoftwareConfig_GetTypes,
-} from "./Dataproc_ClusterClusterConfigSoftwareConfig";
+  dataproc_ClusterClusterConfigPreemptibleWorkerConfig,
+  dataproc_ClusterClusterConfigPreemptibleWorkerConfig_GetTypes,
+} from "./dataproc_ClusterClusterConfigPreemptibleWorkerConfig";
 import {
-  Dataproc_ClusterClusterConfigSecurityConfig,
-  Dataproc_ClusterClusterConfigSecurityConfig_GetTypes,
-} from "./Dataproc_ClusterClusterConfigSecurityConfig";
+  dataproc_ClusterClusterConfigEncryptionConfig,
+  dataproc_ClusterClusterConfigEncryptionConfig_GetTypes,
+} from "./dataproc_ClusterClusterConfigEncryptionConfig";
 import {
-  Dataproc_ClusterClusterConfigWorkerConfig,
-  Dataproc_ClusterClusterConfigWorkerConfig_GetTypes,
-} from "./Dataproc_ClusterClusterConfigWorkerConfig";
+  dataproc_ClusterClusterConfigDataprocMetricConfig,
+  dataproc_ClusterClusterConfigDataprocMetricConfig_GetTypes,
+} from "./dataproc_ClusterClusterConfigDataprocMetricConfig";
 import {
-  Dataproc_ClusterClusterConfigAutoscalingConfig,
-  Dataproc_ClusterClusterConfigAutoscalingConfig_GetTypes,
-} from "./Dataproc_ClusterClusterConfigAutoscalingConfig";
+  dataproc_ClusterClusterConfigAuxiliaryNodeGroup,
+  dataproc_ClusterClusterConfigAuxiliaryNodeGroup_GetTypes,
+} from "./dataproc_ClusterClusterConfigAuxiliaryNodeGroup";
 import {
-  Dataproc_ClusterClusterConfigEncryptionConfig,
-  Dataproc_ClusterClusterConfigEncryptionConfig_GetTypes,
-} from "./Dataproc_ClusterClusterConfigEncryptionConfig";
+  dataproc_ClusterClusterConfigAutoscalingConfig,
+  dataproc_ClusterClusterConfigAutoscalingConfig_GetTypes,
+} from "./dataproc_ClusterClusterConfigAutoscalingConfig";
 import {
-  Dataproc_ClusterClusterConfigInitializationAction,
-  Dataproc_ClusterClusterConfigInitializationAction_GetTypes,
-} from "./Dataproc_ClusterClusterConfigInitializationAction";
+  dataproc_ClusterClusterConfigInitializationAction,
+  dataproc_ClusterClusterConfigInitializationAction_GetTypes,
+} from "./dataproc_ClusterClusterConfigInitializationAction";
 import {
-  Dataproc_ClusterClusterConfigMetastoreConfig,
-  Dataproc_ClusterClusterConfigMetastoreConfig_GetTypes,
-} from "./Dataproc_ClusterClusterConfigMetastoreConfig";
+  dataproc_ClusterClusterConfigEndpointConfig,
+  dataproc_ClusterClusterConfigEndpointConfig_GetTypes,
+} from "./dataproc_ClusterClusterConfigEndpointConfig";
 import {
-  Dataproc_ClusterClusterConfigAuxiliaryNodeGroup,
-  Dataproc_ClusterClusterConfigAuxiliaryNodeGroup_GetTypes,
-} from "./Dataproc_ClusterClusterConfigAuxiliaryNodeGroup";
+  dataproc_ClusterClusterConfigLifecycleConfig,
+  dataproc_ClusterClusterConfigLifecycleConfig_GetTypes,
+} from "./dataproc_ClusterClusterConfigLifecycleConfig";
 import {
-  Dataproc_ClusterClusterConfigMasterConfig,
-  Dataproc_ClusterClusterConfigMasterConfig_GetTypes,
-} from "./Dataproc_ClusterClusterConfigMasterConfig";
+  dataproc_ClusterClusterConfigWorkerConfig,
+  dataproc_ClusterClusterConfigWorkerConfig_GetTypes,
+} from "./dataproc_ClusterClusterConfigWorkerConfig";
 import {
-  Dataproc_ClusterClusterConfigPreemptibleWorkerConfig,
-  Dataproc_ClusterClusterConfigPreemptibleWorkerConfig_GetTypes,
-} from "./Dataproc_ClusterClusterConfigPreemptibleWorkerConfig";
+  dataproc_ClusterClusterConfigSoftwareConfig,
+  dataproc_ClusterClusterConfigSoftwareConfig_GetTypes,
+} from "./dataproc_ClusterClusterConfigSoftwareConfig";
 import {
-  Dataproc_ClusterClusterConfigEndpointConfig,
-  Dataproc_ClusterClusterConfigEndpointConfig_GetTypes,
-} from "./Dataproc_ClusterClusterConfigEndpointConfig";
+  dataproc_ClusterClusterConfigGceClusterConfig,
+  dataproc_ClusterClusterConfigGceClusterConfig_GetTypes,
+} from "./dataproc_ClusterClusterConfigGceClusterConfig";
 import {
-  Dataproc_ClusterClusterConfigDataprocMetricConfig,
-  Dataproc_ClusterClusterConfigDataprocMetricConfig_GetTypes,
-} from "./Dataproc_ClusterClusterConfigDataprocMetricConfig";
+  dataproc_ClusterClusterConfigMetastoreConfig,
+  dataproc_ClusterClusterConfigMetastoreConfig_GetTypes,
+} from "./dataproc_ClusterClusterConfigMetastoreConfig";
 import {
-  Dataproc_ClusterClusterConfigLifecycleConfig,
-  Dataproc_ClusterClusterConfigLifecycleConfig_GetTypes,
-} from "./Dataproc_ClusterClusterConfigLifecycleConfig";
+  dataproc_ClusterClusterConfigSecurityConfig,
+  dataproc_ClusterClusterConfigSecurityConfig_GetTypes,
+} from "./dataproc_ClusterClusterConfigSecurityConfig";
 import {
-  Dataproc_ClusterClusterConfigGceClusterConfig,
-  Dataproc_ClusterClusterConfigGceClusterConfig_GetTypes,
-} from "./Dataproc_ClusterClusterConfigGceClusterConfig";
+  dataproc_ClusterClusterConfigMasterConfig,
+  dataproc_ClusterClusterConfigMasterConfig_GetTypes,
+} from "./dataproc_ClusterClusterConfigMasterConfig";
 
-export interface Dataproc_ClusterClusterConfig {
-  /*
-The Customer managed encryption keys settings for the cluster.
-Structure defined below.
-*/
-  EncryptionConfig?: Dataproc_ClusterClusterConfigEncryptionConfig;
-
-  /*
-The settings for auto deletion cluster schedule.
-Structure defined below.
-*/
-  LifecycleConfig?: Dataproc_ClusterClusterConfigLifecycleConfig;
-
-  /*
-The Cloud Storage temp bucket used to store ephemeral cluster
-and jobs data, such as Spark and MapReduce history files.
-Note: If you don't explicitly specify a `temp_bucket` then GCP will auto create / assign one for you.
-*/
-  TempBucket?: string;
-
-  /*
-The Google Compute Engine config settings for the master instances
-in a cluster. Structure defined below.
-*/
-  MasterConfig?: Dataproc_ClusterClusterConfigMasterConfig;
-
+export interface dataproc_ClusterClusterConfig {
   /*
 The Google Compute Engine config settings for the additional
 instances in a cluster. Structure defined below.
@@ -95,34 +70,13 @@ instances in a cluster. Structure defined below.
 an alias for the api's [secondaryWorkerConfig](https://cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig#InstanceGroupConfig). The name doesn't necessarily mean it is preemptible and is named as
 such for legacy/compatibility reasons.
 */
-  PreemptibleWorkerConfig?: Dataproc_ClusterClusterConfigPreemptibleWorkerConfig;
-
-  // The name of the cloud storage bucket ultimately used to house the staging data for the cluster. If staging_bucket is specified, it will contain this value, otherwise it will be the auto generated name.
-  Bucket?: string;
-
-  /*
-Common config settings for resources of Google Compute Engine cluster
-instances, applicable to all instances in the cluster. Structure defined below.
-*/
-  GceClusterConfig?: Dataproc_ClusterClusterConfigGceClusterConfig;
-
-  /*
-Commands to execute on each node after config is completed.
-You can specify multiple versions of these. Structure defined below.
-*/
-  InitializationActions?: Array<Dataproc_ClusterClusterConfigInitializationAction>;
-
-  /*
-The Compute Engine accelerator (GPU) configuration for these instances. Can be specified multiple times.
-Structure defined below.
-*/
-  DataprocMetricConfig?: Dataproc_ClusterClusterConfigDataprocMetricConfig;
+  preemptibleWorkerConfig?: dataproc_ClusterClusterConfigPreemptibleWorkerConfig;
 
   /*
 The config settings for software inside the cluster.
 Structure defined below.
 */
-  SoftwareConfig?: Dataproc_ClusterClusterConfigSoftwareConfig;
+  softwareConfig?: dataproc_ClusterClusterConfigSoftwareConfig;
 
   /*
 The Cloud Storage staging bucket used to stage files,
@@ -133,23 +87,29 @@ an auto generated bucket which is solely dedicated to your cluster; it may be sh
 with other clusters in the same region/zone also choosing to use the auto generation
 option.
 */
-  StagingBucket?: string;
+  stagingBucket?: string;
+
+  // The name of the cloud storage bucket ultimately used to house the staging data for the cluster. If staging_bucket is specified, it will contain this value, otherwise it will be the auto generated name.
+  bucket?: string;
+
+  /*
+The Customer managed encryption keys settings for the cluster.
+Structure defined below.
+*/
+  encryptionConfig?: dataproc_ClusterClusterConfigEncryptionConfig;
+
+  /*
+Common config settings for resources of Google Compute Engine cluster
+instances, applicable to all instances in the cluster. Structure defined below.
+*/
+  gceClusterConfig?: dataproc_ClusterClusterConfigGceClusterConfig;
 
   /*
 The config setting for metastore service with the cluster.
 Structure defined below.
 - - -
 */
-  MetastoreConfig?: Dataproc_ClusterClusterConfigMetastoreConfig;
-
-  // Security related configuration. Structure defined below.
-  SecurityConfig?: Dataproc_ClusterClusterConfigSecurityConfig;
-
-  /*
-The Google Compute Engine config settings for the worker instances
-in a cluster. Structure defined below.
-*/
-  WorkerConfig?: Dataproc_ClusterClusterConfigWorkerConfig;
+  metastoreConfig?: dataproc_ClusterClusterConfigMetastoreConfig;
 
   /*
 The autoscaling policy config associated with the cluster.
@@ -157,106 +117,138 @@ Note that once set, if `autoscaling_config` is the only field set in `cluster_co
 only be removed by setting `policy_uri = ""`, rather than removing the whole block.
 Structure defined below.
 */
-  AutoscalingConfig?: Dataproc_ClusterClusterConfigAutoscalingConfig;
+  autoscalingConfig?: dataproc_ClusterClusterConfigAutoscalingConfig;
+
+  /*
+The Compute Engine accelerator (GPU) configuration for these instances. Can be specified multiple times.
+Structure defined below.
+*/
+  dataprocMetricConfig?: dataproc_ClusterClusterConfigDataprocMetricConfig;
+
+  /*
+Commands to execute on each node after config is completed.
+You can specify multiple versions of these. Structure defined below.
+*/
+  initializationActions?: Array<dataproc_ClusterClusterConfigInitializationAction>;
 
   /*
 A Dataproc NodeGroup resource is a group of Dataproc cluster nodes that execute an assigned role. 
 Structure defined below.
 */
-  AuxiliaryNodeGroups?: Array<Dataproc_ClusterClusterConfigAuxiliaryNodeGroup>;
+  auxiliaryNodeGroups?: Array<dataproc_ClusterClusterConfigAuxiliaryNodeGroup>;
 
   /*
 The config settings for port access on the cluster.
 Structure defined below.
 */
-  EndpointConfig?: Dataproc_ClusterClusterConfigEndpointConfig;
+  endpointConfig?: dataproc_ClusterClusterConfigEndpointConfig;
+
+  /*
+The Google Compute Engine config settings for the master instances
+in a cluster. Structure defined below.
+*/
+  masterConfig?: dataproc_ClusterClusterConfigMasterConfig;
+
+  // Security related configuration. Structure defined below.
+  securityConfig?: dataproc_ClusterClusterConfigSecurityConfig;
+
+  /*
+The settings for auto deletion cluster schedule.
+Structure defined below.
+*/
+  lifecycleConfig?: dataproc_ClusterClusterConfigLifecycleConfig;
+
+  /*
+The Cloud Storage temp bucket used to store ephemeral cluster
+and jobs data, such as Spark and MapReduce history files.
+Note: If you don't explicitly specify a `temp_bucket` then GCP will auto create / assign one for you.
+*/
+  tempBucket?: string;
+
+  /*
+The Google Compute Engine config settings for the worker instances
+in a cluster. Structure defined below.
+*/
+  workerConfig?: dataproc_ClusterClusterConfigWorkerConfig;
 }
 
-export function Dataproc_ClusterClusterConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterClusterConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Array,
-      "AuxiliaryNodeGroups",
-      "A Dataproc NodeGroup resource is a group of Dataproc cluster nodes that execute an assigned role. \nStructure defined below.",
-      Dataproc_ClusterClusterConfigAuxiliaryNodeGroup_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Object,
-      "EndpointConfig",
-      "The config settings for port access on the cluster.\nStructure defined below.",
-      Dataproc_ClusterClusterConfigEndpointConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "EncryptionConfig",
-      "The Customer managed encryption keys settings for the cluster.\nStructure defined below.",
-      Dataproc_ClusterClusterConfigEncryptionConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "LifecycleConfig",
-      "The settings for auto deletion cluster schedule.\nStructure defined below.",
-      Dataproc_ClusterClusterConfigLifecycleConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Bucket",
-      "The name of the cloud storage bucket ultimately used to house the staging data for the cluster. If staging_bucket is specified, it will contain this value, otherwise it will be the auto generated name.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Array,
-      "InitializationActions",
-      "Commands to execute on each node after config is completed.\nYou can specify multiple versions of these. Structure defined below.",
-      Dataproc_ClusterClusterConfigInitializationAction_GetTypes(),
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "DataprocMetricConfig",
+      "dataprocMetricConfig",
       "The Compute Engine accelerator (GPU) configuration for these instances. Can be specified multiple times.\nStructure defined below.",
-      Dataproc_ClusterClusterConfigDataprocMetricConfig_GetTypes(),
+      dataproc_ClusterClusterConfigDataprocMetricConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
-      InputType.String,
-      "StagingBucket",
-      "The Cloud Storage staging bucket used to stage files,\nsuch as Hadoop jars, between client machines and the cluster.\nNote: If you don't explicitly specify a `staging_bucket`\nthen GCP will auto create / assign one for you. However, you are not guaranteed\nan auto generated bucket which is solely dedicated to your cluster; it may be shared\nwith other clusters in the same region/zone also choosing to use the auto generation\noption.",
-      [],
+      InputType.Array,
+      "initializationActions",
+      "Commands to execute on each node after config is completed.\nYou can specify multiple versions of these. Structure defined below.",
+      dataproc_ClusterClusterConfigInitializationAction_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
-      InputType.Object,
-      "MetastoreConfig",
-      "The config setting for metastore service with the cluster.\nStructure defined below.\n- - -",
-      Dataproc_ClusterClusterConfigMetastoreConfig_GetTypes(),
+      InputType.Array,
+      "auxiliaryNodeGroups",
+      "A Dataproc NodeGroup resource is a group of Dataproc cluster nodes that execute an assigned role. \nStructure defined below.",
+      dataproc_ClusterClusterConfigAuxiliaryNodeGroup_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "WorkerConfig",
-      "The Google Compute Engine config settings for the worker instances\nin a cluster. Structure defined below.",
-      Dataproc_ClusterClusterConfigWorkerConfig_GetTypes(),
+      "securityConfig",
+      "Security related configuration. Structure defined below.",
+      dataproc_ClusterClusterConfigSecurityConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "softwareConfig",
+      "The config settings for software inside the cluster.\nStructure defined below.",
+      dataproc_ClusterClusterConfigSoftwareConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "encryptionConfig",
+      "The Customer managed encryption keys settings for the cluster.\nStructure defined below.",
+      dataproc_ClusterClusterConfigEncryptionConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "autoscalingConfig",
+      'The autoscaling policy config associated with the cluster.\nNote that once set, if `autoscaling_config` is the only field set in `cluster_config`, it can\nonly be removed by setting `policy_uri = ""`, rather than removing the whole block.\nStructure defined below.',
+      dataproc_ClusterClusterConfigAutoscalingConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "metastoreConfig",
+      "The config setting for metastore service with the cluster.\nStructure defined below.\n- - -",
+      dataproc_ClusterClusterConfigMetastoreConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "masterConfig",
+      "The Google Compute Engine config settings for the master instances\nin a cluster. Structure defined below.",
+      dataproc_ClusterClusterConfigMasterConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "TempBucket",
+      "tempBucket",
       "The Cloud Storage temp bucket used to store ephemeral cluster\nand jobs data, such as Spark and MapReduce history files.\nNote: If you don't explicitly specify a `temp_bucket` then GCP will auto create / assign one for you.",
       [],
       false,
@@ -264,49 +256,57 @@ export function Dataproc_ClusterClusterConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "MasterConfig",
-      "The Google Compute Engine config settings for the master instances\nin a cluster. Structure defined below.",
-      Dataproc_ClusterClusterConfigMasterConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "PreemptibleWorkerConfig",
-      "The Google Compute Engine config settings for the additional\ninstances in a cluster. Structure defined below.\n* **NOTE** : `preemptible_worker_config` is\nan alias for the api's [secondaryWorkerConfig](https://cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig#InstanceGroupConfig). The name doesn't necessarily mean it is preemptible and is named as\nsuch for legacy/compatibility reasons.",
-      Dataproc_ClusterClusterConfigPreemptibleWorkerConfig_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Object,
-      "GceClusterConfig",
+      "gceClusterConfig",
       "Common config settings for resources of Google Compute Engine cluster\ninstances, applicable to all instances in the cluster. Structure defined below.",
-      Dataproc_ClusterClusterConfigGceClusterConfig_GetTypes(),
+      dataproc_ClusterClusterConfigGceClusterConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "SoftwareConfig",
-      "The config settings for software inside the cluster.\nStructure defined below.",
-      Dataproc_ClusterClusterConfigSoftwareConfig_GetTypes(),
+      "lifecycleConfig",
+      "The settings for auto deletion cluster schedule.\nStructure defined below.",
+      dataproc_ClusterClusterConfigLifecycleConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "SecurityConfig",
-      "Security related configuration. Structure defined below.",
-      Dataproc_ClusterClusterConfigSecurityConfig_GetTypes(),
+      "preemptibleWorkerConfig",
+      "The Google Compute Engine config settings for the additional\ninstances in a cluster. Structure defined below.\n* **NOTE** : `preemptible_worker_config` is\nan alias for the api's [secondaryWorkerConfig](https://cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig#InstanceGroupConfig). The name doesn't necessarily mean it is preemptible and is named as\nsuch for legacy/compatibility reasons.",
+      dataproc_ClusterClusterConfigPreemptibleWorkerConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "stagingBucket",
+      "The Cloud Storage staging bucket used to stage files,\nsuch as Hadoop jars, between client machines and the cluster.\nNote: If you don't explicitly specify a `staging_bucket`\nthen GCP will auto create / assign one for you. However, you are not guaranteed\nan auto generated bucket which is solely dedicated to your cluster; it may be shared\nwith other clusters in the same region/zone also choosing to use the auto generation\noption.",
+      [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "bucket",
+      "The name of the cloud storage bucket ultimately used to house the staging data for the cluster. If staging_bucket is specified, it will contain this value, otherwise it will be the auto generated name.",
+      [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "AutoscalingConfig",
-      'The autoscaling policy config associated with the cluster.\nNote that once set, if `autoscaling_config` is the only field set in `cluster_config`, it can\nonly be removed by setting `policy_uri = ""`, rather than removing the whole block.\nStructure defined below.',
-      Dataproc_ClusterClusterConfigAutoscalingConfig_GetTypes(),
+      "endpointConfig",
+      "The config settings for port access on the cluster.\nStructure defined below.",
+      dataproc_ClusterClusterConfigEndpointConfig_GetTypes(),
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "workerConfig",
+      "The Google Compute Engine config settings for the worker instances\nin a cluster. Structure defined below.",
+      dataproc_ClusterClusterConfigWorkerConfig_GetTypes(),
       false,
       false,
     ),

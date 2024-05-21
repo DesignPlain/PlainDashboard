@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Beyondcorp_AppConnectionApplicationEndpoint {
+export interface beyondcorp_AppConnectionApplicationEndpoint {
   // Hostname or IP address of the remote application endpoint.
-  Host?: string;
+  host?: string;
 
   /*
 Port of the remote application endpoint.
 
 - - -
 */
-  Port?: number;
+  port?: number;
 }
 
-export function Beyondcorp_AppConnectionApplicationEndpoint_GetTypes(): DynamicUIProps[] {
+export function beyondcorp_AppConnectionApplicationEndpoint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Host",
+      "host",
       "Hostname or IP address of the remote application endpoint.",
       [],
       true,
@@ -30,7 +30,7 @@ export function Beyondcorp_AppConnectionApplicationEndpoint_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Port",
+      "port",
       "Port of the remote application endpoint.\n\n- - -",
       [],
       true,

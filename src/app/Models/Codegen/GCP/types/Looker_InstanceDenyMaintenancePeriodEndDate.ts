@@ -6,31 +6,39 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Looker_InstanceDenyMaintenancePeriodEndDate {
+export interface looker_InstanceDenyMaintenancePeriodEndDate {
+  /*
+Year of the date. Must be from 1 to 9999, or 0 to specify a date without
+a year.
+*/
+  year?: number;
+
   /*
 Day of a month. Must be from 1 to 31 and valid for the year and month, or 0
 to specify a year by itself or a year and month where the day isn't significant.
 */
-  Day?: number;
+  day?: number;
 
   /*
 Month of a year. Must be from 1 to 12, or 0 to specify a year without a
 month and day.
 */
-  Month?: number;
-
-  /*
-Year of the date. Must be from 1 to 9999, or 0 to specify a date without
-a year.
-*/
-  Year?: number;
+  month?: number;
 }
 
-export function Looker_InstanceDenyMaintenancePeriodEndDate_GetTypes(): DynamicUIProps[] {
+export function looker_InstanceDenyMaintenancePeriodEndDate_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Day",
+      "year",
+      "Year of the date. Must be from 1 to 9999, or 0 to specify a date without\na year.",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "day",
       "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0\nto specify a year by itself or a year and month where the day isn't significant.",
       [],
       false,
@@ -38,16 +46,8 @@ export function Looker_InstanceDenyMaintenancePeriodEndDate_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Month",
+      "month",
       "Month of a year. Must be from 1 to 12, or 0 to specify a year without a\nmonth and day.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "Year",
-      "Year of the date. Must be from 1 to 9999, or 0 to specify a date without\na year.",
       [],
       false,
       false,

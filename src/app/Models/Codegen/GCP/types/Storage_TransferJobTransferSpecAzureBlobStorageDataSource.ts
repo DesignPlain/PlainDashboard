@@ -6,29 +6,29 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Storage_TransferJobTransferSpecAzureBlobStorageDataSourceAzureCredentials,
-  Storage_TransferJobTransferSpecAzureBlobStorageDataSourceAzureCredentials_GetTypes,
-} from "./Storage_TransferJobTransferSpecAzureBlobStorageDataSourceAzureCredentials";
+  storage_TransferJobTransferSpecAzureBlobStorageDataSourceAzureCredentials,
+  storage_TransferJobTransferSpecAzureBlobStorageDataSourceAzureCredentials_GetTypes,
+} from "./storage_TransferJobTransferSpecAzureBlobStorageDataSourceAzureCredentials";
 
-export interface Storage_TransferJobTransferSpecAzureBlobStorageDataSource {
+export interface storage_TransferJobTransferSpecAzureBlobStorageDataSource {
+  // The name of the Azure Storage account.
+  storageAccount?: string;
+
   // Credentials used to authenticate API requests to Azure block.
-  AzureCredentials?: Storage_TransferJobTransferSpecAzureBlobStorageDataSourceAzureCredentials;
+  azureCredentials?: storage_TransferJobTransferSpecAzureBlobStorageDataSourceAzureCredentials;
 
   // The container to transfer from the Azure Storage account.`
-  Container?: string;
+  container?: string;
 
   // Root path to transfer objects. Must be an empty string or full path name that ends with a '/'. This field is treated as an object prefix. As such, it should generally not begin with a '/'.
-  Path?: string;
-
-  // The name of the Azure Storage account.
-  StorageAccount?: string;
+  path?: string;
 }
 
-export function Storage_TransferJobTransferSpecAzureBlobStorageDataSource_GetTypes(): DynamicUIProps[] {
+export function storage_TransferJobTransferSpecAzureBlobStorageDataSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "StorageAccount",
+      "storageAccount",
       "The name of the Azure Storage account.",
       [],
       true,
@@ -36,15 +36,15 @@ export function Storage_TransferJobTransferSpecAzureBlobStorageDataSource_GetTyp
     ),
     new DynamicUIProps(
       InputType.Object,
-      "AzureCredentials",
+      "azureCredentials",
       "Credentials used to authenticate API requests to Azure block.",
-      Storage_TransferJobTransferSpecAzureBlobStorageDataSourceAzureCredentials_GetTypes(),
+      storage_TransferJobTransferSpecAzureBlobStorageDataSourceAzureCredentials_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Container",
+      "container",
       "The container to transfer from the Azure Storage account.`",
       [],
       true,
@@ -52,7 +52,7 @@ export function Storage_TransferJobTransferSpecAzureBlobStorageDataSource_GetTyp
     ),
     new DynamicUIProps(
       InputType.String,
-      "Path",
+      "path",
       "Root path to transfer objects. Must be an empty string or full path name that ends with a '/'. This field is treated as an object prefix. As such, it should generally not begin with a '/'.",
       [],
       false,

@@ -6,40 +6,40 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel,
-  Networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel_GetTypes,
-} from "./Networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel";
+  networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel,
+  networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel_GetTypes,
+} from "./networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel";
 
-export interface Networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcher {
+export interface networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcher {
   /*
 Specifies how matching should be done.
 Possible values are: `MATCH_ANY`, `MATCH_ALL`.
 */
-  MetadataLabelMatchCriteria?: string;
+  metadataLabelMatchCriteria?: string;
 
   /*
 The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
 Structure is documented below.
 */
-  MetadataLabels?: Array<Networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel>;
+  metadataLabels?: Array<networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel>;
 }
 
-export function Networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcher_GetTypes(): DynamicUIProps[] {
+export function networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcher_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.String,
-      "MetadataLabelMatchCriteria",
-      "Specifies how matching should be done.\nPossible values are: `MATCH_ANY`, `MATCH_ALL`.",
-      [],
-      true,
+      InputType.Array,
+      "metadataLabels",
+      "The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria\nStructure is documented below.",
+      networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel_GetTypes(),
+      false,
       false,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "MetadataLabels",
-      "The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria\nStructure is documented below.",
-      Networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel_GetTypes(),
-      false,
+      InputType.String,
+      "metadataLabelMatchCriteria",
+      "Specifies how matching should be done.\nPossible values are: `MATCH_ANY`, `MATCH_ALL`.",
+      [],
+      true,
       false,
     ),
   ];

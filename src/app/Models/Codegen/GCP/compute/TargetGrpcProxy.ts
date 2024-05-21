@@ -8,6 +8,9 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface TargetGrpcProxyArgs {
+  // An optional description of this resource.
+  description?: string;
+
   /*
 Name of the resource. Provided by the client when the resource
 is created. The name must be 1-63 characters long, and comply
@@ -20,20 +23,20 @@ except the last character, which cannot be a dash.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   /*
 URL to the UrlMap resource that defines the mapping from URL to
 the BackendService. The protocol field in the BackendService
 must be set to GRPC.
 */
-  UrlMap?: string;
+  urlMap?: string;
 
   /*
 If true, indicates that the BackendServices referenced by
@@ -47,20 +50,20 @@ applications via a sidecar proxy. In this case, a gRPC application
 must not use "xds:///" scheme in the target URI of the service
 it is connecting to
 */
-  ValidateForProxyless?: boolean;
-
-  // An optional description of this resource.
-  Description?: string;
+  validateForProxyless?: boolean;
 }
 export class TargetGrpcProxy extends Resource {
+  // An optional description of this resource.
+  public description?: string;
+
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
-  // Server-defined URL with id for the resource.
-  public SelfLinkWithId?: string;
+  // The URI of the created resource.
+  public selfLink?: string;
 
   /*
 If true, indicates that the BackendServices referenced by
@@ -74,13 +77,10 @@ applications via a sidecar proxy. In this case, a gRPC application
 must not use "xds:///" scheme in the target URI of the service
 it is connecting to
 */
-  public ValidateForProxyless?: boolean;
+  public validateForProxyless?: boolean;
 
   // Creation timestamp in RFC3339 text format.
-  public CreationTimestamp?: string;
-
-  // An optional description of this resource.
-  public Description?: string;
+  public creationTimestamp?: string;
 
   /*
 Fingerprint of this resource. A hash of the contents stored in
@@ -91,7 +91,7 @@ TargetGrpcProxy; otherwise, the request will fail with error
 412 conditionNotMet. To see the latest fingerprint, make a get()
 request to retrieve the TargetGrpcProxy. A base64-encoded string.
 */
-  public Fingerprint?: string;
+  public fingerprint?: string;
 
   /*
 Name of the resource. Provided by the client when the resource
@@ -105,23 +105,31 @@ except the last character, which cannot be a dash.
 
 - - -
 */
-  public Name?: string;
+  public name?: string;
 
-  // The URI of the created resource.
-  public SelfLink?: string;
+  // Server-defined URL with id for the resource.
+  public selfLinkWithId?: string;
 
   /*
 URL to the UrlMap resource that defines the mapping from URL to
 the BackendService. The protocol field in the BackendService
 must be set to GRPC.
 */
-  public UrlMap?: string;
+  public urlMap?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "description",
+        "An optional description of this resource.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
         "Name of the resource. Provided by the client when the resource\nis created. The name must be 1-63 characters long, and comply\nwith RFC1035. Specifically, the name must be 1-63 characters long\nand match the regular expression `a-z?` which\nmeans the first character must be a lowercase letter, and all\nfollowing characters must be a dash, lowercase letter, or digit,\nexcept the last character, which cannot be a dash.\n\n\n- - -",
         [],
         false,
@@ -129,7 +137,7 @@ must be set to GRPC.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
@@ -137,7 +145,7 @@ must be set to GRPC.
       ),
       new DynamicUIProps(
         InputType.String,
-        "UrlMap",
+        "urlMap",
         "URL to the UrlMap resource that defines the mapping from URL to\nthe BackendService. The protocol field in the BackendService\nmust be set to GRPC.",
         [],
         false,
@@ -145,19 +153,11 @@ must be set to GRPC.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "ValidateForProxyless",
+        "validateForProxyless",
         'If true, indicates that the BackendServices referenced by\nthe urlMap may be accessed by gRPC applications without using\na sidecar proxy. This will enable configuration checks on urlMap\nand its referenced BackendServices to not allow unsupported features.\nA gRPC application must use "xds:///" scheme in the target URI\nof the service it is connecting to. If false, indicates that the\nBackendServices referenced by the urlMap will be accessed by gRPC\napplications via a sidecar proxy. In this case, a gRPC application\nmust not use "xds:///" scheme in the target URI of the service\nit is connecting to',
         [],
         false,
         true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Description",
-        "An optional description of this resource.",
-        [],
-        false,
-        false,
       ),
     ];
   }

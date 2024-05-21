@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FeatureMembershipConfigmanagementBinauthz {
+export interface gkehub_FeatureMembershipConfigmanagementBinauthz {
   // Whether binauthz is enabled in this cluster.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Gkehub_FeatureMembershipConfigmanagementBinauthz_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureMembershipConfigmanagementBinauthz_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Whether binauthz is enabled in this cluster.",
       [],
       false,

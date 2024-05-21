@@ -6,39 +6,39 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Bigquery_DatasetAccessAuthorizedDatasetDataset,
-  Bigquery_DatasetAccessAuthorizedDatasetDataset_GetTypes,
-} from "./Bigquery_DatasetAccessAuthorizedDatasetDataset";
+  bigquery_DatasetAccessAuthorizedDatasetDataset,
+  bigquery_DatasetAccessAuthorizedDatasetDataset_GetTypes,
+} from "./bigquery_DatasetAccessAuthorizedDatasetDataset";
 
-export interface Bigquery_DatasetAccessAuthorizedDataset {
-  /*
-The dataset this entry applies to
-Structure is documented below.
-*/
-  Dataset?: Bigquery_DatasetAccessAuthorizedDatasetDataset;
-
+export interface bigquery_DatasetAccessAuthorizedDataset {
   /*
 Which resources in the dataset this entry applies to. Currently, only views are supported,
 but additional target types may be added in the future. Possible values: VIEWS
 */
-  TargetTypes?: Array<string>;
+  targetTypes?: Array<string>;
+
+  /*
+The dataset this entry applies to
+Structure is documented below.
+*/
+  dataset?: bigquery_DatasetAccessAuthorizedDatasetDataset;
 }
 
-export function Bigquery_DatasetAccessAuthorizedDataset_GetTypes(): DynamicUIProps[] {
+export function bigquery_DatasetAccessAuthorizedDataset_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "Dataset",
-      "The dataset this entry applies to\nStructure is documented below.",
-      Bigquery_DatasetAccessAuthorizedDatasetDataset_GetTypes(),
+      InputType.Array,
+      "targetTypes",
+      "Which resources in the dataset this entry applies to. Currently, only views are supported,\nbut additional target types may be added in the future. Possible values: VIEWS",
+      InputType_String_GetTypes(),
       true,
       true,
     ),
     new DynamicUIProps(
-      InputType.Array,
-      "TargetTypes",
-      "Which resources in the dataset this entry applies to. Currently, only views are supported,\nbut additional target types may be added in the future. Possible values: VIEWS",
-      InputType_String_GetTypes(),
+      InputType.Object,
+      "dataset",
+      "The dataset this entry applies to\nStructure is documented below.",
+      bigquery_DatasetAccessAuthorizedDatasetDataset_GetTypes(),
       true,
       true,
     ),

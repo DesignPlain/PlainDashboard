@@ -6,30 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_StandardAppVersionVpcAccessConnector {
+export interface appengine_StandardAppVersionVpcAccessConnector {
   // The egress setting for the connector, controlling what traffic is diverted through it.
-  EgressSetting?: string;
+  egressSetting?: string;
 
   // Full Serverless VPC Access Connector name e.g. /projects/my-project/locations/us-central1/connectors/c1.
-  Name?: string;
+  name?: string;
 }
 
-export function Appengine_StandardAppVersionVpcAccessConnector_GetTypes(): DynamicUIProps[] {
+export function appengine_StandardAppVersionVpcAccessConnector_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
-      "Full Serverless VPC Access Connector name e.g. /projects/my-project/locations/us-central1/connectors/c1.",
+      "egressSetting",
+      "The egress setting for the connector, controlling what traffic is diverted through it.",
       [],
-      true,
+      false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "EgressSetting",
-      "The egress setting for the connector, controlling what traffic is diverted through it.",
+      "name",
+      "Full Serverless VPC Access Connector name e.g. /projects/my-project/locations/us-central1/connectors/c1.",
       [],
-      false,
+      true,
       false,
     ),
   ];

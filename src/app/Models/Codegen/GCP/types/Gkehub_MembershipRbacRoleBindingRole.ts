@@ -6,21 +6,21 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_MembershipRbacRoleBindingRole {
+export interface gkehub_MembershipRbacRoleBindingRole {
   /*
 PredefinedRole is an ENUM representation of the default Kubernetes Roles
 Possible values are: `UNKNOWN`, `ADMIN`, `EDIT`, `VIEW`, `ANTHOS_SUPPORT`.
 
 - - -
 */
-  PredefinedRole?: string;
+  predefinedRole?: string;
 }
 
-export function Gkehub_MembershipRbacRoleBindingRole_GetTypes(): DynamicUIProps[] {
+export function gkehub_MembershipRbacRoleBindingRole_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "PredefinedRole",
+      "predefinedRole",
       "PredefinedRole is an ENUM representation of the default Kubernetes Roles\nPossible values are: `UNKNOWN`, `ADMIN`, `EDIT`, `VIEW`, `ANTHOS_SUPPORT`.\n\n- - -",
       [],
       true,

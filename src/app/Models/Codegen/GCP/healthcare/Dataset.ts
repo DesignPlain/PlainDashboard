@@ -9,62 +9,70 @@ import { DynamicUIProps } from "src/app/components/resource-config/resource-conf
 
 export interface DatasetArgs {
   /*
+The default timezone used by this dataset. Must be a either a valid IANA time zone name such as
+"America/New_York" or empty, which defaults to UTC. This is used for parsing times in resources
+(e.g., HL7 messages) where no explicit timezone is specified.
+*/
+  timeZone?: string;
+
+  /*
 The location for the Dataset.
 
 
 - - -
 */
-  Location?: string;
+  location?: string;
 
   // The resource name for the Dataset.
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
-
-  /*
-The default timezone used by this dataset. Must be a either a valid IANA time zone name such as
-"America/New_York" or empty, which defaults to UTC. This is used for parsing times in resources
-(e.g., HL7 messages) where no explicit timezone is specified.
-*/
-  TimeZone?: string;
+  project?: string;
 }
 export class Dataset extends Resource {
   /*
-The default timezone used by this dataset. Must be a either a valid IANA time zone name such as
-"America/New_York" or empty, which defaults to UTC. This is used for parsing times in resources
-(e.g., HL7 messages) where no explicit timezone is specified.
-*/
-  public TimeZone?: string;
-
-  /*
 The location for the Dataset.
 
 
 - - -
 */
-  public Location?: string;
+  public location?: string;
 
   // The resource name for the Dataset.
-  public Name?: string;
+  public name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  public Project?: string;
+  public project?: string;
 
   // The fully qualified name of this dataset
-  public SelfLink?: string;
+  public selfLink?: string;
+
+  /*
+The default timezone used by this dataset. Must be a either a valid IANA time zone name such as
+"America/New_York" or empty, which defaults to UTC. This is used for parsing times in resources
+(e.g., HL7 messages) where no explicit timezone is specified.
+*/
+  public timeZone?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Location",
+        "timeZone",
+        'The default timezone used by this dataset. Must be a either a valid IANA time zone name such as\n"America/New_York" or empty, which defaults to UTC. This is used for parsing times in resources\n(e.g., HL7 messages) where no explicit timezone is specified.',
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "location",
         "The location for the Dataset.\n\n\n- - -",
         [],
         true,
@@ -72,7 +80,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Name",
+        "name",
         "The resource name for the Dataset.",
         [],
         false,
@@ -80,19 +88,11 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
         true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "TimeZone",
-        'The default timezone used by this dataset. Must be a either a valid IANA time zone name such as\n"America/New_York" or empty, which defaults to UTC. This is used for parsing times in resources\n(e.g., HL7 messages) where no explicit timezone is specified.',
-        [],
-        false,
-        false,
       ),
     ];
   }

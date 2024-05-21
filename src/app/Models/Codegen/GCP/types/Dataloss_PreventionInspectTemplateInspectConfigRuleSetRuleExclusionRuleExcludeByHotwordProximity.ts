@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximity {
+export interface dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximity {
   // Number of characters after the finding to consider.
-  WindowAfter?: number;
+  windowAfter?: number;
 
   // Number of characters before the finding to consider.
-  WindowBefore?: number;
+  windowBefore?: number;
 }
 
-export function Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximity_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximity_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "WindowAfter",
+      "windowAfter",
       "Number of characters after the finding to consider.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclus
     ),
     new DynamicUIProps(
       InputType.Number,
-      "WindowBefore",
+      "windowBefore",
       "Number of characters before the finding to consider.",
       [],
       false,

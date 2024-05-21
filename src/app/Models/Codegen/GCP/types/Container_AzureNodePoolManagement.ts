@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_AzureNodePoolManagement {
+export interface container_AzureNodePoolManagement {
   // Optional. Whether or not the nodes will be automatically repaired.
-  AutoRepair?: boolean;
+  autoRepair?: boolean;
 }
 
-export function Container_AzureNodePoolManagement_GetTypes(): DynamicUIProps[] {
+export function container_AzureNodePoolManagement_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "AutoRepair",
+      "autoRepair",
       "Optional. Whether or not the nodes will be automatically repaired.",
       [],
       false,

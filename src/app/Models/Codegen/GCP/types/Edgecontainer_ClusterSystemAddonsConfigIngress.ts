@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Edgecontainer_ClusterSystemAddonsConfigIngress {
+export interface edgecontainer_ClusterSystemAddonsConfigIngress {
   // Whether Ingress is disabled.
-  Disabled?: boolean;
+  disabled?: boolean;
 
   // Ingress VIP.
-  Ipv4Vip?: string;
+  ipv4Vip?: string;
 }
 
-export function Edgecontainer_ClusterSystemAddonsConfigIngress_GetTypes(): DynamicUIProps[] {
+export function edgecontainer_ClusterSystemAddonsConfigIngress_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Disabled",
+      "disabled",
       "Whether Ingress is disabled.",
       [],
       false,
@@ -26,7 +26,7 @@ export function Edgecontainer_ClusterSystemAddonsConfigIngress_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "Ipv4Vip",
+      "ipv4Vip",
       "Ingress VIP.",
       [],
       false,

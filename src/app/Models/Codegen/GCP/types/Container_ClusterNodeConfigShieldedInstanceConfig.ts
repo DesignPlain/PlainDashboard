@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterNodeConfigShieldedInstanceConfig {
-  /*
-Defines if the instance has Secure Boot enabled.
-
-Secure Boot helps ensure that the system only runs authentic software by verifying the digital signature of all boot components, and halting the boot process if signature verification fails.  Defaults to `false`.
-*/
-  EnableSecureBoot?: boolean;
-
+export interface container_ClusterNodeConfigShieldedInstanceConfig {
   /*
 Defines if the instance has integrity monitoring enabled.
 
 Enables monitoring and attestation of the boot integrity of the instance. The attestation is performed against the integrity policy baseline. This baseline is initially derived from the implicitly trusted boot image when the instance is created.  Defaults to `true`.
 */
-  EnableIntegrityMonitoring?: boolean;
+  enableIntegrityMonitoring?: boolean;
+
+  /*
+Defines if the instance has Secure Boot enabled.
+
+Secure Boot helps ensure that the system only runs authentic software by verifying the digital signature of all boot components, and halting the boot process if signature verification fails.  Defaults to `false`.
+*/
+  enableSecureBoot?: boolean;
 }
 
-export function Container_ClusterNodeConfigShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterNodeConfigShieldedInstanceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "EnableIntegrityMonitoring",
+      "enableIntegrityMonitoring",
       "Defines if the instance has integrity monitoring enabled.\n\nEnables monitoring and attestation of the boot integrity of the instance. The attestation is performed against the integrity policy baseline. This baseline is initially derived from the implicitly trusted boot image when the instance is created.  Defaults to `true`.",
       [],
       false,
@@ -34,7 +34,7 @@ export function Container_ClusterNodeConfigShieldedInstanceConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "EnableSecureBoot",
+      "enableSecureBoot",
       "Defines if the instance has Secure Boot enabled.\n\nSecure Boot helps ensure that the system only runs authentic software by verifying the digital signature of all boot components, and halting the boot process if signature verification fails.  Defaults to `false`.",
       [],
       false,

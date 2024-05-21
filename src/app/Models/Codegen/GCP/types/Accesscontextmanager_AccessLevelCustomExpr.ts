@@ -6,33 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Accesscontextmanager_AccessLevelCustomExpr {
+export interface accesscontextmanager_AccessLevelCustomExpr {
   // Description of the expression
-  Description?: string;
+  description?: string;
 
   // Textual representation of an expression in Common Expression Language syntax.
-  Expression?: string;
+  expression?: string;
 
   // String indicating the location of the expression for error reporting, e.g. a file name and a position in the file
-  Location?: string;
+  location?: string;
 
   // Title for the expression, i.e. a short string describing its purpose.
-  Title?: string;
+  title?: string;
 }
 
-export function Accesscontextmanager_AccessLevelCustomExpr_GetTypes(): DynamicUIProps[] {
+export function accesscontextmanager_AccessLevelCustomExpr_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Title",
-      "Title for the expression, i.e. a short string describing its purpose.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "Description",
+      "description",
       "Description of the expression",
       [],
       false,
@@ -40,7 +32,7 @@ export function Accesscontextmanager_AccessLevelCustomExpr_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "Expression",
+      "expression",
       "Textual representation of an expression in Common Expression Language syntax.",
       [],
       true,
@@ -48,8 +40,16 @@ export function Accesscontextmanager_AccessLevelCustomExpr_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "Location",
+      "location",
       "String indicating the location of the expression for error reporting, e.g. a file name and a position in the file",
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "title",
+      "Title for the expression, i.e. a short string describing its purpose.",
       [],
       false,
       false,

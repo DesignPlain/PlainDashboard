@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Cloudbuildv2_ConnectionGitlabConfigServiceDirectoryConfig {
+export interface cloudbuildv2_ConnectionGitlabConfigServiceDirectoryConfig {
   // Required. The Service Directory service name. Format: projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}.
-  Service?: string;
+  service?: string;
 }
 
-export function Cloudbuildv2_ConnectionGitlabConfigServiceDirectoryConfig_GetTypes(): DynamicUIProps[] {
+export function cloudbuildv2_ConnectionGitlabConfigServiceDirectoryConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Service",
+      "service",
       "Required. The Service Directory service name. Format: projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}.",
       [],
       true,

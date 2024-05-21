@@ -6,20 +6,20 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_FlexibleAppVersionManualScaling {
+export interface appengine_FlexibleAppVersionManualScaling {
   /*
 Number of instances to assign to the service at the start.
 --Note:-- When managing the number of instances at runtime through the App Engine Admin API or the (now deprecated) Python 2
 Modules API set_num_instances() you must use `lifecycle.ignore_changes = ["manual_scaling"[0].instances]` to prevent drift detection.
 */
-  Instances?: number;
+  instances?: number;
 }
 
-export function Appengine_FlexibleAppVersionManualScaling_GetTypes(): DynamicUIProps[] {
+export function appengine_FlexibleAppVersionManualScaling_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "Instances",
+      "instances",
       'Number of instances to assign to the service at the start.\n**Note:** When managing the number of instances at runtime through the App Engine Admin API or the (now deprecated) Python 2\nModules API set_num_instances() you must use `lifecycle.ignore_changes = ["manual_scaling"[0].instances]` to prevent drift detection.',
       [],
       true,

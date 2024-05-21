@@ -6,25 +6,25 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Appengine_StandardAppVersionAutomaticScalingStandardSchedulerSettings {
+export interface appengine_StandardAppVersionAutomaticScalingStandardSchedulerSettings {
   // Maximum number of instances to run for this version. Set to zero to disable maxInstances configuration.
-  MaxInstances?: number;
+  maxInstances?: number;
 
   // Minimum number of instances to run for this version. Set to zero to disable minInstances configuration.
-  MinInstances?: number;
+  minInstances?: number;
 
   // Target CPU utilization ratio to maintain when scaling. Should be a value in the range [0.50, 0.95], zero, or a negative value.
-  TargetCpuUtilization?: number;
+  targetCpuUtilization?: number;
 
   // Target throughput utilization ratio to maintain when scaling. Should be a value in the range [0.50, 0.95], zero, or a negative value.
-  TargetThroughputUtilization?: number;
+  targetThroughputUtilization?: number;
 }
 
-export function Appengine_StandardAppVersionAutomaticScalingStandardSchedulerSettings_GetTypes(): DynamicUIProps[] {
+export function appengine_StandardAppVersionAutomaticScalingStandardSchedulerSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "MaxInstances",
+      "maxInstances",
       "Maximum number of instances to run for this version. Set to zero to disable maxInstances configuration.",
       [],
       false,
@@ -32,7 +32,7 @@ export function Appengine_StandardAppVersionAutomaticScalingStandardSchedulerSet
     ),
     new DynamicUIProps(
       InputType.Number,
-      "MinInstances",
+      "minInstances",
       "Minimum number of instances to run for this version. Set to zero to disable minInstances configuration.",
       [],
       false,
@@ -40,7 +40,7 @@ export function Appengine_StandardAppVersionAutomaticScalingStandardSchedulerSet
     ),
     new DynamicUIProps(
       InputType.Number,
-      "TargetCpuUtilization",
+      "targetCpuUtilization",
       "Target CPU utilization ratio to maintain when scaling. Should be a value in the range [0.50, 0.95], zero, or a negative value.",
       [],
       false,
@@ -48,7 +48,7 @@ export function Appengine_StandardAppVersionAutomaticScalingStandardSchedulerSet
     ),
     new DynamicUIProps(
       InputType.Number,
-      "TargetThroughputUtilization",
+      "targetThroughputUtilization",
       "Target throughput utilization ratio to maintain when scaling. Should be a value in the range [0.50, 0.95], zero, or a negative value.",
       [],
       false,

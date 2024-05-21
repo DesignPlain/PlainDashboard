@@ -8,70 +8,64 @@ import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
 export interface RepositoryArgs {
-  // The location for the resource
-  Location?: string;
-
-  // Name of the repository.
-  Name?: string;
-
   /*
 The connection for the resource
 
 
 - - -
 */
-  ParentConnection?: string;
+  parentConnection?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 
   // Required. Git Clone HTTPS URI.
-  RemoteUri?: string;
+  remoteUri?: string;
 
   /*
 Allows clients to store small amounts of arbitrary data.
 --Note--: This field is non-authoritative, and will only manage the annotations present in your configuration.
 Please refer to the field `effective_annotations` for all of the annotations present on the resource.
 */
-  Annotations?: Map<string, string>;
-}
-export class Repository extends Resource {
-  // Output only. Server assigned timestamp for when the connection was created.
-  public CreateTime?: string;
+  annotations?: Map<string, string>;
+
+  // The location for the resource
+  location?: string;
 
   // Name of the repository.
-  public Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  // Required. Git Clone HTTPS URI.
-  public RemoteUri?: string;
-
+  name?: string;
+}
+export class Repository extends Resource {
   /*
 Allows clients to store small amounts of arbitrary data.
 --Note--: This field is non-authoritative, and will only manage the annotations present in your configuration.
 Please refer to the field `effective_annotations` for all of the annotations present on the resource.
 */
-  public Annotations?: Map<string, string>;
+  public annotations?: Map<string, string>;
+
+  // This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
+  public etag?: string;
+
+  // The location for the resource
+  public location?: string;
+
+  // Name of the repository.
+  public name?: string;
+
+  // Output only. Server assigned timestamp for when the connection was updated.
+  public updateTime?: string;
+
+  // Output only. Server assigned timestamp for when the connection was created.
+  public createTime?: string;
 
   /*
 All of annotations (key/value pairs) present on the resource in GCP, including the annotations configured through
 Terraform, other clients and services.
 */
-  public EffectiveAnnotations?: Map<string, string>;
-
-  // This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
-  public Etag?: string;
-
-  // The location for the resource
-  public Location?: string;
+  public effectiveAnnotations?: Map<string, string>;
 
   /*
 The connection for the resource
@@ -79,48 +73,22 @@ The connection for the resource
 
 - - -
 */
-  public ParentConnection?: string;
+  public parentConnection?: string;
 
-  // Output only. Server assigned timestamp for when the connection was updated.
-  public UpdateTime?: string;
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  // Required. Git Clone HTTPS URI.
+  public remoteUri?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Location",
-        "The location for the resource",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
-        "Name of the repository.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ParentConnection",
-        "The connection for the resource\n\n\n- - -",
-        [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "RemoteUri",
+        "remoteUri",
         "Required. Git Clone HTTPS URI.",
         [],
         true,
@@ -128,9 +96,41 @@ The connection for the resource
       ),
       new DynamicUIProps(
         InputType.Map,
-        "Annotations",
+        "annotations",
         "Allows clients to store small amounts of arbitrary data.\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
         InputType_Map_GetTypes(),
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "location",
+        "The location for the resource",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "name",
+        "Name of the repository.",
+        [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "parentConnection",
+        "The connection for the resource\n\n\n- - -",
+        [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "project",
+        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        [],
         false,
         true,
       ),

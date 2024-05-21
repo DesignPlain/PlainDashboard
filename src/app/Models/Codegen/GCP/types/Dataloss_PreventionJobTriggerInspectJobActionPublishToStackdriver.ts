@@ -6,8 +6,8 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataloss_PreventionJobTriggerInspectJobActionPublishToStackdriver {}
+export interface dataloss_PreventionJobTriggerInspectJobActionPublishToStackdriver {}
 
-export function Dataloss_PreventionJobTriggerInspectJobActionPublishToStackdriver_GetTypes(): DynamicUIProps[] {
+export function dataloss_PreventionJobTriggerInspectJobActionPublishToStackdriver_GetTypes(): DynamicUIProps[] {
   return [];
 }

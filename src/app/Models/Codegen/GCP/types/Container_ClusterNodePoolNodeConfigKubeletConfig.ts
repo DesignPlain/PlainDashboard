@@ -6,12 +6,12 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Container_ClusterNodePoolNodeConfigKubeletConfig {
+export interface container_ClusterNodePoolNodeConfigKubeletConfig {
   /*
 If true, enables CPU CFS quota enforcement for
 containers that specify CPU limits.
 */
-  CpuCfsQuota?: boolean;
+  cpuCfsQuota?: boolean;
 
   /*
 The CPU CFS quota period value. Specified
@@ -24,24 +24,32 @@ value and accepts an invalid `default` value instead. While this remains true,
 not specifying the `kubelet_config` block should be the equivalent of specifying
 `none`.
 */
-  CpuCfsQuotaPeriod?: string;
+  cpuCfsQuotaPeriod?: string;
 
   /*
 The CPU management policy on the node. See
 [K8S CPU Management Policies](https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/).
 One of `"none"` or `"static"`. Defaults to `none` when `kubelet_config` is unset.
 */
-  CpuManagerPolicy?: string;
+  cpuManagerPolicy?: string;
 
   // Controls the maximum number of processes allowed to run in a pod. The value must be greater than or equal to 1024 and less than 4194304.
-  PodPidsLimit?: number;
+  podPidsLimit?: number;
 }
 
-export function Container_ClusterNodePoolNodeConfigKubeletConfig_GetTypes(): DynamicUIProps[] {
+export function container_ClusterNodePoolNodeConfigKubeletConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "CpuManagerPolicy",
+      "cpuCfsQuotaPeriod",
+      'The CPU CFS quota period value. Specified\nas a sequence of decimal numbers, each with optional fraction and a unit suffix,\nsuch as `"300ms"`. Valid time units are "ns", "us" (or "µs"), "ms", "s", "m",\n"h". The value must be a positive duration.\n\n> Note: At the time of writing (2020/08/18) the GKE API rejects the `none`\nvalue and accepts an invalid `default` value instead. While this remains true,\nnot specifying the `kubelet_config` block should be the equivalent of specifying\n`none`.',
+      [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "cpuManagerPolicy",
       'The CPU management policy on the node. See\n[K8S CPU Management Policies](https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/).\nOne of `"none"` or `"static"`. Defaults to `none` when `kubelet_config` is unset.',
       [],
       true,
@@ -49,7 +57,7 @@ export function Container_ClusterNodePoolNodeConfigKubeletConfig_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Number,
-      "PodPidsLimit",
+      "podPidsLimit",
       "Controls the maximum number of processes allowed to run in a pod. The value must be greater than or equal to 1024 and less than 4194304.",
       [],
       false,
@@ -57,16 +65,8 @@ export function Container_ClusterNodePoolNodeConfigKubeletConfig_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "CpuCfsQuota",
+      "cpuCfsQuota",
       "If true, enables CPU CFS quota enforcement for\ncontainers that specify CPU limits.",
-      [],
-      false,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "CpuCfsQuotaPeriod",
-      'The CPU CFS quota period value. Specified\nas a sequence of decimal numbers, each with optional fraction and a unit suffix,\nsuch as `"300ms"`. Valid time units are "ns", "us" (or "µs"), "ms", "s", "m",\n"h". The value must be a positive duration.\n\n> Note: At the time of writing (2020/08/18) the GKE API rejects the `none`\nvalue and accepts an invalid `default` value instead. While this remains true,\nnot specifying the `kubelet_config` block should be the equivalent of specifying\n`none`.',
       [],
       false,
       false,

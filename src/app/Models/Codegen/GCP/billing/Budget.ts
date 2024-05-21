@@ -7,49 +7,32 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Billing_BudgetAmount,
-  Billing_BudgetAmount_GetTypes,
-} from "../types/Billing_BudgetAmount";
+  billing_BudgetBudgetFilter,
+  billing_BudgetBudgetFilter_GetTypes,
+} from "../types/billing_BudgetBudgetFilter";
 import {
-  Billing_BudgetBudgetFilter,
-  Billing_BudgetBudgetFilter_GetTypes,
-} from "../types/Billing_BudgetBudgetFilter";
+  billing_BudgetThresholdRule,
+  billing_BudgetThresholdRule_GetTypes,
+} from "../types/billing_BudgetThresholdRule";
 import {
-  Billing_BudgetThresholdRule,
-  Billing_BudgetThresholdRule_GetTypes,
-} from "../types/Billing_BudgetThresholdRule";
+  billing_BudgetAllUpdatesRule,
+  billing_BudgetAllUpdatesRule_GetTypes,
+} from "../types/billing_BudgetAllUpdatesRule";
 import {
-  Billing_BudgetAllUpdatesRule,
-  Billing_BudgetAllUpdatesRule_GetTypes,
-} from "../types/Billing_BudgetAllUpdatesRule";
+  billing_BudgetAmount,
+  billing_BudgetAmount_GetTypes,
+} from "../types/billing_BudgetAmount";
 
 export interface BudgetArgs {
-  /*
-Defines notifications that are sent on every update to the
-billing account's spend, regardless of the thresholds defined
-using threshold rules.
-Structure is documented below.
-*/
-  AllUpdatesRule?: Billing_BudgetAllUpdatesRule;
-
-  /*
-The budgeted amount for each usage period.
-Structure is documented below.
-*/
-  Amount?: Billing_BudgetAmount;
-
-  // ID of the billing account to set a budget on.
-  BillingAccount?: string;
-
   /*
 Filters that define which resources are used to compute the actual
 spend against the budget.
 Structure is documented below.
 */
-  BudgetFilter?: Billing_BudgetBudgetFilter;
+  budgetFilter?: billing_BudgetBudgetFilter;
 
   // User data for display name in UI. Must be <= 60 chars.
-  DisplayName?: string;
+  displayName?: string;
 
   /*
 Rules that trigger alerts (notifications of thresholds being
@@ -57,42 +40,32 @@ crossed) when spend exceeds the specified percentages of the
 budget.
 Structure is documented below.
 */
-  ThresholdRules?: Array<Billing_BudgetThresholdRule>;
-}
-export class Budget extends Resource {
+  thresholdRules?: Array<billing_BudgetThresholdRule>;
+
   /*
 Defines notifications that are sent on every update to the
 billing account's spend, regardless of the thresholds defined
 using threshold rules.
 Structure is documented below.
 */
-  public AllUpdatesRule?: Billing_BudgetAllUpdatesRule;
+  allUpdatesRule?: billing_BudgetAllUpdatesRule;
 
   /*
 The budgeted amount for each usage period.
 Structure is documented below.
 */
-  public Amount?: Billing_BudgetAmount;
+  amount?: billing_BudgetAmount;
 
   // ID of the billing account to set a budget on.
-  public BillingAccount?: string;
-
-  /*
-Filters that define which resources are used to compute the actual
-spend against the budget.
-Structure is documented below.
-*/
-  public BudgetFilter?: Billing_BudgetBudgetFilter;
-
-  // User data for display name in UI. Must be <= 60 chars.
-  public DisplayName?: string;
-
+  billingAccount?: string;
+}
+export class Budget extends Resource {
   /*
 Resource name of the budget. The resource name
 implies the scope of a budget. Values are of the form
 billingAccounts/{billingAccountId}/budgets/{budgetId}.
 */
-  public Name?: string;
+  public name?: string;
 
   /*
 Rules that trigger alerts (notifications of thresholds being
@@ -100,13 +73,48 @@ crossed) when spend exceeds the specified percentages of the
 budget.
 Structure is documented below.
 */
-  public ThresholdRules?: Array<Billing_BudgetThresholdRule>;
+  public thresholdRules?: Array<billing_BudgetThresholdRule>;
+
+  /*
+Defines notifications that are sent on every update to the
+billing account's spend, regardless of the thresholds defined
+using threshold rules.
+Structure is documented below.
+*/
+  public allUpdatesRule?: billing_BudgetAllUpdatesRule;
+
+  /*
+The budgeted amount for each usage period.
+Structure is documented below.
+*/
+  public amount?: billing_BudgetAmount;
+
+  // ID of the billing account to set a budget on.
+  public billingAccount?: string;
+
+  /*
+Filters that define which resources are used to compute the actual
+spend against the budget.
+Structure is documented below.
+*/
+  public budgetFilter?: billing_BudgetBudgetFilter;
+
+  // User data for display name in UI. Must be <= 60 chars.
+  public displayName?: string;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
+        InputType.Object,
+        "budgetFilter",
+        "Filters that define which resources are used to compute the actual\nspend against the budget.\nStructure is documented below.",
+        billing_BudgetBudgetFilter_GetTypes(),
+        false,
+        false,
+      ),
+      new DynamicUIProps(
         InputType.String,
-        "DisplayName",
+        "displayName",
         "User data for display name in UI. Must be <= 60 chars.",
         [],
         false,
@@ -114,43 +122,35 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ThresholdRules",
+        "thresholdRules",
         "Rules that trigger alerts (notifications of thresholds being\ncrossed) when spend exceeds the specified percentages of the\nbudget.\nStructure is documented below.",
-        Billing_BudgetThresholdRule_GetTypes(),
+        billing_BudgetThresholdRule_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "AllUpdatesRule",
+        "allUpdatesRule",
         "Defines notifications that are sent on every update to the\nbilling account's spend, regardless of the thresholds defined\nusing threshold rules.\nStructure is documented below.",
-        Billing_BudgetAllUpdatesRule_GetTypes(),
+        billing_BudgetAllUpdatesRule_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "Amount",
+        "amount",
         "The budgeted amount for each usage period.\nStructure is documented below.",
-        Billing_BudgetAmount_GetTypes(),
+        billing_BudgetAmount_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "BillingAccount",
+        "billingAccount",
         "ID of the billing account to set a budget on.",
         [],
         true,
         true,
-      ),
-      new DynamicUIProps(
-        InputType.Object,
-        "BudgetFilter",
-        "Filters that define which resources are used to compute the actual\nspend against the budget.\nStructure is documented below.",
-        Billing_BudgetBudgetFilter_GetTypes(),
-        false,
-        false,
       ),
     ];
   }

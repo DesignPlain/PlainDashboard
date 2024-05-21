@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Workbench_InstanceGceSetupContainerImage {
+export interface workbench_InstanceGceSetupContainerImage {
   /*
 The path to the container image repository.
 For example: gcr.io/{project_id}/{imageName}
 */
-  Repository?: string;
+  repository?: string;
 
   // The tag of the container image. If not specified, this defaults to the latest tag.
-  Tag?: string;
+  tag?: string;
 }
 
-export function Workbench_InstanceGceSetupContainerImage_GetTypes(): DynamicUIProps[] {
+export function workbench_InstanceGceSetupContainerImage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Repository",
+      "repository",
       "The path to the container image repository.\nFor example: gcr.io/{project_id}/{imageName}",
       [],
       true,
@@ -29,7 +29,7 @@ export function Workbench_InstanceGceSetupContainerImage_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "Tag",
+      "tag",
       "The tag of the container image. If not specified, this defaults to the latest tag.",
       [],
       false,

@@ -6,36 +6,36 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Identityplatform_ConfigClientPermissions,
-  Identityplatform_ConfigClientPermissions_GetTypes,
-} from "./Identityplatform_ConfigClientPermissions";
+  identityplatform_ConfigClientPermissions,
+  identityplatform_ConfigClientPermissions_GetTypes,
+} from "./identityplatform_ConfigClientPermissions";
 
-export interface Identityplatform_ConfigClient {
-  /*
-(Output)
-Firebase subdomain.
-*/
-  FirebaseSubdomain?: string;
-
-  /*
-Configuration related to restricting a user's ability to affect their account.
-Structure is documented below.
-*/
-  Permissions?: Identityplatform_ConfigClientPermissions;
-
+export interface identityplatform_ConfigClient {
   /*
 (Output)
 API key that can be used when making requests for this project.
 --Note--: This property is sensitive and will not be displayed in the plan.
 */
-  ApiKey?: string;
+  apiKey?: string;
+
+  /*
+(Output)
+Firebase subdomain.
+*/
+  firebaseSubdomain?: string;
+
+  /*
+Configuration related to restricting a user's ability to affect their account.
+Structure is documented below.
+*/
+  permissions?: identityplatform_ConfigClientPermissions;
 }
 
-export function Identityplatform_ConfigClient_GetTypes(): DynamicUIProps[] {
+export function identityplatform_ConfigClient_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "ApiKey",
+      "apiKey",
       "(Output)\nAPI key that can be used when making requests for this project.\n**Note**: This property is sensitive and will not be displayed in the plan.",
       [],
       false,
@@ -43,7 +43,7 @@ export function Identityplatform_ConfigClient_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "FirebaseSubdomain",
+      "firebaseSubdomain",
       "(Output)\nFirebase subdomain.",
       [],
       false,
@@ -51,9 +51,9 @@ export function Identityplatform_ConfigClient_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Permissions",
+      "permissions",
       "Configuration related to restricting a user's ability to affect their account.\nStructure is documented below.",
-      Identityplatform_ConfigClientPermissions_GetTypes(),
+      identityplatform_ConfigClientPermissions_GetTypes(),
       false,
       false,
     ),

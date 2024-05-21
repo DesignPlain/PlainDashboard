@@ -6,34 +6,34 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_NetworkEndpointListNetworkEndpoint {
+export interface compute_NetworkEndpointListNetworkEndpoint {
   /*
 The name for a specific VM instance that the IP address belongs to.
 This is required for network endpoints of type GCE_VM_IP_PORT.
 The instance must be in the same zone as the network endpoint group.
 */
-  Instance?: string;
+  instance?: string;
 
   /*
 IPv4 address of network endpoint. The IP address must belong
 to a VM in GCE (either the primary IP or as part of an aliased IP
 range).
 */
-  IpAddress?: string;
+  ipAddress?: string;
 
   /*
 Port number of network endpoint.
 --Note-- `port` is required unless the Network Endpoint Group is created
 with the type of `GCE_VM_IP`
 */
-  Port?: number;
+  port?: number;
 }
 
-export function Compute_NetworkEndpointListNetworkEndpoint_GetTypes(): DynamicUIProps[] {
+export function compute_NetworkEndpointListNetworkEndpoint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Instance",
+      "instance",
       "The name for a specific VM instance that the IP address belongs to.\nThis is required for network endpoints of type GCE_VM_IP_PORT.\nThe instance must be in the same zone as the network endpoint group.",
       [],
       false,
@@ -41,7 +41,7 @@ export function Compute_NetworkEndpointListNetworkEndpoint_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "IpAddress",
+      "ipAddress",
       "IPv4 address of network endpoint. The IP address must belong\nto a VM in GCE (either the primary IP or as part of an aliased IP\nrange).",
       [],
       true,
@@ -49,7 +49,7 @@ export function Compute_NetworkEndpointListNetworkEndpoint_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Number,
-      "Port",
+      "port",
       "Port number of network endpoint.\n**Note** `port` is required unless the Network Endpoint Group is created\nwith the type of `GCE_VM_IP`",
       [],
       false,

@@ -6,23 +6,23 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Networkconnectivity_SpokeLinkedRouterApplianceInstancesInstance {
+export interface networkconnectivity_SpokeLinkedRouterApplianceInstancesInstance {
   // The IP address on the VM to use for peering.
-  IpAddress?: string;
+  ipAddress?: string;
 
   /*
 The URI of the virtual machine resource
 
 - - -
 */
-  VirtualMachine?: string;
+  virtualMachine?: string;
 }
 
-export function Networkconnectivity_SpokeLinkedRouterApplianceInstancesInstance_GetTypes(): DynamicUIProps[] {
+export function networkconnectivity_SpokeLinkedRouterApplianceInstancesInstance_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "IpAddress",
+      "ipAddress",
       "The IP address on the VM to use for peering.",
       [],
       false,
@@ -30,7 +30,7 @@ export function Networkconnectivity_SpokeLinkedRouterApplianceInstancesInstance_
     ),
     new DynamicUIProps(
       InputType.String,
-      "VirtualMachine",
+      "virtualMachine",
       "The URI of the virtual machine resource\n\n- - -",
       [],
       false,

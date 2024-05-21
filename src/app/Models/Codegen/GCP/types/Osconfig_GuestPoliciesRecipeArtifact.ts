@@ -6,54 +6,46 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Osconfig_GuestPoliciesRecipeArtifactGcs,
-  Osconfig_GuestPoliciesRecipeArtifactGcs_GetTypes,
-} from "./Osconfig_GuestPoliciesRecipeArtifactGcs";
+  osconfig_GuestPoliciesRecipeArtifactGcs,
+  osconfig_GuestPoliciesRecipeArtifactGcs_GetTypes,
+} from "./osconfig_GuestPoliciesRecipeArtifactGcs";
 import {
-  Osconfig_GuestPoliciesRecipeArtifactRemote,
-  Osconfig_GuestPoliciesRecipeArtifactRemote_GetTypes,
-} from "./Osconfig_GuestPoliciesRecipeArtifactRemote";
+  osconfig_GuestPoliciesRecipeArtifactRemote,
+  osconfig_GuestPoliciesRecipeArtifactRemote_GetTypes,
+} from "./osconfig_GuestPoliciesRecipeArtifactRemote";
 
-export interface Osconfig_GuestPoliciesRecipeArtifact {
+export interface osconfig_GuestPoliciesRecipeArtifact {
   /*
 Defaults to false. When false, recipes are subject to validations based on the artifact type:
 Remote: A checksum must be specified, and only protocols with transport-layer security are permitted.
 GCS: An object generation number must be specified.
 */
-  AllowInsecure?: boolean;
+  allowInsecure?: boolean;
 
   /*
 A Google Cloud Storage artifact.
 Structure is documented below.
 */
-  Gcs?: Osconfig_GuestPoliciesRecipeArtifactGcs;
+  gcs?: osconfig_GuestPoliciesRecipeArtifactGcs;
 
   /*
 Id of the artifact, which the installation and update steps of this recipe can reference.
 Artifacts in a recipe cannot have the same id.
 */
-  Id?: string;
+  id?: string;
 
   /*
 A generic remote artifact.
 Structure is documented below.
 */
-  Remote?: Osconfig_GuestPoliciesRecipeArtifactRemote;
+  remote?: osconfig_GuestPoliciesRecipeArtifactRemote;
 }
 
-export function Osconfig_GuestPoliciesRecipeArtifact_GetTypes(): DynamicUIProps[] {
+export function osconfig_GuestPoliciesRecipeArtifact_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
-      InputType.Object,
-      "Remote",
-      "A generic remote artifact.\nStructure is documented below.",
-      Osconfig_GuestPoliciesRecipeArtifactRemote_GetTypes(),
-      false,
-      false,
-    ),
-    new DynamicUIProps(
       InputType.Bool,
-      "AllowInsecure",
+      "allowInsecure",
       "Defaults to false. When false, recipes are subject to validations based on the artifact type:\nRemote: A checksum must be specified, and only protocols with transport-layer security are permitted.\nGCS: An object generation number must be specified.",
       [],
       false,
@@ -61,18 +53,26 @@ export function Osconfig_GuestPoliciesRecipeArtifact_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Object,
-      "Gcs",
+      "gcs",
       "A Google Cloud Storage artifact.\nStructure is documented below.",
-      Osconfig_GuestPoliciesRecipeArtifactGcs_GetTypes(),
+      osconfig_GuestPoliciesRecipeArtifactGcs_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "Id",
+      "id",
       "Id of the artifact, which the installation and update steps of this recipe can reference.\nArtifacts in a recipe cannot have the same id.",
       [],
       true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "remote",
+      "A generic remote artifact.\nStructure is documented below.",
+      osconfig_GuestPoliciesRecipeArtifactRemote_GetTypes(),
+      false,
       false,
     ),
   ];

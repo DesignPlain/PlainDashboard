@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Compute_InstanceFromTemplateNetworkPerformanceConfig {
+export interface compute_InstanceFromTemplateNetworkPerformanceConfig {
   // The egress bandwidth tier to enable. Possible values:TIER_1, DEFAULT
-  TotalEgressBandwidthTier?: string;
+  totalEgressBandwidthTier?: string;
 }
 
-export function Compute_InstanceFromTemplateNetworkPerformanceConfig_GetTypes(): DynamicUIProps[] {
+export function compute_InstanceFromTemplateNetworkPerformanceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "TotalEgressBandwidthTier",
+      "totalEgressBandwidthTier",
       "The egress bandwidth tier to enable. Possible values:TIER_1, DEFAULT",
       [],
       true,

@@ -6,19 +6,19 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade {
+export interface gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade {
   // Name of the upgrade, e.g., "k8s_control_plane". It should be a valid upgrade name. It must not exceet 99 characters.
-  Name?: string;
+  name?: string;
 
   // Version of the upgrade, e.g., "1.22.1-gke.100". It should be a valid version. It must not exceet 99 characters.
-  Version?: string;
+  version?: string;
 }
 
-export function Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade_GetTypes(): DynamicUIProps[] {
+export function gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "Name",
+      "name",
       'Name of the upgrade, e.g., "k8s_control_plane". It should be a valid upgrade name. It must not exceet 99 characters.',
       [],
       true,
@@ -26,7 +26,7 @@ export function Gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade_GetTyp
     ),
     new DynamicUIProps(
       InputType.String,
-      "Version",
+      "version",
       'Version of the upgrade, e.g., "1.22.1-gke.100". It should be a valid version. It must not exceet 99 characters.',
       [],
       true,

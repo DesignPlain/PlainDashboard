@@ -6,22 +6,22 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Composer_EnvironmentConfigWebServerNetworkAccessControlAllowedIpRange,
-  Composer_EnvironmentConfigWebServerNetworkAccessControlAllowedIpRange_GetTypes,
-} from "./Composer_EnvironmentConfigWebServerNetworkAccessControlAllowedIpRange";
+  composer_EnvironmentConfigWebServerNetworkAccessControlAllowedIpRange,
+  composer_EnvironmentConfigWebServerNetworkAccessControlAllowedIpRange_GetTypes,
+} from "./composer_EnvironmentConfigWebServerNetworkAccessControlAllowedIpRange";
 
-export interface Composer_EnvironmentConfigWebServerNetworkAccessControl {
+export interface composer_EnvironmentConfigWebServerNetworkAccessControl {
   // A collection of allowed IP ranges with descriptions.
-  AllowedIpRanges?: Array<Composer_EnvironmentConfigWebServerNetworkAccessControlAllowedIpRange>;
+  allowedIpRanges?: Array<composer_EnvironmentConfigWebServerNetworkAccessControlAllowedIpRange>;
 }
 
-export function Composer_EnvironmentConfigWebServerNetworkAccessControl_GetTypes(): DynamicUIProps[] {
+export function composer_EnvironmentConfigWebServerNetworkAccessControl_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "AllowedIpRanges",
+      "allowedIpRanges",
       "A collection of allowed IP ranges with descriptions.",
-      Composer_EnvironmentConfigWebServerNetworkAccessControlAllowedIpRange_GetTypes(),
+      composer_EnvironmentConfigWebServerNetworkAccessControlAllowedIpRange_GetTypes(),
       false,
       false,
     ),

@@ -6,16 +6,16 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Dataproc_getMetastoreServiceMetadataIntegrationDataCatalogConfig {
+export interface dataproc_getMetastoreServiceMetadataIntegrationDataCatalogConfig {
   // Defines whether the metastore metadata should be synced to Data Catalog. The default value is to disable syncing metastore metadata to Data Catalog.
-  Enabled?: boolean;
+  enabled?: boolean;
 }
 
-export function Dataproc_getMetastoreServiceMetadataIntegrationDataCatalogConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_getMetastoreServiceMetadataIntegrationDataCatalogConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "Enabled",
+      "enabled",
       "Defines whether the metastore metadata should be synced to Data Catalog. The default value is to disable syncing metastore metadata to Data Catalog.",
       [],
       true,

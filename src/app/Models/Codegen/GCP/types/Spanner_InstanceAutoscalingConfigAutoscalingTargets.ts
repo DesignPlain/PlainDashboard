@@ -6,27 +6,27 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 
-export interface Spanner_InstanceAutoscalingConfigAutoscalingTargets {
+export interface spanner_InstanceAutoscalingConfigAutoscalingTargets {
   /*
 Specifies the target high priority cpu utilization percentage that the autoscaler
 should be trying to achieve for the instance.
 This number is on a scale from 0 (no utilization) to 100 (full utilization)..
 */
-  HighPriorityCpuUtilizationPercent?: number;
+  highPriorityCpuUtilizationPercent?: number;
 
   /*
 Specifies the target storage utilization percentage that the autoscaler
 should be trying to achieve for the instance.
 This number is on a scale from 0 (no utilization) to 100 (full utilization).
 */
-  StorageUtilizationPercent?: number;
+  storageUtilizationPercent?: number;
 }
 
-export function Spanner_InstanceAutoscalingConfigAutoscalingTargets_GetTypes(): DynamicUIProps[] {
+export function spanner_InstanceAutoscalingConfigAutoscalingTargets_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "HighPriorityCpuUtilizationPercent",
+      "highPriorityCpuUtilizationPercent",
       "Specifies the target high priority cpu utilization percentage that the autoscaler\nshould be trying to achieve for the instance.\nThis number is on a scale from 0 (no utilization) to 100 (full utilization)..",
       [],
       false,
@@ -34,7 +34,7 @@ export function Spanner_InstanceAutoscalingConfigAutoscalingTargets_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Number,
-      "StorageUtilizationPercent",
+      "storageUtilizationPercent",
       "Specifies the target storage utilization percentage that the autoscaler\nshould be trying to achieve for the instance.\nThis number is on a scale from 0 (no utilization) to 100 (full utilization).",
       [],
       false,

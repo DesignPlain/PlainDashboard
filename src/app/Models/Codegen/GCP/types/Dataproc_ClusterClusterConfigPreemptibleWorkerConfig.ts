@@ -6,15 +6,30 @@ import {
 } from "src/app/enum/InputType";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Dataproc_ClusterClusterConfigPreemptibleWorkerConfigDiskConfig,
-  Dataproc_ClusterClusterConfigPreemptibleWorkerConfigDiskConfig_GetTypes,
-} from "./Dataproc_ClusterClusterConfigPreemptibleWorkerConfigDiskConfig";
+  dataproc_ClusterClusterConfigPreemptibleWorkerConfigDiskConfig,
+  dataproc_ClusterClusterConfigPreemptibleWorkerConfigDiskConfig_GetTypes,
+} from "./dataproc_ClusterClusterConfigPreemptibleWorkerConfigDiskConfig";
 import {
-  Dataproc_ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy,
-  Dataproc_ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy_GetTypes,
-} from "./Dataproc_ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy";
+  dataproc_ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy,
+  dataproc_ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy_GetTypes,
+} from "./dataproc_ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy";
 
-export interface Dataproc_ClusterClusterConfigPreemptibleWorkerConfig {
+export interface dataproc_ClusterClusterConfigPreemptibleWorkerConfig {
+  // Disk Config
+  diskConfig?: dataproc_ClusterClusterConfigPreemptibleWorkerConfigDiskConfig;
+
+  // Instance flexibility Policy allowing a mixture of VM shapes and provisioning models.
+  instanceFlexibilityPolicy?: dataproc_ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy;
+
+  // List of preemptible instance names which have been assigned to the cluster.
+  instanceNames?: Array<string>;
+
+  /*
+Specifies the number of preemptible nodes to create.
+Defaults to 0.
+*/
+  numInstances?: number;
+
   /*
 Specifies the preemptibility of the secondary workers. The default value is `PREEMPTIBLE`
 Accepted values are:
@@ -22,45 +37,30 @@ Accepted values are:
 - NON_PREEMPTIBLE
 - PREEMPTIBLE
 */
-  Preemptibility?: string;
-
-  // Disk Config
-  DiskConfig?: Dataproc_ClusterClusterConfigPreemptibleWorkerConfigDiskConfig;
-
-  // Instance flexibility Policy allowing a mixture of VM shapes and provisioning models.
-  InstanceFlexibilityPolicy?: Dataproc_ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy;
-
-  // List of preemptible instance names which have been assigned to the cluster.
-  InstanceNames?: Array<string>;
-
-  /*
-Specifies the number of preemptible nodes to create.
-Defaults to 0.
-*/
-  NumInstances?: number;
+  preemptibility?: string;
 }
 
-export function Dataproc_ClusterClusterConfigPreemptibleWorkerConfig_GetTypes(): DynamicUIProps[] {
+export function dataproc_ClusterClusterConfigPreemptibleWorkerConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "DiskConfig",
+      "diskConfig",
       "Disk Config",
-      Dataproc_ClusterClusterConfigPreemptibleWorkerConfigDiskConfig_GetTypes(),
+      dataproc_ClusterClusterConfigPreemptibleWorkerConfigDiskConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "InstanceFlexibilityPolicy",
+      "instanceFlexibilityPolicy",
       "Instance flexibility Policy allowing a mixture of VM shapes and provisioning models.",
-      Dataproc_ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy_GetTypes(),
+      dataproc_ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "InstanceNames",
+      "instanceNames",
       "List of preemptible instance names which have been assigned to the cluster.",
       InputType_String_GetTypes(),
       false,
@@ -68,7 +68,7 @@ export function Dataproc_ClusterClusterConfigPreemptibleWorkerConfig_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Number,
-      "NumInstances",
+      "numInstances",
       "Specifies the number of preemptible nodes to create.\nDefaults to 0.",
       [],
       false,
@@ -76,7 +76,7 @@ export function Dataproc_ClusterClusterConfigPreemptibleWorkerConfig_GetTypes():
     ),
     new DynamicUIProps(
       InputType.String,
-      "Preemptibility",
+      "preemptibility",
       "Specifies the preemptibility of the secondary workers. The default value is `PREEMPTIBLE`\nAccepted values are:\n* PREEMPTIBILITY_UNSPECIFIED\n* NON_PREEMPTIBLE\n* PREEMPTIBLE",
       [],
       false,

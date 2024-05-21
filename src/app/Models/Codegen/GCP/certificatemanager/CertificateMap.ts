@@ -7,13 +7,13 @@ import {
 import { Resource } from "src/app/Models/CloudResource";
 import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
 import {
-  Certificatemanager_CertificateMapGclbTarget,
-  Certificatemanager_CertificateMapGclbTarget_GetTypes,
-} from "../types/Certificatemanager_CertificateMapGclbTarget";
+  certificatemanager_CertificateMapGclbTarget,
+  certificatemanager_CertificateMapGclbTarget_GetTypes,
+} from "../types/certificatemanager_CertificateMapGclbTarget";
 
 export interface CertificateMapArgs {
   // A human-readable description of the resource.
-  Description?: string;
+  description?: string;
 
   /*
 Set of labels associated with a Certificate Map resource.
@@ -21,7 +21,7 @@ Set of labels associated with a Certificate Map resource.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  Labels?: Map<string, string>;
+  labels?: Map<string, string>;
 
   /*
 A user-defined name of the Certificate Map. Certificate Map names must be unique
@@ -30,58 +30,55 @@ globally and match the pattern `projects/-/locations/-/certificateMaps/-`.
 
 - - -
 */
-  Name?: string;
+  name?: string;
 
   /*
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
 */
-  Project?: string;
+  project?: string;
 }
 export class CertificateMap extends Resource {
-  /*
-A user-defined name of the Certificate Map. Certificate Map names must be unique
-globally and match the pattern `projects/-/locations/-/certificateMaps/-`.
-
-
-- - -
-*/
-  public Name?: string;
-
-  /*
-The ID of the project in which the resource belongs.
-If it is not provided, the provider project is used.
-*/
-  public Project?: string;
-
-  /*
-The combination of labels configured directly on the resource
-and default labels configured on the provider.
-*/
-  public PulumiLabels?: Map<string, string>;
-
   /*
 Update timestamp of a Certificate Map. Timestamp is in RFC3339 UTC "Zulu" format,
 accurate to nanoseconds with up to nine fractional digits.
 Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  public UpdateTime?: string;
+  public updateTime?: string;
 
   /*
 Creation timestamp of a Certificate Map. Timestamp is in RFC3339 UTC "Zulu" format,
 accurate to nanoseconds with up to nine fractional digits.
 Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
 */
-  public CreateTime?: string;
+  public createTime?: string;
 
-  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
-  public EffectiveLabels?: Map<string, string>;
+  // A human-readable description of the resource.
+  public description?: string;
 
   /*
 A list of target proxies that use this Certificate Map
 Structure is documented below.
 */
-  public GclbTargets?: Array<Certificatemanager_CertificateMapGclbTarget>;
+  public gclbTargets?: Array<certificatemanager_CertificateMapGclbTarget>;
+
+  /*
+A user-defined name of the Certificate Map. Certificate Map names must be unique
+globally and match the pattern `projects/-/locations/-/certificateMaps/-`.
+
+
+- - -
+*/
+  public name?: string;
+
+  /*
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+*/
+  public project?: string;
+
+  // All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
+  public effectiveLabels?: Map<string, string>;
 
   /*
 Set of labels associated with a Certificate Map resource.
@@ -89,32 +86,19 @@ Set of labels associated with a Certificate Map resource.
 --Note--: This field is non-authoritative, and will only manage the labels present in your configuration.
 Please refer to the field `effective_labels` for all of the labels present on the resource.
 */
-  public Labels?: Map<string, string>;
+  public labels?: Map<string, string>;
 
-  // A human-readable description of the resource.
-  public Description?: string;
+  /*
+The combination of labels configured directly on the resource
+and default labels configured on the provider.
+*/
+  public pulumiLabels?: Map<string, string>;
 
   public static GetTypes(): DynamicUIProps[] {
     return [
       new DynamicUIProps(
         InputType.String,
-        "Description",
-        "A human-readable description of the resource.",
-        [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.Map,
-        "Labels",
-        "Set of labels associated with a Certificate Map resource.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
-        InputType_Map_GetTypes(),
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "Name",
+        "name",
         "A user-defined name of the Certificate Map. Certificate Map names must be unique\nglobally and match the pattern `projects/*/locations/*/certificateMaps/*`.\n\n\n- - -",
         [],
         false,
@@ -122,11 +106,27 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "Project",
+        "project",
         "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
         [],
         false,
         true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        "description",
+        "A human-readable description of the resource.",
+        [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.Map,
+        "labels",
+        "Set of labels associated with a Certificate Map resource.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        InputType_Map_GetTypes(),
+        false,
+        false,
       ),
     ];
   }
