@@ -9,7 +9,8 @@ import {
 } from '../components/resource-config/resource-config.component';
 import { Outputs } from '../Models/CloudResource';
 import { PlaygroundComponent } from '../components/playground/playground.component';
-import { ResourceType } from '../Models/Codegen/GCP/ResourceType';
+import { GCP_ResourceType } from 'src/app/Models/Codegen/gcp_resources/ResourceType';
+import { AWS_ResourceType } from '../Models/Codegen/aws_resources/ResourceType';
 
 @Injectable({
   providedIn: 'root',
@@ -37,7 +38,7 @@ export class ModalDialogService {
 
   public openComponentModal(
     currentIndex: number,
-    currentResource: ResourceType,
+    currentResource: GCP_ResourceType | AWS_ResourceType | undefined,
     config: Map<string, DynamicUIPropState>,
     currentOutput: Outputs[],
     comp: PlaygroundComponent

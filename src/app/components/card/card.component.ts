@@ -7,7 +7,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';
 import { OverlayConfig } from '@angular/cdk/overlay';
-import { ResourceType } from 'src/app/Models/Codegen/GCP/ResourceType';
+import { GCP_ResourceType } from 'src/app/Models/Codegen/gcp_resources/ResourceType';
+import { AWS_ResourceType } from 'src/app/Models/Codegen/aws_resources/ResourceType';
 
 @Component({
   selector: 'app-card',
@@ -53,10 +54,24 @@ export class CardComponent {
   @Output()
   public mouseLeft = new EventEmitter();
 
-  public resourceType = ResourceType;
+  //public resourceType = ResourceType;
   // Initializing font awesome icons
   public faTrash: IconDefinition = faTrash;
   public faGear: IconDefinition = faGear;
+
+  public isGroup(): boolean {
+    return (
+      this.item.resourceType == GCP_ResourceType.COMPUTE_NETWORK ||
+      this.item.resourceType == AWS_ResourceType.EC2_VPC
+    );
+  }
+
+  public isRec(): boolean {
+    return (
+      this.item.resourceType == GCP_ResourceType.COMPUTE_SUBNETWORK ||
+      this.item.resourceType == AWS_ResourceType.EC2_SUBNET
+    );
+  }
 
   public handleMouseDown(event: any, ref: HTMLElement): void {
     event.stopPropagation();

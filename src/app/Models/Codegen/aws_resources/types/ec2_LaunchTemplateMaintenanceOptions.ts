@@ -1,0 +1,25 @@
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
+import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+
+export interface ec2_LaunchTemplateMaintenanceOptions {
+  // Disables the automatic recovery behavior of your instance or sets it to default. Can be `"default"` or `"disabled"`. See [Recover your instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html) for more details.
+  autoRecovery?: string;
+}
+
+export function ec2_LaunchTemplateMaintenanceOptions_GetTypes(): DynamicUIProps[] {
+  return [
+    new DynamicUIProps(
+      InputType.String,
+      "autoRecovery",
+      'Disables the automatic recovery behavior of your instance or sets it to default. Can be `"default"` or `"disabled"`. See [Recover your instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html) for more details.',
+      [],
+      false,
+      false,
+    ),
+  ];
+}

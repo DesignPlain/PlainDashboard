@@ -1,4 +1,6 @@
 :host {
+  z-index: 1000;
+
   .controls {
     display: flex;
     flex-wrap: nowrap;

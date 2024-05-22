@@ -1,19 +1,21 @@
 import { Component, Input } from '@angular/core';
 import { IconDefinition, faClose } from '@fortawesome/free-solid-svg-icons';
-import { ProviderType } from "src/app/enum/ProviderType";
+import { take } from 'rxjs';
+import { ProviderType } from 'src/app/enum/ProviderType';
 import { ModalDialogService } from 'src/app/services/modal-dialog.service';
 import { StackService } from 'src/app/services/stack.service';
 
 @Component({
   selector: 'app-config-modal',
   templateUrl: './config-modal.component.html',
-  styleUrls: ['./config-modal.component.scss']
+  styleUrls: ['./config-modal.component.scss'],
 })
-
 export class ConfigModalComponent {
   constructor(
     private _modalDialogService: ModalDialogService,
-    private _stackService: StackService) {
+    private _stackService: StackService
+  ) {
+    this.get();
   }
   public faClose: IconDefinition = faClose;
 
@@ -23,36 +25,57 @@ export class ConfigModalComponent {
 
   file: File;
   @Input() public projectName: string;
-  @Input() public toggleCred: boolean = false;
 
-  provType = ProviderType
+  @Input() public aws_KeyId: string;
+  @Input() public aws_Secretkey: string;
+
+  @Input() public toggleCred: boolean = false;
+  fileName: string = '';
+  provType = ProviderType;
   @Input() public toggleProvider = 0;
 
-
-
   onFilechange(event: any) {
-    //console.log(event.target.files[0])
-    this.file = event.target.files[0]
+    console.log(event.target.files[0]);
+    this.file = event.target.files[0];
+
+    this.fileName = this.file.name;
   }
 
   toggleMenu() {
     this.toggleCred = !this.toggleCred;
     if (!this.toggleCred) {
       this.toggleProvider = 0;
-    }
-    else {
+    } else {
       this.toggleProvider = ProviderType.GCP;
     }
   }
 
   upload() {
-    if (this.file && this.projectName != "") {
-      this._stackService.uploadfile(this.file, this.projectName)
-        .subscribe(resp => {
-          alert("Uploaded")
-        })
-    } else {
-      alert("Please select a file first")
-    }
+    this._stackService
+      .uploadProjectConfig(
+        this.file,
+        this.projectName,
+        this.aws_KeyId,
+        this.aws_Secretkey
+      )
+      .subscribe((resp) => {
+        alert('Uploaded');
+      });
+  }
+
+  get() {
+    this._stackService
+      .getProjectConfig()
+      .pipe(take(1))
+      .subscribe((resp) => {
+        let res = JSON.parse(JSON.stringify(resp));
+
+        this.aws_KeyId = res['AWS_AccessKeyId'];
+        this.aws_Secretkey = res['AWS_SecretAccessKey'];
+        this.fileName = res['GCP_APIKeyFileName'];
+        this.projectName = res['ProjectName'];
+
+        console.log(res);
+      });
   }
 }
