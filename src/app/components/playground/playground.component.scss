@@ -1,9 +1,39 @@
 :host {
-  align-items: center;
-  overflow: hidden;
+  display: block;
+  overflow: auto;
   min-width: 100%;
   min-height: 100%;
   position: relative;
+
+  top: auto;
+  left: auto;
+  margin: 0px;
+  height: 10000px;
+  width: 10000px;
+
+  background-image: linear-gradient(
+      #d6d4d4d0 2.8000000000000003px,
+      transparent 2.8000000000000003px
+    ),
+    linear-gradient(
+      90deg,
+      #d6d4d4d0 2.8000000000000003px,
+      transparent 2.8000000000000003px
+    ),
+    linear-gradient(
+      #d6d4d4d0 1.4000000000000001px,
+      transparent 1.4000000000000001px
+    ),
+    linear-gradient(
+      90deg,
+      #d6d4d4d0 1.4000000000000001px,
+      #e5e5f7d0 1.4000000000000001px
+    );
+  background-size: 70px 70px, 70px 70px, 14px 14px, 14px 14px;
+  background-position: -2.8000000000000003px -2.8000000000000003px,
+    -2.8000000000000003px -2.8000000000000003px,
+    -1.4000000000000001px -1.4000000000000001px,
+    -1.4000000000000001px -1.4000000000000001px;
 
   canvas {
     position: absolute;
@@ -39,8 +69,11 @@
 }
 
 .controls {
-  display: flex;
-  flex-wrap: nowrap;
+  left: 0%;
+  position: fixed;
+  width: 70%;
+  left: 30%;
+  z-index: 1000;
 
   .apply {
     left: 40%;
@@ -269,7 +302,7 @@ hr {
 .product-watermark {
   right: 1%;
   bottom: 1%;
-  position: absolute;
+  position: fixed;
   font-size: larger;
   font-weight: bold;
   font-family: "Geneva", Verdana, sans-serif;

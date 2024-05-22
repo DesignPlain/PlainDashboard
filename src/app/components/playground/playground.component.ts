@@ -11,7 +11,6 @@ import {
   Outputs,
   LineCoordinates,
 } from 'src/app/Models/CloudResource';
-import { ResourceProperties } from 'src/app/Models/Codegen/GCP/ResourceProperties';
 
 import { ProviderType } from 'src/app/enum/ProviderType';
 import { AddComponentService } from 'src/app/services/add-component.service';
@@ -34,9 +33,13 @@ import {
   DynamicUIProps,
 } from '../resource-config/resource-config.component';
 import { VisualResource } from '../resource-list/VisualResource';
-import { ResourceType } from 'src/app/Models/Codegen/GCP/ResourceType';
 import { InputType } from 'src/app/enum/InputType';
-import { Bucket } from 'src/app/Models/Codegen/GCP/storage/Bucket';
+
+import { GCP_ResourceType } from 'src/app/Models/Codegen/gcp_resources/ResourceType';
+
+import { GCP_ResourceProperties } from 'src/app/Models/Codegen/gcp_resources/ResourceProperties';
+import { AWS_ResourceProperties } from 'src/app/Models/Codegen/aws_resources/ResourceProperties';
+import { AWS_ResourceType } from 'src/app/Models/Codegen/aws_resources/ResourceType';
 
 @Component({
   selector: 'app-playground',
@@ -104,10 +107,10 @@ export class PlaygroundComponent implements OnInit {
     string,
     DynamicUIPropState
   >();
-  public currentResourceType: ResourceType | undefined;
+  public currentResourceType: GCP_ResourceType | AWS_ResourceType | undefined;
   public currentOut: Outputs[] = [];
   public items: CloudResource[] = [];
-  public resourceType = ResourceType;
+  // public resourceType = ResourceType;
   public hideline: boolean = true;
   public lineOptions: LineOptions[] = [];
   public currentDraggingCard: CloudResource | undefined;
@@ -136,12 +139,20 @@ export class PlaygroundComponent implements OnInit {
         const item = new CloudResource();
         item.id = uuidv4();
         item.resourceType = resource.ResourceType;
-        item.name = ResourceType[resource.ResourceType];
+        item.name =
+          resource.ProviderType == ProviderType.AWS
+            ? AWS_ResourceType[resource.ResourceType]
+            : GCP_ResourceType[resource.ResourceType];
         item.title = item.name.toString();
-        item.providerType = ProviderType.AWS;
-        item.resourceConfig = ResourceProperties.GetResourceObject(
-          resource.ResourceType
-        );
+        item.providerType = resource.ProviderType;
+        item.resourceConfig =
+          resource.ProviderType == ProviderType.AWS
+            ? AWS_ResourceProperties.GetResourceObject(
+                resource.ResourceType as AWS_ResourceType
+              )
+            : GCP_ResourceProperties.GetResourceObject(
+                resource.ResourceType as GCP_ResourceType
+              );
 
         item.iconSrc = resource.iconSrc;
         this.items.push(item);
@@ -201,6 +212,7 @@ export class PlaygroundComponent implements OnInit {
       this.loadResourceConfig(
         item.title,
         item.resourceConfig,
+        item.providerType,
         item.resourceType
       );
     } else {
@@ -208,7 +220,7 @@ export class PlaygroundComponent implements OnInit {
     }
 
     this.currentResourceType = item.resourceType;
-    this.currentOut = item.resOutputs.sort((a, b) =>
+    this.currentOut = item.resOutputs?.sort((a, b) =>
       a.name > b.name ? 1 : -1
     );
     this.currentIndex = resourceIndex;
@@ -226,7 +238,11 @@ export class PlaygroundComponent implements OnInit {
   //#region [ResourceConfig methods]
 
   private setDefaultResourceConfig(item: CloudResource) {
-    ResourceProperties.propertiesMap.get(item.resourceType)?.forEach((val) => {
+    let propertiesMapResource = this.getPropertiesMapResource(
+      item.providerType,
+      item.resourceType
+    );
+    propertiesMapResource?.forEach((val) => {
       const map = new Map();
       val.members.forEach((obj) => {
         map.set(obj.val, new DynamicUIPropState(obj.type, '', '', undefined));
@@ -239,14 +255,44 @@ export class PlaygroundComponent implements OnInit {
     });
   }
 
+  private getPropertiesMapResource(
+    providerType: ProviderType,
+    resourceType: GCP_ResourceType | AWS_ResourceType
+  ) {
+    if (providerType == ProviderType.AWS) {
+      let propertiesMap = AWS_ResourceProperties.propertiesMap1.get(
+        resourceType as AWS_ResourceType
+      );
+
+      if (propertiesMap == undefined) {
+        propertiesMap = AWS_ResourceProperties.propertiesMap2.get(
+          resourceType as AWS_ResourceType
+        );
+      }
+
+      return propertiesMap;
+    } else {
+      let propertiesMap = GCP_ResourceProperties.propertiesMap.get(
+        resourceType as GCP_ResourceType
+      );
+      return propertiesMap;
+    }
+  }
+
   private loadResourceConfig(
     name: string,
     res: Resource,
-    resourceType: ResourceType
+    providerType: ProviderType,
+    resourceType: GCP_ResourceType | AWS_ResourceType
   ) {
     //(res as Bucket).Labels = new Map([["Key","8"]])
     let objMap = new Map(Object.entries(res));
-    ResourceProperties.propertiesMap.get(resourceType)?.forEach((val) => {
+
+    let propertiesMapResource = this.getPropertiesMapResource(
+      providerType,
+      resourceType
+    );
+    propertiesMapResource?.forEach((val) => {
       const map = new Map();
 
       // console.log('\n*****Call depth: ', 0);

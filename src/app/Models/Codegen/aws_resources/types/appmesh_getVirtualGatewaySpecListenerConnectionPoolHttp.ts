@@ -1,0 +1,29 @@
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
+import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+
+export interface appmesh_getVirtualGatewaySpecListenerConnectionPoolHttp {
+  //
+  maxPendingRequests?: number;
+
+  //
+  maxConnections?: number;
+}
+
+export function appmesh_getVirtualGatewaySpecListenerConnectionPoolHttp_GetTypes(): DynamicUIProps[] {
+  return [
+    new DynamicUIProps(
+      InputType.Number,
+      "maxPendingRequests",
+      "",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(InputType.Number, "maxConnections", "", [], true, false),
+  ];
+}

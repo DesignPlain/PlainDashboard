@@ -1,6 +1,6 @@
 <div class="container">
   <div class="menu">
-    <span>Settings Menu</span>
+    <span class="menu-head">Settings Menu</span>
     <div>
       <div class="menu-item" (click)="toggleMenu()">
         Configure Access Credentials
@@ -19,26 +19,72 @@
     <div class="sub-content">
       <div *ngIf="toggleProvider == provType.AWS">
         <div class="header">AWS Configuration</div>
-        <app-select></app-select>
         <br />
+
+        <div class="usr-in">
+          <div class="span"><span>AWS Access Key Id:</span></div>
+          <input
+            #box1
+            class="input"
+            type="text"
+            value="{{ aws_KeyId }}"
+            placeholder="Enter Access Key Id"
+            (change)="aws_KeyId = box1.value"
+          />
+        </div>
+        <br />
+        <div class="usr-in">
+          <div class="span"><span>AWS Secret Access Key:</span></div>
+          <input
+            #box2
+            class="input"
+            type="text"
+            value="{{ aws_Secretkey }}"
+            placeholder="Enter Secret Access Key"
+            (change)="aws_Secretkey = box2.value"
+          />
+        </div>
       </div>
+
       <div *ngIf="toggleProvider == provType.AZURE">
         <div class="header">AZURE Configuration</div>
         <br />
       </div>
+
       <div *ngIf="toggleProvider == provType.GCP">
         <div class="header">GCP Configuration</div>
         <br />
-        <label class="form-label">Project Name: </label>
-        <input #box type="text" (change)="projectName = box.value" />
-        <br /><br />
-        <label for="formFile" class="form-label">Upload Key file: </label>
-        <input
-          (change)="this.onFilechange($event)"
-          class="form-control"
-          type="file"
-          id="formFile"
-        />
+
+        <div class="usr-in">
+          <div class="span"><span>Project Name:</span></div>
+          <input
+            #box3
+            class="input"
+            type="text"
+            value="{{ projectName }}"
+            placeholder="Enter Project Name"
+            (change)="projectName = box3.value"
+          />
+        </div>
+        <br />
+        <div class="usr-in">
+          <div class="span"><span>API Key File:</span></div>
+          <div>
+            <label for="formFile" class="fileUp btn btn-info"
+              >Select File</label
+            >
+            <input
+              (change)="this.onFilechange($event)"
+              class="form-control"
+              type="file"
+              id="formFile"
+              style="display: none"
+            />
+          </div>
+          <div class="fname">
+            <span>{{ fileName }}</span>
+          </div>
+        </div>
       </div>
     </div>
     <div (click)="this.upload()" class="apply">Save</div>

@@ -1,8 +1,8 @@
 <div
   class="TypicalCard"
   [ngClass]="{
-    rectangle: item.resourceType == resourceType.COMPUTE_SUBNETWORK,
-    group: item.resourceType == resourceType.COMPUTE_NETWORK
+    rectangle: isRec(),
+    group: isGroup()
   }"
   cdkDragBoundary=".right"
   [cdkDragFreeDragPosition]="item.position"

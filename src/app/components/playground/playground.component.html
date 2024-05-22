@@ -1,4 +1,3 @@
-<app-config-options class="configuration"></app-config-options>
 <ng-container *ngFor="let item of items; let i = index">
   <div>
     <app-card
@@ -24,8 +23,11 @@
   <line *ngIf="newLine" [edgeObserver]="edgeObserver"></line>
 </ng-container>
 
-<app-tool-bar
-  (deployClicked)="deploy()"
-  (destroyClicked)="destroy()"
-></app-tool-bar>
+<div class="controls">
+  <app-tool-bar
+    (deployClicked)="deploy()"
+    (destroyClicked)="destroy()"
+  ></app-tool-bar>
+  <app-config-options class="configuration"></app-config-options>
+</div>
 <span class="product-watermark">DesignSphere</span>

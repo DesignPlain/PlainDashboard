@@ -1,0 +1,80 @@
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "src/app/enum/InputType";
+import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+
+export interface artifactregistry_getRepositoryCleanupPolicyCondition {
+  // Match versions newer than a duration.
+  newerThan?: string;
+
+  // Match versions older than a duration.
+  olderThan?: string;
+
+  // Match versions by package prefix. Applied on any prefix match.
+  packageNamePrefixes?: Array<string>;
+
+  // Match versions by tag prefix. Applied on any prefix match.
+  tagPrefixes?: Array<string>;
+
+  // Match versions by tag status. Default value: "ANY" Possible values: ["TAGGED", "UNTAGGED", "ANY"]
+  tagState?: string;
+
+  // Match versions by version name prefix. Applied on any prefix match.
+  versionNamePrefixes?: Array<string>;
+}
+
+export function artifactregistry_getRepositoryCleanupPolicyCondition_GetTypes(): DynamicUIProps[] {
+  return [
+    new DynamicUIProps(
+      InputType.String,
+      "olderThan",
+      "Match versions older than a duration.",
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "packageNamePrefixes",
+      "Match versions by package prefix. Applied on any prefix match.",
+      InputType_String_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "tagPrefixes",
+      "Match versions by tag prefix. Applied on any prefix match.",
+      InputType_String_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "tagState",
+      'Match versions by tag status. Default value: "ANY" Possible values: ["TAGGED", "UNTAGGED", "ANY"]',
+      [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Array,
+      "versionNamePrefixes",
+      "Match versions by version name prefix. Applied on any prefix match.",
+      InputType_String_GetTypes(),
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "newerThan",
+      "Match versions newer than a duration.",
+      [],
+      true,
+      false,
+    ),
+  ];
+}

@@ -1,12 +1,5 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  ViewEncapsulation,
-} from '@angular/core';
-import { Icon, IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
   faClose,
   faGear,
@@ -17,11 +10,14 @@ import {
   DefaultResource,
   Resource,
   Outputs,
+  CloudResource,
 } from 'src/app/Models/CloudResource';
 import { InputType } from 'src/app/enum/InputType';
 import { ModalDialogService } from 'src/app/services/modal-dialog.service';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { ResourceType } from 'src/app/Models/Codegen/GCP/ResourceType';
+
+import { GCP_ResourceType } from 'src/app/Models/Codegen/gcp_resources/ResourceType';
+import { ProviderType } from 'src/app/enum/ProviderType';
+import { AWS_ResourceType } from 'src/app/Models/Codegen/aws_resources/ResourceType';
 
 export class DynamicUIProps {
   constructor(
@@ -61,13 +57,14 @@ export class ResourceConfigComponent implements OnInit {
   }
 
   public show = '';
-  @Input() currentResource: ResourceType;
+  @Input() currentResource: GCP_ResourceType | AWS_ResourceType | undefined;
   @Input() currentIndex: number = -1;
   resConfig: Resource = new DefaultResource();
   @Input() config: Map<string, DynamicUIPropState> = new Map();
   @Input() currentOutput: Outputs[] = [];
   inputType = InputType;
-  resourceType = ResourceType;
+  gcp_resourceType = GCP_ResourceType;
+  aws_resourceType = AWS_ResourceType;
 
   ngOnInit(): void {
     //console.log(this.config);
@@ -79,6 +76,15 @@ export class ResourceConfigComponent implements OnInit {
   set = false;
   listMap = new Map<string, any>();
   check = false;
+
+  getResourceName() {
+    let r = this.resConfig as CloudResource;
+    if (r.providerType == ProviderType.AWS) {
+      AWS_ResourceType[r.resourceType];
+    } else {
+      GCP_ResourceType[r.resourceType];
+    }
+  }
 
   addToMap(name: string, data: any, type: InputType) {
     this.check = true;

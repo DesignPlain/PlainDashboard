@@ -1,11 +1,13 @@
 import { ProviderType } from '../enum/ProviderType';
-import { ResourceType } from './Codegen/GCP/ResourceType';
+import { AWS_ResourceType } from './Codegen/aws_resources/ResourceType';
+import { GCP_ResourceType } from './Codegen/gcp_resources/ResourceType';
+
 
 export class CloudResource {
   public id: string = '';
   public name: string = '';
   public title: string = 'Description';
-  public resourceType: ResourceType = 0;
+  public resourceType: GCP_ResourceType | AWS_ResourceType = 0;
   public providerType: ProviderType = 0;
   public resourceConfig: Resource | undefined = new DefaultResource();
   public position = { x: 0, y: 0 };
@@ -39,7 +41,7 @@ export class Outputs {
 }
 
 export abstract class Resource {
- // constructor(public BaseName: string, public PlatformType: string) {}
+  // constructor(public BaseName: string, public PlatformType: string) {}
 }
 
 export class DefaultResource extends Resource {
