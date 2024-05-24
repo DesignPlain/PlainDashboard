@@ -61,7 +61,7 @@ export class ResourceListComponent {
         new VisualResource(
           'ELB Loadbalancer',
           ProviderType.AWS,
-          AWS_ResourceType.ALB_TARGETGROUPATTACHMENT,
+          AWS_ResourceType.ELB_LOADBALANCER,
           '../../../assets/Arch_Amazon-Elastic_Load_Balancer_64.png'
         ),
       ],

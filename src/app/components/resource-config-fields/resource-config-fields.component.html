@@ -25,7 +25,9 @@
       type="text"
       class="input"
       placeholder="{{
-        item.value.val != undefined ? item.value.val : 'Enter ' + toKeyFormat(item.key)
+        item.value.val != undefined
+          ? item.value.val
+          : 'Enter ' + toKeyFormat(item.key)
       }}"
       value="{{ item.value.val }}"
       (focusout)="addToMap(toKeyFormat(item.key), box.value, item.value.type)"
@@ -66,7 +68,7 @@
   <div *ngSwitchCase="inputType.Number" class="in">
     <div class="span" *ngIf="item.value.description != 'GenericType'">
       <span>{{ toKeyFormat(item.key) }}</span>
-      <span *ngIf="item.value.willReplaceOnChanges" class="req_icon">*</span>
+      <span *ngIf="item.value.isRequired" class="req_icon">*</span>
       <fa-icon
         (mouseenter)="show = toKeyFormat(item.key)"
         (mouseleave)="show = ''"
@@ -90,7 +92,9 @@
       type="number"
       class="input"
       placeholder="{{
-        item.value.val != undefined ? item.value.val : 'Enter ' + toKeyFormat(item.key)
+        item.value.val != undefined
+          ? item.value.val
+          : 'Enter ' + toKeyFormat(item.key)
       }}"
       value="{{ item.value.val }}"
       (focusout)="addToMap(toKeyFormat(item.key), box.value, item.value.type)"
@@ -124,7 +128,9 @@
       type="file"
       class="input"
       placeholder="{{
-        item.value.val != undefined ? item.value.val : 'Enter ' + toKeyFormat(item.key)
+        item.value.val != undefined
+          ? item.value.val
+          : 'Enter ' + toKeyFormat(item.key)
       }}"
       value="{{ item.value.val }}"
       (focusout)="addToMap(toKeyFormat(item.key), box.value, item.value.type)"
@@ -158,7 +164,9 @@
       class="checkbox"
       value="{{ item.value.val }}"
       placeholder="{{
-        item.value.val != undefined ? item.value.val : 'Enter ' + toKeyFormat(item.key)
+        item.value.val != undefined
+          ? item.value.val
+          : 'Enter ' + toKeyFormat(item.key)
       }}"
       value="{{ item.value.val }}"
       (focusout)="addToMap(toKeyFormat(item.key), box.value, item.value.type)"
