@@ -33,6 +33,39 @@
       }
     }
 
+    /* HTML: <div class="loader"></div> */
+    .loader {
+      position: absolute;
+      right: 5px;
+      bottom: 7px;
+
+      width: 14px;
+      aspect-ratio: 1;
+      display: grid;
+    }
+    .loader::before,
+    .loader::after {
+      content: "";
+      grid-area: 1/1;
+      --c: no-repeat radial-gradient(farthest-side, #e453c0 92%, #0000);
+      background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+        var(--c) 0 50%;
+      background-size: 3px 3px;
+      animation: l12 1s infinite;
+    }
+    .loader::before {
+      margin: 4px;
+      filter: hue-rotate(45deg);
+      background-size: 1.5px 1.5px;
+      animation-timing-function: linear;
+    }
+
+    @keyframes l12 {
+      100% {
+        transform: rotate(0.5turn);
+      }
+    }
+
     display: inline-block;
 
     &.group {
@@ -45,9 +78,8 @@
       opacity: 0.8;
 
       background-image: radial-gradient(#ffffff00 0.3px, #e2e2e299 0.5px);
-      border: 2.5px dashed rgba(81, 81, 81, 0.39);
-
-      border-radius: 1%;
+      border: 1.9px dashed rgba(83, 53, 53, 0.39);
+      border-radius: 3px;
 
       &:hover {
         background-image: radial-gradient(#ffffff 0.3px, #f0cecece 0.5px);
@@ -55,6 +87,11 @@
 
       button {
         visibility: hidden;
+      }
+
+      .name {
+        left: 34px;
+        top: 13px;
       }
     }
 
@@ -68,9 +105,8 @@
       opacity: 0.8;
 
       background-image: radial-gradient(#ffffff00 0.3px, #c6d0c499 0.5px);
-      border: 2.5px dashed rgba(83, 53, 53, 0.39);
-
-      border-radius: 1%;
+      border: 1.9px dashed rgba(83, 53, 53, 0.39);
+      border-radius: 3px;
 
       &:hover {
         background-image: radial-gradient(#ffffff 0.3px, #f0cecece 0.5px);
@@ -79,20 +115,28 @@
       button {
         visibility: hidden;
       }
+
+      .name {
+        left: 34px;
+        top: 13px;
+      }
     }
 
     .listIcon {
-      position: relative;
       position: absolute;
       left: 5px;
       margin: 0 5px;
       max-width: 20px;
       max-height: 20px;
-      border-radius: 5px;
+      border-radius: 4px;
       border-color: rgba(255, 255, 255, 0.654);
-      border-width: 1px;
+      border-width: 0.5px;
       border-style: solid;
       background-color: rgba(255, 255, 255, 0.654);
+
+      &:hover {
+        cursor: grab;
+      }
     }
 
     .name {
@@ -100,18 +144,39 @@
       font-family: "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
         sans-serif;
       position: absolute;
-      left: 35px;
+      left: 10px;
+      top: 40px;
       color: #264653;
       background-color: rgba(0, 0, 0, 0);
       opacity: 0.8;
       border: 0px;
-      width: 100px;
+      width: 118px;
       font-size: x-small;
 
       &:focus {
         outline: none;
         border-bottom: 1px;
         border: 1px black;
+      }
+    }
+
+    .status {
+      background-color: rgba(77, 77, 77, 0.641);
+      border-bottom-left-radius: 10px;
+      display: block;
+      width: 30px;
+      height: 5px;
+      position: absolute;
+      right: -5px;
+      top: -2px;
+      overflow: visible;
+
+      &.errored {
+        background-color: rgba(255, 0, 0, 0.8);
+      }
+
+      &.deployed {
+        background-color: rgba(15, 148, 44, 0.8);
       }
     }
 

@@ -10,6 +10,7 @@
   margin: 0px;
   height: 10000px;
   width: 10000px;
+  zoom: 1;
 
   background-image: linear-gradient(
       #d6d4d4d0 2.8000000000000003px,
@@ -44,6 +45,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    zoom: 1;
   }
 }
 
@@ -304,10 +306,9 @@ hr {
   bottom: 1%;
   position: fixed;
   font-size: larger;
-  font-weight: bold;
-  font-family: "Geneva", Verdana, sans-serif;
-  background-color: rgba(198, 152, 152, 0.085);
+  font-weight: 300;
+  font-family:  Geneva, Tahoma, sans-serif;
   padding: 5px;
   border-radius: 5px;
-  color: rgba(0, 0, 0, 0.139);
+  color: rgba(0, 0, 0, 0.134);
 }

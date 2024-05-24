@@ -99,7 +99,10 @@ export class PlaygroundComponent implements OnInit {
     this.currentOutput = null;
     this.currentInput = null;
     this.newLine = false;
+
+    this._saveState()
   }
+
   public newLine: boolean = false;
   public showSideBar: boolean = false;
   public currentIndex: number = 0;
@@ -167,17 +170,53 @@ export class PlaygroundComponent implements OnInit {
   }
 
   public deploy(): void {
+    this.items.forEach((x) => {
+      x.deploying = true;
+    });
     this._stackService
       .deploy(this.items)
       .pipe(take(1))
-      .subscribe((res) => this._processResponse(res));
+      .subscribe({
+        next: (res) => {
+          this._processResponse(res);
+          this.refresh();
+        },
+        error: () => {
+          this.items.forEach((x) => {
+            x.deploying = false;
+          });
+        },
+        complete: () => {
+          this.items.forEach((x) => {
+            x.deploying = false;
+          });
+        },
+      });
   }
 
   public destroy(): void {
+    this.items.forEach((x) => {
+      x.deploying = true;
+    });
     this._stackService
-      .getStack()
+      .destroyStack()
       .pipe(take(1))
-      .subscribe((res) => console.log(res));
+      .subscribe({
+        next: (res) => {
+          console.log(res)
+          this.refresh();
+        },
+        error: () => {
+          this.items.forEach((x) => {
+            x.deploying = false;
+          });
+        },
+        complete: () => {
+          this.items.forEach((x) => {
+            x.deploying = false;
+          });
+        },
+      });
   }
 
   public trashShit(index: number, id: string): void {
@@ -417,51 +456,16 @@ export class PlaygroundComponent implements OnInit {
   public mouseLeft(): void {}
 
   public dragMove($event: CdkDragMove, id: string): void {
-    //console.log($event);
-    // let pos = $event.pointerPosition;
-    // let count = 0;
-    // let currentItem = this.items.find((x) => { count += 1; x.id == id });
-    // if (currentItem != null) {
-    //   let differenceinX = $event.delta.x * $event.distance.x;
-    //   let differenceinY = $event.delta.y * $event.distance.y;
-    //   if (currentItem.inlets.length > 0) {
-    //     currentItem.inlets.forEach((element) => {
-    //       let tempInlet = this.items.find((x) => x.id == element);
-    //       if (tempInlet) {
-    //         let existingCords = tempInlet.outletMap.get(id);
-    //         if (existingCords) {
-    //           tempInlet.outletMap.set(id, {
-    //             x1: existingCords?.x1 + differenceinX,
-    //             y1: existingCords?.y1 + differenceinY,
-    //             x2: existingCords?.x2,
-    //             y2: existingCords?.y2,
-    //           });
-    //         }
-    //       }
-    //     });
-    //     currentItem.inletMap.forEach((value: LineCoordinates, key: string) => {
-    //       value.x1 += differenceinX;
-    //       value.y1 += differenceinY;
-    //     });
-    //   }
-    //   if (currentItem.outlets.length > 0) {
-    //     currentItem.outletMap.forEach((value: LineCoordinates, key: string) => {
-    //       value.x2 += differenceinX;
-    //       value.y2 += differenceinY;
-    //     });
-    //   }
-    //   currentItem.position.x += $event.delta.x * $event.distance.x;
-    //   currentItem.position.y += $event.delta.y * $event.distance.y;
-    //   console.log('Position:', pos);
-    //   //this.items[count] = currentItem;
-    //   //this._saveState();
-    //   //this.items = _.cloneDeep(this.items);
-    //}
+    let pos = $event.source.getFreeDragPosition();
+    this.updateLinePosition(id, pos);
   }
 
   public dragEnd($event: CdkDragEnd, id: string): void {
-    //console.log('ended');
     let pos = $event.source.getFreeDragPosition();
+    this.updateLinePosition(id, pos);
+  }
+
+  private updateLinePosition(id: string, pos: any) {
     let currentItem = this.items.find((x) => x.id == id);
     if (currentItem != null) {
       let differenceinX = pos.x - currentItem.position.x;
@@ -482,41 +486,27 @@ export class PlaygroundComponent implements OnInit {
           }
         });
         currentItem.inletMap.forEach((value: LineCoordinates, key: string) => {
-          value.x1 += differenceinX;
-          value.y1 += differenceinY;
+          if (key != 'dataType') {
+            value.x1 += differenceinX;
+            value.y1 += differenceinY;
+          }
         });
       }
 
       if (currentItem.outlets.length > 0) {
         currentItem.outletMap.forEach((value: LineCoordinates, key: string) => {
-          value.x2 += differenceinX;
-          value.y2 += differenceinY;
+          if (key != 'dataType') {
+            value.x2 += differenceinX;
+            value.y2 += differenceinY;
+          }
         });
       }
       currentItem.position.x = pos.x;
       currentItem.position.y = pos.y;
-      //console.log(pos);
+
       this._saveState();
-      this.items = _.cloneDeep(this.items);
       this._processLineData();
     }
-
-    // TODO: VPC group drag logic
-    // if (currentItem.resourceType == ResourceType.Virtual_Private_Cloud) {
-    //   let x = pos.x - currentItem.position.x;
-    //   let y = pos.y - currentItem.position.y;
-
-    //   let index = 0;
-    //   this.items.forEach((element) => {
-    //     this._updateLine(element, index, pos);
-    //     let nx = element.position.x + x;
-    //     let ny = element.position.y + y;
-    //     element.position = { x: nx, y: ny };
-    //     index += 1;
-    //   });
-    // }
-
-    // this._updateLine(currentItem, id, pos);
   }
 
   public onResize(ev: ResizeObserverEntry, id: number): void {
@@ -552,28 +542,14 @@ export class PlaygroundComponent implements OnInit {
       .subscribe({
         next: (res) => {
           this.items = JSON.parse(JSON.stringify(res, replacer), reviver);
-          this.items.forEach((item) => {
-            item.inletMap = new Map<string, LineCoordinates>(
-              JSON.parse(item.inletMapString, reviver)
-            );
-            item.outletMap = new Map<string, LineCoordinates>(
-              JSON.parse(item.outletMapString, reviver)
-            );
-          });
+          console.log(this.items);
           this._processLineData();
         },
         error: (_) => {
           let data = this._localStorageService.getLocalState();
           if (data != null) {
             this.items = JSON.parse(data, reviver);
-            this.items.forEach((item) => {
-              item.inletMap = new Map<string, LineCoordinates>(
-                JSON.parse(item.inletMapString, reviver)
-              );
-              item.outletMap = new Map<string, LineCoordinates>(
-                JSON.parse(item.outletMapString, reviver)
-              );
-            });
+            console.log(this.items);
             this._processLineData();
           }
         },
@@ -582,10 +558,6 @@ export class PlaygroundComponent implements OnInit {
   }
 
   private _saveState(): void {
-    this.items.forEach((item) => {
-      item.inletMapString = JSON.stringify([...item.inletMap]);
-      item.outletMapString = JSON.stringify([...item.outletMap]);
-    });
     this._applicationStateService
       .saveState(this.items)
       .pipe(take(1))
@@ -612,69 +584,9 @@ export class PlaygroundComponent implements OnInit {
         });
       }
     });
-    this.lineOptions = _.cloneDeep(this.lineOptions);
   }
 
-  // private _updateLine(currentItem: CloudResource, id: number, pos: any) {
-  //   let translateX = pos.x - currentItem.position.x;
-  //   let translateY = pos.y - currentItem.position.y;
-  //   if (currentItem.inlets.length > 0) {
-  //     currentItem.inlets.forEach((element) => {
-  //       let inlet = currentItem.inletMap.get(element);
-  //       currentItem.inletMap.set(element, {
-  //         x1: (inlet?.x1 as number) + translateX,
-  //         y1: (inlet?.y1 as number) + translateY,
-  //         x2: inlet?.x2 as number,
-  //         y2: inlet?.y2 as number,
-  //       });
-  //       let outlet = this.items[element].outletMap.get(id);
-  //       this.items[element].outletMap.set(id, {
-  //         x1: outlet?.x1 as number,
-  //         y1: outlet?.y1 as number,
-  //         x2: (inlet?.x1 as number) + translateX,
-  //         y2: (inlet?.y1 as number) + translateY,
-  //       });
-  //     });
-  //   }
-
-  //   if (currentItem.outlets.length > 0) {
-  //     currentItem.outlets.forEach((element) => {
-  //       let outlet = currentItem.outletMap.get(element);
-  //       currentItem.outletMap.set(element, {
-  //         x1: (outlet?.x1 as number) + translateX,
-  //         y1: (outlet?.y1 as number) + translateY,
-  //         x2: outlet?.x2 as number,
-  //         y2: outlet?.y2 as number,
-  //       });
-  //       let inlet = this.items[element].inletMap.get(id);
-  //       this.items[element].inletMap.set(id, {
-  //         x1: inlet?.x1 as number,
-  //         y1: inlet?.y1 as number,
-  //         x2: (inlet?.x1 as number) + translateX,
-  //         y2: (inlet?.y1 as number) + translateY,
-  //       });
-  //     });
-  //   }
-  // }
-
-  // private _updateLineState(id: number): void {
-  //   let outLetItem = this.items[this.currentInlet];
-  //   let inLetItem = this.items[id];
-  //   outLetItem.outlets.push(id);
-  //   inLetItem.inlets.push(this.currentInlet);
-  //   let coordinates = this._lineService.getCoordinates();
-  //   outLetItem.outletMap.set(id, {
-  //     x1: coordinates.startx,
-  //     y1: coordinates.starty,
-  //     x2: coordinates.endx,
-  //     y2: coordinates.endy,
-  //   });
-  //   inLetItem.inletMap.set(this.currentInlet, {
-  //     x1: coordinates.endx,
-  //     y1: coordinates.endy,
-  //     x2: coordinates.startx,
-  //     y2: coordinates.starty,
-  //   });
-  //   console.log(this.items);
-  // }
+  refresh() {
+    window.location.reload();
+  }
 }
