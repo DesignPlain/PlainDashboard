@@ -100,7 +100,7 @@ export class PlaygroundComponent implements OnInit {
     this.currentInput = null;
     this.newLine = false;
 
-    this._saveState()
+    this._saveState();
   }
 
   public newLine: boolean = false;
@@ -132,10 +132,11 @@ export class PlaygroundComponent implements OnInit {
     private _localStorageService: LocalStorageService,
     private _stackService: StackService,
     private _modalService: ModalDialogService
-  ) {}
+  ) {
+    this._getState();
+  }
 
   ngOnInit(): void {
-    this._getState();
     // Subcribe for component addition
     this._addComponentService.components.subscribe(
       (resource: VisualResource) => {
@@ -178,8 +179,7 @@ export class PlaygroundComponent implements OnInit {
       .pipe(take(1))
       .subscribe({
         next: (res) => {
-          this._processResponse(res);
-          this.refresh();
+          this._getState();
         },
         error: () => {
           this.items.forEach((x) => {
@@ -203,8 +203,8 @@ export class PlaygroundComponent implements OnInit {
       .pipe(take(1))
       .subscribe({
         next: (res) => {
-          console.log(res)
-          this.refresh();
+          console.log(res);
+          this._getState();
         },
         error: () => {
           this.items.forEach((x) => {
@@ -463,6 +463,7 @@ export class PlaygroundComponent implements OnInit {
   public dragEnd($event: CdkDragEnd, id: string): void {
     let pos = $event.source.getFreeDragPosition();
     this.updateLinePosition(id, pos);
+    this._saveState();
   }
 
   private updateLinePosition(id: string, pos: any) {
@@ -504,7 +505,6 @@ export class PlaygroundComponent implements OnInit {
       currentItem.position.x = pos.x;
       currentItem.position.y = pos.y;
 
-      this._saveState();
       this._processLineData();
     }
   }
@@ -571,7 +571,7 @@ export class PlaygroundComponent implements OnInit {
   }
 
   private _processResponse(val: string): void {
-    var data = JSON.parse(val, reviver);
+    //var data = JSON.parse(val, reviver);
     //console.log(data['message']);
   }
 
