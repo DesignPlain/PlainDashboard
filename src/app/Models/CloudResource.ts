@@ -2,7 +2,6 @@ import { ProviderType } from '../enum/ProviderType';
 import { AWS_ResourceType } from './Codegen/aws_resources/ResourceType';
 import { GCP_ResourceType } from './Codegen/gcp_resources/ResourceType';
 
-
 export class CloudResource {
   public id: string = '';
   public name: string = '';
@@ -13,19 +12,25 @@ export class CloudResource {
   public position = { x: 0, y: 0 };
   public shape = { width: 130, height: 40 };
   public iconSrc: string = '';
+  public status: ResourceStatus = ResourceStatus.Draft;
   public inlets: string[] = [];
   public outlets: string[] = [];
   public inletMap: Map<string, LineCoordinates> = new Map<
     string,
     { x1: number; y1: number; x2: number; y2: number }
   >();
-  public inletMapString: string;
-  public outletMapString: string;
   public outletMap: Map<string, LineCoordinates> = new Map<
     string,
     { x1: number; y1: number; x2: number; y2: number }
   >();
   public resOutputs: Outputs[] = [];
+  public deploying: boolean = false;
+}
+
+export enum ResourceStatus {
+  Draft,
+  Deployed,
+  Errored,
 }
 
 export abstract class LineCoordinates {

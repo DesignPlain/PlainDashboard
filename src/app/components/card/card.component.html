@@ -14,6 +14,14 @@
   [style.width.px]="item.shape.width"
   [style.height.px]="item.shape.height"
 >
+  <div
+    class="status"
+    [ngClass]="{
+      deployed: resourceStatus(ResourceStatus.Deployed),
+      errored: resourceStatus(ResourceStatus.Errored)
+    }"
+  ></div>
+  <div *ngIf="item.deploying" class="loader"></div> 
   <button
     #firstButtonRef
     class="firstButton"

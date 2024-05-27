@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CloudResource } from 'src/app/Models/CloudResource';
+import { CloudResource, ResourceStatus } from 'src/app/Models/CloudResource';
 import {
   faTrash,
   faGear,
@@ -71,6 +71,12 @@ export class CardComponent {
       this.item.resourceType == GCP_ResourceType.COMPUTE_SUBNETWORK ||
       this.item.resourceType == AWS_ResourceType.EC2_SUBNET
     );
+  }
+
+  ResourceStatus = ResourceStatus;
+
+  public resourceStatus(stat: ResourceStatus): boolean {
+    return this.item.status == stat;
   }
 
   public handleMouseDown(event: any, ref: HTMLElement): void {

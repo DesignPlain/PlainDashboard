@@ -63,6 +63,7 @@ export class ModalDialogService {
     cmpRef.instance.currentIndex = currentIndex;
     cmpRef.instance.config = config;
     cmpRef.instance.currentOutput = currentOutput;
+
     cmpRef.instance.configUpdateEvent.subscribe((res) => {
       comp.updateConfig(res.id, res.res);
     });

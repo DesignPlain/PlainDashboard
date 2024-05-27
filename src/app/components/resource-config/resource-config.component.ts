@@ -77,12 +77,11 @@ export class ResourceConfigComponent implements OnInit {
   listMap = new Map<string, any>();
   check = false;
 
-  getResourceName() {
-    let r = this.resConfig as CloudResource;
-    if (r.providerType == ProviderType.AWS) {
-      AWS_ResourceType[r.resourceType];
+  getResourceName(): string {
+    if (this.currentResource != undefined && this.currentResource > 500) {
+      return AWS_ResourceType[this.currentResource as AWS_ResourceType];
     } else {
-      GCP_ResourceType[r.resourceType];
+      return GCP_ResourceType[this.currentResource as GCP_ResourceType];
     }
   }
 

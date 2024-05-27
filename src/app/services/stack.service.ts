@@ -19,7 +19,7 @@ export class StackService {
     );
   }
 
-  public getStack(): Observable<object> {
+  public destroyStack(): Observable<object> {
     return this._http.get('http://localhost:8080/stack');
   }
 
