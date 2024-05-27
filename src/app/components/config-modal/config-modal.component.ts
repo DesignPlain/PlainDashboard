@@ -73,7 +73,7 @@ export class ConfigModalComponent {
         this.aws_KeyId = res['AWS_AccessKeyId'];
         this.aws_Secretkey = res['AWS_SecretAccessKey'];
         this.fileName = res['GCP_APIKeyFileName'];
-        this.projectName = res['ProjectName'];
+        this.projectName = res['GCP_ProjectName'];
 
         console.log(res);
       });
