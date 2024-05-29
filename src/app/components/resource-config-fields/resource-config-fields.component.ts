@@ -53,10 +53,7 @@ export class ResourceConfigFieldsComponent implements OnInit {
         break;
       // TODO: Fix this checkbox logic
       case InputType.Bool:
-        this.listMap.set(
-          this.toStoreFormat(name),
-          data == 'false' ? 'false' : ''
-        );
+        this.listMap.set(this.toStoreFormat(name), data);
         break;
     }
 
