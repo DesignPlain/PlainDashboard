@@ -85,22 +85,6 @@ export class ResourceConfigComponent implements OnInit {
     }
   }
 
-  addToMap(name: string, data: any, type: InputType) {
-    this.check = true;
-    switch (type) {
-      case InputType.String:
-        this.listMap.set(name, data as string);
-        break;
-      case InputType.Number:
-        this.listMap.set(name, data as number);
-        break;
-      // TODO: Fix this checkbox logic
-      case InputType.Bool:
-        this.listMap.set(name, data == 'false' ? 'false' : '');
-        break;
-    }
-  }
-
   public UpdateResourceConfig(it: Map<string, any>): void {
     it.forEach((v, k) => {
       console.log(k, v);

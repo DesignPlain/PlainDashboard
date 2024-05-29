@@ -159,17 +159,13 @@
       />
     </div>
     <input
-      #box
+      #inputEl
       type="checkbox"
       class="checkbox"
-      value="{{ item.value.val }}"
-      placeholder="{{
-        item.value.val != undefined
-          ? item.value.val
-          : 'Enter ' + toKeyFormat(item.key)
-      }}"
-      value="{{ item.value.val }}"
-      (focusout)="addToMap(toKeyFormat(item.key), box.value, item.value.type)"
+      [checked]="item.value.val"
+      (change)="
+        addToMap(toKeyFormat(item.key), inputEl.checked, item.value.type)
+      "
     />
   </div>
 
