@@ -1,0 +1,88 @@
+:host {
+  .wrapper {
+    margin-bottom: 7px;
+    max-width: 600px;
+    min-width: 600px;
+    max-height: 30px;
+    position: relative;
+    color: #264653;
+    font-size: small;
+  }
+  .container {
+    cursor: pointer;
+    display: flex;
+    max-width: 600px;
+    min-width: 600px;
+    max-height: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    justify-content: space-between;
+
+    border: 0.5px solid transparent;
+    outline: none;
+    overflow: hidden;
+    border-color: #a3a2a2ca;
+    background-color: rgba(249, 246, 246, 0.885);
+    border-radius: 3px;
+    transition: all 0.1s;
+    color: rgba(80, 79, 79, 0.771);
+
+    &:hover,
+    &:focus {
+      border: 1px solid #4a9dec;
+      box-shadow: 0px 0px 0px 1px rgb(74, 157, 236, 20%);
+      background-color: white;
+      transition: all 250ms linear;
+    }
+
+    .input {
+      //margin-right: 10rem;
+      border: 0.5px solid transparent;
+      width: 16em;
+      height: 2em;
+      outline: none;
+      overflow: scroll;
+      border-color: #a3a2a2;
+      border-radius: 3px;
+      border-width: 0.5px;
+      transition: all 0.1s;
+      margin-left: 50px;
+
+      &:hover,
+      &:focus {
+        border: 0.5px solid #4a9dec;
+        box-shadow: 1px 0px 9px 9px rgba(74, 157, 236, 0.2);
+        background-color: white;
+      }
+    }
+  }
+  .option-container {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 0px 0px,
+      rgba(0, 0, 0, 0.12) 1px 3px 0px, rgba(0, 0, 0, 0.12) 0px 4px 6px;
+
+    z-index: 1000;
+    position: absolute;
+    background-color: rgba(249, 246, 246, 0.885);
+    min-width: 605px;
+    max-width: 605px;
+    max-height: 600px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    border-radius: 0 0 5px 5px;
+    padding: 7px;
+    .option {
+      padding: 5px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.158);
+      &:last-child {
+        border-bottom: unset;
+      }
+      &:hover {
+        padding-left: 10px;
+        border-radius: 0 0 1px 1px;
+        background-color: #4a9eec94;
+      }
+    }
+  }
+}

@@ -20,14 +20,12 @@ import { CardComponent } from './components/card/card.component';
 import { ConfigModalComponent } from './components/config-modal/config-modal.component';
 import { ConfigOptionsComponent } from './components/config-options/config-options.component';
 import { SelectModule } from './components/utilityComponents/select/select.component.module';
-import { InputGroupModule } from 'primeng/inputgroup';
-import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
-import { InputTextModule } from 'primeng/inputtext';
-import { FloatLabelModule } from 'primeng/floatlabel';
-import { ButtonModule } from 'primeng/button';
+
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ResourceConfigFieldsComponent } from './components/resource-config-fields/resource-config-fields.component';
 import { KeyValueArrayComponent } from './components/utilityComponents/key-value-array/key-value-array.component';
+import { APP_BASE_HREF } from '@angular/common';
+import { ResourceMenuModule } from './components/utilityComponents/resource-menu/resource-menu.component.module';
 
 @NgModule({
   declarations: [
@@ -45,6 +43,8 @@ import { KeyValueArrayComponent } from './components/utilityComponents/key-value
     ConfigOptionsComponent,
     KeyValueArrayComponent,
   ],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/app' }],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     FontAwesomeModule,
@@ -56,14 +56,8 @@ import { KeyValueArrayComponent } from './components/utilityComponents/key-value
     MatButtonModule,
     HttpClientModule,
     SelectModule,
-    InputGroupModule,
-    InputGroupAddonModule,
-    InputTextModule,
-    FloatLabelModule,
-    ButtonModule,
     MatTooltipModule,
+    ResourceMenuModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent],
 })
 export class AppModule {}
