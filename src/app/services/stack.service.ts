@@ -10,21 +10,17 @@ export class StackService {
   constructor(private _http: HttpClient) {}
 
   public deploy(items: CloudResource[]): Observable<string> {
-    return this._http.post(
-      'http://localhost:8080/deploy',
-      JSON.stringify(items),
-      {
-        responseType: 'text',
-      }
-    );
+    return this._http.post('/api/deploy', JSON.stringify(items), {
+      responseType: 'text',
+    });
   }
 
   public destroyStack(): Observable<object> {
-    return this._http.get('http://localhost:8080/stack');
+    return this._http.get('/api/stack');
   }
 
   public getProjectConfig(): Observable<object> {
-    return this._http.get('http://localhost:8080/getProjectConfig');
+    return this._http.get('/api/getProjectConfig');
   }
   public uploadProjectConfig(
     file: File,
@@ -47,9 +43,6 @@ export class StackService {
     if (awsSecretKey != undefined) {
       formParams.append('awsSecretKey', awsSecretKey);
     }
-    return this._http.post(
-      'http://localhost:8080/uploadProjectConfig',
-      formParams
-    );
+    return this._http.post('/api/uploadProjectConfig', formParams);
   }
 }

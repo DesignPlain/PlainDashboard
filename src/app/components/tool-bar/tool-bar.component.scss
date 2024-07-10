@@ -6,6 +6,7 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    width: 70%;
 
     .apply {
       margin: 10px;
@@ -31,5 +32,15 @@
         color: #1fe71f;
       }
     }
+  }
+
+  .menu {
+    position: absolute;
+    display: flex;
+    top: 10px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
   }
 }

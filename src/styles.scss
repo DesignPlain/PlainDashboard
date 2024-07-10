@@ -7,8 +7,8 @@
   body {
     margin: 0;
     min-height: 100vh;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
     .interactive-close-btn {
       overflow: hidden;
@@ -47,5 +47,3 @@
     }
   }
 }
-
-@layer primeng, reset;

@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <input
+    #box
+    type="text"
+    class="container"
+    (click)="expandOptions()"
+    placeholder="{{ selected }}"
+    (input)="change($event)"
+    autofocus
+  />
+  <div *ngIf="expand" class="option-container">
+    <div class="option" *ngFor="let item of items" (click)="selectItem(item)">
+      {{ getResourceString(item) }}
+    </div>
+  </div>
+</div>

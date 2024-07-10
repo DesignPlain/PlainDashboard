@@ -9,7 +9,7 @@ export class CloudResource {
   public resourceType: GCP_ResourceType | AWS_ResourceType = 0;
   public providerType: ProviderType = 0;
   public resourceConfig: Resource | undefined = new DefaultResource();
-  public position = { x: 0, y: 0 };
+  public position = { x: 100, y: 100 };
   public shape = { width: 130, height: 40 };
   public iconSrc: string = '';
   public status: ResourceStatus = ResourceStatus.Draft;

@@ -9,7 +9,7 @@
 }
 .add {
   position: relative;
-  padding: 0px 2px 0px 2px;
+  padding: 1px 4px 1px 4px;
   align-items: center;
   align-content: center;
   color: black;
@@ -22,13 +22,13 @@
   border-style: solid;
 
   &:hover {
-    color: rgba(0, 161, 8, 0.814);
+    color: rgba(0, 190, 6, 0.875);
   }
 }
 
 .close {
   position: relative;
-  padding: 0px 2px 0px 2px;
+  padding: 1px 4px 1px 4px;
   align-items: center;
   align-content: center;
   color: rgb(255, 255, 255);
@@ -36,16 +36,17 @@
   background-color: rgb(0, 0, 0);
   border-radius: 100px;
 
-  border-color: black;
+  border-color: rgba(0, 0, 0, 0.297);
   border-width: 1px;
   border-style: solid;
 
   left: 1.6em;
   top: -0.6em;
   margin-right: 10px;
+  aspect-ratio: 1;
 
   &:hover {
-    color: rgba(190, 0, 0, 0.814);
+    color: rgba(0, 190, 6, 0.875);
   }
 }
 
@@ -66,8 +67,7 @@
   justify-content: center;
   align-items: flex-start;
   margin-bottom: 5px;
-  box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1),
-    0px 0px 3px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1), 0px 0px 3px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffffd5;
 }
 
