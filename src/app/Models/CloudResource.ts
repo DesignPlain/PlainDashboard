@@ -10,7 +10,7 @@ export class CloudResource {
   public providerType: ProviderType = 0;
   public resourceConfig: Resource | undefined = new DefaultResource();
   public position = { x: 100, y: 100 };
-  public shape = { width: 130, height: 40 };
+  public shape = { width: 110, height: 40 };
   public iconSrc: string = '';
   public status: ResourceStatus = ResourceStatus.Draft;
   public inlets: string[] = [];

@@ -27,7 +27,7 @@ export class LineComponent {
   public lineReady: boolean = false;
 
   // Adjust to change the curvature behavior
-  private readonly curveAdjuster = 0.4;
+  private readonly curveAdjuster = 0.6;
 
   ngOnInit(): void {
     this.edgeObserver.subscribe((value) => {

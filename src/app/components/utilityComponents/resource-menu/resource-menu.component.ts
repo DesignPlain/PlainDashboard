@@ -5,65 +5,101 @@ import { GCP_ResourceType } from 'src/app/Models/Codegen/gcp_resources/ResourceT
 import { AddComponentService } from 'src/app/services/add-component.service';
 import { VisualResource } from '../../resource-list/VisualResource';
 import { ProviderType } from 'src/app/enum/ProviderType';
+import { AWS_ResourceProperties } from 'src/app/Models/Codegen/aws_resources/ResourceProperties';
+import { AWS_ResourceType } from 'src/app/Models/Codegen/aws_resources/ResourceType';
 @Component({
   selector: 'resource-menu',
   templateUrl: './resource-menu.component.html',
   styleUrls: ['./resource-menu.component.scss'],
 })
 export class ResourceMenuComponent {
+  static resources: number[] = [
+    ...GCP_ResourceProperties.ResourceFactoryMap.keys(),
+    ...AWS_ResourceProperties.ResourceFactoryMap1.keys(),
+    ...AWS_ResourceProperties.ResourceFactoryMap2.keys(),
+  ].map((x) => x);
+
+  GCP_ResourceType = GCP_ResourceType;
+  AWS_ResourceType = AWS_ResourceType;
   public faChevronDown = faChevronDown;
   @Input()
   public selected: string = 'Please select';
-
-  resources: number[] = [
-    ...GCP_ResourceProperties.ResourceFactoryMap.keys(),
-  ].map((x) => x);
-
-  public items = this.resources;
-
-  change(event: any) {
-    this.items = this.resources.filter((x) =>
-      GCP_ResourceType[x].toLowerCase().includes(event.target.value)
-    );
-  }
-
+  public items = ResourceMenuComponent.resources;
   public expand: boolean = true;
-  GCP_ResourceType = GCP_ResourceType;
 
   constructor(private _addComponentService: AddComponentService) {}
+
   addComponent(resource: VisualResource) {
     //console.log(componentName);
     this._addComponentService.components.next(resource);
   }
 
-  public expandOptions() {
+  change(event: any) {
+    this.items = ResourceMenuComponent.resources.filter((x) => {
+      let str =
+        x < AWS_ResourceType.ACCESSANALYZER_ANALYZER
+          ? GCP_ResourceType[x]
+          : AWS_ResourceType[x];
+
+      str = str.toLowerCase();
+      return event.target.value
+        .toLowerCase()
+        .split(' ')
+        .every((element: string) => str.includes(element));
+    });
+  }
+
+  expandOptions() {
     this.expand = true;
   }
 
   @Output()
-  public done = new EventEmitter();
+  done = new EventEmitter();
 
-  public selectItem(item: number) {
+  public selectItem(res_index: number) {
     this.expand = false;
+    let res: VisualResource;
+    if (res_index < AWS_ResourceType.ACCESSANALYZER_ANALYZER) {
+      res = new VisualResource(
+        this.selected,
+        ProviderType.GCP,
+        res_index,
+        '../../../assets/GCPIcons/gcp-logo.png'
+      );
+    } else {
+      res = new VisualResource(
+        this.selected,
+        ProviderType.AWS,
+        res_index,
+        '../../../assets/aws-logo.png'
+      );
+    }
 
-    let res = new VisualResource(
-      this.selected,
-      ProviderType.GCP,
-      item,
-      '../../../assets/GCPIcons/gcp-logo.png'
-    );
     this.addComponent(res);
     this.done.emit();
   }
 
-  public getResourceString(res_index: number) {
-    let str = GCP_ResourceType[res_index].toLowerCase().replace('_', ' ');
+  public getResourceString(res_index: number): String[] {
+    let str = 'NotFound';
+    let logo_path = 'NotFound';
+    if (res_index < AWS_ResourceType.ACCESSANALYZER_ANALYZER) {
+      str = GCP_ResourceType[res_index].toLowerCase().replace('_', ' ');
+      logo_path = '../../../assets/GCPIcons/gcp-logo.png';
+    } else {
+      str = AWS_ResourceType[res_index].toLowerCase().replace('_', ' ');
+      logo_path = '../../../assets/aws-logo.png';
+    }
+
     let sp_index = str.indexOf(' ');
-    return (
+
+    let result = [
       str.charAt(0).toUpperCase() +
-      str.slice(1, sp_index + 1) +
-      str.charAt(sp_index + 1).toUpperCase() +
-      str.slice(sp_index + 2)
-    );
+        str.slice(1, sp_index + 1) +
+        str.charAt(sp_index + 1).toUpperCase() +
+        str.slice(sp_index + 2),
+      logo_path,
+    ];
+
+    return result;
   }
 }

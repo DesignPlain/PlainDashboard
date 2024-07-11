@@ -38,6 +38,11 @@ export class ResourceConfigFieldsComponent implements OnInit {
     return str[0].toUpperCase() + str.substring(1);
   }
 
+  timeout(): void {
+    setTimeout(() => {
+      this.show = '';
+    }, 1000);
+  }
   toStoreFormat(str: string): string {
     return str[0].toLowerCase() + str.substring(1);
   }

@@ -1,5 +1,7 @@
 <div class="container">
-  <h2 class="header">{{ "Configure " + getResourceName() }}</h2>
+  <h2 class="header">
+    {{ getResourceName().replace("_", " ") + " CONFIGURATION" }}
+  </h2>
   <div class="inputform">
     <app-resource-config-fields
       class="subform"

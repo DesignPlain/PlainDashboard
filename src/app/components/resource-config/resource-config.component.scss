@@ -7,10 +7,10 @@
 
   .container {
     position: relative;
-    min-width: 77rem;
-    min-height: 55rem;
-    max-width: 77rem;
-    max-height: 55rem;
+    min-width: 80vw;
+    min-height: 90vh;
+    max-width: 80vw;
+    max-height: 90vh;
     background-color: rgb(255, 255, 255);
     padding: 20px;
     padding-left: 50px;
@@ -23,9 +23,10 @@
       margin-top: 2rem;
       margin-left: 2rem;
       font-weight: 800;
-      color: #60045786;
+      color: #290225af;
       font-size: large;
       align-self: center;
+      text-decoration: underline;
     }
 
     .inputform {
@@ -33,9 +34,10 @@
       padding-left: 2rem;
 
       margin-left: 2rem;
-      max-width: 91%;
-      max-height: 48rem;
-      min-height: 38rem;
+      min-width: 90vw;
+      min-height: 70vh;
+      max-width: 90vw;
+      max-height: 70vh;
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
@@ -52,7 +54,7 @@
 
     .subform {
       height: 100%;
-      padding-bottom: 3rem;
+      padding-bottom: 10rem;
       margin-left: 2rem;
       overflow: scroll;
       scrollbar-width: none;
@@ -67,10 +69,10 @@
       align-items: center;
       padding: 10px;
       border-radius: 4px;
-      max-height: 50px;
-      min-height: 50px;
-      min-width: 100px;
-      max-width: 100px;
+      max-height: 40px;
+      min-height: 25px;
+      min-width: 80px;
+      max-width: 80px;
       text-align: center;
       background-image: radial-gradient(#000000 0.2px, #85da3f 0.2px);
       color: #0c600c;

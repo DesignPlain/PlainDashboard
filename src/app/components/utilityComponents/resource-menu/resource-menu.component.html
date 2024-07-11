@@ -10,7 +10,9 @@
   />
   <div *ngIf="expand" class="option-container">
     <div class="option" *ngFor="let item of items" (click)="selectItem(item)">
-      {{ getResourceString(item) }}
+      {{ getResourceString(item)[0] }}
+
+      <img class="listIcon" src="{{ getResourceString(item)[1] }}" />
     </div>
   </div>
 </div>
