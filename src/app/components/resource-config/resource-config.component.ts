@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
   faClose,
@@ -46,15 +54,14 @@ export class DynamicUIPropState {
   styleUrls: ['./resource-config.component.scss'],
 })
 export class ResourceConfigComponent implements OnInit {
-  constructor(private _modalDialogService: ModalDialogService) {}
+  constructor(
+    private _modalDialogService: ModalDialogService,
+    private el: ElementRef
+  ) {}
 
   public faClose: IconDefinition = faClose;
   public faInfo: IconDefinition = faInfoCircle;
   public faGear: IconDefinition = faGear;
-
-  public closeModal() {
-    this._modalDialogService.ActiveModal.dispose();
-  }
 
   public show = '';
   @Input() currentResource: GCP_ResourceType | AWS_ResourceType | undefined;
@@ -70,6 +77,10 @@ export class ResourceConfigComponent implements OnInit {
     //console.log(this.config);
   }
 
+  public closeModal() {
+    this._modalDialogService.ActiveModal.dispose();
+  }
+
   @Output()
   configUpdateEvent = new EventEmitter<{ id: number; res: Resource }>();
 
@@ -78,7 +89,10 @@ export class ResourceConfigComponent implements OnInit {
   check = false;
 
   getResourceName(): string {
-    if (this.currentResource != undefined && this.currentResource > 500) {
+    if (
+      this.currentResource != undefined &&
+      this.currentResource > AWS_ResourceType.ACCESSANALYZER_ANALYZER
+    ) {
       return AWS_ResourceType[this.currentResource as AWS_ResourceType];
     } else {
       return GCP_ResourceType[this.currentResource as GCP_ResourceType];

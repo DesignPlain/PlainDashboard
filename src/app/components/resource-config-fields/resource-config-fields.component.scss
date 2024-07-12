@@ -31,9 +31,24 @@
     gap: 10px;
   }
 
+  .add {
+    position: relative;
+    padding: 1px 4px 1px 4px;
+    align-items: center;
+    align-content: center;
+    color: #264653;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100px;
+    left: -20px;
+
+    &:hover {
+      color: rgba(0, 190, 6, 0.875);
+    }
+  }
+
   .span-check {
     position: relative;
-
     color: #264653;
   }
 
@@ -54,14 +69,22 @@
     color: #264653;
   }
 
+  span {
+    color: #264653;
+  }
+
   .arr-class {
     margin-left: 50px;
   }
 
-  span {
+  .span {
+    position: relative;
     width: 22em;
     margin-right: 5px;
-    color: #264653;
+  }
+
+  .i-up {
+    position: absolute;
   }
 
   .sub-input-object {
@@ -86,6 +109,38 @@
     background-color: #ffffffd5;
     margin-left: 50px;
     padding-bottom: 20px;
+  }
+
+  .sub-object {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-left: 50px;
+    gap: 7px;
+    border-radius: 3px;
+    padding: 30px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    min-width: 10em;
+    overflow: unset;
+    align-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 5px;
+    box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1),
+      0px 0px 3px 0 rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8352941176);
+  }
+
+  .add-title {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: small;
+    width: 18em;
+    justify-self: flex-start;
   }
 
   .tool-tip {
@@ -117,9 +172,16 @@
     left: -5px;
   }
 
+  fa-icon {
+    color: #264653;
+    &:hover {
+      color: rgb(0, 0, 0);
+    }
+  }
+
   .restart-icon {
     position: relative;
-    color: black;
+    color: #264653;
     font-size: small;
     left: 5px;
   }
