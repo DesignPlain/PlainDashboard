@@ -12,14 +12,13 @@
   padding: 1px 4px 1px 4px;
   align-items: center;
   align-content: center;
-  color: black;
   text-align: center;
   background-color: rgb(255, 255, 255);
   border-radius: 100px;
   left: -20px;
-  border-color: black;
-  border-width: 1px;
-  border-style: solid;
+  fa-icon {
+    color: #264653;
+  }
 
   &:hover {
     color: rgba(0, 190, 6, 0.875);
@@ -31,12 +30,9 @@
   padding: 1px 4px 1px 4px;
   align-items: center;
   align-content: center;
-  color: rgb(255, 255, 255);
+  color: #264653;
   text-align: center;
-  background-color: rgb(0, 0, 0);
   border-radius: 100px;
-
-  border-color: rgba(0, 0, 0, 0.297);
   border-width: 1px;
   border-style: solid;
 
@@ -46,7 +42,7 @@
   aspect-ratio: 1;
 
   &:hover {
-    color: rgba(0, 190, 6, 0.875);
+    color: rgb(0, 0, 0);
   }
 }
 
@@ -69,6 +65,7 @@
   margin-bottom: 5px;
   box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1), 0px 0px 3px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffffd5;
+  color: #264653;
 }
 
 .sub-entry-object {
@@ -91,6 +88,7 @@
   margin-bottom: 5px;
   box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1), 0px 0px 3px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffffd5;
+  color: #264653;
 
   .entry {
     position: relative;
@@ -109,5 +107,12 @@
     padding-bottom: 10px;
 
     left: -20px;
+  }
+
+  fa-icon {
+    color: #264653;
+    &:hover {
+      color: rgb(0, 0, 0);
+    }
   }
 }

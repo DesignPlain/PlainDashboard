@@ -30,7 +30,7 @@ export class LocalStorageService {
   }
 
   public setLocalState(items: CloudResource[]): void {
-    console.log('Saving state: ', items, JSON.stringify(items, replacer));
+    //console.log('Saving state: ', items, JSON.stringify(items, replacer));
     localStorage.setItem('data', JSON.stringify(items, replacer));
   }
 }

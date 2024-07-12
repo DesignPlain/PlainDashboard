@@ -19,9 +19,7 @@
       rgba(0, 0, 0, 0.12) 0px 0px 5px 0px, rgba(0, 0, 0, 0.12) 0px 0px 5px 0px;
   }
   .container {
-    cursor: text;
     display: flex;
-
     width: 96%;
     margin-top: 2px;
     max-height: 30px;
@@ -48,10 +46,11 @@
     }
 
     .input {
+      cursor: text;
       //margin-right: 10rem;
       border: 0.5px solid transparent;
       width: 16em;
-      height: 2em;
+      height: 1.5em;
       outline: none;
       overflow: scroll;
       border-color: #a3a2a2;
@@ -81,6 +80,7 @@
     margin-bottom: 7px;
     margin-top: 3px;
     .option {
+      cursor: pointer;
       padding: 5px;
       padding-top: 6px;
       padding-bottom: 6px;

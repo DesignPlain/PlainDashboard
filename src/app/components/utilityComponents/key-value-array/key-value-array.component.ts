@@ -4,7 +4,12 @@ import {
   faArrowAltCircleDown,
   faArrowAltCircleUp,
 } from '@fortawesome/free-regular-svg-icons';
-import { faAdd, faClose, faCross } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAdd,
+  faCirclePlus,
+  faClose,
+  faCross,
+} from '@fortawesome/free-solid-svg-icons';
 import { DynamicUIPropState } from 'src/app/components/resource-config/resource-config.component';
 import { InputType } from 'src/app/enum/InputType';
 
@@ -33,7 +38,7 @@ export class KeyValueArrayComponent implements OnInit {
   listMap: Map<string, any>[] = [];
 
   public faClose: IconDefinition = faClose;
-  public faAdd: IconDefinition = faAdd;
+  public faCirclePlus: IconDefinition = faCirclePlus;
   public faDown: IconDefinition = faArrowAltCircleDown;
   public faUp: IconDefinition = faArrowAltCircleUp;
 

@@ -1,12 +1,20 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Icon, IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { faInfoCircle, faRotate } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCirclePlus,
+  faInfoCircle,
+  faRotate,
+} from '@fortawesome/free-solid-svg-icons';
 import {
   DynamicUIPropState,
   DynamicUIProps,
 } from '../resource-config/resource-config.component';
 import { InputType } from 'src/app/enum/InputType';
 import { Mode } from 'src/app/components/utilityComponents/key-value-array/key-value-array.component';
+import {
+  faArrowAltCircleDown,
+  faArrowAltCircleUp,
+} from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-resource-config-fields',
@@ -33,6 +41,33 @@ export class ResourceConfigFieldsComponent implements OnInit {
   listMap = new Map<string, any>();
   check = false;
   Mode = Mode;
+  faCirclePlus = faCirclePlus;
+  faDown = faArrowAltCircleDown;
+  faUp = faArrowAltCircleUp;
+
+  hasContent(arg: Map<string, DynamicUIPropState>) {
+    //let hasContent = [...arg.values()].every((x) => x.val == undefined);
+    return true;
+  }
+
+  public showObj(ele: any): boolean {
+    let val = ele.getAttribute('data');
+    if (val == 'false') {
+      return false;
+    }
+
+    return true;
+  }
+
+  public toggle(ele: any) {
+    let val = ele.getAttribute('data');
+
+    if (val == 'false') {
+      ele.setAttribute('data', true);
+    } else {
+      ele.setAttribute('data', false);
+    }
+  }
 
   toKeyFormat(str: string): string {
     return str[0].toUpperCase() + str.substring(1);
@@ -51,7 +86,11 @@ export class ResourceConfigFieldsComponent implements OnInit {
     this.check = true;
     switch (type) {
       case InputType.String:
+        //if ((data as string).trim() != '') {
         this.listMap.set(this.toStoreFormat(name), data as string);
+        //} else {
+        // this.listMap.set(this.toStoreFormat(name), undefined);
+        //}
         break;
       case InputType.Number:
         this.listMap.set(this.toStoreFormat(name), Number(data));
@@ -100,7 +139,7 @@ export class ResourceConfigFieldsComponent implements OnInit {
   submit() {
     let currentConfig = new Map<string, any>();
     this.config.forEach((k, v) => {
-      if (this.listMap.get(v) == undefined) {
+      if (!this.listMap.has(v)) {
         currentConfig.set(v, k.val);
       }
     });
