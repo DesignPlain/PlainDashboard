@@ -7,6 +7,7 @@
         (mouseenter)="show = toKeyFormat(item.key)"
         (mouseleave)="show = ''"
         [icon]="faInfo"
+        class="i1"
       />
       <div *ngIf="show == toKeyFormat(item.key)" class="tool-tip">
         {{ item.value.description }}
@@ -36,11 +37,11 @@
 
   <div
     *ngSwitchCase="inputType.Object"
-    class="in-sub"
+    class="in"
     #res
     [attr.data]="!hasContent(item.value.members)"
   >
-    <div>
+    <div class="span">
       <span class="span">{{ toKeyFormat(item.key) }}</span>
       <span *ngIf="item.value.isRequired" class="req_icon">*</span>
       <fa-icon
@@ -121,7 +122,7 @@
   </div>
 
   <div *ngSwitchCase="inputType.File" class="in">
-    <div>
+    <div class="span">
       <span class="span">{{ toKeyFormat(item.key) }}</span>
       <span *ngIf="item.value.isRequired" class="req_icon">*</span>
       <fa-icon
@@ -156,8 +157,8 @@
     />
   </div>
 
-  <div *ngSwitchCase="inputType.Bool" class="in-check">
-    <div class="span-check">
+  <div *ngSwitchCase="inputType.Bool" class="in">
+    <div class="span">
       <span class="span">{{ toKeyFormat(item.key) }}</span>
       <span *ngIf="item.value.isRequired" class="req_icon">*</span>
       <fa-icon
@@ -177,19 +178,23 @@
         *ngIf="item.value.willReplaceOnChanges"
       />
     </div>
-    <input
-      #inputEl
-      type="checkbox"
-      class="checkbox"
-      [checked]="item.value.val"
-      (change)="
-        addToMap(toKeyFormat(item.key), inputEl.checked, item.value.type)
-      "
-    />
+
+    <div class="checkbox-wrapper-19">
+      <input
+        #inputEl
+        type="checkbox"
+        id="{{ item.key }}"
+        [checked]="item.value.val"
+        (change)="
+          addToMap(toKeyFormat(item.key), inputEl.checked, item.value.type)
+        "
+      />
+      <label for="{{ item.key }}" class="check-box"></label>
+    </div>
   </div>
 
   <div *ngSwitchCase="inputType.Array" class="in">
-    <div>
+    <div class="span">
       <span class="span">{{ toKeyFormat(item.key) }}</span>
       <span *ngIf="item.value.isRequired" class="req_icon">*</span>
       <fa-icon
@@ -220,7 +225,7 @@
   </div>
 
   <div *ngSwitchCase="inputType.Map" class="in">
-    <div>
+    <div class="span">
       <span class="span">{{ toKeyFormat(item.key) }}</span>
       <span *ngIf="item.value.isRequired" class="req_icon">*</span>
       <fa-icon

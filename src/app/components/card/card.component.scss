@@ -23,7 +23,7 @@
 
     &:hover {
       z-index: 1000;
-      background-image: radial-gradient(#ffffff 0.3px, #f0cece 0.5px);
+      background-image: radial-gradient(#ffffff 0.3px, #f0ceceac 0.5px);
       animation-name: bounce;
       opacity: 1;
 
@@ -85,7 +85,7 @@
       border-radius: 3px;
 
       &:hover {
-        background-image: radial-gradient(#ffffff 0.3px, #f0cecece 0.5px);
+        background-image: radial-gradient(#ffffff 0.3px, #f0ceceac 0.5px);
       }
 
       button {
@@ -113,7 +113,7 @@
       border-radius: 3px;
 
       &:hover {
-        background-image: radial-gradient(#ffffff 0.3px, #f0cecece 0.5px);
+        background-image: radial-gradient(#ffffff 0.3px, #f0ceceac 0.5px);
       }
 
       button {
@@ -124,6 +124,8 @@
         left: 34px;
         top: 13px;
       }
+
+      resize: both;
     }
 
     .listIcon {

@@ -12,8 +12,8 @@ import {
 import { InputType } from 'src/app/enum/InputType';
 import { Mode } from 'src/app/components/utilityComponents/key-value-array/key-value-array.component';
 import {
-  faArrowAltCircleDown,
-  faArrowAltCircleUp,
+  faSquareCaretDown,
+  faSquareCaretUp,
 } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
@@ -42,8 +42,8 @@ export class ResourceConfigFieldsComponent implements OnInit {
   check = false;
   Mode = Mode;
   faCirclePlus = faCirclePlus;
-  faDown = faArrowAltCircleDown;
-  faUp = faArrowAltCircleUp;
+  faDown = faSquareCaretDown;
+  faUp = faSquareCaretUp;
 
   hasContent(arg: Map<string, DynamicUIPropState>) {
     //let hasContent = [...arg.values()].every((x) => x.val == undefined);

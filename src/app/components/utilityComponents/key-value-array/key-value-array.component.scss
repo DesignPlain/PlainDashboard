@@ -56,13 +56,14 @@
   padding: 30px;
   padding-top: 7px;
   padding-bottom: 7px;
-  min-width: 10em;
+  min-width: 13em;
   overflow: unset;
 
   align-content: flex-start;
   justify-content: center;
   align-items: flex-start;
   margin-bottom: 5px;
+  margin-right: 5px;
   box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1), 0px 0px 3px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffffd5;
   color: #264653;
@@ -78,14 +79,16 @@
   padding-left: 40px;
   padding-top: 0px;
   padding-bottom: 0px;
-  min-width: 10em;
+  min-width: 13em;
 
   overflow: unset;
 
   align-content: flex-start;
   justify-content: center;
   align-items: flex-start;
-  margin-bottom: 5px;
+
+  margin-bottom: 15px;
+  padding-bottom: 15px;
   box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1), 0px 0px 3px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffffd5;
   color: #264653;
@@ -97,7 +100,7 @@
     gap: 5px;
     flex-direction: row;
     align-items: center;
-    min-width: 10em;
+    min-width: 13em;
     font-size: small;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -110,7 +113,8 @@
   }
 
   fa-icon {
-    color: #264653;
+    font-size: small;
+    color: #264653e0;
     &:hover {
       color: rgb(0, 0, 0);
     }

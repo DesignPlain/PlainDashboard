@@ -100,6 +100,7 @@ export class CardComponent {
         ref.getBoundingClientRect().bottom - ref.getBoundingClientRect().top
       ) /
         2;
+
     this.startConnectionClicked.emit({
       outputPositionX: centerX,
       outputPositionY: centerY,

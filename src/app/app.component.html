@@ -1,5 +1,12 @@
-<div class="container">
-  <div class="left">
+<div class="container" #res [attr.data]="false">
+  <div class="bar" *ngIf="showObj(res)"></div>
+  <div class="left-i" *ngIf="!showObj(res)">
+    <fa-icon [icon]="faAngleLeft" (click)="toggle(res)"></fa-icon>
+  </div>
+  <div class="right-i" *ngIf="showObj(res)">
+    <fa-icon [icon]="faAngleRight" (click)="toggle(res)"></fa-icon>
+  </div>
+  <div class="left" *ngIf="!showObj(res)">
     <app-resource-list></app-resource-list>
   </div>
   <div class="right">
