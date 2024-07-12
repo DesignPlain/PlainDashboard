@@ -9,6 +9,13 @@ import { CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';
 import { OverlayConfig } from '@angular/cdk/overlay';
 import { GCP_ResourceType } from 'src/app/Models/Codegen/gcp_resources/ResourceType';
 import { AWS_ResourceType } from 'src/app/Models/Codegen/aws_resources/ResourceType';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-card',
@@ -93,6 +100,7 @@ export class CardComponent {
         ref.getBoundingClientRect().bottom - ref.getBoundingClientRect().top
       ) /
         2;
+
     this.startConnectionClicked.emit({
       outputPositionX: centerX,
       outputPositionY: centerY,
