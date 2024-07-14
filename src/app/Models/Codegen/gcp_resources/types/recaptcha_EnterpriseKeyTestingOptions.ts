@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface recaptcha_EnterpriseKeyTestingOptions {
   // For challenge-based keys only (CHECKBOX, INVISIBLE), all challenge requests for this site will return nocaptcha if NOCAPTCHA, or an unsolvable challenge if UNSOLVABLE_CHALLENGE. Possible values: TESTING_CHALLENGE_UNSPECIFIED, NOCAPTCHA, UNSOLVABLE_CHALLENGE

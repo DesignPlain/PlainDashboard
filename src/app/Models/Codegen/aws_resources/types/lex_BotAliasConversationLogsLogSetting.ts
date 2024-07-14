@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface lex_BotAliasConversationLogsLogSetting {
   // The prefix of the S3 object key for `AUDIO` logs or the log stream name for `TEXT` logs.

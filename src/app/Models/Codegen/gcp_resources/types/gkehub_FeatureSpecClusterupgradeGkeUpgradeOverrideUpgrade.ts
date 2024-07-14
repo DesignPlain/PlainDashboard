@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade {
   // Version of the upgrade, e.g., "1.22.1-gke.100". It should be a valid version. It must not exceet 99 characters.

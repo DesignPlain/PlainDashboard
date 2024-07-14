@@ -5,7 +5,7 @@ import {
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface SnapshotArgs {
   // Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.

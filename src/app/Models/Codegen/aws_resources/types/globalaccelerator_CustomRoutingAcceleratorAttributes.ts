@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface globalaccelerator_CustomRoutingAcceleratorAttributes {
   // Indicates whether flow logs are enabled. Defaults to `false`. Valid values: `true`, `false`.

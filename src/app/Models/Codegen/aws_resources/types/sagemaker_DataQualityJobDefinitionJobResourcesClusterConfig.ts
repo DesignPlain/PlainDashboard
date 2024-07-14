@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface sagemaker_DataQualityJobDefinitionJobResourcesClusterConfig {
   // The number of ML compute instances to use in the model monitoring job. For distributed processing jobs, specify a value greater than 1.

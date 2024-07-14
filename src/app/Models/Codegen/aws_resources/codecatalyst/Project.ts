@@ -5,7 +5,7 @@ import {
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface ProjectArgs {
   // The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.

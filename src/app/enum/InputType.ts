@@ -1,4 +1,4 @@
-import { DynamicUIProps } from '../components/resource-config/resource-config.component';
+import { DynamicUIProps } from '../components/resource-config/DynamicUIProps';
 
 export enum InputType {
   String,

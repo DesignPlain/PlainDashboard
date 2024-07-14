@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface cloudformation_StackSetInstanceOperationPreferences {
   // The number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the operation in that Region.

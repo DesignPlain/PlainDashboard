@@ -5,7 +5,7 @@ import {
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface DashboardArgs {
   // The detailed information about the dashboard, including what widgets are included and their location on the dashboard. You can read more about the body structure in the [documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html).

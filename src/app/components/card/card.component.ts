@@ -4,6 +4,9 @@ import {
   faTrash,
   faGear,
   IconDefinition,
+  faCircle,
+  faCodeCommit,
+  faCircleDot,
 } from '@fortawesome/free-solid-svg-icons';
 import { CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';
 import { OverlayConfig } from '@angular/cdk/overlay';
@@ -16,6 +19,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { faHashnode } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-card',
@@ -65,6 +69,7 @@ export class CardComponent {
   // Initializing font awesome icons
   public faTrash: IconDefinition = faTrash;
   public faGear: IconDefinition = faGear;
+  public faCircle: IconDefinition = faCircleDot;
 
   public isGroup(): boolean {
     return (
@@ -88,18 +93,9 @@ export class CardComponent {
 
   public handleMouseDown(event: any, ref: HTMLElement): void {
     event.stopPropagation();
-    const centerX =
-      ref.getBoundingClientRect().left +
-      Math.abs(
-        ref.getBoundingClientRect().right - ref.getBoundingClientRect().left
-      ) /
-        2;
-    const centerY =
-      ref.getBoundingClientRect().top +
-      Math.abs(
-        ref.getBoundingClientRect().bottom - ref.getBoundingClientRect().top
-      ) /
-        2;
+    const centerX = ref.getBoundingClientRect().left + 6;
+
+    const centerY = ref.getBoundingClientRect().top + 6;
 
     this.startConnectionClicked.emit({
       outputPositionX: centerX,
@@ -110,18 +106,8 @@ export class CardComponent {
   public handleMouseEnter(event: any, ref: HTMLElement) {
     event.stopPropagation();
 
-    const centerX =
-      ref.getBoundingClientRect().left +
-      Math.abs(
-        ref.getBoundingClientRect().right - ref.getBoundingClientRect().left
-      ) /
-        2;
-    const centerY =
-      ref.getBoundingClientRect().top +
-      Math.abs(
-        ref.getBoundingClientRect().bottom - ref.getBoundingClientRect().top
-      ) /
-        2;
+    const centerX = ref.getBoundingClientRect().left + 6;
+    const centerY = ref.getBoundingClientRect().top + 6;
     this.mouseEntered.emit({
       inputPositionX: centerX,
       inputPositionY: centerY,

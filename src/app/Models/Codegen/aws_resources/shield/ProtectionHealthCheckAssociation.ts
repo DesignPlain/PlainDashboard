@@ -5,7 +5,7 @@ import {
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface ProtectionHealthCheckAssociationArgs {
   // The ARN (Amazon Resource Name) of the Route53 Health Check resource which will be associated to the protected resource.

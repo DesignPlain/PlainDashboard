@@ -5,7 +5,7 @@ import {
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface ResourcePolicyArgs {
   // Content for the resource policy. The text must be correctly formatted JSON that complies with the syntax for the resource policy's type. See the [_AWS Organizations User Guide_](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_delegate_examples.html) for examples.

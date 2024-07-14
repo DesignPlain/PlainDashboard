@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface dataplex_ZoneDiscoverySpecCsvOptions {
   // Optional. Whether to disable the inference of data type for CSV data. If true, all columns will be registered as strings.

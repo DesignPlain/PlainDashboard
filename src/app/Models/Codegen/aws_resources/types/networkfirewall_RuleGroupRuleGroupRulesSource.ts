@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 import {
   networkfirewall_RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActions,
   networkfirewall_RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActions_GetTypes,

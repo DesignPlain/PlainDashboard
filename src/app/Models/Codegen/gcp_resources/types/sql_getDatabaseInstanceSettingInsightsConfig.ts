@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface sql_getDatabaseInstanceSettingInsightsConfig {
   // Number of query execution plans captured by Insights per minute for all queries combined. Between 0 and 20. Default to 5.

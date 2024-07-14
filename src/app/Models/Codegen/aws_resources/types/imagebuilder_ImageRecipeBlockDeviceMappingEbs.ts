@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface imagebuilder_ImageRecipeBlockDeviceMappingEbs {
   // Whether to delete the volume on termination. Defaults to unset, which is the value inherited from the parent image.

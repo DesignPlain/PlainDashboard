@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface osconfig_GuestPoliciesAssignmentOsType {
   // Targets VM instances with OS Inventory enabled and having the following OS short name, for example "debian" or "windows".

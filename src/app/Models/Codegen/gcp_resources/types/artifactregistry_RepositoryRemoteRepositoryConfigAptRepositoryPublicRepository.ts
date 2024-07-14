@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface artifactregistry_RepositoryRemoteRepositoryConfigAptRepositoryPublicRepository {
   // Specific repository from the base, e.g. `"centos/8-stream/BaseOS/x86_64/os"`

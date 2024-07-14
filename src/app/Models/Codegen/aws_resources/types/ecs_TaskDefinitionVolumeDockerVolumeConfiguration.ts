@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface ecs_TaskDefinitionVolumeDockerVolumeConfiguration {
   // If this value is `true`, the Docker volume is created if it does not already exist. -Note-: This field is only used if the scope is `shared`.

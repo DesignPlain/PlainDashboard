@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface securitylake_DataLakeConfigurationEncryptionConfiguration {
   // The id of KMS encryption key used by Amazon Security Lake to encrypt the Security Lake object.

@@ -5,7 +5,7 @@ import {
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface LbHttpsRedirectionPolicyArgs {
   // The Https Redirection state of the load balancer. `true` to activate http to https redirection or `false` to deactivate http to https redirection.

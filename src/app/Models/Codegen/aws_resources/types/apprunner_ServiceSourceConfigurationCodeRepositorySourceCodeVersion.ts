@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface apprunner_ServiceSourceConfigurationCodeRepositorySourceCodeVersion {
   // Type of version identifier. For a git-based repository, branches represent versions. Valid values: `BRANCH`.

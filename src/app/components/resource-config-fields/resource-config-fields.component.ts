@@ -1,14 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Icon, IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
   faCirclePlus,
   faInfoCircle,
   faRotate,
 } from '@fortawesome/free-solid-svg-icons';
-import {
-  DynamicUIPropState,
-  DynamicUIProps,
-} from '../resource-config/resource-config.component';
+import { DynamicUIPropState } from '../resource-config/DynamicUIPropState';
 import { InputType } from 'src/app/enum/InputType';
 import { Mode } from 'src/app/components/utilityComponents/key-value-array/key-value-array.component';
 import {
@@ -21,10 +18,7 @@ import {
   templateUrl: './resource-config-fields.component.html',
   styleUrl: './resource-config-fields.component.scss',
 })
-export class ResourceConfigFieldsComponent implements OnInit {
-  ngOnInit(): void {
-    console.log(this.parent, ' With Config:', this.config);
-  }
+export class ResourceConfigFieldsComponent {
   public faInfo: IconDefinition = faInfoCircle;
   public faRotate: IconDefinition = faRotate;
 

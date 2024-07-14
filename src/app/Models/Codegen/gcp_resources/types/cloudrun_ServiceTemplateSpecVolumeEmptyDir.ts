@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface cloudrun_ServiceTemplateSpecVolumeEmptyDir {
   // The medium on which the data is stored. The default is "" which means to use the node's default medium. Must be an empty string (default) or Memory.

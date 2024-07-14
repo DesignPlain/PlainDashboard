@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColor {
   // The amount of blue in the color as a value in the interval [0, 1].

@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleHeaderMatch {
   // A header with the contents of headerName must exist. The match takes place whether or not the request's header has a value.

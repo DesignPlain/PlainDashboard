@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface cognito_UserPoolAdminCreateUserConfigInviteMessageTemplate {
   // Message template for email messages. Must contain `{username}` and `{####}` placeholders, for username and temporary password, respectively.

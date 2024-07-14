@@ -7,7 +7,7 @@
     opacity: 0.9;
     background-image: radial-gradient(#ffffff 0.3px, #ffffff 0.5px);
     display: flex;
-    border: 0.05px solid rgb(79, 79, 79, 0.5);
+    border: 0.05px solid rgba(79, 79, 79, 0.2);
     padding: 10px;
     max-width: 400px;
     max-height: 200px;
@@ -19,11 +19,18 @@
     justify-content: center;
     opacity: 0.95;
 
-    overflow: hidden;
+    .inner {
+      position: absolute;
+      border-radius: 15px;
+      top: -20px;
+      right: -20px;
+      width: 40px;
+      height: 40px;
+    }
 
     &:hover {
       z-index: 1000;
-      background-image: radial-gradient(#ffffff 0.3px, #f0ceceac 0.5px);
+      background-image: radial-gradient(#ffffff 0.3px, #f0dbdbf0 0.5px);
       animation-name: bounce;
       opacity: 1;
 
@@ -81,7 +88,7 @@
       opacity: 0.8;
 
       background-image: radial-gradient(#ffffff00 0.3px, #e2e2e299 0.5px);
-      border: 1.9px dashed rgba(83, 53, 53, 0.39);
+      border: 1px dashed rgba(83, 53, 53, 0.2);
       border-radius: 3px;
 
       &:hover {
@@ -96,20 +103,34 @@
         left: 34px;
         top: 8px;
       }
+
       resize: both;
+      overflow: hidden;
+
+      fa-icon {
+        &.i1 {
+          right: 30px;
+          top: 4px;
+        }
+
+        &.i2 {
+          right: 50px;
+          top: 4px;
+        }
+      }
     }
 
     &.rectangle {
       z-index: 1;
       max-width: 3000px;
-      min-width: 100px;
+      min-width: 300px;
 
       max-height: 3000px;
-      min-height: 100px;
+      min-height: 300px;
       opacity: 0.8;
 
       background-image: radial-gradient(#ffffff00 0.3px, #c6d0c499 0.5px);
-      border: 1.9px dashed rgba(83, 53, 53, 0.39);
+      border: 1.9px dashed rgba(83, 53, 53, 0.2);
       border-radius: 3px;
 
       &:hover {
@@ -126,6 +147,19 @@
       }
 
       resize: both;
+      overflow: hidden;
+
+      fa-icon {
+        &.i1 {
+          right: 30px;
+          top: 4px;
+        }
+
+        &.i2 {
+          right: 50px;
+          top: 4px;
+        }
+      }
     }
 
     .listIcon {
@@ -156,8 +190,8 @@
       background-color: rgba(0, 0, 0, 0);
       opacity: 0.8;
       border: 0px;
-      width: 110px;
-      font-size: x-small;
+      width: 100px;
+      font-size: xx-small;
 
       &:focus {
         outline: none;
@@ -167,14 +201,15 @@
     }
 
     .status {
-      background-color: rgba(77, 77, 77, 0.641);
+      background-color: rgba(116, 115, 115, 0.874);
       border-bottom-left-radius: 10px;
+      border-top-right-radius: 10px;
       display: block;
-      width: 30px;
-      height: 5px;
+      width: 25px;
+      height: 4px;
       position: absolute;
-      right: -5px;
-      top: -2px;
+      right: 0px;
+      top: 0px;
       overflow: visible;
 
       &.errored {
@@ -186,34 +221,34 @@
       }
     }
 
-    button {
+    .cir {
       position: absolute;
       z-index: 10000;
-      border-radius: 4px;
+      border-radius: 10px;
       border: none;
-      background-color: rgba(24, 20, 20, 0.429);
+      color: rgba(116, 115, 115);
       transition: 0.2s;
-      top: 42%;
-      width: 8px;
-      height: 8px;
+      top: 45.5%;
       visibility: hidden;
-
+      font-size: xx-small;
       &.firstButton {
-        left: -7px;
+        left: -4px;
       }
 
       &.secondButton {
-        right: -7px;
+        right: 5px;
       }
 
-      &:hover {
-        background-color: rgba(255, 0, 166, 0.799);
-        width: 14px;
-        border-radius: 10px;
+      .fa {
+        opacity: 0.7;
+
+        &:hover {
+          color: rgba(255, 0, 166, 0.799);
+        }
       }
 
       &:disabled:hover {
-        background-color: rgb(255, 255, 255);
+        color: rgb(255, 255, 255);
       }
     }
 
@@ -221,20 +256,24 @@
       max-width: 8px;
       max-height: 8px;
       position: absolute;
-      top: 6px;
-      opacity: 0.5;
       visibility: hidden;
 
-      &:hover {
-        opacity: 0.8;
-      }
-
       &.i1 {
-        right: 30px;
+        opacity: 0.5;
+        right: -12px;
+        top: 0px;
+        &:hover {
+          opacity: 0.8;
+        }
       }
 
       &.i2 {
-        right: 50px;
+        opacity: 0.5;
+        right: 8px;
+        top: -20px;
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
   }

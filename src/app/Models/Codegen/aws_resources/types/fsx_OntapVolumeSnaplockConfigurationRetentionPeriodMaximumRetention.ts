@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface fsx_OntapVolumeSnaplockConfigurationRetentionPeriodMaximumRetention {
   // The amount of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume.

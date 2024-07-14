@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface networkfirewall_RuleGroupRuleGroupRulesSourceStatefulRuleHeader {
   // The destination IP address or address range to inspect for, in CIDR notation. To match with any address, specify `ANY`.

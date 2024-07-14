@@ -1,6 +1,6 @@
 import { GCP_ResourceType as ResourceType } from './ResourceType';
 import { Resource } from 'src/app/Models/CloudResource';
-import { DynamicUIProps } from 'src/app/components/resource-config/resource-config.component';
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 import { AccessLevel as ACCESSCONTEXTMANAGER_AccessLevel } from './accesscontextmanager/AccessLevel';
 import { AccessLevelCondition as ACCESSCONTEXTMANAGER_AccessLevelCondition } from './accesscontextmanager/AccessLevelCondition';
 import { AccessLevels as ACCESSCONTEXTMANAGER_AccessLevels } from './accesscontextmanager/AccessLevels';

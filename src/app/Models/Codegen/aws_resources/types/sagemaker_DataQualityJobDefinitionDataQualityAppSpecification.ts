@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface sagemaker_DataQualityJobDefinitionDataQualityAppSpecification {
   // Sets the environment variables in the container that the monitoring job runs. A list of key value pairs.

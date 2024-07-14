@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface servicecatalog_ProductProvisioningArtifactParameters {
   // Description of the provisioning artifact (i.e., version), including how it differs from the previous provisioning artifact.

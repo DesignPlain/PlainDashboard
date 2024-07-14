@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface glue_getCatalogTableTargetTable {
   // ID of the Glue Catalog and database where the table metadata resides. If omitted, this defaults to the current AWS Account ID.

@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface s3_BucketLifecycleConfigurationV2RuleNoncurrentVersionExpiration {
   // Number of noncurrent versions Amazon S3 will retain. Must be a non-zero positive integer.

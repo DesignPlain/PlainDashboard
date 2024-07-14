@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface cloudrun_getServiceTemplateSpecContainerPort {
   // Port number the container listens on. This must be a valid port number (between 1 and 65535). Defaults to "8080".

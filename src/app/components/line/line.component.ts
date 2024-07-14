@@ -4,13 +4,13 @@ import { Subject } from 'rxjs';
 export interface LineOptions {
   selected: boolean;
   isNew: boolean;
-  position: { x1: number, y1: number, x2: number, y2: number };
+  position: { x1: number; y1: number; x2: number; y2: number };
 }
 
 @Component({
   selector: 'line',
   templateUrl: './line.component.html',
-  styleUrls: ['./line.component.scss']
+  styleUrls: ['./line.component.scss'],
 })
 export class LineComponent {
   @Input()
@@ -37,9 +37,13 @@ export class LineComponent {
       this.y1 = value.position.y1;
       this.x2 = value.position.x2;
       this.y2 = value.position.y2;
-      this.path = `M${this.x1} ${this.y1} C ${this.x1 + Math.abs(this.x2 - this.x1) * this.curveAdjuster} ${this.y1}, ${this.x2 - Math.abs(this.x2 - this.x1) * this.curveAdjuster} ${this.y2}, ${this.x2} ${this.y2}`;
+      this.path = `M${this.x1} ${this.y1} C ${
+        this.x1 + Math.abs(this.x2 - this.x1) * this.curveAdjuster
+      } ${this.y1}, ${
+        this.x2 - Math.abs(this.x2 - this.x1) * this.curveAdjuster
+      } ${this.y2}, ${this.x2} ${this.y2}`;
       this.lineReady = true;
-    })
+    });
     if (this.LineOptions) {
       this.isNew = this.LineOptions.isNew;
       this.selected = this.LineOptions.selected;
@@ -48,9 +52,17 @@ export class LineComponent {
       this.x2 = this.LineOptions.position.x2;
       this.y2 = this.LineOptions.position.y2;
       // this.path = `M${this.x1} ${this.y1} C ${this.x1 + Math.abs(this.x2 - this.x1)} ${this.y1}, ${this.x2 - Math.abs(this.x2 - this.x1)} ${this.y2}, ${this.x2} ${this.y2}`
-      this.path = `M${this.x1} ${this.y1} C ${this.x1 + Math.abs(this.x2 - this.x1) * this.curveAdjuster} ${this.y1}, ${this.x2 - Math.abs(this.x2 - this.x1) * this.curveAdjuster} ${this.y2}, ${this.x2} ${this.y2}`;
+      this.path = `M${this.x1} ${this.y1} C ${
+        this.x1 + Math.abs(this.x2 - this.x1) * this.curveAdjuster
+      } ${this.y1}, ${
+        this.x2 - Math.abs(this.x2 - this.x1) * this.curveAdjuster
+      } ${this.y2}, ${this.x2} ${this.y2}`;
 
       this.lineReady = true;
     }
+  }
+
+  onClick(e: Event) {
+    console.log(e);
   }
 }

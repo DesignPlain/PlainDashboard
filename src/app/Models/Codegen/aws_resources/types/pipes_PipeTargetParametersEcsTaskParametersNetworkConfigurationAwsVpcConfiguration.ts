@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface pipes_PipeTargetParametersEcsTaskParametersNetworkConfigurationAwsVpcConfiguration {
   // List of the subnets associated with the stream. These subnets must all be in the same VPC. You can specify as many as 16 subnets.

@@ -3,9 +3,6 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
   faArrowAltCircleDown,
   faArrowAltCircleUp,
-  faSquareCaretDown,
-  faSquareCaretUp,
-  faSquarePlus,
 } from '@fortawesome/free-regular-svg-icons';
 import {
   faAdd,
@@ -13,7 +10,7 @@ import {
   faClose,
   faCross,
 } from '@fortawesome/free-solid-svg-icons';
-import { DynamicUIPropState } from 'src/app/components/resource-config/resource-config.component';
+import { DynamicUIPropState } from '../../resource-config/DynamicUIPropState';
 import { InputType } from 'src/app/enum/InputType';
 
 export enum Mode {
@@ -41,9 +38,9 @@ export class KeyValueArrayComponent implements OnInit {
   listMap: Map<string, any>[] = [];
 
   public faClose: IconDefinition = faClose;
-  public faCirclePlus: IconDefinition = faSquarePlus;
-  public faDown: IconDefinition = faSquareCaretDown;
-  public faUp: IconDefinition = faSquareCaretUp;
+  public faCirclePlus: IconDefinition = faCirclePlus;
+  public faDown: IconDefinition = faArrowAltCircleDown;
+  public faUp: IconDefinition = faArrowAltCircleUp;
 
   ngOnInit(): void {
     console.log('Creating a ', Mode[this.mode], ' component', this.data);

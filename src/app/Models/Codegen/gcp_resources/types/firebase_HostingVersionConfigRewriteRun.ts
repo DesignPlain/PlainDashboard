@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface firebase_HostingVersionConfigRewriteRun {
   // Optional. User-provided region where the Cloud Run service is hosted. Defaults to `us-central1` if not supplied.

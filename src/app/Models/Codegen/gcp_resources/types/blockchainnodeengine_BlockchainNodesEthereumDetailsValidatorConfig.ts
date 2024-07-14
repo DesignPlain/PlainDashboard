@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface blockchainnodeengine_BlockchainNodesEthereumDetailsValidatorConfig {
   // URLs for MEV-relay services to use for block building. When set, a managed MEV-boost service is configured on the beacon client.

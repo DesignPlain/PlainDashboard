@@ -1,6 +1,6 @@
 import { AWS_ResourceType } from './ResourceType';
 import { Resource } from 'src/app/Models/CloudResource';
-import { DynamicUIProps } from 'src/app/components/resource-config/resource-config.component';
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 import { Analyzer as ACCESSANALYZER_Analyzer } from './accessanalyzer/Analyzer';
 import { ArchiveRule as ACCESSANALYZER_ArchiveRule } from './accessanalyzer/ArchiveRule';
 import { AlternativeContact as ACCOUNT_AlternativeContact } from './account/AlternativeContact';

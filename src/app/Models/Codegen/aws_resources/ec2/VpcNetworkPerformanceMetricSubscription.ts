@@ -5,7 +5,7 @@ import {
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface VpcNetworkPerformanceMetricSubscriptionArgs {
   // The target Region or Availability Zone that the metric subscription is enabled for. For example, `eu-west-1`.

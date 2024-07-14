@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface rds_ClusterMasterUserSecret {
   // ARN for the KMS encryption key. When specifying `kms_key_id`, `storage_encrypted` needs to be set to true.

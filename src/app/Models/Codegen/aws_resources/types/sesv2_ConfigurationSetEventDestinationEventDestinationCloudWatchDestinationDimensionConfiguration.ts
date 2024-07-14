@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface sesv2_ConfigurationSetEventDestinationEventDestinationCloudWatchDestinationDimensionConfiguration {
   // The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email.

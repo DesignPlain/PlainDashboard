@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface lb_ListenerRuleActionAuthenticateCognito {
   // The behavior if the user is not authenticated. Valid values: `deny`, `allow` and `authenticate`

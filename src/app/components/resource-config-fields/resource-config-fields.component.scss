@@ -44,13 +44,14 @@
 
   .span {
     position: relative;
-    width: 22em;
+    width: 19em;
     margin-right: 5px;
     color: #264653;
   }
 
   span {
     color: #264653;
+    word-wrap: break-word;
   }
 
   .arr-class {

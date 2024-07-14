@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface accesscontextmanager_ServicePerimeterStatusIngressPolicyIngressFromSource {
   // An AccessLevel resource name that allows resources outside the ServicePerimeter to be accessed from the inside.

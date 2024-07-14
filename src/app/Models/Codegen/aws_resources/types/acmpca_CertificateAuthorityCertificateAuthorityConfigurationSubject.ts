@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface acmpca_CertificateAuthorityCertificateAuthorityConfigurationSubject {
   // Two digit code that specifies the country in which the certificate subject located. Must be less than or equal to 2 characters in length.

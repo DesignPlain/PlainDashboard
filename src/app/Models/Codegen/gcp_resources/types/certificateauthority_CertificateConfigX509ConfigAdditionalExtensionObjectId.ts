@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface certificateauthority_CertificateConfigX509ConfigAdditionalExtensionObjectId {
   // An ObjectId specifies an object identifier (OID). These provide context and describe types in ASN.1 messages.

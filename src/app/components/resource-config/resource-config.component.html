@@ -1,6 +1,6 @@
 <div class="container">
   <h2 class="header">
-    {{ getResourceName().replace("_", " ") + " CONFIGURATION" }}
+    {{ getResourceName().replace("_", " ") + " CONFIGURATION  " }}
   </h2>
   <div class="inputform">
     <app-resource-config-fields
@@ -9,6 +9,19 @@
       (configUpdateEvent)="UpdateResourceConfig($event)"
     >
     </app-resource-config-fields>
+  </div>
+  <div *ngIf="getRelatedResources()" class="related-res">
+    <span class="s-h">Related Resources</span>
+    <div class="sub-rel-res">
+      <ng-container
+        *ngFor="let rel_res of getRelatedResources(); let i = index"
+      >
+        <span *ngIf="rel_res == -1"> -------------------- </span>
+        <span *ngIf="rel_res != -1" (click)="onclick(rel_res)">{{
+          getResourceString(rel_res)[0]
+        }}</span>
+      </ng-container>
+    </div>
   </div>
   <div class="apply" (click)="submit()">Save</div>
   <br />

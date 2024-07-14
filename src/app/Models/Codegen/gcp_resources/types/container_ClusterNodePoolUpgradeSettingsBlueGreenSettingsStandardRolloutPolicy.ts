@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface container_ClusterNodePoolUpgradeSettingsBlueGreenSettingsStandardRolloutPolicy {
   // Number of blue nodes to drain in a batch. Only one of the batch_percentage or batch_node_count can be specified.

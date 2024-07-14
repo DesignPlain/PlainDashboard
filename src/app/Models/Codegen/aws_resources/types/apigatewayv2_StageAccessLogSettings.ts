@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface apigatewayv2_StageAccessLogSettings {
   // ARN of the CloudWatch Logs log group to receive access logs. Any trailing `:-` is trimmed from the ARN.

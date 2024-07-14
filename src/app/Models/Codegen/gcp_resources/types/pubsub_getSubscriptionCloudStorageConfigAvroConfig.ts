@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface pubsub_getSubscriptionCloudStorageConfigAvroConfig {
   // When true, write the subscription name, messageId, publishTime, attributes, and orderingKey as additional fields in the output.

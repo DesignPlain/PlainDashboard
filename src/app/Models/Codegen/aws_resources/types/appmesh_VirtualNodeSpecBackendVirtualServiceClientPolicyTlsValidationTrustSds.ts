@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface appmesh_VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSds {
   // Name of the secret for a virtual node's Transport Layer Security (TLS) Secret Discovery Service validation context trust.
