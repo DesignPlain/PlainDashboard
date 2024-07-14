@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface kendra_ExperienceConfigurationContentSourceConfiguration {
   // The identifiers of the data sources you want to use for your Amazon Kendra experience. Maximum number of 100 items.

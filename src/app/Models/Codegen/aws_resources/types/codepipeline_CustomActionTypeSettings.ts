@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface codepipeline_CustomActionTypeSettings {
   // The URL returned to the AWS CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.

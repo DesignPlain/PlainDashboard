@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface sagemaker_AppImageConfigKernelGatewayImageConfigFileSystemConfig {
   // The default POSIX group ID (GID). If not specified, defaults to `100`. Valid values are `0` and `100`.

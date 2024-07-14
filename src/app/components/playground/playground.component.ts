@@ -1,4 +1,10 @@
-import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
 import { CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';
 import {
   faTrash,
@@ -28,10 +34,8 @@ import { RESOURCE_LIST_WIDTH } from 'src/app/constants/board-constants';
 import { Subject } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 import { ModalDialogService } from 'src/app/services/modal-dialog.service';
-import {
-  DynamicUIPropState,
-  DynamicUIProps,
-} from '../resource-config/resource-config.component';
+import { DynamicUIProps } from '../resource-config/DynamicUIProps';
+import { DynamicUIPropState } from '../resource-config/DynamicUIPropState';
 import { VisualResource } from '../resource-list/VisualResource';
 import { InputType } from 'src/app/enum/InputType';
 
@@ -56,12 +60,29 @@ export class PlaygroundComponent implements OnInit {
         position: {
           x1: this.currentOutput.x,
           y1: this.currentOutput.y,
-          x2: e.clientX - RESOURCE_LIST_WIDTH,
-          y2: e.clientY,
+          x2: e.clientX + this.getWindowLeftOffsetWithScroll(),
+          y2: e.clientY + this.getWindowTopOffsetWithScroll(),
         },
       });
       this.newLine = true;
     }
+  }
+
+  private getWindowTopOffsetWithScroll() {
+    return (
+      (this._element_ref.nativeElement as HTMLElement)
+        .parentElement as HTMLElement
+    ).scrollTop;
+  }
+
+  private getWindowLeftOffsetWithScroll() {
+    return (
+      -RESOURCE_LIST_WIDTH +
+      (
+        (this._element_ref.nativeElement as HTMLElement)
+          .parentElement as HTMLElement
+      ).scrollLeft
+    );
   }
 
   @HostListener('document:mouseup', ['$event'])
@@ -70,6 +91,7 @@ export class PlaygroundComponent implements OnInit {
       let inputItem = this.items.find((x) => x.id == this.currentInput?.id);
       let outputItem = this.items.find((x) => x.id == this.currentOutput?.id);
 
+      console.log(inputItem?.resourceType, outputItem?.resourceType);
       if (
         inputItem?.inlets.find((x) => x == outputItem?.id) ||
         outputItem?.outlets.find((x) => x == inputItem?.id)
@@ -131,7 +153,8 @@ export class PlaygroundComponent implements OnInit {
     private _renderer: Renderer2,
     private _localStorageService: LocalStorageService,
     private _stackService: StackService,
-    private _modalService: ModalDialogService
+    private _modalService: ModalDialogService,
+    private _element_ref: ElementRef
   ) {
     this._getState();
   }
@@ -246,7 +269,7 @@ export class PlaygroundComponent implements OnInit {
 
   public SetResourceConfig(resourceIndex: number, item: CloudResource): void {
     this.currentConfig = new Map<string, DynamicUIPropState>();
-
+    console.log(item);
     if (item.resourceConfig != undefined) {
       this.loadResourceConfig(
         item.title,
@@ -432,10 +455,16 @@ export class PlaygroundComponent implements OnInit {
     },
     outPutId: string
   ): void {
+    console.log(
+      (
+        (this._element_ref.nativeElement as HTMLElement)
+          .parentElement as HTMLElement
+      ).scrollTop
+    );
     this.currentOutput = {
       id: outPutId,
-      x: startPosition.outputPositionX - RESOURCE_LIST_WIDTH,
-      y: startPosition.outputPositionY,
+      x: startPosition.outputPositionX + this.getWindowLeftOffsetWithScroll(),
+      y: startPosition.outputPositionY + this.getWindowTopOffsetWithScroll(),
     };
   }
 
@@ -448,8 +477,8 @@ export class PlaygroundComponent implements OnInit {
   ): void {
     this.currentInput = {
       id: inputId,
-      x: endPosition.inputPositionX - RESOURCE_LIST_WIDTH,
-      y: endPosition.inputPositionY,
+      x: endPosition.inputPositionX + this.getWindowLeftOffsetWithScroll(),
+      y: endPosition.inputPositionY + this.getWindowTopOffsetWithScroll(),
     };
   }
 

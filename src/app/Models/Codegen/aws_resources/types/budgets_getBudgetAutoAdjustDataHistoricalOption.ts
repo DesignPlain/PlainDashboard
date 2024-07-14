@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface budgets_getBudgetAutoAdjustDataHistoricalOption {
   // (Required) - The number of budget periods included in the moving-average calculation that determines your auto-adjusted budget amount.

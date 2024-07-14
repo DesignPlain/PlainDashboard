@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface synthetics_CanaryArtifactConfigS3Encryption {
   // The encryption method to use for artifacts created by this canary. Valid values are: `SSE_S3` and `SSE_KMS`.

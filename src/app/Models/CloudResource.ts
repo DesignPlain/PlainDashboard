@@ -9,8 +9,8 @@ export class CloudResource {
   public resourceType: GCP_ResourceType | AWS_ResourceType = 0;
   public providerType: ProviderType = 0;
   public resourceConfig: Resource | undefined = new DefaultResource();
-  public position = { x: 490, y: 200 };
-  public shape = { width: 110, height: 40 };
+  public position = { x: 340, y: 100 };
+  public shape = { width: 100, height: 40 };
   public iconSrc: string = '';
   public status: ResourceStatus = ResourceStatus.Draft;
   public inlets: string[] = [];

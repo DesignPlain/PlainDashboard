@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface codepipeline_PipelineTriggerGitConfigurationPullRequestFilePaths {
   // A list of patterns of Git repository file paths that, when a commit is pushed, are to be excluded from starting the pipeline.

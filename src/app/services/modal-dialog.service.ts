@@ -3,10 +3,10 @@ import { Injectable, Injector } from '@angular/core';
 import { ConfigModalComponent } from '../components/config-modal/config-modal.component';
 import { ComponentPortal } from '@angular/cdk/portal';
 import {
-  DynamicUIPropState,
-  DynamicUIProps,
   ResourceConfigComponent,
 } from '../components/resource-config/resource-config.component';
+import { DynamicUIProps } from '../components/resource-config/DynamicUIProps';
+import { DynamicUIPropState } from '../components/resource-config/DynamicUIPropState';
 import { Outputs } from '../Models/CloudResource';
 import { PlaygroundComponent } from '../components/playground/playground.component';
 import { GCP_ResourceType } from 'src/app/Models/Codegen/gcp_resources/ResourceType';
@@ -66,6 +66,10 @@ export class ModalDialogService {
 
     cmpRef.instance.configUpdateEvent.subscribe((res) => {
       comp.updateConfig(res.id, res.res);
+    });
+
+    cmpRef.instance.subConfigOpen.subscribe((res) => {
+      comp.SetResourceConfig(res.id, comp.items[comp.items.length - 1]);
     });
 
     overlayRef.backdropClick().subscribe(() => overlayRef.dispose());

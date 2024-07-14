@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface globalaccelerator_CustomRoutingEndpointGroupDestinationConfiguration {
   // The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.

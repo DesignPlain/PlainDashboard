@@ -5,7 +5,7 @@ import {
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
 import { Resource } from "src/app/Models/CloudResource";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface SnapshotScheduleArgs {
   // The definition of the snapshot schedule. The definition is made up of schedule expressions, for example `cron(30 12 -)` or `rate(12 hours)`.

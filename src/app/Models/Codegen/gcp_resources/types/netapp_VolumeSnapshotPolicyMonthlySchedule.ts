@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface netapp_VolumeSnapshotPolicyMonthlySchedule {
   // Set the day or days of the month to make a snapshot (1-31). Accepts a comma separated number of days. Defaults to '1'.

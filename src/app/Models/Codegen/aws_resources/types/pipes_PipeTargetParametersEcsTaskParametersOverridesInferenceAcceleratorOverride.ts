@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface pipes_PipeTargetParametersEcsTaskParametersOverridesInferenceAcceleratorOverride {
   // The Elastic Inference accelerator device name to override for the task. This parameter must match a deviceName specified in the task definition.

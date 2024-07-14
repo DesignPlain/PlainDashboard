@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameterEnvironment {
   // The Compute Engine availability zone for launching worker instances to run your pipeline. In the future, workerZone will take precedence.

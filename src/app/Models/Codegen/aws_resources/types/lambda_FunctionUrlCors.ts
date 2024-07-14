@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface lambda_FunctionUrlCors {
   // The origins that can access the function URL. You can list any number of specific origins (or the wildcard character (`"-"`)), separated by a comma. For example: `["https://www.example.com", "http://localhost:60905"]`.

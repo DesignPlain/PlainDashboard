@@ -5,11 +5,31 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
+  /* Works on Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(207, 207, 207, 0.3) rgba(255, 255, 255, 0);
+  scroll-behavior: smooth;
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: rgba(255, 166, 0, 0);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(207, 207, 207, 0.3);
+    border-radius: 20px;
+    border: 3px solid rgba(255, 166, 0, 0);
+  }
+
   .container {
     position: relative;
-    min-width: 80vw;
+    min-width: 85vw;
     min-height: 90vh;
-    max-width: 80vw;
+    max-width: 85vw;
     max-height: 90vh;
     background-color: rgb(255, 255, 255);
     padding: 20px;
@@ -17,13 +37,12 @@
     border-radius: 10px;
     font-size: smaller;
     overflow: visible;
-    scrollbar-width: none;
 
     .header {
       margin-top: 2rem;
       margin-left: 2rem;
-      font-weight: 800;
-      color: #9d2163c4;
+      font-weight: 500;
+      color: #000000c4;
       font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
         "Lucida Sans", Arial, sans-serif;
       font-size: x-large;
@@ -32,15 +51,11 @@
     }
 
     .inputform {
-      padding-top: 2rem;
       padding-left: 2rem;
-      margin-right: 5rem;
       margin-left: 2rem;
-
-      min-height: 70vh;
-
-      max-height: 70vh;
-
+      padding-right: 20rem;
+      min-height: 65vh;
+      max-height: 65vh;
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
@@ -49,17 +64,57 @@
       align-items: flex-start;
 
       overflow: scroll;
-      padding-bottom: 8rem;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
+      padding-bottom: 7rem;
     }
 
     .subform {
-      height: 100%;
+      height: 80%;
       padding-bottom: 10rem;
-      margin-left: 2rem;
-      overflow: scroll;
-      scrollbar-width: none;
+    }
+
+    .related-res {
+      right: 3%;
+      top: 8%;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: start;
+      padding: 10px;
+      padding-top: 15px;
+      border-radius: 4px;
+      max-height: 75%;
+      min-width: 180px;
+      max-width: 300px;
+      box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1),
+        0px 0px 3px 0 rgba(0, 0, 0, 0.1);
+      background-color: #f9f8f8c2;
+
+      .s-h {
+        font-size: medium;
+        margin-bottom: 15px;
+      }
+
+      .sub-rel-res {
+        overflow-y: scroll;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 15px;
+        padding-top: 0px;
+        gap: 7px;
+        font-size: small;
+
+        span {
+          &:hover {
+            cursor: pointer;
+            color: #9d2163c4;
+          }
+        }
+      }
     }
 
     .apply {

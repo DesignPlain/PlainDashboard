@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface opsworks_CustomLayerCloudwatchConfigurationLogStream {
   // Specifies the max number of log events in a batch, up to `10000`. The default value is `1000`.

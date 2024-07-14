@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface batch_ComputeEnvironmentComputeResourcesLaunchTemplate {
   // ID of the launch template. You must specify either the launch template ID or launch template name in the request, but not both.

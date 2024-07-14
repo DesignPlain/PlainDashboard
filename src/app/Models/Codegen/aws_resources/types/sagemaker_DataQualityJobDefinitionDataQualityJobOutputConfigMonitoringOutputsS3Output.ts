@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface sagemaker_DataQualityJobDefinitionDataQualityJobOutputConfigMonitoringOutputsS3Output {
   // Path to the filesystem where the batch transform data is available to the container. Defaults to `/opt/ml/processing/input`.

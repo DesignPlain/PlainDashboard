@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface wafv2_RuleGroupRuleStatementLabelMatchStatement {
   // Specify whether you want to match using the label name or just the namespace. Valid values are `LABEL` or `NAMESPACE`.

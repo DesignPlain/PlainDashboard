@@ -14,6 +14,7 @@
   [style.width.px]="item.shape.width"
   [style.height.px]="item.shape.height"
 >
+  <div class="inner"></div>
   <div
     class="status"
     [ngClass]="{
@@ -22,12 +23,14 @@
     }"
   ></div>
   <div *ngIf="item.deploying" class="loader"></div>
-  <button
+  <div
     #firstButtonRef
-    class="firstButton"
+    class="cir firstButton"
     (mouseenter)="handleMouseEnter($event, firstButtonRef)"
     (mouseleave)="handleMouseLeave()"
-  ></button>
+  >
+    <fa-icon class="fa" [icon]="faCircle" />
+  </div>
   <input
     #box
     class="name"
@@ -44,9 +47,11 @@
   />
   <div (click)="trashShit()"><fa-icon class="i1" [icon]="faTrash" /></div>
   <div (click)="openConfigPopup()"><fa-icon class="i2" [icon]="faGear" /></div>
-  <button
+  <div
     #buttonRef
-    class="secondButton"
+    class="cir secondButton"
     (mousedown)="handleMouseDown($event, buttonRef)"
-  ></button>
+  >
+    <fa-icon class="fa" [icon]="faCircle" />
+  </div>
 </div>

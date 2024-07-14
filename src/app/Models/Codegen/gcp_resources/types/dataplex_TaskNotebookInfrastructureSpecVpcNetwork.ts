@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface dataplex_TaskNotebookInfrastructureSpecVpcNetwork {
   // The Cloud VPC network in which the job is run. By default, the Cloud VPC network named Default within the project is used.

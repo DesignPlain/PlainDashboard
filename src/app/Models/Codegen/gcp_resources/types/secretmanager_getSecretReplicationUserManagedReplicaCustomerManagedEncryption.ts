@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption {
   // Describes the Cloud KMS encryption key that will be used to protect destination secret.

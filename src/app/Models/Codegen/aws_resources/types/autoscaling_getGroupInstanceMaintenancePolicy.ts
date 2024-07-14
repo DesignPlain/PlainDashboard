@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface autoscaling_getGroupInstanceMaintenancePolicy {
   // Specifies the upper limit on the number of instances that are in the InService or Pending state with a healthy status during an instance replacement activity.

@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface quicksight_DataSetLogicalTableMapDataTransformFilterOperation {
   // An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.

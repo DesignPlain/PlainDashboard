@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface fsx_WindowsFileSystemSelfManagedActiveDirectory {
   // The user name for the service account on your self-managed AD domain that Amazon FSx will use to join to your AD domain.

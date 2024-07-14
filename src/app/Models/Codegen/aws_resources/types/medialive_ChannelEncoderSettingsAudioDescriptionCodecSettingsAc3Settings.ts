@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface medialive_ChannelEncoderSettingsAudioDescriptionCodecSettingsAc3Settings {
   // When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding.

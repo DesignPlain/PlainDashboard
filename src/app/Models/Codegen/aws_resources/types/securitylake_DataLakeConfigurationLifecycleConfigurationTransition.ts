@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface securitylake_DataLakeConfigurationLifecycleConfigurationTransition {
   // Number of days before data transition to a different S3 Storage Class in the Amazon Security Lake object.

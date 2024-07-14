@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface ecs_ServiceServiceConnectConfigurationServiceTimeout {
   // The amount of time in seconds a connection will stay active while idle. A value of 0 can be set to disable idleTimeout.

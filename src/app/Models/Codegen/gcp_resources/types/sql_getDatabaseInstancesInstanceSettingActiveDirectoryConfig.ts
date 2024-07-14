@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface sql_getDatabaseInstancesInstanceSettingActiveDirectoryConfig {
   // Domain name of the Active Directory for SQL Server (e.g., mydomain.com).

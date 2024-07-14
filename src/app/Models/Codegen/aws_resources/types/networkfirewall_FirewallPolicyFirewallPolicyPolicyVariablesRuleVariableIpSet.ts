@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface networkfirewall_FirewallPolicyFirewallPolicyPolicyVariablesRuleVariableIpSet {
   // Set of IPv4 or IPv6 addresses in CIDR notation to use for the Suricata `HOME_NET` variable.

@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface apprunner_ServiceSourceConfigurationImageRepositoryImageConfiguration {
   // Command App Runner runs to start the application in the source image. If specified, this command overrides the Docker image’s default start command.

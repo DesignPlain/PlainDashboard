@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface servicediscovery_getServiceDnsConfigDnsRecord {
   // Amount of time, in seconds, that you want DNS resolvers to cache the settings for this resource record set.

@@ -1,3 +1,7 @@
 <svg class="wrapper">
-  <path [ngClass]="{'edgeNew': isNew, 'selected': selected, 'edge': !selected}" [attr.d]=path></path>
+  <path
+    (click)="onClick($event)"
+    [ngClass]="{ edgeNew: isNew, selected: selected, edge: !selected }"
+    [attr.d]="path"
+  ></path>
 </svg>

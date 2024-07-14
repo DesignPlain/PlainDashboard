@@ -4,7 +4,7 @@ import {
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
 } from "src/app/enum/InputType";
-import { DynamicUIProps } from "src/app/components/resource-config/resource-config.component";
+import { DynamicUIProps } from 'src/app/components/resource-config/DynamicUIProps';
 
 export interface networkservices_HttpRouteRuleActionRequestHeaderModifier {
   // Completely overwrite/replace the headers with given map where key is the name of the header, value is the value of the header.
