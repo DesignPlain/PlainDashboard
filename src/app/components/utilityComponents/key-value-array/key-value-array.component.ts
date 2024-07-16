@@ -55,7 +55,9 @@ export class KeyValueArrayComponent implements OnInit {
 
     c.forEach((v, k) => {
       if (this.listMap.length >= index + 1) {
-        v.val = this.listMap[index].get(k);
+        //console.log(index, this.listMap[index], k, typeof this.listMap[index]);
+        let a = new Map(Object.entries(this.listMap[index]));
+        v.val = a.get(k);
 
         if (v.type != InputType.Array && v.type != InputType.Map) {
           populateData(v.members, v.val, 1);

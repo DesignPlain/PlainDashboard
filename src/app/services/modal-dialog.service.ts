@@ -2,9 +2,7 @@ import { Overlay, OverlayConfig } from '@angular/cdk/overlay';
 import { Injectable, Injector } from '@angular/core';
 import { ConfigModalComponent } from '../components/config-modal/config-modal.component';
 import { ComponentPortal } from '@angular/cdk/portal';
-import {
-  ResourceConfigComponent,
-} from '../components/resource-config/resource-config.component';
+import { ResourceConfigComponent } from '../components/resource-config/resource-config.component';
 import { DynamicUIProps } from '../components/resource-config/DynamicUIProps';
 import { DynamicUIPropState } from '../components/resource-config/DynamicUIPropState';
 import { Outputs } from '../Models/CloudResource';
@@ -41,6 +39,7 @@ export class ModalDialogService {
     currentResource: GCP_ResourceType | AWS_ResourceType | undefined,
     config: Map<string, DynamicUIPropState>,
     currentOutput: Outputs[],
+    lastError: string,
     comp: PlaygroundComponent
   ) {
     let positionStrategy = this._overlay.position().global();
@@ -63,6 +62,7 @@ export class ModalDialogService {
     cmpRef.instance.currentIndex = currentIndex;
     cmpRef.instance.config = config;
     cmpRef.instance.currentOutput = currentOutput;
+    cmpRef.instance.lastError = lastError;
 
     cmpRef.instance.configUpdateEvent.subscribe((res) => {
       comp.updateConfig(res.id, res.res);

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
   faCirclePlus,
+  faDiagramProject,
   faInfoCircle,
   faRotate,
 } from '@fortawesome/free-solid-svg-icons';
@@ -9,9 +10,11 @@ import { DynamicUIPropState } from '../resource-config/DynamicUIPropState';
 import { InputType } from 'src/app/enum/InputType';
 import { Mode } from 'src/app/components/utilityComponents/key-value-array/key-value-array.component';
 import {
+  faPenToSquare,
   faSquareCaretDown,
   faSquareCaretUp,
 } from '@fortawesome/free-regular-svg-icons';
+import { Outputs } from 'src/app/Models/CloudResource';
 
 @Component({
   selector: 'app-resource-config-fields',
@@ -21,11 +24,14 @@ import {
 export class ResourceConfigFieldsComponent {
   public faInfo: IconDefinition = faInfoCircle;
   public faRotate: IconDefinition = faRotate;
+  public faRelated: IconDefinition = faPenToSquare;
 
   public show = '';
 
   @Input() config: Map<string, DynamicUIPropState> = new Map();
   @Input() parent: string = 'ROOT';
+  @Input() currentOutput: Outputs[] = [];
+
   inputType = InputType;
 
   @Output()
@@ -39,9 +45,16 @@ export class ResourceConfigFieldsComponent {
   faDown = faSquareCaretDown;
   faUp = faSquareCaretUp;
 
+  @Input()
+  edit: boolean = false;
+
   hasContent(arg: Map<string, DynamicUIPropState>) {
     //let hasContent = [...arg.values()].every((x) => x.val == undefined);
     return true;
+  }
+
+  getValue(arg: any) {
+    return JSON.stringify(arg);
   }
 
   public showObj(ele: any): boolean {

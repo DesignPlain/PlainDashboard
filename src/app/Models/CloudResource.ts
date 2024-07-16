@@ -13,6 +13,7 @@ export class CloudResource {
   public shape = { width: 100, height: 40 };
   public iconSrc: string = '';
   public status: ResourceStatus = ResourceStatus.Draft;
+  public lastError: string = '';
   public inlets: string[] = [];
   public outlets: string[] = [];
   public inletMap: Map<string, LineCoordinates> = new Map<
