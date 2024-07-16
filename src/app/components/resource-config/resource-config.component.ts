@@ -13,6 +13,10 @@ import {
   faGear,
   faInfoCircle,
   faInfo,
+  faTrash,
+  faTriangleExclamation,
+  faDiagramProject,
+  faList,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   DefaultResource,
@@ -32,6 +36,7 @@ import { ResourceMenuComponent } from '../utilityComponents/resource-menu/resour
 import { GCP_ResourceProperties } from 'src/app/Models/Codegen/gcp_resources/ResourceProperties';
 import { AWS_ResourceProperties } from 'src/app/Models/Codegen/aws_resources/ResourceProperties';
 import { DynamicUIPropState } from './DynamicUIPropState';
+import { faCircleDot } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-resource-config',
@@ -50,9 +55,14 @@ export class ResourceConfigComponent implements OnInit {
     ...AWS_ResourceProperties.ResourceFactoryMap2.keys(),
   ].map((x) => x);
 
+  view: number = 0;
+
   public faClose: IconDefinition = faClose;
   public faInfo: IconDefinition = faInfoCircle;
   public faGear: IconDefinition = faGear;
+  public faError: IconDefinition = faTriangleExclamation;
+  public faDetails: IconDefinition = faList;
+  public faRelated: IconDefinition = faDiagramProject;
 
   public show = '';
   @Input() currentResource: GCP_ResourceType | AWS_ResourceType | undefined;
@@ -60,16 +70,23 @@ export class ResourceConfigComponent implements OnInit {
   resConfig: Resource = new DefaultResource();
   @Input() config: Map<string, DynamicUIPropState> = new Map();
   @Input() currentOutput: Outputs[] = [];
+  @Input() lastError: string = '';
+  edit: boolean = false;
+
   inputType = InputType;
   gcp_resourceType = GCP_ResourceType;
   aws_resourceType = AWS_ResourceType;
 
   ngOnInit(): void {
-    //console.log(this.config);
+    console.log(this.currentOutput);
   }
 
   public closeModal() {
     this._modalDialogService.ActiveModal.dispose();
+  }
+
+  getValue(arg: any) {
+    return JSON.stringify(arg);
   }
 
   @Output()

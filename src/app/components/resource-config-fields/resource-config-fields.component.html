@@ -1,257 +1,271 @@
-<div *ngFor="let item of config | keyvalue" [ngSwitch]="item.value.type">
-  <div *ngSwitchCase="inputType.String" class="in">
-    <div class="span" *ngIf="item.value.description != 'GenericType'">
-      <span class="span">{{ toKeyFormat(item.key) }}</span>
-      <span *ngIf="item.value.isRequired" class="req_icon">*</span>
-      <fa-icon
-        (mouseenter)="show = toKeyFormat(item.key)"
-        (mouseleave)="show = ''"
-        [icon]="faInfo"
-        class="i1"
-      />
-      <div *ngIf="show == toKeyFormat(item.key)" class="tool-tip">
-        {{ item.value.description }}
+<div *ngIf="edit || currentOutput == null || currentOutput.length == 0">
+  <div *ngFor="let item of config | keyvalue" [ngSwitch]="item.value.type">
+    <div *ngSwitchCase="inputType.String" class="in">
+      <div class="span" *ngIf="item.value.description != 'GenericType'">
+        <span class="span">{{ toKeyFormat(item.key) }}</span>
+        <span *ngIf="item.value.isRequired" class="req_icon">*</span>
+        <fa-icon
+          (mouseenter)="show = toKeyFormat(item.key)"
+          (mouseleave)="show = ''"
+          [icon]="faInfo"
+          class="i1"
+        />
+        <div *ngIf="show == toKeyFormat(item.key)" class="tool-tip">
+          {{ item.value.description }}
+        </div>
+        <fa-icon
+          (mouseenter)="show = toKeyFormat(item.key)"
+          (mouseleave)="show = ''"
+          class="restart-icon"
+          [icon]="faRotate"
+          *ngIf="item.value.willReplaceOnChanges"
+        />
       </div>
-      <fa-icon
-        (mouseenter)="show = toKeyFormat(item.key)"
-        (mouseleave)="show = ''"
-        class="restart-icon"
-        [icon]="faRotate"
-        *ngIf="item.value.willReplaceOnChanges"
-      />
-    </div>
 
-    <input
-      #box
-      type="text"
-      class="input"
-      placeholder="{{
-        item.value.val != undefined
-          ? item.value.val
-          : 'Enter ' + toKeyFormat(item.key)
-      }}"
-      value="{{ item.value.val }}"
-      (focusout)="addToMap(toKeyFormat(item.key), box.value, item.value.type)"
-    />
-  </div>
-
-  <div
-    *ngSwitchCase="inputType.Object"
-    class="in"
-    #res
-    [attr.data]="!hasContent(item.value.members)"
-  >
-    <div class="span">
-      <span class="span">{{ toKeyFormat(item.key) }}</span>
-      <span *ngIf="item.value.isRequired" class="req_icon">*</span>
-      <fa-icon
-        (mouseenter)="show = toKeyFormat(item.key)"
-        (mouseleave)="show = ''"
-        class="i1"
-        [icon]="faInfo"
-      />
-      <div *ngIf="show == toKeyFormat(item.key)" class="tool-tip">
-        {{ item.value.description }}
-      </div>
-      <fa-icon
-        (mouseenter)="show = toKeyFormat(item.key)"
-        (mouseleave)="show = ''"
-        class="restart-icon"
-        [icon]="faRotate"
-        *ngIf="item.value.willReplaceOnChanges"
-      />
-    </div>
-
-    <div class="sub-object" *ngIf="!showObj(res)">
-      <div class="add">
-        <span
-          ><fa-icon class="i2" [icon]="faDown" (click)="toggle(res)"></fa-icon
-        ></span>
-      </div>
-      <span>View Section</span>
-    </div>
-
-    <div class="sub-input-object" *ngIf="showObj(res)">
-      <div class="add">
-        <span
-          ><fa-icon class="i-up" [icon]="faUp" (click)="toggle(res)"></fa-icon
-        ></span>
-      </div>
-      <app-resource-config-fields
-        [parent]="toKeyFormat(item.key)"
-        [config]="item.value.members"
-        (configUpdateEvent)="UpdateResourceConfig($event)"
-      ></app-resource-config-fields>
-    </div>
-  </div>
-
-  <div *ngSwitchCase="inputType.Number" class="in">
-    <div class="span" *ngIf="item.value.description != 'GenericType'">
-      <span class="span">{{ toKeyFormat(item.key) }}</span>
-      <span *ngIf="item.value.isRequired" class="req_icon">*</span>
-      <fa-icon
-        (mouseenter)="show = toKeyFormat(item.key)"
-        (mouseleave)="show = ''"
-        class="i1"
-        [icon]="faInfo"
-      />
-      <div *ngIf="show == toKeyFormat(item.key)" class="tool-tip">
-        {{ item.value.description }}
-      </div>
-      <fa-icon
-        (mouseenter)="show = toKeyFormat(item.key)"
-        (mouseleave)="show = ''"
-        class="restart-icon"
-        [icon]="faRotate"
-        *ngIf="item.value.willReplaceOnChanges"
-      />
-    </div>
-
-    <input
-      #box
-      type="number"
-      class="input"
-      placeholder="{{
-        item.value.val != undefined
-          ? item.value.val
-          : 'Enter ' + toKeyFormat(item.key)
-      }}"
-      value="{{ item.value.val }}"
-      (focusout)="addToMap(toKeyFormat(item.key), box.value, item.value.type)"
-    />
-  </div>
-
-  <div *ngSwitchCase="inputType.File" class="in">
-    <div class="span">
-      <span class="span">{{ toKeyFormat(item.key) }}</span>
-      <span *ngIf="item.value.isRequired" class="req_icon">*</span>
-      <fa-icon
-        (mouseenter)="show = toKeyFormat(item.key)"
-        (mouseleave)="show = ''"
-        class="i1"
-        [icon]="faInfo"
-      />
-      <div *ngIf="show == toKeyFormat(item.key)" class="tool-tip">
-        {{ item.value.description }}
-      </div>
-      <fa-icon
-        (mouseenter)="show = toKeyFormat(item.key)"
-        (mouseleave)="show = ''"
-        class="restart-icon"
-        [icon]="faRotate"
-        *ngIf="item.value.willReplaceOnChanges"
-      />
-    </div>
-
-    <input
-      #box
-      type="file"
-      class="input"
-      placeholder="{{
-        item.value.val != undefined
-          ? item.value.val
-          : 'Enter ' + toKeyFormat(item.key)
-      }}"
-      value="{{ item.value.val }}"
-      (focusout)="addToMap(toKeyFormat(item.key), box.value, item.value.type)"
-    />
-  </div>
-
-  <div *ngSwitchCase="inputType.Bool" class="in">
-    <div class="span">
-      <span class="span">{{ toKeyFormat(item.key) }}</span>
-      <span *ngIf="item.value.isRequired" class="req_icon">*</span>
-      <fa-icon
-        (mouseenter)="show = toKeyFormat(item.key)"
-        (mouseleave)="show = ''"
-        class="i1"
-        [icon]="faInfo"
-      />
-      <div *ngIf="show == toKeyFormat(item.key)" class="tool-tip">
-        {{ item.value.description }}
-      </div>
-      <fa-icon
-        (mouseenter)="show = toKeyFormat(item.key)"
-        (mouseleave)="show = ''"
-        class="restart-icon"
-        [icon]="faRotate"
-        *ngIf="item.value.willReplaceOnChanges"
-      />
-    </div>
-
-    <div class="checkbox-wrapper-19">
       <input
-        #inputEl
-        type="checkbox"
-        id="{{ item.key }}"
-        [checked]="item.value.val"
-        (change)="
-          addToMap(toKeyFormat(item.key), inputEl.checked, item.value.type)
-        "
+        #box
+        type="text"
+        class="input"
+        placeholder="{{
+          item.value.val != undefined
+            ? item.value.val
+            : 'Enter ' + toKeyFormat(item.key)
+        }}"
+        value="{{ item.value.val }}"
+        (focusout)="addToMap(toKeyFormat(item.key), box.value, item.value.type)"
       />
-      <label for="{{ item.key }}" class="check-box"></label>
+    </div>
+
+    <div
+      *ngSwitchCase="inputType.Object"
+      class="in"
+      #res
+      [attr.data]="!hasContent(item.value.members)"
+    >
+      <div class="span">
+        <span class="span">{{ toKeyFormat(item.key) }}</span>
+        <span *ngIf="item.value.isRequired" class="req_icon">*</span>
+        <fa-icon
+          (mouseenter)="show = toKeyFormat(item.key)"
+          (mouseleave)="show = ''"
+          class="i1"
+          [icon]="faInfo"
+        />
+        <div *ngIf="show == toKeyFormat(item.key)" class="tool-tip">
+          {{ item.value.description }}
+        </div>
+        <fa-icon
+          (mouseenter)="show = toKeyFormat(item.key)"
+          (mouseleave)="show = ''"
+          class="restart-icon"
+          [icon]="faRotate"
+          *ngIf="item.value.willReplaceOnChanges"
+        />
+      </div>
+
+      <div class="sub-object" *ngIf="!showObj(res)">
+        <div class="add">
+          <span
+            ><fa-icon class="i2" [icon]="faDown" (click)="toggle(res)"></fa-icon
+          ></span>
+        </div>
+        <span>View Section</span>
+      </div>
+
+      <div class="sub-input-object" *ngIf="showObj(res)">
+        <div class="add">
+          <span
+            ><fa-icon class="i-up" [icon]="faUp" (click)="toggle(res)"></fa-icon
+          ></span>
+        </div>
+        <app-resource-config-fields
+          [parent]="toKeyFormat(item.key)"
+          [config]="item.value.members"
+          (configUpdateEvent)="UpdateResourceConfig($event)"
+        ></app-resource-config-fields>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="inputType.Number" class="in">
+      <div class="span" *ngIf="item.value.description != 'GenericType'">
+        <span class="span">{{ toKeyFormat(item.key) }}</span>
+        <span *ngIf="item.value.isRequired" class="req_icon">*</span>
+        <fa-icon
+          (mouseenter)="show = toKeyFormat(item.key)"
+          (mouseleave)="show = ''"
+          class="i1"
+          [icon]="faInfo"
+        />
+        <div *ngIf="show == toKeyFormat(item.key)" class="tool-tip">
+          {{ item.value.description }}
+        </div>
+        <fa-icon
+          (mouseenter)="show = toKeyFormat(item.key)"
+          (mouseleave)="show = ''"
+          class="restart-icon"
+          [icon]="faRotate"
+          *ngIf="item.value.willReplaceOnChanges"
+        />
+      </div>
+
+      <input
+        #box
+        type="number"
+        class="input"
+        placeholder="{{
+          item.value.val != undefined
+            ? item.value.val
+            : 'Enter ' + toKeyFormat(item.key)
+        }}"
+        value="{{ item.value.val }}"
+        (focusout)="addToMap(toKeyFormat(item.key), box.value, item.value.type)"
+      />
+    </div>
+
+    <div *ngSwitchCase="inputType.File" class="in">
+      <div class="span">
+        <span class="span">{{ toKeyFormat(item.key) }}</span>
+        <span *ngIf="item.value.isRequired" class="req_icon">*</span>
+        <fa-icon
+          (mouseenter)="show = toKeyFormat(item.key)"
+          (mouseleave)="show = ''"
+          class="i1"
+          [icon]="faInfo"
+        />
+        <div *ngIf="show == toKeyFormat(item.key)" class="tool-tip">
+          {{ item.value.description }}
+        </div>
+        <fa-icon
+          (mouseenter)="show = toKeyFormat(item.key)"
+          (mouseleave)="show = ''"
+          class="restart-icon"
+          [icon]="faRotate"
+          *ngIf="item.value.willReplaceOnChanges"
+        />
+      </div>
+
+      <input
+        #box
+        type="file"
+        class="input"
+        placeholder="{{
+          item.value.val != undefined
+            ? item.value.val
+            : 'Enter ' + toKeyFormat(item.key)
+        }}"
+        value="{{ item.value.val }}"
+        (focusout)="addToMap(toKeyFormat(item.key), box.value, item.value.type)"
+      />
+    </div>
+
+    <div *ngSwitchCase="inputType.Bool" class="in">
+      <div class="span">
+        <span class="span">{{ toKeyFormat(item.key) }}</span>
+        <span *ngIf="item.value.isRequired" class="req_icon">*</span>
+        <fa-icon
+          (mouseenter)="show = toKeyFormat(item.key)"
+          (mouseleave)="show = ''"
+          class="i1"
+          [icon]="faInfo"
+        />
+        <div *ngIf="show == toKeyFormat(item.key)" class="tool-tip">
+          {{ item.value.description }}
+        </div>
+        <fa-icon
+          (mouseenter)="show = toKeyFormat(item.key)"
+          (mouseleave)="show = ''"
+          class="restart-icon"
+          [icon]="faRotate"
+          *ngIf="item.value.willReplaceOnChanges"
+        />
+      </div>
+
+      <div class="checkbox-wrapper-19">
+        <input
+          #inputEl
+          type="checkbox"
+          id="{{ item.key }}"
+          [checked]="item.value.val"
+          (change)="
+            addToMap(toKeyFormat(item.key), inputEl.checked, item.value.type)
+          "
+        />
+        <label for="{{ item.key }}" class="check-box"></label>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="inputType.Array" class="in">
+      <div class="span">
+        <span class="span">{{ toKeyFormat(item.key) }}</span>
+        <span *ngIf="item.value.isRequired" class="req_icon">*</span>
+        <fa-icon
+          (mouseenter)="show = toKeyFormat(item.key)"
+          (mouseleave)="show = ''"
+          class="i1"
+          [icon]="faInfo"
+        />
+        <div *ngIf="show == toKeyFormat(item.key)" class="tool-tip">
+          {{ item.value.description }}
+        </div>
+        <fa-icon
+          (mouseenter)="show = toKeyFormat(item.key)"
+          (mouseleave)="show = ''"
+          class="restart-icon"
+          [icon]="faRotate"
+          *ngIf="item.value.willReplaceOnChanges"
+        />
+      </div>
+      <key-value-array
+        [mode]="Mode.Array"
+        [data]="get_array_data(item.value.val, item.value.members)"
+        class="arr-class"
+        [config]="item.value.members"
+        [parentRes]="toKeyFormat(item.key)"
+        (configUpdateEvent)="UpdateResourceConfig($event)"
+      ></key-value-array>
+    </div>
+
+    <div *ngSwitchCase="inputType.Map" class="in">
+      <div class="span">
+        <span class="span">{{ toKeyFormat(item.key) }}</span>
+        <span *ngIf="item.value.isRequired" class="req_icon">*</span>
+        <fa-icon
+          (mouseenter)="show = toKeyFormat(item.key)"
+          (mouseleave)="show = ''"
+          class="i1"
+          [icon]="faInfo"
+        />
+        <div *ngIf="show == toKeyFormat(item.key)" class="tool-tip">
+          {{ item.value.description }}
+        </div>
+        <fa-icon
+          (mouseenter)="show = toKeyFormat(item.key)"
+          (mouseleave)="show = ''"
+          class="restart-icon"
+          [icon]="faRotate"
+          *ngIf="item.value.willReplaceOnChanges"
+        />
+      </div>
+      <key-value-array
+        [mode]="Mode.Map"
+        class="arr-class"
+        [config]="item.value.members"
+        [data]="get_map_data(item.value.val)"
+        [parentRes]="toKeyFormat(item.key)"
+        (configUpdateEvent)="UpdateResourceConfig($event)"
+      ></key-value-array>
     </div>
   </div>
+</div>
 
-  <div *ngSwitchCase="inputType.Array" class="in">
-    <div class="span">
-      <span class="span">{{ toKeyFormat(item.key) }}</span>
-      <span *ngIf="item.value.isRequired" class="req_icon">*</span>
-      <fa-icon
-        (mouseenter)="show = toKeyFormat(item.key)"
-        (mouseleave)="show = ''"
-        class="i1"
-        [icon]="faInfo"
-      />
-      <div *ngIf="show == toKeyFormat(item.key)" class="tool-tip">
-        {{ item.value.description }}
-      </div>
-      <fa-icon
-        (mouseenter)="show = toKeyFormat(item.key)"
-        (mouseleave)="show = ''"
-        class="restart-icon"
-        [icon]="faRotate"
-        *ngIf="item.value.willReplaceOnChanges"
-      />
-    </div>
-    <key-value-array
-      [mode]="Mode.Array"
-      [data]="get_array_data(item.value.val, item.value.members)"
-      class="arr-class"
-      [config]="item.value.members"
-      [parentRes]="toKeyFormat(item.key)"
-      (configUpdateEvent)="UpdateResourceConfig($event)"
-    ></key-value-array>
+<div *ngIf="edit == false && currentOutput != null && currentOutput.length > 0">
+  <div class="edit-btn" (click)="edit = true">
+    <fa-icon class="i1" [icon]="faRelated" />
   </div>
-
-  <div *ngSwitchCase="inputType.Map" class="in">
-    <div class="span">
-      <span class="span">{{ toKeyFormat(item.key) }}</span>
-      <span *ngIf="item.value.isRequired" class="req_icon">*</span>
-      <fa-icon
-        (mouseenter)="show = toKeyFormat(item.key)"
-        (mouseleave)="show = ''"
-        class="i1"
-        [icon]="faInfo"
-      />
-      <div *ngIf="show == toKeyFormat(item.key)" class="tool-tip">
-        {{ item.value.description }}
-      </div>
-      <fa-icon
-        (mouseenter)="show = toKeyFormat(item.key)"
-        (mouseleave)="show = ''"
-        class="restart-icon"
-        [icon]="faRotate"
-        *ngIf="item.value.willReplaceOnChanges"
-      />
+  <div class="outputBox" *ngFor="let item of currentOutput">
+    <label class="outlabel">{{ item.name }} </label>
+    <div class="outvalue">
+      <span>{{ getValue(item.value) }}</span>
     </div>
-    <key-value-array
-      [mode]="Mode.Map"
-      class="arr-class"
-      [config]="item.value.members"
-      [data]="get_map_data(item.value.val)"
-      [parentRes]="toKeyFormat(item.key)"
-      (configUpdateEvent)="UpdateResourceConfig($event)"
-    ></key-value-array>
   </div>
 </div>

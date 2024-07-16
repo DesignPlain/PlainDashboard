@@ -293,6 +293,7 @@ export class PlaygroundComponent implements OnInit {
       this.currentResourceType,
       this.currentConfig,
       this.currentOut,
+      `${item.lastError}`,
       this
     );
   }
@@ -570,9 +571,11 @@ export class PlaygroundComponent implements OnInit {
       .pipe(take(1))
       .subscribe({
         next: (res) => {
-          this.items = JSON.parse(JSON.stringify(res, replacer), reviver);
-          console.log(this.items);
-          this._processLineData();
+          if (res != null) {
+            this.items = JSON.parse(JSON.stringify(res, replacer), reviver);
+            console.log(this.items);
+            this._processLineData();
+          }
         },
         error: (_) => {
           let data = this._localStorageService.getLocalState();

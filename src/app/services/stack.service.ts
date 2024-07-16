@@ -7,20 +7,25 @@ import { CloudResource } from '../Models/CloudResource';
   providedIn: 'root',
 })
 export class StackService {
+  public static BASE_PATH = 'http://localhost:8080';
   constructor(private _http: HttpClient) {}
 
   public deploy(items: CloudResource[]): Observable<string> {
-    return this._http.post('/api/deploy', JSON.stringify(items), {
-      responseType: 'text',
-    });
+    return this._http.post(
+      StackService.BASE_PATH + '/api/deploy',
+      JSON.stringify(items),
+      {
+        responseType: 'text',
+      }
+    );
   }
 
   public destroyStack(): Observable<object> {
-    return this._http.get('/api/stack');
+    return this._http.get(StackService.BASE_PATH + '/api/stack');
   }
 
   public getProjectConfig(): Observable<object> {
-    return this._http.get('/api/getProjectConfig');
+    return this._http.get(StackService.BASE_PATH + '/api/getProjectConfig');
   }
   public uploadProjectConfig(
     file: File,
@@ -43,6 +48,9 @@ export class StackService {
     if (awsSecretKey != undefined) {
       formParams.append('awsSecretKey', awsSecretKey);
     }
-    return this._http.post('/api/uploadProjectConfig', formParams);
+    return this._http.post(
+      StackService.BASE_PATH + '/api/uploadProjectConfig',
+      formParams
+    );
   }
 }
