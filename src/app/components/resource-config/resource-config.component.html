@@ -22,6 +22,12 @@
     >
       <fa-icon style="color: red" [icon]="faError" />
     </div>
+    <div
+      (click)="view != 0 && view == 3 ? (view = 0) : (view = 3)"
+      *ngIf="yamlData != ''"
+    >
+      <fa-icon [icon]="fafile" />
+    </div>
   </div>
   <div *ngIf="view == 1 && getRelatedResources()" class="related-res">
     <span class="s-h">Related Resources</span>
@@ -30,9 +36,12 @@
         *ngFor="let rel_res of getRelatedResources(); let i = index"
       >
         <span *ngIf="rel_res == -1"> </span>
-        <span *ngIf="rel_res != -1" (click)="onclick(rel_res)">{{
-          getResourceString(rel_res)[0]
-        }}</span>
+        <span
+          class="rel-res-field"
+          *ngIf="rel_res != -1"
+          (click)="onclick(rel_res)"
+          >{{ getResourceString(rel_res)[0] }}</span
+        >
       </ng-container>
     </div>
   </div>
@@ -40,6 +49,11 @@
   <div *ngIf="view == 2" class="related-res">
     <span class="s-h">Last Deploy Result</span>
     <div class="sub-rel-res"><span [innerHTML]="lastError"></span></div>
+  </div>
+
+  <div *ngIf="view == 3" class="related-res">
+    <span class="s-h">Pulumi Yaml Content</span>
+    <div class="sub-rel-res"><span [innerHTML]="yamlData"></span></div>
   </div>
 
   <div class="apply" (click)="submit()">Save</div>

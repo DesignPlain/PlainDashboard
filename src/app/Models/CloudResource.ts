@@ -14,6 +14,7 @@ export class CloudResource {
   public iconSrc: string = '';
   public status: ResourceStatus = ResourceStatus.Draft;
   public lastError: string = '';
+  public yamlContent: string = '';
   public inlets: string[] = [];
   public outlets: string[] = [];
   public inletMap: Map<string, LineCoordinates> = new Map<
