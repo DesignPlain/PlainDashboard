@@ -17,6 +17,7 @@ import {
   faTriangleExclamation,
   faDiagramProject,
   faList,
+  faFileLines,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   DefaultResource,
@@ -63,6 +64,7 @@ export class ResourceConfigComponent implements OnInit {
   public faError: IconDefinition = faTriangleExclamation;
   public faDetails: IconDefinition = faList;
   public faRelated: IconDefinition = faDiagramProject;
+  public fafile: IconDefinition = faFileLines;
 
   public show = '';
   @Input() currentResource: GCP_ResourceType | AWS_ResourceType | undefined;
@@ -71,6 +73,7 @@ export class ResourceConfigComponent implements OnInit {
   @Input() config: Map<string, DynamicUIPropState> = new Map();
   @Input() currentOutput: Outputs[] = [];
   @Input() lastError: string = '';
+  @Input() yamlData: string = '';
   edit: boolean = false;
 
   inputType = InputType;

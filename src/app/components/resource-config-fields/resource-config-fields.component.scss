@@ -1,7 +1,8 @@
 :host {
   min-width: 100%;
   min-height: 100%;
-
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+    sans-serif;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -227,6 +228,30 @@
     border-width: 0.5px;
     transition: all 0.1s;
     margin-left: 2px;
+
+    &:hover,
+    &:focus {
+      border: 0.5px solid #4a9dec;
+      box-shadow: 0px 0px 0px 1px rgb(74, 157, 236, 20%);
+      background-color: white;
+    }
+
+    box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1),
+      0px 0px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .str {
+    border: 0.5px solid transparent;
+    min-width: 16em;
+    min-height: 1em;
+    padding: 7px;
+    padding-left: 0.8em;
+    //padding-right: 0.8em;
+    border-radius: 3px;
+    transition: all 0.1s;
+    margin-left: 2px;
+    scrollbar-width: none;
+    outline: none;
 
     &:hover,
     &:focus {
