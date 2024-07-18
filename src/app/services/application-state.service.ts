@@ -12,12 +12,12 @@ export class ApplicationStateService {
   constructor(private _http: HttpClient) {}
 
   public getState(): Observable<object> {
-    return this._http.get(StackService.BASE_PATH + '/api/state');
+    return this._http.get(StackService.HOSTNAME + '/api/state');
   }
 
   public saveState(items: CloudResource[]): Observable<string> {
     return this._http.post(
-      StackService.BASE_PATH + '/api/state',
+      StackService.HOSTNAME + '/api/state',
       JSON.stringify(items, replacer),
       {
         responseType: 'text',

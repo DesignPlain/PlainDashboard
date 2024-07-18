@@ -26,6 +26,7 @@ import { ResourceConfigFieldsComponent } from './components/resource-config-fiel
 import { KeyValueArrayComponent } from './components/utilityComponents/key-value-array/key-value-array.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { ResourceMenuModule } from './components/utilityComponents/resource-menu/resource-menu.component.module';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { ResourceMenuModule } from './components/utilityComponents/resource-menu
     ConfigOptionsComponent,
     KeyValueArrayComponent,
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/app' }],
+  providers: [{ provide: APP_BASE_HREF, useValue: environment.appBasePath }],
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,

@@ -2,17 +2,18 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CloudResource } from '../Models/CloudResource';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StackService {
-  public static BASE_PATH = 'http://localhost:8080';
+  public static HOSTNAME = environment.host;
   constructor(private _http: HttpClient) {}
 
   public deploy(items: CloudResource[]): Observable<string> {
     return this._http.post(
-      StackService.BASE_PATH + '/api/deploy',
+      StackService.HOSTNAME + '/api/deploy',
       JSON.stringify(items),
       {
         responseType: 'text',
@@ -21,11 +22,11 @@ export class StackService {
   }
 
   public destroyStack(): Observable<object> {
-    return this._http.get(StackService.BASE_PATH + '/api/stack');
+    return this._http.get(StackService.HOSTNAME + '/api/stack');
   }
 
   public getProjectConfig(): Observable<object> {
-    return this._http.get(StackService.BASE_PATH + '/api/getProjectConfig');
+    return this._http.get(StackService.HOSTNAME + '/api/getProjectConfig');
   }
   public uploadProjectConfig(
     file: File,
@@ -49,7 +50,7 @@ export class StackService {
       formParams.append('awsSecretKey', awsSecretKey);
     }
     return this._http.post(
-      StackService.BASE_PATH + '/api/uploadProjectConfig',
+      StackService.HOSTNAME + '/api/uploadProjectConfig',
       formParams
     );
   }
