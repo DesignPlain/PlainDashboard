@@ -118,10 +118,10 @@ export class ResourceConfigComponent implements OnInit {
     let logo_path = 'NotFound';
     if (res_index < AWS_ResourceType.ACCESSANALYZER_ANALYZER) {
       str = GCP_ResourceType[res_index].toLowerCase().replace('_', ' ');
-      logo_path = '../../../assets/GCPIcons/gcp-logo.png';
+      logo_path = '/assets/GCPIcons/gcp-logo.png';
     } else {
       str = AWS_ResourceType[res_index].toLowerCase().replace('_', ' ');
-      logo_path = '../../../assets/aws-logo.png';
+      logo_path = '/assets/aws-logo.png';
     }
 
     let sp_index = str.indexOf(' ');
@@ -144,14 +144,14 @@ export class ResourceConfigComponent implements OnInit {
         GCP_ResourceType[res_index],
         ProviderType.GCP,
         res_index,
-        '../../../assets/GCPIcons/gcp-logo.png'
+        '/assets/GCPIcons/gcp-logo.png'
       );
     } else {
       res = new VisualResource(
         AWS_ResourceType[res_index],
         ProviderType.AWS,
         res_index,
-        '../../../assets/aws-logo.png'
+        '/assets/aws-logo.png'
       );
     }
 
