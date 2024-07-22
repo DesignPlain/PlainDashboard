@@ -29,6 +29,7 @@ import { Outputs } from 'src/app/Models/CloudResource';
 
 import { Pipe, PipeTransform } from '@angular/core';
 import { KeyValue } from '@angular/common';
+import { StackService } from 'src/app/services/stack.service';
 
 @Component({
   selector: 'app-resource-config-fields',
@@ -39,7 +40,7 @@ export class ResourceConfigFieldsComponent implements OnInit {
   @ViewChildren('tooltipel', { read: ElementRef })
   tooltipRefs: QueryList<ElementRef>;
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef, private _stackService: StackService) {}
   ngOnInit(): void {}
   public faInfo: IconDefinition = faInfoCircle;
   public faRotate: IconDefinition = faRotate;
@@ -167,6 +168,13 @@ export class ResourceConfigFieldsComponent implements OnInit {
         // this.listMap.set(this.toStoreFormat(name), undefined);
         //}
         break;
+      case InputType.File:
+        //if ((data as string).trim() != '') {
+        this.listMap.set(this.toStoreFormat(name), data as string);
+        //} else {
+        // this.listMap.set(this.toStoreFormat(name), undefined);
+        //}
+        break;
       case InputType.Number:
         this.listMap.set(this.toStoreFormat(name), Number(data));
         break;
@@ -177,6 +185,10 @@ export class ResourceConfigFieldsComponent implements OnInit {
     }
 
     this.submit();
+  }
+
+  getFromMap(name: string) {
+    return this.listMap.get(this.toStoreFormat(name));
   }
 
   public UpdateResourceConfig(it: Map<string, any>): void {
@@ -268,5 +280,21 @@ export class ResourceConfigFieldsComponent implements OnInit {
     } else {
       return arr_data;
     }
+  }
+
+  onFilechange(name: string, event: any) {
+    console.log(event.target.files[0]);
+    let file = event.target.files[0];
+
+    this.upload(file);
+    this.addToMap(this.toKeyFormat(name), file.name, InputType.File);
+  }
+
+  upload(file: File) {
+    this._stackService.uploadResourceFile(file).subscribe((resp) => {
+      console.log(
+        resp.toString() + ' Uploaded resource related file: ' + file.name
+      );
+    });
   }
 }

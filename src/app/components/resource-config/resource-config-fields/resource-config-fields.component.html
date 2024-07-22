@@ -139,20 +139,22 @@
         />
       </div>
 
-      <input
-        #box
-        type="file"
-        class="input"
-        placeholder="{{
-          item.value.val != undefined
-            ? item.value.val
-            : 'Enter ' + toKeyFormat(item.key)
-        }}"
-        value="{{ item.value.val }}"
-        (focusout)="addToMap(toKeyFormat(item.key), box.value, item.value.type)"
-      />
+      <div class="fileBox">
+        <div>
+          <label for="formFile" class="fileUp btn btn-info">Select File</label>
+          <input
+            (change)="this.onFilechange(toKeyFormat(item.key), $event)"
+            class="form-control"
+            type="file"
+            id="formFile"
+            style="display: none"
+          />
+        </div>
+        <div class="fname">
+          <span>{{ getFromMap(toKeyFormat(item.key)) || item.value.val }}</span>
+        </div>
+      </div>
     </div>
-
     <div *ngSwitchCase="inputType.Bool" class="in">
       <div class="span">
         <span class="span">{{ toKeyFormat(item.key) }}</span>
@@ -245,9 +247,8 @@
       ></key-value-array>
     </div>
   </div>
+  <!-- Output Listing -->
 </div>
-
-<!-- Output Listing -->
 <div *ngIf="edit == false && currentOutput != null && currentOutput.length > 0">
   <div class="edit-btn" (click)="edit = true">
     <fa-icon class="i1" [icon]="faRelated" />
