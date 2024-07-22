@@ -1,4 +1,15 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Input,
+  OnInit,
+  Output,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
   faCirclePlus,
@@ -6,7 +17,7 @@ import {
   faInfoCircle,
   faRotate,
 } from '@fortawesome/free-solid-svg-icons';
-import { DynamicUIPropState } from '../resource-config/DynamicUIPropState';
+import { DynamicUIPropState } from '../DynamicUIPropState';
 import { InputType } from 'src/app/enum/InputType';
 import { Mode } from 'src/app/components/utilityComponents/key-value-array/key-value-array.component';
 import {
@@ -16,12 +27,20 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 import { Outputs } from 'src/app/Models/CloudResource';
 
+import { Pipe, PipeTransform } from '@angular/core';
+import { KeyValue } from '@angular/common';
+
 @Component({
   selector: 'app-resource-config-fields',
   templateUrl: './resource-config-fields.component.html',
   styleUrl: './resource-config-fields.component.scss',
 })
-export class ResourceConfigFieldsComponent {
+export class ResourceConfigFieldsComponent implements OnInit {
+  @ViewChildren('tooltipel', { read: ElementRef })
+  tooltipRefs: QueryList<ElementRef>;
+
+  constructor(private el: ElementRef) {}
+  ngOnInit(): void {}
   public faInfo: IconDefinition = faInfoCircle;
   public faRotate: IconDefinition = faRotate;
   public faRelated: IconDefinition = faPenToSquare;
@@ -29,6 +48,7 @@ export class ResourceConfigFieldsComponent {
   public show = '';
 
   @Input() config: Map<string, DynamicUIPropState> = new Map();
+  configViewOrder: Map<string, DynamicUIPropState> = new Map();
   @Input() parent: string = 'ROOT';
   @Input() currentOutput: Outputs[] = [];
 
@@ -48,13 +68,61 @@ export class ResourceConfigFieldsComponent {
   @Input()
   edit: boolean = false;
 
+  @HostListener('document:click', ['$event'])
+  onClick(event: Event) {
+    if (
+      !this.tooltipRefs.some((element) =>
+        element.nativeElement.contains(event.target)
+      )
+    ) {
+      this.show = '';
+    }
+  }
+
+  customOrder = (
+    akv: KeyValue<string, any>,
+    bkv: KeyValue<string, any>
+  ): number => {
+    let map = new Map<string, number>([
+      ['name', 1],
+      ['id', 1],
+      ['arn', 1],
+      ['description', 2],
+      ['region', 3],
+      ['zone', 3],
+      ['serviceAccount', 4],
+      ['tags', 4],
+      ['versioning', 4],
+      ['location', 5],
+    ]);
+
+    const a = map.has(akv.key)
+      ? (map.get(akv.key) as number)
+      : akv.key.charCodeAt(0) + 100;
+    const b = map.has(bkv.key)
+      ? (map.get(bkv.key) as number)
+      : bkv.key.charCodeAt(0) + 100;
+
+    return a > b ? 1 : b > a ? -1 : 0;
+  };
+
+  getConfig(keyname: string): DynamicUIPropState {
+    let conf = this.config.get(keyname[0].toLowerCase() + keyname.substring(1));
+    return conf as DynamicUIPropState;
+  }
+
   hasContent(arg: Map<string, DynamicUIPropState>) {
     //let hasContent = [...arg.values()].every((x) => x.val == undefined);
     return true;
   }
 
   getValue(arg: any) {
-    return JSON.stringify(arg);
+    let val = JSON.stringify(arg);
+    if (val == 'null') {
+      return 'N/A';
+    }
+
+    return val;
   }
 
   public showObj(ele: any): boolean {

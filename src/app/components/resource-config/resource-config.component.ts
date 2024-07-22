@@ -82,6 +82,7 @@ export class ResourceConfigComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.currentOutput);
+    console.log(this.config);
   }
 
   public closeModal() {
