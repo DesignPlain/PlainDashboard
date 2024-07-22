@@ -356,6 +356,7 @@ export class PlaygroundComponent implements OnInit {
       providerType,
       resourceType
     );
+
     propertiesMapResource?.forEach((val) => {
       const map = new Map();
 
@@ -364,15 +365,17 @@ export class PlaygroundComponent implements OnInit {
       // console.log('Value', val.val);
       // console.log('Value type', InputType[val.type]);
 
-      console.log('\n\n Base Type', val.val, objMap);
+      //console.log('\n\n Base Type', val.val, objMap);
 
       let baseObj = objMap.get(toCamel(val.val));
       if (baseObj == undefined) {
         baseObj = objMap.get(val.val);
       }
+
       setDynamicUIMembers(baseObj, baseObj, val, map, 1);
 
-      objMap.set('Name', name);
+      // Set inner config name to card title name
+      objMap.set('name', name);
 
       this.currentConfig.set(
         val.val,
@@ -386,7 +389,7 @@ export class PlaygroundComponent implements OnInit {
         )
       );
 
-      console.log('Final load:', this.currentConfig);
+      //console.log('Final load:', this.currentConfig);
     });
 
     function toCamel(str: string): string {
@@ -400,7 +403,7 @@ export class PlaygroundComponent implements OnInit {
       map: Map<any, any>,
       depth: number
     ) {
-      console.log('ObjMap: before null check ', objMap);
+      //console.log('ObjMap: before null check ', objMap);
       if (!(objMap instanceof Map) && (objMap != null || objMap != undefined)) {
         objMap = new Map(Object.entries(objMap));
       }
@@ -408,11 +411,11 @@ export class PlaygroundComponent implements OnInit {
         const lmap = new Map();
         let objVal = undefined;
 
-        console.log('\n*****Call depth: ', depth);
-        console.log('ObjMap: ', objMap);
-        console.log('sen: ', lastObj);
-        console.log('obj', obj);
-        console.log('Value type', InputType[obj.type]);
+        // console.log('\n*****Call depth: ', depth);
+        // console.log('ObjMap: ', objMap);
+        // console.log('sen: ', lastObj);
+        // console.log('obj', obj);
+        // console.log('Value type', InputType[obj.type]);
         if (val.type == InputType.Array || val.type == InputType.Map) {
           objVal = objMap;
           lastObj = null;
@@ -425,11 +428,11 @@ export class PlaygroundComponent implements OnInit {
           }
         }
 
-        console.log('Next ObjMap: ', objVal);
-        console.log('Next sen: ', lastObj);
+        // console.log('Next ObjMap: ', objVal);
+        // console.log('Next sen: ', lastObj);
         setDynamicUIMembers(lastObj, objVal, obj, lmap, depth + 1);
 
-        console.log('Parent:', val.val, obj.val, objVal);
+        // console.log('Parent:', val.val, obj.val, objVal);
 
         map.set(
           obj.val,
@@ -443,7 +446,7 @@ export class PlaygroundComponent implements OnInit {
           )
         );
 
-        console.log(map);
+        // console.log(map);
       });
     }
   }
@@ -457,12 +460,12 @@ export class PlaygroundComponent implements OnInit {
     },
     outPutId: string
   ): void {
-    console.log(
-      (
-        (this._element_ref.nativeElement as HTMLElement)
-          .parentElement as HTMLElement
-      ).scrollTop
-    );
+    // console.log(
+    //   (
+    //     (this._element_ref.nativeElement as HTMLElement)
+    //       .parentElement as HTMLElement
+    //   ).scrollTop
+    // );
     this.currentOutput = {
       id: outPutId,
       x: startPosition.outputPositionX + this.getWindowLeftOffsetWithScroll(),
@@ -574,7 +577,7 @@ export class PlaygroundComponent implements OnInit {
         next: (res) => {
           if (res != null) {
             this.items = JSON.parse(JSON.stringify(res, replacer), reviver);
-            console.log(this.items);
+            //console.log(this.items);
             this._processLineData();
           }
         },
@@ -582,7 +585,7 @@ export class PlaygroundComponent implements OnInit {
           let data = this._localStorageService.getLocalState();
           if (data != null) {
             this.items = JSON.parse(data, reviver);
-            console.log(this.items);
+            //console.log(this.items);
             this._processLineData();
           }
         },

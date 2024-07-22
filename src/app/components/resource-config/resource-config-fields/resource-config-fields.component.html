@@ -1,12 +1,15 @@
 <div *ngIf="edit || currentOutput == null || currentOutput.length == 0">
-  <div *ngFor="let item of config | keyvalue" [ngSwitch]="item.value.type">
+  <div
+    *ngFor="let item of config | keyvalue : customOrder"
+    [ngSwitch]="item.value.type"
+  >
     <div *ngSwitchCase="inputType.String" class="in">
       <div class="span" *ngIf="item.value.description != 'GenericType'">
         <span class="span">{{ toKeyFormat(item.key) }}</span>
         <span *ngIf="item.value.isRequired" class="req_icon">*</span>
         <fa-icon
-          (mouseenter)="show = toKeyFormat(item.key)"
-          (mouseleave)="show = ''"
+          #tooltipel
+          (click)="show = toKeyFormat(item.key)"
           [icon]="faInfo"
           class="i1"
         />
@@ -14,8 +17,6 @@
           {{ item.value.description }}
         </div>
         <fa-icon
-          (mouseenter)="show = toKeyFormat(item.key)"
-          (mouseleave)="show = ''"
           class="restart-icon"
           [icon]="faRotate"
           *ngIf="item.value.willReplaceOnChanges"
@@ -46,8 +47,8 @@
         <span class="span">{{ toKeyFormat(item.key) }}</span>
         <span *ngIf="item.value.isRequired" class="req_icon">*</span>
         <fa-icon
-          (mouseenter)="show = toKeyFormat(item.key)"
-          (mouseleave)="show = ''"
+          #tooltipel
+          (click)="show = toKeyFormat(item.key)"
           class="i1"
           [icon]="faInfo"
         />
@@ -55,8 +56,6 @@
           {{ item.value.description }}
         </div>
         <fa-icon
-          (mouseenter)="show = toKeyFormat(item.key)"
-          (mouseleave)="show = ''"
           class="restart-icon"
           [icon]="faRotate"
           *ngIf="item.value.willReplaceOnChanges"
@@ -91,8 +90,8 @@
         <span class="span">{{ toKeyFormat(item.key) }}</span>
         <span *ngIf="item.value.isRequired" class="req_icon">*</span>
         <fa-icon
-          (mouseenter)="show = toKeyFormat(item.key)"
-          (mouseleave)="show = ''"
+          #tooltipel
+          (click)="show = toKeyFormat(item.key)"
           class="i1"
           [icon]="faInfo"
         />
@@ -100,8 +99,6 @@
           {{ item.value.description }}
         </div>
         <fa-icon
-          (mouseenter)="show = toKeyFormat(item.key)"
-          (mouseleave)="show = ''"
           class="restart-icon"
           [icon]="faRotate"
           *ngIf="item.value.willReplaceOnChanges"
@@ -127,8 +124,8 @@
         <span class="span">{{ toKeyFormat(item.key) }}</span>
         <span *ngIf="item.value.isRequired" class="req_icon">*</span>
         <fa-icon
-          (mouseenter)="show = toKeyFormat(item.key)"
-          (mouseleave)="show = ''"
+          #tooltipel
+          (click)="show = toKeyFormat(item.key)"
           class="i1"
           [icon]="faInfo"
         />
@@ -136,8 +133,6 @@
           {{ item.value.description }}
         </div>
         <fa-icon
-          (mouseenter)="show = toKeyFormat(item.key)"
-          (mouseleave)="show = ''"
           class="restart-icon"
           [icon]="faRotate"
           *ngIf="item.value.willReplaceOnChanges"
@@ -163,8 +158,8 @@
         <span class="span">{{ toKeyFormat(item.key) }}</span>
         <span *ngIf="item.value.isRequired" class="req_icon">*</span>
         <fa-icon
-          (mouseenter)="show = toKeyFormat(item.key)"
-          (mouseleave)="show = ''"
+          #tooltipel
+          (click)="show = toKeyFormat(item.key)"
           class="i1"
           [icon]="faInfo"
         />
@@ -172,8 +167,6 @@
           {{ item.value.description }}
         </div>
         <fa-icon
-          (mouseenter)="show = toKeyFormat(item.key)"
-          (mouseleave)="show = ''"
           class="restart-icon"
           [icon]="faRotate"
           *ngIf="item.value.willReplaceOnChanges"
@@ -199,8 +192,8 @@
         <span class="span">{{ toKeyFormat(item.key) }}</span>
         <span *ngIf="item.value.isRequired" class="req_icon">*</span>
         <fa-icon
-          (mouseenter)="show = toKeyFormat(item.key)"
-          (mouseleave)="show = ''"
+          #tooltipel
+          (click)="show = toKeyFormat(item.key)"
           class="i1"
           [icon]="faInfo"
         />
@@ -208,8 +201,6 @@
           {{ item.value.description }}
         </div>
         <fa-icon
-          (mouseenter)="show = toKeyFormat(item.key)"
-          (mouseleave)="show = ''"
           class="restart-icon"
           [icon]="faRotate"
           *ngIf="item.value.willReplaceOnChanges"
@@ -230,8 +221,8 @@
         <span class="span">{{ toKeyFormat(item.key) }}</span>
         <span *ngIf="item.value.isRequired" class="req_icon">*</span>
         <fa-icon
-          (mouseenter)="show = toKeyFormat(item.key)"
-          (mouseleave)="show = ''"
+          #tooltipel
+          (click)="show = toKeyFormat(item.key)"
           class="i1"
           [icon]="faInfo"
         />
@@ -239,8 +230,6 @@
           {{ item.value.description }}
         </div>
         <fa-icon
-          (mouseenter)="show = toKeyFormat(item.key)"
-          (mouseleave)="show = ''"
           class="restart-icon"
           [icon]="faRotate"
           *ngIf="item.value.willReplaceOnChanges"
@@ -258,12 +247,24 @@
   </div>
 </div>
 
+<!-- Output Listing -->
 <div *ngIf="edit == false && currentOutput != null && currentOutput.length > 0">
   <div class="edit-btn" (click)="edit = true">
     <fa-icon class="i1" [icon]="faRelated" />
   </div>
   <div class="outputBox" *ngFor="let item of currentOutput">
-    <label class="outlabel">{{ item.name }} </label>
+    <div class="span">
+      <label class="outlabel">{{ item.name }} </label>
+      <fa-icon
+        #tooltipel
+        (click)="show = toKeyFormat(item.name)"
+        class="i1"
+        [icon]="faInfo"
+      />
+      <div *ngIf="show == toKeyFormat(item.name)" class="tool-tip">
+        {{ getConfig(item.name).description }}
+      </div>
+    </div>
     <div class="outvalue">
       <span>{{ getValue(item.value) }}</span>
     </div>

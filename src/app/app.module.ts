@@ -22,7 +22,7 @@ import { ConfigOptionsComponent } from './components/config-options/config-optio
 import { SelectModule } from './components/utilityComponents/select/select.component.module';
 
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { ResourceConfigFieldsComponent } from './components/resource-config-fields/resource-config-fields.component';
+import { ResourceConfigFieldsComponent } from './components/resource-config/resource-config-fields/resource-config-fields.component';
 import { KeyValueArrayComponent } from './components/utilityComponents/key-value-array/key-value-array.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { ResourceMenuModule } from './components/utilityComponents/resource-menu/resource-menu.component.module';
@@ -42,7 +42,7 @@ import { environment } from 'src/environments/environment';
     CardComponent,
     ConfigModalComponent,
     ConfigOptionsComponent,
-    KeyValueArrayComponent,
+    KeyValueArrayComponent
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: environment.appBasePath }],
   bootstrap: [AppComponent],
