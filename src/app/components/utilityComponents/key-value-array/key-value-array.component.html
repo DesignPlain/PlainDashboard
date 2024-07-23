@@ -1,7 +1,9 @@
 <div class="sub-input-object">
   <div class="add-title">
     <div class="add">
-      <span><fa-icon [icon]="faCirclePlus" (click)="AddValue()"></fa-icon></span>
+      <span
+        ><fa-icon [icon]="faCirclePlus" (click)="AddValue()"></fa-icon
+      ></span>
     </div>
     <span>Add {{ parentRes.substring(0, parentRes.length - 1) }}</span>
   </div>
@@ -27,6 +29,7 @@
       </div>
 
       <app-resource-config-fields
+        [resId]="resId"
         [parent]="parentRes"
         *ngIf="show(res)"
         [config]="getConfig(i)"
@@ -34,7 +37,13 @@
       ></app-resource-config-fields>
     </div>
     <div class="close">
-      <span><fa-icon class="close-i" [icon]="faClose" (click)="deleteValue(i)"></fa-icon></span>
+      <span
+        ><fa-icon
+          class="close-i"
+          [icon]="faClose"
+          (click)="deleteValue(i)"
+        ></fa-icon
+      ></span>
     </div>
   </div>
 </div>

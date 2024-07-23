@@ -31,6 +31,7 @@ export class KeyValueArrayComponent implements OnInit {
   // @Input() map_data: Map<string, any> = new Map();
 
   @Input() parentRes: string;
+  @Input() resId: string = '';
 
   @Output()
   configUpdateEvent = new EventEmitter<Map<string, any>>();

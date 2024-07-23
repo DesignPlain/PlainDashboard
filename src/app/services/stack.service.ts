@@ -55,11 +55,13 @@ export class StackService {
     );
   }
 
-  public uploadResourceFile(file: File) {
+  public uploadResourceFile(file: File, resId: string) {
     let formParams = new FormData();
     if (file != undefined) {
       formParams.append('file', file);
     }
+
+    formParams.append('resId', resId);
 
     return this._http.post(
       StackService.HOSTNAME + '/api/uploadResourceFile',

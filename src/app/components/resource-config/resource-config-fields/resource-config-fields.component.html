@@ -78,6 +78,7 @@
           ></span>
         </div>
         <app-resource-config-fields
+          [resId]="resId"
           [parent]="toKeyFormat(item.key)"
           [config]="item.value.members"
           (configUpdateEvent)="UpdateResourceConfig($event)"
@@ -213,6 +214,7 @@
         [data]="get_array_data(item.value.val, item.value.members)"
         class="arr-class"
         [config]="item.value.members"
+        [resId]="resId"
         [parentRes]="toKeyFormat(item.key)"
         (configUpdateEvent)="UpdateResourceConfig($event)"
       ></key-value-array>
@@ -242,6 +244,7 @@
         class="arr-class"
         [config]="item.value.members"
         [data]="get_map_data(item.value.val)"
+        [resId]="resId"
         [parentRes]="toKeyFormat(item.key)"
         (configUpdateEvent)="UpdateResourceConfig($event)"
       ></key-value-array>
