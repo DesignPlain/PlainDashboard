@@ -295,6 +295,7 @@ export class PlaygroundComponent implements OnInit {
       this.currentOut,
       `${item.lastError}`,
       `${item.yamlContent}`,
+      item.id,
       this
     );
   }

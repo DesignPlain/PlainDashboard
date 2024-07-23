@@ -69,7 +69,9 @@ export class ResourceConfigComponent implements OnInit {
   public show = '';
   @Input() currentResource: GCP_ResourceType | AWS_ResourceType | undefined;
   @Input() currentIndex: number = -1;
+  @Input() resId: string = '';
   resConfig: Resource = new DefaultResource();
+
   @Input() config: Map<string, DynamicUIPropState> = new Map();
   @Input() currentOutput: Outputs[] = [];
   @Input() lastError: string = '';

@@ -41,6 +41,7 @@ export class ModalDialogService {
     currentOutput: Outputs[],
     lastError: string,
     yamlContent: string,
+    resId: string,
     comp: PlaygroundComponent
   ) {
     let positionStrategy = this._overlay.position().global();
@@ -65,6 +66,7 @@ export class ModalDialogService {
     cmpRef.instance.currentOutput = currentOutput;
     cmpRef.instance.lastError = lastError;
     cmpRef.instance.yamlData = yamlContent;
+    cmpRef.instance.resId = resId;
 
     cmpRef.instance.configUpdateEvent.subscribe((res) => {
       comp.updateConfig(res.id, res.res);

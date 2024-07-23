@@ -52,6 +52,7 @@ export class ResourceConfigFieldsComponent implements OnInit {
   configViewOrder: Map<string, DynamicUIPropState> = new Map();
   @Input() parent: string = 'ROOT';
   @Input() currentOutput: Outputs[] = [];
+  @Input() resId: string = '';
 
   inputType = InputType;
 
@@ -118,11 +119,16 @@ export class ResourceConfigFieldsComponent implements OnInit {
   }
 
   getValue(arg: any) {
+    const filter = ['null', '""', '[]', '{}'];
     let val = JSON.stringify(arg);
-    if (val == 'null') {
-      return 'N/A';
+
+    if (filter.some((token) => token == val) || val.length == 0) {
+      return 'None';
     }
 
+    if (val.startsWith('"') || val.endsWith('"')) {
+      return val.substring(1, val.length - 1);
+    }
     return val;
   }
 
@@ -291,10 +297,12 @@ export class ResourceConfigFieldsComponent implements OnInit {
   }
 
   upload(file: File) {
-    this._stackService.uploadResourceFile(file).subscribe((resp) => {
-      console.log(
-        resp.toString() + ' Uploaded resource related file: ' + file.name
-      );
-    });
+    this._stackService
+      .uploadResourceFile(file, this.resId)
+      .subscribe((resp) => {
+        console.log(
+          resp?.toString() + ' Uploaded resource related file: ' + file.name
+        );
+      });
   }
 }
