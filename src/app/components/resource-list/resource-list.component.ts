@@ -17,7 +17,7 @@ export class ResourceListComponent {
   viewGCP = false;
   viewOnPremise = false;
 
-  public readonly VisualResources = new Map<ProviderType, VisualResource[]>([
+  public VisualResources = new Map<ProviderType, VisualResource[]>([
     [
       ProviderType.AWS,
       [

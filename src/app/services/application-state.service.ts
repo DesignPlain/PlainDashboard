@@ -5,10 +5,17 @@ import { CloudResource } from '../Models/CloudResource';
 import { replacer } from './local-storage.service';
 import { StackService } from './stack.service';
 
+export class Template {
+  public template_name: string = '';
+  public template_description: string = '';
+  public res_details: string = '';
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class ApplicationStateService {
+  public template: Template[] = [];
   constructor(private _http: HttpClient) {}
 
   public getState(): Observable<object> {
@@ -23,5 +30,14 @@ export class ApplicationStateService {
         responseType: 'text',
       }
     );
+  }
+
+  public addTemplate(name: string, desc: string, details: string) {
+    let newTemplate = {
+      template_name: name,
+      template_description: desc,
+      res_details: details,
+    };
+    this.template.push(newTemplate);
   }
 }

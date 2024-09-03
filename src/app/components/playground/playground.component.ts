@@ -10,6 +10,16 @@ import {
   faTrash,
   faGear,
   IconDefinition,
+  faCopy,
+  faFloppyDisk,
+  faObjectGroup,
+  faAngleRight,
+  faAngleLeft,
+  faTriangleExclamation,
+  faFileWaveform,
+  faCircleQuestion,
+  faLayerGroup,
+  faChartLine,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   CloudResource,
@@ -26,7 +36,10 @@ import {
   replacer,
   reviver,
 } from 'src/app/services/local-storage.service';
-import { ApplicationStateService } from 'src/app/services/application-state.service';
+import {
+  ApplicationStateService,
+  Template,
+} from 'src/app/services/application-state.service';
 import { LineOptions } from '../line/line.component';
 import { StackService } from 'src/app/services/stack.service';
 import * as _ from 'lodash';
@@ -51,6 +64,203 @@ import { AWS_ResourceType } from 'src/app/Models/Codegen/aws_resources/ResourceT
   styleUrls: ['./playground.component.scss'],
 })
 export class PlaygroundComponent implements OnInit {
+  public newLine: boolean = false;
+  public showSideBar: boolean = false;
+  public currentIndex: number = 0;
+  public currentConfig: Map<string, DynamicUIPropState> = new Map<
+    string,
+    DynamicUIPropState
+  >();
+  public currentResourceType: GCP_ResourceType | AWS_ResourceType | undefined;
+  public currentOut: Outputs[] = [];
+  public items: CloudResource[] = [];
+  // public resourceType = ResourceType;
+  public hideline: boolean = true;
+  public lineOptions: LineOptions[] = [];
+  public currentDraggingCard: CloudResource | undefined;
+
+  // Initializing font awesome icons
+  public faTrash: IconDefinition = faTrash;
+  public faGear: IconDefinition = faGear;
+
+  public faCopy: IconDefinition = faCopy;
+  public faSave: IconDefinition = faFloppyDisk;
+  public faObjectGroup: IconDefinition = faObjectGroup;
+
+  view: number = 0;
+  faAngleLeft = faAngleLeft;
+  faAngleRight = faAngleRight;
+  faLog = faFileWaveform;
+  faAlert = faTriangleExclamation;
+  faHelp = faCircleQuestion;
+  faWorkSpace = faLayerGroup;
+  faMetric = faChartLine;
+
+  public currentOutput: { x: number; y: number; id: string } | null = null;
+  public currentInput: { x: number; y: number; id: string } | null = null;
+  public edgeObserver: Subject<LineOptions> = new Subject<LineOptions>();
+
+  public selectionState: {
+    start_x: number;
+    start_y: number;
+    end_x: number;
+    end_y: number;
+  } | null = null;
+
+  selection_div_style = {
+    position: 'absolute',
+    top: '200px',
+    left: '300px',
+    width: '100px',
+    height: '100px',
+    border: '2px dashed rgba(0, 0, 0, 0)',
+    //background: '#ffffff29',
+    'border-color': 'rgba(0, 0, 0, 0.0)',
+  };
+
+  selected = false;
+  selected_div_style = {
+    position: 'absolute',
+    //top: '200px',
+    //left: '300px',
+    width: '100px',
+    height: '100px',
+    border: '2px dashed rgba(0, 0, 0, 0)',
+    'border-color': 'rgba(0, 0, 0, 0.30)',
+    'background-color': 'rgb(255 255 255 / 10%)',
+    display: 'none',
+  };
+
+  selected_box_coordinates = {
+    start_x: 0,
+    start_y: 0,
+    end_x: 0,
+    end_y: 0,
+  };
+
+  selected_position = {
+    x: 0,
+    y: 0,
+  };
+
+  selected_ids: string[] = [];
+
+  selected_box_shape = { width: 0, height: 0 };
+  cardToSelect: string;
+  cardToUnSelect: string;
+  templates: Template[] = [];
+
+  // card_div_style = {
+  //   border: '2px dashed rgba(0, 0, 0, 0)',
+  //   'border-color': 'green',
+  //   outline: '',
+  //   'outline-offset': '',
+  // };
+
+  constructor(
+    private _applicationStateService: ApplicationStateService,
+    private _addComponentService: AddComponentService,
+    private _renderer: Renderer2,
+    private _localStorageService: LocalStorageService,
+    private _stackService: StackService,
+    private _modalService: ModalDialogService,
+    private _element_ref: ElementRef
+  ) {
+    this._getState();
+    this.templates = _applicationStateService.template;
+  }
+
+  ngOnInit(): void {
+    // Subcribe for component addition
+    this._addComponentService.components.subscribe(
+      (resource: VisualResource) => {
+        const item = new CloudResource();
+        item.id = uuidv4();
+        item.resourceType = resource.ResourceType;
+        item.name =
+          resource.ProviderType == ProviderType.AWS
+            ? AWS_ResourceType[resource.ResourceType]
+            : GCP_ResourceType[resource.ResourceType];
+
+        item.name += '_' + item.id.toString().replaceAll('-', '');
+
+        item.title = item.name.toString();
+        item.providerType = resource.ProviderType;
+        item.resourceConfig =
+          resource.ProviderType == ProviderType.AWS
+            ? AWS_ResourceProperties.GetResourceObject(
+                resource.ResourceType as AWS_ResourceType
+              )
+            : GCP_ResourceProperties.GetResourceObject(
+                resource.ResourceType as GCP_ResourceType
+              );
+
+        item.iconSrc = resource.iconSrc;
+        this.items.push(item);
+        this._saveState();
+      }
+    );
+  }
+
+  @HostListener('document:mousedown', ['$event'])
+  onMouseDown(e: any) {
+    if (
+      !e.target.className.includes('selected-div') &&
+      Boolean(e.target.closest('div.selected-div'))
+    ) {
+      return;
+    }
+
+    let insideSelectedBox =
+      e.clientX + this.getWindowLeftOffsetWithScroll() >=
+        this.selected_box_coordinates.start_x &&
+      e.clientY + this.getWindowTopOffsetWithScroll() >=
+        this.selected_box_coordinates.start_y &&
+      e.clientX + this.getWindowLeftOffsetWithScroll() <=
+        this.selected_box_coordinates.start_x + this.selected_box_shape.width &&
+      e.clientY + this.getWindowTopOffsetWithScroll() <=
+        this.selected_box_coordinates.start_y + this.selected_box_shape.height;
+
+    if (!insideSelectedBox) {
+      this.selectionState = {
+        start_x: e.clientX,
+        start_y: e.clientY,
+        end_x: 0,
+        end_y: 0,
+      };
+    }
+
+    if (!insideSelectedBox && !e.shiftKey) {
+      this.dropSelectedBox();
+      this.selected_ids.forEach((newId, oldId) => {
+        let item = this.items.find((res) => res.id == newId) as CloudResource;
+        item.selected = false;
+      });
+
+      this.selected_ids.splice(0, this.selected_ids.length);
+    } else if (insideSelectedBox) {
+      this.items.forEach((res_card) => {
+        // console.log(res_card.position);
+        if (
+          e.clientX + this.getWindowLeftOffsetWithScroll() >=
+            res_card.position.x - 8 &&
+          e.clientY + this.getWindowTopOffsetWithScroll() >=
+            res_card.position.y - 8 &&
+          e.clientX + this.getWindowLeftOffsetWithScroll() <=
+            res_card.position.x + res_card.shape.width + 36 &&
+          e.clientY + this.getWindowTopOffsetWithScroll() <=
+            res_card.position.y + res_card.shape.height + 36
+        ) {
+          if (this.selected_ids.every((id) => id != res_card.id)) {
+            this.cardToSelect = res_card.id;
+          } else {
+            this.cardToUnSelect = res_card.id;
+          }
+        }
+      });
+    }
+  }
+
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: any) {
     if (this.currentOutput) {
@@ -66,27 +276,80 @@ export class PlaygroundComponent implements OnInit {
       });
       this.newLine = true;
     }
-  }
 
-  private getWindowTopOffsetWithScroll() {
-    return (
-      (this._element_ref.nativeElement as HTMLElement)
-        .parentElement as HTMLElement
-    ).scrollTop;
-  }
+    if (this.cardToSelect != '') {
+      this.cardToSelect = '';
+    } else if (this.cardToUnSelect != '') {
+      this.cardToUnSelect = '';
+    }
 
-  private getWindowLeftOffsetWithScroll() {
-    return (
-      -RESOURCE_LIST_WIDTH +
-      (
-        (this._element_ref.nativeElement as HTMLElement)
-          .parentElement as HTMLElement
-      ).scrollLeft
-    );
+    if (
+      this.selectionState == null &&
+      e.clientX + this.getWindowLeftOffsetWithScroll() >=
+        this.selected_box_coordinates.start_x &&
+      e.clientY + this.getWindowTopOffsetWithScroll() >=
+        this.selected_box_coordinates.start_y &&
+      e.clientX + this.getWindowLeftOffsetWithScroll() <=
+        this.selected_box_coordinates.start_x + this.selected_box_shape.width &&
+      e.clientY + this.getWindowTopOffsetWithScroll() <=
+        this.selected_box_coordinates.start_y + this.selected_box_shape.height
+    ) {
+      console.log('In selection');
+    } else {
+      this.startSelectionBox(e);
+    }
   }
 
   @HostListener('document:mouseup', ['$event'])
   onMouseUp(e: any) {
+    this.dropSelectionBox();
+
+    if (this.cardToSelect != '') {
+      let res_card = this.items.find((res) => res.id == this.cardToSelect);
+      if (res_card) {
+        this.selected_ids.push(res_card.id);
+        res_card.selected = true;
+      }
+      this.cardToSelect = '';
+      let max_selected_box_coordinates = {
+        max_start_x: Number.MAX_VALUE,
+        max_start_y: Number.MAX_VALUE,
+        max_end_x: 0,
+        max_end_y: 0,
+      };
+      this.selected_ids.forEach((newId, oldId) => {
+        let item = this.items.find((res) => res.id == newId) as CloudResource;
+        this.drawSelectedBox(item, max_selected_box_coordinates);
+      });
+    } else if (this.cardToUnSelect != '') {
+      let ind = this.selected_ids.indexOf(this.cardToUnSelect);
+      if (ind != -1) {
+        let id = this.selected_ids.splice(ind, 1);
+        console.log(this.selected_ids);
+        let res_card = this.items.find((res) => res.id == this.cardToUnSelect);
+        if (res_card) {
+          res_card.selected = false;
+        }
+      }
+
+      if (this.selected_ids.length == 0) {
+        this.dropSelectedBox();
+      } else {
+        let max_selected_box_coordinates = {
+          max_start_x: Number.MAX_VALUE,
+          max_start_y: Number.MAX_VALUE,
+          max_end_x: 0,
+          max_end_y: 0,
+        };
+        this.selected_ids.forEach((newId, oldId) => {
+          let item = this.items.find((res) => res.id == newId) as CloudResource;
+          this.drawSelectedBox(item, max_selected_box_coordinates);
+        });
+      }
+
+      this.cardToUnSelect = '';
+    }
+
     if (this.currentInput != null && this.currentOutput) {
       let inputItem = this.items.find((x) => x.id == this.currentInput?.id);
       let outputItem = this.items.find((x) => x.id == this.currentOutput?.id);
@@ -125,66 +388,353 @@ export class PlaygroundComponent implements OnInit {
     this._saveState();
   }
 
-  public newLine: boolean = false;
-  public showSideBar: boolean = false;
-  public currentIndex: number = 0;
-  public currentConfig: Map<string, DynamicUIPropState> = new Map<
-    string,
-    DynamicUIPropState
-  >();
-  public currentResourceType: GCP_ResourceType | AWS_ResourceType | undefined;
-  public currentOut: Outputs[] = [];
-  public items: CloudResource[] = [];
-  // public resourceType = ResourceType;
-  public hideline: boolean = true;
-  public lineOptions: LineOptions[] = [];
-  public currentDraggingCard: CloudResource | undefined;
-
-  // Initializing font awesome icons
-  public faTrash: IconDefinition = faTrash;
-  public faGear: IconDefinition = faGear;
-  public currentOutput: { x: number; y: number; id: string } | null = null;
-  public currentInput: { x: number; y: number; id: string } | null = null;
-  public edgeObserver: Subject<LineOptions> = new Subject<LineOptions>();
-
-  constructor(
-    private _applicationStateService: ApplicationStateService,
-    private _addComponentService: AddComponentService,
-    private _renderer: Renderer2,
-    private _localStorageService: LocalStorageService,
-    private _stackService: StackService,
-    private _modalService: ModalDialogService,
-    private _element_ref: ElementRef
-  ) {
-    this._getState();
+  private dropSelectedBox() {
+    if (this.selected) {
+      this.selected_div_style.display = 'none';
+      this.selected_box_shape = { width: 0, height: 0 };
+    }
   }
 
-  ngOnInit(): void {
-    // Subcribe for component addition
-    this._addComponentService.components.subscribe(
-      (resource: VisualResource) => {
-        const item = new CloudResource();
-        item.id = uuidv4();
-        item.resourceType = resource.ResourceType;
-        item.name =
-          resource.ProviderType == ProviderType.AWS
-            ? AWS_ResourceType[resource.ResourceType]
-            : GCP_ResourceType[resource.ResourceType];
-        item.title = item.name.toString();
-        item.providerType = resource.ProviderType;
-        item.resourceConfig =
-          resource.ProviderType == ProviderType.AWS
-            ? AWS_ResourceProperties.GetResourceObject(
-                resource.ResourceType as AWS_ResourceType
-              )
-            : GCP_ResourceProperties.GetResourceObject(
-                resource.ResourceType as GCP_ResourceType
-              );
+  private dropSelectionBox() {
+    if (this.selectionState) {
+      this.selectionState = null;
+      this.selection_div_style['border-color'] = 'rgba(0, 0, 0, 0)';
+      this.selection_div_style.width = '0px';
+      this.selection_div_style.height = '0px';
+    }
+  }
 
-        item.iconSrc = resource.iconSrc;
-        this.items.push(item);
-        this._saveState();
+  private startSelectionBox(e: any) {
+    if (this.selectionState) {
+      this.selection_div_style['border-color'] = 'rgba(0, 0, 0, 0.2)';
+      this.selection_div_style.left =
+        (
+          this.selectionState.start_x + this.getWindowLeftOffsetWithScroll()
+        ).toString() + 'px';
+
+      this.selection_div_style.top =
+        (
+          this.selectionState.start_y + this.getWindowTopOffsetWithScroll()
+        ).toString() + 'px';
+
+      this.selectionState.end_x = e.clientX;
+      this.selectionState.end_y = e.clientY;
+
+      (this.selection_div_style.width =
+        (e.clientX - this.selectionState.start_x).toString() + 'px'),
+        (this.selection_div_style.height =
+          (e.clientY - this.selectionState.start_y).toString() + 'px');
+
+      let absolute_start_x =
+        this.selectionState.start_x + this.getWindowLeftOffsetWithScroll();
+      let absolute_start_y =
+        this.selectionState.start_y + this.getWindowTopOffsetWithScroll();
+      let absolute_end_x =
+        this.selectionState.end_x + this.getWindowLeftOffsetWithScroll();
+      let absolute_end_y =
+        this.selectionState.end_y + this.getWindowTopOffsetWithScroll();
+
+      let max_selected_box_coordinates = {
+        max_start_x: Number.MAX_VALUE,
+        max_start_y: Number.MAX_VALUE,
+        max_end_x: 0,
+        max_end_y: 0,
+      };
+
+      this.items.forEach((res_card) => {
+        // console.log(res_card.position);
+        if (
+          res_card.position.x >= absolute_start_x &&
+          res_card.position.y >= absolute_start_y &&
+          res_card.position.x <= absolute_end_x &&
+          res_card.position.y <= absolute_end_y
+        ) {
+          this.drawSelectedBox(res_card, max_selected_box_coordinates);
+
+          if (this.selected_ids.every((id) => id != res_card.id)) {
+            this.selected_ids.push(res_card.id);
+            console.log(this.selected_ids);
+          }
+        } else {
+          let ind = this.selected_ids.indexOf(res_card.id);
+          if (ind != -1) {
+            let id = this.selected_ids.splice(ind);
+            console.log(this.selected_ids);
+            res_card.selected = false;
+            this.selected_div_style.display = 'none';
+          }
+        }
+      });
+    }
+  }
+
+  private drawSelectedBox(
+    res_card: CloudResource,
+    max_selected_box_coordinates: {
+      max_start_x: number;
+      max_start_y: number;
+      max_end_x: number;
+      max_end_y: number;
+    }
+  ) {
+    if (res_card.position.x < max_selected_box_coordinates.max_start_x) {
+      max_selected_box_coordinates.max_start_x = res_card.position.x;
+    }
+
+    if (res_card.position.y < max_selected_box_coordinates.max_start_y) {
+      max_selected_box_coordinates.max_start_y = res_card.position.y;
+    }
+
+    if (
+      res_card.position.x + res_card.shape.width >
+      max_selected_box_coordinates.max_end_x
+    ) {
+      max_selected_box_coordinates.max_end_x =
+        res_card.position.x + res_card.shape.width;
+    }
+
+    if (
+      res_card.position.y + res_card.shape.height >
+      max_selected_box_coordinates.max_end_y
+    ) {
+      max_selected_box_coordinates.max_end_y =
+        res_card.position.y + res_card.shape.height;
+    }
+
+    this.selected_box_coordinates.start_x =
+      max_selected_box_coordinates.max_start_x - 8;
+    this.selected_box_coordinates.start_y =
+      max_selected_box_coordinates.max_start_y - 8;
+    this.selected_box_coordinates.end_x =
+      max_selected_box_coordinates.max_end_x + 28;
+    this.selected_box_coordinates.end_y =
+      max_selected_box_coordinates.max_end_y + 28;
+
+    this.selected_position = {
+      x: this.selected_box_coordinates.start_x,
+      y: this.selected_box_coordinates.start_y,
+    };
+
+    // let left = this.selected_box_coordinates.start_x;
+    // let top = this.selected_box_coordinates.start_y;
+    let width =
+      this.selected_box_coordinates.end_x -
+      this.selected_box_coordinates.start_x;
+    let height =
+      this.selected_box_coordinates.end_y -
+      this.selected_box_coordinates.start_y;
+
+    this.selected_box_shape = { width: width, height: height };
+
+    this.selected_div_style.display = 'block';
+    //this.selected_div_style.left = left.toString() + 'px';
+    //this.selected_div_style.top = top.toString() + 'px';
+    this.selected_div_style.width = width.toString() + 'px';
+    this.selected_div_style.height = height.toString() + 'px';
+    this.selected = true;
+
+    res_card.selected = true;
+  }
+
+  selectCard(id: string, event: any) {
+    let max_selected_box_coordinates = {
+      max_start_x: Number.MAX_VALUE,
+      max_start_y: Number.MAX_VALUE,
+      max_end_x: 0,
+      max_end_y: 0,
+    };
+    this.selected_ids.push(id);
+    this.selected_ids.forEach((newId, oldId) => {
+      let item = this.items.find((res) => res.id == newId) as CloudResource;
+      this.drawSelectedBox(item, max_selected_box_coordinates);
+    });
+  }
+
+  saveAsTemplate() {
+    let templateResources: CloudResource[] = [];
+    this.selected_ids.forEach((id) => {
+      let oldRes = this.items.find((res) => res.id == id);
+      if (oldRes) {
+        oldRes.selected = false;
+        let res = structuredClone(oldRes);
+        if (res != undefined) {
+          let oldId = res.id;
+          // TODO: Update and provide placeholders.
+          // res.id = uuidv4();
+          res.name += '_template';
+          res.title += '_template';
+
+          templateResources.push(res);
+        }
       }
+    });
+
+    let details_string: string = JSON.stringify(
+      templateResources,
+      replacer,
+      '\t'
+    );
+    this._modalService.openTemplateConfigModal(details_string);
+  }
+
+  loadTemplateInstance(template_index: number) {
+    let res = this.templates[template_index].res_details;
+    let selected_resources: CloudResource[] = JSON.parse(res, reviver);
+
+    let updatedIds: Map<string, string> = new Map();
+    selected_resources.forEach((oldRes) => {
+      if (oldRes) {
+        oldRes.selected = false;
+        let res = structuredClone(oldRes);
+        if (res != undefined) {
+          let oldId = res.id;
+          res.id = uuidv4();
+          res.name += '_1';
+          res.title += '_1';
+          res.position.x -= 100;
+          res.position.y -= 100;
+
+          this.items.push(res);
+          updatedIds.set(oldId, res.id);
+        }
+      }
+    });
+
+    this.selected_ids = [...updatedIds.values()];
+    let max_selected_box_coordinates = {
+      max_start_x: Number.MAX_VALUE,
+      max_start_y: Number.MAX_VALUE,
+      max_end_x: 0,
+      max_end_y: 0,
+    };
+    updatedIds.forEach((newId, oldId) => {
+      let item = this.items.find((res) => res.id == newId) as CloudResource;
+
+      this.drawSelectedBox(item, max_selected_box_coordinates);
+
+      item?.inlets.splice(0, item.inlets.length);
+      let newIMap: Map<string, LineCoordinates> = new Map();
+      item?.inletMap.forEach((iv, ik) => {
+        if (ik != 'dataType') {
+          let newKey = updatedIds.get(ik) as string;
+          if (newKey != undefined) {
+            newIMap.set(newKey, iv);
+            item.inlets.push(newKey);
+          }
+        }
+        item.inletMap = newIMap;
+      });
+
+      item?.outlets.splice(0, item.outlets.length);
+      let newOMap: Map<string, LineCoordinates> = new Map();
+      item?.outletMap.forEach((iv, ik) => {
+        if (ik != 'dataType') {
+          let newKey = updatedIds.get(ik) as string;
+          if (newKey != undefined) {
+            newOMap.set(newKey, iv);
+            item.outlets.push(newKey);
+          }
+        }
+
+        item.outletMap = newOMap;
+      });
+
+      this.UpdateInletAndOutlet(item, item.id, -100, -100);
+    });
+
+    this._processLineData();
+    this._saveState();
+  }
+
+  duplicateSelected() {
+    let updatedIds: Map<string, string> = new Map();
+    this.selected_ids.forEach((id) => {
+      let oldRes = this.items.find((res) => res.id == id);
+      if (oldRes) {
+        oldRes.selected = false;
+        let res = structuredClone(oldRes);
+        if (res != undefined) {
+          let oldId = res.id;
+          res.id = uuidv4();
+          res.name += '_1';
+          res.title += '_1';
+          res.position.x -= 100;
+          res.position.y -= 100;
+
+          this.items.push(res);
+          updatedIds.set(oldId, res.id);
+        }
+      }
+    });
+
+    this.selected_ids = [...updatedIds.values()];
+    let max_selected_box_coordinates = {
+      max_start_x: Number.MAX_VALUE,
+      max_start_y: Number.MAX_VALUE,
+      max_end_x: 0,
+      max_end_y: 0,
+    };
+    updatedIds.forEach((newId, oldId) => {
+      let item = this.items.find((res) => res.id == newId) as CloudResource;
+
+      this.drawSelectedBox(item, max_selected_box_coordinates);
+
+      item?.inlets.splice(0, item.inlets.length);
+      let newIMap: Map<string, LineCoordinates> = new Map();
+      item?.inletMap.forEach((iv, ik) => {
+        if (ik != 'dataType') {
+          let newKey = updatedIds.get(ik) as string;
+          if (newKey != undefined) {
+            newIMap.set(newKey, iv);
+            item.inlets.push(newKey);
+          }
+        }
+        item.inletMap = newIMap;
+      });
+
+      item?.outlets.splice(0, item.outlets.length);
+      let newOMap: Map<string, LineCoordinates> = new Map();
+      item?.outletMap.forEach((iv, ik) => {
+        if (ik != 'dataType') {
+          let newKey = updatedIds.get(ik) as string;
+          if (newKey != undefined) {
+            newOMap.set(newKey, iv);
+            item.outlets.push(newKey);
+          }
+        }
+
+        item.outletMap = newOMap;
+      });
+
+      this.UpdateInletAndOutlet(item, item.id, -100, -100);
+    });
+
+    this._processLineData();
+    this._saveState();
+  }
+
+  trashAllSelected() {
+    this.selected_ids.forEach((id) => {
+      this.trashResource(-1, id);
+    });
+
+    this.dropSelectedBox();
+  }
+
+  private getWindowTopOffsetWithScroll() {
+    return (
+      (this._element_ref.nativeElement as HTMLElement)
+        .parentElement as HTMLElement
+    ).scrollTop;
+  }
+
+  private getWindowLeftOffsetWithScroll() {
+    return (
+      -RESOURCE_LIST_WIDTH +
+      (
+        (this._element_ref.nativeElement as HTMLElement)
+          .parentElement as HTMLElement
+      ).scrollLeft
     );
   }
 
@@ -242,9 +792,13 @@ export class PlaygroundComponent implements OnInit {
       });
   }
 
-  public trashShit(index: number, id: string): void {
+  public trashResource(index: number, id: string): void {
     let currentItem = this.items.find((x) => x.id == id);
+
     if (currentItem) {
+      if ((index = -1)) {
+        index = this.items.indexOf(currentItem);
+      }
       currentItem.inlets.forEach((element: string) => {
         let tempItem = this.items.find((x) => x.id == element);
         if (tempItem) {
@@ -490,14 +1044,53 @@ export class PlaygroundComponent implements OnInit {
 
   public mouseLeft(): void {}
 
-  public dragMove($event: CdkDragMove, id: string): void {
+  public dragMove_Card($event: CdkDragMove, id: string): void {
+    this.dropSelectionBox();
     let pos = $event.source.getFreeDragPosition();
     this.updateLinePosition(id, pos);
   }
 
-  public dragEnd($event: CdkDragEnd, id: string): void {
+  public dragEnd_Card($event: CdkDragEnd, id: string): void {
+    this._saveState();
+  }
+
+  public dragMove_Selection($event: CdkDragMove): void {
+    //this.dropSelectionBox();
     let pos = $event.source.getFreeDragPosition();
-    this.updateLinePosition(id, pos);
+
+    let differenceinX = pos.x - this.selected_position.x;
+    let differenceinY = pos.y - this.selected_position.y;
+
+    console.log(differenceinX, differenceinY);
+
+    this.selected_ids.forEach((id) => {
+      let currentItem = this.items.find((x) => x.id == id);
+
+      if (currentItem != null) {
+        currentItem.position = {
+          x: currentItem.position.x + differenceinX,
+          y: currentItem.position.y + differenceinY,
+        };
+
+        this.UpdateInletAndOutlet(
+          currentItem,
+          id,
+          differenceinX,
+          differenceinY
+        );
+
+        this._processLineData();
+      }
+    });
+
+    this.selected_box_coordinates.start_x = pos.x;
+    this.selected_box_coordinates.start_y = pos.y;
+
+    this.selected_position.x = pos.x;
+    this.selected_position.y = pos.y;
+  }
+
+  public dragEnd_Selection($event: CdkDragEnd): void {
     this._saveState();
   }
 
@@ -506,41 +1099,51 @@ export class PlaygroundComponent implements OnInit {
     if (currentItem != null) {
       let differenceinX = pos.x - currentItem.position.x;
       let differenceinY = pos.y - currentItem.position.y;
-      if (currentItem.inlets.length > 0) {
-        currentItem.inlets.forEach((element) => {
-          let tempInlet = this.items.find((x) => x.id == element);
-          if (tempInlet) {
-            let existingCords = tempInlet.outletMap.get(id);
-            if (existingCords) {
-              tempInlet.outletMap.set(id, {
-                x1: existingCords?.x1 + differenceinX,
-                y1: existingCords?.y1 + differenceinY,
-                x2: existingCords?.x2,
-                y2: existingCords?.y2,
-              });
-            }
-          }
-        });
-        currentItem.inletMap.forEach((value: LineCoordinates, key: string) => {
-          if (key != 'dataType') {
-            value.x1 += differenceinX;
-            value.y1 += differenceinY;
-          }
-        });
-      }
-
-      if (currentItem.outlets.length > 0) {
-        currentItem.outletMap.forEach((value: LineCoordinates, key: string) => {
-          if (key != 'dataType') {
-            value.x2 += differenceinX;
-            value.y2 += differenceinY;
-          }
-        });
-      }
+      this.UpdateInletAndOutlet(currentItem, id, differenceinX, differenceinY);
       currentItem.position.x = pos.x;
       currentItem.position.y = pos.y;
 
       this._processLineData();
+    }
+  }
+
+  private UpdateInletAndOutlet(
+    currentItem: CloudResource,
+    id: string,
+    differenceinX: number,
+    differenceinY: number
+  ) {
+    if (currentItem.inlets.length > 0) {
+      currentItem.inlets.forEach((element) => {
+        let tempInlet = this.items.find((x) => x.id == element);
+        if (tempInlet) {
+          let existingCords = tempInlet.outletMap.get(id);
+          if (existingCords) {
+            tempInlet.outletMap.set(id, {
+              x1: existingCords?.x1 + differenceinX,
+              y1: existingCords?.y1 + differenceinY,
+              x2: existingCords?.x2,
+              y2: existingCords?.y2,
+            });
+          }
+        }
+      });
+
+      currentItem.inletMap.forEach((value: LineCoordinates, key: string) => {
+        if (key != 'dataType') {
+          value.x1 += differenceinX;
+          value.y1 += differenceinY;
+        }
+      });
+    }
+
+    if (currentItem.outlets.length > 0) {
+      currentItem.outletMap.forEach((value: LineCoordinates, key: string) => {
+        if (key != 'dataType') {
+          value.x2 += differenceinX;
+          value.y2 += differenceinY;
+        }
+      });
     }
   }
 

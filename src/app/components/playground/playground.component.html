@@ -1,27 +1,51 @@
-<ng-container *ngFor="let item of items; let i = index">
-  <div>
+<div class="canvas">
+  <ng-container *ngFor="let item of items; let i = index">
     <app-card
       [item]="item"
-      (dragEnded)="dragEnd($event, item.id)"
-      (dragMoved)="dragMove($event, item.id)"
+      (dragEnded)="dragEnd_Card($event, item.id)"
+      (dragMoved)="dragMove_Card($event, item.id)"
       (resized)="onResize($event, i)"
       (onValueEntered)="onEnter($event, i)"
-      (trashShitClicked)="trashShit(i, item.id)"
+      (trashShitClicked)="trashResource(i, item.id)"
       (openResourceConfigClicked)="SetResourceConfig(i, item)"
       (startConnectionClicked)="startConnection($event, item.id)"
       (mouseEntered)="mouseEntered($event, item.id)"
       (mouseLeft)="mouseLeft()"
+      (click)="selectCard(item.id, $event)"
+      [selected]="item.selected"
     ></app-card>
+  </ng-container>
+
+  <ng-container *ngFor="let item of lineOptions">
+    <line [LineOptions]="item"></line>
+  </ng-container>
+
+  <ng-container>
+    <line *ngIf="newLine" [edgeObserver]="edgeObserver"></line>
+  </ng-container>
+
+  <div [ngStyle]="selection_div_style"></div>
+  <div
+    class="selected-div"
+    [ngStyle]="selected_div_style"
+    cdkDragBoundary=".right"
+    (cdkDragEnded)="dragEnd_Selection($event)"
+    (cdkDragMoved)="dragMove_Selection($event)"
+    [cdkDragFreeDragPosition]="selected_position"
+    cdkDrag
+  >
+    <div class="inner"></div>
+    <div (click)="trashAllSelected()">
+      <fa-icon class="i1" [icon]="faTrash" />
+    </div>
+    <div (click)="duplicateSelected()">
+      <fa-icon class="i2" [icon]="faCopy" />
+    </div>
+    <div (click)="saveAsTemplate()">
+      <fa-icon class="i3" [icon]="faSave" />
+    </div>
   </div>
-</ng-container>
-
-<ng-container *ngFor="let item of lineOptions">
-  <line [LineOptions]="item"></line>
-</ng-container>
-
-<ng-container>
-  <line *ngIf="newLine" [edgeObserver]="edgeObserver"></line>
-</ng-container>
+</div>
 
 <div class="controls">
   <app-tool-bar
@@ -30,4 +54,41 @@
   ></app-tool-bar>
   <app-config-options class="configuration"></app-config-options>
 </div>
+
+<div class="side-bar">
+  <div (click)="view != 0 && view == 1 ? (view = 0) : (view = 1)">
+    <fa-icon class="i1" [icon]="faObjectGroup" />
+  </div>
+  <div (click)="view != 0 && view == 2 ? (view = 0) : (view = 2)">
+    <fa-icon class="i1" [icon]="faWorkSpace" />
+  </div>
+  <div (click)="view != 0 && view == 3 ? (view = 0) : (view = 3)">
+    <fa-icon class="i1t" [icon]="faMetric" />
+  </div>
+  <div (click)="view != 0 && view == 4 ? (view = 0) : (view = 4)">
+    <fa-icon class="i1" [icon]="faLog" />
+  </div>
+  <div (click)="view != 0 && view == 5 ? (view = 0) : (view = 5)">
+    <fa-icon class="i1" [icon]="faAlert" />
+  </div>
+  <div (click)="view != 0 && view == 6 ? (view = 0) : (view = 6)">
+    <fa-icon class="i1" [icon]="faHelp" />
+  </div>
+</div>
+<div *ngIf="view == 1" class="related-res">
+  <span class="s-h">Templates</span>
+  <div class="sub-rel-res">
+    <ng-container *ngFor="let template of templates; let i = index">
+      <div class="rel-res-field" (click)="loadTemplateInstance(i)">
+        <span class="template-name">
+          <fa-icon class="tempicon" [icon]="faObjectGroup" />
+          <img class="listIcon" src="/assets/aws-logo.png" />
+          <span>{{ template.template_name }}</span>
+        </span>
+        <span class="template-desc">{{ template.template_description }}</span>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
 <span class="product-watermark">DesignSphere</span>

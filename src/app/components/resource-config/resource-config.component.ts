@@ -33,7 +33,7 @@ import { ProviderType } from 'src/app/enum/ProviderType';
 import { AWS_ResourceType } from 'src/app/Models/Codegen/aws_resources/ResourceType';
 import { AddComponentService } from 'src/app/services/add-component.service';
 import { VisualResource } from '../resource-list/VisualResource';
-import { ResourceMenuComponent } from '../utilityComponents/resource-menu/resource-menu.component';
+import { ResourceMenuComponent } from '../tool-bar/resource-menu/resource-menu.component';
 import { GCP_ResourceProperties } from 'src/app/Models/Codegen/gcp_resources/ResourceProperties';
 import { AWS_ResourceProperties } from 'src/app/Models/Codegen/aws_resources/ResourceProperties';
 import { DynamicUIPropState } from './DynamicUIPropState';

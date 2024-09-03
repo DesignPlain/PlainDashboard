@@ -66,12 +66,17 @@
   font-size: smaller;
   background-size: 10px 10px;
   margin: 10px;
-  padding: 10px 10px 10px 10px;
-  border-radius: 5px;
+  padding: 7px 10px 7px 10px;
+  border-radius: 4px;
   min-width: 20px;
   max-width: 200px;
   align-items: center;
   vertical-align: auto;
+
+  &:hover {
+    cursor: pointer;
+    background: #2b1c1c85;
+  }
 
   .listIcon {
     left: 190px;
@@ -83,5 +88,5 @@
 }
 
 span {
-  cursor:default;
+  cursor: default;
 }

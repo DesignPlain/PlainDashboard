@@ -1,6 +1,10 @@
 <div class="controls">
-  <div class="apply" (click)="deploy()">Deploy</div>
-  <div class="apply bid2" (click)="destroy()">Destroy</div>
+  <div class="apply" (click)="deploy()">
+    <fa-icon class="i1" [icon]="faPlay" /> Deploy
+  </div>
+  <div class="apply bid2" (click)="destroy()">
+    <fa-icon class="i1" [icon]="faStop" /> Destroy
+  </div>
 </div>
 <div *ngIf="view" class="menu">
   <resource-menu

@@ -1,14 +1,14 @@
 import { Overlay, OverlayConfig } from '@angular/cdk/overlay';
 import { Injectable, Injector } from '@angular/core';
-import { ConfigModalComponent } from '../components/config-modal/config-modal.component';
+import { ConfigModalComponent } from '../components/config-options/config-modal/config-modal.component';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { ResourceConfigComponent } from '../components/resource-config/resource-config.component';
-import { DynamicUIProps } from '../components/resource-config/DynamicUIProps';
 import { DynamicUIPropState } from '../components/resource-config/DynamicUIPropState';
 import { Outputs } from '../Models/CloudResource';
 import { PlaygroundComponent } from '../components/playground/playground.component';
 import { GCP_ResourceType } from 'src/app/Models/Codegen/gcp_resources/ResourceType';
 import { AWS_ResourceType } from '../Models/Codegen/aws_resources/ResourceType';
+import { TemplateConfigComponent } from '../components/template-config/template-config.component';
 
 @Injectable({
   providedIn: 'root',
@@ -29,8 +29,28 @@ export class ModalDialogService {
       })
     );
     this.ActiveModal = overlayRef;
-    const userProfilePortal = new ComponentPortal(ConfigModalComponent);
-    overlayRef.attach(userProfilePortal);
+    const configModalComponent = new ComponentPortal(ConfigModalComponent);
+    overlayRef.attach(configModalComponent);
+    overlayRef.backdropClick().subscribe(() => overlayRef.dispose());
+  }
+
+  public openTemplateConfigModal(details: string) {
+    let positionStrategy = this._overlay.position().global();
+    positionStrategy = positionStrategy.centerHorizontally();
+    positionStrategy = positionStrategy.centerVertically();
+
+    const overlayRef = this._overlay.create(
+      new OverlayConfig({
+        positionStrategy,
+        hasBackdrop: true,
+        disposeOnNavigation: true,
+      })
+    );
+    this.ActiveModal = overlayRef;
+    const configModalComponent = new ComponentPortal(TemplateConfigComponent);
+    let cmpRef = overlayRef.attach(configModalComponent);
+
+    cmpRef.instance.t_details = details;
     overlayRef.backdropClick().subscribe(() => overlayRef.dispose());
   }
 
@@ -56,9 +76,11 @@ export class ModalDialogService {
       })
     );
     this.ActiveModal = overlayRef;
-    const userProfilePortal = new ComponentPortal(ResourceConfigComponent);
+    const resourceConfigComponent = new ComponentPortal(
+      ResourceConfigComponent
+    );
 
-    let cmpRef = overlayRef.attach(userProfilePortal);
+    let cmpRef = overlayRef.attach(resourceConfigComponent);
 
     cmpRef.instance.currentResource = currentResource;
     cmpRef.instance.currentIndex = currentIndex;

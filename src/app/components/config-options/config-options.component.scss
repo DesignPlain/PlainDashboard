@@ -1,6 +1,11 @@
-.configuration{
-  padding: 10px;
-  fa-icon{
+.configuration {
+  padding: 13px;
+  fa-icon {
     font-size: 24px;
+  }
+
+  &:hover {
+    transform: rotate(25deg);
+    transition: 200ms ease-in-out 200ms;
   }
 }

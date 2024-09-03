@@ -29,7 +29,7 @@
     }
 
     &:hover {
-      z-index: 1000;
+      z-index: 999;
       background-image: radial-gradient(#ffffff 0.3px, #f0dbdbf0 0.5px);
       animation-name: bounce;
       opacity: 1;
@@ -88,7 +88,7 @@
       opacity: 0.8;
 
       background-image: radial-gradient(#ffffff00 0.3px, #e2e2e299 0.5px);
-      border: 1px dashed rgba(83, 53, 53, 0.2);
+      border: 1.9px dashed rgba(83, 53, 53, 0.4);
       border-radius: 3px;
 
       &:hover {
@@ -130,7 +130,7 @@
       opacity: 0.8;
 
       background-image: radial-gradient(#ffffff00 0.3px, #c6d0c499 0.5px);
-      border: 1.9px dashed rgba(83, 53, 53, 0.2);
+      border: 1.9px dashed rgba(83, 53, 53, 0.4);
       border-radius: 3px;
 
       &:hover {
@@ -175,7 +175,7 @@
       background-color: rgba(255, 255, 255, 0.654);
 
       &:hover {
-        cursor: grab;
+        cursor: move;
       }
     }
 
@@ -191,7 +191,7 @@
       opacity: 0.8;
       border: 0px;
       width: 100px;
-      font-size: xx-small;
+      font-size: 9px;
 
       &:focus {
         outline: none;
@@ -223,7 +223,7 @@
 
     .cir {
       position: absolute;
-      z-index: 10000;
+      z-index: 999;
       border-radius: 10px;
       border: none;
       color: rgba(116, 115, 115);
