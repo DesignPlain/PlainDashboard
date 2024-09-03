@@ -10,7 +10,7 @@
     .left-i {
       position: absolute;
       left: 240.22px;
-      z-index: 999;
+      z-index: 995;
       bottom: 1vh;
       font-size: 20px;
       background: -webkit-linear-gradient(11deg, #b466c1 90%, #ffffff 100%);
@@ -25,7 +25,7 @@
     .right-i {
       position: absolute;
       left: 5.22px;
-      z-index: 999;
+      z-index: 994;
       bottom: 1vh;
       font-size: 20px;
       background: -webkit-linear-gradient(11deg, #b466c1 90%, #ffffff 100%);
@@ -70,7 +70,7 @@
 
       position: absolute;
       bottom: 0px;
-      z-index: 995;
+      z-index: 994;
     }
 
     .left {
@@ -107,12 +107,13 @@
 
       position: absolute;
       bottom: 0px;
-      z-index: 995;
+      z-index: 994;
     }
 
     .right {
       opacity: 1;
       width: 100%;
+      position: relative;
 
       overflow: auto;
 

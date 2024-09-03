@@ -5,6 +5,12 @@ import {
   HostListener,
   Output,
 } from '@angular/core';
+import {
+  faCirclePlay,
+  faStopCircle,
+  faTrash,
+  IconDefinition,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-tool-bar',
@@ -12,6 +18,8 @@ import {
   styleUrls: ['./tool-bar.component.scss'],
 })
 export class ToolBarComponent {
+  public faPlay: IconDefinition = faCirclePlay;
+  public faStop: IconDefinition = faStopCircle;
   constructor(private el: ElementRef) {}
   view = false;
 

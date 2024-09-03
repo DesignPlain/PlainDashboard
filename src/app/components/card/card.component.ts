@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CloudResource, ResourceStatus } from 'src/app/Models/CloudResource';
 import {
   faTrash,
@@ -29,8 +29,22 @@ import { faHashnode } from '@fortawesome/free-brands-svg-icons';
 export class CardComponent {
   constructor() {}
 
+  cardStyle = {
+    outline: '0px',
+    'outline-offset': '1.5px',
+  };
+
   @Input()
   public item: CloudResource;
+
+  @Input()
+  set selected(value: boolean) {
+    if (value) {
+      this.cardStyle.outline = '1.7px dashed #167d16';
+    } else {
+      this.cardStyle.outline = '0px';
+    }
+  }
 
   @Output()
   public trashShitClicked = new EventEmitter();

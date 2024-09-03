@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="sub-content">
+    <div class="header">Template Editor</div>
+    <br />
+
+    <div class="usr-in">
+      <div class="span"><span>Template Name:</span></div>
+      <input
+        #box1
+        class="input"
+        type="text"
+        value="{{ t_name }}"
+        placeholder="Enter Template Name"
+        (change)="t_name = box1.value"
+      />
+    </div>
+    <br />
+    <div class="usr-in">
+      <div class="span"><span>Template Description:</span></div>
+      <textarea
+        #box2
+        class="input-area"
+        type="text"
+        value="{{ t_desc }}"
+        placeholder="Enter Template Description"
+        (change)="t_desc = box2.value"
+      ></textarea>
+    </div>
+    <br />
+    <div class="span"><span>Template Details:</span></div>
+    <div class="details">
+      <span [innerHTML]="t_details"></span>
+    </div>
+    <div (click)="CreateTemplate()" class="apply">Create Template</div>
+  </div>
+  <!-- <button class="close interactive-close-btn" (click)="closeModal()"></button> -->
+</div>

@@ -5,7 +5,18 @@ import {
   faAngleRight,
   faAnglesLeft,
   faAnglesRight,
+  faChartLine,
+  faCircleQuestion,
+  faFileWaveform,
+  faLayerGroup,
+  faObjectGroup,
+  faTerminal,
+  faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
+import {
+  ApplicationStateService,
+  Template,
+} from './services/application-state.service';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +24,9 @@ import {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  templates: Template[] = [];
+  constructor() {}
+
   public showObj(ele: any): boolean {
     let val = ele.getAttribute('data');
     if (val == 'false') {
@@ -35,4 +49,10 @@ export class AppComponent {
   title = 'DesignSphere';
   faAngleLeft = faAngleLeft;
   faAngleRight = faAngleRight;
+  faObjectGroup = faObjectGroup;
+  faLog = faFileWaveform;
+  faAlert = faTriangleExclamation;
+  faHelp = faCircleQuestion;
+  faWorkSpace = faLayerGroup;
+  faMetric = faChartLine;
 }

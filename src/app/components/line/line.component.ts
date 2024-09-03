@@ -44,6 +44,7 @@ export class LineComponent {
       } ${this.y2}, ${this.x2} ${this.y2}`;
       this.lineReady = true;
     });
+
     if (this.LineOptions) {
       this.isNew = this.LineOptions.isNew;
       this.selected = this.LineOptions.selected;

@@ -13,6 +13,7 @@ export class CloudResource {
   public shape = { width: 100, height: 40 };
   public iconSrc: string = '';
   public status: ResourceStatus = ResourceStatus.Draft;
+  public selected: boolean = false;
   public lastError: string = '';
   public yamlContent: string = '';
   public inlets: string[] = [];
