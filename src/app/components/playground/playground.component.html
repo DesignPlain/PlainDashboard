@@ -59,9 +59,6 @@
   <div (click)="view != 0 && view == 1 ? (view = 0) : (view = 1)">
     <fa-icon class="i1" [icon]="faObjectGroup" />
   </div>
-  <div (click)="view != 0 && view == 2 ? (view = 0) : (view = 2)">
-    <fa-icon class="i1" [icon]="faWorkSpace" />
-  </div>
   <div (click)="view != 0 && view == 3 ? (view = 0) : (view = 3)">
     <fa-icon class="i1t" [icon]="faMetric" />
   </div>
@@ -71,8 +68,8 @@
   <div (click)="view != 0 && view == 5 ? (view = 0) : (view = 5)">
     <fa-icon class="i1" [icon]="faAlert" />
   </div>
-  <div (click)="view != 0 && view == 6 ? (view = 0) : (view = 6)">
-    <fa-icon class="i1" [icon]="faHelp" />
+  <div (click)="view != 0 && view == 2 ? (view = 0) : (view = 2)">
+    <fa-icon class="i1" [icon]="faWorkSpace" />
   </div>
 </div>
 <div *ngIf="view == 1" class="related-res">
@@ -83,11 +80,22 @@
         <span class="template-name">
           <fa-icon class="tempicon" [icon]="faObjectGroup" />
           <img class="listIcon" src="/assets/aws-logo.png" />
-          <span>{{ template.template_name }}</span>
+          <span class="template-name-span">{{ template.template_name }}</span>
+          <fa-icon
+            class="remove"
+            [icon]="faTrash"
+            (click)="removeTemplate(template.id)"
+          />
         </span>
         <span class="template-desc">{{ template.template_description }}</span>
       </div>
     </ng-container>
+  </div>
+</div>
+
+<div class="side-bar-bottom">
+  <div (click)="viewHelp()">
+    <fa-icon class="i1" [icon]="faHelp" />
   </div>
 </div>
 

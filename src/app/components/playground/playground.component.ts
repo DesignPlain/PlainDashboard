@@ -167,10 +167,14 @@ export class PlaygroundComponent implements OnInit {
     private _element_ref: ElementRef
   ) {
     this._getState();
-    this.templates = _applicationStateService.template;
   }
 
   ngOnInit(): void {
+    this._applicationStateService.templateUpdates.subscribe((_) => {
+      this.templates = this._applicationStateService.templates;
+      console.log(this.templates);
+    });
+
     // Subcribe for component addition
     this._addComponentService.components.subscribe(
       (resource: VisualResource) => {
@@ -294,7 +298,7 @@ export class PlaygroundComponent implements OnInit {
       e.clientY + this.getWindowTopOffsetWithScroll() <=
         this.selected_box_coordinates.start_y + this.selected_box_shape.height
     ) {
-      console.log('In selection');
+      //console.log('In selection');
     } else {
       this.startSelectionBox(e);
     }
@@ -550,6 +554,10 @@ export class PlaygroundComponent implements OnInit {
     });
   }
 
+  viewHelp() {
+    this._modalService.openHelpModal();
+  }
+
   saveAsTemplate() {
     let templateResources: CloudResource[] = [];
     this.selected_ids.forEach((id) => {
@@ -575,6 +583,10 @@ export class PlaygroundComponent implements OnInit {
       '\t'
     );
     this._modalService.openTemplateConfigModal(details_string);
+  }
+
+  removeTemplate(id: string) {
+    this._applicationStateService.deleteTemplate(id);
   }
 
   loadTemplateInstance(template_index: number) {
@@ -705,7 +717,10 @@ export class PlaygroundComponent implements OnInit {
 
         item.outletMap = newOMap;
       });
+    });
 
+    updatedIds.forEach((newId, oldId) => {
+      let item = this.items.find((res) => res.id == newId) as CloudResource;
       this.UpdateInletAndOutlet(item, item.id, -100, -100);
     });
 
@@ -718,7 +733,9 @@ export class PlaygroundComponent implements OnInit {
       this.trashResource(-1, id);
     });
 
+    this.selected_ids = [];
     this.dropSelectedBox();
+    this._saveState();
   }
 
   private getWindowTopOffsetWithScroll() {
@@ -1061,8 +1078,6 @@ export class PlaygroundComponent implements OnInit {
     let differenceinX = pos.x - this.selected_position.x;
     let differenceinY = pos.y - this.selected_position.y;
 
-    console.log(differenceinX, differenceinY);
-
     this.selected_ids.forEach((id) => {
       let currentItem = this.items.find((x) => x.id == id);
 
@@ -1116,6 +1131,7 @@ export class PlaygroundComponent implements OnInit {
     if (currentItem.inlets.length > 0) {
       currentItem.inlets.forEach((element) => {
         let tempInlet = this.items.find((x) => x.id == element);
+
         if (tempInlet) {
           let existingCords = tempInlet.outletMap.get(id);
           if (existingCords) {

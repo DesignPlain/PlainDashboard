@@ -9,6 +9,7 @@ import { PlaygroundComponent } from '../components/playground/playground.compone
 import { GCP_ResourceType } from 'src/app/Models/Codegen/gcp_resources/ResourceType';
 import { AWS_ResourceType } from '../Models/Codegen/aws_resources/ResourceType';
 import { TemplateConfigComponent } from '../components/template-config/template-config.component';
+import { HelpModalComponent } from '../components/help-modal/help-modal.component';
 
 @Injectable({
   providedIn: 'root',
@@ -51,6 +52,24 @@ export class ModalDialogService {
     let cmpRef = overlayRef.attach(configModalComponent);
 
     cmpRef.instance.t_details = details;
+    overlayRef.backdropClick().subscribe(() => overlayRef.dispose());
+  }
+
+  public openHelpModal() {
+    let positionStrategy = this._overlay.position().global();
+    positionStrategy = positionStrategy.centerHorizontally();
+    positionStrategy = positionStrategy.centerVertically();
+
+    const overlayRef = this._overlay.create(
+      new OverlayConfig({
+        positionStrategy,
+        hasBackdrop: true,
+        disposeOnNavigation: true,
+      })
+    );
+    this.ActiveModal = overlayRef;
+    const configModalComponent = new ComponentPortal(HelpModalComponent);
+    let cmpRef = overlayRef.attach(configModalComponent);
     overlayRef.backdropClick().subscribe(() => overlayRef.dispose());
   }
 
