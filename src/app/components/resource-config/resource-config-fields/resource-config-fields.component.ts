@@ -39,6 +39,10 @@ import { StackService } from 'src/app/services/stack.service';
 export class ResourceConfigFieldsComponent implements OnInit {
   @ViewChildren('tooltipel', { read: ElementRef })
   tooltipRefs: QueryList<ElementRef>;
+  textAreaStyle = {
+    // width: '26em',
+    // height: '8em',
+  };
 
   constructor(private el: ElementRef, private _stackService: StackService) {}
   ngOnInit(): void {}
@@ -107,6 +111,37 @@ export class ResourceConfigFieldsComponent implements OnInit {
 
     return a > b ? 1 : b > a ? -1 : 0;
   };
+
+  // We are using some generic values here, ideally
+  // this info should be available in the schema based
+  // on the potential max input length
+  TextAreaKeys = ['base64'];
+  TextAreaList = ['test'];
+  ExactTextAreaKeys = ['content', 'code', 'data', 'userdata'];
+  needTextArea(keyname: string, value: any = '') {
+    if (value != undefined && value.length > 20) {
+      this.textAreaStyle = {
+        width: '26em',
+        height: '8em',
+      };
+
+      this.TextAreaList.push(keyname);
+    }
+
+    let lowerKey = keyname.toLocaleLowerCase();
+    let yes =
+      this.TextAreaKeys.some((pattern) => lowerKey.includes(pattern)) ||
+      this.ExactTextAreaKeys.some((pattern) => lowerKey == pattern);
+
+    return yes;
+  }
+
+  needTextAreaResize(keyname: string) {
+    return this.TextAreaList.some((k) => {
+      console.log('key', k, keyname);
+      return k == keyname;
+    });
+  }
 
   getConfig(keyname: string): DynamicUIPropState {
     let conf = this.config.get(keyname[0].toLowerCase() + keyname.substring(1));

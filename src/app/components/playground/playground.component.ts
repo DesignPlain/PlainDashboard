@@ -915,6 +915,34 @@ export class PlaygroundComponent implements OnInit {
     }
   }
 
+  // TODO: Added extra fields in the DynamicUIProps for custom properties for rendering
+  //       Ideally these should be in the generated code for the resource, but we can this have override
+  //       for specify resource fields which we might need to set manually
+  //       eg: changing the name of the resource displayed or show text or text-area in UI
+  // private getPropertiesMapResourceCustomOverrides(
+  //   providerType: ProviderType,
+  //   resourceType: GCP_ResourceType | AWS_ResourceType
+  // ) {
+  //   if (providerType == ProviderType.AWS) {
+  //     let propertiesMap = AWS_ResourceProperties.propertiesMap1.get(
+  //       resourceType as AWS_ResourceType
+  //     );
+
+  //     if (propertiesMap == undefined) {
+  //       propertiesMap = AWS_ResourceProperties.propertiesMap2.get(
+  //         resourceType as AWS_ResourceType
+  //       );
+  //     }
+
+  //     return propertiesMap;
+  //   } else {
+  //     let propertiesMap = GCP_ResourceProperties.propertiesMap.get(
+  //       resourceType as GCP_ResourceType
+  //     );
+  //     return propertiesMap;
+  //   }
+  // }
+
   private loadResourceConfig(
     name: string,
     res: Resource,
