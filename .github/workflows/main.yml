@@ -11,7 +11,7 @@ jobs:
       - name: Trigger Workflow in Another Repository
         run: |
           # Set the required variables
-          repo_owner="DesignPlain" 
+          repo_owner="nmbr7" 
           repo_name="PlainServer"  
           event_type="trigger-workflow" 
   
