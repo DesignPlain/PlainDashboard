@@ -18,8 +18,8 @@ export class Template {
 })
 export class ApplicationStateService {
   public templateUpdates: Subject<boolean> = new Subject<boolean>();
-  public templates: Template[];
-  constructor(private _http: HttpClient) {}
+  public templates: Template[] = [];
+  constructor(private _http: HttpClient) { }
 
   public getState(): Observable<object> {
     this.getTemplate();
@@ -48,7 +48,7 @@ export class ApplicationStateService {
             this.templateUpdates.next(true);
           }
         },
-        error: (_) => {},
+        error: (_) => { },
         complete: () => console.info('GetTemplate completed'),
       });
   }
@@ -74,8 +74,8 @@ export class ApplicationStateService {
         }
       )
       .subscribe({
-        next: (data) => {},
-        error: (_) => {},
+        next: (data) => { },
+        error: (_) => { },
         complete: () => console.info('SaveTemplate Completed'),
       });
   }
@@ -96,8 +96,8 @@ export class ApplicationStateService {
         }
       )
       .subscribe({
-        next: (data) => {},
-        error: (_) => {},
+        next: (data) => { },
+        error: (_) => { },
         complete: () => console.info('SaveTemplate Completed'),
       });
   }

@@ -10,8 +10,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';
 import { OverlayConfig } from '@angular/cdk/overlay';
-import { GCP_ResourceType } from 'src/app/Models/Codegen/gcp_resources/ResourceType';
-import { AWS_ResourceType } from 'src/app/Models/Codegen/aws_resources/ResourceType';
+import { ResourceType as AWS_ResourceType } from 'src/app/Models/codegen/aws/ResourceType';
+import { ResourceType as GCP_ResourceType } from 'src/app/Models/codegen/gcp/ResourceType';
 import {
   animate,
   state,
@@ -27,7 +27,7 @@ import { faHashnode } from '@fortawesome/free-brands-svg-icons';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  constructor() {}
+  constructor() { }
 
   cardStyle = {
     outline: '0px',

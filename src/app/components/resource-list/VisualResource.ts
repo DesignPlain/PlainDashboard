@@ -1,6 +1,5 @@
-
-import { AWS_ResourceType } from 'src/app/Models/Codegen/aws_resources/ResourceType';
-import { GCP_ResourceType } from 'src/app/Models/Codegen/gcp_resources/ResourceType';
+import { ResourceType as GCP_ResourceType } from 'src/app/Models/codegen/gcp/ResourceType';
+import { ResourceType as AWS_ResourceType } from 'src/app/Models/codegen/aws/ResourceType';
 import { ProviderType } from 'src/app/enum/ProviderType';
 
 export class VisualResource {
@@ -9,5 +8,5 @@ export class VisualResource {
     public ProviderType: ProviderType,
     public ResourceType: GCP_ResourceType | AWS_ResourceType,
     public iconSrc: string
-  ) {}
+  ) { }
 }

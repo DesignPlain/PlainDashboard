@@ -1,0 +1,47 @@
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "../../ds_base/InputType";
+import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+
+export interface ec2_NetworkInterfaceAttachment {
+  //
+  attachmentId?: string;
+
+  // Integer to define the devices index.
+  deviceIndex?: number;
+
+  // ID of the instance to attach to.
+  instance?: string;
+}
+
+export function ec2_NetworkInterfaceAttachment_GetTypes(): DynamicUIProps[] {
+  return [
+    new DynamicUIProps(
+      InputType.String,
+      "attachmentId",
+      "",
+      () => [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "deviceIndex",
+      "Integer to define the devices index.",
+      () => [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "instance",
+      "ID of the instance to attach to.",
+      () => [],
+      true,
+      false,
+    ),
+  ];
+}

@@ -1,14 +1,17 @@
 import { ProviderType } from '../enum/ProviderType';
-import { AWS_ResourceType } from './Codegen/aws_resources/ResourceType';
-import { GCP_ResourceType } from './Codegen/gcp_resources/ResourceType';
+import { ResourceType as GCP_ResourceType } from 'src/app/Models/codegen/gcp/ResourceType';
+import { ResourceType as AWS_ResourceType } from 'src/app/Models/codegen/aws/ResourceType';
+import { DS_Resource } from 'src/app/Models/codegen/ds_base/Resource';
+
 
 export class CloudResource {
   public id: string = '';
   public name: string = '';
-  public title: string = 'Description';
+  public title: string = 'Title';
+  public desc: string = 'Description';
   public resourceType: GCP_ResourceType | AWS_ResourceType = 0;
   public providerType: ProviderType = 0;
-  public resourceConfig: Resource | undefined = new DefaultResource();
+  public resourceConfig: DS_Resource | undefined = new DefaultResource();
   public position = { x: 340, y: 100 };
   public shape = { width: 100, height: 40 };
   public iconSrc: string = '';
@@ -48,11 +51,7 @@ export class Outputs {
   public value: string = '';
 }
 
-export abstract class Resource {
-  // constructor(public BaseName: string, public PlatformType: string) {}
-}
-
-export class DefaultResource extends Resource {
+export class DefaultResource extends DS_Resource {
   // constructor() {
   // //  super('Def', 'None');
   // }

@@ -39,7 +39,7 @@
     overflow: visible;
 
     .header {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       margin-left: 2rem;
       font-weight: 500;
       color: #000000c4;
@@ -50,7 +50,15 @@
       text-decoration: underline;
     }
 
+    .sub-head {
+      margin-left: 2rem;
+      color: #000000c4;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    }
+
     .inputform {
+      margin-top: 1em;
       padding-left: 2rem;
       margin-left: 2rem;
       padding-right: 20rem;

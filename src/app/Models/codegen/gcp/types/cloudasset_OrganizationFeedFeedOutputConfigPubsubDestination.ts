@@ -1,0 +1,29 @@
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "../../ds_base/InputType";
+import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+
+export interface cloudasset_OrganizationFeedFeedOutputConfigPubsubDestination {
+  /*
+Destination on Cloud Pubsub topic.
+
+- - -
+*/
+  topic?: string;
+}
+
+export function cloudasset_OrganizationFeedFeedOutputConfigPubsubDestination_GetTypes(): DynamicUIProps[] {
+  return [
+    new DynamicUIProps(
+      InputType.String,
+      "topic",
+      "Destination on Cloud Pubsub topic.\n\n- - -",
+      () => [],
+      true,
+      false,
+    ),
+  ];
+}

@@ -18,7 +18,7 @@ import {
   faRotate,
 } from '@fortawesome/free-solid-svg-icons';
 import { DynamicUIPropState } from '../DynamicUIPropState';
-import { InputType } from 'src/app/enum/InputType';
+import { InputType } from 'src/app/Models/codegen/ds_base/InputType';
 import { Mode } from 'src/app/components/utilityComponents/key-value-array/key-value-array.component';
 import {
   faPenToSquare,
@@ -43,9 +43,10 @@ export class ResourceConfigFieldsComponent implements OnInit {
     // width: '26em',
     // height: '8em',
   };
+  AssetType: string = '';
 
-  constructor(private el: ElementRef, private _stackService: StackService) {}
-  ngOnInit(): void {}
+  constructor(private el: ElementRef, private _stackService: StackService) { }
+  ngOnInit(): void { }
   public faInfo: IconDefinition = faInfoCircle;
   public faRotate: IconDefinition = faRotate;
   public faRelated: IconDefinition = faPenToSquare;
@@ -138,7 +139,7 @@ export class ResourceConfigFieldsComponent implements OnInit {
 
   needTextAreaResize(keyname: string) {
     return this.TextAreaList.some((k) => {
-      console.log('key', k, keyname);
+      //console.log('key', k, keyname);
       return k == keyname;
     });
   }

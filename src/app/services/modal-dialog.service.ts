@@ -6,8 +6,8 @@ import { ResourceConfigComponent } from '../components/resource-config/resource-
 import { DynamicUIPropState } from '../components/resource-config/DynamicUIPropState';
 import { Outputs } from '../Models/CloudResource';
 import { PlaygroundComponent } from '../components/playground/playground.component';
-import { GCP_ResourceType } from 'src/app/Models/Codegen/gcp_resources/ResourceType';
-import { AWS_ResourceType } from '../Models/Codegen/aws_resources/ResourceType';
+import { ResourceType as GCP_ResourceType } from 'src/app/Models/codegen/gcp/ResourceType';
+import { ResourceType as AWS_ResourceType } from 'src/app/Models/codegen/aws/ResourceType';
 import { TemplateConfigComponent } from '../components/template-config/template-config.component';
 import { HelpModalComponent } from '../components/help-modal/help-modal.component';
 
@@ -15,7 +15,7 @@ import { HelpModalComponent } from '../components/help-modal/help-modal.componen
   providedIn: 'root',
 })
 export class ModalDialogService {
-  constructor(private _overlay: Overlay, private _injector: Injector) {}
+  constructor(private _overlay: Overlay, private _injector: Injector) { }
   public ActiveModal: any;
   public openConfigModal() {
     let positionStrategy = this._overlay.position().global();
@@ -81,6 +81,7 @@ export class ModalDialogService {
     lastError: string,
     yamlContent: string,
     resId: string,
+    desc: string,
     comp: PlaygroundComponent
   ) {
     let positionStrategy = this._overlay.position().global();
@@ -108,6 +109,7 @@ export class ModalDialogService {
     cmpRef.instance.lastError = lastError;
     cmpRef.instance.yamlData = yamlContent;
     cmpRef.instance.resId = resId;
+    cmpRef.instance.description = desc;
 
     cmpRef.instance.configUpdateEvent.subscribe((res) => {
       comp.updateConfig(res.id, res.res);

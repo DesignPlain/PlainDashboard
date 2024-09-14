@@ -1,0 +1,53 @@
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "../../ds_base/InputType";
+import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+import {
+  monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRange,
+  monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRange_GetTypes,
+} from "./monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRange";
+
+export interface monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCut {
+  /*
+A TimeSeries [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+aggregating values to quantify the good service provided.
+Must have ValueType = DISTRIBUTION and
+MetricKind = DELTA or MetricKind = CUMULATIVE.
+*/
+  distributionFilter?: string;
+
+  /*
+Range of numerical values. The computed good_service
+will be the count of values x in the Distribution such
+that range.min <= x <= range.max. inclusive of min and
+max. Open ranges can be defined by setting
+just one of min or max.
+Structure is documented below.
+*/
+  range?: monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRange;
+}
+
+export function monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCut_GetTypes(): DynamicUIProps[] {
+  return [
+    new DynamicUIProps(
+      InputType.String,
+      "distributionFilter",
+      "A TimeSeries [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)\naggregating values to quantify the good service provided.\nMust have ValueType = DISTRIBUTION and\nMetricKind = DELTA or MetricKind = CUMULATIVE.",
+      () => [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Object,
+      "range",
+      "Range of numerical values. The computed good_service\nwill be the count of values x in the Distribution such\nthat range.min <= x <= range.max. inclusive of min and\nmax. Open ranges can be defined by setting\njust one of min or max.\nStructure is documented below.",
+      () =>
+        monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRange_GetTypes(),
+      true,
+      false,
+    ),
+  ];
+}

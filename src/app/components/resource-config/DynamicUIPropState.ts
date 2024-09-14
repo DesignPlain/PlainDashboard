@@ -1,4 +1,4 @@
-import { InputType } from "src/app/enum/InputType";
+import { InputType } from "src/app/Models/codegen/ds_base/InputType";
 
 
 export class DynamicUIPropState {
