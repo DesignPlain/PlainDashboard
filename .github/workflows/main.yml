@@ -1,4 +1,4 @@
-name: Trigger_UI_File_Update_In_Server_Repo
+name: Trigger UI File Update In Server Repo
 
 on:
   workflow_dispatch:
@@ -12,7 +12,7 @@ jobs:
         run: |
           repo_owner="DesignPlain" 
           repo_name="PlainServer"  
-          event_type="trigger-ui-file-update-workflow" 
+          event_type="Trigger-UI-File-Update" 
   
           curl -L \
             -X POST \
