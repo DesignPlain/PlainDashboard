@@ -1,12 +1,15 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import { GCP_ResourceProperties } from 'src/app/Models/Codegen/gcp_resources/ResourceProperties';
-import { GCP_ResourceType } from 'src/app/Models/Codegen/gcp_resources/ResourceType';
 import { AddComponentService } from 'src/app/services/add-component.service';
 import { VisualResource } from '../../resource-list/VisualResource';
 import { ProviderType } from 'src/app/enum/ProviderType';
-import { AWS_ResourceProperties } from 'src/app/Models/Codegen/aws_resources/ResourceProperties';
-import { AWS_ResourceType } from 'src/app/Models/Codegen/aws_resources/ResourceType';
+
+import { ResourceType as GCP_ResourceType } from 'src/app/Models/codegen/gcp/ResourceType';
+import { ResourceType as AWS_ResourceType } from 'src/app/Models/codegen/aws/ResourceType';
+
+import { ResourceProperties as GCP_ResourceProperties } from 'src/app/Models/codegen/gcp/ResourceProperties';
+import { ResourceProperties as AWS_ResourceProperties } from 'src/app/Models/codegen/aws/ResourceProperties';
+
 @Component({
   selector: 'resource-menu',
   templateUrl: './resource-menu.component.html',
@@ -14,7 +17,7 @@ import { AWS_ResourceType } from 'src/app/Models/Codegen/aws_resources/ResourceT
 })
 export class ResourceMenuComponent {
   static resources: number[] = [
-    ...GCP_ResourceProperties.ResourceFactoryMap.keys(),
+    ...GCP_ResourceProperties.ResourceFactoryMap1.keys(),
     ...AWS_ResourceProperties.ResourceFactoryMap1.keys(),
     ...AWS_ResourceProperties.ResourceFactoryMap2.keys(),
   ].map((x) => x);
@@ -27,7 +30,7 @@ export class ResourceMenuComponent {
   public items = ResourceMenuComponent.resources;
   public expand: boolean = true;
 
-  constructor(private _addComponentService: AddComponentService) {}
+  constructor(private _addComponentService: AddComponentService) { }
 
   addComponent(resource: VisualResource) {
     //console.log(componentName);
@@ -94,9 +97,9 @@ export class ResourceMenuComponent {
 
     let result = [
       str.charAt(0).toUpperCase() +
-        str.slice(1, sp_index + 1) +
-        str.charAt(sp_index + 1).toUpperCase() +
-        str.slice(sp_index + 2),
+      str.slice(1, sp_index + 1) +
+      str.charAt(sp_index + 1).toUpperCase() +
+      str.slice(sp_index + 2),
       logo_path,
     ];
 

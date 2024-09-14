@@ -1,0 +1,73 @@
+import {
+  InputType,
+  InputType_String_GetTypes,
+  InputType_Number_GetTypes,
+  InputType_Map_GetTypes,
+} from "../../ds_base/InputType";
+import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+
+export interface ec2_SpotInstanceRequestMetadataOptions {
+  // Whether the IPv6 endpoint for the instance metadata service is enabled. Defaults to `disabled`.
+  httpProtocolIpv6?: string;
+
+  // Desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. Valid values are integer from `1` to `64`. Defaults to `1`.
+  httpPutResponseHopLimit?: number;
+
+  // Whether or not the metadata service requires session tokens, also referred to as _Instance Metadata Service Version 2 (IMDSv2)_. Valid values include `optional` or `required`.
+  httpTokens?: string;
+
+  /*
+Enables or disables access to instance tags from the instance metadata service. Valid values include `enabled` or `disabled`. Defaults to `disabled`.
+
+For more information, see the documentation on the [Instance Metadata Service](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html).
+*/
+  instanceMetadataTags?: string;
+
+  // Whether the metadata service is available. Valid values include `enabled` or `disabled`. Defaults to `enabled`.
+  httpEndpoint?: string;
+}
+
+export function ec2_SpotInstanceRequestMetadataOptions_GetTypes(): DynamicUIProps[] {
+  return [
+    new DynamicUIProps(
+      InputType.String,
+      "httpProtocolIpv6",
+      "Whether the IPv6 endpoint for the instance metadata service is enabled. Defaults to `disabled`.",
+      () => [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      "httpPutResponseHopLimit",
+      "Desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. Valid values are integer from `1` to `64`. Defaults to `1`.",
+      () => [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "httpTokens",
+      "Whether or not the metadata service requires session tokens, also referred to as _Instance Metadata Service Version 2 (IMDSv2)_. Valid values include `optional` or `required`.",
+      () => [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "instanceMetadataTags",
+      "Enables or disables access to instance tags from the instance metadata service. Valid values include `enabled` or `disabled`. Defaults to `disabled`.\n\nFor more information, see the documentation on the [Instance Metadata Service](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html).",
+      () => [],
+      false,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      "httpEndpoint",
+      "Whether the metadata service is available. Valid values include `enabled` or `disabled`. Defaults to `enabled`.",
+      () => [],
+      false,
+      false,
+    ),
+  ];
+}

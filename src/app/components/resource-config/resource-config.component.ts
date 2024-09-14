@@ -21,23 +21,25 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import {
   DefaultResource,
-  Resource,
   Outputs,
   CloudResource,
 } from 'src/app/Models/CloudResource';
-import { InputType } from 'src/app/enum/InputType';
+import { InputType } from 'src/app/Models/codegen/ds_base/InputType';
 import { ModalDialogService } from 'src/app/services/modal-dialog.service';
 
-import { GCP_ResourceType } from 'src/app/Models/Codegen/gcp_resources/ResourceType';
 import { ProviderType } from 'src/app/enum/ProviderType';
-import { AWS_ResourceType } from 'src/app/Models/Codegen/aws_resources/ResourceType';
 import { AddComponentService } from 'src/app/services/add-component.service';
 import { VisualResource } from '../resource-list/VisualResource';
 import { ResourceMenuComponent } from '../tool-bar/resource-menu/resource-menu.component';
-import { GCP_ResourceProperties } from 'src/app/Models/Codegen/gcp_resources/ResourceProperties';
-import { AWS_ResourceProperties } from 'src/app/Models/Codegen/aws_resources/ResourceProperties';
 import { DynamicUIPropState } from './DynamicUIPropState';
 import { faCircleDot } from '@fortawesome/free-regular-svg-icons';
+
+import { ResourceType as GCP_ResourceType } from 'src/app/Models/codegen/gcp/ResourceType';
+import { ResourceType as AWS_ResourceType } from 'src/app/Models/codegen/aws/ResourceType';
+
+import { ResourceProperties as GCP_ResourceProperties } from 'src/app/Models/codegen/gcp/ResourceProperties';
+import { ResourceProperties as AWS_ResourceProperties } from 'src/app/Models/codegen/aws/ResourceProperties';
+import { DS_Resource } from 'src/app/Models/codegen/ds_base/Resource';
 
 @Component({
   selector: 'app-resource-config',
@@ -48,10 +50,10 @@ export class ResourceConfigComponent implements OnInit {
   constructor(
     private _addComponentService: AddComponentService,
     private _modalDialogService: ModalDialogService
-  ) {}
+  ) { }
 
   static RESOURCE_ID_ARRAY: number[] = [
-    ...GCP_ResourceProperties.ResourceFactoryMap.keys(),
+    ...GCP_ResourceProperties.ResourceFactoryMap1.keys(),
     ...AWS_ResourceProperties.ResourceFactoryMap1.keys(),
     ...AWS_ResourceProperties.ResourceFactoryMap2.keys(),
   ].map((x) => x);
@@ -70,7 +72,9 @@ export class ResourceConfigComponent implements OnInit {
   @Input() currentResource: GCP_ResourceType | AWS_ResourceType | undefined;
   @Input() currentIndex: number = -1;
   @Input() resId: string = '';
-  resConfig: Resource = new DefaultResource();
+  @Input() description: string = '';
+
+  resConfig: DS_Resource = new DefaultResource();
 
   @Input() config: Map<string, DynamicUIPropState> = new Map();
   @Input() currentOutput: Outputs[] = [];
@@ -96,10 +100,10 @@ export class ResourceConfigComponent implements OnInit {
   }
 
   @Output()
-  configUpdateEvent = new EventEmitter<{ id: number; res: Resource }>();
+  configUpdateEvent = new EventEmitter<{ id: number; res: DS_Resource }>();
 
   @Output()
-  subConfigOpen = new EventEmitter<{ id: number; res: Resource }>();
+  subConfigOpen = new EventEmitter<{ id: number; res: DS_Resource }>();
 
   set = false;
   listMap = new Map<string, any>();
@@ -131,9 +135,9 @@ export class ResourceConfigComponent implements OnInit {
 
     let result = [
       str.charAt(0).toUpperCase() +
-        str.slice(1, sp_index + 1) +
-        str.charAt(sp_index + 1).toUpperCase() +
-        str.slice(sp_index + 2),
+      str.slice(1, sp_index + 1) +
+      str.charAt(sp_index + 1).toUpperCase() +
+      str.slice(sp_index + 2),
       logo_path,
     ];
 
@@ -176,7 +180,7 @@ export class ResourceConfigComponent implements OnInit {
       let resource_ids = new Map<number, undefined>();
 
       let related = ResourceConfigComponent.RESOURCE_ID_ARRAY.slice(
-        GCP_ResourceProperties.ResourceFactoryMap.size
+        GCP_ResourceProperties.ResourceFactoryMap1.size
       ).filter((id) => {
         let resource_name_lower = AWS_ResourceType[id].toLowerCase();
 
@@ -212,7 +216,7 @@ export class ResourceConfigComponent implements OnInit {
 
       let related = ResourceConfigComponent.RESOURCE_ID_ARRAY.slice(
         0,
-        GCP_ResourceProperties.ResourceFactoryMap.size
+        GCP_ResourceProperties.ResourceFactoryMap1.size
       ).filter((id) => {
         let resource_name_lower = GCP_ResourceType[id]?.toLowerCase();
 
@@ -259,7 +263,7 @@ export class ResourceConfigComponent implements OnInit {
       });
 
       let resMap = new Map([...this.listMap, ...currentConfig]);
-      this.resConfig = Object.fromEntries(resMap.entries()) as Resource;
+      this.resConfig = Object.fromEntries(resMap.entries()) as DS_Resource;
 
       //console.log('Final submit', this.resConfig);
       this.configUpdateEvent.emit({

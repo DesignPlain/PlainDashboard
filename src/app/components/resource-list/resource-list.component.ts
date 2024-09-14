@@ -3,8 +3,8 @@ import { AddComponentService } from 'src/app/services/add-component.service';
 
 import { VisualResource } from './VisualResource';
 import { ProviderType } from 'src/app/enum/ProviderType';
-import { GCP_ResourceType } from 'src/app/Models/Codegen/gcp_resources/ResourceType';
-import { AWS_ResourceType } from 'src/app/Models/Codegen/aws_resources/ResourceType';
+import { ResourceType as AWS_ResourceType } from 'src/app/Models/codegen/aws/ResourceType';
+import { ResourceType as GCP_ResourceType } from 'src/app/Models/codegen/gcp/ResourceType';
 
 @Component({
   selector: 'app-resource-list',
@@ -117,33 +117,7 @@ export class ResourceListComponent {
     ],
   ]);
 
-  public static readonly RelatedResources = new Map<
-    ProviderType,
-    Map<
-      AWS_ResourceType | GCP_ResourceType,
-      AWS_ResourceType[] | GCP_ResourceType[]
-    >
-  >([
-    [
-      ProviderType.GCP,
-      new Map([
-        [
-          GCP_ResourceType.COMPUTE_INSTANCE,
-          [
-            GCP_ResourceType.COMPUTE_ADDRESS,
-            GCP_ResourceType.COMPUTE_BACKENDSERVICE,
-            GCP_ResourceType.COMPUTE_DISK,
-            GCP_ResourceType.COMPUTE_FIREWALL,
-            GCP_ResourceType.COMPUTE_INSTANCEGROUP,
-            GCP_ResourceType.COMPUTE_INSTANCEIAMBINDING,
-            GCP_ResourceType.COMPUTE_INSTANCEIAMMEMBER,
-            GCP_ResourceType.COMPUTE_INSTANCEIAMPOLICY,
-          ],
-        ],
-      ]),
-    ],
-  ]);
-  constructor(private _addComponentService: AddComponentService) {}
+  constructor(private _addComponentService: AddComponentService) { }
   addComponent(resource: VisualResource) {
     //console.log(componentName);
     this._addComponentService.components.next(resource);

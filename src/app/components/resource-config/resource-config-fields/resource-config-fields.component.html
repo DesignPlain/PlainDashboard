@@ -157,20 +157,56 @@
           *ngIf="item.value.willReplaceOnChanges"
         />
       </div>
-
-      <div class="fileBox">
-        <div>
-          <label for="formFile" class="fileUp btn btn-info">Select File</label>
-          <input
-            (change)="this.onFilechange(toKeyFormat(item.key), $event)"
-            class="form-control"
-            type="file"
-            id="formFile"
-            style="display: none"
-          />
+      <div class="asset-section">
+        <div class="asset-btn">
+          <label class="fileUp btn btn-info as-btn" (click)="AssetType = 'file'"
+            >Upload File</label
+          >
+          <label
+            class="fileUp btn btn-info as-btn"
+            (click)="AssetType = 'remote'"
+            >Remote</label
+          >
         </div>
-        <div class="fname">
-          <span>{{ getFromMap(toKeyFormat(item.key)) || item.value.val }}</span>
+        <div class="fileBox" *ngIf="AssetType == 'file'">
+          <div>
+            <div class="span asset-field">
+              <label for="formFile" class="fileUp btn btn-info"
+                >Select File</label
+              >
+            </div>
+            <input
+              (change)="this.onFilechange(toKeyFormat(item.key), $event)"
+              class="form-control"
+              type="file"
+              id="formFile"
+              style="display: none"
+            />
+          </div>
+          <div class="fname">
+            <span>{{
+              getFromMap(toKeyFormat(item.key)) || item.value.val
+            }}</span>
+          </div>
+        </div>
+        <div class="fileBox" *ngIf="AssetType == 'remote'">
+          <div>
+            <div class="span asset-field">
+              <span class="span"> URL </span>
+            </div>
+          </div>
+          <div class="fname">
+            <input
+              #box
+              type="text"
+              class="input"
+              placeholder="Enter URL"
+              value="{{ getFromMap(toKeyFormat(item.key)) || item.value.val }}"
+              (focusout)="
+                addToMap(toKeyFormat(item.key), box.value, item.value.type)
+              "
+            />
+          </div>
         </div>
       </div>
     </div>

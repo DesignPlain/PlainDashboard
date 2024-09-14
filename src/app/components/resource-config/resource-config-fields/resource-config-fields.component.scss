@@ -101,7 +101,7 @@
 
   .span {
     position: relative;
-    width: 22em;
+    width: 25em;
     margin-right: 5px;
     color: #264653;
   }
@@ -473,6 +473,39 @@
     background: #4ca50d;
   }
 
+  .asset-section {
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-direction: column;
+
+    border: 0.5px solid transparent;
+    outline: none;
+    margin-left: 2px;
+
+    box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1),
+      0px 0px 3px 0 rgba(0, 0, 0, 0.1);
+
+    padding: 12px;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    outline: none;
+    padding-top: 5px;
+
+    border-radius: 3px;
+    border-width: 0.5px;
+    transition: all 0;
+    min-width: 16em;
+
+    .asset-btn {
+      margin-bottom: 20px;
+      margin-top: 10px;
+      .as-btn {
+        margin-right: 10px;
+      }
+    }
+  }
+
   .fileBox {
     display: flex;
     justify-content: flex-start;
@@ -489,7 +522,7 @@
     box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1),
       0px 0px 3px 0 rgba(0, 0, 0, 0.1);
 
-    padding: 12px;
+    padding: 15px;
     padding-left: 0.8em;
     padding-right: 0.8em;
     outline: none;
@@ -498,6 +531,10 @@
     border-width: 0.5px;
     transition: all 0;
     min-width: 16em;
+
+    .asset-field {
+      width: 7em;
+    }
   }
 
   .fileUp {

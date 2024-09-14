@@ -11,7 +11,7 @@ import {
   faCross,
 } from '@fortawesome/free-solid-svg-icons';
 import { DynamicUIPropState } from '../../resource-config/DynamicUIPropState';
-import { InputType } from 'src/app/enum/InputType';
+import { InputType } from 'src/app/Models/codegen/ds_base/InputType';
 
 export enum Mode {
   Array,
