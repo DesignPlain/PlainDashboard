@@ -1,4 +1,4 @@
-name: Trigger Target Workflow
+name: Trigger_UI_File_Update_In_Server_Repo
 
 on:
   workflow_dispatch:
@@ -8,12 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Trigger Workflow in Another Repository
+      - name: Trigger Workflow in Server Repo
         run: |
-          # Set the required variables
           repo_owner="DesignPlain" 
           repo_name="PlainServer"  
-          event_type="trigger-workflow" 
+          event_type="trigger-ui-file-update-workflow" 
   
           curl -L \
             -X POST \
