@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface PolicyAttachmentArgs {
   // Role(s) the policy should be applied to.
@@ -43,40 +43,40 @@ export class PolicyAttachment extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "roles",
-        "Role(s) the policy should be applied to.",
+        'roles',
+        'Role(s) the policy should be applied to.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "users",
-        "User(s) the policy should be applied to.",
+        'users',
+        'User(s) the policy should be applied to.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "groups",
-        "Group(s) the policy should be applied to.",
+        'groups',
+        'Group(s) the policy should be applied to.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the attachment. This cannot be an empty string.",
+        'name',
+        'Name of the attachment. This cannot be an empty string.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "policyArn",
-        "ARN of the policy you want to apply. Typically this should be a reference to the ARN of another resource to ensure dependency ordering, such as `aws_iam_policy.example.arn`.",
+        'policyArn',
+        'ARN of the policy you want to apply. Typically this should be a reference to the ARN of another resource to ensure dependency ordering, such as `aws_iam_policy.example.arn`.',
         () => [],
         true,
         true,

@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_getMachineTypesMachineTypeBundledLocalSsd,
   compute_getMachineTypesMachineTypeBundledLocalSsd_GetTypes,
-} from "./compute_getMachineTypesMachineTypeBundledLocalSsd";
+} from './compute_getMachineTypesMachineTypeBundledLocalSsd';
 import {
   compute_getMachineTypesMachineTypeAccelerator,
   compute_getMachineTypesMachineTypeAccelerator_GetTypes,
-} from "./compute_getMachineTypesMachineTypeAccelerator";
+} from './compute_getMachineTypesMachineTypeAccelerator';
 import {
   compute_getMachineTypesMachineTypeDeprecated,
   compute_getMachineTypesMachineTypeDeprecated_GetTypes,
-} from "./compute_getMachineTypesMachineTypeDeprecated";
+} from './compute_getMachineTypesMachineTypeDeprecated';
 
 export interface compute_getMachineTypesMachineType {
   // The configuration of bundled local SSD for the machine type. Structure is documented below.
@@ -57,88 +57,88 @@ export function compute_getMachineTypesMachineType_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The name of the machine type.",
+      'name',
+      'The name of the machine type.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "accelerators",
-      "A list of accelerator configurations assigned to this machine type. Structure is documented below.",
+      'accelerators',
+      'A list of accelerator configurations assigned to this machine type. Structure is documented below.',
       () => compute_getMachineTypesMachineTypeAccelerator_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "description",
-      "A textual description of the machine type.",
+      'description',
+      'A textual description of the machine type.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "deprecateds",
-      "The deprecation status associated with this machine type. Structure is documented below.",
+      'deprecateds',
+      'The deprecation status associated with this machine type. Structure is documented below.',
       () => compute_getMachineTypesMachineTypeDeprecated_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maximumPersistentDisks",
-      "The maximum persistent disks allowed.",
+      'maximumPersistentDisks',
+      'The maximum persistent disks allowed.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "bundledLocalSsds",
-      "The configuration of bundled local SSD for the machine type. Structure is documented below.",
+      'bundledLocalSsds',
+      'The configuration of bundled local SSD for the machine type. Structure is documented below.',
       () => compute_getMachineTypesMachineTypeBundledLocalSsd_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "guestCpus",
-      "The number of virtual CPUs that are available to the instance.",
+      'guestCpus',
+      'The number of virtual CPUs that are available to the instance.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "isSharedCpus",
-      "Whether this machine type has a shared CPU.",
+      'isSharedCpus',
+      'Whether this machine type has a shared CPU.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maximumPersistentDisksSizeGb",
-      "The maximum total persistent disks size (GB) allowed.",
+      'maximumPersistentDisksSizeGb',
+      'The maximum total persistent disks size (GB) allowed.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "memoryMb",
-      "The amount of physical memory available to the instance, defined in MB.",
+      'memoryMb',
+      'The amount of physical memory available to the instance, defined in MB.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "selfLink",
-      "The server-defined URL for the machine type.",
+      'selfLink',
+      'The server-defined URL for the machine type.',
       () => [],
       true,
       false,

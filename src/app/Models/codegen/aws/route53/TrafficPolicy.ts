@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface TrafficPolicyArgs {
   // Comment for the traffic policy.
@@ -45,24 +45,24 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "comment",
-        "Comment for the traffic policy.",
+        'comment',
+        'Comment for the traffic policy.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "document",
-        "Policy document. This is a JSON formatted string. For more information about building Route53 traffic policy documents, see the [AWS Route53 Traffic Policy document format](https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html)\n\nThe following arguments are optional:",
+        'document',
+        'Policy document. This is a JSON formatted string. For more information about building Route53 traffic policy documents, see the [AWS Route53 Traffic Policy document format](https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html)\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the traffic policy.",
+        'name',
+        'Name of the traffic policy.',
         () => [],
         false,
         true,

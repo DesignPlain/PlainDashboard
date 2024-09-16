@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface emrcontainers_JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurationS3MonitoringConfiguration {
   // Amazon S3 destination URI for log publishing.
@@ -15,8 +15,8 @@ export function emrcontainers_JobTemplateJobTemplateDataConfigurationOverridesMo
   return [
     new DynamicUIProps(
       InputType.String,
-      "logUri",
-      "Amazon S3 destination URI for log publishing.",
+      'logUri',
+      'Amazon S3 destination URI for log publishing.',
       () => [],
       true,
       true,

@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   customerprofiles_DomainRuleBasedMatchingAttributeTypesSelector,
   customerprofiles_DomainRuleBasedMatchingAttributeTypesSelector_GetTypes,
-} from "./customerprofiles_DomainRuleBasedMatchingAttributeTypesSelector";
+} from './customerprofiles_DomainRuleBasedMatchingAttributeTypesSelector';
 import {
   customerprofiles_DomainRuleBasedMatchingConflictResolution,
   customerprofiles_DomainRuleBasedMatchingConflictResolution_GetTypes,
-} from "./customerprofiles_DomainRuleBasedMatchingConflictResolution";
+} from './customerprofiles_DomainRuleBasedMatchingConflictResolution';
 import {
   customerprofiles_DomainRuleBasedMatchingExportingConfig,
   customerprofiles_DomainRuleBasedMatchingExportingConfig_GetTypes,
-} from "./customerprofiles_DomainRuleBasedMatchingExportingConfig";
+} from './customerprofiles_DomainRuleBasedMatchingExportingConfig';
 import {
   customerprofiles_DomainRuleBasedMatchingMatchingRule,
   customerprofiles_DomainRuleBasedMatchingMatchingRule_GetTypes,
-} from "./customerprofiles_DomainRuleBasedMatchingMatchingRule";
+} from './customerprofiles_DomainRuleBasedMatchingMatchingRule';
 
 export interface customerprofiles_DomainRuleBasedMatching {
   // A block that configures information about the `AttributeTypesSelector` where the rule-based identity resolution uses to match profiles. Documented below.
@@ -52,25 +52,25 @@ export function customerprofiles_DomainRuleBasedMatching_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Number,
-      "maxAllowedRuleLevelForMatching",
-      "Indicates the maximum allowed rule level for matching.",
+      'maxAllowedRuleLevelForMatching',
+      'Indicates the maximum allowed rule level for matching.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxAllowedRuleLevelForMerging",
-      "Indicates the maximum allowed rule level for merging.",
+      'maxAllowedRuleLevelForMerging',
+      'Indicates the maximum allowed rule level for merging.',
       () => [],
       false,
       false,
     ),
-    new DynamicUIProps(InputType.String, "status", "", () => [], false, false),
+    new DynamicUIProps(InputType.String, 'status', '', () => [], false, false),
     new DynamicUIProps(
       InputType.Object,
-      "attributeTypesSelector",
-      "A block that configures information about the `AttributeTypesSelector` where the rule-based identity resolution uses to match profiles. Documented below.",
+      'attributeTypesSelector',
+      'A block that configures information about the `AttributeTypesSelector` where the rule-based identity resolution uses to match profiles. Documented below.',
       () =>
         customerprofiles_DomainRuleBasedMatchingAttributeTypesSelector_GetTypes(),
       false,
@@ -78,8 +78,8 @@ export function customerprofiles_DomainRuleBasedMatching_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "conflictResolution",
-      "A block that specifies how the auto-merging process should resolve conflicts between different profiles. Documented below.",
+      'conflictResolution',
+      'A block that specifies how the auto-merging process should resolve conflicts between different profiles. Documented below.',
       () =>
         customerprofiles_DomainRuleBasedMatchingConflictResolution_GetTypes(),
       false,
@@ -87,24 +87,24 @@ export function customerprofiles_DomainRuleBasedMatching_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
-      "The flag that enables the rule-based matching process of duplicate profiles.",
+      'enabled',
+      'The flag that enables the rule-based matching process of duplicate profiles.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "exportingConfig",
-      "A block that specifies the configuration for exporting Identity Resolution results. Documented below.",
+      'exportingConfig',
+      'A block that specifies the configuration for exporting Identity Resolution results. Documented below.',
       () => customerprofiles_DomainRuleBasedMatchingExportingConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "matchingRules",
-      "A block that configures how the rule-based matching process should match profiles. You can have up to 15 `rule` in the `natching_rules`. Documented below.",
+      'matchingRules',
+      'A block that configures how the rule-based matching process should match profiles. You can have up to 15 `rule` in the `natching_rules`. Documented below.',
       () => customerprofiles_DomainRuleBasedMatchingMatchingRule_GetTypes(),
       false,
       false,

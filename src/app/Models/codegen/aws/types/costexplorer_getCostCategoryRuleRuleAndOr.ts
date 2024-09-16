@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   costexplorer_getCostCategoryRuleRuleAndOrDimension,
   costexplorer_getCostCategoryRuleRuleAndOrDimension_GetTypes,
-} from "./costexplorer_getCostCategoryRuleRuleAndOrDimension";
+} from './costexplorer_getCostCategoryRuleRuleAndOrDimension';
 import {
   costexplorer_getCostCategoryRuleRuleAndOrTag,
   costexplorer_getCostCategoryRuleRuleAndOrTag_GetTypes,
-} from "./costexplorer_getCostCategoryRuleRuleAndOrTag";
+} from './costexplorer_getCostCategoryRuleRuleAndOrTag';
 import {
   costexplorer_getCostCategoryRuleRuleAndOrCostCategory,
   costexplorer_getCostCategoryRuleRuleAndOrCostCategory_GetTypes,
-} from "./costexplorer_getCostCategoryRuleRuleAndOrCostCategory";
+} from './costexplorer_getCostCategoryRuleRuleAndOrCostCategory';
 
 export interface costexplorer_getCostCategoryRuleRuleAndOr {
   // Configuration block for the specific `Dimension` to use for `Expression`. See below.
@@ -33,15 +33,15 @@ export function costexplorer_getCostCategoryRuleRuleAndOr_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Array,
-      "tags",
-      "Configuration block for the specific `Tag` to use for `Expression`. See below.",
+      'tags',
+      'Configuration block for the specific `Tag` to use for `Expression`. See below.',
       () => costexplorer_getCostCategoryRuleRuleAndOrTag_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "costCategories",
+      'costCategories',
       "Configuration block for the filter that's based on `CostCategory` values. See below.",
       () => costexplorer_getCostCategoryRuleRuleAndOrCostCategory_GetTypes(),
       true,
@@ -49,8 +49,8 @@ export function costexplorer_getCostCategoryRuleRuleAndOr_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Array,
-      "dimensions",
-      "Configuration block for the specific `Dimension` to use for `Expression`. See below.",
+      'dimensions',
+      'Configuration block for the specific `Dimension` to use for `Expression`. See below.',
       () => costexplorer_getCostCategoryRuleRuleAndOrDimension_GetTypes(),
       true,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface gkeonprem_BareMetalClusterOsEnvironmentConfig {
   /*
@@ -18,8 +18,8 @@ export function gkeonprem_BareMetalClusterOsEnvironmentConfig_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "packageRepoExcluded",
-      "Whether the package repo should not be included when initializing\nbare metal machines.",
+      'packageRepoExcluded',
+      'Whether the package repo should not be included when initializing\nbare metal machines.',
       () => [],
       true,
       false,

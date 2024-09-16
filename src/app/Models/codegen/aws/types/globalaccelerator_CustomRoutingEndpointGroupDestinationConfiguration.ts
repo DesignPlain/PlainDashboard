@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface globalaccelerator_CustomRoutingEndpointGroupDestinationConfiguration {
   // The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.
@@ -21,15 +21,15 @@ export function globalaccelerator_CustomRoutingEndpointGroupDestinationConfigura
   return [
     new DynamicUIProps(
       InputType.Number,
-      "fromPort",
-      "The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.",
+      'fromPort',
+      'The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "protocols",
+      'protocols',
       'The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either `"TCP"` or `"UDP"`.',
       () => InputType_String_GetTypes(),
       true,
@@ -37,8 +37,8 @@ export function globalaccelerator_CustomRoutingEndpointGroupDestinationConfigura
     ),
     new DynamicUIProps(
       InputType.Number,
-      "toPort",
-      "The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.",
+      'toPort',
+      'The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.',
       () => [],
       true,
       false,

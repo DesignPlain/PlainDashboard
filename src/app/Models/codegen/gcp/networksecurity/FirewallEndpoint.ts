@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface FirewallEndpointArgs {
   /*
@@ -91,32 +91,32 @@ fully configured. Format: projects/{project}/global/networks/{name}.
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the firewall endpoint resource.",
+        'name',
+        'The name of the firewall endpoint resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The name of the parent this firewall endpoint belongs to.\nFormat: organizations/{organization_id}.\n\n\n- - -",
+        'parent',
+        'The name of the parent this firewall endpoint belongs to.\nFormat: organizations/{organization_id}.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "A map of key/value label pairs to assign to the resource.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'A map of key/value label pairs to assign to the resource.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location (zone) of the firewall endpoint.",
+        'location',
+        'The location (zone) of the firewall endpoint.',
         () => [],
         true,
         true,

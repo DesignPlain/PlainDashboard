@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface bigquery_TableMaterializedView {
   /*
@@ -33,15 +33,15 @@ export function bigquery_TableMaterializedView_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "allowNonIncrementalDefinition",
-      "Allow non incremental materialized view definition.\nThe default value is false.",
+      'allowNonIncrementalDefinition',
+      'Allow non incremental materialized view definition.\nThe default value is false.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enableRefresh",
+      'enableRefresh',
       "Specifies whether to use BigQuery's automatic refresh for this materialized view when the base table is updated.\nThe default value is true.",
       () => [],
       false,
@@ -49,16 +49,16 @@ export function bigquery_TableMaterializedView_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "query",
-      "A query whose result is persisted.",
+      'query',
+      'A query whose result is persisted.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "refreshIntervalMs",
-      "The maximum frequency at which this materialized view will be refreshed.\nThe default value is 1800000",
+      'refreshIntervalMs',
+      'The maximum frequency at which this materialized view will be refreshed.\nThe default value is 1800000',
       () => [],
       false,
       false,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kendra_FaqS3Path,
   kendra_FaqS3Path_GetTypes,
-} from "../types/kendra_FaqS3Path";
+} from '../types/kendra_FaqS3Path';
 
 export interface FaqArgs {
   // The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that contains the FAQs. For more information, see [IAM Roles for Amazon Kendra](https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html).
@@ -86,64 +86,64 @@ export class Faq extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "indexId",
-        "The identifier of the index for a FAQ.",
+        'indexId',
+        'The identifier of the index for a FAQ.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "languageCode",
-        "",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "name",
-        "The name that should be associated with the FAQ.",
+        'languageCode',
+        '',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "roleArn",
-        "The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that contains the FAQs. For more information, see [IAM Roles for Amazon Kendra](https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html).",
+        'name',
+        'The name that should be associated with the FAQ.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'roleArn',
+        'The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that contains the FAQs. For more information, see [IAM Roles for Amazon Kendra](https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html).',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "s3Path",
-        "The S3 location of the FAQ input data. Detailed below.",
+        's3Path',
+        'The S3 location of the FAQ input data. Detailed below.',
         () => kendra_FaqS3Path_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "",
+        'tags',
+        '',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "",
+        'description',
+        '',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "fileFormat",
-        "",
+        'fileFormat',
+        '',
         () => [],
         false,
         true,

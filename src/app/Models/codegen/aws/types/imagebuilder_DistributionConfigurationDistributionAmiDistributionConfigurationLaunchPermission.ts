@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface imagebuilder_DistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission {
   // Set of AWS Organization ARNs to assign.
@@ -24,32 +24,32 @@ export function imagebuilder_DistributionConfigurationDistributionAmiDistributio
   return [
     new DynamicUIProps(
       InputType.Array,
-      "organizationArns",
-      "Set of AWS Organization ARNs to assign.",
+      'organizationArns',
+      'Set of AWS Organization ARNs to assign.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "organizationalUnitArns",
-      "Set of AWS Organizational Unit ARNs to assign.",
+      'organizationalUnitArns',
+      'Set of AWS Organizational Unit ARNs to assign.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "userGroups",
-      "Set of EC2 launch permission user groups to assign. Use `all` to distribute a public AMI.",
+      'userGroups',
+      'Set of EC2 launch permission user groups to assign. Use `all` to distribute a public AMI.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "userIds",
-      "Set of AWS Account identifiers to assign.",
+      'userIds',
+      'Set of AWS Account identifiers to assign.',
       () => InputType_String_GetTypes(),
       false,
       false,

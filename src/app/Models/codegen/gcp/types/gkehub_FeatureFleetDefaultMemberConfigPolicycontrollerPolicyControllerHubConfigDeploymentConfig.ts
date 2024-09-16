@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResources,
   gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResources_GetTypes,
-} from "./gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResources";
+} from './gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResources';
 import {
   gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodToleration,
   gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodToleration_GetTypes,
-} from "./gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodToleration";
+} from './gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodToleration';
 
 export interface gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfig {
   /*
@@ -44,8 +44,8 @@ export function gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyCont
   return [
     new DynamicUIProps(
       InputType.Object,
-      "containerResources",
-      "Container resource requirements.\nStructure is documented below.",
+      'containerResources',
+      'Container resource requirements.\nStructure is documented below.',
       () =>
         gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResources_GetTypes(),
       false,
@@ -53,16 +53,16 @@ export function gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyCont
     ),
     new DynamicUIProps(
       InputType.String,
-      "podAffinity",
-      "Pod affinity configuration.\nPossible values are: `AFFINITY_UNSPECIFIED`, `NO_AFFINITY`, `ANTI_AFFINITY`.",
+      'podAffinity',
+      'Pod affinity configuration.\nPossible values are: `AFFINITY_UNSPECIFIED`, `NO_AFFINITY`, `ANTI_AFFINITY`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "podTolerations",
-      "Pod tolerations of node taints.\nStructure is documented below.",
+      'podTolerations',
+      'Pod tolerations of node taints.\nStructure is documented below.',
       () =>
         gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodToleration_GetTypes(),
       false,
@@ -70,16 +70,16 @@ export function gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyCont
     ),
     new DynamicUIProps(
       InputType.Number,
-      "replicaCount",
-      "Pod replica count.",
+      'replicaCount',
+      'Pod replica count.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "component",
-      "The identifier for this object. Format specified above.",
+      'component',
+      'The identifier for this object. Format specified above.',
       () => [],
       true,
       false,

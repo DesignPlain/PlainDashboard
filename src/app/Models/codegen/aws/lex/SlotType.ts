@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_SlotTypeEnumerationValue,
   lex_SlotTypeEnumerationValue_GetTypes,
-} from "../types/lex_SlotTypeEnumerationValue";
+} from '../types/lex_SlotTypeEnumerationValue';
 
 export interface SlotTypeArgs {
   // The name of the slot type. The name is not case sensitive. Must be less than or equal to 100 characters in length.
@@ -88,40 +88,40 @@ not included as an argument because the resource will add it automatically when 
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the slot type. The name is not case sensitive. Must be less than or equal to 100 characters in length.",
+        'name',
+        'The name of the slot type. The name is not case sensitive. Must be less than or equal to 100 characters in length.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "valueSelectionStrategy",
-        "Determines the slot resolution strategy that Amazon Lex\nuses to return slot type values. `ORIGINAL_VALUE` returns the value entered by the user if the user\nvalue is similar to the slot value. `TOP_RESOLUTION` returns the first value in the resolution list\nif there is a resolution list for the slot, otherwise null is returned. Defaults to `ORIGINAL_VALUE`.",
+        'valueSelectionStrategy',
+        'Determines the slot resolution strategy that Amazon Lex\nuses to return slot type values. `ORIGINAL_VALUE` returns the value entered by the user if the user\nvalue is similar to the slot value. `TOP_RESOLUTION` returns the first value in the resolution list\nif there is a resolution list for the slot, otherwise null is returned. Defaults to `ORIGINAL_VALUE`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "createVersion",
-        "Determines if a new slot type version is created when the initial resource is created and on each\nupdate. Defaults to `false`.",
+        'createVersion',
+        'Determines if a new slot type version is created when the initial resource is created and on each\nupdate. Defaults to `false`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of the slot type. Must be less than or equal to 200 characters in length.",
+        'description',
+        'A description of the slot type. Must be less than or equal to 200 characters in length.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "enumerationValues",
-        "A list of EnumerationValue objects that defines the values that\nthe slot type can take. Each value can have a list of synonyms, which are additional values that help\ntrain the machine learning model about the values that it resolves for a slot. Attributes are\ndocumented under enumeration_value.",
+        'enumerationValues',
+        'A list of EnumerationValue objects that defines the values that\nthe slot type can take. Each value can have a list of synonyms, which are additional values that help\ntrain the machine learning model about the values that it resolves for a slot. Attributes are\ndocumented under enumeration_value.',
         () => lex_SlotTypeEnumerationValue_GetTypes(),
         true,
         false,

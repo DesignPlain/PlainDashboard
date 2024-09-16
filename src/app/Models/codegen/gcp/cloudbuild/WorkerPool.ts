@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudbuild_WorkerPoolNetworkConfig,
   cloudbuild_WorkerPoolNetworkConfig_GetTypes,
-} from "../types/cloudbuild_WorkerPoolNetworkConfig";
+} from '../types/cloudbuild_WorkerPoolNetworkConfig';
 import {
   cloudbuild_WorkerPoolWorkerConfig,
   cloudbuild_WorkerPoolWorkerConfig_GetTypes,
-} from "../types/cloudbuild_WorkerPoolWorkerConfig";
+} from '../types/cloudbuild_WorkerPoolWorkerConfig';
 
 export interface WorkerPoolArgs {
   /*
@@ -102,56 +102,56 @@ Terraform, other clients and services.
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "User-defined name of the `WorkerPool`.\n\n\n- - -",
+        'name',
+        'User-defined name of the `WorkerPool`.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "networkConfig",
-        "Network configuration for the `WorkerPool`. Structure is documented below.",
+        'networkConfig',
+        'Network configuration for the `WorkerPool`. Structure is documented below.',
         () => cloudbuild_WorkerPoolNetworkConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project for the resource",
+        'project',
+        'The project for the resource',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "workerConfig",
-        "Configuration to be used for a creating workers in the `WorkerPool`. Structure is documented below.",
+        'workerConfig',
+        'Configuration to be used for a creating workers in the `WorkerPool`. Structure is documented below.',
         () => cloudbuild_WorkerPoolWorkerConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
-        "User specified annotations. See https://google.aip.dev/128#annotations for more details such as format and size\nlimitations. **Note**: This field is non-authoritative, and will only manage the annotations present in your\nconfiguration. Please refer to the field `effective_annotations` for all of the annotations present on the resource.",
+        'annotations',
+        'User specified annotations. See https://google.aip.dev/128#annotations for more details such as format and size\nlimitations. **Note**: This field is non-authoritative, and will only manage the annotations present in your\nconfiguration. Please refer to the field `effective_annotations` for all of the annotations present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "A user-specified, human-readable name for the `WorkerPool`. If provided, this value must be 1-63 characters.",
+        'displayName',
+        'A user-specified, human-readable name for the `WorkerPool`. If provided, this value must be 1-63 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource",
+        'location',
+        'The location for the resource',
         () => [],
         true,
         true,

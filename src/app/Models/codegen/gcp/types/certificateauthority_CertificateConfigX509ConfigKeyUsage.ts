@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificateauthority_CertificateConfigX509ConfigKeyUsageExtendedKeyUsage,
   certificateauthority_CertificateConfigX509ConfigKeyUsageExtendedKeyUsage_GetTypes,
-} from "./certificateauthority_CertificateConfigX509ConfigKeyUsageExtendedKeyUsage";
+} from './certificateauthority_CertificateConfigX509ConfigKeyUsageExtendedKeyUsage';
 import {
   certificateauthority_CertificateConfigX509ConfigKeyUsageUnknownExtendedKeyUsage,
   certificateauthority_CertificateConfigX509ConfigKeyUsageUnknownExtendedKeyUsage_GetTypes,
-} from "./certificateauthority_CertificateConfigX509ConfigKeyUsageUnknownExtendedKeyUsage";
+} from './certificateauthority_CertificateConfigX509ConfigKeyUsageUnknownExtendedKeyUsage';
 import {
   certificateauthority_CertificateConfigX509ConfigKeyUsageBaseKeyUsage,
   certificateauthority_CertificateConfigX509ConfigKeyUsageBaseKeyUsage_GetTypes,
-} from "./certificateauthority_CertificateConfigX509ConfigKeyUsageBaseKeyUsage";
+} from './certificateauthority_CertificateConfigX509ConfigKeyUsageBaseKeyUsage';
 
 export interface certificateauthority_CertificateConfigX509ConfigKeyUsage {
   /*
@@ -42,8 +42,8 @@ export function certificateauthority_CertificateConfigX509ConfigKeyUsage_GetType
   return [
     new DynamicUIProps(
       InputType.Object,
-      "extendedKeyUsage",
-      "Describes high-level ways in which a key may be used.\nStructure is documented below.",
+      'extendedKeyUsage',
+      'Describes high-level ways in which a key may be used.\nStructure is documented below.',
       () =>
         certificateauthority_CertificateConfigX509ConfigKeyUsageExtendedKeyUsage_GetTypes(),
       true,
@@ -51,8 +51,8 @@ export function certificateauthority_CertificateConfigX509ConfigKeyUsage_GetType
     ),
     new DynamicUIProps(
       InputType.Array,
-      "unknownExtendedKeyUsages",
-      "An ObjectId specifies an object identifier (OID). These provide context and describe types in ASN.1 messages.\nStructure is documented below.",
+      'unknownExtendedKeyUsages',
+      'An ObjectId specifies an object identifier (OID). These provide context and describe types in ASN.1 messages.\nStructure is documented below.',
       () =>
         certificateauthority_CertificateConfigX509ConfigKeyUsageUnknownExtendedKeyUsage_GetTypes(),
       false,
@@ -60,8 +60,8 @@ export function certificateauthority_CertificateConfigX509ConfigKeyUsage_GetType
     ),
     new DynamicUIProps(
       InputType.Object,
-      "baseKeyUsage",
-      "Describes high-level ways in which a key may be used.\nStructure is documented below.",
+      'baseKeyUsage',
+      'Describes high-level ways in which a key may be used.\nStructure is documented below.',
       () =>
         certificateauthority_CertificateConfigX509ConfigKeyUsageBaseKeyUsage_GetTypes(),
       true,

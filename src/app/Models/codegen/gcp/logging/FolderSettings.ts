@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface FolderSettingsArgs {
   // The storage location that Cloud Logging will use to create new resources when a location is needed but not explicitly provided.
@@ -56,32 +56,32 @@ The folder for which to retrieve settings.
     return [
       new DynamicUIProps(
         InputType.String,
-        "kmsKeyName",
-        "The resource name for the configured Cloud KMS key.",
+        'kmsKeyName',
+        'The resource name for the configured Cloud KMS key.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "storageLocation",
-        "The storage location that Cloud Logging will use to create new resources when a location is needed but not explicitly provided.",
+        'storageLocation',
+        'The storage location that Cloud Logging will use to create new resources when a location is needed but not explicitly provided.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "disableDefaultSink",
-        "If set to true, the _Default sink in newly created projects and folders will created in a disabled state. This can be used to automatically disable log storage if there is already an aggregated sink configured in the hierarchy. The _Default sink can be re-enabled manually if needed.",
+        'disableDefaultSink',
+        'If set to true, the _Default sink in newly created projects and folders will created in a disabled state. This can be used to automatically disable log storage if there is already an aggregated sink configured in the hierarchy. The _Default sink can be re-enabled manually if needed.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "folder",
-        "The folder for which to retrieve settings.\n\n\n- - -",
+        'folder',
+        'The folder for which to retrieve settings.\n\n\n- - -',
         () => [],
         true,
         true,

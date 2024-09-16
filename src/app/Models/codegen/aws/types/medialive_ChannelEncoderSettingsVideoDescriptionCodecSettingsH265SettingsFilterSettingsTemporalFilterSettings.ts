@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsFilterSettingsTemporalFilterSettings {
   // Post filter sharpening.
@@ -18,16 +18,16 @@ export function medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH26
   return [
     new DynamicUIProps(
       InputType.String,
-      "strength",
-      "Filter strength.",
+      'strength',
+      'Filter strength.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "postFilterSharpening",
-      "Post filter sharpening.",
+      'postFilterSharpening',
+      'Post filter sharpening.',
       () => [],
       false,
       false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   glue_getScriptDagNodeArg,
   glue_getScriptDagNodeArg_GetTypes,
-} from "./glue_getScriptDagNodeArg";
+} from './glue_getScriptDagNodeArg';
 
 export interface glue_getScriptDagNode {
   // Line number of the node.
@@ -28,31 +28,31 @@ export function glue_getScriptDagNode_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "lineNumber",
-      "Line number of the node.",
+      'lineNumber',
+      'Line number of the node.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "nodeType",
-      "Type of node this is.",
+      'nodeType',
+      'Type of node this is.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "args",
-      "Nested configuration an argument or property of a node. Defined below.",
+      'args',
+      'Nested configuration an argument or property of a node. Defined below.',
       () => glue_getScriptDagNodeArg_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "id",
+      'id',
       "Node identifier that is unique within the node's graph.",
       () => [],
       true,

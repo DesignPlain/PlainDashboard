@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface storage_TransferJobScheduleScheduleEndDate {
   /*
@@ -25,7 +25,7 @@ export function storage_TransferJobScheduleScheduleEndDate_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Number,
-      "day",
+      'day',
       'Day of month. Must be from 1 to 31 and valid for the year and month.\n\n<a name="nested_start_time_of_day"></a>The `start_time_of_day` blocks support:',
       () => [],
       true,
@@ -33,16 +33,16 @@ export function storage_TransferJobScheduleScheduleEndDate_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Number,
-      "month",
-      "Month of year. Must be from 1 to 12.",
+      'month',
+      'Month of year. Must be from 1 to 12.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "year",
-      "Year of date. Must be from 1 to 9999.",
+      'year',
+      'Year of date. Must be from 1 to 9999.',
       () => [],
       true,
       false,

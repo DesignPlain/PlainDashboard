@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface rds_ParameterGroupParameter {
   /*
@@ -25,23 +25,23 @@ export function rds_ParameterGroupParameter_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The name of the DB parameter.",
+      'name',
+      'The name of the DB parameter.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "The value of the DB parameter.",
+      'value',
+      'The value of the DB parameter.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "applyMethod",
+      'applyMethod',
       '"immediate" (default), or "pending-reboot". Some\nengines can\'t apply some parameters without a reboot, and you will need to\nspecify "pending-reboot" here.',
       () => [],
       false,

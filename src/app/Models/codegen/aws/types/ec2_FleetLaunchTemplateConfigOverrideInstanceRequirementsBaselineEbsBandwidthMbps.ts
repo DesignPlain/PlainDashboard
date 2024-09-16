@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2_FleetLaunchTemplateConfigOverrideInstanceRequirementsBaselineEbsBandwidthMbps {
   // The minimum baseline bandwidth, in Mbps. To specify no minimum limit, omit this parameter..
@@ -18,16 +18,16 @@ export function ec2_FleetLaunchTemplateConfigOverrideInstanceRequirementsBaselin
   return [
     new DynamicUIProps(
       InputType.Number,
-      "max",
-      "The maximum baseline bandwidth, in Mbps. To specify no maximum limit, omit this parameter..",
+      'max',
+      'The maximum baseline bandwidth, in Mbps. To specify no maximum limit, omit this parameter..',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "min",
-      "The minimum baseline bandwidth, in Mbps. To specify no minimum limit, omit this parameter..",
+      'min',
+      'The minimum baseline bandwidth, in Mbps. To specify no minimum limit, omit this parameter..',
       () => [],
       false,
       false,

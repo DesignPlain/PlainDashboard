@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datastream_StreamSourceConfigMysqlSourceConfig,
   datastream_StreamSourceConfigMysqlSourceConfig_GetTypes,
-} from "./datastream_StreamSourceConfigMysqlSourceConfig";
+} from './datastream_StreamSourceConfigMysqlSourceConfig';
 import {
   datastream_StreamSourceConfigOracleSourceConfig,
   datastream_StreamSourceConfigOracleSourceConfig_GetTypes,
-} from "./datastream_StreamSourceConfigOracleSourceConfig";
+} from './datastream_StreamSourceConfigOracleSourceConfig';
 import {
   datastream_StreamSourceConfigPostgresqlSourceConfig,
   datastream_StreamSourceConfigPostgresqlSourceConfig_GetTypes,
-} from "./datastream_StreamSourceConfigPostgresqlSourceConfig";
+} from './datastream_StreamSourceConfigPostgresqlSourceConfig';
 
 export interface datastream_StreamSourceConfig {
   /*
@@ -45,32 +45,32 @@ export function datastream_StreamSourceConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "mysqlSourceConfig",
-      "MySQL data source configuration.\nStructure is documented below.",
+      'mysqlSourceConfig',
+      'MySQL data source configuration.\nStructure is documented below.',
       () => datastream_StreamSourceConfigMysqlSourceConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "oracleSourceConfig",
-      "MySQL data source configuration.\nStructure is documented below.",
+      'oracleSourceConfig',
+      'MySQL data source configuration.\nStructure is documented below.',
       () => datastream_StreamSourceConfigOracleSourceConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "postgresqlSourceConfig",
-      "PostgreSQL data source configuration.\nStructure is documented below.",
+      'postgresqlSourceConfig',
+      'PostgreSQL data source configuration.\nStructure is documented below.',
       () => datastream_StreamSourceConfigPostgresqlSourceConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "sourceConnectionProfile",
-      "Source connection profile resource. Format: projects/{project}/locations/{location}/connectionProfiles/{name}",
+      'sourceConnectionProfile',
+      'Source connection profile resource. Format: projects/{project}/locations/{location}/connectionProfiles/{name}',
       () => [],
       true,
       true,

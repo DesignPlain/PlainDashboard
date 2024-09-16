@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   clouddeploy_DeliveryPipelineSerialPipeline,
   clouddeploy_DeliveryPipelineSerialPipeline_GetTypes,
-} from "../types/clouddeploy_DeliveryPipelineSerialPipeline";
+} from '../types/clouddeploy_DeliveryPipelineSerialPipeline';
 import {
   clouddeploy_DeliveryPipelineCondition,
   clouddeploy_DeliveryPipelineCondition_GetTypes,
-} from "../types/clouddeploy_DeliveryPipelineCondition";
+} from '../types/clouddeploy_DeliveryPipelineCondition';
 
 export interface DeliveryPipelineArgs {
   // Name of the `DeliveryPipeline`. Format is [a-z][a-z0-9\-]{0,62}.
@@ -116,64 +116,64 @@ Please refer to the field `effective_annotations` for all of the annotations pre
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project for the resource",
+        'project',
+        'The project for the resource',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "serialPipeline",
-        "SerialPipeline defines a sequential set of stages for a `DeliveryPipeline`.",
+        'serialPipeline',
+        'SerialPipeline defines a sequential set of stages for a `DeliveryPipeline`.',
         () => clouddeploy_DeliveryPipelineSerialPipeline_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "suspended",
-        "When suspended, no new releases or rollouts can be created, but in-progress ones will complete.",
+        'suspended',
+        'When suspended, no new releases or rollouts can be created, but in-progress ones will complete.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
-        "User annotations. These attributes can only be set and used by the user, and not by Google Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
+        'annotations',
+        'User annotations. These attributes can only be set and used by the user, and not by Google Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the `DeliveryPipeline`. Max length is 255 characters.",
+        'description',
+        'Description of the `DeliveryPipeline`. Max length is 255 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Labels are attributes that can be set and used by both the user and by Google Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Labels are attributes that can be set and used by both the user and by Google Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource",
+        'location',
+        'The location for the resource',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the `DeliveryPipeline`. Format is [a-z][a-z0-9\\-]{0,62}.",
+        'name',
+        'Name of the `DeliveryPipeline`. Format is [a-z][a-z0-9\\-]{0,62}.',
         () => [],
         false,
         true,

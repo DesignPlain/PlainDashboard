@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkehub_MembershipAuthority,
   gkehub_MembershipAuthority_GetTypes,
-} from "../types/gkehub_MembershipAuthority";
+} from '../types/gkehub_MembershipAuthority';
 import {
   gkehub_MembershipEndpoint,
   gkehub_MembershipEndpoint_GetTypes,
-} from "../types/gkehub_MembershipEndpoint";
+} from '../types/gkehub_MembershipEndpoint';
 
 export interface MembershipArgs {
   /*
@@ -131,56 +131,56 @@ The default value is `global`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "Location of the membership.\nThe default value is `global`.",
+        'location',
+        'Location of the membership.\nThe default value is `global`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "membershipId",
-        "The client-provided identifier of the membership.\n\n\n- - -",
+        'membershipId',
+        'The client-provided identifier of the membership.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "authority",
-        "Authority encodes how Google will recognize identities from this Membership.\nSee the workload identity documentation for more details:\nhttps://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity\nStructure is documented below.",
+        'authority',
+        'Authority encodes how Google will recognize identities from this Membership.\nSee the workload identity documentation for more details:\nhttps://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity\nStructure is documented below.',
         () => gkehub_MembershipAuthority_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The name of this entity type to be displayed on the console. This field is unavailable in v1 of the API.\n\n> **Warning:** `description` is deprecated and will be removed in a future major release.",
+        'description',
+        'The name of this entity type to be displayed on the console. This field is unavailable in v1 of the API.\n\n> **Warning:** `description` is deprecated and will be removed in a future major release.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "endpoint",
-        "If this Membership is a Kubernetes API server hosted on GKE, this is a self link to its GCP resource.\nStructure is documented below.",
+        'endpoint',
+        'If this Membership is a Kubernetes API server hosted on GKE, this is a self link to its GCP resource.\nStructure is documented below.',
         () => gkehub_MembershipEndpoint_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Labels to apply to this membership.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Labels to apply to this membership.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,

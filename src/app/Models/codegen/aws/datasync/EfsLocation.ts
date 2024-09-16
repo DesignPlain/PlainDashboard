@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datasync_EfsLocationEc2Config,
   datasync_EfsLocationEc2Config_GetTypes,
-} from "../types/datasync_EfsLocationEc2Config";
+} from '../types/datasync_EfsLocationEc2Config';
 
 export interface EfsLocationArgs {
   // Configuration block containing EC2 configurations for connecting to the EFS File System.
@@ -68,56 +68,56 @@ export class EfsLocation extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "efsFileSystemArn",
-        "Amazon Resource Name (ARN) of EFS File System.",
+        'efsFileSystemArn',
+        'Amazon Resource Name (ARN) of EFS File System.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "fileSystemAccessRoleArn",
-        "Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "inTransitEncryption",
-        "Specifies whether you want DataSync to use TLS encryption when transferring data to or from your Amazon EFS file system. Valid values are `NONE` and `TLS1_2`.",
+        'fileSystemAccessRoleArn',
+        'Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "subdirectory",
-        "Subdirectory to perform actions as source or destination. Default `/`.",
+        'inTransitEncryption',
+        'Specifies whether you want DataSync to use TLS encryption when transferring data to or from your Amazon EFS file system. Valid values are `NONE` and `TLS1_2`.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'subdirectory',
+        'Subdirectory to perform actions as source or destination. Default `/`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value pairs of resource tags to assign to the DataSync Location. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value pairs of resource tags to assign to the DataSync Location. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "accessPointArn",
-        "Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.",
+        'accessPointArn',
+        'Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "ec2Config",
-        "Configuration block containing EC2 configurations for connecting to the EFS File System.",
+        'ec2Config',
+        'Configuration block containing EC2 configurations for connecting to the EFS File System.',
         () => datasync_EfsLocationEc2Config_GetTypes(),
         true,
         true,

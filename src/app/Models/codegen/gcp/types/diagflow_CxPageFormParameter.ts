@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   diagflow_CxPageFormParameterAdvancedSettings,
   diagflow_CxPageFormParameterAdvancedSettings_GetTypes,
-} from "./diagflow_CxPageFormParameterAdvancedSettings";
+} from './diagflow_CxPageFormParameterAdvancedSettings';
 import {
   diagflow_CxPageFormParameterFillBehavior,
   diagflow_CxPageFormParameterFillBehavior_GetTypes,
-} from "./diagflow_CxPageFormParameterFillBehavior";
+} from './diagflow_CxPageFormParameterFillBehavior';
 
 export interface diagflow_CxPageFormParameter {
   /*
@@ -60,64 +60,64 @@ export function diagflow_CxPageFormParameter_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "fillBehavior",
-      "Defines fill behavior for the parameter.\nStructure is documented below.",
+      'fillBehavior',
+      'Defines fill behavior for the parameter.\nStructure is documented below.',
       () => diagflow_CxPageFormParameterFillBehavior_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "isList",
-      "Indicates whether the parameter represents a list of values.",
+      'isList',
+      'Indicates whether the parameter represents a list of values.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "redact",
-      "Indicates whether the parameter content should be redacted in log.\nIf redaction is enabled, the parameter content will be replaced by parameter name during logging. Note: the parameter content is subject to redaction if either parameter level redaction or entity type level redaction is enabled.",
+      'redact',
+      'Indicates whether the parameter content should be redacted in log.\nIf redaction is enabled, the parameter content will be replaced by parameter name during logging. Note: the parameter content is subject to redaction if either parameter level redaction or entity type level redaction is enabled.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "required",
-      "Indicates whether the parameter is required. Optional parameters will not trigger prompts; however, they are filled if the user specifies them.\nRequired parameters must be filled before form filling concludes.",
+      'required',
+      'Indicates whether the parameter is required. Optional parameters will not trigger prompts; however, they are filled if the user specifies them.\nRequired parameters must be filled before form filling concludes.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "advancedSettings",
-      "Hierarchical advanced settings for this parameter. The settings exposed at the lower level overrides the settings exposed at the higher level.\nHierarchy: Agent->Flow->Page->Fulfillment/Parameter.\nStructure is documented below.",
+      'advancedSettings',
+      'Hierarchical advanced settings for this parameter. The settings exposed at the lower level overrides the settings exposed at the higher level.\nHierarchy: Agent->Flow->Page->Fulfillment/Parameter.\nStructure is documented below.',
       () => diagflow_CxPageFormParameterAdvancedSettings_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "defaultValue",
-      "The default value of an optional parameter. If the parameter is required, the default value will be ignored.",
+      'defaultValue',
+      'The default value of an optional parameter. If the parameter is required, the default value will be ignored.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "displayName",
-      "The human-readable name of the parameter, unique within the form.",
+      'displayName',
+      'The human-readable name of the parameter, unique within the form.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "entityType",
-      "The entity type of the parameter.\nFormat: projects/-/locations/-/agents/-/entityTypes/<System Entity Type ID> for system entity types (for example, projects/-/locations/-/agents/-/entityTypes/sys.date), or projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/entityTypes/<Entity Type ID> for developer entity types.",
+      'entityType',
+      'The entity type of the parameter.\nFormat: projects/-/locations/-/agents/-/entityTypes/<System Entity Type ID> for system entity types (for example, projects/-/locations/-/agents/-/entityTypes/sys.date), or projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/entityTypes/<Entity Type ID> for developer entity types.',
       () => [],
       false,
       false,

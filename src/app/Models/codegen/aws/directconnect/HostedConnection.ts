@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface HostedConnectionArgs {
   // The ID of the interconnect or LAG.
@@ -73,40 +73,40 @@ export class HostedConnection extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the connection.",
+        'name',
+        'The name of the connection.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ownerAccountId",
-        "The ID of the AWS account of the customer for the connection.",
+        'ownerAccountId',
+        'The ID of the AWS account of the customer for the connection.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "vlan",
-        "The dedicated VLAN provisioned to the hosted connection.",
+        'vlan',
+        'The dedicated VLAN provisioned to the hosted connection.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "bandwidth",
-        "The bandwidth of the connection. Valid values for dedicated connections: 1Gbps, 10Gbps. Valid values for hosted connections: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps and 10Gbps. Case sensitive.",
+        'bandwidth',
+        'The bandwidth of the connection. Valid values for dedicated connections: 1Gbps, 10Gbps. Valid values for hosted connections: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps and 10Gbps. Case sensitive.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "connectionId",
-        "The ID of the interconnect or LAG.",
+        'connectionId',
+        'The ID of the interconnect or LAG.',
         () => [],
         true,
         true,

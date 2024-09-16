@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_ImageImageEncryptionKey {
   /*
@@ -25,16 +25,16 @@ export function compute_ImageImageEncryptionKey_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "kmsKeyServiceAccount",
-      "The service account being used for the encryption request for the\ngiven KMS key. If absent, the Compute Engine default service\naccount is used.",
+      'kmsKeyServiceAccount',
+      'The service account being used for the encryption request for the\ngiven KMS key. If absent, the Compute Engine default service\naccount is used.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "kmsKeySelfLink",
-      "The self link of the encryption key that is stored in Google Cloud\nKMS.",
+      'kmsKeySelfLink',
+      'The self link of the encryption key that is stored in Google Cloud\nKMS.',
       () => [],
       false,
       true,

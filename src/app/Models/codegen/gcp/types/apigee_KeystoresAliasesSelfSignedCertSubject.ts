@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface apigee_KeystoresAliasesSelfSignedCertSubject {
   // Organization team name. Maximum length is 64 characters.
@@ -37,56 +37,56 @@ export function apigee_KeystoresAliasesSelfSignedCertSubject_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.String,
-      "commonName",
-      "Common name of the organization. Maximum length is 64 characters.",
+      'commonName',
+      'Common name of the organization. Maximum length is 64 characters.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "countryCode",
-      "Two-letter country code. Example, IN for India, US for United States of America.",
+      'countryCode',
+      'Two-letter country code. Example, IN for India, US for United States of America.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "email",
-      "Email address. Max 255 characters.\n\n- - -",
+      'email',
+      'Email address. Max 255 characters.\n\n- - -',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "locality",
-      "City or town name. Maximum length is 128 characters.",
+      'locality',
+      'City or town name. Maximum length is 128 characters.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "org",
-      "Organization name. Maximum length is 64 characters.",
+      'org',
+      'Organization name. Maximum length is 64 characters.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "orgUnit",
-      "Organization team name. Maximum length is 64 characters.",
+      'orgUnit',
+      'Organization team name. Maximum length is 64 characters.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "state",
-      "State or district name. Maximum length is 128 characters.",
+      'state',
+      'State or district name. Maximum length is 128 characters.',
       () => [],
       false,
       true,

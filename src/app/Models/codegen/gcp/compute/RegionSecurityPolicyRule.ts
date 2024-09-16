@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_RegionSecurityPolicyRuleMatch,
   compute_RegionSecurityPolicyRuleMatch_GetTypes,
-} from "../types/compute_RegionSecurityPolicyRuleMatch";
+} from '../types/compute_RegionSecurityPolicyRuleMatch';
 import {
   compute_RegionSecurityPolicyRuleNetworkMatch,
   compute_RegionSecurityPolicyRuleNetworkMatch_GetTypes,
-} from "../types/compute_RegionSecurityPolicyRuleNetworkMatch";
+} from '../types/compute_RegionSecurityPolicyRuleNetworkMatch';
 
 export interface RegionSecurityPolicyRuleArgs {
   /*
@@ -141,23 +141,23 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "action",
-        "The Action to perform when the rule is matched. The following are the valid actions:\n* allow: allow access to target.\n* deny(STATUS): deny access to target, returns the HTTP response code specified. Valid values for STATUS are 403, 404, and 502.\n* rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rateLimitOptions to be set.\n* redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. This action is only supported in Global Security Policies of type CLOUD_ARMOR.\n* throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rateLimitOptions to be set for this.",
+        'action',
+        'The Action to perform when the rule is matched. The following are the valid actions:\n* allow: allow access to target.\n* deny(STATUS): deny access to target, returns the HTTP response code specified. Valid values for STATUS are 403, 404, and 502.\n* rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rateLimitOptions to be set.\n* redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. This action is only supported in Global Security Policies of type CLOUD_ARMOR.\n* throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rateLimitOptions to be set for this.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource. Provide this property when you create the resource.",
+        'description',
+        'An optional description of this resource. Provide this property when you create the resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "match",
+        'match',
         "A match condition that incoming traffic is evaluated against.\nIf it evaluates to true, the corresponding 'action' is enforced.\nStructure is documented below.",
         () => compute_RegionSecurityPolicyRuleMatch_GetTypes(),
         false,
@@ -165,39 +165,39 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "securityPolicy",
-        "The name of the security policy this rule belongs to.\n\n\n- - -",
+        'securityPolicy',
+        'The name of the security policy this rule belongs to.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "priority",
-        "An integer indicating the priority of a rule in the list.\nThe priority must be a positive value between 0 and 2147483647.\nRules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.",
+        'priority',
+        'An integer indicating the priority of a rule in the list.\nThe priority must be a positive value between 0 and 2147483647.\nRules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The Region in which the created Region Security Policy rule should reside.",
+        'region',
+        'The Region in which the created Region Security Policy rule should reside.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "networkMatch",
+        'networkMatch',
         "A match condition that incoming packets are evaluated against for CLOUD_ARMOR_NETWORK security policies. If it matches, the corresponding 'action' is enforced.\nThe match criteria for a rule consists of built-in match fields (like 'srcIpRanges') and potentially multiple user-defined match fields ('userDefinedFields').\nField values may be extracted directly from the packet or derived from it (e.g. 'srcRegionCodes'). Some fields may not be present in every packet (e.g. 'srcPorts'). A user-defined field is only present if the base header is found in the packet and the entire field is in bounds.\nEach match field may specify which values can match it, listing one or more ranges, prefixes, or exact values that are considered a match for the field. A field value must be present in order to match a specified match field. If no match values are specified for a match field, then any field value is considered to match it, and it's not required to be present. For strings specifying '*' is also equivalent to match all.\nFor a packet to match a rule, all specified match fields must match the corresponding field values derived from the packet.\nExample:\nnetworkMatch: srcIpRanges: - \"192.0.2.0/24\" - \"198.51.100.0/24\" userDefinedFields: - name: \"ipv4_fragment_offset\" values: - \"1-0x1fff\"\nThe above match condition matches packets with a source IP in 192.0.2.0/24 or 198.51.100.0/24 and a user-defined field named \"ipv4_fragment_offset\" with a value between 1 and 0x1fff inclusive\nStructure is documented below.",
         () => compute_RegionSecurityPolicyRuleNetworkMatch_GetTypes(),
         false,
@@ -205,8 +205,8 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "preview",
-        "If set to true, the specified action is not enforced.",
+        'preview',
+        'If set to true, the specified action is not enforced.',
         () => [],
         false,
         false,

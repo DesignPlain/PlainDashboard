@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfig,
   gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfig_GetTypes,
-} from "./gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfig";
+} from './gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfig';
 
 export interface gkehub_FeatureMembershipPolicycontroller {
   // Policy Controller configuration for the cluster. Structure is documented below.
@@ -22,8 +22,8 @@ export function gkehub_FeatureMembershipPolicycontroller_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Object,
-      "policyControllerHubConfig",
-      "Policy Controller configuration for the cluster. Structure is documented below.",
+      'policyControllerHubConfig',
+      'Policy Controller configuration for the cluster. Structure is documented below.',
       () =>
         gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfig_GetTypes(),
       true,
@@ -31,8 +31,8 @@ export function gkehub_FeatureMembershipPolicycontroller_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "version",
-      "Version of Policy Controller to install. Defaults to the latest version.",
+      'version',
+      'Version of Policy Controller to install. Defaults to the latest version.',
       () => [],
       false,
       false,

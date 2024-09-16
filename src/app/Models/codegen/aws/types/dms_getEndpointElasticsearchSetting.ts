@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dms_getEndpointElasticsearchSetting {
   //
@@ -24,32 +24,32 @@ export function dms_getEndpointElasticsearchSetting_GetTypes(): DynamicUIProps[]
   return [
     new DynamicUIProps(
       InputType.Number,
-      "errorRetryDuration",
-      "",
+      'errorRetryDuration',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "fullLoadErrorPercentage",
-      "",
+      'fullLoadErrorPercentage',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "serviceAccessRoleArn",
-      "",
+      'serviceAccessRoleArn',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "endpointUri",
-      "",
+      'endpointUri',
+      '',
       () => [],
       true,
       false,

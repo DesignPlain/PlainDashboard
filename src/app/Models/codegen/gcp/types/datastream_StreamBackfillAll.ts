@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datastream_StreamBackfillAllMysqlExcludedObjects,
   datastream_StreamBackfillAllMysqlExcludedObjects_GetTypes,
-} from "./datastream_StreamBackfillAllMysqlExcludedObjects";
+} from './datastream_StreamBackfillAllMysqlExcludedObjects';
 import {
   datastream_StreamBackfillAllOracleExcludedObjects,
   datastream_StreamBackfillAllOracleExcludedObjects_GetTypes,
-} from "./datastream_StreamBackfillAllOracleExcludedObjects";
+} from './datastream_StreamBackfillAllOracleExcludedObjects';
 import {
   datastream_StreamBackfillAllPostgresqlExcludedObjects,
   datastream_StreamBackfillAllPostgresqlExcludedObjects_GetTypes,
-} from "./datastream_StreamBackfillAllPostgresqlExcludedObjects";
+} from './datastream_StreamBackfillAllPostgresqlExcludedObjects';
 
 export interface datastream_StreamBackfillAll {
   /*
@@ -42,24 +42,24 @@ export function datastream_StreamBackfillAll_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "oracleExcludedObjects",
-      "PostgreSQL data source objects to avoid backfilling.\nStructure is documented below.",
+      'oracleExcludedObjects',
+      'PostgreSQL data source objects to avoid backfilling.\nStructure is documented below.',
       () => datastream_StreamBackfillAllOracleExcludedObjects_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "postgresqlExcludedObjects",
-      "PostgreSQL data source objects to avoid backfilling.\nStructure is documented below.",
+      'postgresqlExcludedObjects',
+      'PostgreSQL data source objects to avoid backfilling.\nStructure is documented below.',
       () => datastream_StreamBackfillAllPostgresqlExcludedObjects_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "mysqlExcludedObjects",
-      "MySQL data source objects to avoid backfilling.\nStructure is documented below.",
+      'mysqlExcludedObjects',
+      'MySQL data source objects to avoid backfilling.\nStructure is documented below.',
       () => datastream_StreamBackfillAllMysqlExcludedObjects_GetTypes(),
       false,
       false,

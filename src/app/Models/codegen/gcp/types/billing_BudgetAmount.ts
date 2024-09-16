@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   billing_BudgetAmountSpecifiedAmount,
   billing_BudgetAmountSpecifiedAmount_GetTypes,
-} from "./billing_BudgetAmountSpecifiedAmount";
+} from './billing_BudgetAmountSpecifiedAmount';
 
 export interface billing_BudgetAmount {
   /*
@@ -32,7 +32,7 @@ export function billing_BudgetAmount_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "lastPeriodAmount",
+      'lastPeriodAmount',
       "Configures a budget amount that is automatically set to 100%!o(MISSING)f\nlast period's spend.\nBoolean. Set value to true to use. Do not set to false, instead\nuse the `specified_amount` block.",
       () => [],
       false,
@@ -40,8 +40,8 @@ export function billing_BudgetAmount_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "specifiedAmount",
-      "A specified amount to use as the budget. currencyCode is\noptional. If specified, it must match the currency of the\nbilling account. The currencyCode is provided on output.\nStructure is documented below.",
+      'specifiedAmount',
+      'A specified amount to use as the budget. currencyCode is\noptional. If specified, it must match the currency of the\nbilling account. The currencyCode is provided on output.\nStructure is documented below.',
       () => billing_BudgetAmountSpecifiedAmount_GetTypes(),
       false,
       false,

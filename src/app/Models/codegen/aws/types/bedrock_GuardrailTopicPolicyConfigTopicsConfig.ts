@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface bedrock_GuardrailTopicPolicyConfigTopicsConfig {
   // Definition of topic in topic policy.
@@ -24,32 +24,32 @@ export function bedrock_GuardrailTopicPolicyConfigTopicsConfig_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.String,
-      "definition",
-      "Definition of topic in topic policy.",
+      'definition',
+      'Definition of topic in topic policy.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "examples",
-      "List of text examples.",
+      'examples',
+      'List of text examples.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of topic in topic policy.",
+      'name',
+      'Name of topic in topic policy.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "Type of topic in a policy.",
+      'type',
+      'Type of topic in a policy.',
       () => [],
       true,
       false,

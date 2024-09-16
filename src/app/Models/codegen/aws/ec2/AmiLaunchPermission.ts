@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface AmiLaunchPermissionArgs {
   // Name of the group for the launch permission. Valid values: `"all"`.
@@ -43,7 +43,7 @@ export class AmiLaunchPermission extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "group",
+        'group',
         'Name of the group for the launch permission. Valid values: `"all"`.',
         () => [],
         false,
@@ -51,32 +51,32 @@ export class AmiLaunchPermission extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "imageId",
-        "ID of the AMI.",
+        'imageId',
+        'ID of the AMI.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "organizationArn",
-        "ARN of an organization for the launch permission.",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "organizationalUnitArn",
-        "ARN of an organizational unit for the launch permission.",
+        'organizationArn',
+        'ARN of an organization for the launch permission.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "accountId",
-        "AWS account ID for the launch permission.",
+        'organizationalUnitArn',
+        'ARN of an organizational unit for the launch permission.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'accountId',
+        'AWS account ID for the launch permission.',
         () => [],
         false,
         true,

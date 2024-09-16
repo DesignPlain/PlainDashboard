@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_getResourcePolicyInstanceSchedulePolicyVmStopSchedule {
   // Specifies the frequency for the operation, using the unix-cron format.
@@ -15,8 +15,8 @@ export function compute_getResourcePolicyInstanceSchedulePolicyVmStopSchedule_Ge
   return [
     new DynamicUIProps(
       InputType.String,
-      "schedule",
-      "Specifies the frequency for the operation, using the unix-cron format.",
+      'schedule',
+      'Specifies the frequency for the operation, using the unix-cron format.',
       () => [],
       true,
       false,

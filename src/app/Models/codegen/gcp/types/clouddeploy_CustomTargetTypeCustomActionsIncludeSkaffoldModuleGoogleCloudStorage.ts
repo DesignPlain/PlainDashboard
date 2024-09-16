@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudStorage {
   // Relative path from the source to the Skaffold file.
@@ -18,16 +18,16 @@ export function clouddeploy_CustomTargetTypeCustomActionsIncludeSkaffoldModuleGo
   return [
     new DynamicUIProps(
       InputType.String,
-      "path",
-      "Relative path from the source to the Skaffold file.",
+      'path',
+      'Relative path from the source to the Skaffold file.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "source",
-      "Cloud Storage source paths to copy recursively. For example, providing `gs://my-bucket/dir/configs/*` will result in Skaffold copying all files within the `dir/configs` directory in the bucket `my-bucket`.",
+      'source',
+      'Cloud Storage source paths to copy recursively. For example, providing `gs://my-bucket/dir/configs/*` will result in Skaffold copying all files within the `dir/configs` directory in the bucket `my-bucket`.',
       () => [],
       true,
       false,

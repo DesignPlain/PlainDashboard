@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface datastream_ConnectionProfileForwardSshConnectivity {
   // Hostname for the SSH tunnel.
@@ -33,40 +33,40 @@ export function datastream_ConnectionProfileForwardSshConnectivity_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.String,
-      "hostname",
-      "Hostname for the SSH tunnel.",
+      'hostname',
+      'Hostname for the SSH tunnel.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "password",
-      "SSH password.\n**Note**: This property is sensitive and will not be displayed in the plan.",
+      'password',
+      'SSH password.\n**Note**: This property is sensitive and will not be displayed in the plan.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "port",
-      "Port for the SSH tunnel.",
+      'port',
+      'Port for the SSH tunnel.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "privateKey",
-      "SSH private key.\n**Note**: This property is sensitive and will not be displayed in the plan.",
+      'privateKey',
+      'SSH private key.\n**Note**: This property is sensitive and will not be displayed in the plan.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "username",
-      "Username for the SSH tunnel.",
+      'username',
+      'Username for the SSH tunnel.',
       () => [],
       true,
       false,

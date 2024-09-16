@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_URLMapDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAdd {
   // The name of the header to add.
@@ -24,24 +24,24 @@ export function compute_URLMapDefaultRouteActionWeightedBackendServiceHeaderActi
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "replace",
-      "If false, headerValue is appended to any values that already exist for the header.\nIf true, headerValue is set for the header, discarding any values that were set for that header.",
+      'replace',
+      'If false, headerValue is appended to any values that already exist for the header.\nIf true, headerValue is set for the header, discarding any values that were set for that header.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "headerName",
-      "The name of the header to add.",
+      'headerName',
+      'The name of the header to add.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "headerValue",
-      "The value of the header to add.",
+      'headerValue',
+      'The value of the header to add.',
       () => [],
       false,
       false,

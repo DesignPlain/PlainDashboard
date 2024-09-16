@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cognito_RiskConfigurationCompromisedCredentialsRiskConfigurationActions {
   // The event action. Valid values are `BLOCK` or `NO_ACTION`.
@@ -15,8 +15,8 @@ export function cognito_RiskConfigurationCompromisedCredentialsRiskConfiguration
   return [
     new DynamicUIProps(
       InputType.String,
-      "eventAction",
-      "The event action. Valid values are `BLOCK` or `NO_ACTION`.",
+      'eventAction',
+      'The event action. Valid values are `BLOCK` or `NO_ACTION`.',
       () => [],
       true,
       false,

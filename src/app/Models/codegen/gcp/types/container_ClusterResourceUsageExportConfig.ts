@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   container_ClusterResourceUsageExportConfigBigqueryDestination,
   container_ClusterResourceUsageExportConfigBigqueryDestination_GetTypes,
-} from "./container_ClusterResourceUsageExportConfigBigqueryDestination";
+} from './container_ClusterResourceUsageExportConfigBigqueryDestination';
 
 export interface container_ClusterResourceUsageExportConfig {
   /*
@@ -38,16 +38,16 @@ export function container_ClusterResourceUsageExportConfig_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enableResourceConsumptionMetering",
-      "Whether to enable resource\nconsumption metering on this cluster. When enabled, a table will be created in\nthe resource export BigQuery dataset to store resource consumption data. The\nresulting table can be joined with the resource usage table or with BigQuery\nbilling export. Defaults to `true`.",
+      'enableResourceConsumptionMetering',
+      'Whether to enable resource\nconsumption metering on this cluster. When enabled, a table will be created in\nthe resource export BigQuery dataset to store resource consumption data. The\nresulting table can be joined with the resource usage table or with BigQuery\nbilling export. Defaults to `true`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "bigqueryDestination",
-      "Parameters for using BigQuery as the destination of resource usage export.\n\n* `bigquery_destination.dataset_id` (Required) - The ID of a BigQuery Dataset. For Example:",
+      'bigqueryDestination',
+      'Parameters for using BigQuery as the destination of resource usage export.\n\n* `bigquery_destination.dataset_id` (Required) - The ID of a BigQuery Dataset. For Example:',
       () =>
         container_ClusterResourceUsageExportConfigBigqueryDestination_GetTypes(),
       true,
@@ -55,8 +55,8 @@ export function container_ClusterResourceUsageExportConfig_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enableNetworkEgressMetering",
-      "Whether to enable network egress metering for this cluster. If enabled, a daemonset will be created\nin the cluster to meter network egress traffic.",
+      'enableNetworkEgressMetering',
+      'Whether to enable network egress metering for this cluster. If enabled, a daemonset will be created\nin the cluster to meter network egress traffic.',
       () => [],
       false,
       false,

@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldField,
   dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldField_GetTypes,
-} from "./dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldField";
+} from './dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldField';
 import {
   dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable,
   dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable_GetTypes,
-} from "./dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable";
+} from './dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable';
 
 export interface dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryField {
   /*
@@ -32,8 +32,8 @@ export function dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFi
   return [
     new DynamicUIProps(
       InputType.Object,
-      "field",
-      "Designated field in the BigQuery table.\nStructure is documented below.",
+      'field',
+      'Designated field in the BigQuery table.\nStructure is documented below.',
       () =>
         dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldField_GetTypes(),
       true,
@@ -41,8 +41,8 @@ export function dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFi
     ),
     new DynamicUIProps(
       InputType.Object,
-      "table",
-      "Field in a BigQuery table where each cell represents a dictionary phrase.\nStructure is documented below.",
+      'table',
+      'Field in a BigQuery table where each cell represents a dictionary phrase.\nStructure is documented below.',
       () =>
         dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable_GetTypes(),
       true,

@@ -3,84 +3,84 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   container_NodePoolNodeConfigHostMaintenancePolicy,
   container_NodePoolNodeConfigHostMaintenancePolicy_GetTypes,
-} from "./container_NodePoolNodeConfigHostMaintenancePolicy";
+} from './container_NodePoolNodeConfigHostMaintenancePolicy';
 import {
   container_NodePoolNodeConfigConfidentialNodes,
   container_NodePoolNodeConfigConfidentialNodes_GetTypes,
-} from "./container_NodePoolNodeConfigConfidentialNodes";
+} from './container_NodePoolNodeConfigConfidentialNodes';
 import {
   container_NodePoolNodeConfigGvnic,
   container_NodePoolNodeConfigGvnic_GetTypes,
-} from "./container_NodePoolNodeConfigGvnic";
+} from './container_NodePoolNodeConfigGvnic';
 import {
   container_NodePoolNodeConfigEphemeralStorageLocalSsdConfig,
   container_NodePoolNodeConfigEphemeralStorageLocalSsdConfig_GetTypes,
-} from "./container_NodePoolNodeConfigEphemeralStorageLocalSsdConfig";
+} from './container_NodePoolNodeConfigEphemeralStorageLocalSsdConfig';
 import {
   container_NodePoolNodeConfigReservationAffinity,
   container_NodePoolNodeConfigReservationAffinity_GetTypes,
-} from "./container_NodePoolNodeConfigReservationAffinity";
+} from './container_NodePoolNodeConfigReservationAffinity';
 import {
   container_NodePoolNodeConfigEffectiveTaint,
   container_NodePoolNodeConfigEffectiveTaint_GetTypes,
-} from "./container_NodePoolNodeConfigEffectiveTaint";
+} from './container_NodePoolNodeConfigEffectiveTaint';
 import {
   container_NodePoolNodeConfigSoleTenantConfig,
   container_NodePoolNodeConfigSoleTenantConfig_GetTypes,
-} from "./container_NodePoolNodeConfigSoleTenantConfig";
+} from './container_NodePoolNodeConfigSoleTenantConfig';
 import {
   container_NodePoolNodeConfigShieldedInstanceConfig,
   container_NodePoolNodeConfigShieldedInstanceConfig_GetTypes,
-} from "./container_NodePoolNodeConfigShieldedInstanceConfig";
+} from './container_NodePoolNodeConfigShieldedInstanceConfig';
 import {
   container_NodePoolNodeConfigTaint,
   container_NodePoolNodeConfigTaint_GetTypes,
-} from "./container_NodePoolNodeConfigTaint";
+} from './container_NodePoolNodeConfigTaint';
 import {
   container_NodePoolNodeConfigLinuxNodeConfig,
   container_NodePoolNodeConfigLinuxNodeConfig_GetTypes,
-} from "./container_NodePoolNodeConfigLinuxNodeConfig";
+} from './container_NodePoolNodeConfigLinuxNodeConfig';
 import {
   container_NodePoolNodeConfigKubeletConfig,
   container_NodePoolNodeConfigKubeletConfig_GetTypes,
-} from "./container_NodePoolNodeConfigKubeletConfig";
+} from './container_NodePoolNodeConfigKubeletConfig';
 import {
   container_NodePoolNodeConfigLocalNvmeSsdBlockConfig,
   container_NodePoolNodeConfigLocalNvmeSsdBlockConfig_GetTypes,
-} from "./container_NodePoolNodeConfigLocalNvmeSsdBlockConfig";
+} from './container_NodePoolNodeConfigLocalNvmeSsdBlockConfig';
 import {
   container_NodePoolNodeConfigGuestAccelerator,
   container_NodePoolNodeConfigGuestAccelerator_GetTypes,
-} from "./container_NodePoolNodeConfigGuestAccelerator";
+} from './container_NodePoolNodeConfigGuestAccelerator';
 import {
   container_NodePoolNodeConfigEphemeralStorageConfig,
   container_NodePoolNodeConfigEphemeralStorageConfig_GetTypes,
-} from "./container_NodePoolNodeConfigEphemeralStorageConfig";
+} from './container_NodePoolNodeConfigEphemeralStorageConfig';
 import {
   container_NodePoolNodeConfigFastSocket,
   container_NodePoolNodeConfigFastSocket_GetTypes,
-} from "./container_NodePoolNodeConfigFastSocket";
+} from './container_NodePoolNodeConfigFastSocket';
 import {
   container_NodePoolNodeConfigAdvancedMachineFeatures,
   container_NodePoolNodeConfigAdvancedMachineFeatures_GetTypes,
-} from "./container_NodePoolNodeConfigAdvancedMachineFeatures";
+} from './container_NodePoolNodeConfigAdvancedMachineFeatures';
 import {
   container_NodePoolNodeConfigWorkloadMetadataConfig,
   container_NodePoolNodeConfigWorkloadMetadataConfig_GetTypes,
-} from "./container_NodePoolNodeConfigWorkloadMetadataConfig";
+} from './container_NodePoolNodeConfigWorkloadMetadataConfig';
 import {
   container_NodePoolNodeConfigGcfsConfig,
   container_NodePoolNodeConfigGcfsConfig_GetTypes,
-} from "./container_NodePoolNodeConfigGcfsConfig";
+} from './container_NodePoolNodeConfigGcfsConfig';
 import {
   container_NodePoolNodeConfigSandboxConfig,
   container_NodePoolNodeConfigSandboxConfig_GetTypes,
-} from "./container_NodePoolNodeConfigSandboxConfig";
+} from './container_NodePoolNodeConfigSandboxConfig';
 
 export interface container_NodePoolNodeConfig {
   // The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool.
@@ -202,248 +202,248 @@ export function container_NodePoolNodeConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ephemeralStorageConfig",
-      "Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk.",
+      'ephemeralStorageConfig',
+      'Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk.',
       () => container_NodePoolNodeConfigEphemeralStorageConfig_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "bootDiskKmsKey",
-      "The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool.",
+      'bootDiskKmsKey',
+      'The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "oauthScopes",
-      "The set of Google API scopes to be made available on all of the node VMs.",
+      'oauthScopes',
+      'The set of Google API scopes to be made available on all of the node VMs.',
       () => InputType_String_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "resourceManagerTags",
-      "A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.",
+      'resourceManagerTags',
+      'A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "linuxNodeConfig",
-      "Parameters that can be configured on Linux nodes.",
+      'linuxNodeConfig',
+      'Parameters that can be configured on Linux nodes.',
       () => container_NodePoolNodeConfigLinuxNodeConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "localNvmeSsdBlockConfig",
-      "Parameters for raw-block local NVMe SSDs.",
+      'localNvmeSsdBlockConfig',
+      'Parameters for raw-block local NVMe SSDs.',
       () => container_NodePoolNodeConfigLocalNvmeSsdBlockConfig_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "confidentialNodes",
-      "Configuration for Confidential Nodes feature. Structure is documented below.",
+      'confidentialNodes',
+      'Configuration for Confidential Nodes feature. Structure is documented below.',
       () => container_NodePoolNodeConfigConfidentialNodes_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "machineType",
-      "The name of a Google Compute Engine machine type.",
+      'machineType',
+      'The name of a Google Compute Engine machine type.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "metadata",
-      "The metadata key/value pairs assigned to instances in the cluster.",
+      'metadata',
+      'The metadata key/value pairs assigned to instances in the cluster.',
       () => InputType_Map_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "loggingVariant",
-      "Type of logging agent that is used as the default value for node pools in the cluster. Valid values include DEFAULT and MAX_THROUGHPUT.",
+      'loggingVariant',
+      'Type of logging agent that is used as the default value for node pools in the cluster. Valid values include DEFAULT and MAX_THROUGHPUT.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "tags",
-      "The list of instance tags applied to all nodes.",
+      'tags',
+      'The list of instance tags applied to all nodes.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "hostMaintenancePolicy",
-      "The maintenance policy for the hosts on which the GKE VMs run on.",
+      'hostMaintenancePolicy',
+      'The maintenance policy for the hosts on which the GKE VMs run on.',
       () => container_NodePoolNodeConfigHostMaintenancePolicy_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "gvnic",
-      "Enable or disable gvnic in the node pool.",
+      'gvnic',
+      'Enable or disable gvnic in the node pool.',
       () => container_NodePoolNodeConfigGvnic_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "preemptible",
-      "Whether the nodes are created as preemptible VM instances.",
+      'preemptible',
+      'Whether the nodes are created as preemptible VM instances.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "spot",
-      "Whether the nodes are created as spot VM instances.",
+      'spot',
+      'Whether the nodes are created as spot VM instances.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "taints",
-      "List of Kubernetes taints to be applied to each node.",
+      'taints',
+      'List of Kubernetes taints to be applied to each node.',
       () => container_NodePoolNodeConfigTaint_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "soleTenantConfig",
-      "Node affinity options for sole tenant node pools.",
+      'soleTenantConfig',
+      'Node affinity options for sole tenant node pools.',
       () => container_NodePoolNodeConfigSoleTenantConfig_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "diskSizeGb",
-      "Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB.",
+      'diskSizeGb',
+      'Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "minCpuPlatform",
-      "Minimum CPU platform to be used by this instance. The instance may be scheduled on the specified or newer CPU platform.",
+      'minCpuPlatform',
+      'Minimum CPU platform to be used by this instance. The instance may be scheduled on the specified or newer CPU platform.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "resourceLabels",
-      "The GCE resource labels (a map of key/value pairs) to be applied to the node pool.",
+      'resourceLabels',
+      'The GCE resource labels (a map of key/value pairs) to be applied to the node pool.',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enableConfidentialStorage",
-      "If enabled boot disks are configured with confidential mode.",
+      'enableConfidentialStorage',
+      'If enabled boot disks are configured with confidential mode.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "nodeGroup",
-      "Setting this field will assign instances of this pool to run on the specified node group. This is useful for running workloads on sole tenant nodes.",
+      'nodeGroup',
+      'Setting this field will assign instances of this pool to run on the specified node group. This is useful for running workloads on sole tenant nodes.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "gcfsConfig",
-      "GCFS configuration for this node.",
+      'gcfsConfig',
+      'GCFS configuration for this node.',
       () => container_NodePoolNodeConfigGcfsConfig_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "localSsdCount",
-      "The number of local SSD disks to be attached to the node.",
+      'localSsdCount',
+      'The number of local SSD disks to be attached to the node.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "imageType",
-      "The image type to use for this node. Note that for a given image type, the latest version of it will be used.",
+      'imageType',
+      'The image type to use for this node. Note that for a given image type, the latest version of it will be used.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "shieldedInstanceConfig",
-      "Shielded Instance options.",
+      'shieldedInstanceConfig',
+      'Shielded Instance options.',
       () => container_NodePoolNodeConfigShieldedInstanceConfig_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "workloadMetadataConfig",
-      "The workload metadata configuration for this node.",
+      'workloadMetadataConfig',
+      'The workload metadata configuration for this node.',
       () => container_NodePoolNodeConfigWorkloadMetadataConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "effectiveTaints",
-      "List of kubernetes taints applied to each node.",
+      'effectiveTaints',
+      'List of kubernetes taints applied to each node.',
       () => container_NodePoolNodeConfigEffectiveTaint_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "kubeletConfig",
-      "Node kubelet configs.",
+      'kubeletConfig',
+      'Node kubelet configs.',
       () => container_NodePoolNodeConfigKubeletConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "diskType",
-      "Type of the disk attached to each node. Such as pd-standard, pd-balanced or pd-ssd",
+      'diskType',
+      'Type of the disk attached to each node. Such as pd-standard, pd-balanced or pd-ssd',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ephemeralStorageLocalSsdConfig",
-      "Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk.",
+      'ephemeralStorageLocalSsdConfig',
+      'Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk.',
       () =>
         container_NodePoolNodeConfigEphemeralStorageLocalSsdConfig_GetTypes(),
       false,
@@ -451,56 +451,56 @@ export function container_NodePoolNodeConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "reservationAffinity",
-      "The reservation affinity configuration for the node pool.",
+      'reservationAffinity',
+      'The reservation affinity configuration for the node pool.',
       () => container_NodePoolNodeConfigReservationAffinity_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "sandboxConfig",
-      "Sandbox configuration for this node.",
+      'sandboxConfig',
+      'Sandbox configuration for this node.',
       () => container_NodePoolNodeConfigSandboxConfig_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "advancedMachineFeatures",
-      "Specifies options for controlling advanced machine features.",
+      'advancedMachineFeatures',
+      'Specifies options for controlling advanced machine features.',
       () => container_NodePoolNodeConfigAdvancedMachineFeatures_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "labels",
-      "The map of Kubernetes labels (key/value pairs) to be applied to each node. These will added in addition to any default label(s) that Kubernetes may apply to the node.",
+      'labels',
+      'The map of Kubernetes labels (key/value pairs) to be applied to each node. These will added in addition to any default label(s) that Kubernetes may apply to the node.',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "guestAccelerators",
-      "List of the type and count of accelerator cards attached to the instance.",
+      'guestAccelerators',
+      'List of the type and count of accelerator cards attached to the instance.',
       () => container_NodePoolNodeConfigGuestAccelerator_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "serviceAccount",
-      "The Google Cloud Platform Service Account to be used by the node VMs.",
+      'serviceAccount',
+      'The Google Cloud Platform Service Account to be used by the node VMs.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "fastSocket",
-      "Enable or disable NCCL Fast Socket in the node pool.",
+      'fastSocket',
+      'Enable or disable NCCL Fast Socket in the node pool.',
       () => container_NodePoolNodeConfigFastSocket_GetTypes(),
       false,
       false,

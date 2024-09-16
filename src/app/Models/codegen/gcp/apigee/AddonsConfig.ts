@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   apigee_AddonsConfigAddonsConfig,
   apigee_AddonsConfigAddonsConfig_GetTypes,
-} from "../types/apigee_AddonsConfigAddonsConfig";
+} from '../types/apigee_AddonsConfigAddonsConfig';
 
 export interface AddonsConfigArgs {
   /*
@@ -45,16 +45,16 @@ Name of the Apigee organization.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "addonsConfig",
-        "Addon configurations of the Apigee organization.\nStructure is documented below.",
+        'addonsConfig',
+        'Addon configurations of the Apigee organization.\nStructure is documented below.',
         () => apigee_AddonsConfigAddonsConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "org",
-        "Name of the Apigee organization.\n\n\n- - -",
+        'org',
+        'Name of the Apigee organization.\n\n\n- - -',
         () => [],
         true,
         true,

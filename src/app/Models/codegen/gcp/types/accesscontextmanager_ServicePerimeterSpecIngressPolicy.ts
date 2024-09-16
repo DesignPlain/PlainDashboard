@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   accesscontextmanager_ServicePerimeterSpecIngressPolicyIngressFrom,
   accesscontextmanager_ServicePerimeterSpecIngressPolicyIngressFrom_GetTypes,
-} from "./accesscontextmanager_ServicePerimeterSpecIngressPolicyIngressFrom";
+} from './accesscontextmanager_ServicePerimeterSpecIngressPolicyIngressFrom';
 import {
   accesscontextmanager_ServicePerimeterSpecIngressPolicyIngressTo,
   accesscontextmanager_ServicePerimeterSpecIngressPolicyIngressTo_GetTypes,
-} from "./accesscontextmanager_ServicePerimeterSpecIngressPolicyIngressTo";
+} from './accesscontextmanager_ServicePerimeterSpecIngressPolicyIngressTo';
 
 export interface accesscontextmanager_ServicePerimeterSpecIngressPolicy {
   /*
@@ -34,8 +34,8 @@ export function accesscontextmanager_ServicePerimeterSpecIngressPolicy_GetTypes(
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ingressFrom",
-      "Defines the conditions on the source of a request causing this `IngressPolicy`\nto apply.\nStructure is documented below.",
+      'ingressFrom',
+      'Defines the conditions on the source of a request causing this `IngressPolicy`\nto apply.\nStructure is documented below.',
       () =>
         accesscontextmanager_ServicePerimeterSpecIngressPolicyIngressFrom_GetTypes(),
       false,
@@ -43,8 +43,8 @@ export function accesscontextmanager_ServicePerimeterSpecIngressPolicy_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ingressTo",
-      "Defines the conditions on the `ApiOperation` and request destination that cause\nthis `IngressPolicy` to apply.\nStructure is documented below.",
+      'ingressTo',
+      'Defines the conditions on the `ApiOperation` and request destination that cause\nthis `IngressPolicy` to apply.\nStructure is documented below.',
       () =>
         accesscontextmanager_ServicePerimeterSpecIngressPolicyIngressTo_GetTypes(),
       false,

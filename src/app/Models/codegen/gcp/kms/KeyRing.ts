@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface KeyRingArgs {
   /*
@@ -49,24 +49,24 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The resource name for the KeyRing.",
+        'name',
+        'The resource name for the KeyRing.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the KeyRing.\nA full list of valid locations can be found by running `gcloud kms locations list`.\n\n\n- - -",
+        'location',
+        'The location for the KeyRing.\nA full list of valid locations can be found by running `gcloud kms locations list`.\n\n\n- - -',
         () => [],
         true,
         true,

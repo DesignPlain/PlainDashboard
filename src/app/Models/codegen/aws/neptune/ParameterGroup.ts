@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   neptune_ParameterGroupParameter,
   neptune_ParameterGroupParameter_GetTypes,
-} from "../types/neptune_ParameterGroupParameter";
+} from '../types/neptune_ParameterGroupParameter';
 
 export interface ParameterGroupArgs {
   // The description of the Neptune parameter group. Defaults to "Managed by Pulumi".
@@ -59,7 +59,7 @@ export class ParameterGroup extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
+        'description',
         'The description of the Neptune parameter group. Defaults to "Managed by Pulumi".',
         () => [],
         false,
@@ -67,40 +67,40 @@ export class ParameterGroup extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "family",
-        "The family of the Neptune parameter group.",
+        'family',
+        'The family of the Neptune parameter group.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the Neptune parameter.",
+        'name',
+        'The name of the Neptune parameter.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "namePrefix",
-        "Creates a unique name beginning with the specified prefix. Conflicts with `name`.",
+        'namePrefix',
+        'Creates a unique name beginning with the specified prefix. Conflicts with `name`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "parameters",
-        "A list of Neptune parameters to apply.",
+        'parameters',
+        'A list of Neptune parameters to apply.',
         () => neptune_ParameterGroupParameter_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

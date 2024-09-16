@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkconnectivity_SpokeLinkedInterconnectAttachments,
   networkconnectivity_SpokeLinkedInterconnectAttachments_GetTypes,
-} from "../types/networkconnectivity_SpokeLinkedInterconnectAttachments";
+} from '../types/networkconnectivity_SpokeLinkedInterconnectAttachments';
 import {
   networkconnectivity_SpokeLinkedRouterApplianceInstances,
   networkconnectivity_SpokeLinkedRouterApplianceInstances_GetTypes,
-} from "../types/networkconnectivity_SpokeLinkedRouterApplianceInstances";
+} from '../types/networkconnectivity_SpokeLinkedRouterApplianceInstances';
 import {
   networkconnectivity_SpokeLinkedVpnTunnels,
   networkconnectivity_SpokeLinkedVpnTunnels_GetTypes,
-} from "../types/networkconnectivity_SpokeLinkedVpnTunnels";
+} from '../types/networkconnectivity_SpokeLinkedVpnTunnels';
 import {
   networkconnectivity_SpokeLinkedVpcNetwork,
   networkconnectivity_SpokeLinkedVpcNetwork_GetTypes,
-} from "../types/networkconnectivity_SpokeLinkedVpcNetwork";
+} from '../types/networkconnectivity_SpokeLinkedVpcNetwork';
 
 export interface SpokeArgs {
   /*
@@ -117,24 +117,24 @@ Please refer to the field `effective_labels` for all of the labels present on th
     return [
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Optional labels in key:value format. For more information about labels, see [Requirements for labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Optional labels in key:value format. For more information about labels, see [Requirements for labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "linkedInterconnectAttachments",
-        "A collection of VLAN attachment resources. These resources should be redundant attachments that all advertise the same prefixes to Google Cloud. Alternatively, in active/passive configurations, all attachments should be capable of advertising the same prefixes.",
+        'linkedInterconnectAttachments',
+        'A collection of VLAN attachment resources. These resources should be redundant attachments that all advertise the same prefixes to Google Cloud. Alternatively, in active/passive configurations, all attachments should be capable of advertising the same prefixes.',
         () => networkconnectivity_SpokeLinkedInterconnectAttachments_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "linkedRouterApplianceInstances",
-        "The URIs of linked Router appliance resources",
+        'linkedRouterApplianceInstances',
+        'The URIs of linked Router appliance resources',
         () =>
           networkconnectivity_SpokeLinkedRouterApplianceInstances_GetTypes(),
         false,
@@ -142,56 +142,56 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "hub",
-        "Immutable. The URI of the hub that this spoke is attached to.",
+        'hub',
+        'Immutable. The URI of the hub that this spoke is attached to.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Immutable. The name of the spoke. Spoke names must be unique.",
+        'name',
+        'Immutable. The name of the spoke. Spoke names must be unique.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "linkedVpnTunnels",
-        "The URIs of linked VPN tunnel resources",
+        'linkedVpnTunnels',
+        'The URIs of linked VPN tunnel resources',
         () => networkconnectivity_SpokeLinkedVpnTunnels_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource",
+        'location',
+        'The location for the resource',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of the spoke.",
+        'description',
+        'An optional description of the spoke.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project for the resource",
+        'project',
+        'The project for the resource',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "linkedVpcNetwork",
-        "VPC network that is associated with the spoke.",
+        'linkedVpcNetwork',
+        'VPC network that is associated with the spoke.',
         () => networkconnectivity_SpokeLinkedVpcNetwork_GetTypes(),
         false,
         true,

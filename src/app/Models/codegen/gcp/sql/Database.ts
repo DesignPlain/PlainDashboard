@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface DatabaseArgs {
   /*
@@ -110,7 +110,7 @@ ID.
     return [
       new DynamicUIProps(
         InputType.String,
-        "charset",
+        'charset',
         "The charset value. See MySQL's\n[Supported Character Sets and Collations](https://dev.mysql.com/doc/refman/5.7/en/charset-charsets.html)\nand Postgres' [Character Set Support](https://www.postgresql.org/docs/9.6/static/multibyte.html)\nfor more details and supported values. Postgres databases only support\na value of `UTF8` at creation time.",
         () => [],
         false,
@@ -118,7 +118,7 @@ ID.
       ),
       new DynamicUIProps(
         InputType.String,
-        "collation",
+        'collation',
         "The collation value. See MySQL's\n[Supported Character Sets and Collations](https://dev.mysql.com/doc/refman/5.7/en/charset-charsets.html)\nand Postgres' [Collation Support](https://www.postgresql.org/docs/9.6/static/collation.html)\nfor more details and supported values. Postgres databases only support\na value of `en_US.UTF8` at creation time.",
         () => [],
         false,
@@ -126,7 +126,7 @@ ID.
       ),
       new DynamicUIProps(
         InputType.String,
-        "deletionPolicy",
+        'deletionPolicy',
         'The deletion policy for the database. Setting ABANDON allows the resource\nto be abandoned rather than deleted. This is useful for Postgres, where databases cannot be\ndeleted from the API if there are users other than cloudsqlsuperuser with access. Possible\nvalues are: "ABANDON", "DELETE". Defaults to "DELETE".',
         () => [],
         false,
@@ -134,24 +134,24 @@ ID.
       ),
       new DynamicUIProps(
         InputType.String,
-        "instance",
-        "The name of the Cloud SQL instance. This does not include the project\nID.\n\n\n- - -",
+        'instance',
+        'The name of the Cloud SQL instance. This does not include the project\nID.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the database in the Cloud SQL instance.\nThis does not include the project ID or instance name.",
+        'name',
+        'The name of the database in the Cloud SQL instance.\nThis does not include the project ID or instance name.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

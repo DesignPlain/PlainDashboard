@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudfunctionsv2_FunctionBuildConfigSourceRepoSource,
   cloudfunctionsv2_FunctionBuildConfigSourceRepoSource_GetTypes,
-} from "./cloudfunctionsv2_FunctionBuildConfigSourceRepoSource";
+} from './cloudfunctionsv2_FunctionBuildConfigSourceRepoSource';
 import {
   cloudfunctionsv2_FunctionBuildConfigSourceStorageSource,
   cloudfunctionsv2_FunctionBuildConfigSourceStorageSource_GetTypes,
-} from "./cloudfunctionsv2_FunctionBuildConfigSourceStorageSource";
+} from './cloudfunctionsv2_FunctionBuildConfigSourceStorageSource';
 
 export interface cloudfunctionsv2_FunctionBuildConfigSource {
   /*
@@ -32,16 +32,16 @@ export function cloudfunctionsv2_FunctionBuildConfigSource_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Object,
-      "repoSource",
-      "If provided, get the source from this location in a Cloud Source Repository.\nStructure is documented below.",
+      'repoSource',
+      'If provided, get the source from this location in a Cloud Source Repository.\nStructure is documented below.',
       () => cloudfunctionsv2_FunctionBuildConfigSourceRepoSource_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "storageSource",
-      "If provided, get the source from this location in Google Cloud Storage.\nStructure is documented below.",
+      'storageSource',
+      'If provided, get the source from this location in Google Cloud Storage.\nStructure is documented below.',
       () => cloudfunctionsv2_FunctionBuildConfigSourceStorageSource_GetTypes(),
       false,
       false,

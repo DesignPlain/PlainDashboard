@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dataproc_ClusterClusterConfigDataprocMetricConfigMetric {
   /*
@@ -22,16 +22,16 @@ export function dataproc_ClusterClusterConfigDataprocMetricConfigMetric_GetTypes
   return [
     new DynamicUIProps(
       InputType.Array,
-      "metricOverrides",
-      "One or more [available OSS metrics] (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics) to collect for the metric course.\n\n- - -",
+      'metricOverrides',
+      'One or more [available OSS metrics] (https://cloud.google.com/dataproc/docs/guides/monitoring#available_oss_metrics) to collect for the metric course.\n\n- - -',
       () => InputType_String_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "metricSource",
-      "A source for the collection of Dataproc OSS metrics (see [available OSS metrics](https://cloud.google.com//dataproc/docs/guides/monitoring#available_oss_metrics)).",
+      'metricSource',
+      'A source for the collection of Dataproc OSS metrics (see [available OSS metrics](https://cloud.google.com//dataproc/docs/guides/monitoring#available_oss_metrics)).',
       () => [],
       true,
       true,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface IAMPolicyArgs {
   /*
@@ -52,16 +52,16 @@ inferred from the provider.
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project id of the target project. This is not\ninferred from the provider.",
+        'project',
+        'The project id of the target project. This is not\ninferred from the provider.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "policyData",
-        "The `gcp.organizations.getIAMPolicy` data source that represents\nthe IAM policy that will be applied to the project. The policy will be\nmerged with any existing policy applied to the project.\n\nChanging this updates the policy.\n\nDeleting this removes all policies from the project, locking out users without\norganization-level access.",
+        'policyData',
+        'The `gcp.organizations.getIAMPolicy` data source that represents\nthe IAM policy that will be applied to the project. The policy will be\nmerged with any existing policy applied to the project.\n\nChanging this updates the policy.\n\nDeleting this removes all policies from the project, locking out users without\norganization-level access.',
         () => [],
         true,
         false,

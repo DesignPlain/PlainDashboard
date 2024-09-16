@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface GatewayArgs {
   /*
@@ -225,15 +225,15 @@ The default value is `global`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A free-text description of the resource. Max length 1024 characters.",
+        'description',
+        'A free-text description of the resource. Max length 1024 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "addresses",
+        'addresses',
         "Zero or one IPv4-address on which the Gateway will receive the traffic. When no address is provided,\nan IP from the subnetwork is allocated This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.\nGateways of type 'OPEN_MESH' listen on 0.0.0.0.",
         () => InputType_String_GetTypes(),
         false,
@@ -241,31 +241,31 @@ The default value is `global`.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Set of label tags associated with the Gateway resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Set of label tags associated with the Gateway resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Short name of the Gateway resource to be created.\n\n\n- - -",
+        'name',
+        'Short name of the Gateway resource to be created.\n\n\n- - -',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "scope",
-        "Immutable. Scope determines how configuration across multiple Gateway instances are merged.\nThe configuration for multiple Gateway instances with the same scope will be merged as presented as\na single coniguration to the proxy/load balancer.\nMax length 64 characters. Scope should start with a letter and can only have letters, numbers, hyphens.",
+        'scope',
+        'Immutable. Scope determines how configuration across multiple Gateway instances are merged.\nThe configuration for multiple Gateway instances with the same scope will be merged as presented as\na single coniguration to the proxy/load balancer.\nMax length 64 characters. Scope should start with a letter and can only have letters, numbers, hyphens.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "network",
+        'network',
         "The relative resource name identifying the VPC network that is using this configuration.\nFor example: `projects/*/global/networks/network-1`.\nCurrently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY'.",
         () => [],
         false,
@@ -273,7 +273,7 @@ The default value is `global`.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "deleteSwgAutogenRouterOnDestroy",
+        'deleteSwgAutogenRouterOnDestroy',
         "When deleting a gateway of type 'SECURE_WEB_GATEWAY', this boolean option will also delete auto generated router by the gateway creation.\nIf there is no other gateway of type 'SECURE_WEB_GATEWAY' remaining for that region and network it will be deleted.",
         () => [],
         false,
@@ -281,15 +281,15 @@ The default value is `global`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ports",
+        'ports',
         "One or more port numbers (1-65535), on which the Gateway will receive traffic.\nThe proxy binds to the specified ports. Gateways of type 'SECURE_WEB_GATEWAY' are\nlimited to 1 port. Gateways of type 'OPEN_MESH' listen on 0.0.0.0 and support multiple ports.",
         () => InputType_Number_GetTypes(),
         true,
@@ -297,7 +297,7 @@ The default value is `global`.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "certificateUrls",
+        'certificateUrls',
         "A fully-qualified Certificates URL reference. The proxy presents a Certificate (selected based on SNI) when establishing a TLS connection.\nThis feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.",
         () => InputType_String_GetTypes(),
         false,
@@ -305,7 +305,7 @@ The default value is `global`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "gatewaySecurityPolicy",
+        'gatewaySecurityPolicy',
         "A fully-qualified GatewaySecurityPolicy URL reference. Defines how a server should apply security policy to inbound (VM to Proxy) initiated connections.\nFor example: `projects/*/locations/*/gatewaySecurityPolicies/swg-policy`.\nThis policy is specific to gateways of type 'SECURE_WEB_GATEWAY'.",
         () => [],
         false,
@@ -313,7 +313,7 @@ The default value is `global`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "subnetwork",
+        'subnetwork',
         "The relative resource name identifying the subnetwork in which this SWG is allocated.\nFor example: `projects/*/regions/us-central1/subnetworks/network-1`.\nCurrently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY.",
         () => [],
         false,
@@ -321,24 +321,24 @@ The default value is `global`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the gateway.\nThe default value is `global`.",
+        'location',
+        'The location of the gateway.\nThe default value is `global`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serverTlsPolicy",
-        "A fully-qualified ServerTLSPolicy URL reference. Specifies how TLS traffic is terminated.\nIf empty, TLS termination is disabled.",
+        'serverTlsPolicy',
+        'A fully-qualified ServerTLSPolicy URL reference. Specifies how TLS traffic is terminated.\nIf empty, TLS termination is disabled.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "Immutable. The type of the customer-managed gateway. Possible values are: * OPEN_MESH * SECURE_WEB_GATEWAY.\nPossible values are: `TYPE_UNSPECIFIED`, `OPEN_MESH`, `SECURE_WEB_GATEWAY`.",
+        'type',
+        'Immutable. The type of the customer-managed gateway. Possible values are: * OPEN_MESH * SECURE_WEB_GATEWAY.\nPossible values are: `TYPE_UNSPECIFIED`, `OPEN_MESH`, `SECURE_WEB_GATEWAY`.',
         () => [],
         true,
         true,

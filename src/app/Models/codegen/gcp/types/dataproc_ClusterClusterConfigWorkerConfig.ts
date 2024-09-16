@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataproc_ClusterClusterConfigWorkerConfigAccelerator,
   dataproc_ClusterClusterConfigWorkerConfigAccelerator_GetTypes,
-} from "./dataproc_ClusterClusterConfigWorkerConfigAccelerator";
+} from './dataproc_ClusterClusterConfigWorkerConfigAccelerator';
 import {
   dataproc_ClusterClusterConfigWorkerConfigDiskConfig,
   dataproc_ClusterClusterConfigWorkerConfigDiskConfig_GetTypes,
-} from "./dataproc_ClusterClusterConfigWorkerConfigDiskConfig";
+} from './dataproc_ClusterClusterConfigWorkerConfigDiskConfig';
 
 export interface dataproc_ClusterClusterConfigWorkerConfig {
   // List of master/worker instance names which have been assigned to the cluster.
@@ -64,47 +64,47 @@ export function dataproc_ClusterClusterConfigWorkerConfig_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.String,
-      "imageUri",
-      "The URI for the image to use for this worker.  See [the guide](https://cloud.google.com/dataproc/docs/guides/dataproc-images)\nfor more information.",
+      'imageUri',
+      'The URI for the image to use for this worker.  See [the guide](https://cloud.google.com/dataproc/docs/guides/dataproc-images)\nfor more information.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "instanceNames",
-      "List of master/worker instance names which have been assigned to the cluster.",
+      'instanceNames',
+      'List of master/worker instance names which have been assigned to the cluster.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "machineType",
-      "The name of a Google Compute Engine machine type\nto create for the worker nodes. If not specified, GCP will default to a predetermined\ncomputed value (currently `n1-standard-4`).",
+      'machineType',
+      'The name of a Google Compute Engine machine type\nto create for the worker nodes. If not specified, GCP will default to a predetermined\ncomputed value (currently `n1-standard-4`).',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "minCpuPlatform",
-      "The name of a minimum generation of CPU family\nfor the master. If not specified, GCP will default to a predetermined computed value\nfor each zone. See [the guide](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)\nfor details about which CPU families are available (and defaulted) for each zone.",
+      'minCpuPlatform',
+      'The name of a minimum generation of CPU family\nfor the master. If not specified, GCP will default to a predetermined computed value\nfor each zone. See [the guide](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)\nfor details about which CPU families are available (and defaulted) for each zone.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "minNumInstances",
-      "The minimum number of primary worker instances to create.  If `min_num_instances` is set, cluster creation will succeed if the number of primary workers created is at least equal to the `min_num_instances` number.",
+      'minNumInstances',
+      'The minimum number of primary worker instances to create.  If `min_num_instances` is set, cluster creation will succeed if the number of primary workers created is at least equal to the `min_num_instances` number.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "numInstances",
+      'numInstances',
       'Specifies the number of worker nodes to create.\nIf not specified, GCP will default to a predetermined computed value (currently 2).\nThere is currently a beta feature which allows you to run a\n[Single Node Cluster](https://cloud.google.com/dataproc/docs/concepts/single-node-clusters).\nIn order to take advantage of this you need to set\n`"dataproc:dataproc.allow.zero.workers" = "true"` in\n`cluster_config.software_config.properties`',
       () => [],
       false,
@@ -112,16 +112,16 @@ export function dataproc_ClusterClusterConfigWorkerConfig_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Array,
-      "accelerators",
-      "The Compute Engine accelerator configuration for these instances. Can be specified multiple times.",
+      'accelerators',
+      'The Compute Engine accelerator configuration for these instances. Can be specified multiple times.',
       () => dataproc_ClusterClusterConfigWorkerConfigAccelerator_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "diskConfig",
-      "Disk Config",
+      'diskConfig',
+      'Disk Config',
       () => dataproc_ClusterClusterConfigWorkerConfigDiskConfig_GetTypes(),
       false,
       false,

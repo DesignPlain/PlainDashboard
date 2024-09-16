@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_AttachedClusterLoggingConfigComponentConfig {
   /*
@@ -18,8 +18,8 @@ export function container_AttachedClusterLoggingConfigComponentConfig_GetTypes()
   return [
     new DynamicUIProps(
       InputType.Array,
-      "enableComponents",
-      "The components to be enabled.\nEach value may be one of: `SYSTEM_COMPONENTS`, `WORKLOADS`.",
+      'enableComponents',
+      'The components to be enabled.\nEach value may be one of: `SYSTEM_COMPONENTS`, `WORKLOADS`.',
       () => InputType_String_GetTypes(),
       false,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface connect_HoursOfOperationConfigStartTime {
   // Specifies the minute of opening.
@@ -18,16 +18,16 @@ export function connect_HoursOfOperationConfigStartTime_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.Number,
-      "minutes",
-      "Specifies the minute of opening.",
+      'minutes',
+      'Specifies the minute of opening.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "hours",
-      "Specifies the hour of opening.",
+      'hours',
+      'Specifies the hour of opening.',
       () => [],
       true,
       false,

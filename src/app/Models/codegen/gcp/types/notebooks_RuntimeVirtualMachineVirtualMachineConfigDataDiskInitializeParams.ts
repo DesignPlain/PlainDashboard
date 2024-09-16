@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface notebooks_RuntimeVirtualMachineVirtualMachineConfigDataDiskInitializeParams {
   /*
@@ -46,40 +46,40 @@ export function notebooks_RuntimeVirtualMachineVirtualMachineConfigDataDiskIniti
   return [
     new DynamicUIProps(
       InputType.String,
-      "diskType",
-      "The type of the boot disk attached to this runtime,\ndefaults to standard persistent disk. For valid values,\nsee `https://cloud.google.com/vertex-ai/docs/workbench/\nreference/rest/v1/projects.locations.runtimes#disktype`",
+      'diskType',
+      'The type of the boot disk attached to this runtime,\ndefaults to standard persistent disk. For valid values,\nsee `https://cloud.google.com/vertex-ai/docs/workbench/\nreference/rest/v1/projects.locations.runtimes#disktype`',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "labels",
-      "Labels to apply to this disk. These can be later modified\nby the disks.setLabels method. This field is only\napplicable for persistent disks.",
+      'labels',
+      'Labels to apply to this disk. These can be later modified\nby the disks.setLabels method. This field is only\napplicable for persistent disks.',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "description",
-      "Provide this property when creating the disk.",
+      'description',
+      'Provide this property when creating the disk.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "diskName",
-      "Specifies the disk name. If not specified, the default is\nto use the name of the instance. If the disk with the\ninstance name exists already in the given zone/region, a\nnew name will be automatically generated.",
+      'diskName',
+      'Specifies the disk name. If not specified, the default is\nto use the name of the instance. If the disk with the\ninstance name exists already in the given zone/region, a\nnew name will be automatically generated.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "diskSizeGb",
-      "Specifies the size of the disk in base-2 GB. If not\nspecified, the disk will be the same size as the image\n(usually 10GB). If specified, the size must be equal to\nor larger than 10GB. Default 100 GB.",
+      'diskSizeGb',
+      'Specifies the size of the disk in base-2 GB. If not\nspecified, the disk will be the same size as the image\n(usually 10GB). If specified, the size must be equal to\nor larger than 10GB. Default 100 GB.',
       () => [],
       false,
       false,

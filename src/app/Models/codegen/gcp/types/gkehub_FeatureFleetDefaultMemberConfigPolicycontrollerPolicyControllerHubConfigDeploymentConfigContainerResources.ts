@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesRequests,
   gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesRequests_GetTypes,
-} from "./gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesRequests";
+} from './gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesRequests';
 import {
   gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimits,
   gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimits_GetTypes,
-} from "./gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimits";
+} from './gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimits';
 
 export interface gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResources {
   /*
@@ -32,8 +32,8 @@ export function gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyCont
   return [
     new DynamicUIProps(
       InputType.Object,
-      "requests",
-      "Requests describes the amount of compute resources reserved for the container by the kube-scheduler.\nStructure is documented below.",
+      'requests',
+      'Requests describes the amount of compute resources reserved for the container by the kube-scheduler.\nStructure is documented below.',
       () =>
         gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesRequests_GetTypes(),
       false,
@@ -41,8 +41,8 @@ export function gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyCont
     ),
     new DynamicUIProps(
       InputType.Object,
-      "limits",
-      "Limits describes the maximum amount of compute resources allowed for use by the running container.\nStructure is documented below.",
+      'limits',
+      'Limits describes the maximum amount of compute resources allowed for use by the running container.\nStructure is documented below.',
       () =>
         gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimits_GetTypes(),
       false,

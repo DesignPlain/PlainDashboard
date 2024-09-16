@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkebackup_RestorePlanRestoreConfigTransformationRuleFieldAction,
   gkebackup_RestorePlanRestoreConfigTransformationRuleFieldAction_GetTypes,
-} from "./gkebackup_RestorePlanRestoreConfigTransformationRuleFieldAction";
+} from './gkebackup_RestorePlanRestoreConfigTransformationRuleFieldAction';
 import {
   gkebackup_RestorePlanRestoreConfigTransformationRuleResourceFilter,
   gkebackup_RestorePlanRestoreConfigTransformationRuleResourceFilter_GetTypes,
-} from "./gkebackup_RestorePlanRestoreConfigTransformationRuleResourceFilter";
+} from './gkebackup_RestorePlanRestoreConfigTransformationRuleResourceFilter';
 
 export interface gkebackup_RestorePlanRestoreConfigTransformationRule {
   /*
@@ -44,8 +44,8 @@ export function gkebackup_RestorePlanRestoreConfigTransformationRule_GetTypes():
   return [
     new DynamicUIProps(
       InputType.Array,
-      "fieldActions",
-      "A list of transformation rule actions to take against candidate\nresources. Actions are executed in order defined - this order\nmatters, as they could potentially interfere with each other and\nthe first operation could affect the outcome of the second operation.\nStructure is documented below.",
+      'fieldActions',
+      'A list of transformation rule actions to take against candidate\nresources. Actions are executed in order defined - this order\nmatters, as they could potentially interfere with each other and\nthe first operation could affect the outcome of the second operation.\nStructure is documented below.',
       () =>
         gkebackup_RestorePlanRestoreConfigTransformationRuleFieldAction_GetTypes(),
       true,
@@ -53,8 +53,8 @@ export function gkebackup_RestorePlanRestoreConfigTransformationRule_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Object,
-      "resourceFilter",
-      "This field is used to specify a set of fields that should be used to\ndetermine which resources in backup should be acted upon by the\nsupplied transformation rule actions, and this will ensure that only\nspecific resources are affected by transformation rule actions.\nStructure is documented below.",
+      'resourceFilter',
+      'This field is used to specify a set of fields that should be used to\ndetermine which resources in backup should be acted upon by the\nsupplied transformation rule actions, and this will ensure that only\nspecific resources are affected by transformation rule actions.\nStructure is documented below.',
       () =>
         gkebackup_RestorePlanRestoreConfigTransformationRuleResourceFilter_GetTypes(),
       false,
@@ -62,8 +62,8 @@ export function gkebackup_RestorePlanRestoreConfigTransformationRule_GetTypes():
     ),
     new DynamicUIProps(
       InputType.String,
-      "description",
-      "The description is a user specified string description\nof the transformation rule.",
+      'description',
+      'The description is a user specified string description\nof the transformation rule.',
       () => [],
       false,
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface CapacityCommitmentArgs {
   /*
@@ -105,23 +105,23 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "renewalPlan",
-        "The plan this capacity commitment is converted to after commitmentEndTime passes. Once the plan is changed, committed period is extended according to commitment plan. Only applicable for some commitment plans.",
+        'renewalPlan',
+        'The plan this capacity commitment is converted to after commitmentEndTime passes. Once the plan is changed, committed period is extended according to commitment plan. Only applicable for some commitment plans.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "slotCount",
-        "Number of slots in this commitment.",
+        'slotCount',
+        'Number of slots in this commitment.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "capacityCommitmentId",
+        'capacityCommitmentId',
         "The optional capacity commitment ID. Capacity commitment name will be generated automatically if this field is\nempty. This field must only contain lower case alphanumeric characters or dashes. The first and last character\ncannot be a dash. Max length is 64 characters. NOTE: this ID won't be kept if the capacity commitment is split\nor merged.",
         () => [],
         false,
@@ -129,40 +129,40 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "edition",
-        "The edition type. Valid values are STANDARD, ENTERPRISE, ENTERPRISE_PLUS",
+        'edition',
+        'The edition type. Valid values are STANDARD, ENTERPRISE, ENTERPRISE_PLUS',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "enforceSingleAdminProjectPerOrg",
-        "If true, fail the request if another project in the organization has a capacity commitment.",
+        'enforceSingleAdminProjectPerOrg',
+        'If true, fail the request if another project in the organization has a capacity commitment.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The geographic location where the transfer config should reside.\nExamples: US, EU, asia-northeast1. The default value is US.",
+        'location',
+        'The geographic location where the transfer config should reside.\nExamples: US, EU, asia-northeast1. The default value is US.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "plan",
-        "Capacity commitment plan. Valid values are at https://cloud.google.com/bigquery/docs/reference/reservations/rpc/google.cloud.bigquery.reservation.v1#commitmentplan\n\n\n- - -",
+        'plan',
+        'Capacity commitment plan. Valid values are at https://cloud.google.com/bigquery/docs/reference/reservations/rpc/google.cloud.bigquery.reservation.v1#commitmentplan\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

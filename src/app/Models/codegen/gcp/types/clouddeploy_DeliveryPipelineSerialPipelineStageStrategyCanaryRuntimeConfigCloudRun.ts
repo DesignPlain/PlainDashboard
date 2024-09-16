@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRun {
   // Whether Cloud Deploy should update the traffic stanza in a Cloud Run Service on the user's behalf to facilitate traffic splitting. This is required to be true for CanaryDeployments, but optional for CustomCanaryDeployments.
@@ -24,7 +24,7 @@ export function clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRun
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "automaticTrafficControl",
+      'automaticTrafficControl',
       "Whether Cloud Deploy should update the traffic stanza in a Cloud Run Service on the user's behalf to facilitate traffic splitting. This is required to be true for CanaryDeployments, but optional for CustomCanaryDeployments.",
       () => [],
       false,
@@ -32,24 +32,24 @@ export function clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRun
     ),
     new DynamicUIProps(
       InputType.Array,
-      "canaryRevisionTags",
-      "Optional. A list of tags that are added to the canary revision while the canary phase is in progress.",
+      'canaryRevisionTags',
+      'Optional. A list of tags that are added to the canary revision while the canary phase is in progress.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "priorRevisionTags",
-      "Optional. A list of tags that are added to the prior revision while the canary phase is in progress.",
+      'priorRevisionTags',
+      'Optional. A list of tags that are added to the prior revision while the canary phase is in progress.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "stableRevisionTags",
-      "Optional. A list of tags that are added to the final stable revision when the stable phase is applied.",
+      'stableRevisionTags',
+      'Optional. A list of tags that are added to the final stable revision when the stable phase is applied.',
       () => InputType_String_GetTypes(),
       false,
       false,

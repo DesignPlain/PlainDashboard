@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface integrationconnectors_ConnectionAuthConfigUserPasswordPassword {
   /*
@@ -18,8 +18,8 @@ export function integrationconnectors_ConnectionAuthConfigUserPasswordPassword_G
   return [
     new DynamicUIProps(
       InputType.String,
-      "secretVersion",
-      "The resource name of the secret version in the format,\nformat as: projects/*/secrets/*/versions/*.",
+      'secretVersion',
+      'The resource name of the secret version in the format,\nformat as: projects/*/secrets/*/versions/*.',
       () => [],
       true,
       false,

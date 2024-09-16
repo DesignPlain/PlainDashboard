@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   opsworks_HaproxyLayerLoadBasedAutoScalingDownscaling,
   opsworks_HaproxyLayerLoadBasedAutoScalingDownscaling_GetTypes,
-} from "./opsworks_HaproxyLayerLoadBasedAutoScalingDownscaling";
+} from './opsworks_HaproxyLayerLoadBasedAutoScalingDownscaling';
 import {
   opsworks_HaproxyLayerLoadBasedAutoScalingUpscaling,
   opsworks_HaproxyLayerLoadBasedAutoScalingUpscaling_GetTypes,
-} from "./opsworks_HaproxyLayerLoadBasedAutoScalingUpscaling";
+} from './opsworks_HaproxyLayerLoadBasedAutoScalingUpscaling';
 
 export interface opsworks_HaproxyLayerLoadBasedAutoScaling {
   //
@@ -29,20 +29,20 @@ export function opsworks_HaproxyLayerLoadBasedAutoScaling_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Object,
-      "upscaling",
-      "",
+      'upscaling',
+      '',
       () => opsworks_HaproxyLayerLoadBasedAutoScalingUpscaling_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "downscaling",
-      "",
+      'downscaling',
+      '',
       () => opsworks_HaproxyLayerLoadBasedAutoScalingDownscaling_GetTypes(),
       false,
       false,
     ),
-    new DynamicUIProps(InputType.Bool, "enable", "", () => [], false, false),
+    new DynamicUIProps(InputType.Bool, 'enable', '', () => [], false, false),
   ];
 }

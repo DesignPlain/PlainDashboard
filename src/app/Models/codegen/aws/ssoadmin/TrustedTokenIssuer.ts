@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ssoadmin_TrustedTokenIssuerTrustedTokenIssuerConfiguration,
   ssoadmin_TrustedTokenIssuerTrustedTokenIssuerConfiguration_GetTypes,
-} from "../types/ssoadmin_TrustedTokenIssuerTrustedTokenIssuerConfiguration";
+} from '../types/ssoadmin_TrustedTokenIssuerTrustedTokenIssuerConfiguration';
 
 export interface TrustedTokenIssuerArgs {
   // Name of the trusted token issuer.
@@ -67,8 +67,8 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Object,
-        "trustedTokenIssuerConfiguration",
-        "A block that specifies settings that apply to the trusted token issuer, these change depending on the type you specify in `trusted_token_issuer_type`. Documented below.",
+        'trustedTokenIssuerConfiguration',
+        'A block that specifies settings that apply to the trusted token issuer, these change depending on the type you specify in `trusted_token_issuer_type`. Documented below.',
         () =>
           ssoadmin_TrustedTokenIssuerTrustedTokenIssuerConfiguration_GetTypes(),
         false,
@@ -76,40 +76,40 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.String,
-        "trustedTokenIssuerType",
-        "Specifies the type of the trusted token issuer. Valid values are `OIDC_JWT`\n\nThe following arguments are optional:",
+        'trustedTokenIssuerType',
+        'Specifies the type of the trusted token issuer. Valid values are `OIDC_JWT`\n\nThe following arguments are optional:',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clientToken",
-        "A unique, case-sensitive ID that you provide to ensure the idempotency of the request. AWS generates a random value when not provided.",
+        'clientToken',
+        'A unique, case-sensitive ID that you provide to ensure the idempotency of the request. AWS generates a random value when not provided.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceArn",
-        "ARN of the instance of IAM Identity Center.",
+        'instanceArn',
+        'ARN of the instance of IAM Identity Center.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the trusted token issuer.",
+        'name',
+        'Name of the trusted token issuer.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

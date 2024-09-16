@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   costexplorer_AnomalySubscriptionThresholdExpressionAndCostCategory,
   costexplorer_AnomalySubscriptionThresholdExpressionAndCostCategory_GetTypes,
-} from "./costexplorer_AnomalySubscriptionThresholdExpressionAndCostCategory";
+} from './costexplorer_AnomalySubscriptionThresholdExpressionAndCostCategory';
 import {
   costexplorer_AnomalySubscriptionThresholdExpressionAndDimension,
   costexplorer_AnomalySubscriptionThresholdExpressionAndDimension_GetTypes,
-} from "./costexplorer_AnomalySubscriptionThresholdExpressionAndDimension";
+} from './costexplorer_AnomalySubscriptionThresholdExpressionAndDimension';
 import {
   costexplorer_AnomalySubscriptionThresholdExpressionAndTags,
   costexplorer_AnomalySubscriptionThresholdExpressionAndTags_GetTypes,
-} from "./costexplorer_AnomalySubscriptionThresholdExpressionAndTags";
+} from './costexplorer_AnomalySubscriptionThresholdExpressionAndTags';
 
 export interface costexplorer_AnomalySubscriptionThresholdExpressionAnd {
   // Configuration block for the filter that's based on  values. See Cost Category below.
@@ -33,7 +33,7 @@ export function costexplorer_AnomalySubscriptionThresholdExpressionAnd_GetTypes(
   return [
     new DynamicUIProps(
       InputType.Object,
-      "costCategory",
+      'costCategory',
       "Configuration block for the filter that's based on  values. See Cost Category below.",
       () =>
         costexplorer_AnomalySubscriptionThresholdExpressionAndCostCategory_GetTypes(),
@@ -42,8 +42,8 @@ export function costexplorer_AnomalySubscriptionThresholdExpressionAnd_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "dimension",
-      "Configuration block for the specific Dimension to use for.",
+      'dimension',
+      'Configuration block for the specific Dimension to use for.',
       () =>
         costexplorer_AnomalySubscriptionThresholdExpressionAndDimension_GetTypes(),
       false,
@@ -51,8 +51,8 @@ export function costexplorer_AnomalySubscriptionThresholdExpressionAnd_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "tags",
-      "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+      'tags',
+      'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
       () =>
         costexplorer_AnomalySubscriptionThresholdExpressionAndTags_GetTypes(),
       false,

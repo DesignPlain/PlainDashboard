@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2_SpotFleetRequestLaunchSpecificationRootBlockDevice {
   //
@@ -33,35 +33,35 @@ export function ec2_SpotFleetRequestLaunchSpecificationRootBlockDevice_GetTypes(
   return [
     new DynamicUIProps(
       InputType.Number,
-      "volumeSize",
-      "",
+      'volumeSize',
+      '',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "volumeType",
-      "",
+      'volumeType',
+      '',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "deleteOnTermination",
-      "",
+      'deleteOnTermination',
+      '',
       () => [],
       false,
       true,
     ),
-    new DynamicUIProps(InputType.Bool, "encrypted", "", () => [], false, true),
-    new DynamicUIProps(InputType.Number, "iops", "", () => [], false, true),
-    new DynamicUIProps(InputType.String, "kmsKeyId", "", () => [], false, true),
+    new DynamicUIProps(InputType.Bool, 'encrypted', '', () => [], false, true),
+    new DynamicUIProps(InputType.Number, 'iops', '', () => [], false, true),
+    new DynamicUIProps(InputType.String, 'kmsKeyId', '', () => [], false, true),
     new DynamicUIProps(
       InputType.Number,
-      "throughput",
-      "",
+      'throughput',
+      '',
       () => [],
       false,
       true,

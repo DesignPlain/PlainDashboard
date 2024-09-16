@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface monitoring_AlertPolicyAlertStrategyNotificationChannelStrategy {
   /*
@@ -23,16 +23,16 @@ export function monitoring_AlertPolicyAlertStrategyNotificationChannelStrategy_G
   return [
     new DynamicUIProps(
       InputType.String,
-      "renotifyInterval",
-      "The frequency at which to send reminder notifications for open incidents.",
+      'renotifyInterval',
+      'The frequency at which to send reminder notifications for open incidents.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "notificationChannelNames",
-      "The notification channels that these settings apply to. Each of these\ncorrespond to the name field in one of the NotificationChannel objects\nreferenced in the notification_channels field of this AlertPolicy. The format is\n`projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]`",
+      'notificationChannelNames',
+      'The notification channels that these settings apply to. Each of these\ncorrespond to the name field in one of the NotificationChannel objects\nreferenced in the notification_channels field of this AlertPolicy. The format is\n`projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]`',
       () => InputType_String_GetTypes(),
       false,
       false,

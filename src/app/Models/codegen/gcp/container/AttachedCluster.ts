@@ -3,45 +3,45 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   container_AttachedClusterAuthorization,
   container_AttachedClusterAuthorization_GetTypes,
-} from "../types/container_AttachedClusterAuthorization";
+} from '../types/container_AttachedClusterAuthorization';
 import {
   container_AttachedClusterOidcConfig,
   container_AttachedClusterOidcConfig_GetTypes,
-} from "../types/container_AttachedClusterOidcConfig";
+} from '../types/container_AttachedClusterOidcConfig';
 import {
   container_AttachedClusterWorkloadIdentityConfig,
   container_AttachedClusterWorkloadIdentityConfig_GetTypes,
-} from "../types/container_AttachedClusterWorkloadIdentityConfig";
+} from '../types/container_AttachedClusterWorkloadIdentityConfig';
 import {
   container_AttachedClusterBinaryAuthorization,
   container_AttachedClusterBinaryAuthorization_GetTypes,
-} from "../types/container_AttachedClusterBinaryAuthorization";
+} from '../types/container_AttachedClusterBinaryAuthorization';
 import {
   container_AttachedClusterLoggingConfig,
   container_AttachedClusterLoggingConfig_GetTypes,
-} from "../types/container_AttachedClusterLoggingConfig";
+} from '../types/container_AttachedClusterLoggingConfig';
 import {
   container_AttachedClusterMonitoringConfig,
   container_AttachedClusterMonitoringConfig_GetTypes,
-} from "../types/container_AttachedClusterMonitoringConfig";
+} from '../types/container_AttachedClusterMonitoringConfig';
 import {
   container_AttachedClusterProxyConfig,
   container_AttachedClusterProxyConfig_GetTypes,
-} from "../types/container_AttachedClusterProxyConfig";
+} from '../types/container_AttachedClusterProxyConfig';
 import {
   container_AttachedClusterError,
   container_AttachedClusterError_GetTypes,
-} from "../types/container_AttachedClusterError";
+} from '../types/container_AttachedClusterError';
 import {
   container_AttachedClusterFleet,
   container_AttachedClusterFleet_GetTypes,
-} from "../types/container_AttachedClusterFleet";
+} from '../types/container_AttachedClusterFleet';
 
 export interface AttachedClusterArgs {
   /*
@@ -282,15 +282,15 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "authorization",
-        "Configuration related to the cluster RBAC settings.\nStructure is documented below.",
+        'authorization',
+        'Configuration related to the cluster RBAC settings.\nStructure is documented below.',
         () => container_AttachedClusterAuthorization_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "distribution",
+        'distribution',
         'The Kubernetes distribution of the underlying attached cluster. Supported values:\n"eks", "aks".',
         () => [],
         true,
@@ -298,104 +298,104 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource",
+        'location',
+        'The location for the resource',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
-        "Optional. Annotations on the cluster. This field has the same\nrestrictions as Kubernetes annotations. The total size of all keys and\nvalues combined is limited to 256k. Key can have 2 segments: prefix (optional)\nand name (required), separated by a slash (/). Prefix must be a DNS subdomain.\nName must be 63 characters or less, begin and end with alphanumerics,\nwith dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
+        'annotations',
+        'Optional. Annotations on the cluster. This field has the same\nrestrictions as Kubernetes annotations. The total size of all keys and\nvalues combined is limited to 256k. Key can have 2 segments: prefix (optional)\nand name (required), separated by a slash (/). Prefix must be a DNS subdomain.\nName must be 63 characters or less, begin and end with alphanumerics,\nwith dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of this resource.",
+        'name',
+        'The name of this resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "oidcConfig",
-        "OIDC discovery information of the target cluster.\nKubernetes Service Account (KSA) tokens are JWT tokens signed by the cluster\nAPI server. This fields indicates how GCP services\nvalidate KSA tokens in order to allow system workloads (such as GKE Connect\nand telemetry agents) to authenticate back to GCP.\nBoth clusters with public and private issuer URLs are supported.\nClusters with public issuers only need to specify the `issuer_url` field\nwhile clusters with private issuers need to provide both\n`issuer_url` and `jwks`.\nStructure is documented below.",
+        'oidcConfig',
+        'OIDC discovery information of the target cluster.\nKubernetes Service Account (KSA) tokens are JWT tokens signed by the cluster\nAPI server. This fields indicates how GCP services\nvalidate KSA tokens in order to allow system workloads (such as GKE Connect\nand telemetry agents) to authenticate back to GCP.\nBoth clusters with public and private issuer URLs are supported.\nClusters with public issuers only need to specify the `issuer_url` field\nwhile clusters with private issuers need to provide both\n`issuer_url` and `jwks`.\nStructure is documented below.',
         () => container_AttachedClusterOidcConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "loggingConfig",
-        "Logging configuration.\nStructure is documented below.",
+        'loggingConfig',
+        'Logging configuration.\nStructure is documented below.',
         () => container_AttachedClusterLoggingConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "deletionPolicy",
-        "Policy to determine what flags to send on delete.",
+        'deletionPolicy',
+        'Policy to determine what flags to send on delete.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A human readable description of this attached cluster. Cannot be longer\nthan 255 UTF-8 encoded bytes.",
+        'description',
+        'A human readable description of this attached cluster. Cannot be longer\nthan 255 UTF-8 encoded bytes.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "proxyConfig",
-        "Support for proxy configuration.\nStructure is documented below.",
+        'proxyConfig',
+        'Support for proxy configuration.\nStructure is documented below.',
         () => container_AttachedClusterProxyConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "binaryAuthorization",
-        "Binary Authorization configuration.\nStructure is documented below.",
+        'binaryAuthorization',
+        'Binary Authorization configuration.\nStructure is documented below.',
         () => container_AttachedClusterBinaryAuthorization_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "fleet",
-        "Fleet configuration.\nStructure is documented below.",
+        'fleet',
+        'Fleet configuration.\nStructure is documented below.',
         () => container_AttachedClusterFleet_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "monitoringConfig",
-        "Monitoring configuration.\nStructure is documented below.",
+        'monitoringConfig',
+        'Monitoring configuration.\nStructure is documented below.',
         () => container_AttachedClusterMonitoringConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "platformVersion",
-        "The platform version for the cluster (e.g. `1.23.0-gke.1`).",
+        'platformVersion',
+        'The platform version for the cluster (e.g. `1.23.0-gke.1`).',
         () => [],
         true,
         false,

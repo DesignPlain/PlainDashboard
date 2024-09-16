@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   servicediscovery_ServiceHealthCheckConfig,
   servicediscovery_ServiceHealthCheckConfig_GetTypes,
-} from "../types/servicediscovery_ServiceHealthCheckConfig";
+} from '../types/servicediscovery_ServiceHealthCheckConfig';
 import {
   servicediscovery_ServiceHealthCheckCustomConfig,
   servicediscovery_ServiceHealthCheckCustomConfig_GetTypes,
-} from "../types/servicediscovery_ServiceHealthCheckCustomConfig";
+} from '../types/servicediscovery_ServiceHealthCheckCustomConfig';
 import {
   servicediscovery_ServiceDnsConfig,
   servicediscovery_ServiceDnsConfig_GetTypes,
-} from "../types/servicediscovery_ServiceDnsConfig";
+} from '../types/servicediscovery_ServiceDnsConfig';
 
 export interface ServiceArgs {
   // A complex type that contains information about the resource record sets that you want Amazon Route 53 to create when you register an instance. See `dns_config` Block for details.
@@ -85,72 +85,72 @@ export class Service extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "namespaceId",
-        "The ID of the namespace that you want to use to create the service.",
+        'namespaceId',
+        'The ID of the namespace that you want to use to create the service.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "dnsConfig",
-        "A complex type that contains information about the resource record sets that you want Amazon Route 53 to create when you register an instance. See `dns_config` Block for details.",
+        'dnsConfig',
+        'A complex type that contains information about the resource record sets that you want Amazon Route 53 to create when you register an instance. See `dns_config` Block for details.',
         () => servicediscovery_ServiceDnsConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "healthCheckConfig",
-        "A complex type that contains settings for an optional health check. Only for Public DNS namespaces. See `health_check_config` Block for details.",
+        'healthCheckConfig',
+        'A complex type that contains settings for an optional health check. Only for Public DNS namespaces. See `health_check_config` Block for details.',
         () => servicediscovery_ServiceHealthCheckConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the service. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the service. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the service.",
+        'description',
+        'The description of the service.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "forceDestroy",
-        "A boolean that indicates all instances should be deleted from the service so that the service can be destroyed without error. These instances are not recoverable. Defaults to `false`.",
+        'forceDestroy',
+        'A boolean that indicates all instances should be deleted from the service so that the service can be destroyed without error. These instances are not recoverable. Defaults to `false`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the service.",
+        'name',
+        'The name of the service.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "If present, specifies that the service instances are only discoverable using the `DiscoverInstances` API operation. No DNS records is registered for the service instances. The only valid value is `HTTP`.",
+        'type',
+        'If present, specifies that the service instances are only discoverable using the `DiscoverInstances` API operation. No DNS records is registered for the service instances. The only valid value is `HTTP`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "healthCheckCustomConfig",
-        "A complex type that contains settings for ECS managed health checks. See `health_check_custom_config` Block for details.",
+        'healthCheckCustomConfig',
+        'A complex type that contains settings for ECS managed health checks. See `health_check_custom_config` Block for details.',
         () => servicediscovery_ServiceHealthCheckCustomConfig_GetTypes(),
         false,
         true,

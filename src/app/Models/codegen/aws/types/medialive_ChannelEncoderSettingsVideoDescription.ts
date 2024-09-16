@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelEncoderSettingsVideoDescriptionCodecSettings,
   medialive_ChannelEncoderSettingsVideoDescriptionCodecSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsVideoDescriptionCodecSettings";
+} from './medialive_ChannelEncoderSettingsVideoDescriptionCodecSettings';
 
 export interface medialive_ChannelEncoderSettingsVideoDescription {
   // Indicate how to respond to the AFD values that might be in the input video.
@@ -37,56 +37,56 @@ export function medialive_ChannelEncoderSettingsVideoDescription_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.Number,
-      "height",
-      "Output video height in pixels.",
+      'height',
+      'Output video height in pixels.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The name of the video description.",
+      'name',
+      'The name of the video description.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "respondToAfd",
-      "Indicate how to respond to the AFD values that might be in the input video.",
+      'respondToAfd',
+      'Indicate how to respond to the AFD values that might be in the input video.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "scalingBehavior",
-      "Behavior on how to scale.",
+      'scalingBehavior',
+      'Behavior on how to scale.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "sharpness",
-      "Changes the strength of the anti-alias filter used for scaling.",
+      'sharpness',
+      'Changes the strength of the anti-alias filter used for scaling.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "width",
-      "Output video width in pixels.",
+      'width',
+      'Output video width in pixels.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "codecSettings",
-      "The video codec settings. See Video Codec Settings for more details.",
+      'codecSettings',
+      'The video codec settings. See Video Codec Settings for more details.',
       () =>
         medialive_ChannelEncoderSettingsVideoDescriptionCodecSettings_GetTypes(),
       false,

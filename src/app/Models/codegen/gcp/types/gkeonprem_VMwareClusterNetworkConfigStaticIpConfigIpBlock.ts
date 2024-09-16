@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlockIp,
   gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlockIp_GetTypes,
-} from "./gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlockIp";
+} from './gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlockIp';
 
 export interface gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock {
   // The network gateway used by the VMware User Cluster.
@@ -28,7 +28,7 @@ export function gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock_GetTyp
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ips",
+      'ips',
       "The node's network configurations used by the VMware User Cluster.\nStructure is documented below.",
       () =>
         gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlockIp_GetTypes(),
@@ -37,16 +37,16 @@ export function gkeonprem_VMwareClusterNetworkConfigStaticIpConfigIpBlock_GetTyp
     ),
     new DynamicUIProps(
       InputType.String,
-      "netmask",
-      "The netmask used by the VMware User Cluster.",
+      'netmask',
+      'The netmask used by the VMware User Cluster.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "gateway",
-      "The network gateway used by the VMware User Cluster.",
+      'gateway',
+      'The network gateway used by the VMware User Cluster.',
       () => [],
       true,
       false,

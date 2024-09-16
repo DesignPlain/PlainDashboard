@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getGatewayRouteSpecHttp2Route,
   appmesh_getGatewayRouteSpecHttp2Route_GetTypes,
-} from "./appmesh_getGatewayRouteSpecHttp2Route";
+} from './appmesh_getGatewayRouteSpecHttp2Route';
 import {
   appmesh_getGatewayRouteSpecHttpRoute,
   appmesh_getGatewayRouteSpecHttpRoute_GetTypes,
-} from "./appmesh_getGatewayRouteSpecHttpRoute";
+} from './appmesh_getGatewayRouteSpecHttpRoute';
 import {
   appmesh_getGatewayRouteSpecGrpcRoute,
   appmesh_getGatewayRouteSpecGrpcRoute_GetTypes,
-} from "./appmesh_getGatewayRouteSpecGrpcRoute";
+} from './appmesh_getGatewayRouteSpecGrpcRoute';
 
 export interface appmesh_getGatewayRouteSpec {
   //
@@ -36,28 +36,28 @@ export function appmesh_getGatewayRouteSpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "grpcRoutes",
-      "",
+      'grpcRoutes',
+      '',
       () => appmesh_getGatewayRouteSpecGrpcRoute_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "http2Routes",
-      "",
+      'http2Routes',
+      '',
       () => appmesh_getGatewayRouteSpecHttp2Route_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "httpRoutes",
-      "",
+      'httpRoutes',
+      '',
       () => appmesh_getGatewayRouteSpecHttpRoute_GetTypes(),
       true,
       false,
     ),
-    new DynamicUIProps(InputType.Number, "priority", "", () => [], true, false),
+    new DynamicUIProps(InputType.Number, 'priority', '', () => [], true, false),
   ];
 }

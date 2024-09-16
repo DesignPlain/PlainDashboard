@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface beyondcorp_AppConnectionGateway {
   // AppGateway name in following format: projects/{project_id}/locations/{locationId}/appgateways/{gateway_id}.
@@ -34,32 +34,32 @@ export function beyondcorp_AppConnectionGateway_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "appGateway",
-      "AppGateway name in following format: projects/{project_id}/locations/{locationId}/appgateways/{gateway_id}.",
+      'appGateway',
+      'AppGateway name in following format: projects/{project_id}/locations/{locationId}/appgateways/{gateway_id}.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "ingressPort",
-      "(Output)\nIngress port reserved on the gateways for this AppConnection, if not specified or zero, the default port is 19443.",
+      'ingressPort',
+      '(Output)\nIngress port reserved on the gateways for this AppConnection, if not specified or zero, the default port is 19443.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "The type of hosting used by the gateway. Refer to\nhttps://cloud.google.com/beyondcorp/docs/reference/rest/v1/projects.locations.appConnections#Type_1\nfor a list of possible values.",
+      'type',
+      'The type of hosting used by the gateway. Refer to\nhttps://cloud.google.com/beyondcorp/docs/reference/rest/v1/projects.locations.appConnections#Type_1\nfor a list of possible values.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "uri",
-      "(Output)\nServer-defined URI for this resource.",
+      'uri',
+      '(Output)\nServer-defined URI for this resource.',
       () => [],
       false,
       false,

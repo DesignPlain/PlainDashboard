@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cognito_RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationNoActionEmail {
   // The email HTML body.
@@ -21,24 +21,24 @@ export function cognito_RiskConfigurationAccountTakeoverRiskConfigurationNotifyC
   return [
     new DynamicUIProps(
       InputType.String,
-      "textBody",
-      "The email text body.",
+      'textBody',
+      'The email text body.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "htmlBody",
-      "The email HTML body.",
+      'htmlBody',
+      'The email HTML body.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "subject",
-      "The email subject.",
+      'subject',
+      'The email subject.',
       () => [],
       true,
       false,

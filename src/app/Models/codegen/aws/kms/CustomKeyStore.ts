@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface CustomKeyStoreArgs {
   // Cluster ID of CloudHSM.
@@ -37,32 +37,32 @@ export class CustomKeyStore extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "keyStorePassword",
-        "Password for `kmsuser` on CloudHSM.",
+        'keyStorePassword',
+        'Password for `kmsuser` on CloudHSM.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "trustAnchorCertificate",
-        "Customer certificate used for signing on CloudHSM.",
+        'trustAnchorCertificate',
+        'Customer certificate used for signing on CloudHSM.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cloudHsmClusterId",
-        "Cluster ID of CloudHSM.",
+        'cloudHsmClusterId',
+        'Cluster ID of CloudHSM.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "customKeyStoreName",
-        "Unique name for Custom Key Store.",
+        'customKeyStoreName',
+        'Unique name for Custom Key Store.',
         () => [],
         true,
         false,

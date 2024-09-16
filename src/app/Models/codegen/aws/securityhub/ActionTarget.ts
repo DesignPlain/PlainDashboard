@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ActionTargetArgs {
   // The description for the custom action target.
@@ -34,24 +34,24 @@ export class ActionTarget extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The description for the custom action target.",
+        'name',
+        'The description for the custom action target.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The name of the custom action target.",
+        'description',
+        'The name of the custom action target.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "identifier",
-        "The ID for the custom action target.",
+        'identifier',
+        'The ID for the custom action target.',
         () => [],
         true,
         true,

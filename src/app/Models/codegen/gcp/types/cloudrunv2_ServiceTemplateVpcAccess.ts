@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudrunv2_ServiceTemplateVpcAccessNetworkInterface,
   cloudrunv2_ServiceTemplateVpcAccessNetworkInterface_GetTypes,
-} from "./cloudrunv2_ServiceTemplateVpcAccessNetworkInterface";
+} from './cloudrunv2_ServiceTemplateVpcAccessNetworkInterface';
 
 export interface cloudrunv2_ServiceTemplateVpcAccess {
   // VPC Access connector name. Format: projects/{project}/locations/{location}/connectors/{connector}, where {project} can be project id or number.
@@ -31,24 +31,24 @@ export function cloudrunv2_ServiceTemplateVpcAccess_GetTypes(): DynamicUIProps[]
   return [
     new DynamicUIProps(
       InputType.String,
-      "connector",
-      "VPC Access connector name. Format: projects/{project}/locations/{location}/connectors/{connector}, where {project} can be project id or number.",
+      'connector',
+      'VPC Access connector name. Format: projects/{project}/locations/{location}/connectors/{connector}, where {project} can be project id or number.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "egress",
-      "Traffic VPC egress settings.\nPossible values are: `ALL_TRAFFIC`, `PRIVATE_RANGES_ONLY`.",
+      'egress',
+      'Traffic VPC egress settings.\nPossible values are: `ALL_TRAFFIC`, `PRIVATE_RANGES_ONLY`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "networkInterfaces",
-      "Direct VPC egress settings. Currently only single network interface is supported.\nStructure is documented below.",
+      'networkInterfaces',
+      'Direct VPC egress settings. Currently only single network interface is supported.\nStructure is documented below.',
       () => cloudrunv2_ServiceTemplateVpcAccessNetworkInterface_GetTypes(),
       false,
       false,

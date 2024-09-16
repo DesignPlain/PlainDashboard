@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface LicenseGrantArgs {
   // A list of the allowed operations for the grant. This is a subset of the allowed operations on the license.
@@ -52,32 +52,32 @@ export class LicenseGrant extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "allowedOperations",
-        "A list of the allowed operations for the grant. This is a subset of the allowed operations on the license.",
+        'allowedOperations',
+        'A list of the allowed operations for the grant. This is a subset of the allowed operations on the license.',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "licenseArn",
-        "The ARN of the license to grant.",
+        'licenseArn',
+        'The ARN of the license to grant.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The Name of the grant.",
+        'name',
+        'The Name of the grant.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "principal",
-        "The target account for the grant in the form of the ARN for an account principal of the root user.",
+        'principal',
+        'The target account for the grant in the form of the ARN for an account principal of the root user.',
         () => [],
         true,
         true,

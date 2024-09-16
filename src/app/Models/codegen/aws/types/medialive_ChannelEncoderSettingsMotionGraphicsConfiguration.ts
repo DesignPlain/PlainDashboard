@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettings,
   medialive_ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettings";
+} from './medialive_ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettings';
 
 export interface medialive_ChannelEncoderSettingsMotionGraphicsConfiguration {
   // Motion Graphics Insertion.
@@ -22,8 +22,8 @@ export function medialive_ChannelEncoderSettingsMotionGraphicsConfiguration_GetT
   return [
     new DynamicUIProps(
       InputType.Object,
-      "motionGraphicsSettings",
-      "Motion Graphics Settings. See Motion Graphics Settings for more details.",
+      'motionGraphicsSettings',
+      'Motion Graphics Settings. See Motion Graphics Settings for more details.',
       () =>
         medialive_ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettings_GetTypes(),
       true,
@@ -31,8 +31,8 @@ export function medialive_ChannelEncoderSettingsMotionGraphicsConfiguration_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "motionGraphicsInsertion",
-      "Motion Graphics Insertion.",
+      'motionGraphicsInsertion',
+      'Motion Graphics Insertion.',
       () => [],
       false,
       false,

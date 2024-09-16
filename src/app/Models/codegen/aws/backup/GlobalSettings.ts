@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface GlobalSettingsArgs {
   // A list of resources along with the opt-in preferences for the account.
@@ -19,8 +19,8 @@ export class GlobalSettings extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "globalSettings",
-        "A list of resources along with the opt-in preferences for the account.",
+        'globalSettings',
+        'A list of resources along with the opt-in preferences for the account.',
         () => InputType_Map_GetTypes(),
         true,
         false,

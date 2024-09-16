@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gamelift_FleetEc2InboundPermission,
   gamelift_FleetEc2InboundPermission_GetTypes,
-} from "../types/gamelift_FleetEc2InboundPermission";
+} from '../types/gamelift_FleetEc2InboundPermission';
 import {
   gamelift_FleetResourceCreationLimitPolicy,
   gamelift_FleetResourceCreationLimitPolicy_GetTypes,
-} from "../types/gamelift_FleetResourceCreationLimitPolicy";
+} from '../types/gamelift_FleetResourceCreationLimitPolicy';
 import {
   gamelift_FleetCertificateConfiguration,
   gamelift_FleetCertificateConfiguration_GetTypes,
-} from "../types/gamelift_FleetCertificateConfiguration";
+} from '../types/gamelift_FleetCertificateConfiguration';
 import {
   gamelift_FleetRuntimeConfiguration,
   gamelift_FleetRuntimeConfiguration_GetTypes,
-} from "../types/gamelift_FleetRuntimeConfiguration";
+} from '../types/gamelift_FleetRuntimeConfiguration';
 
 export interface FleetArgs {
   // Range of IP addresses and port settings that permit inbound traffic to access server processes running on the fleet. See below.
@@ -131,112 +131,112 @@ export class Fleet extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "instanceRoleArn",
-        "ARN of an IAM role that instances in the fleet can assume.",
+        'instanceRoleArn',
+        'ARN of an IAM role that instances in the fleet can assume.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "runtimeConfiguration",
-        "Instructions for launching server processes on each instance in the fleet. See below.",
+        'runtimeConfiguration',
+        'Instructions for launching server processes on each instance in the fleet. See below.',
         () => gamelift_FleetRuntimeConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "scriptId",
-        "ID of the GameLift Script to be deployed on the fleet.",
+        'scriptId',
+        'ID of the GameLift Script to be deployed on the fleet.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ec2InboundPermissions",
-        "Range of IP addresses and port settings that permit inbound traffic to access server processes running on the fleet. See below.",
+        'ec2InboundPermissions',
+        'Range of IP addresses and port settings that permit inbound traffic to access server processes running on the fleet. See below.',
         () => gamelift_FleetEc2InboundPermission_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "buildId",
-        "ID of the GameLift Build to be deployed on the fleet.",
+        'buildId',
+        'ID of the GameLift Build to be deployed on the fleet.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "metricGroups",
-        "List of names of metric groups to add this fleet to. A metric group tracks metrics across all fleets in the group. Defaults to `default`.",
+        'metricGroups',
+        'List of names of metric groups to add this fleet to. A metric group tracks metrics across all fleets in the group. Defaults to `default`.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the fleet.",
+        'name',
+        'The name of the fleet.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "newGameSessionProtectionPolicy",
-        "Game session protection policy to apply to all instances in this fleetE.g., `FullProtection`. Defaults to `NoProtection`.",
+        'newGameSessionProtectionPolicy',
+        'Game session protection policy to apply to all instances in this fleetE.g., `FullProtection`. Defaults to `NoProtection`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "resourceCreationLimitPolicy",
-        "Policy that limits the number of game sessions an individual player can create over a span of time for this fleet. See below.",
+        'resourceCreationLimitPolicy',
+        'Policy that limits the number of game sessions an individual player can create over a span of time for this fleet. See below.',
         () => gamelift_FleetResourceCreationLimitPolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "certificateConfiguration",
-        "Prompts GameLift to generate a TLS/SSL certificate for the fleet. See certificate_configuration.",
+        'certificateConfiguration',
+        'Prompts GameLift to generate a TLS/SSL certificate for the fleet. See certificate_configuration.',
         () => gamelift_FleetCertificateConfiguration_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ec2InstanceType",
-        "Name of an EC2 instance typeE.g., `t2.micro`",
+        'ec2InstanceType',
+        'Name of an EC2 instance typeE.g., `t2.micro`',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "fleetType",
-        "Type of fleet. This value must be `ON_DEMAND` or `SPOT`. Defaults to `ON_DEMAND`.",
+        'fleetType',
+        'Type of fleet. This value must be `ON_DEMAND` or `SPOT`. Defaults to `ON_DEMAND`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Human-readable description of the fleet.",
+        'description',
+        'Human-readable description of the fleet.',
         () => [],
         false,
         false,

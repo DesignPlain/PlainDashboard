@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAll,
   wafv2_RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAll_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAll";
+} from './wafv2_RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAll';
 
 export interface wafv2_RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPattern {
   // An empty configuration block that is used for inspecting all headers.
@@ -22,8 +22,8 @@ export function wafv2_RuleGroupRuleStatementRegexPatternSetReferenceStatementFie
   return [
     new DynamicUIProps(
       InputType.Object,
-      "all",
-      "An empty configuration block that is used for inspecting all headers.",
+      'all',
+      'An empty configuration block that is used for inspecting all headers.',
       () =>
         wafv2_RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAll_GetTypes(),
       false,
@@ -31,8 +31,8 @@ export function wafv2_RuleGroupRuleStatementRegexPatternSetReferenceStatementFie
     ),
     new DynamicUIProps(
       InputType.Array,
-      "includedPaths",
-      "",
+      'includedPaths',
+      '',
       () => InputType_String_GetTypes(),
       false,
       false,

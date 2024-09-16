@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_NetworkEndpointListNetworkEndpoint,
   compute_NetworkEndpointListNetworkEndpoint_GetTypes,
-} from "../types/compute_NetworkEndpointListNetworkEndpoint";
+} from '../types/compute_NetworkEndpointListNetworkEndpoint';
 
 export interface NetworkEndpointListArgs {
   /*
@@ -67,32 +67,32 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "networkEndpointGroup",
-        "The network endpoint group these endpoints are part of.\n\n\n- - -",
+        'networkEndpointGroup',
+        'The network endpoint group these endpoints are part of.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "networkEndpoints",
-        "The network endpoints to be added to the enclosing network endpoint group\n(NEG). Each endpoint specifies an IP address and port, along with\nadditional information depending on the NEG type.\nStructure is documented below.",
+        'networkEndpoints',
+        'The network endpoints to be added to the enclosing network endpoint group\n(NEG). Each endpoint specifies an IP address and port, along with\nadditional information depending on the NEG type.\nStructure is documented below.',
         () => compute_NetworkEndpointListNetworkEndpoint_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "zone",
-        "Zone where the containing network endpoint group is located.",
+        'zone',
+        'Zone where the containing network endpoint group is located.',
         () => [],
         false,
         false,

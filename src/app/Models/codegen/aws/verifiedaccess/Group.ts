@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   verifiedaccess_GroupSseConfiguration,
   verifiedaccess_GroupSseConfiguration_GetTypes,
-} from "../types/verifiedaccess_GroupSseConfiguration";
+} from '../types/verifiedaccess_GroupSseConfiguration';
 
 export interface GroupArgs {
   /*
@@ -76,40 +76,40 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "verifiedaccessInstanceId",
-        "The id of the verified access instance this group is associated with.\n\nThe following arguments are optional:",
+        'verifiedaccessInstanceId',
+        'The id of the verified access instance this group is associated with.\n\nThe following arguments are optional:',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the verified access group.",
+        'description',
+        'Description of the verified access group.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "policyDocument",
-        "The policy document that is associated with this resource.",
+        'policyDocument',
+        'The policy document that is associated with this resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "sseConfiguration",
-        "Configuration block to use KMS keys for server-side encryption.",
+        'sseConfiguration',
+        'Configuration block to use KMS keys for server-side encryption.',
         () => verifiedaccess_GroupSseConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

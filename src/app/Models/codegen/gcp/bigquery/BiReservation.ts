@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bigquery_BiReservationPreferredTable,
   bigquery_BiReservationPreferredTable_GetTypes,
-} from "../types/bigquery_BiReservationPreferredTable";
+} from '../types/bigquery_BiReservationPreferredTable';
 
 export interface BiReservationArgs {
   /*
@@ -72,32 +72,32 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "LOCATION_DESCRIPTION\n\n\n- - -",
+        'location',
+        'LOCATION_DESCRIPTION\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "preferredTables",
-        "Preferred tables to use BI capacity for.\nStructure is documented below.",
+        'preferredTables',
+        'Preferred tables to use BI capacity for.\nStructure is documented below.',
         () => bigquery_BiReservationPreferredTable_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "size",
-        "Size of a reservation, in bytes.",
+        'size',
+        'Size of a reservation, in bytes.',
         () => [],
         false,
         false,

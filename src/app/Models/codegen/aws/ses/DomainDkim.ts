@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface DomainDkimArgs {
   // Verified domain name to generate DKIM tokens for.
@@ -29,8 +29,8 @@ in the [AWS SES docs](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-
     return [
       new DynamicUIProps(
         InputType.String,
-        "domain",
-        "Verified domain name to generate DKIM tokens for.",
+        'domain',
+        'Verified domain name to generate DKIM tokens for.',
         () => [],
         true,
         true,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface TagKeyArgs {
   /*
@@ -87,7 +87,7 @@ The short name must be 1-63 characters, beginning and ending with an alphanumeri
     return [
       new DynamicUIProps(
         InputType.Map,
-        "purposeData",
+        'purposeData',
         'Optional. Purpose data cannot be changed once set.\nPurpose data corresponds to the policy system that the tag is intended for. For example, the GCE_FIREWALL purpose expects data in the following format: `network = "<project-name>/<vpc-name>"`.',
         () => InputType_Map_GetTypes(),
         false,
@@ -95,23 +95,23 @@ The short name must be 1-63 characters, beginning and ending with an alphanumeri
       ),
       new DynamicUIProps(
         InputType.String,
-        "shortName",
-        "Input only. The user friendly name for a TagKey. The short name should be unique for TagKeys within the same tag namespace.\nThe short name must be 1-63 characters, beginning and ending with an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n\n- - -",
+        'shortName',
+        'Input only. The user friendly name for a TagKey. The short name should be unique for TagKeys within the same tag namespace.\nThe short name must be 1-63 characters, beginning and ending with an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "User-assigned description of the TagKey. Must not exceed 256 characters.",
+        'description',
+        'User-assigned description of the TagKey. Must not exceed 256 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
+        'parent',
         "Input only. The resource name of the new TagKey's parent. Must be of the form organizations/{org_id} or projects/{project_id_or_number}.",
         () => [],
         true,
@@ -119,8 +119,8 @@ The short name must be 1-63 characters, beginning and ending with an alphanumeri
       ),
       new DynamicUIProps(
         InputType.String,
-        "purpose",
-        "Optional. A purpose cannot be changed once set.\nA purpose denotes that this Tag is intended for use in policies of a specific policy engine, and will involve that policy engine in management operations involving this Tag.\nPossible values are: `GCE_FIREWALL`.",
+        'purpose',
+        'Optional. A purpose cannot be changed once set.\nA purpose denotes that this Tag is intended for use in policies of a specific policy engine, and will involve that policy engine in management operations involving this Tag.\nPossible values are: `GCE_FIREWALL`.',
         () => [],
         false,
         true,

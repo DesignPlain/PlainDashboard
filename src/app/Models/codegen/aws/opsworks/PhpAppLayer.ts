@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   opsworks_PhpAppLayerEbsVolume,
   opsworks_PhpAppLayerEbsVolume_GetTypes,
-} from "../types/opsworks_PhpAppLayerEbsVolume";
+} from '../types/opsworks_PhpAppLayerEbsVolume';
 import {
   opsworks_PhpAppLayerCloudwatchConfiguration,
   opsworks_PhpAppLayerCloudwatchConfiguration_GetTypes,
-} from "../types/opsworks_PhpAppLayerCloudwatchConfiguration";
+} from '../types/opsworks_PhpAppLayerCloudwatchConfiguration';
 import {
   opsworks_PhpAppLayerLoadBasedAutoScaling,
   opsworks_PhpAppLayerLoadBasedAutoScaling_GetTypes,
-} from "../types/opsworks_PhpAppLayerLoadBasedAutoScaling";
+} from '../types/opsworks_PhpAppLayerLoadBasedAutoScaling';
 
 export interface PhpAppLayerArgs {
   // Custom JSON attributes to apply to the layer.
@@ -181,7 +181,7 @@ lifecycle events, if custom cookbooks are enabled on the layer's stack:
     return [
       new DynamicUIProps(
         InputType.Array,
-        "systemPackages",
+        'systemPackages',
         "Names of a set of system packages to install on the layer's instances.",
         () => InputType_String_GetTypes(),
         false,
@@ -189,15 +189,15 @@ lifecycle events, if custom cookbooks are enabled on the layer's stack:
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cloudwatchConfiguration",
-        "",
+        'cloudwatchConfiguration',
+        '',
         () => opsworks_PhpAppLayerCloudwatchConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "autoAssignElasticIps",
+        'autoAssignElasticIps',
         "Whether to automatically assign an elastic IP address to the layer's instances.",
         () => [],
         false,
@@ -205,23 +205,23 @@ lifecycle events, if custom cookbooks are enabled on the layer's stack:
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "installUpdatesOnBoot",
-        "Whether to install OS and package updates on each instance when it boots.",
+        'installUpdatesOnBoot',
+        'Whether to install OS and package updates on each instance when it boots.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "stackId",
-        "ID of the stack the layer will belong to.",
+        'stackId',
+        'ID of the stack the layer will belong to.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "customSecurityGroupIds",
+        'customSecurityGroupIds',
         "Ids for a set of security groups to apply to the layer's instances.",
         () => InputType_String_GetTypes(),
         false,
@@ -229,15 +229,15 @@ lifecycle events, if custom cookbooks are enabled on the layer's stack:
       ),
       new DynamicUIProps(
         InputType.String,
-        "customJson",
-        "Custom JSON attributes to apply to the layer.",
+        'customJson',
+        'Custom JSON attributes to apply to the layer.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ebsVolumes",
+        'ebsVolumes',
         "`ebs_volume` blocks, as described below, will each create an EBS volume and connect it to the layer's instances.",
         () => opsworks_PhpAppLayerEbsVolume_GetTypes(),
         false,
@@ -245,31 +245,31 @@ lifecycle events, if custom cookbooks are enabled on the layer's stack:
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "autoHealing",
-        "Whether to enable auto-healing for the layer.",
+        'autoHealing',
+        'Whether to enable auto-healing for the layer.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "customConfigureRecipes",
-        "",
+        'customConfigureRecipes',
+        '',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "drainElbOnShutdown",
-        "Whether to enable Elastic Load Balancing connection draining.",
+        'drainElbOnShutdown',
+        'Whether to enable Elastic Load Balancing connection draining.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
+        'tags',
         "A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.\n\nThe following extra optional arguments, all lists of Chef recipe names, allow\ncustom Chef recipes to be applied to layer instances at the five different\nlifecycle events, if custom cookbooks are enabled on the layer's stack:",
         () => InputType_Map_GetTypes(),
         false,
@@ -277,71 +277,71 @@ lifecycle events, if custom cookbooks are enabled on the layer's stack:
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "useEbsOptimizedInstances",
-        "Whether to use EBS-optimized instances.",
+        'useEbsOptimizedInstances',
+        'Whether to use EBS-optimized instances.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "customShutdownRecipes",
-        "",
+        'customShutdownRecipes',
+        '',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "customSetupRecipes",
-        "",
+        'customSetupRecipes',
+        '',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "instanceShutdownTimeout",
-        "The time, in seconds, that OpsWorks will wait for Chef to complete after triggering the Shutdown event.",
+        'instanceShutdownTimeout',
+        'The time, in seconds, that OpsWorks will wait for Chef to complete after triggering the Shutdown event.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "loadBasedAutoScaling",
-        "",
+        'loadBasedAutoScaling',
+        '',
         () => opsworks_PhpAppLayerLoadBasedAutoScaling_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "customUndeployRecipes",
-        "",
+        'customUndeployRecipes',
+        '',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "elasticLoadBalancer",
-        "Name of an Elastic Load Balancer to attach to this layer",
+        'elasticLoadBalancer',
+        'Name of an Elastic Load Balancer to attach to this layer',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A human-readable name for the layer.",
+        'name',
+        'A human-readable name for the layer.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "autoAssignPublicIps",
+        'autoAssignPublicIps',
         "For stacks belonging to a VPC, whether to automatically assign a public IP address to each of the layer's instances.",
         () => [],
         false,
@@ -349,15 +349,15 @@ lifecycle events, if custom cookbooks are enabled on the layer's stack:
       ),
       new DynamicUIProps(
         InputType.Array,
-        "customDeployRecipes",
-        "",
+        'customDeployRecipes',
+        '',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "customInstanceProfileArn",
+        'customInstanceProfileArn',
         "The ARN of an IAM profile that will be used for the layer's instances.",
         () => [],
         false,

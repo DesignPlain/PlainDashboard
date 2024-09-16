@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface sagemaker_CodeRepositoryGitConfig {
   // The default branch for the Git repository.
@@ -21,7 +21,7 @@ export function sagemaker_CodeRepositoryGitConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "secretArn",
+      'secretArn',
       'The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the credentials used to access the git repository. The secret must have a staging label of AWSCURRENT and must be in the following format: `{"username": UserName, "password": Password}`',
       () => [],
       false,
@@ -29,16 +29,16 @@ export function sagemaker_CodeRepositoryGitConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "branch",
-      "The default branch for the Git repository.",
+      'branch',
+      'The default branch for the Git repository.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "repositoryUrl",
-      "The URL where the Git repository is located.",
+      'repositoryUrl',
+      'The URL where the Git repository is located.',
       () => [],
       true,
       true,

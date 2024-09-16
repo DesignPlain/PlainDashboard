@@ -1,1 +1,1 @@
-export const RESOURCE_LIST_WIDTH = 0
+export const RESOURCE_LIST_WIDTH = 0;

@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   identitystore_getGroupAlternateIdentifierExternalId,
   identitystore_getGroupAlternateIdentifierExternalId_GetTypes,
-} from "./identitystore_getGroupAlternateIdentifierExternalId";
+} from './identitystore_getGroupAlternateIdentifierExternalId';
 import {
   identitystore_getGroupAlternateIdentifierUniqueAttribute,
   identitystore_getGroupAlternateIdentifierUniqueAttribute_GetTypes,
-} from "./identitystore_getGroupAlternateIdentifierUniqueAttribute";
+} from './identitystore_getGroupAlternateIdentifierUniqueAttribute';
 
 export interface identitystore_getGroupAlternateIdentifier {
   // Configuration block for filtering by the identifier issued by an external identity provider. Detailed below.
@@ -30,15 +30,15 @@ export function identitystore_getGroupAlternateIdentifier_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Object,
-      "externalId",
-      "Configuration block for filtering by the identifier issued by an external identity provider. Detailed below.",
+      'externalId',
+      'Configuration block for filtering by the identifier issued by an external identity provider. Detailed below.',
       () => identitystore_getGroupAlternateIdentifierExternalId_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "uniqueAttribute",
+      'uniqueAttribute',
       "An entity attribute that's unique to a specific entity. Detailed below.\n\n> Exactly one of the above arguments must be provided.",
       () => identitystore_getGroupAlternateIdentifierUniqueAttribute_GetTypes(),
       false,

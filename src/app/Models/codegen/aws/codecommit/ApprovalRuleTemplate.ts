@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ApprovalRuleTemplateArgs {
   // The content of the approval rule template. Maximum of 3000 characters.
@@ -46,24 +46,24 @@ export class ApprovalRuleTemplate extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "content",
-        "The content of the approval rule template. Maximum of 3000 characters.",
+        'content',
+        'The content of the approval rule template. Maximum of 3000 characters.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the approval rule template. Maximum of 1000 characters.",
+        'description',
+        'The description of the approval rule template. Maximum of 1000 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name for the approval rule template. Maximum of 100 characters.",
+        'name',
+        'The name for the approval rule template. Maximum of 100 characters.',
         () => [],
         false,
         false,

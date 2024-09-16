@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelActivityMetrics,
   s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelActivityMetrics_GetTypes,
-} from "./s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelActivityMetrics";
+} from './s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelActivityMetrics';
 import {
   s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedCostOptimizationMetrics,
   s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedCostOptimizationMetrics_GetTypes,
-} from "./s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedCostOptimizationMetrics";
+} from './s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedCostOptimizationMetrics';
 import {
   s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedDataProtectionMetrics,
   s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedDataProtectionMetrics_GetTypes,
-} from "./s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedDataProtectionMetrics";
+} from './s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedDataProtectionMetrics';
 import {
   s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelDetailedStatusCodeMetrics,
   s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelDetailedStatusCodeMetrics_GetTypes,
-} from "./s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelDetailedStatusCodeMetrics";
+} from './s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelDetailedStatusCodeMetrics';
 import {
   s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevel,
   s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevel_GetTypes,
-} from "./s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevel";
+} from './s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevel';
 
 export interface s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevel {
   // S3 Storage Lens activity metrics. See Activity Metrics above for more details.
@@ -47,8 +47,8 @@ export function s3control_StorageLensConfigurationStorageLensConfigurationAccoun
   return [
     new DynamicUIProps(
       InputType.Object,
-      "advancedCostOptimizationMetrics",
-      "Advanced cost-optimization metrics for S3 Storage Lens. See Advanced Cost-Optimization Metrics above for more details.",
+      'advancedCostOptimizationMetrics',
+      'Advanced cost-optimization metrics for S3 Storage Lens. See Advanced Cost-Optimization Metrics above for more details.',
       () =>
         s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedCostOptimizationMetrics_GetTypes(),
       false,
@@ -56,8 +56,8 @@ export function s3control_StorageLensConfigurationStorageLensConfigurationAccoun
     ),
     new DynamicUIProps(
       InputType.Object,
-      "advancedDataProtectionMetrics",
-      "Advanced data-protection metrics for S3 Storage Lens. See Advanced Data-Protection Metrics above for more details.",
+      'advancedDataProtectionMetrics',
+      'Advanced data-protection metrics for S3 Storage Lens. See Advanced Data-Protection Metrics above for more details.',
       () =>
         s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedDataProtectionMetrics_GetTypes(),
       false,
@@ -65,8 +65,8 @@ export function s3control_StorageLensConfigurationStorageLensConfigurationAccoun
     ),
     new DynamicUIProps(
       InputType.Object,
-      "detailedStatusCodeMetrics",
-      "Detailed status code metrics for S3 Storage Lens. See Detailed Status Code Metrics above for more details.",
+      'detailedStatusCodeMetrics',
+      'Detailed status code metrics for S3 Storage Lens. See Detailed Status Code Metrics above for more details.',
       () =>
         s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelDetailedStatusCodeMetrics_GetTypes(),
       false,
@@ -74,8 +74,8 @@ export function s3control_StorageLensConfigurationStorageLensConfigurationAccoun
     ),
     new DynamicUIProps(
       InputType.Object,
-      "prefixLevel",
-      "Prefix-level metrics for S3 Storage Lens. See Prefix Level below for more details.",
+      'prefixLevel',
+      'Prefix-level metrics for S3 Storage Lens. See Prefix Level below for more details.',
       () =>
         s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevel_GetTypes(),
       false,
@@ -83,8 +83,8 @@ export function s3control_StorageLensConfigurationStorageLensConfigurationAccoun
     ),
     new DynamicUIProps(
       InputType.Object,
-      "activityMetrics",
-      "S3 Storage Lens activity metrics. See Activity Metrics above for more details.",
+      'activityMetrics',
+      'S3 Storage Lens activity metrics. See Activity Metrics above for more details.',
       () =>
         s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelActivityMetrics_GetTypes(),
       false,

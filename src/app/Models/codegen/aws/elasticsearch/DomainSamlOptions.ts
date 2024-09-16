@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   elasticsearch_DomainSamlOptionsSamlOptions,
   elasticsearch_DomainSamlOptionsSamlOptions_GetTypes,
-} from "../types/elasticsearch_DomainSamlOptionsSamlOptions";
+} from '../types/elasticsearch_DomainSamlOptionsSamlOptions';
 
 export interface DomainSamlOptionsArgs {
   /*
@@ -37,16 +37,16 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "domainName",
-        "Name of the domain.\n\nThe following arguments are optional:",
+        'domainName',
+        'Name of the domain.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "samlOptions",
-        "The SAML authentication options for an AWS Elasticsearch Domain.",
+        'samlOptions',
+        'The SAML authentication options for an AWS Elasticsearch Domain.',
         () => elasticsearch_DomainSamlOptionsSamlOptions_GetTypes(),
         false,
         false,

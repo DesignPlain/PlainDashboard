@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   costexplorer_getCostCategorySplitChargeRuleParameter,
   costexplorer_getCostCategorySplitChargeRuleParameter_GetTypes,
-} from "./costexplorer_getCostCategorySplitChargeRuleParameter";
+} from './costexplorer_getCostCategorySplitChargeRuleParameter';
 
 export interface costexplorer_getCostCategorySplitChargeRule {
   // Method that's used to define how to split your source costs across your targets. Valid values are `FIXED`, `PROPORTIONAL`, `EVEN`
@@ -28,7 +28,7 @@ export function costexplorer_getCostCategorySplitChargeRule_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.Array,
-      "targets",
+      'targets',
       "Cost Category values that you want to split costs across. These values can't be used as a source in other split charge rules.",
       () => InputType_String_GetTypes(),
       true,
@@ -36,7 +36,7 @@ export function costexplorer_getCostCategorySplitChargeRule_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "method",
+      'method',
       "Method that's used to define how to split your source costs across your targets. Valid values are `FIXED`, `PROPORTIONAL`, `EVEN`",
       () => [],
       true,
@@ -44,16 +44,16 @@ export function costexplorer_getCostCategorySplitChargeRule_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Array,
-      "parameters",
-      "Configuration block for the parameters for a split charge method. This is only required for the `FIXED` method. See below.",
+      'parameters',
+      'Configuration block for the parameters for a split charge method. This is only required for the `FIXED` method. See below.',
       () => costexplorer_getCostCategorySplitChargeRuleParameter_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "source",
-      "Cost Category value that you want to split.",
+      'source',
+      'Cost Category value that you want to split.',
       () => [],
       true,
       false,

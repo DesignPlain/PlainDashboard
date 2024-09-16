@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleHeaderMatch {
   /*
@@ -33,15 +33,15 @@ export function networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleMatch
   return [
     new DynamicUIProps(
       InputType.String,
-      "prefixMatch",
-      "The value of the header must start with the contents of prefixMatch.",
+      'prefixMatch',
+      'The value of the header must start with the contents of prefixMatch.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "presentMatch",
+      'presentMatch',
       "A header with the contents of headerName must exist. The match takes place whether or not the request's header has a value.",
       () => [],
       false,
@@ -49,32 +49,32 @@ export function networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleMatch
     ),
     new DynamicUIProps(
       InputType.String,
-      "suffixMatch",
-      "The value of the header must end with the contents of suffixMatch.",
+      'suffixMatch',
+      'The value of the header must end with the contents of suffixMatch.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "exactMatch",
-      "The value of the header should exactly match contents of exactMatch.",
+      'exactMatch',
+      'The value of the header should exactly match contents of exactMatch.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "headerName",
-      "The header name to match on.",
+      'headerName',
+      'The header name to match on.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "invertMatch",
-      "If set to false (default), the headerMatch is considered a match if the match criteria above are met.\nIf set to true, the headerMatch is considered a match if the match criteria above are NOT met.",
+      'invertMatch',
+      'If set to false (default), the headerMatch is considered a match if the match criteria above are met.\nIf set to true, the headerMatch is considered a match if the match criteria above are NOT met.',
       () => [],
       false,
       false,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lambda_FunctionUrlCors,
   lambda_FunctionUrlCors_GetTypes,
-} from "../types/lambda_FunctionUrlCors";
+} from '../types/lambda_FunctionUrlCors';
 
 export interface FunctionUrlArgs {
   // The name (or ARN) of the Lambda function.
@@ -56,23 +56,23 @@ export class FunctionUrl extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "functionName",
-        "The name (or ARN) of the Lambda function.",
+        'functionName',
+        'The name (or ARN) of the Lambda function.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "invokeMode",
-        "Determines how the Lambda function responds to an invocation. Valid values are `BUFFERED` (default) and `RESPONSE_STREAM`. See more in [Configuring a Lambda function to stream responses](https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html).",
+        'invokeMode',
+        'Determines how the Lambda function responds to an invocation. Valid values are `BUFFERED` (default) and `RESPONSE_STREAM`. See more in [Configuring a Lambda function to stream responses](https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html).',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "qualifier",
+        'qualifier',
         'The alias name or `"$LATEST"`.',
         () => [],
         false,
@@ -80,7 +80,7 @@ export class FunctionUrl extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "authorizationType",
+        'authorizationType',
         'The type of authentication that the function URL uses. Set to `"AWS_IAM"` to restrict access to authenticated IAM users only. Set to `"NONE"` to bypass IAM authentication and create a public endpoint. See the [AWS documentation](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html) for more details.',
         () => [],
         true,
@@ -88,8 +88,8 @@ export class FunctionUrl extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cors",
-        "The [cross-origin resource sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) settings for the function URL. Documented below.",
+        'cors',
+        'The [cross-origin resource sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) settings for the function URL. Documented below.',
         () => lambda_FunctionUrlCors_GetTypes(),
         false,
         false,

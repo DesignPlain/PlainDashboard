@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificateauthority_getAuthoritySubordinateConfigPemIssuerChain,
   certificateauthority_getAuthoritySubordinateConfigPemIssuerChain_GetTypes,
-} from "./certificateauthority_getAuthoritySubordinateConfigPemIssuerChain";
+} from './certificateauthority_getAuthoritySubordinateConfigPemIssuerChain';
 
 export interface certificateauthority_getAuthoritySubordinateConfig {
   /*
@@ -30,7 +30,7 @@ export function certificateauthority_getAuthoritySubordinateConfig_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.String,
-      "certificateAuthority",
+      'certificateAuthority',
       "This can refer to a CertificateAuthority that was used to create a\nsubordinate CertificateAuthority. This field is used for information\nand usability purposes only. The resource name is in the format\n'projects/*/locations/*/caPools/*/certificateAuthorities/*'.",
       () => [],
       true,
@@ -38,8 +38,8 @@ export function certificateauthority_getAuthoritySubordinateConfig_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Array,
-      "pemIssuerChains",
-      "Contains the PEM certificate chain for the issuers of this CertificateAuthority,\nbut not pem certificate for this CA itself.",
+      'pemIssuerChains',
+      'Contains the PEM certificate chain for the issuers of this CertificateAuthority,\nbut not pem certificate for this CA itself.',
       () =>
         certificateauthority_getAuthoritySubordinateConfigPemIssuerChain_GetTypes(),
       true,

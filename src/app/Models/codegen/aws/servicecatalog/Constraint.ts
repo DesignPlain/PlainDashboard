@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ConstraintArgs {
   // Product identifier.
@@ -63,48 +63,48 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "acceptLanguage",
-        "Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.",
+        'acceptLanguage',
+        'Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the constraint.",
+        'description',
+        'Description of the constraint.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parameters",
-        "Constraint parameters in JSON format. The syntax depends on the constraint type. See details below.",
+        'parameters',
+        'Constraint parameters in JSON format. The syntax depends on the constraint type. See details below.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "portfolioId",
-        "Portfolio identifier.",
+        'portfolioId',
+        'Portfolio identifier.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "productId",
-        "Product identifier.",
+        'productId',
+        'Product identifier.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "Type of constraint. Valid values are `LAUNCH`, `NOTIFICATION`, `RESOURCE_UPDATE`, `STACKSET`, and `TEMPLATE`.\n\nThe following arguments are optional:",
+        'type',
+        'Type of constraint. Valid values are `LAUNCH`, `NOTIFICATION`, `RESOURCE_UPDATE`, `STACKSET`, and `TEMPLATE`.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,

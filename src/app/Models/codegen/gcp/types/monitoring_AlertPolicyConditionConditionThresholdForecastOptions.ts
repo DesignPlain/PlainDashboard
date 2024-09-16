@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface monitoring_AlertPolicyConditionConditionThresholdForecastOptions {
   /*
@@ -22,8 +22,8 @@ export function monitoring_AlertPolicyConditionConditionThresholdForecastOptions
   return [
     new DynamicUIProps(
       InputType.String,
-      "forecastHorizon",
-      "The length of time into the future to forecast\nwhether a timeseries will violate the threshold.\nIf the predicted value is found to violate the\nthreshold, and the violation is observed in all\nforecasts made for the Configured `duration`,\nthen the timeseries is considered to be failing.",
+      'forecastHorizon',
+      'The length of time into the future to forecast\nwhether a timeseries will violate the threshold.\nIf the predicted value is found to violate the\nthreshold, and the violation is observed in all\nforecasts made for the Configured `duration`,\nthen the timeseries is considered to be failing.',
       () => [],
       true,
       false,

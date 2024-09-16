@@ -3,33 +3,33 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   monitoring_UptimeCheckConfigResourceGroup,
   monitoring_UptimeCheckConfigResourceGroup_GetTypes,
-} from "../types/monitoring_UptimeCheckConfigResourceGroup";
+} from '../types/monitoring_UptimeCheckConfigResourceGroup';
 import {
   monitoring_UptimeCheckConfigSyntheticMonitor,
   monitoring_UptimeCheckConfigSyntheticMonitor_GetTypes,
-} from "../types/monitoring_UptimeCheckConfigSyntheticMonitor";
+} from '../types/monitoring_UptimeCheckConfigSyntheticMonitor';
 import {
   monitoring_UptimeCheckConfigTcpCheck,
   monitoring_UptimeCheckConfigTcpCheck_GetTypes,
-} from "../types/monitoring_UptimeCheckConfigTcpCheck";
+} from '../types/monitoring_UptimeCheckConfigTcpCheck';
 import {
   monitoring_UptimeCheckConfigContentMatcher,
   monitoring_UptimeCheckConfigContentMatcher_GetTypes,
-} from "../types/monitoring_UptimeCheckConfigContentMatcher";
+} from '../types/monitoring_UptimeCheckConfigContentMatcher';
 import {
   monitoring_UptimeCheckConfigHttpCheck,
   monitoring_UptimeCheckConfigHttpCheck_GetTypes,
-} from "../types/monitoring_UptimeCheckConfigHttpCheck";
+} from '../types/monitoring_UptimeCheckConfigHttpCheck';
 import {
   monitoring_UptimeCheckConfigMonitoredResource,
   monitoring_UptimeCheckConfigMonitoredResource_GetTypes,
-} from "../types/monitoring_UptimeCheckConfigMonitoredResource";
+} from '../types/monitoring_UptimeCheckConfigMonitoredResource';
 
 export interface UptimeCheckConfigArgs {
   /*
@@ -183,47 +183,47 @@ The maximum amount of time to wait for the request to complete (must be between 
     return [
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "A human-friendly name for the uptime check configuration. The display name should be unique within a Stackdriver Workspace in order to make it easier to identify; however, uniqueness is not enforced.",
+        'displayName',
+        'A human-friendly name for the uptime check configuration. The display name should be unique within a Stackdriver Workspace in order to make it easier to identify; however, uniqueness is not enforced.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "httpCheck",
-        "Contains information needed to make an HTTP or HTTPS check.\nStructure is documented below.",
+        'httpCheck',
+        'Contains information needed to make an HTTP or HTTPS check.\nStructure is documented below.',
         () => monitoring_UptimeCheckConfigHttpCheck_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "resourceGroup",
-        "The group resource associated with the configuration.\nStructure is documented below.",
+        'resourceGroup',
+        'The group resource associated with the configuration.\nStructure is documented below.',
         () => monitoring_UptimeCheckConfigResourceGroup_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "selectedRegions",
-        "The list of regions from which the check will be run. Some regions contain one location, and others contain more than one. If this field is specified, enough regions to include a minimum of 3 locations must be provided, or an error message is returned. Not specifying this field will result in uptime checks running from all regions.",
+        'selectedRegions',
+        'The list of regions from which the check will be run. Some regions contain one location, and others contain more than one. If this field is specified, enough regions to include a minimum of 3 locations must be provided, or an error message is returned. Not specifying this field will result in uptime checks running from all regions.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "syntheticMonitor",
-        "A Synthetic Monitor deployed to a Cloud Functions V2 instance.\nStructure is documented below.",
+        'syntheticMonitor',
+        'A Synthetic Monitor deployed to a Cloud Functions V2 instance.\nStructure is documented below.',
         () => monitoring_UptimeCheckConfigSyntheticMonitor_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "contentMatchers",
+        'contentMatchers',
         "The expected content on the page the check is run against. Currently, only the first entry in the list is supported, and other entries will be ignored. The server will look for an exact match of the string in the page response's content. This field is optional and should only be specified if a content match is required.\nStructure is documented below.",
         () => monitoring_UptimeCheckConfigContentMatcher_GetTypes(),
         false,
@@ -231,56 +231,56 @@ The maximum amount of time to wait for the request to complete (must be between 
       ),
       new DynamicUIProps(
         InputType.Object,
-        "tcpCheck",
-        "Contains information needed to make a TCP check.\nStructure is documented below.",
+        'tcpCheck',
+        'Contains information needed to make a TCP check.\nStructure is documented below.',
         () => monitoring_UptimeCheckConfigTcpCheck_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "monitoredResource",
-        "The [monitored resource]\n(https://cloud.google.com/monitoring/api/resources) associated with the\nconfiguration. The following monitored resource types are supported for\nuptime checks:",
+        'monitoredResource',
+        'The [monitored resource]\n(https://cloud.google.com/monitoring/api/resources) associated with the\nconfiguration. The following monitored resource types are supported for\nuptime checks:',
         () => monitoring_UptimeCheckConfigMonitoredResource_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "timeout",
-        "The maximum amount of time to wait for the request to complete (must be between 1 and 60 seconds). See the accepted formats\n\n\n- - -",
+        'timeout',
+        'The maximum amount of time to wait for the request to complete (must be between 1 and 60 seconds). See the accepted formats\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "checkerType",
-        "The checker type to use for the check. If the monitored resource type is `servicedirectory_service`, `checker_type` must be set to `VPC_CHECKERS`.\nPossible values are: `STATIC_IP_CHECKERS`, `VPC_CHECKERS`.",
+        'checkerType',
+        'The checker type to use for the check. If the monitored resource type is `servicedirectory_service`, `checker_type` must be set to `VPC_CHECKERS`.\nPossible values are: `STATIC_IP_CHECKERS`, `VPC_CHECKERS`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "userLabels",
-        "User-supplied key/value data to be used for organizing and identifying the `UptimeCheckConfig` objects. The field can contain up to 64 entries. Each key and value is limited to 63 Unicode characters or 128 bytes, whichever is smaller. Labels and values can contain only lowercase letters, numerals, underscores, and dashes. Keys must begin with a letter.",
+        'userLabels',
+        'User-supplied key/value data to be used for organizing and identifying the `UptimeCheckConfig` objects. The field can contain up to 64 entries. Each key and value is limited to 63 Unicode characters or 128 bytes, whichever is smaller. Labels and values can contain only lowercase letters, numerals, underscores, and dashes. Keys must begin with a letter.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "period",
-        "How often, in seconds, the uptime check is performed. Currently, the only supported values are 60s (1 minute), 300s (5 minutes), 600s (10 minutes), and 900s (15 minutes). Optional, defaults to 300s.",
+        'period',
+        'How often, in seconds, the uptime check is performed. Currently, the only supported values are 60s (1 minute), 300s (5 minutes), 600s (10 minutes), and 900s (15 minutes). Optional, defaults to 300s.',
         () => [],
         false,
         false,

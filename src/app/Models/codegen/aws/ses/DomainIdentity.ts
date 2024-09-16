@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface DomainIdentityArgs {
   // The domain name to assign to SES
@@ -25,8 +25,8 @@ export class DomainIdentity extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "domain",
-        "The domain name to assign to SES",
+        'domain',
+        'The domain name to assign to SES',
         () => [],
         true,
         true,

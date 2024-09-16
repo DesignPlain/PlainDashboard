@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   netapp_VolumeExportPolicyRule,
   netapp_VolumeExportPolicyRule_GetTypes,
-} from "./netapp_VolumeExportPolicyRule";
+} from './netapp_VolumeExportPolicyRule';
 
 export interface netapp_VolumeExportPolicy {
   /*
@@ -22,8 +22,8 @@ export function netapp_VolumeExportPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "rules",
-      "Export rules (up to 5) control NFS volume access.\nStructure is documented below.",
+      'rules',
+      'Export rules (up to 5) control NFS volume access.\nStructure is documented below.',
       () => netapp_VolumeExportPolicyRule_GetTypes(),
       true,
       false,

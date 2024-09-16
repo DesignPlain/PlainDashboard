@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface SmsChannelArgs {
   // Whether the channel is enabled or disabled. By default, it is set to `true`.
@@ -43,32 +43,32 @@ export class SmsChannel extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "enabled",
-        "Whether the channel is enabled or disabled. By default, it is set to `true`.",
+        'enabled',
+        'Whether the channel is enabled or disabled. By default, it is set to `true`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "senderId",
-        "Identifier of the sender for your messages.",
+        'senderId',
+        'Identifier of the sender for your messages.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "shortCode",
-        "Short Code registered with the phone provider.",
+        'shortCode',
+        'Short Code registered with the phone provider.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "applicationId",
-        "ID of the application.",
+        'applicationId',
+        'ID of the application.',
         () => [],
         true,
         true,

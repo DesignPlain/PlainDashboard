@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface sql_DatabaseInstanceRestoreBackupContext {
   // The ID of the backup run to restore from.
@@ -24,15 +24,15 @@ export function sql_DatabaseInstanceRestoreBackupContext_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Number,
-      "backupRunId",
-      "The ID of the backup run to restore from.",
+      'backupRunId',
+      'The ID of the backup run to restore from.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "instanceId",
+      'instanceId',
       "The ID of the instance that the backup was taken from. If left empty,\nthis instance's ID will be used.",
       () => [],
       false,
@@ -40,8 +40,8 @@ export function sql_DatabaseInstanceRestoreBackupContext_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "project",
-      "The full project ID of the source instance.`",
+      'project',
+      'The full project ID of the source instance.`',
       () => [],
       false,
       false,

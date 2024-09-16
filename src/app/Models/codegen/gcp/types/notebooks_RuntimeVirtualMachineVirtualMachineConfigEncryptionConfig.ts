@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface notebooks_RuntimeVirtualMachineVirtualMachineConfigEncryptionConfig {
   /*
@@ -21,8 +21,8 @@ export function notebooks_RuntimeVirtualMachineVirtualMachineConfigEncryptionCon
   return [
     new DynamicUIProps(
       InputType.String,
-      "kmsKey",
-      "The Cloud KMS resource identifier of the customer-managed\nencryption key used to protect a resource, such as a disks.\nIt has the following format:\n`projects/{PROJECT_ID}/locations/{REGION}/keyRings/\n{KEY_RING_NAME}/cryptoKeys/{KEY_NAME}`",
+      'kmsKey',
+      'The Cloud KMS resource identifier of the customer-managed\nencryption key used to protect a resource, such as a disks.\nIt has the following format:\n`projects/{PROJECT_ID}/locations/{REGION}/keyRings/\n{KEY_RING_NAME}/cryptoKeys/{KEY_NAME}`',
       () => [],
       false,
       false,

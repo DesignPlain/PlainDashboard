@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   vpcaccess_ConnectorSubnet,
   vpcaccess_ConnectorSubnet_GetTypes,
-} from "../types/vpcaccess_ConnectorSubnet";
+} from '../types/vpcaccess_ConnectorSubnet';
 
 export interface ConnectorArgs {
   // Maximum throughput of the connector in Mbps, must be greater than `min_throughput`. Default is 300.
@@ -114,88 +114,88 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.Number,
-        "maxThroughput",
-        "Maximum throughput of the connector in Mbps, must be greater than `min_throughput`. Default is 300.",
+        'maxThroughput',
+        'Maximum throughput of the connector in Mbps, must be greater than `min_throughput`. Default is 300.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "network",
-        "Name or self_link of the VPC network. Required if `ip_cidr_range` is set.",
+        'network',
+        'Name or self_link of the VPC network. Required if `ip_cidr_range` is set.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ipCidrRange",
-        "The range of internal addresses that follows RFC 4632 notation. Example: `10.132.0.0/28`.",
+        'ipCidrRange',
+        'The range of internal addresses that follows RFC 4632 notation. Example: `10.132.0.0/28`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "machineType",
-        "Machine type of VM Instance underlying connector. Default is e2-micro",
+        'machineType',
+        'Machine type of VM Instance underlying connector. Default is e2-micro',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "maxInstances",
-        "Maximum value of instances in autoscaling group underlying the connector.",
+        'maxInstances',
+        'Maximum value of instances in autoscaling group underlying the connector.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "minThroughput",
-        "Minimum throughput of the connector in Mbps. Default and min is 200.",
+        'minThroughput',
+        'Minimum throughput of the connector in Mbps. Default and min is 200.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "Region where the VPC Access connector resides. If it is not provided, the provider region is used.",
+        'region',
+        'Region where the VPC Access connector resides. If it is not provided, the provider region is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "subnet",
-        "The subnet in which to house the connector\nStructure is documented below.",
+        'subnet',
+        'The subnet in which to house the connector\nStructure is documented below.',
         () => vpcaccess_ConnectorSubnet_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "minInstances",
-        "Minimum value of instances in autoscaling group underlying the connector.",
+        'minInstances',
+        'Minimum value of instances in autoscaling group underlying the connector.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the resource (Max 25 characters).\n\n\n- - -",
+        'name',
+        'The name of the resource (Max 25 characters).\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

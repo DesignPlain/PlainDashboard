@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface sql_DatabaseInstanceSettingsLocationPreference {
   /*
@@ -33,24 +33,24 @@ export function sql_DatabaseInstanceSettingsLocationPreference_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.String,
-      "followGaeApplication",
-      "A GAE application whose zone to remain\nin. Must be in the same region as this instance.",
+      'followGaeApplication',
+      'A GAE application whose zone to remain\nin. Must be in the same region as this instance.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "secondaryZone",
-      "The preferred Compute Engine zone for the secondary/failover.\n\nThe optional `settings.maintenance_window` subblock for instances declares a one-hour\n[maintenance window](https://cloud.google.com/sql/docs/instance-settings?hl=en#maintenance-window-2ndgen)\nwhen an Instance can automatically restart to apply updates. The maintenance window is specified in UTC time. It supports:",
+      'secondaryZone',
+      'The preferred Compute Engine zone for the secondary/failover.\n\nThe optional `settings.maintenance_window` subblock for instances declares a one-hour\n[maintenance window](https://cloud.google.com/sql/docs/instance-settings?hl=en#maintenance-window-2ndgen)\nwhen an Instance can automatically restart to apply updates. The maintenance window is specified in UTC time. It supports:',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "zone",
-      "The preferred compute engine\n[zone](https://cloud.google.com/compute/docs/zones?hl=en).",
+      'zone',
+      'The preferred compute engine\n[zone](https://cloud.google.com/compute/docs/zones?hl=en).',
       () => [],
       false,
       false,

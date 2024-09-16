@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sql_UserPasswordPolicy,
   sql_UserPasswordPolicy_GetTypes,
-} from "../types/sql_UserPasswordPolicy";
+} from '../types/sql_UserPasswordPolicy';
 import {
   sql_UserSqlServerUserDetail,
   sql_UserSqlServerUserDetail_GetTypes,
-} from "../types/sql_UserSqlServerUserDetail";
+} from '../types/sql_UserSqlServerUserDetail';
 
 export interface UserArgs {
   /*
@@ -132,23 +132,23 @@ include "BUILT_IN", "CLOUD_IAM_USER", "CLOUD_IAM_GROUP" or "CLOUD_IAM_SERVICE_AC
     return [
       new DynamicUIProps(
         InputType.Object,
-        "passwordPolicy",
-        "",
+        'passwordPolicy',
+        '',
         () => sql_UserPasswordPolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
+        'type',
         'The user type. It determines the method to authenticate the\nuser during login. The default is the database\'s built-in user type. Flags\ninclude "BUILT_IN", "CLOUD_IAM_USER", "CLOUD_IAM_GROUP" or "CLOUD_IAM_SERVICE_ACCOUNT".',
         () => [],
         false,
@@ -156,15 +156,15 @@ include "BUILT_IN", "CLOUD_IAM_USER", "CLOUD_IAM_GROUP" or "CLOUD_IAM_SERVICE_AC
       ),
       new DynamicUIProps(
         InputType.String,
-        "deletionPolicy",
-        "The deletion policy for the user.\nSetting `ABANDON` allows the resource to be abandoned rather than deleted. This is useful\nfor Postgres, where users cannot be deleted from the API if they have been granted SQL roles.\n\nPossible values are: `ABANDON`.\n\n- - -",
+        'deletionPolicy',
+        'The deletion policy for the user.\nSetting `ABANDON` allows the resource to be abandoned rather than deleted. This is useful\nfor Postgres, where users cannot be deleted from the API if they have been granted SQL roles.\n\nPossible values are: `ABANDON`.\n\n- - -',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "host",
+        'host',
         "The host the user can connect from. This is only supported\nfor BUILT_IN users in MySQL instances. Don't set this field for PostgreSQL and SQL Server instances.\nCan be an IP address. Changing this forces a new resource to be created.",
         () => [],
         false,
@@ -172,23 +172,23 @@ include "BUILT_IN", "CLOUD_IAM_USER", "CLOUD_IAM_GROUP" or "CLOUD_IAM_SERVICE_AC
       ),
       new DynamicUIProps(
         InputType.String,
-        "instance",
-        "The name of the Cloud SQL instance. Changing this\nforces a new resource to be created.",
+        'instance',
+        'The name of the Cloud SQL instance. Changing this\nforces a new resource to be created.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the user. Changing this forces a new resource\nto be created.",
+        'name',
+        'The name of the user. Changing this forces a new resource\nto be created.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "password",
+        'password',
         "The password for the user. Can be updated. For Postgres\ninstances this is a Required field, unless type is set to either CLOUD_IAM_USER\nor CLOUD_IAM_SERVICE_ACCOUNT. Don't set this field for CLOUD_IAM_USER\nand CLOUD_IAM_SERVICE_ACCOUNT user types for any Cloud SQL instance.",
         () => [],
         false,

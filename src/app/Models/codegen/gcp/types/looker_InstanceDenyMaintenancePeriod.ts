@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   looker_InstanceDenyMaintenancePeriodTime,
   looker_InstanceDenyMaintenancePeriodTime_GetTypes,
-} from "./looker_InstanceDenyMaintenancePeriodTime";
+} from './looker_InstanceDenyMaintenancePeriodTime';
 import {
   looker_InstanceDenyMaintenancePeriodEndDate,
   looker_InstanceDenyMaintenancePeriodEndDate_GetTypes,
-} from "./looker_InstanceDenyMaintenancePeriodEndDate";
+} from './looker_InstanceDenyMaintenancePeriodEndDate';
 import {
   looker_InstanceDenyMaintenancePeriodStartDate,
   looker_InstanceDenyMaintenancePeriodStartDate_GetTypes,
-} from "./looker_InstanceDenyMaintenancePeriodStartDate";
+} from './looker_InstanceDenyMaintenancePeriodStartDate';
 
 export interface looker_InstanceDenyMaintenancePeriod {
   /*
@@ -42,24 +42,24 @@ export function looker_InstanceDenyMaintenancePeriod_GetTypes(): DynamicUIProps[
   return [
     new DynamicUIProps(
       InputType.Object,
-      "endDate",
-      "Required. Start date of the deny maintenance period\nStructure is documented below.",
+      'endDate',
+      'Required. Start date of the deny maintenance period\nStructure is documented below.',
       () => looker_InstanceDenyMaintenancePeriodEndDate_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "startDate",
-      "Required. Start date of the deny maintenance period\nStructure is documented below.",
+      'startDate',
+      'Required. Start date of the deny maintenance period\nStructure is documented below.',
       () => looker_InstanceDenyMaintenancePeriodStartDate_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "time",
-      "Required. Start time of the window in UTC time.\nStructure is documented below.",
+      'time',
+      'Required. Start time of the window in UTC time.\nStructure is documented below.',
       () => looker_InstanceDenyMaintenancePeriodTime_GetTypes(),
       true,
       false,

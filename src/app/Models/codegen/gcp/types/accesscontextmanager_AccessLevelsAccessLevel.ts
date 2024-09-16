@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   accesscontextmanager_AccessLevelsAccessLevelBasic,
   accesscontextmanager_AccessLevelsAccessLevelBasic_GetTypes,
-} from "./accesscontextmanager_AccessLevelsAccessLevelBasic";
+} from './accesscontextmanager_AccessLevelsAccessLevelBasic';
 import {
   accesscontextmanager_AccessLevelsAccessLevelCustom,
   accesscontextmanager_AccessLevelsAccessLevelCustom_GetTypes,
-} from "./accesscontextmanager_AccessLevelsAccessLevelCustom";
+} from './accesscontextmanager_AccessLevelsAccessLevelCustom';
 
 export interface accesscontextmanager_AccessLevelsAccessLevel {
   /*
@@ -46,7 +46,7 @@ export function accesscontextmanager_AccessLevelsAccessLevel_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
+      'name',
       "Resource name for the Access Level. The short_name component must begin\nwith a letter and only include alphanumeric and '_'.\nFormat: accessPolicies/{policy_id}/accessLevels/{short_name}",
       () => [],
       true,
@@ -54,32 +54,32 @@ export function accesscontextmanager_AccessLevelsAccessLevel_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "title",
-      "Human readable title. Must be unique within the Policy.",
+      'title',
+      'Human readable title. Must be unique within the Policy.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "basic",
-      "A set of predefined conditions for the access level and a combining function.\nStructure is documented below.",
+      'basic',
+      'A set of predefined conditions for the access level and a combining function.\nStructure is documented below.',
       () => accesscontextmanager_AccessLevelsAccessLevelBasic_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "custom",
-      "Custom access level conditions are set using the Cloud Common Expression Language to represent the necessary conditions for the level to apply to a request.\nSee CEL spec at: https://github.com/google/cel-spec.\nStructure is documented below.",
+      'custom',
+      'Custom access level conditions are set using the Cloud Common Expression Language to represent the necessary conditions for the level to apply to a request.\nSee CEL spec at: https://github.com/google/cel-spec.\nStructure is documented below.',
       () => accesscontextmanager_AccessLevelsAccessLevelCustom_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "description",
-      "Description of the AccessLevel and its use. Does not affect behavior.",
+      'description',
+      'Description of the AccessLevel and its use. Does not affect behavior.',
       () => [],
       false,
       false,

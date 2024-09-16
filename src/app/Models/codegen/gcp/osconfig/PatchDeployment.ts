@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   osconfig_PatchDeploymentInstanceFilter,
   osconfig_PatchDeploymentInstanceFilter_GetTypes,
-} from "../types/osconfig_PatchDeploymentInstanceFilter";
+} from '../types/osconfig_PatchDeploymentInstanceFilter';
 import {
   osconfig_PatchDeploymentPatchConfig,
   osconfig_PatchDeploymentPatchConfig_GetTypes,
-} from "../types/osconfig_PatchDeploymentPatchConfig";
+} from '../types/osconfig_PatchDeploymentPatchConfig';
 import {
   osconfig_PatchDeploymentRecurringSchedule,
   osconfig_PatchDeploymentRecurringSchedule_GetTypes,
-} from "../types/osconfig_PatchDeploymentRecurringSchedule";
+} from '../types/osconfig_PatchDeploymentRecurringSchedule';
 import {
   osconfig_PatchDeploymentOneTimeSchedule,
   osconfig_PatchDeploymentOneTimeSchedule_GetTypes,
-} from "../types/osconfig_PatchDeploymentOneTimeSchedule";
+} from '../types/osconfig_PatchDeploymentOneTimeSchedule';
 import {
   osconfig_PatchDeploymentRollout,
   osconfig_PatchDeploymentRollout_GetTypes,
-} from "../types/osconfig_PatchDeploymentRollout";
+} from '../types/osconfig_PatchDeploymentRollout';
 
 export interface PatchDeploymentArgs {
   /*
@@ -168,72 +168,72 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "instanceFilter",
-        "VM instances to patch.\nStructure is documented below.",
+        'instanceFilter',
+        'VM instances to patch.\nStructure is documented below.',
         () => osconfig_PatchDeploymentInstanceFilter_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "patchConfig",
-        "Patch configuration that is applied.\nStructure is documented below.",
+        'patchConfig',
+        'Patch configuration that is applied.\nStructure is documented below.',
         () => osconfig_PatchDeploymentPatchConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "recurringSchedule",
-        "Schedule recurring executions.\nStructure is documented below.",
+        'recurringSchedule',
+        'Schedule recurring executions.\nStructure is documented below.',
         () => osconfig_PatchDeploymentRecurringSchedule_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "rollout",
-        "Rollout strategy of the patch job.\nStructure is documented below.",
+        'rollout',
+        'Rollout strategy of the patch job.\nStructure is documented below.',
         () => osconfig_PatchDeploymentRollout_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "duration",
-        "Duration of the patch. After the duration ends, the patch times out.\nA duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\"",
+        'duration',
+        'Duration of the patch. After the duration ends, the patch times out.\nA duration in seconds with up to nine fractional digits, terminated by \'s\'. Example: "3.5s"',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the patch deployment. Length of the description is limited to 1024 characters.",
+        'description',
+        'Description of the patch deployment. Length of the description is limited to 1024 characters.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "oneTimeSchedule",
-        "Schedule a one-time execution.\nStructure is documented below.",
+        'oneTimeSchedule',
+        'Schedule a one-time execution.\nStructure is documented below.',
         () => osconfig_PatchDeploymentOneTimeSchedule_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "patchDeploymentId",
-        "A name for the patch deployment in the project. When creating a name the following rules apply:\n* Must contain only lowercase letters, numbers, and hyphens.\n* Must start with a letter.\n* Must be between 1-63 characters.\n* Must end with a number or a letter.\n* Must be unique within the project.",
+        'patchDeploymentId',
+        'A name for the patch deployment in the project. When creating a name the following rules apply:\n* Must contain only lowercase letters, numbers, and hyphens.\n* Must start with a letter.\n* Must be between 1-63 characters.\n* Must end with a number or a letter.\n* Must be unique within the project.',
         () => [],
         true,
         true,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bigquerydatapolicy_DataPolicyDataMaskingPolicy,
   bigquerydatapolicy_DataPolicyDataMaskingPolicy_GetTypes,
-} from "../types/bigquerydatapolicy_DataPolicyDataMaskingPolicy";
+} from '../types/bigquerydatapolicy_DataPolicyDataMaskingPolicy';
 
 export interface DataPolicyArgs {
   // Policy tag resource name, in the format of projects/{project_number}/locations/{locationId}/taxonomies/{taxonomyId}/policyTags/{policyTag_id}.
@@ -80,48 +80,48 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The name of the location of the data policy.",
+        'location',
+        'The name of the location of the data policy.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "policyTag",
-        "Policy tag resource name, in the format of projects/{project_number}/locations/{locationId}/taxonomies/{taxonomyId}/policyTags/{policyTag_id}.",
+        'policyTag',
+        'Policy tag resource name, in the format of projects/{project_number}/locations/{locationId}/taxonomies/{taxonomyId}/policyTags/{policyTag_id}.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "dataMaskingPolicy",
-        "The data masking policy that specifies the data masking rule to use.\nStructure is documented below.",
+        'dataMaskingPolicy',
+        'The data masking policy that specifies the data masking rule to use.\nStructure is documented below.',
         () => bigquerydatapolicy_DataPolicyDataMaskingPolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dataPolicyId",
-        "User-assigned (human readable) ID of the data policy that needs to be unique within a project. Used as {dataPolicyId} in part of the resource name.",
+        'dataPolicyId',
+        'User-assigned (human readable) ID of the data policy that needs to be unique within a project. Used as {dataPolicyId} in part of the resource name.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dataPolicyType",
-        "The enrollment level of the service.\nPossible values are: `COLUMN_LEVEL_SECURITY_POLICY`, `DATA_MASKING_POLICY`.\n\n\n- - -",
+        'dataPolicyType',
+        'The enrollment level of the service.\nPossible values are: `COLUMN_LEVEL_SECURITY_POLICY`, `DATA_MASKING_POLICY`.\n\n\n- - -',
         () => [],
         true,
         false,

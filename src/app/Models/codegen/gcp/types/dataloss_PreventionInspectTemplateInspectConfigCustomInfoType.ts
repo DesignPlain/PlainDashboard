@@ -3,32 +3,32 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeStoredType,
   dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeStoredType_GetTypes,
-} from "./dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeStoredType";
+} from './dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeStoredType';
 import {
   dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeSurrogateType,
   dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeSurrogateType_GetTypes,
-} from "./dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeSurrogateType";
+} from './dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeSurrogateType';
 import {
   dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionary,
   dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionary_GetTypes,
-} from "./dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionary";
+} from './dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionary';
 import {
   dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoType,
   dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoType_GetTypes,
-} from "./dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoType";
+} from './dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoType';
 import {
   dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeRegex,
   dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeRegex_GetTypes,
-} from "./dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeRegex";
+} from './dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeRegex';
 import {
   dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeSensitivityScore,
   dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeSensitivityScore_GetTypes,
-} from "./dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeSensitivityScore";
+} from './dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeSensitivityScore';
 
 export interface dataloss_PreventionInspectTemplateInspectConfigCustomInfoType {
   /*
@@ -86,16 +86,16 @@ export function dataloss_PreventionInspectTemplateInspectConfigCustomInfoType_Ge
   return [
     new DynamicUIProps(
       InputType.String,
-      "exclusionType",
-      "If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding to be returned. It still can be used for rules matching.\nPossible values are: `EXCLUSION_TYPE_EXCLUDE`.",
+      'exclusionType',
+      'If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding to be returned. It still can be used for rules matching.\nPossible values are: `EXCLUSION_TYPE_EXCLUDE`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "infoType",
-      "CustomInfoType can either be a new infoType, or an extension of built-in infoType, when the name matches one of existing\ninfoTypes and that infoType is specified in `info_types` field. Specifying the latter adds findings to the\none detected by the system. If built-in info type is not specified in `info_types` list then the name is\ntreated as a custom info type.\nStructure is documented below.",
+      'infoType',
+      'CustomInfoType can either be a new infoType, or an extension of built-in infoType, when the name matches one of existing\ninfoTypes and that infoType is specified in `info_types` field. Specifying the latter adds findings to the\none detected by the system. If built-in info type is not specified in `info_types` list then the name is\ntreated as a custom info type.\nStructure is documented below.',
       () =>
         dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeInfoType_GetTypes(),
       true,
@@ -103,16 +103,16 @@ export function dataloss_PreventionInspectTemplateInspectConfigCustomInfoType_Ge
     ),
     new DynamicUIProps(
       InputType.String,
-      "likelihood",
-      "Likelihood to return for this CustomInfoType. This base value can be altered by a detection rule if the finding meets the criteria\nspecified by the rule.\nDefault value is `VERY_LIKELY`.\nPossible values are: `VERY_UNLIKELY`, `UNLIKELY`, `POSSIBLE`, `LIKELY`, `VERY_LIKELY`.",
+      'likelihood',
+      'Likelihood to return for this CustomInfoType. This base value can be altered by a detection rule if the finding meets the criteria\nspecified by the rule.\nDefault value is `VERY_LIKELY`.\nPossible values are: `VERY_UNLIKELY`, `UNLIKELY`, `POSSIBLE`, `LIKELY`, `VERY_LIKELY`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "regex",
-      "Regular expression which defines the rule.\nStructure is documented below.",
+      'regex',
+      'Regular expression which defines the rule.\nStructure is documented below.',
       () =>
         dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeRegex_GetTypes(),
       false,
@@ -120,8 +120,8 @@ export function dataloss_PreventionInspectTemplateInspectConfigCustomInfoType_Ge
     ),
     new DynamicUIProps(
       InputType.Object,
-      "sensitivityScore",
-      "Optional custom sensitivity for this InfoType. This only applies to data profiling.\nStructure is documented below.",
+      'sensitivityScore',
+      'Optional custom sensitivity for this InfoType. This only applies to data profiling.\nStructure is documented below.',
       () =>
         dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeSensitivityScore_GetTypes(),
       false,
@@ -129,8 +129,8 @@ export function dataloss_PreventionInspectTemplateInspectConfigCustomInfoType_Ge
     ),
     new DynamicUIProps(
       InputType.Object,
-      "storedType",
-      "A reference to a StoredInfoType to use with scanning.\nStructure is documented below.",
+      'storedType',
+      'A reference to a StoredInfoType to use with scanning.\nStructure is documented below.',
       () =>
         dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeStoredType_GetTypes(),
       false,
@@ -138,8 +138,8 @@ export function dataloss_PreventionInspectTemplateInspectConfigCustomInfoType_Ge
     ),
     new DynamicUIProps(
       InputType.Object,
-      "surrogateType",
-      "Message for detecting output from deidentification transformations that support reversing.",
+      'surrogateType',
+      'Message for detecting output from deidentification transformations that support reversing.',
       () =>
         dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeSurrogateType_GetTypes(),
       false,
@@ -147,8 +147,8 @@ export function dataloss_PreventionInspectTemplateInspectConfigCustomInfoType_Ge
     ),
     new DynamicUIProps(
       InputType.Object,
-      "dictionary",
-      "Dictionary which defines the rule.\nStructure is documented below.",
+      'dictionary',
+      'Dictionary which defines the rule.\nStructure is documented below.',
       () =>
         dataloss_PreventionInspectTemplateInspectConfigCustomInfoTypeDictionary_GetTypes(),
       false,

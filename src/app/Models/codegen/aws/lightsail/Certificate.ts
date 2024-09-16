@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lightsail_CertificateDomainValidationOption,
   lightsail_CertificateDomainValidationOption_GetTypes,
-} from "../types/lightsail_CertificateDomainValidationOption";
+} from '../types/lightsail_CertificateDomainValidationOption';
 
 export interface CertificateArgs {
   // The name of the Lightsail load balancer.
@@ -53,32 +53,32 @@ export class Certificate extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the Lightsail load balancer.",
+        'name',
+        'The name of the Lightsail load balancer.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "subjectAlternativeNames",
-        "Set of domains that should be SANs in the issued certificate. `domain_name` attribute is automatically added as a Subject Alternative Name.",
+        'subjectAlternativeNames',
+        'Set of domains that should be SANs in the issued certificate. `domain_name` attribute is automatically added as a Subject Alternative Name.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. To create a key-only tag, use an empty string as the value. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. To create a key-only tag, use an empty string as the value. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "domainName",
-        "A domain name for which the certificate should be issued.",
+        'domainName',
+        'A domain name for which the certificate should be issued.',
         () => [],
         false,
         true,

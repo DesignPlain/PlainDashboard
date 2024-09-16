@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface RedrivePolicyArgs {
   // The URL of the SQS Queue to which to attach the policy
@@ -25,16 +25,16 @@ export class RedrivePolicy extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "queueUrl",
-        "The URL of the SQS Queue to which to attach the policy",
+        'queueUrl',
+        'The URL of the SQS Queue to which to attach the policy',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "redrivePolicy",
-        "The JSON redrive policy for the SQS queue. Accepts two key/val pairs: `deadLetterTargetArn` and `maxReceiveCount`. Learn more in the [Amazon SQS dead-letter queues documentation](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html).",
+        'redrivePolicy',
+        'The JSON redrive policy for the SQS queue. Accepts two key/val pairs: `deadLetterTargetArn` and `maxReceiveCount`. Learn more in the [Amazon SQS dead-letter queues documentation](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html).',
         () => [],
         true,
         false,

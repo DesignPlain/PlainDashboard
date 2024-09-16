@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   quicksight_DataSetLogicalTableMapSourceJoinInstructionLeftJoinKeyProperties,
   quicksight_DataSetLogicalTableMapSourceJoinInstructionLeftJoinKeyProperties_GetTypes,
-} from "./quicksight_DataSetLogicalTableMapSourceJoinInstructionLeftJoinKeyProperties";
+} from './quicksight_DataSetLogicalTableMapSourceJoinInstructionLeftJoinKeyProperties';
 import {
   quicksight_DataSetLogicalTableMapSourceJoinInstructionRightJoinKeyProperties,
   quicksight_DataSetLogicalTableMapSourceJoinInstructionRightJoinKeyProperties_GetTypes,
-} from "./quicksight_DataSetLogicalTableMapSourceJoinInstructionRightJoinKeyProperties";
+} from './quicksight_DataSetLogicalTableMapSourceJoinInstructionRightJoinKeyProperties';
 
 export interface quicksight_DataSetLogicalTableMapSourceJoinInstruction {
   // Join key properties of the left operand. See left_join_key_properties.
@@ -38,8 +38,8 @@ export function quicksight_DataSetLogicalTableMapSourceJoinInstruction_GetTypes(
   return [
     new DynamicUIProps(
       InputType.Object,
-      "leftJoinKeyProperties",
-      "Join key properties of the left operand. See left_join_key_properties.",
+      'leftJoinKeyProperties',
+      'Join key properties of the left operand. See left_join_key_properties.',
       () =>
         quicksight_DataSetLogicalTableMapSourceJoinInstructionLeftJoinKeyProperties_GetTypes(),
       false,
@@ -47,24 +47,24 @@ export function quicksight_DataSetLogicalTableMapSourceJoinInstruction_GetTypes(
     ),
     new DynamicUIProps(
       InputType.String,
-      "leftOperand",
-      "Operand on the left side of a join.",
+      'leftOperand',
+      'Operand on the left side of a join.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "onClause",
-      "Join instructions provided in the ON clause of a join.",
+      'onClause',
+      'Join instructions provided in the ON clause of a join.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "rightJoinKeyProperties",
-      "Join key properties of the right operand. See right_join_key_properties.",
+      'rightJoinKeyProperties',
+      'Join key properties of the right operand. See right_join_key_properties.',
       () =>
         quicksight_DataSetLogicalTableMapSourceJoinInstructionRightJoinKeyProperties_GetTypes(),
       false,
@@ -72,16 +72,16 @@ export function quicksight_DataSetLogicalTableMapSourceJoinInstruction_GetTypes(
     ),
     new DynamicUIProps(
       InputType.String,
-      "rightOperand",
-      "Operand on the right side of a join.",
+      'rightOperand',
+      'Operand on the right side of a join.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "Type of join. Valid values are `INNER`, `OUTER`, `LEFT`, and `RIGHT`.",
+      'type',
+      'Type of join. Valid values are `INNER`, `OUTER`, `LEFT`, and `RIGHT`.',
       () => [],
       true,
       false,

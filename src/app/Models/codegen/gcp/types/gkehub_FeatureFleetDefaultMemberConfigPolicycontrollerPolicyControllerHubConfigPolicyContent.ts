@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibrary,
   gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibrary_GetTypes,
-} from "./gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibrary";
+} from './gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibrary';
 import {
   gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentBundle,
   gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentBundle_GetTypes,
-} from "./gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentBundle";
+} from './gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentBundle';
 
 export interface gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContent {
   /*
@@ -32,8 +32,8 @@ export function gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyCont
   return [
     new DynamicUIProps(
       InputType.Array,
-      "bundles",
-      "Configures which bundles to install and their corresponding install specs.\nStructure is documented below.",
+      'bundles',
+      'Configures which bundles to install and their corresponding install specs.\nStructure is documented below.',
       () =>
         gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentBundle_GetTypes(),
       false,
@@ -41,8 +41,8 @@ export function gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyCont
     ),
     new DynamicUIProps(
       InputType.Object,
-      "templateLibrary",
-      "Configures the installation of the Template Library.\nStructure is documented below.",
+      'templateLibrary',
+      'Configures the installation of the Template Library.\nStructure is documented below.',
       () =>
         gkehub_FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibrary_GetTypes(),
       false,

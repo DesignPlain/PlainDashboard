@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudfront_OriginRequestPolicyQueryStringsConfigQueryStrings,
   cloudfront_OriginRequestPolicyQueryStringsConfigQueryStrings_GetTypes,
-} from "./cloudfront_OriginRequestPolicyQueryStringsConfigQueryStrings";
+} from './cloudfront_OriginRequestPolicyQueryStringsConfigQueryStrings';
 
 export interface cloudfront_OriginRequestPolicyQueryStringsConfig {
   //
@@ -22,16 +22,16 @@ export function cloudfront_OriginRequestPolicyQueryStringsConfig_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.String,
-      "queryStringBehavior",
-      "",
+      'queryStringBehavior',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "queryStrings",
-      "",
+      'queryStrings',
+      '',
       () =>
         cloudfront_OriginRequestPolicyQueryStringsConfigQueryStrings_GetTypes(),
       false,

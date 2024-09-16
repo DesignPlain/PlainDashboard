@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   logging_BillingAccountBucketConfigCmekSettings,
   logging_BillingAccountBucketConfigCmekSettings_GetTypes,
-} from "../types/logging_BillingAccountBucketConfigCmekSettings";
+} from '../types/logging_BillingAccountBucketConfigCmekSettings';
 import {
   logging_BillingAccountBucketConfigIndexConfig,
   logging_BillingAccountBucketConfigIndexConfig_GetTypes,
-} from "../types/logging_BillingAccountBucketConfigIndexConfig";
+} from '../types/logging_BillingAccountBucketConfigIndexConfig';
 
 export interface BillingAccountBucketConfigArgs {
   /*
@@ -77,56 +77,56 @@ updating the log bucket. Changing the KMS key is allowed.
     return [
       new DynamicUIProps(
         InputType.Number,
-        "retentionDays",
-        "Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used. Bucket retention can not be increased on buckets outside of projects.",
+        'retentionDays',
+        'Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used. Bucket retention can not be increased on buckets outside of projects.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "billingAccount",
-        "The parent resource that contains the logging bucket.",
+        'billingAccount',
+        'The parent resource that contains the logging bucket.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "bucketId",
-        "The name of the logging bucket. Logging automatically creates two log buckets: `_Required` and `_Default`.",
+        'bucketId',
+        'The name of the logging bucket. Logging automatically creates two log buckets: `_Required` and `_Default`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cmekSettings",
-        "The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK\nkey provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by\nupdating the log bucket. Changing the KMS key is allowed.",
+        'cmekSettings',
+        'The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK\nkey provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by\nupdating the log bucket. Changing the KMS key is allowed.',
         () => logging_BillingAccountBucketConfigCmekSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Describes this bucket.",
+        'description',
+        'Describes this bucket.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "indexConfigs",
-        "A list of indexed fields and related configuration data. Structure is documented below.",
+        'indexConfigs',
+        'A list of indexed fields and related configuration data. Structure is documented below.',
         () => logging_BillingAccountBucketConfigIndexConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the bucket.",
+        'location',
+        'The location of the bucket.',
         () => [],
         true,
         true,

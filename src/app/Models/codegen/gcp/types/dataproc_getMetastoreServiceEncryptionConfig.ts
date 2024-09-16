@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dataproc_getMetastoreServiceEncryptionConfig {
   /*
@@ -18,7 +18,7 @@ export function dataproc_getMetastoreServiceEncryptionConfig_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.String,
-      "kmsKey",
+      'kmsKey',
       "The fully qualified customer provided Cloud KMS key name to use for customer data encryption.\nUse the following format: 'projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)'",
       () => [],
       true,

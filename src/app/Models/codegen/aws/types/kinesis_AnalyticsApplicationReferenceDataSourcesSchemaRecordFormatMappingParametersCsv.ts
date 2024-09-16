@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsv {
   // The Column Delimiter.
@@ -18,16 +18,16 @@ export function kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordForm
   return [
     new DynamicUIProps(
       InputType.String,
-      "recordColumnDelimiter",
-      "The Column Delimiter.",
+      'recordColumnDelimiter',
+      'The Column Delimiter.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "recordRowDelimiter",
-      "The Row Delimiter.",
+      'recordRowDelimiter',
+      'The Row Delimiter.',
       () => [],
       true,
       false,

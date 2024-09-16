@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_getRegionInstanceGroupInstanceNamedPort,
   compute_getRegionInstanceGroupInstanceNamedPort_GetTypes,
-} from "./compute_getRegionInstanceGroupInstanceNamedPort";
+} from './compute_getRegionInstanceGroupInstanceNamedPort';
 
 export interface compute_getRegionInstanceGroupInstance {
   // URL to the instance.
@@ -25,24 +25,24 @@ export function compute_getRegionInstanceGroupInstance_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.String,
-      "status",
-      "String description of current state of the instance.",
+      'status',
+      'String description of current state of the instance.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "instance",
-      "URL to the instance.",
+      'instance',
+      'URL to the instance.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "namedPorts",
-      "List of named ports in the group, as a list of resources, each containing:",
+      'namedPorts',
+      'List of named ports in the group, as a list of resources, each containing:',
       () => compute_getRegionInstanceGroupInstanceNamedPort_GetTypes(),
       true,
       false,

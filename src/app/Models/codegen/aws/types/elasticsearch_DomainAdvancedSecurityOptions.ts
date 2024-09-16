@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   elasticsearch_DomainAdvancedSecurityOptionsMasterUserOptions,
   elasticsearch_DomainAdvancedSecurityOptionsMasterUserOptions_GetTypes,
-} from "./elasticsearch_DomainAdvancedSecurityOptionsMasterUserOptions";
+} from './elasticsearch_DomainAdvancedSecurityOptionsMasterUserOptions';
 
 export interface elasticsearch_DomainAdvancedSecurityOptions {
   // Whether the internal user database is enabled. If not set, defaults to `false` by the AWS API.
@@ -25,16 +25,16 @@ export function elasticsearch_DomainAdvancedSecurityOptions_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "internalUserDatabaseEnabled",
-      "Whether the internal user database is enabled. If not set, defaults to `false` by the AWS API.",
+      'internalUserDatabaseEnabled',
+      'Whether the internal user database is enabled. If not set, defaults to `false` by the AWS API.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "masterUserOptions",
-      "Configuration block for the main user. Detailed below.",
+      'masterUserOptions',
+      'Configuration block for the main user. Detailed below.',
       () =>
         elasticsearch_DomainAdvancedSecurityOptionsMasterUserOptions_GetTypes(),
       false,
@@ -42,8 +42,8 @@ export function elasticsearch_DomainAdvancedSecurityOptions_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
-      "Whether advanced security is enabled.",
+      'enabled',
+      'Whether advanced security is enabled.',
       () => [],
       true,
       true,

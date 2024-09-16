@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_ClusterDatabaseEncryption {
   /*
@@ -22,7 +22,7 @@ export function container_ClusterDatabaseEncryption_GetTypes(): DynamicUIProps[]
   return [
     new DynamicUIProps(
       InputType.String,
-      "keyName",
+      'keyName',
       'the key to use to encrypt/decrypt secrets.  See the [DatabaseEncryption definition](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters#Cluster.DatabaseEncryption) for more information.\n\n<a name="nested_enable_k8s_beta_apis"></a>The `enable_k8s_beta_apis` block supports:',
       () => [],
       false,
@@ -30,8 +30,8 @@ export function container_ClusterDatabaseEncryption_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "state",
-      "`ENCRYPTED` or `DECRYPTED`",
+      'state',
+      '`ENCRYPTED` or `DECRYPTED`',
       () => [],
       true,
       false,

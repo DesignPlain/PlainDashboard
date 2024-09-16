@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudrunv2_getServiceTemplateContainerEnvValueSourceSecretKeyRef,
   cloudrunv2_getServiceTemplateContainerEnvValueSourceSecretKeyRef_GetTypes,
-} from "./cloudrunv2_getServiceTemplateContainerEnvValueSourceSecretKeyRef";
+} from './cloudrunv2_getServiceTemplateContainerEnvValueSourceSecretKeyRef';
 
 export interface cloudrunv2_getServiceTemplateContainerEnvValueSource {
   // Selects a secret and a specific version from Cloud Secret Manager.
@@ -19,8 +19,8 @@ export function cloudrunv2_getServiceTemplateContainerEnvValueSource_GetTypes():
   return [
     new DynamicUIProps(
       InputType.Array,
-      "secretKeyReves",
-      "Selects a secret and a specific version from Cloud Secret Manager.",
+      'secretKeyReves',
+      'Selects a secret and a specific version from Cloud Secret Manager.',
       () =>
         cloudrunv2_getServiceTemplateContainerEnvValueSourceSecretKeyRef_GetTypes(),
       true,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesZendeskErrorHandlingConfig,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesZendeskErrorHandlingConfig_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesZendeskErrorHandlingConfig";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesZendeskErrorHandlingConfig';
 
 export interface appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesZendesk {
   //
@@ -28,25 +28,25 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesZ
   return [
     new DynamicUIProps(
       InputType.Array,
-      "idFieldNames",
-      "",
+      'idFieldNames',
+      '',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
-    new DynamicUIProps(InputType.String, "object", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'object', '', () => [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "writeOperationType",
-      "",
+      'writeOperationType',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "errorHandlingConfig",
-      "",
+      'errorHandlingConfig',
+      '',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesZendeskErrorHandlingConfig_GetTypes(),
       false,

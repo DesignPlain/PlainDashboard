@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudfunctionsv2_FunctionEventTriggerEventFilter {
   /*
@@ -34,7 +34,7 @@ export function cloudfunctionsv2_FunctionEventTriggerEventFilter_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.String,
-      "attribute",
+      'attribute',
       "'Required. The name of a CloudEvents attribute.\nCurrently, only a subset of attributes are supported for filtering. Use the `gcloud eventarc providers describe` command to learn more about events and their attributes.\nDo not filter for the 'type' attribute here, as this is already achieved by the resource's `event_type` attribute.",
       () => [],
       true,
@@ -42,7 +42,7 @@ export function cloudfunctionsv2_FunctionEventTriggerEventFilter_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "operator",
+      'operator',
       "Optional. The operator used for matching the events with the value of\nthe filter. If not specified, only events that have an exact key-value\npair specified in the filter are matched.\nThe only allowed value is `match-path-pattern`.\n[See documentation on path patterns here](https://cloud.google.com/eventarc/docs/path-patterns)'",
       () => [],
       false,
@@ -50,8 +50,8 @@ export function cloudfunctionsv2_FunctionEventTriggerEventFilter_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "Required. The value for the attribute.\nIf the operator field is set as `match-path-pattern`, this value can be a path pattern instead of an exact value.",
+      'value',
+      'Required. The value for the attribute.\nIf the operator field is set as `match-path-pattern`, this value can be a path pattern instead of an exact value.',
       () => [],
       true,
       false,

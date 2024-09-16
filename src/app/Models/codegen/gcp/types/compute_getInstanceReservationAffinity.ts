@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_getInstanceReservationAffinitySpecificReservation,
   compute_getInstanceReservationAffinitySpecificReservation_GetTypes,
-} from "./compute_getInstanceReservationAffinitySpecificReservation";
+} from './compute_getInstanceReservationAffinitySpecificReservation';
 
 export interface compute_getInstanceReservationAffinity {
   // Specifies the label selector for the reservation to use.
@@ -22,8 +22,8 @@ export function compute_getInstanceReservationAffinity_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.Array,
-      "specificReservations",
-      "Specifies the label selector for the reservation to use.",
+      'specificReservations',
+      'Specifies the label selector for the reservation to use.',
       () =>
         compute_getInstanceReservationAffinitySpecificReservation_GetTypes(),
       true,
@@ -31,8 +31,8 @@ export function compute_getInstanceReservationAffinity_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "The accelerator type resource exposed to this instance. E.g. `nvidia-tesla-k80`.",
+      'type',
+      'The accelerator type resource exposed to this instance. E.g. `nvidia-tesla-k80`.',
       () => [],
       true,
       false,

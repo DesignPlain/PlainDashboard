@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bigqueryanalyticshub_ListingRestrictedExportConfig,
   bigqueryanalyticshub_ListingRestrictedExportConfig_GetTypes,
-} from "../types/bigqueryanalyticshub_ListingRestrictedExportConfig";
+} from '../types/bigqueryanalyticshub_ListingRestrictedExportConfig';
 import {
   bigqueryanalyticshub_ListingPublisher,
   bigqueryanalyticshub_ListingPublisher_GetTypes,
-} from "../types/bigqueryanalyticshub_ListingPublisher";
+} from '../types/bigqueryanalyticshub_ListingPublisher';
 import {
   bigqueryanalyticshub_ListingDataProvider,
   bigqueryanalyticshub_ListingDataProvider_GetTypes,
-} from "../types/bigqueryanalyticshub_ListingDataProvider";
+} from '../types/bigqueryanalyticshub_ListingDataProvider';
 import {
   bigqueryanalyticshub_ListingBigqueryDataset,
   bigqueryanalyticshub_ListingBigqueryDataset_GetTypes,
-} from "../types/bigqueryanalyticshub_ListingBigqueryDataset";
+} from '../types/bigqueryanalyticshub_ListingBigqueryDataset';
 
 export interface ListingArgs {
   /*
@@ -152,15 +152,15 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "dataExchangeId",
-        "The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.",
+        'dataExchangeId',
+        'The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
+        'displayName',
         "Human-readable display name of the listing. The display name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), ampersands (&) and can't start or end with spaces.",
         () => [],
         true,
@@ -168,104 +168,104 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The name of the location this data exchange listing.",
+        'location',
+        'The name of the location this data exchange listing.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "documentation",
-        "Documentation describing the listing.",
+        'documentation',
+        'Documentation describing the listing.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "icon",
-        "Base64 encoded image representing the listing.",
+        'icon',
+        'Base64 encoded image representing the listing.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "primaryContact",
-        "Email or URL of the primary point of contact of the listing.",
+        'primaryContact',
+        'Email or URL of the primary point of contact of the listing.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "listingId",
-        "The ID of the listing. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.",
+        'listingId',
+        'The ID of the listing. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "categories",
-        "Categories of the listing. Up to two categories are allowed.",
+        'categories',
+        'Categories of the listing. Up to two categories are allowed.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "dataProvider",
-        "Details of the data provider who owns the source data.\nStructure is documented below.",
+        'dataProvider',
+        'Details of the data provider who owns the source data.\nStructure is documented below.',
         () => bigqueryanalyticshub_ListingDataProvider_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "requestAccess",
-        "Email or URL of the request access of the listing. Subscribers can use this reference to request access.",
+        'requestAccess',
+        'Email or URL of the request access of the listing. Subscribers can use this reference to request access.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "bigqueryDataset",
-        "Shared dataset i.e. BigQuery dataset source.\nStructure is documented below.",
+        'bigqueryDataset',
+        'Shared dataset i.e. BigQuery dataset source.\nStructure is documented below.',
         () => bigqueryanalyticshub_ListingBigqueryDataset_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "restrictedExportConfig",
-        "If set, restricted export configuration will be propagated and enforced on the linked dataset.\nStructure is documented below.",
+        'restrictedExportConfig',
+        'If set, restricted export configuration will be propagated and enforced on the linked dataset.\nStructure is documented below.',
         () => bigqueryanalyticshub_ListingRestrictedExportConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "publisher",
-        "Details of the publisher who owns the listing and who can share the source data.\nStructure is documented below.",
+        'publisher',
+        'Details of the publisher who owns the listing and who can share the source data.\nStructure is documented below.',
         () => bigqueryanalyticshub_ListingPublisher_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Short description of the listing. The description must not contain Unicode non-characters and C0 and C1 control codes except tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF).",
+        'description',
+        'Short description of the listing. The description must not contain Unicode non-characters and C0 and C1 control codes except tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF).',
         () => [],
         false,
         false,

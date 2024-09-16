@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudbuild_TriggerBuildArtifactsObjectsTiming,
   cloudbuild_TriggerBuildArtifactsObjectsTiming_GetTypes,
-} from "./cloudbuild_TriggerBuildArtifactsObjectsTiming";
+} from './cloudbuild_TriggerBuildArtifactsObjectsTiming';
 
 export interface cloudbuild_TriggerBuildArtifactsObjects {
   /*
@@ -36,7 +36,7 @@ export function cloudbuild_TriggerBuildArtifactsObjects_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.Array,
-      "paths",
+      'paths',
       "Path globs used to match files in the build's workspace.",
       () => InputType_String_GetTypes(),
       false,
@@ -44,7 +44,7 @@ export function cloudbuild_TriggerBuildArtifactsObjects_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Array,
-      "timings",
+      'timings',
       '(Output)\nOutput only. Stores timing information for pushing all artifact objects.\nStructure is documented below.\n\n\n<a name="nested_timing"></a>The `timing` block contains:',
       () => cloudbuild_TriggerBuildArtifactsObjectsTiming_GetTypes(),
       false,
@@ -52,7 +52,7 @@ export function cloudbuild_TriggerBuildArtifactsObjects_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "location",
+      'location',
       'Cloud Storage bucket and optional object path, in the form "gs://bucket/path/to/somewhere/".\nFiles in the workspace matching any path pattern will be uploaded to Cloud Storage with\nthis location as a prefix.',
       () => [],
       false,

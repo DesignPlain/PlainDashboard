@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface servicediscovery_ServiceHealthCheckCustomConfig {
   // The number of 30-second intervals that you want service discovery to wait before it changes the health status of a service instance.  Maximum value of 10.
@@ -15,8 +15,8 @@ export function servicediscovery_ServiceHealthCheckCustomConfig_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Number,
-      "failureThreshold",
-      "The number of 30-second intervals that you want service discovery to wait before it changes the health status of a service instance.  Maximum value of 10.",
+      'failureThreshold',
+      'The number of 30-second intervals that you want service discovery to wait before it changes the health status of a service instance.  Maximum value of 10.',
       () => [],
       false,
       true,

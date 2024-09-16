@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatch,
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatch_GetTypes,
-} from "./wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatch";
+} from './wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatch';
 import {
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformation,
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformation_GetTypes,
-} from "./wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformation";
+} from './wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformation';
 
 export interface wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatement {
   // Part of a web request that you want AWS WAF to inspect. See `field_to_match` below for details.
@@ -26,8 +26,8 @@ export function wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementXss
   return [
     new DynamicUIProps(
       InputType.Object,
-      "fieldToMatch",
-      "Part of a web request that you want AWS WAF to inspect. See `field_to_match` below for details.",
+      'fieldToMatch',
+      'Part of a web request that you want AWS WAF to inspect. See `field_to_match` below for details.',
       () =>
         wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatch_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementXss
     ),
     new DynamicUIProps(
       InputType.Array,
-      "textTransformations",
-      "Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one transformation is required. See `text_transformation` below for details.",
+      'textTransformations',
+      'Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one transformation is required. See `text_transformation` below for details.',
       () =>
         wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformation_GetTypes(),
       true,

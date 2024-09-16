@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFile,
   osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFile_GetTypes,
-} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFile";
+} from './osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFile';
 
 export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFile {
   /*
@@ -49,24 +49,24 @@ export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFile_Get
   return [
     new DynamicUIProps(
       InputType.String,
-      "state",
-      "Desired state of the file. Possible values are:\n`DESIRED_STATE_UNSPECIFIED`, `PRESENT`, `ABSENT`, `CONTENTS_MATCH`.",
+      'state',
+      'Desired state of the file. Possible values are:\n`DESIRED_STATE_UNSPECIFIED`, `PRESENT`, `ABSENT`, `CONTENTS_MATCH`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "content",
-      "A a file with this content. The size of the content\nis limited to 1024 characters.",
+      'content',
+      'A a file with this content. The size of the content\nis limited to 1024 characters.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "file",
-      "A remote or local source. Structure is\ndocumented below.",
+      'file',
+      'A remote or local source. Structure is\ndocumented below.',
       () =>
         osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFileFile_GetTypes(),
       false,
@@ -74,16 +74,16 @@ export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceFile_Get
     ),
     new DynamicUIProps(
       InputType.String,
-      "path",
-      "The absolute path of the file within the VM.",
+      'path',
+      'The absolute path of the file within the VM.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "permissions",
-      "Consists of three octal digits which represent, in\norder, the permissions of the owner, group, and other users for the file\n(similarly to the numeric mode used in the linux chmod utility). Each digit\nrepresents a three bit number with the 4 bit corresponding to the read\npermissions, the 2 bit corresponds to the write bit, and the one bit\ncorresponds to the execute permission. Default behavior is 755. Below are\nsome examples of permissions and their associated values: read, write, and\nexecute: 7 read and execute: 5 read and write: 6 read only: 4",
+      'permissions',
+      'Consists of three octal digits which represent, in\norder, the permissions of the owner, group, and other users for the file\n(similarly to the numeric mode used in the linux chmod utility). Each digit\nrepresents a three bit number with the 4 bit corresponding to the read\npermissions, the 2 bit corresponds to the write bit, and the one bit\ncorresponds to the execute permission. Default behavior is 755. Below are\nsome examples of permissions and their associated values: read, write, and\nexecute: 7 read and execute: 5 read and write: 6 read only: 4',
       () => [],
       false,
       false,

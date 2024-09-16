@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cfg_ConfigurationAggregatorAccountAggregationSource {
   // List of 12-digit account IDs of the account(s) being aggregated.
@@ -25,24 +25,24 @@ export function cfg_ConfigurationAggregatorAccountAggregationSource_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.Array,
-      "regions",
-      "List of source regions being aggregated.\n\nEither `regions` or `all_regions` (as true) must be specified.",
+      'regions',
+      'List of source regions being aggregated.\n\nEither `regions` or `all_regions` (as true) must be specified.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "accountIds",
-      "List of 12-digit account IDs of the account(s) being aggregated.",
+      'accountIds',
+      'List of 12-digit account IDs of the account(s) being aggregated.',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "allRegions",
-      "If true, aggregate existing AWS Config regions and future regions.",
+      'allRegions',
+      'If true, aggregate existing AWS Config regions and future regions.',
       () => [],
       false,
       false,

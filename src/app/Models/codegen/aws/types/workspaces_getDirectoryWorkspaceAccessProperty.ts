@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface workspaces_getDirectoryWorkspaceAccessProperty {
   // (Optional) Indicates whether users can access their WorkSpaces through a web browser.
@@ -36,64 +36,64 @@ export function workspaces_getDirectoryWorkspaceAccessProperty_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.String,
-      "deviceTypeIos",
-      "(Optional) Indicates whether users can use iOS devices to access their WorkSpaces.",
+      'deviceTypeIos',
+      '(Optional) Indicates whether users can use iOS devices to access their WorkSpaces.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "deviceTypeLinux",
-      "(Optional) Indicates whether users can use Linux clients to access their WorkSpaces.",
+      'deviceTypeLinux',
+      '(Optional) Indicates whether users can use Linux clients to access their WorkSpaces.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "deviceTypeOsx",
-      "(Optional) Indicates whether users can use macOS clients to access their WorkSpaces.",
+      'deviceTypeOsx',
+      '(Optional) Indicates whether users can use macOS clients to access their WorkSpaces.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "deviceTypeWeb",
-      "(Optional) Indicates whether users can access their WorkSpaces through a web browser.",
+      'deviceTypeWeb',
+      '(Optional) Indicates whether users can access their WorkSpaces through a web browser.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "deviceTypeWindows",
-      "(Optional) Indicates whether users can use Windows clients to access their WorkSpaces.",
+      'deviceTypeWindows',
+      '(Optional) Indicates whether users can use Windows clients to access their WorkSpaces.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "deviceTypeZeroclient",
-      "(Optional) Indicates whether users can use zero client devices to access their WorkSpaces.",
+      'deviceTypeZeroclient',
+      '(Optional) Indicates whether users can use zero client devices to access their WorkSpaces.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "deviceTypeAndroid",
-      "(Optional) Indicates whether users can use Android devices to access their WorkSpaces.",
+      'deviceTypeAndroid',
+      '(Optional) Indicates whether users can use Android devices to access their WorkSpaces.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "deviceTypeChromeos",
-      "(Optional) Indicates whether users can use Chromebooks to access their WorkSpaces.",
+      'deviceTypeChromeos',
+      '(Optional) Indicates whether users can use Chromebooks to access their WorkSpaces.',
       () => [],
       true,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_AwsClusterAuthorizationAdminGroup {
   // The name of the group, e.g. `my-group@domain.com`.
@@ -15,8 +15,8 @@ export function container_AwsClusterAuthorizationAdminGroup_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.String,
-      "group",
-      "The name of the group, e.g. `my-group@domain.com`.",
+      'group',
+      'The name of the group, e.g. `my-group@domain.com`.',
       () => [],
       true,
       false,

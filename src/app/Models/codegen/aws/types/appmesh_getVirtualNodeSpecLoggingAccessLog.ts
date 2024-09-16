@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualNodeSpecLoggingAccessLogFile,
   appmesh_getVirtualNodeSpecLoggingAccessLogFile_GetTypes,
-} from "./appmesh_getVirtualNodeSpecLoggingAccessLogFile";
+} from './appmesh_getVirtualNodeSpecLoggingAccessLogFile';
 
 export interface appmesh_getVirtualNodeSpecLoggingAccessLog {
   //
@@ -19,8 +19,8 @@ export function appmesh_getVirtualNodeSpecLoggingAccessLog_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Array,
-      "files",
-      "",
+      'files',
+      '',
       () => appmesh_getVirtualNodeSpecLoggingAccessLogFile_GetTypes(),
       true,
       false,

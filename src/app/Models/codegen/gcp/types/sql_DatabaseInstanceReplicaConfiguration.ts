@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface sql_DatabaseInstanceReplicaConfiguration {
   /*
@@ -72,23 +72,23 @@ export function sql_DatabaseInstanceReplicaConfiguration_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.String,
-      "username",
-      "Username for replication connection.",
+      'username',
+      'Username for replication connection.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "sslCipher",
-      "Permissible ciphers for use in SSL encryption.",
+      'sslCipher',
+      'Permissible ciphers for use in SSL encryption.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "clientKey",
+      'clientKey',
       "PEM representation of the replica's private key. The\ncorresponding public key in encoded in the `client_certificate`.",
       () => [],
       false,
@@ -96,7 +96,7 @@ export function sql_DatabaseInstanceReplicaConfiguration_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "verifyServerCertificate",
+      'verifyServerCertificate',
       "True if the master's common name\nvalue is checked during the SSL handshake.",
       () => [],
       false,
@@ -104,31 +104,31 @@ export function sql_DatabaseInstanceReplicaConfiguration_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "failoverTarget",
-      "Specifies if the replica is the failover target.\nIf the field is set to true the replica will be designated as a failover replica.\nIf the master instance fails, the replica instance will be promoted as\nthe new master instance.\n> **NOTE:** Not supported for Postgres database.",
+      'failoverTarget',
+      'Specifies if the replica is the failover target.\nIf the field is set to true the replica will be designated as a failover replica.\nIf the master instance fails, the replica instance will be promoted as\nthe new master instance.\n> **NOTE:** Not supported for Postgres database.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "masterHeartbeatPeriod",
-      "Time in ms between replication\nheartbeats.",
+      'masterHeartbeatPeriod',
+      'Time in ms between replication\nheartbeats.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "password",
-      "Password for the replication connection.",
+      'password',
+      'Password for the replication connection.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "caCertificate",
+      'caCertificate',
       "PEM representation of the trusted CA's x509\ncertificate.",
       () => [],
       false,
@@ -136,7 +136,7 @@ export function sql_DatabaseInstanceReplicaConfiguration_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "clientCertificate",
+      'clientCertificate',
       "PEM representation of the replica's x509\ncertificate.",
       () => [],
       false,
@@ -144,7 +144,7 @@ export function sql_DatabaseInstanceReplicaConfiguration_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Number,
-      "connectRetryInterval",
+      'connectRetryInterval',
       "The number of seconds\nbetween connect retries. MySQL's default is 60 seconds.",
       () => [],
       false,
@@ -152,8 +152,8 @@ export function sql_DatabaseInstanceReplicaConfiguration_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "dumpFilePath",
-      "Path to a SQL file in GCS from which replica\ninstances are created. Format is `gs://bucket/filename`.",
+      'dumpFilePath',
+      'Path to a SQL file in GCS from which replica\ninstances are created. Format is `gs://bucket/filename`.',
       () => [],
       false,
       true,

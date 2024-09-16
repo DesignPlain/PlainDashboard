@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface organizations_getDelegatedAdministratorsDelegatedAdministrator {
   // The ARN of the delegated administrator's account.
@@ -36,7 +36,7 @@ export function organizations_getDelegatedAdministratorsDelegatedAdministrator_G
   return [
     new DynamicUIProps(
       InputType.String,
-      "status",
+      'status',
       "The status of the delegated administrator's account in the organization.",
       () => [],
       true,
@@ -44,7 +44,7 @@ export function organizations_getDelegatedAdministratorsDelegatedAdministrator_G
     ),
     new DynamicUIProps(
       InputType.String,
-      "arn",
+      'arn',
       "The ARN of the delegated administrator's account.",
       () => [],
       true,
@@ -52,15 +52,15 @@ export function organizations_getDelegatedAdministratorsDelegatedAdministrator_G
     ),
     new DynamicUIProps(
       InputType.String,
-      "delegationEnabledDate",
-      "The date when the account was made a delegated administrator.",
+      'delegationEnabledDate',
+      'The date when the account was made a delegated administrator.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "email",
+      'email',
       "The email address that is associated with the delegated administrator's AWS account.",
       () => [],
       true,
@@ -68,7 +68,7 @@ export function organizations_getDelegatedAdministratorsDelegatedAdministrator_G
     ),
     new DynamicUIProps(
       InputType.String,
-      "id",
+      'id',
       "The unique identifier (ID) of the delegated administrator's account.",
       () => [],
       true,
@@ -76,7 +76,7 @@ export function organizations_getDelegatedAdministratorsDelegatedAdministrator_G
     ),
     new DynamicUIProps(
       InputType.String,
-      "joinedMethod",
+      'joinedMethod',
       "The method by which the delegated administrator's account joined the organization.",
       () => [],
       true,
@@ -84,7 +84,7 @@ export function organizations_getDelegatedAdministratorsDelegatedAdministrator_G
     ),
     new DynamicUIProps(
       InputType.String,
-      "joinedTimestamp",
+      'joinedTimestamp',
       "The date when the delegated administrator's account became a part of the organization.",
       () => [],
       true,
@@ -92,7 +92,7 @@ export function organizations_getDelegatedAdministratorsDelegatedAdministrator_G
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
+      'name',
       "The friendly name of the delegated administrator's account.",
       () => [],
       true,

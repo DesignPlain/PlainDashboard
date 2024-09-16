@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   batch_getJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameterTmpf,
   batch_getJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameterTmpf_GetTypes,
-} from "./batch_getJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameterTmpf";
+} from './batch_getJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameterTmpf';
 import {
   batch_getJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameterDevice,
   batch_getJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameterDevice_GetTypes,
-} from "./batch_getJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameterDevice";
+} from './batch_getJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameterDevice';
 
 export interface batch_getJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameter {
   // The value for the size (in MiB) of the `/dev/shm` volume.
@@ -38,15 +38,15 @@ export function batch_getJobDefinitionNodePropertyNodeRangePropertyContainerLinu
   return [
     new DynamicUIProps(
       InputType.Number,
-      "sharedMemorySize",
-      "The value for the size (in MiB) of the `/dev/shm` volume.",
+      'sharedMemorySize',
+      'The value for the size (in MiB) of the `/dev/shm` volume.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "swappiness",
+      'swappiness',
       "You can use this parameter to tune a container's memory swappiness behavior.",
       () => [],
       true,
@@ -54,8 +54,8 @@ export function batch_getJobDefinitionNodePropertyNodeRangePropertyContainerLinu
     ),
     new DynamicUIProps(
       InputType.Array,
-      "tmpfs",
-      "The container path, mount options, and size (in MiB) of the tmpfs mount.",
+      'tmpfs',
+      'The container path, mount options, and size (in MiB) of the tmpfs mount.',
       () =>
         batch_getJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameterTmpf_GetTypes(),
       true,
@@ -63,8 +63,8 @@ export function batch_getJobDefinitionNodePropertyNodeRangePropertyContainerLinu
     ),
     new DynamicUIProps(
       InputType.Array,
-      "devices",
-      "Any of the host devices to expose to the container.",
+      'devices',
+      'Any of the host devices to expose to the container.',
       () =>
         batch_getJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameterDevice_GetTypes(),
       true,
@@ -72,16 +72,16 @@ export function batch_getJobDefinitionNodePropertyNodeRangePropertyContainerLinu
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "initProcessEnabled",
-      "If true, run an init process inside the container that forwards signals and reaps processes.",
+      'initProcessEnabled',
+      'If true, run an init process inside the container that forwards signals and reaps processes.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxSwap",
-      "The total amount of swap memory (in MiB) a container can use.",
+      'maxSwap',
+      'The total amount of swap memory (in MiB) a container can use.',
       () => [],
       true,
       false,

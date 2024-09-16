@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface apprunner_ServiceEncryptionConfiguration {
   // ARN of the KMS key used for encryption.
@@ -15,8 +15,8 @@ export function apprunner_ServiceEncryptionConfiguration_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.String,
-      "kmsKey",
-      "ARN of the KMS key used for encryption.",
+      'kmsKey',
+      'ARN of the KMS key used for encryption.',
       () => [],
       true,
       true,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfig,
   gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfig_GetTypes,
-} from "./gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfig";
+} from './gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfig';
 
 export interface gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfig {
   /*
@@ -22,8 +22,8 @@ export function gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfig
   return [
     new DynamicUIProps(
       InputType.Object,
-      "nodePoolConfig",
-      "The generic configuration for a node pool running the control plane.\nStructure is documented below.",
+      'nodePoolConfig',
+      'The generic configuration for a node pool running the control plane.\nStructure is documented below.',
       () =>
         gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfig_GetTypes(),
       true,

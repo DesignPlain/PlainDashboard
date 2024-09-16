@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   finspace_KxEnvironmentTransitGatewayConfiguration,
   finspace_KxEnvironmentTransitGatewayConfiguration_GetTypes,
-} from "../types/finspace_KxEnvironmentTransitGatewayConfiguration";
+} from '../types/finspace_KxEnvironmentTransitGatewayConfiguration';
 import {
   finspace_KxEnvironmentCustomDnsConfiguration,
   finspace_KxEnvironmentCustomDnsConfiguration_GetTypes,
-} from "../types/finspace_KxEnvironmentCustomDnsConfiguration";
+} from '../types/finspace_KxEnvironmentCustomDnsConfiguration';
 
 export interface KxEnvironmentArgs {
   // Transit gateway and network configuration that is used to connect the KX environment to an internal network. Defined below.
@@ -86,48 +86,48 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the KX environment that you want to create.",
+        'name',
+        'Name of the KX environment that you want to create.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "transitGatewayConfiguration",
-        "Transit gateway and network configuration that is used to connect the KX environment to an internal network. Defined below.",
+        'transitGatewayConfiguration',
+        'Transit gateway and network configuration that is used to connect the KX environment to an internal network. Defined below.',
         () => finspace_KxEnvironmentTransitGatewayConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "customDnsConfigurations",
-        "List of DNS server name and server IP. This is used to set up Route-53 outbound resolvers. Defined below.",
+        'customDnsConfigurations',
+        'List of DNS server name and server IP. This is used to set up Route-53 outbound resolvers. Defined below.',
         () => finspace_KxEnvironmentCustomDnsConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description for the KX environment.",
+        'description',
+        'Description for the KX environment.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "kmsKeyId",
-        "KMS key ID to encrypt your data in the FinSpace environment.\n\nThe following arguments are optional:",
+        'kmsKeyId',
+        'KMS key ID to encrypt your data in the FinSpace environment.\n\nThe following arguments are optional:',
         () => [],
         true,
         false,

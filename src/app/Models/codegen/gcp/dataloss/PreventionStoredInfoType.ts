@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionStoredInfoTypeLargeCustomDictionary,
   dataloss_PreventionStoredInfoTypeLargeCustomDictionary_GetTypes,
-} from "../types/dataloss_PreventionStoredInfoTypeLargeCustomDictionary";
+} from '../types/dataloss_PreventionStoredInfoTypeLargeCustomDictionary';
 import {
   dataloss_PreventionStoredInfoTypeRegex,
   dataloss_PreventionStoredInfoTypeRegex_GetTypes,
-} from "../types/dataloss_PreventionStoredInfoTypeRegex";
+} from '../types/dataloss_PreventionStoredInfoTypeRegex';
 import {
   dataloss_PreventionStoredInfoTypeDictionary,
   dataloss_PreventionStoredInfoTypeDictionary_GetTypes,
-} from "../types/dataloss_PreventionStoredInfoTypeDictionary";
+} from '../types/dataloss_PreventionStoredInfoTypeDictionary';
 
 export interface PreventionStoredInfoTypeArgs {
   // User set display name of the info type.
@@ -114,56 +114,56 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "largeCustomDictionary",
-        "Dictionary which defines the rule.\nStructure is documented below.",
+        'largeCustomDictionary',
+        'Dictionary which defines the rule.\nStructure is documented below.',
         () => dataloss_PreventionStoredInfoTypeLargeCustomDictionary_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The parent of the info type in any of the following formats:\n* `projects/{{project}}`\n* `projects/{{project}}/locations/{{location}}`\n* `organizations/{{organization_id}}`\n* `organizations/{{organization_id}}/locations/{{location}}`\n\n\n- - -",
+        'parent',
+        'The parent of the info type in any of the following formats:\n* `projects/{{project}}`\n* `projects/{{project}}/locations/{{location}}`\n* `organizations/{{organization_id}}`\n* `organizations/{{organization_id}}/locations/{{location}}`\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "regex",
-        "Regular expression which defines the rule.\nStructure is documented below.",
+        'regex',
+        'Regular expression which defines the rule.\nStructure is documented below.',
         () => dataloss_PreventionStoredInfoTypeRegex_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "storedInfoTypeId",
-        "The storedInfoType ID can contain uppercase and lowercase letters, numbers, and hyphens;\nthat is, it must match the regular expression: [a-zA-Z\\d-_]+. The maximum length is 100\ncharacters. Can be empty to allow the system to generate one.",
+        'storedInfoTypeId',
+        'The storedInfoType ID can contain uppercase and lowercase letters, numbers, and hyphens;\nthat is, it must match the regular expression: [a-zA-Z\\d-_]+. The maximum length is 100\ncharacters. Can be empty to allow the system to generate one.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of the info type.",
+        'description',
+        'A description of the info type.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "dictionary",
-        "Dictionary which defines the rule.\nStructure is documented below.",
+        'dictionary',
+        'Dictionary which defines the rule.\nStructure is documented below.',
         () => dataloss_PreventionStoredInfoTypeDictionary_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "User set display name of the info type.",
+        'displayName',
+        'User set display name of the info type.',
         () => [],
         false,
         false,

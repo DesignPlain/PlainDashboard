@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ssm_getContactsRotationRecurrenceMonthlySettingHandOffTime,
   ssm_getContactsRotationRecurrenceMonthlySettingHandOffTime_GetTypes,
-} from "./ssm_getContactsRotationRecurrenceMonthlySettingHandOffTime";
+} from './ssm_getContactsRotationRecurrenceMonthlySettingHandOffTime';
 
 export interface ssm_getContactsRotationRecurrenceMonthlySetting {
   //
@@ -22,16 +22,16 @@ export function ssm_getContactsRotationRecurrenceMonthlySetting_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Number,
-      "dayOfMonth",
-      "",
+      'dayOfMonth',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "handOffTimes",
-      "",
+      'handOffTimes',
+      '',
       () =>
         ssm_getContactsRotationRecurrenceMonthlySettingHandOffTime_GetTypes(),
       true,

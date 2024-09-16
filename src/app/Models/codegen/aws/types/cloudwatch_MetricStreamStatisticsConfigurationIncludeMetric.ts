@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudwatch_MetricStreamStatisticsConfigurationIncludeMetric {
   // The name of the metric.
@@ -18,16 +18,16 @@ export function cloudwatch_MetricStreamStatisticsConfigurationIncludeMetric_GetT
   return [
     new DynamicUIProps(
       InputType.String,
-      "metricName",
-      "The name of the metric.",
+      'metricName',
+      'The name of the metric.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "namespace",
-      "",
+      'namespace',
+      '',
       () => [],
       true,
       false,

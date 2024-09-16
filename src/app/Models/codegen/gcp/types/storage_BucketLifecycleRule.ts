@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   storage_BucketLifecycleRuleAction,
   storage_BucketLifecycleRuleAction_GetTypes,
-} from "./storage_BucketLifecycleRuleAction";
+} from './storage_BucketLifecycleRuleAction';
 import {
   storage_BucketLifecycleRuleCondition,
   storage_BucketLifecycleRuleCondition_GetTypes,
-} from "./storage_BucketLifecycleRuleCondition";
+} from './storage_BucketLifecycleRuleCondition';
 
 export interface storage_BucketLifecycleRule {
   // The Lifecycle Rule's action configuration. A single block of this type is supported. Structure is documented below.
@@ -26,7 +26,7 @@ export function storage_BucketLifecycleRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "action",
+      'action',
       "The Lifecycle Rule's action configuration. A single block of this type is supported. Structure is documented below.",
       () => storage_BucketLifecycleRuleAction_GetTypes(),
       true,
@@ -34,7 +34,7 @@ export function storage_BucketLifecycleRule_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "condition",
+      'condition',
       "The Lifecycle Rule's condition configuration. A single block of this type is supported. Structure is documented below.",
       () => storage_BucketLifecycleRuleCondition_GetTypes(),
       true,

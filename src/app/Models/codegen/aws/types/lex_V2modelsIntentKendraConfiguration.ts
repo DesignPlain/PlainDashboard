@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface lex_V2modelsIntentKendraConfiguration {
   // Query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see [Filtering queries](https://docs.aws.amazon.com/kendra/latest/dg/filtering.html).
@@ -21,24 +21,24 @@ export function lex_V2modelsIntentKendraConfiguration_GetTypes(): DynamicUIProps
   return [
     new DynamicUIProps(
       InputType.String,
-      "kendraIndex",
-      "ARN of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot.",
+      'kendraIndex',
+      'ARN of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "queryFilterString",
-      "Query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see [Filtering queries](https://docs.aws.amazon.com/kendra/latest/dg/filtering.html).",
+      'queryFilterString',
+      'Query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see [Filtering queries](https://docs.aws.amazon.com/kendra/latest/dg/filtering.html).',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "queryFilterStringEnabled",
-      "Whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon Kendra index.",
+      'queryFilterStringEnabled',
+      'Whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon Kendra index.',
       () => [],
       false,
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface InternetGatewayArgs {
   /*
@@ -276,7 +276,7 @@ resources:
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
+        'tags',
         'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.\n\n> **Note:** It\'s recommended to denote that the AWS Instance or Elastic IP depends on the Internet Gateway. For example:\n\n<!--Start PulumiCodeChooser -->\n```typescript\nimport * as pulumi from "@pulumi/pulumi";\nimport * as aws from "@pulumi/aws";\n\nconst gw = new aws.ec2.InternetGateway("gw", {vpcId: main.id});\nconst foo = new aws.ec2.Instance("foo", {}, {\n    dependsOn: [gw],\n});\n```\n```python\nimport pulumi\nimport pulumi_aws as aws\n\ngw = aws.ec2.InternetGateway("gw", vpc_id=main["id"])\nfoo = aws.ec2.Instance("foo", opts = pulumi.ResourceOptions(depends_on=[gw]))\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Aws = Pulumi.Aws;\n\nreturn await Deployment.RunAsync(() => \n{\n    var gw = new Aws.Ec2.InternetGateway("gw", new()\n    {\n        VpcId = main.Id,\n    });\n\n    var foo = new Aws.Ec2.Instance("foo", new()\n    {\n    }, new CustomResourceOptions\n    {\n        DependsOn =\n        {\n            gw,\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t"github.com/pulumi/pulumi-aws/sdk/v6/go/aws/ec2"\n\t"github.com/pulumi/pulumi/sdk/v3/go/pulumi"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\tgw, err := ec2.NewInternetGateway(ctx, "gw", &ec2.InternetGatewayArgs{\n\t\t\tVpcId: pulumi.Any(main.Id),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = ec2.NewInstance(ctx, "foo", nil, pulumi.DependsOn([]pulumi.Resource{\n\t\t\tgw,\n\t\t}))\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.aws.ec2.InternetGateway;\nimport com.pulumi.aws.ec2.InternetGatewayArgs;\nimport com.pulumi.aws.ec2.Instance;\nimport com.pulumi.aws.ec2.InstanceArgs;\nimport com.pulumi.resources.CustomResourceOptions;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var gw = new InternetGateway("gw", InternetGatewayArgs.builder()\n            .vpcId(main.id())\n            .build());\n\n        var foo = new Instance("foo", InstanceArgs.Empty, CustomResourceOptions.builder()\n            .dependsOn(gw)\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  gw:\n    type: aws:ec2:InternetGateway\n    properties:\n      vpcId: ${main.id}\n  foo:\n    type: aws:ec2:Instance\n    options:\n      dependson:\n        - ${gw}\n```\n<!--End PulumiCodeChooser -->',
         () => InputType_Map_GetTypes(),
         false,
@@ -284,8 +284,8 @@ resources:
       ),
       new DynamicUIProps(
         InputType.String,
-        "vpcId",
-        "The VPC ID to create in.  See the aws.ec2.InternetGatewayAttachment resource for an alternate way to attach an Internet Gateway to a VPC.",
+        'vpcId',
+        'The VPC ID to create in.  See the aws.ec2.InternetGatewayAttachment resource for an alternate way to attach an Internet Gateway to a VPC.',
         () => [],
         false,
         false,

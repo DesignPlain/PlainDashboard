@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sagemaker_DataQualityJobDefinitionDataQualityBaselineConfigConstraintsResource,
   sagemaker_DataQualityJobDefinitionDataQualityBaselineConfigConstraintsResource_GetTypes,
-} from "./sagemaker_DataQualityJobDefinitionDataQualityBaselineConfigConstraintsResource";
+} from './sagemaker_DataQualityJobDefinitionDataQualityBaselineConfigConstraintsResource';
 import {
   sagemaker_DataQualityJobDefinitionDataQualityBaselineConfigStatisticsResource,
   sagemaker_DataQualityJobDefinitionDataQualityBaselineConfigStatisticsResource_GetTypes,
-} from "./sagemaker_DataQualityJobDefinitionDataQualityBaselineConfigStatisticsResource";
+} from './sagemaker_DataQualityJobDefinitionDataQualityBaselineConfigStatisticsResource';
 
 export interface sagemaker_DataQualityJobDefinitionDataQualityBaselineConfig {
   // The constraints resource for a monitoring job. Fields are documented below.
@@ -26,8 +26,8 @@ export function sagemaker_DataQualityJobDefinitionDataQualityBaselineConfig_GetT
   return [
     new DynamicUIProps(
       InputType.Object,
-      "constraintsResource",
-      "The constraints resource for a monitoring job. Fields are documented below.",
+      'constraintsResource',
+      'The constraints resource for a monitoring job. Fields are documented below.',
       () =>
         sagemaker_DataQualityJobDefinitionDataQualityBaselineConfigConstraintsResource_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function sagemaker_DataQualityJobDefinitionDataQualityBaselineConfig_GetT
     ),
     new DynamicUIProps(
       InputType.Object,
-      "statisticsResource",
-      "The statistics resource for a monitoring job. Fields are documented below.",
+      'statisticsResource',
+      'The statistics resource for a monitoring job. Fields are documented below.',
       () =>
         sagemaker_DataQualityJobDefinitionDataQualityBaselineConfigStatisticsResource_GetTypes(),
       false,

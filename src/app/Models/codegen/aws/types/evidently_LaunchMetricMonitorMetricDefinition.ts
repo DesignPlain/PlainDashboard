@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface evidently_LaunchMetricMonitorMetricDefinition {
   // Specifies the entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is `userDetails.userID`.
@@ -27,40 +27,40 @@ export function evidently_LaunchMetricMonitorMetricDefinition_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.String,
-      "unitLabel",
-      "Specifies a label for the units that the metric is measuring.",
+      'unitLabel',
+      'Specifies a label for the units that the metric is measuring.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "valueKey",
-      "Specifies the value that is tracked to produce the metric.",
-      () => [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "entityIdKey",
-      "Specifies the entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is `userDetails.userID`.",
+      'valueKey',
+      'Specifies the value that is tracked to produce the metric.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "eventPattern",
-      "Specifies The EventBridge event pattern that defines how the metric is recorded.",
+      'entityIdKey',
+      'Specifies the entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is `userDetails.userID`.',
+      () => [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      'eventPattern',
+      'Specifies The EventBridge event pattern that defines how the metric is recorded.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Specifies the name for the metric.",
+      'name',
+      'Specifies the name for the metric.',
       () => [],
       true,
       false,

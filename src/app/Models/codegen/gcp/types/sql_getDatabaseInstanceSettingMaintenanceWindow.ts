@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface sql_getDatabaseInstanceSettingMaintenanceWindow {
   // Day of week (1-7), starting on Monday
@@ -21,24 +21,24 @@ export function sql_getDatabaseInstanceSettingMaintenanceWindow_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Number,
-      "day",
-      "Day of week (1-7), starting on Monday",
+      'day',
+      'Day of week (1-7), starting on Monday',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "hour",
-      "Hour of day (0-23), ignored if day not set",
+      'hour',
+      'Hour of day (0-23), ignored if day not set',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "updateTrack",
-      "Receive updates earlier (canary) or later (stable)",
+      'updateTrack',
+      'Receive updates earlier (canary) or later (stable)',
       () => [],
       true,
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface MountTargetArgs {
   // The ID of the file system for which the mount target is intended.
@@ -70,32 +70,32 @@ be for the same VPC as subnet specified) in effect for the mount target.
     return [
       new DynamicUIProps(
         InputType.String,
-        "ipAddress",
-        "The address (within the address range of the specified subnet) at\nwhich the file system may be mounted via the mount target.",
+        'ipAddress',
+        'The address (within the address range of the specified subnet) at\nwhich the file system may be mounted via the mount target.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "securityGroups",
-        "A list of up to 5 VPC security group IDs (that must\nbe for the same VPC as subnet specified) in effect for the mount target.",
+        'securityGroups',
+        'A list of up to 5 VPC security group IDs (that must\nbe for the same VPC as subnet specified) in effect for the mount target.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "subnetId",
-        "The ID of the subnet to add the mount target in.",
+        'subnetId',
+        'The ID of the subnet to add the mount target in.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "fileSystemId",
-        "The ID of the file system for which the mount target is intended.",
+        'fileSystemId',
+        'The ID of the file system for which the mount target is intended.',
         () => [],
         true,
         true,

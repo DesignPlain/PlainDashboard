@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkeonprem_BareMetalNodePoolNodePoolConfig,
   gkeonprem_BareMetalNodePoolNodePoolConfig_GetTypes,
-} from "../types/gkeonprem_BareMetalNodePoolNodePoolConfig";
+} from '../types/gkeonprem_BareMetalNodePoolNodePoolConfig';
 import {
   gkeonprem_BareMetalNodePoolStatus,
   gkeonprem_BareMetalNodePoolStatus_GetTypes,
-} from "../types/gkeonprem_BareMetalNodePoolStatus";
+} from '../types/gkeonprem_BareMetalNodePoolStatus';
 
 export interface BareMetalNodePoolArgs {
   // The location of the resource.
@@ -141,56 +141,56 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
-        "Annotations on the Bare Metal Node Pool.\nThis field has the same restrictions as Kubernetes annotations.\nThe total size of all keys and values combined is limited to 256k.\nKey can have 2 segments: prefix (optional) and name (required),\nseparated by a slash (/).\nPrefix must be a DNS subdomain.\nName must be 63 characters or less, begin and end with alphanumerics,\nwith dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
+        'annotations',
+        'Annotations on the Bare Metal Node Pool.\nThis field has the same restrictions as Kubernetes annotations.\nThe total size of all keys and values combined is limited to 256k.\nKey can have 2 segments: prefix (optional) and name (required),\nseparated by a slash (/).\nPrefix must be a DNS subdomain.\nName must be 63 characters or less, begin and end with alphanumerics,\nwith dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "bareMetalCluster",
-        "The cluster this node pool belongs to.",
+        'bareMetalCluster',
+        'The cluster this node pool belongs to.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The display name for the Bare Metal Node Pool.",
+        'displayName',
+        'The display name for the Bare Metal Node Pool.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the resource.",
+        'location',
+        'The location of the resource.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The bare metal node pool name.",
+        'name',
+        'The bare metal node pool name.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "nodePoolConfig",
-        "Node pool configuration.\nStructure is documented below.",
+        'nodePoolConfig',
+        'Node pool configuration.\nStructure is documented below.',
         () => gkeonprem_BareMetalNodePoolNodePoolConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

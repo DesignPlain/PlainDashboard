@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface route53_getTrafficPolicyDocumentRuleLocation {
   // If you want to associate a health check with the endpoint or rule.
@@ -36,64 +36,64 @@ export function route53_getTrafficPolicyDocumentRuleLocation_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "evaluateTargetHealth",
-      "Indicates whether you want Amazon Route 53 to evaluate the health of the endpoint and route traffic only to healthy endpoints.",
+      'evaluateTargetHealth',
+      'Indicates whether you want Amazon Route 53 to evaluate the health of the endpoint and route traffic only to healthy endpoints.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "healthCheck",
-      "If you want to associate a health check with the endpoint or rule.",
+      'healthCheck',
+      'If you want to associate a health check with the endpoint or rule.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "isDefault",
-      "Indicates whether this set of values represents the default location.",
+      'isDefault',
+      'Indicates whether this set of values represents the default location.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ruleReference",
-      "References to a rule.",
+      'ruleReference',
+      'References to a rule.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "subdivision",
-      "Value of a subdivision.",
+      'subdivision',
+      'Value of a subdivision.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "continent",
-      "Value of a continent.",
+      'continent',
+      'Value of a continent.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "country",
-      "Value of a country.",
+      'country',
+      'Value of a country.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "endpointReference",
-      "References to an endpoint.",
+      'endpointReference',
+      'References to an endpoint.',
       () => [],
       false,
       false,

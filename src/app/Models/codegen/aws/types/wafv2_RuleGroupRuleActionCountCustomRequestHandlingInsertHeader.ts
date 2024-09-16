@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface wafv2_RuleGroupRuleActionCountCustomRequestHandlingInsertHeader {
   // A friendly name of the rule group.
@@ -18,16 +18,16 @@ export function wafv2_RuleGroupRuleActionCountCustomRequestHandlingInsertHeader_
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "A friendly name of the rule group.",
+      'name',
+      'A friendly name of the rule group.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "The value of the custom header.",
+      'value',
+      'The value of the custom header.',
       () => [],
       true,
       false,

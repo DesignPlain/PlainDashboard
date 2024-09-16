@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationCustomPayload,
   lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationCustomPayload_GetTypes,
-} from "./lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationCustomPayload";
+} from './lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationCustomPayload';
 import {
   lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationImageResponseCard,
   lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationImageResponseCard_GetTypes,
-} from "./lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationImageResponseCard";
+} from './lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationImageResponseCard';
 import {
   lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationPlainTextMessage,
   lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationPlainTextMessage_GetTypes,
-} from "./lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationPlainTextMessage";
+} from './lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationPlainTextMessage';
 import {
   lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationSsmlMessage,
   lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationSsmlMessage_GetTypes,
-} from "./lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationSsmlMessage";
+} from './lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationSsmlMessage';
 
 export interface lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariation {
   // Configuration block for a message in a custom format defined by the client application. See `custom_payload`.
@@ -40,8 +40,8 @@ export function lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecif
   return [
     new DynamicUIProps(
       InputType.Object,
-      "customPayload",
-      "Configuration block for a message in a custom format defined by the client application. See `custom_payload`.",
+      'customPayload',
+      'Configuration block for a message in a custom format defined by the client application. See `custom_payload`.',
       () =>
         lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationCustomPayload_GetTypes(),
       false,
@@ -49,8 +49,8 @@ export function lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecif
     ),
     new DynamicUIProps(
       InputType.Object,
-      "imageResponseCard",
-      "Configuration block for a message that defines a response card that the client application can show to the user. See `image_response_card`.",
+      'imageResponseCard',
+      'Configuration block for a message that defines a response card that the client application can show to the user. See `image_response_card`.',
       () =>
         lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationImageResponseCard_GetTypes(),
       false,
@@ -58,8 +58,8 @@ export function lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecif
     ),
     new DynamicUIProps(
       InputType.Object,
-      "plainTextMessage",
-      "Configuration block for a message in plain text format. See `plain_text_message`.",
+      'plainTextMessage',
+      'Configuration block for a message in plain text format. See `plain_text_message`.',
       () =>
         lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationPlainTextMessage_GetTypes(),
       false,
@@ -67,8 +67,8 @@ export function lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecif
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ssmlMessage",
-      "Configuration block for a message in Speech Synthesis Markup Language (SSML). See `ssml_message`.",
+      'ssmlMessage',
+      'Configuration block for a message in Speech Synthesis Markup Language (SSML). See `ssml_message`.',
       () =>
         lex_V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationSsmlMessage_GetTypes(),
       false,

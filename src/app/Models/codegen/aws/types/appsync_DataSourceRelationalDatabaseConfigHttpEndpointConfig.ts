@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appsync_DataSourceRelationalDatabaseConfigHttpEndpointConfig {
   // AWS secret store ARN for database credentials.
@@ -27,40 +27,40 @@ export function appsync_DataSourceRelationalDatabaseConfigHttpEndpointConfig_Get
   return [
     new DynamicUIProps(
       InputType.String,
-      "awsSecretStoreArn",
-      "AWS secret store ARN for database credentials.",
+      'awsSecretStoreArn',
+      'AWS secret store ARN for database credentials.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "databaseName",
-      "Logical database name.",
+      'databaseName',
+      'Logical database name.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "dbClusterIdentifier",
-      "Amazon RDS cluster identifier.",
+      'dbClusterIdentifier',
+      'Amazon RDS cluster identifier.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "region",
-      "AWS Region for RDS HTTP endpoint. Defaults to current region.",
+      'region',
+      'AWS Region for RDS HTTP endpoint. Defaults to current region.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "schema",
-      "Logical schema name.",
+      'schema',
+      'Logical schema name.',
       () => [],
       false,
       false,

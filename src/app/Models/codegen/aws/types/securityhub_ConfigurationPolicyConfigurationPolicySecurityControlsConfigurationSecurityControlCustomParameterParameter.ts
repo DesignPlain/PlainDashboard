@@ -3,40 +3,40 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterEnumList,
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterEnumList_GetTypes,
-} from "./securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterEnumList";
+} from './securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterEnumList';
 import {
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterBool,
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterBool_GetTypes,
-} from "./securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterBool";
+} from './securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterBool';
 import {
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterEnum,
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterEnum_GetTypes,
-} from "./securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterEnum";
+} from './securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterEnum';
 import {
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterInt,
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterInt_GetTypes,
-} from "./securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterInt";
+} from './securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterInt';
 import {
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterIntList,
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterIntList_GetTypes,
-} from "./securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterIntList";
+} from './securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterIntList';
 import {
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterString,
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterString_GetTypes,
-} from "./securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterString";
+} from './securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterString';
 import {
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterStringList,
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterStringList_GetTypes,
-} from "./securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterStringList";
+} from './securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterStringList';
 import {
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterDouble,
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterDouble_GetTypes,
-} from "./securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterDouble";
+} from './securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterDouble';
 
 export interface securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameter {
   // The bool `value` for a Boolean-typed Security Hub Control Parameter.
@@ -74,8 +74,8 @@ export function securityhub_ConfigurationPolicyConfigurationPolicySecurityContro
   return [
     new DynamicUIProps(
       InputType.Object,
-      "int",
-      "The int `value` for a Int-typed Security Hub Control Parameter.",
+      'int',
+      'The int `value` for a Int-typed Security Hub Control Parameter.',
       () =>
         securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterInt_GetTypes(),
       false,
@@ -83,8 +83,8 @@ export function securityhub_ConfigurationPolicyConfigurationPolicySecurityContro
     ),
     new DynamicUIProps(
       InputType.Object,
-      "intList",
-      "The int list `value` for a IntList-typed Security Hub Control Parameter.",
+      'intList',
+      'The int list `value` for a IntList-typed Security Hub Control Parameter.',
       () =>
         securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterIntList_GetTypes(),
       false,
@@ -92,16 +92,16 @@ export function securityhub_ConfigurationPolicyConfigurationPolicySecurityContro
     ),
     new DynamicUIProps(
       InputType.String,
-      "valueType",
-      "Identifies whether a control parameter uses a custom user-defined value or subscribes to the default Security Hub behavior. Valid values: `DEFAULT`, `CUSTOM`.",
+      'valueType',
+      'Identifies whether a control parameter uses a custom user-defined value or subscribes to the default Security Hub behavior. Valid values: `DEFAULT`, `CUSTOM`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "enumList",
-      "The string list `value` for a EnumList-typed Security Hub Control Parameter.",
+      'enumList',
+      'The string list `value` for a EnumList-typed Security Hub Control Parameter.',
       () =>
         securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterEnumList_GetTypes(),
       false,
@@ -109,8 +109,8 @@ export function securityhub_ConfigurationPolicyConfigurationPolicySecurityContro
     ),
     new DynamicUIProps(
       InputType.Object,
-      "bool",
-      "The bool `value` for a Boolean-typed Security Hub Control Parameter.",
+      'bool',
+      'The bool `value` for a Boolean-typed Security Hub Control Parameter.',
       () =>
         securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterBool_GetTypes(),
       false,
@@ -118,8 +118,8 @@ export function securityhub_ConfigurationPolicyConfigurationPolicySecurityContro
     ),
     new DynamicUIProps(
       InputType.Object,
-      "enum",
-      "The string `value` for a Enum-typed Security Hub Control Parameter.",
+      'enum',
+      'The string `value` for a Enum-typed Security Hub Control Parameter.',
       () =>
         securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterEnum_GetTypes(),
       false,
@@ -127,16 +127,16 @@ export function securityhub_ConfigurationPolicyConfigurationPolicySecurityContro
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The name of the control parameter. For more information see the [Security Hub controls reference] documentation.",
+      'name',
+      'The name of the control parameter. For more information see the [Security Hub controls reference] documentation.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "string",
-      "The string `value` for a String-typed Security Hub Control Parameter.",
+      'string',
+      'The string `value` for a String-typed Security Hub Control Parameter.',
       () =>
         securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterString_GetTypes(),
       false,
@@ -144,8 +144,8 @@ export function securityhub_ConfigurationPolicyConfigurationPolicySecurityContro
     ),
     new DynamicUIProps(
       InputType.Object,
-      "stringList",
-      "The string list `value` for a StringList-typed Security Hub Control Parameter.",
+      'stringList',
+      'The string list `value` for a StringList-typed Security Hub Control Parameter.',
       () =>
         securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterStringList_GetTypes(),
       false,
@@ -153,8 +153,8 @@ export function securityhub_ConfigurationPolicyConfigurationPolicySecurityContro
     ),
     new DynamicUIProps(
       InputType.Object,
-      "double",
-      "The float `value` for a Double-typed Security Hub Control Parameter.",
+      'double',
+      'The float `value` for a Double-typed Security Hub Control Parameter.',
       () =>
         securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterDouble_GetTypes(),
       false,

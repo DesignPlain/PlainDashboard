@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface batch_getJobDefinitionNodePropertyNodeRangePropertyContainerUlimit {
   // The hard limit for the ulimit type.
@@ -21,24 +21,24 @@ export function batch_getJobDefinitionNodePropertyNodeRangePropertyContainerUlim
   return [
     new DynamicUIProps(
       InputType.Number,
-      "hardLimit",
-      "The hard limit for the ulimit type.",
+      'hardLimit',
+      'The hard limit for the ulimit type.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).",
+      'name',
+      'The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "softLimit",
-      "The soft limit for the ulimit type.",
+      'softLimit',
+      'The soft limit for the ulimit type.',
       () => [],
       true,
       false,

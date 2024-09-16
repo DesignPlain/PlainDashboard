@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ssmincidents_ResponsePlanAction,
   ssmincidents_ResponsePlanAction_GetTypes,
-} from "../types/ssmincidents_ResponsePlanAction";
+} from '../types/ssmincidents_ResponsePlanAction';
 import {
   ssmincidents_ResponsePlanIncidentTemplate,
   ssmincidents_ResponsePlanIncidentTemplate_GetTypes,
-} from "../types/ssmincidents_ResponsePlanIncidentTemplate";
+} from '../types/ssmincidents_ResponsePlanIncidentTemplate';
 import {
   ssmincidents_ResponsePlanIntegration,
   ssmincidents_ResponsePlanIntegration_GetTypes,
-} from "../types/ssmincidents_ResponsePlanIntegration";
+} from '../types/ssmincidents_ResponsePlanIntegration';
 
 export interface ResponsePlanArgs {
   // The name of the response plan.
@@ -79,64 +79,64 @@ export class ResponsePlan extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "incidentTemplate",
-        "",
+        'incidentTemplate',
+        '',
         () => ssmincidents_ResponsePlanIncidentTemplate_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "integration",
-        "",
+        'integration',
+        '',
         () => ssmincidents_ResponsePlanIntegration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the response plan.",
+        'name',
+        'The name of the response plan.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "",
+        'tags',
+        '',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "action",
-        "",
+        'action',
+        '',
         () => ssmincidents_ResponsePlanAction_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "chatChannels",
-        "",
+        'chatChannels',
+        '',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "",
+        'displayName',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "engagements",
-        "",
+        'engagements',
+        '',
         () => InputType_String_GetTypes(),
         false,
         false,

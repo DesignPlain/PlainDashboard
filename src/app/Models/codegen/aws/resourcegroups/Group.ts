@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   resourcegroups_GroupConfiguration,
   resourcegroups_GroupConfiguration_GetTypes,
-} from "../types/resourcegroups_GroupConfiguration";
+} from '../types/resourcegroups_GroupConfiguration';
 import {
   resourcegroups_GroupResourceQuery,
   resourcegroups_GroupResourceQuery_GetTypes,
-} from "../types/resourcegroups_GroupResourceQuery";
+} from '../types/resourcegroups_GroupResourceQuery';
 
 export interface GroupArgs {
   // A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. See below for details.
@@ -57,23 +57,23 @@ export class Group extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "configurations",
-        "A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. See below for details.",
+        'configurations',
+        'A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. See below for details.',
         () => resourcegroups_GroupConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of the resource group.",
+        'description',
+        'A description of the resource group.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
+        'name',
         "The resource group's name. A resource group name can have a maximum of 127 characters, including letters, numbers, hyphens, dots, and underscores. The name cannot start with `AWS` or `aws`.",
         () => [],
         false,
@@ -81,16 +81,16 @@ export class Group extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Object,
-        "resourceQuery",
-        "A `resource_query` block. Resource queries are documented below.",
+        'resourceQuery',
+        'A `resource_query` block. Resource queries are documented below.',
         () => resourcegroups_GroupResourceQuery_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

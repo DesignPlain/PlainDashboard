@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getRouteSpecHttpRouteMatchQueryParameterMatch,
   appmesh_getRouteSpecHttpRouteMatchQueryParameterMatch_GetTypes,
-} from "./appmesh_getRouteSpecHttpRouteMatchQueryParameterMatch";
+} from './appmesh_getRouteSpecHttpRouteMatchQueryParameterMatch';
 
 export interface appmesh_getRouteSpecHttpRouteMatchQueryParameter {
   //
@@ -22,16 +22,16 @@ export function appmesh_getRouteSpecHttpRouteMatchQueryParameter_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.Array,
-      "matches",
-      "",
+      'matches',
+      '',
       () => appmesh_getRouteSpecHttpRouteMatchQueryParameterMatch_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the route.",
+      'name',
+      'Name of the route.',
       () => [],
       true,
       false,

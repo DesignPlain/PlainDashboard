@@ -3,49 +3,49 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudbuild_TriggerRepositoryEventConfig,
   cloudbuild_TriggerRepositoryEventConfig_GetTypes,
-} from "../types/cloudbuild_TriggerRepositoryEventConfig";
+} from '../types/cloudbuild_TriggerRepositoryEventConfig';
 import {
   cloudbuild_TriggerPubsubConfig,
   cloudbuild_TriggerPubsubConfig_GetTypes,
-} from "../types/cloudbuild_TriggerPubsubConfig";
+} from '../types/cloudbuild_TriggerPubsubConfig';
 import {
   cloudbuild_TriggerBitbucketServerTriggerConfig,
   cloudbuild_TriggerBitbucketServerTriggerConfig_GetTypes,
-} from "../types/cloudbuild_TriggerBitbucketServerTriggerConfig";
+} from '../types/cloudbuild_TriggerBitbucketServerTriggerConfig';
 import {
   cloudbuild_TriggerBuild,
   cloudbuild_TriggerBuild_GetTypes,
-} from "../types/cloudbuild_TriggerBuild";
+} from '../types/cloudbuild_TriggerBuild';
 import {
   cloudbuild_TriggerWebhookConfig,
   cloudbuild_TriggerWebhookConfig_GetTypes,
-} from "../types/cloudbuild_TriggerWebhookConfig";
+} from '../types/cloudbuild_TriggerWebhookConfig';
 import {
   cloudbuild_TriggerApprovalConfig,
   cloudbuild_TriggerApprovalConfig_GetTypes,
-} from "../types/cloudbuild_TriggerApprovalConfig";
+} from '../types/cloudbuild_TriggerApprovalConfig';
 import {
   cloudbuild_TriggerGithub,
   cloudbuild_TriggerGithub_GetTypes,
-} from "../types/cloudbuild_TriggerGithub";
+} from '../types/cloudbuild_TriggerGithub';
 import {
   cloudbuild_TriggerSourceToBuild,
   cloudbuild_TriggerSourceToBuild_GetTypes,
-} from "../types/cloudbuild_TriggerSourceToBuild";
+} from '../types/cloudbuild_TriggerSourceToBuild';
 import {
   cloudbuild_TriggerTriggerTemplate,
   cloudbuild_TriggerTriggerTemplate_GetTypes,
-} from "../types/cloudbuild_TriggerTriggerTemplate";
+} from '../types/cloudbuild_TriggerTriggerTemplate';
 import {
   cloudbuild_TriggerGitFileSource,
   cloudbuild_TriggerGitFileSource_GetTypes,
-} from "../types/cloudbuild_TriggerGitFileSource";
+} from '../types/cloudbuild_TriggerGitFileSource';
 
 export interface TriggerArgs {
   /*
@@ -365,135 +365,135 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "includeBuildLogs",
-        "Build logs will be sent back to GitHub as part of the checkrun\nresult.  Values can be INCLUDE_BUILD_LOGS_UNSPECIFIED or\nINCLUDE_BUILD_LOGS_WITH_STATUS\nPossible values are: `INCLUDE_BUILD_LOGS_UNSPECIFIED`, `INCLUDE_BUILD_LOGS_WITH_STATUS`.",
+        'includeBuildLogs',
+        'Build logs will be sent back to GitHub as part of the checkrun\nresult.  Values can be INCLUDE_BUILD_LOGS_UNSPECIFIED or\nINCLUDE_BUILD_LOGS_WITH_STATUS\nPossible values are: `INCLUDE_BUILD_LOGS_UNSPECIFIED`, `INCLUDE_BUILD_LOGS_WITH_STATUS`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "approvalConfig",
-        "Configuration for manual approval to start a build invocation of this BuildTrigger.\nBuilds created by this trigger will require approval before they execute.\nAny user with a Cloud Build Approver role for the project can approve a build.\nStructure is documented below.",
+        'approvalConfig',
+        'Configuration for manual approval to start a build invocation of this BuildTrigger.\nBuilds created by this trigger will require approval before they execute.\nAny user with a Cloud Build Approver role for the project can approve a build.\nStructure is documented below.',
         () => cloudbuild_TriggerApprovalConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "filename",
-        "Path, from the source root, to a file whose contents is used for the template.\nEither a filename or build template must be provided. Set this only when using trigger_template or github.\nWhen using Pub/Sub, Webhook or Manual set the file name using git_file_source instead.",
+        'filename',
+        'Path, from the source root, to a file whose contents is used for the template.\nEither a filename or build template must be provided. Set this only when using trigger_template or github.\nWhen using Pub/Sub, Webhook or Manual set the file name using git_file_source instead.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the trigger. Must be unique within the project.",
+        'name',
+        'Name of the trigger. Must be unique within the project.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "bitbucketServerTriggerConfig",
-        "BitbucketServerTriggerConfig describes the configuration of a trigger that creates a build whenever a Bitbucket Server event is received.\nStructure is documented below.",
+        'bitbucketServerTriggerConfig',
+        'BitbucketServerTriggerConfig describes the configuration of a trigger that creates a build whenever a Bitbucket Server event is received.\nStructure is documented below.',
         () => cloudbuild_TriggerBitbucketServerTriggerConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "disabled",
-        "Whether the trigger is disabled or not. If true, the trigger will never result in a build.",
+        'disabled',
+        'Whether the trigger is disabled or not. If true, the trigger will never result in a build.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "gitFileSource",
-        "The file source describing the local or remote Build template.\nStructure is documented below.",
+        'gitFileSource',
+        'The file source describing the local or remote Build template.\nStructure is documented below.',
         () => cloudbuild_TriggerGitFileSource_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "build",
-        "Contents of the build template. Either a filename or build template must be provided.\nStructure is documented below.",
+        'build',
+        'Contents of the build template. Either a filename or build template must be provided.\nStructure is documented below.',
         () => cloudbuild_TriggerBuild_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "substitutions",
-        "Substitutions data for Build resource.",
+        'substitutions',
+        'Substitutions data for Build resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ignoredFiles",
-        "ignoredFiles and includedFiles are file glob matches using https://golang.org/pkg/path/filepath/#Match\nextended with support for `**`.\nIf ignoredFiles and changed files are both empty, then they are not\nused to determine whether or not to trigger a build.\nIf ignoredFiles is not empty, then we ignore any files that match any\nof the ignored_file globs. If the change has no files that are outside\nof the ignoredFiles globs, then we do not trigger a build.",
+        'ignoredFiles',
+        'ignoredFiles and includedFiles are file glob matches using https://golang.org/pkg/path/filepath/#Match\nextended with support for `**`.\nIf ignoredFiles and changed files are both empty, then they are not\nused to determine whether or not to trigger a build.\nIf ignoredFiles is not empty, then we ignore any files that match any\nof the ignored_file globs. If the change has no files that are outside\nof the ignoredFiles globs, then we do not trigger a build.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "repositoryEventConfig",
-        "The configuration of a trigger that creates a build whenever an event from Repo API is received.\nStructure is documented below.",
+        'repositoryEventConfig',
+        'The configuration of a trigger that creates a build whenever an event from Repo API is received.\nStructure is documented below.',
         () => cloudbuild_TriggerRepositoryEventConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "triggerTemplate",
-        "Template describing the types of source changes to trigger a build.\nBranch and tag names in trigger templates are interpreted as regular\nexpressions. Any branch or tag change that matches that regular\nexpression will trigger a build.\nOne of `trigger_template`, `github`, `pubsub_config`, `webhook_config` or `source_to_build` must be provided.\nStructure is documented below.",
+        'triggerTemplate',
+        'Template describing the types of source changes to trigger a build.\nBranch and tag names in trigger templates are interpreted as regular\nexpressions. Any branch or tag change that matches that regular\nexpression will trigger a build.\nOne of `trigger_template`, `github`, `pubsub_config`, `webhook_config` or `source_to_build` must be provided.\nStructure is documented below.',
         () => cloudbuild_TriggerTriggerTemplate_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceAccount",
-        "The service account used for all user-controlled operations including\ntriggers.patch, triggers.run, builds.create, and builds.cancel.\nIf no service account is set, then the standard Cloud Build service account\n([PROJECT_NUM]@system.gserviceaccount.com) will be used instead.\nFormat: projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}",
+        'serviceAccount',
+        'The service account used for all user-controlled operations including\ntriggers.patch, triggers.run, builds.create, and builds.cancel.\nIf no service account is set, then the standard Cloud Build service account\n([PROJECT_NUM]@system.gserviceaccount.com) will be used instead.\nFormat: projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "sourceToBuild",
-        "The repo and ref of the repository from which to build.\nThis field is used only for those triggers that do not respond to SCM events.\nTriggers that respond to such events build source at whatever commit caused the event.\nThis field is currently only used by Webhook, Pub/Sub, Manual, and Cron triggers.\nOne of `trigger_template`, `github`, `pubsub_config` `webhook_config` or `source_to_build` must be provided.\nStructure is documented below.",
+        'sourceToBuild',
+        'The repo and ref of the repository from which to build.\nThis field is used only for those triggers that do not respond to SCM events.\nTriggers that respond to such events build source at whatever commit caused the event.\nThis field is currently only used by Webhook, Pub/Sub, Manual, and Cron triggers.\nOne of `trigger_template`, `github`, `pubsub_config` `webhook_config` or `source_to_build` must be provided.\nStructure is documented below.',
         () => cloudbuild_TriggerSourceToBuild_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Human-readable description of the trigger.",
+        'description',
+        'Human-readable description of the trigger.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
+        'location',
         'The [Cloud Build location](https://cloud.google.com/build/docs/locations) for the trigger.\nIf not specified, "global" is used.',
         () => [],
         false,
@@ -501,31 +501,31 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "github",
-        "Describes the configuration of a trigger that creates a build whenever a GitHub event is received.\nOne of `trigger_template`, `github`, `pubsub_config` or `webhook_config` must be provided.\nStructure is documented below.",
+        'github',
+        'Describes the configuration of a trigger that creates a build whenever a GitHub event is received.\nOne of `trigger_template`, `github`, `pubsub_config` or `webhook_config` must be provided.\nStructure is documented below.',
         () => cloudbuild_TriggerGithub_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "filter",
-        "A Common Expression Language string. Used only with Pub/Sub and Webhook.",
+        'filter',
+        'A Common Expression Language string. Used only with Pub/Sub and Webhook.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "includedFiles",
-        "ignoredFiles and includedFiles are file glob matches using https://golang.org/pkg/path/filepath/#Match\nextended with support for `**`.\nIf any of the files altered in the commit pass the ignoredFiles filter\nand includedFiles is empty, then as far as this filter is concerned, we\nshould trigger the build.\nIf any of the files altered in the commit pass the ignoredFiles filter\nand includedFiles is not empty, then we make sure that at least one of\nthose files matches a includedFiles glob. If not, then we do not trigger\na build.",
+        'includedFiles',
+        'ignoredFiles and includedFiles are file glob matches using https://golang.org/pkg/path/filepath/#Match\nextended with support for `**`.\nIf any of the files altered in the commit pass the ignoredFiles filter\nand includedFiles is empty, then as far as this filter is concerned, we\nshould trigger the build.\nIf any of the files altered in the commit pass the ignoredFiles filter\nand includedFiles is not empty, then we make sure that at least one of\nthose files matches a includedFiles glob. If not, then we do not trigger\na build.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "webhookConfig",
+        'webhookConfig',
         "WebhookConfig describes the configuration of a trigger that creates\na build whenever a webhook is sent to a trigger's webhook URL.\nOne of `trigger_template`, `github`, `pubsub_config` `webhook_config` or `source_to_build` must be provided.\nStructure is documented below.",
         () => cloudbuild_TriggerWebhookConfig_GetTypes(),
         false,
@@ -533,16 +533,16 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "pubsubConfig",
-        "PubsubConfig describes the configuration of a trigger that creates\na build whenever a Pub/Sub message is published.\nOne of `trigger_template`, `github`, `pubsub_config` `webhook_config` or `source_to_build` must be provided.\nStructure is documented below.",
+        'pubsubConfig',
+        'PubsubConfig describes the configuration of a trigger that creates\na build whenever a Pub/Sub message is published.\nOne of `trigger_template`, `github`, `pubsub_config` `webhook_config` or `source_to_build` must be provided.\nStructure is documented below.',
         () => cloudbuild_TriggerPubsubConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "tags",
-        "Tags for annotation of a BuildTrigger",
+        'tags',
+        'Tags for annotation of a BuildTrigger',
         () => InputType_String_GetTypes(),
         false,
         false,

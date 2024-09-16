@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface imagebuilder_getImageRecipeComponentParameter {
   // Name of the image recipe.
@@ -18,16 +18,16 @@ export function imagebuilder_getImageRecipeComponentParameter_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the image recipe.",
+      'name',
+      'Name of the image recipe.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "Value of the component parameter.",
+      'value',
+      'Value of the component parameter.',
       () => [],
       true,
       false,

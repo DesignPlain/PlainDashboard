@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface alloydb_ClusterAutomatedBackupPolicyWeeklyScheduleStartTime {
   // Fractions of seconds in nanoseconds. Currently, only the value 0 is supported.
@@ -24,15 +24,15 @@ export function alloydb_ClusterAutomatedBackupPolicyWeeklyScheduleStartTime_GetT
   return [
     new DynamicUIProps(
       InputType.Number,
-      "seconds",
-      "Seconds of minutes of the time. Currently, only the value 0 is supported.",
+      'seconds',
+      'Seconds of minutes of the time. Currently, only the value 0 is supported.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "hours",
+      'hours',
       'Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.',
       () => [],
       false,
@@ -40,16 +40,16 @@ export function alloydb_ClusterAutomatedBackupPolicyWeeklyScheduleStartTime_GetT
     ),
     new DynamicUIProps(
       InputType.Number,
-      "minutes",
-      "Minutes of hour of day. Currently, only the value 0 is supported.",
+      'minutes',
+      'Minutes of hour of day. Currently, only the value 0 is supported.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "nanos",
-      "Fractions of seconds in nanoseconds. Currently, only the value 0 is supported.",
+      'nanos',
+      'Fractions of seconds in nanoseconds. Currently, only the value 0 is supported.',
       () => [],
       false,
       false,

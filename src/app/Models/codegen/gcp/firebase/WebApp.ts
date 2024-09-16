@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface WebAppArgs {
   /*
@@ -82,7 +82,7 @@ projects/projectId/webApps/appId
     return [
       new DynamicUIProps(
         InputType.String,
-        "deletionPolicy",
+        'deletionPolicy',
         "Set to 'ABANDON' to allow the WebApp to be untracked from terraform state rather than deleted upon 'terraform destroy'.\nThis is useful becaue the WebApp may be serving traffic. Set to 'DELETE' to delete the WebApp. Default to 'DELETE'",
         () => [],
         false,
@@ -90,24 +90,24 @@ projects/projectId/webApps/appId
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The user-assigned display name of the App.\n\n\n- - -",
+        'displayName',
+        'The user-assigned display name of the App.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "apiKeyId",
-        "The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the WebApp.\nIf apiKeyId is not set during creation, then Firebase automatically associates an apiKeyId with the WebApp.\nThis auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned.",
+        'apiKeyId',
+        'The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the WebApp.\nIf apiKeyId is not set during creation, then Firebase automatically associates an apiKeyId with the WebApp.\nThis auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned.',
         () => [],
         false,
         false,

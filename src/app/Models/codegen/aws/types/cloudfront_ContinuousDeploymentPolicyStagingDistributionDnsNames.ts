@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudfront_ContinuousDeploymentPolicyStagingDistributionDnsNames {
   // A list of CloudFront domain names for the staging distribution.
@@ -18,16 +18,16 @@ export function cloudfront_ContinuousDeploymentPolicyStagingDistributionDnsNames
   return [
     new DynamicUIProps(
       InputType.Array,
-      "items",
-      "A list of CloudFront domain names for the staging distribution.",
+      'items',
+      'A list of CloudFront domain names for the staging distribution.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "quantity",
-      "Number of CloudFront domain names in the staging distribution.",
+      'quantity',
+      'Number of CloudFront domain names in the staging distribution.',
       () => [],
       true,
       false,

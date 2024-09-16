@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface batch_JobQueueJobStateTimeLimitAction {
   /*
@@ -27,15 +27,15 @@ export function batch_JobQueueJobStateTimeLimitAction_GetTypes(): DynamicUIProps
   return [
     new DynamicUIProps(
       InputType.String,
-      "reason",
-      "The reason to log for the action being taken.",
+      'reason',
+      'The reason to log for the action being taken.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "state",
+      'state',
       'The state of the job needed to trigger the action. Valid values include `"RUNNABLE"`.',
       () => [],
       true,
@@ -43,7 +43,7 @@ export function batch_JobQueueJobStateTimeLimitAction_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "action",
+      'action',
       'The action to take when a job is at the head of the job queue in the specified state for the specified period of time. Valid values include `"CANCEL"`\n* `job_state_time_limit_action.#.max_time_seconds` - The approximate amount of time, in seconds, that must pass with the job in the specified state before the action is taken. Valid values include integers between `600` & `86400`',
       () => [],
       true,
@@ -51,8 +51,8 @@ export function batch_JobQueueJobStateTimeLimitAction_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxTimeSeconds",
-      "",
+      'maxTimeSeconds',
+      '',
       () => [],
       true,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface lb_LoadBalancerAccessLogs {
   // S3 bucket name to store the logs in.
@@ -21,24 +21,24 @@ export function lb_LoadBalancerAccessLogs_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "bucket",
-      "S3 bucket name to store the logs in.",
+      'bucket',
+      'S3 bucket name to store the logs in.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
-      "Boolean to enable / disable `access_logs`. Defaults to `false`, even when `bucket` is specified.",
+      'enabled',
+      'Boolean to enable / disable `access_logs`. Defaults to `false`, even when `bucket` is specified.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "prefix",
-      "S3 bucket prefix. Logs are stored in the root if not configured.",
+      'prefix',
+      'S3 bucket prefix. Logs are stored in the root if not configured.',
       () => [],
       false,
       false,

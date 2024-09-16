@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface NamedQueryArgs {
   // Database to which the query belongs.
@@ -43,40 +43,40 @@ export class NamedQuery extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "database",
-        "Database to which the query belongs.",
+        'database',
+        'Database to which the query belongs.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Brief explanation of the query. Maximum length of 1024.",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "name",
-        "Plain language name for the query. Maximum length of 128.",
+        'description',
+        'Brief explanation of the query. Maximum length of 1024.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "query",
-        "Text of the query itself. In other words, all query statements. Maximum length of 262144.",
+        'name',
+        'Plain language name for the query. Maximum length of 128.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'query',
+        'Text of the query itself. In other words, all query statements. Maximum length of 262144.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "workgroup",
-        "Workgroup to which the query belongs. Defaults to `primary`",
+        'workgroup',
+        'Workgroup to which the query belongs. Defaults to `primary`',
         () => [],
         false,
         true,

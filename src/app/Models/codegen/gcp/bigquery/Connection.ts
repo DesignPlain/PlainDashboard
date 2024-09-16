@@ -3,33 +3,33 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bigquery_ConnectionAzure,
   bigquery_ConnectionAzure_GetTypes,
-} from "../types/bigquery_ConnectionAzure";
+} from '../types/bigquery_ConnectionAzure';
 import {
   bigquery_ConnectionCloudResource,
   bigquery_ConnectionCloudResource_GetTypes,
-} from "../types/bigquery_ConnectionCloudResource";
+} from '../types/bigquery_ConnectionCloudResource';
 import {
   bigquery_ConnectionCloudSpanner,
   bigquery_ConnectionCloudSpanner_GetTypes,
-} from "../types/bigquery_ConnectionCloudSpanner";
+} from '../types/bigquery_ConnectionCloudSpanner';
 import {
   bigquery_ConnectionSpark,
   bigquery_ConnectionSpark_GetTypes,
-} from "../types/bigquery_ConnectionSpark";
+} from '../types/bigquery_ConnectionSpark';
 import {
   bigquery_ConnectionAws,
   bigquery_ConnectionAws_GetTypes,
-} from "../types/bigquery_ConnectionAws";
+} from '../types/bigquery_ConnectionAws';
 import {
   bigquery_ConnectionCloudSql,
   bigquery_ConnectionCloudSql_GetTypes,
-} from "../types/bigquery_ConnectionCloudSql";
+} from '../types/bigquery_ConnectionCloudSql';
 
 export interface ConnectionArgs {
   /*
@@ -170,88 +170,88 @@ The resource name of the connection in the form of:
     return [
       new DynamicUIProps(
         InputType.Object,
-        "cloudResource",
-        "Container for connection properties for delegation of access to GCP resources.\nStructure is documented below.",
+        'cloudResource',
+        'Container for connection properties for delegation of access to GCP resources.\nStructure is documented below.',
         () => bigquery_ConnectionCloudResource_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "spark",
-        "Container for connection properties to execute stored procedures for Apache Spark. resources.\nStructure is documented below.",
+        'spark',
+        'Container for connection properties to execute stored procedures for Apache Spark. resources.\nStructure is documented below.',
         () => bigquery_ConnectionSpark_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cloudSql",
-        "Connection properties specific to the Cloud SQL.\nStructure is documented below.",
+        'cloudSql',
+        'Connection properties specific to the Cloud SQL.\nStructure is documented below.',
         () => bigquery_ConnectionCloudSql_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "azure",
-        "Container for connection properties specific to Azure.\nStructure is documented below.",
+        'azure',
+        'Container for connection properties specific to Azure.\nStructure is documented below.',
         () => bigquery_ConnectionAzure_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cloudSpanner",
-        "Connection properties specific to Cloud Spanner\nStructure is documented below.",
+        'cloudSpanner',
+        'Connection properties specific to Cloud Spanner\nStructure is documented below.',
         () => bigquery_ConnectionCloudSpanner_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "connectionId",
-        "Optional connection id that should be assigned to the created connection.",
+        'connectionId',
+        'Optional connection id that should be assigned to the created connection.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "friendlyName",
-        "A descriptive name for the connection",
+        'friendlyName',
+        'A descriptive name for the connection',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The geographic location where the connection should reside.\nCloud SQL instance must be in the same location as the connection\nwith following exceptions: Cloud SQL us-central1 maps to BigQuery US, Cloud SQL europe-west1 maps to BigQuery EU.\nExamples: US, EU, asia-northeast1, us-central1, europe-west1.\nSpanner Connections same as spanner region\nAWS allowed regions are aws-us-east-1\nAzure allowed regions are azure-eastus2",
+        'location',
+        'The geographic location where the connection should reside.\nCloud SQL instance must be in the same location as the connection\nwith following exceptions: Cloud SQL us-central1 maps to BigQuery US, Cloud SQL europe-west1 maps to BigQuery EU.\nExamples: US, EU, asia-northeast1, us-central1, europe-west1.\nSpanner Connections same as spanner region\nAWS allowed regions are aws-us-east-1\nAzure allowed regions are azure-eastus2',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "aws",
-        "Connection properties specific to Amazon Web Services.\nStructure is documented below.",
+        'aws',
+        'Connection properties specific to Amazon Web Services.\nStructure is documented below.',
         () => bigquery_ConnectionAws_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A descriptive description for the connection",
+        'description',
+        'A descriptive description for the connection',
         () => [],
         false,
         false,

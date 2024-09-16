@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_NetworkInsightsAnalysisForwardPathComponentAdditionalDetailComponent,
   ec2_NetworkInsightsAnalysisForwardPathComponentAdditionalDetailComponent_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisForwardPathComponentAdditionalDetailComponent";
+} from './ec2_NetworkInsightsAnalysisForwardPathComponentAdditionalDetailComponent';
 
 export interface ec2_NetworkInsightsAnalysisForwardPathComponentAdditionalDetail {
   //
@@ -22,16 +22,16 @@ export function ec2_NetworkInsightsAnalysisForwardPathComponentAdditionalDetail_
   return [
     new DynamicUIProps(
       InputType.String,
-      "additionalDetailType",
-      "",
+      'additionalDetailType',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "components",
-      "",
+      'components',
+      '',
       () =>
         ec2_NetworkInsightsAnalysisForwardPathComponentAdditionalDetailComponent_GetTypes(),
       false,

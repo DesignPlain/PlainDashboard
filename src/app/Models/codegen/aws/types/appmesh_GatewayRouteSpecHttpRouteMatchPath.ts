@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appmesh_GatewayRouteSpecHttpRouteMatchPath {
   // The exact path to match on.
@@ -18,16 +18,16 @@ export function appmesh_GatewayRouteSpecHttpRouteMatchPath_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.String,
-      "regex",
-      "The regex used to match the path.",
+      'regex',
+      'The regex used to match the path.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "exact",
-      "The exact path to match on.",
+      'exact',
+      'The exact path to match on.',
       () => [],
       false,
       false,

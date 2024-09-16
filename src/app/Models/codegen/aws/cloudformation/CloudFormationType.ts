@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudformation_CloudFormationTypeLoggingConfig,
   cloudformation_CloudFormationTypeLoggingConfig_GetTypes,
-} from "../types/cloudformation_CloudFormationTypeLoggingConfig";
+} from '../types/cloudformation_CloudFormationTypeLoggingConfig';
 
 export interface CloudFormationTypeArgs {
   // Configuration block containing logging configuration.
@@ -83,40 +83,40 @@ export class CloudFormationType extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "typeName",
-        "CloudFormation Type name. For example, `ExampleCompany::ExampleService::ExampleResource`.",
+        'typeName',
+        'CloudFormation Type name. For example, `ExampleCompany::ExampleService::ExampleResource`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "executionRoleArn",
-        "Amazon Resource Name (ARN) of the IAM Role for CloudFormation to assume when invoking the extension. If your extension calls AWS APIs in any of its handlers, you must create an IAM execution role that includes the necessary permissions to call those AWS APIs, and provision that execution role in your account. When CloudFormation needs to invoke the extension handler, CloudFormation assumes this execution role to create a temporary session token, which it then passes to the extension handler, thereby supplying your extension with the appropriate credentials.",
+        'executionRoleArn',
+        'Amazon Resource Name (ARN) of the IAM Role for CloudFormation to assume when invoking the extension. If your extension calls AWS APIs in any of its handlers, you must create an IAM execution role that includes the necessary permissions to call those AWS APIs, and provision that execution role in your account. When CloudFormation needs to invoke the extension handler, CloudFormation assumes this execution role to create a temporary session token, which it then passes to the extension handler, thereby supplying your extension with the appropriate credentials.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "loggingConfig",
-        "Configuration block containing logging configuration.",
+        'loggingConfig',
+        'Configuration block containing logging configuration.',
         () => cloudformation_CloudFormationTypeLoggingConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "schemaHandlerPackage",
-        "URL to the S3 bucket containing the extension project package that contains the necessary files for the extension you want to register. Must begin with `s3://` or `https://`. For example, `s3://example-bucket/example-object`.",
+        'schemaHandlerPackage',
+        'URL to the S3 bucket containing the extension project package that contains the necessary files for the extension you want to register. Must begin with `s3://` or `https://`. For example, `s3://example-bucket/example-object`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "CloudFormation Registry Type. For example, `RESOURCE` or `MODULE`.",
+        'type',
+        'CloudFormation Registry Type. For example, `RESOURCE` or `MODULE`.',
         () => [],
         false,
         true,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_getClusterDatabaseEncryption {
   // The key to use to encrypt/decrypt secrets.
@@ -18,16 +18,16 @@ export function container_getClusterDatabaseEncryption_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.String,
-      "keyName",
-      "The key to use to encrypt/decrypt secrets.",
+      'keyName',
+      'The key to use to encrypt/decrypt secrets.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "state",
-      "ENCRYPTED or DECRYPTED.",
+      'state',
+      'ENCRYPTED or DECRYPTED.',
       () => [],
       true,
       false,

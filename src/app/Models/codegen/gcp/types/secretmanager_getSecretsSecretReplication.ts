@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   secretmanager_getSecretsSecretReplicationAuto,
   secretmanager_getSecretsSecretReplicationAuto_GetTypes,
-} from "./secretmanager_getSecretsSecretReplicationAuto";
+} from './secretmanager_getSecretsSecretReplicationAuto';
 import {
   secretmanager_getSecretsSecretReplicationUserManaged,
   secretmanager_getSecretsSecretReplicationUserManaged_GetTypes,
-} from "./secretmanager_getSecretsSecretReplicationUserManaged";
+} from './secretmanager_getSecretsSecretReplicationUserManaged';
 
 export interface secretmanager_getSecretsSecretReplication {
   /*
@@ -32,16 +32,16 @@ export function secretmanager_getSecretsSecretReplication_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Array,
-      "autos",
-      "The Secret will automatically be replicated without any restrictions.\nStructure is documented below.",
+      'autos',
+      'The Secret will automatically be replicated without any restrictions.\nStructure is documented below.',
       () => secretmanager_getSecretsSecretReplicationAuto_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "userManageds",
-      "The Secret will be replicated to the regions specified by the user.\nStructure is documented below.",
+      'userManageds',
+      'The Secret will be replicated to the regions specified by the user.\nStructure is documented below.',
       () => secretmanager_getSecretsSecretReplicationUserManaged_GetTypes(),
       true,
       false,

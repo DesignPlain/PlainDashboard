@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   artifactregistry_getRepositoryVirtualRepositoryConfigUpstreamPolicy,
   artifactregistry_getRepositoryVirtualRepositoryConfigUpstreamPolicy_GetTypes,
-} from "./artifactregistry_getRepositoryVirtualRepositoryConfigUpstreamPolicy";
+} from './artifactregistry_getRepositoryVirtualRepositoryConfigUpstreamPolicy';
 
 export interface artifactregistry_getRepositoryVirtualRepositoryConfig {
   /*
@@ -22,8 +22,8 @@ export function artifactregistry_getRepositoryVirtualRepositoryConfig_GetTypes()
   return [
     new DynamicUIProps(
       InputType.Array,
-      "upstreamPolicies",
-      "Policies that configure the upstream artifacts distributed by the Virtual\nRepository. Upstream policies cannot be set on a standard repository.",
+      'upstreamPolicies',
+      'Policies that configure the upstream artifacts distributed by the Virtual\nRepository. Upstream policies cannot be set on a standard repository.',
       () =>
         artifactregistry_getRepositoryVirtualRepositoryConfigUpstreamPolicy_GetTypes(),
       true,

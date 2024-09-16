@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface HostedZoneDnsSecArgs {
   /*
@@ -33,16 +33,16 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "hostedZoneId",
-        "Identifier of the Route 53 Hosted Zone.\n\nThe following arguments are optional:",
+        'hostedZoneId',
+        'Identifier of the Route 53 Hosted Zone.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "signingStatus",
-        "Hosted Zone signing status. Valid values: `SIGNING`, `NOT_SIGNING`. Defaults to `SIGNING`.",
+        'signingStatus',
+        'Hosted Zone signing status. Valid values: `SIGNING`, `NOT_SIGNING`. Defaults to `SIGNING`.',
         () => [],
         false,
         false,

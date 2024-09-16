@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ScheduleGroupArgs {
   // Name of the schedule group. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`.
@@ -46,24 +46,24 @@ export class ScheduleGroup extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the schedule group. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`.",
+        'name',
+        'Name of the schedule group. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "namePrefix",
-        "Creates a unique name beginning with the specified prefix. Conflicts with `name`.",
+        'namePrefix',
+        'Creates a unique name beginning with the specified prefix. Conflicts with `name`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

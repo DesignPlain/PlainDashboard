@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface kendra_ExperienceConfigurationContentSourceConfiguration {
   // The identifiers of the data sources you want to use for your Amazon Kendra experience. Maximum number of 100 items.
@@ -21,24 +21,24 @@ export function kendra_ExperienceConfigurationContentSourceConfiguration_GetType
   return [
     new DynamicUIProps(
       InputType.Array,
-      "dataSourceIds",
-      "The identifiers of the data sources you want to use for your Amazon Kendra experience. Maximum number of 100 items.",
+      'dataSourceIds',
+      'The identifiers of the data sources you want to use for your Amazon Kendra experience. Maximum number of 100 items.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "directPutContent",
-      "Whether to use documents you indexed directly using the `BatchPutDocument API`. Defaults to `false`.",
+      'directPutContent',
+      'Whether to use documents you indexed directly using the `BatchPutDocument API`. Defaults to `false`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "faqIds",
-      "The identifier of the FAQs that you want to use for your Amazon Kendra experience. Maximum number of 100 items.",
+      'faqIds',
+      'The identifier of the FAQs that you want to use for your Amazon Kendra experience. Maximum number of 100 items.',
       () => InputType_String_GetTypes(),
       false,
       false,

@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudasset_FolderFeedFeedOutputConfig,
   cloudasset_FolderFeedFeedOutputConfig_GetTypes,
-} from "../types/cloudasset_FolderFeedFeedOutputConfig";
+} from '../types/cloudasset_FolderFeedFeedOutputConfig';
 import {
   cloudasset_FolderFeedCondition,
   cloudasset_FolderFeedCondition_GetTypes,
-} from "../types/cloudasset_FolderFeedCondition";
+} from '../types/cloudasset_FolderFeedCondition';
 
 export interface FolderFeedArgs {
   /*
@@ -134,31 +134,31 @@ enablement check, quota, and billing.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "feedOutputConfig",
-        "Output configuration for asset feed destination.\nStructure is documented below.",
+        'feedOutputConfig',
+        'Output configuration for asset feed destination.\nStructure is documented below.',
         () => cloudasset_FolderFeedFeedOutputConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "folder",
-        "The folder this feed should be created in.",
+        'folder',
+        'The folder this feed should be created in.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "assetNames",
-        "A list of the full names of the assets to receive updates. You must specify either or both of\nassetNames and assetTypes. Only asset updates matching specified assetNames and assetTypes are\nexported to the feed. For example: //compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1.\nSee https://cloud.google.com/apis/design/resourceNames#fullResourceName for more info.",
+        'assetNames',
+        'A list of the full names of the assets to receive updates. You must specify either or both of\nassetNames and assetTypes. Only asset updates matching specified assetNames and assetTypes are\nexported to the feed. For example: //compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1.\nSee https://cloud.google.com/apis/design/resourceNames#fullResourceName for more info.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "assetTypes",
+        'assetTypes',
         'A list of types of the assets to receive updates. You must specify either or both of assetNames\nand assetTypes. Only asset updates matching specified assetNames and assetTypes are exported to\nthe feed. For example: "compute.googleapis.com/Disk"\nSee https://cloud.google.com/asset-inventory/docs/supported-asset-types for a list of all\nsupported asset types.',
         () => InputType_String_GetTypes(),
         false,
@@ -166,15 +166,15 @@ enablement check, quota, and billing.
       ),
       new DynamicUIProps(
         InputType.String,
-        "billingProject",
-        "The project whose identity will be used when sending messages to the\ndestination pubsub topic. It also specifies the project for API\nenablement check, quota, and billing.",
+        'billingProject',
+        'The project whose identity will be used when sending messages to the\ndestination pubsub topic. It also specifies the project for API\nenablement check, quota, and billing.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "condition",
+        'condition',
         'A condition which determines whether an asset update should be published. If specified, an asset\nwill be returned only when the expression evaluates to true. When set, expression field\nmust be a valid CEL expression on a TemporalAsset with name temporal_asset. Example: a Feed with\nexpression "temporal_asset.deleted == true" will only publish Asset deletions. Other fields of\ncondition are optional.\nStructure is documented below.',
         () => cloudasset_FolderFeedCondition_GetTypes(),
         false,
@@ -182,16 +182,16 @@ enablement check, quota, and billing.
       ),
       new DynamicUIProps(
         InputType.String,
-        "contentType",
-        "Asset content type. If not specified, no content but the asset name and type will be returned.\nPossible values are: `CONTENT_TYPE_UNSPECIFIED`, `RESOURCE`, `IAM_POLICY`, `ORG_POLICY`, `OS_INVENTORY`, `ACCESS_POLICY`.",
+        'contentType',
+        'Asset content type. If not specified, no content but the asset name and type will be returned.\nPossible values are: `CONTENT_TYPE_UNSPECIFIED`, `RESOURCE`, `IAM_POLICY`, `ORG_POLICY`, `OS_INVENTORY`, `ACCESS_POLICY`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "feedId",
-        "This is the client-assigned asset feed identifier and it needs to be unique under a specific parent.",
+        'feedId',
+        'This is the client-assigned asset feed identifier and it needs to be unique under a specific parent.',
         () => [],
         true,
         true,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   opensearch_DomainAdvancedSecurityOptionsMasterUserOptions,
   opensearch_DomainAdvancedSecurityOptionsMasterUserOptions_GetTypes,
-} from "./opensearch_DomainAdvancedSecurityOptionsMasterUserOptions";
+} from './opensearch_DomainAdvancedSecurityOptionsMasterUserOptions';
 
 export interface opensearch_DomainAdvancedSecurityOptions {
   // Whether advanced security is enabled.
@@ -28,24 +28,24 @@ export function opensearch_DomainAdvancedSecurityOptions_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
-      "Whether advanced security is enabled.",
+      'enabled',
+      'Whether advanced security is enabled.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "internalUserDatabaseEnabled",
-      "Whether the internal user database is enabled. Default is `false`.",
+      'internalUserDatabaseEnabled',
+      'Whether the internal user database is enabled. Default is `false`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "masterUserOptions",
-      "Configuration block for the main user. Detailed below.",
+      'masterUserOptions',
+      'Configuration block for the main user. Detailed below.',
       () =>
         opensearch_DomainAdvancedSecurityOptionsMasterUserOptions_GetTypes(),
       false,
@@ -53,8 +53,8 @@ export function opensearch_DomainAdvancedSecurityOptions_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "anonymousAuthEnabled",
-      "Whether Anonymous auth is enabled. Enables fine-grained access control on an existing domain. Ignored unless `advanced_security_options` are enabled. _Can only be enabled on an existing domain._",
+      'anonymousAuthEnabled',
+      'Whether Anonymous auth is enabled. Enables fine-grained access control on an existing domain. Ignored unless `advanced_security_options` are enabled. _Can only be enabled on an existing domain._',
       () => [],
       false,
       false,

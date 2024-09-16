@@ -3,37 +3,37 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataproc_MetastoreServiceTelemetryConfig,
   dataproc_MetastoreServiceTelemetryConfig_GetTypes,
-} from "../types/dataproc_MetastoreServiceTelemetryConfig";
+} from '../types/dataproc_MetastoreServiceTelemetryConfig';
 import {
   dataproc_MetastoreServiceScalingConfig,
   dataproc_MetastoreServiceScalingConfig_GetTypes,
-} from "../types/dataproc_MetastoreServiceScalingConfig";
+} from '../types/dataproc_MetastoreServiceScalingConfig';
 import {
   dataproc_MetastoreServiceEncryptionConfig,
   dataproc_MetastoreServiceEncryptionConfig_GetTypes,
-} from "../types/dataproc_MetastoreServiceEncryptionConfig";
+} from '../types/dataproc_MetastoreServiceEncryptionConfig';
 import {
   dataproc_MetastoreServiceMaintenanceWindow,
   dataproc_MetastoreServiceMaintenanceWindow_GetTypes,
-} from "../types/dataproc_MetastoreServiceMaintenanceWindow";
+} from '../types/dataproc_MetastoreServiceMaintenanceWindow';
 import {
   dataproc_MetastoreServiceMetadataIntegration,
   dataproc_MetastoreServiceMetadataIntegration_GetTypes,
-} from "../types/dataproc_MetastoreServiceMetadataIntegration";
+} from '../types/dataproc_MetastoreServiceMetadataIntegration';
 import {
   dataproc_MetastoreServiceHiveMetastoreConfig,
   dataproc_MetastoreServiceHiveMetastoreConfig_GetTypes,
-} from "../types/dataproc_MetastoreServiceHiveMetastoreConfig";
+} from '../types/dataproc_MetastoreServiceHiveMetastoreConfig';
 import {
   dataproc_MetastoreServiceNetworkConfig,
   dataproc_MetastoreServiceNetworkConfig_GetTypes,
-} from "../types/dataproc_MetastoreServiceNetworkConfig";
+} from '../types/dataproc_MetastoreServiceNetworkConfig';
 
 export interface MetastoreServiceArgs {
   /*
@@ -277,55 +277,55 @@ The default value is `global`.
     return [
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "User-defined labels for the metastore service.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'User-defined labels for the metastore service.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "metadataIntegration",
-        "The setting that defines how metastore metadata should be integrated with external services and systems.\nStructure is documented below.",
+        'metadataIntegration',
+        'The setting that defines how metastore metadata should be integrated with external services and systems.\nStructure is documented below.',
         () => dataproc_MetastoreServiceMetadataIntegration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "databaseType",
-        "The database type that the Metastore service stores its data.\nDefault value is `MYSQL`.\nPossible values are: `MYSQL`, `SPANNER`.",
+        'databaseType',
+        'The database type that the Metastore service stores its data.\nDefault value is `MYSQL`.\nPossible values are: `MYSQL`, `SPANNER`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "releaseChannel",
-        "The release channel of the service. If unspecified, defaults to `STABLE`.\nDefault value is `STABLE`.\nPossible values are: `CANARY`, `STABLE`.",
+        'releaseChannel',
+        'The release channel of the service. If unspecified, defaults to `STABLE`.\nDefault value is `STABLE`.\nPossible values are: `CANARY`, `STABLE`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceId",
-        "The ID of the metastore service. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_),\nand hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between\n3 and 63 characters.\n\n\n- - -",
+        'serviceId',
+        'The ID of the metastore service. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_),\nand hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between\n3 and 63 characters.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "encryptionConfig",
-        "Information used to configure the Dataproc Metastore service to encrypt\ncustomer data at rest.\nStructure is documented below.",
+        'encryptionConfig',
+        'Information used to configure the Dataproc Metastore service to encrypt\ncustomer data at rest.\nStructure is documented below.',
         () => dataproc_MetastoreServiceEncryptionConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "network",
+        'network',
         'The relative resource name of the VPC network on which the instance can be accessed. It is specified in the following form:\n"projects/{projectNumber}/global/networks/{network_id}".',
         () => [],
         false,
@@ -333,72 +333,72 @@ The default value is `global`.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "port",
-        "The TCP port at which the metastore service is reached. Default: 9083.",
+        'port',
+        'The TCP port at which the metastore service is reached. Default: 9083.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "networkConfig",
-        "The configuration specifying the network settings for the Dataproc Metastore service.\nStructure is documented below.",
+        'networkConfig',
+        'The configuration specifying the network settings for the Dataproc Metastore service.\nStructure is documented below.',
         () => dataproc_MetastoreServiceNetworkConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "scalingConfig",
-        "Represents the scaling configuration of a metastore service.\nStructure is documented below.",
+        'scalingConfig',
+        'Represents the scaling configuration of a metastore service.\nStructure is documented below.',
         () => dataproc_MetastoreServiceScalingConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location where the metastore service should reside.\nThe default value is `global`.",
+        'location',
+        'The location where the metastore service should reside.\nThe default value is `global`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "maintenanceWindow",
-        "The one hour maintenance window of the metastore service.\nThis specifies when the service can be restarted for maintenance purposes in UTC time.\nMaintenance window is not needed for services with the `SPANNER` database type.\nStructure is documented below.",
+        'maintenanceWindow',
+        'The one hour maintenance window of the metastore service.\nThis specifies when the service can be restarted for maintenance purposes in UTC time.\nMaintenance window is not needed for services with the `SPANNER` database type.\nStructure is documented below.',
         () => dataproc_MetastoreServiceMaintenanceWindow_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "hiveMetastoreConfig",
-        "Configuration information specific to running Hive metastore software as the metastore service.\nStructure is documented below.",
+        'hiveMetastoreConfig',
+        'Configuration information specific to running Hive metastore software as the metastore service.\nStructure is documented below.',
         () => dataproc_MetastoreServiceHiveMetastoreConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "telemetryConfig",
-        "The configuration specifying telemetry settings for the Dataproc Metastore service. If unspecified defaults to JSON.\nStructure is documented below.",
+        'telemetryConfig',
+        'The configuration specifying telemetry settings for the Dataproc Metastore service. If unspecified defaults to JSON.\nStructure is documented below.',
         () => dataproc_MetastoreServiceTelemetryConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "tier",
-        "The tier of the service.\nPossible values are: `DEVELOPER`, `ENTERPRISE`.",
+        'tier',
+        'The tier of the service.\nPossible values are: `DEVELOPER`, `ENTERPRISE`.',
         () => [],
         false,
         false,

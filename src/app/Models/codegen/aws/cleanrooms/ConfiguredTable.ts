@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cleanrooms_ConfiguredTableTableReference,
   cleanrooms_ConfiguredTableTableReference_GetTypes,
-} from "../types/cleanrooms_ConfiguredTableTableReference";
+} from '../types/cleanrooms_ConfiguredTableTableReference';
 
 export interface ConfiguredTableArgs {
   /*
@@ -73,48 +73,48 @@ A reference to the AWS Glue table which will be used to create the configured ta
     return [
       new DynamicUIProps(
         InputType.Object,
-        "tableReference",
-        "A reference to the AWS Glue table which will be used to create the configured table.\n* `table_reference.database_name` - (Required - Forces new resource) - The name of the AWS Glue database which contains the table.\n* `table_reference.table_name` - (Required - Forces new resource) - The name of the AWS Glue table which will be used to create the configured table.",
+        'tableReference',
+        'A reference to the AWS Glue table which will be used to create the configured table.\n* `table_reference.database_name` - (Required - Forces new resource) - The name of the AWS Glue database which contains the table.\n* `table_reference.table_name` - (Required - Forces new resource) - The name of the AWS Glue table which will be used to create the configured table.',
         () => cleanrooms_ConfiguredTableTableReference_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key value pairs which tag the configured table.",
+        'tags',
+        'Key value pairs which tag the configured table.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "allowedColumns",
-        "The columns of the references table which will be included in the configured table.",
+        'allowedColumns',
+        'The columns of the references table which will be included in the configured table.',
         () => InputType_String_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "analysisMethod",
-        "The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.",
+        'analysisMethod',
+        'The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description for the configured table.",
+        'description',
+        'A description for the configured table.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the configured table.",
+        'name',
+        'The name of the configured table.',
         () => [],
         false,
         false,

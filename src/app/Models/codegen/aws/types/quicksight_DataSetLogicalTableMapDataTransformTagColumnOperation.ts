@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   quicksight_DataSetLogicalTableMapDataTransformTagColumnOperationTag,
   quicksight_DataSetLogicalTableMapDataTransformTagColumnOperationTag_GetTypes,
-} from "./quicksight_DataSetLogicalTableMapDataTransformTagColumnOperationTag";
+} from './quicksight_DataSetLogicalTableMapDataTransformTagColumnOperationTag';
 
 export interface quicksight_DataSetLogicalTableMapDataTransformTagColumnOperation {
   // Column name.
@@ -22,16 +22,16 @@ export function quicksight_DataSetLogicalTableMapDataTransformTagColumnOperation
   return [
     new DynamicUIProps(
       InputType.String,
-      "columnName",
-      "Column name.",
+      'columnName',
+      'Column name.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "tags",
-      "The dataset column tag, currently only used for geospatial type tagging. See tags.",
+      'tags',
+      'The dataset column tag, currently only used for geospatial type tagging. See tags.',
       () =>
         quicksight_DataSetLogicalTableMapDataTransformTagColumnOperationTag_GetTypes(),
       true,

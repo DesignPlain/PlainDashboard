@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfigLastUpdatedPartitionConfig {
   /*
@@ -21,16 +21,16 @@ export function healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfigL
   return [
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "Type of partitioning.\nPossible values are: `PARTITION_TYPE_UNSPECIFIED`, `HOUR`, `DAY`, `MONTH`, `YEAR`.",
+      'type',
+      'Type of partitioning.\nPossible values are: `PARTITION_TYPE_UNSPECIFIED`, `HOUR`, `DAY`, `MONTH`, `YEAR`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "expirationMs",
-      "Number of milliseconds for which to keep the storage for a partition.",
+      'expirationMs',
+      'Number of milliseconds for which to keep the storage for a partition.',
       () => [],
       false,
       false,

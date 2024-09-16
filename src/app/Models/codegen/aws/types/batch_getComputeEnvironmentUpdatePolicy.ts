@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface batch_getComputeEnvironmentUpdatePolicy {
   //
@@ -18,16 +18,16 @@ export function batch_getComputeEnvironmentUpdatePolicy_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.Number,
-      "jobExecutionTimeoutMinutes",
-      "",
+      'jobExecutionTimeoutMinutes',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "terminateJobsOnUpdate",
-      "",
+      'terminateJobsOnUpdate',
+      '',
       () => [],
       true,
       false,

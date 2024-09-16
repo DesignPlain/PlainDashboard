@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettingsContainerSettingsM2tsSettingsDvbNitSettings {
   //
@@ -21,24 +21,24 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsA
   return [
     new DynamicUIProps(
       InputType.String,
-      "networkName",
-      "",
+      'networkName',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "repInterval",
-      "",
+      'repInterval',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "networkId",
-      "",
+      'networkId',
+      '',
       () => [],
       true,
       false,

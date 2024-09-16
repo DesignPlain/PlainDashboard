@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface SecurityProfileArgs {
   // Specifies the description of the Security Profile.
@@ -61,40 +61,40 @@ Tags to apply to the Security Profile. If configured with a provider
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Specifies the description of the Security Profile.",
+        'description',
+        'Specifies the description of the Security Profile.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceId",
-        "Specifies the identifier of the hosting Amazon Connect Instance.",
+        'instanceId',
+        'Specifies the identifier of the hosting Amazon Connect Instance.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Specifies the name of the Security Profile.",
+        'name',
+        'Specifies the name of the Security Profile.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "permissions",
-        "Specifies a list of permissions assigned to the security profile.",
+        'permissions',
+        'Specifies a list of permissions assigned to the security profile.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Tags to apply to the Security Profile. If configured with a provider\n`default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Tags to apply to the Security Profile. If configured with a provider\n`default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

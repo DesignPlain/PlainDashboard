@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface RepositoryPermissionsPolicyArgs {
   // The account number of the AWS account that owns the domain.
@@ -46,23 +46,23 @@ export class RepositoryPermissionsPolicy extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "domainOwner",
-        "The account number of the AWS account that owns the domain.",
+        'domainOwner',
+        'The account number of the AWS account that owns the domain.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "policyDocument",
-        "A JSON policy string to be set as the access control resource policy on the provided domain.",
+        'policyDocument',
+        'A JSON policy string to be set as the access control resource policy on the provided domain.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "policyRevision",
+        'policyRevision',
         "The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy.",
         () => [],
         false,
@@ -70,16 +70,16 @@ export class RepositoryPermissionsPolicy extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "repository",
-        "The name of the repository to set the resource policy on.",
+        'repository',
+        'The name of the repository to set the resource policy on.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "domain",
-        "The name of the domain on which to set the resource policy.",
+        'domain',
+        'The name of the domain on which to set the resource policy.',
         () => [],
         true,
         true,

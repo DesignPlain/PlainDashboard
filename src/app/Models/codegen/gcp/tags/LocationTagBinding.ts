@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface LocationTagBindingArgs {
   /*
@@ -42,24 +42,24 @@ Location of the target resource.
     return [
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "Location of the target resource.\n\n- - -",
+        'location',
+        'Location of the target resource.\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The full resource name of the resource the TagValue is bound to. E.g. //cloudresourcemanager.googleapis.com/projects/123",
+        'parent',
+        'The full resource name of the resource the TagValue is bound to. E.g. //cloudresourcemanager.googleapis.com/projects/123',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "tagValue",
-        "The TagValue of the TagBinding. Must be of the form tagValues/456.",
+        'tagValue',
+        'The TagValue of the TagBinding. Must be of the form tagValues/456.',
         () => [],
         true,
         true,

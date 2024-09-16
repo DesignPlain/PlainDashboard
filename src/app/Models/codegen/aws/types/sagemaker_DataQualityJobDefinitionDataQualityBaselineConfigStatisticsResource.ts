@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface sagemaker_DataQualityJobDefinitionDataQualityBaselineConfigStatisticsResource {
   // The Amazon S3 URI for the statistics resource.
@@ -15,8 +15,8 @@ export function sagemaker_DataQualityJobDefinitionDataQualityBaselineConfigStati
   return [
     new DynamicUIProps(
       InputType.String,
-      "s3Uri",
-      "The Amazon S3 URI for the statistics resource.",
+      's3Uri',
+      'The Amazon S3 URI for the statistics resource.',
       () => [],
       false,
       true,

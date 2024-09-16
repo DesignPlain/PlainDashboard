@@ -13,7 +13,7 @@ import { StackService } from 'src/app/services/stack.service';
 export class ConfigModalComponent {
   constructor(
     private _modalDialogService: ModalDialogService,
-    private _stackService: StackService
+    private _stackService: StackService,
   ) {
     this.get();
   }
@@ -29,10 +29,10 @@ export class ConfigModalComponent {
   @Input() public aws_KeyId: string;
   @Input() public aws_Secretkey: string;
 
-  @Input() public toggleCred: boolean = false;
+  @Input() public toggleCred: boolean = true;
   fileName: string = '';
   provType = ProviderType;
-  @Input() public toggleProvider = 0;
+  @Input() public toggleProvider = ProviderType.AWS;
 
   onFilechange(event: any) {
     console.log(event.target.files[0]);
@@ -56,7 +56,7 @@ export class ConfigModalComponent {
         this.file,
         this.projectName,
         this.aws_KeyId,
-        this.aws_Secretkey
+        this.aws_Secretkey,
       )
       .subscribe((resp) => {
         alert('Uploaded');

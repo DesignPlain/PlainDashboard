@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   mediapackage_ChannelHlsIngest,
   mediapackage_ChannelHlsIngest_GetTypes,
-} from "../types/mediapackage_ChannelHlsIngest";
+} from '../types/mediapackage_ChannelHlsIngest';
 
 export interface ChannelArgs {
   // A unique identifier describing the channel
@@ -44,24 +44,24 @@ export class Channel extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "channelId",
-        "A unique identifier describing the channel",
+        'channelId',
+        'A unique identifier describing the channel',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of the channel",
+        'description',
+        'A description of the channel',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

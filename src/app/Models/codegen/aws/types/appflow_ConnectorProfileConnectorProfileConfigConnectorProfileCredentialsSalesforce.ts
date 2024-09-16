@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforceOauthRequest,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforceOauthRequest_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforceOauthRequest";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforceOauthRequest';
 
 export interface appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforce {
   //
@@ -34,16 +34,16 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
   return [
     new DynamicUIProps(
       InputType.String,
-      "oauth2GrantType",
-      "",
+      'oauth2GrantType',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "oauthRequest",
-      "",
+      'oauthRequest',
+      '',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforceOauthRequest_GetTypes(),
       false,
@@ -51,32 +51,32 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.String,
-      "refreshToken",
-      "",
+      'refreshToken',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "accessToken",
-      "",
+      'accessToken',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "clientCredentialsArn",
-      "The secret manager ARN, which contains the client ID and client secret of the connected app.",
+      'clientCredentialsArn',
+      'The secret manager ARN, which contains the client ID and client secret of the connected app.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "jwtToken",
-      "A JSON web token (JWT) that authorizes access to Salesforce records.",
+      'jwtToken',
+      'A JSON web token (JWT) that authorizes access to Salesforce records.',
       () => [],
       false,
       false,

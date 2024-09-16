@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig {
   /*
@@ -21,7 +21,7 @@ export function certificatemanager_CertificateIssuanceConfigCertificateAuthority
   return [
     new DynamicUIProps(
       InputType.String,
-      "caPool",
+      'caPool',
       'A CA pool resource used to issue a certificate.\nThe CA pool string has a relative resource path following the form\n"projects/{project}/locations/{location}/caPools/{caPool}".\n\n- - -',
       () => [],
       true,

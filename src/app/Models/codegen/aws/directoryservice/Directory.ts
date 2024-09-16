@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   directoryservice_DirectoryConnectSettings,
   directoryservice_DirectoryConnectSettings_GetTypes,
-} from "../types/directoryservice_DirectoryConnectSettings";
+} from '../types/directoryservice_DirectoryConnectSettings';
 import {
   directoryservice_DirectoryVpcSettings,
   directoryservice_DirectoryVpcSettings_GetTypes,
-} from "../types/directoryservice_DirectoryVpcSettings";
+} from '../types/directoryservice_DirectoryVpcSettings';
 
 export interface DirectoryArgs {
   // The alias for the directory (must be unique amongst all aliases in AWS). Required for `enable_sso`.
@@ -111,104 +111,104 @@ export class Directory extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "size",
-        "(For `SimpleAD` and `ADConnector` types) The size of the directory (`Small` or `Large` are accepted values). `Large` by default.",
+        'size',
+        '(For `SimpleAD` and `ADConnector` types) The size of the directory (`Small` or `Large` are accepted values). `Large` by default.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "desiredNumberOfDomainControllers",
-        "The number of domain controllers desired in the directory. Minimum value of `2`. Scaling of domain controllers is only supported for `MicrosoftAD` directories.",
+        'desiredNumberOfDomainControllers',
+        'The number of domain controllers desired in the directory. Minimum value of `2`. Scaling of domain controllers is only supported for `MicrosoftAD` directories.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "edition",
-        "The MicrosoftAD edition (`Standard` or `Enterprise`). Defaults to `Enterprise`.",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "type",
-        "The directory type (`SimpleAD`, `ADConnector` or `MicrosoftAD` are accepted values). Defaults to `SimpleAD`.",
+        'edition',
+        'The MicrosoftAD edition (`Standard` or `Enterprise`). Defaults to `Enterprise`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "alias",
-        "The alias for the directory (must be unique amongst all aliases in AWS). Required for `enable_sso`.",
+        'type',
+        'The directory type (`SimpleAD`, `ADConnector` or `MicrosoftAD` are accepted values). Defaults to `SimpleAD`.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'alias',
+        'The alias for the directory (must be unique amongst all aliases in AWS). Required for `enable_sso`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableSso",
-        "Whether to enable single-sign on for the directory. Requires `alias`. Defaults to `false`.",
+        'enableSso',
+        'Whether to enable single-sign on for the directory. Requires `alias`. Defaults to `false`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "shortName",
-        "The short name of the directory, such as `CORP`.",
+        'shortName',
+        'The short name of the directory, such as `CORP`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "vpcSettings",
-        "VPC related information about the directory. Fields documented below.",
+        'vpcSettings',
+        'VPC related information about the directory. Fields documented below.',
         () => directoryservice_DirectoryVpcSettings_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The fully qualified name for the directory, such as `corp.example.com`",
+        'name',
+        'The fully qualified name for the directory, such as `corp.example.com`',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A textual description for the directory.",
+        'description',
+        'A textual description for the directory.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "password",
-        "The password for the directory administrator or connector user.",
+        'password',
+        'The password for the directory administrator or connector user.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "connectSettings",
-        "Connector related information about the directory. Fields documented below.",
+        'connectSettings',
+        'Connector related information about the directory. Fields documented below.',
         () => directoryservice_DirectoryConnectSettings_GetTypes(),
         false,
         true,

@@ -1,4 +1,4 @@
-import { DynamicUIProps } from "./DynamicUIProps";
+import { DynamicUIProps } from './DynamicUIProps';
 
 export abstract class DS_Resource {}
 

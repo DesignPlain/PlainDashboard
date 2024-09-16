@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bigquery_AppProfileStandardIsolation,
   bigquery_AppProfileStandardIsolation_GetTypes,
-} from "../types/bigquery_AppProfileStandardIsolation";
+} from '../types/bigquery_AppProfileStandardIsolation';
 import {
   bigquery_AppProfileSingleClusterRouting,
   bigquery_AppProfileSingleClusterRouting_GetTypes,
-} from "../types/bigquery_AppProfileSingleClusterRouting";
+} from '../types/bigquery_AppProfileSingleClusterRouting';
 
 export interface AppProfileArgs {
   // The name of the instance to create the app profile within.
@@ -120,55 +120,55 @@ consistency to improve availability.
     return [
       new DynamicUIProps(
         InputType.Array,
-        "multiClusterRoutingClusterIds",
-        "The set of clusters to route to. The order is ignored; clusters will be tried in order of distance. If left empty, all\nclusters are eligible.",
+        'multiClusterRoutingClusterIds',
+        'The set of clusters to route to. The order is ignored; clusters will be tried in order of distance. If left empty, all\nclusters are eligible.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instance",
-        "The name of the instance to create the app profile within.",
+        'instance',
+        'The name of the instance to create the app profile within.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "multiClusterRoutingUseAny",
-        "If true, read/write requests are routed to the nearest cluster in the instance, and will fail over to the nearest cluster that is available\nin the event of transient errors or delays. Clusters in a region are considered equidistant. Choosing this option sacrifices read-your-writes\nconsistency to improve availability.",
+        'multiClusterRoutingUseAny',
+        'If true, read/write requests are routed to the nearest cluster in the instance, and will fail over to the nearest cluster that is available\nin the event of transient errors or delays. Clusters in a region are considered equidistant. Choosing this option sacrifices read-your-writes\nconsistency to improve availability.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Long form description of the use case for this app profile.",
+        'description',
+        'Long form description of the use case for this app profile.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "singleClusterRouting",
-        "Use a single-cluster routing policy.\nStructure is documented below.",
+        'singleClusterRouting',
+        'Use a single-cluster routing policy.\nStructure is documented below.',
         () => bigquery_AppProfileSingleClusterRouting_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "ignoreWarnings",
-        "If true, ignore safety checks when deleting/updating the app profile.",
+        'ignoreWarnings',
+        'If true, ignore safety checks when deleting/updating the app profile.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "standardIsolation",
+        'standardIsolation',
         "The standard options used for isolating this app profile's traffic from other use cases.\nStructure is documented below.",
         () => bigquery_AppProfileStandardIsolation_GetTypes(),
         false,
@@ -176,16 +176,16 @@ consistency to improve availability.
       ),
       new DynamicUIProps(
         InputType.String,
-        "appProfileId",
-        "The unique name of the app profile in the form `[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.\n\n\n- - -",
+        'appProfileId',
+        'The unique name of the app profile in the form `[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

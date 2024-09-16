@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_getBackendBucketCdnPolicyCacheKeyPolicy {
   /*
@@ -25,15 +25,15 @@ export function compute_getBackendBucketCdnPolicyCacheKeyPolicy_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Array,
-      "includeHttpHeaders",
-      "Allows HTTP request headers (by name) to be used in the\ncache key.",
+      'includeHttpHeaders',
+      'Allows HTTP request headers (by name) to be used in the\ncache key.',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "queryStringWhitelists",
+      'queryStringWhitelists',
       "Names of query string parameters to include in cache keys.\nDefault parameters are always included. '&' and '=' will\nbe percent encoded and not treated as delimiters.",
       () => InputType_String_GetTypes(),
       true,

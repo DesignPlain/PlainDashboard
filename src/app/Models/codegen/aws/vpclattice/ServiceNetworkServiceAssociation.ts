@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   vpclattice_ServiceNetworkServiceAssociationDnsEntry,
   vpclattice_ServiceNetworkServiceAssociationDnsEntry_GetTypes,
-} from "../types/vpclattice_ServiceNetworkServiceAssociationDnsEntry";
+} from '../types/vpclattice_ServiceNetworkServiceAssociationDnsEntry';
 
 export interface ServiceNetworkServiceAssociationArgs {
   // The ID or Amazon Resource Identifier (ARN) of the service.
@@ -59,24 +59,24 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceIdentifier",
-        "The ID or Amazon Resource Identifier (ARN) of the service.",
+        'serviceIdentifier',
+        'The ID or Amazon Resource Identifier (ARN) of the service.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceNetworkIdentifier",
-        "The ID or Amazon Resource Identifier (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.\nThe following arguments are optional:",
+        'serviceNetworkIdentifier',
+        'The ID or Amazon Resource Identifier (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.\nThe following arguments are optional:',
         () => [],
         true,
         true,

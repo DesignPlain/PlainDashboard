@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_ClusterClusterAutoscalingResourceLimit {
   // Maximum amount of the resource in the cluster.
@@ -25,24 +25,24 @@ export function container_ClusterClusterAutoscalingResourceLimit_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.Number,
-      "maximum",
-      "Maximum amount of the resource in the cluster.",
+      'maximum',
+      'Maximum amount of the resource in the cluster.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "minimum",
-      "Minimum amount of the resource in the cluster.",
+      'minimum',
+      'Minimum amount of the resource in the cluster.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "resourceType",
-      "The type of the resource. For example, `cpu` and\n`memory`.  See the [guide to using Node Auto-Provisioning](https://cloud.google.com/kubernetes-engine/docs/how-to/node-auto-provisioning)\nfor a list of types.",
+      'resourceType',
+      'The type of the resource. For example, `cpu` and\n`memory`.  See the [guide to using Node Auto-Provisioning](https://cloud.google.com/kubernetes-engine/docs/how-to/node-auto-provisioning)\nfor a list of types.',
       () => [],
       true,
       false,

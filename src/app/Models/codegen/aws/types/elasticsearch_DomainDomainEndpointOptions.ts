@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface elasticsearch_DomainDomainEndpointOptions {
   // Name of the TLS security policy that needs to be applied to the HTTPS endpoint. Valid values:  `Policy-Min-TLS-1-0-2019-07` and `Policy-Min-TLS-1-2-2019-07`. The provider will only perform drift detection if a configuration value is provided.
@@ -27,40 +27,40 @@ export function elasticsearch_DomainDomainEndpointOptions_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.String,
-      "customEndpointCertificateArn",
-      "ACM certificate ARN for your custom endpoint.",
+      'customEndpointCertificateArn',
+      'ACM certificate ARN for your custom endpoint.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "customEndpointEnabled",
-      "Whether to enable custom endpoint for the Elasticsearch domain.",
+      'customEndpointEnabled',
+      'Whether to enable custom endpoint for the Elasticsearch domain.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enforceHttps",
-      "Whether or not to require HTTPS. Defaults to `true`.",
+      'enforceHttps',
+      'Whether or not to require HTTPS. Defaults to `true`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "tlsSecurityPolicy",
-      "Name of the TLS security policy that needs to be applied to the HTTPS endpoint. Valid values:  `Policy-Min-TLS-1-0-2019-07` and `Policy-Min-TLS-1-2-2019-07`. The provider will only perform drift detection if a configuration value is provided.",
+      'tlsSecurityPolicy',
+      'Name of the TLS security policy that needs to be applied to the HTTPS endpoint. Valid values:  `Policy-Min-TLS-1-0-2019-07` and `Policy-Min-TLS-1-2-2019-07`. The provider will only perform drift detection if a configuration value is provided.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "customEndpoint",
-      "Fully qualified domain for your custom endpoint.",
+      'customEndpoint',
+      'Fully qualified domain for your custom endpoint.',
       () => [],
       false,
       false,

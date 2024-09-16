@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkehub_FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig,
   gkehub_FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig_GetTypes,
-} from "./gkehub_FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig";
+} from './gkehub_FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig';
 import {
   gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig,
   gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig_GetTypes,
-} from "./gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig";
+} from './gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig';
 
 export interface gkehub_FeatureSpecFleetobservabilityLoggingConfig {
   /*
@@ -32,8 +32,8 @@ export function gkehub_FeatureSpecFleetobservabilityLoggingConfig_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Object,
-      "fleetScopeLogsConfig",
-      "Specified if applying the routing config to all logs for all fleet scopes.\nStructure is documented below.",
+      'fleetScopeLogsConfig',
+      'Specified if applying the routing config to all logs for all fleet scopes.\nStructure is documented below.',
       () =>
         gkehub_FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig_GetTypes(),
       false,
@@ -41,8 +41,8 @@ export function gkehub_FeatureSpecFleetobservabilityLoggingConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "defaultConfig",
-      "Specified if applying the default routing config to logs not specified in other configs.\nStructure is documented below.",
+      'defaultConfig',
+      'Specified if applying the default routing config to logs not specified in other configs.\nStructure is documented below.',
       () =>
         gkehub_FeatureSpecFleetobservabilityLoggingConfigDefaultConfig_GetTypes(),
       false,

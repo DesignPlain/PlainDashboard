@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupMessagePlainTextMessage {
   // Message to send to the user.
@@ -15,8 +15,8 @@ export function lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecifi
   return [
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "Message to send to the user.",
+      'value',
+      'Message to send to the user.',
       () => [],
       true,
       false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkeonprem_VMwareClusterValidationCheckStatus,
   gkeonprem_VMwareClusterValidationCheckStatus_GetTypes,
-} from "./gkeonprem_VMwareClusterValidationCheckStatus";
+} from './gkeonprem_VMwareClusterValidationCheckStatus';
 
 export interface gkeonprem_VMwareClusterValidationCheck {
   /*
@@ -35,24 +35,24 @@ export function gkeonprem_VMwareClusterValidationCheck_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.String,
-      "options",
-      "(Output)\nOptions used for the validation check.",
+      'options',
+      '(Output)\nOptions used for the validation check.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "scenario",
-      "(Output)\nThe scenario when the preflight checks were run..",
+      'scenario',
+      '(Output)\nThe scenario when the preflight checks were run..',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "statuses",
-      "(Output)\nSpecifies the detailed validation check status\nStructure is documented below.",
+      'statuses',
+      '(Output)\nSpecifies the detailed validation check status\nStructure is documented below.',
       () => gkeonprem_VMwareClusterValidationCheckStatus_GetTypes(),
       false,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface networkmanager_getCoreNetworkPolicyDocumentNetworkFunctionGroup {
   // This identifies the network function group container.
@@ -21,24 +21,24 @@ export function networkmanager_getCoreNetworkPolicyDocumentNetworkFunctionGroup_
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "This identifies the network function group container.",
+      'name',
+      'This identifies the network function group container.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "requireAttachmentAcceptance",
-      "This will be either `true`, that attachment acceptance is required, or `false`, that it is not required.",
+      'requireAttachmentAcceptance',
+      'This will be either `true`, that attachment acceptance is required, or `false`, that it is not required.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "description",
-      "Optional description of the network function group.",
+      'description',
+      'Optional description of the network function group.',
       () => [],
       false,
       false,

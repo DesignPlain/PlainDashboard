@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface certificateauthority_CertificateCertificateDescriptionX509DescriptionCaOption {
   // When true, the "CA" in Basic Constraints extension will be set to true.
@@ -21,7 +21,7 @@ export function certificateauthority_CertificateCertificateDescriptionX509Descri
   return [
     new DynamicUIProps(
       InputType.Number,
-      "maxIssuerPathLength",
+      'maxIssuerPathLength',
       'Refers to the "path length constraint" in Basic Constraints extension. For a CA certificate, this value describes the depth of\nsubordinate CA certificates that are allowed. If this value is less than 0, the request will fail.',
       () => [],
       false,
@@ -29,7 +29,7 @@ export function certificateauthority_CertificateCertificateDescriptionX509Descri
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "isCa",
+      'isCa',
       'When true, the "CA" in Basic Constraints extension will be set to true.',
       () => [],
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface MemberArgs {
   // Boolean whether to invite the account to Security Hub as a member. Defaults to `false`.
@@ -37,24 +37,24 @@ export class Member extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "invite",
-        "Boolean whether to invite the account to Security Hub as a member. Defaults to `false`.",
+        'invite',
+        'Boolean whether to invite the account to Security Hub as a member. Defaults to `false`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "accountId",
-        "The ID of the member AWS account.",
+        'accountId',
+        'The ID of the member AWS account.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "email",
-        "The email of the member AWS account.",
+        'email',
+        'The email of the member AWS account.',
         () => [],
         false,
         true,

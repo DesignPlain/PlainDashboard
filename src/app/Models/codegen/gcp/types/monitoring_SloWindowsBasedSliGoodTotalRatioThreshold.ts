@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance,
   monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance_GetTypes,
-} from "./monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance";
+} from './monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance';
 import {
   monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformance,
   monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformance_GetTypes,
-} from "./monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformance";
+} from './monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformance';
 
 export interface monitoring_SloWindowsBasedSliGoodTotalRatioThreshold {
   /*
@@ -38,8 +38,8 @@ export function monitoring_SloWindowsBasedSliGoodTotalRatioThreshold_GetTypes():
   return [
     new DynamicUIProps(
       InputType.Object,
-      "basicSliPerformance",
-      "Basic SLI to evaluate to judge window quality.\nStructure is documented below.",
+      'basicSliPerformance',
+      'Basic SLI to evaluate to judge window quality.\nStructure is documented below.',
       () =>
         monitoring_SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance_GetTypes(),
       false,
@@ -47,8 +47,8 @@ export function monitoring_SloWindowsBasedSliGoodTotalRatioThreshold_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Object,
-      "performance",
-      "Request-based SLI to evaluate to judge window quality.\nStructure is documented below.",
+      'performance',
+      'Request-based SLI to evaluate to judge window quality.\nStructure is documented below.',
       () =>
         monitoring_SloWindowsBasedSliGoodTotalRatioThresholdPerformance_GetTypes(),
       false,
@@ -56,8 +56,8 @@ export function monitoring_SloWindowsBasedSliGoodTotalRatioThreshold_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Number,
-      "threshold",
-      "If window performance >= threshold, the window is counted\nas good.",
+      'threshold',
+      'If window performance >= threshold, the window is counted\nas good.',
       () => [],
       false,
       false,

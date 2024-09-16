@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datastream_StreamSourceConfigOracleSourceConfigIncludeObjects,
   datastream_StreamSourceConfigOracleSourceConfigIncludeObjects_GetTypes,
-} from "./datastream_StreamSourceConfigOracleSourceConfigIncludeObjects";
+} from './datastream_StreamSourceConfigOracleSourceConfigIncludeObjects';
 import {
   datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects,
   datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects_GetTypes,
-} from "./datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects";
+} from './datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects';
 import {
   datastream_StreamSourceConfigOracleSourceConfigDropLargeObjects,
   datastream_StreamSourceConfigOracleSourceConfigDropLargeObjects_GetTypes,
-} from "./datastream_StreamSourceConfigOracleSourceConfigDropLargeObjects";
+} from './datastream_StreamSourceConfigOracleSourceConfigDropLargeObjects';
 import {
   datastream_StreamSourceConfigOracleSourceConfigExcludeObjects,
   datastream_StreamSourceConfigOracleSourceConfigExcludeObjects_GetTypes,
-} from "./datastream_StreamSourceConfigOracleSourceConfigExcludeObjects";
+} from './datastream_StreamSourceConfigOracleSourceConfigExcludeObjects';
 
 export interface datastream_StreamSourceConfigOracleSourceConfig {
   /*
@@ -58,8 +58,8 @@ export function datastream_StreamSourceConfigOracleSourceConfig_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Object,
-      "includeObjects",
-      "Oracle objects to retrieve from the source.\nStructure is documented below.",
+      'includeObjects',
+      'Oracle objects to retrieve from the source.\nStructure is documented below.',
       () =>
         datastream_StreamSourceConfigOracleSourceConfigIncludeObjects_GetTypes(),
       false,
@@ -67,7 +67,7 @@ export function datastream_StreamSourceConfigOracleSourceConfig_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxConcurrentBackfillTasks",
+      'maxConcurrentBackfillTasks',
       "Maximum number of concurrent backfill tasks. The number should be non negative.\nIf not set (or set to 0), the system's default value will be used.",
       () => [],
       false,
@@ -75,7 +75,7 @@ export function datastream_StreamSourceConfigOracleSourceConfig_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxConcurrentCdcTasks",
+      'maxConcurrentCdcTasks',
       "Maximum number of concurrent CDC tasks. The number should be non negative.\nIf not set (or set to 0), the system's default value will be used.",
       () => [],
       false,
@@ -83,8 +83,8 @@ export function datastream_StreamSourceConfigOracleSourceConfig_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Object,
-      "streamLargeObjects",
-      "Configuration to drop large object values.",
+      'streamLargeObjects',
+      'Configuration to drop large object values.',
       () =>
         datastream_StreamSourceConfigOracleSourceConfigStreamLargeObjects_GetTypes(),
       false,
@@ -92,8 +92,8 @@ export function datastream_StreamSourceConfigOracleSourceConfig_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Object,
-      "dropLargeObjects",
-      "Configuration to drop large object values.",
+      'dropLargeObjects',
+      'Configuration to drop large object values.',
       () =>
         datastream_StreamSourceConfigOracleSourceConfigDropLargeObjects_GetTypes(),
       false,
@@ -101,8 +101,8 @@ export function datastream_StreamSourceConfigOracleSourceConfig_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Object,
-      "excludeObjects",
-      "Oracle objects to exclude from the stream.\nStructure is documented below.",
+      'excludeObjects',
+      'Oracle objects to exclude from the stream.\nStructure is documented below.',
       () =>
         datastream_StreamSourceConfigOracleSourceConfigExcludeObjects_GetTypes(),
       false,

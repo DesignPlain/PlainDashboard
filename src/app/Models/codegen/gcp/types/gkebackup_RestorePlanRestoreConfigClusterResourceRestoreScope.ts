@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScopeExcludedGroupKind,
   gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScopeExcludedGroupKind_GetTypes,
-} from "./gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScopeExcludedGroupKind";
+} from './gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScopeExcludedGroupKind';
 import {
   gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScopeSelectedGroupKind,
   gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScopeSelectedGroupKind_GetTypes,
-} from "./gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScopeSelectedGroupKind";
+} from './gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScopeSelectedGroupKind';
 
 export interface gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScope {
   /*
@@ -49,16 +49,16 @@ export function gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScope_Ge
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "allGroupKinds",
-      "If True, all valid cluster-scoped resources will be restored.\nMutually exclusive to any other field in `clusterResourceRestoreScope`.",
+      'allGroupKinds',
+      'If True, all valid cluster-scoped resources will be restored.\nMutually exclusive to any other field in `clusterResourceRestoreScope`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "excludedGroupKinds",
-      "A list of cluster-scoped resource group kinds to NOT restore from the backup.\nIf specified, all valid cluster-scoped resources will be restored except\nfor those specified in the list.\nMutually exclusive to any other field in `clusterResourceRestoreScope`.\nStructure is documented below.",
+      'excludedGroupKinds',
+      'A list of cluster-scoped resource group kinds to NOT restore from the backup.\nIf specified, all valid cluster-scoped resources will be restored except\nfor those specified in the list.\nMutually exclusive to any other field in `clusterResourceRestoreScope`.\nStructure is documented below.',
       () =>
         gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScopeExcludedGroupKind_GetTypes(),
       false,
@@ -66,16 +66,16 @@ export function gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScope_Ge
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "noGroupKinds",
-      "If True, no cluster-scoped resources will be restored.\nMutually exclusive to any other field in `clusterResourceRestoreScope`.",
+      'noGroupKinds',
+      'If True, no cluster-scoped resources will be restored.\nMutually exclusive to any other field in `clusterResourceRestoreScope`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "selectedGroupKinds",
-      "A list of cluster-scoped resource group kinds to restore from the backup.\nIf specified, only the selected resources will be restored.\nMutually exclusive to any other field in the `clusterResourceRestoreScope`.\nStructure is documented below.",
+      'selectedGroupKinds',
+      'A list of cluster-scoped resource group kinds to restore from the backup.\nIf specified, only the selected resources will be restored.\nMutually exclusive to any other field in the `clusterResourceRestoreScope`.\nStructure is documented below.',
       () =>
         gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScopeSelectedGroupKind_GetTypes(),
       false,

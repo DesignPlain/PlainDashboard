@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   monitoring_SloBasicSli,
   monitoring_SloBasicSli_GetTypes,
-} from "../types/monitoring_SloBasicSli";
+} from '../types/monitoring_SloBasicSli';
 import {
   monitoring_SloWindowsBasedSli,
   monitoring_SloWindowsBasedSli_GetTypes,
-} from "../types/monitoring_SloWindowsBasedSli";
+} from '../types/monitoring_SloWindowsBasedSli';
 import {
   monitoring_SloRequestBasedSli,
   monitoring_SloRequestBasedSli_GetTypes,
-} from "../types/monitoring_SloRequestBasedSli";
+} from '../types/monitoring_SloRequestBasedSli';
 
 export interface SloArgs {
   // Name used for UI elements listing this SLO.
@@ -199,31 +199,31 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sloId",
-        "The id to use for this ServiceLevelObjective. If omitted, an id will be generated instead.",
+        'sloId',
+        'The id to use for this ServiceLevelObjective. If omitted, an id will be generated instead.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "userLabels",
-        "This field is intended to be used for organizing and identifying the AlertPolicy\nobjects.The field can contain up to 64 entries. Each key and value is limited\nto 63 Unicode characters or 128 bytes, whichever is smaller. Labels and values\ncan contain only lowercase letters, numerals, underscores, and dashes. Keys\nmust begin with a letter.",
+        'userLabels',
+        'This field is intended to be used for organizing and identifying the AlertPolicy\nobjects.The field can contain up to 64 entries. Each key and value is limited\nto 63 Unicode characters or 128 bytes, whichever is smaller. Labels and values\ncan contain only lowercase letters, numerals, underscores, and dashes. Keys\nmust begin with a letter.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "windowsBasedSli",
+        'windowsBasedSli',
         "A windows-based SLI defines the criteria for time windows.\ngood_service is defined based off the count of these time windows\nfor which the provided service was of good quality.\nA SLI describes a good service. It is used to measure and calculate\nthe quality of the Service's performance with respect to a single\naspect of service quality.\nExactly one of the following must be set:\n`basic_sli`, `request_based_sli`, `windows_based_sli`\nStructure is documented below.",
         () => monitoring_SloWindowsBasedSli_GetTypes(),
         false,
@@ -231,7 +231,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "requestBasedSli",
+        'requestBasedSli',
         "A request-based SLI defines a SLI for which atomic units of\nservice are counted directly.\nA SLI describes a good service.\nIt is used to measure and calculate the quality of the Service's\nperformance with respect to a single aspect of service quality.\nExactly one of the following must be set:\n`basic_sli`, `request_based_sli`, `windows_based_sli`\nStructure is documented below.",
         () => monitoring_SloRequestBasedSli_GetTypes(),
         false,
@@ -239,7 +239,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "rollingPeriodDays",
+        'rollingPeriodDays',
         'A rolling time period, semantically "in the past X days".\nMust be between 1 to 30 days, inclusive.',
         () => [],
         false,
@@ -247,15 +247,15 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "goal",
-        "The fraction of service that must be good in order for this objective\nto be met. 0 < goal <= 0.999",
+        'goal',
+        'The fraction of service that must be good in order for this objective\nto be met. 0 < goal <= 0.999',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "calendarPeriod",
+        'calendarPeriod',
         'A calendar period, semantically "since the start of the current\n<calendarPeriod>".\nPossible values are: `DAY`, `WEEK`, `FORTNIGHT`, `MONTH`.',
         () => [],
         false,
@@ -263,23 +263,23 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "Name used for UI elements listing this SLO.",
+        'displayName',
+        'Name used for UI elements listing this SLO.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "service",
-        "ID of the service to which this SLO belongs.\n\n\n- - -",
+        'service',
+        'ID of the service to which this SLO belongs.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "basicSli",
+        'basicSli',
         "Basic Service-Level Indicator (SLI) on a well-known service type.\nPerformance will be computed on the basis of pre-defined metrics.\nSLIs are used to measure and calculate the quality of the Service's\nperformance with respect to a single aspect of service quality.\nExactly one of the following must be set:\n`basic_sli`, `request_based_sli`, `windows_based_sli`\nStructure is documented below.",
         () => monitoring_SloBasicSli_GetTypes(),
         false,

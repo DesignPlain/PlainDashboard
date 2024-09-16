@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface accesscontextmanager_ServicePerimeterStatusIngressPolicyIngressFromSource {
   // An AccessLevel resource name that allows resources outside the ServicePerimeter to be accessed from the inside.
@@ -25,16 +25,16 @@ export function accesscontextmanager_ServicePerimeterStatusIngressPolicyIngressF
   return [
     new DynamicUIProps(
       InputType.String,
-      "accessLevel",
-      "An AccessLevel resource name that allows resources outside the ServicePerimeter to be accessed from the inside.",
+      'accessLevel',
+      'An AccessLevel resource name that allows resources outside the ServicePerimeter to be accessed from the inside.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "resource",
-      "A Google Cloud resource that is allowed to ingress the perimeter.\nRequests from these resources will be allowed to access perimeter data.\nCurrently only projects are allowed. Format `projects/{project_number}`\nThe project may be in any Google Cloud organization, not just the\norganization that the perimeter is defined in. `*` is not allowed, the case\nof allowing all Google Cloud resources only is not supported.",
+      'resource',
+      'A Google Cloud resource that is allowed to ingress the perimeter.\nRequests from these resources will be allowed to access perimeter data.\nCurrently only projects are allowed. Format `projects/{project_number}`\nThe project may be in any Google Cloud organization, not just the\norganization that the perimeter is defined in. `*` is not allowed, the case\nof allowing all Google Cloud resources only is not supported.',
       () => [],
       false,
       false,

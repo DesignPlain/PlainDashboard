@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface imagebuilder_getContainerRecipeInstanceConfigurationBlockDeviceMappingEb {
   // KMS key used to encrypt the container image.
@@ -36,64 +36,64 @@ export function imagebuilder_getContainerRecipeInstanceConfigurationBlockDeviceM
   return [
     new DynamicUIProps(
       InputType.Number,
-      "iops",
-      "Number of Input/Output (I/O) operations per second to provision for an `io1` or `io2` volume.",
+      'iops',
+      'Number of Input/Output (I/O) operations per second to provision for an `io1` or `io2` volume.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "kmsKeyId",
-      "KMS key used to encrypt the container image.",
+      'kmsKeyId',
+      'KMS key used to encrypt the container image.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "snapshotId",
-      "Identifier of the EC2 Volume Snapshot.",
+      'snapshotId',
+      'Identifier of the EC2 Volume Snapshot.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "throughput",
-      "For GP3 volumes only. The throughput in MiB/s that the volume supports.",
+      'throughput',
+      'For GP3 volumes only. The throughput in MiB/s that the volume supports.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "volumeSize",
-      "Size of the volume, in GiB.",
+      'volumeSize',
+      'Size of the volume, in GiB.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "volumeType",
-      "Type of the volume. For example, `gp2` or `io2`.",
+      'volumeType',
+      'Type of the volume. For example, `gp2` or `io2`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "deleteOnTermination",
-      "Whether to delete the volume on termination. Defaults to unset, which is the value inherited from the parent image.",
+      'deleteOnTermination',
+      'Whether to delete the volume on termination. Defaults to unset, which is the value inherited from the parent image.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "encrypted",
-      "Whether to encrypt the volume. Defaults to unset, which is the value inherited from the parent image.",
+      'encrypted',
+      'Whether to encrypt the volume. Defaults to unset, which is the value inherited from the parent image.',
       () => [],
       true,
       false,

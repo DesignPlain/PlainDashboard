@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   redis_ClusterPscConfig,
   redis_ClusterPscConfig_GetTypes,
-} from "../types/redis_ClusterPscConfig";
+} from '../types/redis_ClusterPscConfig';
 import {
   redis_ClusterDiscoveryEndpoint,
   redis_ClusterDiscoveryEndpoint_GetTypes,
-} from "../types/redis_ClusterDiscoveryEndpoint";
+} from '../types/redis_ClusterDiscoveryEndpoint';
 import {
   redis_ClusterPscConnection,
   redis_ClusterPscConnection_GetTypes,
-} from "../types/redis_ClusterPscConnection";
+} from '../types/redis_ClusterPscConnection';
 import {
   redis_ClusterStateInfo,
   redis_ClusterStateInfo_GetTypes,
-} from "../types/redis_ClusterStateInfo";
+} from '../types/redis_ClusterStateInfo';
 
 export interface ClusterArgs {
   // Optional. The number of replica nodes per shard.
@@ -153,64 +153,64 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "authorizationMode",
-        "Optional. The authorization mode of the Redis cluster. If not provided, auth feature is disabled for the cluster.\nDefault value is `AUTH_MODE_DISABLED`.\nPossible values are: `AUTH_MODE_UNSPECIFIED`, `AUTH_MODE_IAM_AUTH`, `AUTH_MODE_DISABLED`.",
+        'authorizationMode',
+        'Optional. The authorization mode of the Redis cluster. If not provided, auth feature is disabled for the cluster.\nDefault value is `AUTH_MODE_DISABLED`.\nPossible values are: `AUTH_MODE_UNSPECIFIED`, `AUTH_MODE_IAM_AUTH`, `AUTH_MODE_DISABLED`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Unique name of the resource in this scope including project and location using the form:\nprojects/{projectId}/locations/{locationId}/clusters/{clusterId}",
+        'name',
+        'Unique name of the resource in this scope including project and location using the form:\nprojects/{projectId}/locations/{locationId}/clusters/{clusterId}',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "pscConfigs",
-        "Required. Each PscConfig configures the consumer network where two\nnetwork addresses will be designated to the cluster for client access.\nCurrently, only one PscConfig is supported.\nStructure is documented below.",
+        'pscConfigs',
+        'Required. Each PscConfig configures the consumer network where two\nnetwork addresses will be designated to the cluster for client access.\nCurrently, only one PscConfig is supported.\nStructure is documented below.',
         () => redis_ClusterPscConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The name of the region of the Redis cluster.",
+        'region',
+        'The name of the region of the Redis cluster.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "replicaCount",
-        "Optional. The number of replica nodes per shard.",
+        'replicaCount',
+        'Optional. The number of replica nodes per shard.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "shardCount",
-        "Required. Number of shards for the Redis cluster.",
+        'shardCount',
+        'Required. Number of shards for the Redis cluster.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "transitEncryptionMode",
-        "Optional. The in-transit encryption for the Redis cluster.\nIf not provided, encryption is disabled for the cluster.\nDefault value is `TRANSIT_ENCRYPTION_MODE_DISABLED`.\nPossible values are: `TRANSIT_ENCRYPTION_MODE_UNSPECIFIED`, `TRANSIT_ENCRYPTION_MODE_DISABLED`, `TRANSIT_ENCRYPTION_MODE_SERVER_AUTHENTICATION`.",
+        'transitEncryptionMode',
+        'Optional. The in-transit encryption for the Redis cluster.\nIf not provided, encryption is disabled for the cluster.\nDefault value is `TRANSIT_ENCRYPTION_MODE_DISABLED`.\nPossible values are: `TRANSIT_ENCRYPTION_MODE_UNSPECIFIED`, `TRANSIT_ENCRYPTION_MODE_DISABLED`, `TRANSIT_ENCRYPTION_MODE_SERVER_AUTHENTICATION`.',
         () => [],
         false,
         true,

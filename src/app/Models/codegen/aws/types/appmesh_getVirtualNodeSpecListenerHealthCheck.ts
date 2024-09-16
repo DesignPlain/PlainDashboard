@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appmesh_getVirtualNodeSpecListenerHealthCheck {
   //
@@ -33,35 +33,35 @@ export function appmesh_getVirtualNodeSpecListenerHealthCheck_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.Number,
-      "intervalMillis",
-      "",
+      'intervalMillis',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "path", "", () => [], true, false),
-    new DynamicUIProps(InputType.Number, "port", "", () => [], true, false),
-    new DynamicUIProps(InputType.String, "protocol", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'path', '', () => [], true, false),
+    new DynamicUIProps(InputType.Number, 'port', '', () => [], true, false),
+    new DynamicUIProps(InputType.String, 'protocol', '', () => [], true, false),
     new DynamicUIProps(
       InputType.Number,
-      "timeoutMillis",
-      "",
-      () => [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.Number,
-      "unhealthyThreshold",
-      "",
+      'timeoutMillis',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "healthyThreshold",
-      "",
+      'unhealthyThreshold',
+      '',
+      () => [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.Number,
+      'healthyThreshold',
+      '',
       () => [],
       true,
       false,

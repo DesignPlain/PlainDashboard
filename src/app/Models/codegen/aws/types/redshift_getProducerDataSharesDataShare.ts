@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface redshift_getProducerDataSharesDataShare {
   // ARN (Amazon Resource Name) of the data share.
@@ -25,24 +25,24 @@ export function redshift_getProducerDataSharesDataShare_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.String,
-      "dataShareArn",
-      "ARN (Amazon Resource Name) of the data share.",
+      'dataShareArn',
+      'ARN (Amazon Resource Name) of the data share.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "managedBy",
-      "Identifier of a datashare to show its managing entity.",
+      'managedBy',
+      'Identifier of a datashare to show its managing entity.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "producerArn",
-      "Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.\n\nThe following arguments are optional:",
+      'producerArn',
+      'Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.\n\nThe following arguments are optional:',
       () => [],
       true,
       false,

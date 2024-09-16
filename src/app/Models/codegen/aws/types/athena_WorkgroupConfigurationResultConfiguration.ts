@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   athena_WorkgroupConfigurationResultConfigurationAclConfiguration,
   athena_WorkgroupConfigurationResultConfigurationAclConfiguration_GetTypes,
-} from "./athena_WorkgroupConfigurationResultConfigurationAclConfiguration";
+} from './athena_WorkgroupConfigurationResultConfigurationAclConfiguration';
 import {
   athena_WorkgroupConfigurationResultConfigurationEncryptionConfiguration,
   athena_WorkgroupConfigurationResultConfigurationEncryptionConfiguration_GetTypes,
-} from "./athena_WorkgroupConfigurationResultConfigurationEncryptionConfiguration";
+} from './athena_WorkgroupConfigurationResultConfigurationEncryptionConfiguration';
 
 export interface athena_WorkgroupConfigurationResultConfiguration {
   // That an Amazon S3 canned ACL should be set to control ownership of stored query results. See ACL Configuration below.
@@ -32,8 +32,8 @@ export function athena_WorkgroupConfigurationResultConfiguration_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.Object,
-      "aclConfiguration",
-      "That an Amazon S3 canned ACL should be set to control ownership of stored query results. See ACL Configuration below.",
+      'aclConfiguration',
+      'That an Amazon S3 canned ACL should be set to control ownership of stored query results. See ACL Configuration below.',
       () =>
         athena_WorkgroupConfigurationResultConfigurationAclConfiguration_GetTypes(),
       false,
@@ -41,8 +41,8 @@ export function athena_WorkgroupConfigurationResultConfiguration_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Object,
-      "encryptionConfiguration",
-      "Configuration block with encryption settings. See Encryption Configuration below.",
+      'encryptionConfiguration',
+      'Configuration block with encryption settings. See Encryption Configuration below.',
       () =>
         athena_WorkgroupConfigurationResultConfigurationEncryptionConfiguration_GetTypes(),
       false,
@@ -50,16 +50,16 @@ export function athena_WorkgroupConfigurationResultConfiguration_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "expectedBucketOwner",
-      "AWS account ID that you expect to be the owner of the Amazon S3 bucket.",
+      'expectedBucketOwner',
+      'AWS account ID that you expect to be the owner of the Amazon S3 bucket.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "outputLocation",
-      "Location in Amazon S3 where your query results are stored, such as `s3://path/to/query/bucket/`. For more information, see [Queries and Query Result Files](https://docs.aws.amazon.com/athena/latest/ug/querying.html).",
+      'outputLocation',
+      'Location in Amazon S3 where your query results are stored, such as `s3://path/to/query/bucket/`. For more information, see [Queries and Query Result Files](https://docs.aws.amazon.com/athena/latest/ug/querying.html).',
       () => [],
       false,
       false,

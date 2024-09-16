@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appmesh_VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcm {
   // One or more ACM ARNs.
@@ -15,8 +15,8 @@ export function appmesh_VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidati
   return [
     new DynamicUIProps(
       InputType.Array,
-      "certificateAuthorityArns",
-      "One or more ACM ARNs.",
+      'certificateAuthorityArns',
+      'One or more ACM ARNs.',
       () => InputType_String_GetTypes(),
       true,
       false,

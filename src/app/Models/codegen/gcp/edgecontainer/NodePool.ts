@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   edgecontainer_NodePoolLocalDiskEncryption,
   edgecontainer_NodePoolLocalDiskEncryption_GetTypes,
-} from "../types/edgecontainer_NodePoolLocalDiskEncryption";
+} from '../types/edgecontainer_NodePoolLocalDiskEncryption';
 import {
   edgecontainer_NodePoolNodeConfig,
   edgecontainer_NodePoolNodeConfig_GetTypes,
-} from "../types/edgecontainer_NodePoolNodeConfig";
+} from '../types/edgecontainer_NodePoolNodeConfig';
 
 export interface NodePoolArgs {
   // The location of the resource.
@@ -143,47 +143,47 @@ documented in more detail in [AIP-160](https://google.aip.dev/160).
     return [
       new DynamicUIProps(
         InputType.Object,
-        "localDiskEncryption",
-        "Local disk encryption options. This field is only used when enabling CMEK support.\nStructure is documented below.",
+        'localDiskEncryption',
+        'Local disk encryption options. This field is only used when enabling CMEK support.\nStructure is documented below.',
         () => edgecontainer_NodePoolLocalDiskEncryption_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "nodeConfig",
-        "Configuration for each node in the NodePool\nStructure is documented below.",
+        'nodeConfig',
+        'Configuration for each node in the NodePool\nStructure is documented below.',
         () => edgecontainer_NodePoolNodeConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cluster",
-        "The name of the target Distributed Cloud Edge Cluster.\n\n\n- - -",
+        'cluster',
+        'The name of the target Distributed Cloud Edge Cluster.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The resource name of the node pool.",
+        'name',
+        'The resource name of the node pool.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Labels associated with this resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Labels associated with this resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "machineFilter",
+        'machineFilter',
         'Only machines matching this filter will be allowed to join the node pool.\nThe filtering language accepts strings like "name=<name>", and is\ndocumented in more detail in [AIP-160](https://google.aip.dev/160).',
         () => [],
         false,
@@ -191,32 +191,32 @@ documented in more detail in [AIP-160](https://google.aip.dev/160).
       ),
       new DynamicUIProps(
         InputType.String,
-        "nodeLocation",
-        "Name of the Google Distributed Cloud Edge zone where this node pool will be created. For example: `us-central1-edge-customer-a`.",
+        'nodeLocation',
+        'Name of the Google Distributed Cloud Edge zone where this node pool will be created. For example: `us-central1-edge-customer-a`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the resource.",
+        'location',
+        'The location of the resource.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "nodeCount",
-        "The number of nodes in the pool.",
+        'nodeCount',
+        'The number of nodes in the pool.',
         () => [],
         true,
         false,

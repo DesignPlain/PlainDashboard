@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface WorkspaceApiKeyArgs {
   // Specifies the permission level of the API key. Valid values are `VIEWER`, `EDITOR`, or `ADMIN`.
@@ -40,32 +40,32 @@ export class WorkspaceApiKey extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "keyName",
-        "Specifies the name of the API key. Key names must be unique to the workspace.",
+        'keyName',
+        'Specifies the name of the API key. Key names must be unique to the workspace.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "keyRole",
-        "Specifies the permission level of the API key. Valid values are `VIEWER`, `EDITOR`, or `ADMIN`.",
+        'keyRole',
+        'Specifies the permission level of the API key. Valid values are `VIEWER`, `EDITOR`, or `ADMIN`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "secondsToLive",
-        "Specifies the time in seconds until the API key expires. Keys can be valid for up to 30 days.",
+        'secondsToLive',
+        'Specifies the time in seconds until the API key expires. Keys can be valid for up to 30 days.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "workspaceId",
-        "The ID of the workspace that the API key is valid for.",
+        'workspaceId',
+        'The ID of the workspace that the API key is valid for.',
         () => [],
         true,
         true,

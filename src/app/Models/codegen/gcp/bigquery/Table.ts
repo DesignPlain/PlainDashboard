@@ -3,41 +3,41 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bigquery_TableExternalDataConfiguration,
   bigquery_TableExternalDataConfiguration_GetTypes,
-} from "../types/bigquery_TableExternalDataConfiguration";
+} from '../types/bigquery_TableExternalDataConfiguration';
 import {
   bigquery_TableTableReplicationInfo,
   bigquery_TableTableReplicationInfo_GetTypes,
-} from "../types/bigquery_TableTableReplicationInfo";
+} from '../types/bigquery_TableTableReplicationInfo';
 import {
   bigquery_TableMaterializedView,
   bigquery_TableMaterializedView_GetTypes,
-} from "../types/bigquery_TableMaterializedView";
+} from '../types/bigquery_TableMaterializedView';
 import {
   bigquery_TableRangePartitioning,
   bigquery_TableRangePartitioning_GetTypes,
-} from "../types/bigquery_TableRangePartitioning";
+} from '../types/bigquery_TableRangePartitioning';
 import {
   bigquery_TableView,
   bigquery_TableView_GetTypes,
-} from "../types/bigquery_TableView";
+} from '../types/bigquery_TableView';
 import {
   bigquery_TableEncryptionConfiguration,
   bigquery_TableEncryptionConfiguration_GetTypes,
-} from "../types/bigquery_TableEncryptionConfiguration";
+} from '../types/bigquery_TableEncryptionConfiguration';
 import {
   bigquery_TableTimePartitioning,
   bigquery_TableTimePartitioning_GetTypes,
-} from "../types/bigquery_TableTimePartitioning";
+} from '../types/bigquery_TableTimePartitioning';
 import {
   bigquery_TableTableConstraints,
   bigquery_TableTableConstraints_GetTypes,
-} from "../types/bigquery_TableTableConstraints";
+} from '../types/bigquery_TableTableConstraints';
 
 export interface TableArgs {
   // Replication info of a table created using "AS REPLICA" DDL like: "CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv".
@@ -368,31 +368,31 @@ is transparent to the user.  Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "maxStaleness",
-        "The maximum staleness of data that could be\nreturned when the table (or stale MV) is queried. Staleness encoded as a\nstring encoding of [SQL IntervalValue\ntype](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#interval_type).",
+        'maxStaleness',
+        'The maximum staleness of data that could be\nreturned when the table (or stale MV) is queried. Staleness encoded as a\nstring encoding of [SQL IntervalValue\ntype](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#interval_type).',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "encryptionConfiguration",
-        "Specifies how the table should be encrypted.\nIf left blank, the table will be encrypted with a Google-managed key; that process\nis transparent to the user.  Structure is documented below.",
+        'encryptionConfiguration',
+        'Specifies how the table should be encrypted.\nIf left blank, the table will be encrypted with a Google-managed key; that process\nis transparent to the user.  Structure is documented below.',
         () => bigquery_TableEncryptionConfiguration_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timePartitioning",
-        "If specified, configures time-based\npartitioning for this table. Structure is documented below.",
+        'timePartitioning',
+        'If specified, configures time-based\npartitioning for this table. Structure is documented below.',
         () => bigquery_TableTimePartitioning_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "tableReplicationInfo",
+        'tableReplicationInfo',
         'Replication info of a table created using "AS REPLICA" DDL like: "CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv".',
         () => bigquery_TableTableReplicationInfo_GetTypes(),
         false,
@@ -400,39 +400,39 @@ is transparent to the user.  Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "expirationTime",
-        "The time when this table expires, in\nmilliseconds since the epoch. If not present, the table will persist\nindefinitely. Expired tables will be deleted and their storage\nreclaimed.",
+        'expirationTime',
+        'The time when this table expires, in\nmilliseconds since the epoch. If not present, the table will persist\nindefinitely. Expired tables will be deleted and their storage\nreclaimed.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "requirePartitionFilter",
-        "If set to true, queries over this table\nrequire a partition filter that can be used for partition elimination to be\nspecified.",
+        'requirePartitionFilter',
+        'If set to true, queries over this table\nrequire a partition filter that can be used for partition elimination to be\nspecified.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "view",
-        "If specified, configures this table as a view.\nStructure is documented below.",
+        'view',
+        'If specified, configures this table as a view.\nStructure is documented below.',
         () => bigquery_TableView_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "datasetId",
-        "The dataset ID to create the table in.\nChanging this forces a new resource to be created.",
+        'datasetId',
+        'The dataset ID to create the table in.\nChanging this forces a new resource to be created.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "schema",
+        'schema',
         "A JSON schema for the external table. Schema is required\nfor CSV and JSON formats if autodetect is not on. Schema is disallowed\nfor Google Cloud Bigtable, Cloud Datastore backups, Avro, Iceberg, ORC and Parquet formats.\n~>**NOTE:** Because this field expects a JSON string, any changes to the\nstring will create a diff, even if the JSON itself hasn't changed.\nFurthermore drift for this field cannot not be detected because BigQuery\nonly uses this schema to compute the effective schema for the table, therefore\nany changes on the configured value will force the table to be recreated.\nThis schema is effectively only applied when creating a table from an external\ndatasource, after creation the computed schema will be stored in\n`google_bigquery_table.schema`\n\n~>**NOTE:** If you set `external_data_configuration.connection_id`, the\ntable schema must be specified using the top-level `schema` field\ndocumented above.",
         () => [],
         false,
@@ -440,23 +440,23 @@ is transparent to the user.  Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "clusterings",
-        "Specifies column names to use for data clustering.\nUp to four top-level columns are allowed, and should be specified in\ndescending priority order.",
+        'clusterings',
+        'Specifies column names to use for data clustering.\nUp to four top-level columns are allowed, and should be specified in\ndescending priority order.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The field description.",
+        'description',
+        'The field description.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         "A mapping of labels to assign to the resource.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field 'effective_labels' for all of the labels present on the resource.",
         () => InputType_Map_GetTypes(),
         false,
@@ -464,64 +464,64 @@ is transparent to the user.  Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "tableConstraints",
-        "Defines the primary key and foreign keys. \nStructure is documented below.",
+        'tableConstraints',
+        'Defines the primary key and foreign keys. \nStructure is documented below.',
         () => bigquery_TableTableConstraints_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "friendlyName",
-        "A descriptive name for the table.",
+        'friendlyName',
+        'A descriptive name for the table.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "materializedView",
-        "If specified, configures this table as a materialized view.\nStructure is documented below.",
+        'materializedView',
+        'If specified, configures this table as a materialized view.\nStructure is documented below.',
         () => bigquery_TableMaterializedView_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "rangePartitioning",
-        "If specified, configures range-based\npartitioning for this table. Structure is documented below.",
+        'rangePartitioning',
+        'If specified, configures range-based\npartitioning for this table. Structure is documented below.',
         () => bigquery_TableRangePartitioning_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "deletionProtection",
-        "Whether or not to allow the provider to destroy the instance. Unless this field is set to false\nin state, a `=destroy` or `=update` that would delete the instance will fail.",
+        'deletionProtection',
+        'Whether or not to allow the provider to destroy the instance. Unless this field is set to false\nin state, a `=destroy` or `=update` that would delete the instance will fail.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "tableId",
-        "A unique ID for the resource.\nChanging this forces a new resource to be created.",
+        'tableId',
+        'A unique ID for the resource.\nChanging this forces a new resource to be created.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "externalDataConfiguration",
-        "Describes the data format,\nlocation, and other properties of a table stored outside of BigQuery.\nBy defining these properties, the data source can then be queried as\nif it were a standard BigQuery table. Structure is documented below.",
+        'externalDataConfiguration',
+        'Describes the data format,\nlocation, and other properties of a table stored outside of BigQuery.\nBy defining these properties, the data source can then be queried as\nif it were a standard BigQuery table. Structure is documented below.',
         () => bigquery_TableExternalDataConfiguration_GetTypes(),
         false,
         false,

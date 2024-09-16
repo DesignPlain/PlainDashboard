@@ -3,37 +3,37 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bedrock_CustomModelTrainingMetric,
   bedrock_CustomModelTrainingMetric_GetTypes,
-} from "../types/bedrock_CustomModelTrainingMetric";
+} from '../types/bedrock_CustomModelTrainingMetric';
 import {
   bedrock_CustomModelTimeouts,
   bedrock_CustomModelTimeouts_GetTypes,
-} from "../types/bedrock_CustomModelTimeouts";
+} from '../types/bedrock_CustomModelTimeouts';
 import {
   bedrock_CustomModelVpcConfig,
   bedrock_CustomModelVpcConfig_GetTypes,
-} from "../types/bedrock_CustomModelVpcConfig";
+} from '../types/bedrock_CustomModelVpcConfig';
 import {
   bedrock_CustomModelOutputDataConfig,
   bedrock_CustomModelOutputDataConfig_GetTypes,
-} from "../types/bedrock_CustomModelOutputDataConfig";
+} from '../types/bedrock_CustomModelOutputDataConfig';
 import {
   bedrock_CustomModelTrainingDataConfig,
   bedrock_CustomModelTrainingDataConfig_GetTypes,
-} from "../types/bedrock_CustomModelTrainingDataConfig";
+} from '../types/bedrock_CustomModelTrainingDataConfig';
 import {
   bedrock_CustomModelValidationDataConfig,
   bedrock_CustomModelValidationDataConfig_GetTypes,
-} from "../types/bedrock_CustomModelValidationDataConfig";
+} from '../types/bedrock_CustomModelValidationDataConfig';
 import {
   bedrock_CustomModelValidationMetric,
   bedrock_CustomModelValidationMetric_GetTypes,
-} from "../types/bedrock_CustomModelValidationMetric";
+} from '../types/bedrock_CustomModelValidationMetric';
 
 export interface CustomModelArgs {
   // A name for the customization job.
@@ -137,104 +137,104 @@ export class CustomModel extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "customizationType",
-        "The customization type. Valid values: `FINE_TUNING`, `CONTINUED_PRE_TRAINING`.",
+        'customizationType',
+        'The customization type. Valid values: `FINE_TUNING`, `CONTINUED_PRE_TRAINING`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "customModelKmsKeyId",
-        "The custom model is encrypted at rest using this key. Specify the key ARN.",
+        'customModelKmsKeyId',
+        'The custom model is encrypted at rest using this key. Specify the key ARN.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "hyperparameters",
-        "[Parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html) related to tuning the model.",
+        'hyperparameters',
+        '[Parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html) related to tuning the model.',
         () => InputType_Map_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "jobName",
-        "A name for the customization job.",
+        'jobName',
+        'A name for the customization job.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "roleArn",
-        "The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to perform tasks on your behalf.",
+        'roleArn',
+        'The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to perform tasks on your behalf.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the customization job and custom model. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the customization job and custom model. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => bedrock_CustomModelTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "vpcConfig",
-        "Configuration parameters for the private Virtual Private Cloud (VPC) that contains the resources you are using for this job.",
+        'vpcConfig',
+        'Configuration parameters for the private Virtual Private Cloud (VPC) that contains the resources you are using for this job.',
         () => bedrock_CustomModelVpcConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "customModelName",
-        "Name for the custom model.",
+        'customModelName',
+        'Name for the custom model.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "outputDataConfig",
-        "S3 location for the output data.",
+        'outputDataConfig',
+        'S3 location for the output data.',
         () => bedrock_CustomModelOutputDataConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "trainingDataConfig",
-        "Information about the training dataset.",
+        'trainingDataConfig',
+        'Information about the training dataset.',
         () => bedrock_CustomModelTrainingDataConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "validationDataConfig",
-        "Information about the validation dataset.",
+        'validationDataConfig',
+        'Information about the validation dataset.',
         () => bedrock_CustomModelValidationDataConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "baseModelIdentifier",
-        "The Amazon Resource Name (ARN) of the base model.",
+        'baseModelIdentifier',
+        'The Amazon Resource Name (ARN) of the base model.',
         () => [],
         true,
         false,

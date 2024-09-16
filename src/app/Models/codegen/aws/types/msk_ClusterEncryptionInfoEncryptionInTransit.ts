@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface msk_ClusterEncryptionInfoEncryptionInTransit {
   // Encryption setting for data in transit between clients and brokers. Valid values: `TLS`, `TLS_PLAINTEXT`, and `PLAINTEXT`. Default value is `TLS`.
@@ -18,16 +18,16 @@ export function msk_ClusterEncryptionInfoEncryptionInTransit_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.String,
-      "clientBroker",
-      "Encryption setting for data in transit between clients and brokers. Valid values: `TLS`, `TLS_PLAINTEXT`, and `PLAINTEXT`. Default value is `TLS`.",
+      'clientBroker',
+      'Encryption setting for data in transit between clients and brokers. Valid values: `TLS`, `TLS_PLAINTEXT`, and `PLAINTEXT`. Default value is `TLS`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "inCluster",
-      "Whether data communication among broker nodes is encrypted. Default value: `true`.",
+      'inCluster',
+      'Whether data communication among broker nodes is encrypted. Default value: `true`.',
       () => [],
       false,
       true,

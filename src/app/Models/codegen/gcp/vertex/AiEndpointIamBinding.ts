@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   vertex_AiEndpointIamBindingCondition,
   vertex_AiEndpointIamBindingCondition_GetTypes,
-} from "../types/vertex_AiEndpointIamBindingCondition";
+} from '../types/vertex_AiEndpointIamBindingCondition';
 
 export interface AiEndpointIamBindingArgs {
   //
@@ -56,41 +56,41 @@ export class AiEndpointIamBinding extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "members",
-        "",
+        'members',
+        '',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "",
+        'project',
+        '',
         () => [],
         false,
         true,
       ),
-      new DynamicUIProps(InputType.String, "role", "", () => [], true, true),
+      new DynamicUIProps(InputType.String, 'role', '', () => [], true, true),
       new DynamicUIProps(
         InputType.Object,
-        "condition",
-        "",
+        'condition',
+        '',
         () => vertex_AiEndpointIamBindingCondition_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "endpoint",
-        "",
+        'endpoint',
+        '',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "",
+        'location',
+        '',
         () => [],
         false,
         true,

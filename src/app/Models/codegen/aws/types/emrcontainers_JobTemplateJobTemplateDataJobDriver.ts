@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   emrcontainers_JobTemplateJobTemplateDataJobDriverSparkSqlJobDriver,
   emrcontainers_JobTemplateJobTemplateDataJobDriverSparkSqlJobDriver_GetTypes,
-} from "./emrcontainers_JobTemplateJobTemplateDataJobDriverSparkSqlJobDriver";
+} from './emrcontainers_JobTemplateJobTemplateDataJobDriverSparkSqlJobDriver';
 import {
   emrcontainers_JobTemplateJobTemplateDataJobDriverSparkSubmitJobDriver,
   emrcontainers_JobTemplateJobTemplateDataJobDriverSparkSubmitJobDriver_GetTypes,
-} from "./emrcontainers_JobTemplateJobTemplateDataJobDriverSparkSubmitJobDriver";
+} from './emrcontainers_JobTemplateJobTemplateDataJobDriverSparkSubmitJobDriver';
 
 export interface emrcontainers_JobTemplateJobTemplateDataJobDriver {
   // The job driver for job type.
@@ -26,8 +26,8 @@ export function emrcontainers_JobTemplateJobTemplateDataJobDriver_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Object,
-      "sparkSqlJobDriver",
-      "The job driver for job type.",
+      'sparkSqlJobDriver',
+      'The job driver for job type.',
       () =>
         emrcontainers_JobTemplateJobTemplateDataJobDriverSparkSqlJobDriver_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function emrcontainers_JobTemplateJobTemplateDataJobDriver_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "sparkSubmitJobDriver",
-      "The job driver parameters specified for spark submit.",
+      'sparkSubmitJobDriver',
+      'The job driver parameters specified for spark submit.',
       () =>
         emrcontainers_JobTemplateJobTemplateDataJobDriverSparkSubmitJobDriver_GetTypes(),
       false,

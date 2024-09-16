@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appflow_FlowSourceFlowConfigSourceConnectorPropertiesCustomConnector {
   //
@@ -18,16 +18,16 @@ export function appflow_FlowSourceFlowConfigSourceConnectorPropertiesCustomConne
   return [
     new DynamicUIProps(
       InputType.Map,
-      "customProperties",
-      "",
+      'customProperties',
+      '',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "entityName",
-      "",
+      'entityName',
+      '',
       () => [],
       true,
       false,

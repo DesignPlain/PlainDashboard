@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   fsx_getOntapFileSystemEndpointIntercluster,
   fsx_getOntapFileSystemEndpointIntercluster_GetTypes,
-} from "./fsx_getOntapFileSystemEndpointIntercluster";
+} from './fsx_getOntapFileSystemEndpointIntercluster';
 import {
   fsx_getOntapFileSystemEndpointManagement,
   fsx_getOntapFileSystemEndpointManagement_GetTypes,
-} from "./fsx_getOntapFileSystemEndpointManagement";
+} from './fsx_getOntapFileSystemEndpointManagement';
 
 export interface fsx_getOntapFileSystemEndpoint {
   // A FileSystemEndpoint for managing your file system by setting up NetApp SnapMirror with other ONTAP systems. See FileSystemEndpoint below.
@@ -26,16 +26,16 @@ export function fsx_getOntapFileSystemEndpoint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "interclusters",
-      "A FileSystemEndpoint for managing your file system by setting up NetApp SnapMirror with other ONTAP systems. See FileSystemEndpoint below.",
+      'interclusters',
+      'A FileSystemEndpoint for managing your file system by setting up NetApp SnapMirror with other ONTAP systems. See FileSystemEndpoint below.',
       () => fsx_getOntapFileSystemEndpointIntercluster_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "managements",
-      "A FileSystemEndpoint for managing your file system using the NetApp ONTAP CLI and NetApp ONTAP API. See FileSystemEndpoint below.",
+      'managements',
+      'A FileSystemEndpoint for managing your file system using the NetApp ONTAP CLI and NetApp ONTAP API. See FileSystemEndpoint below.',
       () => fsx_getOntapFileSystemEndpointManagement_GetTypes(),
       true,
       false,

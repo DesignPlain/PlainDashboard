@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface lightsail_DistributionCacheBehaviorSettingsForwardedHeaders {
   // The specific headers to forward to your distribution's origin.
@@ -18,7 +18,7 @@ export function lightsail_DistributionCacheBehaviorSettingsForwardedHeaders_GetT
   return [
     new DynamicUIProps(
       InputType.Array,
-      "headersAllowLists",
+      'headersAllowLists',
       "The specific headers to forward to your distribution's origin.",
       () => InputType_String_GetTypes(),
       false,
@@ -26,8 +26,8 @@ export function lightsail_DistributionCacheBehaviorSettingsForwardedHeaders_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "option",
-      "The headers that you want your distribution to forward to your origin and base caching on.",
+      'option',
+      'The headers that you want your distribution to forward to your origin and base caching on.',
       () => [],
       false,
       false,

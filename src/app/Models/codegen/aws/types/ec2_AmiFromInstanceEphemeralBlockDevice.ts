@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2_AmiFromInstanceEphemeralBlockDevice {
   // Path at which the device is exposed to created instances.
@@ -21,7 +21,7 @@ export function ec2_AmiFromInstanceEphemeralBlockDevice_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.String,
-      "virtualName",
+      'virtualName',
       'Name for the ephemeral device, of the form "ephemeralN" where\n*N* is a volume number starting from zero.',
       () => [],
       false,
@@ -29,8 +29,8 @@ export function ec2_AmiFromInstanceEphemeralBlockDevice_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "deviceName",
-      "Path at which the device is exposed to created instances.",
+      'deviceName',
+      'Path at which the device is exposed to created instances.',
       () => [],
       false,
       false,

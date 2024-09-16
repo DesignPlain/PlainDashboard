@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   osconfig_GuestPoliciesRecipeUpdateStep,
   osconfig_GuestPoliciesRecipeUpdateStep_GetTypes,
-} from "./osconfig_GuestPoliciesRecipeUpdateStep";
+} from './osconfig_GuestPoliciesRecipeUpdateStep';
 import {
   osconfig_GuestPoliciesRecipeArtifact,
   osconfig_GuestPoliciesRecipeArtifact_GetTypes,
-} from "./osconfig_GuestPoliciesRecipeArtifact";
+} from './osconfig_GuestPoliciesRecipeArtifact';
 import {
   osconfig_GuestPoliciesRecipeInstallStep,
   osconfig_GuestPoliciesRecipeInstallStep_GetTypes,
-} from "./osconfig_GuestPoliciesRecipeInstallStep";
+} from './osconfig_GuestPoliciesRecipeInstallStep';
 
 export interface osconfig_GuestPoliciesRecipe {
   /*
@@ -66,31 +66,31 @@ export function osconfig_GuestPoliciesRecipe_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "updateSteps",
-      "Actions to be taken for updating this recipe. On failure it stops executing steps and does not attempt another update for this recipe.\nAny steps taken (including partially completed steps) are not rolled back.\nStructure is documented below.",
+      'updateSteps',
+      'Actions to be taken for updating this recipe. On failure it stops executing steps and does not attempt another update for this recipe.\nAny steps taken (including partially completed steps) are not rolled back.\nStructure is documented below.',
       () => osconfig_GuestPoliciesRecipeUpdateStep_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "version",
-      "The version of this software recipe. Version can be up to 4 period separated numbers (e.g. 12.34.56.78).",
+      'version',
+      'The version of this software recipe. Version can be up to 4 period separated numbers (e.g. 12.34.56.78).',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "artifacts",
-      "Resources available to be used in the steps in the recipe.\nStructure is documented below.",
+      'artifacts',
+      'Resources available to be used in the steps in the recipe.\nStructure is documented below.',
       () => osconfig_GuestPoliciesRecipeArtifact_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "desiredState",
+      'desiredState',
       "Default is INSTALLED. The desired state the agent should maintain for this recipe.\nINSTALLED: The software recipe is installed on the instance but won't be updated to new versions.\nINSTALLED_KEEP_UPDATED: The software recipe is installed on the instance. The recipe is updated to a higher version,\nif a higher version of the recipe is assigned to this instance.\nREMOVE: Remove is unsupported for software recipes and attempts to create or update a recipe to the REMOVE state is rejected.\nDefault value is `INSTALLED`.\nPossible values are: `INSTALLED`, `UPDATED`, `REMOVED`.",
       () => [],
       false,
@@ -98,16 +98,16 @@ export function osconfig_GuestPoliciesRecipe_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "installSteps",
-      "Actions to be taken for installing this recipe. On failure it stops executing steps and does not attempt another installation.\nAny steps taken (including partially completed steps) are not rolled back.\nStructure is documented below.",
+      'installSteps',
+      'Actions to be taken for installing this recipe. On failure it stops executing steps and does not attempt another installation.\nAny steps taken (including partially completed steps) are not rolled back.\nStructure is documented below.',
       () => osconfig_GuestPoliciesRecipeInstallStep_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Unique identifier for the recipe. Only one recipe with a given name is installed on an instance.\nNames are also used to identify resources which helps to determine whether guest policies have conflicts.\nThis means that requests to create multiple recipes with the same name and version are rejected since they\ncould potentially have conflicting assignments.",
+      'name',
+      'Unique identifier for the recipe. Only one recipe with a given name is installed on an instance.\nNames are also used to identify resources which helps to determine whether guest policies have conflicts.\nThis means that requests to create multiple recipes with the same name and version are rejected since they\ncould potentially have conflicting assignments.',
       () => [],
       true,
       false,

@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions,
   gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions_GetTypes,
-} from "./gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions";
+} from './gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions';
 import {
   gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade,
   gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade_GetTypes,
-} from "./gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade";
+} from './gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade';
 
 export interface gkehub_FeatureSpecClusterupgradeGkeUpgradeOverride {
   /*
@@ -32,8 +32,8 @@ export function gkehub_FeatureSpecClusterupgradeGkeUpgradeOverride_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.Object,
-      "postConditions",
-      "Post conditions to override for the specified upgrade.\nStructure is documented below.",
+      'postConditions',
+      'Post conditions to override for the specified upgrade.\nStructure is documented below.',
       () =>
         gkehub_FeatureSpecClusterupgradeGkeUpgradeOverridePostConditions_GetTypes(),
       true,
@@ -41,8 +41,8 @@ export function gkehub_FeatureSpecClusterupgradeGkeUpgradeOverride_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Object,
-      "upgrade",
-      "Which upgrade to override.\nStructure is documented below.",
+      'upgrade',
+      'Which upgrade to override.\nStructure is documented below.',
       () =>
         gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade_GetTypes(),
       true,

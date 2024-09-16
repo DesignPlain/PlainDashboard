@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface LinkAssociationArgs {
   // The ID of the device.
@@ -31,24 +31,24 @@ export class LinkAssociation extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "globalNetworkId",
-        "The ID of the global network.",
+        'globalNetworkId',
+        'The ID of the global network.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "linkId",
-        "The ID of the link.",
+        'linkId',
+        'The ID of the link.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "deviceId",
-        "The ID of the device.",
+        'deviceId',
+        'The ID of the device.',
         () => [],
         true,
         true,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   batch_getJobDefinitionNodePropertyNodeRangePropertyContainer,
   batch_getJobDefinitionNodePropertyNodeRangePropertyContainer_GetTypes,
-} from "./batch_getJobDefinitionNodePropertyNodeRangePropertyContainer";
+} from './batch_getJobDefinitionNodePropertyNodeRangePropertyContainer';
 
 export interface batch_getJobDefinitionNodePropertyNodeRangeProperty {
   // The range of nodes, using node index values. A range of 0:3 indicates nodes with index values of 0 through 3. I
@@ -22,8 +22,8 @@ export function batch_getJobDefinitionNodePropertyNodeRangeProperty_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.Array,
-      "containers",
-      "The container details for the node range.",
+      'containers',
+      'The container details for the node range.',
       () =>
         batch_getJobDefinitionNodePropertyNodeRangePropertyContainer_GetTypes(),
       true,
@@ -31,8 +31,8 @@ export function batch_getJobDefinitionNodePropertyNodeRangeProperty_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "targetNodes",
-      "The range of nodes, using node index values. A range of 0:3 indicates nodes with index values of 0 through 3. I",
+      'targetNodes',
+      'The range of nodes, using node index values. A range of 0:3 indicates nodes with index values of 0 through 3. I',
       () => [],
       true,
       false,

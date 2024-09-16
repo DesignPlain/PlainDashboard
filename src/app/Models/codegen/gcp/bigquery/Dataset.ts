@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bigquery_DatasetDefaultEncryptionConfiguration,
   bigquery_DatasetDefaultEncryptionConfiguration_GetTypes,
-} from "../types/bigquery_DatasetDefaultEncryptionConfiguration";
+} from '../types/bigquery_DatasetDefaultEncryptionConfiguration';
 import {
   bigquery_DatasetAccess,
   bigquery_DatasetAccess_GetTypes,
-} from "../types/bigquery_DatasetAccess";
+} from '../types/bigquery_DatasetAccess';
 import {
   bigquery_DatasetExternalDatasetReference,
   bigquery_DatasetExternalDatasetReference_GetTypes,
-} from "../types/bigquery_DatasetExternalDatasetReference";
+} from '../types/bigquery_DatasetExternalDatasetReference';
 
 export interface DatasetArgs {
   /*
@@ -326,39 +326,39 @@ Please refer to the field `effective_labels` for all of the labels present on th
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "deleteContentsOnDestroy",
-        "If set to `true`, delete all the tables in the\ndataset when destroying the resource; otherwise,\ndestroying the resource will fail if tables are present.",
+        'deleteContentsOnDestroy',
+        'If set to `true`, delete all the tables in the\ndataset when destroying the resource; otherwise,\ndestroying the resource will fail if tables are present.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "defaultEncryptionConfiguration",
-        "The default encryption key for all tables in the dataset. Once this property is set,\nall newly-created partitioned tables in the dataset will have encryption key set to\nthis value, unless table creation request (or query) overrides the key.\nStructure is documented below.",
+        'defaultEncryptionConfiguration',
+        'The default encryption key for all tables in the dataset. Once this property is set,\nall newly-created partitioned tables in the dataset will have encryption key set to\nthis value, unless table creation request (or query) overrides the key.\nStructure is documented below.',
         () => bigquery_DatasetDefaultEncryptionConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "accesses",
-        "An array of objects that define dataset access for one or more entities.\nStructure is documented below.",
+        'accesses',
+        'An array of objects that define dataset access for one or more entities.\nStructure is documented below.',
         () => bigquery_DatasetAccess_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "defaultCollation",
+        'defaultCollation',
         "Defines the default collation specification of future tables created\nin the dataset. If a table is created in this dataset without table-level\ndefault collation, then the table inherits the dataset default collation,\nwhich is applied to the string fields that do not have explicit collation\nspecified. A change to this field affects only tables created afterwards,\nand does not alter the existing tables.\nThe following values are supported:\n- 'und:ci': undetermined locale, case insensitive.\n- '': empty string. Default to case-sensitive behavior.",
         () => [],
         false,
@@ -366,7 +366,7 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.Number,
-        "defaultTableExpirationMs",
+        'defaultTableExpirationMs',
         "The default lifetime of all tables in the dataset, in milliseconds.\nThe minimum value is 3600000 milliseconds (one hour).\n\nOnce this property is set, all newly-created tables in the dataset\nwill have an `expirationTime` property set to the creation time plus\nthe value in this property, and changing the value will only affect\nnew tables, not existing ones. When the `expirationTime` for a given\ntable is reached, that table will be deleted automatically.\nIf a table's `expirationTime` is modified or removed before the\ntable expires, or if you provide an explicit `expirationTime` when\ncreating a table, that value takes precedence over the default\nexpiration time indicated by this property.",
         () => [],
         false,
@@ -374,47 +374,47 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.Object,
-        "externalDatasetReference",
-        "Information about the external metadata storage where the dataset is defined.\nStructure is documented below.",
+        'externalDatasetReference',
+        'Information about the external metadata storage where the dataset is defined.\nStructure is documented below.',
         () => bigquery_DatasetExternalDatasetReference_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "datasetId",
-        "A unique ID for this dataset, without the project name. The ID\nmust contain only letters (a-z, A-Z), numbers (0-9), or\nunderscores (_). The maximum length is 1,024 characters.\n\n\n- - -",
+        'datasetId',
+        'A unique ID for this dataset, without the project name. The ID\nmust contain only letters (a-z, A-Z), numbers (0-9), or\nunderscores (_). The maximum length is 1,024 characters.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "friendlyName",
-        "A descriptive name for the dataset",
+        'friendlyName',
+        'A descriptive name for the dataset',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "defaultPartitionExpirationMs",
-        "The default partition expiration for all partitioned tables in\nthe dataset, in milliseconds.\n\nOnce this property is set, all newly-created partitioned tables in\nthe dataset will have an `expirationMs` property in the `timePartitioning`\nsettings set to this value, and changing the value will only\naffect new tables, not existing ones. The storage in a partition will\nhave an expiration time of its partition time plus this value.\nSetting this property overrides the use of `defaultTableExpirationMs`\nfor partitioned tables: only one of `defaultTableExpirationMs` and\n`defaultPartitionExpirationMs` will be used for any new partitioned\ntable. If you provide an explicit `timePartitioning.expirationMs` when\ncreating or updating a partitioned table, that value takes precedence\nover the default partition expiration time indicated by this property.",
+        'defaultPartitionExpirationMs',
+        'The default partition expiration for all partitioned tables in\nthe dataset, in milliseconds.\n\nOnce this property is set, all newly-created partitioned tables in\nthe dataset will have an `expirationMs` property in the `timePartitioning`\nsettings set to this value, and changing the value will only\naffect new tables, not existing ones. The storage in a partition will\nhave an expiration time of its partition time plus this value.\nSetting this property overrides the use of `defaultTableExpirationMs`\nfor partitioned tables: only one of `defaultTableExpirationMs` and\n`defaultPartitionExpirationMs` will be used for any new partitioned\ntable. If you provide an explicit `timePartitioning.expirationMs` when\ncreating or updating a partitioned table, that value takes precedence\nover the default partition expiration time indicated by this property.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "The labels associated with this dataset. You can use these to\norganize and group your datasets.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'The labels associated with this dataset. You can use these to\norganize and group your datasets.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "storageBillingModel",
+        'storageBillingModel',
         "Specifies the storage billing model for the dataset.\nSet this flag value to LOGICAL to use logical bytes for storage billing,\nor to PHYSICAL to use physical bytes instead.\nLOGICAL is the default if this flag isn't specified.",
         () => [],
         false,
@@ -422,32 +422,32 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The geographic location where the dataset should reside.\nSee [official docs](https://cloud.google.com/bigquery/docs/dataset-locations).\n\nThere are two types of locations, regional or multi-regional. A regional\nlocation is a specific geographic place, such as Tokyo, and a multi-regional\nlocation is a large geographic area, such as the United States, that\ncontains at least two geographic places.\n\nThe default value is multi-regional location `US`.\nChanging this forces a new resource to be created.",
+        'location',
+        'The geographic location where the dataset should reside.\nSee [official docs](https://cloud.google.com/bigquery/docs/dataset-locations).\n\nThere are two types of locations, regional or multi-regional. A regional\nlocation is a specific geographic place, such as Tokyo, and a multi-regional\nlocation is a large geographic area, such as the United States, that\ncontains at least two geographic places.\n\nThe default value is multi-regional location `US`.\nChanging this forces a new resource to be created.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "isCaseInsensitive",
-        "TRUE if the dataset and its table names are case-insensitive, otherwise FALSE.\nBy default, this is FALSE, which means the dataset and its table names are\ncase-sensitive. This field does not affect routine references.",
+        'isCaseInsensitive',
+        'TRUE if the dataset and its table names are case-insensitive, otherwise FALSE.\nBy default, this is FALSE, which means the dataset and its table names are\ncase-sensitive. This field does not affect routine references.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A user-friendly description of the dataset",
+        'description',
+        'A user-friendly description of the dataset',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "maxTimeTravelHours",
-        "Defines the time travel window in hours. The value can be from 48 to 168 hours (2 to 7 days).",
+        'maxTimeTravelHours',
+        'Defines the time travel window in hours. The value can be from 48 to 168 hours (2 to 7 days).',
         () => [],
         false,
         false,

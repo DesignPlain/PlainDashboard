@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2_getInstanceMetadataOption {
   // State of the metadata service: `enabled`, `disabled`.
@@ -27,40 +27,40 @@ export function ec2_getInstanceMetadataOption_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "httpPutResponseHopLimit",
-      "Desired HTTP PUT response hop limit for instance metadata requests.",
+      'httpPutResponseHopLimit',
+      'Desired HTTP PUT response hop limit for instance metadata requests.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "httpTokens",
-      "If session tokens are required: `optional`, `required`.",
+      'httpTokens',
+      'If session tokens are required: `optional`, `required`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "instanceMetadataTags",
-      "If access to instance tags is allowed from the metadata service: `enabled`, `disabled`.",
+      'instanceMetadataTags',
+      'If access to instance tags is allowed from the metadata service: `enabled`, `disabled`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "httpEndpoint",
-      "State of the metadata service: `enabled`, `disabled`.",
+      'httpEndpoint',
+      'State of the metadata service: `enabled`, `disabled`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "httpProtocolIpv6",
-      "Whether the IPv6 endpoint for the instance metadata service is `enabled` or `disabled`",
+      'httpProtocolIpv6',
+      'Whether the IPv6 endpoint for the instance metadata service is `enabled` or `disabled`',
       () => [],
       true,
       false,

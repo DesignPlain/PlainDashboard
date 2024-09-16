@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2_LaunchTemplateBlockDeviceMappingEbs {
   /*
@@ -51,39 +51,39 @@ export function ec2_LaunchTemplateBlockDeviceMappingEbs_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.Number,
-      "volumeSize",
-      "The size of the volume in gigabytes.",
+      'volumeSize',
+      'The size of the volume in gigabytes.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "volumeType",
-      "The volume type.\nCan be one of `standard`, `gp2`, `gp3`, `io1`, `io2`, `sc1` or `st1`.",
+      'volumeType',
+      'The volume type.\nCan be one of `standard`, `gp2`, `gp3`, `io1`, `io2`, `sc1` or `st1`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "deleteOnTermination",
-      "Whether the volume should be destroyed on instance termination.\nSee [Preserving Amazon EBS Volumes on Instance Termination](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/preserving-volumes-on-termination.html) for more information.",
+      'deleteOnTermination',
+      'Whether the volume should be destroyed on instance termination.\nSee [Preserving Amazon EBS Volumes on Instance Termination](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/preserving-volumes-on-termination.html) for more information.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "encrypted",
-      "Enables [EBS encryption](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html) on the volume.\nCannot be used with `snapshot_id`.",
+      'encrypted',
+      'Enables [EBS encryption](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html) on the volume.\nCannot be used with `snapshot_id`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "iops",
+      'iops',
       'The amount of provisioned [IOPS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html).\nThis must be set with a `volume_type` of `"io1/io2/gp3"`.',
       () => [],
       false,
@@ -91,24 +91,24 @@ export function ec2_LaunchTemplateBlockDeviceMappingEbs_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "kmsKeyId",
-      "The ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the encrypted volume.\n`encrypted` must be set to `true` when this is set.",
+      'kmsKeyId',
+      'The ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the encrypted volume.\n`encrypted` must be set to `true` when this is set.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "snapshotId",
-      "The Snapshot ID to mount.",
+      'snapshotId',
+      'The Snapshot ID to mount.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "throughput",
-      "The throughput to provision for a `gp3` volume in MiB/s (specified as an integer, e.g., 500), with a maximum of 1,000 MiB/s.",
+      'throughput',
+      'The throughput to provision for a `gp3` volume in MiB/s (specified as an integer, e.g., 500), with a maximum of 1,000 MiB/s.',
       () => [],
       false,
       false,

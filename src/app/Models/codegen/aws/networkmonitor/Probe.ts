@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ProbeArgs {
   // The destination IP address. This must be either IPV4 or IPV6.
@@ -78,56 +78,56 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "destination",
-        "The destination IP address. This must be either IPV4 or IPV6.",
+        'destination',
+        'The destination IP address. This must be either IPV4 or IPV6.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "destinationPort",
-        "The port associated with the destination. This is required only if the protocol is TCP and must be a number between 1 and 65536.",
+        'destinationPort',
+        'The port associated with the destination. This is required only if the protocol is TCP and must be a number between 1 and 65536.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "monitorName",
-        "The name of the monitor.",
+        'monitorName',
+        'The name of the monitor.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "packetSize",
-        "The size of the packets sent between the source and destination. This must be a number between 56 and 8500.\n\nThe following arguments are optional:",
+        'packetSize',
+        'The size of the packets sent between the source and destination. This must be a number between 56 and 8500.\n\nThe following arguments are optional:',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "protocol",
-        "The protocol used for the network traffic between the source and destination. This must be either TCP or ICMP.",
+        'protocol',
+        'The protocol used for the network traffic between the source and destination. This must be either TCP or ICMP.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceArn",
-        "The ARN of the subnet.",
+        'sourceArn',
+        'The ARN of the subnet.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value tags for the monitor. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value tags for the monitor. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

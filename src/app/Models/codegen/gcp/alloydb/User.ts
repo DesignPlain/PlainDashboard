@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface UserArgs {
   /*
@@ -64,15 +64,15 @@ Identifies the alloydb cluster. Must be in the format
     return [
       new DynamicUIProps(
         InputType.String,
-        "userType",
-        "The type of this user.\nPossible values are: `ALLOYDB_BUILT_IN`, `ALLOYDB_IAM_USER`.\n\n\n- - -",
+        'userType',
+        'The type of this user.\nPossible values are: `ALLOYDB_BUILT_IN`, `ALLOYDB_IAM_USER`.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cluster",
+        'cluster',
         "Identifies the alloydb cluster. Must be in the format\n'projects/{project}/locations/{location}/clusters/{cluster_id}'",
         () => [],
         true,
@@ -80,24 +80,24 @@ Identifies the alloydb cluster. Must be in the format
       ),
       new DynamicUIProps(
         InputType.Array,
-        "databaseRoles",
-        "List of database roles this database user has.",
+        'databaseRoles',
+        'List of database roles this database user has.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "password",
-        "Password for this database user.",
+        'password',
+        'Password for this database user.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "userId",
-        "The database role name of the user.",
+        'userId',
+        'The database role name of the user.',
         () => [],
         true,
         true,

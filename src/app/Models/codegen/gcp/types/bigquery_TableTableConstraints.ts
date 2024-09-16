@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bigquery_TableTableConstraintsPrimaryKey,
   bigquery_TableTableConstraintsPrimaryKey_GetTypes,
-} from "./bigquery_TableTableConstraintsPrimaryKey";
+} from './bigquery_TableTableConstraintsPrimaryKey';
 import {
   bigquery_TableTableConstraintsForeignKey,
   bigquery_TableTableConstraintsForeignKey_GetTypes,
-} from "./bigquery_TableTableConstraintsForeignKey";
+} from './bigquery_TableTableConstraintsForeignKey';
 
 export interface bigquery_TableTableConstraints {
   /*
@@ -35,7 +35,7 @@ export function bigquery_TableTableConstraints_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "primaryKey",
+      'primaryKey',
       "Represents the primary key constraint\non a table's columns. Present only if the table has a primary key.\nThe primary key is not enforced.\nStructure is documented below.",
       () => bigquery_TableTableConstraintsPrimaryKey_GetTypes(),
       false,
@@ -43,8 +43,8 @@ export function bigquery_TableTableConstraints_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "foreignKeys",
-      "Present only if the table has a foreign key.\nThe foreign key is not enforced.\nStructure is documented below.",
+      'foreignKeys',
+      'Present only if the table has a foreign key.\nThe foreign key is not enforced.\nStructure is documented below.',
       () => bigquery_TableTableConstraintsForeignKey_GetTypes(),
       false,
       false,

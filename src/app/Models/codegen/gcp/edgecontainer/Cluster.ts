@@ -3,41 +3,41 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   edgecontainer_ClusterFleet,
   edgecontainer_ClusterFleet_GetTypes,
-} from "../types/edgecontainer_ClusterFleet";
+} from '../types/edgecontainer_ClusterFleet';
 import {
   edgecontainer_ClusterAuthorization,
   edgecontainer_ClusterAuthorization_GetTypes,
-} from "../types/edgecontainer_ClusterAuthorization";
+} from '../types/edgecontainer_ClusterAuthorization';
 import {
   edgecontainer_ClusterMaintenanceEvent,
   edgecontainer_ClusterMaintenanceEvent_GetTypes,
-} from "../types/edgecontainer_ClusterMaintenanceEvent";
+} from '../types/edgecontainer_ClusterMaintenanceEvent';
 import {
   edgecontainer_ClusterControlPlaneEncryption,
   edgecontainer_ClusterControlPlaneEncryption_GetTypes,
-} from "../types/edgecontainer_ClusterControlPlaneEncryption";
+} from '../types/edgecontainer_ClusterControlPlaneEncryption';
 import {
   edgecontainer_ClusterMaintenancePolicy,
   edgecontainer_ClusterMaintenancePolicy_GetTypes,
-} from "../types/edgecontainer_ClusterMaintenancePolicy";
+} from '../types/edgecontainer_ClusterMaintenancePolicy';
 import {
   edgecontainer_ClusterSystemAddonsConfig,
   edgecontainer_ClusterSystemAddonsConfig_GetTypes,
-} from "../types/edgecontainer_ClusterSystemAddonsConfig";
+} from '../types/edgecontainer_ClusterSystemAddonsConfig';
 import {
   edgecontainer_ClusterControlPlane,
   edgecontainer_ClusterControlPlane_GetTypes,
-} from "../types/edgecontainer_ClusterControlPlane";
+} from '../types/edgecontainer_ClusterControlPlane';
 import {
   edgecontainer_ClusterNetworking,
   edgecontainer_ClusterNetworking_GetTypes,
-} from "../types/edgecontainer_ClusterNetworking";
+} from '../types/edgecontainer_ClusterNetworking';
 
 export interface ClusterArgs {
   /*
@@ -271,47 +271,47 @@ if the cluster does not have any worker nodes.
     return [
       new DynamicUIProps(
         InputType.Array,
-        "externalLoadBalancerIpv4AddressPools",
-        "Address pools for cluster data plane external load balancing.",
+        'externalLoadBalancerIpv4AddressPools',
+        'Address pools for cluster data plane external load balancing.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "authorization",
-        "RBAC policy that will be applied and managed by GEC.\nStructure is documented below.",
+        'authorization',
+        'RBAC policy that will be applied and managed by GEC.\nStructure is documented below.',
         () => edgecontainer_ClusterAuthorization_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "releaseChannel",
-        "The release channel a cluster is subscribed to.\nPossible values are: `RELEASE_CHANNEL_UNSPECIFIED`, `NONE`, `REGULAR`.",
+        'releaseChannel',
+        'The release channel a cluster is subscribed to.\nPossible values are: `RELEASE_CHANNEL_UNSPECIFIED`, `NONE`, `REGULAR`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "systemAddonsConfig",
-        "Config that customers are allowed to define for GDCE system add-ons.\nStructure is documented below.",
+        'systemAddonsConfig',
+        'Config that customers are allowed to define for GDCE system add-ons.\nStructure is documented below.',
         () => edgecontainer_ClusterSystemAddonsConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "targetVersion",
+        'targetVersion',
         'The target cluster version. For example: "1.5.0".',
         () => [],
         false,
@@ -319,72 +319,72 @@ if the cluster does not have any worker nodes.
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The GDCE cluster name.",
+        'name',
+        'The GDCE cluster name.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "fleet",
-        "Fleet related configuration.\nFleets are a Google Cloud concept for logically organizing clusters,\nletting you use and manage multi-cluster capabilities and apply\nconsistent policies across your systems.\nStructure is documented below.",
+        'fleet',
+        'Fleet related configuration.\nFleets are a Google Cloud concept for logically organizing clusters,\nletting you use and manage multi-cluster capabilities and apply\nconsistent policies across your systems.\nStructure is documented below.',
         () => edgecontainer_ClusterFleet_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "User-defined labels for the edgecloud cluster.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'User-defined labels for the edgecloud cluster.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "controlPlane",
-        "The configuration of the cluster control plane.\nStructure is documented below.",
+        'controlPlane',
+        'The configuration of the cluster control plane.\nStructure is documented below.',
         () => edgecontainer_ClusterControlPlane_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "controlPlaneEncryption",
-        "Remote control plane disk encryption options. This field is only used when\nenabling CMEK support.\nStructure is documented below.",
+        'controlPlaneEncryption',
+        'Remote control plane disk encryption options. This field is only used when\nenabling CMEK support.\nStructure is documented below.',
         () => edgecontainer_ClusterControlPlaneEncryption_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "maintenancePolicy",
-        "Cluster-wide maintenance policy configuration.\nStructure is documented below.",
+        'maintenancePolicy',
+        'Cluster-wide maintenance policy configuration.\nStructure is documented below.',
         () => edgecontainer_ClusterMaintenancePolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "networking",
-        "Fleet related configuration.\nFleets are a Google Cloud concept for logically organizing clusters,\nletting you use and manage multi-cluster capabilities and apply\nconsistent policies across your systems.\nStructure is documented below.",
+        'networking',
+        'Fleet related configuration.\nFleets are a Google Cloud concept for logically organizing clusters,\nletting you use and manage multi-cluster capabilities and apply\nconsistent policies across your systems.\nStructure is documented below.',
         () => edgecontainer_ClusterNetworking_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "defaultMaxPodsPerNode",
-        "The default maximum number of pods per node used if a maximum value is not\nspecified explicitly for a node pool in this cluster. If unspecified, the\nKubernetes default value will be used.",
+        'defaultMaxPodsPerNode',
+        'The default maximum number of pods per node used if a maximum value is not\nspecified explicitly for a node pool in this cluster. If unspecified, the\nKubernetes default value will be used.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the resource.",
+        'location',
+        'The location of the resource.',
         () => [],
         true,
         true,

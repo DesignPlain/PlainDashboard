@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface storage_TransferJobTransferSpecAwsS3DataSourceAwsAccessKey {
   // AWS Key ID.
@@ -18,16 +18,16 @@ export function storage_TransferJobTransferSpecAwsS3DataSourceAwsAccessKey_GetTy
   return [
     new DynamicUIProps(
       InputType.String,
-      "accessKeyId",
-      "AWS Key ID.",
+      'accessKeyId',
+      'AWS Key ID.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "secretAccessKey",
-      "AWS Secret Access Key.",
+      'secretAccessKey',
+      'AWS Secret Access Key.',
       () => [],
       true,
       false,

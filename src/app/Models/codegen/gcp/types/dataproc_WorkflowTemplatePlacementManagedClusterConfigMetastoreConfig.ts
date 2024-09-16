@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dataproc_WorkflowTemplatePlacementManagedClusterConfigMetastoreConfig {
   // Required. Resource name of an existing Dataproc Metastore service. Example: - `projects/`
@@ -15,8 +15,8 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfigMetastoreC
   return [
     new DynamicUIProps(
       InputType.String,
-      "dataprocMetastoreService",
-      "Required. Resource name of an existing Dataproc Metastore service. Example: * `projects/`",
+      'dataprocMetastoreService',
+      'Required. Resource name of an existing Dataproc Metastore service. Example: * `projects/`',
       () => [],
       true,
       true,

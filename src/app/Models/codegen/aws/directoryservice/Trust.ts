@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface TrustArgs {
   /*
@@ -117,64 +117,64 @@ One of `Created`, `VerifyFailed`,`Verified`, `UpdateFailed`,`Updated`,`Deleted`,
     return [
       new DynamicUIProps(
         InputType.String,
-        "trustPassword",
-        "Password for the Trust.\nDoes not need to match the passwords for either Directory.\nCan contain upper- and lower-case letters, numbers, and punctuation characters.\nMay be up to 128 characters long.",
+        'trustPassword',
+        'Password for the Trust.\nDoes not need to match the passwords for either Directory.\nCan contain upper- and lower-case letters, numbers, and punctuation characters.\nMay be up to 128 characters long.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "trustType",
-        "Type of the Trust relationship.\nValid values are `Forest` and `External`.\nDefault value is `Forest`.",
+        'trustType',
+        'Type of the Trust relationship.\nValid values are `Forest` and `External`.\nDefault value is `Forest`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "conditionalForwarderIpAddrs",
-        "Set of IPv4 addresses for the DNS server associated with the remote Directory.\nCan contain between 1 and 4 values.",
+        'conditionalForwarderIpAddrs',
+        'Set of IPv4 addresses for the DNS server associated with the remote Directory.\nCan contain between 1 and 4 values.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "deleteAssociatedConditionalForwarder",
-        "Whether to delete the conditional forwarder when deleting the Trust relationship.",
+        'deleteAssociatedConditionalForwarder',
+        'Whether to delete the conditional forwarder when deleting the Trust relationship.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "directoryId",
-        "ID of the Directory.",
-        () => [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "remoteDomainName",
-        "Fully qualified domain name of the remote Directory.",
+        'directoryId',
+        'ID of the Directory.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "selectiveAuth",
-        "Whether to enable selective authentication.\nValid values are `Enabled` and `Disabled`.\nDefault value is `Disabled`.",
+        'remoteDomainName',
+        'Fully qualified domain name of the remote Directory.',
+        () => [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'selectiveAuth',
+        'Whether to enable selective authentication.\nValid values are `Enabled` and `Disabled`.\nDefault value is `Disabled`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "trustDirection",
-        "The direction of the Trust relationship.\nValid values are `One-Way: Outgoing`, `One-Way: Incoming`, and `Two-Way`.",
+        'trustDirection',
+        'The direction of the Trust relationship.\nValid values are `One-Way: Outgoing`, `One-Way: Incoming`, and `Two-Way`.',
         () => [],
         true,
         false,

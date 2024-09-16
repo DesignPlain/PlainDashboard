@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface KeyPairArgs {
   // The name for the key pair. If neither `key_name` nor `key_name_prefix` is provided, the provider will create a unique key name.
@@ -52,32 +52,32 @@ export class KeyPair extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "publicKey",
-        "The public key material.",
+        'publicKey',
+        'The public key material.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "keyName",
-        "The name for the key pair. If neither `key_name` nor `key_name_prefix` is provided, the provider will create a unique key name.",
+        'keyName',
+        'The name for the key pair. If neither `key_name` nor `key_name_prefix` is provided, the provider will create a unique key name.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "keyNamePrefix",
-        "Creates a unique name beginning with the specified prefix. Conflicts with `key_name`. If neither `key_name` nor `key_name_prefix` is provided, the provider will create a unique key name.",
+        'keyNamePrefix',
+        'Creates a unique name beginning with the specified prefix. Conflicts with `key_name`. If neither `key_name` nor `key_name_prefix` is provided, the provider will create a unique key name.',
         () => [],
         false,
         true,

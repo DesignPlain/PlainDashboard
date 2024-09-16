@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTable,
   datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTable_GetTypes,
-} from "./datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTable";
+} from './datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTable';
 
 export interface datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabase {
   /*
@@ -25,8 +25,8 @@ export function datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabase_Ge
   return [
     new DynamicUIProps(
       InputType.Array,
-      "mysqlTables",
-      "Tables in the database.\nStructure is documented below.",
+      'mysqlTables',
+      'Tables in the database.\nStructure is documented below.',
       () =>
         datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTable_GetTypes(),
       false,
@@ -34,8 +34,8 @@ export function datastream_StreamBackfillAllMysqlExcludedObjectsMysqlDatabase_Ge
     ),
     new DynamicUIProps(
       InputType.String,
-      "database",
-      "Database name.",
+      'database',
+      'Database name.',
       () => [],
       true,
       false,

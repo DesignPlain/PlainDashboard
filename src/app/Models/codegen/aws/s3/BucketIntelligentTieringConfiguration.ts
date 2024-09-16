@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   s3_BucketIntelligentTieringConfigurationFilter,
   s3_BucketIntelligentTieringConfigurationFilter_GetTypes,
-} from "../types/s3_BucketIntelligentTieringConfigurationFilter";
+} from '../types/s3_BucketIntelligentTieringConfigurationFilter';
 import {
   s3_BucketIntelligentTieringConfigurationTiering,
   s3_BucketIntelligentTieringConfigurationTiering_GetTypes,
-} from "../types/s3_BucketIntelligentTieringConfigurationTiering";
+} from '../types/s3_BucketIntelligentTieringConfigurationTiering';
 
 export interface BucketIntelligentTieringConfigurationArgs {
   // Name of the bucket this intelligent tiering configuration is associated with.
@@ -51,7 +51,7 @@ export class BucketIntelligentTieringConfiguration extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "filter",
+        'filter',
         "Bucket filter. The configuration only includes objects that meet the filter's criteria (documented below).",
         () => s3_BucketIntelligentTieringConfigurationFilter_GetTypes(),
         false,
@@ -59,32 +59,32 @@ export class BucketIntelligentTieringConfiguration extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Unique name used to identify the S3 Intelligent-Tiering configuration for the bucket.",
+        'name',
+        'Unique name used to identify the S3 Intelligent-Tiering configuration for the bucket.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "status",
-        "Specifies the status of the configuration. Valid values: `Enabled`, `Disabled`.",
+        'status',
+        'Specifies the status of the configuration. Valid values: `Enabled`, `Disabled`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "tierings",
-        "S3 Intelligent-Tiering storage class tiers of the configuration (documented below).",
+        'tierings',
+        'S3 Intelligent-Tiering storage class tiers of the configuration (documented below).',
         () => s3_BucketIntelligentTieringConfigurationTiering_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "bucket",
-        "Name of the bucket this intelligent tiering configuration is associated with.",
+        'bucket',
+        'Name of the bucket this intelligent tiering configuration is associated with.',
         () => [],
         true,
         true,

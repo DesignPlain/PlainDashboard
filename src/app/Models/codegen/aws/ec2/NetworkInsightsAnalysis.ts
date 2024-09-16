@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_NetworkInsightsAnalysisAlternatePathHint,
   ec2_NetworkInsightsAnalysisAlternatePathHint_GetTypes,
-} from "../types/ec2_NetworkInsightsAnalysisAlternatePathHint";
+} from '../types/ec2_NetworkInsightsAnalysisAlternatePathHint';
 import {
   ec2_NetworkInsightsAnalysisForwardPathComponent,
   ec2_NetworkInsightsAnalysisForwardPathComponent_GetTypes,
-} from "../types/ec2_NetworkInsightsAnalysisForwardPathComponent";
+} from '../types/ec2_NetworkInsightsAnalysisForwardPathComponent';
 import {
   ec2_NetworkInsightsAnalysisExplanation,
   ec2_NetworkInsightsAnalysisExplanation_GetTypes,
-} from "../types/ec2_NetworkInsightsAnalysisExplanation";
+} from '../types/ec2_NetworkInsightsAnalysisExplanation';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponent,
   ec2_NetworkInsightsAnalysisReturnPathComponent_GetTypes,
-} from "../types/ec2_NetworkInsightsAnalysisReturnPathComponent";
+} from '../types/ec2_NetworkInsightsAnalysisReturnPathComponent';
 
 export interface NetworkInsightsAnalysisArgs {
   // A list of ARNs for resources the path must traverse.
@@ -94,32 +94,32 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Array,
-        "filterInArns",
-        "A list of ARNs for resources the path must traverse.",
+        'filterInArns',
+        'A list of ARNs for resources the path must traverse.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "networkInsightsPathId",
-        "ID of the Network Insights Path to run an analysis on.\n\nThe following arguments are optional:",
+        'networkInsightsPathId',
+        'ID of the Network Insights Path to run an analysis on.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "waitForCompletion",
-        "If enabled, the resource will wait for the Network Insights Analysis status to change to `succeeded` or `failed`. Setting this to `false` will skip the process. Default: `true`.",
+        'waitForCompletion',
+        'If enabled, the resource will wait for the Network Insights Analysis status to change to `succeeded` or `failed`. Setting this to `false` will skip the process. Default: `true`.',
         () => [],
         false,
         false,

@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   fms_PolicySecurityServicePolicyDataPolicyOptionThirdPartyFirewallPolicy,
   fms_PolicySecurityServicePolicyDataPolicyOptionThirdPartyFirewallPolicy_GetTypes,
-} from "./fms_PolicySecurityServicePolicyDataPolicyOptionThirdPartyFirewallPolicy";
+} from './fms_PolicySecurityServicePolicyDataPolicyOptionThirdPartyFirewallPolicy';
 import {
   fms_PolicySecurityServicePolicyDataPolicyOptionNetworkFirewallPolicy,
   fms_PolicySecurityServicePolicyDataPolicyOptionNetworkFirewallPolicy_GetTypes,
-} from "./fms_PolicySecurityServicePolicyDataPolicyOptionNetworkFirewallPolicy";
+} from './fms_PolicySecurityServicePolicyDataPolicyOptionNetworkFirewallPolicy';
 
 export interface fms_PolicySecurityServicePolicyDataPolicyOption {
   //
@@ -26,8 +26,8 @@ export function fms_PolicySecurityServicePolicyDataPolicyOption_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Object,
-      "thirdPartyFirewallPolicy",
-      "",
+      'thirdPartyFirewallPolicy',
+      '',
       () =>
         fms_PolicySecurityServicePolicyDataPolicyOptionThirdPartyFirewallPolicy_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function fms_PolicySecurityServicePolicyDataPolicyOption_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Object,
-      "networkFirewallPolicy",
-      "Defines the deployment model to use for the firewall policy. Documented below.",
+      'networkFirewallPolicy',
+      'Defines the deployment model to use for the firewall policy. Documented below.',
       () =>
         fms_PolicySecurityServicePolicyDataPolicyOptionNetworkFirewallPolicy_GetTypes(),
       false,

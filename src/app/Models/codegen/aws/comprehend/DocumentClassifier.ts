@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   comprehend_DocumentClassifierInputDataConfig,
   comprehend_DocumentClassifierInputDataConfig_GetTypes,
-} from "../types/comprehend_DocumentClassifierInputDataConfig";
+} from '../types/comprehend_DocumentClassifierInputDataConfig';
 import {
   comprehend_DocumentClassifierOutputDataConfig,
   comprehend_DocumentClassifierOutputDataConfig_GetTypes,
-} from "../types/comprehend_DocumentClassifierOutputDataConfig";
+} from '../types/comprehend_DocumentClassifierOutputDataConfig';
 import {
   comprehend_DocumentClassifierVpcConfig,
   comprehend_DocumentClassifierVpcConfig_GetTypes,
-} from "../types/comprehend_DocumentClassifierVpcConfig";
+} from '../types/comprehend_DocumentClassifierVpcConfig';
 
 export interface DocumentClassifierArgs {
   /*
@@ -185,23 +185,23 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "languageCode",
-        "Two-letter language code for the language.\nOne of `en`, `es`, `fr`, `it`, `de`, or `pt`.",
+        'languageCode',
+        'Two-letter language code for the language.\nOne of `en`, `es`, `fr`, `it`, `de`, or `pt`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "modelKmsKeyId",
-        "KMS Key used to encrypt trained Document Classifiers.\nCan be a KMS Key ID or a KMS Key ARN.",
+        'modelKmsKeyId',
+        'KMS Key used to encrypt trained Document Classifiers.\nCan be a KMS Key ID or a KMS Key ARN.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "versionName",
+        'versionName',
         'Name for the version of the Document Classifier.\nEach version must have a unique name within the Document Classifier.\nIf omitted, the provider will assign a random, unique version name.\nIf explicitly set to `""`, no version name will be set.\nHas a maximum length of 63 characters.\nCan contain upper- and lower-case letters, numbers, and hypen (`-`).\nConflicts with `version_name_prefix`.',
         () => [],
         false,
@@ -209,71 +209,71 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.String,
-        "dataAccessRoleArn",
-        "The ARN for an IAM Role which allows Comprehend to read the training and testing data.",
+        'dataAccessRoleArn',
+        'The ARN for an IAM Role which allows Comprehend to read the training and testing data.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name for the Document Classifier.\nHas a maximum length of 63 characters.\nCan contain upper- and lower-case letters, numbers, and hypen (`-`).\n\nThe following arguments are optional:",
+        'name',
+        'Name for the Document Classifier.\nHas a maximum length of 63 characters.\nCan contain upper- and lower-case letters, numbers, and hypen (`-`).\n\nThe following arguments are optional:',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` Configuration Block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` Configuration Block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "versionNamePrefix",
-        "Creates a unique version name beginning with the specified prefix.\nHas a maximum length of 37 characters.\nCan contain upper- and lower-case letters, numbers, and hypen (`-`).\nConflicts with `version_name`.",
+        'versionNamePrefix',
+        'Creates a unique version name beginning with the specified prefix.\nHas a maximum length of 37 characters.\nCan contain upper- and lower-case letters, numbers, and hypen (`-`).\nConflicts with `version_name`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "volumeKmsKeyId",
-        "KMS Key used to encrypt storage volumes during job processing.\nCan be a KMS Key ID or a KMS Key ARN.",
+        'volumeKmsKeyId',
+        'KMS Key used to encrypt storage volumes during job processing.\nCan be a KMS Key ID or a KMS Key ARN.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "inputDataConfig",
-        "Configuration for the training and testing data.\nSee the `input_data_config` Configuration Block section below.",
+        'inputDataConfig',
+        'Configuration for the training and testing data.\nSee the `input_data_config` Configuration Block section below.',
         () => comprehend_DocumentClassifierInputDataConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "outputDataConfig",
-        "Configuration for the output results of training.\nSee the `output_data_config` Configuration Block section below.",
+        'outputDataConfig',
+        'Configuration for the output results of training.\nSee the `output_data_config` Configuration Block section below.',
         () => comprehend_DocumentClassifierOutputDataConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "vpcConfig",
-        "Configuration parameters for VPC to contain Document Classifier resources.\nSee the `vpc_config` Configuration Block section below.",
+        'vpcConfig',
+        'Configuration parameters for VPC to contain Document Classifier resources.\nSee the `vpc_config` Configuration Block section below.',
         () => comprehend_DocumentClassifierVpcConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "mode",
+        'mode',
         'The document classification mode.\nOne of `MULTI_CLASS` or `MULTI_LABEL`.\n`MULTI_CLASS` is also known as "Single Label" in the AWS Console.',
         () => [],
         false,

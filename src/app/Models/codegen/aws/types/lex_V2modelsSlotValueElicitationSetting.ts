@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecification,
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecification_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecification";
+} from './lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecification';
 import {
   lex_V2modelsSlotValueElicitationSettingDefaultValueSpecification,
   lex_V2modelsSlotValueElicitationSettingDefaultValueSpecification_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingDefaultValueSpecification";
+} from './lex_V2modelsSlotValueElicitationSettingDefaultValueSpecification';
 import {
   lex_V2modelsSlotValueElicitationSettingPromptSpecification,
   lex_V2modelsSlotValueElicitationSettingPromptSpecification_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingPromptSpecification";
+} from './lex_V2modelsSlotValueElicitationSettingPromptSpecification';
 import {
   lex_V2modelsSlotValueElicitationSettingSampleUtterance,
   lex_V2modelsSlotValueElicitationSettingSampleUtterance_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingSampleUtterance";
+} from './lex_V2modelsSlotValueElicitationSettingSampleUtterance';
 import {
   lex_V2modelsSlotValueElicitationSettingSlotResolutionSetting,
   lex_V2modelsSlotValueElicitationSettingSlotResolutionSetting_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingSlotResolutionSetting";
+} from './lex_V2modelsSlotValueElicitationSettingSlotResolutionSetting';
 
 export interface lex_V2modelsSlotValueElicitationSetting {
   //
@@ -50,8 +50,8 @@ export function lex_V2modelsSlotValueElicitationSetting_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.Object,
-      "promptSpecification",
-      "",
+      'promptSpecification',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingPromptSpecification_GetTypes(),
       true,
@@ -59,24 +59,24 @@ export function lex_V2modelsSlotValueElicitationSetting_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Array,
-      "sampleUtterances",
-      "",
+      'sampleUtterances',
+      '',
       () => lex_V2modelsSlotValueElicitationSettingSampleUtterance_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "slotConstraint",
-      "",
+      'slotConstraint',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "slotResolutionSettings",
-      "",
+      'slotResolutionSettings',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingSlotResolutionSetting_GetTypes(),
       false,
@@ -84,8 +84,8 @@ export function lex_V2modelsSlotValueElicitationSetting_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Array,
-      "waitAndContinueSpecifications",
-      "",
+      'waitAndContinueSpecifications',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecification_GetTypes(),
       false,
@@ -93,8 +93,8 @@ export function lex_V2modelsSlotValueElicitationSetting_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Array,
-      "defaultValueSpecifications",
-      "",
+      'defaultValueSpecifications',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingDefaultValueSpecification_GetTypes(),
       false,

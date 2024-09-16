@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_WebAclLoggingConfigurationLoggingFilterFilterConditionLabelNameCondition,
   wafv2_WebAclLoggingConfigurationLoggingFilterFilterConditionLabelNameCondition_GetTypes,
-} from "./wafv2_WebAclLoggingConfigurationLoggingFilterFilterConditionLabelNameCondition";
+} from './wafv2_WebAclLoggingConfigurationLoggingFilterFilterConditionLabelNameCondition';
 import {
   wafv2_WebAclLoggingConfigurationLoggingFilterFilterConditionActionCondition,
   wafv2_WebAclLoggingConfigurationLoggingFilterFilterConditionActionCondition_GetTypes,
-} from "./wafv2_WebAclLoggingConfigurationLoggingFilterFilterConditionActionCondition";
+} from './wafv2_WebAclLoggingConfigurationLoggingFilterFilterConditionActionCondition';
 
 export interface wafv2_WebAclLoggingConfigurationLoggingFilterFilterCondition {
   // Condition for a single label name. See Label Name Condition below for more details.
@@ -26,8 +26,8 @@ export function wafv2_WebAclLoggingConfigurationLoggingFilterFilterCondition_Get
   return [
     new DynamicUIProps(
       InputType.Object,
-      "actionCondition",
-      "Configuration for a single action condition. See Action Condition below for more details.",
+      'actionCondition',
+      'Configuration for a single action condition. See Action Condition below for more details.',
       () =>
         wafv2_WebAclLoggingConfigurationLoggingFilterFilterConditionActionCondition_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function wafv2_WebAclLoggingConfigurationLoggingFilterFilterCondition_Get
     ),
     new DynamicUIProps(
       InputType.Object,
-      "labelNameCondition",
-      "Condition for a single label name. See Label Name Condition below for more details.",
+      'labelNameCondition',
+      'Condition for a single label name. See Label Name Condition below for more details.',
       () =>
         wafv2_WebAclLoggingConfigurationLoggingFilterFilterConditionLabelNameCondition_GetTypes(),
       false,

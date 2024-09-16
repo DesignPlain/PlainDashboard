@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryField,
   dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryField_GetTypes,
-} from "./dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryField";
+} from './dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryField';
 import {
   dataloss_PreventionStoredInfoTypeLargeCustomDictionaryCloudStorageFileSet,
   dataloss_PreventionStoredInfoTypeLargeCustomDictionaryCloudStorageFileSet_GetTypes,
-} from "./dataloss_PreventionStoredInfoTypeLargeCustomDictionaryCloudStorageFileSet";
+} from './dataloss_PreventionStoredInfoTypeLargeCustomDictionaryCloudStorageFileSet';
 import {
   dataloss_PreventionStoredInfoTypeLargeCustomDictionaryOutputPath,
   dataloss_PreventionStoredInfoTypeLargeCustomDictionaryOutputPath_GetTypes,
-} from "./dataloss_PreventionStoredInfoTypeLargeCustomDictionaryOutputPath";
+} from './dataloss_PreventionStoredInfoTypeLargeCustomDictionaryOutputPath';
 
 export interface dataloss_PreventionStoredInfoTypeLargeCustomDictionary {
   /*
@@ -43,8 +43,8 @@ export function dataloss_PreventionStoredInfoTypeLargeCustomDictionary_GetTypes(
   return [
     new DynamicUIProps(
       InputType.Object,
-      "bigQueryField",
-      "Field in a BigQuery table where each cell represents a dictionary phrase.\nStructure is documented below.",
+      'bigQueryField',
+      'Field in a BigQuery table where each cell represents a dictionary phrase.\nStructure is documented below.',
       () =>
         dataloss_PreventionStoredInfoTypeLargeCustomDictionaryBigQueryField_GetTypes(),
       false,
@@ -52,8 +52,8 @@ export function dataloss_PreventionStoredInfoTypeLargeCustomDictionary_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "cloudStorageFileSet",
-      "Set of files containing newline-delimited lists of dictionary phrases.\nStructure is documented below.",
+      'cloudStorageFileSet',
+      'Set of files containing newline-delimited lists of dictionary phrases.\nStructure is documented below.',
       () =>
         dataloss_PreventionStoredInfoTypeLargeCustomDictionaryCloudStorageFileSet_GetTypes(),
       false,
@@ -61,8 +61,8 @@ export function dataloss_PreventionStoredInfoTypeLargeCustomDictionary_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "outputPath",
-      "Location to store dictionary artifacts in Google Cloud Storage. These files will only be accessible by project owners and the DLP API.\nIf any of these artifacts are modified, the dictionary is considered invalid and can no longer be used.\nStructure is documented below.",
+      'outputPath',
+      'Location to store dictionary artifacts in Google Cloud Storage. These files will only be accessible by project owners and the DLP API.\nIf any of these artifacts are modified, the dictionary is considered invalid and can no longer be used.\nStructure is documented below.',
       () =>
         dataloss_PreventionStoredInfoTypeLargeCustomDictionaryOutputPath_GetTypes(),
       true,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   clouddomains_RegistrationDnsSettingsCustomDnsDsRecord,
   clouddomains_RegistrationDnsSettingsCustomDnsDsRecord_GetTypes,
-} from "./clouddomains_RegistrationDnsSettingsCustomDnsDsRecord";
+} from './clouddomains_RegistrationDnsSettingsCustomDnsDsRecord';
 
 export interface clouddomains_RegistrationDnsSettingsCustomDns {
   /*
@@ -29,7 +29,7 @@ export function clouddomains_RegistrationDnsSettingsCustomDns_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.Array,
-      "dsRecords",
+      'dsRecords',
       "The list of DS records for this domain, which are used to enable DNSSEC. The domain's DNS provider can provide\nthe values to set here. If this field is empty, DNSSEC is disabled.\nStructure is documented below.",
       () => clouddomains_RegistrationDnsSettingsCustomDnsDsRecord_GetTypes(),
       false,
@@ -37,8 +37,8 @@ export function clouddomains_RegistrationDnsSettingsCustomDns_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Array,
-      "nameServers",
-      "Required. A list of name servers that store the DNS zone for this domain. Each name server is a domain\nname, with Unicode domain names expressed in Punycode format.",
+      'nameServers',
+      'Required. A list of name servers that store the DNS zone for this domain. Each name server is a domain\nname, with Unicode domain names expressed in Punycode format.',
       () => InputType_String_GetTypes(),
       true,
       true,

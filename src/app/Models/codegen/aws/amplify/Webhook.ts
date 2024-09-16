@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface WebhookArgs {
   // Unique ID for an Amplify app.
@@ -37,24 +37,24 @@ export class Webhook extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "appId",
-        "Unique ID for an Amplify app.",
+        'appId',
+        'Unique ID for an Amplify app.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "branchName",
-        "Name for a branch that is part of the Amplify app.",
+        'branchName',
+        'Name for a branch that is part of the Amplify app.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description for a webhook.",
+        'description',
+        'Description for a webhook.',
         () => [],
         false,
         false,

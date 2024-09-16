@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   connect_QueueOutboundCallerConfig,
   connect_QueueOutboundCallerConfig_GetTypes,
-} from "../types/connect_QueueOutboundCallerConfig";
+} from '../types/connect_QueueOutboundCallerConfig';
 
 export interface QueueArgs {
   // Specifies the name of the Queue.
@@ -80,72 +80,72 @@ export class Queue extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Specifies the name of the Queue.",
+        'name',
+        'Specifies the name of the Queue.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Tags to apply to the Queue. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Tags to apply to the Queue. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "maxContacts",
-        "Specifies the maximum number of contacts that can be in the queue before it is considered full. Minimum value of 0.",
+        'maxContacts',
+        'Specifies the maximum number of contacts that can be in the queue before it is considered full. Minimum value of 0.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "status",
-        "Specifies the description of the Queue. Valid values are `ENABLED`, `DISABLED`.",
+        'status',
+        'Specifies the description of the Queue. Valid values are `ENABLED`, `DISABLED`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "quickConnectIds",
-        "Specifies a list of quick connects ids that determine the quick connects available to agents who are working the queue.",
+        'quickConnectIds',
+        'Specifies a list of quick connects ids that determine the quick connects available to agents who are working the queue.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "outboundCallerConfig",
-        "A block that defines the outbound caller ID name, number, and outbound whisper flow. The Outbound Caller Config block is documented below.",
+        'outboundCallerConfig',
+        'A block that defines the outbound caller ID name, number, and outbound whisper flow. The Outbound Caller Config block is documented below.',
         () => connect_QueueOutboundCallerConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Specifies the description of the Queue.",
+        'description',
+        'Specifies the description of the Queue.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "hoursOfOperationId",
-        "Specifies the identifier of the Hours of Operation.",
+        'hoursOfOperationId',
+        'Specifies the identifier of the Hours of Operation.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceId",
-        "Specifies the identifier of the hosting Amazon Connect Instance.",
+        'instanceId',
+        'Specifies the identifier of the hosting Amazon Connect Instance.',
         () => [],
         true,
         false,

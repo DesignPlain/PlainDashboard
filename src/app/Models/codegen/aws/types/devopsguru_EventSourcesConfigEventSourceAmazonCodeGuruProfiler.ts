@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface devopsguru_EventSourcesConfigEventSourceAmazonCodeGuruProfiler {
   // Status of the CodeGuru Profiler integration. Valid values are `ENABLED` and `DISABLED`.
@@ -15,8 +15,8 @@ export function devopsguru_EventSourcesConfigEventSourceAmazonCodeGuruProfiler_G
   return [
     new DynamicUIProps(
       InputType.String,
-      "status",
-      "Status of the CodeGuru Profiler integration. Valid values are `ENABLED` and `DISABLED`.",
+      'status',
+      'Status of the CodeGuru Profiler integration. Valid values are `ENABLED` and `DISABLED`.',
       () => [],
       true,
       false,

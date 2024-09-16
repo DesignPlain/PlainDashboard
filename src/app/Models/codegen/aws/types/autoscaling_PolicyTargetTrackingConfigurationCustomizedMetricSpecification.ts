@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   autoscaling_PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetric,
   autoscaling_PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetric_GetTypes,
-} from "./autoscaling_PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetric";
+} from './autoscaling_PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetric';
 import {
   autoscaling_PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension,
   autoscaling_PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension_GetTypes,
-} from "./autoscaling_PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension";
+} from './autoscaling_PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension';
 
 export interface autoscaling_PolicyTargetTrackingConfigurationCustomizedMetricSpecification {
   // Name of the metric.
@@ -38,16 +38,16 @@ export function autoscaling_PolicyTargetTrackingConfigurationCustomizedMetricSpe
   return [
     new DynamicUIProps(
       InputType.String,
-      "metricName",
-      "Name of the metric.",
+      'metricName',
+      'Name of the metric.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "metrics",
-      "Metrics to include, as a metric data query.",
+      'metrics',
+      'Metrics to include, as a metric data query.',
       () =>
         autoscaling_PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetric_GetTypes(),
       false,
@@ -55,32 +55,32 @@ export function autoscaling_PolicyTargetTrackingConfigurationCustomizedMetricSpe
     ),
     new DynamicUIProps(
       InputType.String,
-      "namespace",
-      "Namespace of the metric.",
+      'namespace',
+      'Namespace of the metric.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "statistic",
-      "Statistic of the metric.",
+      'statistic',
+      'Statistic of the metric.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "unit",
-      "Unit of the metric.",
+      'unit',
+      'Unit of the metric.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "metricDimensions",
-      "Dimensions of the metric.",
+      'metricDimensions',
+      'Dimensions of the metric.',
       () =>
         autoscaling_PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension_GetTypes(),
       false,

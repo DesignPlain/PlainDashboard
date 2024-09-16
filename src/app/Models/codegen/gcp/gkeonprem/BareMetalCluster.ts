@@ -3,73 +3,73 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkeonprem_BareMetalClusterNetworkConfig,
   gkeonprem_BareMetalClusterNetworkConfig_GetTypes,
-} from "../types/gkeonprem_BareMetalClusterNetworkConfig";
+} from '../types/gkeonprem_BareMetalClusterNetworkConfig';
 import {
   gkeonprem_BareMetalClusterValidationCheck,
   gkeonprem_BareMetalClusterValidationCheck_GetTypes,
-} from "../types/gkeonprem_BareMetalClusterValidationCheck";
+} from '../types/gkeonprem_BareMetalClusterValidationCheck';
 import {
   gkeonprem_BareMetalClusterStorage,
   gkeonprem_BareMetalClusterStorage_GetTypes,
-} from "../types/gkeonprem_BareMetalClusterStorage";
+} from '../types/gkeonprem_BareMetalClusterStorage';
 import {
   gkeonprem_BareMetalClusterNodeAccessConfig,
   gkeonprem_BareMetalClusterNodeAccessConfig_GetTypes,
-} from "../types/gkeonprem_BareMetalClusterNodeAccessConfig";
+} from '../types/gkeonprem_BareMetalClusterNodeAccessConfig';
 import {
   gkeonprem_BareMetalClusterOsEnvironmentConfig,
   gkeonprem_BareMetalClusterOsEnvironmentConfig_GetTypes,
-} from "../types/gkeonprem_BareMetalClusterOsEnvironmentConfig";
+} from '../types/gkeonprem_BareMetalClusterOsEnvironmentConfig';
 import {
   gkeonprem_BareMetalClusterProxy,
   gkeonprem_BareMetalClusterProxy_GetTypes,
-} from "../types/gkeonprem_BareMetalClusterProxy";
+} from '../types/gkeonprem_BareMetalClusterProxy';
 import {
   gkeonprem_BareMetalClusterSecurityConfig,
   gkeonprem_BareMetalClusterSecurityConfig_GetTypes,
-} from "../types/gkeonprem_BareMetalClusterSecurityConfig";
+} from '../types/gkeonprem_BareMetalClusterSecurityConfig';
 import {
   gkeonprem_BareMetalClusterBinaryAuthorization,
   gkeonprem_BareMetalClusterBinaryAuthorization_GetTypes,
-} from "../types/gkeonprem_BareMetalClusterBinaryAuthorization";
+} from '../types/gkeonprem_BareMetalClusterBinaryAuthorization';
 import {
   gkeonprem_BareMetalClusterLoadBalancer,
   gkeonprem_BareMetalClusterLoadBalancer_GetTypes,
-} from "../types/gkeonprem_BareMetalClusterLoadBalancer";
+} from '../types/gkeonprem_BareMetalClusterLoadBalancer';
 import {
   gkeonprem_BareMetalClusterMaintenanceConfig,
   gkeonprem_BareMetalClusterMaintenanceConfig_GetTypes,
-} from "../types/gkeonprem_BareMetalClusterMaintenanceConfig";
+} from '../types/gkeonprem_BareMetalClusterMaintenanceConfig';
 import {
   gkeonprem_BareMetalClusterStatus,
   gkeonprem_BareMetalClusterStatus_GetTypes,
-} from "../types/gkeonprem_BareMetalClusterStatus";
+} from '../types/gkeonprem_BareMetalClusterStatus';
 import {
   gkeonprem_BareMetalClusterFleet,
   gkeonprem_BareMetalClusterFleet_GetTypes,
-} from "../types/gkeonprem_BareMetalClusterFleet";
+} from '../types/gkeonprem_BareMetalClusterFleet';
 import {
   gkeonprem_BareMetalClusterNodeConfig,
   gkeonprem_BareMetalClusterNodeConfig_GetTypes,
-} from "../types/gkeonprem_BareMetalClusterNodeConfig";
+} from '../types/gkeonprem_BareMetalClusterNodeConfig';
 import {
   gkeonprem_BareMetalClusterClusterOperations,
   gkeonprem_BareMetalClusterClusterOperations_GetTypes,
-} from "../types/gkeonprem_BareMetalClusterClusterOperations";
+} from '../types/gkeonprem_BareMetalClusterClusterOperations';
 import {
   gkeonprem_BareMetalClusterControlPlane,
   gkeonprem_BareMetalClusterControlPlane_GetTypes,
-} from "../types/gkeonprem_BareMetalClusterControlPlane";
+} from '../types/gkeonprem_BareMetalClusterControlPlane';
 import {
   gkeonprem_BareMetalClusterUpgradePolicy,
   gkeonprem_BareMetalClusterUpgradePolicy_GetTypes,
-} from "../types/gkeonprem_BareMetalClusterUpgradePolicy";
+} from '../types/gkeonprem_BareMetalClusterUpgradePolicy';
 
 export interface BareMetalClusterArgs {
   /*
@@ -388,63 +388,63 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "securityConfig",
-        "Specifies the security related settings for the Bare Metal User Cluster.\nStructure is documented below.",
+        'securityConfig',
+        'Specifies the security related settings for the Bare Metal User Cluster.\nStructure is documented below.',
         () => gkeonprem_BareMetalClusterSecurityConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "binaryAuthorization",
-        "Binary Authorization related configurations.\nStructure is documented below.",
+        'binaryAuthorization',
+        'Binary Authorization related configurations.\nStructure is documented below.',
         () => gkeonprem_BareMetalClusterBinaryAuthorization_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "nodeConfig",
-        "Specifies the workload node configurations.\nStructure is documented below.",
+        'nodeConfig',
+        'Specifies the workload node configurations.\nStructure is documented below.',
         () => gkeonprem_BareMetalClusterNodeConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "storage",
-        "Specifies the cluster storage configuration.\nStructure is documented below.",
+        'storage',
+        'Specifies the cluster storage configuration.\nStructure is documented below.',
         () => gkeonprem_BareMetalClusterStorage_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "nodeAccessConfig",
-        "Specifies the node access related settings for the bare metal user cluster.\nStructure is documented below.",
+        'nodeAccessConfig',
+        'Specifies the node access related settings for the bare metal user cluster.\nStructure is documented below.',
         () => gkeonprem_BareMetalClusterNodeAccessConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "bareMetalVersion",
-        "A human readable description of this Bare Metal User Cluster.",
+        'bareMetalVersion',
+        'A human readable description of this Bare Metal User Cluster.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "osEnvironmentConfig",
-        "OS environment related configurations.\nStructure is documented below.",
+        'osEnvironmentConfig',
+        'OS environment related configurations.\nStructure is documented below.',
         () => gkeonprem_BareMetalClusterOsEnvironmentConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "adminClusterMembership",
+        'adminClusterMembership',
         "The Admin Cluster this Bare Metal User Cluster belongs to.\nThis is the full resource name of the Admin Cluster's hub membership.",
         () => [],
         true,
@@ -452,31 +452,31 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "proxy",
-        "Specifies the cluster proxy configuration.\nStructure is documented below.",
+        'proxy',
+        'Specifies the cluster proxy configuration.\nStructure is documented below.',
         () => gkeonprem_BareMetalClusterProxy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
-        "Annotations on the Bare Metal User Cluster.\nThis field has the same restrictions as Kubernetes annotations.\nThe total size of all keys and values combined is limited to 256k.\nKey can have 2 segments: prefix (optional) and name (required),\nseparated by a slash (/).\nPrefix must be a DNS subdomain.\nName must be 63 characters or less, begin and end with alphanumerics,\nwith dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
+        'annotations',
+        'Annotations on the Bare Metal User Cluster.\nThis field has the same restrictions as Kubernetes annotations.\nThe total size of all keys and values combined is limited to 256k.\nKey can have 2 segments: prefix (optional) and name (required),\nseparated by a slash (/).\nPrefix must be a DNS subdomain.\nName must be 63 characters or less, begin and end with alphanumerics,\nwith dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The bare metal cluster name.",
+        'name',
+        'The bare metal cluster name.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "clusterOperations",
+        'clusterOperations',
         "Specifies the User Cluster's observability infrastructure.\nStructure is documented below.",
         () => gkeonprem_BareMetalClusterClusterOperations_GetTypes(),
         false,
@@ -484,64 +484,64 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A human readable description of this Bare Metal User Cluster.",
+        'description',
+        'A human readable description of this Bare Metal User Cluster.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "networkConfig",
-        "Network configuration.\nStructure is documented below.",
+        'networkConfig',
+        'Network configuration.\nStructure is documented below.',
         () => gkeonprem_BareMetalClusterNetworkConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "upgradePolicy",
-        "The cluster upgrade policy.\nStructure is documented below.",
+        'upgradePolicy',
+        'The cluster upgrade policy.\nStructure is documented below.',
         () => gkeonprem_BareMetalClusterUpgradePolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "maintenanceConfig",
-        "Specifies the workload node configurations.\nStructure is documented below.",
+        'maintenanceConfig',
+        'Specifies the workload node configurations.\nStructure is documented below.',
         () => gkeonprem_BareMetalClusterMaintenanceConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "controlPlane",
-        "Specifies the control plane configuration.\nStructure is documented below.",
+        'controlPlane',
+        'Specifies the control plane configuration.\nStructure is documented below.',
         () => gkeonprem_BareMetalClusterControlPlane_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "loadBalancer",
-        "Specifies the load balancer configuration.\nStructure is documented below.",
+        'loadBalancer',
+        'Specifies the load balancer configuration.\nStructure is documented below.',
         () => gkeonprem_BareMetalClusterLoadBalancer_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the resource.",
+        'location',
+        'The location of the resource.',
         () => [],
         true,
         true,

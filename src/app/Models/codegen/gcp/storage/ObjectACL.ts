@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ObjectACLArgs {
   /*
@@ -51,15 +51,15 @@ Must be set if `predefined_acl` is not.
     return [
       new DynamicUIProps(
         InputType.String,
-        "object",
-        "The name of the object to apply the acl to.\n\n- - -",
+        'object',
+        'The name of the object to apply the acl to.\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "predefinedAcl",
+        'predefinedAcl',
         'The "canned" [predefined ACL](https://cloud.google.com/storage/docs/access-control#predefined-acl) to apply. Must be set if `role_entity` is not.',
         () => [],
         false,
@@ -67,16 +67,16 @@ Must be set if `predefined_acl` is not.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "roleEntities",
-        "List of role/entity pairs in the form `ROLE:entity`. See [GCS Object ACL documentation](https://cloud.google.com/storage/docs/json_api/v1/objectAccessControls) for more details.\nMust be set if `predefined_acl` is not.",
+        'roleEntities',
+        'List of role/entity pairs in the form `ROLE:entity`. See [GCS Object ACL documentation](https://cloud.google.com/storage/docs/json_api/v1/objectAccessControls) for more details.\nMust be set if `predefined_acl` is not.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "bucket",
-        "The name of the bucket the object is stored in.",
+        'bucket',
+        'The name of the bucket the object is stored in.',
         () => [],
         true,
         true,

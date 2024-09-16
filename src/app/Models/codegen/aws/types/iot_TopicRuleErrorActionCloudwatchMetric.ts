@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface iot_TopicRuleErrorActionCloudwatchMetric {
   // The CloudWatch metric value.
@@ -30,48 +30,48 @@ export function iot_TopicRuleErrorActionCloudwatchMetric_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.String,
-      "metricNamespace",
-      "The CloudWatch metric namespace name.",
+      'metricNamespace',
+      'The CloudWatch metric namespace name.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "metricTimestamp",
-      "An optional Unix timestamp (http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp).",
+      'metricTimestamp',
+      'An optional Unix timestamp (http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp).',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "metricUnit",
-      "The metric unit (supported units can be found here: http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit)",
-      () => [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "metricValue",
-      "The CloudWatch metric value.",
+      'metricUnit',
+      'The metric unit (supported units can be found here: http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit)',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "roleArn",
-      "The IAM role ARN that allows access to the CloudWatch metric.",
+      'metricValue',
+      'The CloudWatch metric value.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "metricName",
-      "The CloudWatch metric name.",
+      'roleArn',
+      'The IAM role ARN that allows access to the CloudWatch metric.',
+      () => [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      'metricName',
+      'The CloudWatch metric name.',
       () => [],
       true,
       false,

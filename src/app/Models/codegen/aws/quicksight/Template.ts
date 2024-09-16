@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   quicksight_TemplateSourceEntity,
   quicksight_TemplateSourceEntity_GetTypes,
-} from "../types/quicksight_TemplateSourceEntity";
+} from '../types/quicksight_TemplateSourceEntity';
 import {
   quicksight_TemplatePermission,
   quicksight_TemplatePermission_GetTypes,
-} from "../types/quicksight_TemplatePermission";
+} from '../types/quicksight_TemplatePermission';
 
 export interface TemplateArgs {
   // Identifier for the template.
@@ -92,56 +92,56 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Object,
-        "sourceEntity",
-        "The entity that you are using as a source when you create the template (analysis or template). Only one of `definition` or `source_entity` should be configured. See source_entity.",
+        'sourceEntity',
+        'The entity that you are using as a source when you create the template (analysis or template). Only one of `definition` or `source_entity` should be configured. See source_entity.',
         () => quicksight_TemplateSourceEntity_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "templateId",
-        "Identifier for the template.",
+        'templateId',
+        'Identifier for the template.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "versionDescription",
-        "A description of the current template version being created/updated.\n\nThe following arguments are optional:",
+        'versionDescription',
+        'A description of the current template version being created/updated.\n\nThe following arguments are optional:',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "awsAccountId",
-        "AWS account ID.",
+        'awsAccountId',
+        'AWS account ID.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Display name for the template.",
+        'name',
+        'Display name for the template.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "permissions",
-        "A set of resource permissions on the template. Maximum of 64 items. See permissions.",
+        'permissions',
+        'A set of resource permissions on the template. Maximum of 64 items. See permissions.',
         () => quicksight_TemplatePermission_GetTypes(),
         false,
         false,

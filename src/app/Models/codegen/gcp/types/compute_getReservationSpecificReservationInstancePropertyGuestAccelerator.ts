@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_getReservationSpecificReservationInstancePropertyGuestAccelerator {
   /*
@@ -27,15 +27,15 @@ export function compute_getReservationSpecificReservationInstancePropertyGuestAc
   return [
     new DynamicUIProps(
       InputType.Number,
-      "acceleratorCount",
-      "The number of the guest accelerator cards exposed to\nthis instance.",
+      'acceleratorCount',
+      'The number of the guest accelerator cards exposed to\nthis instance.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "acceleratorType",
+      'acceleratorType',
       "The full or partial URL of the accelerator type to\nattach to this instance. For example:\n'projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100'\n\nIf you are creating an instance template, specify only the accelerator name.",
       () => [],
       true,

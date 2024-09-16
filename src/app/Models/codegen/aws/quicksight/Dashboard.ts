@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   quicksight_DashboardDashboardPublishOptions,
   quicksight_DashboardDashboardPublishOptions_GetTypes,
-} from "../types/quicksight_DashboardDashboardPublishOptions";
+} from '../types/quicksight_DashboardDashboardPublishOptions';
 import {
   quicksight_DashboardPermission,
   quicksight_DashboardPermission_GetTypes,
-} from "../types/quicksight_DashboardPermission";
+} from '../types/quicksight_DashboardPermission';
 import {
   quicksight_DashboardParameters,
   quicksight_DashboardParameters_GetTypes,
-} from "../types/quicksight_DashboardParameters";
+} from '../types/quicksight_DashboardParameters';
 import {
   quicksight_DashboardSourceEntity,
   quicksight_DashboardSourceEntity_GetTypes,
-} from "../types/quicksight_DashboardSourceEntity";
+} from '../types/quicksight_DashboardSourceEntity';
 
 export interface DashboardArgs {
   // Identifier for the dashboard.
@@ -121,80 +121,80 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Display name for the dashboard.",
+        'name',
+        'Display name for the dashboard.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "permissions",
-        "A set of resource permissions on the dashboard. Maximum of 64 items. See permissions.",
+        'permissions',
+        'A set of resource permissions on the dashboard. Maximum of 64 items. See permissions.',
         () => quicksight_DashboardPermission_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "parameters",
-        "The parameters for the creation of the dashboard, which you want to use to override the default settings. A dashboard can have any type of parameters, and some parameters might accept multiple values. See parameters.",
+        'parameters',
+        'The parameters for the creation of the dashboard, which you want to use to override the default settings. A dashboard can have any type of parameters, and some parameters might accept multiple values. See parameters.',
         () => quicksight_DashboardParameters_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "sourceEntity",
-        "The entity that you are using as a source when you create the dashboard (template). Only one of `definition` or `source_entity` should be configured. See source_entity.",
+        'sourceEntity',
+        'The entity that you are using as a source when you create the dashboard (template). Only one of `definition` or `source_entity` should be configured. See source_entity.',
         () => quicksight_DashboardSourceEntity_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "themeArn",
-        "The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. The theme ARN must exist in the same AWS account where you create the dashboard.",
+        'themeArn',
+        'The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. The theme ARN must exist in the same AWS account where you create the dashboard.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dashboardId",
-        "Identifier for the dashboard.",
+        'dashboardId',
+        'Identifier for the dashboard.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "dashboardPublishOptions",
-        "Options for publishing the dashboard. See dashboard_publish_options.",
+        'dashboardPublishOptions',
+        'Options for publishing the dashboard. See dashboard_publish_options.',
         () => quicksight_DashboardDashboardPublishOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "versionDescription",
-        "A description of the current dashboard version being created/updated.\n\nThe following arguments are optional:",
+        'versionDescription',
+        'A description of the current dashboard version being created/updated.\n\nThe following arguments are optional:',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "awsAccountId",
-        "AWS account ID.",
+        'awsAccountId',
+        'AWS account ID.',
         () => [],
         false,
         true,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorOauth2OauthRequest,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorOauth2OauthRequest_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorOauth2OauthRequest";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorOauth2OauthRequest';
 
 export interface appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorOauth2 {
   //
@@ -31,16 +31,16 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
   return [
     new DynamicUIProps(
       InputType.String,
-      "clientSecret",
-      "",
+      'clientSecret',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "oauthRequest",
-      "",
+      'oauthRequest',
+      '',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorOauth2OauthRequest_GetTypes(),
       false,
@@ -48,24 +48,24 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.String,
-      "refreshToken",
-      "",
+      'refreshToken',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "accessToken",
-      "",
+      'accessToken',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "clientId",
-      "",
+      'clientId',
+      '',
       () => [],
       false,
       false,

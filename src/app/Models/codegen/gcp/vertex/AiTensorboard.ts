@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   vertex_AiTensorboardEncryptionSpec,
   vertex_AiTensorboardEncryptionSpec_GetTypes,
-} from "../types/vertex_AiTensorboardEncryptionSpec";
+} from '../types/vertex_AiTensorboardEncryptionSpec';
 
 export interface AiTensorboardArgs {
   // The region of the tensorboard. eg us-central1
@@ -109,48 +109,48 @@ Please refer to the field `effective_labels` for all of the labels present on th
     return [
       new DynamicUIProps(
         InputType.Object,
-        "encryptionSpec",
-        "Customer-managed encryption key spec for a Tensorboard. If set, this Tensorboard and all sub-resources of this Tensorboard will be secured by this key.\nStructure is documented below.",
+        'encryptionSpec',
+        'Customer-managed encryption key spec for a Tensorboard. If set, this Tensorboard and all sub-resources of this Tensorboard will be secured by this key.\nStructure is documented below.',
         () => vertex_AiTensorboardEncryptionSpec_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "The labels with user-defined metadata to organize your Tensorboards.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'The labels with user-defined metadata to organize your Tensorboards.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The region of the tensorboard. eg us-central1",
+        'region',
+        'The region of the tensorboard. eg us-central1',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of this Tensorboard.",
+        'description',
+        'Description of this Tensorboard.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "User provided name of this Tensorboard.\n\n\n- - -",
+        'displayName',
+        'User provided name of this Tensorboard.\n\n\n- - -',
         () => [],
         true,
         false,

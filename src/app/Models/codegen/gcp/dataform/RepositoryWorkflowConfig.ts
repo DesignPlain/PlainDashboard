@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataform_RepositoryWorkflowConfigInvocationConfig,
   dataform_RepositoryWorkflowConfigInvocationConfig_GetTypes,
-} from "../types/dataform_RepositoryWorkflowConfigInvocationConfig";
+} from '../types/dataform_RepositoryWorkflowConfigInvocationConfig';
 import {
   dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecord,
   dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecord_GetTypes,
-} from "../types/dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecord";
+} from '../types/dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecord';
 
 export interface RepositoryWorkflowConfigArgs {
   /*
@@ -97,55 +97,55 @@ The name of the release config whose releaseCompilationResult should be executed
     return [
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "A reference to the region",
+        'region',
+        'A reference to the region',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "releaseConfig",
-        "The name of the release config whose releaseCompilationResult should be executed. Must be in the format projects/*/locations/*/repositories/*/releaseConfigs/*.\n\n\n- - -",
+        'releaseConfig',
+        'The name of the release config whose releaseCompilationResult should be executed. Must be in the format projects/*/locations/*/repositories/*/releaseConfigs/*.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "repository",
-        "A reference to the Dataform repository",
+        'repository',
+        'A reference to the Dataform repository',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "timeZone",
-        "Optional. Specifies the time zone to be used when interpreting cronSchedule. Must be a time zone name from the time zone database (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is UTC.",
+        'timeZone',
+        'Optional. Specifies the time zone to be used when interpreting cronSchedule. Must be a time zone name from the time zone database (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is UTC.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cronSchedule",
-        "Optional. Optional schedule (in cron format) for automatic creation of compilation results.",
+        'cronSchedule',
+        'Optional. Optional schedule (in cron format) for automatic creation of compilation results.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "invocationConfig",
-        "Optional. If left unset, a default InvocationConfig will be used.\nStructure is documented below.",
+        'invocationConfig',
+        'Optional. If left unset, a default InvocationConfig will be used.\nStructure is documented below.',
         () => dataform_RepositoryWorkflowConfigInvocationConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
+        'name',
         "The workflow's name.",
         () => [],
         false,
@@ -153,8 +153,8 @@ The name of the release config whose releaseCompilationResult should be executed
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

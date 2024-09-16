@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface HostedPrivateVirtualInterfaceAccepterArgs {
   // The ID of the Direct Connect gateway to which to connect the virtual interface.
@@ -43,32 +43,32 @@ export class HostedPrivateVirtualInterfaceAccepter extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "virtualInterfaceId",
-        "The ID of the Direct Connect virtual interface to accept.",
+        'virtualInterfaceId',
+        'The ID of the Direct Connect virtual interface to accept.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "vpnGatewayId",
-        "The ID of the virtual private gateway to which to connect the virtual interface.",
+        'vpnGatewayId',
+        'The ID of the virtual private gateway to which to connect the virtual interface.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dxGatewayId",
-        "The ID of the Direct Connect gateway to which to connect the virtual interface.",
+        'dxGatewayId',
+        'The ID of the Direct Connect gateway to which to connect the virtual interface.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

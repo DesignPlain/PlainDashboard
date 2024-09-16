@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appmesh_getVirtualNodeSpecServiceDiscoveryAwsCloudMap {
   //
@@ -21,24 +21,24 @@ export function appmesh_getVirtualNodeSpecServiceDiscoveryAwsCloudMap_GetTypes()
   return [
     new DynamicUIProps(
       InputType.Map,
-      "attributes",
-      "",
+      'attributes',
+      '',
       () => InputType_Map_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "namespaceName",
-      "",
+      'namespaceName',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "serviceName",
-      "",
+      'serviceName',
+      '',
       () => [],
       true,
       false,

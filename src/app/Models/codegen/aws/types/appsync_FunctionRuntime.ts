@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appsync_FunctionRuntime {
   // The name of the runtime to use. Currently, the only allowed value is `APPSYNC_JS`.
@@ -18,16 +18,16 @@ export function appsync_FunctionRuntime_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The name of the runtime to use. Currently, the only allowed value is `APPSYNC_JS`.",
+      'name',
+      'The name of the runtime to use. Currently, the only allowed value is `APPSYNC_JS`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "runtimeVersion",
-      "The version of the runtime to use. Currently, the only allowed version is `1.0.0`.",
+      'runtimeVersion',
+      'The version of the runtime to use. Currently, the only allowed version is `1.0.0`.',
       () => [],
       true,
       false,

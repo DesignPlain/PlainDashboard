@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   s3_BucketWebsiteConfigurationV2ErrorDocument,
   s3_BucketWebsiteConfigurationV2ErrorDocument_GetTypes,
-} from "../types/s3_BucketWebsiteConfigurationV2ErrorDocument";
+} from '../types/s3_BucketWebsiteConfigurationV2ErrorDocument';
 import {
   s3_BucketWebsiteConfigurationV2IndexDocument,
   s3_BucketWebsiteConfigurationV2IndexDocument_GetTypes,
-} from "../types/s3_BucketWebsiteConfigurationV2IndexDocument";
+} from '../types/s3_BucketWebsiteConfigurationV2IndexDocument';
 import {
   s3_BucketWebsiteConfigurationV2RedirectAllRequestsTo,
   s3_BucketWebsiteConfigurationV2RedirectAllRequestsTo_GetTypes,
-} from "../types/s3_BucketWebsiteConfigurationV2RedirectAllRequestsTo";
+} from '../types/s3_BucketWebsiteConfigurationV2RedirectAllRequestsTo';
 import {
   s3_BucketWebsiteConfigurationV2RoutingRule,
   s3_BucketWebsiteConfigurationV2RoutingRule_GetTypes,
-} from "../types/s3_BucketWebsiteConfigurationV2RoutingRule";
+} from '../types/s3_BucketWebsiteConfigurationV2RoutingRule';
 
 export interface BucketWebsiteConfigurationV2Args {
   // List of rules that define when a redirect is applied and the redirect behavior. See below.
@@ -83,7 +83,7 @@ describing redirect behavior and when redirects are applied. Use this parameter 
     return [
       new DynamicUIProps(
         InputType.String,
-        "routingRuleDetails",
+        'routingRuleDetails',
         'JSON array containing [routing rules](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html)\ndescribing redirect behavior and when redirects are applied. Use this parameter when your routing rules contain empty String values (`""`) as seen in the example above.',
         () => [],
         false,
@@ -91,47 +91,47 @@ describing redirect behavior and when redirects are applied. Use this parameter 
       ),
       new DynamicUIProps(
         InputType.Array,
-        "routingRules",
-        "List of rules that define when a redirect is applied and the redirect behavior. See below.",
+        'routingRules',
+        'List of rules that define when a redirect is applied and the redirect behavior. See below.',
         () => s3_BucketWebsiteConfigurationV2RoutingRule_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "bucket",
-        "Name of the bucket.",
+        'bucket',
+        'Name of the bucket.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "errorDocument",
-        "Name of the error document for the website. See below.",
+        'errorDocument',
+        'Name of the error document for the website. See below.',
         () => s3_BucketWebsiteConfigurationV2ErrorDocument_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "expectedBucketOwner",
-        "Account ID of the expected bucket owner.",
+        'expectedBucketOwner',
+        'Account ID of the expected bucket owner.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "indexDocument",
-        "Name of the index document for the website. See below.",
+        'indexDocument',
+        'Name of the index document for the website. See below.',
         () => s3_BucketWebsiteConfigurationV2IndexDocument_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "redirectAllRequestsTo",
+        'redirectAllRequestsTo',
         "Redirect behavior for every request to this bucket's website endpoint. See below. Conflicts with `error_document`, `index_document`, and `routing_rule`.",
         () => s3_BucketWebsiteConfigurationV2RedirectAllRequestsTo_GetTypes(),
         false,

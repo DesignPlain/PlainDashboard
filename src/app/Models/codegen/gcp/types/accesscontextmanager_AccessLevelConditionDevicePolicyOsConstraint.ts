@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface accesscontextmanager_AccessLevelConditionDevicePolicyOsConstraint {
   /*
@@ -25,7 +25,7 @@ export function accesscontextmanager_AccessLevelConditionDevicePolicyOsConstrain
   return [
     new DynamicUIProps(
       InputType.String,
-      "minimumVersion",
+      'minimumVersion',
       'The minimum allowed OS version. If not set, any version\nof this OS satisfies the constraint.\nFormat: "major.minor.patch" such as "10.5.301", "9.2.1".',
       () => [],
       false,
@@ -33,8 +33,8 @@ export function accesscontextmanager_AccessLevelConditionDevicePolicyOsConstrain
     ),
     new DynamicUIProps(
       InputType.String,
-      "osType",
-      "The operating system type of the device.\nPossible values are: `OS_UNSPECIFIED`, `DESKTOP_MAC`, `DESKTOP_WINDOWS`, `DESKTOP_LINUX`, `DESKTOP_CHROME_OS`, `ANDROID`, `IOS`.",
+      'osType',
+      'The operating system type of the device.\nPossible values are: `OS_UNSPECIFIED`, `DESKTOP_MAC`, `DESKTOP_WINDOWS`, `DESKTOP_LINUX`, `DESKTOP_CHROME_OS`, `ANDROID`, `IOS`.',
       () => [],
       true,
       true,

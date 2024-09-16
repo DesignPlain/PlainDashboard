@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_getClusterNodePoolNodeConfigEffectiveTaint {
   // Effect for taint.
@@ -21,24 +21,24 @@ export function container_getClusterNodePoolNodeConfigEffectiveTaint_GetTypes():
   return [
     new DynamicUIProps(
       InputType.String,
-      "effect",
-      "Effect for taint.",
+      'effect',
+      'Effect for taint.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "key",
-      "Key for taint.",
+      'key',
+      'Key for taint.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "Value for taint.",
+      'value',
+      'Value for taint.',
       () => [],
       true,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface diagflow_CxFlowEventHandlerTriggerFulfillmentMessageLiveAgentHandoff {
   // Custom metadata. Dialogflow doesn't impose any structure on this.
@@ -15,7 +15,7 @@ export function diagflow_CxFlowEventHandlerTriggerFulfillmentMessageLiveAgentHan
   return [
     new DynamicUIProps(
       InputType.String,
-      "metadata",
+      'metadata',
       "Custom metadata. Dialogflow doesn't impose any structure on this.",
       () => [],
       false,

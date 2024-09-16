@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface glue_TriggerActionNotificationProperty {
   // After a job run starts, the number of minutes to wait before sending a job run delay notification.
@@ -15,8 +15,8 @@ export function glue_TriggerActionNotificationProperty_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.Number,
-      "notifyDelayAfter",
-      "After a job run starts, the number of minutes to wait before sending a job run delay notification.",
+      'notifyDelayAfter',
+      'After a job run starts, the number of minutes to wait before sending a job run delay notification.',
       () => [],
       false,
       false,

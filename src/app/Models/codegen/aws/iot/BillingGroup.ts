@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   iot_BillingGroupProperties,
   iot_BillingGroupProperties_GetTypes,
-} from "../types/iot_BillingGroupProperties";
+} from '../types/iot_BillingGroupProperties';
 import {
   iot_BillingGroupMetadata,
   iot_BillingGroupMetadata_GetTypes,
-} from "../types/iot_BillingGroupMetadata";
+} from '../types/iot_BillingGroupMetadata';
 
 export interface BillingGroupArgs {
   // The name of the Billing Group.
@@ -51,24 +51,24 @@ export class BillingGroup extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "properties",
-        "The Billing Group properties. Defined below.",
+        'properties',
+        'The Billing Group properties. Defined below.',
         () => iot_BillingGroupProperties_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value mapping of resource tags",
+        'tags',
+        'Key-value mapping of resource tags',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the Billing Group.",
+        'name',
+        'The name of the Billing Group.',
         () => [],
         false,
         true,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   firebase_HostingVersionConfig,
   firebase_HostingVersionConfig_GetTypes,
-} from "../types/firebase_HostingVersionConfig";
+} from '../types/firebase_HostingVersionConfig';
 
 export interface HostingVersionArgs {
   /*
@@ -54,16 +54,16 @@ Required. The ID of the site in which to create this Version.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "config",
-        "The configuration for the behavior of the site. This configuration exists in the `firebase.json` file.\nStructure is documented below.",
+        'config',
+        'The configuration for the behavior of the site. This configuration exists in the `firebase.json` file.\nStructure is documented below.',
         () => firebase_HostingVersionConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "siteId",
-        "Required. The ID of the site in which to create this Version.\n\n\n- - -",
+        'siteId',
+        'Required. The ID of the site in which to create this Version.\n\n\n- - -',
         () => [],
         true,
         true,

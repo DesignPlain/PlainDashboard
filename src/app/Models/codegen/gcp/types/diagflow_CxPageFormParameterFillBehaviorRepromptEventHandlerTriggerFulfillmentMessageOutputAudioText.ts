@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageOutputAudioText {
   // The SSML text to be synthesized. For more information, see SSML.
@@ -24,15 +24,15 @@ export function diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTrig
   return [
     new DynamicUIProps(
       InputType.String,
-      "text",
-      "The raw text to be synthesized.",
+      'text',
+      'The raw text to be synthesized.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "allowPlaybackInterruption",
+      'allowPlaybackInterruption',
       "(Output)\nWhether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.",
       () => [],
       false,
@@ -40,8 +40,8 @@ export function diagflow_CxPageFormParameterFillBehaviorRepromptEventHandlerTrig
     ),
     new DynamicUIProps(
       InputType.String,
-      "ssml",
-      "The SSML text to be synthesized. For more information, see SSML.",
+      'ssml',
+      'The SSML text to be synthesized. For more information, see SSML.',
       () => [],
       false,
       false,

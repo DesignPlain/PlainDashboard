@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface MemberArgs {
   // AWS account ID for member account.
@@ -52,48 +52,48 @@ export class Member extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "email",
-        "Email address for member account.",
+        'email',
+        'Email address for member account.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "invitationMessage",
-        "Message for invitation.",
+        'invitationMessage',
+        'Message for invitation.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "invite",
-        "Boolean whether to invite the account to GuardDuty as a member. Defaults to `false`. To detect if an invitation needs to be (re-)sent, the this provider state value is `true` based on a `relationship_status` of `Disabled`, `Enabled`, `Invited`, or `EmailVerificationInProgress`.",
+        'invite',
+        'Boolean whether to invite the account to GuardDuty as a member. Defaults to `false`. To detect if an invitation needs to be (re-)sent, the this provider state value is `true` based on a `relationship_status` of `Disabled`, `Enabled`, `Invited`, or `EmailVerificationInProgress`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "accountId",
-        "AWS account ID for member account.",
+        'accountId',
+        'AWS account ID for member account.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "detectorId",
-        "The detector ID of the GuardDuty account where you want to create member accounts.",
+        'detectorId',
+        'The detector ID of the GuardDuty account where you want to create member accounts.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "disableEmailNotification",
-        "Boolean whether an email notification is sent to the accounts. Defaults to `false`.",
+        'disableEmailNotification',
+        'Boolean whether an email notification is sent to the accounts. Defaults to `false`.',
         () => [],
         false,
         true,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2clientvpn_getEndpointConnectionLogOption {
   //
@@ -21,17 +21,17 @@ export function ec2clientvpn_getEndpointConnectionLogOption_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.String,
-      "cloudwatchLogStream",
-      "",
+      'cloudwatchLogStream',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.Bool, "enabled", "", () => [], true, false),
+    new DynamicUIProps(InputType.Bool, 'enabled', '', () => [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "cloudwatchLogGroup",
-      "",
+      'cloudwatchLogGroup',
+      '',
       () => [],
       true,
       false,

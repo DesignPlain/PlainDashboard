@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface medialive_ChannelInputAttachmentInputSettingsNetworkInputSettingsHlsInputSettings {
   // The bitrate is specified in bits per second, as in an HLS manifest.
@@ -27,40 +27,40 @@ export function medialive_ChannelInputAttachmentInputSettingsNetworkInputSetting
   return [
     new DynamicUIProps(
       InputType.Number,
-      "bandwidth",
-      "The bitrate is specified in bits per second, as in an HLS manifest.",
+      'bandwidth',
+      'The bitrate is specified in bits per second, as in an HLS manifest.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "bufferSegments",
-      "Buffer segments.",
+      'bufferSegments',
+      'Buffer segments.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "retries",
-      "The number of consecutive times that attempts to read a manifest or segment must fail before the input is considered unavailable.",
+      'retries',
+      'The number of consecutive times that attempts to read a manifest or segment must fail before the input is considered unavailable.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "retryInterval",
-      "The number of seconds between retries when an attempt to read a manifest or segment fails.",
+      'retryInterval',
+      'The number of seconds between retries when an attempt to read a manifest or segment fails.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "scte35Source",
-      "",
+      'scte35Source',
+      '',
       () => [],
       false,
       false,

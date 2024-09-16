@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface identityplatform_ProjectDefaultConfigSignInAnonymous {
   /*
@@ -19,7 +19,7 @@ export function identityplatform_ProjectDefaultConfigSignInAnonymous_GetTypes():
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
+      'enabled',
       'Whether anonymous user auth is enabled for the project or not.\n\n<a name="nested_hash_config"></a>The `hash_config` block contains:',
       () => [],
       true,

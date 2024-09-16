@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface VoiceConnectorTerminationArgs {
   // The countries to which calls are allowed, in ISO 3166-1 alpha-2 format.
@@ -49,48 +49,48 @@ export class VoiceConnectorTermination extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "defaultPhoneNumber",
-        "The default caller ID phone number.",
+        'defaultPhoneNumber',
+        'The default caller ID phone number.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "disabled",
-        "When termination settings are disabled, outbound calls can not be made.",
+        'disabled',
+        'When termination settings are disabled, outbound calls can not be made.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "voiceConnectorId",
-        "The Amazon Chime Voice Connector ID.",
+        'voiceConnectorId',
+        'The Amazon Chime Voice Connector ID.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "callingRegions",
-        "The countries to which calls are allowed, in ISO 3166-1 alpha-2 format.",
+        'callingRegions',
+        'The countries to which calls are allowed, in ISO 3166-1 alpha-2 format.',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "cidrAllowLists",
-        "The IP addresses allowed to make calls, in CIDR format.",
+        'cidrAllowLists',
+        'The IP addresses allowed to make calls, in CIDR format.',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "cpsLimit",
-        "The limit on calls per second. Max value based on account service quota. Default value of `1`.",
+        'cpsLimit',
+        'The limit on calls per second. Max value based on account service quota. Default value of `1`.',
         () => [],
         false,
         false,

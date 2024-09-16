@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface QueryLogArgs {
   // CloudWatch log group ARN to send query logs.
@@ -28,16 +28,16 @@ export class QueryLog extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "cloudwatchLogGroupArn",
-        "CloudWatch log group ARN to send query logs.",
+        'cloudwatchLogGroupArn',
+        'CloudWatch log group ARN to send query logs.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "zoneId",
-        "Route53 hosted zone ID to enable query logs.",
+        'zoneId',
+        'Route53 hosted zone ID to enable query logs.',
         () => [],
         true,
         true,

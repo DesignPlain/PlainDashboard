@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   s3_BucketReplicationConfigRuleDestinationMetricsEventThreshold,
   s3_BucketReplicationConfigRuleDestinationMetricsEventThreshold_GetTypes,
-} from "./s3_BucketReplicationConfigRuleDestinationMetricsEventThreshold";
+} from './s3_BucketReplicationConfigRuleDestinationMetricsEventThreshold';
 
 export interface s3_BucketReplicationConfigRuleDestinationMetrics {
   // Configuration block that specifies the time threshold for emitting the `s3:Replication:OperationMissedThreshold` event. See below.
@@ -22,8 +22,8 @@ export function s3_BucketReplicationConfigRuleDestinationMetrics_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.Object,
-      "eventThreshold",
-      "Configuration block that specifies the time threshold for emitting the `s3:Replication:OperationMissedThreshold` event. See below.",
+      'eventThreshold',
+      'Configuration block that specifies the time threshold for emitting the `s3:Replication:OperationMissedThreshold` event. See below.',
       () =>
         s3_BucketReplicationConfigRuleDestinationMetricsEventThreshold_GetTypes(),
       false,
@@ -31,7 +31,7 @@ export function s3_BucketReplicationConfigRuleDestinationMetrics_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "status",
+      'status',
       'Status of the Destination Metrics. Either `"Enabled"` or `"Disabled"`.',
       () => [],
       true,

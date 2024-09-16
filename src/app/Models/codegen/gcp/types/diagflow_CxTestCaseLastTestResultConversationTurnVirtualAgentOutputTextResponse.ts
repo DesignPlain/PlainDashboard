@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponse {
   // A collection of text responses.
@@ -15,8 +15,8 @@ export function diagflow_CxTestCaseLastTestResultConversationTurnVirtualAgentOut
   return [
     new DynamicUIProps(
       InputType.Array,
-      "texts",
-      "A collection of text responses.",
+      'texts',
+      'A collection of text responses.',
       () => InputType_String_GetTypes(),
       false,
       false,

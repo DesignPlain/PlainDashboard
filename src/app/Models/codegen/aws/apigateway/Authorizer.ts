@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface AuthorizerArgs {
   // Validation expression for the incoming identity. For `TOKEN` type, this value should be a regular expression. The incoming token from the client is matched against this expression, and will proceed if the token matches. If the token doesn't match, the client receives a 401 Unauthorized response.
@@ -76,15 +76,15 @@ e.g., `arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lam
     return [
       new DynamicUIProps(
         InputType.String,
-        "restApi",
-        "ID of the associated REST API",
+        'restApi',
+        'ID of the associated REST API',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "identitySource",
+        'identitySource',
         'Source of the identity in an incoming request. Defaults to `method.request.header.Authorization`. For `REQUEST` type, this may be a comma-separated list of values, including headers, query string parameters and stage variables - e.g., `"method.request.header.SomeHeaderName,method.request.querystring.SomeQueryStringName,stageVariables.SomeStageVariableName"`',
         () => [],
         false,
@@ -92,7 +92,7 @@ e.g., `arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lam
       ),
       new DynamicUIProps(
         InputType.String,
-        "identityValidationExpression",
+        'identityValidationExpression',
         "Validation expression for the incoming identity. For `TOKEN` type, this value should be a regular expression. The incoming token from the client is matched against this expression, and will proceed if the token matches. If the token doesn't match, the client receives a 401 Unauthorized response.",
         () => [],
         false,
@@ -100,23 +100,23 @@ e.g., `arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lam
       ),
       new DynamicUIProps(
         InputType.Array,
-        "providerArns",
-        "List of the Amazon Cognito user pool ARNs. Each element is of this format: `arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}`.",
+        'providerArns',
+        'List of the Amazon Cognito user pool ARNs. Each element is of this format: `arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}`.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "authorizerCredentials",
-        "Credentials required for the authorizer. To specify an IAM Role for API Gateway to assume, use the IAM Role ARN.",
+        'authorizerCredentials',
+        'Credentials required for the authorizer. To specify an IAM Role for API Gateway to assume, use the IAM Role ARN.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "authorizerUri",
+        'authorizerUri',
         "Authorizer's Uniform Resource Identifier (URI). This must be a well-formed Lambda function URI in the form of `arn:aws:apigateway:{region}:lambda:path/{service_api}`,\ne.g., `arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:012345678912:function:my-function/invocations`",
         () => [],
         false,
@@ -124,24 +124,24 @@ e.g., `arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lam
       ),
       new DynamicUIProps(
         InputType.Number,
-        "authorizerResultTtlInSeconds",
-        "TTL of cached authorizer results in seconds. Defaults to `300`.",
+        'authorizerResultTtlInSeconds',
+        'TTL of cached authorizer results in seconds. Defaults to `300`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the authorizer",
+        'name',
+        'Name of the authorizer',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "Type of the authorizer. Possible values are `TOKEN` for a Lambda function using a single authorization token submitted in a custom header, `REQUEST` for a Lambda function using incoming request parameters, or `COGNITO_USER_POOLS` for using an Amazon Cognito user pool. Defaults to `TOKEN`.",
+        'type',
+        'Type of the authorizer. Possible values are `TOKEN` for a Lambda function using a single authorization token submitted in a custom header, `REQUEST` for a Lambda function using incoming request parameters, or `COGNITO_USER_POOLS` for using an Amazon Cognito user pool. Defaults to `TOKEN`.',
         () => [],
         false,
         false,

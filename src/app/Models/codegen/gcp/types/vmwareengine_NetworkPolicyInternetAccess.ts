@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface vmwareengine_NetworkPolicyInternetAccess {
   // True if the service is enabled; false otherwise.
@@ -21,16 +21,16 @@ export function vmwareengine_NetworkPolicyInternetAccess_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
-      "True if the service is enabled; false otherwise.",
+      'enabled',
+      'True if the service is enabled; false otherwise.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "state",
-      "(Output)\nState of the service. New values may be added to this enum when appropriate.",
+      'state',
+      '(Output)\nState of the service. New values may be added to this enum when appropriate.',
       () => [],
       false,
       false,

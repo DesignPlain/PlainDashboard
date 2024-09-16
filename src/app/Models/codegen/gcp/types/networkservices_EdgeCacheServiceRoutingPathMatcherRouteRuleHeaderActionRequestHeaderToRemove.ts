@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToRemove {
   // The name of the header to remove.
@@ -15,8 +15,8 @@ export function networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeade
   return [
     new DynamicUIProps(
       InputType.String,
-      "headerName",
-      "The name of the header to remove.",
+      'headerName',
+      'The name of the header to remove.',
       () => [],
       true,
       false,

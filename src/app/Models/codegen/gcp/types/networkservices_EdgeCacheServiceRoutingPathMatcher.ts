@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkservices_EdgeCacheServiceRoutingPathMatcherRouteRule,
   networkservices_EdgeCacheServiceRoutingPathMatcherRouteRule_GetTypes,
-} from "./networkservices_EdgeCacheServiceRoutingPathMatcherRouteRule";
+} from './networkservices_EdgeCacheServiceRoutingPathMatcherRouteRule';
 
 export interface networkservices_EdgeCacheServiceRoutingPathMatcher {
   // The name to which this PathMatcher is referred by the HostRule.
@@ -28,16 +28,16 @@ export function networkservices_EdgeCacheServiceRoutingPathMatcher_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The name to which this PathMatcher is referred by the HostRule.",
+      'name',
+      'The name to which this PathMatcher is referred by the HostRule.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "routeRules",
-      "The routeRules to match against. routeRules support advanced routing behaviour, and can match on paths, headers and query parameters, as well as status codes and HTTP methods.\nStructure is documented below.",
+      'routeRules',
+      'The routeRules to match against. routeRules support advanced routing behaviour, and can match on paths, headers and query parameters, as well as status codes and HTTP methods.\nStructure is documented below.',
       () =>
         networkservices_EdgeCacheServiceRoutingPathMatcherRouteRule_GetTypes(),
       true,
@@ -45,8 +45,8 @@ export function networkservices_EdgeCacheServiceRoutingPathMatcher_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.String,
-      "description",
-      "A human-readable description of the resource.",
+      'description',
+      'A human-readable description of the resource.',
       () => [],
       false,
       false,

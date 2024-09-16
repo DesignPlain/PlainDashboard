@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface quicksight_getDataSetColumnLevelPermissionRule {
   //
@@ -18,16 +18,16 @@ export function quicksight_getDataSetColumnLevelPermissionRule_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Array,
-      "columnNames",
-      "",
+      'columnNames',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "principals",
-      "",
+      'principals',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface AdmChannelArgs {
   // The application ID.
@@ -37,32 +37,32 @@ export class AdmChannel extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "applicationId",
-        "The application ID.",
+        'applicationId',
+        'The application ID.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clientId",
-        "Client ID (part of OAuth Credentials) obtained via Amazon Developer Account.",
+        'clientId',
+        'Client ID (part of OAuth Credentials) obtained via Amazon Developer Account.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clientSecret",
-        "Client Secret (part of OAuth Credentials) obtained via Amazon Developer Account.",
+        'clientSecret',
+        'Client Secret (part of OAuth Credentials) obtained via Amazon Developer Account.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enabled",
-        "Specifies whether to enable the channel. Defaults to `true`.",
+        'enabled',
+        'Specifies whether to enable the channel. Defaults to `true`.',
         () => [],
         false,
         false,

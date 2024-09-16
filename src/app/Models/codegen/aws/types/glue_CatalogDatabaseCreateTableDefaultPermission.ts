@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   glue_CatalogDatabaseCreateTableDefaultPermissionPrincipal,
   glue_CatalogDatabaseCreateTableDefaultPermissionPrincipal_GetTypes,
-} from "./glue_CatalogDatabaseCreateTableDefaultPermissionPrincipal";
+} from './glue_CatalogDatabaseCreateTableDefaultPermissionPrincipal';
 
 export interface glue_CatalogDatabaseCreateTableDefaultPermission {
   // The principal who is granted permissions.. See `principal` below.
@@ -22,8 +22,8 @@ export function glue_CatalogDatabaseCreateTableDefaultPermission_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.Object,
-      "principal",
-      "The principal who is granted permissions.. See `principal` below.",
+      'principal',
+      'The principal who is granted permissions.. See `principal` below.',
       () =>
         glue_CatalogDatabaseCreateTableDefaultPermissionPrincipal_GetTypes(),
       false,
@@ -31,8 +31,8 @@ export function glue_CatalogDatabaseCreateTableDefaultPermission_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Array,
-      "permissions",
-      "The permissions that are granted to the principal.",
+      'permissions',
+      'The permissions that are granted to the principal.',
       () => InputType_String_GetTypes(),
       false,
       false,

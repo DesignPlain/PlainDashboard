@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   monitoring_MetricDescriptorLabel,
   monitoring_MetricDescriptorLabel_GetTypes,
-} from "../types/monitoring_MetricDescriptorLabel";
+} from '../types/monitoring_MetricDescriptorLabel';
 import {
   monitoring_MetricDescriptorMetadata,
   monitoring_MetricDescriptorMetadata_GetTypes,
-} from "../types/monitoring_MetricDescriptorMetadata";
+} from '../types/monitoring_MetricDescriptorMetadata';
 
 export interface MetricDescriptorArgs {
   // The metric type, including its DNS name prefix. The type is not URL-encoded. All service defined metrics must be prefixed with the service name, in the format of {service name}/{relative metric name}, such as cloudsql.googleapis.com/database/cpu/utilization. The relative metric name must have only upper and lower-case letters, digits, '/' and underscores '_' are allowed. Additionally, the maximum number of characters allowed for the relative_metric_name is 100. All user-defined metric types have the DNS name custom.googleapis.com, external.googleapis.com, or logging.googleapis.com/user/.
@@ -169,7 +169,7 @@ Possible values are: `LAUNCH_STAGE_UNSPECIFIED`, `UNIMPLEMENTED`, `PRELAUNCH`, `
     return [
       new DynamicUIProps(
         InputType.String,
-        "type",
+        'type',
         "The metric type, including its DNS name prefix. The type is not URL-encoded. All service defined metrics must be prefixed with the service name, in the format of {service name}/{relative metric name}, such as cloudsql.googleapis.com/database/cpu/utilization. The relative metric name must have only upper and lower-case letters, digits, '/' and underscores '_' are allowed. Additionally, the maximum number of characters allowed for the relative_metric_name is 100. All user-defined metric types have the DNS name custom.googleapis.com, external.googleapis.com, or logging.googleapis.com/user/.",
         () => [],
         true,
@@ -177,39 +177,39 @@ Possible values are: `LAUNCH_STAGE_UNSPECIFIED`, `UNIMPLEMENTED`, `PRELAUNCH`, `
       ),
       new DynamicUIProps(
         InputType.Array,
-        "labels",
-        "The set of labels that can be used to describe a specific instance of this metric type. In order to delete a label, the entire resource must be deleted, then created with the desired labels.\nStructure is documented below.",
+        'labels',
+        'The set of labels that can be used to describe a specific instance of this metric type. In order to delete a label, the entire resource must be deleted, then created with the desired labels.\nStructure is documented below.',
         () => monitoring_MetricDescriptorLabel_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "metadata",
-        "Metadata which can be used to guide usage of the metric.\nStructure is documented below.",
+        'metadata',
+        'Metadata which can be used to guide usage of the metric.\nStructure is documented below.',
         () => monitoring_MetricDescriptorMetadata_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "valueType",
-        "Whether the measurement is an integer, a floating-point number, etc. Some combinations of metricKind and valueType might not be supported.\nPossible values are: `BOOL`, `INT64`, `DOUBLE`, `STRING`, `DISTRIBUTION`.",
+        'valueType',
+        'Whether the measurement is an integer, a floating-point number, etc. Some combinations of metricKind and valueType might not be supported.\nPossible values are: `BOOL`, `INT64`, `DOUBLE`, `STRING`, `DISTRIBUTION`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A detailed description of the metric, which can be used in documentation.",
+        'description',
+        'A detailed description of the metric, which can be used in documentation.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
+        'displayName',
         'A concise name for the metric, which can be displayed in user interfaces. Use sentence case without an ending period, for example "Request count".\n\n\n- - -',
         () => [],
         true,
@@ -217,32 +217,32 @@ Possible values are: `LAUNCH_STAGE_UNSPECIFIED`, `UNIMPLEMENTED`, `PRELAUNCH`, `
       ),
       new DynamicUIProps(
         InputType.String,
-        "launchStage",
-        "The launch stage of the metric definition.\nPossible values are: `LAUNCH_STAGE_UNSPECIFIED`, `UNIMPLEMENTED`, `PRELAUNCH`, `EARLY_ACCESS`, `ALPHA`, `BETA`, `GA`, `DEPRECATED`.",
+        'launchStage',
+        'The launch stage of the metric definition.\nPossible values are: `LAUNCH_STAGE_UNSPECIFIED`, `UNIMPLEMENTED`, `PRELAUNCH`, `EARLY_ACCESS`, `ALPHA`, `BETA`, `GA`, `DEPRECATED`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "metricKind",
-        "Whether the metric records instantaneous values, changes to a value, etc. Some combinations of metricKind and valueType might not be supported.\nPossible values are: `METRIC_KIND_UNSPECIFIED`, `GAUGE`, `DELTA`, `CUMULATIVE`.",
+        'metricKind',
+        'Whether the metric records instantaneous values, changes to a value, etc. Some combinations of metricKind and valueType might not be supported.\nPossible values are: `METRIC_KIND_UNSPECIFIED`, `GAUGE`, `DELTA`, `CUMULATIVE`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "unit",
-        "The units in which the metric value is reported. It is only applicable if the\nvalueType is INT64, DOUBLE, or DISTRIBUTION. The unit defines the representation of\nthe stored metric values.\nDifferent systems may scale the values to be more easily displayed (so a value of\n0.02KBy might be displayed as 20By, and a value of 3523KBy might be displayed as\n3.5MBy). However, if the unit is KBy, then the value of the metric is always in\nthousands of bytes, no matter how it may be displayed.\nIf you want a custom metric to record the exact number of CPU-seconds used by a job,\nyou can create an INT64 CUMULATIVE metric whose unit is s{CPU} (or equivalently\n1s{CPU} or just s). If the job uses 12,005 CPU-seconds, then the value is written as\n12005.\nAlternatively, if you want a custom metric to record data in a more granular way, you\ncan create a DOUBLE CUMULATIVE metric whose unit is ks{CPU}, and then write the value\n12.005 (which is 12005/1000), or use Kis{CPU} and write 11.723 (which is 12005/1024).\nThe supported units are a subset of The Unified Code for Units of Measure standard.\nMore info can be found in the API documentation\n(https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors).",
+        'unit',
+        'The units in which the metric value is reported. It is only applicable if the\nvalueType is INT64, DOUBLE, or DISTRIBUTION. The unit defines the representation of\nthe stored metric values.\nDifferent systems may scale the values to be more easily displayed (so a value of\n0.02KBy might be displayed as 20By, and a value of 3523KBy might be displayed as\n3.5MBy). However, if the unit is KBy, then the value of the metric is always in\nthousands of bytes, no matter how it may be displayed.\nIf you want a custom metric to record the exact number of CPU-seconds used by a job,\nyou can create an INT64 CUMULATIVE metric whose unit is s{CPU} (or equivalently\n1s{CPU} or just s). If the job uses 12,005 CPU-seconds, then the value is written as\n12005.\nAlternatively, if you want a custom metric to record data in a more granular way, you\ncan create a DOUBLE CUMULATIVE metric whose unit is ks{CPU}, and then write the value\n12.005 (which is 12005/1000), or use Kis{CPU} and write 11.723 (which is 12005/1024).\nThe supported units are a subset of The Unified Code for Units of Measure standard.\nMore info can be found in the API documentation\n(https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors).',
         () => [],
         false,
         true,

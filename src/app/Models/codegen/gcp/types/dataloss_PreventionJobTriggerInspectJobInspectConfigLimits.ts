@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoType,
   dataloss_PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoType_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoType";
+} from './dataloss_PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoType';
 
 export interface dataloss_PreventionJobTriggerInspectJobInspectConfigLimits {
   /*
@@ -28,8 +28,8 @@ export function dataloss_PreventionJobTriggerInspectJobInspectConfigLimits_GetTy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "maxFindingsPerInfoTypes",
-      "Configuration of findings limit given for specified infoTypes.\nStructure is documented below.",
+      'maxFindingsPerInfoTypes',
+      'Configuration of findings limit given for specified infoTypes.\nStructure is documented below.',
       () =>
         dataloss_PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoType_GetTypes(),
       false,
@@ -37,16 +37,16 @@ export function dataloss_PreventionJobTriggerInspectJobInspectConfigLimits_GetTy
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxFindingsPerItem",
-      "Max number of findings that will be returned for each item scanned. The maximum returned is 2000.",
+      'maxFindingsPerItem',
+      'Max number of findings that will be returned for each item scanned. The maximum returned is 2000.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxFindingsPerRequest",
-      "Max number of findings that will be returned per request/job. The maximum returned is 2000.",
+      'maxFindingsPerRequest',
+      'Max number of findings that will be returned per request/job. The maximum returned is 2000.',
       () => [],
       false,
       false,

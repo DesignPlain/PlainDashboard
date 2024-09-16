@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   fsx_getOntapStorageVirtualMachineEndpointIscsi,
   fsx_getOntapStorageVirtualMachineEndpointIscsi_GetTypes,
-} from "./fsx_getOntapStorageVirtualMachineEndpointIscsi";
+} from './fsx_getOntapStorageVirtualMachineEndpointIscsi';
 import {
   fsx_getOntapStorageVirtualMachineEndpointManagement,
   fsx_getOntapStorageVirtualMachineEndpointManagement_GetTypes,
-} from "./fsx_getOntapStorageVirtualMachineEndpointManagement";
+} from './fsx_getOntapStorageVirtualMachineEndpointManagement';
 import {
   fsx_getOntapStorageVirtualMachineEndpointNf,
   fsx_getOntapStorageVirtualMachineEndpointNf_GetTypes,
-} from "./fsx_getOntapStorageVirtualMachineEndpointNf";
+} from './fsx_getOntapStorageVirtualMachineEndpointNf';
 import {
   fsx_getOntapStorageVirtualMachineEndpointSmb,
   fsx_getOntapStorageVirtualMachineEndpointSmb_GetTypes,
-} from "./fsx_getOntapStorageVirtualMachineEndpointSmb";
+} from './fsx_getOntapStorageVirtualMachineEndpointSmb';
 
 export interface fsx_getOntapStorageVirtualMachineEndpoint {
   //
@@ -40,32 +40,32 @@ export function fsx_getOntapStorageVirtualMachineEndpoint_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Array,
-      "iscsis",
-      "",
+      'iscsis',
+      '',
       () => fsx_getOntapStorageVirtualMachineEndpointIscsi_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "managements",
-      "An endpoint for managing SVMs using the NetApp ONTAP CLI, NetApp ONTAP API, or NetApp CloudManager. See SVM Endpoint below.",
+      'managements',
+      'An endpoint for managing SVMs using the NetApp ONTAP CLI, NetApp ONTAP API, or NetApp CloudManager. See SVM Endpoint below.',
       () => fsx_getOntapStorageVirtualMachineEndpointManagement_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "nfs",
-      "An endpoint for connecting using the Network File System (NFS) protocol. See SVM Endpoint below.",
+      'nfs',
+      'An endpoint for connecting using the Network File System (NFS) protocol. See SVM Endpoint below.',
       () => fsx_getOntapStorageVirtualMachineEndpointNf_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "smbs",
-      "An endpoint for connecting using the Server Message Block (SMB) protocol. See SVM Endpoint below.",
+      'smbs',
+      'An endpoint for connecting using the Server Message Block (SMB) protocol. See SVM Endpoint below.',
       () => fsx_getOntapStorageVirtualMachineEndpointSmb_GetTypes(),
       true,
       false,

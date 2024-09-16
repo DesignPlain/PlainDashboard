@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   quicksight_RefreshScheduleScheduleScheduleFrequencyRefreshOnDay,
   quicksight_RefreshScheduleScheduleScheduleFrequencyRefreshOnDay_GetTypes,
-} from "./quicksight_RefreshScheduleScheduleScheduleFrequencyRefreshOnDay";
+} from './quicksight_RefreshScheduleScheduleScheduleFrequencyRefreshOnDay';
 
 export interface quicksight_RefreshScheduleScheduleScheduleFrequency {
   // The interval between scheduled refreshes. Valid values are `MINUTE15`, `MINUTE30`, `HOURLY`, `DAILY`, `WEEKLY` and `MONTHLY`.
@@ -28,16 +28,16 @@ export function quicksight_RefreshScheduleScheduleScheduleFrequency_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.String,
-      "interval",
-      "The interval between scheduled refreshes. Valid values are `MINUTE15`, `MINUTE30`, `HOURLY`, `DAILY`, `WEEKLY` and `MONTHLY`.",
+      'interval',
+      'The interval between scheduled refreshes. Valid values are `MINUTE15`, `MINUTE30`, `HOURLY`, `DAILY`, `WEEKLY` and `MONTHLY`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "refreshOnDay",
-      "The [refresh on entity](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ScheduleRefreshOnEntity.html) configuration for weekly or monthly schedules. See refresh_on_day.",
+      'refreshOnDay',
+      'The [refresh on entity](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ScheduleRefreshOnEntity.html) configuration for weekly or monthly schedules. See refresh_on_day.',
       () =>
         quicksight_RefreshScheduleScheduleScheduleFrequencyRefreshOnDay_GetTypes(),
       false,
@@ -45,16 +45,16 @@ export function quicksight_RefreshScheduleScheduleScheduleFrequency_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "timeOfTheDay",
-      "The time of day that you want the dataset to refresh. This value is expressed in `HH:MM` format. This field is not required for schedules that refresh hourly.",
+      'timeOfTheDay',
+      'The time of day that you want the dataset to refresh. This value is expressed in `HH:MM` format. This field is not required for schedules that refresh hourly.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "timezone",
-      "The timezone that you want the refresh schedule to use.",
+      'timezone',
+      'The timezone that you want the refresh schedule to use.',
       () => [],
       false,
       false,

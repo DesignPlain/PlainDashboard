@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfigTimestampField {
   /*
@@ -22,8 +22,8 @@ export function dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConf
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Specification of the field containing the timestamp of scanned items. Used for data sources like Datastore and BigQuery.\nFor BigQuery: Required to filter out rows based on the given start and end times. If not specified and the table was\nmodified between the given start and end times, the entire table will be scanned. The valid data types of the timestamp\nfield are: INTEGER, DATE, TIMESTAMP, or DATETIME BigQuery column.\nFor Datastore. Valid data types of the timestamp field are: TIMESTAMP. Datastore entity will be scanned if the\ntimestamp property does not exist or its value is empty or invalid.",
+      'name',
+      'Specification of the field containing the timestamp of scanned items. Used for data sources like Datastore and BigQuery.\nFor BigQuery: Required to filter out rows based on the given start and end times. If not specified and the table was\nmodified between the given start and end times, the entire table will be scanned. The valid data types of the timestamp\nfield are: INTEGER, DATE, TIMESTAMP, or DATETIME BigQuery column.\nFor Datastore. Valid data types of the timestamp field are: TIMESTAMP. Datastore entity will be scanned if the\ntimestamp property does not exist or its value is empty or invalid.',
       () => [],
       true,
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface LicenseConfigurationArgs {
   // Description of the license configuration.
@@ -64,56 +64,56 @@ export class LicenseConfiguration extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "licenseCountHardLimit",
-        "Sets the number of available licenses as a hard limit.",
+        'licenseCountHardLimit',
+        'Sets the number of available licenses as a hard limit.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "licenseCountingType",
-        "Dimension to use to track license inventory. Specify either `vCPU`, `Instance`, `Core` or `Socket`.",
+        'licenseCountingType',
+        'Dimension to use to track license inventory. Specify either `vCPU`, `Instance`, `Core` or `Socket`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "licenseRules",
-        "Array of configured License Manager rules.",
+        'licenseRules',
+        'Array of configured License Manager rules.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the license configuration.",
+        'name',
+        'Name of the license configuration.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the license configuration.",
+        'description',
+        'Description of the license configuration.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "licenseCount",
-        "Number of licenses managed by the license configuration.",
+        'licenseCount',
+        'Number of licenses managed by the license configuration.',
         () => [],
         false,
         false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   signer_getSigningJobSourceS3,
   signer_getSigningJobSourceS3_GetTypes,
-} from "./signer_getSigningJobSourceS3";
+} from './signer_getSigningJobSourceS3';
 
 export interface signer_getSigningJobSource {
   //
@@ -19,8 +19,8 @@ export function signer_getSigningJobSource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "s3s",
-      "",
+      's3s',
+      '',
       () => signer_getSigningJobSourceS3_GetTypes(),
       true,
       false,

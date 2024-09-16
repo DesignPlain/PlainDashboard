@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   vertex_AiFeatureOnlineStoreFeatureviewSyncConfig,
   vertex_AiFeatureOnlineStoreFeatureviewSyncConfig_GetTypes,
-} from "../types/vertex_AiFeatureOnlineStoreFeatureviewSyncConfig";
+} from '../types/vertex_AiFeatureOnlineStoreFeatureviewSyncConfig';
 import {
   vertex_AiFeatureOnlineStoreFeatureviewVectorSearchConfig,
   vertex_AiFeatureOnlineStoreFeatureviewVectorSearchConfig_GetTypes,
-} from "../types/vertex_AiFeatureOnlineStoreFeatureviewVectorSearchConfig";
+} from '../types/vertex_AiFeatureOnlineStoreFeatureviewVectorSearchConfig';
 import {
   vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySource,
   vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySource_GetTypes,
-} from "../types/vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySource";
+} from '../types/vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySource';
 import {
   vertex_AiFeatureOnlineStoreFeatureviewBigQuerySource,
   vertex_AiFeatureOnlineStoreFeatureviewBigQuerySource_GetTypes,
-} from "../types/vertex_AiFeatureOnlineStoreFeatureviewBigQuerySource";
+} from '../types/vertex_AiFeatureOnlineStoreFeatureviewBigQuerySource';
 
 export interface AiFeatureOnlineStoreFeatureviewArgs {
   /*
@@ -148,16 +148,16 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "featureOnlineStore",
-        "The name of the FeatureOnlineStore to use for the featureview.",
+        'featureOnlineStore',
+        'The name of the FeatureOnlineStore to use for the featureview.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "featureRegistrySource",
-        "Configures the features from a Feature Registry source that need to be loaded onto the FeatureOnlineStore.\nStructure is documented below.",
+        'featureRegistrySource',
+        'Configures the features from a Feature Registry source that need to be loaded onto the FeatureOnlineStore.\nStructure is documented below.',
         () =>
           vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySource_GetTypes(),
         false,
@@ -165,48 +165,48 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the FeatureView. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.",
+        'name',
+        'Name of the FeatureView. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The region for the resource. It should be the same as the featureonlinestore region.\n\n\n- - -",
+        'region',
+        'The region for the resource. It should be the same as the featureonlinestore region.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "bigQuerySource",
-        "Configures how data is supposed to be extracted from a BigQuery source to be loaded onto the FeatureOnlineStore.\nStructure is documented below.",
+        'bigQuerySource',
+        'Configures how data is supposed to be extracted from a BigQuery source to be loaded onto the FeatureOnlineStore.\nStructure is documented below.',
         () => vertex_AiFeatureOnlineStoreFeatureviewBigQuerySource_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "A set of key/value label pairs to assign to this FeatureView.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'A set of key/value label pairs to assign to this FeatureView.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "syncConfig",
-        "Configures when data is to be synced/updated for this FeatureView. At the end of the sync the latest featureValues for each entityId of this FeatureView are made ready for online serving.\nStructure is documented below.",
+        'syncConfig',
+        'Configures when data is to be synced/updated for this FeatureView. At the end of the sync the latest featureValues for each entityId of this FeatureView are made ready for online serving.\nStructure is documented below.',
         () => vertex_AiFeatureOnlineStoreFeatureviewSyncConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "vectorSearchConfig",
-        "Configuration for vector search. It contains the required configurations to create an index from source data, so that approximate nearest neighbor (a.k.a ANN) algorithms search can be performed during online serving.\nStructure is documented below.",
+        'vectorSearchConfig',
+        'Configuration for vector search. It contains the required configurations to create an index from source data, so that approximate nearest neighbor (a.k.a ANN) algorithms search can be performed during online serving.\nStructure is documented below.',
         () =>
           vertex_AiFeatureOnlineStoreFeatureviewVectorSearchConfig_GetTypes(),
         false,
@@ -214,8 +214,8 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

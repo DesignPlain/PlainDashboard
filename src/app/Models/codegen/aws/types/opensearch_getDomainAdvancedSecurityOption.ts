@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface opensearch_getDomainAdvancedSecurityOption {
   //
@@ -21,24 +21,24 @@ export function opensearch_getDomainAdvancedSecurityOption_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "anonymousAuthEnabled",
-      "",
+      'anonymousAuthEnabled',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
-      "Enabled disabled toggle for off-peak update window",
+      'enabled',
+      'Enabled disabled toggle for off-peak update window',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "internalUserDatabaseEnabled",
-      "Whether the internal user database is enabled.",
+      'internalUserDatabaseEnabled',
+      'Whether the internal user database is enabled.',
       () => [],
       true,
       false,

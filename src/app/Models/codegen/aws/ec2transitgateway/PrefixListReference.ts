@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface PrefixListReferenceArgs {
   // Indicates whether to drop traffic that matches the Prefix List. Defaults to `false`.
@@ -48,32 +48,32 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "blackhole",
-        "Indicates whether to drop traffic that matches the Prefix List. Defaults to `false`.",
+        'blackhole',
+        'Indicates whether to drop traffic that matches the Prefix List. Defaults to `false`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "prefixListId",
-        "Identifier of EC2 Prefix List.",
+        'prefixListId',
+        'Identifier of EC2 Prefix List.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "transitGatewayAttachmentId",
-        "Identifier of EC2 Transit Gateway Attachment.",
+        'transitGatewayAttachmentId',
+        'Identifier of EC2 Transit Gateway Attachment.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "transitGatewayRouteTableId",
-        "Identifier of EC2 Transit Gateway Route Table.\n\nThe following arguments are optional:",
+        'transitGatewayRouteTableId',
+        'Identifier of EC2 Transit Gateway Route Table.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,

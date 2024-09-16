@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   containeranalysis_OccurenceAttestation,
   containeranalysis_OccurenceAttestation_GetTypes,
-} from "../types/containeranalysis_OccurenceAttestation";
+} from '../types/containeranalysis_OccurenceAttestation';
 
 export interface OccurenceArgs {
   /*
@@ -105,23 +105,23 @@ filter in list requests.
     return [
       new DynamicUIProps(
         InputType.String,
-        "remediation",
-        "A description of actions that can be taken to remedy the note.",
+        'remediation',
+        'A description of actions that can be taken to remedy the note.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resourceUri",
-        "Required. Immutable. A URI that represents the resource for which\nthe occurrence applies. For example,\nhttps://gcr.io/project/image@sha256:123abc for a Docker image.",
+        'resourceUri',
+        'Required. Immutable. A URI that represents the resource for which\nthe occurrence applies. For example,\nhttps://gcr.io/project/image@sha256:123abc for a Docker image.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "attestation",
+        'attestation',
         'Occurrence that represents a single "attestation". The authenticity\nof an attestation can be verified using the attached signature.\nIf the verifier trusts the public key of the signer, then verifying\nthe signature is sufficient to establish trust. In this circumstance,\nthe authority to which this attestation is attached is primarily\nuseful for lookup (how to find this attestation if you already\nknow the authority and artifact to be verified) and intent (for\nwhich authority this attestation was intended to sign.\nStructure is documented below.',
         () => containeranalysis_OccurenceAttestation_GetTypes(),
         true,
@@ -129,16 +129,16 @@ filter in list requests.
       ),
       new DynamicUIProps(
         InputType.String,
-        "noteName",
-        "The analysis note associated with this occurrence, in the form of\nprojects/[PROJECT]/notes/[NOTE_ID]. This field can be used as a\nfilter in list requests.",
+        'noteName',
+        'The analysis note associated with this occurrence, in the form of\nprojects/[PROJECT]/notes/[NOTE_ID]. This field can be used as a\nfilter in list requests.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

@@ -1,4 +1,4 @@
-import { InputType } from "./InputType";
+import { InputType } from './InputType';
 
 export class DynamicUIProps {
   constructor(

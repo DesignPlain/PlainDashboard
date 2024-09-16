@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   apigateway_DomainNameEndpointConfiguration,
   apigateway_DomainNameEndpointConfiguration_GetTypes,
-} from "../types/apigateway_DomainNameEndpointConfiguration";
+} from '../types/apigateway_DomainNameEndpointConfiguration';
 import {
   apigateway_DomainNameMutualTlsAuthentication,
   apigateway_DomainNameMutualTlsAuthentication_GetTypes,
-} from "../types/apigateway_DomainNameMutualTlsAuthentication";
+} from '../types/apigateway_DomainNameMutualTlsAuthentication';
 
 export interface DomainNameArgs {
   // ARN for an AWS-managed certificate. AWS Certificate Manager is the only supported source. Used when an edge-optimized domain name is desired. Conflicts with `certificate_name`, `certificate_body`, `certificate_chain`, `certificate_private_key`, `regional_certificate_arn`, and `regional_certificate_name`.
@@ -136,104 +136,104 @@ When referencing an AWS-managed certificate, the following arguments are support
     return [
       new DynamicUIProps(
         InputType.String,
-        "domainName",
-        "Fully-qualified domain name to register.",
+        'domainName',
+        'Fully-qualified domain name to register.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateArn",
-        "ARN for an AWS-managed certificate. AWS Certificate Manager is the only supported source. Used when an edge-optimized domain name is desired. Conflicts with `certificate_name`, `certificate_body`, `certificate_chain`, `certificate_private_key`, `regional_certificate_arn`, and `regional_certificate_name`.",
+        'certificateArn',
+        'ARN for an AWS-managed certificate. AWS Certificate Manager is the only supported source. Used when an edge-optimized domain name is desired. Conflicts with `certificate_name`, `certificate_body`, `certificate_chain`, `certificate_private_key`, `regional_certificate_arn`, and `regional_certificate_name`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateName",
-        "Unique name to use when registering this certificate as an IAM server certificate. Conflicts with `certificate_arn`, `regional_certificate_arn`, and `regional_certificate_name`. Required if `certificate_arn` is not set.",
+        'certificateName',
+        'Unique name to use when registering this certificate as an IAM server certificate. Conflicts with `certificate_arn`, `regional_certificate_arn`, and `regional_certificate_name`. Required if `certificate_arn` is not set.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificatePrivateKey",
-        "Private key associated with the domain certificate given in `certificate_body`. Only valid for `EDGE` endpoint configuration type. Conflicts with `certificate_arn`, `regional_certificate_arn`, and `regional_certificate_name`.",
+        'certificatePrivateKey',
+        'Private key associated with the domain certificate given in `certificate_body`. Only valid for `EDGE` endpoint configuration type. Conflicts with `certificate_arn`, `regional_certificate_arn`, and `regional_certificate_name`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "endpointConfiguration",
-        "Configuration block defining API endpoint information including type. See below.",
+        'endpointConfiguration',
+        'Configuration block defining API endpoint information including type. See below.',
         () => apigateway_DomainNameEndpointConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "regionalCertificateName",
-        "User-friendly name of the certificate that will be used by regional endpoint for this domain name. Conflicts with `certificate_arn`, `certificate_name`, `certificate_body`, `certificate_chain`, and `certificate_private_key`.",
+        'regionalCertificateName',
+        'User-friendly name of the certificate that will be used by regional endpoint for this domain name. Conflicts with `certificate_arn`, `certificate_name`, `certificate_body`, `certificate_chain`, and `certificate_private_key`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.\n\nWhen referencing an AWS-managed certificate, the following arguments are supported:",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.\n\nWhen referencing an AWS-managed certificate, the following arguments are supported:',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateBody",
-        "Certificate issued for the domain name being registered, in PEM format. Only valid for `EDGE` endpoint configuration type. Conflicts with `certificate_arn`, `regional_certificate_arn`, and `regional_certificate_name`.",
+        'certificateBody',
+        'Certificate issued for the domain name being registered, in PEM format. Only valid for `EDGE` endpoint configuration type. Conflicts with `certificate_arn`, `regional_certificate_arn`, and `regional_certificate_name`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "mutualTlsAuthentication",
-        "Mutual TLS authentication configuration for the domain name. See below.",
+        'mutualTlsAuthentication',
+        'Mutual TLS authentication configuration for the domain name. See below.',
         () => apigateway_DomainNameMutualTlsAuthentication_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ownershipVerificationCertificateArn",
-        "ARN of the AWS-issued certificate used to validate custom domain ownership (when `certificate_arn` is issued via an ACM Private CA or `mutual_tls_authentication` is configured with an ACM-imported certificate.)",
+        'ownershipVerificationCertificateArn',
+        'ARN of the AWS-issued certificate used to validate custom domain ownership (when `certificate_arn` is issued via an ACM Private CA or `mutual_tls_authentication` is configured with an ACM-imported certificate.)',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "regionalCertificateArn",
-        "ARN for an AWS-managed certificate. AWS Certificate Manager is the only supported source. Used when a regional domain name is desired. Conflicts with `certificate_arn`, `certificate_name`, `certificate_body`, `certificate_chain`, and `certificate_private_key`.\n\nWhen uploading a certificate, the following arguments are supported:",
+        'regionalCertificateArn',
+        'ARN for an AWS-managed certificate. AWS Certificate Manager is the only supported source. Used when a regional domain name is desired. Conflicts with `certificate_arn`, `certificate_name`, `certificate_body`, `certificate_chain`, and `certificate_private_key`.\n\nWhen uploading a certificate, the following arguments are supported:',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "securityPolicy",
-        "Transport Layer Security (TLS) version + cipher suite for this DomainName. Valid values are `TLS_1_0` and `TLS_1_2`. Must be configured to perform drift detection.",
+        'securityPolicy',
+        'Transport Layer Security (TLS) version + cipher suite for this DomainName. Valid values are `TLS_1_0` and `TLS_1_2`. Must be configured to perform drift detection.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateChain",
-        "Certificate for the CA that issued the certificate, along with any intermediate CA certificates required to create an unbroken chain to a certificate trusted by the intended API clients. Only valid for `EDGE` endpoint configuration type. Conflicts with `certificate_arn`, `regional_certificate_arn`, and `regional_certificate_name`.",
+        'certificateChain',
+        'Certificate for the CA that issued the certificate, along with any intermediate CA certificates required to create an unbroken chain to a certificate trusted by the intended API clients. Only valid for `EDGE` endpoint configuration type. Conflicts with `certificate_arn`, `regional_certificate_arn`, and `regional_certificate_name`.',
         () => [],
         false,
         true,

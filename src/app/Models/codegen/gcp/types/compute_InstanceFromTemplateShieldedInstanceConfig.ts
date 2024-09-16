@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_InstanceFromTemplateShieldedInstanceConfig {
   // Whether integrity monitoring is enabled for the instance.
@@ -21,24 +21,24 @@ export function compute_InstanceFromTemplateShieldedInstanceConfig_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enableIntegrityMonitoring",
-      "Whether integrity monitoring is enabled for the instance.",
+      'enableIntegrityMonitoring',
+      'Whether integrity monitoring is enabled for the instance.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enableSecureBoot",
-      "Whether secure boot is enabled for the instance.",
+      'enableSecureBoot',
+      'Whether secure boot is enabled for the instance.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enableVtpm",
-      "Whether the instance uses vTPM.",
+      'enableVtpm',
+      'Whether the instance uses vTPM.',
       () => [],
       false,
       false,

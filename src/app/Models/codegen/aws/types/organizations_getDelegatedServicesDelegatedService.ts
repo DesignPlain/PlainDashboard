@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface organizations_getDelegatedServicesDelegatedService {
   // The date that the account became a delegated administrator for this service.
@@ -18,16 +18,16 @@ export function organizations_getDelegatedServicesDelegatedService_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.String,
-      "delegationEnabledDate",
-      "The date that the account became a delegated administrator for this service.",
+      'delegationEnabledDate',
+      'The date that the account became a delegated administrator for this service.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "servicePrincipal",
-      "The name of an AWS service that can request an operation for the specified service.",
+      'servicePrincipal',
+      'The name of an AWS service that can request an operation for the specified service.',
       () => [],
       true,
       false,

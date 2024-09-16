@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ssm_MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersParameter {
   // The parameter name.
@@ -18,16 +18,16 @@ export function ssm_MaintenanceWindowTaskTaskInvocationParametersRunCommandParam
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The parameter name.",
+      'name',
+      'The parameter name.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "values",
-      "The array of strings.",
+      'values',
+      'The array of strings.',
       () => InputType_String_GetTypes(),
       true,
       false,

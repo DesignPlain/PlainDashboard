@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudrun_getServiceTemplateSpecContainerStartupProbeHttpGetHttpHeader,
   cloudrun_getServiceTemplateSpecContainerStartupProbeHttpGetHttpHeader_GetTypes,
-} from "./cloudrun_getServiceTemplateSpecContainerStartupProbeHttpGetHttpHeader";
+} from './cloudrun_getServiceTemplateSpecContainerStartupProbeHttpGetHttpHeader';
 
 export interface cloudrun_getServiceTemplateSpecContainerStartupProbeHttpGet {
   // Custom headers to set in the request. HTTP allows repeated headers.
@@ -28,8 +28,8 @@ export function cloudrun_getServiceTemplateSpecContainerStartupProbeHttpGet_GetT
   return [
     new DynamicUIProps(
       InputType.Array,
-      "httpHeaders",
-      "Custom headers to set in the request. HTTP allows repeated headers.",
+      'httpHeaders',
+      'Custom headers to set in the request. HTTP allows repeated headers.',
       () =>
         cloudrun_getServiceTemplateSpecContainerStartupProbeHttpGetHttpHeader_GetTypes(),
       true,
@@ -37,16 +37,16 @@ export function cloudrun_getServiceTemplateSpecContainerStartupProbeHttpGet_GetT
     ),
     new DynamicUIProps(
       InputType.String,
-      "path",
-      "Path to access on the HTTP server. If set, it should not be empty string.",
+      'path',
+      'Path to access on the HTTP server. If set, it should not be empty string.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "port",
-      "Port number to access on the container. Number must be in the range 1 to 65535.\nIf not specified, defaults to the same value as container.ports[0].containerPort.",
+      'port',
+      'Port number to access on the container. Number must be in the range 1 to 65535.\nIf not specified, defaults to the same value as container.ports[0].containerPort.',
       () => [],
       true,
       false,

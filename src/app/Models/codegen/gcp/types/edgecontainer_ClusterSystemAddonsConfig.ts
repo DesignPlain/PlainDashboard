@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   edgecontainer_ClusterSystemAddonsConfigIngress,
   edgecontainer_ClusterSystemAddonsConfigIngress_GetTypes,
-} from "./edgecontainer_ClusterSystemAddonsConfigIngress";
+} from './edgecontainer_ClusterSystemAddonsConfigIngress';
 
 export interface edgecontainer_ClusterSystemAddonsConfig {
   /*
@@ -24,8 +24,8 @@ export function edgecontainer_ClusterSystemAddonsConfig_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ingress",
-      "Config for the Ingress add-on which allows customers to create an Ingress\nobject to manage external access to the servers in a cluster. The add-on\nconsists of istiod and istio-ingress.\nStructure is documented below.",
+      'ingress',
+      'Config for the Ingress add-on which allows customers to create an Ingress\nobject to manage external access to the servers in a cluster. The add-on\nconsists of istiod and istio-ingress.\nStructure is documented below.',
       () => edgecontainer_ClusterSystemAddonsConfigIngress_GetTypes(),
       false,
       false,

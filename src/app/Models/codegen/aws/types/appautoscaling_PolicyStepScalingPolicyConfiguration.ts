@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appautoscaling_PolicyStepScalingPolicyConfigurationStepAdjustment,
   appautoscaling_PolicyStepScalingPolicyConfigurationStepAdjustment_GetTypes,
-} from "./appautoscaling_PolicyStepScalingPolicyConfigurationStepAdjustment";
+} from './appautoscaling_PolicyStepScalingPolicyConfigurationStepAdjustment';
 
 export interface appautoscaling_PolicyStepScalingPolicyConfiguration {
   // Whether the adjustment is an absolute number or a percentage of the current capacity. Valid values are `ChangeInCapacity`, `ExactCapacity`, and `PercentChangeInCapacity`.
@@ -154,23 +154,23 @@ export function appautoscaling_PolicyStepScalingPolicyConfiguration_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.String,
-      "adjustmentType",
-      "Whether the adjustment is an absolute number or a percentage of the current capacity. Valid values are `ChangeInCapacity`, `ExactCapacity`, and `PercentChangeInCapacity`.",
+      'adjustmentType',
+      'Whether the adjustment is an absolute number or a percentage of the current capacity. Valid values are `ChangeInCapacity`, `ExactCapacity`, and `PercentChangeInCapacity`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "cooldown",
-      "Amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start.",
+      'cooldown',
+      'Amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "metricAggregationType",
+      'metricAggregationType',
       'Aggregation type for the policy\'s metrics. Valid values are "Minimum", "Maximum", and "Average". Without a value, AWS will treat the aggregation type as "Average".',
       () => [],
       false,
@@ -178,15 +178,15 @@ export function appautoscaling_PolicyStepScalingPolicyConfiguration_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Number,
-      "minAdjustmentMagnitude",
-      "Minimum number to adjust your scalable dimension as a result of a scaling activity. If the adjustment type is PercentChangeInCapacity, the scaling policy changes the scalable dimension of the scalable target by this amount.",
+      'minAdjustmentMagnitude',
+      'Minimum number to adjust your scalable dimension as a result of a scaling activity. If the adjustment type is PercentChangeInCapacity, the scaling policy changes the scalable dimension of the scalable target by this amount.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "stepAdjustments",
+      'stepAdjustments',
       'Set of adjustments that manage scaling. These have the following structure:\n\n<!--Start PulumiCodeChooser -->\n```typescript\nimport * as pulumi from "@pulumi/pulumi";\nimport * as aws from "@pulumi/aws";\n\nconst ecsPolicy = new aws.appautoscaling.Policy("ecs_policy", {stepScalingPolicyConfiguration: {\n    stepAdjustments: [\n        {\n            metricIntervalLowerBound: "1",\n            metricIntervalUpperBound: "2",\n            scalingAdjustment: -1,\n        },\n        {\n            metricIntervalLowerBound: "2",\n            metricIntervalUpperBound: "3",\n            scalingAdjustment: 1,\n        },\n    ],\n}});\n```\n```python\nimport pulumi\nimport pulumi_aws as aws\n\necs_policy = aws.appautoscaling.Policy("ecs_policy", step_scaling_policy_configuration={\n    "step_adjustments": [\n        {\n            "metric_interval_lower_bound": "1",\n            "metric_interval_upper_bound": "2",\n            "scaling_adjustment": -1,\n        },\n        {\n            "metric_interval_lower_bound": "2",\n            "metric_interval_upper_bound": "3",\n            "scaling_adjustment": 1,\n        },\n    ],\n})\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Aws = Pulumi.Aws;\n\nreturn await Deployment.RunAsync(() => \n{\n    var ecsPolicy = new Aws.AppAutoScaling.Policy("ecs_policy", new()\n    {\n        StepScalingPolicyConfiguration = new Aws.AppAutoScaling.Inputs.PolicyStepScalingPolicyConfigurationArgs\n        {\n            StepAdjustments = new[]\n            {\n                new Aws.AppAutoScaling.Inputs.PolicyStepScalingPolicyConfigurationStepAdjustmentArgs\n                {\n                    MetricIntervalLowerBound = "1",\n                    MetricIntervalUpperBound = "2",\n                    ScalingAdjustment = -1,\n                },\n                new Aws.AppAutoScaling.Inputs.PolicyStepScalingPolicyConfigurationStepAdjustmentArgs\n                {\n                    MetricIntervalLowerBound = "2",\n                    MetricIntervalUpperBound = "3",\n                    ScalingAdjustment = 1,\n                },\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t"github.com/pulumi/pulumi-aws/sdk/v6/go/aws/appautoscaling"\n\t"github.com/pulumi/pulumi/sdk/v3/go/pulumi"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := appautoscaling.NewPolicy(ctx, "ecs_policy", &appautoscaling.PolicyArgs{\n\t\t\tStepScalingPolicyConfiguration: &appautoscaling.PolicyStepScalingPolicyConfigurationArgs{\n\t\t\t\tStepAdjustments: appautoscaling.PolicyStepScalingPolicyConfigurationStepAdjustmentArray{\n\t\t\t\t\t&appautoscaling.PolicyStepScalingPolicyConfigurationStepAdjustmentArgs{\n\t\t\t\t\t\tMetricIntervalLowerBound: pulumi.String("1"),\n\t\t\t\t\t\tMetricIntervalUpperBound: pulumi.String("2"),\n\t\t\t\t\t\tScalingAdjustment:        int(-1),\n\t\t\t\t\t},\n\t\t\t\t\t&appautoscaling.PolicyStepScalingPolicyConfigurationStepAdjustmentArgs{\n\t\t\t\t\t\tMetricIntervalLowerBound: pulumi.String("2"),\n\t\t\t\t\t\tMetricIntervalUpperBound: pulumi.String("3"),\n\t\t\t\t\t\tScalingAdjustment:        pulumi.Int(1),\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```yaml\nresources:\n  ecsPolicy:\n    type: aws:appautoscaling:Policy\n    name: ecs_policy\n    properties:\n      stepScalingPolicyConfiguration:\n        stepAdjustments:\n          - metricIntervalLowerBound: 1\n            metricIntervalUpperBound: 2\n            scalingAdjustment: -1\n          - metricIntervalLowerBound: 2\n            metricIntervalUpperBound: 3\n            scalingAdjustment: 1\n```\n<!--End PulumiCodeChooser -->',
       () =>
         appautoscaling_PolicyStepScalingPolicyConfigurationStepAdjustment_GetTypes(),

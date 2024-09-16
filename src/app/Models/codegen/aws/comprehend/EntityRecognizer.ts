@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   comprehend_EntityRecognizerVpcConfig,
   comprehend_EntityRecognizerVpcConfig_GetTypes,
-} from "../types/comprehend_EntityRecognizerVpcConfig";
+} from '../types/comprehend_EntityRecognizerVpcConfig';
 import {
   comprehend_EntityRecognizerInputDataConfig,
   comprehend_EntityRecognizerInputDataConfig_GetTypes,
-} from "../types/comprehend_EntityRecognizerInputDataConfig";
+} from '../types/comprehend_EntityRecognizerInputDataConfig';
 
 export interface EntityRecognizerArgs {
   // A map of tags to assign to the resource. If configured with a provider `default_tags` Configuration Block present, tags with matching keys will overwrite those defined at the provider-level.
@@ -143,55 +143,55 @@ See the `input_data_config` Configuration Block section below.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "vpcConfig",
-        "Configuration parameters for VPC to contain Entity Recognizer resources.\nSee the `vpc_config` Configuration Block section below.",
+        'vpcConfig',
+        'Configuration parameters for VPC to contain Entity Recognizer resources.\nSee the `vpc_config` Configuration Block section below.',
         () => comprehend_EntityRecognizerVpcConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "modelKmsKeyId",
-        "The ID or ARN of a KMS Key used to encrypt trained Entity Recognizers.",
+        'modelKmsKeyId',
+        'The ID or ARN of a KMS Key used to encrypt trained Entity Recognizers.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "languageCode",
-        "Two-letter language code for the language.\nOne of `en`, `es`, `fr`, `it`, `de`, or `pt`.",
+        'languageCode',
+        'Two-letter language code for the language.\nOne of `en`, `es`, `fr`, `it`, `de`, or `pt`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name for the Entity Recognizer.\nHas a maximum length of 63 characters.\nCan contain upper- and lower-case letters, numbers, and hypen (`-`).\n\nThe following arguments are optional:",
+        'name',
+        'Name for the Entity Recognizer.\nHas a maximum length of 63 characters.\nCan contain upper- and lower-case letters, numbers, and hypen (`-`).\n\nThe following arguments are optional:',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dataAccessRoleArn",
-        "The ARN for an IAM Role which allows Comprehend to read the training and testing data.",
+        'dataAccessRoleArn',
+        'The ARN for an IAM Role which allows Comprehend to read the training and testing data.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` Configuration Block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` Configuration Block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "versionName",
+        'versionName',
         'Name for the version of the Entity Recognizer.\nEach version must have a unique name within the Entity Recognizer.\nIf omitted, the provider will assign a random, unique version name.\nIf explicitly set to `""`, no version name will be set.\nHas a maximum length of 63 characters.\nCan contain upper- and lower-case letters, numbers, and hypen (`-`).\nConflicts with `version_name_prefix`.',
         () => [],
         false,
@@ -199,24 +199,24 @@ See the `input_data_config` Configuration Block section below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "versionNamePrefix",
-        "Creates a unique version name beginning with the specified prefix.\nHas a maximum length of 37 characters.\nCan contain upper- and lower-case letters, numbers, and hypen (`-`).\nConflicts with `version_name`.",
+        'versionNamePrefix',
+        'Creates a unique version name beginning with the specified prefix.\nHas a maximum length of 37 characters.\nCan contain upper- and lower-case letters, numbers, and hypen (`-`).\nConflicts with `version_name`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "volumeKmsKeyId",
-        "ID or ARN of a KMS Key used to encrypt storage volumes during job processing.",
+        'volumeKmsKeyId',
+        'ID or ARN of a KMS Key used to encrypt storage volumes during job processing.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "inputDataConfig",
-        "Configuration for the training and testing data.\nSee the `input_data_config` Configuration Block section below.",
+        'inputDataConfig',
+        'Configuration for the training and testing data.\nSee the `input_data_config` Configuration Block section below.',
         () => comprehend_EntityRecognizerInputDataConfig_GetTypes(),
         true,
         false,

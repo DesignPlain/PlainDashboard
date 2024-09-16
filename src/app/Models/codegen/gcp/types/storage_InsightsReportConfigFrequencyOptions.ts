@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   storage_InsightsReportConfigFrequencyOptionsStartDate,
   storage_InsightsReportConfigFrequencyOptionsStartDate_GetTypes,
-} from "./storage_InsightsReportConfigFrequencyOptionsStartDate";
+} from './storage_InsightsReportConfigFrequencyOptionsStartDate';
 import {
   storage_InsightsReportConfigFrequencyOptionsEndDate,
   storage_InsightsReportConfigFrequencyOptionsEndDate_GetTypes,
-} from "./storage_InsightsReportConfigFrequencyOptionsEndDate";
+} from './storage_InsightsReportConfigFrequencyOptionsEndDate';
 
 export interface storage_InsightsReportConfigFrequencyOptions {
   /*
@@ -38,15 +38,15 @@ export function storage_InsightsReportConfigFrequencyOptions_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.String,
-      "frequency",
-      "The frequency in which inventory reports are generated. Values are DAILY or WEEKLY.\nPossible values are: `DAILY`, `WEEKLY`.",
+      'frequency',
+      'The frequency in which inventory reports are generated. Values are DAILY or WEEKLY.\nPossible values are: `DAILY`, `WEEKLY`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "startDate",
+      'startDate',
       'The date to start generating inventory reports. For example, {"day": 15, "month": 8, "year": 2022}.\nStructure is documented below.',
       () => storage_InsightsReportConfigFrequencyOptionsStartDate_GetTypes(),
       true,
@@ -54,7 +54,7 @@ export function storage_InsightsReportConfigFrequencyOptions_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Object,
-      "endDate",
+      'endDate',
       'The date to stop generating inventory reports. For example, {"day": 15, "month": 9, "year": 2022}.\nStructure is documented below.',
       () => storage_InsightsReportConfigFrequencyOptionsEndDate_GetTypes(),
       true,

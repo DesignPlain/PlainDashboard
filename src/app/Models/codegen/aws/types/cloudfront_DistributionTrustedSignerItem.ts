@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudfront_DistributionTrustedSignerItem {
   // AWS account ID or `self`
@@ -18,16 +18,16 @@ export function cloudfront_DistributionTrustedSignerItem_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Array,
-      "keyPairIds",
-      "Set of active CloudFront key pairs associated with the signer account",
+      'keyPairIds',
+      'Set of active CloudFront key pairs associated with the signer account',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "awsAccountNumber",
-      "AWS account ID or `self`",
+      'awsAccountNumber',
+      'AWS account ID or `self`',
       () => [],
       false,
       false,

@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToAdd,
   networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToAdd_GetTypes,
-} from "./networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToAdd";
+} from './networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToAdd';
 import {
   networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToRemove,
   networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToRemove_GetTypes,
-} from "./networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToRemove";
+} from './networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToRemove';
 import {
   networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToAdd,
   networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToAdd_GetTypes,
-} from "./networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToAdd";
+} from './networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToAdd';
 import {
   networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToRemove,
   networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToRemove_GetTypes,
-} from "./networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToRemove";
+} from './networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToRemove';
 
 export interface networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderAction {
   /*
@@ -53,8 +53,8 @@ export function networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeade
   return [
     new DynamicUIProps(
       InputType.Array,
-      "responseHeaderToRemoves",
-      "A list of header names for headers that need to be removed from the request prior to forwarding the request to the origin.\nStructure is documented below.",
+      'responseHeaderToRemoves',
+      'A list of header names for headers that need to be removed from the request prior to forwarding the request to the origin.\nStructure is documented below.',
       () =>
         networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToRemove_GetTypes(),
       false,
@@ -62,8 +62,8 @@ export function networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeade
     ),
     new DynamicUIProps(
       InputType.Array,
-      "requestHeaderToAdds",
-      "Describes a header to add.\nStructure is documented below.",
+      'requestHeaderToAdds',
+      'Describes a header to add.\nStructure is documented below.',
       () =>
         networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToAdd_GetTypes(),
       false,
@@ -71,8 +71,8 @@ export function networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeade
     ),
     new DynamicUIProps(
       InputType.Array,
-      "requestHeaderToRemoves",
-      "A list of header names for headers that need to be removed from the request prior to forwarding the request to the origin.\nStructure is documented below.",
+      'requestHeaderToRemoves',
+      'A list of header names for headers that need to be removed from the request prior to forwarding the request to the origin.\nStructure is documented below.',
       () =>
         networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToRemove_GetTypes(),
       false,
@@ -80,8 +80,8 @@ export function networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeade
     ),
     new DynamicUIProps(
       InputType.Array,
-      "responseHeaderToAdds",
-      "Headers to add to the response prior to sending it back to the client.\nResponse headers are only sent to the client, and do not have an effect on the cache serving the response.\nStructure is documented below.",
+      'responseHeaderToAdds',
+      'Headers to add to the response prior to sending it back to the client.\nResponse headers are only sent to the client, and do not have an effect on the cache serving the response.\nStructure is documented below.',
       () =>
         networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToAdd_GetTypes(),
       false,

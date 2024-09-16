@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface bigquery_getDatasetDefaultEncryptionConfiguration {
   /*
@@ -19,8 +19,8 @@ export function bigquery_getDatasetDefaultEncryptionConfiguration_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.String,
-      "kmsKeyName",
-      "Describes the Cloud KMS encryption key that will be used to protect destination\nBigQuery table. The BigQuery Service Account associated with your project requires\naccess to this encryption key.",
+      'kmsKeyName',
+      'Describes the Cloud KMS encryption key that will be used to protect destination\nBigQuery table. The BigQuery Service Account associated with your project requires\naccess to this encryption key.',
       () => [],
       true,
       false,

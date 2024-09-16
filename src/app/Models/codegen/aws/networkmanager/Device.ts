@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkmanager_DeviceAwsLocation,
   networkmanager_DeviceAwsLocation_GetTypes,
-} from "../types/networkmanager_DeviceAwsLocation";
+} from '../types/networkmanager_DeviceAwsLocation';
 import {
   networkmanager_DeviceLocation,
   networkmanager_DeviceLocation_GetTypes,
-} from "../types/networkmanager_DeviceLocation";
+} from '../types/networkmanager_DeviceLocation';
 
 export interface DeviceArgs {
   // The type of device.
@@ -87,80 +87,80 @@ export class Device extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "vendor",
-        "The vendor of the device.",
+        'vendor',
+        'The vendor of the device.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "awsLocation",
-        "The AWS location of the device. Documented below.",
+        'awsLocation',
+        'The AWS location of the device. Documented below.',
         () => networkmanager_DeviceAwsLocation_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "globalNetworkId",
-        "The ID of the global network.",
+        'globalNetworkId',
+        'The ID of the global network.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of the device.",
+        'description',
+        'A description of the device.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "siteId",
-        "The ID of the site.",
+        'siteId',
+        'The ID of the site.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value tags for the device. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value tags for the device. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serialNumber",
-        "The serial number of the device.",
+        'serialNumber',
+        'The serial number of the device.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The type of device.",
+        'type',
+        'The type of device.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "location",
-        "The location of the device. Documented below.",
+        'location',
+        'The location of the device. Documented below.',
         () => networkmanager_DeviceLocation_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "model",
-        "The model of device.",
+        'model',
+        'The model of device.',
         () => [],
         false,
         false,

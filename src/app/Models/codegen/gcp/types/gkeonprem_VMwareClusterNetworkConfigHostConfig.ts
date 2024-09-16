@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface gkeonprem_VMwareClusterNetworkConfigHostConfig {
   /*
@@ -25,7 +25,7 @@ export function gkeonprem_VMwareClusterNetworkConfigHostConfig_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Array,
-      "dnsSearchDomains",
+      'dnsSearchDomains',
       'DNS search domains.\n\n<a name="nested_control_plane_v2_config"></a>The `control_plane_v2_config` block supports:',
       () => InputType_String_GetTypes(),
       false,
@@ -33,16 +33,16 @@ export function gkeonprem_VMwareClusterNetworkConfigHostConfig_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Array,
-      "dnsServers",
-      "DNS servers.",
+      'dnsServers',
+      'DNS servers.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ntpServers",
-      "NTP servers.",
+      'ntpServers',
+      'NTP servers.',
       () => InputType_String_GetTypes(),
       false,
       false,

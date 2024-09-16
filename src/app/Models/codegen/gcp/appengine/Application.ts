@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appengine_ApplicationFeatureSettings,
   appengine_ApplicationFeatureSettings_GetTypes,
-} from "../types/appengine_ApplicationFeatureSettings";
+} from '../types/appengine_ApplicationFeatureSettings';
 import {
   appengine_ApplicationIap,
   appengine_ApplicationIap_GetTypes,
-} from "../types/appengine_ApplicationIap";
+} from '../types/appengine_ApplicationIap';
 import {
   appengine_ApplicationUrlDispatchRule,
   appengine_ApplicationUrlDispatchRule_GetTypes,
-} from "../types/appengine_ApplicationUrlDispatchRule";
+} from '../types/appengine_ApplicationUrlDispatchRule';
 
 export interface ApplicationArgs {
   // The domain to authenticate users with when using App Engine's User API.
@@ -116,7 +116,7 @@ you may get a "Permission denied" error.
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
+        'project',
         'The project ID to create the application under.\n~>**NOTE:** GCP only accepts project ID, not project number. If you are using number,\nyou may get a "Permission denied" error.',
         () => [],
         false,
@@ -124,15 +124,15 @@ you may get a "Permission denied" error.
       ),
       new DynamicUIProps(
         InputType.String,
-        "servingStatus",
-        "The serving status of the app.",
+        'servingStatus',
+        'The serving status of the app.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "authDomain",
+        'authDomain',
         "The domain to authenticate users with when using App Engine's User API.",
         () => [],
         false,
@@ -140,32 +140,32 @@ you may get a "Permission denied" error.
       ),
       new DynamicUIProps(
         InputType.String,
-        "databaseType",
-        "The type of the Cloud Firestore or Cloud Datastore database associated with this application.\nCan be `CLOUD_FIRESTORE` or `CLOUD_DATASTORE_COMPATIBILITY` for new\ninstances.  To support old instances, the value `CLOUD_DATASTORE` is accepted by the provider, but will be rejected by the API.\nTo create a Cloud Firestore database without creating an App Engine application, use the\n`gcp.firestore.Database`\nresource instead.",
+        'databaseType',
+        'The type of the Cloud Firestore or Cloud Datastore database associated with this application.\nCan be `CLOUD_FIRESTORE` or `CLOUD_DATASTORE_COMPATIBILITY` for new\ninstances.  To support old instances, the value `CLOUD_DATASTORE` is accepted by the provider, but will be rejected by the API.\nTo create a Cloud Firestore database without creating an App Engine application, use the\n`gcp.firestore.Database`\nresource instead.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "featureSettings",
-        "A block of optional settings to configure specific App Engine features:",
+        'featureSettings',
+        'A block of optional settings to configure specific App Engine features:',
         () => appengine_ApplicationFeatureSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "iap",
-        "Settings for enabling Cloud Identity Aware Proxy",
+        'iap',
+        'Settings for enabling Cloud Identity Aware Proxy',
         () => appengine_ApplicationIap_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "locationId",
-        "The [location](https://cloud.google.com/appengine/docs/locations)\nto serve the app from.",
+        'locationId',
+        'The [location](https://cloud.google.com/appengine/docs/locations)\nto serve the app from.',
         () => [],
         true,
         false,

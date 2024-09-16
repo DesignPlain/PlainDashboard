@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionInspectTemplateInspectConfigRuleSetInfoType,
   dataloss_PreventionInspectTemplateInspectConfigRuleSetInfoType_GetTypes,
-} from "./dataloss_PreventionInspectTemplateInspectConfigRuleSetInfoType";
+} from './dataloss_PreventionInspectTemplateInspectConfigRuleSetInfoType';
 import {
   dataloss_PreventionInspectTemplateInspectConfigRuleSetRule,
   dataloss_PreventionInspectTemplateInspectConfigRuleSetRule_GetTypes,
-} from "./dataloss_PreventionInspectTemplateInspectConfigRuleSetRule";
+} from './dataloss_PreventionInspectTemplateInspectConfigRuleSetRule';
 
 export interface dataloss_PreventionInspectTemplateInspectConfigRuleSet {
   /*
@@ -32,8 +32,8 @@ export function dataloss_PreventionInspectTemplateInspectConfigRuleSet_GetTypes(
   return [
     new DynamicUIProps(
       InputType.Array,
-      "infoTypes",
-      "List of infoTypes this rule set is applied to.\nStructure is documented below.",
+      'infoTypes',
+      'List of infoTypes this rule set is applied to.\nStructure is documented below.',
       () =>
         dataloss_PreventionInspectTemplateInspectConfigRuleSetInfoType_GetTypes(),
       true,
@@ -41,8 +41,8 @@ export function dataloss_PreventionInspectTemplateInspectConfigRuleSet_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Array,
-      "rules",
-      "Set of rules to be applied to infoTypes. The rules are applied in order.\nStructure is documented below.",
+      'rules',
+      'Set of rules to be applied to infoTypes. The rules are applied in order.\nStructure is documented below.',
       () =>
         dataloss_PreventionInspectTemplateInspectConfigRuleSetRule_GetTypes(),
       true,

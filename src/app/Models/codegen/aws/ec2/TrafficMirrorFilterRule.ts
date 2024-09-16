@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_TrafficMirrorFilterRuleDestinationPortRange,
   ec2_TrafficMirrorFilterRuleDestinationPortRange_GetTypes,
-} from "../types/ec2_TrafficMirrorFilterRuleDestinationPortRange";
+} from '../types/ec2_TrafficMirrorFilterRuleDestinationPortRange';
 import {
   ec2_TrafficMirrorFilterRuleSourcePortRange,
   ec2_TrafficMirrorFilterRuleSourcePortRange_GetTypes,
-} from "../types/ec2_TrafficMirrorFilterRuleSourcePortRange";
+} from '../types/ec2_TrafficMirrorFilterRuleSourcePortRange';
 
 export interface TrafficMirrorFilterRuleArgs {
   // Description of the traffic mirror filter rule.
@@ -92,80 +92,80 @@ Traffic mirror port range support following attributes:
     return [
       new DynamicUIProps(
         InputType.String,
-        "ruleAction",
-        "Action to take (accept | reject) on the filtered traffic. Valid values are `accept` and `reject`",
+        'ruleAction',
+        'Action to take (accept | reject) on the filtered traffic. Valid values are `accept` and `reject`',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "trafficDirection",
-        "Direction of traffic to be captured. Valid values are `ingress` and `egress`\n\nTraffic mirror port range support following attributes:",
+        'trafficDirection',
+        'Direction of traffic to be captured. Valid values are `ingress` and `egress`\n\nTraffic mirror port range support following attributes:',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "ruleNumber",
-        "Number of the Traffic Mirror rule. This number must be unique for each Traffic Mirror rule in a given direction. The rules are processed in ascending order by rule number.",
+        'ruleNumber',
+        'Number of the Traffic Mirror rule. This number must be unique for each Traffic Mirror rule in a given direction. The rules are processed in ascending order by rule number.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceCidrBlock",
-        "Source CIDR block to assign to the Traffic Mirror rule.",
+        'sourceCidrBlock',
+        'Source CIDR block to assign to the Traffic Mirror rule.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "sourcePortRange",
-        "Source port range. Supported only when the protocol is set to TCP(6) or UDP(17). See Traffic mirror port range documented below",
+        'sourcePortRange',
+        'Source port range. Supported only when the protocol is set to TCP(6) or UDP(17). See Traffic mirror port range documented below',
         () => ec2_TrafficMirrorFilterRuleSourcePortRange_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the traffic mirror filter rule.",
+        'description',
+        'Description of the traffic mirror filter rule.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "destinationCidrBlock",
-        "Destination CIDR block to assign to the Traffic Mirror rule.",
+        'destinationCidrBlock',
+        'Destination CIDR block to assign to the Traffic Mirror rule.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "destinationPortRange",
-        "Destination port range. Supported only when the protocol is set to TCP(6) or UDP(17). See Traffic mirror port range documented below",
+        'destinationPortRange',
+        'Destination port range. Supported only when the protocol is set to TCP(6) or UDP(17). See Traffic mirror port range documented below',
         () => ec2_TrafficMirrorFilterRuleDestinationPortRange_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "trafficMirrorFilterId",
-        "ID of the traffic mirror filter to which this rule should be added",
+        'trafficMirrorFilterId',
+        'ID of the traffic mirror filter to which this rule should be added',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "protocol",
-        "Protocol number, for example 17 (UDP), to assign to the Traffic Mirror rule. For information about the protocol value, see [Protocol Numbers](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml) on the Internet Assigned Numbers Authority (IANA) website.",
+        'protocol',
+        'Protocol number, for example 17 (UDP), to assign to the Traffic Mirror rule. For information about the protocol value, see [Protocol Numbers](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml) on the Internet Assigned Numbers Authority (IANA) website.',
         () => [],
         false,
         false,

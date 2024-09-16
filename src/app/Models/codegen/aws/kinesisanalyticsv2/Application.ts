@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kinesisanalyticsv2_ApplicationCloudwatchLoggingOptions,
   kinesisanalyticsv2_ApplicationCloudwatchLoggingOptions_GetTypes,
-} from "../types/kinesisanalyticsv2_ApplicationCloudwatchLoggingOptions";
+} from '../types/kinesisanalyticsv2_ApplicationCloudwatchLoggingOptions';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfiguration,
   kinesisanalyticsv2_ApplicationApplicationConfiguration_GetTypes,
-} from "../types/kinesisanalyticsv2_ApplicationApplicationConfiguration";
+} from '../types/kinesisanalyticsv2_ApplicationApplicationConfiguration';
 
 export interface ApplicationArgs {
   // The ARN of the IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.
@@ -99,7 +99,7 @@ export class Application extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "applicationMode",
+        'applicationMode',
         "The application's mode. Valid values are `STREAMING`, `INTERACTIVE`.",
         () => [],
         false,
@@ -107,15 +107,15 @@ export class Application extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cloudwatchLoggingOptions",
-        "A CloudWatch log stream to monitor application configuration errors.",
+        'cloudwatchLoggingOptions',
+        'A CloudWatch log stream to monitor application configuration errors.',
         () => kinesisanalyticsv2_ApplicationCloudwatchLoggingOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "applicationConfiguration",
+        'applicationConfiguration',
         "The application's configuration",
         () => kinesisanalyticsv2_ApplicationApplicationConfiguration_GetTypes(),
         false,
@@ -123,56 +123,56 @@ export class Application extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "runtimeEnvironment",
-        "The runtime environment for the application. Valid values: `SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`, `FLINK-1_11`, `FLINK-1_13`, `FLINK-1_15`, `FLINK-1_18`, `FLINK-1_19`.",
+        'runtimeEnvironment',
+        'The runtime environment for the application. Valid values: `SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`, `FLINK-1_11`, `FLINK-1_13`, `FLINK-1_15`, `FLINK-1_18`, `FLINK-1_19`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceExecutionRole",
-        "The ARN of the IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.",
+        'serviceExecutionRole',
+        'The ARN of the IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "startApplication",
-        "Whether to start or stop the application.",
+        'startApplication',
+        'Whether to start or stop the application.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the application. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level",
+        'tags',
+        'A map of tags to assign to the application. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "forceStop",
-        "Whether to force stop an unresponsive Flink-based application.",
+        'forceStop',
+        'Whether to force stop an unresponsive Flink-based application.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the application.",
+        'name',
+        'The name of the application.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A summary description of the application.",
+        'description',
+        'A summary description of the application.',
         () => [],
         false,
         true,

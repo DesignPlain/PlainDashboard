@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   transfer_ConnectorAs2Config,
   transfer_ConnectorAs2Config_GetTypes,
-} from "../types/transfer_ConnectorAs2Config";
+} from '../types/transfer_ConnectorAs2Config';
 import {
   transfer_ConnectorSftpConfig,
   transfer_ConnectorSftpConfig_GetTypes,
-} from "../types/transfer_ConnectorSftpConfig";
+} from '../types/transfer_ConnectorSftpConfig';
 
 export interface ConnectorArgs {
   // The URL of the partners AS2 endpoint or SFTP endpoint.
@@ -72,56 +72,56 @@ export class Connector extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "url",
-        "The URL of the partners AS2 endpoint or SFTP endpoint.",
+        'url',
+        'The URL of the partners AS2 endpoint or SFTP endpoint.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "accessRole",
-        "The IAM Role which provides read and write access to the parent directory of the file location mentioned in the StartFileTransfer request.",
+        'accessRole',
+        'The IAM Role which provides read and write access to the parent directory of the file location mentioned in the StartFileTransfer request.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "as2Config",
-        "Either SFTP or AS2 is configured.The parameters to configure for the connector object. Fields documented below.",
+        'as2Config',
+        'Either SFTP or AS2 is configured.The parameters to configure for the connector object. Fields documented below.',
         () => transfer_ConnectorAs2Config_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "loggingRole",
-        "The IAM Role which is required for allowing the connector to turn on CloudWatch logging for Amazon S3 events.",
+        'loggingRole',
+        'The IAM Role which is required for allowing the connector to turn on CloudWatch logging for Amazon S3 events.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "securityPolicyName",
-        "Name of the security policy for the connector.",
+        'securityPolicyName',
+        'Name of the security policy for the connector.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "sftpConfig",
-        "Either SFTP or AS2 is configured.The parameters to configure for the connector object. Fields documented below.",
+        'sftpConfig',
+        'Either SFTP or AS2 is configured.The parameters to configure for the connector object. Fields documented below.',
         () => transfer_ConnectorSftpConfig_GetTypes(),
         false,
         false,

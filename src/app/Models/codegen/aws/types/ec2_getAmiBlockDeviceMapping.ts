@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2_getAmiBlockDeviceMapping {
   // Physical name of the device.
@@ -24,15 +24,15 @@ export function ec2_getAmiBlockDeviceMapping_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "deviceName",
-      "Physical name of the device.",
+      'deviceName',
+      'Physical name of the device.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "ebs",
+      'ebs',
       'Map containing EBS information, if the device is EBS based. Unlike most object attributes, these are accessed directly (e.g., `ebs.volume_size` or `ebs["volume_size"]`) rather than accessed through the first element of a list (e.g., `ebs[0].volume_size`).',
       () => InputType_Map_GetTypes(),
       true,
@@ -40,16 +40,16 @@ export function ec2_getAmiBlockDeviceMapping_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "noDevice",
-      "Suppresses the specified device included in the block device mapping of the AMI.",
+      'noDevice',
+      'Suppresses the specified device included in the block device mapping of the AMI.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "virtualName",
-      "Virtual device name (for instance stores).",
+      'virtualName',
+      'Virtual device name (for instance stores).',
       () => [],
       true,
       false,

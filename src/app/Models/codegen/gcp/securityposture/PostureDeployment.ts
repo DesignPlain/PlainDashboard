@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface PostureDeploymentArgs {
   // Description of the posture deployment.
@@ -124,56 +124,56 @@ organizations/{organization_id}
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the posture deployment.",
+        'description',
+        'Description of the posture deployment.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the resource, eg. global`.",
+        'location',
+        'The location of the resource, eg. global`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The parent of the resource, an organization. Format should be `organizations/{organization_id}`.",
+        'parent',
+        'The parent of the resource, an organization. Format should be `organizations/{organization_id}`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "postureDeploymentId",
-        "ID of the posture deployment.\n\n\n- - -",
+        'postureDeploymentId',
+        'ID of the posture deployment.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "postureId",
-        "Relative name of the posture which needs to be deployed. It should be in the format:\norganizations/{organization_id}/locations/{location}/postures/{posture_id}",
-        () => [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "postureRevisionId",
-        "Revision_id the posture which needs to be deployed.",
+        'postureId',
+        'Relative name of the posture which needs to be deployed. It should be in the format:\norganizations/{organization_id}/locations/{location}/postures/{posture_id}',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "targetResource",
-        "The resource on which the posture should be deployed. This can be in one of the following formats:\nprojects/{project_number},\nfolders/{folder_number},\norganizations/{organization_id}",
+        'postureRevisionId',
+        'Revision_id the posture which needs to be deployed.',
+        () => [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'targetResource',
+        'The resource on which the posture should be deployed. This can be in one of the following formats:\nprojects/{project_number},\nfolders/{folder_number},\norganizations/{organization_id}',
         () => [],
         true,
         true,

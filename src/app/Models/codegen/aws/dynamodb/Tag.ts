@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface TagArgs {
   // Tag name.
@@ -31,24 +31,24 @@ export class Tag extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "key",
-        "Tag name.",
+        'key',
+        'Tag name.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resourceArn",
-        "Amazon Resource Name (ARN) of the DynamoDB resource to tag.",
+        'resourceArn',
+        'Amazon Resource Name (ARN) of the DynamoDB resource to tag.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "value",
-        "Tag value.",
+        'value',
+        'Tag value.',
         () => [],
         true,
         false,

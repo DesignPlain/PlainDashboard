@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtension,
   certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtension_GetTypes,
-} from "./certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtension";
+} from './certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtension';
 import {
   certificateauthority_CaPoolIssuancePolicyBaselineValuesCaOptions,
   certificateauthority_CaPoolIssuancePolicyBaselineValuesCaOptions_GetTypes,
-} from "./certificateauthority_CaPoolIssuancePolicyBaselineValuesCaOptions";
+} from './certificateauthority_CaPoolIssuancePolicyBaselineValuesCaOptions';
 import {
   certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsage,
   certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsage_GetTypes,
-} from "./certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsage";
+} from './certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsage';
 import {
   certificateauthority_CaPoolIssuancePolicyBaselineValuesNameConstraints,
   certificateauthority_CaPoolIssuancePolicyBaselineValuesNameConstraints_GetTypes,
-} from "./certificateauthority_CaPoolIssuancePolicyBaselineValuesNameConstraints";
+} from './certificateauthority_CaPoolIssuancePolicyBaselineValuesNameConstraints';
 import {
   certificateauthority_CaPoolIssuancePolicyBaselineValuesPolicyId,
   certificateauthority_CaPoolIssuancePolicyBaselineValuesPolicyId_GetTypes,
-} from "./certificateauthority_CaPoolIssuancePolicyBaselineValuesPolicyId";
+} from './certificateauthority_CaPoolIssuancePolicyBaselineValuesPolicyId';
 
 export interface certificateauthority_CaPoolIssuancePolicyBaselineValues {
   /*
@@ -68,7 +68,7 @@ export function certificateauthority_CaPoolIssuancePolicyBaselineValues_GetTypes
   return [
     new DynamicUIProps(
       InputType.Array,
-      "aiaOcspServers",
+      'aiaOcspServers',
       'Describes Online Certificate Status Protocol (OCSP) endpoint addresses that appear in the\n"Authority Information Access" extension in the certificate.',
       () => InputType_String_GetTypes(),
       false,
@@ -76,8 +76,8 @@ export function certificateauthority_CaPoolIssuancePolicyBaselineValues_GetTypes
     ),
     new DynamicUIProps(
       InputType.Object,
-      "caOptions",
-      "Describes values that are relevant in a CA certificate.\nStructure is documented below.",
+      'caOptions',
+      'Describes values that are relevant in a CA certificate.\nStructure is documented below.',
       () =>
         certificateauthority_CaPoolIssuancePolicyBaselineValuesCaOptions_GetTypes(),
       true,
@@ -85,8 +85,8 @@ export function certificateauthority_CaPoolIssuancePolicyBaselineValues_GetTypes
     ),
     new DynamicUIProps(
       InputType.Object,
-      "keyUsage",
-      "Indicates the intended use for keys that correspond to a certificate.\nStructure is documented below.",
+      'keyUsage',
+      'Indicates the intended use for keys that correspond to a certificate.\nStructure is documented below.',
       () =>
         certificateauthority_CaPoolIssuancePolicyBaselineValuesKeyUsage_GetTypes(),
       true,
@@ -94,8 +94,8 @@ export function certificateauthority_CaPoolIssuancePolicyBaselineValues_GetTypes
     ),
     new DynamicUIProps(
       InputType.Object,
-      "nameConstraints",
-      "Describes the X.509 name constraints extension.\nStructure is documented below.",
+      'nameConstraints',
+      'Describes the X.509 name constraints extension.\nStructure is documented below.',
       () =>
         certificateauthority_CaPoolIssuancePolicyBaselineValuesNameConstraints_GetTypes(),
       false,
@@ -103,8 +103,8 @@ export function certificateauthority_CaPoolIssuancePolicyBaselineValues_GetTypes
     ),
     new DynamicUIProps(
       InputType.Array,
-      "policyIds",
-      "Describes the X.509 certificate policy object identifiers, per https://tools.ietf.org/html/rfc5280#section-4.2.1.4.\nStructure is documented below.",
+      'policyIds',
+      'Describes the X.509 certificate policy object identifiers, per https://tools.ietf.org/html/rfc5280#section-4.2.1.4.\nStructure is documented below.',
       () =>
         certificateauthority_CaPoolIssuancePolicyBaselineValuesPolicyId_GetTypes(),
       false,
@@ -112,8 +112,8 @@ export function certificateauthority_CaPoolIssuancePolicyBaselineValues_GetTypes
     ),
     new DynamicUIProps(
       InputType.Array,
-      "additionalExtensions",
-      "Specifies an X.509 extension, which may be used in different parts of X.509 objects like certificates, CSRs, and CRLs.\nStructure is documented below.",
+      'additionalExtensions',
+      'Specifies an X.509 extension, which may be used in different parts of X.509 objects like certificates, CSRs, and CRLs.\nStructure is documented below.',
       () =>
         certificateauthority_CaPoolIssuancePolicyBaselineValuesAdditionalExtension_GetTypes(),
       false,

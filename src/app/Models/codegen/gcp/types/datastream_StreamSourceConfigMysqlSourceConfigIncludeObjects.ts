@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabase,
   datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabase_GetTypes,
-} from "./datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabase";
+} from './datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabase';
 
 export interface datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects {
   /*
@@ -22,8 +22,8 @@ export function datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects_Get
   return [
     new DynamicUIProps(
       InputType.Array,
-      "mysqlDatabases",
-      "MySQL databases on the server\nStructure is documented below.",
+      'mysqlDatabases',
+      'MySQL databases on the server\nStructure is documented below.',
       () =>
         datastream_StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabase_GetTypes(),
       true,

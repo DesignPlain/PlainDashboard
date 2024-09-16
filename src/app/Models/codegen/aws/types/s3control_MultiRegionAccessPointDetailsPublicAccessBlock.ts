@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface s3control_MultiRegionAccessPointDetailsPublicAccessBlock {
   //
@@ -24,32 +24,32 @@ export function s3control_MultiRegionAccessPointDetailsPublicAccessBlock_GetType
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "restrictPublicBuckets",
-      "",
+      'restrictPublicBuckets',
+      '',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "blockPublicAcls",
-      "",
+      'blockPublicAcls',
+      '',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "blockPublicPolicy",
-      "",
+      'blockPublicPolicy',
+      '',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "ignorePublicAcls",
-      "",
+      'ignorePublicAcls',
+      '',
       () => [],
       false,
       true,

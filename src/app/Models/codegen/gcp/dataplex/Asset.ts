@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataplex_AssetResourceSpec,
   dataplex_AssetResourceSpec_GetTypes,
-} from "../types/dataplex_AssetResourceSpec";
+} from '../types/dataplex_AssetResourceSpec';
 import {
   dataplex_AssetResourceStatus,
   dataplex_AssetResourceStatus_GetTypes,
-} from "../types/dataplex_AssetResourceStatus";
+} from '../types/dataplex_AssetResourceStatus';
 import {
   dataplex_AssetSecurityStatus,
   dataplex_AssetSecurityStatus_GetTypes,
-} from "../types/dataplex_AssetSecurityStatus";
+} from '../types/dataplex_AssetSecurityStatus';
 import {
   dataplex_AssetDiscoveryStatus,
   dataplex_AssetDiscoveryStatus_GetTypes,
-} from "../types/dataplex_AssetDiscoveryStatus";
+} from '../types/dataplex_AssetDiscoveryStatus';
 import {
   dataplex_AssetDiscoverySpec,
   dataplex_AssetDiscoverySpec_GetTypes,
-} from "../types/dataplex_AssetDiscoverySpec";
+} from '../types/dataplex_AssetDiscoverySpec';
 
 export interface AssetArgs {
   // Optional. Description of the asset.
@@ -130,80 +130,80 @@ Please refer to the field `effective_labels` for all of the labels present on th
     return [
       new DynamicUIProps(
         InputType.Object,
-        "discoverySpec",
-        "Required. Specification of the discovery feature applied to data referenced by this asset. When this spec is left unset, the asset will use the spec set on the parent zone.",
+        'discoverySpec',
+        'Required. Specification of the discovery feature applied to data referenced by this asset. When this spec is left unset, the asset will use the spec set on the parent zone.',
         () => dataplex_AssetDiscoverySpec_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "lake",
-        "The lake for the resource",
+        'lake',
+        'The lake for the resource',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project for the resource",
+        'project',
+        'The project for the resource',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Optional. Description of the asset.",
+        'description',
+        'Optional. Description of the asset.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "Optional. User friendly display name.",
+        'displayName',
+        'Optional. User friendly display name.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Optional. User defined labels for the asset.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Optional. User defined labels for the asset.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource",
+        'location',
+        'The location for the resource',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "resourceSpec",
-        "Required. Immutable. Specification of the resource that is referenced by this asset.",
+        'resourceSpec',
+        'Required. Immutable. Specification of the resource that is referenced by this asset.',
         () => dataplex_AssetResourceSpec_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the asset.",
+        'name',
+        'The name of the asset.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dataplexZone",
-        "The zone for the resource",
+        'dataplexZone',
+        'The zone for the resource',
         () => [],
         true,
         true,

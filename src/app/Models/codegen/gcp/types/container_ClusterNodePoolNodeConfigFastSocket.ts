@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_ClusterNodePoolNodeConfigFastSocket {
   // Whether or not the NCCL Fast Socket is enabled
@@ -15,8 +15,8 @@ export function container_ClusterNodePoolNodeConfigFastSocket_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
-      "Whether or not the NCCL Fast Socket is enabled",
+      'enabled',
+      'Whether or not the NCCL Fast Socket is enabled',
       () => [],
       true,
       false,

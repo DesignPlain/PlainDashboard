@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kinesis_AnalyticsApplicationInputsSchemaRecordColumn,
   kinesis_AnalyticsApplicationInputsSchemaRecordColumn_GetTypes,
-} from "./kinesis_AnalyticsApplicationInputsSchemaRecordColumn";
+} from './kinesis_AnalyticsApplicationInputsSchemaRecordColumn';
 import {
   kinesis_AnalyticsApplicationInputsSchemaRecordFormat,
   kinesis_AnalyticsApplicationInputsSchemaRecordFormat_GetTypes,
-} from "./kinesis_AnalyticsApplicationInputsSchemaRecordFormat";
+} from './kinesis_AnalyticsApplicationInputsSchemaRecordFormat';
 
 export interface kinesis_AnalyticsApplicationInputsSchema {
   /*
@@ -35,24 +35,24 @@ export function kinesis_AnalyticsApplicationInputsSchema_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Array,
-      "recordColumns",
-      "The Record Column mapping for the streaming source data element.\nSee Record Columns below for more details.",
+      'recordColumns',
+      'The Record Column mapping for the streaming source data element.\nSee Record Columns below for more details.',
       () => kinesis_AnalyticsApplicationInputsSchemaRecordColumn_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "recordEncoding",
-      "The Encoding of the record in the streaming source.",
+      'recordEncoding',
+      'The Encoding of the record in the streaming source.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "recordFormat",
-      "The Record Format and mapping information to schematize a record.\nSee Record Format below for more details.",
+      'recordFormat',
+      'The Record Format and mapping information to schematize a record.\nSee Record Format below for more details.',
       () => kinesis_AnalyticsApplicationInputsSchemaRecordFormat_GetTypes(),
       true,
       false,

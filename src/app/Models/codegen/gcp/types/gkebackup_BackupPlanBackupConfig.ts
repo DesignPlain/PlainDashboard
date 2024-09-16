@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkebackup_BackupPlanBackupConfigSelectedApplications,
   gkebackup_BackupPlanBackupConfigSelectedApplications_GetTypes,
-} from "./gkebackup_BackupPlanBackupConfigSelectedApplications";
+} from './gkebackup_BackupPlanBackupConfigSelectedApplications';
 import {
   gkebackup_BackupPlanBackupConfigSelectedNamespaces,
   gkebackup_BackupPlanBackupConfigSelectedNamespaces_GetTypes,
-} from "./gkebackup_BackupPlanBackupConfigSelectedNamespaces";
+} from './gkebackup_BackupPlanBackupConfigSelectedNamespaces';
 import {
   gkebackup_BackupPlanBackupConfigEncryptionKey,
   gkebackup_BackupPlanBackupConfigEncryptionKey_GetTypes,
-} from "./gkebackup_BackupPlanBackupConfigEncryptionKey";
+} from './gkebackup_BackupPlanBackupConfigEncryptionKey';
 
 export interface gkebackup_BackupPlanBackupConfig {
   /*
@@ -58,31 +58,31 @@ export function gkebackup_BackupPlanBackupConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "selectedApplications",
-      "A list of namespaced Kubernetes Resources.\nStructure is documented below.",
+      'selectedApplications',
+      'A list of namespaced Kubernetes Resources.\nStructure is documented below.',
       () => gkebackup_BackupPlanBackupConfigSelectedApplications_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "selectedNamespaces",
-      "If set, include just the resources in the listed namespaces.\nStructure is documented below.",
+      'selectedNamespaces',
+      'If set, include just the resources in the listed namespaces.\nStructure is documented below.',
       () => gkebackup_BackupPlanBackupConfigSelectedNamespaces_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "allNamespaces",
-      "If True, include all namespaced resources.",
+      'allNamespaces',
+      'If True, include all namespaced resources.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "encryptionKey",
+      'encryptionKey',
       'This defines a customer managed encryption key that will be used to encrypt the "config"\nportion (the Kubernetes resources) of Backups created via this plan.\nStructure is documented below.',
       () => gkebackup_BackupPlanBackupConfigEncryptionKey_GetTypes(),
       false,
@@ -90,16 +90,16 @@ export function gkebackup_BackupPlanBackupConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "includeSecrets",
-      "This flag specifies whether Kubernetes Secret resources should be included\nwhen they fall into the scope of Backups.",
+      'includeSecrets',
+      'This flag specifies whether Kubernetes Secret resources should be included\nwhen they fall into the scope of Backups.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "includeVolumeData",
-      "This flag specifies whether volume data should be backed up when PVCs are\nincluded in the scope of a Backup.",
+      'includeVolumeData',
+      'This flag specifies whether volume data should be backed up when PVCs are\nincluded in the scope of a Backup.',
       () => [],
       false,
       false,

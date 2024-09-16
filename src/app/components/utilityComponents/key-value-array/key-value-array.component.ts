@@ -68,7 +68,7 @@ export class KeyValueArrayComponent implements OnInit {
       function populateData(
         members: Map<string, DynamicUIPropState>,
         listMap: any,
-        nested: number
+        nested: number,
       ) {
         if (listMap != undefined) {
           members.forEach((val, key) => {
@@ -143,7 +143,7 @@ export class KeyValueArrayComponent implements OnInit {
     this.configUpdateEvent.emit(
       new Map<string, any>([
         [this.parentRes, this.listMap.length > 0 ? this.listMap : undefined],
-      ])
+      ]),
     );
   }
 }

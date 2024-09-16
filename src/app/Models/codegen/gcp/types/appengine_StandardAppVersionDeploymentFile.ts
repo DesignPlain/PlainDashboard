@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appengine_StandardAppVersionDeploymentFile {
   // The identifier for this object. Format specified above.
@@ -21,24 +21,24 @@ export function appengine_StandardAppVersionDeploymentFile_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The identifier for this object. Format specified above.",
+      'name',
+      'The identifier for this object. Format specified above.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "sha1Sum",
-      "SHA1 checksum of the file",
+      'sha1Sum',
+      'SHA1 checksum of the file',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "sourceUrl",
-      "Source URL",
+      'sourceUrl',
+      'Source URL',
       () => [],
       true,
       false,

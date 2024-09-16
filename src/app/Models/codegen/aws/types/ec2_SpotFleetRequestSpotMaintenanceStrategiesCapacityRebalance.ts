@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2_SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalance {
   // The replacement strategy to use. Only available for spot fleets with `fleet_type` set to `maintain`. Valid values: `launch`.
@@ -15,8 +15,8 @@ export function ec2_SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalance_G
   return [
     new DynamicUIProps(
       InputType.String,
-      "replacementStrategy",
-      "The replacement strategy to use. Only available for spot fleets with `fleet_type` set to `maintain`. Valid values: `launch`.",
+      'replacementStrategy',
+      'The replacement strategy to use. Only available for spot fleets with `fleet_type` set to `maintain`. Valid values: `launch`.',
       () => [],
       false,
       true,

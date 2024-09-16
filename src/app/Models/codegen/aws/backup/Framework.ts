@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   backup_FrameworkControl,
   backup_FrameworkControl_GetTypes,
-} from "../types/backup_FrameworkControl";
+} from '../types/backup_FrameworkControl';
 
 export interface FrameworkArgs {
   // One or more control blocks that make up the framework. Each control in the list has a name, input parameters, and scope. Detailed below.
@@ -56,32 +56,32 @@ export class Framework extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "controls",
-        "One or more control blocks that make up the framework. Each control in the list has a name, input parameters, and scope. Detailed below.",
+        'controls',
+        'One or more control blocks that make up the framework. Each control in the list has a name, input parameters, and scope. Detailed below.',
         () => backup_FrameworkControl_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the framework with a maximum of 1,024 characters",
+        'description',
+        'The description of the framework with a maximum of 1,024 characters',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters, numbers, and underscores.",
+        'name',
+        'The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters, numbers, and underscores.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Metadata that you can assign to help organize the frameworks you create. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Metadata that you can assign to help organize the frameworks you create. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

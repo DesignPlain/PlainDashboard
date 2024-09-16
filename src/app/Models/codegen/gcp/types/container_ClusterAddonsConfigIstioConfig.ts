@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_ClusterAddonsConfigIstioConfig {
   // The authentication type between services in Istio. Available options include `AUTH_MUTUAL_TLS`.
@@ -21,16 +21,16 @@ export function container_ClusterAddonsConfigIstioConfig_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.String,
-      "auth",
-      "The authentication type between services in Istio. Available options include `AUTH_MUTUAL_TLS`.",
+      'auth',
+      'The authentication type between services in Istio. Available options include `AUTH_MUTUAL_TLS`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "disabled",
-      "The status of the Istio addon, which makes it easy to set up Istio for services in a\ncluster. It is disabled by default. Set `disabled = false` to enable.",
+      'disabled',
+      'The status of the Istio addon, which makes it easy to set up Istio for services in a\ncluster. It is disabled by default. Set `disabled = false` to enable.',
       () => [],
       true,
       false,

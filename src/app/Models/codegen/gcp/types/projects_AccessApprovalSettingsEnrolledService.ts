@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface projects_AccessApprovalSettingsEnrolledService {
   /*
@@ -36,16 +36,16 @@ export function projects_AccessApprovalSettingsEnrolledService_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.String,
-      "cloudProduct",
-      "The product for which Access Approval will be enrolled. Allowed values are listed (case-sensitive):\nall\nappengine.googleapis.com\nbigquery.googleapis.com\nbigtable.googleapis.com\ncloudkms.googleapis.com\ncompute.googleapis.com\ndataflow.googleapis.com\niam.googleapis.com\npubsub.googleapis.com\nstorage.googleapis.com",
+      'cloudProduct',
+      'The product for which Access Approval will be enrolled. Allowed values are listed (case-sensitive):\nall\nappengine.googleapis.com\nbigquery.googleapis.com\nbigtable.googleapis.com\ncloudkms.googleapis.com\ncompute.googleapis.com\ndataflow.googleapis.com\niam.googleapis.com\npubsub.googleapis.com\nstorage.googleapis.com',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "enrollmentLevel",
-      "The enrollment level of the service.\nDefault value is `BLOCK_ALL`.\nPossible values are: `BLOCK_ALL`.\n\n- - -",
+      'enrollmentLevel',
+      'The enrollment level of the service.\nDefault value is `BLOCK_ALL`.\nPossible values are: `BLOCK_ALL`.\n\n- - -',
       () => [],
       false,
       false,

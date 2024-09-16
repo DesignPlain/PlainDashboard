@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getGatewayRouteSpecGrpcRouteActionTarget,
   appmesh_getGatewayRouteSpecGrpcRouteActionTarget_GetTypes,
-} from "./appmesh_getGatewayRouteSpecGrpcRouteActionTarget";
+} from './appmesh_getGatewayRouteSpecGrpcRouteActionTarget';
 
 export interface appmesh_getGatewayRouteSpecGrpcRouteAction {
   //
@@ -19,8 +19,8 @@ export function appmesh_getGatewayRouteSpecGrpcRouteAction_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Array,
-      "targets",
-      "",
+      'targets',
+      '',
       () => appmesh_getGatewayRouteSpecGrpcRouteActionTarget_GetTypes(),
       true,
       false,

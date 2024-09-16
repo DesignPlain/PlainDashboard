@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_LaunchTemplateBlockDeviceMappingEbs,
   ec2_LaunchTemplateBlockDeviceMappingEbs_GetTypes,
-} from "./ec2_LaunchTemplateBlockDeviceMappingEbs";
+} from './ec2_LaunchTemplateBlockDeviceMappingEbs';
 
 export interface ec2_LaunchTemplateBlockDeviceMapping {
   // The name of the device to mount.
@@ -32,23 +32,23 @@ export function ec2_LaunchTemplateBlockDeviceMapping_GetTypes(): DynamicUIProps[
   return [
     new DynamicUIProps(
       InputType.String,
-      "deviceName",
-      "The name of the device to mount.",
+      'deviceName',
+      'The name of the device to mount.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ebs",
-      "Configure EBS volume properties.",
+      'ebs',
+      'Configure EBS volume properties.',
       () => ec2_LaunchTemplateBlockDeviceMappingEbs_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "noDevice",
+      'noDevice',
       "Suppresses the specified device included in the AMI's block device mapping.",
       () => [],
       false,
@@ -56,7 +56,7 @@ export function ec2_LaunchTemplateBlockDeviceMapping_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "virtualName",
+      'virtualName',
       'The [Instance Store Device\nName](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#InstanceStoreDeviceNames)\n(e.g., `"ephemeral0"`).',
       () => [],
       false,

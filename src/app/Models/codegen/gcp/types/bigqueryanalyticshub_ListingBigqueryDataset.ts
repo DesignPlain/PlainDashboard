@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface bigqueryanalyticshub_ListingBigqueryDataset {
   /*
@@ -19,8 +19,8 @@ export function bigqueryanalyticshub_ListingBigqueryDataset_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.String,
-      "dataset",
-      "Resource name of the dataset source for this listing. e.g. projects/myproject/datasets/123\n\n- - -",
+      'dataset',
+      'Resource name of the dataset source for this listing. e.g. projects/myproject/datasets/123\n\n- - -',
       () => [],
       true,
       false,

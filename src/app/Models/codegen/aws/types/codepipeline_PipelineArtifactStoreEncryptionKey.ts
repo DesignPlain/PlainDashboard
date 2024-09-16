@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface codepipeline_PipelineArtifactStoreEncryptionKey {
   // The KMS key ARN or ID
@@ -18,16 +18,16 @@ export function codepipeline_PipelineArtifactStoreEncryptionKey_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.String,
-      "id",
-      "The KMS key ARN or ID",
+      'id',
+      'The KMS key ARN or ID',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "The type of key; currently only `KMS` is supported",
+      'type',
+      'The type of key; currently only `KMS` is supported',
       () => [],
       true,
       false,

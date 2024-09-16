@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionJobTriggerInspectJob,
   dataloss_PreventionJobTriggerInspectJob_GetTypes,
-} from "../types/dataloss_PreventionJobTriggerInspectJob";
+} from '../types/dataloss_PreventionJobTriggerInspectJob';
 import {
   dataloss_PreventionJobTriggerTrigger,
   dataloss_PreventionJobTriggerTrigger_GetTypes,
-} from "../types/dataloss_PreventionJobTriggerTrigger";
+} from '../types/dataloss_PreventionJobTriggerTrigger';
 
 export interface PreventionJobTriggerArgs {
   /*
@@ -112,56 +112,56 @@ Possible values are: `PAUSED`, `HEALTHY`, `CANCELLED`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A short description of where the data is coming from. Will be stored once in the job. 256 max length.",
+        'description',
+        'A short description of where the data is coming from. Will be stored once in the job. 256 max length.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "User set display name of the job trigger.",
+        'displayName',
+        'User set display name of the job trigger.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "inspectJob",
-        "Controls what and how to inspect for findings.\nStructure is documented below.",
+        'inspectJob',
+        'Controls what and how to inspect for findings.\nStructure is documented below.',
         () => dataloss_PreventionJobTriggerInspectJob_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The parent of the trigger, either in the format `projects/{{project}}`\nor `projects/{{project}}/locations/{{location}}`",
+        'parent',
+        'The parent of the trigger, either in the format `projects/{{project}}`\nor `projects/{{project}}/locations/{{location}}`',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "status",
-        "Whether the trigger is currently active.\nDefault value is `HEALTHY`.\nPossible values are: `PAUSED`, `HEALTHY`, `CANCELLED`.",
+        'status',
+        'Whether the trigger is currently active.\nDefault value is `HEALTHY`.\nPossible values are: `PAUSED`, `HEALTHY`, `CANCELLED`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "triggerId",
-        "The trigger id can contain uppercase and lowercase letters, numbers, and hyphens;\nthat is, it must match the regular expression: [a-zA-Z\\d-_]+.\nThe maximum length is 100 characters. Can be empty to allow the system to generate one.",
+        'triggerId',
+        'The trigger id can contain uppercase and lowercase letters, numbers, and hyphens;\nthat is, it must match the regular expression: [a-zA-Z\\d-_]+.\nThe maximum length is 100 characters. Can be empty to allow the system to generate one.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "triggers",
-        "What event needs to occur for a new job to be started.\nStructure is documented below.",
+        'triggers',
+        'What event needs to occur for a new job to be started.\nStructure is documented below.',
         () => dataloss_PreventionJobTriggerTrigger_GetTypes(),
         true,
         false,

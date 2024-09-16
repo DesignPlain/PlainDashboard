@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   emr_ClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification,
   emr_ClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification_GetTypes,
-} from "./emr_ClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification";
+} from './emr_ClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification';
 import {
   emr_ClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification,
   emr_ClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification_GetTypes,
-} from "./emr_ClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification";
+} from './emr_ClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification';
 
 export interface emr_ClusterMasterInstanceFleetLaunchSpecifications {
   // Configuration block for on demand instances launch specifications.
@@ -26,8 +26,8 @@ export function emr_ClusterMasterInstanceFleetLaunchSpecifications_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.Array,
-      "onDemandSpecifications",
-      "Configuration block for on demand instances launch specifications.",
+      'onDemandSpecifications',
+      'Configuration block for on demand instances launch specifications.',
       () =>
         emr_ClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function emr_ClusterMasterInstanceFleetLaunchSpecifications_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Array,
-      "spotSpecifications",
-      "Configuration block for spot instances launch specifications.",
+      'spotSpecifications',
+      'Configuration block for spot instances launch specifications.',
       () =>
         emr_ClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification_GetTypes(),
       false,

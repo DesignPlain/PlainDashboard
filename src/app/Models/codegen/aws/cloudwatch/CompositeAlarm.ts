@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudwatch_CompositeAlarmActionsSuppressor,
   cloudwatch_CompositeAlarmActionsSuppressor_GetTypes,
-} from "../types/cloudwatch_CompositeAlarmActionsSuppressor";
+} from '../types/cloudwatch_CompositeAlarmActionsSuppressor';
 
 export interface CompositeAlarmArgs {
   // Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. Defaults to `true`.
@@ -77,15 +77,15 @@ export class CompositeAlarm extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "alarmName",
-        "The name for the composite alarm. This name must be unique within the region.",
+        'alarmName',
+        'The name for the composite alarm. This name must be unique within the region.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "alarmRule",
+        'alarmRule',
         "An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. For syntax, see [Creating a Composite Alarm](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Composite_Alarm.html). The maximum length is 10240 characters.",
         () => [],
         true,
@@ -93,56 +93,56 @@ export class CompositeAlarm extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Array,
-        "okActions",
-        "The set of actions to execute when this alarm transitions to an `OK` state from any other state. Each action is specified as an ARN. Up to 5 actions are allowed.",
+        'okActions',
+        'The set of actions to execute when this alarm transitions to an `OK` state from any other state. Each action is specified as an ARN. Up to 5 actions are allowed.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "alarmActions",
-        "The set of actions to execute when this alarm transitions to the `ALARM` state from any other state. Each action is specified as an ARN. Up to 5 actions are allowed.",
+        'alarmActions',
+        'The set of actions to execute when this alarm transitions to the `ALARM` state from any other state. Each action is specified as an ARN. Up to 5 actions are allowed.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "insufficientDataActions",
-        "The set of actions to execute when this alarm transitions to the `INSUFFICIENT_DATA` state from any other state. Each action is specified as an ARN. Up to 5 actions are allowed.",
+        'insufficientDataActions',
+        'The set of actions to execute when this alarm transitions to the `INSUFFICIENT_DATA` state from any other state. Each action is specified as an ARN. Up to 5 actions are allowed.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to associate with the alarm. Up to 50 tags are allowed. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to associate with the alarm. Up to 50 tags are allowed. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "actionsEnabled",
-        "Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. Defaults to `true`.",
+        'actionsEnabled',
+        'Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. Defaults to `true`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "actionsSuppressor",
-        "Actions will be suppressed if the suppressor alarm is in the ALARM state.",
+        'actionsSuppressor',
+        'Actions will be suppressed if the suppressor alarm is in the ALARM state.',
         () => cloudwatch_CompositeAlarmActionsSuppressor_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "alarmDescription",
-        "The description for the composite alarm.",
+        'alarmDescription',
+        'The description for the composite alarm.',
         () => [],
         false,
         false,

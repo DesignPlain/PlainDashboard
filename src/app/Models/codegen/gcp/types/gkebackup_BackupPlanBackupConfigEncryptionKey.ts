@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface gkebackup_BackupPlanBackupConfigEncryptionKey {
   // Google Cloud KMS encryption key. Format: projects/-/locations/-/keyRings/-/cryptoKeys/-
@@ -15,8 +15,8 @@ export function gkebackup_BackupPlanBackupConfigEncryptionKey_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.String,
-      "gcpKmsEncryptionKey",
-      "Google Cloud KMS encryption key. Format: projects/*/locations/*/keyRings/*/cryptoKeys/*",
+      'gcpKmsEncryptionKey',
+      'Google Cloud KMS encryption key. Format: projects/*/locations/*/keyRings/*/cryptoKeys/*',
       () => [],
       true,
       false,

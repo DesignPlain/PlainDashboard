@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   notebooks_EnvironmentVmImage,
   notebooks_EnvironmentVmImage_GetTypes,
-} from "../types/notebooks_EnvironmentVmImage";
+} from '../types/notebooks_EnvironmentVmImage';
 import {
   notebooks_EnvironmentContainerImage,
   notebooks_EnvironmentContainerImage_GetTypes,
-} from "../types/notebooks_EnvironmentContainerImage";
+} from '../types/notebooks_EnvironmentContainerImage';
 
 export interface EnvironmentArgs {
   /*
@@ -112,63 +112,63 @@ The path must be a URL or Cloud Storage path. Example: "gs://path-to-file/file-n
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "vmImage",
-        "Use a Compute Engine VM image to start the notebook instance.\nStructure is documented below.",
+        'vmImage',
+        'Use a Compute Engine VM image to start the notebook instance.\nStructure is documented below.',
         () => notebooks_EnvironmentVmImage_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "containerImage",
-        "Use a container image to start the notebook instance.\nStructure is documented below.",
+        'containerImage',
+        'Use a container image to start the notebook instance.\nStructure is documented below.',
         () => notebooks_EnvironmentContainerImage_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A brief description of this environment.",
+        'description',
+        'A brief description of this environment.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "Display name of this environment for the UI.",
+        'displayName',
+        'Display name of this environment for the UI.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "A reference to the zone where the machine resides.\n\n\n- - -",
+        'location',
+        'A reference to the zone where the machine resides.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name specified for the Environment instance.\nFormat: projects/{project_id}/locations/{location}/environments/{environmentId}",
+        'name',
+        'The name specified for the Environment instance.\nFormat: projects/{project_id}/locations/{location}/environments/{environmentId}',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "postStartupScript",
+        'postStartupScript',
         'Path to a Bash script that automatically runs after a notebook instance fully boots up.\nThe path must be a URL or Cloud Storage path. Example: "gs://path-to-file/file-name"',
         () => [],
         false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_ReservationShareSettingsProjectMap,
   compute_ReservationShareSettingsProjectMap_GetTypes,
-} from "./compute_ReservationShareSettingsProjectMap";
+} from './compute_ReservationShareSettingsProjectMap';
 
 export interface compute_ReservationShareSettings {
   /*
@@ -28,7 +28,7 @@ export function compute_ReservationShareSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "projectMaps",
+      'projectMaps',
       "A map of project number and project config. This is only valid when shareType's value is SPECIFIC_PROJECTS.\nStructure is documented below.",
       () => compute_ReservationShareSettingsProjectMap_GetTypes(),
       false,
@@ -36,8 +36,8 @@ export function compute_ReservationShareSettings_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "shareType",
-      "Type of sharing for this shared-reservation\nPossible values are: `LOCAL`, `SPECIFIC_PROJECTS`.",
+      'shareType',
+      'Type of sharing for this shared-reservation\nPossible values are: `LOCAL`, `SPECIFIC_PROJECTS`.',
       () => [],
       false,
       false,

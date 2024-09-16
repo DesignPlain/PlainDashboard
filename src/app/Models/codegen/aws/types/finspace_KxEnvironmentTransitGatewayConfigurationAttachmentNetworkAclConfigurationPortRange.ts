@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface finspace_KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationPortRange {
   // First port in the range.
@@ -18,16 +18,16 @@ export function finspace_KxEnvironmentTransitGatewayConfigurationAttachmentNetwo
   return [
     new DynamicUIProps(
       InputType.Number,
-      "from",
-      "First port in the range.",
+      'from',
+      'First port in the range.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "to",
-      "Last port in the range.",
+      'to',
+      'Last port in the range.',
       () => [],
       true,
       false,

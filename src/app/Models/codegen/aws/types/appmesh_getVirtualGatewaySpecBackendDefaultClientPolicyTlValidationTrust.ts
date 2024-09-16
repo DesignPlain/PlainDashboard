@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustAcm,
   appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustAcm_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustAcm";
+} from './appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustAcm';
 import {
   appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustFile,
   appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustFile_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustFile";
+} from './appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustFile';
 import {
   appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustSd,
   appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustSd_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustSd";
+} from './appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustSd';
 
 export interface appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrust {
   //
@@ -33,8 +33,8 @@ export function appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidat
   return [
     new DynamicUIProps(
       InputType.Array,
-      "sds",
-      "",
+      'sds',
+      '',
       () =>
         appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustSd_GetTypes(),
       true,
@@ -42,8 +42,8 @@ export function appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidat
     ),
     new DynamicUIProps(
       InputType.Array,
-      "acms",
-      "",
+      'acms',
+      '',
       () =>
         appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustAcm_GetTypes(),
       true,
@@ -51,8 +51,8 @@ export function appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidat
     ),
     new DynamicUIProps(
       InputType.Array,
-      "files",
-      "",
+      'files',
+      '',
       () =>
         appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustFile_GetTypes(),
       true,

@@ -3,37 +3,37 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_RegionHealthCheckSslHealthCheck,
   compute_RegionHealthCheckSslHealthCheck_GetTypes,
-} from "../types/compute_RegionHealthCheckSslHealthCheck";
+} from '../types/compute_RegionHealthCheckSslHealthCheck';
 import {
   compute_RegionHealthCheckHttp2HealthCheck,
   compute_RegionHealthCheckHttp2HealthCheck_GetTypes,
-} from "../types/compute_RegionHealthCheckHttp2HealthCheck";
+} from '../types/compute_RegionHealthCheckHttp2HealthCheck';
 import {
   compute_RegionHealthCheckLogConfig,
   compute_RegionHealthCheckLogConfig_GetTypes,
-} from "../types/compute_RegionHealthCheckLogConfig";
+} from '../types/compute_RegionHealthCheckLogConfig';
 import {
   compute_RegionHealthCheckGrpcHealthCheck,
   compute_RegionHealthCheckGrpcHealthCheck_GetTypes,
-} from "../types/compute_RegionHealthCheckGrpcHealthCheck";
+} from '../types/compute_RegionHealthCheckGrpcHealthCheck';
 import {
   compute_RegionHealthCheckHttpHealthCheck,
   compute_RegionHealthCheckHttpHealthCheck_GetTypes,
-} from "../types/compute_RegionHealthCheckHttpHealthCheck";
+} from '../types/compute_RegionHealthCheckHttpHealthCheck';
 import {
   compute_RegionHealthCheckHttpsHealthCheck,
   compute_RegionHealthCheckHttpsHealthCheck_GetTypes,
-} from "../types/compute_RegionHealthCheckHttpsHealthCheck";
+} from '../types/compute_RegionHealthCheckHttpsHealthCheck';
 import {
   compute_RegionHealthCheckTcpHealthCheck,
   compute_RegionHealthCheckTcpHealthCheck_GetTypes,
-} from "../types/compute_RegionHealthCheckTcpHealthCheck";
+} from '../types/compute_RegionHealthCheckTcpHealthCheck';
 
 export interface RegionHealthCheckArgs {
   /*
@@ -248,120 +248,120 @@ last character, which cannot be a dash.
     return [
       new DynamicUIProps(
         InputType.Number,
-        "unhealthyThreshold",
-        "A so-far healthy instance will be marked unhealthy after this many\nconsecutive failures. The default value is 2.",
+        'unhealthyThreshold',
+        'A so-far healthy instance will be marked unhealthy after this many\nconsecutive failures. The default value is 2.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035.  Specifically, the name must be 1-63 characters long and\nmatch the regular expression `a-z?` which means\nthe first character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the\nlast character, which cannot be a dash.\n\n\n- - -",
+        'name',
+        'Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035.  Specifically, the name must be 1-63 characters long and\nmatch the regular expression `a-z?` which means\nthe first character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the\nlast character, which cannot be a dash.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "healthyThreshold",
-        "A so-far unhealthy instance will be marked healthy after this many\nconsecutive successes. The default value is 2.",
+        'healthyThreshold',
+        'A so-far unhealthy instance will be marked healthy after this many\nconsecutive successes. The default value is 2.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The Region in which the created health check should reside.\nIf it is not provided, the provider region is used.",
+        'region',
+        'The Region in which the created health check should reside.\nIf it is not provided, the provider region is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "logConfig",
-        "Configure logging on this health check.\nStructure is documented below.",
+        'logConfig',
+        'Configure logging on this health check.\nStructure is documented below.',
         () => compute_RegionHealthCheckLogConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "timeoutSec",
-        "How long (in seconds) to wait before claiming failure.\nThe default value is 5 seconds.  It is invalid for timeoutSec to have\ngreater value than checkIntervalSec.",
+        'timeoutSec',
+        'How long (in seconds) to wait before claiming failure.\nThe default value is 5 seconds.  It is invalid for timeoutSec to have\ngreater value than checkIntervalSec.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "grpcHealthCheck",
-        "A nested object resource\nStructure is documented below.",
+        'grpcHealthCheck',
+        'A nested object resource\nStructure is documented below.',
         () => compute_RegionHealthCheckGrpcHealthCheck_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "httpHealthCheck",
-        "A nested object resource\nStructure is documented below.",
+        'httpHealthCheck',
+        'A nested object resource\nStructure is documented below.',
         () => compute_RegionHealthCheckHttpHealthCheck_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "tcpHealthCheck",
-        "A nested object resource\nStructure is documented below.",
+        'tcpHealthCheck',
+        'A nested object resource\nStructure is documented below.',
         () => compute_RegionHealthCheckTcpHealthCheck_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "checkIntervalSec",
-        "How often (in seconds) to send a health check. The default value is 5\nseconds.",
+        'checkIntervalSec',
+        'How often (in seconds) to send a health check. The default value is 5\nseconds.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "httpsHealthCheck",
-        "A nested object resource\nStructure is documented below.",
+        'httpsHealthCheck',
+        'A nested object resource\nStructure is documented below.',
         () => compute_RegionHealthCheckHttpsHealthCheck_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource. Provide this property when\nyou create the resource.",
+        'description',
+        'An optional description of this resource. Provide this property when\nyou create the resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "sslHealthCheck",
-        "A nested object resource\nStructure is documented below.",
+        'sslHealthCheck',
+        'A nested object resource\nStructure is documented below.',
         () => compute_RegionHealthCheckSslHealthCheck_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "http2HealthCheck",
-        "A nested object resource\nStructure is documented below.",
+        'http2HealthCheck',
+        'A nested object resource\nStructure is documented below.',
         () => compute_RegionHealthCheckHttp2HealthCheck_GetTypes(),
         false,
         false,

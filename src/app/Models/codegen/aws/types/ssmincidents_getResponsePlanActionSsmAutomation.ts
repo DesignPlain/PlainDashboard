@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ssmincidents_getResponsePlanActionSsmAutomationParameter,
   ssmincidents_getResponsePlanActionSsmAutomationParameter_GetTypes,
-} from "./ssmincidents_getResponsePlanActionSsmAutomationParameter";
+} from './ssmincidents_getResponsePlanActionSsmAutomationParameter';
 
 export interface ssmincidents_getResponsePlanActionSsmAutomation {
   // The version of the automation document to use at runtime.
@@ -34,23 +34,23 @@ export function ssmincidents_getResponsePlanActionSsmAutomation_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.String,
-      "roleArn",
-      "The Amazon Resource Name (ARN) of the role that the automation document assumes when it runs commands.",
+      'roleArn',
+      'The Amazon Resource Name (ARN) of the role that the automation document assumes when it runs commands.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "targetAccount",
-      "The account that runs the automation document. This can be in either the management account or an application account.",
+      'targetAccount',
+      'The account that runs the automation document. This can be in either the management account or an application account.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "documentName",
+      'documentName',
       "The automation document's name.",
       () => [],
       true,
@@ -58,24 +58,24 @@ export function ssmincidents_getResponsePlanActionSsmAutomation_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.String,
-      "documentVersion",
-      "The version of the automation document to use at runtime.",
+      'documentVersion',
+      'The version of the automation document to use at runtime.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "dynamicParameters",
-      "The key-value pair used to resolve dynamic parameter values when processing a Systems Manager Automation runbook.",
+      'dynamicParameters',
+      'The key-value pair used to resolve dynamic parameter values when processing a Systems Manager Automation runbook.',
       () => InputType_Map_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "parameters",
-      "The key-value pair parameters used when the automation document runs. The following values are supported:",
+      'parameters',
+      'The key-value pair parameters used when the automation document runs. The following values are supported:',
       () => ssmincidents_getResponsePlanActionSsmAutomationParameter_GetTypes(),
       true,
       false,

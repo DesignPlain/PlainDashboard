@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_getClusterNodePoolNetworkConfigAdditionalNodeNetworkConfig {
   // Name of the VPC where the additional interface belongs.
@@ -18,16 +18,16 @@ export function container_getClusterNodePoolNetworkConfigAdditionalNodeNetworkCo
   return [
     new DynamicUIProps(
       InputType.String,
-      "network",
-      "Name of the VPC where the additional interface belongs.",
+      'network',
+      'Name of the VPC where the additional interface belongs.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "subnetwork",
-      "Name of the subnetwork where the additional interface belongs.",
+      'subnetwork',
+      'Name of the subnetwork where the additional interface belongs.',
       () => [],
       true,
       false,

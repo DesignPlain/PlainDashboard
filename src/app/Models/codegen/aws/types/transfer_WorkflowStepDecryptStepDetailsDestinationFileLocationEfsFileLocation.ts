@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface transfer_WorkflowStepDecryptStepDetailsDestinationFileLocationEfsFileLocation {
   // The ID of the file system, assigned by Amazon EFS.
@@ -18,16 +18,16 @@ export function transfer_WorkflowStepDecryptStepDetailsDestinationFileLocationEf
   return [
     new DynamicUIProps(
       InputType.String,
-      "fileSystemId",
-      "The ID of the file system, assigned by Amazon EFS.",
+      'fileSystemId',
+      'The ID of the file system, assigned by Amazon EFS.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "path",
-      "The pathname for the folder being used by a workflow.",
+      'path',
+      'The pathname for the folder being used by a workflow.',
       () => [],
       false,
       true,

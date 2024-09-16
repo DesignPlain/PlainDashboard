@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   diagflow_CxWebhookServiceDirectory,
   diagflow_CxWebhookServiceDirectory_GetTypes,
-} from "../types/diagflow_CxWebhookServiceDirectory";
+} from '../types/diagflow_CxWebhookServiceDirectory';
 import {
   diagflow_CxWebhookGenericWebService,
   diagflow_CxWebhookGenericWebService_GetTypes,
-} from "../types/diagflow_CxWebhookGenericWebService";
+} from '../types/diagflow_CxWebhookGenericWebService';
 
 export interface CxWebhookArgs {
   /*
@@ -112,72 +112,72 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "enableSpellCorrection",
-        "Indicates if automatic spell correction is enabled in detect intent requests.",
+        'enableSpellCorrection',
+        'Indicates if automatic spell correction is enabled in detect intent requests.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "genericWebService",
-        "Configuration for a generic web service.\nStructure is documented below.",
+        'genericWebService',
+        'Configuration for a generic web service.\nStructure is documented below.',
         () => diagflow_CxWebhookGenericWebService_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The agent to create a webhook for.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>.",
+        'parent',
+        'The agent to create a webhook for.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "securitySettings",
-        "Name of the SecuritySettings reference for the agent. Format: projects/<Project ID>/locations/<Location ID>/securitySettings/<Security Settings ID>.",
+        'securitySettings',
+        'Name of the SecuritySettings reference for the agent. Format: projects/<Project ID>/locations/<Location ID>/securitySettings/<Security Settings ID>.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The human-readable name of the webhook, unique within the agent.\n\n\n- - -",
+        'displayName',
+        'The human-readable name of the webhook, unique within the agent.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "timeout",
-        "Webhook execution timeout.",
+        'timeout',
+        'Webhook execution timeout.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "disabled",
-        "Indicates whether the webhook is disabled.",
+        'disabled',
+        'Indicates whether the webhook is disabled.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableStackdriverLogging",
-        "Determines whether this agent should log conversation queries.",
+        'enableStackdriverLogging',
+        'Determines whether this agent should log conversation queries.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "serviceDirectory",
-        "Configuration for a Service Directory service.\nStructure is documented below.",
+        'serviceDirectory',
+        'Configuration for a Service Directory service.\nStructure is documented below.',
         () => diagflow_CxWebhookServiceDirectory_GetTypes(),
         false,
         false,

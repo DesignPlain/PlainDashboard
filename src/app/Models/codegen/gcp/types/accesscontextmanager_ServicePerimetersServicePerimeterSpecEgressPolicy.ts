@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicyEgressFrom,
   accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicyEgressFrom_GetTypes,
-} from "./accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicyEgressFrom";
+} from './accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicyEgressFrom';
 import {
   accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicyEgressTo,
   accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicyEgressTo_GetTypes,
-} from "./accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicyEgressTo";
+} from './accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicyEgressTo';
 
 export interface accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicy {
   /*
@@ -33,8 +33,8 @@ export function accesscontextmanager_ServicePerimetersServicePerimeterSpecEgress
   return [
     new DynamicUIProps(
       InputType.Object,
-      "egressFrom",
-      "Defines conditions on the source of a request causing this `EgressPolicy` to apply.\nStructure is documented below.",
+      'egressFrom',
+      'Defines conditions on the source of a request causing this `EgressPolicy` to apply.\nStructure is documented below.',
       () =>
         accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicyEgressFrom_GetTypes(),
       false,
@@ -42,8 +42,8 @@ export function accesscontextmanager_ServicePerimetersServicePerimeterSpecEgress
     ),
     new DynamicUIProps(
       InputType.Object,
-      "egressTo",
-      "Defines the conditions on the `ApiOperation` and destination resources that\ncause this `EgressPolicy` to apply.\nStructure is documented below.",
+      'egressTo',
+      'Defines the conditions on the `ApiOperation` and destination resources that\ncause this `EgressPolicy` to apply.\nStructure is documented below.',
       () =>
         accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicyEgressTo_GetTypes(),
       false,

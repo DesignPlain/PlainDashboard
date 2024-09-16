@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kinesis_FirehoseDeliveryStreamMskSourceConfigurationAuthenticationConfiguration,
   kinesis_FirehoseDeliveryStreamMskSourceConfigurationAuthenticationConfiguration_GetTypes,
-} from "./kinesis_FirehoseDeliveryStreamMskSourceConfigurationAuthenticationConfiguration";
+} from './kinesis_FirehoseDeliveryStreamMskSourceConfigurationAuthenticationConfiguration';
 
 export interface kinesis_FirehoseDeliveryStreamMskSourceConfiguration {
   // The authentication configuration of the Amazon MSK cluster. See `authentication_configuration` block below for details.
@@ -25,24 +25,24 @@ export function kinesis_FirehoseDeliveryStreamMskSourceConfiguration_GetTypes():
   return [
     new DynamicUIProps(
       InputType.String,
-      "mskClusterArn",
-      "The ARN of the Amazon MSK cluster.",
+      'mskClusterArn',
+      'The ARN of the Amazon MSK cluster.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "topicName",
-      "The topic name within the Amazon MSK cluster.",
+      'topicName',
+      'The topic name within the Amazon MSK cluster.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "authenticationConfiguration",
-      "The authentication configuration of the Amazon MSK cluster. See `authentication_configuration` block below for details.",
+      'authenticationConfiguration',
+      'The authentication configuration of the Amazon MSK cluster. See `authentication_configuration` block below for details.',
       () =>
         kinesis_FirehoseDeliveryStreamMskSourceConfigurationAuthenticationConfiguration_GetTypes(),
       true,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   securitylake_SubscriberNotificationConfiguration,
   securitylake_SubscriberNotificationConfiguration_GetTypes,
-} from "../types/securitylake_SubscriberNotificationConfiguration";
+} from '../types/securitylake_SubscriberNotificationConfiguration';
 
 export interface SubscriberNotificationArgs {
   // Specify the configuration using which you want to create the subscriber notification..
@@ -35,16 +35,16 @@ export class SubscriberNotification extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "configuration",
-        "Specify the configuration using which you want to create the subscriber notification..",
+        'configuration',
+        'Specify the configuration using which you want to create the subscriber notification..',
         () => securitylake_SubscriberNotificationConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "subscriberId",
-        "The subscriber ID for the notification subscription.",
+        'subscriberId',
+        'The subscriber ID for the notification subscription.',
         () => [],
         true,
         false,

@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   batch_getJobDefinitionEksPropertyPodPropertyContainerResource,
   batch_getJobDefinitionEksPropertyPodPropertyContainerResource_GetTypes,
-} from "./batch_getJobDefinitionEksPropertyPodPropertyContainerResource";
+} from './batch_getJobDefinitionEksPropertyPodPropertyContainerResource';
 import {
   batch_getJobDefinitionEksPropertyPodPropertyContainerVolumeMount,
   batch_getJobDefinitionEksPropertyPodPropertyContainerVolumeMount_GetTypes,
-} from "./batch_getJobDefinitionEksPropertyPodPropertyContainerVolumeMount";
+} from './batch_getJobDefinitionEksPropertyPodPropertyContainerVolumeMount';
 import {
   batch_getJobDefinitionEksPropertyPodPropertyContainerEnv,
   batch_getJobDefinitionEksPropertyPodPropertyContainerEnv_GetTypes,
-} from "./batch_getJobDefinitionEksPropertyPodPropertyContainerEnv";
+} from './batch_getJobDefinitionEksPropertyPodPropertyContainerEnv';
 import {
   batch_getJobDefinitionEksPropertyPodPropertyContainerSecurityContext,
   batch_getJobDefinitionEksPropertyPodPropertyContainerSecurityContext_GetTypes,
-} from "./batch_getJobDefinitionEksPropertyPodPropertyContainerSecurityContext";
+} from './batch_getJobDefinitionEksPropertyPodPropertyContainerSecurityContext';
 
 export interface batch_getJobDefinitionEksPropertyPodPropertyContainer {
   // The command that's passed to the container.
@@ -55,24 +55,24 @@ export function batch_getJobDefinitionEksPropertyPodPropertyContainer_GetTypes()
   return [
     new DynamicUIProps(
       InputType.String,
-      "image",
-      "The image used to start a container.",
+      'image',
+      'The image used to start a container.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "imagePullPolicy",
-      "The image pull policy for the container.",
+      'imagePullPolicy',
+      'The image pull policy for the container.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "volumeMounts",
-      "The volume mounts for the container.",
+      'volumeMounts',
+      'The volume mounts for the container.',
       () =>
         batch_getJobDefinitionEksPropertyPodPropertyContainerVolumeMount_GetTypes(),
       true,
@@ -80,8 +80,8 @@ export function batch_getJobDefinitionEksPropertyPodPropertyContainer_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Array,
-      "securityContexts",
-      "The security context for a job.",
+      'securityContexts',
+      'The security context for a job.',
       () =>
         batch_getJobDefinitionEksPropertyPodPropertyContainerSecurityContext_GetTypes(),
       true,
@@ -89,7 +89,7 @@ export function batch_getJobDefinitionEksPropertyPodPropertyContainer_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Array,
-      "commands",
+      'commands',
       "The command that's passed to the container.",
       () => InputType_String_GetTypes(),
       true,
@@ -97,8 +97,8 @@ export function batch_getJobDefinitionEksPropertyPodPropertyContainer_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Array,
-      "resources",
-      "The type and amount of resources to assign to a container.",
+      'resources',
+      'The type and amount of resources to assign to a container.',
       () =>
         batch_getJobDefinitionEksPropertyPodPropertyContainerResource_GetTypes(),
       true,
@@ -106,24 +106,24 @@ export function batch_getJobDefinitionEksPropertyPodPropertyContainer_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Array,
-      "args",
-      "An array of arguments to the entrypoint",
+      'args',
+      'An array of arguments to the entrypoint',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "envs",
-      "The environment variables to pass to a container.  Array of EksContainerEnvironmentVariable objects.",
+      'envs',
+      'The environment variables to pass to a container.  Array of EksContainerEnvironmentVariable objects.',
       () => batch_getJobDefinitionEksPropertyPodPropertyContainerEnv_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).",
+      'name',
+      'The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).',
       () => [],
       true,
       false,

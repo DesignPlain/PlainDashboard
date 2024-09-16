@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface iam_getTestablePermissionsPermission {
   // Release stage of the permission.
@@ -27,31 +27,31 @@ export function iam_getTestablePermissionsPermission_GetTypes(): DynamicUIProps[
   return [
     new DynamicUIProps(
       InputType.String,
-      "stage",
-      "Release stage of the permission.",
+      'stage',
+      'Release stage of the permission.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "title",
-      "Human readable title of the permission.",
+      'title',
+      'Human readable title of the permission.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "apiDisabled",
-      "Whether the corresponding API has been enabled for the resource.",
+      'apiDisabled',
+      'Whether the corresponding API has been enabled for the resource.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "customSupportLevel",
+      'customSupportLevel',
       'The level of support for custom roles. Can be one of `"NOT_SUPPORTED"`, `"SUPPORTED"`, `"TESTING"`. Default is `"SUPPORTED"`',
       () => [],
       true,
@@ -59,8 +59,8 @@ export function iam_getTestablePermissionsPermission_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the permission.",
+      'name',
+      'Name of the permission.',
       () => [],
       true,
       false,

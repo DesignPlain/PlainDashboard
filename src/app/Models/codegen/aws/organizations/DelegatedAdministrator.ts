@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface DelegatedAdministratorArgs {
   // The account ID number of the member account in the organization to register as a delegated administrator.
@@ -46,16 +46,16 @@ export class DelegatedAdministrator extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "accountId",
-        "The account ID number of the member account in the organization to register as a delegated administrator.",
+        'accountId',
+        'The account ID number of the member account in the organization to register as a delegated administrator.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "servicePrincipal",
-        "The service principal of the AWS service for which you want to make the member account a delegated administrator.",
+        'servicePrincipal',
+        'The service principal of the AWS service for which you want to make the member account a delegated administrator.',
         () => [],
         true,
         true,

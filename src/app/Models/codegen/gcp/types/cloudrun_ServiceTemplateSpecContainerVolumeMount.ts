@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudrun_ServiceTemplateSpecContainerVolumeMount {
   // This must match the Name of a Volume.
@@ -21,15 +21,15 @@ export function cloudrun_ServiceTemplateSpecContainerVolumeMount_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "This must match the Name of a Volume.",
+      'name',
+      'This must match the Name of a Volume.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "mountPath",
+      'mountPath',
       "Path within the container at which the volume should be mounted.  Must\nnot contain ':'.",
       () => [],
       true,

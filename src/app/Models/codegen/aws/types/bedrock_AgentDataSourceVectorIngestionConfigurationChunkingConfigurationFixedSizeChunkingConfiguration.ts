@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface bedrock_AgentDataSourceVectorIngestionConfigurationChunkingConfigurationFixedSizeChunkingConfiguration {
   // Percentage of overlap between adjacent chunks of a data source.
@@ -18,16 +18,16 @@ export function bedrock_AgentDataSourceVectorIngestionConfigurationChunkingConfi
   return [
     new DynamicUIProps(
       InputType.Number,
-      "overlapPercentage",
-      "Percentage of overlap between adjacent chunks of a data source.",
+      'overlapPercentage',
+      'Percentage of overlap between adjacent chunks of a data source.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxTokens",
-      "Maximum number of tokens to include in a chunk.",
+      'maxTokens',
+      'Maximum number of tokens to include in a chunk.',
       () => [],
       true,
       false,

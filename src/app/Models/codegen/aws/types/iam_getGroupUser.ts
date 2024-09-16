@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface iam_getGroupUser {
   // User ARN.
@@ -24,32 +24,32 @@ export function iam_getGroupUser_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "userName",
-      "Name of the IAM user.",
+      'userName',
+      'Name of the IAM user.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "arn",
-      "User ARN.",
+      'arn',
+      'User ARN.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "path",
-      "Path to the IAM user.",
+      'path',
+      'Path to the IAM user.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "userId",
-      "Stable and unique string identifying the IAM user.",
+      'userId',
+      'Stable and unique string identifying the IAM user.',
       () => [],
       true,
       false,

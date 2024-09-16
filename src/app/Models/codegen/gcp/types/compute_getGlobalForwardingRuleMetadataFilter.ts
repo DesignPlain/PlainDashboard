@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_getGlobalForwardingRuleMetadataFilterFilterLabel,
   compute_getGlobalForwardingRuleMetadataFilterFilterLabel_GetTypes,
-} from "./compute_getGlobalForwardingRuleMetadataFilterFilterLabel";
+} from './compute_getGlobalForwardingRuleMetadataFilterFilterLabel';
 
 export interface compute_getGlobalForwardingRuleMetadataFilter {
   /*
@@ -35,7 +35,7 @@ export function compute_getGlobalForwardingRuleMetadataFilter_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.String,
-      "filterMatchCriteria",
+      'filterMatchCriteria',
       'Specifies how individual filterLabel matches within the list of\nfilterLabels contribute towards the overall metadataFilter match.\n\nMATCH_ANY - At least one of the filterLabels must have a matching\nlabel in the provided metadata.\nMATCH_ALL - All filterLabels must have matching labels in the\nprovided metadata. Possible values: ["MATCH_ANY", "MATCH_ALL"]',
       () => [],
       true,
@@ -43,8 +43,8 @@ export function compute_getGlobalForwardingRuleMetadataFilter_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Array,
-      "filterLabels",
-      "The list of label value pairs that must match labels in the\nprovided metadata based on filterMatchCriteria\n\nThis list must not be empty and can have at the most 64 entries.",
+      'filterLabels',
+      'The list of label value pairs that must match labels in the\nprovided metadata based on filterMatchCriteria\n\nThis list must not be empty and can have at the most 64 entries.',
       () => compute_getGlobalForwardingRuleMetadataFilterFilterLabel_GetTypes(),
       true,
       false,

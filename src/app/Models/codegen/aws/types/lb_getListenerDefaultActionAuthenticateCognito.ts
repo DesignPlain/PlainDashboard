@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface lb_getListenerDefaultActionAuthenticateCognito {
   //
@@ -36,57 +36,57 @@ export function lb_getListenerDefaultActionAuthenticateCognito_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.String,
-      "userPoolDomain",
-      "",
+      'userPoolDomain',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "authenticationRequestExtraParams",
-      "",
+      'authenticationRequestExtraParams',
+      '',
       () => InputType_Map_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "onUnauthenticatedRequest",
-      "",
+      'onUnauthenticatedRequest',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "scope", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'scope', '', () => [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "sessionCookieName",
-      "",
+      'sessionCookieName',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "sessionTimeout",
-      "",
+      'sessionTimeout',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "userPoolArn",
-      "",
+      'userPoolArn',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "userPoolClientId",
-      "",
+      'userPoolClientId',
+      '',
       () => [],
       true,
       false,

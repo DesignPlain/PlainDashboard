@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificatemanager_CertificateMapGclbTarget,
   certificatemanager_CertificateMapGclbTarget_GetTypes,
-} from "../types/certificatemanager_CertificateMapGclbTarget";
+} from '../types/certificatemanager_CertificateMapGclbTarget';
 
 export interface CertificateMapArgs {
   // A human-readable description of the resource.
@@ -98,32 +98,32 @@ and default labels configured on the provider.
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A human-readable description of the resource.",
+        'description',
+        'A human-readable description of the resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Set of labels associated with a Certificate Map resource.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Set of labels associated with a Certificate Map resource.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A user-defined name of the Certificate Map. Certificate Map names must be unique\nglobally and match the pattern `projects/*/locations/*/certificateMaps/*`.\n\n\n- - -",
+        'name',
+        'A user-defined name of the Certificate Map. Certificate Map names must be unique\nglobally and match the pattern `projects/*/locations/*/certificateMaps/*`.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

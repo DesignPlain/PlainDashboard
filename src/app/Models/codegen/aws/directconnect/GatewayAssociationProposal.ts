@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface GatewayAssociationProposalArgs {
   // Direct Connect Gateway identifier.
@@ -43,15 +43,15 @@ export class GatewayAssociationProposal extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "dxGatewayId",
-        "Direct Connect Gateway identifier.",
+        'dxGatewayId',
+        'Direct Connect Gateway identifier.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dxGatewayOwnerAccountId",
+        'dxGatewayOwnerAccountId',
         "AWS Account identifier of the Direct Connect Gateway's owner.",
         () => [],
         true,
@@ -59,16 +59,16 @@ export class GatewayAssociationProposal extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Array,
-        "allowedPrefixes",
-        "VPC prefixes (CIDRs) to advertise to the Direct Connect gateway. Defaults to the CIDR block of the VPC associated with the Virtual Gateway. To enable drift detection, must be configured.",
+        'allowedPrefixes',
+        'VPC prefixes (CIDRs) to advertise to the Direct Connect gateway. Defaults to the CIDR block of the VPC associated with the Virtual Gateway. To enable drift detection, must be configured.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "associatedGatewayId",
-        "The ID of the VGW or transit gateway with which to associate the Direct Connect gateway.",
+        'associatedGatewayId',
+        'The ID of the VGW or transit gateway with which to associate the Direct Connect gateway.',
         () => [],
         true,
         true,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   eks_getClusterOutpostConfigControlPlanePlacement,
   eks_getClusterOutpostConfigControlPlanePlacement_GetTypes,
-} from "./eks_getClusterOutpostConfigControlPlanePlacement";
+} from './eks_getClusterOutpostConfigControlPlanePlacement';
 
 export interface eks_getClusterOutpostConfig {
   // The Amazon EC2 instance type for all Kubernetes control plane instances.
@@ -25,24 +25,24 @@ export function eks_getClusterOutpostConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "controlPlaneInstanceType",
-      "The Amazon EC2 instance type for all Kubernetes control plane instances.",
+      'controlPlaneInstanceType',
+      'The Amazon EC2 instance type for all Kubernetes control plane instances.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "controlPlanePlacements",
-      "An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on AWS Outpost.",
+      'controlPlanePlacements',
+      'An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on AWS Outpost.',
       () => eks_getClusterOutpostConfigControlPlanePlacement_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "outpostArns",
-      "List of ARNs of the Outposts hosting the EKS cluster. Only a single ARN is supported currently.",
+      'outpostArns',
+      'List of ARNs of the Outposts hosting the EKS cluster. Only a single ARN is supported currently.',
       () => InputType_String_GetTypes(),
       true,
       false,

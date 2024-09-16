@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_FlowTriggerConfigTriggerPropertiesScheduled,
   appflow_FlowTriggerConfigTriggerPropertiesScheduled_GetTypes,
-} from "./appflow_FlowTriggerConfigTriggerPropertiesScheduled";
+} from './appflow_FlowTriggerConfigTriggerPropertiesScheduled';
 
 export interface appflow_FlowTriggerConfigTriggerProperties {
   //
@@ -19,8 +19,8 @@ export function appflow_FlowTriggerConfigTriggerProperties_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Object,
-      "scheduled",
-      "",
+      'scheduled',
+      '',
       () => appflow_FlowTriggerConfigTriggerPropertiesScheduled_GetTypes(),
       false,
       false,

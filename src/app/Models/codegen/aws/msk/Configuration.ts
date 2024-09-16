@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ConfigurationArgs {
   // Name of the configuration.
@@ -43,32 +43,32 @@ export class Configuration extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the configuration.",
+        'description',
+        'Description of the configuration.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "kafkaVersions",
-        "List of Apache Kafka versions which can use this configuration.",
+        'kafkaVersions',
+        'List of Apache Kafka versions which can use this configuration.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the configuration.",
+        'name',
+        'Name of the configuration.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serverProperties",
-        "Contents of the server.properties file. Supported properties are documented in the [MSK Developer Guide](https://docs.aws.amazon.com/msk/latest/developerguide/msk-configuration-properties.html).",
+        'serverProperties',
+        'Contents of the server.properties file. Supported properties are documented in the [MSK Developer Guide](https://docs.aws.amazon.com/msk/latest/developerguide/msk-configuration-properties.html).',
         () => [],
         true,
         false,

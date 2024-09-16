@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   storage_DefaultObjectAccessControlProjectTeam,
   storage_DefaultObjectAccessControlProjectTeam_GetTypes,
-} from "../types/storage_DefaultObjectAccessControlProjectTeam";
+} from '../types/storage_DefaultObjectAccessControlProjectTeam';
 
 export interface DefaultObjectAccessControlArgs {
   // The name of the bucket.
@@ -91,15 +91,15 @@ Possible values are: `OWNER`, `READER`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "bucket",
-        "The name of the bucket.",
+        'bucket',
+        'The name of the bucket.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "entity",
+        'entity',
         'The entity holding the permission, in one of the following forms:\n* user-{{userId}}\n* user-{{email}} (such as "user-liz@example.com")\n* group-{{groupId}}\n* group-{{email}} (such as "group-example@googlegroups.com")\n* domain-{{domain}} (such as "domain-example.com")\n* project-team-{{projectId}}\n* allUsers\n* allAuthenticatedUsers',
         () => [],
         true,
@@ -107,16 +107,16 @@ Possible values are: `OWNER`, `READER`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "object",
-        "The name of the object, if applied to an object.",
+        'object',
+        'The name of the object, if applied to an object.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "role",
-        "The access permission for the entity.\nPossible values are: `OWNER`, `READER`.\n\n\n- - -",
+        'role',
+        'The access permission for the entity.\nPossible values are: `OWNER`, `READER`.\n\n\n- - -',
         () => [],
         true,
         false,

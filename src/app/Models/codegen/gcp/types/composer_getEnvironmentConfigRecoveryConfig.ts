@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   composer_getEnvironmentConfigRecoveryConfigScheduledSnapshotsConfig,
   composer_getEnvironmentConfigRecoveryConfigScheduledSnapshotsConfig_GetTypes,
-} from "./composer_getEnvironmentConfigRecoveryConfigScheduledSnapshotsConfig";
+} from './composer_getEnvironmentConfigRecoveryConfigScheduledSnapshotsConfig';
 
 export interface composer_getEnvironmentConfigRecoveryConfig {
   // The configuration settings for scheduled snapshots.
@@ -19,8 +19,8 @@ export function composer_getEnvironmentConfigRecoveryConfig_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.Array,
-      "scheduledSnapshotsConfigs",
-      "The configuration settings for scheduled snapshots.",
+      'scheduledSnapshotsConfigs',
+      'The configuration settings for scheduled snapshots.',
       () =>
         composer_getEnvironmentConfigRecoveryConfigScheduledSnapshotsConfig_GetTypes(),
       true,

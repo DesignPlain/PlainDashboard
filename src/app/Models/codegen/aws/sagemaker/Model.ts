@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sagemaker_ModelContainer,
   sagemaker_ModelContainer_GetTypes,
-} from "../types/sagemaker_ModelContainer";
+} from '../types/sagemaker_ModelContainer';
 import {
   sagemaker_ModelInferenceExecutionConfig,
   sagemaker_ModelInferenceExecutionConfig_GetTypes,
-} from "../types/sagemaker_ModelInferenceExecutionConfig";
+} from '../types/sagemaker_ModelInferenceExecutionConfig';
 import {
   sagemaker_ModelPrimaryContainer,
   sagemaker_ModelPrimaryContainer_GetTypes,
-} from "../types/sagemaker_ModelPrimaryContainer";
+} from '../types/sagemaker_ModelPrimaryContainer';
 import {
   sagemaker_ModelVpcConfig,
   sagemaker_ModelVpcConfig_GetTypes,
-} from "../types/sagemaker_ModelVpcConfig";
+} from '../types/sagemaker_ModelVpcConfig';
 
 export interface ModelArgs {
   // Specifies containers in the inference pipeline. If not specified, the `primary_container` argument is required. Fields are documented below.
@@ -83,64 +83,64 @@ export class Model extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "containers",
-        "Specifies containers in the inference pipeline. If not specified, the `primary_container` argument is required. Fields are documented below.",
+        'containers',
+        'Specifies containers in the inference pipeline. If not specified, the `primary_container` argument is required. Fields are documented below.',
         () => sagemaker_ModelContainer_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableNetworkIsolation",
-        "Isolates the model container. No inbound or outbound network calls can be made to or from the model container.",
+        'enableNetworkIsolation',
+        'Isolates the model container. No inbound or outbound network calls can be made to or from the model container.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "executionRoleArn",
-        "A role that SageMaker can assume to access model artifacts and docker images for deployment.",
+        'executionRoleArn',
+        'A role that SageMaker can assume to access model artifacts and docker images for deployment.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "inferenceExecutionConfig",
-        "Specifies details of how containers in a multi-container endpoint are called. see Inference Execution Config.",
+        'inferenceExecutionConfig',
+        'Specifies details of how containers in a multi-container endpoint are called. see Inference Execution Config.',
         () => sagemaker_ModelInferenceExecutionConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the model (must be unique). If omitted, this provider will assign a random, unique name.",
+        'name',
+        'The name of the model (must be unique). If omitted, this provider will assign a random, unique name.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "primaryContainer",
-        "The primary docker image containing inference code that is used when the model is deployed for predictions.  If not specified, the `container` argument is required. Fields are documented below.",
+        'primaryContainer',
+        'The primary docker image containing inference code that is used when the model is deployed for predictions.  If not specified, the `container` argument is required. Fields are documented below.',
         () => sagemaker_ModelPrimaryContainer_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "vpcConfig",
-        "Specifies the VPC that you want your model to connect to. VpcConfig is used in hosting services and in batch transform.",
+        'vpcConfig',
+        'Specifies the VPC that you want your model to connect to. VpcConfig is used in hosting services and in batch transform.',
         () => sagemaker_ModelVpcConfig_GetTypes(),
         false,
         true,

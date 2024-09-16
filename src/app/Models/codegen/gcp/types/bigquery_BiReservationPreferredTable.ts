@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface bigquery_BiReservationPreferredTable {
   // The ID of the dataset in the above project.
@@ -21,24 +21,24 @@ export function bigquery_BiReservationPreferredTable_GetTypes(): DynamicUIProps[
   return [
     new DynamicUIProps(
       InputType.String,
-      "datasetId",
-      "The ID of the dataset in the above project.",
+      'datasetId',
+      'The ID of the dataset in the above project.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "projectId",
-      "The assigned project ID of the project.",
+      'projectId',
+      'The assigned project ID of the project.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "tableId",
-      "The ID of the table in the above dataset.",
+      'tableId',
+      'The ID of the table in the above dataset.',
       () => [],
       false,
       false,

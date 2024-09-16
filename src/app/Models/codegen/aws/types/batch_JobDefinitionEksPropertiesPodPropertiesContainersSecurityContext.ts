@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface batch_JobDefinitionEksPropertiesPodPropertiesContainersSecurityContext {
   //
@@ -27,40 +27,40 @@ export function batch_JobDefinitionEksPropertiesPodPropertiesContainersSecurityC
   return [
     new DynamicUIProps(
       InputType.Number,
-      "runAsUser",
-      "",
+      'runAsUser',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "privileged",
-      "",
+      'privileged',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "readOnlyRootFileSystem",
-      "",
+      'readOnlyRootFileSystem',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "runAsGroup",
-      "",
+      'runAsGroup',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "runAsNonRoot",
-      "",
+      'runAsNonRoot',
+      '',
       () => [],
       false,
       false,

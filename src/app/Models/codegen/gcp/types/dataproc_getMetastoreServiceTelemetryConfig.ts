@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dataproc_getMetastoreServiceTelemetryConfig {
   // The output format of the Dataproc Metastore service's logs. Default value: "JSON" Possible values: ["LEGACY", "JSON"]
@@ -15,7 +15,7 @@ export function dataproc_getMetastoreServiceTelemetryConfig_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.String,
-      "logFormat",
+      'logFormat',
       'The output format of the Dataproc Metastore service\'s logs. Default value: "JSON" Possible values: ["LEGACY", "JSON"]',
       () => [],
       true,

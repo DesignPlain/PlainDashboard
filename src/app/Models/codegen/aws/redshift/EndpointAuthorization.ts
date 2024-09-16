@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface EndpointAuthorizationArgs {
   // The Amazon Web Services account ID to grant access to.
@@ -49,32 +49,32 @@ export class EndpointAuthorization extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "account",
-        "The Amazon Web Services account ID to grant access to.",
+        'account',
+        'The Amazon Web Services account ID to grant access to.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clusterIdentifier",
-        "The cluster identifier of the cluster to grant access to.",
+        'clusterIdentifier',
+        'The cluster identifier of the cluster to grant access to.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "forceDelete",
-        "Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted. Default value is `false`.",
+        'forceDelete',
+        'Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted. Default value is `false`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "vpcIds",
-        "The virtual private cloud (VPC) identifiers to grant access to. If none are specified all VPCs in shared account are allowed.",
+        'vpcIds',
+        'The virtual private cloud (VPC) identifiers to grant access to. If none are specified all VPCs in shared account are allowed.',
         () => InputType_String_GetTypes(),
         false,
         false,

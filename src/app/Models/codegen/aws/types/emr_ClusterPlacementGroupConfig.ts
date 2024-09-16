@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface emr_ClusterPlacementGroupConfig {
   // Role of the instance in the cluster. Valid Values: `MASTER`, `CORE`, `TASK`.
@@ -18,16 +18,16 @@ export function emr_ClusterPlacementGroupConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "instanceRole",
-      "Role of the instance in the cluster. Valid Values: `MASTER`, `CORE`, `TASK`.",
+      'instanceRole',
+      'Role of the instance in the cluster. Valid Values: `MASTER`, `CORE`, `TASK`.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "placementStrategy",
-      "EC2 Placement Group strategy associated with instance role. Valid Values: `SPREAD`, `PARTITION`, `CLUSTER`, `NONE`.",
+      'placementStrategy',
+      'EC2 Placement Group strategy associated with instance role. Valid Values: `SPREAD`, `PARTITION`, `CLUSTER`, `NONE`.',
       () => [],
       false,
       true,

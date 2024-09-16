@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface AutoScalingConfigurationVersionArgs {
   // Name of the auto scaling configuration.
@@ -64,40 +64,40 @@ export class AutoScalingConfigurationVersion extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "autoScalingConfigurationName",
-        "Name of the auto scaling configuration.",
+        'autoScalingConfigurationName',
+        'Name of the auto scaling configuration.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "maxConcurrency",
-        "Maximal number of concurrent requests that you want an instance to process. When the number of concurrent requests goes over this limit, App Runner scales up your service.",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.Number,
-        "maxSize",
-        "Maximal number of instances that App Runner provisions for your service.",
+        'maxConcurrency',
+        'Maximal number of concurrent requests that you want an instance to process. When the number of concurrent requests goes over this limit, App Runner scales up your service.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "minSize",
-        "Minimal number of instances that App Runner provisions for your service.",
+        'maxSize',
+        'Maximal number of instances that App Runner provisions for your service.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.Number,
+        'minSize',
+        'Minimal number of instances that App Runner provisions for your service.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

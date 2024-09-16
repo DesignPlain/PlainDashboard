@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_RuleGroupRuleStatement,
   wafv2_RuleGroupRuleStatement_GetTypes,
-} from "./wafv2_RuleGroupRuleStatement";
+} from './wafv2_RuleGroupRuleStatement';
 
 export interface wafv2_RuleGroupRuleStatementOrStatement {
   // The statements to combine.
@@ -19,8 +19,8 @@ export function wafv2_RuleGroupRuleStatementOrStatement_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.Array,
-      "statements",
-      "The statements to combine.",
+      'statements',
+      'The statements to combine.',
       () => wafv2_RuleGroupRuleStatement_GetTypes(),
       true,
       false,

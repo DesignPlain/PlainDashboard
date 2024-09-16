@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface batch_JobDefinitionEksPropertiesPodPropertiesVolumeHostPath {
   // Path of the file or directory on the host to mount into containers on the pod.
@@ -15,8 +15,8 @@ export function batch_JobDefinitionEksPropertiesPodPropertiesVolumeHostPath_GetT
   return [
     new DynamicUIProps(
       InputType.String,
-      "path",
-      "Path of the file or directory on the host to mount into containers on the pod.",
+      'path',
+      'Path of the file or directory on the host to mount into containers on the pod.',
       () => [],
       true,
       false,

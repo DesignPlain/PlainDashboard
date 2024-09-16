@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualNodeSpecListenerTimeoutGrpcIdle,
   appmesh_getVirtualNodeSpecListenerTimeoutGrpcIdle_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTimeoutGrpcIdle";
+} from './appmesh_getVirtualNodeSpecListenerTimeoutGrpcIdle';
 import {
   appmesh_getVirtualNodeSpecListenerTimeoutGrpcPerRequest,
   appmesh_getVirtualNodeSpecListenerTimeoutGrpcPerRequest_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTimeoutGrpcPerRequest";
+} from './appmesh_getVirtualNodeSpecListenerTimeoutGrpcPerRequest';
 
 export interface appmesh_getVirtualNodeSpecListenerTimeoutGrpc {
   //
@@ -26,16 +26,16 @@ export function appmesh_getVirtualNodeSpecListenerTimeoutGrpc_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.Array,
-      "perRequests",
-      "",
+      'perRequests',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTimeoutGrpcPerRequest_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "idles",
-      "",
+      'idles',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTimeoutGrpcIdle_GetTypes(),
       true,
       false,

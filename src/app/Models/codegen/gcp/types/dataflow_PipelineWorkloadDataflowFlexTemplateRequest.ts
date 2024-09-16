@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter,
   dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter_GetTypes,
-} from "./dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter";
+} from './dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter';
 
 export interface dataflow_PipelineWorkloadDataflowFlexTemplateRequest {
   // The regional endpoint to which to direct the request. For example, us-central1, us-west1.
@@ -32,32 +32,32 @@ export function dataflow_PipelineWorkloadDataflowFlexTemplateRequest_GetTypes():
   return [
     new DynamicUIProps(
       InputType.String,
-      "location",
-      "The regional endpoint to which to direct the request. For example, us-central1, us-west1.",
+      'location',
+      'The regional endpoint to which to direct the request. For example, us-central1, us-west1.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "projectId",
-      "The ID of the Cloud Platform project that the job belongs to.",
+      'projectId',
+      'The ID of the Cloud Platform project that the job belongs to.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "validateOnly",
-      "If true, the request is validated but not actually executed. Defaults to false.",
+      'validateOnly',
+      'If true, the request is validated but not actually executed. Defaults to false.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "launchParameter",
-      "Parameter to launch a job from a Flex Template.\nhttps://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#launchflextemplateparameter\nStructure is documented below.",
+      'launchParameter',
+      'Parameter to launch a job from a Flex Template.\nhttps://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#launchflextemplateparameter\nStructure is documented below.',
       () =>
         dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter_GetTypes(),
       true,

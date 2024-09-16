@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   opsworks_PhpAppLayerCloudwatchConfigurationLogStream,
   opsworks_PhpAppLayerCloudwatchConfigurationLogStream_GetTypes,
-} from "./opsworks_PhpAppLayerCloudwatchConfigurationLogStream";
+} from './opsworks_PhpAppLayerCloudwatchConfigurationLogStream';
 
 export interface opsworks_PhpAppLayerCloudwatchConfiguration {
   //
@@ -20,11 +20,11 @@ export interface opsworks_PhpAppLayerCloudwatchConfiguration {
 
 export function opsworks_PhpAppLayerCloudwatchConfiguration_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.Bool, "enabled", "", () => [], false, false),
+    new DynamicUIProps(InputType.Bool, 'enabled', '', () => [], false, false),
     new DynamicUIProps(
       InputType.Array,
-      "logStreams",
-      "",
+      'logStreams',
+      '',
       () => opsworks_PhpAppLayerCloudwatchConfigurationLogStream_GetTypes(),
       false,
       false,

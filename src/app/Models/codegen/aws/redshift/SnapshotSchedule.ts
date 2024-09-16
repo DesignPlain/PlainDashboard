@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface SnapshotScheduleArgs {
   // Whether to destroy all associated clusters with this snapshot schedule on deletion. Must be enabled and applied before attempting deletion.
@@ -61,48 +61,48 @@ identifier beginning with the specified prefix. Conflicts with `identifier`.
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "definitions",
-        "The definition of the snapshot schedule. The definition is made up of schedule expressions, for example `cron(30 12 *)` or `rate(12 hours)`.",
+        'definitions',
+        'The definition of the snapshot schedule. The definition is made up of schedule expressions, for example `cron(30 12 *)` or `rate(12 hours)`.',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the snapshot schedule.",
+        'description',
+        'The description of the snapshot schedule.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "forceDestroy",
-        "Whether to destroy all associated clusters with this snapshot schedule on deletion. Must be enabled and applied before attempting deletion.",
+        'forceDestroy',
+        'Whether to destroy all associated clusters with this snapshot schedule on deletion. Must be enabled and applied before attempting deletion.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "identifier",
-        "The snapshot schedule identifier. If omitted, this provider will assign a random, unique identifier.",
+        'identifier',
+        'The snapshot schedule identifier. If omitted, this provider will assign a random, unique identifier.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "identifierPrefix",
-        "Creates a unique\nidentifier beginning with the specified prefix. Conflicts with `identifier`.",
+        'identifierPrefix',
+        'Creates a unique\nidentifier beginning with the specified prefix. Conflicts with `identifier`.',
         () => [],
         false,
         true,

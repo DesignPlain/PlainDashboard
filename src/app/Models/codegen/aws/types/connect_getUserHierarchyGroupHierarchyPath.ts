@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   connect_getUserHierarchyGroupHierarchyPathLevelOne,
   connect_getUserHierarchyGroupHierarchyPathLevelOne_GetTypes,
-} from "./connect_getUserHierarchyGroupHierarchyPathLevelOne";
+} from './connect_getUserHierarchyGroupHierarchyPathLevelOne';
 import {
   connect_getUserHierarchyGroupHierarchyPathLevelThree,
   connect_getUserHierarchyGroupHierarchyPathLevelThree_GetTypes,
-} from "./connect_getUserHierarchyGroupHierarchyPathLevelThree";
+} from './connect_getUserHierarchyGroupHierarchyPathLevelThree';
 import {
   connect_getUserHierarchyGroupHierarchyPathLevelTwo,
   connect_getUserHierarchyGroupHierarchyPathLevelTwo_GetTypes,
-} from "./connect_getUserHierarchyGroupHierarchyPathLevelTwo";
+} from './connect_getUserHierarchyGroupHierarchyPathLevelTwo';
 import {
   connect_getUserHierarchyGroupHierarchyPathLevelFife,
   connect_getUserHierarchyGroupHierarchyPathLevelFife_GetTypes,
-} from "./connect_getUserHierarchyGroupHierarchyPathLevelFife";
+} from './connect_getUserHierarchyGroupHierarchyPathLevelFife';
 import {
   connect_getUserHierarchyGroupHierarchyPathLevelFour,
   connect_getUserHierarchyGroupHierarchyPathLevelFour_GetTypes,
-} from "./connect_getUserHierarchyGroupHierarchyPathLevelFour";
+} from './connect_getUserHierarchyGroupHierarchyPathLevelFour';
 
 export interface connect_getUserHierarchyGroupHierarchyPath {
   // Details of level five. See below.
@@ -47,40 +47,40 @@ export function connect_getUserHierarchyGroupHierarchyPath_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Array,
-      "levelFives",
-      "Details of level five. See below.",
+      'levelFives',
+      'Details of level five. See below.',
       () => connect_getUserHierarchyGroupHierarchyPathLevelFife_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "levelFours",
-      "Details of level four. See below.",
+      'levelFours',
+      'Details of level four. See below.',
       () => connect_getUserHierarchyGroupHierarchyPathLevelFour_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "levelOnes",
-      "Details of level one. See below.",
+      'levelOnes',
+      'Details of level one. See below.',
       () => connect_getUserHierarchyGroupHierarchyPathLevelOne_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "levelThrees",
-      "Details of level three. See below.",
+      'levelThrees',
+      'Details of level three. See below.',
       () => connect_getUserHierarchyGroupHierarchyPathLevelThree_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "levelTwos",
-      "Details of level two. See below.",
+      'levelTwos',
+      'Details of level two. See below.',
       () => connect_getUserHierarchyGroupHierarchyPathLevelTwo_GetTypes(),
       true,
       false,

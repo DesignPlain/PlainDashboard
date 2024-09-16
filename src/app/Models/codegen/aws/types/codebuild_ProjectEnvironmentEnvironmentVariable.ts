@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface codebuild_ProjectEnvironmentEnvironmentVariable {
   // Environment variable's name or key.
@@ -21,15 +21,15 @@ export function codebuild_ProjectEnvironmentEnvironmentVariable_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "Type of environment variable. Valid values: `PARAMETER_STORE`, `PLAINTEXT`, `SECRETS_MANAGER`.",
+      'type',
+      'Type of environment variable. Valid values: `PARAMETER_STORE`, `PLAINTEXT`, `SECRETS_MANAGER`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "value",
+      'value',
       "Environment variable's value.",
       () => [],
       true,
@@ -37,7 +37,7 @@ export function codebuild_ProjectEnvironmentEnvironmentVariable_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
+      'name',
       "Environment variable's name or key.",
       () => [],
       true,

@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   auditmanager_AssessmentScope,
   auditmanager_AssessmentScope_GetTypes,
-} from "../types/auditmanager_AssessmentScope";
+} from '../types/auditmanager_AssessmentScope';
 import {
   auditmanager_AssessmentAssessmentReportsDestination,
   auditmanager_AssessmentAssessmentReportsDestination_GetTypes,
-} from "../types/auditmanager_AssessmentAssessmentReportsDestination";
+} from '../types/auditmanager_AssessmentAssessmentReportsDestination';
 import {
   auditmanager_AssessmentRole,
   auditmanager_AssessmentRole_GetTypes,
-} from "../types/auditmanager_AssessmentRole";
+} from '../types/auditmanager_AssessmentRole';
 import {
   auditmanager_AssessmentRolesAll,
   auditmanager_AssessmentRolesAll_GetTypes,
-} from "../types/auditmanager_AssessmentRolesAll";
+} from '../types/auditmanager_AssessmentRolesAll';
 
 export interface AssessmentArgs {
   /*
@@ -91,56 +91,56 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the assessment.",
+        'description',
+        'Description of the assessment.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "frameworkId",
-        "Unique identifier of the framework the assessment will be created from.",
+        'frameworkId',
+        'Unique identifier of the framework the assessment will be created from.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the assessment.",
+        'name',
+        'Name of the assessment.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "roles",
-        "List of roles for the assessment. See `roles` below.",
+        'roles',
+        'List of roles for the assessment. See `roles` below.',
         () => auditmanager_AssessmentRole_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "scope",
-        "Amazon Web Services accounts and services that are in scope for the assessment. See `scope` below.\n\nThe following arguments are optional:",
+        'scope',
+        'Amazon Web Services accounts and services that are in scope for the assessment. See `scope` below.\n\nThe following arguments are optional:',
         () => auditmanager_AssessmentScope_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the assessment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the assessment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "assessmentReportsDestination",
-        "Assessment report storage destination configuration. See `assessment_reports_destination` below.",
+        'assessmentReportsDestination',
+        'Assessment report storage destination configuration. See `assessment_reports_destination` below.',
         () => auditmanager_AssessmentAssessmentReportsDestination_GetTypes(),
         false,
         false,

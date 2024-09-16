@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ssm_MaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters,
   ssm_MaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters_GetTypes,
-} from "./ssm_MaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters";
+} from './ssm_MaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters';
 import {
   ssm_MaintenanceWindowTaskTaskInvocationParametersAutomationParameters,
   ssm_MaintenanceWindowTaskTaskInvocationParametersAutomationParameters_GetTypes,
-} from "./ssm_MaintenanceWindowTaskTaskInvocationParametersAutomationParameters";
+} from './ssm_MaintenanceWindowTaskTaskInvocationParametersAutomationParameters';
 import {
   ssm_MaintenanceWindowTaskTaskInvocationParametersLambdaParameters,
   ssm_MaintenanceWindowTaskTaskInvocationParametersLambdaParameters_GetTypes,
-} from "./ssm_MaintenanceWindowTaskTaskInvocationParametersLambdaParameters";
+} from './ssm_MaintenanceWindowTaskTaskInvocationParametersLambdaParameters';
 import {
   ssm_MaintenanceWindowTaskTaskInvocationParametersRunCommandParameters,
   ssm_MaintenanceWindowTaskTaskInvocationParametersRunCommandParameters_GetTypes,
-} from "./ssm_MaintenanceWindowTaskTaskInvocationParametersRunCommandParameters";
+} from './ssm_MaintenanceWindowTaskTaskInvocationParametersRunCommandParameters';
 
 export interface ssm_MaintenanceWindowTaskTaskInvocationParameters {
   // The parameters for an AUTOMATION task type. Documented below.
@@ -40,8 +40,8 @@ export function ssm_MaintenanceWindowTaskTaskInvocationParameters_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Object,
-      "automationParameters",
-      "The parameters for an AUTOMATION task type. Documented below.",
+      'automationParameters',
+      'The parameters for an AUTOMATION task type. Documented below.',
       () =>
         ssm_MaintenanceWindowTaskTaskInvocationParametersAutomationParameters_GetTypes(),
       false,
@@ -49,8 +49,8 @@ export function ssm_MaintenanceWindowTaskTaskInvocationParameters_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "lambdaParameters",
-      "The parameters for a LAMBDA task type. Documented below.",
+      'lambdaParameters',
+      'The parameters for a LAMBDA task type. Documented below.',
       () =>
         ssm_MaintenanceWindowTaskTaskInvocationParametersLambdaParameters_GetTypes(),
       false,
@@ -58,8 +58,8 @@ export function ssm_MaintenanceWindowTaskTaskInvocationParameters_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "runCommandParameters",
-      "The parameters for a RUN_COMMAND task type. Documented below.",
+      'runCommandParameters',
+      'The parameters for a RUN_COMMAND task type. Documented below.',
       () =>
         ssm_MaintenanceWindowTaskTaskInvocationParametersRunCommandParameters_GetTypes(),
       false,
@@ -67,8 +67,8 @@ export function ssm_MaintenanceWindowTaskTaskInvocationParameters_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "stepFunctionsParameters",
-      "The parameters for a STEP_FUNCTIONS task type. Documented below.",
+      'stepFunctionsParameters',
+      'The parameters for a STEP_FUNCTIONS task type. Documented below.',
       () =>
         ssm_MaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters_GetTypes(),
       false,

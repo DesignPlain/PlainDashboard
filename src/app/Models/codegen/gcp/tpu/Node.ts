@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   tpu_NodeSchedulingConfig,
   tpu_NodeSchedulingConfig_GetTypes,
-} from "../types/tpu_NodeSchedulingConfig";
+} from '../types/tpu_NodeSchedulingConfig';
 import {
   tpu_NodeNetworkEndpoint,
   tpu_NodeNetworkEndpoint_GetTypes,
-} from "../types/tpu_NodeNetworkEndpoint";
+} from '../types/tpu_NodeNetworkEndpoint';
 
 export interface NodeArgs {
   /*
@@ -180,23 +180,23 @@ TPU Node to is a Shared VPC network, the node must be created with this this fie
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "useServiceNetworking",
-        "Whether the VPC peering for the node is set up through Service Networking API.\nThe VPC Peering should be set up before provisioning the node. If this field is set,\ncidr_block field should not be specified. If the network that you want to peer the\nTPU Node to is a Shared VPC network, the node must be created with this this field enabled.",
+        'useServiceNetworking',
+        'Whether the VPC peering for the node is set up through Service Networking API.\nThe VPC Peering should be set up before provisioning the node. If this field is set,\ncidr_block field should not be specified. If the network that you want to peer the\nTPU Node to is a Shared VPC network, the node must be created with this this field enabled.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cidrBlock",
+        'cidrBlock',
         "The CIDR block that the TPU node will use when selecting an IP\naddress. This CIDR block must be a /29 block; the Compute Engine\nnetworks API forbids a smaller block, and using a larger block would\nbe wasteful (a node can only consume one IP address).\nErrors will occur if the CIDR block has already been used for a\ncurrently existing TPU node, the CIDR block conflicts with any\nsubnetworks in the user's provided network, or the provided network\nis peered with another network that is using that CIDR block.",
         () => [],
         false,
@@ -204,15 +204,15 @@ TPU Node to is a Shared VPC network, the node must be created with this this fie
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The immutable name of the TPU.",
+        'name',
+        'The immutable name of the TPU.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "network",
+        'network',
         'The name of a network to peer the TPU node to. It must be a\npreexisting Compute Engine network inside of the project on which\nthis API has been activated. If none is provided, "default" will be\nused.',
         () => [],
         false,
@@ -220,48 +220,48 @@ TPU Node to is a Shared VPC network, the node must be created with this this fie
       ),
       new DynamicUIProps(
         InputType.String,
-        "acceleratorType",
-        "The type of hardware accelerators associated with this node.",
+        'acceleratorType',
+        'The type of hardware accelerators associated with this node.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The user-supplied description of the TPU. Maximum of 512 characters.",
+        'description',
+        'The user-supplied description of the TPU. Maximum of 512 characters.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "zone",
-        "The GCP location for the TPU. If it is not provided, the provider zone is used.",
+        'zone',
+        'The GCP location for the TPU. If it is not provided, the provider zone is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Resource labels to represent user provided metadata.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Resource labels to represent user provided metadata.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "tensorflowVersion",
-        "The version of Tensorflow running in the Node.\n\n\n- - -",
+        'tensorflowVersion',
+        'The version of Tensorflow running in the Node.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "schedulingConfig",
-        "Sets the scheduling options for this TPU instance.\nStructure is documented below.",
+        'schedulingConfig',
+        'Sets the scheduling options for this TPU instance.\nStructure is documented below.',
         () => tpu_NodeSchedulingConfig_GetTypes(),
         false,
         true,

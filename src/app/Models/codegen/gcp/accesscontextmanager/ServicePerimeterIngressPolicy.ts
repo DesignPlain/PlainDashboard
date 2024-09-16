@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   accesscontextmanager_ServicePerimeterIngressPolicyIngressTo,
   accesscontextmanager_ServicePerimeterIngressPolicyIngressTo_GetTypes,
-} from "../types/accesscontextmanager_ServicePerimeterIngressPolicyIngressTo";
+} from '../types/accesscontextmanager_ServicePerimeterIngressPolicyIngressTo';
 import {
   accesscontextmanager_ServicePerimeterIngressPolicyIngressFrom,
   accesscontextmanager_ServicePerimeterIngressPolicyIngressFrom_GetTypes,
-} from "../types/accesscontextmanager_ServicePerimeterIngressPolicyIngressFrom";
+} from '../types/accesscontextmanager_ServicePerimeterIngressPolicyIngressFrom';
 
 export interface ServicePerimeterIngressPolicyArgs {
   /*
@@ -65,16 +65,16 @@ The name of the Service Perimeter to add this resource to.
     return [
       new DynamicUIProps(
         InputType.String,
-        "perimeter",
-        "The name of the Service Perimeter to add this resource to.\n\n\n- - -",
+        'perimeter',
+        'The name of the Service Perimeter to add this resource to.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "ingressFrom",
-        "Defines the conditions on the source of a request causing this `IngressPolicy`\nto apply.\nStructure is documented below.",
+        'ingressFrom',
+        'Defines the conditions on the source of a request causing this `IngressPolicy`\nto apply.\nStructure is documented below.',
         () =>
           accesscontextmanager_ServicePerimeterIngressPolicyIngressFrom_GetTypes(),
         false,
@@ -82,8 +82,8 @@ The name of the Service Perimeter to add this resource to.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "ingressTo",
-        "Defines the conditions on the `ApiOperation` and request destination that cause\nthis `IngressPolicy` to apply.\nStructure is documented below.",
+        'ingressTo',
+        'Defines the conditions on the `ApiOperation` and request destination that cause\nthis `IngressPolicy` to apply.\nStructure is documented below.',
         () =>
           accesscontextmanager_ServicePerimeterIngressPolicyIngressTo_GetTypes(),
         false,

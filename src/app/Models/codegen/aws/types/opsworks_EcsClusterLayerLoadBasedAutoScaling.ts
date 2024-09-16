@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   opsworks_EcsClusterLayerLoadBasedAutoScalingDownscaling,
   opsworks_EcsClusterLayerLoadBasedAutoScalingDownscaling_GetTypes,
-} from "./opsworks_EcsClusterLayerLoadBasedAutoScalingDownscaling";
+} from './opsworks_EcsClusterLayerLoadBasedAutoScalingDownscaling';
 import {
   opsworks_EcsClusterLayerLoadBasedAutoScalingUpscaling,
   opsworks_EcsClusterLayerLoadBasedAutoScalingUpscaling_GetTypes,
-} from "./opsworks_EcsClusterLayerLoadBasedAutoScalingUpscaling";
+} from './opsworks_EcsClusterLayerLoadBasedAutoScalingUpscaling';
 
 export interface opsworks_EcsClusterLayerLoadBasedAutoScaling {
   //
@@ -29,17 +29,17 @@ export function opsworks_EcsClusterLayerLoadBasedAutoScaling_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.Object,
-      "downscaling",
-      "",
+      'downscaling',
+      '',
       () => opsworks_EcsClusterLayerLoadBasedAutoScalingDownscaling_GetTypes(),
       false,
       false,
     ),
-    new DynamicUIProps(InputType.Bool, "enable", "", () => [], false, false),
+    new DynamicUIProps(InputType.Bool, 'enable', '', () => [], false, false),
     new DynamicUIProps(
       InputType.Object,
-      "upscaling",
-      "",
+      'upscaling',
+      '',
       () => opsworks_EcsClusterLayerLoadBasedAutoScalingUpscaling_GetTypes(),
       false,
       false,

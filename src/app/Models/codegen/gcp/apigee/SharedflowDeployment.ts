@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface SharedflowDeploymentArgs {
   // The resource ID of the environment.
@@ -53,40 +53,40 @@ Revision of the Sharedflow to be deployed.
     return [
       new DynamicUIProps(
         InputType.String,
-        "revision",
-        "Revision of the Sharedflow to be deployed.\n\n\n- - -",
+        'revision',
+        'Revision of the Sharedflow to be deployed.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceAccount",
-        "The service account represents the identity of the deployed proxy, and determines what permissions it has. The format must be {ACCOUNT_ID}@{PROJECT}.iam.gserviceaccount.com.",
+        'serviceAccount',
+        'The service account represents the identity of the deployed proxy, and determines what permissions it has. The format must be {ACCOUNT_ID}@{PROJECT}.iam.gserviceaccount.com.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sharedflowId",
-        "Id of the Sharedflow to be deployed.",
+        'sharedflowId',
+        'Id of the Sharedflow to be deployed.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "environment",
-        "The resource ID of the environment.",
+        'environment',
+        'The resource ID of the environment.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "orgId",
-        "The Apigee Organization associated with the Sharedflow",
+        'orgId',
+        'The Apigee Organization associated with the Sharedflow',
         () => [],
         true,
         true,

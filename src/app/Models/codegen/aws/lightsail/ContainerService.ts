@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lightsail_ContainerServicePrivateRegistryAccess,
   lightsail_ContainerServicePrivateRegistryAccess_GetTypes,
-} from "../types/lightsail_ContainerServicePrivateRegistryAccess";
+} from '../types/lightsail_ContainerServicePrivateRegistryAccess';
 import {
   lightsail_ContainerServicePublicDomainNames,
   lightsail_ContainerServicePublicDomainNames_GetTypes,
-} from "../types/lightsail_ContainerServicePublicDomainNames";
+} from '../types/lightsail_ContainerServicePublicDomainNames';
 
 export interface ContainerServiceArgs {
   /*
@@ -148,47 +148,47 @@ Defined below.
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of container service tags. To create a key-only tag, use an empty string as the value. To tag at launch, specify the tags in the Launch Template. If\nconfigured with a provider\n`default_tags` configuration block\npresent, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of container service tags. To create a key-only tag, use an empty string as the value. To tag at launch, specify the tags in the Launch Template. If\nconfigured with a provider\n`default_tags` configuration block\npresent, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "isDisabled",
-        "A Boolean value indicating whether the container service is disabled. Defaults to `false`.",
+        'isDisabled',
+        'A Boolean value indicating whether the container service is disabled. Defaults to `false`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name for the container service. Names must be of length 1 to 63, and be\nunique within each AWS Region in your Lightsail account.",
+        'name',
+        'The name for the container service. Names must be of length 1 to 63, and be\nunique within each AWS Region in your Lightsail account.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "power",
-        "The power specification for the container service. The power specifies the amount of memory,\nthe number of vCPUs, and the monthly price of each node of the container service.\nPossible values: `nano`, `micro`, `small`, `medium`, `large`, `xlarge`.",
+        'power',
+        'The power specification for the container service. The power specifies the amount of memory,\nthe number of vCPUs, and the monthly price of each node of the container service.\nPossible values: `nano`, `micro`, `small`, `medium`, `large`, `xlarge`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "privateRegistryAccess",
-        "An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories. See Private Registry Access below for more details.",
+        'privateRegistryAccess',
+        'An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories. See Private Registry Access below for more details.',
         () => lightsail_ContainerServicePrivateRegistryAccess_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "publicDomainNames",
+        'publicDomainNames',
         "The public domain names to use with the container service, such as example.com\nand www.example.com. You can specify up to four public domain names for a container service. The domain names that you\nspecify are used when you create a deployment with a container configured as the public endpoint of your container\nservice. If you don't specify public domain names, then you can use the default domain of the container service.\nDefined below.",
         () => lightsail_ContainerServicePublicDomainNames_GetTypes(),
         false,
@@ -196,8 +196,8 @@ Defined below.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "scale",
-        "The scale specification for the container service. The scale specifies the allocated compute\nnodes of the container service.",
+        'scale',
+        'The scale specification for the container service. The scale specifies the allocated compute\nnodes of the container service.',
         () => [],
         true,
         false,

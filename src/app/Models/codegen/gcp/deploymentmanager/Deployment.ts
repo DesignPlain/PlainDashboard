@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   deploymentmanager_DeploymentLabel,
   deploymentmanager_DeploymentLabel_GetTypes,
-} from "../types/deploymentmanager_DeploymentLabel";
+} from '../types/deploymentmanager_DeploymentLabel';
 import {
   deploymentmanager_DeploymentTarget,
   deploymentmanager_DeploymentTarget_GetTypes,
-} from "../types/deploymentmanager_DeploymentTarget";
+} from '../types/deploymentmanager_DeploymentTarget';
 
 export interface DeploymentArgs {
   /*
@@ -153,23 +153,23 @@ Possible values are: `ACQUIRE`, `CREATE_OR_ACQUIRE`.
     return [
       new DynamicUIProps(
         InputType.Array,
-        "labels",
-        "Key-value pairs to apply to this labels.\nStructure is documented below.",
+        'labels',
+        'Key-value pairs to apply to this labels.\nStructure is documented below.',
         () => deploymentmanager_DeploymentLabel_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Unique name for the deployment",
+        'name',
+        'Unique name for the deployment',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "preview",
+        'preview',
         'If set to true, a deployment is created with "shell" resources\nthat are not actually instantiated. This allows you to preview a\ndeployment. It can be updated to false to actually deploy\nwith real resources.\n~>**NOTE:** Deployment Manager does not allow update\nof a deployment in preview (unless updating to preview=false). Thus,\nthe provider will force-recreate deployments if either preview is updated\nto true or if other fields are updated while preview is true.',
         () => [],
         false,
@@ -177,40 +177,40 @@ Possible values are: `ACQUIRE`, `CREATE_OR_ACQUIRE`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "target",
-        "Parameters that define your deployment, including the deployment\nconfiguration and relevant templates.\nStructure is documented below.",
+        'target',
+        'Parameters that define your deployment, including the deployment\nconfiguration and relevant templates.\nStructure is documented below.',
         () => deploymentmanager_DeploymentTarget_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "createPolicy",
-        "Set the policy to use for creating new resources. Only used on\ncreate and update. Valid values are `CREATE_OR_ACQUIRE` (default) or\n`ACQUIRE`. If set to `ACQUIRE` and resources do not already exist,\nthe deployment will fail. Note that updating this field does not\nactually affect the deployment, just how it is updated.\nDefault value is `CREATE_OR_ACQUIRE`.\nPossible values are: `ACQUIRE`, `CREATE_OR_ACQUIRE`.",
+        'createPolicy',
+        'Set the policy to use for creating new resources. Only used on\ncreate and update. Valid values are `CREATE_OR_ACQUIRE` (default) or\n`ACQUIRE`. If set to `ACQUIRE` and resources do not already exist,\nthe deployment will fail. Note that updating this field does not\nactually affect the deployment, just how it is updated.\nDefault value is `CREATE_OR_ACQUIRE`.\nPossible values are: `ACQUIRE`, `CREATE_OR_ACQUIRE`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "deletePolicy",
-        "Set the policy to use for deleting new resources on update/delete.\nValid values are `DELETE` (default) or `ABANDON`. If `DELETE`,\nresource is deleted after removal from Deployment Manager. If\n`ABANDON`, the resource is only removed from Deployment Manager\nand is not actually deleted. Note that updating this field does not\nactually change the deployment, just how it is updated.\nDefault value is `DELETE`.\nPossible values are: `ABANDON`, `DELETE`.",
+        'deletePolicy',
+        'Set the policy to use for deleting new resources on update/delete.\nValid values are `DELETE` (default) or `ABANDON`. If `DELETE`,\nresource is deleted after removal from Deployment Manager. If\n`ABANDON`, the resource is only removed from Deployment Manager\nand is not actually deleted. Note that updating this field does not\nactually change the deployment, just how it is updated.\nDefault value is `DELETE`.\nPossible values are: `ABANDON`, `DELETE`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Optional user-provided description of deployment.",
+        'description',
+        'Optional user-provided description of deployment.',
         () => [],
         false,
         false,

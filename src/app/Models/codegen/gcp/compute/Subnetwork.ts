@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_SubnetworkLogConfig,
   compute_SubnetworkLogConfig_GetTypes,
-} from "../types/compute_SubnetworkLogConfig";
+} from '../types/compute_SubnetworkLogConfig';
 import {
   compute_SubnetworkSecondaryIpRange,
   compute_SubnetworkSecondaryIpRange_GetTypes,
-} from "../types/compute_SubnetworkSecondaryIpRange";
+} from '../types/compute_SubnetworkSecondaryIpRange';
 
 export interface SubnetworkArgs {
   /*
@@ -278,15 +278,15 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "network",
-        "The network this subnet belongs to.\nOnly networks that are in the distributed mode can have subnetworks.\n\n\n- - -",
+        'network',
+        'The network this subnet belongs to.\nOnly networks that are in the distributed mode can have subnetworks.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "logConfig",
+        'logConfig',
         "This field denotes the VPC flow logging options for this subnetwork. If\nlogging is enabled, logs are exported to Cloud Logging. Flow logging\nisn't supported if the subnet `purpose` field is set to subnetwork is\n`REGIONAL_MANAGED_PROXY` or `GLOBAL_MANAGED_PROXY`.\nStructure is documented below.",
         () => compute_SubnetworkLogConfig_GetTypes(),
         false,
@@ -294,79 +294,79 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "privateIpv6GoogleAccess",
-        "The private IPv6 google access type for the VMs in this subnet.",
+        'privateIpv6GoogleAccess',
+        'The private IPv6 google access type for the VMs in this subnet.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "secondaryIpRanges",
-        "An array of configurations for secondary IP ranges for VM instances\ncontained in this subnetwork. The primary IP of such VM must belong\nto the primary ipCidrRange of the subnetwork. The alias IPs may belong\nto either primary or secondary ranges.\nStructure is documented below.",
+        'secondaryIpRanges',
+        'An array of configurations for secondary IP ranges for VM instances\ncontained in this subnetwork. The primary IP of such VM must belong\nto the primary ipCidrRange of the subnetwork. The alias IPs may belong\nto either primary or secondary ranges.\nStructure is documented below.',
         () => compute_SubnetworkSecondaryIpRange_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource. Provide this property when\nyou create the resource. This field can be set only at resource\ncreation time.",
+        'description',
+        'An optional description of this resource. Provide this property when\nyou create the resource. This field can be set only at resource\ncreation time.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "role",
-        "The role of subnetwork.\nCurrently, this field is only used when `purpose` is `REGIONAL_MANAGED_PROXY`.\nThe value can be set to `ACTIVE` or `BACKUP`.\nAn `ACTIVE` subnetwork is one that is currently being used for Envoy-based load balancers in a region.\nA `BACKUP` subnetwork is one that is ready to be promoted to `ACTIVE` or is currently draining.\nPossible values are: `ACTIVE`, `BACKUP`.",
+        'role',
+        'The role of subnetwork.\nCurrently, this field is only used when `purpose` is `REGIONAL_MANAGED_PROXY`.\nThe value can be set to `ACTIVE` or `BACKUP`.\nAn `ACTIVE` subnetwork is one that is currently being used for Envoy-based load balancers in a region.\nA `BACKUP` subnetwork is one that is ready to be promoted to `ACTIVE` or is currently draining.\nPossible values are: `ACTIVE`, `BACKUP`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "externalIpv6Prefix",
-        "The range of external IPv6 addresses that are owned by this subnetwork.",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "purpose",
-        "The purpose of the resource. This field can be either `PRIVATE_RFC_1918`, `REGIONAL_MANAGED_PROXY`, `GLOBAL_MANAGED_PROXY`, `PRIVATE_SERVICE_CONNECT` or `PRIVATE_NAT`.\nA subnet with purpose set to `REGIONAL_MANAGED_PROXY` is a user-created subnetwork that is reserved for regional Envoy-based load balancers.\nA subnetwork in a given region with purpose set to `GLOBAL_MANAGED_PROXY` is a proxy-only subnet and is shared between all the cross-regional Envoy-based load balancers.\nA subnetwork with purpose set to `PRIVATE_SERVICE_CONNECT` reserves the subnet for hosting a Private Service Connect published service.\nA subnetwork with purpose set to `PRIVATE_NAT` is used as source range for Private NAT gateways.\nNote that `REGIONAL_MANAGED_PROXY` is the preferred setting for all regional Envoy load balancers.\nIf unspecified, the purpose defaults to `PRIVATE_RFC_1918`.",
+        'externalIpv6Prefix',
+        'The range of external IPv6 addresses that are owned by this subnetwork.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the resource, provided by the client when initially\ncreating the resource. The name must be 1-63 characters long, and\ncomply with RFC1035. Specifically, the name must be 1-63 characters\nlong and match the regular expression `a-z?` which\nmeans the first character must be a lowercase letter, and all\nfollowing characters must be a dash, lowercase letter, or digit,\nexcept the last character, which cannot be a dash.",
+        'purpose',
+        'The purpose of the resource. This field can be either `PRIVATE_RFC_1918`, `REGIONAL_MANAGED_PROXY`, `GLOBAL_MANAGED_PROXY`, `PRIVATE_SERVICE_CONNECT` or `PRIVATE_NAT`.\nA subnet with purpose set to `REGIONAL_MANAGED_PROXY` is a user-created subnetwork that is reserved for regional Envoy-based load balancers.\nA subnetwork in a given region with purpose set to `GLOBAL_MANAGED_PROXY` is a proxy-only subnet and is shared between all the cross-regional Envoy-based load balancers.\nA subnetwork with purpose set to `PRIVATE_SERVICE_CONNECT` reserves the subnet for hosting a Private Service Connect published service.\nA subnetwork with purpose set to `PRIVATE_NAT` is used as source range for Private NAT gateways.\nNote that `REGIONAL_MANAGED_PROXY` is the preferred setting for all regional Envoy load balancers.\nIf unspecified, the purpose defaults to `PRIVATE_RFC_1918`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The GCP region for this subnetwork.",
+        'name',
+        'The name of the resource, provided by the client when initially\ncreating the resource. The name must be 1-63 characters long, and\ncomply with RFC1035. Specifically, the name must be 1-63 characters\nlong and match the regular expression `a-z?` which\nmeans the first character must be a lowercase letter, and all\nfollowing characters must be a dash, lowercase letter, or digit,\nexcept the last character, which cannot be a dash.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ipv6AccessType",
+        'region',
+        'The GCP region for this subnetwork.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'ipv6AccessType',
         "The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation\nor the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet\ncannot enable direct path.\nPossible values are: `EXTERNAL`, `INTERNAL`.",
         () => [],
         false,
@@ -374,32 +374,32 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "allowSubnetCidrRoutesOverlap",
-        "Typically packets destined to IPs within the subnetwork range that do not match\nexisting resources are dropped and prevented from leaving the VPC.\nSetting this field to true will allow these packets to match dynamic routes injected\nvia BGP even if their destinations match existing subnet ranges.",
+        'allowSubnetCidrRoutesOverlap',
+        'Typically packets destined to IPs within the subnetwork range that do not match\nexisting resources are dropped and prevented from leaving the VPC.\nSetting this field to true will allow these packets to match dynamic routes injected\nvia BGP even if their destinations match existing subnet ranges.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "stackType",
-        "The stack type for this subnet to identify whether the IPv6 feature is enabled or not.\nIf not specified IPV4_ONLY will be used.\nPossible values are: `IPV4_ONLY`, `IPV4_IPV6`.",
+        'stackType',
+        'The stack type for this subnet to identify whether the IPv6 feature is enabled or not.\nIf not specified IPV4_ONLY will be used.\nPossible values are: `IPV4_ONLY`, `IPV4_IPV6`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ipCidrRange",
-        "The range of internal addresses that are owned by this subnetwork.\nProvide this property when you create the subnetwork. For example,\n10.0.0.0/8 or 192.168.0.0/16. Ranges must be unique and\nnon-overlapping within a network. Only IPv4 is supported.",
+        'ipCidrRange',
+        'The range of internal addresses that are owned by this subnetwork.\nProvide this property when you create the subnetwork. For example,\n10.0.0.0/8 or 192.168.0.0/16. Ranges must be unique and\nnon-overlapping within a network. Only IPv4 is supported.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "privateIpGoogleAccess",
-        "When enabled, VMs in this subnetwork without external IP addresses can\naccess Google APIs and services by using Private Google Access.",
+        'privateIpGoogleAccess',
+        'When enabled, VMs in this subnetwork without external IP addresses can\naccess Google APIs and services by using Private Google Access.',
         () => [],
         false,
         false,

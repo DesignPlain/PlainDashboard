@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface securesourcemanager_InstancePrivateConfig {
   // CA pool resource, resource must in the format of `projects/{project}/locations/{location}/caPools/{ca_pool}`.
@@ -30,7 +30,7 @@ export function securesourcemanager_InstancePrivateConfig_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "isPrivate",
+      'isPrivate',
       "'Indicate if it's private instance.'",
       () => [],
       true,
@@ -38,24 +38,24 @@ export function securesourcemanager_InstancePrivateConfig_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "sshServiceAttachment",
-      "(Output)\nService Attachment for SSH, resource is in the format of `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.",
+      'sshServiceAttachment',
+      '(Output)\nService Attachment for SSH, resource is in the format of `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "caPool",
-      "CA pool resource, resource must in the format of `projects/{project}/locations/{location}/caPools/{ca_pool}`.",
+      'caPool',
+      'CA pool resource, resource must in the format of `projects/{project}/locations/{location}/caPools/{ca_pool}`.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "httpServiceAttachment",
-      "(Output)\nService Attachment for HTTP, resource is in the format of `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.",
+      'httpServiceAttachment',
+      '(Output)\nService Attachment for HTTP, resource is in the format of `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.',
       () => [],
       false,
       false,

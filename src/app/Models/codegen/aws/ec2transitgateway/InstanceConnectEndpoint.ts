@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2transitgateway_InstanceConnectEndpointTimeouts,
   ec2transitgateway_InstanceConnectEndpointTimeouts_GetTypes,
-} from "../types/ec2transitgateway_InstanceConnectEndpointTimeouts";
+} from '../types/ec2transitgateway_InstanceConnectEndpointTimeouts';
 
 export interface InstanceConnectEndpointArgs {
   // Indicates whether your client's IP address is preserved as the source. Default: `true`.
@@ -71,7 +71,7 @@ export class InstanceConnectEndpoint extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "preserveClientIp",
+        'preserveClientIp',
         "Indicates whether your client's IP address is preserved as the source. Default: `true`.",
         () => [],
         false,
@@ -79,7 +79,7 @@ export class InstanceConnectEndpoint extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Array,
-        "securityGroupIds",
+        'securityGroupIds',
         "One or more security groups to associate with the endpoint. If you don't specify a security group, the default security group for the VPC will be associated with the endpoint.",
         () => InputType_String_GetTypes(),
         false,
@@ -87,24 +87,24 @@ export class InstanceConnectEndpoint extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "subnetId",
-        "The ID of the subnet in which to create the EC2 Instance Connect Endpoint.",
+        'subnetId',
+        'The ID of the subnet in which to create the EC2 Instance Connect Endpoint.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to this resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to this resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => ec2transitgateway_InstanceConnectEndpointTimeouts_GetTypes(),
         false,
         false,

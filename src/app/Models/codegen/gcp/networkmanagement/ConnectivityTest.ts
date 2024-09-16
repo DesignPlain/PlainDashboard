@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkmanagement_ConnectivityTestSource,
   networkmanagement_ConnectivityTestSource_GetTypes,
-} from "../types/networkmanagement_ConnectivityTestSource";
+} from '../types/networkmanagement_ConnectivityTestSource';
 import {
   networkmanagement_ConnectivityTestDestination,
   networkmanagement_ConnectivityTestDestination_GetTypes,
-} from "../types/networkmanagement_ConnectivityTestDestination";
+} from '../types/networkmanagement_ConnectivityTestDestination';
 
 export interface ConnectivityTestArgs {
   /*
@@ -180,7 +180,7 @@ and default labels configured on the provider.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "destination",
+        'destination',
         "Required. Destination specification of the Connectivity Test.\nYou can use a combination of destination IP address, Compute\nEngine VM instance, or VPC network to uniquely identify the\ndestination location.\nEven if the destination IP address is not unique, the source IP\nlocation is unique. Usually, the analysis can infer the destination\nendpoint from route information.\nIf the destination you specify is a VM instance and the instance has\nmultiple network interfaces, then you must also specify either a\ndestination IP address or VPC network to identify the destination\ninterface.\nA reachability analysis proceeds even if the destination location\nis ambiguous. However, the result can include endpoints that you\ndon't intend to test.\nStructure is documented below.",
         () => networkmanagement_ConnectivityTestDestination_GetTypes(),
         true,
@@ -188,31 +188,31 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Resource labels to represent user-provided metadata.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Resource labels to represent user-provided metadata.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Unique name for the connectivity test.",
+        'name',
+        'Unique name for the connectivity test.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "protocol",
+        'protocol',
         'IP Protocol of the test. When not provided, "TCP" is assumed.',
         () => [],
         false,
@@ -220,15 +220,15 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "relatedProjects",
-        "Other projects that may be relevant for reachability analysis.\nThis is applicable to scenarios where a test can cross project\nboundaries.",
+        'relatedProjects',
+        'Other projects that may be relevant for reachability analysis.\nThis is applicable to scenarios where a test can cross project\nboundaries.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "source",
+        'source',
         "Required. Source specification of the Connectivity Test.\nYou can use a combination of source IP address, virtual machine\n(VM) instance, or Compute Engine network to uniquely identify the\nsource location.\nExamples: If the source IP address is an internal IP address within\na Google Cloud Virtual Private Cloud (VPC) network, then you must\nalso specify the VPC network. Otherwise, specify the VM instance,\nwhich already contains its internal IP address and VPC network\ninformation.\nIf the source of the test is within an on-premises network, then\nyou must provide the destination VPC network.\nIf the source endpoint is a Compute Engine VM instance with multiple\nnetwork interfaces, the instance itself is not sufficient to\nidentify the endpoint. So, you must also specify the source IP\naddress or VPC network.\nA reachability analysis proceeds even if the source location is\nambiguous. However, the test result may include endpoints that\nyou don't intend to test.\nStructure is documented below.",
         () => networkmanagement_ConnectivityTestSource_GetTypes(),
         true,
@@ -236,8 +236,8 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The user-supplied description of the Connectivity Test.\nMaximum of 512 characters.",
+        'description',
+        'The user-supplied description of the Connectivity Test.\nMaximum of 512 characters.',
         () => [],
         false,
         false,

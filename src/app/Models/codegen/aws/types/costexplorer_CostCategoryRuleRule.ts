@@ -3,32 +3,32 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   costexplorer_CostCategoryRuleRuleNot,
   costexplorer_CostCategoryRuleRuleNot_GetTypes,
-} from "./costexplorer_CostCategoryRuleRuleNot";
+} from './costexplorer_CostCategoryRuleRuleNot';
 import {
   costexplorer_CostCategoryRuleRuleOr,
   costexplorer_CostCategoryRuleRuleOr_GetTypes,
-} from "./costexplorer_CostCategoryRuleRuleOr";
+} from './costexplorer_CostCategoryRuleRuleOr';
 import {
   costexplorer_CostCategoryRuleRuleTags,
   costexplorer_CostCategoryRuleRuleTags_GetTypes,
-} from "./costexplorer_CostCategoryRuleRuleTags";
+} from './costexplorer_CostCategoryRuleRuleTags';
 import {
   costexplorer_CostCategoryRuleRuleAnd,
   costexplorer_CostCategoryRuleRuleAnd_GetTypes,
-} from "./costexplorer_CostCategoryRuleRuleAnd";
+} from './costexplorer_CostCategoryRuleRuleAnd';
 import {
   costexplorer_CostCategoryRuleRuleCostCategory,
   costexplorer_CostCategoryRuleRuleCostCategory_GetTypes,
-} from "./costexplorer_CostCategoryRuleRuleCostCategory";
+} from './costexplorer_CostCategoryRuleRuleCostCategory';
 import {
   costexplorer_CostCategoryRuleRuleDimension,
   costexplorer_CostCategoryRuleRuleDimension_GetTypes,
-} from "./costexplorer_CostCategoryRuleRuleDimension";
+} from './costexplorer_CostCategoryRuleRuleDimension';
 
 export interface costexplorer_CostCategoryRuleRule {
   // Return results that match both `Dimension` object.
@@ -54,47 +54,47 @@ export function costexplorer_CostCategoryRuleRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "dimension",
-      "Configuration block for the specific `Dimension` to use for `Expression`. See below.",
+      'dimension',
+      'Configuration block for the specific `Dimension` to use for `Expression`. See below.',
       () => costexplorer_CostCategoryRuleRuleDimension_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "not",
-      "Return results that match both `Dimension` object.",
+      'not',
+      'Return results that match both `Dimension` object.',
       () => costexplorer_CostCategoryRuleRuleNot_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ors",
-      "Return results that match both `Dimension` object.",
+      'ors',
+      'Return results that match both `Dimension` object.',
       () => costexplorer_CostCategoryRuleRuleOr_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "tags",
-      "Configuration block for the specific `Tag` to use for `Expression`. See below.",
+      'tags',
+      'Configuration block for the specific `Tag` to use for `Expression`. See below.',
       () => costexplorer_CostCategoryRuleRuleTags_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ands",
-      "Return results that match both `Dimension` objects.",
+      'ands',
+      'Return results that match both `Dimension` objects.',
       () => costexplorer_CostCategoryRuleRuleAnd_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "costCategory",
+      'costCategory',
       "Configuration block for the filter that's based on `CostCategory` values. See below.",
       () => costexplorer_CostCategoryRuleRuleCostCategory_GetTypes(),
       false,

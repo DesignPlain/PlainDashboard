@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataplex_TaskExecutionSpec,
   dataplex_TaskExecutionSpec_GetTypes,
-} from "../types/dataplex_TaskExecutionSpec";
+} from '../types/dataplex_TaskExecutionSpec';
 import {
   dataplex_TaskSpark,
   dataplex_TaskSpark_GetTypes,
-} from "../types/dataplex_TaskSpark";
+} from '../types/dataplex_TaskSpark';
 import {
   dataplex_TaskNotebook,
   dataplex_TaskNotebook_GetTypes,
-} from "../types/dataplex_TaskNotebook";
+} from '../types/dataplex_TaskNotebook';
 import {
   dataplex_TaskTriggerSpec,
   dataplex_TaskTriggerSpec_GetTypes,
-} from "../types/dataplex_TaskTriggerSpec";
+} from '../types/dataplex_TaskTriggerSpec';
 import {
   dataplex_TaskExecutionStatus,
   dataplex_TaskExecutionStatus_GetTypes,
-} from "../types/dataplex_TaskExecutionStatus";
+} from '../types/dataplex_TaskExecutionStatus';
 
 export interface TaskArgs {
   // User-provided description of the task.
@@ -181,88 +181,88 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "User friendly display name.",
+        'displayName',
+        'User friendly display name.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "User-provided description of the task.",
+        'description',
+        'User-provided description of the task.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "executionSpec",
-        "Configuration for the cluster\nStructure is documented below.",
+        'executionSpec',
+        'Configuration for the cluster\nStructure is documented below.',
         () => dataplex_TaskExecutionSpec_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "User-defined labels for the task.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'User-defined labels for the task.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "spark",
-        "A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time.\nStructure is documented below.",
+        'spark',
+        'A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time.\nStructure is documented below.',
         () => dataplex_TaskSpark_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "taskId",
-        "The task Id of the task.",
+        'taskId',
+        'The task Id of the task.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location in which the task will be created in.",
+        'location',
+        'The location in which the task will be created in.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "lake",
-        "The lake in which the task will be created in.",
+        'lake',
+        'The lake in which the task will be created in.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "notebook",
-        "A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time.\nStructure is documented below.",
+        'notebook',
+        'A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time.\nStructure is documented below.',
         () => dataplex_TaskNotebook_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "triggerSpec",
-        "Configuration for the cluster\nStructure is documented below.",
+        'triggerSpec',
+        'Configuration for the cluster\nStructure is documented below.',
         () => dataplex_TaskTriggerSpec_GetTypes(),
         true,
         false,

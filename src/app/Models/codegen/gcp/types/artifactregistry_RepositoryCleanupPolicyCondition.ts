@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface artifactregistry_RepositoryCleanupPolicyCondition {
   // Match versions older than a duration.
@@ -34,48 +34,48 @@ export function artifactregistry_RepositoryCleanupPolicyCondition_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.String,
-      "olderThan",
-      "Match versions older than a duration.",
+      'olderThan',
+      'Match versions older than a duration.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "packageNamePrefixes",
-      "Match versions by package prefix. Applied on any prefix match.",
+      'packageNamePrefixes',
+      'Match versions by package prefix. Applied on any prefix match.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "tagPrefixes",
-      "Match versions by tag prefix. Applied on any prefix match.",
+      'tagPrefixes',
+      'Match versions by tag prefix. Applied on any prefix match.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "tagState",
-      "Match versions by tag status.\nDefault value is `ANY`.\nPossible values are: `TAGGED`, `UNTAGGED`, `ANY`.",
+      'tagState',
+      'Match versions by tag status.\nDefault value is `ANY`.\nPossible values are: `TAGGED`, `UNTAGGED`, `ANY`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "versionNamePrefixes",
-      "Match versions by version name prefix. Applied on any prefix match.",
+      'versionNamePrefixes',
+      'Match versions by version name prefix. Applied on any prefix match.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "newerThan",
-      "Match versions newer than a duration.",
+      'newerThan',
+      'Match versions newer than a duration.',
       () => [],
       false,
       false,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataproc_MetastoreFederationBackendMetastore,
   dataproc_MetastoreFederationBackendMetastore_GetTypes,
-} from "../types/dataproc_MetastoreFederationBackendMetastore";
+} from '../types/dataproc_MetastoreFederationBackendMetastore';
 
 export interface MetastoreFederationArgs {
   /*
@@ -105,48 +105,48 @@ and default labels configured on the provider.
     return [
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "User-defined labels for the metastore federation.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'User-defined labels for the metastore federation.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location where the metastore federation should reside.",
+        'location',
+        'The location where the metastore federation should reside.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "version",
-        "The Apache Hive metastore version of the federation. All backend metastore versions must be compatible with the federation version.",
+        'version',
+        'The Apache Hive metastore version of the federation. All backend metastore versions must be compatible with the federation version.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "backendMetastores",
-        "A map from BackendMetastore rank to BackendMetastores from which the federation service serves metadata at query time. The map key represents the order in which BackendMetastores should be evaluated to resolve database names at query time and should be greater than or equal to zero. A BackendMetastore with a lower number will be evaluated before a BackendMetastore with a higher number.\nStructure is documented below.",
+        'backendMetastores',
+        'A map from BackendMetastore rank to BackendMetastores from which the federation service serves metadata at query time. The map key represents the order in which BackendMetastores should be evaluated to resolve database names at query time and should be greater than or equal to zero. A BackendMetastore with a lower number will be evaluated before a BackendMetastore with a higher number.\nStructure is documented below.',
         () => dataproc_MetastoreFederationBackendMetastore_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "federationId",
-        "The ID of the metastore federation. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_),\nand hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between\n3 and 63 characters.",
+        'federationId',
+        'The ID of the metastore federation. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_),\nand hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between\n3 and 63 characters.',
         () => [],
         true,
         true,

@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecification,
   appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecification_GetTypes,
-} from "./appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecification";
+} from './appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecification';
 import {
   appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationPredefinedMetricSpecification,
   appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationPredefinedMetricSpecification_GetTypes,
-} from "./appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationPredefinedMetricSpecification";
+} from './appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationPredefinedMetricSpecification';
 
 export interface appautoscaling_PolicyTargetTrackingScalingPolicyConfiguration {
   // Target value for the metric.
@@ -38,8 +38,8 @@ export function appautoscaling_PolicyTargetTrackingScalingPolicyConfiguration_Ge
   return [
     new DynamicUIProps(
       InputType.Object,
-      "predefinedMetricSpecification",
-      "Predefined metric. See supported fields below.",
+      'predefinedMetricSpecification',
+      'Predefined metric. See supported fields below.',
       () =>
         appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationPredefinedMetricSpecification_GetTypes(),
       false,
@@ -47,32 +47,32 @@ export function appautoscaling_PolicyTargetTrackingScalingPolicyConfiguration_Ge
     ),
     new DynamicUIProps(
       InputType.Number,
-      "scaleInCooldown",
-      "Amount of time, in seconds, after a scale in activity completes before another scale in activity can start.",
+      'scaleInCooldown',
+      'Amount of time, in seconds, after a scale in activity completes before another scale in activity can start.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "scaleOutCooldown",
-      "Amount of time, in seconds, after a scale out activity completes before another scale out activity can start.",
+      'scaleOutCooldown',
+      'Amount of time, in seconds, after a scale out activity completes before another scale out activity can start.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "targetValue",
-      "Target value for the metric.",
+      'targetValue',
+      'Target value for the metric.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "customizedMetricSpecification",
-      "Custom CloudWatch metric. Documentation can be found  at: [AWS Customized Metric Specification](https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CustomizedMetricSpecification.html). See supported fields below.",
+      'customizedMetricSpecification',
+      'Custom CloudWatch metric. Documentation can be found  at: [AWS Customized Metric Specification](https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CustomizedMetricSpecification.html). See supported fields below.',
       () =>
         appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecification_GetTypes(),
       false,
@@ -80,7 +80,7 @@ export function appautoscaling_PolicyTargetTrackingScalingPolicyConfiguration_Ge
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "disableScaleIn",
+      'disableScaleIn',
       "Whether scale in by the target tracking policy is disabled. If the value is true, scale in is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is `false`.",
       () => [],
       false,

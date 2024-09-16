@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualNodeSpecListenerTlCertificateAcm,
   appmesh_getVirtualNodeSpecListenerTlCertificateAcm_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTlCertificateAcm";
+} from './appmesh_getVirtualNodeSpecListenerTlCertificateAcm';
 import {
   appmesh_getVirtualNodeSpecListenerTlCertificateFile,
   appmesh_getVirtualNodeSpecListenerTlCertificateFile_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTlCertificateFile";
+} from './appmesh_getVirtualNodeSpecListenerTlCertificateFile';
 import {
   appmesh_getVirtualNodeSpecListenerTlCertificateSd,
   appmesh_getVirtualNodeSpecListenerTlCertificateSd_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTlCertificateSd";
+} from './appmesh_getVirtualNodeSpecListenerTlCertificateSd';
 
 export interface appmesh_getVirtualNodeSpecListenerTlCertificate {
   //
@@ -33,24 +33,24 @@ export function appmesh_getVirtualNodeSpecListenerTlCertificate_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Array,
-      "acms",
-      "",
+      'acms',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTlCertificateAcm_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "files",
-      "",
+      'files',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTlCertificateFile_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "sds",
-      "",
+      'sds',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTlCertificateSd_GetTypes(),
       true,
       false,

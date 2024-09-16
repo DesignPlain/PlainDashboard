@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridgeErrorHandlingConfig,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridgeErrorHandlingConfig_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridgeErrorHandlingConfig";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridgeErrorHandlingConfig';
 
 export interface appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridge {
   //
@@ -22,13 +22,13 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesE
   return [
     new DynamicUIProps(
       InputType.Object,
-      "errorHandlingConfig",
-      "",
+      'errorHandlingConfig',
+      '',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridgeErrorHandlingConfig_GetTypes(),
       false,
       false,
     ),
-    new DynamicUIProps(InputType.String, "object", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'object', '', () => [], true, false),
   ];
 }

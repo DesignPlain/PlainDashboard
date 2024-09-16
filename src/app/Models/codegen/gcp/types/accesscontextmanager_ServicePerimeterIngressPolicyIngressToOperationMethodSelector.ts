@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface accesscontextmanager_ServicePerimeterIngressPolicyIngressToOperationMethodSelector {
   /*
@@ -25,16 +25,16 @@ export function accesscontextmanager_ServicePerimeterIngressPolicyIngressToOpera
   return [
     new DynamicUIProps(
       InputType.String,
-      "method",
-      "Value for method should be a valid method name for the corresponding\nserviceName in `ApiOperation`. If `*` used as value for `method`, then\nALL methods and permissions are allowed.",
+      'method',
+      'Value for method should be a valid method name for the corresponding\nserviceName in `ApiOperation`. If `*` used as value for `method`, then\nALL methods and permissions are allowed.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "permission",
-      "Value for permission should be a valid Cloud IAM permission for the\ncorresponding `serviceName` in `ApiOperation`.",
+      'permission',
+      'Value for permission should be a valid Cloud IAM permission for the\ncorresponding `serviceName` in `ApiOperation`.',
       () => [],
       false,
       false,

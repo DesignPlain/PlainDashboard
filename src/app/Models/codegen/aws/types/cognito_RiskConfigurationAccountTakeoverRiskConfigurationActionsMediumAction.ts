@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cognito_RiskConfigurationAccountTakeoverRiskConfigurationActionsMediumAction {
   //
@@ -18,16 +18,16 @@ export function cognito_RiskConfigurationAccountTakeoverRiskConfigurationActions
   return [
     new DynamicUIProps(
       InputType.String,
-      "eventAction",
-      "",
+      'eventAction',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "notify",
-      "Whether to send a notification.",
+      'notify',
+      'Whether to send a notification.',
       () => [],
       true,
       false,

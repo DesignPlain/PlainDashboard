@@ -3,7 +3,7 @@
   class="TypicalCard"
   [ngClass]="{
     rectangle: isRec(),
-    group: isGroup()
+    group: isGroup(),
   }"
   cdkDragBoundary=".right"
   [cdkDragFreeDragPosition]="item.position"
@@ -20,7 +20,7 @@
     class="status"
     [ngClass]="{
       deployed: resourceStatus(ResourceStatus.Deployed),
-      errored: resourceStatus(ResourceStatus.Errored)
+      errored: resourceStatus(ResourceStatus.Errored),
     }"
   ></div>
   <div *ngIf="item.deploying" class="loader"></div>

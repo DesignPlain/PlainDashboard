@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataform_RepositoryReleaseConfigRecentScheduledReleaseRecord,
   dataform_RepositoryReleaseConfigRecentScheduledReleaseRecord_GetTypes,
-} from "../types/dataform_RepositoryReleaseConfigRecentScheduledReleaseRecord";
+} from '../types/dataform_RepositoryReleaseConfigRecentScheduledReleaseRecord';
 import {
   dataform_RepositoryReleaseConfigCodeCompilationConfig,
   dataform_RepositoryReleaseConfigCodeCompilationConfig_GetTypes,
-} from "../types/dataform_RepositoryReleaseConfigCodeCompilationConfig";
+} from '../types/dataform_RepositoryReleaseConfigCodeCompilationConfig';
 
 export interface RepositoryReleaseConfigArgs {
   /*
@@ -97,47 +97,47 @@ Git commit/tag/branch name at which the repository should be compiled. Must exis
     return [
       new DynamicUIProps(
         InputType.String,
-        "repository",
-        "A reference to the Dataform repository",
+        'repository',
+        'A reference to the Dataform repository',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "timeZone",
-        "Optional. Specifies the time zone to be used when interpreting cronSchedule. Must be a time zone name from the time zone database (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is UTC.",
+        'timeZone',
+        'Optional. Specifies the time zone to be used when interpreting cronSchedule. Must be a time zone name from the time zone database (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is UTC.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "codeCompilationConfig",
-        "Optional. If set, fields of codeCompilationConfig override the default compilation settings that are specified in dataform.json.\nStructure is documented below.",
+        'codeCompilationConfig',
+        'Optional. If set, fields of codeCompilationConfig override the default compilation settings that are specified in dataform.json.\nStructure is documented below.',
         () => dataform_RepositoryReleaseConfigCodeCompilationConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cronSchedule",
-        "Optional. Optional schedule (in cron format) for automatic creation of compilation results.",
+        'cronSchedule',
+        'Optional. Optional schedule (in cron format) for automatic creation of compilation results.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "gitCommitish",
-        "Git commit/tag/branch name at which the repository should be compiled. Must exist in the remote repository.\n\n\n- - -",
+        'gitCommitish',
+        'Git commit/tag/branch name at which the repository should be compiled. Must exist in the remote repository.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
+        'name',
         "The release's name.",
         () => [],
         false,
@@ -145,16 +145,16 @@ Git commit/tag/branch name at which the repository should be compiled. Must exis
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "A reference to the region",
+        'region',
+        'A reference to the region',
         () => [],
         false,
         true,

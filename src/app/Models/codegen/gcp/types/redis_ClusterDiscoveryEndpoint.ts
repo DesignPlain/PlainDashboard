@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   redis_ClusterDiscoveryEndpointPscConfig,
   redis_ClusterDiscoveryEndpointPscConfig_GetTypes,
-} from "./redis_ClusterDiscoveryEndpointPscConfig";
+} from './redis_ClusterDiscoveryEndpointPscConfig';
 
 export interface redis_ClusterDiscoveryEndpoint {
   // Output only. The port number of the exposed Redis endpoint.
@@ -29,24 +29,24 @@ export function redis_ClusterDiscoveryEndpoint_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "port",
-      "Output only. The port number of the exposed Redis endpoint.",
+      'port',
+      'Output only. The port number of the exposed Redis endpoint.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "pscConfig",
-      "Output only. Customer configuration for where the endpoint\nis created and accessed from.\nStructure is documented below.",
+      'pscConfig',
+      'Output only. Customer configuration for where the endpoint\nis created and accessed from.\nStructure is documented below.',
       () => redis_ClusterDiscoveryEndpointPscConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "address",
-      "Output only. The IP allocated on the consumer network for the PSC forwarding rule.",
+      'address',
+      'Output only. The IP allocated on the consumer network for the PSC forwarding rule.',
       () => [],
       false,
       false,

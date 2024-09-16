@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_VpcEndpointServicePrivateDnsNameConfiguration,
   ec2_VpcEndpointServicePrivateDnsNameConfiguration_GetTypes,
-} from "../types/ec2_VpcEndpointServicePrivateDnsNameConfiguration";
+} from '../types/ec2_VpcEndpointServicePrivateDnsNameConfiguration';
 
 export interface VpcEndpointServiceArgs {
   // Amazon Resource Names (ARNs) of one or more Network Load Balancers for the endpoint service.
@@ -86,56 +86,56 @@ export class VpcEndpointService extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "privateDnsName",
-        "The private DNS name for the service.",
+        'privateDnsName',
+        'The private DNS name for the service.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "supportedIpAddressTypes",
-        "The supported IP address types. The possible values are `ipv4` and `ipv6`.",
+        'supportedIpAddressTypes',
+        'The supported IP address types. The possible values are `ipv4` and `ipv6`.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "acceptanceRequired",
-        "Whether or not VPC endpoint connection requests to the service must be accepted by the service owner - `true` or `false`.",
+        'acceptanceRequired',
+        'Whether or not VPC endpoint connection requests to the service must be accepted by the service owner - `true` or `false`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "allowedPrincipals",
-        "The ARNs of one or more principals allowed to discover the endpoint service.",
+        'allowedPrincipals',
+        'The ARNs of one or more principals allowed to discover the endpoint service.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "gatewayLoadBalancerArns",
-        "Amazon Resource Names (ARNs) of one or more Gateway Load Balancers for the endpoint service.",
+        'gatewayLoadBalancerArns',
+        'Amazon Resource Names (ARNs) of one or more Gateway Load Balancers for the endpoint service.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "networkLoadBalancerArns",
-        "Amazon Resource Names (ARNs) of one or more Network Load Balancers for the endpoint service.",
+        'networkLoadBalancerArns',
+        'Amazon Resource Names (ARNs) of one or more Network Load Balancers for the endpoint service.',
         () => InputType_String_GetTypes(),
         false,
         false,

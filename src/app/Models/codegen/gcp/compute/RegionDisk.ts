@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_RegionDiskAsyncPrimaryDisk,
   compute_RegionDiskAsyncPrimaryDisk_GetTypes,
-} from "../types/compute_RegionDiskAsyncPrimaryDisk";
+} from '../types/compute_RegionDiskAsyncPrimaryDisk';
 import {
   compute_RegionDiskSourceSnapshotEncryptionKey,
   compute_RegionDiskSourceSnapshotEncryptionKey_GetTypes,
-} from "../types/compute_RegionDiskSourceSnapshotEncryptionKey";
+} from '../types/compute_RegionDiskSourceSnapshotEncryptionKey';
 import {
   compute_RegionDiskGuestOsFeature,
   compute_RegionDiskGuestOsFeature_GetTypes,
-} from "../types/compute_RegionDiskGuestOsFeature";
+} from '../types/compute_RegionDiskGuestOsFeature';
 import {
   compute_RegionDiskDiskEncryptionKey,
   compute_RegionDiskDiskEncryptionKey_GetTypes,
-} from "../types/compute_RegionDiskDiskEncryptionKey";
+} from '../types/compute_RegionDiskDiskEncryptionKey';
 
 export interface RegionDiskArgs {
   // Any applicable license URI.
@@ -345,23 +345,23 @@ or the size of the snapshot.
     return [
       new DynamicUIProps(
         InputType.Array,
-        "replicaZones",
-        "URLs of the zones where the disk should be replicated to.\n\n\n- - -",
+        'replicaZones',
+        'URLs of the zones where the disk should be replicated to.\n\n\n- - -',
         () => InputType_String_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "interface",
-        "Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI.\n\n> **Warning:** `interface` is deprecated and will be removed in a future major release. This field is no longer used and can be safely removed from your configurations; disk interfaces are automatically determined on attachment.",
+        'interface',
+        'Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI.\n\n> **Warning:** `interface` is deprecated and will be removed in a future major release. This field is no longer used and can be safely removed from your configurations; disk interfaces are automatically determined on attachment.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "snapshot",
+        'snapshot',
         "The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For\nexample, the following are valid values: *\n'https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot' *\n'projects/project/global/snapshots/snapshot' * 'global/snapshots/snapshot' * 'snapshot'",
         () => [],
         false,
@@ -369,111 +369,111 @@ or the size of the snapshot.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "asyncPrimaryDisk",
-        "A nested object resource\nStructure is documented below.",
+        'asyncPrimaryDisk',
+        'A nested object resource\nStructure is documented below.',
         () => compute_RegionDiskAsyncPrimaryDisk_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource. Provide this property when\nyou create the resource.",
+        'description',
+        'An optional description of this resource. Provide this property when\nyou create the resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "guestOsFeatures",
-        "A list of features to enable on the guest operating system.\nApplicable only for bootable disks.\nStructure is documented below.",
+        'guestOsFeatures',
+        'A list of features to enable on the guest operating system.\nApplicable only for bootable disks.\nStructure is documented below.',
         () => compute_RegionDiskGuestOsFeature_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "URL of the disk type resource describing which disk type to use to\ncreate the disk. Provide this when creating the disk.",
+        'type',
+        'URL of the disk type resource describing which disk type to use to\ncreate the disk. Provide this when creating the disk.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.",
+        'name',
+        'Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceDisk",
-        "The source disk used to create this disk. You can provide this as a partial or full URL to the resource.\nFor example, the following are valid values:\n* https://www.googleapis.com/compute/v1/projects/{project}/zones/{zone}/disks/{disk}\n* https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/disks/{disk}\n* projects/{project}/zones/{zone}/disks/{disk}\n* projects/{project}/regions/{region}/disks/{disk}\n* zones/{zone}/disks/{disk}\n* regions/{region}/disks/{disk}",
+        'sourceDisk',
+        'The source disk used to create this disk. You can provide this as a partial or full URL to the resource.\nFor example, the following are valid values:\n* https://www.googleapis.com/compute/v1/projects/{project}/zones/{zone}/disks/{disk}\n* https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/disks/{disk}\n* projects/{project}/zones/{zone}/disks/{disk}\n* projects/{project}/regions/{region}/disks/{disk}\n* zones/{zone}/disks/{disk}\n* regions/{region}/disks/{disk}',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Labels to apply to this disk.  A list of key->value pairs.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Labels to apply to this disk.  A list of key->value pairs.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "sourceSnapshotEncryptionKey",
-        "The customer-supplied encryption key of the source snapshot. Required\nif the source snapshot is protected by a customer-supplied encryption\nkey.\nStructure is documented below.",
+        'sourceSnapshotEncryptionKey',
+        'The customer-supplied encryption key of the source snapshot. Required\nif the source snapshot is protected by a customer-supplied encryption\nkey.\nStructure is documented below.',
         () => compute_RegionDiskSourceSnapshotEncryptionKey_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "diskEncryptionKey",
-        "Encrypts the disk using a customer-supplied encryption key.\nAfter you encrypt a disk with a customer-supplied key, you must\nprovide the same key if you use the disk later (e.g. to create a disk\nsnapshot or an image, or to attach the disk to a virtual machine).\nCustomer-supplied encryption keys do not protect access to metadata of\nthe disk.\nIf you do not provide an encryption key when creating the disk, then\nthe disk will be encrypted using an automatically generated key and\nyou do not need to provide a key to use the disk later.\nStructure is documented below.",
+        'diskEncryptionKey',
+        'Encrypts the disk using a customer-supplied encryption key.\nAfter you encrypt a disk with a customer-supplied key, you must\nprovide the same key if you use the disk later (e.g. to create a disk\nsnapshot or an image, or to attach the disk to a virtual machine).\nCustomer-supplied encryption keys do not protect access to metadata of\nthe disk.\nIf you do not provide an encryption key when creating the disk, then\nthe disk will be encrypted using an automatically generated key and\nyou do not need to provide a key to use the disk later.\nStructure is documented below.',
         () => compute_RegionDiskDiskEncryptionKey_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "A reference to the region where the disk resides.",
+        'region',
+        'A reference to the region where the disk resides.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "licenses",
-        "Any applicable license URI.",
+        'licenses',
+        'Any applicable license URI.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "size",
-        "Size of the persistent disk, specified in GB. You can specify this\nfield when creating a persistent disk using the sourceImage or\nsourceSnapshot parameter, or specify it alone to create an empty\npersistent disk.\nIf you specify this field along with sourceImage or sourceSnapshot,\nthe value of sizeGb must not be less than the size of the sourceImage\nor the size of the snapshot.",
+        'size',
+        'Size of the persistent disk, specified in GB. You can specify this\nfield when creating a persistent disk using the sourceImage or\nsourceSnapshot parameter, or specify it alone to create an empty\npersistent disk.\nIf you specify this field along with sourceImage or sourceSnapshot,\nthe value of sizeGb must not be less than the size of the sourceImage\nor the size of the snapshot.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "physicalBlockSizeBytes",
+        'physicalBlockSizeBytes',
         "Physical block size of the persistent disk, in bytes. If not present\nin a request, a default value is used. Currently supported sizes\nare 4096 and 16384, other sizes may be added in the future.\nIf an unsupported value is requested, the error message will list\nthe supported values for the caller's project.",
         () => [],
         false,

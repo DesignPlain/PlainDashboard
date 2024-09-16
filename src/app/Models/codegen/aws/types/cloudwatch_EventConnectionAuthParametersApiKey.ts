@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudwatch_EventConnectionAuthParametersApiKey {
   // Header Name.
@@ -18,16 +18,16 @@ export function cloudwatch_EventConnectionAuthParametersApiKey_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.String,
-      "key",
-      "Header Name.",
+      'key',
+      'Header Name.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "Header Value. Created and stored in AWS Secrets Manager.",
+      'value',
+      'Header Value. Created and stored in AWS Secrets Manager.',
       () => [],
       true,
       false,

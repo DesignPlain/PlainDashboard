@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ses_EventDestinationSnsDestination,
   ses_EventDestinationSnsDestination_GetTypes,
-} from "../types/ses_EventDestinationSnsDestination";
+} from '../types/ses_EventDestinationSnsDestination';
 import {
   ses_EventDestinationCloudwatchDestination,
   ses_EventDestinationCloudwatchDestination_GetTypes,
-} from "../types/ses_EventDestinationCloudwatchDestination";
+} from '../types/ses_EventDestinationCloudwatchDestination';
 import {
   ses_EventDestinationKinesisDestination,
   ses_EventDestinationKinesisDestination_GetTypes,
-} from "../types/ses_EventDestinationKinesisDestination";
+} from '../types/ses_EventDestinationKinesisDestination';
 
 export interface EventDestinationArgs {
   /*
@@ -78,15 +78,15 @@ Send the events to an SNS Topic destination
     return [
       new DynamicUIProps(
         InputType.Object,
-        "kinesisDestination",
-        "Send the events to a kinesis firehose destination",
+        'kinesisDestination',
+        'Send the events to a kinesis firehose destination',
         () => ses_EventDestinationKinesisDestination_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "matchingTypes",
+        'matchingTypes',
         'A list of matching types. May be any of `"send"`, `"reject"`, `"bounce"`, `"complaint"`, `"delivery"`, `"open"`, `"click"`, or `"renderingFailure"`.',
         () => InputType_String_GetTypes(),
         true,
@@ -94,15 +94,15 @@ Send the events to an SNS Topic destination
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the event destination",
+        'name',
+        'The name of the event destination',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "snsDestination",
+        'snsDestination',
         'Send the events to an SNS Topic destination\n\n> **NOTE:** You can specify `"cloudwatch_destination"` or `"kinesis_destination"` but not both',
         () => ses_EventDestinationSnsDestination_GetTypes(),
         false,
@@ -110,24 +110,24 @@ Send the events to an SNS Topic destination
       ),
       new DynamicUIProps(
         InputType.Array,
-        "cloudwatchDestinations",
-        "CloudWatch destination for the events",
+        'cloudwatchDestinations',
+        'CloudWatch destination for the events',
         () => ses_EventDestinationCloudwatchDestination_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "configurationSetName",
-        "The name of the configuration set",
+        'configurationSetName',
+        'The name of the configuration set',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enabled",
-        "If true, the event destination will be enabled",
+        'enabled',
+        'If true, the event destination will be enabled',
         () => [],
         false,
         true,

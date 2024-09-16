@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsIntentClosingSettingConditional,
   lex_V2modelsIntentClosingSettingConditional_GetTypes,
-} from "./lex_V2modelsIntentClosingSettingConditional";
+} from './lex_V2modelsIntentClosingSettingConditional';
 import {
   lex_V2modelsIntentClosingSettingNextStep,
   lex_V2modelsIntentClosingSettingNextStep_GetTypes,
-} from "./lex_V2modelsIntentClosingSettingNextStep";
+} from './lex_V2modelsIntentClosingSettingNextStep';
 import {
   lex_V2modelsIntentClosingSettingClosingResponse,
   lex_V2modelsIntentClosingSettingClosingResponse_GetTypes,
-} from "./lex_V2modelsIntentClosingSettingClosingResponse";
+} from './lex_V2modelsIntentClosingSettingClosingResponse';
 
 export interface lex_V2modelsIntentClosingSetting {
   // Whether an intent's closing response is used. When this field is false, the closing response isn't sent to the user. If the active field isn't specified, the default is true.
@@ -36,15 +36,15 @@ export function lex_V2modelsIntentClosingSetting_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "closingResponse",
-      "Configuration block for response that Amazon Lex sends to the user when the intent is complete. See `closing_response`.",
+      'closingResponse',
+      'Configuration block for response that Amazon Lex sends to the user when the intent is complete. See `closing_response`.',
       () => lex_V2modelsIntentClosingSettingClosingResponse_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "conditional",
+      'conditional',
       "Configuration block for list of conditional branches associated with the intent's closing response. These branches are executed when the `next_step` attribute is set to `EvalutateConditional`. See `conditional`.",
       () => lex_V2modelsIntentClosingSettingConditional_GetTypes(),
       false,
@@ -52,7 +52,7 @@ export function lex_V2modelsIntentClosingSetting_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "nextStep",
+      'nextStep',
       "Next step that the bot executes after playing the intent's closing response. See `next_step`.",
       () => lex_V2modelsIntentClosingSettingNextStep_GetTypes(),
       false,
@@ -60,7 +60,7 @@ export function lex_V2modelsIntentClosingSetting_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "active",
+      'active',
       "Whether an intent's closing response is used. When this field is false, the closing response isn't sent to the user. If the active field isn't specified, the default is true.",
       () => [],
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface glue_ClassifierCsvClassifier {
   // A list of strings representing column names.
@@ -39,63 +39,63 @@ export function glue_ClassifierCsvClassifier_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "quoteSymbol",
-      "A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.",
+      'quoteSymbol',
+      'A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "serde",
-      "The SerDe for processing CSV. Valid values are `OpenCSVSerDe`, `LazySimpleSerDe`, `None`.",
+      'serde',
+      'The SerDe for processing CSV. Valid values are `OpenCSVSerDe`, `LazySimpleSerDe`, `None`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "customDatatypes",
-      "A list of supported custom datatypes. Valid values are `BINARY`, `BOOLEAN`, `DATE`, `DECIMAL`, `DOUBLE`, `FLOAT`, `INT`, `LONG`, `SHORT`, `STRING`, `TIMESTAMP`.",
+      'customDatatypes',
+      'A list of supported custom datatypes. Valid values are `BINARY`, `BOOLEAN`, `DATE`, `DECIMAL`, `DOUBLE`, `FLOAT`, `INT`, `LONG`, `SHORT`, `STRING`, `TIMESTAMP`.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "delimiter",
-      "The delimiter used in the CSV to separate columns.",
+      'delimiter',
+      'The delimiter used in the CSV to separate columns.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "disableValueTrimming",
-      "Specifies whether to trim column values.",
+      'disableValueTrimming',
+      'Specifies whether to trim column values.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "allowSingleColumn",
-      "Enables the processing of files that contain only one column.",
+      'allowSingleColumn',
+      'Enables the processing of files that contain only one column.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "headers",
-      "A list of strings representing column names.",
+      'headers',
+      'A list of strings representing column names.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "containsHeader",
+      'containsHeader',
       'Indicates whether the CSV file contains a header. This can be one of "ABSENT", "PRESENT", or "UNKNOWN".',
       () => [],
       false,
@@ -103,8 +103,8 @@ export function glue_ClassifierCsvClassifier_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "customDatatypeConfigured",
-      "Enables the custom datatype to be configured.",
+      'customDatatypeConfigured',
+      'Enables the custom datatype to be configured.',
       () => [],
       false,
       false,

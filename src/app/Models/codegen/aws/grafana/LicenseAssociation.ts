@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface LicenseAssociationArgs {
   // A token from Grafana Labs that ties your AWS account with a Grafana Labs account.
@@ -37,24 +37,24 @@ export class LicenseAssociation extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "grafanaToken",
-        "A token from Grafana Labs that ties your AWS account with a Grafana Labs account.",
+        'grafanaToken',
+        'A token from Grafana Labs that ties your AWS account with a Grafana Labs account.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "licenseType",
-        "The type of license for the workspace license association. Valid values are `ENTERPRISE` and `ENTERPRISE_FREE_TRIAL`.",
+        'licenseType',
+        'The type of license for the workspace license association. Valid values are `ENTERPRISE` and `ENTERPRISE_FREE_TRIAL`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "workspaceId",
-        "The workspace id.",
+        'workspaceId',
+        'The workspace id.',
         () => [],
         true,
         true,

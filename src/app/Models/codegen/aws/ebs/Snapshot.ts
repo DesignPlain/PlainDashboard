@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface SnapshotArgs {
   // Indicates whether to permanently restore an archived snapshot.
@@ -79,56 +79,56 @@ export class Snapshot extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "volumeId",
-        "The Volume ID of which to make a snapshot.",
+        'volumeId',
+        'The Volume ID of which to make a snapshot.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of what the snapshot is.",
+        'description',
+        'A description of what the snapshot is.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "outpostArn",
-        "The Amazon Resource Name (ARN) of the Outpost on which to create a local snapshot.",
+        'outpostArn',
+        'The Amazon Resource Name (ARN) of the Outpost on which to create a local snapshot.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "permanentRestore",
-        "Indicates whether to permanently restore an archived snapshot.",
+        'permanentRestore',
+        'Indicates whether to permanently restore an archived snapshot.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "storageTier",
-        "The name of the storage tier. Valid values are `archive` and `standard`. Default value is `standard`.",
+        'storageTier',
+        'The name of the storage tier. Valid values are `archive` and `standard`. Default value is `standard`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the snapshot. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the snapshot. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "temporaryRestoreDays",
-        "Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.",
+        'temporaryRestoreDays',
+        'Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.',
         () => [],
         false,
         false,

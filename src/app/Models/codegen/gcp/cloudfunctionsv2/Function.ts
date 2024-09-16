@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudfunctionsv2_FunctionBuildConfig,
   cloudfunctionsv2_FunctionBuildConfig_GetTypes,
-} from "../types/cloudfunctionsv2_FunctionBuildConfig";
+} from '../types/cloudfunctionsv2_FunctionBuildConfig';
 import {
   cloudfunctionsv2_FunctionEventTrigger,
   cloudfunctionsv2_FunctionEventTrigger_GetTypes,
-} from "../types/cloudfunctionsv2_FunctionEventTrigger";
+} from '../types/cloudfunctionsv2_FunctionEventTrigger';
 import {
   cloudfunctionsv2_FunctionServiceConfig,
   cloudfunctionsv2_FunctionServiceConfig_GetTypes,
-} from "../types/cloudfunctionsv2_FunctionServiceConfig";
+} from '../types/cloudfunctionsv2_FunctionServiceConfig';
 
 export interface FunctionArgs {
   /*
@@ -160,72 +160,72 @@ It must match the pattern projects/{project}/locations/{location}/keyRings/{key_
     return [
       new DynamicUIProps(
         InputType.Object,
-        "buildConfig",
-        "Describes the Build step of the function that builds a container\nfrom the given source.\nStructure is documented below.",
+        'buildConfig',
+        'Describes the Build step of the function that builds a container\nfrom the given source.\nStructure is documented below.',
         () => cloudfunctionsv2_FunctionBuildConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "kmsKeyName",
-        "Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt function resources.\nIt must match the pattern projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}.",
+        'kmsKeyName',
+        'Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt function resources.\nIt must match the pattern projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "A set of key/value label pairs associated with this Cloud Function.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'A set of key/value label pairs associated with this Cloud Function.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of this cloud function.\n\n\n- - -",
+        'location',
+        'The location of this cloud function.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "User-provided description of a function.",
+        'description',
+        'User-provided description of a function.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "eventTrigger",
-        "An Eventarc trigger managed by Google Cloud Functions that fires events in\nresponse to a condition in another service.\nStructure is documented below.",
+        'eventTrigger',
+        'An Eventarc trigger managed by Google Cloud Functions that fires events in\nresponse to a condition in another service.\nStructure is documented below.',
         () => cloudfunctionsv2_FunctionEventTrigger_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A user-defined name of the function. Function names must\nbe unique globally and match pattern `projects/*/locations/*/functions/*`.",
+        'name',
+        'A user-defined name of the function. Function names must\nbe unique globally and match pattern `projects/*/locations/*/functions/*`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "serviceConfig",
-        "Describes the Service being deployed.\nStructure is documented below.",
+        'serviceConfig',
+        'Describes the Service being deployed.\nStructure is documented below.',
         () => cloudfunctionsv2_FunctionServiceConfig_GetTypes(),
         false,
         false,

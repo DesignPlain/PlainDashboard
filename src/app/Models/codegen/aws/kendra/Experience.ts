@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kendra_ExperienceConfiguration,
   kendra_ExperienceConfiguration_GetTypes,
-} from "../types/kendra_ExperienceConfiguration";
+} from '../types/kendra_ExperienceConfiguration';
 import {
   kendra_ExperienceEndpoint,
   kendra_ExperienceEndpoint_GetTypes,
-} from "../types/kendra_ExperienceEndpoint";
+} from '../types/kendra_ExperienceEndpoint';
 
 export interface ExperienceArgs {
   /*
@@ -71,40 +71,40 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "indexId",
-        "The identifier of the index for your Amazon Kendra experience.",
+        'indexId',
+        'The identifier of the index for your Amazon Kendra experience.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A name for your Amazon Kendra experience.",
+        'name',
+        'A name for your Amazon Kendra experience.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "roleArn",
-        "The Amazon Resource Name (ARN) of a role with permission to access `Query API`, `QuerySuggestions API`, `SubmitFeedback API`, and `AWS SSO` that stores your user and group information. For more information, see [IAM roles for Amazon Kendra](https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html).\n\nThe following arguments are optional:",
+        'roleArn',
+        'The Amazon Resource Name (ARN) of a role with permission to access `Query API`, `QuerySuggestions API`, `SubmitFeedback API`, and `AWS SSO` that stores your user and group information. For more information, see [IAM roles for Amazon Kendra](https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html).\n\nThe following arguments are optional:',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "configuration",
-        "Configuration information for your Amazon Kendra experience. The provider will only perform drift detection of its value when present in a configuration. Detailed below.",
+        'configuration',
+        'Configuration information for your Amazon Kendra experience. The provider will only perform drift detection of its value when present in a configuration. Detailed below.',
         () => kendra_ExperienceConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description for your Amazon Kendra experience.",
+        'description',
+        'A description for your Amazon Kendra experience.',
         () => [],
         false,
         false,

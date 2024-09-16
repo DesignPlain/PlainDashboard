@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface emrserverless_ApplicationMaximumCapacity {
   // The maximum allowed CPU for an application.
@@ -21,24 +21,24 @@ export function emrserverless_ApplicationMaximumCapacity_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.String,
-      "cpu",
-      "The maximum allowed CPU for an application.",
+      'cpu',
+      'The maximum allowed CPU for an application.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "disk",
-      "The maximum allowed disk for an application.",
+      'disk',
+      'The maximum allowed disk for an application.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "memory",
-      "The maximum allowed resources for an application.",
+      'memory',
+      'The maximum allowed resources for an application.',
       () => [],
       true,
       false,

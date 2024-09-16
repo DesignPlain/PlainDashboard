@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionUrlRewrite,
   networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionUrlRewrite_GetTypes,
-} from "./networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionUrlRewrite";
+} from './networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionUrlRewrite';
 import {
   networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy,
   networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy_GetTypes,
-} from "./networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy";
+} from './networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy';
 import {
   networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCorsPolicy,
   networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCorsPolicy_GetTypes,
-} from "./networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCorsPolicy";
+} from './networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCorsPolicy';
 
 export interface networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteAction {
   /*
@@ -42,8 +42,8 @@ export function networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRoute
   return [
     new DynamicUIProps(
       InputType.Object,
-      "cdnPolicy",
-      "The policy to use for defining caching and signed request behaviour for requests that match this route.\nStructure is documented below.",
+      'cdnPolicy',
+      'The policy to use for defining caching and signed request behaviour for requests that match this route.\nStructure is documented below.',
       () =>
         networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy_GetTypes(),
       false,
@@ -51,8 +51,8 @@ export function networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRoute
     ),
     new DynamicUIProps(
       InputType.Object,
-      "corsPolicy",
-      "CORSPolicy defines Cross-Origin-Resource-Sharing configuration, including which CORS response headers will be set.\nStructure is documented below.",
+      'corsPolicy',
+      'CORSPolicy defines Cross-Origin-Resource-Sharing configuration, including which CORS response headers will be set.\nStructure is documented below.',
       () =>
         networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCorsPolicy_GetTypes(),
       false,
@@ -60,8 +60,8 @@ export function networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRoute
     ),
     new DynamicUIProps(
       InputType.Object,
-      "urlRewrite",
-      "The URL rewrite configuration for requests that match this route.\nStructure is documented below.",
+      'urlRewrite',
+      'The URL rewrite configuration for requests that match this route.\nStructure is documented below.',
       () =>
         networkservices_EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionUrlRewrite_GetTypes(),
       false,

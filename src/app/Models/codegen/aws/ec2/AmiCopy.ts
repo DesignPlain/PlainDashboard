@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_AmiCopyEbsBlockDevice,
   ec2_AmiCopyEbsBlockDevice_GetTypes,
-} from "../types/ec2_AmiCopyEbsBlockDevice";
+} from '../types/ec2_AmiCopyEbsBlockDevice';
 import {
   ec2_AmiCopyEphemeralBlockDevice,
   ec2_AmiCopyEphemeralBlockDevice_GetTypes,
-} from "../types/ec2_AmiCopyEphemeralBlockDevice";
+} from '../types/ec2_AmiCopyEphemeralBlockDevice';
 
 export interface AmiCopyArgs {
   // Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
@@ -202,88 +202,88 @@ changes the set of further arguments that are required, as described below.
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "kmsKeyId",
-        "Full ARN of the KMS Key to use when encrypting the snapshots of an image during a copy operation. If not specified, then the default AWS KMS Key will be used",
+        'kmsKeyId',
+        'Full ARN of the KMS Key to use when encrypting the snapshots of an image during a copy operation. If not specified, then the default AWS KMS Key will be used',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceAmiId",
-        "Id of the AMI to copy. This id must be valid in the region\ngiven by `source_ami_region`.",
+        'sourceAmiId',
+        'Id of the AMI to copy. This id must be valid in the region\ngiven by `source_ami_region`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "encrypted",
-        "Whether the destination snapshots of the copied image should be encrypted. Defaults to `false`",
+        'encrypted',
+        'Whether the destination snapshots of the copied image should be encrypted. Defaults to `false`',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ephemeralBlockDevices",
-        "Nested block describing an ephemeral block device that\nshould be attached to created instances. The structure of this block is described below.",
+        'ephemeralBlockDevices',
+        'Nested block describing an ephemeral block device that\nshould be attached to created instances. The structure of this block is described below.',
         () => ec2_AmiCopyEphemeralBlockDevice_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Longer, human-readable description for the AMI.",
+        'description',
+        'Longer, human-readable description for the AMI.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ebsBlockDevices",
-        "Nested block describing an EBS block device that should be\nattached to created instances. The structure of this block is described below.",
+        'ebsBlockDevices',
+        'Nested block describing an EBS block device that should be\nattached to created instances. The structure of this block is described below.',
         () => ec2_AmiCopyEbsBlockDevice_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Region-unique name for the AMI.",
+        'name',
+        'Region-unique name for the AMI.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceAmiRegion",
-        "Region from which the AMI will be copied. This may be the\nsame as the AWS provider region in order to create a copy within the same region.",
+        'sourceAmiRegion',
+        'Region from which the AMI will be copied. This may be the\nsame as the AWS provider region in order to create a copy within the same region.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "deprecationTime",
-        "Date and time to deprecate the AMI. If you specified a value for seconds, Amazon EC2 rounds the seconds to the nearest minute. Valid values: [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`)",
+        'deprecationTime',
+        'Date and time to deprecate the AMI. If you specified a value for seconds, Amazon EC2 rounds the seconds to the nearest minute. Valid values: [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`)',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "destinationOutpostArn",
-        "ARN of the Outpost to which to copy the AMI.\nOnly specify this parameter when copying an AMI from an AWS Region to an Outpost. The AMI must be in the Region of the destination Outpost.",
+        'destinationOutpostArn',
+        'ARN of the Outpost to which to copy the AMI.\nOnly specify this parameter when copying an AMI from an AWS Region to an Outpost. The AMI must be in the Region of the destination Outpost.',
         () => [],
         false,
         false,

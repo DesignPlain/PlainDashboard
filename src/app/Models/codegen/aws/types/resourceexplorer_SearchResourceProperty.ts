@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface resourceexplorer_SearchResourceProperty {
   // Name of this property of the resource.
@@ -21,24 +21,24 @@ export function resourceexplorer_SearchResourceProperty_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.String,
-      "lastReportedAt",
-      "The date and time that the information about this resource property was last updated.",
+      'lastReportedAt',
+      'The date and time that the information about this resource property was last updated.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of this property of the resource.",
+      'name',
+      'Name of this property of the resource.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "data",
-      "Details about this property. The content of this field is a JSON object that varies based on the resource type.",
+      'data',
+      'Details about this property. The content of this field is a JSON object that varies based on the resource type.',
       () => [],
       true,
       false,

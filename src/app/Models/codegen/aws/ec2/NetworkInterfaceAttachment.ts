@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface NetworkInterfaceAttachmentArgs {
   // Network interface index (int).
@@ -37,24 +37,24 @@ export class NetworkInterfaceAttachment extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Number,
-        "deviceIndex",
-        "Network interface index (int).",
+        'deviceIndex',
+        'Network interface index (int).',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceId",
-        "Instance ID to attach.",
+        'instanceId',
+        'Instance ID to attach.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "networkInterfaceId",
-        "ENI ID to attach.",
+        'networkInterfaceId',
+        'ENI ID to attach.',
         () => [],
         true,
         true,

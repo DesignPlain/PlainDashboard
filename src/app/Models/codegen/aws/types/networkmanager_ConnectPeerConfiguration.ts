@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkmanager_ConnectPeerConfigurationBgpConfiguration,
   networkmanager_ConnectPeerConfigurationBgpConfiguration_GetTypes,
-} from "./networkmanager_ConnectPeerConfigurationBgpConfiguration";
+} from './networkmanager_ConnectPeerConfigurationBgpConfiguration';
 
 export interface networkmanager_ConnectPeerConfiguration {
   // The inside IP addresses used for BGP peering. Required when the Connect attachment protocol is `GRE`. See `aws.networkmanager.ConnectAttachment` for details.
@@ -35,40 +35,40 @@ export function networkmanager_ConnectPeerConfiguration_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.String,
-      "coreNetworkAddress",
-      "A Connect peer core network address.",
+      'coreNetworkAddress',
+      'A Connect peer core network address.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "insideCidrBlocks",
-      "The inside IP addresses used for BGP peering. Required when the Connect attachment protocol is `GRE`. See `aws.networkmanager.ConnectAttachment` for details.",
+      'insideCidrBlocks',
+      'The inside IP addresses used for BGP peering. Required when the Connect attachment protocol is `GRE`. See `aws.networkmanager.ConnectAttachment` for details.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "peerAddress",
-      "The Connect peer address.\n\nThe following arguments are optional:",
+      'peerAddress',
+      'The Connect peer address.\n\nThe following arguments are optional:',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "protocol",
-      "",
+      'protocol',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "bgpConfigurations",
-      "",
+      'bgpConfigurations',
+      '',
       () => networkmanager_ConnectPeerConfigurationBgpConfiguration_GetTypes(),
       false,
       false,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificatemanager_DnsAuthorizationDnsResourceRecord,
   certificatemanager_DnsAuthorizationDnsResourceRecord_GetTypes,
-} from "../types/certificatemanager_DnsAuthorizationDnsResourceRecord";
+} from '../types/certificatemanager_DnsAuthorizationDnsResourceRecord';
 
 export interface DnsAuthorizationArgs {
   // A human-readable description of the resource.
@@ -106,7 +106,7 @@ and default labels configured on the provider.
     return [
       new DynamicUIProps(
         InputType.String,
-        "location",
+        'location',
         'The Certificate Manager location. If not specified, "global" is used.',
         () => [],
         false,
@@ -114,31 +114,31 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the resource; provided by the client when the resource is created.\nThe name must be 1-64 characters long, and match the regular expression [a-zA-Z][a-zA-Z0-9_-]* which means the first character must be a letter,\nand all following characters must be a dash, underscore, letter or digit.\n\n\n- - -",
+        'name',
+        'Name of the resource; provided by the client when the resource is created.\nThe name must be 1-64 characters long, and match the regular expression [a-zA-Z][a-zA-Z0-9_-]* which means the first character must be a letter,\nand all following characters must be a dash, underscore, letter or digit.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A human-readable description of the resource.",
+        'description',
+        'A human-readable description of the resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "domain",
+        'domain',
         'A domain which is being authorized. A DnsAuthorization resource covers a\nsingle domain and its wildcard, e.g. authorization for "example.com" can\nbe used to issue certificates for "example.com" and "*.example.com".',
         () => [],
         true,
@@ -146,8 +146,8 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Set of label tags associated with the DNS Authorization resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Set of label tags associated with the DNS Authorization resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,

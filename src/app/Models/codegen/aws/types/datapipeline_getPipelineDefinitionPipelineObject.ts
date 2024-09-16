@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datapipeline_getPipelineDefinitionPipelineObjectField,
   datapipeline_getPipelineDefinitionPipelineObjectField_GetTypes,
-} from "./datapipeline_getPipelineDefinitionPipelineObjectField";
+} from './datapipeline_getPipelineDefinitionPipelineObjectField';
 
 export interface datapipeline_getPipelineDefinitionPipelineObject {
   // Key-value pairs that define the properties of the object. See below
@@ -25,24 +25,24 @@ export function datapipeline_getPipelineDefinitionPipelineObject_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.Array,
-      "fields",
-      "Key-value pairs that define the properties of the object. See below",
+      'fields',
+      'Key-value pairs that define the properties of the object. See below',
       () => datapipeline_getPipelineDefinitionPipelineObjectField_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "id",
-      "ID of the object.",
+      'id',
+      'ID of the object.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "ARN of the storage connector.",
+      'name',
+      'ARN of the storage connector.',
       () => [],
       true,
       false,

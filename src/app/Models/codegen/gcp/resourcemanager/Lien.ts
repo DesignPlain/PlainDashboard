@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface LienArgs {
   /*
@@ -85,15 +85,15 @@ prefix (e.g. "projects/my-project-name").
     return [
       new DynamicUIProps(
         InputType.String,
-        "origin",
-        "A stable, user-visible/meaningful string identifying the origin\nof the Lien, intended to be inspected programmatically. Maximum length of\n200 characters.",
+        'origin',
+        'A stable, user-visible/meaningful string identifying the origin\nof the Lien, intended to be inspected programmatically. Maximum length of\n200 characters.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
+        'parent',
         'A reference to the resource this Lien is attached to.\nThe server will validate the parent against those for which Liens are supported.\nSince a variety of objects can have Liens against them, you must provide the type\nprefix (e.g. "projects/my-project-name").',
         () => [],
         true,
@@ -101,15 +101,15 @@ prefix (e.g. "projects/my-project-name").
       ),
       new DynamicUIProps(
         InputType.String,
-        "reason",
-        "Concise user-visible strings indicating why an action cannot be performed\non a resource. Maximum length of 200 characters.",
+        'reason',
+        'Concise user-visible strings indicating why an action cannot be performed\non a resource. Maximum length of 200 characters.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "restrictions",
+        'restrictions',
         "The types of operations which should be blocked as a result of this Lien.\nEach value should correspond to an IAM permission. The server will validate\nthe permissions against those for which Liens are supported.  An empty\nlist is meaningless and will be rejected.\ne.g. ['resourcemanager.projects.delete']\n\n\n- - -",
         () => InputType_String_GetTypes(),
         true,

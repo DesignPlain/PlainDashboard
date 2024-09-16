@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2_getLaunchTemplateBlockDeviceMappingEb {
   //
@@ -36,50 +36,50 @@ export function ec2_getLaunchTemplateBlockDeviceMappingEb_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.String,
-      "encrypted",
-      "",
+      'encrypted',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.Number, "iops", "", () => [], true, false),
-    new DynamicUIProps(InputType.String, "kmsKeyId", "", () => [], true, false),
+    new DynamicUIProps(InputType.Number, 'iops', '', () => [], true, false),
+    new DynamicUIProps(InputType.String, 'kmsKeyId', '', () => [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "snapshotId",
-      "",
+      'snapshotId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "throughput",
-      "",
+      'throughput',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "volumeSize",
-      "",
+      'volumeSize',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "volumeType",
-      "",
+      'volumeType',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "deleteOnTermination",
-      "",
+      'deleteOnTermination',
+      '',
       () => [],
       true,
       false,

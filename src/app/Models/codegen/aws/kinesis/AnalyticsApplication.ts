@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kinesis_AnalyticsApplicationInputs,
   kinesis_AnalyticsApplicationInputs_GetTypes,
-} from "../types/kinesis_AnalyticsApplicationInputs";
+} from '../types/kinesis_AnalyticsApplicationInputs';
 import {
   kinesis_AnalyticsApplicationReferenceDataSources,
   kinesis_AnalyticsApplicationReferenceDataSources_GetTypes,
-} from "../types/kinesis_AnalyticsApplicationReferenceDataSources";
+} from '../types/kinesis_AnalyticsApplicationReferenceDataSources';
 import {
   kinesis_AnalyticsApplicationCloudwatchLoggingOptions,
   kinesis_AnalyticsApplicationCloudwatchLoggingOptions_GetTypes,
-} from "../types/kinesis_AnalyticsApplicationCloudwatchLoggingOptions";
+} from '../types/kinesis_AnalyticsApplicationCloudwatchLoggingOptions';
 import {
   kinesis_AnalyticsApplicationOutput,
   kinesis_AnalyticsApplicationOutput_GetTypes,
-} from "../types/kinesis_AnalyticsApplicationOutput";
+} from '../types/kinesis_AnalyticsApplicationOutput';
 
 export interface AnalyticsApplicationArgs {
   // Description of the application.
@@ -119,15 +119,15 @@ See Reference Data Sources below for more details.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "referenceDataSources",
-        "An S3 Reference Data Source for the application.\nSee Reference Data Sources below for more details.",
+        'referenceDataSources',
+        'An S3 Reference Data Source for the application.\nSee Reference Data Sources below for more details.',
         () => kinesis_AnalyticsApplicationReferenceDataSources_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "startApplication",
+        'startApplication',
         "Whether to start or stop the Kinesis Analytics Application. To start an application, an input with a defined `starting_position` must be configured.\nTo modify an application's starting position, first stop the application by setting `start_application = false`, then update `starting_position` and set `start_application = true`.",
         () => [],
         false,
@@ -135,56 +135,56 @@ See Reference Data Sources below for more details.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cloudwatchLoggingOptions",
-        "The CloudWatch log stream options to monitor application errors.\nSee CloudWatch Logging Options below for more details.",
+        'cloudwatchLoggingOptions',
+        'The CloudWatch log stream options to monitor application errors.\nSee CloudWatch Logging Options below for more details.',
         () => kinesis_AnalyticsApplicationCloudwatchLoggingOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "code",
-        "SQL Code to transform input data, and generate output.",
+        'code',
+        'SQL Code to transform input data, and generate output.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "outputs",
-        "Output destination configuration of the application. See Outputs below for more details.",
+        'outputs',
+        'Output destination configuration of the application. See Outputs below for more details.',
         () => kinesis_AnalyticsApplicationOutput_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the application.",
+        'description',
+        'Description of the application.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "inputs",
-        "Input configuration of the application. See Inputs below for more details.",
+        'inputs',
+        'Input configuration of the application. See Inputs below for more details.',
         () => kinesis_AnalyticsApplicationInputs_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the Kinesis Analytics Application.",
+        'name',
+        'Name of the Kinesis Analytics Application.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of tags for the Kinesis Analytics Application. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of tags for the Kinesis Analytics Application. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

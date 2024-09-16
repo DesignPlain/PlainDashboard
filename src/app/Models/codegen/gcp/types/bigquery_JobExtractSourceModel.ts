@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface bigquery_JobExtractSourceModel {
   // The ID of the dataset containing this model.
@@ -25,24 +25,24 @@ export function bigquery_JobExtractSourceModel_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "datasetId",
-      "The ID of the dataset containing this model.",
+      'datasetId',
+      'The ID of the dataset containing this model.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "modelId",
-      "The ID of the model.\n\n- - -",
+      'modelId',
+      'The ID of the model.\n\n- - -',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "projectId",
-      "The ID of the project containing this model.",
+      'projectId',
+      'The ID of the project containing this model.',
       () => [],
       true,
       true,

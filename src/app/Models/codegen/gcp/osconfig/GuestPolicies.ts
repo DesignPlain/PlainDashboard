@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   osconfig_GuestPoliciesPackageRepository,
   osconfig_GuestPoliciesPackageRepository_GetTypes,
-} from "../types/osconfig_GuestPoliciesPackageRepository";
+} from '../types/osconfig_GuestPoliciesPackageRepository';
 import {
   osconfig_GuestPoliciesPackage,
   osconfig_GuestPoliciesPackage_GetTypes,
-} from "../types/osconfig_GuestPoliciesPackage";
+} from '../types/osconfig_GuestPoliciesPackage';
 import {
   osconfig_GuestPoliciesRecipe,
   osconfig_GuestPoliciesRecipe_GetTypes,
-} from "../types/osconfig_GuestPoliciesRecipe";
+} from '../types/osconfig_GuestPoliciesRecipe';
 import {
   osconfig_GuestPoliciesAssignment,
   osconfig_GuestPoliciesAssignment_GetTypes,
-} from "../types/osconfig_GuestPoliciesAssignment";
+} from '../types/osconfig_GuestPoliciesAssignment';
 
 export interface GuestPoliciesArgs {
   /*
@@ -152,7 +152,7 @@ Example: "2014-10-02T15:01:23.045123456Z".
     return [
       new DynamicUIProps(
         InputType.String,
-        "etag",
+        'etag',
         "The etag for this guest policy. If this is provided on update, it must match the server's etag.",
         () => [],
         false,
@@ -160,56 +160,56 @@ Example: "2014-10-02T15:01:23.045123456Z".
       ),
       new DynamicUIProps(
         InputType.String,
-        "guestPolicyId",
-        "The logical name of the guest policy in the project with the following restrictions:\n* Must contain only lowercase letters, numbers, and hyphens.\n* Must start with a letter.\n* Must be between 1-63 characters.\n* Must end with a number or a letter.\n* Must be unique within the project.",
+        'guestPolicyId',
+        'The logical name of the guest policy in the project with the following restrictions:\n* Must contain only lowercase letters, numbers, and hyphens.\n* Must start with a letter.\n* Must be between 1-63 characters.\n* Must end with a number or a letter.\n* Must be unique within the project.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "packageRepositories",
-        "A list of package repositories to configure on the VM instance.\nThis is done before any other configs are applied so they can use these repos.\nPackage repositories are only configured if the corresponding package manager(s) are available.\nStructure is documented below.",
+        'packageRepositories',
+        'A list of package repositories to configure on the VM instance.\nThis is done before any other configs are applied so they can use these repos.\nPackage repositories are only configured if the corresponding package manager(s) are available.\nStructure is documented below.',
         () => osconfig_GuestPoliciesPackageRepository_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "packages",
-        "The software packages to be managed by this policy.\nStructure is documented below.",
+        'packages',
+        'The software packages to be managed by this policy.\nStructure is documented below.',
         () => osconfig_GuestPoliciesPackage_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "recipes",
-        "A list of Recipes to install on the VM instance.\nStructure is documented below.",
+        'recipes',
+        'A list of Recipes to install on the VM instance.\nStructure is documented below.',
         () => osconfig_GuestPoliciesRecipe_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "assignment",
-        "Specifies the VM instances that are assigned to this policy. This allows you to target sets\nor groups of VM instances by different parameters such as labels, names, OS, or zones.\nIf left empty, all VM instances underneath this policy are targeted.\nAt the same level in the resource hierarchy (that is within a project), the service prevents\nthe creation of multiple policies that conflict with each other.\nFor more information, see how the service\n[handles assignment conflicts](https://cloud.google.com/compute/docs/os-config-management/create-guest-policy#handle-conflicts).\nStructure is documented below.",
+        'assignment',
+        'Specifies the VM instances that are assigned to this policy. This allows you to target sets\nor groups of VM instances by different parameters such as labels, names, OS, or zones.\nIf left empty, all VM instances underneath this policy are targeted.\nAt the same level in the resource hierarchy (that is within a project), the service prevents\nthe creation of multiple policies that conflict with each other.\nFor more information, see how the service\n[handles assignment conflicts](https://cloud.google.com/compute/docs/os-config-management/create-guest-policy#handle-conflicts).\nStructure is documented below.',
         () => osconfig_GuestPoliciesAssignment_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the guest policy. Length of the description is limited to 1024 characters.",
+        'description',
+        'Description of the guest policy. Length of the description is limited to 1024 characters.',
         () => [],
         false,
         false,

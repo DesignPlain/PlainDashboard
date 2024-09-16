@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface networkfirewall_TlsInspectionConfigurationCertificateAuthority {
   // Details about the certificate status, including information about certificate errors.
@@ -24,32 +24,32 @@ export function networkfirewall_TlsInspectionConfigurationCertificateAuthority_G
   return [
     new DynamicUIProps(
       InputType.String,
-      "statusMessage",
-      "Details about the certificate status, including information about certificate errors.",
+      'statusMessage',
+      'Details about the certificate status, including information about certificate errors.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "certificateArn",
-      "ARN of the certificate.",
+      'certificateArn',
+      'ARN of the certificate.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "certificateSerial",
-      "Serial number of the certificate.",
+      'certificateSerial',
+      'Serial number of the certificate.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "status",
-      "Status of the certificate.",
+      'status',
+      'Status of the certificate.',
       () => [],
       true,
       false,

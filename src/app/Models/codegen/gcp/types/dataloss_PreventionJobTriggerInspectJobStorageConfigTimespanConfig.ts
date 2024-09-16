@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfigTimestampField,
   dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfigTimestampField_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfigTimestampField";
+} from './dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfigTimestampField';
 
 export interface dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfig {
   /*
@@ -36,24 +36,24 @@ export function dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConf
   return [
     new DynamicUIProps(
       InputType.String,
-      "endTime",
-      "Exclude files, tables, or rows newer than this value. If not set, no upper time limit is applied.",
+      'endTime',
+      'Exclude files, tables, or rows newer than this value. If not set, no upper time limit is applied.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "startTime",
-      "Exclude files, tables, or rows older than this value. If not set, no lower time limit is applied.",
+      'startTime',
+      'Exclude files, tables, or rows older than this value. If not set, no lower time limit is applied.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "timestampField",
-      "Specification of the field containing the timestamp of scanned items.\nStructure is documented below.",
+      'timestampField',
+      'Specification of the field containing the timestamp of scanned items.\nStructure is documented below.',
       () =>
         dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfigTimestampField_GetTypes(),
       false,
@@ -61,8 +61,8 @@ export function dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConf
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enableAutoPopulationOfTimespanConfig",
-      "When the job is started by a JobTrigger we will automatically figure out a valid startTime to avoid\nscanning files that have not been modified since the last time the JobTrigger executed. This will\nbe based on the time of the execution of the last run of the JobTrigger or the timespan endTime\nused in the last run of the JobTrigger.",
+      'enableAutoPopulationOfTimespanConfig',
+      'When the job is started by a JobTrigger we will automatically figure out a valid startTime to avoid\nscanning files that have not been modified since the last time the JobTrigger executed. This will\nbe based on the time of the execution of the last run of the JobTrigger or the timespan endTime\nused in the last run of the JobTrigger.',
       () => [],
       false,
       false,

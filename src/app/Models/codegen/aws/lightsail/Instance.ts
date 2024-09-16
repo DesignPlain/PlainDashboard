@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lightsail_InstanceAddOn,
   lightsail_InstanceAddOn_GetTypes,
-} from "../types/lightsail_InstanceAddOn";
+} from '../types/lightsail_InstanceAddOn';
 
 export interface InstanceArgs {
   // The add on configuration for the instance. Detailed below.
@@ -131,72 +131,72 @@ bundle IDs can be obtained using the AWS CLI command:
     return [
       new DynamicUIProps(
         InputType.String,
-        "bundleId",
-        "The bundle of specification information. A list of available\nbundle IDs can be obtained using the AWS CLI command:\n[`aws lightsail get-bundles`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/lightsail/get-bundles.html).",
+        'bundleId',
+        'The bundle of specification information. A list of available\nbundle IDs can be obtained using the AWS CLI command:\n[`aws lightsail get-bundles`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/lightsail/get-bundles.html).',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "keyPairName",
-        "The name of your key pair. Created in the\nLightsail console (cannot use `aws.ec2.KeyPair` at this time)",
+        'keyPairName',
+        'The name of your key pair. Created in the\nLightsail console (cannot use `aws.ec2.KeyPair` at this time)',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. To create a key-only tag, use an empty string as the value. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. To create a key-only tag, use an empty string as the value. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "userData",
-        "Single lined launch script as a string to configure server with additional user data",
+        'userData',
+        'Single lined launch script as a string to configure server with additional user data',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ipAddressType",
-        "The IP address type of the Lightsail Instance. Valid Values: `dualstack` | `ipv4`.",
+        'ipAddressType',
+        'The IP address type of the Lightsail Instance. Valid Values: `dualstack` | `ipv4`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the Lightsail Instance. Names must be unique within each AWS Region in your Lightsail account.",
+        'name',
+        'The name of the Lightsail Instance. Names must be unique within each AWS Region in your Lightsail account.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "addOn",
-        "The add on configuration for the instance. Detailed below.",
+        'addOn',
+        'The add on configuration for the instance. Detailed below.',
         () => lightsail_InstanceAddOn_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "availabilityZone",
-        "The Availability Zone in which to create your instance. A\nlist of available zones can be obtained using the AWS CLI command:\n[`aws lightsail get-regions --include-availability-zones`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/lightsail/get-regions.html).",
+        'availabilityZone',
+        'The Availability Zone in which to create your instance. A\nlist of available zones can be obtained using the AWS CLI command:\n[`aws lightsail get-regions --include-availability-zones`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/lightsail/get-regions.html).',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "blueprintId",
-        "The ID for a virtual private server image. A list of available\nblueprint IDs can be obtained using the AWS CLI command:\n[`aws lightsail get-blueprints`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/lightsail/get-blueprints.html).",
+        'blueprintId',
+        'The ID for a virtual private server image. A list of available\nblueprint IDs can be obtained using the AWS CLI command:\n[`aws lightsail get-blueprints`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/lightsail/get-blueprints.html).',
         () => [],
         true,
         true,

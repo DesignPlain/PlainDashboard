@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface BucketPublicAccessBlockArgs {
   /*
@@ -69,7 +69,7 @@ Whether Amazon S3 should ignore public ACLs for this bucket. Defaults to `false`
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "ignorePublicAcls",
+        'ignorePublicAcls',
         "Whether Amazon S3 should ignore public ACLs for this bucket. Defaults to `false`. Enabling this setting does not affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set. When set to `true` causes Amazon S3 to:\n* Ignore public ACLs on this bucket and any objects that it contains.",
         () => [],
         false,
@@ -77,32 +77,32 @@ Whether Amazon S3 should ignore public ACLs for this bucket. Defaults to `false`
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "restrictPublicBuckets",
-        "Whether Amazon S3 should restrict public bucket policies for this bucket. Defaults to `false`. Enabling this setting does not affect the previously stored bucket policy, except that public and cross-account access within the public bucket policy, including non-public delegation to specific accounts, is blocked. When set to `true`:\n* Only the bucket owner and AWS Services can access this buckets if it has a public policy.",
+        'restrictPublicBuckets',
+        'Whether Amazon S3 should restrict public bucket policies for this bucket. Defaults to `false`. Enabling this setting does not affect the previously stored bucket policy, except that public and cross-account access within the public bucket policy, including non-public delegation to specific accounts, is blocked. When set to `true`:\n* Only the bucket owner and AWS Services can access this buckets if it has a public policy.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "blockPublicAcls",
-        "Whether Amazon S3 should block public ACLs for this bucket. Defaults to `false`. Enabling this setting does not affect existing policies or ACLs. When set to `true` causes the following behavior:\n* PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.\n* PUT Object calls will fail if the request includes an object ACL.",
+        'blockPublicAcls',
+        'Whether Amazon S3 should block public ACLs for this bucket. Defaults to `false`. Enabling this setting does not affect existing policies or ACLs. When set to `true` causes the following behavior:\n* PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.\n* PUT Object calls will fail if the request includes an object ACL.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "blockPublicPolicy",
-        "Whether Amazon S3 should block public bucket policies for this bucket. Defaults to `false`. Enabling this setting does not affect the existing bucket policy. When set to `true` causes Amazon S3 to:\n* Reject calls to PUT Bucket policy if the specified bucket policy allows public access.",
+        'blockPublicPolicy',
+        'Whether Amazon S3 should block public bucket policies for this bucket. Defaults to `false`. Enabling this setting does not affect the existing bucket policy. When set to `true` causes Amazon S3 to:\n* Reject calls to PUT Bucket policy if the specified bucket policy allows public access.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "bucket",
-        "S3 Bucket to which this Public Access Block configuration should be applied.",
+        'bucket',
+        'S3 Bucket to which this Public Access Block configuration should be applied.',
         () => [],
         true,
         true,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudbuild_TriggerBuildSourceRepoSource {
   /*
@@ -51,63 +51,63 @@ export function cloudbuild_TriggerBuildSourceRepoSource_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "invertRegex",
-      "Only trigger a build if the revision regex does NOT match the revision regex.",
+      'invertRegex',
+      'Only trigger a build if the revision regex does NOT match the revision regex.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "projectId",
-      "ID of the project that owns the Cloud Source Repository.\nIf omitted, the project ID requesting the build is assumed.",
+      'projectId',
+      'ID of the project that owns the Cloud Source Repository.\nIf omitted, the project ID requesting the build is assumed.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "repoName",
-      "Name of the Cloud Source Repository.",
+      'repoName',
+      'Name of the Cloud Source Repository.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "substitutions",
-      "Substitutions to use in a triggered build. Should only be used with triggers.run",
+      'substitutions',
+      'Substitutions to use in a triggered build. Should only be used with triggers.run',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "tagName",
-      "Regex matching tags to build. Exactly one a of branch name, tag, or commit SHA must be provided.\nThe syntax of the regular expressions accepted is the syntax accepted by RE2 and\ndescribed at https://github.com/google/re2/wiki/Syntax",
+      'tagName',
+      'Regex matching tags to build. Exactly one a of branch name, tag, or commit SHA must be provided.\nThe syntax of the regular expressions accepted is the syntax accepted by RE2 and\ndescribed at https://github.com/google/re2/wiki/Syntax',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "branchName",
-      "Regex matching branches to build. Exactly one a of branch name, tag, or commit SHA must be provided.\nThe syntax of the regular expressions accepted is the syntax accepted by RE2 and\ndescribed at https://github.com/google/re2/wiki/Syntax",
+      'branchName',
+      'Regex matching branches to build. Exactly one a of branch name, tag, or commit SHA must be provided.\nThe syntax of the regular expressions accepted is the syntax accepted by RE2 and\ndescribed at https://github.com/google/re2/wiki/Syntax',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "commitSha",
-      "Explicit commit SHA to build. Exactly one a of branch name, tag, or commit SHA must be provided.",
+      'commitSha',
+      'Explicit commit SHA to build. Exactly one a of branch name, tag, or commit SHA must be provided.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "dir",
+      'dir',
       "Directory, relative to the source root, in which to run the build.\nThis must be a relative path. If a step's dir is specified and is an absolute path,\nthis value is ignored for that step's execution.",
       () => [],
       false,

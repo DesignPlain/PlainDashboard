@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ReservationAssignmentArgs {
   // The project for the resource
@@ -61,40 +61,40 @@ The reservation for the resource
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project for the resource",
+        'project',
+        'The project for the resource',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "reservation",
-        "The reservation for the resource\n\n\n\n- - -",
+        'reservation',
+        'The reservation for the resource\n\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "assignee",
-        "The resource which will use the reservation. E.g. projects/myproject, folders/123, organizations/456.",
+        'assignee',
+        'The resource which will use the reservation. E.g. projects/myproject, folders/123, organizations/456.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "jobType",
-        "Types of job, which could be specified when using the reservation. Possible values: JOB_TYPE_UNSPECIFIED, PIPELINE, QUERY",
+        'jobType',
+        'Types of job, which could be specified when using the reservation. Possible values: JOB_TYPE_UNSPECIFIED, PIPELINE, QUERY',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource",
+        'location',
+        'The location for the resource',
         () => [],
         false,
         true,

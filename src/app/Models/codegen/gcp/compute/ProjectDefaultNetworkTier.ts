@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ProjectDefaultNetworkTierArgs {
   /*
@@ -41,16 +41,16 @@ This field can take the following values: `PREMIUM` or `STANDARD`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "networkTier",
-        "The default network tier to be configured for the project.\nThis field can take the following values: `PREMIUM` or `STANDARD`.\n\n- - -",
+        'networkTier',
+        'The default network tier to be configured for the project.\nThis field can take the following values: `PREMIUM` or `STANDARD`.\n\n- - -',
         () => [],
         true,
         false,

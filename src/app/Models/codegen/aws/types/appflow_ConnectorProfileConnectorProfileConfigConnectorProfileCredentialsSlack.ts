@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSlackOauthRequest,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSlackOauthRequest_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSlackOauthRequest";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSlackOauthRequest';
 
 export interface appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSlack {
   //
@@ -28,25 +28,25 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
   return [
     new DynamicUIProps(
       InputType.String,
-      "accessToken",
-      "",
+      'accessToken',
+      '',
       () => [],
       false,
       false,
     ),
-    new DynamicUIProps(InputType.String, "clientId", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'clientId', '', () => [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "clientSecret",
-      "",
+      'clientSecret',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "oauthRequest",
-      "",
+      'oauthRequest',
+      '',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSlackOauthRequest_GetTypes(),
       false,

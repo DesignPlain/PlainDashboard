@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   securitycenter_FolderCustomModuleCustomConfig,
   securitycenter_FolderCustomModuleCustomConfig_GetTypes,
-} from "../types/securitycenter_FolderCustomModuleCustomConfig";
+} from '../types/securitycenter_FolderCustomModuleCustomConfig';
 
 export interface FolderCustomModuleArgs {
   /*
@@ -85,32 +85,32 @@ Possible values are: `ENABLED`, `DISABLED`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "enablementState",
-        "The enablement state of the custom module.\nPossible values are: `ENABLED`, `DISABLED`.",
+        'enablementState',
+        'The enablement state of the custom module.\nPossible values are: `ENABLED`, `DISABLED`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "folder",
-        "Numerical ID of the parent folder.",
+        'folder',
+        'Numerical ID of the parent folder.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "customConfig",
-        "The user specified custom configuration for the module.\nStructure is documented below.",
+        'customConfig',
+        'The user specified custom configuration for the module.\nStructure is documented below.',
         () => securitycenter_FolderCustomModuleCustomConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The display name of the Security Health Analytics custom module. This\ndisplay name becomes the finding category for all findings that are\nreturned by this custom module. The display name must be between 1 and\n128 characters, start with a lowercase letter, and contain alphanumeric\ncharacters or underscores only.",
+        'displayName',
+        'The display name of the Security Health Analytics custom module. This\ndisplay name becomes the finding category for all findings that are\nreturned by this custom module. The display name must be between 1 and\n128 characters, start with a lowercase letter, and contain alphanumeric\ncharacters or underscores only.',
         () => [],
         true,
         true,

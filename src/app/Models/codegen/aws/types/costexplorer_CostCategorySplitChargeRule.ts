@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   costexplorer_CostCategorySplitChargeRuleParameter,
   costexplorer_CostCategorySplitChargeRuleParameter_GetTypes,
-} from "./costexplorer_CostCategorySplitChargeRuleParameter";
+} from './costexplorer_CostCategorySplitChargeRuleParameter';
 
 export interface costexplorer_CostCategorySplitChargeRule {
   // Method that's used to define how to split your source costs across your targets. Valid values are `FIXED`, `PROPORTIONAL`, `EVEN`
@@ -28,7 +28,7 @@ export function costexplorer_CostCategorySplitChargeRule_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.String,
-      "method",
+      'method',
       "Method that's used to define how to split your source costs across your targets. Valid values are `FIXED`, `PROPORTIONAL`, `EVEN`",
       () => [],
       true,
@@ -36,23 +36,23 @@ export function costexplorer_CostCategorySplitChargeRule_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Array,
-      "parameters",
-      "Configuration block for the parameters for a split charge method. This is only required for the `FIXED` method. See below.",
+      'parameters',
+      'Configuration block for the parameters for a split charge method. This is only required for the `FIXED` method. See below.',
       () => costexplorer_CostCategorySplitChargeRuleParameter_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "source",
-      "Cost Category value that you want to split.",
+      'source',
+      'Cost Category value that you want to split.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "targets",
+      'targets',
       "Cost Category values that you want to split costs across. These values can't be used as a source in other split charge rules.",
       () => InputType_String_GetTypes(),
       true,

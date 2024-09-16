@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTargetResourceNlbResource,
   route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTargetResourceNlbResource_GetTypes,
-} from "./route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTargetResourceNlbResource";
+} from './route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTargetResourceNlbResource';
 import {
   route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTargetResourceR53Resource,
   route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTargetResourceR53Resource_GetTypes,
-} from "./route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTargetResourceR53Resource";
+} from './route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTargetResourceR53Resource';
 
 export interface route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTargetResource {
   // NLB resource a DNS Target Resource points to. Required if `r53_resource` is not set.
@@ -26,8 +26,8 @@ export function route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTar
   return [
     new DynamicUIProps(
       InputType.Object,
-      "nlbResource",
-      "NLB resource a DNS Target Resource points to. Required if `r53_resource` is not set.",
+      'nlbResource',
+      'NLB resource a DNS Target Resource points to. Required if `r53_resource` is not set.',
       () =>
         route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTargetResourceNlbResource_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTar
     ),
     new DynamicUIProps(
       InputType.Object,
-      "r53Resource",
-      "Route53 resource a DNS Target Resource record points to.",
+      'r53Resource',
+      'Route53 resource a DNS Target Resource record points to.',
       () =>
         route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTargetResourceR53Resource_GetTypes(),
       false,

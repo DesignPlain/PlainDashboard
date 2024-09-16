@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   firebase_HostingCustomDomainCertVerificationDnsDesired,
   firebase_HostingCustomDomainCertVerificationDnsDesired_GetTypes,
-} from "./firebase_HostingCustomDomainCertVerificationDnsDesired";
+} from './firebase_HostingCustomDomainCertVerificationDnsDesired';
 import {
   firebase_HostingCustomDomainCertVerificationDnsDiscovered,
   firebase_HostingCustomDomainCertVerificationDnsDiscovered_GetTypes,
-} from "./firebase_HostingCustomDomainCertVerificationDnsDiscovered";
+} from './firebase_HostingCustomDomainCertVerificationDnsDiscovered';
 
 export interface firebase_HostingCustomDomainCertVerificationDns {
   /*
@@ -35,7 +35,7 @@ export function firebase_HostingCustomDomainCertVerificationDns_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.String,
-      "checkTime",
+      'checkTime',
       "(Output)\nThe last time Hosting checked your CustomDomain's DNS records.",
       () => [],
       false,
@@ -43,16 +43,16 @@ export function firebase_HostingCustomDomainCertVerificationDns_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Array,
-      "desireds",
-      "A text string to serve at the path.",
+      'desireds',
+      'A text string to serve at the path.',
       () => firebase_HostingCustomDomainCertVerificationDnsDesired_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "discovereds",
-      "Whether Hosting was able to find the required file contents on the\nspecified path during its last check.",
+      'discovereds',
+      'Whether Hosting was able to find the required file contents on the\nspecified path during its last check.',
       () =>
         firebase_HostingCustomDomainCertVerificationDnsDiscovered_GetTypes(),
       false,

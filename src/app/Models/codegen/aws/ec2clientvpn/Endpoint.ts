@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2clientvpn_EndpointClientLoginBannerOptions,
   ec2clientvpn_EndpointClientLoginBannerOptions_GetTypes,
-} from "../types/ec2clientvpn_EndpointClientLoginBannerOptions";
+} from '../types/ec2clientvpn_EndpointClientLoginBannerOptions';
 import {
   ec2clientvpn_EndpointClientConnectOptions,
   ec2clientvpn_EndpointClientConnectOptions_GetTypes,
-} from "../types/ec2clientvpn_EndpointClientConnectOptions";
+} from '../types/ec2clientvpn_EndpointClientConnectOptions';
 import {
   ec2clientvpn_EndpointAuthenticationOption,
   ec2clientvpn_EndpointAuthenticationOption_GetTypes,
-} from "../types/ec2clientvpn_EndpointAuthenticationOption";
+} from '../types/ec2clientvpn_EndpointAuthenticationOption';
 import {
   ec2clientvpn_EndpointConnectionLogOptions,
   ec2clientvpn_EndpointConnectionLogOptions_GetTypes,
-} from "../types/ec2clientvpn_EndpointConnectionLogOptions";
+} from '../types/ec2clientvpn_EndpointConnectionLogOptions';
 
 export interface EndpointArgs {
   // A mapping of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
@@ -137,128 +137,128 @@ export class Endpoint extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A brief description of the Client VPN endpoint.",
+        'description',
+        'A brief description of the Client VPN endpoint.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serverCertificateArn",
-        "The ARN of the ACM server certificate.",
+        'serverCertificateArn',
+        'The ARN of the ACM server certificate.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "sessionTimeoutHours",
-        "The maximum session duration is a trigger by which end-users are required to re-authenticate prior to establishing a VPN session. Default value is `24` - Valid values: `8 | 10 | 12 | 24`",
+        'sessionTimeoutHours',
+        'The maximum session duration is a trigger by which end-users are required to re-authenticate prior to establishing a VPN session. Default value is `24` - Valid values: `8 | 10 | 12 | 24`',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "selfServicePortal",
-        "Specify whether to enable the self-service portal for the Client VPN endpoint. Values can be `enabled` or `disabled`. Default value is `disabled`.",
+        'selfServicePortal',
+        'Specify whether to enable the self-service portal for the Client VPN endpoint. Values can be `enabled` or `disabled`. Default value is `disabled`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "dnsServers",
-        "Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS servers. If no DNS server is specified, the DNS address of the connecting device is used.",
+        'dnsServers',
+        'Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS servers. If no DNS server is specified, the DNS address of the connecting device is used.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "clientConnectOptions",
-        "The options for managing connection authorization for new client connections.",
+        'clientConnectOptions',
+        'The options for managing connection authorization for new client connections.',
         () => ec2clientvpn_EndpointClientConnectOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "splitTunnel",
-        "Indicates whether split-tunnel is enabled on VPN endpoint. Default value is `false`.",
+        'splitTunnel',
+        'Indicates whether split-tunnel is enabled on VPN endpoint. Default value is `false`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "transportProtocol",
-        "The transport protocol to be used by the VPN session. Default value is `udp`.",
+        'transportProtocol',
+        'The transport protocol to be used by the VPN session. Default value is `udp`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "authenticationOptions",
-        "Information about the authentication method to be used to authenticate clients.",
+        'authenticationOptions',
+        'Information about the authentication method to be used to authenticate clients.',
         () => ec2clientvpn_EndpointAuthenticationOption_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "connectionLogOptions",
-        "Information about the client connection logging options.",
+        'connectionLogOptions',
+        'Information about the client connection logging options.',
         () => ec2clientvpn_EndpointConnectionLogOptions_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A mapping of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A mapping of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "securityGroupIds",
-        "The IDs of one or more security groups to apply to the target network. You must also specify the ID of the VPC that contains the security groups.",
+        'securityGroupIds',
+        'The IDs of one or more security groups to apply to the target network. You must also specify the ID of the VPC that contains the security groups.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "vpcId",
-        "The ID of the VPC to associate with the Client VPN endpoint. If no security group IDs are specified in the request, the default security group for the VPC is applied.",
+        'vpcId',
+        'The ID of the VPC to associate with the Client VPN endpoint. If no security group IDs are specified in the request, the default security group for the VPC is applied.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clientCidrBlock",
-        "The IPv4 address range, in CIDR notation, from which to assign client IP addresses. The address range cannot overlap with the local CIDR of the VPC in which the associated subnet is located, or the routes that you add manually. The address range cannot be changed after the Client VPN endpoint has been created. The CIDR block should be /22 or greater.",
+        'clientCidrBlock',
+        'The IPv4 address range, in CIDR notation, from which to assign client IP addresses. The address range cannot overlap with the local CIDR of the VPC in which the associated subnet is located, or the routes that you add manually. The address range cannot be changed after the Client VPN endpoint has been created. The CIDR block should be /22 or greater.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "clientLoginBannerOptions",
-        "Options for enabling a customizable text banner that will be displayed on AWS provided clients when a VPN session is established.",
+        'clientLoginBannerOptions',
+        'Options for enabling a customizable text banner that will be displayed on AWS provided clients when a VPN session is established.',
         () => ec2clientvpn_EndpointClientLoginBannerOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "vpnPort",
-        "The port number for the Client VPN endpoint. Valid values are `443` and `1194`. Default value is `443`.",
+        'vpnPort',
+        'The port number for the Client VPN endpoint. Valid values are `443` and `1194`. Default value is `443`.',
         () => [],
         false,
         false,

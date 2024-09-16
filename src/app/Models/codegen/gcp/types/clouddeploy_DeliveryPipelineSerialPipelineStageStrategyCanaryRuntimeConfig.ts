@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetes,
   clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetes_GetTypes,
-} from "./clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetes";
+} from './clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetes';
 import {
   clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRun,
   clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRun_GetTypes,
-} from "./clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRun";
+} from './clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRun';
 
 export interface clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfig {
   // Kubernetes runtime configuration.
@@ -26,8 +26,8 @@ export function clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRun
   return [
     new DynamicUIProps(
       InputType.Object,
-      "kubernetes",
-      "Kubernetes runtime configuration.",
+      'kubernetes',
+      'Kubernetes runtime configuration.',
       () =>
         clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetes_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRun
     ),
     new DynamicUIProps(
       InputType.Object,
-      "cloudRun",
-      "Cloud Run runtime configuration.",
+      'cloudRun',
+      'Cloud Run runtime configuration.',
       () =>
         clouddeploy_DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRun_GetTypes(),
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface TrafficMirrorTargetArgs {
   // A description of the traffic mirror session.
@@ -60,40 +60,40 @@ Key-value map of resource tags. If configured with a provider `default_tags` con
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.\n\n**NOTE:** Either `network_interface_id` or `network_load_balancer_arn` should be specified and both should not be specified together",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.\n\n**NOTE:** Either `network_interface_id` or `network_load_balancer_arn` should be specified and both should not be specified together',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of the traffic mirror session.",
+        'description',
+        'A description of the traffic mirror session.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "gatewayLoadBalancerEndpointId",
-        "The VPC Endpoint Id of the Gateway Load Balancer that is associated with the target.",
+        'gatewayLoadBalancerEndpointId',
+        'The VPC Endpoint Id of the Gateway Load Balancer that is associated with the target.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "networkInterfaceId",
-        "The network interface ID that is associated with the target.",
+        'networkInterfaceId',
+        'The network interface ID that is associated with the target.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "networkLoadBalancerArn",
-        "The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the target.",
+        'networkLoadBalancerArn',
+        'The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the target.',
         () => [],
         false,
         true,

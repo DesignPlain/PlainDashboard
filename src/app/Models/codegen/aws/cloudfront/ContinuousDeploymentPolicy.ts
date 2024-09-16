@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudfront_ContinuousDeploymentPolicyTrafficConfig,
   cloudfront_ContinuousDeploymentPolicyTrafficConfig_GetTypes,
-} from "../types/cloudfront_ContinuousDeploymentPolicyTrafficConfig";
+} from '../types/cloudfront_ContinuousDeploymentPolicyTrafficConfig';
 import {
   cloudfront_ContinuousDeploymentPolicyStagingDistributionDnsNames,
   cloudfront_ContinuousDeploymentPolicyStagingDistributionDnsNames_GetTypes,
-} from "../types/cloudfront_ContinuousDeploymentPolicyStagingDistributionDnsNames";
+} from '../types/cloudfront_ContinuousDeploymentPolicyStagingDistributionDnsNames';
 
 export interface ContinuousDeploymentPolicyArgs {
   // Parameters for routing production traffic from primary to staging distributions. See `traffic_config`.
@@ -45,24 +45,24 @@ export class ContinuousDeploymentPolicy extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "trafficConfig",
-        "Parameters for routing production traffic from primary to staging distributions. See `traffic_config`.",
+        'trafficConfig',
+        'Parameters for routing production traffic from primary to staging distributions. See `traffic_config`.',
         () => cloudfront_ContinuousDeploymentPolicyTrafficConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enabled",
-        "Whether this continuous deployment policy is enabled.",
+        'enabled',
+        'Whether this continuous deployment policy is enabled.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "stagingDistributionDnsNames",
-        "CloudFront domain name of the staging distribution. See `staging_distribution_dns_names`.",
+        'stagingDistributionDnsNames',
+        'CloudFront domain name of the staging distribution. See `staging_distribution_dns_names`.',
         () =>
           cloudfront_ContinuousDeploymentPolicyStagingDistributionDnsNames_GetTypes(),
         false,

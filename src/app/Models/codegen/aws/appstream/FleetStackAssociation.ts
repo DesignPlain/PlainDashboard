@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface FleetStackAssociationArgs {
   // Name of the fleet.
@@ -25,16 +25,16 @@ export class FleetStackAssociation extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "fleetName",
-        "Name of the fleet.",
+        'fleetName',
+        'Name of the fleet.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "stackName",
-        "Name of the stack.",
+        'stackName',
+        'Name of the stack.',
         () => [],
         true,
         true,

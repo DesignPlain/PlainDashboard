@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   redshiftserverless_EndpointAccessVpcEndpoint,
   redshiftserverless_EndpointAccessVpcEndpoint_GetTypes,
-} from "../types/redshiftserverless_EndpointAccessVpcEndpoint";
+} from '../types/redshiftserverless_EndpointAccessVpcEndpoint';
 
 export interface EndpointAccessArgs {
   // An array of VPC subnet IDs to associate with the endpoint.
@@ -59,40 +59,40 @@ export class EndpointAccess extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "ownerAccount",
-        "The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.",
+        'ownerAccount',
+        'The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "subnetIds",
-        "An array of VPC subnet IDs to associate with the endpoint.",
+        'subnetIds',
+        'An array of VPC subnet IDs to associate with the endpoint.',
         () => InputType_String_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "vpcSecurityGroupIds",
-        "An array of security group IDs to associate with the workgroup.",
+        'vpcSecurityGroupIds',
+        'An array of security group IDs to associate with the workgroup.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "workgroupName",
-        "The name of the workgroup.",
+        'workgroupName',
+        'The name of the workgroup.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "endpointName",
-        "The name of the endpoint.",
+        'endpointName',
+        'The name of the endpoint.',
         () => [],
         true,
         true,

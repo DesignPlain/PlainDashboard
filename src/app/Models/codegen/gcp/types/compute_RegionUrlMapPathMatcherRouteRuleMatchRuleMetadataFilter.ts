@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel,
   compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel_GetTypes,
-} from "./compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel";
+} from './compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel';
 
 export interface compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilter {
   /*
@@ -35,8 +35,8 @@ export function compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilter_
   return [
     new DynamicUIProps(
       InputType.Array,
-      "filterLabels",
-      "The list of label value pairs that must match labels in the provided metadata\nbased on filterMatchCriteria  This list must not be empty and can have at the\nmost 64 entries.\nStructure is documented below.",
+      'filterLabels',
+      'The list of label value pairs that must match labels in the provided metadata\nbased on filterMatchCriteria  This list must not be empty and can have at the\nmost 64 entries.\nStructure is documented below.',
       () =>
         compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel_GetTypes(),
       true,
@@ -44,8 +44,8 @@ export function compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilter_
     ),
     new DynamicUIProps(
       InputType.String,
-      "filterMatchCriteria",
-      "Specifies how individual filterLabel matches within the list of filterLabels\ncontribute towards the overall metadataFilter match. Supported values are:\n* MATCH_ANY: At least one of the filterLabels must have a matching label in the\nprovided metadata.\n* MATCH_ALL: All filterLabels must have matching labels in\nthe provided metadata.\nPossible values are: `MATCH_ALL`, `MATCH_ANY`.",
+      'filterMatchCriteria',
+      'Specifies how individual filterLabel matches within the list of filterLabels\ncontribute towards the overall metadataFilter match. Supported values are:\n* MATCH_ANY: At least one of the filterLabels must have a matching label in the\nprovided metadata.\n* MATCH_ALL: All filterLabels must have matching labels in\nthe provided metadata.\nPossible values are: `MATCH_ALL`, `MATCH_ANY`.',
       () => [],
       true,
       false,

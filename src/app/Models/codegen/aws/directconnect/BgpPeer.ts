@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface BgpPeerArgs {
   // The address family for the BGP peer. `ipv4 ` or `ipv6`.
@@ -70,48 +70,48 @@ Required for IPv4 BGP peers on public virtual interfaces.
     return [
       new DynamicUIProps(
         InputType.String,
-        "addressFamily",
-        "The address family for the BGP peer. `ipv4 ` or `ipv6`.",
+        'addressFamily',
+        'The address family for the BGP peer. `ipv4 ` or `ipv6`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "amazonAddress",
-        "The IPv4 CIDR address to use to send traffic to Amazon.\nRequired for IPv4 BGP peers on public virtual interfaces.",
+        'amazonAddress',
+        'The IPv4 CIDR address to use to send traffic to Amazon.\nRequired for IPv4 BGP peers on public virtual interfaces.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "bgpAsn",
-        "The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.",
+        'bgpAsn',
+        'The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "bgpAuthKey",
-        "The authentication key for BGP configuration.",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "customerAddress",
-        "The IPv4 CIDR destination address to which Amazon should send traffic.\nRequired for IPv4 BGP peers on public virtual interfaces.",
+        'bgpAuthKey',
+        'The authentication key for BGP configuration.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "virtualInterfaceId",
-        "The ID of the Direct Connect virtual interface on which to create the BGP peer.",
+        'customerAddress',
+        'The IPv4 CIDR destination address to which Amazon should send traffic.\nRequired for IPv4 BGP peers on public virtual interfaces.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'virtualInterfaceId',
+        'The ID of the Direct Connect virtual interface on which to create the BGP peer.',
         () => [],
         true,
         true,

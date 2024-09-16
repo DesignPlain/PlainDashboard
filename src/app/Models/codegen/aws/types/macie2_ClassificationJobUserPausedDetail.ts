@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface macie2_ClassificationJobUserPausedDetail {
   //
@@ -21,24 +21,24 @@ export function macie2_ClassificationJobUserPausedDetail_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.String,
-      "jobExpiresAt",
-      "",
+      'jobExpiresAt',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "jobImminentExpirationHealthEventArn",
-      "",
+      'jobImminentExpirationHealthEventArn',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "jobPausedAt",
-      "",
+      'jobPausedAt',
+      '',
       () => [],
       false,
       false,

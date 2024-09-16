@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface LocalGatewayRouteTableVpcAssociationArgs {
   // Identifier of EC2 Local Gateway Route Table.
@@ -45,24 +45,24 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "vpcId",
-        "Identifier of EC2 VPC.\n\nThe following arguments are optional:",
+        'vpcId',
+        'Identifier of EC2 VPC.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "localGatewayRouteTableId",
-        "Identifier of EC2 Local Gateway Route Table.",
+        'localGatewayRouteTableId',
+        'Identifier of EC2 Local Gateway Route Table.',
         () => [],
         true,
         true,

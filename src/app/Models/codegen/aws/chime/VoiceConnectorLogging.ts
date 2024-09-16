@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface VoiceConnectorLoggingArgs {
   // When true, enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.
@@ -31,24 +31,24 @@ export class VoiceConnectorLogging extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "enableMediaMetricLogs",
-        "When true, enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.",
+        'enableMediaMetricLogs',
+        'When true, enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableSipLogs",
-        "When true, enables SIP message logs for sending to Amazon CloudWatch Logs.",
+        'enableSipLogs',
+        'When true, enables SIP message logs for sending to Amazon CloudWatch Logs.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "voiceConnectorId",
-        "The Amazon Chime Voice Connector ID.",
+        'voiceConnectorId',
+        'The Amazon Chime Voice Connector ID.',
         () => [],
         true,
         true,

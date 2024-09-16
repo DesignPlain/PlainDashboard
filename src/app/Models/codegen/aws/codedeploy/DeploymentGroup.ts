@@ -3,49 +3,49 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   codedeploy_DeploymentGroupLoadBalancerInfo,
   codedeploy_DeploymentGroupLoadBalancerInfo_GetTypes,
-} from "../types/codedeploy_DeploymentGroupLoadBalancerInfo";
+} from '../types/codedeploy_DeploymentGroupLoadBalancerInfo';
 import {
   codedeploy_DeploymentGroupTriggerConfiguration,
   codedeploy_DeploymentGroupTriggerConfiguration_GetTypes,
-} from "../types/codedeploy_DeploymentGroupTriggerConfiguration";
+} from '../types/codedeploy_DeploymentGroupTriggerConfiguration';
 import {
   codedeploy_DeploymentGroupEc2TagFilter,
   codedeploy_DeploymentGroupEc2TagFilter_GetTypes,
-} from "../types/codedeploy_DeploymentGroupEc2TagFilter";
+} from '../types/codedeploy_DeploymentGroupEc2TagFilter';
 import {
   codedeploy_DeploymentGroupBlueGreenDeploymentConfig,
   codedeploy_DeploymentGroupBlueGreenDeploymentConfig_GetTypes,
-} from "../types/codedeploy_DeploymentGroupBlueGreenDeploymentConfig";
+} from '../types/codedeploy_DeploymentGroupBlueGreenDeploymentConfig';
 import {
   codedeploy_DeploymentGroupEc2TagSet,
   codedeploy_DeploymentGroupEc2TagSet_GetTypes,
-} from "../types/codedeploy_DeploymentGroupEc2TagSet";
+} from '../types/codedeploy_DeploymentGroupEc2TagSet';
 import {
   codedeploy_DeploymentGroupEcsService,
   codedeploy_DeploymentGroupEcsService_GetTypes,
-} from "../types/codedeploy_DeploymentGroupEcsService";
+} from '../types/codedeploy_DeploymentGroupEcsService';
 import {
   codedeploy_DeploymentGroupOnPremisesInstanceTagFilter,
   codedeploy_DeploymentGroupOnPremisesInstanceTagFilter_GetTypes,
-} from "../types/codedeploy_DeploymentGroupOnPremisesInstanceTagFilter";
+} from '../types/codedeploy_DeploymentGroupOnPremisesInstanceTagFilter';
 import {
   codedeploy_DeploymentGroupDeploymentStyle,
   codedeploy_DeploymentGroupDeploymentStyle_GetTypes,
-} from "../types/codedeploy_DeploymentGroupDeploymentStyle";
+} from '../types/codedeploy_DeploymentGroupDeploymentStyle';
 import {
   codedeploy_DeploymentGroupAlarmConfiguration,
   codedeploy_DeploymentGroupAlarmConfiguration_GetTypes,
-} from "../types/codedeploy_DeploymentGroupAlarmConfiguration";
+} from '../types/codedeploy_DeploymentGroupAlarmConfiguration';
 import {
   codedeploy_DeploymentGroupAutoRollbackConfiguration,
   codedeploy_DeploymentGroupAutoRollbackConfiguration_GetTypes,
-} from "../types/codedeploy_DeploymentGroupAutoRollbackConfiguration";
+} from '../types/codedeploy_DeploymentGroupAutoRollbackConfiguration';
 
 export interface DeploymentGroupArgs {
   // Single configuration block of the load balancer to use in a blue/green deployment (documented below).
@@ -167,103 +167,103 @@ export class DeploymentGroup extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "triggerConfigurations",
-        "Configuration block(s) of the triggers for the deployment group (documented below).",
+        'triggerConfigurations',
+        'Configuration block(s) of the triggers for the deployment group (documented below).',
         () => codedeploy_DeploymentGroupTriggerConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "outdatedInstancesStrategy",
-        "Configuration block of Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision. Valid values are `UPDATE` and `IGNORE`. Defaults to `UPDATE`.",
+        'outdatedInstancesStrategy',
+        'Configuration block of Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision. Valid values are `UPDATE` and `IGNORE`. Defaults to `UPDATE`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "alarmConfiguration",
-        "Configuration block of alarms associated with the deployment group (documented below).",
+        'alarmConfiguration',
+        'Configuration block of alarms associated with the deployment group (documented below).',
         () => codedeploy_DeploymentGroupAlarmConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "onPremisesInstanceTagFilters",
-        "On premise tag filters associated with the group. See the AWS docs for details.",
+        'onPremisesInstanceTagFilters',
+        'On premise tag filters associated with the group. See the AWS docs for details.',
         () => codedeploy_DeploymentGroupOnPremisesInstanceTagFilter_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "deploymentStyle",
-        "Configuration block of the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer (documented below).",
+        'deploymentStyle',
+        'Configuration block of the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer (documented below).',
         () => codedeploy_DeploymentGroupDeploymentStyle_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ec2TagFilters",
-        "Tag filters associated with the deployment group. See the AWS docs for details.",
+        'ec2TagFilters',
+        'Tag filters associated with the deployment group. See the AWS docs for details.',
         () => codedeploy_DeploymentGroupEc2TagFilter_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "deploymentGroupName",
-        "The name of the deployment group.",
+        'deploymentGroupName',
+        'The name of the deployment group.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "autoRollbackConfiguration",
-        "Configuration block of the automatic rollback configuration associated with the deployment group (documented below).",
+        'autoRollbackConfiguration',
+        'Configuration block of the automatic rollback configuration associated with the deployment group (documented below).',
         () => codedeploy_DeploymentGroupAutoRollbackConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "loadBalancerInfo",
-        "Single configuration block of the load balancer to use in a blue/green deployment (documented below).",
+        'loadBalancerInfo',
+        'Single configuration block of the load balancer to use in a blue/green deployment (documented below).',
         () => codedeploy_DeploymentGroupLoadBalancerInfo_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "appName",
-        "The name of the application.",
+        'appName',
+        'The name of the application.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "autoscalingGroups",
-        "Autoscaling groups associated with the deployment group.",
+        'autoscalingGroups',
+        'Autoscaling groups associated with the deployment group.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "deploymentConfigName",
+        'deploymentConfigName',
         'The name of the group\'s deployment config. The default is "CodeDeployDefault.OneAtATime".',
         () => [],
         false,
@@ -271,32 +271,32 @@ export class DeploymentGroup extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ec2TagSets",
-        "Configuration block(s) of Tag filters associated with the deployment group, which are also referred to as tag groups (documented below). See the AWS docs for details.",
+        'ec2TagSets',
+        'Configuration block(s) of Tag filters associated with the deployment group, which are also referred to as tag groups (documented below). See the AWS docs for details.',
         () => codedeploy_DeploymentGroupEc2TagSet_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceRoleArn",
-        "The service role ARN that allows deployments.",
+        'serviceRoleArn',
+        'The service role ARN that allows deployments.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "ecsService",
-        "Configuration block(s) of the ECS services for a deployment group (documented below).",
+        'ecsService',
+        'Configuration block(s) of the ECS services for a deployment group (documented below).',
         () => codedeploy_DeploymentGroupEcsService_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "blueGreenDeploymentConfig",
-        "Configuration block of the blue/green deployment options for a deployment group (documented below).",
+        'blueGreenDeploymentConfig',
+        'Configuration block of the blue/green deployment options for a deployment group (documented below).',
         () => codedeploy_DeploymentGroupBlueGreenDeploymentConfig_GetTypes(),
         false,
         false,

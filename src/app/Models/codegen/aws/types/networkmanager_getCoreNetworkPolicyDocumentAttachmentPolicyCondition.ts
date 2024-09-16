@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface networkmanager_getCoreNetworkPolicyDocumentAttachmentPolicyCondition {
   // string value
@@ -24,32 +24,32 @@ export function networkmanager_getCoreNetworkPolicyDocumentAttachmentPolicyCondi
   return [
     new DynamicUIProps(
       InputType.String,
-      "key",
-      "string value",
+      'key',
+      'string value',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "operator",
-      "Valid values include: `equals`, `not-equals`, `contains`, `begins-with`.",
+      'operator',
+      'Valid values include: `equals`, `not-equals`, `contains`, `begins-with`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "Valid values include: `account-id`, `any`, `tag-value`, `tag-exists`, `resource-id`, `region`, `attachment-type`.",
+      'type',
+      'Valid values include: `account-id`, `any`, `tag-value`, `tag-exists`, `resource-id`, `region`, `attachment-type`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "string value",
+      'value',
+      'string value',
       () => [],
       false,
       false,

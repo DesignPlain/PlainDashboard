@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudtasks_QueueRateLimits,
   cloudtasks_QueueRateLimits_GetTypes,
-} from "../types/cloudtasks_QueueRateLimits";
+} from '../types/cloudtasks_QueueRateLimits';
 import {
   cloudtasks_QueueRetryConfig,
   cloudtasks_QueueRetryConfig_GetTypes,
-} from "../types/cloudtasks_QueueRetryConfig";
+} from '../types/cloudtasks_QueueRetryConfig';
 import {
   cloudtasks_QueueStackdriverLoggingConfig,
   cloudtasks_QueueStackdriverLoggingConfig_GetTypes,
-} from "../types/cloudtasks_QueueStackdriverLoggingConfig";
+} from '../types/cloudtasks_QueueStackdriverLoggingConfig';
 import {
   cloudtasks_QueueAppEngineRoutingOverride,
   cloudtasks_QueueAppEngineRoutingOverride_GetTypes,
-} from "../types/cloudtasks_QueueAppEngineRoutingOverride";
+} from '../types/cloudtasks_QueueAppEngineRoutingOverride';
 
 export interface QueueArgs {
   /*
@@ -125,47 +125,47 @@ The location of the queue
     return [
       new DynamicUIProps(
         InputType.Object,
-        "stackdriverLoggingConfig",
-        "Configuration options for writing logs to Stackdriver Logging.\nStructure is documented below.",
+        'stackdriverLoggingConfig',
+        'Configuration options for writing logs to Stackdriver Logging.\nStructure is documented below.',
         () => cloudtasks_QueueStackdriverLoggingConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "appEngineRoutingOverride",
-        "Overrides for task-level appEngineRouting. These settings apply only\nto App Engine tasks in this queue\nStructure is documented below.",
+        'appEngineRoutingOverride',
+        'Overrides for task-level appEngineRouting. These settings apply only\nto App Engine tasks in this queue\nStructure is documented below.',
         () => cloudtasks_QueueAppEngineRoutingOverride_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the queue\n\n\n- - -",
+        'location',
+        'The location of the queue\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The queue name.",
+        'name',
+        'The queue name.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "rateLimits",
+        'rateLimits',
         "Rate limits for task dispatches.\nThe queue's actual dispatch rate is the result of:\n* Number of tasks in the queue\n* User-specified throttling: rateLimits, retryConfig, and the queue's state.\n* System throttling due to 429 (Too Many Requests) or 503 (Service\nUnavailable) responses from the worker, high error rates, or to\nsmooth sudden large traffic spikes.\nStructure is documented below.",
         () => cloudtasks_QueueRateLimits_GetTypes(),
         false,
@@ -173,8 +173,8 @@ The location of the queue
       ),
       new DynamicUIProps(
         InputType.Object,
-        "retryConfig",
-        "Settings that determine the retry behavior.\nStructure is documented below.",
+        'retryConfig',
+        'Settings that determine the retry behavior.\nStructure is documented below.',
         () => cloudtasks_QueueRetryConfig_GetTypes(),
         false,
         false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface lex_BotAbortStatementMessage {
   // The text of the message.
@@ -24,24 +24,24 @@ export function lex_BotAbortStatementMessage_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "content",
-      "The text of the message.",
+      'content',
+      'The text of the message.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "contentType",
-      "The content type of the message string.",
+      'contentType',
+      'The content type of the message string.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "groupNumber",
-      "Identifies the message group that the message belongs to. When a group\nis assigned to a message, Amazon Lex returns one message from each group in the response.",
+      'groupNumber',
+      'Identifies the message group that the message belongs to. When a group\nis assigned to a message, Amazon Lex returns one message from each group in the response.',
       () => [],
       false,
       false,

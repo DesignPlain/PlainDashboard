@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface biglake_TableHiveOptionsStorageDescriptor {
   // The fully qualified Java class name of the output format.
@@ -21,23 +21,23 @@ export function biglake_TableHiveOptionsStorageDescriptor_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.String,
-      "outputFormat",
-      "The fully qualified Java class name of the output format.",
+      'outputFormat',
+      'The fully qualified Java class name of the output format.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "inputFormat",
-      "The fully qualified Java class name of the input format.",
+      'inputFormat',
+      'The fully qualified Java class name of the input format.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "locationUri",
+      'locationUri',
       'Cloud Storage folder URI where the table data is stored, starting with "gs://".',
       () => [],
       false,

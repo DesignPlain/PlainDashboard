@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface costexplorer_AnomalySubscriptionSubscriber {
   // The address of the subscriber. If type is `SNS`, this will be the arn of the sns topic. If type is `EMAIL`, this will be the destination email address.
@@ -18,16 +18,16 @@ export function costexplorer_AnomalySubscriptionSubscriber_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.String,
-      "address",
-      "The address of the subscriber. If type is `SNS`, this will be the arn of the sns topic. If type is `EMAIL`, this will be the destination email address.",
+      'address',
+      'The address of the subscriber. If type is `SNS`, this will be the arn of the sns topic. If type is `EMAIL`, this will be the destination email address.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "The type of subscription. Valid Values: `SNS` | `EMAIL`.",
+      'type',
+      'The type of subscription. Valid Values: `SNS` | `EMAIL`.',
       () => [],
       true,
       false,

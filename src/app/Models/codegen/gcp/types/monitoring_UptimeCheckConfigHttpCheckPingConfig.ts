@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface monitoring_UptimeCheckConfigHttpCheckPingConfig {
   // Number of ICMP pings. A maximum of 3 ICMP pings is currently supported.
@@ -15,8 +15,8 @@ export function monitoring_UptimeCheckConfigHttpCheckPingConfig_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Number,
-      "pingsCount",
-      "Number of ICMP pings. A maximum of 3 ICMP pings is currently supported.",
+      'pingsCount',
+      'Number of ICMP pings. A maximum of 3 ICMP pings is currently supported.',
       () => [],
       true,
       false,

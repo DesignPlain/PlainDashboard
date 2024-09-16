@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkfirewall_getFirewallPolicyFirewallPolicyStatelessRuleGroupReference,
   networkfirewall_getFirewallPolicyFirewallPolicyStatelessRuleGroupReference_GetTypes,
-} from "./networkfirewall_getFirewallPolicyFirewallPolicyStatelessRuleGroupReference";
+} from './networkfirewall_getFirewallPolicyFirewallPolicyStatelessRuleGroupReference';
 import {
   networkfirewall_getFirewallPolicyFirewallPolicyStatefulEngineOption,
   networkfirewall_getFirewallPolicyFirewallPolicyStatefulEngineOption_GetTypes,
-} from "./networkfirewall_getFirewallPolicyFirewallPolicyStatefulEngineOption";
+} from './networkfirewall_getFirewallPolicyFirewallPolicyStatefulEngineOption';
 import {
   networkfirewall_getFirewallPolicyFirewallPolicyStatefulRuleGroupReference,
   networkfirewall_getFirewallPolicyFirewallPolicyStatefulRuleGroupReference_GetTypes,
-} from "./networkfirewall_getFirewallPolicyFirewallPolicyStatefulRuleGroupReference";
+} from './networkfirewall_getFirewallPolicyFirewallPolicyStatefulRuleGroupReference';
 import {
   networkfirewall_getFirewallPolicyFirewallPolicyStatelessCustomAction,
   networkfirewall_getFirewallPolicyFirewallPolicyStatelessCustomAction_GetTypes,
-} from "./networkfirewall_getFirewallPolicyFirewallPolicyStatelessCustomAction";
+} from './networkfirewall_getFirewallPolicyFirewallPolicyStatelessCustomAction';
 
 export interface networkfirewall_getFirewallPolicyFirewallPolicy {
   //
@@ -52,24 +52,24 @@ export function networkfirewall_getFirewallPolicyFirewallPolicy_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.String,
-      "tlsInspectionConfigurationArn",
-      "",
+      'tlsInspectionConfigurationArn',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "statefulDefaultActions",
-      "",
+      'statefulDefaultActions',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "statefulEngineOptions",
-      "",
+      'statefulEngineOptions',
+      '',
       () =>
         networkfirewall_getFirewallPolicyFirewallPolicyStatefulEngineOption_GetTypes(),
       true,
@@ -77,8 +77,8 @@ export function networkfirewall_getFirewallPolicyFirewallPolicy_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Array,
-      "statefulRuleGroupReferences",
-      "",
+      'statefulRuleGroupReferences',
+      '',
       () =>
         networkfirewall_getFirewallPolicyFirewallPolicyStatefulRuleGroupReference_GetTypes(),
       true,
@@ -86,8 +86,8 @@ export function networkfirewall_getFirewallPolicyFirewallPolicy_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Array,
-      "statelessCustomActions",
-      "",
+      'statelessCustomActions',
+      '',
       () =>
         networkfirewall_getFirewallPolicyFirewallPolicyStatelessCustomAction_GetTypes(),
       true,
@@ -95,24 +95,24 @@ export function networkfirewall_getFirewallPolicyFirewallPolicy_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Array,
-      "statelessDefaultActions",
-      "",
+      'statelessDefaultActions',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "statelessFragmentDefaultActions",
-      "",
+      'statelessFragmentDefaultActions',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "statelessRuleGroupReferences",
-      "",
+      'statelessRuleGroupReferences',
+      '',
       () =>
         networkfirewall_getFirewallPolicyFirewallPolicyStatelessRuleGroupReference_GetTypes(),
       true,

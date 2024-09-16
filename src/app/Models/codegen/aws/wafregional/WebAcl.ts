@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafregional_WebAclDefaultAction,
   wafregional_WebAclDefaultAction_GetTypes,
-} from "../types/wafregional_WebAclDefaultAction";
+} from '../types/wafregional_WebAclDefaultAction';
 import {
   wafregional_WebAclLoggingConfiguration,
   wafregional_WebAclLoggingConfiguration_GetTypes,
-} from "../types/wafregional_WebAclLoggingConfiguration";
+} from '../types/wafregional_WebAclLoggingConfiguration';
 import {
   wafregional_WebAclRule,
   wafregional_WebAclRule_GetTypes,
-} from "../types/wafregional_WebAclRule";
+} from '../types/wafregional_WebAclRule';
 
 export interface WebAclArgs {
   // The action that you want AWS WAF Regional to take when a request doesn't match the criteria in any of the rules that are associated with the web ACL.
@@ -67,7 +67,7 @@ export class WebAcl extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "defaultAction",
+        'defaultAction',
         "The action that you want AWS WAF Regional to take when a request doesn't match the criteria in any of the rules that are associated with the web ACL.",
         () => wafregional_WebAclDefaultAction_GetTypes(),
         true,
@@ -75,40 +75,40 @@ export class WebAcl extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Object,
-        "loggingConfiguration",
-        "Configuration block to enable WAF logging. Detailed below.",
+        'loggingConfiguration',
+        'Configuration block to enable WAF logging. Detailed below.',
         () => wafregional_WebAclLoggingConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "metricName",
-        "The name or description for the Amazon CloudWatch metric of this web ACL.",
+        'metricName',
+        'The name or description for the Amazon CloudWatch metric of this web ACL.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name or description of the web ACL.",
+        'name',
+        'The name or description of the web ACL.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "rules",
-        "Set of configuration blocks containing rules for the web ACL. Detailed below.",
+        'rules',
+        'Set of configuration blocks containing rules for the web ACL. Detailed below.',
         () => wafregional_WebAclRule_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

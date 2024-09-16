@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface filestore_InstanceNetwork {
   /*
@@ -48,40 +48,40 @@ export function filestore_InstanceNetwork_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "network",
-      "The name of the GCE VPC network to which the\ninstance is connected.",
+      'network',
+      'The name of the GCE VPC network to which the\ninstance is connected.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "reservedIpRange",
-      "A /29 CIDR block that identifies the range of IP\naddresses reserved for this instance.",
+      'reservedIpRange',
+      'A /29 CIDR block that identifies the range of IP\naddresses reserved for this instance.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "connectMode",
-      "The network connect mode of the Filestore instance.\nIf not provided, the connect mode defaults to\nDIRECT_PEERING.\nDefault value is `DIRECT_PEERING`.\nPossible values are: `DIRECT_PEERING`, `PRIVATE_SERVICE_ACCESS`.\n\n- - -",
+      'connectMode',
+      'The network connect mode of the Filestore instance.\nIf not provided, the connect mode defaults to\nDIRECT_PEERING.\nDefault value is `DIRECT_PEERING`.\nPossible values are: `DIRECT_PEERING`, `PRIVATE_SERVICE_ACCESS`.\n\n- - -',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ipAddresses",
-      "(Output)\nA list of IPv4 or IPv6 addresses.",
+      'ipAddresses',
+      '(Output)\nA list of IPv4 or IPv6 addresses.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "modes",
-      "IP versions for which the instance has\nIP addresses assigned.\nEach value may be one of: `ADDRESS_MODE_UNSPECIFIED`, `MODE_IPV4`, `MODE_IPV6`.",
+      'modes',
+      'IP versions for which the instance has\nIP addresses assigned.\nEach value may be one of: `ADDRESS_MODE_UNSPECIFIED`, `MODE_IPV4`, `MODE_IPV6`.',
       () => InputType_String_GetTypes(),
       true,
       true,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface autoscalingplans_ScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecification {
   // Dimensions of the metric.
@@ -27,40 +27,40 @@ export function autoscalingplans_ScalingPlanScalingInstructionTargetTrackingConf
   return [
     new DynamicUIProps(
       InputType.Map,
-      "dimensions",
-      "Dimensions of the metric.",
+      'dimensions',
+      'Dimensions of the metric.',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "metricName",
-      "Name of the metric.",
+      'metricName',
+      'Name of the metric.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "namespace",
-      "Namespace of the metric.",
+      'namespace',
+      'Namespace of the metric.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "statistic",
-      "Statistic of the metric. Valid values: `Average`, `Maximum`, `Minimum`, `SampleCount`, `Sum`.",
+      'statistic',
+      'Statistic of the metric. Valid values: `Average`, `Maximum`, `Minimum`, `SampleCount`, `Sum`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "unit",
-      "Unit of the metric.",
+      'unit',
+      'Unit of the metric.',
       () => [],
       false,
       false,

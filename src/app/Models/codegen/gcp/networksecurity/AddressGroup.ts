@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface AddressGroupArgs {
   /*
@@ -114,23 +114,23 @@ Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the AddressGroup resource.",
+        'name',
+        'Name of the AddressGroup resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The name of the parent this address group belongs to. Format: organizations/{organization_id} or projects/{project_id}.",
+        'parent',
+        'The name of the parent this address group belongs to. Format: organizations/{organization_id} or projects/{project_id}.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
+        'type',
         'The type of the Address Group. Possible values are "IPV4" or "IPV6".\nPossible values are: `IPV4`, `IPV6`.',
         () => [],
         true,
@@ -138,31 +138,31 @@ Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
       ),
       new DynamicUIProps(
         InputType.Number,
-        "capacity",
-        "Capacity of the Address Group.",
+        'capacity',
+        'Capacity of the Address Group.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Free-text description of the resource.",
+        'description',
+        'Free-text description of the resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "items",
-        "List of items.",
+        'items',
+        'List of items.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         'Set of label tags associated with the AddressGroup resource.\nAn object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
@@ -170,8 +170,8 @@ Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the gateway security policy.\nThe default value is `global`.\n\n\n- - -",
+        'location',
+        'The location of the gateway security policy.\nThe default value is `global`.\n\n\n- - -',
         () => [],
         true,
         false,

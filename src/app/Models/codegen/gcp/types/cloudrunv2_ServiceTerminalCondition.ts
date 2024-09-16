@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudrunv2_ServiceTerminalCondition {
   /*
@@ -61,23 +61,23 @@ export function cloudrunv2_ServiceTerminalCondition_GetTypes(): DynamicUIProps[]
   return [
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "The allocation type for this traffic target.\nPossible values are: `TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST`, `TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION`.",
+      'type',
+      'The allocation type for this traffic target.\nPossible values are: `TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST`, `TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "executionReason",
-      "(Output)\nA reason for the execution condition.",
+      'executionReason',
+      '(Output)\nA reason for the execution condition.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "lastTransitionTime",
+      'lastTransitionTime',
       '(Output)\nLast time the condition transitioned from one status to another.\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
       () => [],
       false,
@@ -85,40 +85,40 @@ export function cloudrunv2_ServiceTerminalCondition_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "message",
-      "(Output)\nHuman readable message indicating details about the current status.",
+      'message',
+      '(Output)\nHuman readable message indicating details about the current status.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "reason",
-      "(Output)\nA common (service-level) reason for this condition.",
+      'reason',
+      '(Output)\nA common (service-level) reason for this condition.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "revisionReason",
-      "(Output)\nA reason for the revision condition.",
+      'revisionReason',
+      '(Output)\nA reason for the revision condition.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "severity",
-      "(Output)\nHow to interpret failures of this condition, one of Error, Warning, Info",
+      'severity',
+      '(Output)\nHow to interpret failures of this condition, one of Error, Warning, Info',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "state",
-      "(Output)\nState of the condition.",
+      'state',
+      '(Output)\nState of the condition.',
       () => [],
       false,
       false,

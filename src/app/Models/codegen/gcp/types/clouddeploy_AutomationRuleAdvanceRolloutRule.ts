@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface clouddeploy_AutomationRuleAdvanceRolloutRule {
   // Optional. How long to wait after a rollout is finished.
@@ -25,24 +25,24 @@ export function clouddeploy_AutomationRuleAdvanceRolloutRule_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.String,
-      "wait",
-      "Optional. How long to wait after a rollout is finished.",
+      'wait',
+      'Optional. How long to wait after a rollout is finished.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "id",
-      "Required. ID of the rule. This id must be unique in the `Automation` resource to which this rule belongs. The format is `a-z{0,62}`.",
+      'id',
+      'Required. ID of the rule. This id must be unique in the `Automation` resource to which this rule belongs. The format is `a-z{0,62}`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "sourcePhases",
-      "Optional. Proceeds only after phase name matched any one in the list. This value must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^a-z?$`.\n\n- - -",
+      'sourcePhases',
+      'Optional. Proceeds only after phase name matched any one in the list. This value must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^a-z?$`.\n\n- - -',
       () => InputType_String_GetTypes(),
       false,
       false,

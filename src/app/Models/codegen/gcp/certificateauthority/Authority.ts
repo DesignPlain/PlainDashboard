@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificateauthority_AuthorityKeySpec,
   certificateauthority_AuthorityKeySpec_GetTypes,
-} from "../types/certificateauthority_AuthorityKeySpec";
+} from '../types/certificateauthority_AuthorityKeySpec';
 import {
   certificateauthority_AuthorityConfig,
   certificateauthority_AuthorityConfig_GetTypes,
-} from "../types/certificateauthority_AuthorityConfig";
+} from '../types/certificateauthority_AuthorityConfig';
 import {
   certificateauthority_AuthorityAccessUrl,
   certificateauthority_AuthorityAccessUrl_GetTypes,
-} from "../types/certificateauthority_AuthorityAccessUrl";
+} from '../types/certificateauthority_AuthorityAccessUrl';
 import {
   certificateauthority_AuthoritySubordinateConfig,
   certificateauthority_AuthoritySubordinateConfig_GetTypes,
-} from "../types/certificateauthority_AuthoritySubordinateConfig";
+} from '../types/certificateauthority_AuthoritySubordinateConfig';
 
 export interface AuthorityArgs {
   /*
@@ -275,15 +275,15 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "desiredState",
-        "Desired state of the CertificateAuthority. Set this field to `STAGED` to create a `STAGED` root CA.",
+        'desiredState',
+        'Desired state of the CertificateAuthority. Set this field to `STAGED` to create a `STAGED` root CA.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         'Labels with user-defined metadata.\nAn object containing a list of "key": value pairs. Example: { "name": "wrench", "mass":\n"1.3kg", "count": "3" }.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
@@ -291,31 +291,31 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "config",
-        "The config used to create a self-signed X.509 certificate or CSR.\nStructure is documented below.",
+        'config',
+        'The config used to create a self-signed X.509 certificate or CSR.\nStructure is documented below.',
         () => certificateauthority_AuthorityConfig_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "subordinateConfig",
-        "If this is a subordinate CertificateAuthority, this field will be set\nwith the subordinate configuration, which describes its issuers.\nStructure is documented below.",
+        'subordinateConfig',
+        'If this is a subordinate CertificateAuthority, this field will be set\nwith the subordinate configuration, which describes its issuers.\nStructure is documented below.',
         () => certificateauthority_AuthoritySubordinateConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "lifetime",
+        'lifetime',
         'The desired lifetime of the CA certificate. Used to create the "notBeforeTime" and\n"notAfterTime" fields inside an X.509 certificate. A duration in seconds with up to nine\nfractional digits, terminated by \'s\'. Example: "3.5s".',
         () => [],
         false,
@@ -323,15 +323,15 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The Type of this CertificateAuthority.\n> **Note:** For `SUBORDINATE` Certificate Authorities, they need to\nbe activated before they can issue certificates.\nDefault value is `SELF_SIGNED`.\nPossible values are: `SELF_SIGNED`, `SUBORDINATE`.",
+        'type',
+        'The Type of this CertificateAuthority.\n> **Note:** For `SUBORDINATE` Certificate Authorities, they need to\nbe activated before they can issue certificates.\nDefault value is `SELF_SIGNED`.\nPossible values are: `SELF_SIGNED`, `SUBORDINATE`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "deletionProtection",
+        'deletionProtection',
         "Whether or not to allow Terraform to destroy the CertificateAuthority. Unless this field is set to false in Terraform\nstate, a 'terraform destroy' or 'terraform apply' that would delete the instance will fail.",
         () => [],
         false,
@@ -339,47 +339,47 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "gcsBucket",
-        "The name of a Cloud Storage bucket where this CertificateAuthority will publish content,\nsuch as the CA certificate and CRLs. This must be a bucket name, without any prefixes\n(such as `gs://`) or suffixes (such as `.googleapis.com`). For example, to use a bucket named\nmy-bucket, you would simply specify `my-bucket`. If not specified, a managed bucket will be\ncreated.",
+        'gcsBucket',
+        'The name of a Cloud Storage bucket where this CertificateAuthority will publish content,\nsuch as the CA certificate and CRLs. This must be a bucket name, without any prefixes\n(such as `gs://`) or suffixes (such as `.googleapis.com`). For example, to use a bucket named\nmy-bucket, you would simply specify `my-bucket`. If not specified, a managed bucket will be\ncreated.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "pool",
-        "The name of the CaPool this Certificate Authority belongs to.",
+        'pool',
+        'The name of the CaPool this Certificate Authority belongs to.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "keySpec",
-        "Used when issuing certificates for this CertificateAuthority. If this CertificateAuthority\nis a self-signed CertificateAuthority, this key is also used to sign the self-signed CA\ncertificate. Otherwise, it is used to sign a CSR.\nStructure is documented below.",
+        'keySpec',
+        'Used when issuing certificates for this CertificateAuthority. If this CertificateAuthority\nis a self-signed CertificateAuthority, this key is also used to sign the self-signed CA\ncertificate. Otherwise, it is used to sign a CSR.\nStructure is documented below.',
         () => certificateauthority_AuthorityKeySpec_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "skipGracePeriod",
-        "If this flag is set, the Certificate Authority will be deleted as soon as\npossible without a 30-day grace period where undeletion would have been\nallowed. If you proceed, there will be no way to recover this CA.\nUse with care. Defaults to `false`.",
+        'skipGracePeriod',
+        'If this flag is set, the Certificate Authority will be deleted as soon as\npossible without a 30-day grace period where undeletion would have been\nallowed. If you proceed, there will be no way to recover this CA.\nUse with care. Defaults to `false`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "Location of the CertificateAuthority. A full list of valid locations can be found by\nrunning `gcloud privateca locations list`.",
+        'location',
+        'Location of the CertificateAuthority. A full list of valid locations can be found by\nrunning `gcloud privateca locations list`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "pemCaCertificate",
+        'pemCaCertificate',
         "The signed CA certificate issued from the subordinated CA's CSR. This is needed when activating the subordiante CA with a third party issuer.",
         () => [],
         false,
@@ -387,16 +387,16 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateAuthorityId",
-        "The user provided Resource ID for this Certificate Authority.",
+        'certificateAuthorityId',
+        'The user provided Resource ID for this Certificate Authority.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "ignoreActiveCertificatesOnDeletion",
-        "This field allows the CA to be deleted even if the CA has active certs. Active certs include both unrevoked and unexpired certs.\nUse with care. Defaults to `false`.",
+        'ignoreActiveCertificatesOnDeletion',
+        'This field allows the CA to be deleted even if the CA has active certs. Active certs include both unrevoked and unexpired certs.\nUse with care. Defaults to `false`.',
         () => [],
         false,
         false,

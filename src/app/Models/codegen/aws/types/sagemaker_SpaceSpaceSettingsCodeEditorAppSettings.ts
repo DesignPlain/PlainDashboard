@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sagemaker_SpaceSpaceSettingsCodeEditorAppSettingsDefaultResourceSpec,
   sagemaker_SpaceSpaceSettingsCodeEditorAppSettingsDefaultResourceSpec_GetTypes,
-} from "./sagemaker_SpaceSpaceSettingsCodeEditorAppSettingsDefaultResourceSpec";
+} from './sagemaker_SpaceSpaceSettingsCodeEditorAppSettingsDefaultResourceSpec';
 
 export interface sagemaker_SpaceSpaceSettingsCodeEditorAppSettings {
   // The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. See `default_resource_spec` Block below.
@@ -19,8 +19,8 @@ export function sagemaker_SpaceSpaceSettingsCodeEditorAppSettings_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Object,
-      "defaultResourceSpec",
-      "The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. See `default_resource_spec` Block below.",
+      'defaultResourceSpec',
+      'The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. See `default_resource_spec` Block below.',
       () =>
         sagemaker_SpaceSpaceSettingsCodeEditorAppSettingsDefaultResourceSpec_GetTypes(),
       true,

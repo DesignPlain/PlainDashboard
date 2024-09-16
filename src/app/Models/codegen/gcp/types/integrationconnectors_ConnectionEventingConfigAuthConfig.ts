@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword,
   integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword_GetTypes,
-} from "./integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword";
+} from './integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword';
 import {
   integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable,
   integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable_GetTypes,
-} from "./integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable";
+} from './integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable';
 
 export interface integrationconnectors_ConnectionEventingConfigAuthConfig {
   // The type of authentication configured.
@@ -41,24 +41,24 @@ export function integrationconnectors_ConnectionEventingConfigAuthConfig_GetType
   return [
     new DynamicUIProps(
       InputType.String,
-      "authKey",
-      "The type of authentication configured.",
+      'authKey',
+      'The type of authentication configured.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "authType",
-      "authType of the Connection\nPossible values are: `USER_PASSWORD`.",
+      'authType',
+      'authType of the Connection\nPossible values are: `USER_PASSWORD`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "userPassword",
-      "User password for Authentication.\nStructure is documented below.",
+      'userPassword',
+      'User password for Authentication.\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionEventingConfigAuthConfigUserPassword_GetTypes(),
       true,
@@ -66,8 +66,8 @@ export function integrationconnectors_ConnectionEventingConfigAuthConfig_GetType
     ),
     new DynamicUIProps(
       InputType.Array,
-      "additionalVariables",
-      "List containing additional auth configs.\nStructure is documented below.",
+      'additionalVariables',
+      'List containing additional auth configs.\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionEventingConfigAuthConfigAdditionalVariable_GetTypes(),
       false,

@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualGatewaySpecListenerTlValidationTrustFile,
   appmesh_getVirtualGatewaySpecListenerTlValidationTrustFile_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecListenerTlValidationTrustFile";
+} from './appmesh_getVirtualGatewaySpecListenerTlValidationTrustFile';
 import {
   appmesh_getVirtualGatewaySpecListenerTlValidationTrustSd,
   appmesh_getVirtualGatewaySpecListenerTlValidationTrustSd_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecListenerTlValidationTrustSd";
+} from './appmesh_getVirtualGatewaySpecListenerTlValidationTrustSd';
 
 export interface appmesh_getVirtualGatewaySpecListenerTlValidationTrust {
   //
@@ -26,8 +26,8 @@ export function appmesh_getVirtualGatewaySpecListenerTlValidationTrust_GetTypes(
   return [
     new DynamicUIProps(
       InputType.Array,
-      "files",
-      "",
+      'files',
+      '',
       () =>
         appmesh_getVirtualGatewaySpecListenerTlValidationTrustFile_GetTypes(),
       true,
@@ -35,8 +35,8 @@ export function appmesh_getVirtualGatewaySpecListenerTlValidationTrust_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Array,
-      "sds",
-      "",
+      'sds',
+      '',
       () => appmesh_getVirtualGatewaySpecListenerTlValidationTrustSd_GetTypes(),
       true,
       false,

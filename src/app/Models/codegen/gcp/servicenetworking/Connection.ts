@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ConnectionArgs {
   /*
@@ -62,31 +62,31 @@ service provider organization. For Google services that support this functionali
     return [
       new DynamicUIProps(
         InputType.String,
-        "deletionPolicy",
-        "When set to ABANDON, terraform will abandon management of the resource instead of deleting it. Prevents terraform apply\nfailures with CloudSQL. Note: The resource will still exist.",
+        'deletionPolicy',
+        'When set to ABANDON, terraform will abandon management of the resource instead of deleting it. Prevents terraform apply\nfailures with CloudSQL. Note: The resource will still exist.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "network",
-        "Name of VPC network connected with service producers using VPC peering.",
+        'network',
+        'Name of VPC network connected with service producers using VPC peering.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "reservedPeeringRanges",
-        "Named IP address range(s) of PEERING type reserved for\nthis service provider. Note that invoking this method with a different range when connection\nis already established will not reallocate already provisioned service producer subnetworks.",
+        'reservedPeeringRanges',
+        'Named IP address range(s) of PEERING type reserved for\nthis service provider. Note that invoking this method with a different range when connection\nis already established will not reallocate already provisioned service producer subnetworks.',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "service",
+        'service',
         "Provider peering service that is managing peering connectivity for a\nservice provider organization. For Google services that support this functionality it is\n'servicenetworking.googleapis.com'.",
         () => [],
         true,

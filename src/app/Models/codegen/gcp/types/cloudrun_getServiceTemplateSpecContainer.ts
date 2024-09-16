@@ -3,36 +3,36 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudrun_getServiceTemplateSpecContainerStartupProbe,
   cloudrun_getServiceTemplateSpecContainerStartupProbe_GetTypes,
-} from "./cloudrun_getServiceTemplateSpecContainerStartupProbe";
+} from './cloudrun_getServiceTemplateSpecContainerStartupProbe';
 import {
   cloudrun_getServiceTemplateSpecContainerEnv,
   cloudrun_getServiceTemplateSpecContainerEnv_GetTypes,
-} from "./cloudrun_getServiceTemplateSpecContainerEnv";
+} from './cloudrun_getServiceTemplateSpecContainerEnv';
 import {
   cloudrun_getServiceTemplateSpecContainerPort,
   cloudrun_getServiceTemplateSpecContainerPort_GetTypes,
-} from "./cloudrun_getServiceTemplateSpecContainerPort";
+} from './cloudrun_getServiceTemplateSpecContainerPort';
 import {
   cloudrun_getServiceTemplateSpecContainerVolumeMount,
   cloudrun_getServiceTemplateSpecContainerVolumeMount_GetTypes,
-} from "./cloudrun_getServiceTemplateSpecContainerVolumeMount";
+} from './cloudrun_getServiceTemplateSpecContainerVolumeMount';
 import {
   cloudrun_getServiceTemplateSpecContainerEnvFrom,
   cloudrun_getServiceTemplateSpecContainerEnvFrom_GetTypes,
-} from "./cloudrun_getServiceTemplateSpecContainerEnvFrom";
+} from './cloudrun_getServiceTemplateSpecContainerEnvFrom';
 import {
   cloudrun_getServiceTemplateSpecContainerLivenessProbe,
   cloudrun_getServiceTemplateSpecContainerLivenessProbe_GetTypes,
-} from "./cloudrun_getServiceTemplateSpecContainerLivenessProbe";
+} from './cloudrun_getServiceTemplateSpecContainerLivenessProbe';
 import {
   cloudrun_getServiceTemplateSpecContainerResource,
   cloudrun_getServiceTemplateSpecContainerResource_GetTypes,
-} from "./cloudrun_getServiceTemplateSpecContainerResource";
+} from './cloudrun_getServiceTemplateSpecContainerResource';
 
 export interface cloudrun_getServiceTemplateSpecContainer {
   /*
@@ -102,39 +102,39 @@ export function cloudrun_getServiceTemplateSpecContainer_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Array,
-      "livenessProbes",
-      "Periodic probe of container liveness. Container will be restarted if the probe fails.",
+      'livenessProbes',
+      'Periodic probe of container liveness. Container will be restarted if the probe fails.',
       () => cloudrun_getServiceTemplateSpecContainerLivenessProbe_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The name of the Cloud Run Service.",
+      'name',
+      'The name of the Cloud Run Service.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "resources",
-      "Compute Resources required by this container. Used to set values such as max memory",
+      'resources',
+      'Compute Resources required by this container. Used to set values such as max memory',
       () => cloudrun_getServiceTemplateSpecContainerResource_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "envs",
-      "List of environment variables to set in the container.",
+      'envs',
+      'List of environment variables to set in the container.',
       () => cloudrun_getServiceTemplateSpecContainerEnv_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "workingDir",
+      'workingDir',
       "Container's working directory.\nIf not specified, the container runtime's default will be used, which\nmight be configured in the container image.",
       () => [],
       true,
@@ -142,7 +142,7 @@ export function cloudrun_getServiceTemplateSpecContainer_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Array,
-      "volumeMounts",
+      'volumeMounts',
       "Volume to mount into the container's filesystem.\nOnly supports SecretVolumeSources.",
       () => cloudrun_getServiceTemplateSpecContainerVolumeMount_GetTypes(),
       true,
@@ -150,23 +150,23 @@ export function cloudrun_getServiceTemplateSpecContainer_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Array,
-      "envFroms",
-      "List of sources to populate environment variables in the container.\nAll invalid keys will be reported as an event when the container is starting.\nWhen a key exists in multiple sources, the value associated with the last source will\ntake precedence. Values defined by an Env with a duplicate key will take\nprecedence.",
+      'envFroms',
+      'List of sources to populate environment variables in the container.\nAll invalid keys will be reported as an event when the container is starting.\nWhen a key exists in multiple sources, the value associated with the last source will\ntake precedence. Values defined by an Env with a duplicate key will take\nprecedence.',
       () => cloudrun_getServiceTemplateSpecContainerEnvFrom_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "startupProbes",
-      "Startup probe of application within the container.\nAll other probes are disabled if a startup probe is provided, until it\nsucceeds. Container will not be added to service endpoints if the probe fails.",
+      'startupProbes',
+      'Startup probe of application within the container.\nAll other probes are disabled if a startup probe is provided, until it\nsucceeds. Container will not be added to service endpoints if the probe fails.',
       () => cloudrun_getServiceTemplateSpecContainerStartupProbe_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "commands",
+      'commands',
       "Entrypoint array. Not executed within a shell.\nThe docker image's ENTRYPOINT is used if this is not provided.",
       () => InputType_String_GetTypes(),
       true,
@@ -174,23 +174,23 @@ export function cloudrun_getServiceTemplateSpecContainer_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "image",
-      "Docker image name. This is most often a reference to a container located\nin the container registry, such as gcr.io/cloudrun/hello",
+      'image',
+      'Docker image name. This is most often a reference to a container located\nin the container registry, such as gcr.io/cloudrun/hello',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ports",
-      "List of open ports in the container.",
+      'ports',
+      'List of open ports in the container.',
       () => cloudrun_getServiceTemplateSpecContainerPort_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "args",
+      'args',
       "Arguments to the entrypoint.\nThe docker image's CMD is used if this is not provided.",
       () => InputType_String_GetTypes(),
       true,

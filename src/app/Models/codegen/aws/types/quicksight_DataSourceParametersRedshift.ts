@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface quicksight_DataSourceParametersRedshift {
   // The ID of the cluster to which to connect.
@@ -24,32 +24,32 @@ export function quicksight_DataSourceParametersRedshift_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.String,
-      "database",
-      "The database to which to connect.",
+      'database',
+      'The database to which to connect.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "host",
-      "The host to which to connect.",
+      'host',
+      'The host to which to connect.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "port",
-      "The port to which to connect.",
+      'port',
+      'The port to which to connect.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "clusterId",
-      "The ID of the cluster to which to connect.",
+      'clusterId',
+      'The ID of the cluster to which to connect.',
       () => [],
       false,
       false,

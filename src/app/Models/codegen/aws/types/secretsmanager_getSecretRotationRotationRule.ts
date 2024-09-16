@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface secretsmanager_getSecretRotationRotationRule {
   //
@@ -21,17 +21,17 @@ export function secretsmanager_getSecretRotationRotationRule_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.Number,
-      "automaticallyAfterDays",
-      "",
+      'automaticallyAfterDays',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "duration", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'duration', '', () => [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "scheduleExpression",
-      "",
+      'scheduleExpression',
+      '',
       () => [],
       true,
       false,

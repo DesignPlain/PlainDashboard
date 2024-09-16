@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesHoneycodeErrorHandlingConfig,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesHoneycodeErrorHandlingConfig_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesHoneycodeErrorHandlingConfig";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesHoneycodeErrorHandlingConfig';
 
 export interface appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesHoneycode {
   //
@@ -22,13 +22,13 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesH
   return [
     new DynamicUIProps(
       InputType.Object,
-      "errorHandlingConfig",
-      "",
+      'errorHandlingConfig',
+      '',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesHoneycodeErrorHandlingConfig_GetTypes(),
       false,
       false,
     ),
-    new DynamicUIProps(InputType.String, "object", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'object', '', () => [], true, false),
   ];
 }

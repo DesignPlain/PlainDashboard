@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cognito_ResourceServerScope,
   cognito_ResourceServerScope_GetTypes,
-} from "../types/cognito_ResourceServerScope";
+} from '../types/cognito_ResourceServerScope';
 
 export interface ResourceServerArgs {
   // A name for the resource server.
@@ -44,32 +44,32 @@ export class ResourceServer extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "userPoolId",
-        "User pool the client belongs to.",
+        'userPoolId',
+        'User pool the client belongs to.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "identifier",
-        "An identifier for the resource server.",
+        'identifier',
+        'An identifier for the resource server.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A name for the resource server.",
+        'name',
+        'A name for the resource server.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "scopes",
-        "A list of Authorization Scope.",
+        'scopes',
+        'A list of Authorization Scope.',
         () => cognito_ResourceServerScope_GetTypes(),
         false,
         false,

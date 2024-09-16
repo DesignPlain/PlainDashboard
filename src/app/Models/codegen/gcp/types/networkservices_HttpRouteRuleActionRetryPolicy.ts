@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface networkservices_HttpRouteRuleActionRetryPolicy {
   // Specifies the allowed number of retries.
@@ -21,24 +21,24 @@ export function networkservices_HttpRouteRuleActionRetryPolicy_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Number,
-      "numRetries",
-      "Specifies the allowed number of retries.",
+      'numRetries',
+      'Specifies the allowed number of retries.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "perTryTimeout",
-      "Specifies a non-zero timeout per retry attempt. A duration in seconds with up to nine fractional digits, ending with 's'. Example: \"3.5s\".",
+      'perTryTimeout',
+      'Specifies a non-zero timeout per retry attempt. A duration in seconds with up to nine fractional digits, ending with \'s\'. Example: "3.5s".',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "retryConditions",
-      "Specifies one or more conditions when this retry policy applies.",
+      'retryConditions',
+      'Specifies one or more conditions when this retry policy applies.',
       () => InputType_String_GetTypes(),
       false,
       false,

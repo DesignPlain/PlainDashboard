@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   redshift_EndpointAccessVpcEndpoint,
   redshift_EndpointAccessVpcEndpoint_GetTypes,
-} from "../types/redshift_EndpointAccessVpcEndpoint";
+} from '../types/redshift_EndpointAccessVpcEndpoint';
 
 export interface EndpointAccessArgs {
   // The Redshift-managed VPC endpoint name.
@@ -56,40 +56,40 @@ export class EndpointAccess extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "resourceOwner",
-        "The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.",
+        'resourceOwner',
+        'The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "subnetGroupName",
-        "The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.",
+        'subnetGroupName',
+        'The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "vpcSecurityGroupIds",
-        "The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.",
+        'vpcSecurityGroupIds',
+        'The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clusterIdentifier",
-        "The cluster identifier of the cluster to access.",
+        'clusterIdentifier',
+        'The cluster identifier of the cluster to access.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "endpointName",
-        "The Redshift-managed VPC endpoint name.",
+        'endpointName',
+        'The Redshift-managed VPC endpoint name.',
         () => [],
         true,
         true,

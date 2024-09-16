@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface networkconnectivity_PolicyBasedRouteWarning {
   /*
@@ -30,24 +30,24 @@ export function networkconnectivity_PolicyBasedRouteWarning_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.String,
-      "warningMessage",
-      "(Output)\nA human-readable description of the warning code.",
+      'warningMessage',
+      '(Output)\nA human-readable description of the warning code.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "code",
-      "(Output)\nA warning code, if applicable.",
+      'code',
+      '(Output)\nA warning code, if applicable.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "data",
-      "(Output)\nMetadata about this warning in key: value format. The key should provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement.",
+      'data',
+      '(Output)\nMetadata about this warning in key: value format. The key should provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement.',
       () => InputType_Map_GetTypes(),
       false,
       false,

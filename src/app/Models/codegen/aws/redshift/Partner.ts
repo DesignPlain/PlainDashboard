@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface PartnerArgs {
   // The Amazon Web Services account ID that owns the cluster.
@@ -43,32 +43,32 @@ export class Partner extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "accountId",
-        "The Amazon Web Services account ID that owns the cluster.",
+        'accountId',
+        'The Amazon Web Services account ID that owns the cluster.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clusterIdentifier",
-        "The cluster identifier of the cluster that receives data from the partner.",
+        'clusterIdentifier',
+        'The cluster identifier of the cluster that receives data from the partner.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "databaseName",
-        "The name of the database that receives data from the partner.",
+        'databaseName',
+        'The name of the database that receives data from the partner.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "partnerName",
-        "The name of the partner that is authorized to send data.",
+        'partnerName',
+        'The name of the partner that is authorized to send data.',
         () => [],
         true,
         true,

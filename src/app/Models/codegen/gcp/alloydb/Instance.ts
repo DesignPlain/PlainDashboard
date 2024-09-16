@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   alloydb_InstanceReadPoolConfig,
   alloydb_InstanceReadPoolConfig_GetTypes,
-} from "../types/alloydb_InstanceReadPoolConfig";
+} from '../types/alloydb_InstanceReadPoolConfig';
 import {
   alloydb_InstanceQueryInsightsConfig,
   alloydb_InstanceQueryInsightsConfig_GetTypes,
-} from "../types/alloydb_InstanceQueryInsightsConfig";
+} from '../types/alloydb_InstanceQueryInsightsConfig';
 import {
   alloydb_InstanceClientConnectionConfig,
   alloydb_InstanceClientConnectionConfig_GetTypes,
-} from "../types/alloydb_InstanceClientConnectionConfig";
+} from '../types/alloydb_InstanceClientConnectionConfig';
 import {
   alloydb_InstanceMachineConfig,
   alloydb_InstanceMachineConfig_GetTypes,
-} from "../types/alloydb_InstanceMachineConfig";
+} from '../types/alloydb_InstanceMachineConfig';
 
 export interface InstanceArgs {
   /*
@@ -235,39 +235,39 @@ Identifies the alloydb cluster. Must be in the format
     return [
       new DynamicUIProps(
         InputType.Object,
-        "readPoolConfig",
-        "Read pool specific config. If the instance type is READ_POOL, this configuration must be provided.\nStructure is documented below.",
+        'readPoolConfig',
+        'Read pool specific config. If the instance type is READ_POOL, this configuration must be provided.\nStructure is documented below.',
         () => alloydb_InstanceReadPoolConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "databaseFlags",
-        "Database flags. Set at instance level. * They are copied from primary instance on read instance creation. * Read instances can set new or override existing flags that are relevant for reads, e.g. for enabling columnar cache on a read instance. Flags set on read instance may or may not be present on primary.",
+        'databaseFlags',
+        'Database flags. Set at instance level. * They are copied from primary instance on read instance creation. * Read instances can set new or override existing flags that are relevant for reads, e.g. for enabling columnar cache on a read instance. Flags set on read instance may or may not be present on primary.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "gceZone",
-        "The Compute Engine zone that the instance should serve from, per https://cloud.google.com/compute/docs/regions-zones This can ONLY be specified for ZONAL instances. If present for a REGIONAL instance, an error will be thrown. If this is absent for a ZONAL instance, instance is created in a random zone with available capacity.",
+        'gceZone',
+        'The Compute Engine zone that the instance should serve from, per https://cloud.google.com/compute/docs/regions-zones This can ONLY be specified for ZONAL instances. If present for a REGIONAL instance, an error will be thrown. If this is absent for a ZONAL instance, instance is created in a random zone with available capacity.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "User-defined labels for the alloydb instance.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'User-defined labels for the alloydb instance.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cluster",
+        'cluster',
         "Identifies the alloydb cluster. Must be in the format\n'projects/{project}/locations/{location}/clusters/{cluster_id}'",
         () => [],
         true,
@@ -275,39 +275,39 @@ Identifies the alloydb cluster. Must be in the format
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "User-settable and human-readable display name for the Instance.",
+        'displayName',
+        'User-settable and human-readable display name for the Instance.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
-        "Annotations to allow client tools to store small amount of arbitrary data. This is distinct from labels.\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
+        'annotations',
+        'Annotations to allow client tools to store small amount of arbitrary data. This is distinct from labels.\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "machineConfig",
-        "Configurations for the machines that host the underlying database engine.\nStructure is documented below.",
+        'machineConfig',
+        'Configurations for the machines that host the underlying database engine.\nStructure is documented below.',
         () => alloydb_InstanceMachineConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceId",
-        "The ID of the alloydb instance.\n\n\n- - -",
+        'instanceId',
+        'The ID of the alloydb instance.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceType",
+        'instanceType',
         'The type of the instance. If the instance type is READ_POOL, provide the associated PRIMARY/SECONDARY instance in the\n\'depends_on\' meta-data attribute. If the instance type is SECONDARY, point to the cluster_type of the associated\nsecondary cluster instead of mentioning SECONDARY. Example: {instance_type =\ngoogle_alloydb_cluster.<secondary_cluster_name>.cluster_type} instead of {instance_type = SECONDARY} If the instance\ntype is SECONDARY, the terraform delete instance operation does not delete the secondary instance but abandons it\ninstead. Use deletion_policy = "FORCE" in the associated secondary cluster and delete the cluster forcefully to delete\nthe secondary cluster as well its associated secondary instance. Users can undo the delete secondary instance action by\nimporting the deleted secondary instance by calling terraform import. Possible values: ["PRIMARY", "READ_POOL",\n"SECONDARY"]',
         () => [],
         true,
@@ -315,15 +315,15 @@ Identifies the alloydb cluster. Must be in the format
       ),
       new DynamicUIProps(
         InputType.Object,
-        "queryInsightsConfig",
-        "Configuration for query insights.\nStructure is documented below.",
+        'queryInsightsConfig',
+        'Configuration for query insights.\nStructure is documented below.',
         () => alloydb_InstanceQueryInsightsConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "availabilityType",
+        'availabilityType',
         "'Availability type of an Instance. Defaults to REGIONAL for both primary and read instances.\nNote that primary and read instances can have different availability types.\nOnly READ_POOL instance supports ZONAL type. Users can't specify the zone for READ_POOL instance.\nZone is automatically chosen from the list of zones in the region specified.\nRead pool of size 1 can only have zonal availability. Read pools with node count of 2 or more\ncan have regional availability (nodes are present in 2 or more zones in a region).'\nPossible values are: `AVAILABILITY_TYPE_UNSPECIFIED`, `ZONAL`, `REGIONAL`.",
         () => [],
         false,
@@ -331,8 +331,8 @@ Identifies the alloydb cluster. Must be in the format
       ),
       new DynamicUIProps(
         InputType.Object,
-        "clientConnectionConfig",
-        "Client connection specific configurations.\nStructure is documented below.",
+        'clientConnectionConfig',
+        'Client connection specific configurations.\nStructure is documented below.',
         () => alloydb_InstanceClientConnectionConfig_GetTypes(),
         false,
         false,

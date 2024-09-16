@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datacatalog_TagTemplateFieldTypeEnumTypeAllowedValue,
   datacatalog_TagTemplateFieldTypeEnumTypeAllowedValue_GetTypes,
-} from "./datacatalog_TagTemplateFieldTypeEnumTypeAllowedValue";
+} from './datacatalog_TagTemplateFieldTypeEnumTypeAllowedValue';
 
 export interface datacatalog_TagTemplateFieldTypeEnumType {
   /*
@@ -26,8 +26,8 @@ export function datacatalog_TagTemplateFieldTypeEnumType_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Array,
-      "allowedValues",
-      "The set of allowed values for this enum. The display names of the\nvalues must be case-insensitively unique within this set. Currently,\nenum values can only be added to the list of allowed values. Deletion\nand renaming of enum values are not supported.\nCan have up to 500 allowed values.\nStructure is documented below.",
+      'allowedValues',
+      'The set of allowed values for this enum. The display names of the\nvalues must be case-insensitively unique within this set. Currently,\nenum values can only be added to the list of allowed values. Deletion\nand renaming of enum values are not supported.\nCan have up to 500 allowed values.\nStructure is documented below.',
       () => datacatalog_TagTemplateFieldTypeEnumTypeAllowedValue_GetTypes(),
       true,
       false,

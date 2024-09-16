@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   signer_SigningJobSignedObject,
   signer_SigningJobSignedObject_GetTypes,
-} from "../types/signer_SigningJobSignedObject";
+} from '../types/signer_SigningJobSignedObject';
 import {
   signer_SigningJobRevocationRecord,
   signer_SigningJobRevocationRecord_GetTypes,
-} from "../types/signer_SigningJobRevocationRecord";
+} from '../types/signer_SigningJobRevocationRecord';
 import {
   signer_SigningJobSource,
   signer_SigningJobSource_GetTypes,
-} from "../types/signer_SigningJobSource";
+} from '../types/signer_SigningJobSource';
 import {
   signer_SigningJobDestination,
   signer_SigningJobDestination_GetTypes,
-} from "../types/signer_SigningJobDestination";
+} from '../types/signer_SigningJobDestination';
 
 export interface SigningJobArgs {
   // The S3 bucket that contains the object to sign. See Source below for details.
@@ -95,32 +95,32 @@ export class SigningJob extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "source",
-        "The S3 bucket that contains the object to sign. See Source below for details.",
+        'source',
+        'The S3 bucket that contains the object to sign. See Source below for details.',
         () => signer_SigningJobSource_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "destination",
-        "The S3 bucket in which to save your signed object. See Destination below for details.",
+        'destination',
+        'The S3 bucket in which to save your signed object. See Destination below for details.',
         () => signer_SigningJobDestination_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "ignoreSigningJobFailure",
-        "Set this argument to `true` to ignore signing job failures and retrieve failed status and reason. Default `false`.",
+        'ignoreSigningJobFailure',
+        'Set this argument to `true` to ignore signing job failures and retrieve failed status and reason. Default `false`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "profileName",
-        "The name of the profile to initiate the signing operation.",
+        'profileName',
+        'The name of the profile to initiate the signing operation.',
         () => [],
         true,
         true,

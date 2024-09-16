@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lambda_AliasRoutingConfig,
   lambda_AliasRoutingConfig_GetTypes,
-} from "../types/lambda_AliasRoutingConfig";
+} from '../types/lambda_AliasRoutingConfig';
 
 export interface AliasArgs {
   // The Lambda alias' route configuration settings. Fields documented below
@@ -53,7 +53,7 @@ export class Alias extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "routingConfig",
+        'routingConfig',
         "The Lambda alias' route configuration settings. Fields documented below",
         () => lambda_AliasRoutingConfig_GetTypes(),
         false,
@@ -61,32 +61,32 @@ export class Alias extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the alias.",
+        'description',
+        'Description of the alias.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "functionName",
-        "Lambda Function name or ARN.",
+        'functionName',
+        'Lambda Function name or ARN.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "functionVersion",
-        "Lambda function version for which you are creating the alias. Pattern: `(\\$LATEST|[0-9]+)`.",
+        'functionVersion',
+        'Lambda function version for which you are creating the alias. Pattern: `(\\$LATEST|[0-9]+)`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name for the alias you are creating. Pattern: `(?!^[0-9]+$)([a-zA-Z0-9-_]+)`",
+        'name',
+        'Name for the alias you are creating. Pattern: `(?!^[0-9]+$)([a-zA-Z0-9-_]+)`',
         () => [],
         false,
         true,

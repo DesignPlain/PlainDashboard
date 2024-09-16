@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface gamelift_GameServerGroupLaunchTemplate {
   // A unique identifier for an existing EC2 launch template.
@@ -21,24 +21,24 @@ export function gamelift_GameServerGroupLaunchTemplate_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.String,
-      "id",
-      "A unique identifier for an existing EC2 launch template.",
+      'id',
+      'A unique identifier for an existing EC2 launch template.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "A readable identifier for an existing EC2 launch template.",
+      'name',
+      'A readable identifier for an existing EC2 launch template.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "version",
-      "The version of the EC2 launch template to use. If none is set, the default is the first version created.",
+      'version',
+      'The version of the EC2 launch template to use. If none is set, the default is the first version created.',
       () => [],
       false,
       true,

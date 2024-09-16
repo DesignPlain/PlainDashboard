@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   biglake_DatabaseHiveOptions,
   biglake_DatabaseHiveOptions_GetTypes,
-} from "../types/biglake_DatabaseHiveOptions";
+} from '../types/biglake_DatabaseHiveOptions';
 
 export interface DatabaseArgs {
   // The parent catalog.
@@ -79,32 +79,32 @@ digits. Examples: "2014-10-02T15:01:23Z" and
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the database.",
+        'name',
+        'The name of the database.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The database type.",
+        'type',
+        'The database type.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "catalog",
-        "The parent catalog.",
+        'catalog',
+        'The parent catalog.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "hiveOptions",
-        "Options of a Hive database.\nStructure is documented below.",
+        'hiveOptions',
+        'Options of a Hive database.\nStructure is documented below.',
         () => biglake_DatabaseHiveOptions_GetTypes(),
         true,
         false,

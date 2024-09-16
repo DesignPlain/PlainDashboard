@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroup,
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroup_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroup";
+} from './lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroup';
 
 export interface lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponse {
   //
@@ -22,8 +22,8 @@ export function lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificat
   return [
     new DynamicUIProps(
       InputType.Array,
-      "messageGroups",
-      "",
+      'messageGroups',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroup_GetTypes(),
       false,
@@ -31,8 +31,8 @@ export function lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificat
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "allowInterrupt",
-      "",
+      'allowInterrupt',
+      '',
       () => [],
       false,
       false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bedrockmodel_InvocationLoggingConfigurationLoggingConfigCloudwatchConfigLargeDataDeliveryS3Config,
   bedrockmodel_InvocationLoggingConfigurationLoggingConfigCloudwatchConfigLargeDataDeliveryS3Config_GetTypes,
-} from "./bedrockmodel_InvocationLoggingConfigurationLoggingConfigCloudwatchConfigLargeDataDeliveryS3Config";
+} from './bedrockmodel_InvocationLoggingConfigurationLoggingConfigCloudwatchConfigLargeDataDeliveryS3Config';
 
 export interface bedrockmodel_InvocationLoggingConfigurationLoggingConfigCloudwatchConfig {
   // S3 configuration for delivering a large amount of data.
@@ -25,8 +25,8 @@ export function bedrockmodel_InvocationLoggingConfigurationLoggingConfigCloudwat
   return [
     new DynamicUIProps(
       InputType.Object,
-      "largeDataDeliveryS3Config",
-      "S3 configuration for delivering a large amount of data.",
+      'largeDataDeliveryS3Config',
+      'S3 configuration for delivering a large amount of data.',
       () =>
         bedrockmodel_InvocationLoggingConfigurationLoggingConfigCloudwatchConfigLargeDataDeliveryS3Config_GetTypes(),
       false,
@@ -34,16 +34,16 @@ export function bedrockmodel_InvocationLoggingConfigurationLoggingConfigCloudwat
     ),
     new DynamicUIProps(
       InputType.String,
-      "logGroupName",
-      "Log group name.",
+      'logGroupName',
+      'Log group name.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "roleArn",
-      "The role ARN.",
+      'roleArn',
+      'The role ARN.',
       () => [],
       false,
       false,

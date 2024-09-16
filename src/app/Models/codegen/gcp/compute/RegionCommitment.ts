@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_RegionCommitmentLicenseResource,
   compute_RegionCommitmentLicenseResource_GetTypes,
-} from "../types/compute_RegionCommitmentLicenseResource";
+} from '../types/compute_RegionCommitmentLicenseResource';
 import {
   compute_RegionCommitmentResource,
   compute_RegionCommitmentResource_GetTypes,
-} from "../types/compute_RegionCommitmentResource";
+} from '../types/compute_RegionCommitmentResource';
 
 export interface RegionCommitmentArgs {
   /*
@@ -185,80 +185,80 @@ Possible values are: `TWELVE_MONTH`, `THIRTY_SIX_MONTH`.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "licenseResource",
-        "The license specification required as part of a license commitment.\nStructure is documented below.",
+        'licenseResource',
+        'The license specification required as part of a license commitment.\nStructure is documented below.',
         () => compute_RegionCommitmentLicenseResource_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the resource. The name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.",
+        'name',
+        'Name of the resource. The name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "category",
-        "The category of the commitment. Category MACHINE specifies commitments composed of\nmachine resources such as VCPU or MEMORY, listed in resources. Category LICENSE\nspecifies commitments composed of software licenses, listed in licenseResources.\nNote that only MACHINE commitments should have a Type specified.\nPossible values are: `LICENSE`, `MACHINE`.",
+        'category',
+        'The category of the commitment. Category MACHINE specifies commitments composed of\nmachine resources such as VCPU or MEMORY, listed in resources. Category LICENSE\nspecifies commitments composed of software licenses, listed in licenseResources.\nNote that only MACHINE commitments should have a Type specified.\nPossible values are: `LICENSE`, `MACHINE`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The type of commitment, which affects the discount rate and the eligible resources.\nThe type could be one of the following value: `MEMORY_OPTIMIZED`, `ACCELERATOR_OPTIMIZED`,\n`GENERAL_PURPOSE_N1`, `GENERAL_PURPOSE_N2`, `GENERAL_PURPOSE_N2D`, `GENERAL_PURPOSE_E2`,\n`GENERAL_PURPOSE_T2D`, `GENERAL_PURPOSE_C3`, `COMPUTE_OPTIMIZED_C2`, `COMPUTE_OPTIMIZED_C2D` and\n`GRAPHICS_OPTIMIZED_G2`",
+        'type',
+        'The type of commitment, which affects the discount rate and the eligible resources.\nThe type could be one of the following value: `MEMORY_OPTIMIZED`, `ACCELERATOR_OPTIMIZED`,\n`GENERAL_PURPOSE_N1`, `GENERAL_PURPOSE_N2`, `GENERAL_PURPOSE_N2D`, `GENERAL_PURPOSE_E2`,\n`GENERAL_PURPOSE_T2D`, `GENERAL_PURPOSE_C3`, `COMPUTE_OPTIMIZED_C2`, `COMPUTE_OPTIMIZED_C2D` and\n`GRAPHICS_OPTIMIZED_G2`',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "plan",
-        "The plan for this commitment, which determines duration and discount rate.\nThe currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).\nPossible values are: `TWELVE_MONTH`, `THIRTY_SIX_MONTH`.\n\n\n- - -",
+        'plan',
+        'The plan for this commitment, which determines duration and discount rate.\nThe currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).\nPossible values are: `TWELVE_MONTH`, `THIRTY_SIX_MONTH`.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "URL of the region where this commitment may be used.",
+        'region',
+        'URL of the region where this commitment may be used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "resources",
-        "A list of commitment amounts for particular resources.\nNote that VCPU and MEMORY resource commitments must occur together.\nStructure is documented below.",
+        'resources',
+        'A list of commitment amounts for particular resources.\nNote that VCPU and MEMORY resource commitments must occur together.\nStructure is documented below.',
         () => compute_RegionCommitmentResource_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "autoRenew",
-        "Specifies whether to enable automatic renewal for the commitment.\nThe default value is false if not specified.\nIf the field is set to true, the commitment will be automatically renewed for either\none or three years according to the terms of the existing commitment.",
+        'autoRenew',
+        'Specifies whether to enable automatic renewal for the commitment.\nThe default value is false if not specified.\nIf the field is set to true, the commitment will be automatically renewed for either\none or three years according to the terms of the existing commitment.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource.",
+        'description',
+        'An optional description of this resource.',
         () => [],
         false,
         true,

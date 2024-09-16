@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkeonprem_BareMetalClusterStorageLvpShareConfigLvpConfig,
   gkeonprem_BareMetalClusterStorageLvpShareConfigLvpConfig_GetTypes,
-} from "./gkeonprem_BareMetalClusterStorageLvpShareConfigLvpConfig";
+} from './gkeonprem_BareMetalClusterStorageLvpShareConfigLvpConfig';
 
 export interface gkeonprem_BareMetalClusterStorageLvpShareConfig {
   /*
@@ -25,16 +25,16 @@ export function gkeonprem_BareMetalClusterStorageLvpShareConfig_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Object,
-      "lvpConfig",
-      "Defines the machine path and storage class for the LVP Share.\nStructure is documented below.",
+      'lvpConfig',
+      'Defines the machine path and storage class for the LVP Share.\nStructure is documented below.',
       () => gkeonprem_BareMetalClusterStorageLvpShareConfigLvpConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "sharedPathPvCount",
-      "The number of subdirectories to create under path.",
+      'sharedPathPvCount',
+      'The number of subdirectories to create under path.',
       () => [],
       false,
       false,

@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appfabric_AppAuthorizationConnectionTenant,
   appfabric_AppAuthorizationConnectionTenant_GetTypes,
-} from "../types/appfabric_AppAuthorizationConnectionTenant";
+} from '../types/appfabric_AppAuthorizationConnectionTenant';
 import {
   appfabric_AppAuthorizationConnectionAuthRequest,
   appfabric_AppAuthorizationConnectionAuthRequest_GetTypes,
-} from "../types/appfabric_AppAuthorizationConnectionAuthRequest";
+} from '../types/appfabric_AppAuthorizationConnectionAuthRequest';
 import {
   appfabric_AppAuthorizationConnectionTimeouts,
   appfabric_AppAuthorizationConnectionTimeouts_GetTypes,
-} from "../types/appfabric_AppAuthorizationConnectionTimeouts";
+} from '../types/appfabric_AppAuthorizationConnectionTimeouts';
 
 export interface AppAuthorizationConnectionArgs {
   // Contains OAuth2 authorization information.This is required if the app authorization for the request is configured with an OAuth2 (oauth2) authorization type.
@@ -55,32 +55,32 @@ export class AppAuthorizationConnection extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "authRequest",
-        "Contains OAuth2 authorization information.This is required if the app authorization for the request is configured with an OAuth2 (oauth2) authorization type.",
+        'authRequest',
+        'Contains OAuth2 authorization information.This is required if the app authorization for the request is configured with an OAuth2 (oauth2) authorization type.',
         () => appfabric_AppAuthorizationConnectionAuthRequest_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => appfabric_AppAuthorizationConnectionTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "appAuthorizationArn",
-        "The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.",
+        'appAuthorizationArn',
+        'The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "appBundleArn",
-        "The Amazon Resource Name (ARN) of the app bundle to use for the request.",
+        'appBundleArn',
+        'The Amazon Resource Name (ARN) of the app bundle to use for the request.',
         () => [],
         true,
         false,

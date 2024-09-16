@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface databasemigrationservice_ConnectionProfileAlloydbSettingsInitialUser {
   /*
@@ -27,24 +27,24 @@ export function databasemigrationservice_ConnectionProfileAlloydbSettingsInitial
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "passwordSet",
-      "(Output)\nOutput only. Indicates if the initialUser.password field has been set.",
+      'passwordSet',
+      '(Output)\nOutput only. Indicates if the initialUser.password field has been set.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "user",
-      "The database username.",
+      'user',
+      'The database username.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "password",
-      "The initial password for the user.\n**Note**: This property is sensitive and will not be displayed in the plan.",
+      'password',
+      'The initial password for the user.\n**Note**: This property is sensitive and will not be displayed in the plan.',
       () => [],
       true,
       false,

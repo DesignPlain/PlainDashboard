@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface kinesisanalyticsv2_ApplicationApplicationConfigurationVpcConfiguration {
   //
@@ -24,25 +24,25 @@ export function kinesisanalyticsv2_ApplicationApplicationConfigurationVpcConfigu
   return [
     new DynamicUIProps(
       InputType.Array,
-      "subnetIds",
-      "The Subnet IDs used by the VPC configuration.",
+      'subnetIds',
+      'The Subnet IDs used by the VPC configuration.',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "vpcConfigurationId",
-      "",
+      'vpcConfigurationId',
+      '',
       () => [],
       false,
       false,
     ),
-    new DynamicUIProps(InputType.String, "vpcId", "", () => [], false, false),
+    new DynamicUIProps(InputType.String, 'vpcId', '', () => [], false, false),
     new DynamicUIProps(
       InputType.Array,
-      "securityGroupIds",
-      "The Security Group IDs used by the VPC configuration.",
+      'securityGroupIds',
+      'The Security Group IDs used by the VPC configuration.',
       () => InputType_String_GetTypes(),
       true,
       false,

@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations,
   dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations_GetTypes,
-} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations";
+} from './dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations';
 import {
   dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformations,
   dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformations_GetTypes,
-} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformations";
+} from './dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformations';
 import {
   dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations,
   dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations_GetTypes,
-} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations";
+} from './dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations';
 
 export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfig {
   /*
@@ -42,8 +42,8 @@ export function dataloss_PreventionDeidentifyTemplateDeidentifyConfig_GetTypes()
   return [
     new DynamicUIProps(
       InputType.Object,
-      "recordTransformations",
-      "Treat the dataset as structured. Transformations can be applied to specific locations within structured datasets, such as transforming a column within a table.\nStructure is documented below.",
+      'recordTransformations',
+      'Treat the dataset as structured. Transformations can be applied to specific locations within structured datasets, such as transforming a column within a table.\nStructure is documented below.',
       () =>
         dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations_GetTypes(),
       false,
@@ -51,8 +51,8 @@ export function dataloss_PreventionDeidentifyTemplateDeidentifyConfig_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "imageTransformations",
-      "Treat the dataset as an image and redact.\nStructure is documented below.",
+      'imageTransformations',
+      'Treat the dataset as an image and redact.\nStructure is documented below.',
       () =>
         dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformations_GetTypes(),
       false,
@@ -60,8 +60,8 @@ export function dataloss_PreventionDeidentifyTemplateDeidentifyConfig_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "infoTypeTransformations",
-      "Treat the dataset as free-form text and apply the same free text transformation everywhere\nStructure is documented below.",
+      'infoTypeTransformations',
+      'Treat the dataset as free-form text and apply the same free text transformation everywhere\nStructure is documented below.',
       () =>
         dataloss_PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformations_GetTypes(),
       false,

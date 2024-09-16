@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTarget,
   ec2_SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTarget_GetTypes,
-} from "./ec2_SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTarget";
+} from './ec2_SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTarget';
 
 export interface ec2_SpotInstanceRequestCapacityReservationSpecification {
   // Indicates the instance's Capacity Reservation preferences. Can be `"open"` or `"none"`. (Default: `"open"`).
@@ -26,7 +26,7 @@ export function ec2_SpotInstanceRequestCapacityReservationSpecification_GetTypes
   return [
     new DynamicUIProps(
       InputType.String,
-      "capacityReservationPreference",
+      'capacityReservationPreference',
       'Indicates the instance\'s Capacity Reservation preferences. Can be `"open"` or `"none"`. (Default: `"open"`).',
       () => [],
       false,
@@ -34,8 +34,8 @@ export function ec2_SpotInstanceRequestCapacityReservationSpecification_GetTypes
     ),
     new DynamicUIProps(
       InputType.Object,
-      "capacityReservationTarget",
-      "Information about the target Capacity Reservation. See Capacity Reservation Target below for more details.\n\nFor more information, see the documentation on [Capacity Reservations](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html).",
+      'capacityReservationTarget',
+      'Information about the target Capacity Reservation. See Capacity Reservation Target below for more details.\n\nFor more information, see the documentation on [Capacity Reservations](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html).',
       () =>
         ec2_SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTarget_GetTypes(),
       false,

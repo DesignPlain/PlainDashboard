@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface workstations_WorkstationIamBindingCondition {
   //
@@ -21,20 +21,20 @@ export function workstations_WorkstationIamBindingCondition_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.String,
-      "description",
-      "",
+      'description',
+      '',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "expression",
-      "",
+      'expression',
+      '',
       () => [],
       true,
       true,
     ),
-    new DynamicUIProps(InputType.String, "title", "", () => [], true, true),
+    new DynamicUIProps(InputType.String, 'title', '', () => [], true, true),
   ];
 }

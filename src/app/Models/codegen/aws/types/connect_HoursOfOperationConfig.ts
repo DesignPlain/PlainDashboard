@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   connect_HoursOfOperationConfigStartTime,
   connect_HoursOfOperationConfigStartTime_GetTypes,
-} from "./connect_HoursOfOperationConfigStartTime";
+} from './connect_HoursOfOperationConfigStartTime';
 import {
   connect_HoursOfOperationConfigEndTime,
   connect_HoursOfOperationConfigEndTime_GetTypes,
-} from "./connect_HoursOfOperationConfigEndTime";
+} from './connect_HoursOfOperationConfigEndTime';
 
 export interface connect_HoursOfOperationConfig {
   // Specifies the day that the hours of operation applies to.
@@ -29,24 +29,24 @@ export function connect_HoursOfOperationConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "day",
-      "Specifies the day that the hours of operation applies to.",
+      'day',
+      'Specifies the day that the hours of operation applies to.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "endTime",
-      "A end time block specifies the time that your contact center closes. The `end_time` is documented below.",
+      'endTime',
+      'A end time block specifies the time that your contact center closes. The `end_time` is documented below.',
       () => connect_HoursOfOperationConfigEndTime_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "startTime",
-      "A start time block specifies the time that your contact center opens. The `start_time` is documented below.",
+      'startTime',
+      'A start time block specifies the time that your contact center opens. The `start_time` is documented below.',
       () => connect_HoursOfOperationConfigStartTime_GetTypes(),
       true,
       false,

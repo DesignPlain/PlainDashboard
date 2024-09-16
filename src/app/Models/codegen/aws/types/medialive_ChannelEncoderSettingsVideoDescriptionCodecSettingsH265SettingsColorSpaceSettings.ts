@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsHdr10Settings,
   medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsHdr10Settings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsHdr10Settings";
+} from './medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsHdr10Settings';
 import {
   medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsRec601Settings,
   medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsRec601Settings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsRec601Settings";
+} from './medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsRec601Settings';
 import {
   medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsRec709Settings,
   medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsRec709Settings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsRec709Settings";
+} from './medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsRec709Settings';
 import {
   medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsColorSpacePassthroughSettings,
   medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsColorSpacePassthroughSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsColorSpacePassthroughSettings";
+} from './medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsColorSpacePassthroughSettings';
 import {
   medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsDolbyVision81Settings,
   medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsDolbyVision81Settings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsDolbyVision81Settings";
+} from './medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsDolbyVision81Settings';
 
 export interface medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettings {
   // Set the colorspace to Dolby Vision81.
@@ -47,8 +47,8 @@ export function medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH26
   return [
     new DynamicUIProps(
       InputType.Object,
-      "dolbyVision81Settings",
-      "Set the colorspace to Dolby Vision81.",
+      'dolbyVision81Settings',
+      'Set the colorspace to Dolby Vision81.',
       () =>
         medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsDolbyVision81Settings_GetTypes(),
       false,
@@ -56,8 +56,8 @@ export function medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH26
     ),
     new DynamicUIProps(
       InputType.Object,
-      "hdr10Settings",
-      "Set the colorspace to be HDR10. See H265 HDR10 Settings for more details.",
+      'hdr10Settings',
+      'Set the colorspace to be HDR10. See H265 HDR10 Settings for more details.',
       () =>
         medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsHdr10Settings_GetTypes(),
       false,
@@ -65,8 +65,8 @@ export function medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH26
     ),
     new DynamicUIProps(
       InputType.Object,
-      "rec601Settings",
-      "Set the colorspace to Rec. 601.",
+      'rec601Settings',
+      'Set the colorspace to Rec. 601.',
       () =>
         medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsRec601Settings_GetTypes(),
       false,
@@ -74,8 +74,8 @@ export function medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH26
     ),
     new DynamicUIProps(
       InputType.Object,
-      "rec709Settings",
-      "Set the colorspace to Rec. 709.",
+      'rec709Settings',
+      'Set the colorspace to Rec. 709.',
       () =>
         medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsRec709Settings_GetTypes(),
       false,
@@ -83,8 +83,8 @@ export function medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH26
     ),
     new DynamicUIProps(
       InputType.Object,
-      "colorSpacePassthroughSettings",
-      "Sets the colorspace metadata to be passed through.",
+      'colorSpacePassthroughSettings',
+      'Sets the colorspace metadata to be passed through.',
       () =>
         medialive_ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsColorSpacePassthroughSettings_GetTypes(),
       false,

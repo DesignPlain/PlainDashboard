@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ssoadmin_PermissionsBoundaryAttachmentPermissionsBoundaryCustomerManagedPolicyReference,
   ssoadmin_PermissionsBoundaryAttachmentPermissionsBoundaryCustomerManagedPolicyReference_GetTypes,
-} from "./ssoadmin_PermissionsBoundaryAttachmentPermissionsBoundaryCustomerManagedPolicyReference";
+} from './ssoadmin_PermissionsBoundaryAttachmentPermissionsBoundaryCustomerManagedPolicyReference';
 
 export interface ssoadmin_PermissionsBoundaryAttachmentPermissionsBoundary {
   // Specifies the name and path of a customer managed policy. See below.
@@ -22,8 +22,8 @@ export function ssoadmin_PermissionsBoundaryAttachmentPermissionsBoundary_GetTyp
   return [
     new DynamicUIProps(
       InputType.Object,
-      "customerManagedPolicyReference",
-      "Specifies the name and path of a customer managed policy. See below.",
+      'customerManagedPolicyReference',
+      'Specifies the name and path of a customer managed policy. See below.',
       () =>
         ssoadmin_PermissionsBoundaryAttachmentPermissionsBoundaryCustomerManagedPolicyReference_GetTypes(),
       false,
@@ -31,8 +31,8 @@ export function ssoadmin_PermissionsBoundaryAttachmentPermissionsBoundary_GetTyp
     ),
     new DynamicUIProps(
       InputType.String,
-      "managedPolicyArn",
-      "AWS-managed IAM policy ARN to use as the permissions boundary.",
+      'managedPolicyArn',
+      'AWS-managed IAM policy ARN to use as the permissions boundary.',
       () => [],
       false,
       true,

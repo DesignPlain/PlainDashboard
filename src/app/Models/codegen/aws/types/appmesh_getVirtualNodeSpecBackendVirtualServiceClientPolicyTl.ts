@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificate,
   appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificate_GetTypes,
-} from "./appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificate";
+} from './appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificate';
 import {
   appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidation,
   appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidation_GetTypes,
-} from "./appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidation";
+} from './appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidation';
 
 export interface appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTl {
   //
@@ -30,19 +30,19 @@ export interface appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTl {
 
 export function appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTl_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.Bool, "enforce", "", () => [], true, false),
+    new DynamicUIProps(InputType.Bool, 'enforce', '', () => [], true, false),
     new DynamicUIProps(
       InputType.Array,
-      "ports",
-      "",
+      'ports',
+      '',
       () => InputType_Number_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "validations",
-      "",
+      'validations',
+      '',
       () =>
         appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidation_GetTypes(),
       true,
@@ -50,8 +50,8 @@ export function appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTl_Ge
     ),
     new DynamicUIProps(
       InputType.Array,
-      "certificates",
-      "",
+      'certificates',
+      '',
       () =>
         appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificate_GetTypes(),
       true,

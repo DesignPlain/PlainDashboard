@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualNodeSpecListenerTlCertificate,
   appmesh_getVirtualNodeSpecListenerTlCertificate_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTlCertificate";
+} from './appmesh_getVirtualNodeSpecListenerTlCertificate';
 import {
   appmesh_getVirtualNodeSpecListenerTlValidation,
   appmesh_getVirtualNodeSpecListenerTlValidation_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTlValidation";
+} from './appmesh_getVirtualNodeSpecListenerTlValidation';
 
 export interface appmesh_getVirtualNodeSpecListenerTl {
   //
@@ -29,17 +29,17 @@ export function appmesh_getVirtualNodeSpecListenerTl_GetTypes(): DynamicUIProps[
   return [
     new DynamicUIProps(
       InputType.Array,
-      "certificates",
-      "",
+      'certificates',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTlCertificate_GetTypes(),
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "mode", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'mode', '', () => [], true, false),
     new DynamicUIProps(
       InputType.Array,
-      "validations",
-      "",
+      'validations',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTlValidation_GetTypes(),
       true,
       false,

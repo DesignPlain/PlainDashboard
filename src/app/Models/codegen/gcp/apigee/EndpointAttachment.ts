@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface EndpointAttachmentArgs {
   /*
@@ -65,32 +65,32 @@ in the format `organizations/{{org_name}}`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "serviceAttachment",
-        "Format: projects/*/regions/*/serviceAttachments/*",
+        'serviceAttachment',
+        'Format: projects/*/regions/*/serviceAttachments/*',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "endpointAttachmentId",
-        "ID of the endpoint attachment.\n\n\n- - -",
+        'endpointAttachmentId',
+        'ID of the endpoint attachment.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "Location of the endpoint attachment.",
+        'location',
+        'Location of the endpoint attachment.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "orgId",
-        "The Apigee Organization associated with the Apigee instance,\nin the format `organizations/{{org_name}}`.",
+        'orgId',
+        'The Apigee Organization associated with the Apigee instance,\nin the format `organizations/{{org_name}}`.',
         () => [],
         true,
         true,

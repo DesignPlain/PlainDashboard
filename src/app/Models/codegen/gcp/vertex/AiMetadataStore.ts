@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   vertex_AiMetadataStoreEncryptionSpec,
   vertex_AiMetadataStoreEncryptionSpec_GetTypes,
-} from "../types/vertex_AiMetadataStoreEncryptionSpec";
+} from '../types/vertex_AiMetadataStoreEncryptionSpec';
 import {
   vertex_AiMetadataStoreState,
   vertex_AiMetadataStoreState_GetTypes,
-} from "../types/vertex_AiMetadataStoreState";
+} from '../types/vertex_AiMetadataStoreState';
 
 export interface AiMetadataStoreArgs {
   // Description of the MetadataStore.
@@ -75,40 +75,40 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The region of the Metadata Store. eg us-central1",
+        'region',
+        'The region of the Metadata Store. eg us-central1',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the MetadataStore.",
+        'description',
+        'Description of the MetadataStore.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "encryptionSpec",
-        "Customer-managed encryption key spec for a MetadataStore. If set, this MetadataStore and all sub-resources of this MetadataStore will be secured by this key.\nStructure is documented below.",
+        'encryptionSpec',
+        'Customer-managed encryption key spec for a MetadataStore. If set, this MetadataStore and all sub-resources of this MetadataStore will be secured by this key.\nStructure is documented below.',
         () => vertex_AiMetadataStoreEncryptionSpec_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the MetadataStore. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.",
+        'name',
+        'The name of the MetadataStore. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

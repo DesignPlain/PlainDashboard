@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_RegionUrlMapPathMatcherRouteRuleRouteActionUrlRewrite {
   /*
@@ -24,7 +24,7 @@ export function compute_RegionUrlMapPathMatcherRouteRuleRouteActionUrlRewrite_Ge
   return [
     new DynamicUIProps(
       InputType.String,
-      "hostRewrite",
+      'hostRewrite',
       "Before forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite.\nThe value must be from 1 to 255 characters.",
       () => [],
       false,
@@ -32,7 +32,7 @@ export function compute_RegionUrlMapPathMatcherRouteRuleRouteActionUrlRewrite_Ge
     ),
     new DynamicUIProps(
       InputType.String,
-      "pathPrefixRewrite",
+      'pathPrefixRewrite',
       "Before forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite.\nThe value must be from 1 to 1024 characters.",
       () => [],
       false,

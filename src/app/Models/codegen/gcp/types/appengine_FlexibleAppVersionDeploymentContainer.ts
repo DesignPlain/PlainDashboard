@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appengine_FlexibleAppVersionDeploymentContainer {
   /*
@@ -18,7 +18,7 @@ export function appengine_FlexibleAppVersionDeploymentContainer_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.String,
-      "image",
+      'image',
       'URI to the hosted container image in Google Container Registry. The URI must be fully qualified and include a tag or digest.\nExamples: "gcr.io/my-project/image:tag" or "gcr.io/my-project/image@digest"',
       () => [],
       true,

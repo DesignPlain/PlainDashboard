@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   glue_getCatalogTableStorageDescriptorSchemaReference,
   glue_getCatalogTableStorageDescriptorSchemaReference_GetTypes,
-} from "./glue_getCatalogTableStorageDescriptorSchemaReference";
+} from './glue_getCatalogTableStorageDescriptorSchemaReference';
 import {
   glue_getCatalogTableStorageDescriptorColumn,
   glue_getCatalogTableStorageDescriptorColumn_GetTypes,
-} from "./glue_getCatalogTableStorageDescriptorColumn";
+} from './glue_getCatalogTableStorageDescriptorColumn';
 import {
   glue_getCatalogTableStorageDescriptorSerDeInfo,
   glue_getCatalogTableStorageDescriptorSerDeInfo_GetTypes,
-} from "./glue_getCatalogTableStorageDescriptorSerDeInfo";
+} from './glue_getCatalogTableStorageDescriptorSerDeInfo';
 import {
   glue_getCatalogTableStorageDescriptorSkewedInfo,
   glue_getCatalogTableStorageDescriptorSkewedInfo_GetTypes,
-} from "./glue_getCatalogTableStorageDescriptorSkewedInfo";
+} from './glue_getCatalogTableStorageDescriptorSkewedInfo';
 import {
   glue_getCatalogTableStorageDescriptorSortColumn,
   glue_getCatalogTableStorageDescriptorSortColumn_GetTypes,
-} from "./glue_getCatalogTableStorageDescriptorSortColumn";
+} from './glue_getCatalogTableStorageDescriptorSortColumn';
 
 export interface glue_getCatalogTableStorageDescriptor {
   // Output format: SequenceFileOutputFormat (binary), or IgnoreKeyTextOutputFormat, or a custom format.
@@ -74,55 +74,55 @@ export function glue_getCatalogTableStorageDescriptor_GetTypes(): DynamicUIProps
   return [
     new DynamicUIProps(
       InputType.String,
-      "outputFormat",
-      "Output format: SequenceFileOutputFormat (binary), or IgnoreKeyTextOutputFormat, or a custom format.",
+      'outputFormat',
+      'Output format: SequenceFileOutputFormat (binary), or IgnoreKeyTextOutputFormat, or a custom format.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "storedAsSubDirectories",
-      "Whether the table data is stored in subdirectories.",
+      'storedAsSubDirectories',
+      'Whether the table data is stored in subdirectories.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "inputFormat",
-      "Input format: SequenceFileInputFormat (binary), or TextInputFormat, or a custom format.",
+      'inputFormat',
+      'Input format: SequenceFileInputFormat (binary), or TextInputFormat, or a custom format.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "parameters",
-      "Map of initialization parameters for the SerDe, in key-value form.",
+      'parameters',
+      'Map of initialization parameters for the SerDe, in key-value form.',
       () => InputType_Map_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "skewedInfos",
-      "Configuration block with information about values that appear very frequently in a column (skewed values). See `skewed_info` below.",
+      'skewedInfos',
+      'Configuration block with information about values that appear very frequently in a column (skewed values). See `skewed_info` below.',
       () => glue_getCatalogTableStorageDescriptorSkewedInfo_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "numberOfBuckets",
-      "Is if the table contains any dimension columns.",
+      'numberOfBuckets',
+      'Is if the table contains any dimension columns.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "serDeInfos",
+      'serDeInfos',
       'Configuration block for serialization and deserialization ("SerDe") information. See `ser_de_info` below.',
       () => glue_getCatalogTableStorageDescriptorSerDeInfo_GetTypes(),
       true,
@@ -130,56 +130,56 @@ export function glue_getCatalogTableStorageDescriptor_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Array,
-      "bucketColumns",
-      "List of reducer grouping columns, clustering columns, and bucketing columns in the table.",
+      'bucketColumns',
+      'List of reducer grouping columns, clustering columns, and bucketing columns in the table.',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "location",
-      "Physical location of the table. By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.",
+      'location',
+      'Physical location of the table. By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "compressed",
-      "Whether the data in the table is compressed.",
+      'compressed',
+      'Whether the data in the table is compressed.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "schemaReferences",
-      "Object that references a schema stored in the AWS Glue Schema Registry. See `schema_reference` below.",
+      'schemaReferences',
+      'Object that references a schema stored in the AWS Glue Schema Registry. See `schema_reference` below.',
       () => glue_getCatalogTableStorageDescriptorSchemaReference_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "additionalLocations",
-      "List of locations that point to the path where a Delta table is located",
+      'additionalLocations',
+      'List of locations that point to the path where a Delta table is located',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "columns",
-      "Configuration block for columns in the table. See `columns` below.",
+      'columns',
+      'Configuration block for columns in the table. See `columns` below.',
       () => glue_getCatalogTableStorageDescriptorColumn_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "sortColumns",
-      "Configuration block for the sort order of each bucket in the table. See `sort_columns` below.",
+      'sortColumns',
+      'Configuration block for the sort order of each bucket in the table. See `sort_columns` below.',
       () => glue_getCatalogTableStorageDescriptorSortColumn_GetTypes(),
       true,
       false,

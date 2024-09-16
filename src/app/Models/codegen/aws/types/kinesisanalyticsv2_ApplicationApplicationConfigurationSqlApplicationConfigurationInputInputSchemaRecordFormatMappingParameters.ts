@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParameters,
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParameters_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParameters";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParameters';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParameters,
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParameters_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParameters";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParameters';
 
 export interface kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParameters {
   // Provides additional mapping information when the record format uses delimiters (for example, CSV).
@@ -26,8 +26,8 @@ export function kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplica
   return [
     new DynamicUIProps(
       InputType.Object,
-      "csvMappingParameters",
-      "Provides additional mapping information when the record format uses delimiters (for example, CSV).",
+      'csvMappingParameters',
+      'Provides additional mapping information when the record format uses delimiters (for example, CSV).',
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParameters_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplica
     ),
     new DynamicUIProps(
       InputType.Object,
-      "jsonMappingParameters",
-      "Provides additional mapping information when JSON is the record format on the streaming source.",
+      'jsonMappingParameters',
+      'Provides additional mapping information when JSON is the record format on the streaming source.',
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParameters_GetTypes(),
       false,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datasync_FsxOpenZfsFileSystemProtocol,
   datasync_FsxOpenZfsFileSystemProtocol_GetTypes,
-} from "../types/datasync_FsxOpenZfsFileSystemProtocol";
+} from '../types/datasync_FsxOpenZfsFileSystemProtocol';
 
 export interface FsxOpenZfsFileSystemArgs {
   // The type of protocol that DataSync uses to access your file system. See below.
@@ -59,40 +59,40 @@ export class FsxOpenZfsFileSystem extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "protocol",
-        "The type of protocol that DataSync uses to access your file system. See below.",
+        'protocol',
+        'The type of protocol that DataSync uses to access your file system. See below.',
         () => datasync_FsxOpenZfsFileSystemProtocol_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "securityGroupArns",
-        "The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for openzfs file system.",
+        'securityGroupArns',
+        'The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for openzfs file system.',
         () => InputType_String_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "subdirectory",
-        "Subdirectory to perform actions as source or destination. Must start with `/fsx`.",
+        'subdirectory',
+        'Subdirectory to perform actions as source or destination. Must start with `/fsx`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value pairs of resource tags to assign to the DataSync Location. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value pairs of resource tags to assign to the DataSync Location. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "fsxFilesystemArn",
-        "The Amazon Resource Name (ARN) for the FSx for OpenZfs file system.",
+        'fsxFilesystemArn',
+        'The Amazon Resource Name (ARN) for the FSx for OpenZfs file system.',
         () => [],
         true,
         true,

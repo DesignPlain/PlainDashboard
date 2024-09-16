@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ssm_ResourceDataSyncS3Destination {
   // Name of S3 bucket where the aggregated data is stored.
@@ -27,40 +27,40 @@ export function ssm_ResourceDataSyncS3Destination_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "syncFormat",
-      "A supported sync format. Only JsonSerDe is currently supported. Defaults to JsonSerDe.",
+      'syncFormat',
+      'A supported sync format. Only JsonSerDe is currently supported. Defaults to JsonSerDe.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "bucketName",
-      "Name of S3 bucket where the aggregated data is stored.",
+      'bucketName',
+      'Name of S3 bucket where the aggregated data is stored.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "kmsKeyArn",
-      "ARN of an encryption key for a destination in Amazon S3.",
-      () => [],
-      false,
-      true,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "prefix",
-      "Prefix for the bucket.",
+      'kmsKeyArn',
+      'ARN of an encryption key for a destination in Amazon S3.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "region",
-      "Region with the bucket targeted by the Resource Data Sync.",
+      'prefix',
+      'Prefix for the bucket.',
+      () => [],
+      false,
+      true,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      'region',
+      'Region with the bucket targeted by the Resource Data Sync.',
       () => [],
       true,
       true,

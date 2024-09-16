@@ -3,61 +3,61 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cognito_UserPoolSchema,
   cognito_UserPoolSchema_GetTypes,
-} from "../types/cognito_UserPoolSchema";
+} from '../types/cognito_UserPoolSchema';
 import {
   cognito_UserPoolUserPoolAddOns,
   cognito_UserPoolUserPoolAddOns_GetTypes,
-} from "../types/cognito_UserPoolUserPoolAddOns";
+} from '../types/cognito_UserPoolUserPoolAddOns';
 import {
   cognito_UserPoolAccountRecoverySetting,
   cognito_UserPoolAccountRecoverySetting_GetTypes,
-} from "../types/cognito_UserPoolAccountRecoverySetting";
+} from '../types/cognito_UserPoolAccountRecoverySetting';
 import {
   cognito_UserPoolDeviceConfiguration,
   cognito_UserPoolDeviceConfiguration_GetTypes,
-} from "../types/cognito_UserPoolDeviceConfiguration";
+} from '../types/cognito_UserPoolDeviceConfiguration';
 import {
   cognito_UserPoolEmailConfiguration,
   cognito_UserPoolEmailConfiguration_GetTypes,
-} from "../types/cognito_UserPoolEmailConfiguration";
+} from '../types/cognito_UserPoolEmailConfiguration';
 import {
   cognito_UserPoolUsernameConfiguration,
   cognito_UserPoolUsernameConfiguration_GetTypes,
-} from "../types/cognito_UserPoolUsernameConfiguration";
+} from '../types/cognito_UserPoolUsernameConfiguration';
 import {
   cognito_UserPoolAdminCreateUserConfig,
   cognito_UserPoolAdminCreateUserConfig_GetTypes,
-} from "../types/cognito_UserPoolAdminCreateUserConfig";
+} from '../types/cognito_UserPoolAdminCreateUserConfig';
 import {
   cognito_UserPoolPasswordPolicy,
   cognito_UserPoolPasswordPolicy_GetTypes,
-} from "../types/cognito_UserPoolPasswordPolicy";
+} from '../types/cognito_UserPoolPasswordPolicy';
 import {
   cognito_UserPoolSmsConfiguration,
   cognito_UserPoolSmsConfiguration_GetTypes,
-} from "../types/cognito_UserPoolSmsConfiguration";
+} from '../types/cognito_UserPoolSmsConfiguration';
 import {
   cognito_UserPoolUserAttributeUpdateSettings,
   cognito_UserPoolUserAttributeUpdateSettings_GetTypes,
-} from "../types/cognito_UserPoolUserAttributeUpdateSettings";
+} from '../types/cognito_UserPoolUserAttributeUpdateSettings';
 import {
   cognito_UserPoolVerificationMessageTemplate,
   cognito_UserPoolVerificationMessageTemplate_GetTypes,
-} from "../types/cognito_UserPoolVerificationMessageTemplate";
+} from '../types/cognito_UserPoolVerificationMessageTemplate';
 import {
   cognito_UserPoolSoftwareTokenMfaConfiguration,
   cognito_UserPoolSoftwareTokenMfaConfiguration_GetTypes,
-} from "../types/cognito_UserPoolSoftwareTokenMfaConfiguration";
+} from '../types/cognito_UserPoolSoftwareTokenMfaConfiguration';
 import {
   cognito_UserPoolLambdaConfig,
   cognito_UserPoolLambdaConfig_GetTypes,
-} from "../types/cognito_UserPoolLambdaConfig";
+} from '../types/cognito_UserPoolLambdaConfig';
 
 export interface UserPoolArgs {
   // Configuration block for Short Message Service (SMS) settings. Detailed below. These settings apply to SMS user verification and SMS Multi-Factor Authentication (MFA). Due to Cognito API restrictions, the SMS configuration cannot be removed without recreating the Cognito User Pool. For user data safety, this resource will ignore the removal of this configuration by disabling drift detection. To force resource recreation after this configuration has been applied, see the `taint` command.
@@ -241,7 +241,7 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Object,
-        "deviceConfiguration",
+        'deviceConfiguration',
         "Configuration block for the user pool's device tracking. Detailed below.",
         () => cognito_UserPoolDeviceConfiguration_GetTypes(),
         false,
@@ -249,184 +249,184 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.Object,
-        "emailConfiguration",
-        "Configuration block for configuring email. Detailed below.",
+        'emailConfiguration',
+        'Configuration block for configuring email. Detailed below.',
         () => cognito_UserPoolEmailConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the user pool.\n\nThe following arguments are optional:",
+        'name',
+        'Name of the user pool.\n\nThe following arguments are optional:',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "schemas",
-        "Configuration block for the schema attributes of a user pool. Detailed below. Schema attributes from the [standard attribute set](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#cognito-user-pools-standard-attributes) only need to be specified if they are different from the default configuration. Attributes can be added, but not modified or removed. Maximum of 50 attributes.",
+        'schemas',
+        'Configuration block for the schema attributes of a user pool. Detailed below. Schema attributes from the [standard attribute set](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#cognito-user-pools-standard-attributes) only need to be specified if they are different from the default configuration. Attributes can be added, but not modified or removed. Maximum of 50 attributes.',
         () => cognito_UserPoolSchema_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "passwordPolicy",
-        "Configuration block for information about the user pool password policy. Detailed below.",
+        'passwordPolicy',
+        'Configuration block for information about the user pool password policy. Detailed below.',
         () => cognito_UserPoolPasswordPolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "userPoolAddOns",
-        "Configuration block for user pool add-ons to enable user pool advanced security mode features. Detailed below.",
+        'userPoolAddOns',
+        'Configuration block for user pool add-ons to enable user pool advanced security mode features. Detailed below.',
         () => cognito_UserPoolUserPoolAddOns_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "smsConfiguration",
-        "Configuration block for Short Message Service (SMS) settings. Detailed below. These settings apply to SMS user verification and SMS Multi-Factor Authentication (MFA). Due to Cognito API restrictions, the SMS configuration cannot be removed without recreating the Cognito User Pool. For user data safety, this resource will ignore the removal of this configuration by disabling drift detection. To force resource recreation after this configuration has been applied, see the `taint` command.",
+        'smsConfiguration',
+        'Configuration block for Short Message Service (SMS) settings. Detailed below. These settings apply to SMS user verification and SMS Multi-Factor Authentication (MFA). Due to Cognito API restrictions, the SMS configuration cannot be removed without recreating the Cognito User Pool. For user data safety, this resource will ignore the removal of this configuration by disabling drift detection. To force resource recreation after this configuration has been applied, see the `taint` command.',
         () => cognito_UserPoolSmsConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "deletionProtection",
-        "When active, DeletionProtection prevents accidental deletion of your user pool. Before you can delete a user pool that you have protected against deletion, you must deactivate this feature. Valid values are `ACTIVE` and `INACTIVE`, Default value is `INACTIVE`.",
+        'deletionProtection',
+        'When active, DeletionProtection prevents accidental deletion of your user pool. Before you can delete a user pool that you have protected against deletion, you must deactivate this feature. Valid values are `ACTIVE` and `INACTIVE`, Default value is `INACTIVE`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "emailVerificationMessage",
-        "String representing the email verification message. Conflicts with `verification_message_template` configuration block `email_message` argument.",
+        'emailVerificationMessage',
+        'String representing the email verification message. Conflicts with `verification_message_template` configuration block `email_message` argument.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "emailVerificationSubject",
-        "String representing the email verification subject. Conflicts with `verification_message_template` configuration block `email_subject` argument.",
+        'emailVerificationSubject',
+        'String representing the email verification subject. Conflicts with `verification_message_template` configuration block `email_subject` argument.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "smsVerificationMessage",
-        "String representing the SMS verification message. Conflicts with `verification_message_template` configuration block `sms_message` argument.",
+        'smsVerificationMessage',
+        'String representing the SMS verification message. Conflicts with `verification_message_template` configuration block `sms_message` argument.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "accountRecoverySetting",
-        "Configuration block to define which verified available method a user can use to recover their forgotten password. Detailed below.",
+        'accountRecoverySetting',
+        'Configuration block to define which verified available method a user can use to recover their forgotten password. Detailed below.',
         () => cognito_UserPoolAccountRecoverySetting_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "userAttributeUpdateSettings",
-        "Configuration block for user attribute update settings. Detailed below.",
+        'userAttributeUpdateSettings',
+        'Configuration block for user attribute update settings. Detailed below.',
         () => cognito_UserPoolUserAttributeUpdateSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "usernameAttributes",
-        "Whether email addresses or phone numbers can be specified as usernames when a user signs up. Conflicts with `alias_attributes`.",
+        'usernameAttributes',
+        'Whether email addresses or phone numbers can be specified as usernames when a user signs up. Conflicts with `alias_attributes`.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "adminCreateUserConfig",
-        "Configuration block for creating a new user profile. Detailed below.",
+        'adminCreateUserConfig',
+        'Configuration block for creating a new user profile. Detailed below.',
         () => cognito_UserPoolAdminCreateUserConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "mfaConfiguration",
-        "Multi-Factor Authentication (MFA) configuration for the User Pool. Defaults of `OFF`. Valid values are `OFF` (MFA Tokens are not required), `ON` (MFA is required for all users to sign in; requires at least one of `sms_configuration` or `software_token_mfa_configuration` to be configured), or `OPTIONAL` (MFA Will be required only for individual users who have MFA Enabled; requires at least one of `sms_configuration` or `software_token_mfa_configuration` to be configured).",
+        'mfaConfiguration',
+        'Multi-Factor Authentication (MFA) configuration for the User Pool. Defaults of `OFF`. Valid values are `OFF` (MFA Tokens are not required), `ON` (MFA is required for all users to sign in; requires at least one of `sms_configuration` or `software_token_mfa_configuration` to be configured), or `OPTIONAL` (MFA Will be required only for individual users who have MFA Enabled; requires at least one of `sms_configuration` or `software_token_mfa_configuration` to be configured).',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "softwareTokenMfaConfiguration",
-        "Configuration block for software token Mult-Factor Authentication (MFA) settings. Detailed below.",
+        'softwareTokenMfaConfiguration',
+        'Configuration block for software token Mult-Factor Authentication (MFA) settings. Detailed below.',
         () => cognito_UserPoolSoftwareTokenMfaConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "smsAuthenticationMessage",
-        "String representing the SMS authentication message. The Message must contain the `{####}` placeholder, which will be replaced with the code.",
+        'smsAuthenticationMessage',
+        'String representing the SMS authentication message. The Message must contain the `{####}` placeholder, which will be replaced with the code.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the User Pool. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the User Pool. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "lambdaConfig",
-        "Configuration block for the AWS Lambda triggers associated with the user pool. Detailed below.",
+        'lambdaConfig',
+        'Configuration block for the AWS Lambda triggers associated with the user pool. Detailed below.',
         () => cognito_UserPoolLambdaConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "verificationMessageTemplate",
-        "Configuration block for verification message templates. Detailed below.",
+        'verificationMessageTemplate',
+        'Configuration block for verification message templates. Detailed below.',
         () => cognito_UserPoolVerificationMessageTemplate_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "usernameConfiguration",
-        "Configuration block for username configuration. Detailed below.",
+        'usernameConfiguration',
+        'Configuration block for username configuration. Detailed below.',
         () => cognito_UserPoolUsernameConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "aliasAttributes",
-        "Attributes supported as an alias for this user pool. Valid values: `phone_number`, `email`, or `preferred_username`. Conflicts with `username_attributes`.",
+        'aliasAttributes',
+        'Attributes supported as an alias for this user pool. Valid values: `phone_number`, `email`, or `preferred_username`. Conflicts with `username_attributes`.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "autoVerifiedAttributes",
-        "Attributes to be auto-verified. Valid values: `email`, `phone_number`.",
+        'autoVerifiedAttributes',
+        'Attributes to be auto-verified. Valid values: `email`, `phone_number`.',
         () => InputType_String_GetTypes(),
         false,
         false,

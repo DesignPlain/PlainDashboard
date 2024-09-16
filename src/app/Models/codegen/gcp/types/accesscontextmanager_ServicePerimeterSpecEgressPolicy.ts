@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   accesscontextmanager_ServicePerimeterSpecEgressPolicyEgressFrom,
   accesscontextmanager_ServicePerimeterSpecEgressPolicyEgressFrom_GetTypes,
-} from "./accesscontextmanager_ServicePerimeterSpecEgressPolicyEgressFrom";
+} from './accesscontextmanager_ServicePerimeterSpecEgressPolicyEgressFrom';
 import {
   accesscontextmanager_ServicePerimeterSpecEgressPolicyEgressTo,
   accesscontextmanager_ServicePerimeterSpecEgressPolicyEgressTo_GetTypes,
-} from "./accesscontextmanager_ServicePerimeterSpecEgressPolicyEgressTo";
+} from './accesscontextmanager_ServicePerimeterSpecEgressPolicyEgressTo';
 
 export interface accesscontextmanager_ServicePerimeterSpecEgressPolicy {
   /*
@@ -33,8 +33,8 @@ export function accesscontextmanager_ServicePerimeterSpecEgressPolicy_GetTypes()
   return [
     new DynamicUIProps(
       InputType.Object,
-      "egressFrom",
-      "Defines conditions on the source of a request causing this `EgressPolicy` to apply.\nStructure is documented below.",
+      'egressFrom',
+      'Defines conditions on the source of a request causing this `EgressPolicy` to apply.\nStructure is documented below.',
       () =>
         accesscontextmanager_ServicePerimeterSpecEgressPolicyEgressFrom_GetTypes(),
       false,
@@ -42,8 +42,8 @@ export function accesscontextmanager_ServicePerimeterSpecEgressPolicy_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "egressTo",
-      "Defines the conditions on the `ApiOperation` and destination resources that\ncause this `EgressPolicy` to apply.\nStructure is documented below.",
+      'egressTo',
+      'Defines the conditions on the `ApiOperation` and destination resources that\ncause this `EgressPolicy` to apply.\nStructure is documented below.',
       () =>
         accesscontextmanager_ServicePerimeterSpecEgressPolicyEgressTo_GetTypes(),
       false,

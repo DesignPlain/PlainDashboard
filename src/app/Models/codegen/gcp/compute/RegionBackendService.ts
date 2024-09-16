@@ -3,49 +3,49 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_RegionBackendServiceCdnPolicy,
   compute_RegionBackendServiceCdnPolicy_GetTypes,
-} from "../types/compute_RegionBackendServiceCdnPolicy";
+} from '../types/compute_RegionBackendServiceCdnPolicy';
 import {
   compute_RegionBackendServiceLogConfig,
   compute_RegionBackendServiceLogConfig_GetTypes,
-} from "../types/compute_RegionBackendServiceLogConfig";
+} from '../types/compute_RegionBackendServiceLogConfig';
 import {
   compute_RegionBackendServiceConnectionTrackingPolicy,
   compute_RegionBackendServiceConnectionTrackingPolicy_GetTypes,
-} from "../types/compute_RegionBackendServiceConnectionTrackingPolicy";
+} from '../types/compute_RegionBackendServiceConnectionTrackingPolicy';
 import {
   compute_RegionBackendServiceBackend,
   compute_RegionBackendServiceBackend_GetTypes,
-} from "../types/compute_RegionBackendServiceBackend";
+} from '../types/compute_RegionBackendServiceBackend';
 import {
   compute_RegionBackendServiceOutlierDetection,
   compute_RegionBackendServiceOutlierDetection_GetTypes,
-} from "../types/compute_RegionBackendServiceOutlierDetection";
+} from '../types/compute_RegionBackendServiceOutlierDetection';
 import {
   compute_RegionBackendServiceFailoverPolicy,
   compute_RegionBackendServiceFailoverPolicy_GetTypes,
-} from "../types/compute_RegionBackendServiceFailoverPolicy";
+} from '../types/compute_RegionBackendServiceFailoverPolicy';
 import {
   compute_RegionBackendServiceSubsetting,
   compute_RegionBackendServiceSubsetting_GetTypes,
-} from "../types/compute_RegionBackendServiceSubsetting";
+} from '../types/compute_RegionBackendServiceSubsetting';
 import {
   compute_RegionBackendServiceIap,
   compute_RegionBackendServiceIap_GetTypes,
-} from "../types/compute_RegionBackendServiceIap";
+} from '../types/compute_RegionBackendServiceIap';
 import {
   compute_RegionBackendServiceCircuitBreakers,
   compute_RegionBackendServiceCircuitBreakers_GetTypes,
-} from "../types/compute_RegionBackendServiceCircuitBreakers";
+} from '../types/compute_RegionBackendServiceCircuitBreakers';
 import {
   compute_RegionBackendServiceConsistentHash,
   compute_RegionBackendServiceConsistentHash_GetTypes,
-} from "../types/compute_RegionBackendServiceConsistentHash";
+} from '../types/compute_RegionBackendServiceConsistentHash';
 
 export interface RegionBackendServiceArgs {
   /*
@@ -435,103 +435,103 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "failoverPolicy",
-        "Policy for failovers.\nStructure is documented below.",
+        'failoverPolicy',
+        'Policy for failovers.\nStructure is documented below.',
         () => compute_RegionBackendServiceFailoverPolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "localityLbPolicy",
-        "The load balancing algorithm used within the scope of the locality.\nThe possible values are:",
+        'localityLbPolicy',
+        'The load balancing algorithm used within the scope of the locality.\nThe possible values are:',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "logConfig",
-        "This field denotes the logging options for the load balancer traffic served by this backend service.\nIf logging is enabled, logs will be exported to Stackdriver.\nStructure is documented below.",
+        'logConfig',
+        'This field denotes the logging options for the load balancer traffic served by this backend service.\nIf logging is enabled, logs will be exported to Stackdriver.\nStructure is documented below.',
         () => compute_RegionBackendServiceLogConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.\n\n\n- - -",
+        'name',
+        'Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "healthChecks",
-        "The set of URLs to HealthCheck resources for health checking\nthis RegionBackendService. Currently at most one health\ncheck can be specified.\nA health check must be specified unless the backend service uses an internet\nor serverless NEG as a backend.",
+        'healthChecks',
+        'The set of URLs to HealthCheck resources for health checking\nthis RegionBackendService. Currently at most one health\ncheck can be specified.\nA health check must be specified unless the backend service uses an internet\nor serverless NEG as a backend.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "protocol",
-        "The protocol this RegionBackendService uses to communicate with backends.\nThe default is HTTP. **NOTE**: HTTP2 is only valid for beta HTTP/2 load balancer\ntypes and may result in errors if used with the GA API.\nPossible values are: `HTTP`, `HTTPS`, `HTTP2`, `SSL`, `TCP`, `UDP`, `GRPC`, `UNSPECIFIED`.",
+        'protocol',
+        'The protocol this RegionBackendService uses to communicate with backends.\nThe default is HTTP. **NOTE**: HTTP2 is only valid for beta HTTP/2 load balancer\ntypes and may result in errors if used with the GA API.\nPossible values are: `HTTP`, `HTTPS`, `HTTP2`, `SSL`, `TCP`, `UDP`, `GRPC`, `UNSPECIFIED`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableCdn",
-        "If true, enable Cloud CDN for this RegionBackendService.",
+        'enableCdn',
+        'If true, enable Cloud CDN for this RegionBackendService.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "securityPolicy",
-        "The security policy associated with this backend service.",
+        'securityPolicy',
+        'The security policy associated with this backend service.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sessionAffinity",
-        "Type of session affinity to use. The default is NONE. Session affinity is\nnot applicable if the protocol is UDP.\nPossible values are: `NONE`, `CLIENT_IP`, `CLIENT_IP_PORT_PROTO`, `CLIENT_IP_PROTO`, `GENERATED_COOKIE`, `HEADER_FIELD`, `HTTP_COOKIE`, `CLIENT_IP_NO_DESTINATION`.",
+        'sessionAffinity',
+        'Type of session affinity to use. The default is NONE. Session affinity is\nnot applicable if the protocol is UDP.\nPossible values are: `NONE`, `CLIENT_IP`, `CLIENT_IP_PORT_PROTO`, `CLIENT_IP_PROTO`, `GENERATED_COOKIE`, `HEADER_FIELD`, `HTTP_COOKIE`, `CLIENT_IP_NO_DESTINATION`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "subsetting",
-        "Subsetting configuration for this BackendService. Currently this is applicable only for Internal TCP/UDP load balancing and Internal HTTP(S) load balancing.\nStructure is documented below.",
+        'subsetting',
+        'Subsetting configuration for this BackendService. Currently this is applicable only for Internal TCP/UDP load balancing and Internal HTTP(S) load balancing.\nStructure is documented below.',
         () => compute_RegionBackendServiceSubsetting_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cdnPolicy",
-        "Cloud CDN configuration for this BackendService.\nStructure is documented below.",
+        'cdnPolicy',
+        'Cloud CDN configuration for this BackendService.\nStructure is documented below.',
         () => compute_RegionBackendServiceCdnPolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "portName",
+        'portName',
         'A named port on a backend instance group representing the port for\ncommunication to the backend VMs in that group. Required when the\nloadBalancingScheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED, or INTERNAL_SELF_MANAGED\nand the backends are instance groups. The named port must be defined on each\nbackend instance group. This parameter has no meaning if the backends are NEGs. API sets a\ndefault of "http" if not given.\nMust be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).',
         () => [],
         false,
@@ -539,104 +539,104 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "connectionDrainingTimeoutSec",
-        "Time for which instance will be drained (not accept new\nconnections, but still work to finish started).",
+        'connectionDrainingTimeoutSec',
+        'Time for which instance will be drained (not accept new\nconnections, but still work to finish started).',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "network",
-        "The URL of the network to which this backend service belongs.\nThis field can only be specified when the load balancing scheme is set to INTERNAL.",
+        'network',
+        'The URL of the network to which this backend service belongs.\nThis field can only be specified when the load balancing scheme is set to INTERNAL.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The Region in which the created backend service should reside.\nIf it is not provided, the provider region is used.",
+        'region',
+        'The Region in which the created backend service should reside.\nIf it is not provided, the provider region is used.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "backends",
-        "The set of backends that serve this RegionBackendService.\nStructure is documented below.",
+        'backends',
+        'The set of backends that serve this RegionBackendService.\nStructure is documented below.',
         () => compute_RegionBackendServiceBackend_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "circuitBreakers",
-        "Settings controlling the volume of connections to a backend service. This field\nis applicable only when the `load_balancing_scheme` is set to INTERNAL_MANAGED\nand the `protocol` is set to HTTP, HTTPS, or HTTP2.\nStructure is documented below.",
+        'circuitBreakers',
+        'Settings controlling the volume of connections to a backend service. This field\nis applicable only when the `load_balancing_scheme` is set to INTERNAL_MANAGED\nand the `protocol` is set to HTTP, HTTPS, or HTTP2.\nStructure is documented below.',
         () => compute_RegionBackendServiceCircuitBreakers_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "outlierDetection",
-        "Settings controlling eviction of unhealthy hosts from the load balancing pool.\nThis field is applicable only when the `load_balancing_scheme` is set\nto INTERNAL_MANAGED and the `protocol` is set to HTTP, HTTPS, or HTTP2.\nStructure is documented below.",
+        'outlierDetection',
+        'Settings controlling eviction of unhealthy hosts from the load balancing pool.\nThis field is applicable only when the `load_balancing_scheme` is set\nto INTERNAL_MANAGED and the `protocol` is set to HTTP, HTTPS, or HTTP2.\nStructure is documented below.',
         () => compute_RegionBackendServiceOutlierDetection_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "loadBalancingScheme",
-        "Indicates what kind of load balancing this regional backend service\nwill be used for. A backend service created for one type of load\nbalancing cannot be used with the other(s). For more information, refer to\n[Choosing a load balancer](https://cloud.google.com/load-balancing/docs/backend-service).\nDefault value is `INTERNAL`.\nPossible values are: `EXTERNAL`, `EXTERNAL_MANAGED`, `INTERNAL`, `INTERNAL_MANAGED`.",
+        'loadBalancingScheme',
+        'Indicates what kind of load balancing this regional backend service\nwill be used for. A backend service created for one type of load\nbalancing cannot be used with the other(s). For more information, refer to\n[Choosing a load balancer](https://cloud.google.com/load-balancing/docs/backend-service).\nDefault value is `INTERNAL`.\nPossible values are: `EXTERNAL`, `EXTERNAL_MANAGED`, `INTERNAL`, `INTERNAL_MANAGED`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "affinityCookieTtlSec",
-        "Lifetime of cookies in seconds if session_affinity is\nGENERATED_COOKIE. If set to 0, the cookie is non-persistent and lasts\nonly until the end of the browser session (or equivalent). The\nmaximum allowed value for TTL is one day.\nWhen the load balancing scheme is INTERNAL, this field is not used.",
+        'affinityCookieTtlSec',
+        'Lifetime of cookies in seconds if session_affinity is\nGENERATED_COOKIE. If set to 0, the cookie is non-persistent and lasts\nonly until the end of the browser session (or equivalent). The\nmaximum allowed value for TTL is one day.\nWhen the load balancing scheme is INTERNAL, this field is not used.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "iap",
-        "Settings for enabling Cloud Identity Aware Proxy\nStructure is documented below.",
+        'iap',
+        'Settings for enabling Cloud Identity Aware Proxy\nStructure is documented below.',
         () => compute_RegionBackendServiceIap_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "timeoutSec",
-        "How many seconds to wait for the backend before considering it a\nfailed request. Default is 30 seconds. Valid range is [1, 86400].",
+        'timeoutSec',
+        'How many seconds to wait for the backend before considering it a\nfailed request. Default is 30 seconds. Valid range is [1, 86400].',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "consistentHash",
-        "Consistent Hash-based load balancing can be used to provide soft session\naffinity based on HTTP headers, cookies or other properties. This load balancing\npolicy is applicable only for HTTP connections. The affinity to a particular\ndestination host will be lost when one or more hosts are added/removed from the\ndestination service. This field specifies parameters that control consistent\nhashing.\nThis field only applies when all of the following are true -",
+        'consistentHash',
+        'Consistent Hash-based load balancing can be used to provide soft session\naffinity based on HTTP headers, cookies or other properties. This load balancing\npolicy is applicable only for HTTP connections. The affinity to a particular\ndestination host will be lost when one or more hosts are added/removed from the\ndestination service. This field specifies parameters that control consistent\nhashing.\nThis field only applies when all of the following are true -',
         () => compute_RegionBackendServiceConsistentHash_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "connectionTrackingPolicy",
-        "Connection Tracking configuration for this BackendService.\nThis is available only for Layer 4 Internal Load Balancing and\nNetwork Load Balancing.\nStructure is documented below.",
+        'connectionTrackingPolicy',
+        'Connection Tracking configuration for this BackendService.\nThis is available only for Layer 4 Internal Load Balancing and\nNetwork Load Balancing.\nStructure is documented below.',
         () => compute_RegionBackendServiceConnectionTrackingPolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource.",
+        'description',
+        'An optional description of this resource.',
         () => [],
         false,
         false,

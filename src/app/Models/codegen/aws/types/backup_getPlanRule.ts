@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   backup_getPlanRuleCopyAction,
   backup_getPlanRuleCopyAction_GetTypes,
-} from "./backup_getPlanRuleCopyAction";
+} from './backup_getPlanRuleCopyAction';
 import {
   backup_getPlanRuleLifecycle,
   backup_getPlanRuleLifecycle_GetTypes,
-} from "./backup_getPlanRuleLifecycle";
+} from './backup_getPlanRuleLifecycle';
 
 export interface backup_getPlanRule {
   //
@@ -47,61 +47,61 @@ export function backup_getPlanRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "completionWindow",
-      "",
+      'completionWindow',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "ruleName", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'ruleName', '', () => [], true, false),
     new DynamicUIProps(
       InputType.Number,
-      "startWindow",
-      "",
+      'startWindow',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "lifecycles",
-      "",
+      'lifecycles',
+      '',
       () => backup_getPlanRuleLifecycle_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "targetVaultName",
-      "",
+      'targetVaultName',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "copyActions",
-      "",
+      'copyActions',
+      '',
       () => backup_getPlanRuleCopyAction_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enableContinuousBackup",
-      "",
+      'enableContinuousBackup',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "recoveryPointTags",
-      "",
+      'recoveryPointTags',
+      '',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
-    new DynamicUIProps(InputType.String, "schedule", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'schedule', '', () => [], true, false),
   ];
 }

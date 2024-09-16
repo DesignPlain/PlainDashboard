@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   quicksight_getDataSetPhysicalTableMapS3SourceInputColumn,
   quicksight_getDataSetPhysicalTableMapS3SourceInputColumn_GetTypes,
-} from "./quicksight_getDataSetPhysicalTableMapS3SourceInputColumn";
+} from './quicksight_getDataSetPhysicalTableMapS3SourceInputColumn';
 import {
   quicksight_getDataSetPhysicalTableMapS3SourceUploadSetting,
   quicksight_getDataSetPhysicalTableMapS3SourceUploadSetting_GetTypes,
-} from "./quicksight_getDataSetPhysicalTableMapS3SourceUploadSetting";
+} from './quicksight_getDataSetPhysicalTableMapS3SourceUploadSetting';
 
 export interface quicksight_getDataSetPhysicalTableMapS3Source {
   //
@@ -29,16 +29,16 @@ export function quicksight_getDataSetPhysicalTableMapS3Source_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.Array,
-      "inputColumns",
-      "",
+      'inputColumns',
+      '',
       () => quicksight_getDataSetPhysicalTableMapS3SourceInputColumn_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "uploadSettings",
-      "",
+      'uploadSettings',
+      '',
       () =>
         quicksight_getDataSetPhysicalTableMapS3SourceUploadSetting_GetTypes(),
       true,
@@ -46,8 +46,8 @@ export function quicksight_getDataSetPhysicalTableMapS3Source_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "dataSourceArn",
-      "",
+      'dataSourceArn',
+      '',
       () => [],
       true,
       false,

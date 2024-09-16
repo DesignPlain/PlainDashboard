@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   securesourcemanager_InstancePrivateConfig,
   securesourcemanager_InstancePrivateConfig_GetTypes,
-} from "../types/securesourcemanager_InstancePrivateConfig";
+} from '../types/securesourcemanager_InstancePrivateConfig';
 import {
   securesourcemanager_InstanceHostConfig,
   securesourcemanager_InstanceHostConfig_GetTypes,
-} from "../types/securesourcemanager_InstanceHostConfig";
+} from '../types/securesourcemanager_InstanceHostConfig';
 
 export interface InstanceArgs {
   /*
@@ -119,48 +119,48 @@ and default labels configured on the provider.
     return [
       new DynamicUIProps(
         InputType.String,
-        "instanceId",
-        "The name for the Instance.\n\n\n- - -",
+        'instanceId',
+        'The name for the Instance.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "kmsKey",
-        "Customer-managed encryption key name, in the format projects/*/locations/*/keyRings/*/cryptoKeys/*.",
+        'kmsKey',
+        'Customer-managed encryption key name, in the format projects/*/locations/*/keyRings/*/cryptoKeys/*.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Labels as key value pairs.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Labels as key value pairs.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the Instance.",
+        'location',
+        'The location for the Instance.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "privateConfig",
-        "Private settings for private instance.\nStructure is documented below.",
+        'privateConfig',
+        'Private settings for private instance.\nStructure is documented below.',
         () => securesourcemanager_InstancePrivateConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   container_AzureNodePoolConfig,
   container_AzureNodePoolConfig_GetTypes,
-} from "../types/container_AzureNodePoolConfig";
+} from '../types/container_AzureNodePoolConfig';
 import {
   container_AzureNodePoolMaxPodsConstraint,
   container_AzureNodePoolMaxPodsConstraint_GetTypes,
-} from "../types/container_AzureNodePoolMaxPodsConstraint";
+} from '../types/container_AzureNodePoolMaxPodsConstraint';
 import {
   container_AzureNodePoolManagement,
   container_AzureNodePoolManagement_GetTypes,
-} from "../types/container_AzureNodePoolManagement";
+} from '../types/container_AzureNodePoolManagement';
 import {
   container_AzureNodePoolAutoscaling,
   container_AzureNodePoolAutoscaling_GetTypes,
-} from "../types/container_AzureNodePoolAutoscaling";
+} from '../types/container_AzureNodePoolAutoscaling';
 
 export interface AzureNodePoolArgs {
   /*
@@ -135,31 +135,31 @@ Please refer to the field `effective_annotations` for all of the annotations pre
     return [
       new DynamicUIProps(
         InputType.Object,
-        "config",
-        "The node configuration of the node pool.",
+        'config',
+        'The node configuration of the node pool.',
         () => container_AzureNodePoolConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource",
+        'location',
+        'The location for the resource',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "azureAvailabilityZone",
-        "Optional. The Azure availability zone of the nodes in this nodepool. When unspecified, it defaults to `1`.",
+        'azureAvailabilityZone',
+        'Optional. The Azure availability zone of the nodes in this nodepool. When unspecified, it defaults to `1`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "subnetId",
+        'subnetId',
         "The ARM ID of the subnet where the node pool VMs run. Make sure it's a subnet under the virtual network in the cluster configuration.",
         () => [],
         true,
@@ -167,64 +167,64 @@ Please refer to the field `effective_annotations` for all of the annotations pre
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project for the resource",
+        'project',
+        'The project for the resource',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cluster",
-        "The azureCluster for the resource",
+        'cluster',
+        'The azureCluster for the resource',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "maxPodsConstraint",
-        "The constraint on the maximum number of pods that can be run simultaneously on a node in the node pool.",
+        'maxPodsConstraint',
+        'The constraint on the maximum number of pods that can be run simultaneously on a node in the node pool.',
         () => container_AzureNodePoolMaxPodsConstraint_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of this resource.",
+        'name',
+        'The name of this resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
-        "Optional. Annotations on the node pool. This field has the same restrictions as Kubernetes annotations. The total size of all keys and values combined is limited to 256k. Keys can have 2 segments: prefix (optional) and name (required), separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with alphanumerics, with dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
+        'annotations',
+        'Optional. Annotations on the node pool. This field has the same restrictions as Kubernetes annotations. The total size of all keys and values combined is limited to 256k. Keys can have 2 segments: prefix (optional) and name (required), separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with alphanumerics, with dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "management",
-        "The Management configuration for this node pool.",
+        'management',
+        'The Management configuration for this node pool.',
         () => container_AzureNodePoolManagement_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "version",
-        "The Kubernetes version (e.g. `1.19.10-gke.1000`) running on this node pool.",
+        'version',
+        'The Kubernetes version (e.g. `1.19.10-gke.1000`) running on this node pool.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "autoscaling",
-        "Autoscaler configuration for this node pool.",
+        'autoscaling',
+        'Autoscaler configuration for this node pool.',
         () => container_AzureNodePoolAutoscaling_GetTypes(),
         true,
         false,

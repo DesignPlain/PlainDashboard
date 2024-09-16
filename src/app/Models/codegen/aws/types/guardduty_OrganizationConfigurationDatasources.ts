@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   guardduty_OrganizationConfigurationDatasourcesKubernetes,
   guardduty_OrganizationConfigurationDatasourcesKubernetes_GetTypes,
-} from "./guardduty_OrganizationConfigurationDatasourcesKubernetes";
+} from './guardduty_OrganizationConfigurationDatasourcesKubernetes';
 import {
   guardduty_OrganizationConfigurationDatasourcesMalwareProtection,
   guardduty_OrganizationConfigurationDatasourcesMalwareProtection_GetTypes,
-} from "./guardduty_OrganizationConfigurationDatasourcesMalwareProtection";
+} from './guardduty_OrganizationConfigurationDatasourcesMalwareProtection';
 import {
   guardduty_OrganizationConfigurationDatasourcesS3Logs,
   guardduty_OrganizationConfigurationDatasourcesS3Logs_GetTypes,
-} from "./guardduty_OrganizationConfigurationDatasourcesS3Logs";
+} from './guardduty_OrganizationConfigurationDatasourcesS3Logs';
 
 export interface guardduty_OrganizationConfigurationDatasources {
   // Enable Malware Protection automatically for new member accounts.
@@ -33,8 +33,8 @@ export function guardduty_OrganizationConfigurationDatasources_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Object,
-      "malwareProtection",
-      "Enable Malware Protection automatically for new member accounts.",
+      'malwareProtection',
+      'Enable Malware Protection automatically for new member accounts.',
       () =>
         guardduty_OrganizationConfigurationDatasourcesMalwareProtection_GetTypes(),
       false,
@@ -42,16 +42,16 @@ export function guardduty_OrganizationConfigurationDatasources_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Object,
-      "s3Logs",
-      "Enable S3 Protection automatically for new member accounts.",
+      's3Logs',
+      'Enable S3 Protection automatically for new member accounts.',
       () => guardduty_OrganizationConfigurationDatasourcesS3Logs_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "kubernetes",
-      "Enable Kubernetes Audit Logs Monitoring automatically for new member accounts.",
+      'kubernetes',
+      'Enable Kubernetes Audit Logs Monitoring automatically for new member accounts.',
       () => guardduty_OrganizationConfigurationDatasourcesKubernetes_GetTypes(),
       false,
       false,

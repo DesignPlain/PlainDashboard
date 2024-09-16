@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudfunctions_getFunctionEventTriggerFailurePolicy,
   cloudfunctions_getFunctionEventTriggerFailurePolicy_GetTypes,
-} from "./cloudfunctions_getFunctionEventTriggerFailurePolicy";
+} from './cloudfunctions_getFunctionEventTriggerFailurePolicy';
 
 export interface cloudfunctions_getFunctionEventTrigger {
   // Policy for failed executions. Structure is documented below.
@@ -29,15 +29,15 @@ export function cloudfunctions_getFunctionEventTrigger_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.Array,
-      "failurePolicies",
-      "Policy for failed executions. Structure is documented below.",
+      'failurePolicies',
+      'Policy for failed executions. Structure is documented below.',
       () => cloudfunctions_getFunctionEventTriggerFailurePolicy_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "resource",
+      'resource',
       'The name of the resource whose events are being observed, for example, `"myBucket"`',
       () => [],
       true,
@@ -45,7 +45,7 @@ export function cloudfunctions_getFunctionEventTrigger_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.String,
-      "eventType",
+      'eventType',
       'The type of event to observe. For example: `"google.storage.object.finalize"`.\nSee the documentation on [calling Cloud Functions](https://cloud.google.com/functions/docs/calling/)\nfor a full reference of accepted triggers.',
       () => [],
       true,

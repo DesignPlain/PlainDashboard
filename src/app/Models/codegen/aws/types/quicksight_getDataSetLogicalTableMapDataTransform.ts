@@ -3,36 +3,36 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   quicksight_getDataSetLogicalTableMapDataTransformCreateColumnsOperation,
   quicksight_getDataSetLogicalTableMapDataTransformCreateColumnsOperation_GetTypes,
-} from "./quicksight_getDataSetLogicalTableMapDataTransformCreateColumnsOperation";
+} from './quicksight_getDataSetLogicalTableMapDataTransformCreateColumnsOperation';
 import {
   quicksight_getDataSetLogicalTableMapDataTransformFilterOperation,
   quicksight_getDataSetLogicalTableMapDataTransformFilterOperation_GetTypes,
-} from "./quicksight_getDataSetLogicalTableMapDataTransformFilterOperation";
+} from './quicksight_getDataSetLogicalTableMapDataTransformFilterOperation';
 import {
   quicksight_getDataSetLogicalTableMapDataTransformProjectOperation,
   quicksight_getDataSetLogicalTableMapDataTransformProjectOperation_GetTypes,
-} from "./quicksight_getDataSetLogicalTableMapDataTransformProjectOperation";
+} from './quicksight_getDataSetLogicalTableMapDataTransformProjectOperation';
 import {
   quicksight_getDataSetLogicalTableMapDataTransformRenameColumnOperation,
   quicksight_getDataSetLogicalTableMapDataTransformRenameColumnOperation_GetTypes,
-} from "./quicksight_getDataSetLogicalTableMapDataTransformRenameColumnOperation";
+} from './quicksight_getDataSetLogicalTableMapDataTransformRenameColumnOperation';
 import {
   quicksight_getDataSetLogicalTableMapDataTransformTagColumnOperation,
   quicksight_getDataSetLogicalTableMapDataTransformTagColumnOperation_GetTypes,
-} from "./quicksight_getDataSetLogicalTableMapDataTransformTagColumnOperation";
+} from './quicksight_getDataSetLogicalTableMapDataTransformTagColumnOperation';
 import {
   quicksight_getDataSetLogicalTableMapDataTransformUntagColumnOperation,
   quicksight_getDataSetLogicalTableMapDataTransformUntagColumnOperation_GetTypes,
-} from "./quicksight_getDataSetLogicalTableMapDataTransformUntagColumnOperation";
+} from './quicksight_getDataSetLogicalTableMapDataTransformUntagColumnOperation';
 import {
   quicksight_getDataSetLogicalTableMapDataTransformCastColumnTypeOperation,
   quicksight_getDataSetLogicalTableMapDataTransformCastColumnTypeOperation_GetTypes,
-} from "./quicksight_getDataSetLogicalTableMapDataTransformCastColumnTypeOperation";
+} from './quicksight_getDataSetLogicalTableMapDataTransformCastColumnTypeOperation';
 
 export interface quicksight_getDataSetLogicalTableMapDataTransform {
   //
@@ -61,8 +61,8 @@ export function quicksight_getDataSetLogicalTableMapDataTransform_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "castColumnTypeOperations",
-      "",
+      'castColumnTypeOperations',
+      '',
       () =>
         quicksight_getDataSetLogicalTableMapDataTransformCastColumnTypeOperation_GetTypes(),
       true,
@@ -70,8 +70,8 @@ export function quicksight_getDataSetLogicalTableMapDataTransform_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "createColumnsOperations",
-      "",
+      'createColumnsOperations',
+      '',
       () =>
         quicksight_getDataSetLogicalTableMapDataTransformCreateColumnsOperation_GetTypes(),
       true,
@@ -79,8 +79,8 @@ export function quicksight_getDataSetLogicalTableMapDataTransform_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "filterOperations",
-      "",
+      'filterOperations',
+      '',
       () =>
         quicksight_getDataSetLogicalTableMapDataTransformFilterOperation_GetTypes(),
       true,
@@ -88,8 +88,8 @@ export function quicksight_getDataSetLogicalTableMapDataTransform_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "projectOperations",
-      "",
+      'projectOperations',
+      '',
       () =>
         quicksight_getDataSetLogicalTableMapDataTransformProjectOperation_GetTypes(),
       true,
@@ -97,8 +97,8 @@ export function quicksight_getDataSetLogicalTableMapDataTransform_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "renameColumnOperations",
-      "",
+      'renameColumnOperations',
+      '',
       () =>
         quicksight_getDataSetLogicalTableMapDataTransformRenameColumnOperation_GetTypes(),
       true,
@@ -106,8 +106,8 @@ export function quicksight_getDataSetLogicalTableMapDataTransform_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "tagColumnOperations",
-      "",
+      'tagColumnOperations',
+      '',
       () =>
         quicksight_getDataSetLogicalTableMapDataTransformTagColumnOperation_GetTypes(),
       true,
@@ -115,8 +115,8 @@ export function quicksight_getDataSetLogicalTableMapDataTransform_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "untagColumnOperations",
-      "",
+      'untagColumnOperations',
+      '',
       () =>
         quicksight_getDataSetLogicalTableMapDataTransformUntagColumnOperation_GetTypes(),
       true,

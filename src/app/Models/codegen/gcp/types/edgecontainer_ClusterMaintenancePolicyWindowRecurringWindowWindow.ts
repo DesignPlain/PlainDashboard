@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface edgecontainer_ClusterMaintenancePolicyWindowRecurringWindowWindow {
   /*
@@ -21,16 +21,16 @@ export function edgecontainer_ClusterMaintenancePolicyWindowRecurringWindowWindo
   return [
     new DynamicUIProps(
       InputType.String,
-      "endTime",
-      "The time that the window ends. The end time must take place after the\nstart time.",
+      'endTime',
+      'The time that the window ends. The end time must take place after the\nstart time.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "startTime",
-      "The time that the window first starts.",
+      'startTime',
+      'The time that the window first starts.',
       () => [],
       false,
       false,

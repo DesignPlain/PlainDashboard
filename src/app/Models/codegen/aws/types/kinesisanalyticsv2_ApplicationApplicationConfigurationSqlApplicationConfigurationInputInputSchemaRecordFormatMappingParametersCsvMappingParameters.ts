@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParameters {
   // The column delimiter. For example, in a CSV format, a comma (`,`) is the typical column delimiter.
@@ -18,16 +18,16 @@ export function kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplica
   return [
     new DynamicUIProps(
       InputType.String,
-      "recordColumnDelimiter",
-      "The column delimiter. For example, in a CSV format, a comma (`,`) is the typical column delimiter.",
+      'recordColumnDelimiter',
+      'The column delimiter. For example, in a CSV format, a comma (`,`) is the typical column delimiter.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "recordRowDelimiter",
-      "The row delimiter. For example, in a CSV format, `\\n` is the typical row delimiter.",
+      'recordRowDelimiter',
+      'The row delimiter. For example, in a CSV format, `\\n` is the typical row delimiter.',
       () => [],
       true,
       false,

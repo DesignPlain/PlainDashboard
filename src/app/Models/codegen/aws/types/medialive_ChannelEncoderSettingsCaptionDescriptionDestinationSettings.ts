@@ -3,60 +3,60 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsAribDestinationSettings,
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsAribDestinationSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsAribDestinationSettings";
+} from './medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsAribDestinationSettings';
 import {
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsTtmlDestinationSettings,
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsTtmlDestinationSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsTtmlDestinationSettings";
+} from './medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsTtmlDestinationSettings';
 import {
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsBurnInDestinationSettings,
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsBurnInDestinationSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsBurnInDestinationSettings";
+} from './medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsBurnInDestinationSettings';
 import {
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsDvbSubDestinationSettings,
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsDvbSubDestinationSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsDvbSubDestinationSettings";
+} from './medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsDvbSubDestinationSettings';
 import {
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsEmbeddedPlusScte20DestinationSettings,
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsEmbeddedPlusScte20DestinationSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsEmbeddedPlusScte20DestinationSettings";
+} from './medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsEmbeddedPlusScte20DestinationSettings';
 import {
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsRtmpCaptionInfoDestinationSettings,
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsRtmpCaptionInfoDestinationSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsRtmpCaptionInfoDestinationSettings";
+} from './medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsRtmpCaptionInfoDestinationSettings';
 import {
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsScte27DestinationSettings,
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsScte27DestinationSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsScte27DestinationSettings";
+} from './medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsScte27DestinationSettings';
 import {
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsSmpteTtDestinationSettings,
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsSmpteTtDestinationSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsSmpteTtDestinationSettings";
+} from './medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsSmpteTtDestinationSettings';
 import {
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsWebvttDestinationSettings,
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsWebvttDestinationSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsWebvttDestinationSettings";
+} from './medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsWebvttDestinationSettings';
 import {
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsScte20PlusEmbeddedDestinationSettings,
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsScte20PlusEmbeddedDestinationSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsScte20PlusEmbeddedDestinationSettings";
+} from './medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsScte20PlusEmbeddedDestinationSettings';
 import {
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsTeletextDestinationSettings,
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsTeletextDestinationSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsTeletextDestinationSettings";
+} from './medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsTeletextDestinationSettings';
 import {
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsEbuTtDDestinationSettings,
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsEbuTtDDestinationSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsEbuTtDDestinationSettings";
+} from './medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsEbuTtDDestinationSettings';
 import {
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsEmbeddedDestinationSettings,
   medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsEmbeddedDestinationSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsEmbeddedDestinationSettings";
+} from './medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsEmbeddedDestinationSettings';
 
 export interface medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettings {
   // ARIB Destination Settings.
@@ -103,8 +103,8 @@ export function medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSet
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ttmlDestinationSettings",
-      "TTML Destination Settings. See TTML Destination Settings for more details.",
+      'ttmlDestinationSettings',
+      'TTML Destination Settings. See TTML Destination Settings for more details.',
       () =>
         medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsTtmlDestinationSettings_GetTypes(),
       false,
@@ -112,8 +112,8 @@ export function medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSet
     ),
     new DynamicUIProps(
       InputType.Object,
-      "aribDestinationSettings",
-      "ARIB Destination Settings.",
+      'aribDestinationSettings',
+      'ARIB Destination Settings.',
       () =>
         medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsAribDestinationSettings_GetTypes(),
       false,
@@ -121,8 +121,8 @@ export function medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSet
     ),
     new DynamicUIProps(
       InputType.Object,
-      "smpteTtDestinationSettings",
-      "SMPTE TT Destination Settings.",
+      'smpteTtDestinationSettings',
+      'SMPTE TT Destination Settings.',
       () =>
         medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsSmpteTtDestinationSettings_GetTypes(),
       false,
@@ -130,8 +130,8 @@ export function medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSet
     ),
     new DynamicUIProps(
       InputType.Object,
-      "webvttDestinationSettings",
-      "WebVTT Destination Settings. See WebVTT Destination Settings for more details.",
+      'webvttDestinationSettings',
+      'WebVTT Destination Settings. See WebVTT Destination Settings for more details.',
       () =>
         medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsWebvttDestinationSettings_GetTypes(),
       false,
@@ -139,8 +139,8 @@ export function medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSet
     ),
     new DynamicUIProps(
       InputType.Object,
-      "scte20PlusEmbeddedDestinationSettings",
-      "SCTE20 Plus Embedded Destination Settings.",
+      'scte20PlusEmbeddedDestinationSettings',
+      'SCTE20 Plus Embedded Destination Settings.',
       () =>
         medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsScte20PlusEmbeddedDestinationSettings_GetTypes(),
       false,
@@ -148,8 +148,8 @@ export function medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSet
     ),
     new DynamicUIProps(
       InputType.Object,
-      "teletextDestinationSettings",
-      "Teletext Destination Settings.",
+      'teletextDestinationSettings',
+      'Teletext Destination Settings.',
       () =>
         medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsTeletextDestinationSettings_GetTypes(),
       false,
@@ -157,8 +157,8 @@ export function medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSet
     ),
     new DynamicUIProps(
       InputType.Object,
-      "burnInDestinationSettings",
-      "Burn In Destination Settings. See Burn In Destination Settings for more details.",
+      'burnInDestinationSettings',
+      'Burn In Destination Settings. See Burn In Destination Settings for more details.',
       () =>
         medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsBurnInDestinationSettings_GetTypes(),
       false,
@@ -166,8 +166,8 @@ export function medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSet
     ),
     new DynamicUIProps(
       InputType.Object,
-      "dvbSubDestinationSettings",
-      "DVB Sub Destination Settings. See DVB Sub Destination Settings for more details.",
+      'dvbSubDestinationSettings',
+      'DVB Sub Destination Settings. See DVB Sub Destination Settings for more details.',
       () =>
         medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsDvbSubDestinationSettings_GetTypes(),
       false,
@@ -175,8 +175,8 @@ export function medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSet
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ebuTtDDestinationSettings",
-      "EBU TT D Destination Settings. See EBU TT D Destination Settings for more details.",
+      'ebuTtDDestinationSettings',
+      'EBU TT D Destination Settings. See EBU TT D Destination Settings for more details.',
       () =>
         medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsEbuTtDDestinationSettings_GetTypes(),
       false,
@@ -184,8 +184,8 @@ export function medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSet
     ),
     new DynamicUIProps(
       InputType.Object,
-      "scte27DestinationSettings",
-      "SCTE27 Destination Settings.",
+      'scte27DestinationSettings',
+      'SCTE27 Destination Settings.',
       () =>
         medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsScte27DestinationSettings_GetTypes(),
       false,
@@ -193,8 +193,8 @@ export function medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSet
     ),
     new DynamicUIProps(
       InputType.Object,
-      "embeddedPlusScte20DestinationSettings",
-      "Embedded Plus SCTE20 Destination Settings.",
+      'embeddedPlusScte20DestinationSettings',
+      'Embedded Plus SCTE20 Destination Settings.',
       () =>
         medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsEmbeddedPlusScte20DestinationSettings_GetTypes(),
       false,
@@ -202,8 +202,8 @@ export function medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSet
     ),
     new DynamicUIProps(
       InputType.Object,
-      "rtmpCaptionInfoDestinationSettings",
-      "RTMP Caption Info Destination Settings.",
+      'rtmpCaptionInfoDestinationSettings',
+      'RTMP Caption Info Destination Settings.',
       () =>
         medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsRtmpCaptionInfoDestinationSettings_GetTypes(),
       false,
@@ -211,8 +211,8 @@ export function medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSet
     ),
     new DynamicUIProps(
       InputType.Object,
-      "embeddedDestinationSettings",
-      "Embedded Destination Settings.",
+      'embeddedDestinationSettings',
+      'Embedded Destination Settings.',
       () =>
         medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsEmbeddedDestinationSettings_GetTypes(),
       false,

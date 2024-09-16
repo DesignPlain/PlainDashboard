@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface s3control_StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelActivityMetrics {
   // Whether the activity metrics are enabled.
@@ -15,8 +15,8 @@ export function s3control_StorageLensConfigurationStorageLensConfigurationAccoun
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
-      "Whether the activity metrics are enabled.",
+      'enabled',
+      'Whether the activity metrics are enabled.',
       () => [],
       false,
       false,

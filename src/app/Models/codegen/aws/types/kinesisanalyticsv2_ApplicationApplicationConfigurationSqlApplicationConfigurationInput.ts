@@ -3,32 +3,32 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelism,
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelism_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelism";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelism';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchema,
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchema_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchema";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchema';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputStartingPositionConfiguration,
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputStartingPositionConfiguration_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputStartingPositionConfiguration";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputStartingPositionConfiguration';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInput,
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInput_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInput";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInput';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInput,
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInput_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInput";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInput';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfiguration,
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfiguration_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfiguration";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfiguration';
 
 export interface kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInput {
   // Describes the number of in-application streams to create.
@@ -66,7 +66,7 @@ export function kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplica
   return [
     new DynamicUIProps(
       InputType.Object,
-      "inputProcessingConfiguration",
+      'inputProcessingConfiguration',
       "The input processing configuration for the input.\nAn input processor transforms records as they are received from the stream, before the application's SQL code executes.",
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfiguration_GetTypes(),
@@ -75,8 +75,8 @@ export function kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplica
     ),
     new DynamicUIProps(
       InputType.Object,
-      "inputSchema",
-      "Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.",
+      'inputSchema',
+      'Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.',
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchema_GetTypes(),
       true,
@@ -84,8 +84,8 @@ export function kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplica
     ),
     new DynamicUIProps(
       InputType.Array,
-      "inputStartingPositionConfigurations",
-      "The point at which the application starts processing records from the streaming source.",
+      'inputStartingPositionConfigurations',
+      'The point at which the application starts processing records from the streaming source.',
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputStartingPositionConfiguration_GetTypes(),
       false,
@@ -93,7 +93,7 @@ export function kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplica
     ),
     new DynamicUIProps(
       InputType.Object,
-      "kinesisStreamsInput",
+      'kinesisStreamsInput',
       "If the streaming source is a Kinesis data stream, identifies the stream's Amazon Resource Name (ARN).",
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInput_GetTypes(),
@@ -102,17 +102,17 @@ export function kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplica
     ),
     new DynamicUIProps(
       InputType.Array,
-      "inAppStreamNames",
-      "",
+      'inAppStreamNames',
+      '',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
-    new DynamicUIProps(InputType.String, "inputId", "", () => [], false, false),
+    new DynamicUIProps(InputType.String, 'inputId', '', () => [], false, false),
     new DynamicUIProps(
       InputType.Object,
-      "inputParallelism",
-      "Describes the number of in-application streams to create.",
+      'inputParallelism',
+      'Describes the number of in-application streams to create.',
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelism_GetTypes(),
       false,
@@ -120,7 +120,7 @@ export function kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplica
     ),
     new DynamicUIProps(
       InputType.Object,
-      "kinesisFirehoseInput",
+      'kinesisFirehoseInput',
       "If the streaming source is a Kinesis Data Firehose delivery stream, identifies the delivery stream's ARN.",
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInput_GetTypes(),
@@ -129,8 +129,8 @@ export function kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplica
     ),
     new DynamicUIProps(
       InputType.String,
-      "namePrefix",
-      "The name prefix to use when creating an in-application stream.",
+      'namePrefix',
+      'The name prefix to use when creating an in-application stream.',
       () => [],
       true,
       false,

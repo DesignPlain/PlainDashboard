@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_ClusterNodePoolNodeConfigSandboxConfig {
   /*
@@ -20,7 +20,7 @@ export function container_ClusterNodePoolNodeConfigSandboxConfig_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.String,
-      "sandboxType",
+      'sandboxType',
       'Which sandbox to use for pods in the node pool.\nAccepted values are:\n\n* `"gvisor"`: Pods run within a gVisor sandbox.',
       () => [],
       true,

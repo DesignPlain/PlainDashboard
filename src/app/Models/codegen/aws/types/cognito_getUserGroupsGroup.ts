@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cognito_getUserGroupsGroup {
   // Description of the user group.
@@ -24,32 +24,32 @@ export function cognito_getUserGroupsGroup_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "description",
-      "Description of the user group.",
+      'description',
+      'Description of the user group.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "groupName",
-      "Name of the user group.",
+      'groupName',
+      'Name of the user group.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "precedence",
-      "Precedence of the user group.",
+      'precedence',
+      'Precedence of the user group.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "roleArn",
-      "ARN of the IAM role to be associated with the user group.",
+      'roleArn',
+      'ARN of the IAM role to be associated with the user group.',
       () => [],
       true,
       false,

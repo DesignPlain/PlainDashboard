@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsVideoBlackSettings,
   medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsVideoBlackSettings_GetTypes,
-} from "./medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsVideoBlackSettings";
+} from './medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsVideoBlackSettings';
 import {
   medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsAudioSilenceSettings,
   medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsAudioSilenceSettings_GetTypes,
-} from "./medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsAudioSilenceSettings";
+} from './medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsAudioSilenceSettings';
 import {
   medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsInputLossSettings,
   medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsInputLossSettings_GetTypes,
-} from "./medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsInputLossSettings";
+} from './medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsInputLossSettings';
 
 export interface medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettings {
   // MediaLive will perform a failover if the specified audio selector is silent for the specified period. See Audio Silence Failover Settings for more details.
@@ -33,8 +33,8 @@ export function medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFa
   return [
     new DynamicUIProps(
       InputType.Object,
-      "inputLossSettings",
-      "MediaLive will perform a failover if content is not detected in this input for the specified period. See Input Loss Failover Settings for more details.",
+      'inputLossSettings',
+      'MediaLive will perform a failover if content is not detected in this input for the specified period. See Input Loss Failover Settings for more details.',
       () =>
         medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsInputLossSettings_GetTypes(),
       false,
@@ -42,8 +42,8 @@ export function medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFa
     ),
     new DynamicUIProps(
       InputType.Object,
-      "videoBlackSettings",
-      "MediaLive will perform a failover if content is considered black for the specified period. See Video Black Failover Settings for more details.",
+      'videoBlackSettings',
+      'MediaLive will perform a failover if content is considered black for the specified period. See Video Black Failover Settings for more details.',
       () =>
         medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsVideoBlackSettings_GetTypes(),
       false,
@@ -51,8 +51,8 @@ export function medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFa
     ),
     new DynamicUIProps(
       InputType.Object,
-      "audioSilenceSettings",
-      "MediaLive will perform a failover if the specified audio selector is silent for the specified period. See Audio Silence Failover Settings for more details.",
+      'audioSilenceSettings',
+      'MediaLive will perform a failover if the specified audio selector is silent for the specified period. See Audio Silence Failover Settings for more details.',
       () =>
         medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsAudioSilenceSettings_GetTypes(),
       false,

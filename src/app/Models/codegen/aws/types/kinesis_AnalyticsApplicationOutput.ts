@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kinesis_AnalyticsApplicationOutputKinesisFirehose,
   kinesis_AnalyticsApplicationOutputKinesisFirehose_GetTypes,
-} from "./kinesis_AnalyticsApplicationOutputKinesisFirehose";
+} from './kinesis_AnalyticsApplicationOutputKinesisFirehose';
 import {
   kinesis_AnalyticsApplicationOutputKinesisStream,
   kinesis_AnalyticsApplicationOutputKinesisStream_GetTypes,
-} from "./kinesis_AnalyticsApplicationOutputKinesisStream";
+} from './kinesis_AnalyticsApplicationOutputKinesisStream';
 import {
   kinesis_AnalyticsApplicationOutputLambda,
   kinesis_AnalyticsApplicationOutputLambda_GetTypes,
-} from "./kinesis_AnalyticsApplicationOutputLambda";
+} from './kinesis_AnalyticsApplicationOutputLambda';
 import {
   kinesis_AnalyticsApplicationOutputSchema,
   kinesis_AnalyticsApplicationOutputSchema_GetTypes,
-} from "./kinesis_AnalyticsApplicationOutputSchema";
+} from './kinesis_AnalyticsApplicationOutputSchema';
 
 export interface kinesis_AnalyticsApplicationOutput {
   // The ARN of the Kinesis Analytics Application.
@@ -52,48 +52,48 @@ export function kinesis_AnalyticsApplicationOutput_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.String,
-      "id",
-      "The ARN of the Kinesis Analytics Application.",
+      'id',
+      'The ARN of the Kinesis Analytics Application.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "kinesisFirehose",
-      "The Kinesis Firehose configuration for the destination stream. Conflicts with `kinesis_stream`.\nSee Kinesis Firehose below for more details.",
+      'kinesisFirehose',
+      'The Kinesis Firehose configuration for the destination stream. Conflicts with `kinesis_stream`.\nSee Kinesis Firehose below for more details.',
       () => kinesis_AnalyticsApplicationOutputKinesisFirehose_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "kinesisStream",
-      "The Kinesis Stream configuration for the destination stream. Conflicts with `kinesis_firehose`.\nSee Kinesis Stream below for more details.",
+      'kinesisStream',
+      'The Kinesis Stream configuration for the destination stream. Conflicts with `kinesis_firehose`.\nSee Kinesis Stream below for more details.',
       () => kinesis_AnalyticsApplicationOutputKinesisStream_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "lambda",
-      "The Lambda function destination. See Lambda below for more details.",
+      'lambda',
+      'The Lambda function destination. See Lambda below for more details.',
       () => kinesis_AnalyticsApplicationOutputLambda_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The Name of the in-application stream.",
+      'name',
+      'The Name of the in-application stream.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "schema",
-      "The Schema format of the data written to the destination. See Destination Schema below for more details.",
+      'schema',
+      'The Schema format of the data written to the destination. See Destination Schema below for more details.',
       () => kinesis_AnalyticsApplicationOutputSchema_GetTypes(),
       true,
       false,

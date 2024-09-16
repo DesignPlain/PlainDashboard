@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface monitoring_UptimeCheckConfigSyntheticMonitorCloudFunctionV2 {
   // The fully qualified name of the cloud function resource.
@@ -15,8 +15,8 @@ export function monitoring_UptimeCheckConfigSyntheticMonitorCloudFunctionV2_GetT
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The fully qualified name of the cloud function resource.",
+      'name',
+      'The fully qualified name of the cloud function resource.',
       () => [],
       true,
       true,

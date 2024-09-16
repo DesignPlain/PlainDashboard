@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_RegionInstanceGroupManagerStatusStatefulPerInstanceConfig,
   compute_RegionInstanceGroupManagerStatusStatefulPerInstanceConfig_GetTypes,
-} from "./compute_RegionInstanceGroupManagerStatusStatefulPerInstanceConfig";
+} from './compute_RegionInstanceGroupManagerStatusStatefulPerInstanceConfig';
 
 export interface compute_RegionInstanceGroupManagerStatusStateful {
   // Status of per-instance configs on the instance.
@@ -22,8 +22,8 @@ export function compute_RegionInstanceGroupManagerStatusStateful_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.Array,
-      "perInstanceConfigs",
-      "Status of per-instance configs on the instance.",
+      'perInstanceConfigs',
+      'Status of per-instance configs on the instance.',
       () =>
         compute_RegionInstanceGroupManagerStatusStatefulPerInstanceConfig_GetTypes(),
       false,
@@ -31,8 +31,8 @@ export function compute_RegionInstanceGroupManagerStatusStateful_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "hasStatefulConfig",
-      "A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.",
+      'hasStatefulConfig',
+      'A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.',
       () => [],
       false,
       false,

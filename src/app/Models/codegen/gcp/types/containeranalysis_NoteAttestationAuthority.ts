@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   containeranalysis_NoteAttestationAuthorityHint,
   containeranalysis_NoteAttestationAuthorityHint_GetTypes,
-} from "./containeranalysis_NoteAttestationAuthorityHint";
+} from './containeranalysis_NoteAttestationAuthorityHint';
 
 export interface containeranalysis_NoteAttestationAuthority {
   /*
@@ -29,7 +29,7 @@ export function containeranalysis_NoteAttestationAuthority_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Object,
-      "hint",
+      'hint',
       'This submessage provides human-readable hints about the purpose of\nthe AttestationAuthority. Because the name of a Note acts as its\nresource reference, it is important to disambiguate the canonical\nname of the Note (which might be a UUID for security purposes)\nfrom "readable" names more suitable for debug output. Note that\nthese hints should NOT be used to look up AttestationAuthorities\nin security sensitive contexts, such as when looking up\nAttestations to verify.\nStructure is documented below.',
       () => containeranalysis_NoteAttestationAuthorityHint_GetTypes(),
       true,

@@ -7,13 +7,13 @@
       </div>
       <div class="sub-menu" *ngIf="toggleCred">
         <div class="menu-item" (click)="toggleProvider = provType.AWS">AWS</div>
-        <div class="menu-item" (click)="toggleProvider = provType.AZURE">
+        <!-- <div class="menu-item" (click)="toggleProvider = provType.AZURE">
           AZURE
-        </div>
+        </div> -->
         <div class="menu-item" (click)="toggleProvider = provType.GCP">GCP</div>
       </div>
     </div>
-    <div class="menu-item">General Settings</div>
+    <!-- <div class="menu-item">General Settings</div> -->
   </div>
   <div class="content">
     <div class="sub-content">
@@ -43,6 +43,16 @@
             placeholder="Enter Secret Access Key"
             (change)="aws_Secretkey = box2.value"
           />
+        </div>
+        <div class="setup-link">
+          <span>
+            Follow the steps provided
+            <a
+              href="https://www.pulumi.com/registry/packages/aws/installation-configuration/#credentials"
+              >here</a
+            >
+            to get the AWS credentials.
+          </span>
         </div>
       </div>
 
@@ -84,6 +94,17 @@
           <div class="fname">
             <span>{{ fileName }}</span>
           </div>
+        </div>
+
+        <div class="setup-link">
+          <span>
+            Follow the steps provided
+            <a
+              href="https://www.pulumi.com/registry/packages/gcp/service-account"
+              >here</a
+            >
+            to get the GCP credentials.
+          </span>
         </div>
       </div>
     </div>

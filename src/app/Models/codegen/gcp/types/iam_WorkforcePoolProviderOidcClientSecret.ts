@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   iam_WorkforcePoolProviderOidcClientSecretValue,
   iam_WorkforcePoolProviderOidcClientSecretValue_GetTypes,
-} from "./iam_WorkforcePoolProviderOidcClientSecretValue";
+} from './iam_WorkforcePoolProviderOidcClientSecretValue';
 
 export interface iam_WorkforcePoolProviderOidcClientSecret {
   /*
@@ -22,8 +22,8 @@ export function iam_WorkforcePoolProviderOidcClientSecret_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Object,
-      "value",
-      "The value of the client secret.\nStructure is documented below.",
+      'value',
+      'The value of the client secret.\nStructure is documented below.',
       () => iam_WorkforcePoolProviderOidcClientSecretValue_GetTypes(),
       false,
       false,

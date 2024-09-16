@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher,
   monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher_GetTypes,
-} from "./monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher";
+} from './monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher';
 
 export interface monitoring_UptimeCheckConfigContentMatcher {
   // String or regex content to match (max 1024 bytes)
@@ -32,16 +32,16 @@ export function monitoring_UptimeCheckConfigContentMatcher_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.String,
-      "content",
-      "String or regex content to match (max 1024 bytes)",
+      'content',
+      'String or regex content to match (max 1024 bytes)',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "jsonPathMatcher",
-      "Information needed to perform a JSONPath content match. Used for `ContentMatcherOption::MATCHES_JSON_PATH` and `ContentMatcherOption::NOT_MATCHES_JSON_PATH`.\nStructure is documented below.",
+      'jsonPathMatcher',
+      'Information needed to perform a JSONPath content match. Used for `ContentMatcherOption::MATCHES_JSON_PATH` and `ContentMatcherOption::NOT_MATCHES_JSON_PATH`.\nStructure is documented below.',
       () =>
         monitoring_UptimeCheckConfigContentMatcherJsonPathMatcher_GetTypes(),
       false,
@@ -49,8 +49,8 @@ export function monitoring_UptimeCheckConfigContentMatcher_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "matcher",
-      "The type of content matcher that will be applied to the server output, compared to the content string when the check is run.\nDefault value is `CONTAINS_STRING`.\nPossible values are: `CONTAINS_STRING`, `NOT_CONTAINS_STRING`, `MATCHES_REGEX`, `NOT_MATCHES_REGEX`, `MATCHES_JSON_PATH`, `NOT_MATCHES_JSON_PATH`.",
+      'matcher',
+      'The type of content matcher that will be applied to the server output, compared to the content string when the check is run.\nDefault value is `CONTAINS_STRING`.\nPossible values are: `CONTAINS_STRING`, `NOT_CONTAINS_STRING`, `MATCHES_REGEX`, `NOT_MATCHES_REGEX`, `MATCHES_JSON_PATH`, `NOT_MATCHES_JSON_PATH`.',
       () => [],
       false,
       false,

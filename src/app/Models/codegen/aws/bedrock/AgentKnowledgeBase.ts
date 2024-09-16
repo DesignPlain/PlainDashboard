@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bedrock_AgentKnowledgeBaseKnowledgeBaseConfiguration,
   bedrock_AgentKnowledgeBaseKnowledgeBaseConfiguration_GetTypes,
-} from "../types/bedrock_AgentKnowledgeBaseKnowledgeBaseConfiguration";
+} from '../types/bedrock_AgentKnowledgeBaseKnowledgeBaseConfiguration';
 import {
   bedrock_AgentKnowledgeBaseStorageConfiguration,
   bedrock_AgentKnowledgeBaseStorageConfiguration_GetTypes,
-} from "../types/bedrock_AgentKnowledgeBaseStorageConfiguration";
+} from '../types/bedrock_AgentKnowledgeBaseStorageConfiguration';
 import {
   bedrock_AgentKnowledgeBaseTimeouts,
   bedrock_AgentKnowledgeBaseTimeouts_GetTypes,
-} from "../types/bedrock_AgentKnowledgeBaseTimeouts";
+} from '../types/bedrock_AgentKnowledgeBaseTimeouts';
 
 export interface AgentKnowledgeBaseArgs {
   // Details about the embeddings configuration of the knowledge base. See `knowledge_base_configuration` block for details.
@@ -90,56 +90,56 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => bedrock_AgentKnowledgeBaseTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the knowledge base.",
+        'description',
+        'Description of the knowledge base.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "knowledgeBaseConfiguration",
-        "Details about the embeddings configuration of the knowledge base. See `knowledge_base_configuration` block for details.",
+        'knowledgeBaseConfiguration',
+        'Details about the embeddings configuration of the knowledge base. See `knowledge_base_configuration` block for details.',
         () => bedrock_AgentKnowledgeBaseKnowledgeBaseConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the knowledge base.",
+        'name',
+        'Name of the knowledge base.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "roleArn",
-        "ARN of the IAM role with permissions to invoke API operations on the knowledge base.",
+        'roleArn',
+        'ARN of the IAM role with permissions to invoke API operations on the knowledge base.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "storageConfiguration",
-        "Details about the storage configuration of the knowledge base. See `storage_configuration` block for details.\n\nThe following arguments are optional:",
+        'storageConfiguration',
+        'Details about the storage configuration of the knowledge base. See `storage_configuration` block for details.\n\nThe following arguments are optional:',
         () => bedrock_AgentKnowledgeBaseStorageConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags assigned to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags assigned to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

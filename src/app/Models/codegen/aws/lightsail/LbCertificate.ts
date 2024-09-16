@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lightsail_LbCertificateDomainValidationRecord,
   lightsail_LbCertificateDomainValidationRecord_GetTypes,
-} from "../types/lightsail_LbCertificateDomainValidationRecord";
+} from '../types/lightsail_LbCertificateDomainValidationRecord';
 
 export interface LbCertificateArgs {
   // The domain name (e.g., example.com) for your SSL/TLS certificate.
@@ -53,32 +53,32 @@ export class LbCertificate extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "domainName",
-        "The domain name (e.g., example.com) for your SSL/TLS certificate.",
+        'domainName',
+        'The domain name (e.g., example.com) for your SSL/TLS certificate.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "lbName",
-        "The load balancer name where you want to create the SSL/TLS certificate.",
+        'lbName',
+        'The load balancer name where you want to create the SSL/TLS certificate.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The SSL/TLS certificate name.",
+        'name',
+        'The SSL/TLS certificate name.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "subjectAlternativeNames",
-        "Set of domains that should be SANs in the issued certificate. `domain_name` attribute is automatically added as a Subject Alternative Name.",
+        'subjectAlternativeNames',
+        'Set of domains that should be SANs in the issued certificate. `domain_name` attribute is automatically added as a Subject Alternative Name.',
         () => InputType_String_GetTypes(),
         false,
         true,

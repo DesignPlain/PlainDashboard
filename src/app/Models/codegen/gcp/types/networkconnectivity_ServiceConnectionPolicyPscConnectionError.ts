@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface networkconnectivity_ServiceConnectionPolicyPscConnectionError {
   // The status code, which should be an enum value of [google.rpc.Code][].
@@ -24,24 +24,24 @@ export function networkconnectivity_ServiceConnectionPolicyPscConnectionError_Ge
   return [
     new DynamicUIProps(
       InputType.Array,
-      "details",
-      "(Output)\nA list of messages that carry the error details.",
+      'details',
+      '(Output)\nA list of messages that carry the error details.',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "message",
-      "A developer-facing error message.",
+      'message',
+      'A developer-facing error message.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "code",
-      "The status code, which should be an enum value of [google.rpc.Code][].",
+      'code',
+      'The status code, which should be an enum value of [google.rpc.Code][].',
       () => [],
       false,
       false,

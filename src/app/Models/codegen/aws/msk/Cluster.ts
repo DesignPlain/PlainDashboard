@@ -3,33 +3,33 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   msk_ClusterOpenMonitoring,
   msk_ClusterOpenMonitoring_GetTypes,
-} from "../types/msk_ClusterOpenMonitoring";
+} from '../types/msk_ClusterOpenMonitoring';
 import {
   msk_ClusterClientAuthentication,
   msk_ClusterClientAuthentication_GetTypes,
-} from "../types/msk_ClusterClientAuthentication";
+} from '../types/msk_ClusterClientAuthentication';
 import {
   msk_ClusterLoggingInfo,
   msk_ClusterLoggingInfo_GetTypes,
-} from "../types/msk_ClusterLoggingInfo";
+} from '../types/msk_ClusterLoggingInfo';
 import {
   msk_ClusterBrokerNodeGroupInfo,
   msk_ClusterBrokerNodeGroupInfo_GetTypes,
-} from "../types/msk_ClusterBrokerNodeGroupInfo";
+} from '../types/msk_ClusterBrokerNodeGroupInfo';
 import {
   msk_ClusterConfigurationInfo,
   msk_ClusterConfigurationInfo_GetTypes,
-} from "../types/msk_ClusterConfigurationInfo";
+} from '../types/msk_ClusterConfigurationInfo';
 import {
   msk_ClusterEncryptionInfo,
   msk_ClusterEncryptionInfo_GetTypes,
-} from "../types/msk_ClusterEncryptionInfo";
+} from '../types/msk_ClusterEncryptionInfo';
 
 export interface ClusterArgs {
   // Configuration block for the broker nodes of the Kafka cluster.
@@ -157,96 +157,96 @@ export class Cluster extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Number,
-        "numberOfBrokerNodes",
-        "The desired total number of broker nodes in the kafka cluster.  It must be a multiple of the number of specified client subnets.",
+        'numberOfBrokerNodes',
+        'The desired total number of broker nodes in the kafka cluster.  It must be a multiple of the number of specified client subnets.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "storageMode",
-        "Controls storage mode for supported storage tiers. Valid values are: `LOCAL` or `TIERED`.",
+        'storageMode',
+        'Controls storage mode for supported storage tiers. Valid values are: `LOCAL` or `TIERED`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "encryptionInfo",
-        "Configuration block for specifying encryption. See below.",
+        'encryptionInfo',
+        'Configuration block for specifying encryption. See below.',
         () => msk_ClusterEncryptionInfo_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "kafkaVersion",
-        "Specify the desired Kafka software version.",
+        'kafkaVersion',
+        'Specify the desired Kafka software version.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "openMonitoring",
-        "Configuration block for JMX and Node monitoring for the MSK cluster. See below.",
+        'openMonitoring',
+        'Configuration block for JMX and Node monitoring for the MSK cluster. See below.',
         () => msk_ClusterOpenMonitoring_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "enhancedMonitoring",
-        "Specify the desired enhanced MSK CloudWatch monitoring level. See [Monitoring Amazon MSK with Amazon CloudWatch](https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html)",
+        'enhancedMonitoring',
+        'Specify the desired enhanced MSK CloudWatch monitoring level. See [Monitoring Amazon MSK with Amazon CloudWatch](https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html)',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "clientAuthentication",
-        "Configuration block for specifying a client authentication. See below.",
+        'clientAuthentication',
+        'Configuration block for specifying a client authentication. See below.',
         () => msk_ClusterClientAuthentication_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "loggingInfo",
-        "Configuration block for streaming broker logs to Cloudwatch/S3/Kinesis Firehose. See below.",
+        'loggingInfo',
+        'Configuration block for streaming broker logs to Cloudwatch/S3/Kinesis Firehose. See below.',
         () => msk_ClusterLoggingInfo_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "brokerNodeGroupInfo",
-        "Configuration block for the broker nodes of the Kafka cluster.",
+        'brokerNodeGroupInfo',
+        'Configuration block for the broker nodes of the Kafka cluster.',
         () => msk_ClusterBrokerNodeGroupInfo_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clusterName",
-        "Name of the MSK cluster.",
+        'clusterName',
+        'Name of the MSK cluster.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "configurationInfo",
-        "Configuration block for specifying a MSK Configuration to attach to Kafka brokers. See below.",
+        'configurationInfo',
+        'Configuration block for specifying a MSK Configuration to attach to Kafka brokers. See below.',
         () => msk_ClusterConfigurationInfo_GetTypes(),
         false,
         false,

@@ -3,41 +3,41 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   tpu_V2VmShieldedInstanceConfig,
   tpu_V2VmShieldedInstanceConfig_GetTypes,
-} from "../types/tpu_V2VmShieldedInstanceConfig";
+} from '../types/tpu_V2VmShieldedInstanceConfig';
 import {
   tpu_V2VmDataDisk,
   tpu_V2VmDataDisk_GetTypes,
-} from "../types/tpu_V2VmDataDisk";
+} from '../types/tpu_V2VmDataDisk';
 import {
   tpu_V2VmAcceleratorConfig,
   tpu_V2VmAcceleratorConfig_GetTypes,
-} from "../types/tpu_V2VmAcceleratorConfig";
+} from '../types/tpu_V2VmAcceleratorConfig';
 import {
   tpu_V2VmNetworkConfig,
   tpu_V2VmNetworkConfig_GetTypes,
-} from "../types/tpu_V2VmNetworkConfig";
+} from '../types/tpu_V2VmNetworkConfig';
 import {
   tpu_V2VmSchedulingConfig,
   tpu_V2VmSchedulingConfig_GetTypes,
-} from "../types/tpu_V2VmSchedulingConfig";
+} from '../types/tpu_V2VmSchedulingConfig';
 import {
   tpu_V2VmServiceAccount,
   tpu_V2VmServiceAccount_GetTypes,
-} from "../types/tpu_V2VmServiceAccount";
+} from '../types/tpu_V2VmServiceAccount';
 import {
   tpu_V2VmNetworkEndpoint,
   tpu_V2VmNetworkEndpoint_GetTypes,
-} from "../types/tpu_V2VmNetworkEndpoint";
+} from '../types/tpu_V2VmNetworkEndpoint';
 import {
   tpu_V2VmSymptom,
   tpu_V2VmSymptom_GetTypes,
-} from "../types/tpu_V2VmSymptom";
+} from '../types/tpu_V2VmSymptom';
 
 export interface V2VmArgs {
   /*
@@ -265,103 +265,103 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Resource labels to represent user-provided metadata.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Resource labels to represent user-provided metadata.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "shieldedInstanceConfig",
-        "Shielded Instance options.\nStructure is documented below.",
+        'shieldedInstanceConfig',
+        'Shielded Instance options.\nStructure is documented below.',
         () => tpu_V2VmShieldedInstanceConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The immutable name of the TPU.",
+        'name',
+        'The immutable name of the TPU.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "tags",
-        "Tags to apply to the TPU Node. Tags are used to identify valid sources or targets for network firewalls.",
+        'tags',
+        'Tags to apply to the TPU Node. Tags are used to identify valid sources or targets for network firewalls.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Text description of the TPU.",
+        'description',
+        'Text description of the TPU.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "runtimeVersion",
-        "Runtime version for the TPU.\n\n\n- - -",
+        'runtimeVersion',
+        'Runtime version for the TPU.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "metadata",
-        "Custom metadata to apply to the TPU Node. Can set startup-script and shutdown-script.",
+        'metadata',
+        'Custom metadata to apply to the TPU Node. Can set startup-script and shutdown-script.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "zone",
-        "The GCP location for the TPU. If it is not provided, the provider zone is used.",
+        'zone',
+        'The GCP location for the TPU. If it is not provided, the provider zone is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "schedulingConfig",
-        "The scheduling options for this node.\nStructure is documented below.",
+        'schedulingConfig',
+        'The scheduling options for this node.\nStructure is documented below.',
         () => tpu_V2VmSchedulingConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "serviceAccount",
-        "The Google Cloud Platform Service Account to be used by the TPU node VMs. If None is\nspecified, the default compute service account will be used.\nStructure is documented below.",
+        'serviceAccount',
+        'The Google Cloud Platform Service Account to be used by the TPU node VMs. If None is\nspecified, the default compute service account will be used.\nStructure is documented below.',
         () => tpu_V2VmServiceAccount_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "dataDisks",
-        "The additional data disks for the Node.\nStructure is documented below.",
+        'dataDisks',
+        'The additional data disks for the Node.\nStructure is documented below.',
         () => tpu_V2VmDataDisk_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "acceleratorType",
+        'acceleratorType',
         "TPU accelerator type for the TPU. `accelerator_type` cannot be used at the same time as\n`accelerator_config`. If neither is specified, `accelerator_type` defaults to 'v2-8'.",
         () => [],
         false,
@@ -369,7 +369,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "cidrBlock",
+        'cidrBlock',
         "The CIDR block that the TPU node will use when selecting an IP address. This CIDR block must\nbe a /29 block; the Compute Engine networks API forbids a smaller block, and using a larger\nblock would be wasteful (a node can only consume one IP address). Errors will occur if the\nCIDR block has already been used for a currently existing TPU node, the CIDR block conflicts\nwith any subnetworks in the user's provided network, or the provided network is peered with\nanother network that is using that CIDR block.",
         () => [],
         false,
@@ -377,7 +377,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "acceleratorConfig",
+        'acceleratorConfig',
         "The AccleratorConfig for the TPU Node. `accelerator_config` cannot be used at the same time\nas `accelerator_type`. If neither is specified, `accelerator_type` defaults to 'v2-8'.\nStructure is documented below.",
         () => tpu_V2VmAcceleratorConfig_GetTypes(),
         false,
@@ -385,8 +385,8 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "networkConfig",
-        "Network configurations for the TPU node.\nStructure is documented below.",
+        'networkConfig',
+        'Network configurations for the TPU node.\nStructure is documented below.',
         () => tpu_V2VmNetworkConfig_GetTypes(),
         false,
         true,

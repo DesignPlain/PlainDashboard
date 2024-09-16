@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   imagebuilder_ImageImageScanningConfiguration,
   imagebuilder_ImageImageScanningConfiguration_GetTypes,
-} from "../types/imagebuilder_ImageImageScanningConfiguration";
+} from '../types/imagebuilder_ImageImageScanningConfiguration';
 import {
   imagebuilder_ImageImageTestsConfiguration,
   imagebuilder_ImageImageTestsConfiguration_GetTypes,
-} from "../types/imagebuilder_ImageImageTestsConfiguration";
+} from '../types/imagebuilder_ImageImageTestsConfiguration';
 import {
   imagebuilder_ImageWorkflow,
   imagebuilder_ImageWorkflow_GetTypes,
-} from "../types/imagebuilder_ImageWorkflow";
+} from '../types/imagebuilder_ImageWorkflow';
 import {
   imagebuilder_ImageOutputResource,
   imagebuilder_ImageOutputResource_GetTypes,
-} from "../types/imagebuilder_ImageOutputResource";
+} from '../types/imagebuilder_ImageOutputResource';
 
 export interface ImageArgs {
   // Configuration block with image scanning configuration. Detailed below.
@@ -121,80 +121,80 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "enhancedImageMetadataEnabled",
-        "Whether additional information about the image being created is collected. Defaults to `true`.",
+        'enhancedImageMetadataEnabled',
+        'Whether additional information about the image being created is collected. Defaults to `true`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "imageTestsConfiguration",
-        "Configuration block with image tests configuration. Detailed below.",
+        'imageTestsConfiguration',
+        'Configuration block with image tests configuration. Detailed below.',
         () => imagebuilder_ImageImageTestsConfiguration_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "workflows",
-        "Configuration block with the workflow configuration. Detailed below.",
+        'workflows',
+        'Configuration block with the workflow configuration. Detailed below.',
         () => imagebuilder_ImageWorkflow_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "containerRecipeArn",
-        "Amazon Resource Name (ARN) of the container recipe.",
+        'containerRecipeArn',
+        'Amazon Resource Name (ARN) of the container recipe.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "executionRole",
-        "Amazon Resource Name (ARN) of the service-linked role to be used by Image Builder to [execute workflows](https://docs.aws.amazon.com/imagebuilder/latest/userguide/manage-image-workflows.html).",
+        'executionRole',
+        'Amazon Resource Name (ARN) of the service-linked role to be used by Image Builder to [execute workflows](https://docs.aws.amazon.com/imagebuilder/latest/userguide/manage-image-workflows.html).',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "imageRecipeArn",
-        "Amazon Resource Name (ARN) of the image recipe.",
+        'imageRecipeArn',
+        'Amazon Resource Name (ARN) of the image recipe.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "infrastructureConfigurationArn",
-        "Amazon Resource Name (ARN) of the Image Builder Infrastructure Configuration.\n\nThe following arguments are optional:",
+        'infrastructureConfigurationArn',
+        'Amazon Resource Name (ARN) of the Image Builder Infrastructure Configuration.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "imageScanningConfiguration",
-        "Configuration block with image scanning configuration. Detailed below.",
+        'imageScanningConfiguration',
+        'Configuration block with image scanning configuration. Detailed below.',
         () => imagebuilder_ImageImageScanningConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags for the Image Builder Image. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags for the Image Builder Image. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "distributionConfigurationArn",
-        "Amazon Resource Name (ARN) of the Image Builder Distribution Configuration.",
+        'distributionConfigurationArn',
+        'Amazon Resource Name (ARN) of the Image Builder Distribution Configuration.',
         () => [],
         false,
         true,

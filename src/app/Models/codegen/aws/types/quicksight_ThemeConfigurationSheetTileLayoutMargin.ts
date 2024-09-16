@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface quicksight_ThemeConfigurationSheetTileLayoutMargin {
   // This Boolean value controls whether to display sheet margins.
@@ -15,8 +15,8 @@ export function quicksight_ThemeConfigurationSheetTileLayoutMargin_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "show",
-      "This Boolean value controls whether to display sheet margins.",
+      'show',
+      'This Boolean value controls whether to display sheet margins.',
       () => [],
       false,
       false,

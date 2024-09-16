@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface IAMPolicyArgs {
   // The resource name of the folder the policy is attached to. Its format is folders/{folder_id}.
@@ -46,16 +46,16 @@ folder-level access.
     return [
       new DynamicUIProps(
         InputType.String,
-        "folder",
-        "The resource name of the folder the policy is attached to. Its format is folders/{folder_id}.",
+        'folder',
+        'The resource name of the folder the policy is attached to. Its format is folders/{folder_id}.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "policyData",
-        "The `gcp.organizations.getIAMPolicy` data source that represents\nthe IAM policy that will be applied to the folder. The policy will be\nmerged with any existing policy applied to the folder.\n\nChanging this updates the policy.\n\nDeleting this removes all policies from the folder, locking out users without\nfolder-level access.",
+        'policyData',
+        'The `gcp.organizations.getIAMPolicy` data source that represents\nthe IAM policy that will be applied to the folder. The policy will be\nmerged with any existing policy applied to the folder.\n\nChanging this updates the policy.\n\nDeleting this removes all policies from the folder, locking out users without\nfolder-level access.',
         () => [],
         true,
         false,

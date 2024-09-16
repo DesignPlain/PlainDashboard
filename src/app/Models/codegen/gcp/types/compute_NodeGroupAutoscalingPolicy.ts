@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_NodeGroupAutoscalingPolicy {
   /*
@@ -35,24 +35,24 @@ export function compute_NodeGroupAutoscalingPolicy_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.String,
-      "mode",
-      "The autoscaling mode. Set to one of the following:\n- OFF: Disables the autoscaler.\n- ON: Enables scaling in and scaling out.\n- ONLY_SCALE_OUT: Enables only scaling out.\nYou must use this mode if your node groups are configured to\nrestart their hosted VMs on minimal servers.\nPossible values are: `OFF`, `ON`, `ONLY_SCALE_OUT`.",
+      'mode',
+      'The autoscaling mode. Set to one of the following:\n- OFF: Disables the autoscaler.\n- ON: Enables scaling in and scaling out.\n- ONLY_SCALE_OUT: Enables only scaling out.\nYou must use this mode if your node groups are configured to\nrestart their hosted VMs on minimal servers.\nPossible values are: `OFF`, `ON`, `ONLY_SCALE_OUT`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxNodes",
-      "Maximum size of the node group. Set to a value less than or equal\nto 100 and greater than or equal to min-nodes.",
+      'maxNodes',
+      'Maximum size of the node group. Set to a value less than or equal\nto 100 and greater than or equal to min-nodes.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "minNodes",
-      "Minimum size of the node group. Must be less\nthan or equal to max-nodes. The default value is 0.",
+      'minNodes',
+      'Minimum size of the node group. Must be less\nthan or equal to max-nodes. The default value is 0.',
       () => [],
       false,
       false,

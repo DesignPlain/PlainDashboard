@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames {
   // Subject Alternative Name
@@ -15,8 +15,8 @@ export function apigee_KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames_
   return [
     new DynamicUIProps(
       InputType.String,
-      "subjectAlternativeName",
-      "Subject Alternative Name",
+      'subjectAlternativeName',
+      'Subject Alternative Name',
       () => [],
       false,
       true,

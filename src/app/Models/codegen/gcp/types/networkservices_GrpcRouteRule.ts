@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkservices_GrpcRouteRuleAction,
   networkservices_GrpcRouteRuleAction_GetTypes,
-} from "./networkservices_GrpcRouteRuleAction";
+} from './networkservices_GrpcRouteRuleAction';
 import {
   networkservices_GrpcRouteRuleMatch,
   networkservices_GrpcRouteRuleMatch_GetTypes,
-} from "./networkservices_GrpcRouteRuleMatch";
+} from './networkservices_GrpcRouteRuleMatch';
 
 export interface networkservices_GrpcRouteRule {
   /*
@@ -32,16 +32,16 @@ export function networkservices_GrpcRouteRule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "action",
-      "Required. A detailed rule defining how to route traffic.\nStructure is documented below.",
+      'action',
+      'Required. A detailed rule defining how to route traffic.\nStructure is documented below.',
       () => networkservices_GrpcRouteRuleAction_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "matches",
-      "Matches define conditions used for matching the rule against incoming gRPC requests.\nStructure is documented below.",
+      'matches',
+      'Matches define conditions used for matching the rule against incoming gRPC requests.\nStructure is documented below.',
       () => networkservices_GrpcRouteRuleMatch_GetTypes(),
       false,
       false,

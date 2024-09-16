@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   msk_getClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationSasl,
   msk_getClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationSasl_GetTypes,
-} from "./msk_getClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationSasl";
+} from './msk_getClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationSasl';
 
 export interface msk_getClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthentication {
   //
@@ -22,13 +22,13 @@ export function msk_getClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity
   return [
     new DynamicUIProps(
       InputType.Array,
-      "sasls",
-      "",
+      'sasls',
+      '',
       () =>
         msk_getClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationSasl_GetTypes(),
       true,
       false,
     ),
-    new DynamicUIProps(InputType.Bool, "tls", "", () => [], true, false),
+    new DynamicUIProps(InputType.Bool, 'tls', '', () => [], true, false),
   ];
 }

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataplex_TaskExecutionStatusLatestJob,
   dataplex_TaskExecutionStatusLatestJob_GetTypes,
-} from "./dataplex_TaskExecutionStatusLatestJob";
+} from './dataplex_TaskExecutionStatusLatestJob';
 
 export interface dataplex_TaskExecutionStatus {
   /*
@@ -29,16 +29,16 @@ export function dataplex_TaskExecutionStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "latestJobs",
-      "(Output)\nlatest job execution.\nStructure is documented below.",
+      'latestJobs',
+      '(Output)\nlatest job execution.\nStructure is documented below.',
       () => dataplex_TaskExecutionStatusLatestJob_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "updateTime",
-      "(Output)\nLast update time of the status.",
+      'updateTime',
+      '(Output)\nLast update time of the status.',
       () => [],
       false,
       false,

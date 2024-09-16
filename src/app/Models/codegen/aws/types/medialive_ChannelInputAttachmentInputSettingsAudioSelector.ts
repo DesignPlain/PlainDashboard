@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettings,
   medialive_ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettings_GetTypes,
-} from "./medialive_ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettings";
+} from './medialive_ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettings';
 
 export interface medialive_ChannelInputAttachmentInputSettingsAudioSelector {
   /*
@@ -26,16 +26,16 @@ export function medialive_ChannelInputAttachmentInputSettingsAudioSelector_GetTy
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the Channel.\n\nThe following arguments are optional:",
+      'name',
+      'Name of the Channel.\n\nThe following arguments are optional:',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "selectorSettings",
-      "",
+      'selectorSettings',
+      '',
       () =>
         medialive_ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettings_GetTypes(),
       false,

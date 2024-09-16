@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface bigquery_DataTransferConfigEmailPreferences {
   // If true, email notifications will be sent on transfer run failures.
@@ -15,8 +15,8 @@ export function bigquery_DataTransferConfigEmailPreferences_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enableFailureEmail",
-      "If true, email notifications will be sent on transfer run failures.",
+      'enableFailureEmail',
+      'If true, email notifications will be sent on transfer run failures.',
       () => [],
       true,
       false,

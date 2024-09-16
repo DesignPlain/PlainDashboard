@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   emr_InstanceGroupEbsConfig,
   emr_InstanceGroupEbsConfig_GetTypes,
-} from "../types/emr_InstanceGroupEbsConfig";
+} from '../types/emr_InstanceGroupEbsConfig';
 
 export interface InstanceGroupArgs {
   // target number of instances for the instance group. defaults to 0.
@@ -421,31 +421,31 @@ resources:
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Human friendly name given to the instance group. Changing this forces a new resource to be created.",
+        'name',
+        'Human friendly name given to the instance group. Changing this forces a new resource to be created.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "autoscalingPolicy",
-        "The autoscaling policy document. This is a JSON formatted string. See [EMR Auto Scaling](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-automatic-scaling.html)",
+        'autoscalingPolicy',
+        'The autoscaling policy document. This is a JSON formatted string. See [EMR Auto Scaling](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-automatic-scaling.html)',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ebsConfigs",
-        "One or more `ebs_config` blocks as defined below. Changing this forces a new resource to be created.",
+        'ebsConfigs',
+        'One or more `ebs_config` blocks as defined below. Changing this forces a new resource to be created.',
         () => emr_InstanceGroupEbsConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "configurationsJson",
+        'configurationsJson',
         'A JSON string for supplying list of configurations specific to the EMR instance group. Note that this can only be changed when using EMR release 5.21 or later.\n\n<!--Start PulumiCodeChooser -->\n```typescript\nimport * as pulumi from "@pulumi/pulumi";\nimport * as aws from "@pulumi/aws";\n\nconst task = new aws.emr.InstanceGroup("task", {configurationsJson: `[\n{\n"Classification": "hadoop-env",\n"Configurations": [\n{\n"Classification": "export",\n"Properties": {\n"JAVA_HOME": "/usr/lib/jvm/java-1.8.0"\n}\n}\n],\n"Properties": {}\n}\n]\n`});\n```\n```python\nimport pulumi\nimport pulumi_aws as aws\n\ntask = aws.emr.InstanceGroup("task", configurations_json="""[\n{\n"Classification": "hadoop-env",\n"Configurations": [\n{\n"Classification": "export",\n"Properties": {\n"JAVA_HOME": "/usr/lib/jvm/java-1.8.0"\n}\n}\n],\n"Properties": {}\n}\n]\n""")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Aws = Pulumi.Aws;\n\nreturn await Deployment.RunAsync(() => \n{\n    var task = new Aws.Emr.InstanceGroup("task", new()\n    {\n        ConfigurationsJson = @"[\n{\n""Classification"": ""hadoop-env"",\n""Configurations"": [\n{\n""Classification"": ""export"",\n""Properties"": {\n""JAVA_HOME"": ""/usr/lib/jvm/java-1.8.0""\n}\n}\n],\n""Properties"": {}\n}\n]\n",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t"github.com/pulumi/pulumi-aws/sdk/v6/go/aws/emr"\n\t"github.com/pulumi/pulumi/sdk/v3/go/pulumi"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := emr.NewInstanceGroup(ctx, "task", &emr.InstanceGroupArgs{\n\t\t\tConfigurationsJson: pulumi.String(`[\n{\n"Classification": "hadoop-env",\n"Configurations": [\n{\n"Classification": "export",\n"Properties": {\n"JAVA_HOME": "/usr/lib/jvm/java-1.8.0"\n}\n}\n],\n"Properties": {}\n}\n]\n`),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.aws.emr.InstanceGroup;\nimport com.pulumi.aws.emr.InstanceGroupArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var task = new InstanceGroup("task", InstanceGroupArgs.builder()\n            .configurationsJson("""\n[\n{\n"Classification": "hadoop-env",\n"Configurations": [\n{\n"Classification": "export",\n"Properties": {\n"JAVA_HOME": "/usr/lib/jvm/java-1.8.0"\n}\n}\n],\n"Properties": {}\n}\n]\n            """)\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  task:\n    type: aws:emr:InstanceGroup\n    properties:\n      configurationsJson: |\n        [\n        {\n        "Classification": "hadoop-env",\n        "Configurations": [\n        {\n        "Classification": "export",\n        "Properties": {\n        "JAVA_HOME": "/usr/lib/jvm/java-1.8.0"\n        }\n        }\n        ],\n        "Properties": {}\n        }\n        ]\n```\n<!--End PulumiCodeChooser -->',
         () => [],
         false,
@@ -453,40 +453,40 @@ resources:
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "ebsOptimized",
-        "Indicates whether an Amazon EBS volume is EBS-optimized. Changing this forces a new resource to be created.",
+        'ebsOptimized',
+        'Indicates whether an Amazon EBS volume is EBS-optimized. Changing this forces a new resource to be created.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceType",
-        "The EC2 instance type for all instances in the instance group. Changing this forces a new resource to be created.",
+        'instanceType',
+        'The EC2 instance type for all instances in the instance group. Changing this forces a new resource to be created.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "bidPrice",
-        "If set, the bid price for each EC2 instance in the instance group, expressed in USD. By setting this attribute, the instance group is being declared as a Spot Instance, and will implicitly create a Spot request. Leave this blank to use On-Demand Instances.",
+        'bidPrice',
+        'If set, the bid price for each EC2 instance in the instance group, expressed in USD. By setting this attribute, the instance group is being declared as a Spot Instance, and will implicitly create a Spot request. Leave this blank to use On-Demand Instances.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clusterId",
-        "ID of the EMR Cluster to attach to. Changing this forces a new resource to be created.",
+        'clusterId',
+        'ID of the EMR Cluster to attach to. Changing this forces a new resource to be created.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "instanceCount",
-        "target number of instances for the instance group. defaults to 0.",
+        'instanceCount',
+        'target number of instances for the instance group. defaults to 0.',
         () => [],
         false,
         false,

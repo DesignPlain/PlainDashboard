@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface pipes_PipeSourceParametersManagedStreamingKafkaParametersCredentials {
   // The ARN of the Secrets Manager secret containing the credentials.
@@ -18,16 +18,16 @@ export function pipes_PipeSourceParametersManagedStreamingKafkaParametersCredent
   return [
     new DynamicUIProps(
       InputType.String,
-      "clientCertificateTlsAuth",
-      "The ARN of the Secrets Manager secret containing the credentials.",
+      'clientCertificateTlsAuth',
+      'The ARN of the Secrets Manager secret containing the credentials.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "saslScram512Auth",
-      "The ARN of the Secrets Manager secret containing the credentials.",
+      'saslScram512Auth',
+      'The ARN of the Secrets Manager secret containing the credentials.',
       () => [],
       false,
       false,

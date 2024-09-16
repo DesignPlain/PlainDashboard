@@ -3,33 +3,33 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dns_ManagedZoneServiceDirectoryConfig,
   dns_ManagedZoneServiceDirectoryConfig_GetTypes,
-} from "../types/dns_ManagedZoneServiceDirectoryConfig";
+} from '../types/dns_ManagedZoneServiceDirectoryConfig';
 import {
   dns_ManagedZonePrivateVisibilityConfig,
   dns_ManagedZonePrivateVisibilityConfig_GetTypes,
-} from "../types/dns_ManagedZonePrivateVisibilityConfig";
+} from '../types/dns_ManagedZonePrivateVisibilityConfig';
 import {
   dns_ManagedZoneCloudLoggingConfig,
   dns_ManagedZoneCloudLoggingConfig_GetTypes,
-} from "../types/dns_ManagedZoneCloudLoggingConfig";
+} from '../types/dns_ManagedZoneCloudLoggingConfig';
 import {
   dns_ManagedZoneDnssecConfig,
   dns_ManagedZoneDnssecConfig_GetTypes,
-} from "../types/dns_ManagedZoneDnssecConfig";
+} from '../types/dns_ManagedZoneDnssecConfig';
 import {
   dns_ManagedZonePeeringConfig,
   dns_ManagedZonePeeringConfig_GetTypes,
-} from "../types/dns_ManagedZonePeeringConfig";
+} from '../types/dns_ManagedZonePeeringConfig';
 import {
   dns_ManagedZoneForwardingConfig,
   dns_ManagedZoneForwardingConfig_GetTypes,
-} from "../types/dns_ManagedZoneForwardingConfig";
+} from '../types/dns_ManagedZoneForwardingConfig';
 
 export interface ManagedZoneArgs {
   // A textual description field. Defaults to 'Managed by Pulumi'.
@@ -233,7 +233,7 @@ This is in RFC3339 text format.
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
+        'description',
         "A textual description field. Defaults to 'Managed by Pulumi'.",
         () => [],
         false,
@@ -241,55 +241,55 @@ This is in RFC3339 text format.
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "peeringConfig",
-        "The presence of this field indicates that DNS Peering is enabled for this\nzone. The value of this field contains the network to peer with.\nStructure is documented below.",
+        'peeringConfig',
+        'The presence of this field indicates that DNS Peering is enabled for this\nzone. The value of this field contains the network to peer with.\nStructure is documented below.',
         () => dns_ManagedZonePeeringConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "A set of key/value label pairs to assign to this ManagedZone.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'A set of key/value label pairs to assign to this ManagedZone.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "User assigned name for this resource.\nMust be unique within the project.\n\n- - -",
+        'name',
+        'User assigned name for this resource.\nMust be unique within the project.\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "dnssecConfig",
-        "DNSSEC configuration\nStructure is documented below.",
+        'dnssecConfig',
+        'DNSSEC configuration\nStructure is documented below.',
         () => dns_ManagedZoneDnssecConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "serviceDirectoryConfig",
-        "The presence of this field indicates that this zone is backed by Service Directory. The value of this field contains information related to the namespace associated with the zone.\nStructure is documented below.",
+        'serviceDirectoryConfig',
+        'The presence of this field indicates that this zone is backed by Service Directory. The value of this field contains information related to the namespace associated with the zone.\nStructure is documented below.',
         () => dns_ManagedZoneServiceDirectoryConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dnsName",
+        'dnsName',
         'The DNS name of this managed zone, for instance "example.com.".',
         () => [],
         true,
@@ -297,15 +297,15 @@ This is in RFC3339 text format.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "privateVisibilityConfig",
-        "For privately visible zones, the set of Virtual Private Cloud\nresources that the zone is visible from. At least one of `gke_clusters` or `networks` must be specified.\nStructure is documented below.",
+        'privateVisibilityConfig',
+        'For privately visible zones, the set of Virtual Private Cloud\nresources that the zone is visible from. At least one of `gke_clusters` or `networks` must be specified.\nStructure is documented below.',
         () => dns_ManagedZonePrivateVisibilityConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "visibility",
+        'visibility',
         "The zone's visibility: public zones are exposed to the Internet,\nwhile private zones are visible only to Virtual Private Cloud resources.\nDefault value is `public`.\nPossible values are: `private`, `public`.",
         () => [],
         false,
@@ -313,32 +313,32 @@ This is in RFC3339 text format.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "forceDestroy",
-        "Set this true to delete all records in the zone.",
+        'forceDestroy',
+        'Set this true to delete all records in the zone.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cloudLoggingConfig",
-        "Cloud logging configuration\nStructure is documented below.",
+        'cloudLoggingConfig',
+        'Cloud logging configuration\nStructure is documented below.',
         () => dns_ManagedZoneCloudLoggingConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "reverseLookup",
-        "Specifies if this is a managed reverse lookup zone. If true, Cloud DNS will resolve reverse\nlookup queries using automatically configured records for VPC resources. This only applies\nto networks listed under `private_visibility_config`.",
+        'reverseLookup',
+        'Specifies if this is a managed reverse lookup zone. If true, Cloud DNS will resolve reverse\nlookup queries using automatically configured records for VPC resources. This only applies\nto networks listed under `private_visibility_config`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "forwardingConfig",
-        "The presence for this field indicates that outbound forwarding is enabled\nfor this zone. The value of this field contains the set of destinations\nto forward to.\nStructure is documented below.",
+        'forwardingConfig',
+        'The presence for this field indicates that outbound forwarding is enabled\nfor this zone. The value of this field contains the set of destinations\nto forward to.\nStructure is documented below.',
         () => dns_ManagedZoneForwardingConfig_GetTypes(),
         false,
         false,

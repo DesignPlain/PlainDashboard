@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_VirtualNodeSpecServiceDiscoveryAwsCloudMap,
   appmesh_VirtualNodeSpecServiceDiscoveryAwsCloudMap_GetTypes,
-} from "./appmesh_VirtualNodeSpecServiceDiscoveryAwsCloudMap";
+} from './appmesh_VirtualNodeSpecServiceDiscoveryAwsCloudMap';
 import {
   appmesh_VirtualNodeSpecServiceDiscoveryDns,
   appmesh_VirtualNodeSpecServiceDiscoveryDns_GetTypes,
-} from "./appmesh_VirtualNodeSpecServiceDiscoveryDns";
+} from './appmesh_VirtualNodeSpecServiceDiscoveryDns';
 
 export interface appmesh_VirtualNodeSpecServiceDiscovery {
   // Any AWS Cloud Map information for the virtual node.
@@ -26,16 +26,16 @@ export function appmesh_VirtualNodeSpecServiceDiscovery_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.Object,
-      "awsCloudMap",
-      "Any AWS Cloud Map information for the virtual node.",
+      'awsCloudMap',
+      'Any AWS Cloud Map information for the virtual node.',
       () => appmesh_VirtualNodeSpecServiceDiscoveryAwsCloudMap_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "dns",
-      "DNS service name for the virtual node.",
+      'dns',
+      'DNS service name for the virtual node.',
       () => appmesh_VirtualNodeSpecServiceDiscoveryDns_GetTypes(),
       false,
       false,

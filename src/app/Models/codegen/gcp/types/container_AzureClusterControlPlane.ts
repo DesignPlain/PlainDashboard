@@ -3,32 +3,32 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   container_AzureClusterControlPlaneProxyConfig,
   container_AzureClusterControlPlaneProxyConfig_GetTypes,
-} from "./container_AzureClusterControlPlaneProxyConfig";
+} from './container_AzureClusterControlPlaneProxyConfig';
 import {
   container_AzureClusterControlPlaneRootVolume,
   container_AzureClusterControlPlaneRootVolume_GetTypes,
-} from "./container_AzureClusterControlPlaneRootVolume";
+} from './container_AzureClusterControlPlaneRootVolume';
 import {
   container_AzureClusterControlPlaneSshConfig,
   container_AzureClusterControlPlaneSshConfig_GetTypes,
-} from "./container_AzureClusterControlPlaneSshConfig";
+} from './container_AzureClusterControlPlaneSshConfig';
 import {
   container_AzureClusterControlPlaneDatabaseEncryption,
   container_AzureClusterControlPlaneDatabaseEncryption_GetTypes,
-} from "./container_AzureClusterControlPlaneDatabaseEncryption";
+} from './container_AzureClusterControlPlaneDatabaseEncryption';
 import {
   container_AzureClusterControlPlaneMainVolume,
   container_AzureClusterControlPlaneMainVolume_GetTypes,
-} from "./container_AzureClusterControlPlaneMainVolume";
+} from './container_AzureClusterControlPlaneMainVolume';
 import {
   container_AzureClusterControlPlaneReplicaPlacement,
   container_AzureClusterControlPlaneReplicaPlacement_GetTypes,
-} from "./container_AzureClusterControlPlaneReplicaPlacement";
+} from './container_AzureClusterControlPlaneReplicaPlacement';
 
 export interface container_AzureClusterControlPlane {
   // Optional. A set of tags to apply to all underlying control plane Azure resources.
@@ -66,79 +66,79 @@ export function container_AzureClusterControlPlane_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.String,
-      "version",
-      "The Kubernetes version to run on control plane replicas (e.g. `1.19.10-gke.1000`). You can list all supported versions on a given Google Cloud region by calling GetAzureServerConfig.",
+      'version',
+      'The Kubernetes version to run on control plane replicas (e.g. `1.19.10-gke.1000`). You can list all supported versions on a given Google Cloud region by calling GetAzureServerConfig.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "databaseEncryption",
-      "Optional. Configuration related to application-layer secrets encryption.",
+      'databaseEncryption',
+      'Optional. Configuration related to application-layer secrets encryption.',
       () => container_AzureClusterControlPlaneDatabaseEncryption_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "replicaPlacements",
-      "Configuration for where to place the control plane replicas. Up to three replica placement instances can be specified. If replica_placements is set, the replica placement instances will be applied to the three control plane replicas as evenly as possible.",
+      'replicaPlacements',
+      'Configuration for where to place the control plane replicas. Up to three replica placement instances can be specified. If replica_placements is set, the replica placement instances will be applied to the three control plane replicas as evenly as possible.',
       () => container_AzureClusterControlPlaneReplicaPlacement_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "tags",
-      "Optional. A set of tags to apply to all underlying control plane Azure resources.",
+      'tags',
+      'Optional. A set of tags to apply to all underlying control plane Azure resources.',
       () => InputType_Map_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "proxyConfig",
-      "Proxy configuration for outbound HTTP(S) traffic.",
+      'proxyConfig',
+      'Proxy configuration for outbound HTTP(S) traffic.',
       () => container_AzureClusterControlPlaneProxyConfig_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "rootVolume",
-      "Optional. Configuration related to the root volume provisioned for each control plane replica. When unspecified, it defaults to 32-GiB Azure Disk.",
+      'rootVolume',
+      'Optional. Configuration related to the root volume provisioned for each control plane replica. When unspecified, it defaults to 32-GiB Azure Disk.',
       () => container_AzureClusterControlPlaneRootVolume_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "subnetId",
-      "The ARM ID of the subnet where the control plane VMs are deployed. Example: `/subscriptions//resourceGroups//providers/Microsoft.Network/virtualNetworks//subnets/default`.",
+      'subnetId',
+      'The ARM ID of the subnet where the control plane VMs are deployed. Example: `/subscriptions//resourceGroups//providers/Microsoft.Network/virtualNetworks//subnets/default`.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "sshConfig",
-      "SSH configuration for how to access the underlying control plane machines.",
+      'sshConfig',
+      'SSH configuration for how to access the underlying control plane machines.',
       () => container_AzureClusterControlPlaneSshConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "vmSize",
-      "Optional. The Azure VM size name. Example: `Standard_DS2_v2`. For available VM sizes, see https://docs.microsoft.com/en-us/azure/virtual-machines/vm-naming-conventions. When unspecified, it defaults to `Standard_DS2_v2`.",
+      'vmSize',
+      'Optional. The Azure VM size name. Example: `Standard_DS2_v2`. For available VM sizes, see https://docs.microsoft.com/en-us/azure/virtual-machines/vm-naming-conventions. When unspecified, it defaults to `Standard_DS2_v2`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "mainVolume",
+      'mainVolume',
       "Optional. Configuration related to the main volume provisioned for each control plane replica. The main volume is in charge of storing all of the cluster's etcd state. When unspecified, it defaults to a 8-GiB Azure Disk.",
       () => container_AzureClusterControlPlaneMainVolume_GetTypes(),
       false,

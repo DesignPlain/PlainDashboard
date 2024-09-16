@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lb_getListenerDefaultActionForwardStickiness,
   lb_getListenerDefaultActionForwardStickiness_GetTypes,
-} from "./lb_getListenerDefaultActionForwardStickiness";
+} from './lb_getListenerDefaultActionForwardStickiness';
 import {
   lb_getListenerDefaultActionForwardTargetGroup,
   lb_getListenerDefaultActionForwardTargetGroup_GetTypes,
-} from "./lb_getListenerDefaultActionForwardTargetGroup";
+} from './lb_getListenerDefaultActionForwardTargetGroup';
 
 export interface lb_getListenerDefaultActionForward {
   //
@@ -26,16 +26,16 @@ export function lb_getListenerDefaultActionForward_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.Array,
-      "stickinesses",
-      "",
+      'stickinesses',
+      '',
       () => lb_getListenerDefaultActionForwardStickiness_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "targetGroups",
-      "",
+      'targetGroups',
+      '',
       () => lb_getListenerDefaultActionForwardTargetGroup_GetTypes(),
       true,
       false,

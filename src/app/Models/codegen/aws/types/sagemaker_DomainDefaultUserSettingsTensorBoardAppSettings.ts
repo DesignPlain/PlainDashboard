@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sagemaker_DomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec,
   sagemaker_DomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec_GetTypes,
-} from "./sagemaker_DomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec";
+} from './sagemaker_DomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec';
 
 export interface sagemaker_DomainDefaultUserSettingsTensorBoardAppSettings {
   // The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. see `default_resource_spec` Block below.
@@ -19,8 +19,8 @@ export function sagemaker_DomainDefaultUserSettingsTensorBoardAppSettings_GetTyp
   return [
     new DynamicUIProps(
       InputType.Object,
-      "defaultResourceSpec",
-      "The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. see `default_resource_spec` Block below.",
+      'defaultResourceSpec',
+      'The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. see `default_resource_spec` Block below.',
       () =>
         sagemaker_DomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec_GetTypes(),
       false,

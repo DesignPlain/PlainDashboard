@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   osconfig_GuestPoliciesAssignmentGroupLabel,
   osconfig_GuestPoliciesAssignmentGroupLabel_GetTypes,
-} from "./osconfig_GuestPoliciesAssignmentGroupLabel";
+} from './osconfig_GuestPoliciesAssignmentGroupLabel';
 import {
   osconfig_GuestPoliciesAssignmentOsType,
   osconfig_GuestPoliciesAssignmentOsType_GetTypes,
-} from "./osconfig_GuestPoliciesAssignmentOsType";
+} from './osconfig_GuestPoliciesAssignmentOsType';
 
 export interface osconfig_GuestPoliciesAssignment {
   /*
@@ -57,7 +57,7 @@ export function osconfig_GuestPoliciesAssignment_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "groupLabels",
+      'groupLabels',
       'Targets instances matching at least one of these label sets. This allows an assignment to target disparate groups,\nfor example "env=prod or env=staging".\nStructure is documented below.',
       () => osconfig_GuestPoliciesAssignmentGroupLabel_GetTypes(),
       false,
@@ -65,7 +65,7 @@ export function osconfig_GuestPoliciesAssignment_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "instanceNamePrefixes",
+      'instanceNamePrefixes',
       'Targets VM instances whose name starts with one of these prefixes.\nLike labels, this is another way to group VM instances when targeting configs,\nfor example prefix="prod-".\nOnly supported for project-level policies.',
       () => InputType_String_GetTypes(),
       false,
@@ -73,24 +73,24 @@ export function osconfig_GuestPoliciesAssignment_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "instances",
-      "Targets any of the instances specified. Instances are specified by their URI in the form\nzones/[ZONE]/instances/[INSTANCE_NAME].\nInstance targeting is uncommon and is supported to facilitate the management of changes\nby the instance or to target specific VM instances for development and testing.\nOnly supported for project-level policies and must reference instances within this project.",
+      'instances',
+      'Targets any of the instances specified. Instances are specified by their URI in the form\nzones/[ZONE]/instances/[INSTANCE_NAME].\nInstance targeting is uncommon and is supported to facilitate the management of changes\nby the instance or to target specific VM instances for development and testing.\nOnly supported for project-level policies and must reference instances within this project.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "osTypes",
-      "Targets VM instances matching at least one of the following OS types.\nVM instances must match all supplied criteria for a given OsType to be included.\nStructure is documented below.",
+      'osTypes',
+      'Targets VM instances matching at least one of the following OS types.\nVM instances must match all supplied criteria for a given OsType to be included.\nStructure is documented below.',
       () => osconfig_GuestPoliciesAssignmentOsType_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "zones",
-      "Targets instances in any of these zones. Leave empty to target instances in any zone.\nZonal targeting is uncommon and is supported to facilitate the management of changes by zone.",
+      'zones',
+      'Targets instances in any of these zones. Leave empty to target instances in any zone.\nZonal targeting is uncommon and is supported to facilitate the management of changes by zone.',
       () => InputType_String_GetTypes(),
       false,
       false,

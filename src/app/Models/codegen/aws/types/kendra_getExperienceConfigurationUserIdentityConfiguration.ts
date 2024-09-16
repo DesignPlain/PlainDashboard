@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface kendra_getExperienceConfigurationUserIdentityConfiguration {
   // The AWS SSO field name that contains the identifiers of your users, such as their emails.
@@ -15,8 +15,8 @@ export function kendra_getExperienceConfigurationUserIdentityConfiguration_GetTy
   return [
     new DynamicUIProps(
       InputType.String,
-      "identityAttributeName",
-      "The AWS SSO field name that contains the identifiers of your users, such as their emails.",
+      'identityAttributeName',
+      'The AWS SSO field name that contains the identifiers of your users, such as their emails.',
       () => [],
       true,
       false,

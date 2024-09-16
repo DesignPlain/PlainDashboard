@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bedrock_GuardrailContextualGroundingPolicyConfigFiltersConfig,
   bedrock_GuardrailContextualGroundingPolicyConfigFiltersConfig_GetTypes,
-} from "./bedrock_GuardrailContextualGroundingPolicyConfigFiltersConfig";
+} from './bedrock_GuardrailContextualGroundingPolicyConfigFiltersConfig';
 
 export interface bedrock_GuardrailContextualGroundingPolicyConfig {
   // List of contextual grounding filter configs. See Contextual Grounding Filters Config for more information.
@@ -19,8 +19,8 @@ export function bedrock_GuardrailContextualGroundingPolicyConfig_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.Array,
-      "filtersConfigs",
-      "List of contextual grounding filter configs. See Contextual Grounding Filters Config for more information.",
+      'filtersConfigs',
+      'List of contextual grounding filter configs. See Contextual Grounding Filters Config for more information.',
       () =>
         bedrock_GuardrailContextualGroundingPolicyConfigFiltersConfig_GetTypes(),
       false,

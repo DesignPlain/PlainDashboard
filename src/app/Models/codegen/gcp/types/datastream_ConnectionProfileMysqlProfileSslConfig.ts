@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface datastream_ConnectionProfileMysqlProfileSslConfig {
   /*
@@ -54,7 +54,7 @@ export function datastream_ConnectionProfileMysqlProfileSslConfig_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.String,
-      "clientKey",
+      'clientKey',
       "PEM-encoded private key associated with the Client Certificate.\nIf this field is used then the 'client_certificate' and the\n'ca_certificate' fields are mandatory.\n**Note**: This property is sensitive and will not be displayed in the plan.",
       () => [],
       false,
@@ -62,15 +62,15 @@ export function datastream_ConnectionProfileMysqlProfileSslConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "clientKeySet",
-      "(Output)\nIndicates whether the clientKey field is set.",
+      'clientKeySet',
+      '(Output)\nIndicates whether the clientKey field is set.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "caCertificate",
+      'caCertificate',
       "PEM-encoded certificate of the CA that signed the source database\nserver's certificate.\n**Note**: This property is sensitive and will not be displayed in the plan.",
       () => [],
       false,
@@ -78,15 +78,15 @@ export function datastream_ConnectionProfileMysqlProfileSslConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "caCertificateSet",
-      "(Output)\nIndicates whether the clientKey field is set.",
+      'caCertificateSet',
+      '(Output)\nIndicates whether the clientKey field is set.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "clientCertificate",
+      'clientCertificate',
       "PEM-encoded certificate that will be used by the replica to\nauthenticate against the source database server. If this field\nis used then the 'clientKey' and the 'caCertificate' fields are\nmandatory.\n**Note**: This property is sensitive and will not be displayed in the plan.",
       () => [],
       false,
@@ -94,8 +94,8 @@ export function datastream_ConnectionProfileMysqlProfileSslConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "clientCertificateSet",
-      "(Output)\nIndicates whether the clientCertificate field is set.",
+      'clientCertificateSet',
+      '(Output)\nIndicates whether the clientCertificate field is set.',
       () => [],
       false,
       false,

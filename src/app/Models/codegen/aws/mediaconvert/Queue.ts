@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   mediaconvert_QueueReservationPlanSettings,
   mediaconvert_QueueReservationPlanSettings_GetTypes,
-} from "../types/mediaconvert_QueueReservationPlanSettings";
+} from '../types/mediaconvert_QueueReservationPlanSettings';
 
 export interface QueueArgs {
   // A description of the queue
@@ -59,48 +59,48 @@ export class Queue extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of the queue",
+        'description',
+        'A description of the queue',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A unique identifier describing the queue",
+        'name',
+        'A unique identifier describing the queue',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "pricingPlan",
-        "Specifies whether the pricing plan for the queue is on-demand or reserved. Valid values are `ON_DEMAND` or `RESERVED`. Default to `ON_DEMAND`.",
+        'pricingPlan',
+        'Specifies whether the pricing plan for the queue is on-demand or reserved. Valid values are `ON_DEMAND` or `RESERVED`. Default to `ON_DEMAND`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "reservationPlanSettings",
-        "A detail pricing plan of the  reserved queue. See below.",
+        'reservationPlanSettings',
+        'A detail pricing plan of the  reserved queue. See below.',
         () => mediaconvert_QueueReservationPlanSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "status",
-        "A status of the queue. Valid values are `ACTIVE` or `RESERVED`. Default to `PAUSED`.",
+        'status',
+        'A status of the queue. Valid values are `ACTIVE` or `RESERVED`. Default to `PAUSED`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

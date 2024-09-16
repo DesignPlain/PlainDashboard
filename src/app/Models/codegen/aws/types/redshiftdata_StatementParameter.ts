@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface redshiftdata_StatementParameter {
   //
@@ -16,7 +16,7 @@ export interface redshiftdata_StatementParameter {
 
 export function redshiftdata_StatementParameter_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "name", "", () => [], true, true),
-    new DynamicUIProps(InputType.String, "value", "", () => [], true, true),
+    new DynamicUIProps(InputType.String, 'name', '', () => [], true, true),
+    new DynamicUIProps(InputType.String, 'value', '', () => [], true, true),
   ];
 }

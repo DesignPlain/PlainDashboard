@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface osconfig_GuestPoliciesAssignmentOsType {
   // Targets VM instances with OS Inventory enabled and having the following following OS version.
@@ -25,23 +25,23 @@ export function osconfig_GuestPoliciesAssignmentOsType_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.String,
-      "osVersion",
-      "Targets VM instances with OS Inventory enabled and having the following following OS version.",
+      'osVersion',
+      'Targets VM instances with OS Inventory enabled and having the following following OS version.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "osArchitecture",
-      "Targets VM instances with OS Inventory enabled and having the following OS architecture.\n\n- - -",
+      'osArchitecture',
+      'Targets VM instances with OS Inventory enabled and having the following OS architecture.\n\n- - -',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "osShortName",
+      'osShortName',
       'Targets VM instances with OS Inventory enabled and having the following OS short name, for example "debian" or "windows".',
       () => [],
       false,

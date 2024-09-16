@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface eks_AccessPolicyAssociationAccessScope {
   // The namespaces to which the access scope applies when type is namespace.
@@ -18,16 +18,16 @@ export function eks_AccessPolicyAssociationAccessScope_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.Array,
-      "namespaces",
-      "The namespaces to which the access scope applies when type is namespace.",
+      'namespaces',
+      'The namespaces to which the access scope applies when type is namespace.',
       () => InputType_String_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "Valid values are `namespace` or `cluster`.",
+      'type',
+      'Valid values are `namespace` or `cluster`.',
       () => [],
       true,
       true,

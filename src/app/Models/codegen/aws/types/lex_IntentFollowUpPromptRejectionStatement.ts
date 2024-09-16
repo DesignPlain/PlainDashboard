@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_IntentFollowUpPromptRejectionStatementMessage,
   lex_IntentFollowUpPromptRejectionStatementMessage_GetTypes,
-} from "./lex_IntentFollowUpPromptRejectionStatementMessage";
+} from './lex_IntentFollowUpPromptRejectionStatementMessage';
 
 export interface lex_IntentFollowUpPromptRejectionStatement {
   //
@@ -22,16 +22,16 @@ export function lex_IntentFollowUpPromptRejectionStatement_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Array,
-      "messages",
-      "",
+      'messages',
+      '',
       () => lex_IntentFollowUpPromptRejectionStatementMessage_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "responseCard",
-      "",
+      'responseCard',
+      '',
       () => [],
       false,
       false,

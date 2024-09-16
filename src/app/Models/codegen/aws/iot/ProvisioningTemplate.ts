@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   iot_ProvisioningTemplatePreProvisioningHook,
   iot_ProvisioningTemplatePreProvisioningHook_GetTypes,
-} from "../types/iot_ProvisioningTemplatePreProvisioningHook";
+} from '../types/iot_ProvisioningTemplatePreProvisioningHook';
 
 export interface ProvisioningTemplateArgs {
   // A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
@@ -74,64 +74,64 @@ export class ProvisioningTemplate extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "preProvisioningHook",
-        "Creates a pre-provisioning hook template. Details below.",
+        'preProvisioningHook',
+        'Creates a pre-provisioning hook template. Details below.',
         () => iot_ProvisioningTemplatePreProvisioningHook_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "provisioningRoleArn",
-        "The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.",
+        'provisioningRoleArn',
+        'The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "templateBody",
-        "The JSON formatted contents of the fleet provisioning template.",
+        'templateBody',
+        'The JSON formatted contents of the fleet provisioning template.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The type you define in a provisioning template.",
+        'type',
+        'The type you define in a provisioning template.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the fleet provisioning template.",
+        'description',
+        'The description of the fleet provisioning template.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enabled",
-        "True to enable the fleet provisioning template, otherwise false.",
+        'enabled',
+        'True to enable the fleet provisioning template, otherwise false.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the fleet provisioning template.",
+        'name',
+        'The name of the fleet provisioning template.',
         () => [],
         false,
         true,

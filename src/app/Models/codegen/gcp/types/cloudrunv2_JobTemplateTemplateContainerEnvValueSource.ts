@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudrunv2_JobTemplateTemplateContainerEnvValueSourceSecretKeyRef,
   cloudrunv2_JobTemplateTemplateContainerEnvValueSourceSecretKeyRef_GetTypes,
-} from "./cloudrunv2_JobTemplateTemplateContainerEnvValueSourceSecretKeyRef";
+} from './cloudrunv2_JobTemplateTemplateContainerEnvValueSourceSecretKeyRef';
 
 export interface cloudrunv2_JobTemplateTemplateContainerEnvValueSource {
   /*
@@ -22,8 +22,8 @@ export function cloudrunv2_JobTemplateTemplateContainerEnvValueSource_GetTypes()
   return [
     new DynamicUIProps(
       InputType.Object,
-      "secretKeyRef",
-      "Selects a secret and a specific version from Cloud Secret Manager.\nStructure is documented below.",
+      'secretKeyRef',
+      'Selects a secret and a specific version from Cloud Secret Manager.\nStructure is documented below.',
       () =>
         cloudrunv2_JobTemplateTemplateContainerEnvValueSourceSecretKeyRef_GetTypes(),
       false,

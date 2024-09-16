@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface DefaultPatchBaselineArgs {
   /*
@@ -65,16 +65,16 @@ When specifying an AWS-provided patch baseline, must be the ARN.
     return [
       new DynamicUIProps(
         InputType.String,
-        "baselineId",
-        "ID of the patch baseline.\nCan be an ID or an ARN.\nWhen specifying an AWS-provided patch baseline, must be the ARN.",
+        'baselineId',
+        'ID of the patch baseline.\nCan be an ID or an ARN.\nWhen specifying an AWS-provided patch baseline, must be the ARN.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "operatingSystem",
-        "The operating system the patch baseline applies to.\nValid values are\n`AMAZON_LINUX`,\n`AMAZON_LINUX_2`,\n`AMAZON_LINUX_2022`,\n`CENTOS`,\n`DEBIAN`,\n`MACOS`,\n`ORACLE_LINUX`,\n`RASPBIAN`,\n`REDHAT_ENTERPRISE_LINUX`,\n`ROCKY_LINUX`,\n`SUSE`,\n`UBUNTU`, and\n`WINDOWS`.",
+        'operatingSystem',
+        'The operating system the patch baseline applies to.\nValid values are\n`AMAZON_LINUX`,\n`AMAZON_LINUX_2`,\n`AMAZON_LINUX_2022`,\n`CENTOS`,\n`DEBIAN`,\n`MACOS`,\n`ORACLE_LINUX`,\n`RASPBIAN`,\n`REDHAT_ENTERPRISE_LINUX`,\n`ROCKY_LINUX`,\n`SUSE`,\n`UBUNTU`, and\n`WINDOWS`.',
         () => [],
         true,
         true,

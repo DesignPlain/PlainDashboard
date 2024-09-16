@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   securitycenter_SourceIamBindingCondition,
   securitycenter_SourceIamBindingCondition_GetTypes,
-} from "../types/securitycenter_SourceIamBindingCondition";
+} from '../types/securitycenter_SourceIamBindingCondition';
 
 export interface SourceIamBindingArgs {
   //
@@ -62,26 +62,26 @@ lives in.
     return [
       new DynamicUIProps(
         InputType.String,
-        "organization",
-        "The organization whose Cloud Security Command Center the Source\nlives in.\n\n\n- - -",
+        'organization',
+        'The organization whose Cloud Security Command Center the Source\nlives in.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
-      new DynamicUIProps(InputType.String, "role", "", () => [], true, true),
-      new DynamicUIProps(InputType.String, "source", "", () => [], true, true),
+      new DynamicUIProps(InputType.String, 'role', '', () => [], true, true),
+      new DynamicUIProps(InputType.String, 'source', '', () => [], true, true),
       new DynamicUIProps(
         InputType.Object,
-        "condition",
-        "",
+        'condition',
+        '',
         () => securitycenter_SourceIamBindingCondition_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "members",
-        "",
+        'members',
+        '',
         () => InputType_String_GetTypes(),
         true,
         false,

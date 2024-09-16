@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface route53recoverycontrol_ClusterClusterEndpoint {
   // Cluster endpoint.
@@ -18,16 +18,16 @@ export function route53recoverycontrol_ClusterClusterEndpoint_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.String,
-      "endpoint",
-      "Cluster endpoint.",
+      'endpoint',
+      'Cluster endpoint.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "region",
-      "Region of the endpoint.",
+      'region',
+      'Region of the endpoint.',
       () => [],
       false,
       false,

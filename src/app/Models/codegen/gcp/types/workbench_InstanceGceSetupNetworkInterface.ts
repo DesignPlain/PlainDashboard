@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface workbench_InstanceGceSetupNetworkInterface {
   // Optional. The name of the VPC that this VM instance is in.
@@ -25,24 +25,24 @@ export function workbench_InstanceGceSetupNetworkInterface_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.String,
-      "network",
-      "Optional. The name of the VPC that this VM instance is in.",
+      'network',
+      'Optional. The name of the VPC that this VM instance is in.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "nicType",
-      "Optional. The type of vNIC to be used on this interface. This\nmay be gVNIC or VirtioNet.\nPossible values are: `VIRTIO_NET`, `GVNIC`.",
+      'nicType',
+      'Optional. The type of vNIC to be used on this interface. This\nmay be gVNIC or VirtioNet.\nPossible values are: `VIRTIO_NET`, `GVNIC`.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "subnet",
-      "Optional. The name of the subnet that this VM instance is in.",
+      'subnet',
+      'Optional. The name of the subnet that this VM instance is in.',
       () => [],
       false,
       true,

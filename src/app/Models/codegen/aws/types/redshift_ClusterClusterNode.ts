@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface redshift_ClusterClusterNode {
   // Whether the node is a leader node or a compute node
@@ -21,24 +21,24 @@ export function redshift_ClusterClusterNode_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "nodeRole",
-      "Whether the node is a leader node or a compute node",
+      'nodeRole',
+      'Whether the node is a leader node or a compute node',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "privateIpAddress",
-      "The private IP address of a node within a cluster",
+      'privateIpAddress',
+      'The private IP address of a node within a cluster',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "publicIpAddress",
-      "The public IP address of a node within a cluster",
+      'publicIpAddress',
+      'The public IP address of a node within a cluster',
       () => [],
       false,
       false,

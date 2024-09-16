@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface backupdisasterrecovery_getManagementServerNetwork {
   // Network with format 'projects/{{project_id}}/global/networks/{{network_id}}'
@@ -18,7 +18,7 @@ export function backupdisasterrecovery_getManagementServerNetwork_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.String,
-      "network",
+      'network',
       "Network with format 'projects/{{project_id}}/global/networks/{{network_id}}'",
       () => [],
       true,
@@ -26,7 +26,7 @@ export function backupdisasterrecovery_getManagementServerNetwork_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "peeringMode",
+      'peeringMode',
       'Type of Network peeringMode Default value: "PRIVATE_SERVICE_ACCESS" Possible values: ["PRIVATE_SERVICE_ACCESS"]',
       () => [],
       true,

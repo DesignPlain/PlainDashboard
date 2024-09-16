@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   waf_ByteMatchSetByteMatchTuple,
   waf_ByteMatchSetByteMatchTuple_GetTypes,
-} from "../types/waf_ByteMatchSetByteMatchTuple";
+} from '../types/waf_ByteMatchSetByteMatchTuple';
 
 export interface ByteMatchSetArgs {
   /*
@@ -37,16 +37,16 @@ the location in requests that you want to search, and other settings.
     return [
       new DynamicUIProps(
         InputType.Array,
-        "byteMatchTuples",
-        "Specifies the bytes (typically a string that corresponds\nwith ASCII characters) that you want to search for in web requests,\nthe location in requests that you want to search, and other settings.",
+        'byteMatchTuples',
+        'Specifies the bytes (typically a string that corresponds\nwith ASCII characters) that you want to search for in web requests,\nthe location in requests that you want to search, and other settings.',
         () => waf_ByteMatchSetByteMatchTuple_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name or description of the Byte Match Set.",
+        'name',
+        'The name or description of the Byte Match Set.',
         () => [],
         false,
         true,

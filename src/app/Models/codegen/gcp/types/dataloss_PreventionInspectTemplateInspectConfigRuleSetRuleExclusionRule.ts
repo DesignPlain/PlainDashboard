@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionary,
   dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionary_GetTypes,
-} from "./dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionary";
+} from './dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionary';
 import {
   dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotword,
   dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotword_GetTypes,
-} from "./dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotword";
+} from './dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotword';
 import {
   dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypes,
   dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypes_GetTypes,
-} from "./dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypes";
+} from './dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypes';
 import {
   dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleRegex,
   dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleRegex_GetTypes,
-} from "./dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleRegex";
+} from './dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleRegex';
 
 export interface dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRule {
   /*
@@ -59,8 +59,8 @@ export function dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclus
   return [
     new DynamicUIProps(
       InputType.Object,
-      "dictionary",
-      "Dictionary which defines the rule.\nStructure is documented below.",
+      'dictionary',
+      'Dictionary which defines the rule.\nStructure is documented below.',
       () =>
         dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionary_GetTypes(),
       false,
@@ -68,8 +68,8 @@ export function dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclus
     ),
     new DynamicUIProps(
       InputType.Object,
-      "excludeByHotword",
-      "Drop if the hotword rule is contained in the proximate context.\nFor tabular data, the context includes the column name.\nStructure is documented below.",
+      'excludeByHotword',
+      'Drop if the hotword rule is contained in the proximate context.\nFor tabular data, the context includes the column name.\nStructure is documented below.',
       () =>
         dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotword_GetTypes(),
       false,
@@ -77,8 +77,8 @@ export function dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclus
     ),
     new DynamicUIProps(
       InputType.Object,
-      "excludeInfoTypes",
-      "Set of infoTypes for which findings would affect this rule.\nStructure is documented below.",
+      'excludeInfoTypes',
+      'Set of infoTypes for which findings would affect this rule.\nStructure is documented below.',
       () =>
         dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypes_GetTypes(),
       false,
@@ -86,16 +86,16 @@ export function dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclus
     ),
     new DynamicUIProps(
       InputType.String,
-      "matchingType",
-      "How the rule is applied. See the documentation for more information: https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#MatchingType\nPossible values are: `MATCHING_TYPE_FULL_MATCH`, `MATCHING_TYPE_PARTIAL_MATCH`, `MATCHING_TYPE_INVERSE_MATCH`.",
+      'matchingType',
+      'How the rule is applied. See the documentation for more information: https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#MatchingType\nPossible values are: `MATCHING_TYPE_FULL_MATCH`, `MATCHING_TYPE_PARTIAL_MATCH`, `MATCHING_TYPE_INVERSE_MATCH`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "regex",
-      "Regular expression which defines the rule.\nStructure is documented below.",
+      'regex',
+      'Regular expression which defines the rule.\nStructure is documented below.',
       () =>
         dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleRegex_GetTypes(),
       false,

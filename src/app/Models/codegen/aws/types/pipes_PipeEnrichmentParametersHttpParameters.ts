@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface pipes_PipeEnrichmentParametersHttpParameters {
   //
@@ -21,24 +21,24 @@ export function pipes_PipeEnrichmentParametersHttpParameters_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.Map,
-      "headerParameters",
-      "",
+      'headerParameters',
+      '',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "pathParameterValues",
-      "",
+      'pathParameterValues',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "queryStringParameters",
-      "",
+      'queryStringParameters',
+      '',
       () => InputType_Map_GetTypes(),
       false,
       false,

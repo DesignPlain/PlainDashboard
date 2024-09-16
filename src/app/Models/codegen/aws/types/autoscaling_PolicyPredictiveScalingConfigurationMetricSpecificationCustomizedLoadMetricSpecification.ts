@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   autoscaling_PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQuery,
   autoscaling_PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQuery_GetTypes,
-} from "./autoscaling_PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQuery";
+} from './autoscaling_PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQuery';
 
 export interface autoscaling_PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecification {
   // List of up to 10 structures that defines custom load metric in predictive scaling policy
@@ -19,8 +19,8 @@ export function autoscaling_PolicyPredictiveScalingConfigurationMetricSpecificat
   return [
     new DynamicUIProps(
       InputType.Array,
-      "metricDataQueries",
-      "List of up to 10 structures that defines custom load metric in predictive scaling policy",
+      'metricDataQueries',
+      'List of up to 10 structures that defines custom load metric in predictive scaling policy',
       () =>
         autoscaling_PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQuery_GetTypes(),
       true,

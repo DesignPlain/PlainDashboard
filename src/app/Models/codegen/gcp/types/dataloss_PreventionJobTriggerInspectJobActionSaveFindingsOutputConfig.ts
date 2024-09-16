@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable,
   dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable";
+} from './dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable';
 
 export interface dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig {
   /*
@@ -34,8 +34,8 @@ export function dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputC
   return [
     new DynamicUIProps(
       InputType.Object,
-      "table",
-      "Information on the location of the target BigQuery Table.\nStructure is documented below.",
+      'table',
+      'Information on the location of the target BigQuery Table.\nStructure is documented below.',
       () =>
         dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTable_GetTypes(),
       true,
@@ -43,8 +43,8 @@ export function dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputC
     ),
     new DynamicUIProps(
       InputType.String,
-      "outputSchema",
-      "Schema used for writing the findings for Inspect jobs. This field is only used for\nInspect and must be unspecified for Risk jobs. Columns are derived from the Finding\nobject. If appending to an existing table, any columns from the predefined schema\nthat are missing will be added. No columns in the existing table will be deleted.\nIf unspecified, then all available columns will be used for a new table or an (existing)\ntable with no schema, and no changes will be made to an existing table that has a schema.\nOnly for use with external storage.\nPossible values are: `BASIC_COLUMNS`, `GCS_COLUMNS`, `DATASTORE_COLUMNS`, `BIG_QUERY_COLUMNS`, `ALL_COLUMNS`.",
+      'outputSchema',
+      'Schema used for writing the findings for Inspect jobs. This field is only used for\nInspect and must be unspecified for Risk jobs. Columns are derived from the Finding\nobject. If appending to an existing table, any columns from the predefined schema\nthat are missing will be added. No columns in the existing table will be deleted.\nIf unspecified, then all available columns will be used for a new table or an (existing)\ntable with no schema, and no changes will be made to an existing table that has a schema.\nOnly for use with external storage.\nPossible values are: `BASIC_COLUMNS`, `GCS_COLUMNS`, `DATASTORE_COLUMNS`, `BIG_QUERY_COLUMNS`, `ALL_COLUMNS`.',
       () => [],
       false,
       false,

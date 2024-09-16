@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datazone_ProjectTimeouts,
   datazone_ProjectTimeouts_GetTypes,
-} from "../types/datazone_ProjectTimeouts";
+} from '../types/datazone_ProjectTimeouts';
 import {
   datazone_ProjectFailureReason,
   datazone_ProjectFailureReason_GetTypes,
-} from "../types/datazone_ProjectFailureReason";
+} from '../types/datazone_ProjectFailureReason';
 
 export interface ProjectArgs {
   // Optional flag to delete all child entities within the project.
@@ -80,48 +80,48 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the project. Must follow the regex of `^[\\w -]+$`. and have a length of at most 64.\n\nThe following arguments are optional:",
+        'name',
+        'Name of the project. Must follow the regex of `^[\\w -]+$`. and have a length of at most 64.\n\nThe following arguments are optional:',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "skipDeletionCheck",
-        "Optional flag to delete all child entities within the project.",
+        'skipDeletionCheck',
+        'Optional flag to delete all child entities within the project.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => datazone_ProjectTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of project.",
+        'description',
+        'Description of project.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "domainIdentifier",
-        "Identifier of domain which the project is part of. Must follow the regex of `^dzd[-_][a-zA-Z0-9_-]{1,36}$`.",
+        'domainIdentifier',
+        'Identifier of domain which the project is part of. Must follow the regex of `^dzd[-_][a-zA-Z0-9_-]{1,36}$`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "glossaryTerms",
-        "List of glossary terms that can be used in the project. The list cannot be empty or include over 20 values. Each value must follow the regex of `[a-zA-Z0-9_-]{1,36}$`.",
+        'glossaryTerms',
+        'List of glossary terms that can be used in the project. The list cannot be empty or include over 20 values. Each value must follow the regex of `[a-zA-Z0-9_-]{1,36}$`.',
         () => InputType_String_GetTypes(),
         false,
         false,

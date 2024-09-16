@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ModelArgs {
   // Description of the model
@@ -43,40 +43,40 @@ export class Model extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the model",
+        'description',
+        'Description of the model',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the model",
+        'name',
+        'Name of the model',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "restApi",
-        "ID of the associated REST API",
+        'restApi',
+        'ID of the associated REST API',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "schema",
-        "Schema of the model in a JSON form",
+        'schema',
+        'Schema of the model in a JSON form',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "contentType",
-        "Content type of the model",
+        'contentType',
+        'Content type of the model',
         () => [],
         true,
         true,

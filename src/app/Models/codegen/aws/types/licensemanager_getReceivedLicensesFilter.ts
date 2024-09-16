@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface licensemanager_getReceivedLicensesFilter {
   /*
@@ -139,7 +139,7 @@ export function licensemanager_getReceivedLicensesFilter_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
+      'name',
       'Name of the field to filter by, as defined by\n[the underlying AWS API](https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListReceivedLicenses.html#API_ListReceivedLicenses_RequestSyntax).\nFor example, if filtering using `ProductSKU`, use:\n\n<!--Start PulumiCodeChooser -->\n```typescript\nimport * as pulumi from "@pulumi/pulumi";\nimport * as aws from "@pulumi/aws";\n\nconst selected = aws.licensemanager.getReceivedLicenses({\n    filters: [{\n        name: "ProductSKU",\n        values: [""],\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_aws as aws\n\nselected = aws.licensemanager.get_received_licenses(filters=[{\n    "name": "ProductSKU",\n    "values": [""],\n}])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Aws = Pulumi.Aws;\n\nreturn await Deployment.RunAsync(() => \n{\n    var selected = Aws.LicenseManager.GetReceivedLicenses.Invoke(new()\n    {\n        Filters = new[]\n        {\n            new Aws.LicenseManager.Inputs.GetReceivedLicensesFilterInputArgs\n            {\n                Name = "ProductSKU",\n                Values = new[]\n                {\n                    "",\n                },\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t"github.com/pulumi/pulumi-aws/sdk/v6/go/aws/licensemanager"\n\t"github.com/pulumi/pulumi/sdk/v3/go/pulumi"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := licensemanager.GetReceivedLicenses(ctx, &licensemanager.GetReceivedLicensesArgs{\n\t\t\tFilters: []licensemanager.GetReceivedLicensesFilter{\n\t\t\t\t{\n\t\t\t\t\tName: "ProductSKU",\n\t\t\t\t\tValues: []string{\n\t\t\t\t\t\t"",\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.aws.licensemanager.LicensemanagerFunctions;\nimport com.pulumi.aws.licensemanager.inputs.GetReceivedLicensesArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var selected = LicensemanagerFunctions.getReceivedLicenses(GetReceivedLicensesArgs.builder()\n            .filters(GetReceivedLicensesFilterArgs.builder()\n                .name("ProductSKU")\n                .values("")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  selected:\n    fn::invoke:\n      Function: aws:licensemanager:getReceivedLicenses\n      Arguments:\n        filters:\n          - name: ProductSKU\n            values:\n              -\n```\n<!--End PulumiCodeChooser -->',
       () => [],
       true,
@@ -147,8 +147,8 @@ export function licensemanager_getReceivedLicensesFilter_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Array,
-      "values",
-      "Set of values that are accepted for the given field.",
+      'values',
+      'Set of values that are accepted for the given field.',
       () => InputType_String_GetTypes(),
       true,
       false,

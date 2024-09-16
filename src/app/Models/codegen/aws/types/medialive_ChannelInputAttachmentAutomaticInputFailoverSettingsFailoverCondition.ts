@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettings,
   medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettings_GetTypes,
-} from "./medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettings";
+} from './medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettings';
 
 export interface medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverCondition {
   // Failover condition type-specific settings. See Failover Condition Settings for more details.
@@ -19,8 +19,8 @@ export function medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFa
   return [
     new DynamicUIProps(
       InputType.Object,
-      "failoverConditionSettings",
-      "Failover condition type-specific settings. See Failover Condition Settings for more details.",
+      'failoverConditionSettings',
+      'Failover condition type-specific settings. See Failover Condition Settings for more details.',
       () =>
         medialive_ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettings_GetTypes(),
       false,

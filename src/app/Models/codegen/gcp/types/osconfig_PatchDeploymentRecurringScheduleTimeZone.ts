@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface osconfig_PatchDeploymentRecurringScheduleTimeZone {
   // IANA Time Zone Database version number, e.g. "2019a".
@@ -18,7 +18,7 @@ export function osconfig_PatchDeploymentRecurringScheduleTimeZone_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.String,
-      "id",
+      'id',
       'IANA Time Zone Database time zone, e.g. "America/New_York".',
       () => [],
       true,
@@ -26,7 +26,7 @@ export function osconfig_PatchDeploymentRecurringScheduleTimeZone_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "version",
+      'version',
       'IANA Time Zone Database version number, e.g. "2019a".',
       () => [],
       false,

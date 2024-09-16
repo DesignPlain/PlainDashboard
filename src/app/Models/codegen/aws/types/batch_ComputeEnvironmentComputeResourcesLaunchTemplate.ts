@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface batch_ComputeEnvironmentComputeResourcesLaunchTemplate {
   // ID of the launch template. You must specify either the launch template ID or launch template name in the request, but not both.
@@ -21,24 +21,24 @@ export function batch_ComputeEnvironmentComputeResourcesLaunchTemplate_GetTypes(
   return [
     new DynamicUIProps(
       InputType.String,
-      "launchTemplateId",
-      "ID of the launch template. You must specify either the launch template ID or launch template name in the request, but not both.",
+      'launchTemplateId',
+      'ID of the launch template. You must specify either the launch template ID or launch template name in the request, but not both.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "launchTemplateName",
-      "Name of the launch template.",
+      'launchTemplateName',
+      'Name of the launch template.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "version",
-      "The version number of the launch template. Default: The default version of the launch template.",
+      'version',
+      'The version number of the launch template. Default: The default version of the launch template.',
       () => [],
       false,
       false,

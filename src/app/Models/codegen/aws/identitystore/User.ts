@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   identitystore_UserPhoneNumbers,
   identitystore_UserPhoneNumbers_GetTypes,
-} from "../types/identitystore_UserPhoneNumbers";
+} from '../types/identitystore_UserPhoneNumbers';
 import {
   identitystore_UserEmails,
   identitystore_UserEmails_GetTypes,
-} from "../types/identitystore_UserEmails";
+} from '../types/identitystore_UserEmails';
 import {
   identitystore_UserName,
   identitystore_UserName_GetTypes,
-} from "../types/identitystore_UserName";
+} from '../types/identitystore_UserName';
 import {
   identitystore_UserAddresses,
   identitystore_UserAddresses_GetTypes,
-} from "../types/identitystore_UserAddresses";
+} from '../types/identitystore_UserAddresses';
 import {
   identitystore_UserExternalId,
   identitystore_UserExternalId_GetTypes,
-} from "../types/identitystore_UserExternalId";
+} from '../types/identitystore_UserExternalId';
 
 export interface UserArgs {
   // Details about the user's phone number. At most 1 phone number is allowed. Detailed below.
@@ -131,7 +131,7 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "locale",
+        'locale',
         "The user's geographical region or location.",
         () => [],
         false,
@@ -139,7 +139,7 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.String,
-        "timezone",
+        'timezone',
         "The user's time zone.",
         () => [],
         false,
@@ -147,15 +147,15 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.String,
-        "nickname",
-        "An alternate name for the user.",
+        'nickname',
+        'An alternate name for the user.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "name",
+        'name',
         "Details about the user's full name. Detailed below.",
         () => identitystore_UserName_GetTypes(),
         false,
@@ -163,31 +163,31 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.String,
-        "identityStoreId",
-        "The globally unique identifier for the identity store that this user is in.",
+        'identityStoreId',
+        'The globally unique identifier for the identity store that this user is in.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "userName",
-        "A unique string used to identify the user. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. The limit is 128 characters.\n\nThe following arguments are optional:",
+        'userName',
+        'A unique string used to identify the user. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. The limit is 128 characters.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "userType",
-        "The user type.",
+        'userType',
+        'The user type.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "phoneNumbers",
+        'phoneNumbers',
         "Details about the user's phone number. At most 1 phone number is allowed. Detailed below.",
         () => identitystore_UserPhoneNumbers_GetTypes(),
         false,
@@ -195,7 +195,7 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.String,
-        "title",
+        'title',
         "The user's title.",
         () => [],
         false,
@@ -203,7 +203,7 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.Object,
-        "emails",
+        'emails',
         "Details about the user's email. At most 1 email is allowed. Detailed below.",
         () => identitystore_UserEmails_GetTypes(),
         false,
@@ -211,31 +211,31 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The name that is typically displayed when the user is referenced.",
+        'displayName',
+        'The name that is typically displayed when the user is referenced.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "preferredLanguage",
-        "The preferred language of the user.",
+        'preferredLanguage',
+        'The preferred language of the user.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "profileUrl",
-        "An URL that may be associated with the user.",
+        'profileUrl',
+        'An URL that may be associated with the user.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "addresses",
+        'addresses',
         "Details about the user's address. At most 1 address is allowed. Detailed below.",
         () => identitystore_UserAddresses_GetTypes(),
         false,

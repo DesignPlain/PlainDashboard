@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface HostingChannelArgs {
   /*
@@ -104,31 +104,31 @@ set directly or via the `ttl` field.
     return [
       new DynamicUIProps(
         InputType.String,
-        "siteId",
-        "Required. The ID of the site in which to create this channel.",
+        'siteId',
+        'Required. The ID of the site in which to create this channel.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ttl",
-        "Input only. A time-to-live for this channel. Sets `expire_time` to the provided\nduration past the time of the request. A duration in seconds with up to nine fractional\ndigits, terminated by 's'. Example: \"86400s\" (one day).",
+        'ttl',
+        'Input only. A time-to-live for this channel. Sets `expire_time` to the provided\nduration past the time of the request. A duration in seconds with up to nine fractional\ndigits, terminated by \'s\'. Example: "86400s" (one day).',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "channelId",
-        "Required. Immutable. A unique ID within the site that identifies the channel.\n\n\n- - -",
+        'channelId',
+        'Required. Immutable. A unique ID within the site that identifies the channel.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "expireTime",
+        'expireTime',
         "The time at which the channel will be automatically deleted. If null, the channel\nwill not be automatically deleted. This field is present in the output whether it's\nset directly or via the `ttl` field.",
         () => [],
         false,
@@ -136,16 +136,16 @@ set directly or via the `ttl` field.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Text labels used for extra metadata and/or filtering\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Text labels used for extra metadata and/or filtering\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "retainedReleaseCount",
-        "The number of previous releases to retain on the channel for rollback or other\npurposes. Must be a number between 1-100. Defaults to 10 for new channels.",
+        'retainedReleaseCount',
+        'The number of previous releases to retain on the channel for rollback or other\npurposes. Must be a number between 1-100. Defaults to 10 for new channels.',
         () => [],
         false,
         false,

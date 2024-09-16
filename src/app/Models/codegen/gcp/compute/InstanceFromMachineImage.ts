@@ -3,61 +3,61 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_InstanceFromMachineImageNetworkPerformanceConfig,
   compute_InstanceFromMachineImageNetworkPerformanceConfig_GetTypes,
-} from "../types/compute_InstanceFromMachineImageNetworkPerformanceConfig";
+} from '../types/compute_InstanceFromMachineImageNetworkPerformanceConfig';
 import {
   compute_InstanceFromMachineImageParams,
   compute_InstanceFromMachineImageParams_GetTypes,
-} from "../types/compute_InstanceFromMachineImageParams";
+} from '../types/compute_InstanceFromMachineImageParams';
 import {
   compute_InstanceFromMachineImageServiceAccount,
   compute_InstanceFromMachineImageServiceAccount_GetTypes,
-} from "../types/compute_InstanceFromMachineImageServiceAccount";
+} from '../types/compute_InstanceFromMachineImageServiceAccount';
 import {
   compute_InstanceFromMachineImageShieldedInstanceConfig,
   compute_InstanceFromMachineImageShieldedInstanceConfig_GetTypes,
-} from "../types/compute_InstanceFromMachineImageShieldedInstanceConfig";
+} from '../types/compute_InstanceFromMachineImageShieldedInstanceConfig';
 import {
   compute_InstanceFromMachineImageNetworkInterface,
   compute_InstanceFromMachineImageNetworkInterface_GetTypes,
-} from "../types/compute_InstanceFromMachineImageNetworkInterface";
+} from '../types/compute_InstanceFromMachineImageNetworkInterface';
 import {
   compute_InstanceFromMachineImageBootDisk,
   compute_InstanceFromMachineImageBootDisk_GetTypes,
-} from "../types/compute_InstanceFromMachineImageBootDisk";
+} from '../types/compute_InstanceFromMachineImageBootDisk';
 import {
   compute_InstanceFromMachineImageAdvancedMachineFeatures,
   compute_InstanceFromMachineImageAdvancedMachineFeatures_GetTypes,
-} from "../types/compute_InstanceFromMachineImageAdvancedMachineFeatures";
+} from '../types/compute_InstanceFromMachineImageAdvancedMachineFeatures';
 import {
   compute_InstanceFromMachineImageGuestAccelerator,
   compute_InstanceFromMachineImageGuestAccelerator_GetTypes,
-} from "../types/compute_InstanceFromMachineImageGuestAccelerator";
+} from '../types/compute_InstanceFromMachineImageGuestAccelerator';
 import {
   compute_InstanceFromMachineImageScheduling,
   compute_InstanceFromMachineImageScheduling_GetTypes,
-} from "../types/compute_InstanceFromMachineImageScheduling";
+} from '../types/compute_InstanceFromMachineImageScheduling';
 import {
   compute_InstanceFromMachineImageConfidentialInstanceConfig,
   compute_InstanceFromMachineImageConfidentialInstanceConfig_GetTypes,
-} from "../types/compute_InstanceFromMachineImageConfidentialInstanceConfig";
+} from '../types/compute_InstanceFromMachineImageConfidentialInstanceConfig';
 import {
   compute_InstanceFromMachineImageReservationAffinity,
   compute_InstanceFromMachineImageReservationAffinity_GetTypes,
-} from "../types/compute_InstanceFromMachineImageReservationAffinity";
+} from '../types/compute_InstanceFromMachineImageReservationAffinity';
 import {
   compute_InstanceFromMachineImageAttachedDisk,
   compute_InstanceFromMachineImageAttachedDisk_GetTypes,
-} from "../types/compute_InstanceFromMachineImageAttachedDisk";
+} from '../types/compute_InstanceFromMachineImageAttachedDisk';
 import {
   compute_InstanceFromMachineImageScratchDisk,
   compute_InstanceFromMachineImageScratchDisk_GetTypes,
-} from "../types/compute_InstanceFromMachineImageScratchDisk";
+} from '../types/compute_InstanceFromMachineImageScratchDisk';
 
 export interface InstanceFromMachineImageArgs {
   /*
@@ -350,8 +350,8 @@ entire hostname must not exceed 253 characters. Changing this forces a new resou
     return [
       new DynamicUIProps(
         InputType.Object,
-        "networkPerformanceConfig",
-        "Configures network performance settings for the instance. If not specified, the instance will be created with its\ndefault network performance configuration.",
+        'networkPerformanceConfig',
+        'Configures network performance settings for the instance. If not specified, the instance will be created with its\ndefault network performance configuration.',
         () =>
           compute_InstanceFromMachineImageNetworkPerformanceConfig_GetTypes(),
         false,
@@ -359,7 +359,7 @@ entire hostname must not exceed 253 characters. Changing this forces a new resou
       ),
       new DynamicUIProps(
         InputType.String,
-        "desiredStatus",
+        'desiredStatus',
         'Desired status of the instance. Either "RUNNING" or "TERMINATED".',
         () => [],
         false,
@@ -367,111 +367,111 @@ entire hostname must not exceed 253 characters. Changing this forces a new resou
       ),
       new DynamicUIProps(
         InputType.String,
-        "machineType",
-        "The machine type to create.",
+        'machineType',
+        'The machine type to create.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "reservationAffinity",
-        "Specifies the reservations that this instance can consume from.",
+        'reservationAffinity',
+        'Specifies the reservations that this instance can consume from.',
         () => compute_InstanceFromMachineImageReservationAffinity_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "tags",
-        "The list of tags attached to the instance.",
+        'tags',
+        'The list of tags attached to the instance.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "deletionProtection",
-        "Whether deletion protection is enabled on this instance.",
+        'deletionProtection',
+        'Whether deletion protection is enabled on this instance.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "scheduling",
-        "The scheduling strategy being used by the instance.",
+        'scheduling',
+        'The scheduling strategy being used by the instance.',
         () => compute_InstanceFromMachineImageScheduling_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "metadataStartupScript",
-        "Metadata startup scripts made available within the instance.",
+        'metadataStartupScript',
+        'Metadata startup scripts made available within the instance.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "hostname",
-        "A custom hostname for the instance. Must be a fully qualified DNS name and RFC-1035-valid. Valid format is a series of\nlabels 1-63 characters long matching the regular expression [a-z]([-a-z0-9]*[a-z0-9]), concatenated with periods. The\nentire hostname must not exceed 253 characters. Changing this forces a new resource to be created.",
+        'hostname',
+        'A custom hostname for the instance. Must be a fully qualified DNS name and RFC-1035-valid. Valid format is a series of\nlabels 1-63 characters long matching the regular expression [a-z]([-a-z0-9]*[a-z0-9]), concatenated with periods. The\nentire hostname must not exceed 253 characters. Changing this forces a new resource to be created.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resourcePolicies",
-        "A list of self_links of resource policies to attach to the instance. Currently a max of 1 resource policy is supported.",
+        'resourcePolicies',
+        'A list of self_links of resource policies to attach to the instance. Currently a max of 1 resource policy is supported.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "canIpForward",
-        "Whether sending and receiving of packets with non-matching source or destination IPs is allowed.",
+        'canIpForward',
+        'Whether sending and receiving of packets with non-matching source or destination IPs is allowed.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A brief description of the resource.",
+        'description',
+        'A brief description of the resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "params",
-        "Stores additional params passed with the request, but not persisted as part of resource payload.",
+        'params',
+        'Stores additional params passed with the request, but not persisted as part of resource payload.',
         () => compute_InstanceFromMachineImageParams_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceMachineImage",
-        "Name or self link of a machine\nimage to create the instance based on.\n\n- - -",
+        'sourceMachineImage',
+        'Name or self link of a machine\nimage to create the instance based on.\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableDisplay",
-        "Whether the instance has virtual displays enabled.",
+        'enableDisplay',
+        'Whether the instance has virtual displays enabled.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "zone",
+        'zone',
         'The zone that the machine should be created in. If not\nset, the provider zone is used.\n\nIn addition to these, most* arguments from `gcp.compute.Instance` are supported\nas a way to override the properties in the machine image. All exported attributes\nfrom `gcp.compute.Instance` are likewise exported here.\n\n> **Warning:** *Due to API limitations, disk overrides are currently disabled. This includes the "boot_disk", "attached_disk", and "scratch_disk" fields.',
         () => [],
         false,
@@ -479,8 +479,8 @@ entire hostname must not exceed 253 characters. Changing this forces a new resou
       ),
       new DynamicUIProps(
         InputType.Object,
-        "advancedMachineFeatures",
-        "Controls for advanced machine-related behavior features.",
+        'advancedMachineFeatures',
+        'Controls for advanced machine-related behavior features.',
         () =>
           compute_InstanceFromMachineImageAdvancedMachineFeatures_GetTypes(),
         false,
@@ -488,71 +488,71 @@ entire hostname must not exceed 253 characters. Changing this forces a new resou
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "allowStoppingForUpdate",
-        "If true, allows Terraform to stop the instance to update its properties. If you try to update a property that requires\nstopping the instance without setting this field, the update will fail.",
+        'allowStoppingForUpdate',
+        'If true, allows Terraform to stop the instance to update its properties. If you try to update a property that requires\nstopping the instance without setting this field, the update will fail.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "guestAccelerators",
-        "List of the type and count of accelerator cards attached to the instance.",
+        'guestAccelerators',
+        'List of the type and count of accelerator cards attached to the instance.',
         () => compute_InstanceFromMachineImageGuestAccelerator_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "networkInterfaces",
-        "The networks attached to the instance.",
+        'networkInterfaces',
+        'The networks attached to the instance.',
         () => compute_InstanceFromMachineImageNetworkInterface_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A unique name for the resource, required by GCE.\nChanging this forces a new resource to be created.",
+        'name',
+        'A unique name for the resource, required by GCE.\nChanging this forces a new resource to be created.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "shieldedInstanceConfig",
-        "The shielded vm config being used by the instance.",
+        'shieldedInstanceConfig',
+        'The shielded vm config being used by the instance.',
         () => compute_InstanceFromMachineImageShieldedInstanceConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs. If self_link is provided, this value is ignored. If neither\nself_link nor project are provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs. If self_link is provided, this value is ignored. If neither\nself_link nor project are provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "serviceAccount",
-        "The service account to attach to the instance.",
+        'serviceAccount',
+        'The service account to attach to the instance.',
         () => compute_InstanceFromMachineImageServiceAccount_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "minCpuPlatform",
-        "The minimum CPU platform specified for the VM instance.",
+        'minCpuPlatform',
+        'The minimum CPU platform specified for the VM instance.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         "A set of key/value label pairs assigned to the instance. **Note**: This field is non-authoritative, and will only manage\nthe labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on\nthe resource.",
         () => InputType_Map_GetTypes(),
         false,
@@ -560,16 +560,16 @@ entire hostname must not exceed 253 characters. Changing this forces a new resou
       ),
       new DynamicUIProps(
         InputType.Map,
-        "metadata",
-        "Metadata key/value pairs made available within the instance.",
+        'metadata',
+        'Metadata key/value pairs made available within the instance.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "confidentialInstanceConfig",
-        "The Confidential VM config being used by the instance. on_host_maintenance has to be set to TERMINATE or this will fail\nto create.",
+        'confidentialInstanceConfig',
+        'The Confidential VM config being used by the instance. on_host_maintenance has to be set to TERMINATE or this will fail\nto create.',
         () =>
           compute_InstanceFromMachineImageConfidentialInstanceConfig_GetTypes(),
         false,

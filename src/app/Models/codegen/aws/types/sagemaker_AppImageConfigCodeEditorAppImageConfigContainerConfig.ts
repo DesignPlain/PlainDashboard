@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface sagemaker_AppImageConfigCodeEditorAppImageConfigContainerConfig {
   // The entrypoint used to run the application in the container.
@@ -21,23 +21,23 @@ export function sagemaker_AppImageConfigCodeEditorAppImageConfigContainerConfig_
   return [
     new DynamicUIProps(
       InputType.Array,
-      "containerEntrypoints",
-      "The entrypoint used to run the application in the container.",
+      'containerEntrypoints',
+      'The entrypoint used to run the application in the container.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "containerEnvironmentVariables",
-      "The environment variables to set in the container.",
+      'containerEnvironmentVariables',
+      'The environment variables to set in the container.',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "containerArguments",
+      'containerArguments',
       "The arguments for the container when you're running the application.",
       () => InputType_String_GetTypes(),
       false,

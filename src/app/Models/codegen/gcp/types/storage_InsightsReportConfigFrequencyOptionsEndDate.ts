@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface storage_InsightsReportConfigFrequencyOptionsEndDate {
   // The day of the month to stop generating inventory reports.
@@ -21,24 +21,24 @@ export function storage_InsightsReportConfigFrequencyOptionsEndDate_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.Number,
-      "day",
-      "The day of the month to stop generating inventory reports.",
+      'day',
+      'The day of the month to stop generating inventory reports.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "month",
-      "The month to stop generating inventory reports.",
+      'month',
+      'The month to stop generating inventory reports.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "year",
-      "The year to stop generating inventory reports",
+      'year',
+      'The year to stop generating inventory reports',
       () => [],
       true,
       false,

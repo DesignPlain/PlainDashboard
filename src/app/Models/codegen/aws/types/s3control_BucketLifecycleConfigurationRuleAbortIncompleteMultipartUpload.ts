@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface s3control_BucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload {
   // Number of days after which Amazon S3 aborts an incomplete multipart upload.
@@ -15,8 +15,8 @@ export function s3control_BucketLifecycleConfigurationRuleAbortIncompleteMultipa
   return [
     new DynamicUIProps(
       InputType.Number,
-      "daysAfterInitiation",
-      "Number of days after which Amazon S3 aborts an incomplete multipart upload.",
+      'daysAfterInitiation',
+      'Number of days after which Amazon S3 aborts an incomplete multipart upload.',
       () => [],
       true,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_getClusterWorkloadIdentityConfig {
   // The workload pool to attach all Kubernetes service accounts to.
@@ -15,8 +15,8 @@ export function container_getClusterWorkloadIdentityConfig_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.String,
-      "workloadPool",
-      "The workload pool to attach all Kubernetes service accounts to.",
+      'workloadPool',
+      'The workload pool to attach all Kubernetes service accounts to.',
       () => [],
       true,
       false,

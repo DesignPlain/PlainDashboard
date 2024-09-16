@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatch,
   appmesh_VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatch_GetTypes,
-} from "./appmesh_VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatch";
+} from './appmesh_VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatch';
 
 export interface appmesh_VirtualNodeSpecListenerTlsValidationSubjectAlternativeNames {
   // Criteria for determining a SAN's match.
@@ -19,7 +19,7 @@ export function appmesh_VirtualNodeSpecListenerTlsValidationSubjectAlternativeNa
   return [
     new DynamicUIProps(
       InputType.Object,
-      "match",
+      'match',
       "Criteria for determining a SAN's match.",
       () =>
         appmesh_VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatch_GetTypes(),

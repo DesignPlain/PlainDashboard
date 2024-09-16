@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appmesh_RouteSpecHttp2RouteMatchQueryParameterMatch {
   // The exact query parameter to match on.
@@ -15,8 +15,8 @@ export function appmesh_RouteSpecHttp2RouteMatchQueryParameterMatch_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.String,
-      "exact",
-      "The exact query parameter to match on.",
+      'exact',
+      'The exact query parameter to match on.',
       () => [],
       false,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cognito_IdentityPoolRoleAttachmentRoleMappingMappingRule {
   // The claim name that must be present in the token, for example, "isAdmin" or "paid".
@@ -24,7 +24,7 @@ export function cognito_IdentityPoolRoleAttachmentRoleMappingMappingRule_GetType
   return [
     new DynamicUIProps(
       InputType.String,
-      "claim",
+      'claim',
       'The claim name that must be present in the token, for example, "isAdmin" or "paid".',
       () => [],
       true,
@@ -32,23 +32,23 @@ export function cognito_IdentityPoolRoleAttachmentRoleMappingMappingRule_GetType
     ),
     new DynamicUIProps(
       InputType.String,
-      "matchType",
-      "The match condition that specifies how closely the claim value in the IdP token must match Value.",
+      'matchType',
+      'The match condition that specifies how closely the claim value in the IdP token must match Value.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "roleArn",
-      "The role ARN.",
+      'roleArn',
+      'The role ARN.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "value",
+      'value',
       'A brief string that the claim must match, for example, "paid" or "yes".',
       () => [],
       true,

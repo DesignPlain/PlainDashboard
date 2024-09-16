@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   s3control_AccessGrantGrantee,
   s3control_AccessGrantGrantee_GetTypes,
-} from "../types/s3control_AccessGrantGrantee";
+} from '../types/s3control_AccessGrantGrantee';
 import {
   s3control_AccessGrantAccessGrantsLocationConfiguration,
   s3control_AccessGrantAccessGrantsLocationConfiguration_GetTypes,
-} from "../types/s3control_AccessGrantAccessGrantsLocationConfiguration";
+} from '../types/s3control_AccessGrantAccessGrantsLocationConfiguration';
 
 export interface AccessGrantArgs {
   //
@@ -75,39 +75,39 @@ export class AccessGrant extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "accessGrantsLocationConfiguration",
-        "See Location Configuration below for more details.",
+        'accessGrantsLocationConfiguration',
+        'See Location Configuration below for more details.',
         () => s3control_AccessGrantAccessGrantsLocationConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "accessGrantsLocationId",
-        "The ID of the S3 Access Grants location to with the access grant is giving access.",
+        'accessGrantsLocationId',
+        'The ID of the S3 Access Grants location to with the access grant is giving access.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "accountId",
-        "",
+        'accountId',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "grantee",
-        "See Grantee below for more details.",
+        'grantee',
+        'See Grantee below for more details.',
         () => s3control_AccessGrantGrantee_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "permission",
+        'permission',
         "The access grant's level of access. Valid values: `READ`, `WRITE`, `READWRITE`.",
         () => [],
         true,
@@ -115,16 +115,16 @@ export class AccessGrant extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "s3PrefixType",
-        "If you are creating an access grant that grants access to only one object, set this to `Object`. Valid values: `Object`.",
+        's3PrefixType',
+        'If you are creating an access grant that grants access to only one object, set this to `Object`. Valid values: `Object`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

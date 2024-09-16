@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationSsmlMessage,
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationSsmlMessage_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationSsmlMessage";
+} from './lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationSsmlMessage';
 import {
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationCustomPayload,
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationCustomPayload_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationCustomPayload";
+} from './lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationCustomPayload';
 import {
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCard,
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCard_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCard";
+} from './lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCard';
 import {
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationPlainTextMessage,
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationPlainTextMessage_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationPlainTextMessage";
+} from './lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationPlainTextMessage';
 
 export interface lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariation {
   //
@@ -40,8 +40,8 @@ export function lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessag
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ssmlMessage",
-      "",
+      'ssmlMessage',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationSsmlMessage_GetTypes(),
       false,
@@ -49,8 +49,8 @@ export function lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessag
     ),
     new DynamicUIProps(
       InputType.Array,
-      "customPayloads",
-      "",
+      'customPayloads',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationCustomPayload_GetTypes(),
       false,
@@ -58,8 +58,8 @@ export function lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessag
     ),
     new DynamicUIProps(
       InputType.Object,
-      "imageResponseCard",
-      "",
+      'imageResponseCard',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCard_GetTypes(),
       false,
@@ -67,8 +67,8 @@ export function lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessag
     ),
     new DynamicUIProps(
       InputType.Object,
-      "plainTextMessage",
-      "",
+      'plainTextMessage',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationPlainTextMessage_GetTypes(),
       false,

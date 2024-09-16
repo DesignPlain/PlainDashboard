@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   msk_ServerlessClusterVpcConfig,
   msk_ServerlessClusterVpcConfig_GetTypes,
-} from "../types/msk_ServerlessClusterVpcConfig";
+} from '../types/msk_ServerlessClusterVpcConfig';
 import {
   msk_ServerlessClusterClientAuthentication,
   msk_ServerlessClusterClientAuthentication_GetTypes,
-} from "../types/msk_ServerlessClusterClientAuthentication";
+} from '../types/msk_ServerlessClusterClientAuthentication';
 
 export interface ServerlessClusterArgs {
   // A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
@@ -54,32 +54,32 @@ export class ServerlessCluster extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "vpcConfigs",
-        "VPC configuration information. See below.",
+        'vpcConfigs',
+        'VPC configuration information. See below.',
         () => msk_ServerlessClusterVpcConfig_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "clientAuthentication",
-        "Specifies client authentication information for the serverless cluster. See below.",
+        'clientAuthentication',
+        'Specifies client authentication information for the serverless cluster. See below.',
         () => msk_ServerlessClusterClientAuthentication_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clusterName",
-        "The name of the serverless cluster.",
+        'clusterName',
+        'The name of the serverless cluster.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   osconfig_OsPolicyAssignmentInstanceFilter,
   osconfig_OsPolicyAssignmentInstanceFilter_GetTypes,
-} from "../types/osconfig_OsPolicyAssignmentInstanceFilter";
+} from '../types/osconfig_OsPolicyAssignmentInstanceFilter';
 import {
   osconfig_OsPolicyAssignmentOsPolicy,
   osconfig_OsPolicyAssignmentOsPolicy_GetTypes,
-} from "../types/osconfig_OsPolicyAssignmentOsPolicy";
+} from '../types/osconfig_OsPolicyAssignmentOsPolicy';
 import {
   osconfig_OsPolicyAssignmentRollout,
   osconfig_OsPolicyAssignmentRollout_GetTypes,
-} from "../types/osconfig_OsPolicyAssignmentRollout";
+} from '../types/osconfig_OsPolicyAssignmentRollout';
 
 export interface OsPolicyAssignmentArgs {
   /*
@@ -162,64 +162,64 @@ resource.
     return [
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource",
+        'location',
+        'The location for the resource',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Resource name.",
+        'name',
+        'Resource name.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "osPolicies",
-        "List of OS policies to be applied to the VMs.\nStructure is documented below.",
+        'osPolicies',
+        'List of OS policies to be applied to the VMs.\nStructure is documented below.',
         () => osconfig_OsPolicyAssignmentOsPolicy_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "rollout",
-        "Rollout to deploy the OS policy assignment. A rollout\nis triggered in the following situations: 1) OSPolicyAssignment is created.\n2) OSPolicyAssignment is updated and the update contains changes to one of\nthe following fields: - instance_filter - os_policies 3) OSPolicyAssignment\nis deleted. Structure is documented below.",
+        'rollout',
+        'Rollout to deploy the OS policy assignment. A rollout\nis triggered in the following situations: 1) OSPolicyAssignment is created.\n2) OSPolicyAssignment is updated and the update contains changes to one of\nthe following fields: - instance_filter - os_policies 3) OSPolicyAssignment\nis deleted. Structure is documented below.',
         () => osconfig_OsPolicyAssignmentRollout_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "skipAwaitRollout",
-        "Set to true to skip awaiting rollout\nduring resource creation and update.",
+        'skipAwaitRollout',
+        'Set to true to skip awaiting rollout\nduring resource creation and update.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "OS policy assignment description. Length of the\ndescription is limited to 1024 characters.",
+        'description',
+        'OS policy assignment description. Length of the\ndescription is limited to 1024 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "instanceFilter",
-        "Filter to select VMs. Structure is\ndocumented below.",
+        'instanceFilter',
+        'Filter to select VMs. Structure is\ndocumented below.',
         () => osconfig_OsPolicyAssignmentInstanceFilter_GetTypes(),
         true,
         false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_NodePoolNodeConfigSandboxConfig {
   // Type of the sandbox to use for the node (e.g. 'gvisor')
@@ -15,7 +15,7 @@ export function container_NodePoolNodeConfigSandboxConfig_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.String,
-      "sandboxType",
+      'sandboxType',
       "Type of the sandbox to use for the node (e.g. 'gvisor')",
       () => [],
       true,

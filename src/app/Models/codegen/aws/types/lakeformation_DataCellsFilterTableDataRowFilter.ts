@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lakeformation_DataCellsFilterTableDataRowFilterAllRowsWildcard,
   lakeformation_DataCellsFilterTableDataRowFilterAllRowsWildcard_GetTypes,
-} from "./lakeformation_DataCellsFilterTableDataRowFilterAllRowsWildcard";
+} from './lakeformation_DataCellsFilterTableDataRowFilterAllRowsWildcard';
 
 export interface lakeformation_DataCellsFilterTableDataRowFilter {
   // (Optional) A wildcard that matches all rows.
@@ -22,8 +22,8 @@ export function lakeformation_DataCellsFilterTableDataRowFilter_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Object,
-      "allRowsWildcard",
-      "(Optional) A wildcard that matches all rows.",
+      'allRowsWildcard',
+      '(Optional) A wildcard that matches all rows.',
       () =>
         lakeformation_DataCellsFilterTableDataRowFilterAllRowsWildcard_GetTypes(),
       false,
@@ -31,8 +31,8 @@ export function lakeformation_DataCellsFilterTableDataRowFilter_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.String,
-      "filterExpression",
-      "(Optional) A filter expression.",
+      'filterExpression',
+      '(Optional) A filter expression.',
       () => [],
       false,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface bedrock_getCustomModelOutputDataConfig {
   // The S3 URI where the validation data is stored..
@@ -15,8 +15,8 @@ export function bedrock_getCustomModelOutputDataConfig_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.String,
-      "s3Uri",
-      "The S3 URI where the validation data is stored..",
+      's3Uri',
+      'The S3 URI where the validation data is stored..',
       () => [],
       true,
       false,

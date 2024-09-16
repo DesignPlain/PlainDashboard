@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getGatewayRouteSpecHttpRouteActionRewriteHostname,
   appmesh_getGatewayRouteSpecHttpRouteActionRewriteHostname_GetTypes,
-} from "./appmesh_getGatewayRouteSpecHttpRouteActionRewriteHostname";
+} from './appmesh_getGatewayRouteSpecHttpRouteActionRewriteHostname';
 import {
   appmesh_getGatewayRouteSpecHttpRouteActionRewritePath,
   appmesh_getGatewayRouteSpecHttpRouteActionRewritePath_GetTypes,
-} from "./appmesh_getGatewayRouteSpecHttpRouteActionRewritePath";
+} from './appmesh_getGatewayRouteSpecHttpRouteActionRewritePath';
 import {
   appmesh_getGatewayRouteSpecHttpRouteActionRewritePrefix,
   appmesh_getGatewayRouteSpecHttpRouteActionRewritePrefix_GetTypes,
-} from "./appmesh_getGatewayRouteSpecHttpRouteActionRewritePrefix";
+} from './appmesh_getGatewayRouteSpecHttpRouteActionRewritePrefix';
 
 export interface appmesh_getGatewayRouteSpecHttpRouteActionRewrite {
   //
@@ -33,8 +33,8 @@ export function appmesh_getGatewayRouteSpecHttpRouteActionRewrite_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "hostnames",
-      "",
+      'hostnames',
+      '',
       () =>
         appmesh_getGatewayRouteSpecHttpRouteActionRewriteHostname_GetTypes(),
       true,
@@ -42,16 +42,16 @@ export function appmesh_getGatewayRouteSpecHttpRouteActionRewrite_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "paths",
-      "",
+      'paths',
+      '',
       () => appmesh_getGatewayRouteSpecHttpRouteActionRewritePath_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "prefixes",
-      "",
+      'prefixes',
+      '',
       () => appmesh_getGatewayRouteSpecHttpRouteActionRewritePrefix_GetTypes(),
       true,
       false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroup,
   dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroup_GetTypes,
-} from "./dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroup";
+} from './dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroup';
 
 export interface dataproc_ClusterClusterConfigAuxiliaryNodeGroup {
   // A node group ID. Generated if not specified. The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of from 3 to 33 characters.
@@ -22,16 +22,16 @@ export function dataproc_ClusterClusterConfigAuxiliaryNodeGroup_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.String,
-      "nodeGroupId",
-      "A node group ID. Generated if not specified. The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of from 3 to 33 characters.",
+      'nodeGroupId',
+      'A node group ID. Generated if not specified. The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of from 3 to 33 characters.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "nodeGroups",
-      "Node group configuration.",
+      'nodeGroups',
+      'Node group configuration.',
       () => dataproc_ClusterClusterConfigAuxiliaryNodeGroupNodeGroup_GetTypes(),
       true,
       false,

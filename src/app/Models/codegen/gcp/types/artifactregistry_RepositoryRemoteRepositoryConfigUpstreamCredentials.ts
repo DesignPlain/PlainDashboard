@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentialsUsernamePasswordCredentials,
   artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentialsUsernamePasswordCredentials_GetTypes,
-} from "./artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentialsUsernamePasswordCredentials";
+} from './artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentialsUsernamePasswordCredentials';
 
 export interface artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentials {
   /*
@@ -22,8 +22,8 @@ export function artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredent
   return [
     new DynamicUIProps(
       InputType.Object,
-      "usernamePasswordCredentials",
-      "Use username and password to access the remote repository.\nStructure is documented below.",
+      'usernamePasswordCredentials',
+      'Use username and password to access the remote repository.\nStructure is documented below.',
       () =>
         artifactregistry_RepositoryRemoteRepositoryConfigUpstreamCredentialsUsernamePasswordCredentials_GetTypes(),
       false,

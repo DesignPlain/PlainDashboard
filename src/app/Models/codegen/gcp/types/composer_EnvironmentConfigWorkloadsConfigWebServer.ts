@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface composer_EnvironmentConfigWorkloadsConfigWebServer {
   // CPU request and limit for Airflow web server.
@@ -21,24 +21,24 @@ export function composer_EnvironmentConfigWorkloadsConfigWebServer_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.Number,
-      "storageGb",
-      "Storage (GB) request and limit for Airflow web server.",
+      'storageGb',
+      'Storage (GB) request and limit for Airflow web server.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "cpu",
-      "CPU request and limit for Airflow web server.",
+      'cpu',
+      'CPU request and limit for Airflow web server.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "memoryGb",
-      "Memory (GB) request and limit for Airflow web server.",
+      'memoryGb',
+      'Memory (GB) request and limit for Airflow web server.',
       () => [],
       false,
       false,

@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionBodyContains,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionBodyContains_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionBodyContains";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionBodyContains';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionHeader,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionHeader_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionHeader";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionHeader';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionJson,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionJson_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionJson";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionJson';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionStatusCode,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionStatusCode_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionStatusCode";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionStatusCode';
 
 export interface wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspection {
   // Configures inspection of the response body. See `body_contains` for more details.
@@ -40,8 +40,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGro
   return [
     new DynamicUIProps(
       InputType.Object,
-      "bodyContains",
-      "Configures inspection of the response body. See `body_contains` for more details.",
+      'bodyContains',
+      'Configures inspection of the response body. See `body_contains` for more details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionBodyContains_GetTypes(),
       false,
@@ -49,8 +49,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGro
     ),
     new DynamicUIProps(
       InputType.Object,
-      "header",
-      "Configures inspection of the response header.See `header` for more details.",
+      'header',
+      'Configures inspection of the response header.See `header` for more details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionHeader_GetTypes(),
       false,
@@ -58,8 +58,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGro
     ),
     new DynamicUIProps(
       InputType.Object,
-      "json",
-      "Configures inspection of the response JSON. See `json` for more details.",
+      'json',
+      'Configures inspection of the response JSON. See `json` for more details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionJson_GetTypes(),
       false,
@@ -67,8 +67,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGro
     ),
     new DynamicUIProps(
       InputType.Object,
-      "statusCode",
-      "Configures inspection of the response status code.See `status_code` for more details.",
+      'statusCode',
+      'Configures inspection of the response status code.See `status_code` for more details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionStatusCode_GetTypes(),
       false,

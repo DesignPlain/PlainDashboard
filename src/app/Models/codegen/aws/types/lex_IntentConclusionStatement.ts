@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_IntentConclusionStatementMessage,
   lex_IntentConclusionStatementMessage_GetTypes,
-} from "./lex_IntentConclusionStatementMessage";
+} from './lex_IntentConclusionStatementMessage';
 
 export interface lex_IntentConclusionStatement {
   //
@@ -22,16 +22,16 @@ export function lex_IntentConclusionStatement_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "messages",
-      "",
+      'messages',
+      '',
       () => lex_IntentConclusionStatementMessage_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "responseCard",
-      "",
+      'responseCard',
+      '',
       () => [],
       false,
       false,

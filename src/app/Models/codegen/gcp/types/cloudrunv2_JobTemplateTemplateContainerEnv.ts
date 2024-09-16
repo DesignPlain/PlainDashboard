@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudrunv2_JobTemplateTemplateContainerEnvValueSource,
   cloudrunv2_JobTemplateTemplateContainerEnvValueSource_GetTypes,
-} from "./cloudrunv2_JobTemplateTemplateContainerEnvValueSource";
+} from './cloudrunv2_JobTemplateTemplateContainerEnvValueSource';
 
 export interface cloudrunv2_JobTemplateTemplateContainerEnv {
   // Name of the environment variable. Must be a C_IDENTIFIER, and mnay not exceed 32768 characters.
@@ -28,7 +28,7 @@ export function cloudrunv2_JobTemplateTemplateContainerEnv_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.String,
-      "value",
+      'value',
       'Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any route environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "", and the maximum length is 32768 bytes',
       () => [],
       false,
@@ -36,7 +36,7 @@ export function cloudrunv2_JobTemplateTemplateContainerEnv_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Object,
-      "valueSource",
+      'valueSource',
       "Source for the environment variable's value.\nStructure is documented below.",
       () => cloudrunv2_JobTemplateTemplateContainerEnvValueSource_GetTypes(),
       false,
@@ -44,8 +44,8 @@ export function cloudrunv2_JobTemplateTemplateContainerEnv_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the environment variable. Must be a C_IDENTIFIER, and mnay not exceed 32768 characters.",
+      'name',
+      'Name of the environment variable. Must be a C_IDENTIFIER, and mnay not exceed 32768 characters.',
       () => [],
       true,
       false,

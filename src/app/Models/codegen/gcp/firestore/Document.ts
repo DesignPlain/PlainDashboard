@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface DocumentArgs {
   // The collection ID, relative to database. For example: chatrooms or chatrooms/my-document/private-messages.
@@ -74,7 +74,7 @@ The client-assigned document ID to use for this document during creation.
     return [
       new DynamicUIProps(
         InputType.String,
-        "database",
+        'database',
         'The Firestore database id. Defaults to `"(default)"`.',
         () => [],
         false,
@@ -82,15 +82,15 @@ The client-assigned document ID to use for this document during creation.
       ),
       new DynamicUIProps(
         InputType.String,
-        "documentId",
-        "The client-assigned document ID to use for this document during creation.\n\n\n- - -",
+        'documentId',
+        'The client-assigned document ID to use for this document during creation.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "fields",
+        'fields',
         "The document's [fields](https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents) formated as a json string.",
         () => [],
         true,
@@ -98,16 +98,16 @@ The client-assigned document ID to use for this document during creation.
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "collection",
-        "The collection ID, relative to database. For example: chatrooms or chatrooms/my-document/private-messages.",
+        'collection',
+        'The collection ID, relative to database. For example: chatrooms or chatrooms/my-document/private-messages.',
         () => [],
         true,
         false,

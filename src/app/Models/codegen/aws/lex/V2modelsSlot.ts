@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsSlotObfuscationSetting,
   lex_V2modelsSlotObfuscationSetting_GetTypes,
-} from "../types/lex_V2modelsSlotObfuscationSetting";
+} from '../types/lex_V2modelsSlotObfuscationSetting';
 import {
   lex_V2modelsSlotTimeouts,
   lex_V2modelsSlotTimeouts_GetTypes,
-} from "../types/lex_V2modelsSlotTimeouts";
+} from '../types/lex_V2modelsSlotTimeouts';
 import {
   lex_V2modelsSlotValueElicitationSetting,
   lex_V2modelsSlotValueElicitationSetting_GetTypes,
-} from "../types/lex_V2modelsSlotValueElicitationSetting";
+} from '../types/lex_V2modelsSlotValueElicitationSetting';
 import {
   lex_V2modelsSlotMultipleValuesSetting,
   lex_V2modelsSlotMultipleValuesSetting_GetTypes,
-} from "../types/lex_V2modelsSlotMultipleValuesSetting";
+} from '../types/lex_V2modelsSlotMultipleValuesSetting';
 import {
   lex_V2modelsSlotSubSlotSetting,
   lex_V2modelsSlotSubSlotSetting_GetTypes,
-} from "../types/lex_V2modelsSlotSubSlotSetting";
+} from '../types/lex_V2modelsSlotSubSlotSetting';
 
 export interface V2modelsSlotArgs {
   // Identifier of the intent that contains the slot.
@@ -116,96 +116,96 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => lex_V2modelsSlotTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "localeId",
-        "Identifier of the language and locale that the slot will be used in.",
+        'localeId',
+        'Identifier of the language and locale that the slot will be used in.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "subSlotSettings",
-        "Specifications for the constituent sub slots and the expression for the composite slot.",
+        'subSlotSettings',
+        'Specifications for the constituent sub slots and the expression for the composite slot.',
         () => lex_V2modelsSlotSubSlotSetting_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "intentId",
-        "Identifier of the intent that contains the slot.",
+        'intentId',
+        'Identifier of the intent that contains the slot.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the slot.",
+        'name',
+        'Name of the slot.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "obfuscationSettings",
-        "Determines how slot values are used in Amazon CloudWatch logs. See the `obfuscation_setting` argument reference below.",
+        'obfuscationSettings',
+        'Determines how slot values are used in Amazon CloudWatch logs. See the `obfuscation_setting` argument reference below.',
         () => lex_V2modelsSlotObfuscationSetting_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "valueElicitationSetting",
-        "Prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot.\n\nThe following arguments are optional:",
+        'valueElicitationSetting',
+        'Prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot.\n\nThe following arguments are optional:',
         () => lex_V2modelsSlotValueElicitationSetting_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "botId",
-        "Identifier of the bot associated with the slot.",
+        'botId',
+        'Identifier of the bot associated with the slot.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "botVersion",
-        "Version of the bot associated with the slot.",
+        'botVersion',
+        'Version of the bot associated with the slot.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the slot.",
+        'description',
+        'Description of the slot.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "multipleValuesSettings",
-        "Whether the slot returns multiple values in one response. See the `multiple_values_setting` argument reference below.",
+        'multipleValuesSettings',
+        'Whether the slot returns multiple values in one response. See the `multiple_values_setting` argument reference below.',
         () => lex_V2modelsSlotMultipleValuesSetting_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "slotTypeId",
-        "Unique identifier for the slot type associated with this slot.",
+        'slotTypeId',
+        'Unique identifier for the slot type associated with this slot.',
         () => [],
         false,
         false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface monitoring_UptimeCheckConfigHttpCheckAcceptedResponseStatusCode {
   /*
@@ -21,16 +21,16 @@ export function monitoring_UptimeCheckConfigHttpCheckAcceptedResponseStatusCode_
   return [
     new DynamicUIProps(
       InputType.String,
-      "statusClass",
-      "A class of status codes to accept.\nPossible values are: `STATUS_CLASS_1XX`, `STATUS_CLASS_2XX`, `STATUS_CLASS_3XX`, `STATUS_CLASS_4XX`, `STATUS_CLASS_5XX`, `STATUS_CLASS_ANY`.",
+      'statusClass',
+      'A class of status codes to accept.\nPossible values are: `STATUS_CLASS_1XX`, `STATUS_CLASS_2XX`, `STATUS_CLASS_3XX`, `STATUS_CLASS_4XX`, `STATUS_CLASS_5XX`, `STATUS_CLASS_ANY`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "statusValue",
-      "A status code to accept.",
+      'statusValue',
+      'A status code to accept.',
       () => [],
       false,
       false,

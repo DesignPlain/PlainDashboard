@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualGatewaySpecLoggingAccessLogFileFormatJson,
   appmesh_getVirtualGatewaySpecLoggingAccessLogFileFormatJson_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecLoggingAccessLogFileFormatJson";
+} from './appmesh_getVirtualGatewaySpecLoggingAccessLogFileFormatJson';
 
 export interface appmesh_getVirtualGatewaySpecLoggingAccessLogFileFormat {
   //
@@ -22,13 +22,13 @@ export function appmesh_getVirtualGatewaySpecLoggingAccessLogFileFormat_GetTypes
   return [
     new DynamicUIProps(
       InputType.Array,
-      "jsons",
-      "",
+      'jsons',
+      '',
       () =>
         appmesh_getVirtualGatewaySpecLoggingAccessLogFileFormatJson_GetTypes(),
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "text", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'text', '', () => [], true, false),
   ];
 }

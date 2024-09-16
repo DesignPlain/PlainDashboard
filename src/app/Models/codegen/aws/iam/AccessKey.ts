@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface AccessKeyArgs {
   // Either a base-64 encoded PGP public key, or a keybase username in the form `keybase:some_person_that_exists`, for use in the `encrypted_secret` output attribute. If providing a base-64 encoded PGP public key, make sure to provide the "raw" version and not the "armored" one (e.g. avoid passing the `-a` option to `gpg --export`).
@@ -49,7 +49,7 @@ export class AccessKey extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "pgpKey",
+        'pgpKey',
         'Either a base-64 encoded PGP public key, or a keybase username in the form `keybase:some_person_that_exists`, for use in the `encrypted_secret` output attribute. If providing a base-64 encoded PGP public key, make sure to provide the "raw" version and not the "armored" one (e.g. avoid passing the `-a` option to `gpg --export`).',
         () => [],
         false,
@@ -57,16 +57,16 @@ export class AccessKey extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "status",
-        "Access key status to apply. Defaults to `Active`. Valid values are `Active` and `Inactive`.",
+        'status',
+        'Access key status to apply. Defaults to `Active`. Valid values are `Active` and `Inactive`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "user",
-        "IAM user to associate with this access key.",
+        'user',
+        'IAM user to associate with this access key.',
         () => [],
         true,
         true,

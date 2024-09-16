@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface storage_TransferJobTransferSpecAzureBlobStorageDataSourceAzureCredentials {
   /*
@@ -19,7 +19,7 @@ export function storage_TransferJobTransferSpecAzureBlobStorageDataSourceAzureCr
   return [
     new DynamicUIProps(
       InputType.String,
-      "sasToken",
+      'sasToken',
       'Azure shared access signature. See [Grant limited access to Azure Storage resources using shared access signatures (SAS)](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview).\n\n<a name="nested_schedule_start_end_date"></a>The `schedule_start_date` and `schedule_end_date` blocks support:',
       () => [],
       true,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface costexplorer_getCostCategoryRuleInheritedValue {
   // Key to extract cost category values.
@@ -18,7 +18,7 @@ export function costexplorer_getCostCategoryRuleInheritedValue_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.String,
-      "dimensionName",
+      'dimensionName',
       "Name of the dimension that's used to group costs. If you specify `LINKED_ACCOUNT_NAME`, the cost category value is based on account name. If you specify `TAG`, the cost category value will be based on the value of the specified tag key. Valid values are `LINKED_ACCOUNT_NAME`, `TAG`",
       () => [],
       true,
@@ -26,8 +26,8 @@ export function costexplorer_getCostCategoryRuleInheritedValue_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "dimensionKey",
-      "Key to extract cost category values.",
+      'dimensionKey',
+      'Key to extract cost category values.',
       () => [],
       true,
       false,

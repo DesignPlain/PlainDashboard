@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface signer_getSigningProfileRevocationRecord {
   //
@@ -21,24 +21,24 @@ export function signer_getSigningProfileRevocationRecord_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.String,
-      "revokedAt",
-      "",
+      'revokedAt',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "revokedBy",
-      "",
+      'revokedBy',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "revocationEffectiveFrom",
-      "",
+      'revocationEffectiveFrom',
+      '',
       () => [],
       true,
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface OriginAccessIdentityArgs {
   // An optional comment for the origin access identity.
@@ -51,8 +51,8 @@ permission to an object in Amazon S3.
     return [
       new DynamicUIProps(
         InputType.String,
-        "comment",
-        "An optional comment for the origin access identity.",
+        'comment',
+        'An optional comment for the origin access identity.',
         () => [],
         false,
         false,

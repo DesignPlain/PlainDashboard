@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ssm_AssociationTarget {
   // Either `InstanceIds` or `tag:Tag Name` to specify an EC2 tag.
@@ -18,16 +18,16 @@ export function ssm_AssociationTarget_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "key",
-      "Either `InstanceIds` or `tag:Tag Name` to specify an EC2 tag.",
+      'key',
+      'Either `InstanceIds` or `tag:Tag Name` to specify an EC2 tag.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "values",
-      "A list of instance IDs or tag values. AWS currently limits this list size to one value.",
+      'values',
+      'A list of instance IDs or tag values. AWS currently limits this list size to one value.',
       () => InputType_String_GetTypes(),
       true,
       false,

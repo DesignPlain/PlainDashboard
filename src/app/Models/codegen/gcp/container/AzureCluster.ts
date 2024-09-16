@@ -3,37 +3,37 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   container_AzureClusterLoggingConfig,
   container_AzureClusterLoggingConfig_GetTypes,
-} from "../types/container_AzureClusterLoggingConfig";
+} from '../types/container_AzureClusterLoggingConfig';
 import {
   container_AzureClusterControlPlane,
   container_AzureClusterControlPlane_GetTypes,
-} from "../types/container_AzureClusterControlPlane";
+} from '../types/container_AzureClusterControlPlane';
 import {
   container_AzureClusterNetworking,
   container_AzureClusterNetworking_GetTypes,
-} from "../types/container_AzureClusterNetworking";
+} from '../types/container_AzureClusterNetworking';
 import {
   container_AzureClusterAuthorization,
   container_AzureClusterAuthorization_GetTypes,
-} from "../types/container_AzureClusterAuthorization";
+} from '../types/container_AzureClusterAuthorization';
 import {
   container_AzureClusterWorkloadIdentityConfig,
   container_AzureClusterWorkloadIdentityConfig_GetTypes,
-} from "../types/container_AzureClusterWorkloadIdentityConfig";
+} from '../types/container_AzureClusterWorkloadIdentityConfig';
 import {
   container_AzureClusterAzureServicesAuthentication,
   container_AzureClusterAzureServicesAuthentication_GetTypes,
-} from "../types/container_AzureClusterAzureServicesAuthentication";
+} from '../types/container_AzureClusterAzureServicesAuthentication';
 import {
   container_AzureClusterFleet,
   container_AzureClusterFleet_GetTypes,
-} from "../types/container_AzureClusterFleet";
+} from '../types/container_AzureClusterFleet';
 
 export interface AzureClusterArgs {
   // The name of this resource.
@@ -165,112 +165,112 @@ Terraform, other clients and services.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "fleet",
-        "Fleet configuration.",
+        'fleet',
+        'Fleet configuration.',
         () => container_AzureClusterFleet_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resourceGroupId",
-        "The ARM ID of the resource group where the cluster resources are deployed. For example: `/subscriptions/*/resourceGroups/*`",
+        'resourceGroupId',
+        'The ARM ID of the resource group where the cluster resources are deployed. For example: `/subscriptions/*/resourceGroups/*`',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The number of the Fleet host project where this cluster will be registered.",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "name",
-        "The name of this resource.",
+        'project',
+        'The number of the Fleet host project where this cluster will be registered.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource",
+        'name',
+        'The name of this resource.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'location',
+        'The location for the resource',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "azureRegion",
-        "The Azure region where the cluster runs. Each Google Cloud region supports a subset of nearby Azure regions. You can call to list all supported Azure regions within a given Google Cloud region.",
+        'azureRegion',
+        'The Azure region where the cluster runs. Each Google Cloud region supports a subset of nearby Azure regions. You can call to list all supported Azure regions within a given Google Cloud region.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "loggingConfig",
-        "Logging configuration.",
+        'loggingConfig',
+        'Logging configuration.',
         () => container_AzureClusterLoggingConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "client",
-        "Name of the AzureClient. The `AzureClient` resource must reside on the same GCP project and region as the `AzureCluster`. `AzureClient` names are formatted as `projects/<project-number>/locations/<region>/azureClients/<client-id>`. See Resource Names (https:cloud.google.com/apis/design/resource_names) for more details on Google Cloud resource names.",
+        'client',
+        'Name of the AzureClient. The `AzureClient` resource must reside on the same GCP project and region as the `AzureCluster`. `AzureClient` names are formatted as `projects/<project-number>/locations/<region>/azureClients/<client-id>`. See Resource Names (https:cloud.google.com/apis/design/resource_names) for more details on Google Cloud resource names.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Optional. A human readable description of this cluster. Cannot be longer than 255 UTF-8 encoded bytes.",
+        'description',
+        'Optional. A human readable description of this cluster. Cannot be longer than 255 UTF-8 encoded bytes.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "authorization",
-        "Configuration related to the cluster RBAC settings.",
+        'authorization',
+        'Configuration related to the cluster RBAC settings.',
         () => container_AzureClusterAuthorization_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "azureServicesAuthentication",
-        "Azure authentication configuration for management of Azure resources",
+        'azureServicesAuthentication',
+        'Azure authentication configuration for management of Azure resources',
         () => container_AzureClusterAzureServicesAuthentication_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "controlPlane",
-        "Configuration related to the cluster control plane.",
+        'controlPlane',
+        'Configuration related to the cluster control plane.',
         () => container_AzureClusterControlPlane_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "networking",
-        "Cluster-wide networking configuration.",
+        'networking',
+        'Cluster-wide networking configuration.',
         () => container_AzureClusterNetworking_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
-        "Optional. Annotations on the cluster. This field has the same restrictions as Kubernetes annotations. The total size of all keys and values combined is limited to 256k. Keys can have 2 segments: prefix (optional) and name (required), separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with alphanumerics, with dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
+        'annotations',
+        'Optional. Annotations on the cluster. This field has the same restrictions as Kubernetes annotations. The total size of all keys and values combined is limited to 256k. Keys can have 2 segments: prefix (optional) and name (required), separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with alphanumerics, with dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         true,

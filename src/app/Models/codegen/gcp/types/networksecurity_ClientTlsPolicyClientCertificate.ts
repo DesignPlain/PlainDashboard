@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networksecurity_ClientTlsPolicyClientCertificateCertificateProviderInstance,
   networksecurity_ClientTlsPolicyClientCertificateCertificateProviderInstance_GetTypes,
-} from "./networksecurity_ClientTlsPolicyClientCertificateCertificateProviderInstance";
+} from './networksecurity_ClientTlsPolicyClientCertificateCertificateProviderInstance';
 import {
   networksecurity_ClientTlsPolicyClientCertificateGrpcEndpoint,
   networksecurity_ClientTlsPolicyClientCertificateGrpcEndpoint_GetTypes,
-} from "./networksecurity_ClientTlsPolicyClientCertificateGrpcEndpoint";
+} from './networksecurity_ClientTlsPolicyClientCertificateGrpcEndpoint';
 
 export interface networksecurity_ClientTlsPolicyClientCertificate {
   /*
@@ -32,8 +32,8 @@ export function networksecurity_ClientTlsPolicyClientCertificate_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.Object,
-      "certificateProviderInstance",
-      "The certificate provider instance specification that will be passed to the data plane, which will be used to load necessary credential information.\nStructure is documented below.",
+      'certificateProviderInstance',
+      'The certificate provider instance specification that will be passed to the data plane, which will be used to load necessary credential information.\nStructure is documented below.',
       () =>
         networksecurity_ClientTlsPolicyClientCertificateCertificateProviderInstance_GetTypes(),
       false,
@@ -41,8 +41,8 @@ export function networksecurity_ClientTlsPolicyClientCertificate_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Object,
-      "grpcEndpoint",
-      "gRPC specific configuration to access the gRPC server to obtain the cert and private key.\nStructure is documented below.",
+      'grpcEndpoint',
+      'gRPC specific configuration to access the gRPC server to obtain the cert and private key.\nStructure is documented below.',
       () =>
         networksecurity_ClientTlsPolicyClientCertificateGrpcEndpoint_GetTypes(),
       false,

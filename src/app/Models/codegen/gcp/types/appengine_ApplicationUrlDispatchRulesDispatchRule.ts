@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appengine_ApplicationUrlDispatchRulesDispatchRule {
   /*
@@ -32,7 +32,7 @@ export function appengine_ApplicationUrlDispatchRulesDispatchRule_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.String,
-      "domain",
+      'domain',
       'Domain name to match against. The wildcard "*" is supported if specified before a period: "*.".\nDefaults to matching all domains: "*".',
       () => [],
       false,
@@ -40,7 +40,7 @@ export function appengine_ApplicationUrlDispatchRulesDispatchRule_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "path",
+      'path',
       'Pathname within the host. Must start with a "/". A single "*" can be included at the end of the path.\nThe sum of the lengths of the domain and path may not exceed 100 characters.',
       () => [],
       true,
@@ -48,7 +48,7 @@ export function appengine_ApplicationUrlDispatchRulesDispatchRule_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "service",
+      'service',
       'Pathname within the host. Must start with a "/". A single "*" can be included at the end of the path.\nThe sum of the lengths of the domain and path may not exceed 100 characters.\n\n- - -',
       () => [],
       true,

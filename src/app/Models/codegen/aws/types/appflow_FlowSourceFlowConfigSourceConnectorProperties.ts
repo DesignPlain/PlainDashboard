@@ -3,72 +3,72 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesS3,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesS3_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesS3";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesS3';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesSapoData,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesSapoData_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesSapoData";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesSapoData';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesGoogleAnalytics,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesGoogleAnalytics_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesGoogleAnalytics";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesGoogleAnalytics';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesSalesforce,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesSalesforce_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesSalesforce";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesSalesforce';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesServiceNow,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesServiceNow_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesServiceNow";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesServiceNow';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesSingular,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesSingular_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesSingular";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesSingular';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesZendesk,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesZendesk_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesZendesk";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesZendesk';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesInforNexus,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesInforNexus_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesInforNexus";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesInforNexus';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesSlack,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesSlack_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesSlack";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesSlack';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesDynatrace,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesDynatrace_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesDynatrace";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesDynatrace';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesCustomConnector,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesCustomConnector_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesCustomConnector";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesCustomConnector';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesTrendmicro,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesTrendmicro_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesTrendmicro";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesTrendmicro';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesVeeva,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesVeeva_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesVeeva";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesVeeva';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesMarketo,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesMarketo_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesMarketo";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesMarketo';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesDatadog,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesDatadog_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesDatadog";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesDatadog';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesAmplitude,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesAmplitude_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesAmplitude";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesAmplitude';
 
 export interface appflow_FlowSourceFlowConfigSourceConnectorProperties {
   // Information that is required for querying Infor Nexus. See Generic Source Properties for more details.
@@ -124,8 +124,8 @@ export function appflow_FlowSourceFlowConfigSourceConnectorProperties_GetTypes()
   return [
     new DynamicUIProps(
       InputType.Object,
-      "customConnector",
-      "Properties that are applied when the custom connector is being used as a source. See Custom Connector Source Properties.",
+      'customConnector',
+      'Properties that are applied when the custom connector is being used as a source. See Custom Connector Source Properties.',
       () =>
         appflow_FlowSourceFlowConfigSourceConnectorPropertiesCustomConnector_GetTypes(),
       false,
@@ -133,8 +133,8 @@ export function appflow_FlowSourceFlowConfigSourceConnectorProperties_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "veeva",
-      "Information that is required for querying Veeva. See Veeva Source Properties for more details.",
+      'veeva',
+      'Information that is required for querying Veeva. See Veeva Source Properties for more details.',
       () =>
         appflow_FlowSourceFlowConfigSourceConnectorPropertiesVeeva_GetTypes(),
       false,
@@ -142,8 +142,8 @@ export function appflow_FlowSourceFlowConfigSourceConnectorProperties_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "inforNexus",
-      "Information that is required for querying Infor Nexus. See Generic Source Properties for more details.",
+      'inforNexus',
+      'Information that is required for querying Infor Nexus. See Generic Source Properties for more details.',
       () =>
         appflow_FlowSourceFlowConfigSourceConnectorPropertiesInforNexus_GetTypes(),
       false,
@@ -151,8 +151,8 @@ export function appflow_FlowSourceFlowConfigSourceConnectorProperties_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "datadog",
-      "Information that is required for querying Datadog. See Generic Source Properties for more details.",
+      'datadog',
+      'Information that is required for querying Datadog. See Generic Source Properties for more details.',
       () =>
         appflow_FlowSourceFlowConfigSourceConnectorPropertiesDatadog_GetTypes(),
       false,
@@ -160,8 +160,8 @@ export function appflow_FlowSourceFlowConfigSourceConnectorProperties_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "salesforce",
-      "Information that is required for querying Salesforce. See Salesforce Source Properties for more details.",
+      'salesforce',
+      'Information that is required for querying Salesforce. See Salesforce Source Properties for more details.',
       () =>
         appflow_FlowSourceFlowConfigSourceConnectorPropertiesSalesforce_GetTypes(),
       false,
@@ -169,8 +169,8 @@ export function appflow_FlowSourceFlowConfigSourceConnectorProperties_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "amplitude",
-      "Information that is required for querying Amplitude. See Generic Source Properties for more details.",
+      'amplitude',
+      'Information that is required for querying Amplitude. See Generic Source Properties for more details.',
       () =>
         appflow_FlowSourceFlowConfigSourceConnectorPropertiesAmplitude_GetTypes(),
       false,
@@ -178,8 +178,8 @@ export function appflow_FlowSourceFlowConfigSourceConnectorProperties_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "trendmicro",
-      "Operation to be performed on the provided Trend Micro source fields. Valid values are `PROJECTION`, `EQUAL_TO`, `ADDITION`, `MULTIPLICATION`, `DIVISION`, `SUBTRACTION`, `MASK_ALL`, `MASK_FIRST_N`, `MASK_LAST_N`, `VALIDATE_NON_NULL`, `VALIDATE_NON_ZERO`, `VALIDATE_NON_NEGATIVE`, `VALIDATE_NUMERIC`, and `NO_OP`.",
+      'trendmicro',
+      'Operation to be performed on the provided Trend Micro source fields. Valid values are `PROJECTION`, `EQUAL_TO`, `ADDITION`, `MULTIPLICATION`, `DIVISION`, `SUBTRACTION`, `MASK_ALL`, `MASK_FIRST_N`, `MASK_LAST_N`, `VALIDATE_NON_NULL`, `VALIDATE_NON_ZERO`, `VALIDATE_NON_NEGATIVE`, `VALIDATE_NUMERIC`, and `NO_OP`.',
       () =>
         appflow_FlowSourceFlowConfigSourceConnectorPropertiesTrendmicro_GetTypes(),
       false,
@@ -187,8 +187,8 @@ export function appflow_FlowSourceFlowConfigSourceConnectorProperties_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "marketo",
-      "Information that is required for querying Marketo. See Generic Source Properties for more details.",
+      'marketo',
+      'Information that is required for querying Marketo. See Generic Source Properties for more details.',
       () =>
         appflow_FlowSourceFlowConfigSourceConnectorPropertiesMarketo_GetTypes(),
       false,
@@ -196,8 +196,8 @@ export function appflow_FlowSourceFlowConfigSourceConnectorProperties_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "sapoData",
-      "Information that is required for querying SAPOData as a flow source. See SAPO Source Properties for more details.",
+      'sapoData',
+      'Information that is required for querying SAPOData as a flow source. See SAPO Source Properties for more details.',
       () =>
         appflow_FlowSourceFlowConfigSourceConnectorPropertiesSapoData_GetTypes(),
       false,
@@ -205,8 +205,8 @@ export function appflow_FlowSourceFlowConfigSourceConnectorProperties_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "slack",
-      "Information that is required for querying Slack. See Generic Source Properties for more details.",
+      'slack',
+      'Information that is required for querying Slack. See Generic Source Properties for more details.',
       () =>
         appflow_FlowSourceFlowConfigSourceConnectorPropertiesSlack_GetTypes(),
       false,
@@ -214,16 +214,16 @@ export function appflow_FlowSourceFlowConfigSourceConnectorProperties_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "s3",
-      "Information that is required for querying Amazon S3. See S3 Source Properties for more details.",
+      's3',
+      'Information that is required for querying Amazon S3. See S3 Source Properties for more details.',
       () => appflow_FlowSourceFlowConfigSourceConnectorPropertiesS3_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "googleAnalytics",
-      "Operation to be performed on the provided Google Analytics source fields. Valid values are `PROJECTION` and `BETWEEN`.",
+      'googleAnalytics',
+      'Operation to be performed on the provided Google Analytics source fields. Valid values are `PROJECTION` and `BETWEEN`.',
       () =>
         appflow_FlowSourceFlowConfigSourceConnectorPropertiesGoogleAnalytics_GetTypes(),
       false,
@@ -231,8 +231,8 @@ export function appflow_FlowSourceFlowConfigSourceConnectorProperties_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "serviceNow",
-      "Information that is required for querying ServiceNow. See Generic Source Properties for more details.",
+      'serviceNow',
+      'Information that is required for querying ServiceNow. See Generic Source Properties for more details.',
       () =>
         appflow_FlowSourceFlowConfigSourceConnectorPropertiesServiceNow_GetTypes(),
       false,
@@ -240,8 +240,8 @@ export function appflow_FlowSourceFlowConfigSourceConnectorProperties_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "dynatrace",
-      "Operation to be performed on the provided Dynatrace source fields. Valid values are `PROJECTION`, `BETWEEN`, `EQUAL_TO`, `ADDITION`, `MULTIPLICATION`, `DIVISION`, `SUBTRACTION`, `MASK_ALL`, `MASK_FIRST_N`, `MASK_LAST_N`, `VALIDATE_NON_NULL`, `VALIDATE_NON_ZERO`, `VALIDATE_NON_NEGATIVE`, `VALIDATE_NUMERIC`, and `NO_OP`.",
+      'dynatrace',
+      'Operation to be performed on the provided Dynatrace source fields. Valid values are `PROJECTION`, `BETWEEN`, `EQUAL_TO`, `ADDITION`, `MULTIPLICATION`, `DIVISION`, `SUBTRACTION`, `MASK_ALL`, `MASK_FIRST_N`, `MASK_LAST_N`, `VALIDATE_NON_NULL`, `VALIDATE_NON_ZERO`, `VALIDATE_NON_NEGATIVE`, `VALIDATE_NUMERIC`, and `NO_OP`.',
       () =>
         appflow_FlowSourceFlowConfigSourceConnectorPropertiesDynatrace_GetTypes(),
       false,
@@ -249,8 +249,8 @@ export function appflow_FlowSourceFlowConfigSourceConnectorProperties_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "singular",
-      "Information that is required for querying Singular. See Generic Source Properties for more details.",
+      'singular',
+      'Information that is required for querying Singular. See Generic Source Properties for more details.',
       () =>
         appflow_FlowSourceFlowConfigSourceConnectorPropertiesSingular_GetTypes(),
       false,
@@ -258,8 +258,8 @@ export function appflow_FlowSourceFlowConfigSourceConnectorProperties_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "zendesk",
-      "Information that is required for querying Zendesk. See Generic Source Properties for more details.",
+      'zendesk',
+      'Information that is required for querying Zendesk. See Generic Source Properties for more details.',
       () =>
         appflow_FlowSourceFlowConfigSourceConnectorPropertiesZendesk_GetTypes(),
       false,

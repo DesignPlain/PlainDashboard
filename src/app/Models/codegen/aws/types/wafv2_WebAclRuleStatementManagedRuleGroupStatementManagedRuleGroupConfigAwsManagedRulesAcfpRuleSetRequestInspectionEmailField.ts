@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionEmailField {
   // The name of the field in the request payload that contains your customer's email.
@@ -15,7 +15,7 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGro
   return [
     new DynamicUIProps(
       InputType.String,
-      "identifier",
+      'identifier',
       "The name of the field in the request payload that contains your customer's email.",
       () => [],
       true,

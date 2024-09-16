@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition,
   essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition_GetTypes,
-} from "../types/essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition";
+} from '../types/essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition';
 
 export interface DocumentAiWarehouseDocumentSchemaArgs {
   // Name of the schema given by the user.
@@ -56,40 +56,40 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "Name of the schema given by the user.",
+        'displayName',
+        'Name of the schema given by the user.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "documentIsFolder",
-        "Tells whether the document is a folder or a typical document.",
+        'documentIsFolder',
+        'Tells whether the document is a folder or a typical document.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the resource.",
+        'location',
+        'The location of the resource.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "projectNumber",
-        "The unique identifier of the project.",
+        'projectNumber',
+        'The unique identifier of the project.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "propertyDefinitions",
-        "Defines the metadata for a schema property.\nStructure is documented below.",
+        'propertyDefinitions',
+        'Defines the metadata for a schema property.\nStructure is documented below.',
         () =>
           essentialcontacts_DocumentAiWarehouseDocumentSchemaPropertyDefinition_GetTypes(),
         true,

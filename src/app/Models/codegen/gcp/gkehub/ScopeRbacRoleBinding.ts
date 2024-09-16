@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkehub_ScopeRbacRoleBindingRole,
   gkehub_ScopeRbacRoleBindingRole_GetTypes,
-} from "../types/gkehub_ScopeRbacRoleBindingRole";
+} from '../types/gkehub_ScopeRbacRoleBindingRole';
 import {
   gkehub_ScopeRbacRoleBindingState,
   gkehub_ScopeRbacRoleBindingState_GetTypes,
-} from "../types/gkehub_ScopeRbacRoleBindingState";
+} from '../types/gkehub_ScopeRbacRoleBindingState';
 
 export interface ScopeRbacRoleBindingArgs {
   // The client-provided identifier of the RBAC Role Binding.
@@ -133,23 +133,23 @@ and default labels configured on the provider.
     return [
       new DynamicUIProps(
         InputType.String,
-        "scopeId",
-        "Id of the scope",
+        'scopeId',
+        'Id of the scope',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "scopeRbacRoleBindingId",
-        "The client-provided identifier of the RBAC Role Binding.",
+        'scopeRbacRoleBindingId',
+        'The client-provided identifier of the RBAC Role Binding.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "user",
+        'user',
         'Principal that is be authorized in the cluster (at least of one the oneof\nis required). Updating one will unset the other automatically.\nuser is the name of the user as seen by the kubernetes cluster, example\n"alice" or "alice@domain.tld"',
         () => [],
         false,
@@ -157,32 +157,32 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "group",
-        "Principal that is be authorized in the cluster (at least of one the oneof\nis required). Updating one will unset the other automatically.\ngroup is the group, as seen by the kubernetes cluster.",
+        'group',
+        'Principal that is be authorized in the cluster (at least of one the oneof\nis required). Updating one will unset the other automatically.\ngroup is the group, as seen by the kubernetes cluster.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Labels for this ScopeRBACRoleBinding.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Labels for this ScopeRBACRoleBinding.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "role",
-        "Role to bind to the principal.\nStructure is documented below.",
+        'role',
+        'Role to bind to the principal.\nStructure is documented below.',
         () => gkehub_ScopeRbacRoleBindingRole_GetTypes(),
         true,
         false,

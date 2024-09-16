@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface opsworks_StaticWebLayerEbsVolume {
   // The path to mount the EBS volume on the layer's instances.
@@ -33,15 +33,15 @@ export function opsworks_StaticWebLayerEbsVolume_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "iops",
-      "For PIOPS volumes, the IOPS per disk.",
+      'iops',
+      'For PIOPS volumes, the IOPS per disk.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "mountPoint",
+      'mountPoint',
       "The path to mount the EBS volume on the layer's instances.",
       () => [],
       true,
@@ -49,36 +49,36 @@ export function opsworks_StaticWebLayerEbsVolume_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "numberOfDisks",
-      "The number of disks to use for the EBS volume.",
+      'numberOfDisks',
+      'The number of disks to use for the EBS volume.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "raidLevel",
-      "The RAID level to use for the volume.",
+      'raidLevel',
+      'The RAID level to use for the volume.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "size",
-      "The size of the volume in gigabytes.",
+      'size',
+      'The size of the volume in gigabytes.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "The type of volume to create. This may be `standard` (the default), `io1` or `gp2`.",
+      'type',
+      'The type of volume to create. This may be `standard` (the default), `io1` or `gp2`.',
       () => [],
       false,
       false,
     ),
-    new DynamicUIProps(InputType.Bool, "encrypted", "", () => [], false, false),
+    new DynamicUIProps(InputType.Bool, 'encrypted', '', () => [], false, false),
   ];
 }

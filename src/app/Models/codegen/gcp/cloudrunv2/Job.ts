@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudrunv2_JobTerminalCondition,
   cloudrunv2_JobTerminalCondition_GetTypes,
-} from "../types/cloudrunv2_JobTerminalCondition";
+} from '../types/cloudrunv2_JobTerminalCondition';
 import {
   cloudrunv2_JobCondition,
   cloudrunv2_JobCondition_GetTypes,
-} from "../types/cloudrunv2_JobCondition";
+} from '../types/cloudrunv2_JobCondition';
 import {
   cloudrunv2_JobLatestCreatedExecution,
   cloudrunv2_JobLatestCreatedExecution_GetTypes,
-} from "../types/cloudrunv2_JobLatestCreatedExecution";
+} from '../types/cloudrunv2_JobLatestCreatedExecution';
 import {
   cloudrunv2_JobTemplate,
   cloudrunv2_JobTemplate_GetTypes,
-} from "../types/cloudrunv2_JobTemplate";
+} from '../types/cloudrunv2_JobTemplate';
 import {
   cloudrunv2_JobBinaryAuthorization,
   cloudrunv2_JobBinaryAuthorization_GetTypes,
-} from "../types/cloudrunv2_JobBinaryAuthorization";
+} from '../types/cloudrunv2_JobBinaryAuthorization';
 
 export interface JobArgs {
   /*
@@ -227,47 +227,47 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "launchStage",
-        "The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/products#product-launch-stages). Cloud Run supports ALPHA, BETA, and GA.\nIf no value is specified, GA is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features.\nFor example, if ALPHA is provided as input, but only BETA and GA-level features are used, this field will be BETA on output.\nPossible values are: `UNIMPLEMENTED`, `PRELAUNCH`, `EARLY_ACCESS`, `ALPHA`, `BETA`, `GA`, `DEPRECATED`.",
+        'launchStage',
+        'The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/products#product-launch-stages). Cloud Run supports ALPHA, BETA, and GA.\nIf no value is specified, GA is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features.\nFor example, if ALPHA is provided as input, but only BETA and GA-level features are used, this field will be BETA on output.\nPossible values are: `UNIMPLEMENTED`, `PRELAUNCH`, `EARLY_ACCESS`, `ALPHA`, `BETA`, `GA`, `DEPRECATED`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the Job.",
+        'name',
+        'Name of the Job.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "template",
-        "The template used to create executions for this Job.\nStructure is documented below.",
+        'template',
+        'The template used to create executions for this Job.\nStructure is documented below.',
         () => cloudrunv2_JobTemplate_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clientVersion",
-        "Arbitrary version identifier for the API client.",
+        'clientVersion',
+        'Arbitrary version identifier for the API client.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
+        'annotations',
         "Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects.\nCloud Run API v2 does not support annotations with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected on new resources.\nAll system annotations in v1 now have a corresponding field in v2 Job.\nThis field follows Kubernetes annotations' namespacing, limits, and rules.\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
         () => InputType_Map_GetTypes(),
         false,
@@ -275,23 +275,23 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "binaryAuthorization",
-        "Settings for the Binary Authorization feature.\nStructure is documented below.",
+        'binaryAuthorization',
+        'Settings for the Binary Authorization feature.\nStructure is documented below.',
         () => cloudrunv2_JobBinaryAuthorization_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "client",
-        "Arbitrary identifier for the API client.",
+        'client',
+        'Arbitrary identifier for the API client.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         "Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component,\nenvironment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels.\nCloud Run API v2 does not support labels with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected.\nAll system labels in v1 now have a corresponding field in v2 Job.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         () => InputType_Map_GetTypes(),
         false,
@@ -299,8 +299,8 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the cloud run job",
+        'location',
+        'The location of the cloud run job',
         () => [],
         true,
         true,

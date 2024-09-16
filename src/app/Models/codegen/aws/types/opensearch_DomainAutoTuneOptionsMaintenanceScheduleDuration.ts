@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface opensearch_DomainAutoTuneOptionsMaintenanceScheduleDuration {
   // Unit of time specifying the duration of an Auto-Tune maintenance window. Valid values: `HOURS`.
@@ -18,16 +18,16 @@ export function opensearch_DomainAutoTuneOptionsMaintenanceScheduleDuration_GetT
   return [
     new DynamicUIProps(
       InputType.String,
-      "unit",
-      "Unit of time specifying the duration of an Auto-Tune maintenance window. Valid values: `HOURS`.",
+      'unit',
+      'Unit of time specifying the duration of an Auto-Tune maintenance window. Valid values: `HOURS`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "value",
-      "An integer specifying the value of the duration of an Auto-Tune maintenance window.",
+      'value',
+      'An integer specifying the value of the duration of an Auto-Tune maintenance window.',
       () => [],
       true,
       false,

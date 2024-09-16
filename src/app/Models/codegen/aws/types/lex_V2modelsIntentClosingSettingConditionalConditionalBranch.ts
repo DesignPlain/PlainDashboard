@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsIntentClosingSettingConditionalConditionalBranchCondition,
   lex_V2modelsIntentClosingSettingConditionalConditionalBranchCondition_GetTypes,
-} from "./lex_V2modelsIntentClosingSettingConditionalConditionalBranchCondition";
+} from './lex_V2modelsIntentClosingSettingConditionalConditionalBranchCondition';
 import {
   lex_V2modelsIntentClosingSettingConditionalConditionalBranchNextStep,
   lex_V2modelsIntentClosingSettingConditionalConditionalBranchNextStep_GetTypes,
-} from "./lex_V2modelsIntentClosingSettingConditionalConditionalBranchNextStep";
+} from './lex_V2modelsIntentClosingSettingConditionalConditionalBranchNextStep';
 import {
   lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponse,
   lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponse_GetTypes,
-} from "./lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponse";
+} from './lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponse';
 
 export interface lex_V2modelsIntentClosingSettingConditionalConditionalBranch {
   // Configuration block for the expression to evaluate. If the condition is true, the branch's actions are taken. See `condition`.
@@ -36,7 +36,7 @@ export function lex_V2modelsIntentClosingSettingConditionalConditionalBranch_Get
   return [
     new DynamicUIProps(
       InputType.Object,
-      "condition",
+      'condition',
       "Configuration block for the expression to evaluate. If the condition is true, the branch's actions are taken. See `condition`.",
       () =>
         lex_V2modelsIntentClosingSettingConditionalConditionalBranchCondition_GetTypes(),
@@ -45,16 +45,16 @@ export function lex_V2modelsIntentClosingSettingConditionalConditionalBranch_Get
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the branch.",
+      'name',
+      'Name of the branch.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "nextStep",
-      "Configuration block for the next step in the conversation. See `next_step`.",
+      'nextStep',
+      'Configuration block for the next step in the conversation. See `next_step`.',
       () =>
         lex_V2modelsIntentClosingSettingConditionalConditionalBranchNextStep_GetTypes(),
       true,
@@ -62,8 +62,8 @@ export function lex_V2modelsIntentClosingSettingConditionalConditionalBranch_Get
     ),
     new DynamicUIProps(
       InputType.Object,
-      "response",
-      "Configuration block for a list of message groups that Amazon Lex uses to respond to the user input. See `response`.",
+      'response',
+      'Configuration block for a list of message groups that Amazon Lex uses to respond to the user input. See `response`.',
       () =>
         lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponse_GetTypes(),
       false,

@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificateauthority_CaPoolPublishingOptions,
   certificateauthority_CaPoolPublishingOptions_GetTypes,
-} from "../types/certificateauthority_CaPoolPublishingOptions";
+} from '../types/certificateauthority_CaPoolPublishingOptions';
 import {
   certificateauthority_CaPoolIssuancePolicy,
   certificateauthority_CaPoolIssuancePolicy_GetTypes,
-} from "../types/certificateauthority_CaPoolIssuancePolicy";
+} from '../types/certificateauthority_CaPoolIssuancePolicy';
 
 export interface CaPoolArgs {
   /*
@@ -122,15 +122,15 @@ Please refer to the field `effective_labels` for all of the labels present on th
     return [
       new DynamicUIProps(
         InputType.Object,
-        "issuancePolicy",
-        "The IssuancePolicy to control how Certificates will be issued from this CaPool.\nStructure is documented below.",
+        'issuancePolicy',
+        'The IssuancePolicy to control how Certificates will be issued from this CaPool.\nStructure is documented below.',
         () => certificateauthority_CaPoolIssuancePolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         'Labels with user-defined metadata.\nAn object containing a list of "key": value pairs. Example: { "name": "wrench", "mass":\n"1.3kg", "count": "3" }.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
@@ -138,40 +138,40 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "Location of the CaPool. A full list of valid locations can be found by\nrunning `gcloud privateca locations list`.\n\n\n- - -",
+        'location',
+        'Location of the CaPool. A full list of valid locations can be found by\nrunning `gcloud privateca locations list`.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name for this CaPool.",
+        'name',
+        'The name for this CaPool.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "publishingOptions",
-        "The PublishingOptions to follow when issuing Certificates from any CertificateAuthority in this CaPool.\nStructure is documented below.",
+        'publishingOptions',
+        'The PublishingOptions to follow when issuing Certificates from any CertificateAuthority in this CaPool.\nStructure is documented below.',
         () => certificateauthority_CaPoolPublishingOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "tier",
-        "The Tier of this CaPool.\nPossible values are: `ENTERPRISE`, `DEVOPS`.",
+        'tier',
+        'The Tier of this CaPool.\nPossible values are: `ENTERPRISE`, `DEVOPS`.',
         () => [],
         true,
         true,

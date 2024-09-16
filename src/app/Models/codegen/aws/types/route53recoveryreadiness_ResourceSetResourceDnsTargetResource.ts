@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTargetResource,
   route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTargetResource_GetTypes,
-} from "./route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTargetResource";
+} from './route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTargetResource';
 
 export interface route53recoveryreadiness_ResourceSetResourceDnsTargetResource {
   // Type of DNS Record of target resource.
@@ -31,24 +31,24 @@ export function route53recoveryreadiness_ResourceSetResourceDnsTargetResource_Ge
   return [
     new DynamicUIProps(
       InputType.String,
-      "recordSetId",
-      "Route53 record set id to uniquely identify a record given a `domain_name` and a `record_type`.",
+      'recordSetId',
+      'Route53 record set id to uniquely identify a record given a `domain_name` and a `record_type`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "recordType",
-      "Type of DNS Record of target resource.",
+      'recordType',
+      'Type of DNS Record of target resource.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "targetResource",
-      "Target resource the R53 record specified with the above params points to.",
+      'targetResource',
+      'Target resource the R53 record specified with the above params points to.',
       () =>
         route53recoveryreadiness_ResourceSetResourceDnsTargetResourceTargetResource_GetTypes(),
       false,
@@ -56,16 +56,16 @@ export function route53recoveryreadiness_ResourceSetResourceDnsTargetResource_Ge
     ),
     new DynamicUIProps(
       InputType.String,
-      "domainName",
-      "DNS Name that acts as the ingress point to a portion of application.",
+      'domainName',
+      'DNS Name that acts as the ingress point to a portion of application.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "hostedZoneArn",
-      "Hosted Zone ARN that contains the DNS record with the provided name of target resource.",
+      'hostedZoneArn',
+      'Hosted Zone ARN that contains the DNS record with the provided name of target resource.',
       () => [],
       false,
       false,

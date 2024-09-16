@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_RegionCommitmentResource {
   // Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
@@ -29,24 +29,24 @@ export function compute_RegionCommitmentResource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "acceleratorType",
-      "Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.",
+      'acceleratorType',
+      'Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "amount",
-      "The amount of the resource purchased (in a type-dependent unit,\nsuch as bytes). For vCPUs, this can just be an integer. For memory,\nthis must be provided in MB. Memory must be a multiple of 256 MB,\nwith up to 6.5GB of memory per every vCPU.",
+      'amount',
+      'The amount of the resource purchased (in a type-dependent unit,\nsuch as bytes). For vCPUs, this can just be an integer. For memory,\nthis must be provided in MB. Memory must be a multiple of 256 MB,\nwith up to 6.5GB of memory per every vCPU.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "Type of resource for which this commitment applies.\nPossible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.",
+      'type',
+      'Type of resource for which this commitment applies.\nPossible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.',
       () => [],
       false,
       true,

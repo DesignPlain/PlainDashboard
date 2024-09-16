@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbort,
   compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbort_GetTypes,
-} from "./compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbort";
+} from './compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbort';
 import {
   compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay,
   compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay_GetTypes,
-} from "./compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay";
+} from './compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay';
 
 export interface compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy {
   /*
@@ -32,8 +32,8 @@ export function compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectio
   return [
     new DynamicUIProps(
       InputType.Object,
-      "abort",
-      "The specification for how client requests are aborted as part of fault injection.\nStructure is documented below.",
+      'abort',
+      'The specification for how client requests are aborted as part of fault injection.\nStructure is documented below.',
       () =>
         compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbort_GetTypes(),
       false,
@@ -41,8 +41,8 @@ export function compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectio
     ),
     new DynamicUIProps(
       InputType.Object,
-      "delay",
-      "The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.\nStructure is documented below.",
+      'delay',
+      'The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.\nStructure is documented below.',
       () =>
         compute_RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelay_GetTypes(),
       false,

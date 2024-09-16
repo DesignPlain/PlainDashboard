@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkfirewall_RuleGroupEncryptionConfiguration,
   networkfirewall_RuleGroupEncryptionConfiguration_GetTypes,
-} from "../types/networkfirewall_RuleGroupEncryptionConfiguration";
+} from '../types/networkfirewall_RuleGroupEncryptionConfiguration';
 import {
   networkfirewall_RuleGroupRuleGroup,
   networkfirewall_RuleGroupRuleGroup_GetTypes,
-} from "../types/networkfirewall_RuleGroupRuleGroup";
+} from '../types/networkfirewall_RuleGroupRuleGroup';
 
 export interface RuleGroupArgs {
   // A friendly description of the rule group.
@@ -78,64 +78,64 @@ export class RuleGroup extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "ruleGroup",
-        "A configuration block that defines the rule group rules. Required unless `rules` is specified. See Rule Group below for details.",
+        'ruleGroup',
+        'A configuration block that defines the rule group rules. Required unless `rules` is specified. See Rule Group below for details.',
         () => networkfirewall_RuleGroupRuleGroup_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "rules",
-        "The stateful rule group rules specifications in Suricata file format, with one rule per line. Use this to import your existing Suricata compatible rule groups. Required unless `rule_group` is specified.",
+        'rules',
+        'The stateful rule group rules specifications in Suricata file format, with one rule per line. Use this to import your existing Suricata compatible rule groups. Required unless `rule_group` is specified.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of key:value pairs to associate with the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of key:value pairs to associate with the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "Whether the rule group is stateless (containing stateless rules) or stateful (containing stateful rules). Valid values include: `STATEFUL` or `STATELESS`.",
+        'type',
+        'Whether the rule group is stateless (containing stateless rules) or stateful (containing stateful rules). Valid values include: `STATEFUL` or `STATELESS`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "capacity",
-        "The maximum number of operating resources that this rule group can use. For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules. For a stateful rule group, the minimum capacity required is the number of individual rules.",
+        'capacity',
+        'The maximum number of operating resources that this rule group can use. For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules. For a stateful rule group, the minimum capacity required is the number of individual rules.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A friendly description of the rule group.",
+        'description',
+        'A friendly description of the rule group.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "encryptionConfiguration",
-        "KMS encryption configuration settings. See Encryption Configuration below for details.",
+        'encryptionConfiguration',
+        'KMS encryption configuration settings. See Encryption Configuration below for details.',
         () => networkfirewall_RuleGroupEncryptionConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A friendly name of the rule group.",
+        'name',
+        'A friendly name of the rule group.',
         () => [],
         false,
         true,

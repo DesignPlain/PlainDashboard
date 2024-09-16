@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface verifiedpermissions_PolicyDefinitionStatic {
   // The description of the static policy.
@@ -18,16 +18,16 @@ export function verifiedpermissions_PolicyDefinitionStatic_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.String,
-      "description",
-      "The description of the static policy.",
+      'description',
+      'The description of the static policy.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "statement",
-      "The statement of the static policy.",
+      'statement',
+      'The statement of the static policy.',
       () => [],
       true,
       false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   artifactregistry_RepositoryRemoteRepositoryConfigAptRepositoryPublicRepository,
   artifactregistry_RepositoryRemoteRepositoryConfigAptRepositoryPublicRepository_GetTypes,
-} from "./artifactregistry_RepositoryRemoteRepositoryConfigAptRepositoryPublicRepository";
+} from './artifactregistry_RepositoryRemoteRepositoryConfigAptRepositoryPublicRepository';
 
 export interface artifactregistry_RepositoryRemoteRepositoryConfigAptRepository {
   /*
@@ -22,8 +22,8 @@ export function artifactregistry_RepositoryRemoteRepositoryConfigAptRepository_G
   return [
     new DynamicUIProps(
       InputType.Object,
-      "publicRepository",
-      "One of the publicly available Apt repositories supported by Artifact Registry.\nStructure is documented below.",
+      'publicRepository',
+      'One of the publicly available Apt repositories supported by Artifact Registry.\nStructure is documented below.',
       () =>
         artifactregistry_RepositoryRemoteRepositoryConfigAptRepositoryPublicRepository_GetTypes(),
       false,

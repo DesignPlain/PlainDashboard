@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface VirtualMfaDeviceArgs {
   // The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.
@@ -49,24 +49,24 @@ export class VirtualMfaDevice extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "virtualMfaDeviceName",
-        "The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.",
+        'virtualMfaDeviceName',
+        'The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "path",
-        "The path for the virtual MFA device.",
+        'path',
+        'The path for the virtual MFA device.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of resource tags for the virtual mfa device. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of resource tags for the virtual mfa device. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datacatalog_TagField,
   datacatalog_TagField_GetTypes,
-} from "../types/datacatalog_TagField";
+} from '../types/datacatalog_TagField';
 
 export interface TagArgs {
   /*
@@ -84,15 +84,15 @@ This field cannot be modified after creation.
     return [
       new DynamicUIProps(
         InputType.String,
-        "column",
-        "Resources like Entry can have schemas associated with them. This scope allows users to attach tags to an\nindividual column based on that schema.\nFor attaching a tag to a nested column, use `.` to separate the column names. Example:\n`outer_column.inner_column`",
+        'column',
+        'Resources like Entry can have schemas associated with them. This scope allows users to attach tags to an\nindividual column based on that schema.\nFor attaching a tag to a nested column, use `.` to separate the column names. Example:\n`outer_column.inner_column`',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "fields",
+        'fields',
         "This maps the ID of a tag field to the value of and additional information about that field.\nValid field IDs are defined by the tag's template. A tag must have at least 1 field and at most 500 fields.\nStructure is documented below.",
         () => datacatalog_TagField_GetTypes(),
         true,
@@ -100,16 +100,16 @@ This field cannot be modified after creation.
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The name of the parent this tag is attached to. This can be the name of an entry or an entry group. If an entry group, the tag will be attached to\nall entries in that group.",
+        'parent',
+        'The name of the parent this tag is attached to. This can be the name of an entry or an entry group. If an entry group, the tag will be attached to\nall entries in that group.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "template",
-        "The resource name of the tag template that this tag uses. Example:\nprojects/{project_id}/locations/{location}/tagTemplates/{tagTemplateId}\nThis field cannot be modified after creation.",
+        'template',
+        'The resource name of the tag template that this tag uses. Example:\nprojects/{project_id}/locations/{location}/tagTemplates/{tagTemplateId}\nThis field cannot be modified after creation.',
         () => [],
         true,
         true,

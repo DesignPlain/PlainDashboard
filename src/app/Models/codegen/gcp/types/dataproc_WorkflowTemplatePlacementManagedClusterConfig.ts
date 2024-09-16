@@ -3,60 +3,60 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataproc_WorkflowTemplatePlacementManagedClusterConfigLifecycleConfig,
   dataproc_WorkflowTemplatePlacementManagedClusterConfigLifecycleConfig_GetTypes,
-} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigLifecycleConfig";
+} from './dataproc_WorkflowTemplatePlacementManagedClusterConfigLifecycleConfig';
 import {
   dataproc_WorkflowTemplatePlacementManagedClusterConfigGceClusterConfig,
   dataproc_WorkflowTemplatePlacementManagedClusterConfigGceClusterConfig_GetTypes,
-} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigGceClusterConfig";
+} from './dataproc_WorkflowTemplatePlacementManagedClusterConfigGceClusterConfig';
 import {
   dataproc_WorkflowTemplatePlacementManagedClusterConfigAutoscalingConfig,
   dataproc_WorkflowTemplatePlacementManagedClusterConfigAutoscalingConfig_GetTypes,
-} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigAutoscalingConfig";
+} from './dataproc_WorkflowTemplatePlacementManagedClusterConfigAutoscalingConfig';
 import {
   dataproc_WorkflowTemplatePlacementManagedClusterConfigEndpointConfig,
   dataproc_WorkflowTemplatePlacementManagedClusterConfigEndpointConfig_GetTypes,
-} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigEndpointConfig";
+} from './dataproc_WorkflowTemplatePlacementManagedClusterConfigEndpointConfig';
 import {
   dataproc_WorkflowTemplatePlacementManagedClusterConfigInitializationAction,
   dataproc_WorkflowTemplatePlacementManagedClusterConfigInitializationAction_GetTypes,
-} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigInitializationAction";
+} from './dataproc_WorkflowTemplatePlacementManagedClusterConfigInitializationAction';
 import {
   dataproc_WorkflowTemplatePlacementManagedClusterConfigMasterConfig,
   dataproc_WorkflowTemplatePlacementManagedClusterConfigMasterConfig_GetTypes,
-} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigMasterConfig";
+} from './dataproc_WorkflowTemplatePlacementManagedClusterConfigMasterConfig';
 import {
   dataproc_WorkflowTemplatePlacementManagedClusterConfigMetastoreConfig,
   dataproc_WorkflowTemplatePlacementManagedClusterConfigMetastoreConfig_GetTypes,
-} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigMetastoreConfig";
+} from './dataproc_WorkflowTemplatePlacementManagedClusterConfigMetastoreConfig';
 import {
   dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfig,
   dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfig_GetTypes,
-} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfig";
+} from './dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfig';
 import {
   dataproc_WorkflowTemplatePlacementManagedClusterConfigSoftwareConfig,
   dataproc_WorkflowTemplatePlacementManagedClusterConfigSoftwareConfig_GetTypes,
-} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigSoftwareConfig";
+} from './dataproc_WorkflowTemplatePlacementManagedClusterConfigSoftwareConfig';
 import {
   dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfig,
   dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfig_GetTypes,
-} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfig";
+} from './dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfig';
 import {
   dataproc_WorkflowTemplatePlacementManagedClusterConfigWorkerConfig,
   dataproc_WorkflowTemplatePlacementManagedClusterConfigWorkerConfig_GetTypes,
-} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigWorkerConfig";
+} from './dataproc_WorkflowTemplatePlacementManagedClusterConfigWorkerConfig';
 import {
   dataproc_WorkflowTemplatePlacementManagedClusterConfigEncryptionConfig,
   dataproc_WorkflowTemplatePlacementManagedClusterConfigEncryptionConfig_GetTypes,
-} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigEncryptionConfig";
+} from './dataproc_WorkflowTemplatePlacementManagedClusterConfigEncryptionConfig';
 import {
   dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfig,
   dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfig_GetTypes,
-} from "./dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfig";
+} from './dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfig';
 
 export interface dataproc_WorkflowTemplatePlacementManagedClusterConfig {
   // Autoscaling config for the policy associated with the cluster. Cluster does not autoscale if this field is unset.
@@ -113,8 +113,8 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfig_GetTypes(
   return [
     new DynamicUIProps(
       InputType.Object,
-      "softwareConfig",
-      "The config settings for software inside the cluster.",
+      'softwareConfig',
+      'The config settings for software inside the cluster.',
       () =>
         dataproc_WorkflowTemplatePlacementManagedClusterConfigSoftwareConfig_GetTypes(),
       false,
@@ -122,8 +122,8 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfig_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "encryptionConfig",
-      "Encryption settings for the cluster.",
+      'encryptionConfig',
+      'Encryption settings for the cluster.',
       () =>
         dataproc_WorkflowTemplatePlacementManagedClusterConfigEncryptionConfig_GetTypes(),
       false,
@@ -131,8 +131,8 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfig_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "lifecycleConfig",
-      "Lifecycle setting for the cluster.",
+      'lifecycleConfig',
+      'Lifecycle setting for the cluster.',
       () =>
         dataproc_WorkflowTemplatePlacementManagedClusterConfigLifecycleConfig_GetTypes(),
       false,
@@ -140,8 +140,8 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfig_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "gceClusterConfig",
-      "The shared Compute Engine config settings for all instances in a cluster.",
+      'gceClusterConfig',
+      'The shared Compute Engine config settings for all instances in a cluster.',
       () =>
         dataproc_WorkflowTemplatePlacementManagedClusterConfigGceClusterConfig_GetTypes(),
       false,
@@ -149,7 +149,7 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfig_GetTypes(
     ),
     new DynamicUIProps(
       InputType.String,
-      "tempBucket",
+      'tempBucket',
       "A Cloud Storage bucket used to store ephemeral cluster and jobs data, such as Spark and MapReduce history files. If you do not specify a temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or EU) for your cluster's temp bucket according to the Compute Engine zone where your cluster is deployed, and then create and manage this project-level, per-location bucket. The default bucket has a TTL of 90 days, but you can use any TTL (or none) if you specify a bucket.",
       () => [],
       false,
@@ -157,8 +157,8 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfig_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "endpointConfig",
-      "Port/endpoint configuration for this cluster",
+      'endpointConfig',
+      'Port/endpoint configuration for this cluster',
       () =>
         dataproc_WorkflowTemplatePlacementManagedClusterConfigEndpointConfig_GetTypes(),
       false,
@@ -166,7 +166,7 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfig_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Array,
-      "initializationActions",
+      'initializationActions',
       "Commands to execute on each node after config is completed. By default, executables are run on master and all worker nodes. You can test a node's `role` metadata to run an executable on a master or worker node, as shown below using `curl` (you can also use `wget`): ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role) if ; then ... master specific actions ... else ... worker specific actions ... fi",
       () =>
         dataproc_WorkflowTemplatePlacementManagedClusterConfigInitializationAction_GetTypes(),
@@ -175,7 +175,7 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfig_GetTypes(
     ),
     new DynamicUIProps(
       InputType.String,
-      "stagingBucket",
+      'stagingBucket',
       "A Cloud Storage bucket used to stage job dependencies, config files, and job driver console output. If you do not specify a staging bucket, Cloud Dataproc will determine a Cloud Storage location (US, ASIA, or EU) for your cluster's staging bucket according to the Compute Engine zone where your cluster is deployed, and then create and manage this project-level, per-location bucket (see (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).",
       () => [],
       false,
@@ -183,8 +183,8 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfig_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "secondaryWorkerConfig",
-      "The Compute Engine config settings for additional worker instances in a cluster.",
+      'secondaryWorkerConfig',
+      'The Compute Engine config settings for additional worker instances in a cluster.',
       () =>
         dataproc_WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfig_GetTypes(),
       false,
@@ -192,8 +192,8 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfig_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "autoscalingConfig",
-      "Autoscaling config for the policy associated with the cluster. Cluster does not autoscale if this field is unset.",
+      'autoscalingConfig',
+      'Autoscaling config for the policy associated with the cluster. Cluster does not autoscale if this field is unset.',
       () =>
         dataproc_WorkflowTemplatePlacementManagedClusterConfigAutoscalingConfig_GetTypes(),
       false,
@@ -201,8 +201,8 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfig_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "gkeClusterConfig",
-      "The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes. Setting this is considered mutually exclusive with Compute Engine-based options such as `gce_cluster_config`, `master_config`, `worker_config`, `secondary_worker_config`, and `autoscaling_config`.",
+      'gkeClusterConfig',
+      'The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes. Setting this is considered mutually exclusive with Compute Engine-based options such as `gce_cluster_config`, `master_config`, `worker_config`, `secondary_worker_config`, and `autoscaling_config`.',
       () =>
         dataproc_WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfig_GetTypes(),
       false,
@@ -210,8 +210,8 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfig_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "masterConfig",
-      "The Compute Engine config settings for additional worker instances in a cluster.",
+      'masterConfig',
+      'The Compute Engine config settings for additional worker instances in a cluster.',
       () =>
         dataproc_WorkflowTemplatePlacementManagedClusterConfigMasterConfig_GetTypes(),
       false,
@@ -219,8 +219,8 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfig_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "securityConfig",
-      "Security settings for the cluster.",
+      'securityConfig',
+      'Security settings for the cluster.',
       () =>
         dataproc_WorkflowTemplatePlacementManagedClusterConfigSecurityConfig_GetTypes(),
       false,
@@ -228,8 +228,8 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfig_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "workerConfig",
-      "The Compute Engine config settings for additional worker instances in a cluster.\n\n- - -",
+      'workerConfig',
+      'The Compute Engine config settings for additional worker instances in a cluster.\n\n- - -',
       () =>
         dataproc_WorkflowTemplatePlacementManagedClusterConfigWorkerConfig_GetTypes(),
       false,
@@ -237,8 +237,8 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfig_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "metastoreConfig",
-      "Metastore configuration.",
+      'metastoreConfig',
+      'Metastore configuration.',
       () =>
         dataproc_WorkflowTemplatePlacementManagedClusterConfigMetastoreConfig_GetTypes(),
       false,

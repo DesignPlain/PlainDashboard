@@ -3,49 +3,49 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_RegionInstanceGroupManagerAllInstancesConfig,
   compute_RegionInstanceGroupManagerAllInstancesConfig_GetTypes,
-} from "../types/compute_RegionInstanceGroupManagerAllInstancesConfig";
+} from '../types/compute_RegionInstanceGroupManagerAllInstancesConfig';
 import {
   compute_RegionInstanceGroupManagerStatefulExternalIp,
   compute_RegionInstanceGroupManagerStatefulExternalIp_GetTypes,
-} from "../types/compute_RegionInstanceGroupManagerStatefulExternalIp";
+} from '../types/compute_RegionInstanceGroupManagerStatefulExternalIp';
 import {
   compute_RegionInstanceGroupManagerAutoHealingPolicies,
   compute_RegionInstanceGroupManagerAutoHealingPolicies_GetTypes,
-} from "../types/compute_RegionInstanceGroupManagerAutoHealingPolicies";
+} from '../types/compute_RegionInstanceGroupManagerAutoHealingPolicies';
 import {
   compute_RegionInstanceGroupManagerInstanceLifecyclePolicy,
   compute_RegionInstanceGroupManagerInstanceLifecyclePolicy_GetTypes,
-} from "../types/compute_RegionInstanceGroupManagerInstanceLifecyclePolicy";
+} from '../types/compute_RegionInstanceGroupManagerInstanceLifecyclePolicy';
 import {
   compute_RegionInstanceGroupManagerNamedPort,
   compute_RegionInstanceGroupManagerNamedPort_GetTypes,
-} from "../types/compute_RegionInstanceGroupManagerNamedPort";
+} from '../types/compute_RegionInstanceGroupManagerNamedPort';
 import {
   compute_RegionInstanceGroupManagerVersion,
   compute_RegionInstanceGroupManagerVersion_GetTypes,
-} from "../types/compute_RegionInstanceGroupManagerVersion";
+} from '../types/compute_RegionInstanceGroupManagerVersion';
 import {
   compute_RegionInstanceGroupManagerStatus,
   compute_RegionInstanceGroupManagerStatus_GetTypes,
-} from "../types/compute_RegionInstanceGroupManagerStatus";
+} from '../types/compute_RegionInstanceGroupManagerStatus';
 import {
   compute_RegionInstanceGroupManagerStatefulInternalIp,
   compute_RegionInstanceGroupManagerStatefulInternalIp_GetTypes,
-} from "../types/compute_RegionInstanceGroupManagerStatefulInternalIp";
+} from '../types/compute_RegionInstanceGroupManagerStatefulInternalIp';
 import {
   compute_RegionInstanceGroupManagerUpdatePolicy,
   compute_RegionInstanceGroupManagerUpdatePolicy_GetTypes,
-} from "../types/compute_RegionInstanceGroupManagerUpdatePolicy";
+} from '../types/compute_RegionInstanceGroupManagerUpdatePolicy';
 import {
   compute_RegionInstanceGroupManagerStatefulDisk,
   compute_RegionInstanceGroupManagerStatefulDisk_GetTypes,
-} from "../types/compute_RegionInstanceGroupManagerStatefulDisk";
+} from '../types/compute_RegionInstanceGroupManagerStatefulDisk';
 
 export interface RegionInstanceGroupManagerArgs {
   // The shape to which the group converges either proactively or on resize events (depending on the value set in update_policy.0.instance_redistribution_type). For more information see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/regional-mig-distribution-shape).
@@ -326,79 +326,79 @@ group manager.
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional textual description of the instance\ngroup manager.",
+        'description',
+        'An optional textual description of the instance\ngroup manager.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The region where the managed instance group resides. If not provided, the provider region is used.\n\n- - -",
+        'region',
+        'The region where the managed instance group resides. If not provided, the provider region is used.\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "statefulDisks",
-        "Disks created on the instances that will be preserved on instance delete, update, etc. Structure is documented below. For more information see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/configuring-stateful-disks-in-migs). Proactive cross zone instance redistribution must be disabled before you can update stateful disks on existing instance group managers. This can be controlled via the `update_policy`.",
+        'statefulDisks',
+        'Disks created on the instances that will be preserved on instance delete, update, etc. Structure is documented below. For more information see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/configuring-stateful-disks-in-migs). Proactive cross zone instance redistribution must be disabled before you can update stateful disks on existing instance group managers. This can be controlled via the `update_policy`.',
         () => compute_RegionInstanceGroupManagerStatefulDisk_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "waitForInstancesStatus",
-        "When used with `wait_for_instances` it specifies the status to wait for.\nWhen `STABLE` is specified this resource will wait until the instances are stable before returning. When `UPDATED` is\nset, it will wait for the version target to be reached and any per instance configs to be effective as well as all\ninstances to be stable before returning. The possible values are `STABLE` and `UPDATED`",
+        'waitForInstancesStatus',
+        'When used with `wait_for_instances` it specifies the status to wait for.\nWhen `STABLE` is specified this resource will wait until the instances are stable before returning. When `UPDATED` is\nset, it will wait for the version target to be reached and any per instance configs to be effective as well as all\ninstances to be stable before returning. The possible values are `STABLE` and `UPDATED`',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "autoHealingPolicies",
-        "The autohealing policies for this managed instance\ngroup. You can specify only one value. Structure is documented below. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances#monitoring_groups).",
+        'autoHealingPolicies',
+        'The autohealing policies for this managed instance\ngroup. You can specify only one value. Structure is documented below. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances#monitoring_groups).',
         () => compute_RegionInstanceGroupManagerAutoHealingPolicies_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "targetPools",
-        "The full URL of all target pools to which new\ninstances in the group are added. Updating the target pools attribute does\nnot affect existing instances.",
+        'targetPools',
+        'The full URL of all target pools to which new\ninstances in the group are added. Updating the target pools attribute does\nnot affect existing instances.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "distributionPolicyTargetShape",
-        "The shape to which the group converges either proactively or on resize events (depending on the value set in update_policy.0.instance_redistribution_type). For more information see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/regional-mig-distribution-shape).",
+        'distributionPolicyTargetShape',
+        'The shape to which the group converges either proactively or on resize events (depending on the value set in update_policy.0.instance_redistribution_type). For more information see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/regional-mig-distribution-shape).',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "statefulExternalIps",
-        "External network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name. Structure is documented below.\n\n- - -",
+        'statefulExternalIps',
+        'External network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name. Structure is documented below.\n\n- - -',
         () => compute_RegionInstanceGroupManagerStatefulExternalIp_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "versions",
-        "Application versions managed by this instance group. Each\nversion deals with a specific instance template, allowing canary release scenarios.\nStructure is documented below.",
+        'versions',
+        'Application versions managed by this instance group. Each\nversion deals with a specific instance template, allowing canary release scenarios.\nStructure is documented below.',
         () => compute_RegionInstanceGroupManagerVersion_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "allInstancesConfig",
+        'allInstancesConfig',
         "Properties to set on all instances in the group. After setting\nallInstancesConfig on the group, you must update the group's instances to\napply the configuration.",
         () => compute_RegionInstanceGroupManagerAllInstancesConfig_GetTypes(),
         false,
@@ -406,32 +406,32 @@ group manager.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "waitForInstances",
-        "Whether to wait for all instances to be created/updated before\nreturning. Note that if this is set to true and the operation does not succeed, the provider will\ncontinue trying until it times out.",
+        'waitForInstances',
+        'Whether to wait for all instances to be created/updated before\nreturning. Note that if this is set to true and the operation does not succeed, the provider will\ncontinue trying until it times out.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the instance group manager. Must be 1-63\ncharacters long and comply with\n[RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Supported characters\ninclude lowercase letters, numbers, and hyphens.",
+        'name',
+        'The name of the instance group manager. Must be 1-63\ncharacters long and comply with\n[RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Supported characters\ninclude lowercase letters, numbers, and hyphens.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "instanceLifecyclePolicy",
-        "The instance lifecycle policy for this managed instance group.",
+        'instanceLifecyclePolicy',
+        'The instance lifecycle policy for this managed instance group.',
         () =>
           compute_RegionInstanceGroupManagerInstanceLifecyclePolicy_GetTypes(),
         false,
@@ -439,23 +439,23 @@ group manager.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "targetSize",
-        "The target number of running instances for this managed instance group. This value should always be explicitly set\nunless this resource is attached to an autoscaler, in which case it should never be set. Defaults to 0.",
+        'targetSize',
+        'The target number of running instances for this managed instance group. This value should always be explicitly set\nunless this resource is attached to an autoscaler, in which case it should never be set. Defaults to 0.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "baseInstanceName",
-        "The base instance name to use for\ninstances in this group. The value must be a valid\n[RFC1035](https://www.ietf.org/rfc/rfc1035.txt) name. Supported characters\nare lowercase letters, numbers, and hyphens (-). Instances are named by\nappending a hyphen and a random four-character string to the base instance\nname.",
+        'baseInstanceName',
+        'The base instance name to use for\ninstances in this group. The value must be a valid\n[RFC1035](https://www.ietf.org/rfc/rfc1035.txt) name. Supported characters\nare lowercase letters, numbers, and hyphens (-). Instances are named by\nappending a hyphen and a random four-character string to the base instance\nname.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "listManagedInstancesResults",
+        'listManagedInstancesResults',
         "Pagination behavior of the `listManagedInstances` API\nmethod for this managed instance group. Valid values are: `PAGELESS`, `PAGINATED`.\nIf `PAGELESS` (default), Pagination is disabled for the group's `listManagedInstances` API method.\n`maxResults` and `pageToken` query parameters are ignored and all instances are returned in a single\nresponse. If `PAGINATED`, pagination is enabled, `maxResults` and `pageToken` query parameters are\nrespected.",
         () => [],
         false,
@@ -463,32 +463,32 @@ group manager.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "namedPorts",
-        "The named port configuration. See the section below\nfor details on configuration.",
+        'namedPorts',
+        'The named port configuration. See the section below\nfor details on configuration.',
         () => compute_RegionInstanceGroupManagerNamedPort_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "distributionPolicyZones",
-        "The distribution policy for this managed instance\ngroup. You can specify one or more values. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/distributing-instances-with-regional-instance-groups#selectingzones).",
+        'distributionPolicyZones',
+        'The distribution policy for this managed instance\ngroup. You can specify one or more values. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/distributing-instances-with-regional-instance-groups#selectingzones).',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "statefulInternalIps",
-        "Internal network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name. Structure is documented below.",
+        'statefulInternalIps',
+        'Internal network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name. Structure is documented below.',
         () => compute_RegionInstanceGroupManagerStatefulInternalIp_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "updatePolicy",
-        "The update policy for this managed instance group. Structure is documented below. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/updating-managed-instance-groups) and [API](https://cloud.google.com/compute/docs/reference/rest/beta/regionInstanceGroupManagers/patch)",
+        'updatePolicy',
+        'The update policy for this managed instance group. Structure is documented below. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/updating-managed-instance-groups) and [API](https://cloud.google.com/compute/docs/reference/rest/beta/regionInstanceGroupManagers/patch)',
         () => compute_RegionInstanceGroupManagerUpdatePolicy_GetTypes(),
         false,
         false,

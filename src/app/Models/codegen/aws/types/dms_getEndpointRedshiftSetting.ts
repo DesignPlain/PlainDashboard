@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dms_getEndpointRedshiftSetting {
   //
@@ -27,40 +27,40 @@ export function dms_getEndpointRedshiftSetting_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "serverSideEncryptionKmsKeyId",
-      "",
+      'serverSideEncryptionKmsKeyId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "serviceAccessRoleArn",
-      "",
+      'serviceAccessRoleArn',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "bucketFolder",
-      "",
+      'bucketFolder',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "bucketName",
-      "",
+      'bucketName',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "encryptionMode",
-      "",
+      'encryptionMode',
+      '',
       () => [],
       true,
       false,

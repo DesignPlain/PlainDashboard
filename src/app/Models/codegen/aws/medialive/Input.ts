@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_InputDestination,
   medialive_InputDestination_GetTypes,
-} from "../types/medialive_InputDestination";
+} from '../types/medialive_InputDestination';
 import {
   medialive_InputVpc,
   medialive_InputVpc_GetTypes,
-} from "../types/medialive_InputVpc";
+} from '../types/medialive_InputVpc';
 import {
   medialive_InputInputDevice,
   medialive_InputInputDevice_GetTypes,
-} from "../types/medialive_InputInputDevice";
+} from '../types/medialive_InputInputDevice';
 import {
   medialive_InputMediaConnectFlow,
   medialive_InputMediaConnectFlow_GetTypes,
-} from "../types/medialive_InputMediaConnectFlow";
+} from '../types/medialive_InputMediaConnectFlow';
 import {
   medialive_InputSource,
   medialive_InputSource_GetTypes,
-} from "../types/medialive_InputSource";
+} from '../types/medialive_InputSource';
 
 export interface InputArgs {
   // Settings for a private VPC Input. See VPC for more details.
@@ -119,80 +119,80 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Array,
-        "inputDevices",
-        "Settings for the devices. See Input Devices for more details.",
+        'inputDevices',
+        'Settings for the devices. See Input Devices for more details.',
         () => medialive_InputInputDevice_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "mediaConnectFlows",
-        "A list of the MediaConnect Flows. See Media Connect Flows for more details.",
+        'mediaConnectFlows',
+        'A list of the MediaConnect Flows. See Media Connect Flows for more details.',
         () => medialive_InputMediaConnectFlow_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "destinations",
-        "Destination settings for PUSH type inputs. See Destinations for more details.",
+        'destinations',
+        'Destination settings for PUSH type inputs. See Destinations for more details.',
         () => medialive_InputDestination_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The different types of inputs that AWS Elemental MediaLive supports.\n\nThe following arguments are optional:",
+        'type',
+        'The different types of inputs that AWS Elemental MediaLive supports.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "vpc",
-        "Settings for a private VPC Input. See VPC for more details.",
+        'vpc',
+        'Settings for a private VPC Input. See VPC for more details.',
         () => medialive_InputVpc_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the input.",
+        'name',
+        'Name of the input.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "inputSecurityGroups",
-        "List of input security groups.",
+        'inputSecurityGroups',
+        'List of input security groups.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "roleArn",
-        "The ARN of the role this input assumes during and after creation.",
+        'roleArn',
+        'The ARN of the role this input assumes during and after creation.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "sources",
-        "The source URLs for a PULL-type input. See Sources for more details.",
+        'sources',
+        'The source URLs for a PULL-type input. See Sources for more details.',
         () => medialive_InputSource_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the Input. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the Input. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

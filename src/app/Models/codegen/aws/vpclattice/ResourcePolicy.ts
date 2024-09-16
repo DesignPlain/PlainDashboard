@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ResourcePolicyArgs {
   // An IAM policy. The policy string in JSON must not contain newlines or blank lines.
@@ -25,16 +25,16 @@ export class ResourcePolicy extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "policy",
-        "An IAM policy. The policy string in JSON must not contain newlines or blank lines.",
+        'policy',
+        'An IAM policy. The policy string in JSON must not contain newlines or blank lines.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resourceArn",
-        "The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.",
+        'resourceArn',
+        'The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.',
         () => [],
         true,
         true,

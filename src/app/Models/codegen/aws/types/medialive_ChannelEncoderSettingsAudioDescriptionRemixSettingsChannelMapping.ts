@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMappingInputChannelLevel,
   medialive_ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMappingInputChannelLevel_GetTypes,
-} from "./medialive_ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMappingInputChannelLevel";
+} from './medialive_ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMappingInputChannelLevel';
 
 export interface medialive_ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMapping {
   //
@@ -22,8 +22,8 @@ export function medialive_ChannelEncoderSettingsAudioDescriptionRemixSettingsCha
   return [
     new DynamicUIProps(
       InputType.Array,
-      "inputChannelLevels",
-      "",
+      'inputChannelLevels',
+      '',
       () =>
         medialive_ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMappingInputChannelLevel_GetTypes(),
       true,
@@ -31,8 +31,8 @@ export function medialive_ChannelEncoderSettingsAudioDescriptionRemixSettingsCha
     ),
     new DynamicUIProps(
       InputType.Number,
-      "outputChannel",
-      "",
+      'outputChannel',
+      '',
       () => [],
       true,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface vmwareengine_PrivateCloudHcx {
   // Fully qualified domain name of the appliance.
@@ -27,32 +27,32 @@ export function vmwareengine_PrivateCloudHcx_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "internalIp",
-      "Internal IP address of the appliance.",
+      'internalIp',
+      'Internal IP address of the appliance.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "state",
-      "State of the appliance.\nPossible values are: `ACTIVE`, `CREATING`.",
+      'state',
+      'State of the appliance.\nPossible values are: `ACTIVE`, `CREATING`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "version",
-      "Version of the appliance.",
+      'version',
+      'Version of the appliance.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "fqdn",
-      "Fully qualified domain name of the appliance.",
+      'fqdn',
+      'Fully qualified domain name of the appliance.',
       () => [],
       false,
       false,

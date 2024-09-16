@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   container_ClusterProtectConfigWorkloadConfig,
   container_ClusterProtectConfigWorkloadConfig_GetTypes,
-} from "./container_ClusterProtectConfigWorkloadConfig";
+} from './container_ClusterProtectConfigWorkloadConfig';
 
 export interface container_ClusterProtectConfig {
   // Sets which mode to use for Protect workload vulnerability scanning feature. Accepted values are DISABLED, BASIC.
@@ -22,15 +22,15 @@ export function container_ClusterProtectConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "workloadVulnerabilityMode",
-      "Sets which mode to use for Protect workload vulnerability scanning feature. Accepted values are DISABLED, BASIC.",
+      'workloadVulnerabilityMode',
+      'Sets which mode to use for Protect workload vulnerability scanning feature. Accepted values are DISABLED, BASIC.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "workloadConfig",
+      'workloadConfig',
       "WorkloadConfig defines which actions are enabled for a cluster's workload configurations. Structure is documented below",
       () => container_ClusterProtectConfigWorkloadConfig_GetTypes(),
       false,

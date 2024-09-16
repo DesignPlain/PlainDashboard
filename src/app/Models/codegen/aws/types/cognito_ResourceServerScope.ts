@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cognito_ResourceServerScope {
   // The scope description.
@@ -18,16 +18,16 @@ export function cognito_ResourceServerScope_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "scopeDescription",
-      "The scope description.",
+      'scopeDescription',
+      'The scope description.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "scopeName",
-      "The scope name.",
+      'scopeName',
+      'The scope name.',
       () => [],
       true,
       false,

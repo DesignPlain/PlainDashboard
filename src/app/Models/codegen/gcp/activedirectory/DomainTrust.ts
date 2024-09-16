@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface DomainTrustArgs {
   /*
@@ -97,64 +97,64 @@ The trust secret used for the handshake with the target domain. This will not be
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "selectiveAuthentication",
-        "Whether the trusted side has forest/domain wide access or selective access to an approved set of resources.",
+        'selectiveAuthentication',
+        'Whether the trusted side has forest/domain wide access or selective access to an approved set of resources.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "targetDnsIpAddresses",
-        "The target DNS server IP addresses which can resolve the remote domain involved in the trust.",
+        'targetDnsIpAddresses',
+        'The target DNS server IP addresses which can resolve the remote domain involved in the trust.',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "targetDomainName",
-        "The fully qualified target domain name which will be in trust with the current domain.",
+        'targetDomainName',
+        'The fully qualified target domain name which will be in trust with the current domain.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "trustDirection",
-        "The trust direction, which decides if the current domain is trusted, trusting, or both.\nPossible values are: `INBOUND`, `OUTBOUND`, `BIDIRECTIONAL`.",
+        'trustDirection',
+        'The trust direction, which decides if the current domain is trusted, trusting, or both.\nPossible values are: `INBOUND`, `OUTBOUND`, `BIDIRECTIONAL`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "trustHandshakeSecret",
-        "The trust secret used for the handshake with the target domain. This will not be stored.\n**Note**: This property is sensitive and will not be displayed in the plan.",
+        'trustHandshakeSecret',
+        'The trust secret used for the handshake with the target domain. This will not be stored.\n**Note**: This property is sensitive and will not be displayed in the plan.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "trustType",
-        "The type of trust represented by the trust resource.\nPossible values are: `FOREST`, `EXTERNAL`.",
+        'trustType',
+        'The type of trust represented by the trust resource.\nPossible values are: `FOREST`, `EXTERNAL`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "domain",
-        "The fully qualified domain name. e.g. mydomain.myorganization.com, with the restrictions,\nhttps://cloud.google.com/managed-microsoft-ad/reference/rest/v1/projects.locations.global.domains.\n\n\n- - -",
+        'domain',
+        'The fully qualified domain name. e.g. mydomain.myorganization.com, with the restrictions,\nhttps://cloud.google.com/managed-microsoft-ad/reference/rest/v1/projects.locations.global.domains.\n\n\n- - -',
         () => [],
         true,
         true,

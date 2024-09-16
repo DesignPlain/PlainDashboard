@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface securesourcemanager_InstanceHostConfig {
   /*
@@ -36,32 +36,32 @@ export function securesourcemanager_InstanceHostConfig_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.String,
-      "gitSsh",
-      "(Output)\nGit SSH hostname.",
+      'gitSsh',
+      '(Output)\nGit SSH hostname.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "html",
-      "(Output)\nHTML hostname.",
+      'html',
+      '(Output)\nHTML hostname.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "api",
-      "(Output)\nAPI hostname.",
+      'api',
+      '(Output)\nAPI hostname.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "gitHttp",
-      "(Output)\nGit HTTP hostname.",
+      'gitHttp',
+      '(Output)\nGit HTTP hostname.',
       () => [],
       false,
       false,

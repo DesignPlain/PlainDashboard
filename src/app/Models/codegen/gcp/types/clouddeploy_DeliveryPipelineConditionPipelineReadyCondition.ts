@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface clouddeploy_DeliveryPipelineConditionPipelineReadyCondition {
   // True if the Pipeline is in a valid state. Otherwise at least one condition in `PipelineCondition` is in an invalid state. Iterate over those conditions and see which condition(s) has status = false to find out what is wrong with the Pipeline.
@@ -18,16 +18,16 @@ export function clouddeploy_DeliveryPipelineConditionPipelineReadyCondition_GetT
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "status",
-      "True if the Pipeline is in a valid state. Otherwise at least one condition in `PipelineCondition` is in an invalid state. Iterate over those conditions and see which condition(s) has status = false to find out what is wrong with the Pipeline.",
+      'status',
+      'True if the Pipeline is in a valid state. Otherwise at least one condition in `PipelineCondition` is in an invalid state. Iterate over those conditions and see which condition(s) has status = false to find out what is wrong with the Pipeline.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "updateTime",
-      "Output only. Most recent time at which the pipeline was updated.",
+      'updateTime',
+      'Output only. Most recent time at which the pipeline was updated.',
       () => [],
       false,
       false,

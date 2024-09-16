@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface apprunner_ServiceSourceConfigurationCodeRepositorySourceCodeVersion {
   // Type of version identifier. For a git-based repository, branches represent versions. Valid values: `BRANCH`.
@@ -18,16 +18,16 @@ export function apprunner_ServiceSourceConfigurationCodeRepositorySourceCodeVers
   return [
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "Type of version identifier. For a git-based repository, branches represent versions. Valid values: `BRANCH`.",
+      'type',
+      'Type of version identifier. For a git-based repository, branches represent versions. Valid values: `BRANCH`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "Source code version. For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.",
+      'value',
+      'Source code version. For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.',
       () => [],
       true,
       false,

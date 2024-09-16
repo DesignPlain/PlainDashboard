@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface elasticsearch_getDomainNodeToNodeEncryption {
   // Whether node to node encryption is enabled.
@@ -15,8 +15,8 @@ export function elasticsearch_getDomainNodeToNodeEncryption_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
-      "Whether node to node encryption is enabled.",
+      'enabled',
+      'Whether node to node encryption is enabled.',
       () => [],
       true,
       false,

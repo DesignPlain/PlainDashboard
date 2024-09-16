@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_WebAclLoggingConfigurationLoggingFilterFilter,
   wafv2_WebAclLoggingConfigurationLoggingFilterFilter_GetTypes,
-} from "./wafv2_WebAclLoggingConfigurationLoggingFilterFilter";
+} from './wafv2_WebAclLoggingConfigurationLoggingFilterFilter';
 
 export interface wafv2_WebAclLoggingConfigurationLoggingFilter {
   // Default handling for logs that don't match any of the specified filtering conditions. Valid values for `default_behavior` are `KEEP` or `DROP`.
@@ -22,7 +22,7 @@ export function wafv2_WebAclLoggingConfigurationLoggingFilter_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.String,
-      "defaultBehavior",
+      'defaultBehavior',
       "Default handling for logs that don't match any of the specified filtering conditions. Valid values for `default_behavior` are `KEEP` or `DROP`.",
       () => [],
       true,
@@ -30,8 +30,8 @@ export function wafv2_WebAclLoggingConfigurationLoggingFilter_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Array,
-      "filters",
-      "Filter(s) that you want to apply to the logs. See Filter below for more details.",
+      'filters',
+      'Filter(s) that you want to apply to the logs. See Filter below for more details.',
       () => wafv2_WebAclLoggingConfigurationLoggingFilterFilter_GetTypes(),
       true,
       false,

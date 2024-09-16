@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   container_AwsNodePoolAutoscaling,
   container_AwsNodePoolAutoscaling_GetTypes,
-} from "../types/container_AwsNodePoolAutoscaling";
+} from '../types/container_AwsNodePoolAutoscaling';
 import {
   container_AwsNodePoolConfig,
   container_AwsNodePoolConfig_GetTypes,
-} from "../types/container_AwsNodePoolConfig";
+} from '../types/container_AwsNodePoolConfig';
 import {
   container_AwsNodePoolManagement,
   container_AwsNodePoolManagement_GetTypes,
-} from "../types/container_AwsNodePoolManagement";
+} from '../types/container_AwsNodePoolManagement';
 import {
   container_AwsNodePoolMaxPodsConstraint,
   container_AwsNodePoolMaxPodsConstraint_GetTypes,
-} from "../types/container_AwsNodePoolMaxPodsConstraint";
+} from '../types/container_AwsNodePoolMaxPodsConstraint';
 import {
   container_AwsNodePoolUpdateSettings,
   container_AwsNodePoolUpdateSettings_GetTypes,
-} from "../types/container_AwsNodePoolUpdateSettings";
+} from '../types/container_AwsNodePoolUpdateSettings';
 
 export interface AwsNodePoolArgs {
   // The name of this resource.
@@ -139,96 +139,96 @@ Terraform, other clients and services.
     return [
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource",
+        'location',
+        'The location for the resource',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "management",
-        "The Management configuration for this node pool.",
+        'management',
+        'The Management configuration for this node pool.',
         () => container_AwsNodePoolManagement_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "version",
-        "The Kubernetes version to run on this node pool (e.g. `1.19.10-gke.1000`). You can list all supported versions on a given Google Cloud region by calling GetAwsServerConfig.",
+        'version',
+        'The Kubernetes version to run on this node pool (e.g. `1.19.10-gke.1000`). You can list all supported versions on a given Google Cloud region by calling GetAwsServerConfig.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project for the resource",
+        'project',
+        'The project for the resource',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
-        "Optional. Annotations on the node pool. This field has the same restrictions as Kubernetes annotations. The total size of all keys and values combined is limited to 256k. Key can have 2 segments: prefix (optional) and name (required), separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with alphanumerics, with dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
+        'annotations',
+        'Optional. Annotations on the node pool. This field has the same restrictions as Kubernetes annotations. The total size of all keys and values combined is limited to 256k. Key can have 2 segments: prefix (optional) and name (required), separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with alphanumerics, with dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "autoscaling",
-        "Autoscaler configuration for this node pool.",
+        'autoscaling',
+        'Autoscaler configuration for this node pool.',
         () => container_AwsNodePoolAutoscaling_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "config",
-        "The configuration of the node pool.",
+        'config',
+        'The configuration of the node pool.',
         () => container_AwsNodePoolConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "updateSettings",
-        "Optional. Update settings control the speed and disruption of the node pool update.",
+        'updateSettings',
+        'Optional. Update settings control the speed and disruption of the node pool update.',
         () => container_AwsNodePoolUpdateSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of this resource.",
+        'name',
+        'The name of this resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cluster",
-        "The awsCluster for the resource",
+        'cluster',
+        'The awsCluster for the resource',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "maxPodsConstraint",
-        "The constraint on the maximum number of pods that can be run simultaneously on a node in the node pool.",
+        'maxPodsConstraint',
+        'The constraint on the maximum number of pods that can be run simultaneously on a node in the node pool.',
         () => container_AwsNodePoolMaxPodsConstraint_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "subnetId",
-        "The subnet where the node pool node run.",
+        'subnetId',
+        'The subnet where the node pool node run.',
         () => [],
         true,
         true,

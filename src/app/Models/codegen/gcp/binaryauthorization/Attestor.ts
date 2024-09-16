@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   binaryauthorization_AttestorAttestationAuthorityNote,
   binaryauthorization_AttestorAttestationAuthorityNote_GetTypes,
-} from "../types/binaryauthorization_AttestorAttestationAuthorityNote";
+} from '../types/binaryauthorization_AttestorAttestationAuthorityNote';
 
 export interface AttestorArgs {
   /*
@@ -59,32 +59,32 @@ displayed in chooser dialogs.
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "attestationAuthorityNote",
-        "A Container Analysis ATTESTATION_AUTHORITY Note, created by the user.\nStructure is documented below.",
+        'attestationAuthorityNote',
+        'A Container Analysis ATTESTATION_AUTHORITY Note, created by the user.\nStructure is documented below.',
         () => binaryauthorization_AttestorAttestationAuthorityNote_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A descriptive comment. This field may be updated. The field may be\ndisplayed in chooser dialogs.",
+        'description',
+        'A descriptive comment. This field may be updated. The field may be\ndisplayed in chooser dialogs.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The resource name.",
+        'name',
+        'The resource name.',
         () => [],
         false,
         true,

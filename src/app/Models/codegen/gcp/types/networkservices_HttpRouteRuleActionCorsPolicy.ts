@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface networkservices_HttpRouteRuleActionCorsPolicy {
   // Specifies the list of origins that will be allowed to do CORS requests.
@@ -40,64 +40,64 @@ export function networkservices_HttpRouteRuleActionCorsPolicy_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "disabled",
-      "If true, the CORS policy is disabled. The default value is false, which indicates that the CORS policy is in effect.\n\n- - -",
+      'disabled',
+      'If true, the CORS policy is disabled. The default value is false, which indicates that the CORS policy is in effect.\n\n- - -',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "exposeHeaders",
-      "Specifies the content for Access-Control-Expose-Headers header.",
+      'exposeHeaders',
+      'Specifies the content for Access-Control-Expose-Headers header.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "maxAge",
-      "Specifies how long result of a preflight request can be cached in seconds.",
+      'maxAge',
+      'Specifies how long result of a preflight request can be cached in seconds.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "allowCredentials",
-      "In response to a preflight request, setting this to true indicates that the actual request can include user credentials.",
+      'allowCredentials',
+      'In response to a preflight request, setting this to true indicates that the actual request can include user credentials.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "allowHeaders",
-      "Specifies the content for Access-Control-Allow-Headers header.",
+      'allowHeaders',
+      'Specifies the content for Access-Control-Allow-Headers header.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "allowMethods",
-      "Specifies the content for Access-Control-Allow-Methods header.",
+      'allowMethods',
+      'Specifies the content for Access-Control-Allow-Methods header.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "allowOriginRegexes",
-      "Specifies the regular expression patterns that match allowed origins.",
+      'allowOriginRegexes',
+      'Specifies the regular expression patterns that match allowed origins.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "allowOrigins",
-      "Specifies the list of origins that will be allowed to do CORS requests.",
+      'allowOrigins',
+      'Specifies the list of origins that will be allowed to do CORS requests.',
       () => InputType_String_GetTypes(),
       false,
       false,

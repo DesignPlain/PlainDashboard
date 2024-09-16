@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   s3_BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault,
   s3_BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault_GetTypes,
-} from "./s3_BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault";
+} from './s3_BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault';
 
 export interface s3_BucketServerSideEncryptionConfigurationRule {
   // Single object for setting server-side encryption by default. (documented below)
@@ -22,8 +22,8 @@ export function s3_BucketServerSideEncryptionConfigurationRule_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Object,
-      "applyServerSideEncryptionByDefault",
-      "Single object for setting server-side encryption by default. (documented below)",
+      'applyServerSideEncryptionByDefault',
+      'Single object for setting server-side encryption by default. (documented below)',
       () =>
         s3_BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault_GetTypes(),
       true,
@@ -31,8 +31,8 @@ export function s3_BucketServerSideEncryptionConfigurationRule_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "bucketKeyEnabled",
-      "Whether or not to use [Amazon S3 Bucket Keys](https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html) for SSE-KMS.",
+      'bucketKeyEnabled',
+      'Whether or not to use [Amazon S3 Bucket Keys](https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html) for SSE-KMS.',
       () => [],
       false,
       false,

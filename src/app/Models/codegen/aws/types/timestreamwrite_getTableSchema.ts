@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   timestreamwrite_getTableSchemaCompositePartitionKey,
   timestreamwrite_getTableSchemaCompositePartitionKey_GetTypes,
-} from "./timestreamwrite_getTableSchemaCompositePartitionKey";
+} from './timestreamwrite_getTableSchemaCompositePartitionKey';
 
 export interface timestreamwrite_getTableSchema {
   //
@@ -19,8 +19,8 @@ export function timestreamwrite_getTableSchema_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "compositePartitionKeys",
-      "",
+      'compositePartitionKeys',
+      '',
       () => timestreamwrite_getTableSchemaCompositePartitionKey_GetTypes(),
       true,
       false,

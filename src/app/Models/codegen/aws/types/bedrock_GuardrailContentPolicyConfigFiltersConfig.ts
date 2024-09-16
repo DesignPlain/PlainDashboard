@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface bedrock_GuardrailContentPolicyConfigFiltersConfig {
   // Strength for filters.
@@ -21,24 +21,24 @@ export function bedrock_GuardrailContentPolicyConfigFiltersConfig_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.String,
-      "inputStrength",
-      "Strength for filters.",
+      'inputStrength',
+      'Strength for filters.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "outputStrength",
-      "Strength for filters.",
+      'outputStrength',
+      'Strength for filters.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "Type of contextual grounding filter.",
+      'type',
+      'Type of contextual grounding filter.',
       () => [],
       true,
       false,

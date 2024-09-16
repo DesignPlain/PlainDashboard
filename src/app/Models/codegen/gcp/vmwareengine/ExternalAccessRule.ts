@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   vmwareengine_ExternalAccessRuleSourceIpRange,
   vmwareengine_ExternalAccessRuleSourceIpRange_GetTypes,
-} from "../types/vmwareengine_ExternalAccessRuleSourceIpRange";
+} from '../types/vmwareengine_ExternalAccessRuleSourceIpRange';
 import {
   vmwareengine_ExternalAccessRuleDestinationIpRange,
   vmwareengine_ExternalAccessRuleDestinationIpRange_GetTypes,
-} from "../types/vmwareengine_ExternalAccessRuleDestinationIpRange";
+} from '../types/vmwareengine_ExternalAccessRuleDestinationIpRange';
 
 export interface ExternalAccessRuleArgs {
   // A list of destination ports to which the external access rule applies.
@@ -131,80 +131,80 @@ Possible values are: `ALLOW`, `DENY`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "action",
-        "The action that the external access rule performs.\nPossible values are: `ALLOW`, `DENY`.",
+        'action',
+        'The action that the external access rule performs.\nPossible values are: `ALLOW`, `DENY`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "User-provided description for the external access rule.",
+        'description',
+        'User-provided description for the external access rule.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ipProtocol",
-        "The IP protocol to which the external access rule applies.",
+        'ipProtocol',
+        'The IP protocol to which the external access rule applies.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "destinationIpRanges",
-        "If destination ranges are specified, the external access rule applies only to\ntraffic that has a destination IP address in these ranges.\nStructure is documented below.",
+        'destinationIpRanges',
+        'If destination ranges are specified, the external access rule applies only to\ntraffic that has a destination IP address in these ranges.\nStructure is documented below.',
         () => vmwareengine_ExternalAccessRuleDestinationIpRange_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The resource name of the network policy.\nResource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.\nFor example: projects/my-project/locations/us-west1-a/networkPolicies/my-policy",
+        'parent',
+        'The resource name of the network policy.\nResource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.\nFor example: projects/my-project/locations/us-west1-a/networkPolicies/my-policy',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "priority",
-        "External access rule priority, which determines the external access rule to use when multiple rules apply.",
+        'priority',
+        'External access rule priority, which determines the external access rule to use when multiple rules apply.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "destinationPorts",
-        "A list of destination ports to which the external access rule applies.",
+        'destinationPorts',
+        'A list of destination ports to which the external access rule applies.',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The ID of the external access rule.",
+        'name',
+        'The ID of the external access rule.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "sourceIpRanges",
-        "If source ranges are specified, the external access rule applies only to\ntraffic that has a source IP address in these ranges.\nStructure is documented below.",
+        'sourceIpRanges',
+        'If source ranges are specified, the external access rule applies only to\ntraffic that has a source IP address in these ranges.\nStructure is documented below.',
         () => vmwareengine_ExternalAccessRuleSourceIpRange_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "sourcePorts",
-        "A list of source ports to which the external access rule applies.",
+        'sourcePorts',
+        'A list of source ports to which the external access rule applies.',
         () => InputType_String_GetTypes(),
         true,
         false,

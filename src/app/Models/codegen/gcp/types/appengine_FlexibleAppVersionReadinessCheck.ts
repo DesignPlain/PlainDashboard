@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appengine_FlexibleAppVersionReadinessCheck {
   /*
@@ -36,7 +36,7 @@ export function appengine_FlexibleAppVersionReadinessCheck_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.String,
-      "host",
+      'host',
       'Host header to send when performing a HTTP Readiness check. Example: "myapp.appspot.com"',
       () => [],
       false,
@@ -44,23 +44,23 @@ export function appengine_FlexibleAppVersionReadinessCheck_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "path",
-      "The request path.",
+      'path',
+      'The request path.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "successThreshold",
-      "Number of consecutive successful checks required before receiving traffic. Default: 2.",
+      'successThreshold',
+      'Number of consecutive successful checks required before receiving traffic. Default: 2.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "timeout",
+      'timeout',
       'Time before the check is considered failed. Default: "4s"',
       () => [],
       false,
@@ -68,7 +68,7 @@ export function appengine_FlexibleAppVersionReadinessCheck_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "appStartTimeout",
+      'appStartTimeout',
       'A maximum time limit on application initialization, measured from moment the application successfully\nreplies to a healthcheck until it is ready to serve traffic. Default: "300s"',
       () => [],
       false,
@@ -76,7 +76,7 @@ export function appengine_FlexibleAppVersionReadinessCheck_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "checkInterval",
+      'checkInterval',
       'Interval between health checks.  Default: "5s".',
       () => [],
       false,
@@ -84,8 +84,8 @@ export function appengine_FlexibleAppVersionReadinessCheck_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Number,
-      "failureThreshold",
-      "Number of consecutive failed checks required before removing traffic. Default: 2.",
+      'failureThreshold',
+      'Number of consecutive failed checks required before removing traffic. Default: 2.',
       () => [],
       false,
       false,

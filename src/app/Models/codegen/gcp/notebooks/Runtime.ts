@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   notebooks_RuntimeSoftwareConfig,
   notebooks_RuntimeSoftwareConfig_GetTypes,
-} from "../types/notebooks_RuntimeSoftwareConfig";
+} from '../types/notebooks_RuntimeSoftwareConfig';
 import {
   notebooks_RuntimeVirtualMachine,
   notebooks_RuntimeVirtualMachine_GetTypes,
-} from "../types/notebooks_RuntimeVirtualMachine";
+} from '../types/notebooks_RuntimeVirtualMachine';
 import {
   notebooks_RuntimeAccessConfig,
   notebooks_RuntimeAccessConfig_GetTypes,
-} from "../types/notebooks_RuntimeAccessConfig";
+} from '../types/notebooks_RuntimeAccessConfig';
 import {
   notebooks_RuntimeMetric,
   notebooks_RuntimeMetric_GetTypes,
-} from "../types/notebooks_RuntimeMetric";
+} from '../types/notebooks_RuntimeMetric';
 
 export interface RuntimeArgs {
   /*
@@ -151,56 +151,56 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "accessConfig",
-        "The config settings for accessing runtime.\nStructure is documented below.",
+        'accessConfig',
+        'The config settings for accessing runtime.\nStructure is documented below.',
         () => notebooks_RuntimeAccessConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "The labels to associate with this runtime. Label **keys** must\ncontain 1 to 63 characters, and must conform to [RFC 1035]\n(https://www.ietf.org/rfc/rfc1035.txt). Label **values** may be\nempty, but, if present, must contain 1 to 63 characters, and must\nconform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt). No\nmore than 32 labels can be associated with a cluster.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'The labels to associate with this runtime. Label **keys** must\ncontain 1 to 63 characters, and must conform to [RFC 1035]\n(https://www.ietf.org/rfc/rfc1035.txt). Label **values** may be\nempty, but, if present, must contain 1 to 63 characters, and must\nconform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt). No\nmore than 32 labels can be associated with a cluster.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "A reference to the zone where the machine resides.\n\n\n- - -",
+        'location',
+        'A reference to the zone where the machine resides.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name specified for the Notebook runtime.",
+        'name',
+        'The name specified for the Notebook runtime.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "softwareConfig",
-        "The config settings for software inside the runtime.\nStructure is documented below.",
+        'softwareConfig',
+        'The config settings for software inside the runtime.\nStructure is documented below.',
         () => notebooks_RuntimeSoftwareConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "virtualMachine",
-        "Use a Compute Engine VM image to start the managed notebook instance.\nStructure is documented below.",
+        'virtualMachine',
+        'Use a Compute Engine VM image to start the managed notebook instance.\nStructure is documented below.',
         () => notebooks_RuntimeVirtualMachine_GetTypes(),
         false,
         false,

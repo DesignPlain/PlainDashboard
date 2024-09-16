@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudrunv2_getServiceBinaryAuthorization {
   // If present, indicates to use Breakglass using this justification. If useDefault is False, then it must be empty. For more information on breakglass, see https://cloud.google.com/binary-authorization/docs/using-breakglass
@@ -18,7 +18,7 @@ export function cloudrunv2_getServiceBinaryAuthorization_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "useDefault",
+      'useDefault',
       "If True, indicates to use the default project's binary authorization policy. If False, binary authorization will be disabled.",
       () => [],
       true,
@@ -26,8 +26,8 @@ export function cloudrunv2_getServiceBinaryAuthorization_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "breakglassJustification",
-      "If present, indicates to use Breakglass using this justification. If useDefault is False, then it must be empty. For more information on breakglass, see https://cloud.google.com/binary-authorization/docs/using-breakglass",
+      'breakglassJustification',
+      'If present, indicates to use Breakglass using this justification. If useDefault is False, then it must be empty. For more information on breakglass, see https://cloud.google.com/binary-authorization/docs/using-breakglass',
       () => [],
       true,
       false,

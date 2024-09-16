@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface medialive_ChannelEncoderSettingsAudioDescriptionAudioNormalizationSettings {
   // Audio normalization algorithm to use. itu17701 conforms to the CALM Act specification, itu17702 to the EBU R-128 specification.
@@ -21,24 +21,24 @@ export function medialive_ChannelEncoderSettingsAudioDescriptionAudioNormalizati
   return [
     new DynamicUIProps(
       InputType.String,
-      "algorithm",
-      "Audio normalization algorithm to use. itu17701 conforms to the CALM Act specification, itu17702 to the EBU R-128 specification.",
+      'algorithm',
+      'Audio normalization algorithm to use. itu17701 conforms to the CALM Act specification, itu17702 to the EBU R-128 specification.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "algorithmControl",
-      "Algorithm control for the audio description.",
+      'algorithmControl',
+      'Algorithm control for the audio description.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "targetLkfs",
-      "Target LKFS (loudness) to adjust volume to.",
+      'targetLkfs',
+      'Target LKFS (loudness) to adjust volume to.',
       () => [],
       false,
       false,

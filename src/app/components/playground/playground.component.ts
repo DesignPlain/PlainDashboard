@@ -56,7 +56,10 @@ import { ResourceProperties as AWS_ResourceProperties } from 'src/app/Models/cod
 
 import { ResourceType as GCP_ResourceType } from 'src/app/Models/codegen/gcp/ResourceType';
 import { ResourceType as AWS_ResourceType } from 'src/app/Models/codegen/aws/ResourceType';
-import { DS_Resource, ResourceProperty } from 'src/app/Models/codegen/ds_base/Resource';
+import {
+  DS_Resource,
+  ResourceProperty,
+} from 'src/app/Models/codegen/ds_base/Resource';
 
 @Component({
   selector: 'app-playground',
@@ -164,7 +167,7 @@ export class PlaygroundComponent implements OnInit {
     private _localStorageService: LocalStorageService,
     private _stackService: StackService,
     private _modalService: ModalDialogService,
-    private _element_ref: ElementRef
+    private _element_ref: ElementRef,
   ) {
     this._getState();
   }
@@ -193,17 +196,21 @@ export class PlaygroundComponent implements OnInit {
         item.resourceConfig =
           resource.ProviderType == ProviderType.AWS
             ? AWS_ResourceProperties.GetResourceObject(
-              resource.ResourceType as AWS_ResourceType
-            )
+                resource.ResourceType as AWS_ResourceType,
+              )
             : GCP_ResourceProperties.GetResourceObject(
-              resource.ResourceType as GCP_ResourceType
-            );
+                resource.ResourceType as GCP_ResourceType,
+              );
 
-        item.desc = this.getResourceDetails(resource.ProviderType, resource.ResourceType)?.Description.split(".")[0] || "";
+        item.desc =
+          this.getResourceDetails(
+            resource.ProviderType,
+            resource.ResourceType,
+          )?.Description.split('.')[0] || '';
         item.iconSrc = resource.iconSrc;
         this.items.push(item);
         this._saveState();
-      }
+      },
     );
   }
 
@@ -218,13 +225,13 @@ export class PlaygroundComponent implements OnInit {
 
     let insideSelectedBox =
       e.clientX + this.getWindowLeftOffsetWithScroll() >=
-      this.selected_box_coordinates.start_x &&
+        this.selected_box_coordinates.start_x &&
       e.clientY + this.getWindowTopOffsetWithScroll() >=
-      this.selected_box_coordinates.start_y &&
+        this.selected_box_coordinates.start_y &&
       e.clientX + this.getWindowLeftOffsetWithScroll() <=
-      this.selected_box_coordinates.start_x + this.selected_box_shape.width &&
+        this.selected_box_coordinates.start_x + this.selected_box_shape.width &&
       e.clientY + this.getWindowTopOffsetWithScroll() <=
-      this.selected_box_coordinates.start_y + this.selected_box_shape.height;
+        this.selected_box_coordinates.start_y + this.selected_box_shape.height;
 
     if (!insideSelectedBox) {
       this.selectionState = {
@@ -248,13 +255,13 @@ export class PlaygroundComponent implements OnInit {
         // console.log(res_card.position);
         if (
           e.clientX + this.getWindowLeftOffsetWithScroll() >=
-          res_card.position.x - 8 &&
+            res_card.position.x - 8 &&
           e.clientY + this.getWindowTopOffsetWithScroll() >=
-          res_card.position.y - 8 &&
+            res_card.position.y - 8 &&
           e.clientX + this.getWindowLeftOffsetWithScroll() <=
-          res_card.position.x + res_card.shape.width + 36 &&
+            res_card.position.x + res_card.shape.width + 36 &&
           e.clientY + this.getWindowTopOffsetWithScroll() <=
-          res_card.position.y + res_card.shape.height + 36
+            res_card.position.y + res_card.shape.height + 36
         ) {
           if (this.selected_ids.every((id) => id != res_card.id)) {
             this.cardToSelect = res_card.id;
@@ -291,13 +298,13 @@ export class PlaygroundComponent implements OnInit {
     if (
       this.selectionState == null &&
       e.clientX + this.getWindowLeftOffsetWithScroll() >=
-      this.selected_box_coordinates.start_x &&
+        this.selected_box_coordinates.start_x &&
       e.clientY + this.getWindowTopOffsetWithScroll() >=
-      this.selected_box_coordinates.start_y &&
+        this.selected_box_coordinates.start_y &&
       e.clientX + this.getWindowLeftOffsetWithScroll() <=
-      this.selected_box_coordinates.start_x + this.selected_box_shape.width &&
+        this.selected_box_coordinates.start_x + this.selected_box_shape.width &&
       e.clientY + this.getWindowTopOffsetWithScroll() <=
-      this.selected_box_coordinates.start_y + this.selected_box_shape.height
+        this.selected_box_coordinates.start_y + this.selected_box_shape.height
     ) {
       //console.log('In selection');
     } else {
@@ -480,7 +487,7 @@ export class PlaygroundComponent implements OnInit {
       max_start_y: number;
       max_end_x: number;
       max_end_y: number;
-    }
+    },
   ) {
     if (res_card.position.x < max_selected_box_coordinates.max_start_x) {
       max_selected_box_coordinates.max_start_x = res_card.position.x;
@@ -581,7 +588,7 @@ export class PlaygroundComponent implements OnInit {
     let details_string: string = JSON.stringify(
       templateResources,
       replacer,
-      '\t'
+      '\t',
     );
     this._modalService.openTemplateConfigModal(details_string);
   }
@@ -847,7 +854,7 @@ export class PlaygroundComponent implements OnInit {
         item.title,
         item.resourceConfig,
         item.providerType,
-        item.resourceType
+        item.resourceType,
       );
     } else {
       this.setDefaultResourceConfig(item);
@@ -855,7 +862,7 @@ export class PlaygroundComponent implements OnInit {
 
     this.currentResourceType = item.resourceType;
     this.currentOut = item.resOutputs?.sort((a, b) =>
-      a.name > b.name ? 1 : -1
+      a.name > b.name ? 1 : -1,
     );
     this.currentIndex = resourceIndex;
     this.showSideBar = true;
@@ -869,7 +876,7 @@ export class PlaygroundComponent implements OnInit {
       `${item.yamlContent}`,
       item.id,
       item.desc,
-      this
+      this,
     );
   }
 
@@ -878,11 +885,11 @@ export class PlaygroundComponent implements OnInit {
   private setDefaultResourceConfig(item: CloudResource) {
     let propertiesMapResource: DynamicUIProps[] = this.getPropertiesMapResource(
       item.providerType,
-      item.resourceType
+      item.resourceType,
     );
     propertiesMapResource?.forEach((val) => {
       const map = new Map();
-      let dyn_list = val.members
+      let dyn_list = val.members;
       //console.log(dyn_list.toString())
 
       dyn_list().forEach((obj) => {
@@ -891,36 +898,35 @@ export class PlaygroundComponent implements OnInit {
 
       this.currentConfig.set(
         val.val,
-        new DynamicUIPropState(val.type, '', '', map)
+        new DynamicUIPropState(val.type, '', '', map),
       );
     });
   }
 
   private getPropertiesMapResource(
     providerType: ProviderType,
-    resourceType: GCP_ResourceType | AWS_ResourceType
+    resourceType: GCP_ResourceType | AWS_ResourceType,
   ) {
     let propMapRes = this.getResourceDetails(providerType, resourceType);
     if (propMapRes != undefined) {
       return propMapRes.UIProps;
-
     }
 
-    return []
+    return [];
   }
 
   private getResourceDetails(
     providerType: ProviderType,
-    resourceType: GCP_ResourceType | AWS_ResourceType
+    resourceType: GCP_ResourceType | AWS_ResourceType,
   ) {
     if (providerType == ProviderType.AWS) {
       let resourceProperty = AWS_ResourceProperties.propertiesMap1.get(
-        resourceType as AWS_ResourceType
+        resourceType as AWS_ResourceType,
       );
 
       if (resourceProperty == undefined) {
         resourceProperty = AWS_ResourceProperties.propertiesMap2.get(
-          resourceType as AWS_ResourceType
+          resourceType as AWS_ResourceType,
         );
       }
 
@@ -929,7 +935,7 @@ export class PlaygroundComponent implements OnInit {
       }
     } else {
       let resourceProperty = GCP_ResourceProperties.propertiesMap1.get(
-        resourceType as GCP_ResourceType
+        resourceType as GCP_ResourceType,
       );
       if (resourceProperty != undefined) {
         return resourceProperty;
@@ -971,14 +977,14 @@ export class PlaygroundComponent implements OnInit {
     name: string,
     res: DS_Resource,
     providerType: ProviderType,
-    resourceType: GCP_ResourceType | AWS_ResourceType
+    resourceType: GCP_ResourceType | AWS_ResourceType,
   ) {
     //(res as Bucket).Labels = new Map([["Key","8"]])
     let objMap = new Map(Object.entries(res));
 
     let propertiesMapResource = this.getPropertiesMapResource(
       providerType,
-      resourceType
+      resourceType,
     );
 
     propertiesMapResource?.forEach((val) => {
@@ -1009,8 +1015,8 @@ export class PlaygroundComponent implements OnInit {
           val.description,
           map,
           val.isRequired,
-          val.willReplaceOnChanges
-        )
+          val.willReplaceOnChanges,
+        ),
       );
 
       //console.log('Final load:', this.currentConfig);
@@ -1025,17 +1031,17 @@ export class PlaygroundComponent implements OnInit {
       objMap: Map<string, any>,
       val: DynamicUIProps,
       map: Map<any, any>,
-      depth: number
+      depth: number,
     ) {
       // console.log("setDynamicUIMembers Depth is: ", depth)
       if (depth > 5) {
-        return
+        return;
       }
       //console.log('ObjMap: before null check ', objMap);
       if (!(objMap instanceof Map) && (objMap != null || objMap != undefined)) {
         objMap = new Map(Object.entries(objMap));
       }
-      let dyn_list = val.members
+      let dyn_list = val.members;
       //console.log(dyn_list.toString())
 
       dyn_list().forEach((obj) => {
@@ -1073,8 +1079,8 @@ export class PlaygroundComponent implements OnInit {
             obj.description,
             lmap,
             obj.isRequired,
-            obj.willReplaceOnChanges
-          )
+            obj.willReplaceOnChanges,
+          ),
         );
 
         // console.log(map);
@@ -1089,7 +1095,7 @@ export class PlaygroundComponent implements OnInit {
       outputPositionX: number;
       outputPositionY: number;
     },
-    outPutId: string
+    outPutId: string,
   ): void {
     // console.log(
     //   (
@@ -1109,7 +1115,7 @@ export class PlaygroundComponent implements OnInit {
       inputPositionX: number;
       inputPositionY: number;
     },
-    inputId: string
+    inputId: string,
   ): void {
     this.currentInput = {
       id: inputId,
@@ -1118,7 +1124,7 @@ export class PlaygroundComponent implements OnInit {
     };
   }
 
-  public mouseLeft(): void { }
+  public mouseLeft(): void {}
 
   public dragMove_Card($event: CdkDragMove, id: string): void {
     this.dropSelectionBox();
@@ -1150,7 +1156,7 @@ export class PlaygroundComponent implements OnInit {
           currentItem,
           id,
           differenceinX,
-          differenceinY
+          differenceinY,
         );
 
         this._processLineData();
@@ -1185,7 +1191,7 @@ export class PlaygroundComponent implements OnInit {
     currentItem: CloudResource,
     id: string,
     differenceinX: number,
-    differenceinY: number
+    differenceinY: number,
   ) {
     if (currentItem.inlets.length > 0) {
       currentItem.inlets.forEach((element) => {

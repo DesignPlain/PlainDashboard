@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   directoryservice_ServiceRegionVpcSettings,
   directoryservice_ServiceRegionVpcSettings_GetTypes,
-} from "../types/directoryservice_ServiceRegionVpcSettings";
+} from '../types/directoryservice_ServiceRegionVpcSettings';
 
 export interface ServiceRegionArgs {
   // Map of tags to assign to this resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
@@ -50,40 +50,40 @@ export class ServiceRegion extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Number,
-        "desiredNumberOfDomainControllers",
-        "The number of domain controllers desired in the replicated directory. Minimum value of `2`.",
+        'desiredNumberOfDomainControllers',
+        'The number of domain controllers desired in the replicated directory. Minimum value of `2`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "directoryId",
-        "The identifier of the directory to which you want to add Region replication.",
+        'directoryId',
+        'The identifier of the directory to which you want to add Region replication.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "regionName",
-        "The name of the Region where you want to add domain controllers for replication.",
+        'regionName',
+        'The name of the Region where you want to add domain controllers for replication.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to this resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to this resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "vpcSettings",
-        "VPC information in the replicated Region. Detailed below.",
+        'vpcSettings',
+        'VPC information in the replicated Region. Detailed below.',
         () => directoryservice_ServiceRegionVpcSettings_GetTypes(),
         true,
         true,

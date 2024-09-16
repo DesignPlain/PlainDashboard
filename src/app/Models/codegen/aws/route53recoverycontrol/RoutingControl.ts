@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface RoutingControlArgs {
   // ARN of the cluster in which this routing control will reside.
@@ -45,24 +45,24 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "clusterArn",
-        "ARN of the cluster in which this routing control will reside.",
+        'clusterArn',
+        'ARN of the cluster in which this routing control will reside.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "controlPanelArn",
-        "ARN of the control panel in which this routing control will reside.",
+        'controlPanelArn',
+        'ARN of the control panel in which this routing control will reside.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name describing the routing control.\n\nThe following arguments are optional:",
+        'name',
+        'The name describing the routing control.\n\nThe following arguments are optional:',
         () => [],
         false,
         false,

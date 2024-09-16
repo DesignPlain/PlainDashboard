@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface glue_MLTransformSchema {
   // The type of data in the column.
@@ -18,16 +18,16 @@ export function glue_MLTransformSchema_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "dataType",
-      "The type of data in the column.",
+      'dataType',
+      'The type of data in the column.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The name you assign to this ML Transform. It must be unique in your account.",
+      'name',
+      'The name you assign to this ML Transform. It must be unique in your account.',
       () => [],
       false,
       false,

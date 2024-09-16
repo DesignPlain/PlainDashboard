@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ssmincidents_getResponsePlanActionSsmAutomation,
   ssmincidents_getResponsePlanActionSsmAutomation_GetTypes,
-} from "./ssmincidents_getResponsePlanActionSsmAutomation";
+} from './ssmincidents_getResponsePlanActionSsmAutomation';
 
 export interface ssmincidents_getResponsePlanAction {
   // The Systems Manager automation document to start as the runbook at the beginning of the incident. The following values are supported:
@@ -19,8 +19,8 @@ export function ssmincidents_getResponsePlanAction_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ssmAutomations",
-      "The Systems Manager automation document to start as the runbook at the beginning of the incident. The following values are supported:",
+      'ssmAutomations',
+      'The Systems Manager automation document to start as the runbook at the beginning of the incident. The following values are supported:',
       () => ssmincidents_getResponsePlanActionSsmAutomation_GetTypes(),
       true,
       false,

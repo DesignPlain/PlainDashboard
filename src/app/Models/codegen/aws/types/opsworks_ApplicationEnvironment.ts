@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface opsworks_ApplicationEnvironment {
   // Variable name.
@@ -21,24 +21,24 @@ export function opsworks_ApplicationEnvironment_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "key",
-      "Variable name.",
+      'key',
+      'Variable name.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "secure",
-      "Set visibility of the variable value to `true` or `false`.",
+      'secure',
+      'Set visibility of the variable value to `true` or `false`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "Variable value.",
+      'value',
+      'Variable value.',
       () => [],
       true,
       false,

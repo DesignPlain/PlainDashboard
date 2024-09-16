@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudrun_getServiceTemplateSpecContainerStartupProbeTcpSocket {
   /*
@@ -18,8 +18,8 @@ export function cloudrun_getServiceTemplateSpecContainerStartupProbeTcpSocket_Ge
   return [
     new DynamicUIProps(
       InputType.Number,
-      "port",
-      "Port number to access on the container. Number must be in the range 1 to 65535.\nIf not specified, defaults to the same value as container.ports[0].containerPort.",
+      'port',
+      'Port number to access on the container. Number must be in the range 1 to 65535.\nIf not specified, defaults to the same value as container.ports[0].containerPort.',
       () => [],
       true,
       false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption,
   secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption_GetTypes,
-} from "./secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption";
+} from './secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption';
 
 export interface secretmanager_getSecretReplicationUserManagedReplica {
   // Customer Managed Encryption for the secret.
@@ -22,8 +22,8 @@ export function secretmanager_getSecretReplicationUserManagedReplica_GetTypes():
   return [
     new DynamicUIProps(
       InputType.Array,
-      "customerManagedEncryptions",
-      "Customer Managed Encryption for the secret.",
+      'customerManagedEncryptions',
+      'Customer Managed Encryption for the secret.',
       () =>
         secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption_GetTypes(),
       true,
@@ -31,7 +31,7 @@ export function secretmanager_getSecretReplicationUserManagedReplica_GetTypes():
     ),
     new DynamicUIProps(
       InputType.String,
-      "location",
+      'location',
       'The canonical IDs of the location to replicate data. For example: "us-east1".',
       () => [],
       true,

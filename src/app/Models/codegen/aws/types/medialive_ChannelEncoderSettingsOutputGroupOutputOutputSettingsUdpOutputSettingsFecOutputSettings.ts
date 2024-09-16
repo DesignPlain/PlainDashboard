@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsFecOutputSettings {
   // The height of the FEC protection matrix.
@@ -21,24 +21,24 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsU
   return [
     new DynamicUIProps(
       InputType.Number,
-      "columnDepth",
-      "The height of the FEC protection matrix.",
+      'columnDepth',
+      'The height of the FEC protection matrix.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "includeFec",
-      "Enables column only or column and row based FEC.",
+      'includeFec',
+      'Enables column only or column and row based FEC.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "rowLength",
-      "The width of the FEC protection matrix.",
+      'rowLength',
+      'The width of the FEC protection matrix.',
       () => [],
       false,
       false,

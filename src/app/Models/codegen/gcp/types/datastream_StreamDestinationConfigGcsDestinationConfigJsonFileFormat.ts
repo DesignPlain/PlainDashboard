@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFormat {
   /*
@@ -24,16 +24,16 @@ export function datastream_StreamDestinationConfigGcsDestinationConfigJsonFileFo
   return [
     new DynamicUIProps(
       InputType.String,
-      "compression",
-      "Compression of the loaded JSON file.\nPossible values are: `NO_COMPRESSION`, `GZIP`.",
+      'compression',
+      'Compression of the loaded JSON file.\nPossible values are: `NO_COMPRESSION`, `GZIP`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "schemaFileFormat",
-      "The schema file format along JSON data files.\nPossible values are: `NO_SCHEMA_FILE`, `AVRO_SCHEMA_FILE`.",
+      'schemaFileFormat',
+      'The schema file format along JSON data files.\nPossible values are: `NO_SCHEMA_FILE`, `AVRO_SCHEMA_FILE`.',
       () => [],
       false,
       false,

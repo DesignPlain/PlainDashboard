@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   blockchainnodeengine_BlockchainNodesConnectionInfoEndpointInfo,
   blockchainnodeengine_BlockchainNodesConnectionInfoEndpointInfo_GetTypes,
-} from "./blockchainnodeengine_BlockchainNodesConnectionInfoEndpointInfo";
+} from './blockchainnodeengine_BlockchainNodesConnectionInfoEndpointInfo';
 
 export interface blockchainnodeengine_BlockchainNodesConnectionInfo {
   /*
@@ -29,8 +29,8 @@ export function blockchainnodeengine_BlockchainNodesConnectionInfo_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.Array,
-      "endpointInfos",
-      "(Output)\nThe endpoint information through which to interact with a blockchain node.\nStructure is documented below.",
+      'endpointInfos',
+      '(Output)\nThe endpoint information through which to interact with a blockchain node.\nStructure is documented below.',
       () =>
         blockchainnodeengine_BlockchainNodesConnectionInfoEndpointInfo_GetTypes(),
       false,
@@ -38,8 +38,8 @@ export function blockchainnodeengine_BlockchainNodesConnectionInfo_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.String,
-      "serviceAttachment",
-      "(Output)\nA service attachment that exposes a node, and has the following format: projects/{project}/regions/{region}/serviceAttachments/{service_attachment_name}",
+      'serviceAttachment',
+      '(Output)\nA service attachment that exposes a node, and has the following format: projects/{project}/regions/{region}/serviceAttachments/{service_attachment_name}',
       () => [],
       false,
       false,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   redshiftdata_StatementParameter,
   redshiftdata_StatementParameter_GetTypes,
-} from "../types/redshiftdata_StatementParameter";
+} from '../types/redshiftdata_StatementParameter';
 
 export interface StatementArgs {
   // The database user name.
@@ -79,72 +79,72 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "statementName",
-        "The name of the SQL statement. You can name the SQL statement when you create it to identify the query.",
+        'statementName',
+        'The name of the SQL statement. You can name the SQL statement when you create it to identify the query.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "withEvent",
-        "A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs.",
+        'withEvent',
+        'A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "secretArn",
-        "The name or ARN of the secret that enables access to the database.",
+        'secretArn',
+        'The name or ARN of the secret that enables access to the database.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sql",
-        "The SQL statement text to run.\n\nThe following arguments are optional:",
+        'sql',
+        'The SQL statement text to run.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "workgroupName",
-        "The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "clusterIdentifier",
-        "The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.",
+        'workgroupName',
+        'The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "database",
-        "The name of the database.",
+        'clusterIdentifier',
+        'The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'database',
+        'The name of the database.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dbUser",
-        "The database user name.",
+        'dbUser',
+        'The database user name.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "parameters",
-        "",
+        'parameters',
+        '',
         () => redshiftdata_StatementParameter_GetTypes(),
         false,
         true,

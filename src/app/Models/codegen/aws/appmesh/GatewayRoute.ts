@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_GatewayRouteSpec,
   appmesh_GatewayRouteSpec_GetTypes,
-} from "../types/appmesh_GatewayRouteSpec";
+} from '../types/appmesh_GatewayRouteSpec';
 
 export interface GatewayRouteArgs {
   // Name to use for the gateway route. Must be between 1 and 255 characters in length.
@@ -68,47 +68,47 @@ export class GatewayRoute extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name to use for the gateway route. Must be between 1 and 255 characters in length.",
+        'name',
+        'Name to use for the gateway route. Must be between 1 and 255 characters in length.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "spec",
-        "Gateway route specification to apply.",
+        'spec',
+        'Gateway route specification to apply.',
         () => appmesh_GatewayRouteSpec_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "virtualGatewayName",
-        "Name of the virtual gateway to associate the gateway route with. Must be between 1 and 255 characters in length.",
+        'virtualGatewayName',
+        'Name of the virtual gateway to associate the gateway route with. Must be between 1 and 255 characters in length.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "meshName",
-        "Name of the service mesh in which to create the gateway route. Must be between 1 and 255 characters in length.",
+        'meshName',
+        'Name of the service mesh in which to create the gateway route. Must be between 1 and 255 characters in length.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "meshOwner",
+        'meshOwner',
         "AWS account ID of the service mesh's owner. Defaults to the account ID the AWS provider is currently connected to.",
         () => [],
         false,

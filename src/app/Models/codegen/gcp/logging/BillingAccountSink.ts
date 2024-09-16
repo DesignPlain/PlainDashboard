@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   logging_BillingAccountSinkExclusion,
   logging_BillingAccountSinkExclusion_GetTypes,
-} from "../types/logging_BillingAccountSinkExclusion";
+} from '../types/logging_BillingAccountSinkExclusion';
 import {
   logging_BillingAccountSinkBigqueryOptions,
   logging_BillingAccountSinkBigqueryOptions_GetTypes,
-} from "../types/logging_BillingAccountSinkBigqueryOptions";
+} from '../types/logging_BillingAccountSinkBigqueryOptions';
 
 export interface BillingAccountSinkArgs {
   // If set to True, then this sink is disabled and it does not export any log entries.
@@ -103,64 +103,64 @@ write a filter.
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "disabled",
-        "If set to True, then this sink is disabled and it does not export any log entries.",
+        'disabled',
+        'If set to True, then this sink is disabled and it does not export any log entries.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "exclusions",
-        "Log entries that match any of the exclusion filters will not be exported. If a log entry is matched by both `filter` and one of `exclusions.filter`, it will not be exported.  Can be repeated multiple times for multiple exclusions. Structure is documented below.",
+        'exclusions',
+        'Log entries that match any of the exclusion filters will not be exported. If a log entry is matched by both `filter` and one of `exclusions.filter`, it will not be exported.  Can be repeated multiple times for multiple exclusions. Structure is documented below.',
         () => logging_BillingAccountSinkExclusion_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "filter",
-        "The filter to apply when exporting logs. Only log entries that match the filter are exported.\nSee [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced_filters) for information on how to\nwrite a filter.",
+        'filter',
+        'The filter to apply when exporting logs. Only log entries that match the filter are exported.\nSee [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced_filters) for information on how to\nwrite a filter.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the logging sink.",
+        'name',
+        'The name of the logging sink.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "bigqueryOptions",
-        "Options that affect sinks exporting data to BigQuery. Structure documented below.",
+        'bigqueryOptions',
+        'Options that affect sinks exporting data to BigQuery. Structure documented below.',
         () => logging_BillingAccountSinkBigqueryOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "billingAccount",
-        "The billing account exported to the sink.",
+        'billingAccount',
+        'The billing account exported to the sink.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of this sink. The maximum length of the description is 8000 characters.",
+        'description',
+        'A description of this sink. The maximum length of the description is 8000 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "destination",
-        "The destination of the sink (or, in other words, where logs are written to). Can be a\nCloud Storage bucket, a PubSub topic, a BigQuery dataset or a Cloud Logging bucket. Examples:\n\n- `storage.googleapis.com/[GCS_BUCKET]`\n- `bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]`\n- `pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]`\n- `logging.googleapis.com/projects/[PROJECT_ID]]/locations/global/buckets/[BUCKET_ID]`\n\nThe writer associated with the sink must have access to write to the above resource.",
+        'destination',
+        'The destination of the sink (or, in other words, where logs are written to). Can be a\nCloud Storage bucket, a PubSub topic, a BigQuery dataset or a Cloud Logging bucket. Examples:\n\n- `storage.googleapis.com/[GCS_BUCKET]`\n- `bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]`\n- `pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]`\n- `logging.googleapis.com/projects/[PROJECT_ID]]/locations/global/buckets/[BUCKET_ID]`\n\nThe writer associated with the sink must have access to write to the above resource.',
         () => [],
         true,
         false,

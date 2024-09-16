@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ssmcontacts_PlanStageTargetContactTargetInfo {
   // The Amazon Resource Name (ARN) of the contact.
@@ -18,15 +18,15 @@ export function ssmcontacts_PlanStageTargetContactTargetInfo_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.String,
-      "contactId",
-      "The Amazon Resource Name (ARN) of the contact.",
+      'contactId',
+      'The Amazon Resource Name (ARN) of the contact.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "isEssential",
+      'isEssential',
       "A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.",
       () => [],
       true,

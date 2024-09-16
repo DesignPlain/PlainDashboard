@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidationTrustAcm,
   appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidationTrustAcm_GetTypes,
-} from "./appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidationTrustAcm";
+} from './appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidationTrustAcm';
 import {
   appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidationTrustFile,
   appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidationTrustFile_GetTypes,
-} from "./appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidationTrustFile";
+} from './appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidationTrustFile';
 import {
   appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidationTrustSd,
   appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidationTrustSd_GetTypes,
-} from "./appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidationTrustSd";
+} from './appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidationTrustSd';
 
 export interface appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidationTrust {
   //
@@ -33,8 +33,8 @@ export function appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidation
   return [
     new DynamicUIProps(
       InputType.Array,
-      "acms",
-      "",
+      'acms',
+      '',
       () =>
         appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidationTrustAcm_GetTypes(),
       true,
@@ -42,8 +42,8 @@ export function appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidation
     ),
     new DynamicUIProps(
       InputType.Array,
-      "files",
-      "",
+      'files',
+      '',
       () =>
         appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidationTrustFile_GetTypes(),
       true,
@@ -51,8 +51,8 @@ export function appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidation
     ),
     new DynamicUIProps(
       InputType.Array,
-      "sds",
-      "",
+      'sds',
+      '',
       () =>
         appmesh_getVirtualNodeSpecBackendDefaultClientPolicyTlValidationTrustSd_GetTypes(),
       true,

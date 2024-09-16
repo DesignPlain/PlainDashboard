@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface AccessGrantsLocationArgs {
   //
@@ -52,32 +52,32 @@ requests to the location.
     return [
       new DynamicUIProps(
         InputType.String,
-        "accountId",
-        "",
+        'accountId',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "iamRoleArn",
-        "The ARN of the IAM role that S3 Access Grants should use when fulfilling runtime access\nrequests to the location.",
+        'iamRoleArn',
+        'The ARN of the IAM role that S3 Access Grants should use when fulfilling runtime access\nrequests to the location.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "locationScope",
-        "The default S3 URI `s3://` or the URI to a custom location, a specific bucket or prefix.",
+        'locationScope',
+        'The default S3 URI `s3://` or the URI to a custom location, a specific bucket or prefix.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

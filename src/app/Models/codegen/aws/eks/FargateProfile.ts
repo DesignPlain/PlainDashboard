@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   eks_FargateProfileSelector,
   eks_FargateProfileSelector_GetTypes,
-} from "../types/eks_FargateProfileSelector";
+} from '../types/eks_FargateProfileSelector';
 
 export interface FargateProfileArgs {
   // Name of the EKS Fargate Profile.
@@ -70,48 +70,48 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "clusterName",
-        "Name of the EKS Cluster.",
+        'clusterName',
+        'Name of the EKS Cluster.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "fargateProfileName",
-        "Name of the EKS Fargate Profile.",
+        'fargateProfileName',
+        'Name of the EKS Fargate Profile.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "podExecutionRoleArn",
-        "Amazon Resource Name (ARN) of the IAM Role that provides permissions for the EKS Fargate Profile.",
+        'podExecutionRoleArn',
+        'Amazon Resource Name (ARN) of the IAM Role that provides permissions for the EKS Fargate Profile.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "selectors",
-        "Configuration block(s) for selecting Kubernetes Pods to execute with this EKS Fargate Profile. Detailed below.",
+        'selectors',
+        'Configuration block(s) for selecting Kubernetes Pods to execute with this EKS Fargate Profile. Detailed below.',
         () => eks_FargateProfileSelector_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "subnetIds",
-        "Identifiers of private EC2 Subnets to associate with the EKS Fargate Profile. These subnets must have the following resource tag: `kubernetes.io/cluster/CLUSTER_NAME` (where `CLUSTER_NAME` is replaced with the name of the EKS Cluster).\n\nThe following arguments are optional:",
+        'subnetIds',
+        'Identifiers of private EC2 Subnets to associate with the EKS Fargate Profile. These subnets must have the following resource tag: `kubernetes.io/cluster/CLUSTER_NAME` (where `CLUSTER_NAME` is replaced with the name of the EKS Cluster).\n\nThe following arguments are optional:',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

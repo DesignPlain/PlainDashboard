@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataflow_PipelineWorkload,
   dataflow_PipelineWorkload_GetTypes,
-} from "../types/dataflow_PipelineWorkload";
+} from '../types/dataflow_PipelineWorkload';
 import {
   dataflow_PipelineScheduleInfo,
   dataflow_PipelineScheduleInfo_GetTypes,
-} from "../types/dataflow_PipelineScheduleInfo";
+} from '../types/dataflow_PipelineScheduleInfo';
 
 export interface PipelineArgs {
   /*
@@ -156,15 +156,15 @@ Possible values are: `STATE_UNSPECIFIED`, `STATE_RESUMING`, `STATE_ACTIVE`, `STA
     return [
       new DynamicUIProps(
         InputType.Object,
-        "workload",
-        "Workload information for creating new jobs.\nhttps://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#workload\nStructure is documented below.",
+        'workload',
+        'Workload information for creating new jobs.\nhttps://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#workload\nStructure is documented below.',
         () => dataflow_PipelineWorkload_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "pipelineSources",
+        'pipelineSources',
         'The sources of the pipeline (for example, Dataplex). The keys and values are set by the corresponding sources during pipeline creation.\nAn object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.',
         () => InputType_Map_GetTypes(),
         false,
@@ -172,31 +172,31 @@ Possible values are: `STATE_UNSPECIFIED`, `STATE_RESUMING`, `STATE_ACTIVE`, `STA
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "schedulerServiceAccountEmail",
-        "Optional. A service account email to be used with the Cloud Scheduler job. If not specified, the default compute engine service account will be used.",
+        'schedulerServiceAccountEmail',
+        'Optional. A service account email to be used with the Cloud Scheduler job. If not specified, the default compute engine service account will be used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The display name of the pipeline. It can contain only letters ([A-Za-z]), numbers ([0-9]), hyphens (-), and underscores (_).",
+        'displayName',
+        'The display name of the pipeline. It can contain only letters ([A-Za-z]), numbers ([0-9]), hyphens (-), and underscores (_).',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
+        'name',
         '"The pipeline name. For example\': \'projects/PROJECT_ID/locations/LOCATION_ID/pipelines/PIPELINE_ID."\n"- PROJECT_ID can contain letters ([A-Za-z]), numbers ([0-9]), hyphens (-), colons (:), and periods (.). For more information, see Identifying projects."\n"LOCATION_ID is the canonical ID for the pipeline\'s location. The list of available locations can be obtained by calling google.cloud.location.Locations.ListLocations. Note that the Data Pipelines service is not available in all regions. It depends on Cloud Scheduler, an App Engine application, so it\'s only available in App Engine regions."\n"PIPELINE_ID is the ID of the pipeline. Must be unique for the selected project and location."',
         () => [],
         false,
@@ -204,31 +204,31 @@ Possible values are: `STATE_UNSPECIFIED`, `STATE_RESUMING`, `STATE_ACTIVE`, `STA
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The type of the pipeline. This field affects the scheduling of the pipeline and the type of metrics to show for the pipeline.\nhttps://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#pipelinetype\nPossible values are: `PIPELINE_TYPE_UNSPECIFIED`, `PIPELINE_TYPE_BATCH`, `PIPELINE_TYPE_STREAMING`.",
+        'type',
+        'The type of the pipeline. This field affects the scheduling of the pipeline and the type of metrics to show for the pipeline.\nhttps://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#pipelinetype\nPossible values are: `PIPELINE_TYPE_UNSPECIFIED`, `PIPELINE_TYPE_BATCH`, `PIPELINE_TYPE_STREAMING`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "A reference to the region",
+        'region',
+        'A reference to the region',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "scheduleInfo",
-        "Internal scheduling information for a pipeline. If this information is provided, periodic jobs will be created per the schedule. If not, users are responsible for creating jobs externally.\nhttps://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#schedulespec\nStructure is documented below.",
+        'scheduleInfo',
+        'Internal scheduling information for a pipeline. If this information is provided, periodic jobs will be created per the schedule. If not, users are responsible for creating jobs externally.\nhttps://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#schedulespec\nStructure is documented below.',
         () => dataflow_PipelineScheduleInfo_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "state",
+        'state',
         "The state of the pipeline. When the pipeline is created, the state is set to 'PIPELINE_STATE_ACTIVE' by default. State changes can be requested by setting the state to stopping, paused, or resuming. State cannot be changed through pipelines.patch requests.\nhttps://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#state\nPossible values are: `STATE_UNSPECIFIED`, `STATE_RESUMING`, `STATE_ACTIVE`, `STATE_STOPPING`, `STATE_ARCHIVED`, `STATE_PAUSED`.\n\n\n- - -",
         () => [],
         true,

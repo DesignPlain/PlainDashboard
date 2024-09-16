@@ -7,6 +7,6 @@ export class VisualResource {
     public Titile: string,
     public ProviderType: ProviderType,
     public ResourceType: GCP_ResourceType | AWS_ResourceType,
-    public iconSrc: string
-  ) { }
+    public iconSrc: string,
+  ) {}
 }

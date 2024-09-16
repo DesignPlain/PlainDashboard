@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudfront_ResponseHeadersPolicySecurityHeadersConfigFrameOptions {
   // The value of the `X-Frame-Options` HTTP response header. Valid values: `DENY` | `SAMEORIGIN`
@@ -18,16 +18,16 @@ export function cloudfront_ResponseHeadersPolicySecurityHeadersConfigFrameOption
   return [
     new DynamicUIProps(
       InputType.String,
-      "frameOption",
-      "The value of the `X-Frame-Options` HTTP response header. Valid values: `DENY` | `SAMEORIGIN`",
+      'frameOption',
+      'The value of the `X-Frame-Options` HTTP response header. Valid values: `DENY` | `SAMEORIGIN`',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "override",
-      "Whether CloudFront overrides the `X-Frame-Options` HTTP response header received from the origin with the one specified in this response headers policy.",
+      'override',
+      'Whether CloudFront overrides the `X-Frame-Options` HTTP response header received from the origin with the one specified in this response headers policy.',
       () => [],
       true,
       false,

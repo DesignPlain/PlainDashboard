@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   glue_MLTransformParametersFindMatchesParameters,
   glue_MLTransformParametersFindMatchesParameters_GetTypes,
-} from "./glue_MLTransformParametersFindMatchesParameters";
+} from './glue_MLTransformParametersFindMatchesParameters';
 
 export interface glue_MLTransformParameters {
   // The parameters for the find matches algorithm. see Find Matches Parameters.
@@ -22,16 +22,16 @@ export function glue_MLTransformParameters_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "findMatchesParameters",
-      "The parameters for the find matches algorithm. see Find Matches Parameters.",
+      'findMatchesParameters',
+      'The parameters for the find matches algorithm. see Find Matches Parameters.',
       () => glue_MLTransformParametersFindMatchesParameters_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "transformType",
-      "The type of machine learning transform. For information about the types of machine learning transforms, see [Creating Machine Learning Transforms](http://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html).",
+      'transformType',
+      'The type of machine learning transform. For information about the types of machine learning transforms, see [Creating Machine Learning Transforms](http://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html).',
       () => [],
       true,
       false,

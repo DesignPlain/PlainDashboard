@@ -3,37 +3,37 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ses_ReceiptRuleS3Action,
   ses_ReceiptRuleS3Action_GetTypes,
-} from "../types/ses_ReceiptRuleS3Action";
+} from '../types/ses_ReceiptRuleS3Action';
 import {
   ses_ReceiptRuleStopAction,
   ses_ReceiptRuleStopAction_GetTypes,
-} from "../types/ses_ReceiptRuleStopAction";
+} from '../types/ses_ReceiptRuleStopAction';
 import {
   ses_ReceiptRuleWorkmailAction,
   ses_ReceiptRuleWorkmailAction_GetTypes,
-} from "../types/ses_ReceiptRuleWorkmailAction";
+} from '../types/ses_ReceiptRuleWorkmailAction';
 import {
   ses_ReceiptRuleLambdaAction,
   ses_ReceiptRuleLambdaAction_GetTypes,
-} from "../types/ses_ReceiptRuleLambdaAction";
+} from '../types/ses_ReceiptRuleLambdaAction';
 import {
   ses_ReceiptRuleAddHeaderAction,
   ses_ReceiptRuleAddHeaderAction_GetTypes,
-} from "../types/ses_ReceiptRuleAddHeaderAction";
+} from '../types/ses_ReceiptRuleAddHeaderAction';
 import {
   ses_ReceiptRuleSnsAction,
   ses_ReceiptRuleSnsAction_GetTypes,
-} from "../types/ses_ReceiptRuleSnsAction";
+} from '../types/ses_ReceiptRuleSnsAction';
 import {
   ses_ReceiptRuleBounceAction,
   ses_ReceiptRuleBounceAction_GetTypes,
-} from "../types/ses_ReceiptRuleBounceAction";
+} from '../types/ses_ReceiptRuleBounceAction';
 
 export interface ReceiptRuleArgs {
   // The name of the rule set
@@ -128,112 +128,112 @@ export class ReceiptRule extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "stopActions",
-        "A list of Stop Action blocks. Documented below.",
+        'stopActions',
+        'A list of Stop Action blocks. Documented below.',
         () => ses_ReceiptRuleStopAction_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "workmailActions",
-        "A list of WorkMail Action blocks. Documented below.",
+        'workmailActions',
+        'A list of WorkMail Action blocks. Documented below.',
         () => ses_ReceiptRuleWorkmailAction_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "tlsPolicy",
-        "`Require` or `Optional`",
+        'tlsPolicy',
+        '`Require` or `Optional`',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "after",
-        "The name of the rule to place this rule after",
+        'after',
+        'The name of the rule to place this rule after',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "scanEnabled",
-        "If true, incoming emails will be scanned for spam and viruses",
+        'scanEnabled',
+        'If true, incoming emails will be scanned for spam and viruses',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "s3Actions",
-        "A list of S3 Action blocks. Documented below.",
+        's3Actions',
+        'A list of S3 Action blocks. Documented below.',
         () => ses_ReceiptRuleS3Action_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enabled",
-        "If true, the rule will be enabled",
+        'enabled',
+        'If true, the rule will be enabled',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "recipients",
-        "A list of email addresses",
+        'recipients',
+        'A list of email addresses',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ruleSetName",
-        "The name of the rule set",
+        'ruleSetName',
+        'The name of the rule set',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "snsActions",
-        "A list of SNS Action blocks. Documented below.",
+        'snsActions',
+        'A list of SNS Action blocks. Documented below.',
         () => ses_ReceiptRuleSnsAction_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "bounceActions",
-        "A list of Bounce Action blocks. Documented below.",
+        'bounceActions',
+        'A list of Bounce Action blocks. Documented below.',
         () => ses_ReceiptRuleBounceAction_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the rule",
+        'name',
+        'The name of the rule',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "lambdaActions",
-        "A list of Lambda Action blocks. Documented below.",
+        'lambdaActions',
+        'A list of Lambda Action blocks. Documented below.',
         () => ses_ReceiptRuleLambdaAction_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "addHeaderActions",
-        "A list of Add Header Action blocks. Documented below.",
+        'addHeaderActions',
+        'A list of Add Header Action blocks. Documented below.',
         () => ses_ReceiptRuleAddHeaderAction_GetTypes(),
         false,
         false,

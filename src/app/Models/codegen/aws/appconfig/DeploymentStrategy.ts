@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface DeploymentStrategyArgs {
   // Amount of time AWS AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic roll back. Minimum value of 0, maximum value of 1440.
@@ -67,64 +67,64 @@ export class DeploymentStrategy extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "growthType",
-        "Algorithm used to define how percentage grows over time. Valid value: `LINEAR` and `EXPONENTIAL`. Defaults to `LINEAR`.",
+        'growthType',
+        'Algorithm used to define how percentage grows over time. Valid value: `LINEAR` and `EXPONENTIAL`. Defaults to `LINEAR`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name for the deployment strategy. Must be between 1 and 64 characters in length.",
+        'name',
+        'Name for the deployment strategy. Must be between 1 and 64 characters in length.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "replicateTo",
-        "Where to save the deployment strategy. Valid values: `NONE` and `SSM_DOCUMENT`.",
+        'replicateTo',
+        'Where to save the deployment strategy. Valid values: `NONE` and `SSM_DOCUMENT`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "deploymentDurationInMinutes",
-        "Total amount of time for a deployment to last. Minimum value of 0, maximum value of 1440.",
+        'deploymentDurationInMinutes',
+        'Total amount of time for a deployment to last. Minimum value of 0, maximum value of 1440.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the deployment strategy. Can be at most 1024 characters.",
+        'description',
+        'Description of the deployment strategy. Can be at most 1024 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "finalBakeTimeInMinutes",
-        "Amount of time AWS AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic roll back. Minimum value of 0, maximum value of 1440.",
+        'finalBakeTimeInMinutes',
+        'Amount of time AWS AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic roll back. Minimum value of 0, maximum value of 1440.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "growthFactor",
-        "Percentage of targets to receive a deployed configuration during each interval. Minimum value of 1.0, maximum value of 100.0.",
+        'growthFactor',
+        'Percentage of targets to receive a deployed configuration during each interval. Minimum value of 1.0, maximum value of 100.0.',
         () => [],
         true,
         false,

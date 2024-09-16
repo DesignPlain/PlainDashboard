@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   workspaces_DirectorySelfServicePermissions,
   workspaces_DirectorySelfServicePermissions_GetTypes,
-} from "../types/workspaces_DirectorySelfServicePermissions";
+} from '../types/workspaces_DirectorySelfServicePermissions';
 import {
   workspaces_DirectoryWorkspaceAccessProperties,
   workspaces_DirectoryWorkspaceAccessProperties_GetTypes,
-} from "../types/workspaces_DirectoryWorkspaceAccessProperties";
+} from '../types/workspaces_DirectoryWorkspaceAccessProperties';
 import {
   workspaces_DirectoryWorkspaceCreationProperties,
   workspaces_DirectoryWorkspaceCreationProperties_GetTypes,
-} from "../types/workspaces_DirectoryWorkspaceCreationProperties";
+} from '../types/workspaces_DirectoryWorkspaceCreationProperties';
 
 export interface DirectoryArgs {
   // Permissions to enable or disable self-service capabilities. Defined below.
@@ -94,56 +94,56 @@ export class Directory extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "workspaceAccessProperties",
-        "Specifies which devices and operating systems users can use to access their WorkSpaces. Defined below.",
+        'workspaceAccessProperties',
+        'Specifies which devices and operating systems users can use to access their WorkSpaces. Defined below.',
         () => workspaces_DirectoryWorkspaceAccessProperties_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "workspaceCreationProperties",
-        "Default properties that are used for creating WorkSpaces. Defined below.",
+        'workspaceCreationProperties',
+        'Default properties that are used for creating WorkSpaces. Defined below.',
         () => workspaces_DirectoryWorkspaceCreationProperties_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "directoryId",
-        "The directory identifier for registration in WorkSpaces service.",
+        'directoryId',
+        'The directory identifier for registration in WorkSpaces service.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ipGroupIds",
-        "The identifiers of the IP access control groups associated with the directory.",
+        'ipGroupIds',
+        'The identifiers of the IP access control groups associated with the directory.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "selfServicePermissions",
-        "Permissions to enable or disable self-service capabilities. Defined below.",
+        'selfServicePermissions',
+        'Permissions to enable or disable self-service capabilities. Defined below.',
         () => workspaces_DirectorySelfServicePermissions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "subnetIds",
-        "The identifiers of the subnets where the directory resides.",
+        'subnetIds',
+        'The identifiers of the subnets where the directory resides.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags assigned to the WorkSpaces directory. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags assigned to the WorkSpaces directory. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

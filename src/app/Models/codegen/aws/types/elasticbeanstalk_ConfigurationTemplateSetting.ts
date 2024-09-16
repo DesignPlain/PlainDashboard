@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface elasticbeanstalk_ConfigurationTemplateSetting {
   // A unique name for this Template.
@@ -24,28 +24,28 @@ export function elasticbeanstalk_ConfigurationTemplateSetting_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "A unique name for this Template.",
+      'name',
+      'A unique name for this Template.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "namespace",
-      "",
+      'namespace',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "resource",
-      "",
+      'resource',
+      '',
       () => [],
       false,
       false,
     ),
-    new DynamicUIProps(InputType.String, "value", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'value', '', () => [], true, false),
   ];
 }

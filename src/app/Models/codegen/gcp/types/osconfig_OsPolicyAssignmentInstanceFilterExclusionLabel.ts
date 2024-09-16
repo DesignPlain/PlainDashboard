@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface osconfig_OsPolicyAssignmentInstanceFilterExclusionLabel {
   /*
@@ -19,8 +19,8 @@ export function osconfig_OsPolicyAssignmentInstanceFilterExclusionLabel_GetTypes
   return [
     new DynamicUIProps(
       InputType.Map,
-      "labels",
-      "Labels are identified by key/value pairs in this map.\nA VM should contain all the key/value pairs specified in this map to be\nselected.",
+      'labels',
+      'Labels are identified by key/value pairs in this map.\nA VM should contain all the key/value pairs specified in this map to be\nselected.',
       () => InputType_Map_GetTypes(),
       false,
       false,

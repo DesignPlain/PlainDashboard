@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_GatewayRouteSpecHttpRouteActionRewrite,
   appmesh_GatewayRouteSpecHttpRouteActionRewrite_GetTypes,
-} from "./appmesh_GatewayRouteSpecHttpRouteActionRewrite";
+} from './appmesh_GatewayRouteSpecHttpRouteActionRewrite';
 import {
   appmesh_GatewayRouteSpecHttpRouteActionTarget,
   appmesh_GatewayRouteSpecHttpRouteActionTarget_GetTypes,
-} from "./appmesh_GatewayRouteSpecHttpRouteActionTarget";
+} from './appmesh_GatewayRouteSpecHttpRouteActionTarget';
 
 export interface appmesh_GatewayRouteSpecHttpRouteAction {
   // Gateway route action to rewrite.
@@ -26,16 +26,16 @@ export function appmesh_GatewayRouteSpecHttpRouteAction_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.Object,
-      "rewrite",
-      "Gateway route action to rewrite.",
+      'rewrite',
+      'Gateway route action to rewrite.',
       () => appmesh_GatewayRouteSpecHttpRouteActionRewrite_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "target",
-      "Target that traffic is routed to when a request matches the gateway route.",
+      'target',
+      'Target that traffic is routed to when a request matches the gateway route.',
       () => appmesh_GatewayRouteSpecHttpRouteActionTarget_GetTypes(),
       true,
       false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   chimesdkmediapipelines_MediaInsightsPipelineConfigurationRealTimeAlertConfigurationRule,
   chimesdkmediapipelines_MediaInsightsPipelineConfigurationRealTimeAlertConfigurationRule_GetTypes,
-} from "./chimesdkmediapipelines_MediaInsightsPipelineConfigurationRealTimeAlertConfigurationRule";
+} from './chimesdkmediapipelines_MediaInsightsPipelineConfigurationRealTimeAlertConfigurationRule';
 
 export interface chimesdkmediapipelines_MediaInsightsPipelineConfigurationRealTimeAlertConfiguration {
   // Disables real time alert rules.
@@ -22,16 +22,16 @@ export function chimesdkmediapipelines_MediaInsightsPipelineConfigurationRealTim
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "disabled",
-      "Disables real time alert rules.",
+      'disabled',
+      'Disables real time alert rules.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "rules",
-      "Collection of real time alert rules",
+      'rules',
+      'Collection of real time alert rules',
       () =>
         chimesdkmediapipelines_MediaInsightsPipelineConfigurationRealTimeAlertConfigurationRule_GetTypes(),
       true,

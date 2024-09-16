@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   diagflow_CxVersionNluSetting,
   diagflow_CxVersionNluSetting_GetTypes,
-} from "../types/diagflow_CxVersionNluSetting";
+} from '../types/diagflow_CxVersionNluSetting';
 
 export interface CxVersionArgs {
   // The description of the version. The maximum length is 500 characters. If exceeded, the request is rejected.
@@ -71,24 +71,24 @@ The human-readable name of the version. Limit of 64 characters.
     return [
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The human-readable name of the version. Limit of 64 characters.\n\n\n- - -",
+        'displayName',
+        'The human-readable name of the version. Limit of 64 characters.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The Flow to create an Version for.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>.",
+        'parent',
+        'The Flow to create an Version for.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the version. The maximum length is 500 characters. If exceeded, the request is rejected.",
+        'description',
+        'The description of the version. The maximum length is 500 characters. If exceeded, the request is rejected.',
         () => [],
         false,
         false,

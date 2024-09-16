@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   auditmanager_FrameworkControlSet,
   auditmanager_FrameworkControlSet_GetTypes,
-} from "../types/auditmanager_FrameworkControlSet";
+} from '../types/auditmanager_FrameworkControlSet';
 
 export interface FrameworkArgs {
   // Compliance type that the new custom framework supports, such as `CIS` or `HIPAA`.
@@ -67,40 +67,40 @@ Amazon Resource Name (ARN) of the framework.
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the framework.",
+        'name',
+        'Name of the framework.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the framework. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the framework. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "complianceType",
-        "Compliance type that the new custom framework supports, such as `CIS` or `HIPAA`.",
+        'complianceType',
+        'Compliance type that the new custom framework supports, such as `CIS` or `HIPAA`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "controlSets",
-        "Configuration block(s) for the control sets that are associated with the framework. See `control_sets` Block below for details.\n\nThe following arguments are optional:",
+        'controlSets',
+        'Configuration block(s) for the control sets that are associated with the framework. See `control_sets` Block below for details.\n\nThe following arguments are optional:',
         () => auditmanager_FrameworkControlSet_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the framework.",
+        'description',
+        'Description of the framework.',
         () => [],
         false,
         false,

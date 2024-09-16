@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appstream_StackStorageConnector {
   /*
@@ -24,24 +24,24 @@ export function appstream_StackStorageConnector_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "domains",
-      "Names of the domains for the account.",
+      'domains',
+      'Names of the domains for the account.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "resourceIdentifier",
-      "ARN of the storage connector.",
+      'resourceIdentifier',
+      'ARN of the storage connector.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "connectorType",
-      "Type of storage connector.\nValid values are `HOMEFOLDERS`, `GOOGLE_DRIVE`, or `ONE_DRIVE`.",
+      'connectorType',
+      'Type of storage connector.\nValid values are `HOMEFOLDERS`, `GOOGLE_DRIVE`, or `ONE_DRIVE`.',
       () => [],
       true,
       false,

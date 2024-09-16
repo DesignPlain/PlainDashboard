@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig,
   dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig_GetTypes,
-} from "./dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig";
+} from './dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig';
 import {
   dataproc_ClusterVirtualClusterConfigAuxiliaryServicesConfig,
   dataproc_ClusterVirtualClusterConfigAuxiliaryServicesConfig_GetTypes,
-} from "./dataproc_ClusterVirtualClusterConfigAuxiliaryServicesConfig";
+} from './dataproc_ClusterVirtualClusterConfigAuxiliaryServicesConfig';
 
 export interface dataproc_ClusterVirtualClusterConfig {
   /*
@@ -44,8 +44,8 @@ export function dataproc_ClusterVirtualClusterConfig_GetTypes(): DynamicUIProps[
   return [
     new DynamicUIProps(
       InputType.Object,
-      "kubernetesClusterConfig",
-      "The configuration for running the Dataproc cluster on Kubernetes.\nStructure defined below.\n- - -",
+      'kubernetesClusterConfig',
+      'The configuration for running the Dataproc cluster on Kubernetes.\nStructure defined below.\n- - -',
       () =>
         dataproc_ClusterVirtualClusterConfigKubernetesClusterConfig_GetTypes(),
       false,
@@ -53,7 +53,7 @@ export function dataproc_ClusterVirtualClusterConfig_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.String,
-      "stagingBucket",
+      'stagingBucket',
       "The Cloud Storage staging bucket used to stage files,\nsuch as Hadoop jars, between client machines and the cluster.\nNote: If you don't explicitly specify a `staging_bucket`\nthen GCP will auto create / assign one for you. However, you are not guaranteed\nan auto generated bucket which is solely dedicated to your cluster; it may be shared\nwith other clusters in the same region/zone also choosing to use the auto generation\noption.",
       () => [],
       false,
@@ -61,8 +61,8 @@ export function dataproc_ClusterVirtualClusterConfig_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Object,
-      "auxiliaryServicesConfig",
-      "Configuration of auxiliary services used by this cluster. \nStructure defined below.",
+      'auxiliaryServicesConfig',
+      'Configuration of auxiliary services used by this cluster. \nStructure defined below.',
       () =>
         dataproc_ClusterVirtualClusterConfigAuxiliaryServicesConfig_GetTypes(),
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface StoragePoolArgs {
   /*
@@ -147,71 +147,71 @@ and default labels configured on the provider.
     return [
       new DynamicUIProps(
         InputType.String,
-        "activeDirectory",
-        "Specifies the Active Directory policy to be used. Format: `projects/{{project}}/locations/{{location}}/activeDirectories/{{name}}`.\nThe policy needs to be in the same location as the storage pool.",
+        'activeDirectory',
+        'Specifies the Active Directory policy to be used. Format: `projects/{{project}}/locations/{{location}}/activeDirectories/{{name}}`.\nThe policy needs to be in the same location as the storage pool.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource.",
+        'description',
+        'An optional description of this resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "Name of the location. Usually a region name, expect for some STANDARD service level pools which require a zone name.",
+        'location',
+        'Name of the location. Usually a region name, expect for some STANDARD service level pools which require a zone name.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "capacityGib",
-        "Capacity of the storage pool (in GiB).",
+        'capacityGib',
+        'Capacity of the storage pool (in GiB).',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "network",
-        "VPC network name with format: `projects/{{project}}/global/networks/{{network}}`",
+        'network',
+        'VPC network name with format: `projects/{{project}}/global/networks/{{network}}`',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceLevel",
-        "Service level of the storage pool.\nPossible values are: `PREMIUM`, `EXTREME`, `STANDARD`.",
+        'serviceLevel',
+        'Service level of the storage pool.\nPossible values are: `PREMIUM`, `EXTREME`, `STANDARD`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "kmsConfig",
-        "Specifies the CMEK policy to be used for volume encryption. Format: `projects/{{project}}/locations/{{location}}/kmsConfigs/{{name}}`.\nThe policy needs to be in the same location as the storage pool.",
+        'kmsConfig',
+        'Specifies the CMEK policy to be used for volume encryption. Format: `projects/{{project}}/locations/{{location}}/kmsConfigs/{{name}}`.\nThe policy needs to be in the same location as the storage pool.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         'Labels as key value pairs. Example: `{ "owner": "Bob", "department": "finance", "purpose": "testing" }`.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
@@ -219,16 +219,16 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "ldapEnabled",
-        "When enabled, the volumes uses Active Directory as LDAP name service for UID/GID lookups. Required to enable extended group support for NFSv3,\nusing security identifiers for NFSv4.1 or principal names for kerberized NFSv4.1.",
+        'ldapEnabled',
+        'When enabled, the volumes uses Active Directory as LDAP name service for UID/GID lookups. Required to enable extended group support for NFSv3,\nusing security identifiers for NFSv4.1 or principal names for kerberized NFSv4.1.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The resource name of the storage pool. Needs to be unique per location.\n\n\n- - -",
+        'name',
+        'The resource name of the storage pool. Needs to be unique per location.\n\n\n- - -',
         () => [],
         false,
         true,

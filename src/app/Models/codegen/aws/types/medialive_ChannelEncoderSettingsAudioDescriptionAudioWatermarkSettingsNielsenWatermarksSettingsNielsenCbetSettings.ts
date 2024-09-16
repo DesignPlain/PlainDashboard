@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface medialive_ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettingsNielsenCbetSettings {
   //
@@ -21,24 +21,24 @@ export function medialive_ChannelEncoderSettingsAudioDescriptionAudioWatermarkSe
   return [
     new DynamicUIProps(
       InputType.String,
-      "cbetCheckDigitString",
-      "",
+      'cbetCheckDigitString',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "cbetStepaside",
-      "Determines the method of CBET insertion mode when prior encoding is detected on the same layer.",
+      'cbetStepaside',
+      'Determines the method of CBET insertion mode when prior encoding is detected on the same layer.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "csid",
-      "CBET source ID to use in the watermark.",
+      'csid',
+      'CBET source ID to use in the watermark.',
       () => [],
       true,
       false,

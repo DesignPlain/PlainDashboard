@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface UserArgs {
   // Authentication type for the user. You must specify USERPOOL. Valid values: `API`, `SAML`, `USERPOOL`
@@ -63,48 +63,48 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "enabled",
-        "Whether the user in the user pool is enabled.",
+        'enabled',
+        'Whether the user in the user pool is enabled.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "firstName",
-        "First name, or given name, of the user.",
+        'firstName',
+        'First name, or given name, of the user.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "lastName",
-        "Last name, or surname, of the user.",
+        'lastName',
+        'Last name, or surname, of the user.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "sendEmailNotification",
-        "Send an email notification.",
+        'sendEmailNotification',
+        'Send an email notification.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "userName",
-        "Email address of the user.\n\nThe following arguments are optional:",
+        'userName',
+        'Email address of the user.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "authenticationType",
-        "Authentication type for the user. You must specify USERPOOL. Valid values: `API`, `SAML`, `USERPOOL`",
+        'authenticationType',
+        'Authentication type for the user. You must specify USERPOOL. Valid values: `API`, `SAML`, `USERPOOL`',
         () => [],
         true,
         true,

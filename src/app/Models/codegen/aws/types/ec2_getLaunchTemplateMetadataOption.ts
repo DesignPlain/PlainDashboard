@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2_getLaunchTemplateMetadataOption {
   //
@@ -27,40 +27,40 @@ export function ec2_getLaunchTemplateMetadataOption_GetTypes(): DynamicUIProps[]
   return [
     new DynamicUIProps(
       InputType.String,
-      "instanceMetadataTags",
-      "",
+      'instanceMetadataTags',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "httpEndpoint",
-      "",
+      'httpEndpoint',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "httpProtocolIpv6",
-      "",
+      'httpProtocolIpv6',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "httpPutResponseHopLimit",
-      "",
+      'httpPutResponseHopLimit',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "httpTokens",
-      "",
+      'httpTokens',
+      '',
       () => [],
       true,
       false,

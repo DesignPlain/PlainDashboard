@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTableMysqlColumn,
   datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTableMysqlColumn_GetTypes,
-} from "./datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTableMysqlColumn";
+} from './datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTableMysqlColumn';
 
 export interface datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTable {
   /*
@@ -25,8 +25,8 @@ export function datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysq
   return [
     new DynamicUIProps(
       InputType.Array,
-      "mysqlColumns",
-      "MySQL columns in the schema. When unspecified as part of include/exclude objects, includes/excludes everything.\nStructure is documented below.",
+      'mysqlColumns',
+      'MySQL columns in the schema. When unspecified as part of include/exclude objects, includes/excludes everything.\nStructure is documented below.',
       () =>
         datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTableMysqlColumn_GetTypes(),
       false,
@@ -34,8 +34,8 @@ export function datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysq
     ),
     new DynamicUIProps(
       InputType.String,
-      "table",
-      "Table name.",
+      'table',
+      'Table name.',
       () => [],
       true,
       false,

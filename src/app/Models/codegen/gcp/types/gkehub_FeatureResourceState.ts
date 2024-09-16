@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface gkehub_FeatureResourceState {
   /*
@@ -25,15 +25,15 @@ export function gkehub_FeatureResourceState_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "hasResources",
-      "(Output)\nWhether this Feature has outstanding resources that need to be cleaned up before it can be disabled.",
+      'hasResources',
+      '(Output)\nWhether this Feature has outstanding resources that need to be cleaned up before it can be disabled.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "state",
+      'state',
       '(Output)\nOutput only. The "running state" of the Feature in this Hub.\nStructure is documented below.',
       () => [],
       false,

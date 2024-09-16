@@ -3,64 +3,64 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponentInboundHeader,
   ec2_NetworkInsightsAnalysisReturnPathComponentInboundHeader_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisReturnPathComponentInboundHeader";
+} from './ec2_NetworkInsightsAnalysisReturnPathComponentInboundHeader';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponentVpc,
   ec2_NetworkInsightsAnalysisReturnPathComponentVpc_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisReturnPathComponentVpc";
+} from './ec2_NetworkInsightsAnalysisReturnPathComponentVpc';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponentDestinationVpc,
   ec2_NetworkInsightsAnalysisReturnPathComponentDestinationVpc_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisReturnPathComponentDestinationVpc";
+} from './ec2_NetworkInsightsAnalysisReturnPathComponentDestinationVpc';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponentAclRule,
   ec2_NetworkInsightsAnalysisReturnPathComponentAclRule_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisReturnPathComponentAclRule";
+} from './ec2_NetworkInsightsAnalysisReturnPathComponentAclRule';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponentSubnet,
   ec2_NetworkInsightsAnalysisReturnPathComponentSubnet_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisReturnPathComponentSubnet";
+} from './ec2_NetworkInsightsAnalysisReturnPathComponentSubnet';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponentRouteTableRoute,
   ec2_NetworkInsightsAnalysisReturnPathComponentRouteTableRoute_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisReturnPathComponentRouteTableRoute";
+} from './ec2_NetworkInsightsAnalysisReturnPathComponentRouteTableRoute';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponentComponent,
   ec2_NetworkInsightsAnalysisReturnPathComponentComponent_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisReturnPathComponentComponent";
+} from './ec2_NetworkInsightsAnalysisReturnPathComponentComponent';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponentSourceVpc,
   ec2_NetworkInsightsAnalysisReturnPathComponentSourceVpc_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisReturnPathComponentSourceVpc";
+} from './ec2_NetworkInsightsAnalysisReturnPathComponentSourceVpc';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponentTransitGateway,
   ec2_NetworkInsightsAnalysisReturnPathComponentTransitGateway_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisReturnPathComponentTransitGateway";
+} from './ec2_NetworkInsightsAnalysisReturnPathComponentTransitGateway';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeader,
   ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeader_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeader";
+} from './ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeader';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponentTransitGatewayRouteTableRoute,
   ec2_NetworkInsightsAnalysisReturnPathComponentTransitGatewayRouteTableRoute_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisReturnPathComponentTransitGatewayRouteTableRoute";
+} from './ec2_NetworkInsightsAnalysisReturnPathComponentTransitGatewayRouteTableRoute';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponentSecurityGroupRule,
   ec2_NetworkInsightsAnalysisReturnPathComponentSecurityGroupRule_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisReturnPathComponentSecurityGroupRule";
+} from './ec2_NetworkInsightsAnalysisReturnPathComponentSecurityGroupRule';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponentAdditionalDetail,
   ec2_NetworkInsightsAnalysisReturnPathComponentAdditionalDetail_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisReturnPathComponentAdditionalDetail";
+} from './ec2_NetworkInsightsAnalysisReturnPathComponentAdditionalDetail';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponentAttachedTo,
   ec2_NetworkInsightsAnalysisReturnPathComponentAttachedTo_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisReturnPathComponentAttachedTo";
+} from './ec2_NetworkInsightsAnalysisReturnPathComponentAttachedTo';
 
 export interface ec2_NetworkInsightsAnalysisReturnPathComponent {
   //
@@ -113,16 +113,16 @@ export function ec2_NetworkInsightsAnalysisReturnPathComponent_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Array,
-      "aclRules",
-      "",
+      'aclRules',
+      '',
       () => ec2_NetworkInsightsAnalysisReturnPathComponentAclRule_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "routeTableRoutes",
-      "",
+      'routeTableRoutes',
+      '',
       () =>
         ec2_NetworkInsightsAnalysisReturnPathComponentRouteTableRoute_GetTypes(),
       false,
@@ -130,8 +130,8 @@ export function ec2_NetworkInsightsAnalysisReturnPathComponent_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Array,
-      "inboundHeaders",
-      "",
+      'inboundHeaders',
+      '',
       () =>
         ec2_NetworkInsightsAnalysisReturnPathComponentInboundHeader_GetTypes(),
       false,
@@ -139,8 +139,8 @@ export function ec2_NetworkInsightsAnalysisReturnPathComponent_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Array,
-      "additionalDetails",
-      "",
+      'additionalDetails',
+      '',
       () =>
         ec2_NetworkInsightsAnalysisReturnPathComponentAdditionalDetail_GetTypes(),
       false,
@@ -148,16 +148,16 @@ export function ec2_NetworkInsightsAnalysisReturnPathComponent_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Array,
-      "attachedTos",
-      "",
+      'attachedTos',
+      '',
       () => ec2_NetworkInsightsAnalysisReturnPathComponentAttachedTo_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "outboundHeaders",
-      "",
+      'outboundHeaders',
+      '',
       () =>
         ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeader_GetTypes(),
       false,
@@ -165,8 +165,8 @@ export function ec2_NetworkInsightsAnalysisReturnPathComponent_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Array,
-      "transitGatewayRouteTableRoutes",
-      "",
+      'transitGatewayRouteTableRoutes',
+      '',
       () =>
         ec2_NetworkInsightsAnalysisReturnPathComponentTransitGatewayRouteTableRoute_GetTypes(),
       false,
@@ -174,8 +174,8 @@ export function ec2_NetworkInsightsAnalysisReturnPathComponent_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Array,
-      "securityGroupRules",
-      "",
+      'securityGroupRules',
+      '',
       () =>
         ec2_NetworkInsightsAnalysisReturnPathComponentSecurityGroupRule_GetTypes(),
       false,
@@ -183,24 +183,24 @@ export function ec2_NetworkInsightsAnalysisReturnPathComponent_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Array,
-      "vpcs",
-      "",
+      'vpcs',
+      '',
       () => ec2_NetworkInsightsAnalysisReturnPathComponentVpc_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "sequenceNumber",
-      "",
+      'sequenceNumber',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "transitGateways",
-      "",
+      'transitGateways',
+      '',
       () =>
         ec2_NetworkInsightsAnalysisReturnPathComponentTransitGateway_GetTypes(),
       false,
@@ -208,32 +208,32 @@ export function ec2_NetworkInsightsAnalysisReturnPathComponent_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Array,
-      "components",
-      "",
+      'components',
+      '',
       () => ec2_NetworkInsightsAnalysisReturnPathComponentComponent_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "subnets",
-      "",
+      'subnets',
+      '',
       () => ec2_NetworkInsightsAnalysisReturnPathComponentSubnet_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "sourceVpcs",
-      "",
+      'sourceVpcs',
+      '',
       () => ec2_NetworkInsightsAnalysisReturnPathComponentSourceVpc_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "destinationVpcs",
-      "",
+      'destinationVpcs',
+      '',
       () =>
         ec2_NetworkInsightsAnalysisReturnPathComponentDestinationVpc_GetTypes(),
       false,

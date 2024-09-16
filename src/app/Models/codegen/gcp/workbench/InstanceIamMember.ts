@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   workbench_InstanceIamMemberCondition,
   workbench_InstanceIamMemberCondition_GetTypes,
-} from "../types/workbench_InstanceIamMemberCondition";
+} from '../types/workbench_InstanceIamMemberCondition';
 
 export interface InstanceIamMemberArgs {
   //
@@ -54,29 +54,29 @@ export class InstanceIamMember extends DS_Resource {
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "role", "", () => [], true, true),
+      new DynamicUIProps(InputType.String, 'role', '', () => [], true, true),
       new DynamicUIProps(
         InputType.Object,
-        "condition",
-        "",
+        'condition',
+        '',
         () => workbench_InstanceIamMemberCondition_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "",
+        'location',
+        '',
         () => [],
         false,
         true,
       ),
-      new DynamicUIProps(InputType.String, "member", "", () => [], true, true),
-      new DynamicUIProps(InputType.String, "name", "", () => [], false, true),
+      new DynamicUIProps(InputType.String, 'member', '', () => [], true, true),
+      new DynamicUIProps(InputType.String, 'name', '', () => [], false, true),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "",
+        'project',
+        '',
         () => [],
         false,
         true,

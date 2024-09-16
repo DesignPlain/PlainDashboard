@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface HostedConfigurationVersionArgs {
   // Application ID.
@@ -49,40 +49,40 @@ export class HostedConfigurationVersion extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "configurationProfileId",
-        "Configuration profile ID.",
+        'configurationProfileId',
+        'Configuration profile ID.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "content",
-        "Content of the configuration or the configuration data.",
+        'content',
+        'Content of the configuration or the configuration data.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "contentType",
-        "Standard MIME type describing the format of the configuration content. For more information, see [Content-Type](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17).",
+        'contentType',
+        'Standard MIME type describing the format of the configuration content. For more information, see [Content-Type](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17).',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the configuration.",
+        'description',
+        'Description of the configuration.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "applicationId",
-        "Application ID.",
+        'applicationId',
+        'Application ID.',
         () => [],
         true,
         true,

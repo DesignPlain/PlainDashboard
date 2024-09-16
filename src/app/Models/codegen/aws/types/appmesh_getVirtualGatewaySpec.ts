@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualGatewaySpecBackendDefault,
   appmesh_getVirtualGatewaySpecBackendDefault_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecBackendDefault";
+} from './appmesh_getVirtualGatewaySpecBackendDefault';
 import {
   appmesh_getVirtualGatewaySpecListener,
   appmesh_getVirtualGatewaySpecListener_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecListener";
+} from './appmesh_getVirtualGatewaySpecListener';
 import {
   appmesh_getVirtualGatewaySpecLogging,
   appmesh_getVirtualGatewaySpecLogging_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecLogging";
+} from './appmesh_getVirtualGatewaySpecLogging';
 
 export interface appmesh_getVirtualGatewaySpec {
   //
@@ -33,24 +33,24 @@ export function appmesh_getVirtualGatewaySpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "backendDefaults",
-      "",
+      'backendDefaults',
+      '',
       () => appmesh_getVirtualGatewaySpecBackendDefault_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "listeners",
-      "",
+      'listeners',
+      '',
       () => appmesh_getVirtualGatewaySpecListener_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "loggings",
-      "",
+      'loggings',
+      '',
       () => appmesh_getVirtualGatewaySpecLogging_GetTypes(),
       true,
       false,

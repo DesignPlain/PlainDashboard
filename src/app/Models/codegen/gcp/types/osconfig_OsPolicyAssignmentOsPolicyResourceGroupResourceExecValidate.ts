@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFile,
   osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFile_GetTypes,
-} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFile";
+} from './osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFile';
 
 export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidate {
   /*
@@ -49,24 +49,24 @@ export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecVali
   return [
     new DynamicUIProps(
       InputType.String,
-      "script",
-      "An inline script. The size of the script is limited to\n1024 characters.",
+      'script',
+      'An inline script. The size of the script is limited to\n1024 characters.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "args",
-      "Optional arguments to pass to the source during\nexecution.",
+      'args',
+      'Optional arguments to pass to the source during\nexecution.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "file",
-      "A remote or local file. Structure is\ndocumented below.",
+      'file',
+      'A remote or local file. Structure is\ndocumented below.',
       () =>
         osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFile_GetTypes(),
       false,
@@ -74,16 +74,16 @@ export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecVali
     ),
     new DynamicUIProps(
       InputType.String,
-      "interpreter",
-      "The script interpreter to use. Possible values\nare: `INTERPRETER_UNSPECIFIED`, `NONE`, `SHELL`, `POWERSHELL`.",
+      'interpreter',
+      'The script interpreter to use. Possible values\nare: `INTERPRETER_UNSPECIFIED`, `NONE`, `SHELL`, `POWERSHELL`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "outputFilePath",
-      "Only recorded for enforce Exec. Path to an\noutput file (that is created by this Exec) whose content will be recorded in\nOSPolicyResourceCompliance after a successful run. Absence or failure to\nread this file will result in this ExecResource being non-compliant. Output\nfile size is limited to 100K bytes.",
+      'outputFilePath',
+      'Only recorded for enforce Exec. Path to an\noutput file (that is created by this Exec) whose content will be recorded in\nOSPolicyResourceCompliance after a successful run. Absence or failure to\nread this file will result in this ExecResource being non-compliant. Output\nfile size is limited to 100K bytes.',
       () => [],
       false,
       false,

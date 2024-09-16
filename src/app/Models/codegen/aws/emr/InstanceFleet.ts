@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   emr_InstanceFleetInstanceTypeConfig,
   emr_InstanceFleetInstanceTypeConfig_GetTypes,
-} from "../types/emr_InstanceFleetInstanceTypeConfig";
+} from '../types/emr_InstanceFleetInstanceTypeConfig';
 import {
   emr_InstanceFleetLaunchSpecifications,
   emr_InstanceFleetLaunchSpecifications_GetTypes,
-} from "../types/emr_InstanceFleetLaunchSpecifications";
+} from '../types/emr_InstanceFleetLaunchSpecifications';
 
 export interface InstanceFleetArgs {
   // ID of the EMR Cluster to attach to. Changing this forces a new resource to be created.
@@ -69,48 +69,48 @@ to fulfill TargetSpotCapacity. This provisioned capacity might be less than or g
     return [
       new DynamicUIProps(
         InputType.Object,
-        "launchSpecifications",
-        "Configuration block for launch specification",
+        'launchSpecifications',
+        'Configuration block for launch specification',
         () => emr_InstanceFleetLaunchSpecifications_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Friendly name given to the instance fleet.",
+        'name',
+        'Friendly name given to the instance fleet.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "targetOnDemandCapacity",
-        "The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand instances to provision.",
+        'targetOnDemandCapacity',
+        'The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand instances to provision.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "targetSpotCapacity",
-        "The target capacity of Spot units for the instance fleet, which determines how many Spot instances to provision.",
+        'targetSpotCapacity',
+        'The target capacity of Spot units for the instance fleet, which determines how many Spot instances to provision.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clusterId",
-        "ID of the EMR Cluster to attach to. Changing this forces a new resource to be created.",
+        'clusterId',
+        'ID of the EMR Cluster to attach to. Changing this forces a new resource to be created.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "instanceTypeConfigs",
-        "Configuration block for instance fleet",
+        'instanceTypeConfigs',
+        'Configuration block for instance fleet',
         () => emr_InstanceFleetInstanceTypeConfig_GetTypes(),
         false,
         true,

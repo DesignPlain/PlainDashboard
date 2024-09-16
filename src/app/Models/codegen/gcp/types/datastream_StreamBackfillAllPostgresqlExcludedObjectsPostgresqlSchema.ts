@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datastream_StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTable,
   datastream_StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTable_GetTypes,
-} from "./datastream_StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTable";
+} from './datastream_StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTable';
 
 export interface datastream_StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchema {
   /*
@@ -25,8 +25,8 @@ export function datastream_StreamBackfillAllPostgresqlExcludedObjectsPostgresqlS
   return [
     new DynamicUIProps(
       InputType.Array,
-      "postgresqlTables",
-      "Tables in the schema.\nStructure is documented below.",
+      'postgresqlTables',
+      'Tables in the schema.\nStructure is documented below.',
       () =>
         datastream_StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTable_GetTypes(),
       false,
@@ -34,8 +34,8 @@ export function datastream_StreamBackfillAllPostgresqlExcludedObjectsPostgresqlS
     ),
     new DynamicUIProps(
       InputType.String,
-      "schema",
-      "Database name.",
+      'schema',
+      'Database name.',
       () => [],
       true,
       false,

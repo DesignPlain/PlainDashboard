@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   vertex_AiIndexMetadata,
   vertex_AiIndexMetadata_GetTypes,
-} from "../types/vertex_AiIndexMetadata";
+} from '../types/vertex_AiIndexMetadata';
 import {
   vertex_AiIndexDeployedIndex,
   vertex_AiIndexDeployedIndex_GetTypes,
-} from "../types/vertex_AiIndexDeployedIndex";
+} from '../types/vertex_AiIndexDeployedIndex';
 import {
   vertex_AiIndexIndexStat,
   vertex_AiIndexIndexStat_GetTypes,
-} from "../types/vertex_AiIndexIndexStat";
+} from '../types/vertex_AiIndexIndexStat';
 
 export interface AiIndexArgs {
   /*
@@ -141,56 +141,56 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "metadata",
-        "An additional information about the Index\nStructure is documented below.",
+        'metadata',
+        'An additional information about the Index\nStructure is documented below.',
         () => vertex_AiIndexMetadata_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The region of the index. eg us-central1",
+        'region',
+        'The region of the index. eg us-central1',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the Index.",
+        'description',
+        'The description of the Index.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The display name of the Index. The name can be up to 128 characters long and can consist of any UTF-8 characters.\n\n\n- - -",
+        'displayName',
+        'The display name of the Index. The name can be up to 128 characters long and can consist of any UTF-8 characters.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "indexUpdateMethod",
-        "The update method to use with this Index. The value must be the followings. If not set, BATCH_UPDATE will be used by default.\n* BATCH_UPDATE: user can call indexes.patch with files on Cloud Storage of datapoints to update.\n* STREAM_UPDATE: user can call indexes.upsertDatapoints/DeleteDatapoints to update the Index and the updates will be applied in corresponding DeployedIndexes in nearly real-time.",
+        'indexUpdateMethod',
+        'The update method to use with this Index. The value must be the followings. If not set, BATCH_UPDATE will be used by default.\n* BATCH_UPDATE: user can call indexes.patch with files on Cloud Storage of datapoints to update.\n* STREAM_UPDATE: user can call indexes.upsertDatapoints/DeleteDatapoints to update the Index and the updates will be applied in corresponding DeployedIndexes in nearly real-time.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "The labels with user-defined metadata to organize your Indexes.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'The labels with user-defined metadata to organize your Indexes.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,

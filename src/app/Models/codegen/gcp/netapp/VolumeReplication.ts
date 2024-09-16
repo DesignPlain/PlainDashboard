@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   netapp_VolumeReplicationDestinationVolumeParameters,
   netapp_VolumeReplicationDestinationVolumeParameters_GetTypes,
-} from "../types/netapp_VolumeReplicationDestinationVolumeParameters";
+} from '../types/netapp_VolumeReplicationDestinationVolumeParameters';
 import {
   netapp_VolumeReplicationTransferStat,
   netapp_VolumeReplicationTransferStat_GetTypes,
-} from "../types/netapp_VolumeReplicationTransferStat";
+} from '../types/netapp_VolumeReplicationTransferStat';
 
 export interface VolumeReplicationArgs {
   // An description of this resource.
@@ -223,95 +223,95 @@ volume will remain at the state of the last successful update. Default is false.
     return [
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "Name of region for this resource. The resource needs to be created in the region of the destination volume.",
+        'location',
+        'Name of region for this resource. The resource needs to be created in the region of the destination volume.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An description of this resource.",
+        'description',
+        'An description of this resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "replicationSchedule",
-        "Specifies the replication interval.\nPossible values are: `EVERY_10_MINUTES`, `HOURLY`, `DAILY`.",
+        'replicationSchedule',
+        'Specifies the replication interval.\nPossible values are: `EVERY_10_MINUTES`, `HOURLY`, `DAILY`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "volumeName",
-        "The name of the existing source volume.",
+        'volumeName',
+        'The name of the existing source volume.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "waitForMirror",
-        "Replication resource state is independent of mirror_state. With enough data, it can take many hours for mirror_state to\nreach MIRRORED. If you want Terraform to wait for the mirror to finish on create/stop/resume operations, set this\nparameter to true. Default is false.",
+        'waitForMirror',
+        'Replication resource state is independent of mirror_state. With enough data, it can take many hours for mirror_state to\nreach MIRRORED. If you want Terraform to wait for the mirror to finish on create/stop/resume operations, set this\nparameter to true. Default is false.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the replication. Needs to be unique per location.\n\n\n- - -",
+        'name',
+        'The name of the replication. Needs to be unique per location.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "replicationEnabled",
-        "Set to false to stop/break the mirror. Stopping the mirror makes the destination volume read-write\nand act independently from the source volume.\nSet to true to enable/resume the mirror. WARNING: Resuming a mirror overwrites any changes\ndone to the destination volume with the content of the source volume.",
+        'replicationEnabled',
+        'Set to false to stop/break the mirror. Stopping the mirror makes the destination volume read-write\nand act independently from the source volume.\nSet to true to enable/resume the mirror. WARNING: Resuming a mirror overwrites any changes\ndone to the destination volume with the content of the source volume.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "destinationVolumeParameters",
-        "Destination volume parameters.\nStructure is documented below.",
+        'destinationVolumeParameters',
+        'Destination volume parameters.\nStructure is documented below.',
         () => netapp_VolumeReplicationDestinationVolumeParameters_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "deleteDestinationVolume",
-        "A destination volume is created as part of replication creation. The destination volume will not became under Terraform\nmanagement unless you import it manually. If you delete the replication, this volume will remain. Setting this parameter\nto true will delete the *current* destination volume when destroying the replication. If you reversed the replication\ndirection, this will be your former source volume! For production use, it is recommended to keep this parameter false to\navoid accidental volume deletion. Handle with care. Default is false.",
+        'deleteDestinationVolume',
+        'A destination volume is created as part of replication creation. The destination volume will not became under Terraform\nmanagement unless you import it manually. If you delete the replication, this volume will remain. Setting this parameter\nto true will delete the *current* destination volume when destroying the replication. If you reversed the replication\ndirection, this will be your former source volume! For production use, it is recommended to keep this parameter false to\navoid accidental volume deletion. Handle with care. Default is false.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "forceStopping",
-        "Only replications with mirror_state=MIRRORED can be stopped. A replication in mirror_state=TRANSFERRING\ncurrently receives an update and stopping the update might be undesirable. Set this parameter to true\nto stop anyway. All data transferred to the destination will be discarded and content of destination\nvolume will remain at the state of the last successful update. Default is false.",
+        'forceStopping',
+        'Only replications with mirror_state=MIRRORED can be stopped. A replication in mirror_state=TRANSFERRING\ncurrently receives an update and stopping the update might be undesirable. Set this parameter to true\nto stop anyway. All data transferred to the destination will be discarded and content of destination\nvolume will remain at the state of the last successful update. Default is false.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         'Labels as key value pairs. Example: `{ "owner": "Bob", "department": "finance", "purpose": "testing" }`\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,

@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   accesscontextmanager_ServicePerimetersServicePerimeterSpecVpcAccessibleServices,
   accesscontextmanager_ServicePerimetersServicePerimeterSpecVpcAccessibleServices_GetTypes,
-} from "./accesscontextmanager_ServicePerimetersServicePerimeterSpecVpcAccessibleServices";
+} from './accesscontextmanager_ServicePerimetersServicePerimeterSpecVpcAccessibleServices';
 import {
   accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicy,
   accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicy_GetTypes,
-} from "./accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicy";
+} from './accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicy';
 import {
   accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicy,
   accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicy_GetTypes,
-} from "./accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicy";
+} from './accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicy';
 
 export interface accesscontextmanager_ServicePerimetersServicePerimeterSpec {
   /*
@@ -78,8 +78,8 @@ export function accesscontextmanager_ServicePerimetersServicePerimeterSpec_GetTy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ingressPolicies",
-      "List of `IngressPolicies` to apply to the perimeter. A perimeter may\nhave multiple `IngressPolicies`, each of which is evaluated\nseparately. Access is granted if any `Ingress Policy` grants it.\nMust be empty for a perimeter bridge.\nStructure is documented below.",
+      'ingressPolicies',
+      'List of `IngressPolicies` to apply to the perimeter. A perimeter may\nhave multiple `IngressPolicies`, each of which is evaluated\nseparately. Access is granted if any `Ingress Policy` grants it.\nMust be empty for a perimeter bridge.\nStructure is documented below.',
       () =>
         accesscontextmanager_ServicePerimetersServicePerimeterSpecIngressPolicy_GetTypes(),
       false,
@@ -87,15 +87,15 @@ export function accesscontextmanager_ServicePerimetersServicePerimeterSpec_GetTy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "resources",
-      "A list of GCP resources that are inside of the service perimeter.\nCurrently only projects are allowed.\nFormat: projects/{project_number}",
+      'resources',
+      'A list of GCP resources that are inside of the service perimeter.\nCurrently only projects are allowed.\nFormat: projects/{project_number}',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "restrictedServices",
+      'restrictedServices',
       "GCP services that are subject to the Service Perimeter\nrestrictions. Must contain a list of services. For example, if\n`storage.googleapis.com` is specified, access to the storage\nbuckets inside the perimeter must meet the perimeter's access\nrestrictions.",
       () => InputType_String_GetTypes(),
       false,
@@ -103,8 +103,8 @@ export function accesscontextmanager_ServicePerimetersServicePerimeterSpec_GetTy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "vpcAccessibleServices",
-      "Specifies how APIs are allowed to communicate within the Service\nPerimeter.\nStructure is documented below.",
+      'vpcAccessibleServices',
+      'Specifies how APIs are allowed to communicate within the Service\nPerimeter.\nStructure is documented below.',
       () =>
         accesscontextmanager_ServicePerimetersServicePerimeterSpecVpcAccessibleServices_GetTypes(),
       false,
@@ -112,16 +112,16 @@ export function accesscontextmanager_ServicePerimetersServicePerimeterSpec_GetTy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "accessLevels",
-      "A list of AccessLevel resource names that allow resources within\nthe ServicePerimeter to be accessed from the internet.\nAccessLevels listed must be in the same policy as this\nServicePerimeter. Referencing a nonexistent AccessLevel is a\nsyntax error. If no AccessLevel names are listed, resources within\nthe perimeter can only be accessed via GCP calls with request\norigins within the perimeter. For Service Perimeter Bridge, must\nbe empty.\nFormat: accessPolicies/{policy_id}/accessLevels/{access_level_name}",
+      'accessLevels',
+      'A list of AccessLevel resource names that allow resources within\nthe ServicePerimeter to be accessed from the internet.\nAccessLevels listed must be in the same policy as this\nServicePerimeter. Referencing a nonexistent AccessLevel is a\nsyntax error. If no AccessLevel names are listed, resources within\nthe perimeter can only be accessed via GCP calls with request\norigins within the perimeter. For Service Perimeter Bridge, must\nbe empty.\nFormat: accessPolicies/{policy_id}/accessLevels/{access_level_name}',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "egressPolicies",
-      "List of EgressPolicies to apply to the perimeter. A perimeter may\nhave multiple EgressPolicies, each of which is evaluated separately.\nAccess is granted if any EgressPolicy grants it. Must be empty for\na perimeter bridge.\nStructure is documented below.",
+      'egressPolicies',
+      'List of EgressPolicies to apply to the perimeter. A perimeter may\nhave multiple EgressPolicies, each of which is evaluated separately.\nAccess is granted if any EgressPolicy grants it. Must be empty for\na perimeter bridge.\nStructure is documented below.',
       () =>
         accesscontextmanager_ServicePerimetersServicePerimeterSpecEgressPolicy_GetTypes(),
       false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_getReservationShareSettingProjectMap,
   compute_getReservationShareSettingProjectMap_GetTypes,
-} from "./compute_getReservationShareSettingProjectMap";
+} from './compute_getReservationShareSettingProjectMap';
 
 export interface compute_getReservationShareSetting {
   // A map of project number and project config. This is only valid when shareType's value is SPECIFIC_PROJECTS.
@@ -22,7 +22,7 @@ export function compute_getReservationShareSetting_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.String,
-      "shareType",
+      'shareType',
       'Type of sharing for this shared-reservation Possible values: ["LOCAL", "SPECIFIC_PROJECTS"]',
       () => [],
       true,
@@ -30,7 +30,7 @@ export function compute_getReservationShareSetting_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "projectMaps",
+      'projectMaps',
       "A map of project number and project config. This is only valid when shareType's value is SPECIFIC_PROJECTS.",
       () => compute_getReservationShareSettingProjectMap_GetTypes(),
       true,

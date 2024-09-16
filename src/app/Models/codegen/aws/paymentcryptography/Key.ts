@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   paymentcryptography_KeyTimeouts,
   paymentcryptography_KeyTimeouts_GetTypes,
-} from "../types/paymentcryptography_KeyTimeouts";
+} from '../types/paymentcryptography_KeyTimeouts';
 import {
   paymentcryptography_KeyKeyAttributes,
   paymentcryptography_KeyKeyAttributes_GetTypes,
-} from "../types/paymentcryptography_KeyKeyAttributes";
+} from '../types/paymentcryptography_KeyKeyAttributes';
 
 export interface KeyArgs {
   // Map of tags assigned to the WorkSpaces Connection Alias. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
@@ -86,56 +86,56 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Object,
-        "keyAttributes",
-        "Role of the key, the algorithm it supports, and the cryptographic operations allowed with the key.\n\nThe following arguments are optional:",
+        'keyAttributes',
+        'Role of the key, the algorithm it supports, and the cryptographic operations allowed with the key.\n\nThe following arguments are optional:',
         () => paymentcryptography_KeyKeyAttributes_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "keyCheckValueAlgorithm",
-        "Algorithm that AWS Payment Cryptography uses to calculate the key check value (KCV).",
+        'keyCheckValueAlgorithm',
+        'Algorithm that AWS Payment Cryptography uses to calculate the key check value (KCV).',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags assigned to the WorkSpaces Connection Alias. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags assigned to the WorkSpaces Connection Alias. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => paymentcryptography_KeyTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "deletionWindowInDays",
-        "",
+        'deletionWindowInDays',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enabled",
-        "Whether to enable the key.",
+        'enabled',
+        'Whether to enable the key.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "exportable",
-        "Whether the key is exportable from the service.",
+        'exportable',
+        'Whether the key is exportable from the service.',
         () => [],
         true,
         false,

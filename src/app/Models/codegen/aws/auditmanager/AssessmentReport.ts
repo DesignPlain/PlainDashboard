@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface AssessmentReportArgs {
   /*
@@ -45,24 +45,24 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "assessmentId",
-        "Unique identifier of the assessment to create the report from.\n\nThe following arguments are optional:",
+        'assessmentId',
+        'Unique identifier of the assessment to create the report from.\n\nThe following arguments are optional:',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the assessment report.",
+        'description',
+        'Description of the assessment report.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the assessment report.",
+        'name',
+        'Name of the assessment report.',
         () => [],
         false,
         false,

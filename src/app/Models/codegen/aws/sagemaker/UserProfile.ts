@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sagemaker_UserProfileUserSettings,
   sagemaker_UserProfileUserSettings_GetTypes,
-} from "../types/sagemaker_UserProfileUserSettings";
+} from '../types/sagemaker_UserProfileUserSettings';
 
 export interface UserProfileArgs {
   // The user settings. See User Settings below.
@@ -62,39 +62,39 @@ export class UserProfile extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "userProfileName",
-        "The name for the User Profile.",
+        'userProfileName',
+        'The name for the User Profile.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "userSettings",
-        "The user settings. See User Settings below.",
+        'userSettings',
+        'The user settings. See User Settings below.',
         () => sagemaker_UserProfileUserSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "domainId",
-        "The ID of the associated Domain.",
+        'domainId',
+        'The ID of the associated Domain.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "singleSignOnUserIdentifier",
+        'singleSignOnUserIdentifier',
         "A specifier for the type of value specified in `single_sign_on_user_value`. Currently, the only supported value is `UserName`. If the Domain's AuthMode is SSO, this field is required. If the Domain's AuthMode is not SSO, this field cannot be specified.",
         () => [],
         false,
@@ -102,7 +102,7 @@ export class UserProfile extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "singleSignOnUserValue",
+        'singleSignOnUserValue',
         "The username of the associated AWS Single Sign-On User for this User Profile. If the Domain's AuthMode is SSO, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not SSO, this field cannot be specified.",
         () => [],
         false,

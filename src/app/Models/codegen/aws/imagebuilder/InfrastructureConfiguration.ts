@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   imagebuilder_InfrastructureConfigurationInstanceMetadataOptions,
   imagebuilder_InfrastructureConfigurationInstanceMetadataOptions_GetTypes,
-} from "../types/imagebuilder_InfrastructureConfigurationInstanceMetadataOptions";
+} from '../types/imagebuilder_InfrastructureConfigurationInstanceMetadataOptions';
 import {
   imagebuilder_InfrastructureConfigurationLogging,
   imagebuilder_InfrastructureConfigurationLogging_GetTypes,
-} from "../types/imagebuilder_InfrastructureConfigurationLogging";
+} from '../types/imagebuilder_InfrastructureConfigurationLogging';
 
 export interface InfrastructureConfigurationArgs {
   // Name of IAM Instance Profile.
@@ -119,48 +119,48 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "keyPair",
-        "Name of EC2 Key Pair.",
+        'keyPair',
+        'Name of EC2 Key Pair.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "resourceTags",
-        "Key-value map of resource tags to assign to infrastructure created by the configuration.",
+        'resourceTags',
+        'Key-value map of resource tags to assign to infrastructure created by the configuration.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "securityGroupIds",
-        "Set of EC2 Security Group identifiers.",
+        'securityGroupIds',
+        'Set of EC2 Security Group identifiers.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "subnetId",
-        "EC2 Subnet identifier. Also requires `security_group_ids` argument.",
+        'subnetId',
+        'EC2 Subnet identifier. Also requires `security_group_ids` argument.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags to assign to the configuration. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags to assign to the configuration. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "instanceMetadataOptions",
-        "Configuration block with instance metadata options for the HTTP requests that pipeline builds use to launch EC2 build and test instances. Detailed below.",
+        'instanceMetadataOptions',
+        'Configuration block with instance metadata options for the HTTP requests that pipeline builds use to launch EC2 build and test instances. Detailed below.',
         () =>
           imagebuilder_InfrastructureConfigurationInstanceMetadataOptions_GetTypes(),
         false,
@@ -168,56 +168,56 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name for the configuration.\n\nThe following arguments are optional:",
+        'name',
+        'Name for the configuration.\n\nThe following arguments are optional:',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceProfileName",
-        "Name of IAM Instance Profile.",
+        'instanceProfileName',
+        'Name of IAM Instance Profile.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "terminateInstanceOnFailure",
-        "Enable if the instance should be terminated when the pipeline fails. Defaults to `false`.",
+        'terminateInstanceOnFailure',
+        'Enable if the instance should be terminated when the pipeline fails. Defaults to `false`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "instanceTypes",
-        "Set of EC2 Instance Types.",
+        'instanceTypes',
+        'Set of EC2 Instance Types.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "logging",
-        "Configuration block with logging settings. Detailed below.",
+        'logging',
+        'Configuration block with logging settings. Detailed below.',
         () => imagebuilder_InfrastructureConfigurationLogging_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "snsTopicArn",
-        "Amazon Resource Name (ARN) of SNS Topic.",
+        'snsTopicArn',
+        'Amazon Resource Name (ARN) of SNS Topic.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description for the configuration.",
+        'description',
+        'Description for the configuration.',
         () => [],
         false,
         false,

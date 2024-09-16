@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface backup_SelectionConditionStringNotEqual {
   // The key in a key-value pair.
@@ -18,16 +18,16 @@ export function backup_SelectionConditionStringNotEqual_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "The value in a key-value pair.",
+      'value',
+      'The value in a key-value pair.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "key",
-      "The key in a key-value pair.",
+      'key',
+      'The key in a key-value pair.',
       () => [],
       true,
       true,

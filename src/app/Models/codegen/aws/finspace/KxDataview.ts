@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   finspace_KxDataviewSegmentConfiguration,
   finspace_KxDataviewSegmentConfiguration_GetTypes,
-} from "../types/finspace_KxDataviewSegmentConfiguration";
+} from '../types/finspace_KxDataviewSegmentConfiguration';
 
 export interface KxDataviewArgs {
   // The option to specify whether you want to apply all the future additions and corrections automatically to the dataview, when you ingest new changesets. The default value is false.
@@ -124,88 +124,88 @@ The option to specify whether you want to make the dataview writable to perform 
     return [
       new DynamicUIProps(
         InputType.String,
-        "availabilityZoneId",
-        "The identifier of the availability zones. If attaching a volume, the volume must be in the same availability zone as the dataview that you are attaching to.",
+        'availabilityZoneId',
+        'The identifier of the availability zones. If attaching a volume, the volume must be in the same availability zone as the dataview that you are attaching to.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description for the dataview.",
+        'description',
+        'A description for the dataview.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A unique identifier for the dataview.\n\nThe following arguments are optional:",
+        'name',
+        'A unique identifier for the dataview.\n\nThe following arguments are optional:',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "readWrite",
-        "The option to specify whether you want to make the dataview writable to perform database maintenance. The following are some considerations related to writable dataviews.\n* You cannot create partial writable dataviews. When you create writeable dataviews you must provide the entire database path. You cannot perform updates on a writeable dataview. Hence, `auto_update` must be set as `false` if `read_write` is `true` for a dataview.\n* You must also use a unique volume for creating a writeable dataview. So, if you choose a volume that is already in use by another dataview, the dataview creation fails.\n* Once you create a dataview as writeable, you cannot change it to read-only. So, you cannot update the `read_write` parameter later.",
+        'readWrite',
+        'The option to specify whether you want to make the dataview writable to perform database maintenance. The following are some considerations related to writable dataviews.\n* You cannot create partial writable dataviews. When you create writeable dataviews you must provide the entire database path. You cannot perform updates on a writeable dataview. Hence, `auto_update` must be set as `false` if `read_write` is `true` for a dataview.\n* You must also use a unique volume for creating a writeable dataview. So, if you choose a volume that is already in use by another dataview, the dataview creation fails.\n* Once you create a dataview as writeable, you cannot change it to read-only. So, you cannot update the `read_write` parameter later.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "databaseName",
-        "The name of the database where you want to create a dataview.",
+        'databaseName',
+        'The name of the database where you want to create a dataview.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "segmentConfigurations",
-        "The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. See segment_configurations below.",
+        'segmentConfigurations',
+        'The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. See segment_configurations below.',
         () => finspace_KxDataviewSegmentConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "azMode",
-        "The number of availability zones you want to assign per cluster. This can be one of the following:\n* `SINGLE` - Assigns one availability zone per cluster.\n* `MULTI` - Assigns all the availability zones per cluster.",
+        'azMode',
+        'The number of availability zones you want to assign per cluster. This can be one of the following:\n* `SINGLE` - Assigns one availability zone per cluster.\n* `MULTI` - Assigns all the availability zones per cluster.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "changesetId",
-        "A unique identifier of the changeset of the database that you want to use to ingest data.",
+        'changesetId',
+        'A unique identifier of the changeset of the database that you want to use to ingest data.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "autoUpdate",
-        "The option to specify whether you want to apply all the future additions and corrections automatically to the dataview, when you ingest new changesets. The default value is false.",
+        'autoUpdate',
+        'The option to specify whether you want to apply all the future additions and corrections automatically to the dataview, when you ingest new changesets. The default value is false.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "environmentId",
-        "Unique identifier for the KX environment.",
+        'environmentId',
+        'Unique identifier for the KX environment.',
         () => [],
         true,
         true,

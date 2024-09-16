@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualNodeSpecListenerTlValidationTrustFile,
   appmesh_getVirtualNodeSpecListenerTlValidationTrustFile_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTlValidationTrustFile";
+} from './appmesh_getVirtualNodeSpecListenerTlValidationTrustFile';
 import {
   appmesh_getVirtualNodeSpecListenerTlValidationTrustSd,
   appmesh_getVirtualNodeSpecListenerTlValidationTrustSd_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTlValidationTrustSd";
+} from './appmesh_getVirtualNodeSpecListenerTlValidationTrustSd';
 
 export interface appmesh_getVirtualNodeSpecListenerTlValidationTrust {
   //
@@ -26,16 +26,16 @@ export function appmesh_getVirtualNodeSpecListenerTlValidationTrust_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.Array,
-      "files",
-      "",
+      'files',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTlValidationTrustFile_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "sds",
-      "",
+      'sds',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTlValidationTrustSd_GetTypes(),
       true,
       false,

@@ -3,40 +3,40 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsMultiplexOutputSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsMultiplexOutputSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsMultiplexOutputSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsMultiplexOutputSettings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsRtmpOutputSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsRtmpOutputSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsRtmpOutputSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsRtmpOutputSettings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsFrameCaptureOutputSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsFrameCaptureOutputSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsFrameCaptureOutputSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsFrameCaptureOutputSettings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsMediaPackageOutputSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsMediaPackageOutputSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsMediaPackageOutputSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsMediaPackageOutputSettings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsMsSmoothOutputSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsMsSmoothOutputSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsMsSmoothOutputSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsMsSmoothOutputSettings';
 
 export interface medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettings {
   //
@@ -68,8 +68,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettings_
   return [
     new DynamicUIProps(
       InputType.Object,
-      "hlsOutputSettings",
-      "",
+      'hlsOutputSettings',
+      '',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettings_GetTypes(),
       false,
@@ -77,8 +77,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettings_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "mediaPackageOutputSettings",
-      "Media package output settings. This can be set as an empty block.",
+      'mediaPackageOutputSettings',
+      'Media package output settings. This can be set as an empty block.',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsMediaPackageOutputSettings_GetTypes(),
       false,
@@ -86,8 +86,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettings_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "msSmoothOutputSettings",
-      "",
+      'msSmoothOutputSettings',
+      '',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsMsSmoothOutputSettings_GetTypes(),
       false,
@@ -95,8 +95,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettings_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "multiplexOutputSettings",
-      "Multiplex output settings. See Multiplex Output Settings for more details.",
+      'multiplexOutputSettings',
+      'Multiplex output settings. See Multiplex Output Settings for more details.',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsMultiplexOutputSettings_GetTypes(),
       false,
@@ -104,8 +104,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettings_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "rtmpOutputSettings",
-      "RTMP output settings. See RTMP Output Settings for more details.",
+      'rtmpOutputSettings',
+      'RTMP output settings. See RTMP Output Settings for more details.',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsRtmpOutputSettings_GetTypes(),
       false,
@@ -113,8 +113,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettings_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "udpOutputSettings",
-      "UDP output settings. See UDP Output Settings for more details.",
+      'udpOutputSettings',
+      'UDP output settings. See UDP Output Settings for more details.',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettings_GetTypes(),
       false,
@@ -122,8 +122,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettings_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "archiveOutputSettings",
-      "Archive output settings. See Archive Output Settings for more details.",
+      'archiveOutputSettings',
+      'Archive output settings. See Archive Output Settings for more details.',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettings_GetTypes(),
       false,
@@ -131,8 +131,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettings_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "frameCaptureOutputSettings",
-      "",
+      'frameCaptureOutputSettings',
+      '',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsFrameCaptureOutputSettings_GetTypes(),
       false,

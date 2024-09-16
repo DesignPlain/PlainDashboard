@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTl,
   appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTl_GetTypes,
-} from "./appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTl";
+} from './appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTl';
 
 export interface appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicy {
   //
@@ -19,8 +19,8 @@ export function appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicy_GetT
   return [
     new DynamicUIProps(
       InputType.Array,
-      "tls",
-      "",
+      'tls',
+      '',
       () =>
         appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTl_GetTypes(),
       true,

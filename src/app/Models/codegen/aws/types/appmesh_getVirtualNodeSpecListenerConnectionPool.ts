@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualNodeSpecListenerConnectionPoolHttp2,
   appmesh_getVirtualNodeSpecListenerConnectionPoolHttp2_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerConnectionPoolHttp2";
+} from './appmesh_getVirtualNodeSpecListenerConnectionPoolHttp2';
 import {
   appmesh_getVirtualNodeSpecListenerConnectionPoolHttp,
   appmesh_getVirtualNodeSpecListenerConnectionPoolHttp_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerConnectionPoolHttp";
+} from './appmesh_getVirtualNodeSpecListenerConnectionPoolHttp';
 import {
   appmesh_getVirtualNodeSpecListenerConnectionPoolTcp,
   appmesh_getVirtualNodeSpecListenerConnectionPoolTcp_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerConnectionPoolTcp";
+} from './appmesh_getVirtualNodeSpecListenerConnectionPoolTcp';
 import {
   appmesh_getVirtualNodeSpecListenerConnectionPoolGrpc,
   appmesh_getVirtualNodeSpecListenerConnectionPoolGrpc_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerConnectionPoolGrpc";
+} from './appmesh_getVirtualNodeSpecListenerConnectionPoolGrpc';
 
 export interface appmesh_getVirtualNodeSpecListenerConnectionPool {
   //
@@ -40,32 +40,32 @@ export function appmesh_getVirtualNodeSpecListenerConnectionPool_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.Array,
-      "http2s",
-      "",
+      'http2s',
+      '',
       () => appmesh_getVirtualNodeSpecListenerConnectionPoolHttp2_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "https",
-      "",
+      'https',
+      '',
       () => appmesh_getVirtualNodeSpecListenerConnectionPoolHttp_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "tcps",
-      "",
+      'tcps',
+      '',
       () => appmesh_getVirtualNodeSpecListenerConnectionPoolTcp_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "grpcs",
-      "",
+      'grpcs',
+      '',
       () => appmesh_getVirtualNodeSpecListenerConnectionPoolGrpc_GetTypes(),
       true,
       false,

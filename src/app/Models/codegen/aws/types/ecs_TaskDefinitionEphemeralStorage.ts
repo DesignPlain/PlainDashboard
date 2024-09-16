@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ecs_TaskDefinitionEphemeralStorage {
   // The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is `21` GiB and the maximum supported value is `200` GiB.
@@ -15,8 +15,8 @@ export function ecs_TaskDefinitionEphemeralStorage_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.Number,
-      "sizeInGib",
-      "The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is `21` GiB and the maximum supported value is `200` GiB.",
+      'sizeInGib',
+      'The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is `21` GiB and the maximum supported value is `200` GiB.',
       () => [],
       true,
       true,

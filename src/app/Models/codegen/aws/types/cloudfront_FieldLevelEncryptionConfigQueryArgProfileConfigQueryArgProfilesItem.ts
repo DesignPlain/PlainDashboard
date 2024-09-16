@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudfront_FieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItem {
   //
@@ -18,16 +18,16 @@ export function cloudfront_FieldLevelEncryptionConfigQueryArgProfileConfigQueryA
   return [
     new DynamicUIProps(
       InputType.String,
-      "profileId",
-      "",
+      'profileId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "queryArg",
-      "Query argument for field-level encryption query argument-profile mapping.",
+      'queryArg',
+      'Query argument for field-level encryption query argument-profile mapping.',
       () => [],
       true,
       false,

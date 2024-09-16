@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore,
   dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore_GetTypes,
-} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore";
+} from './dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore';
 
 export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoType {
   // Name of the information type.
@@ -28,24 +28,24 @@ export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransf
   return [
     new DynamicUIProps(
       InputType.String,
-      "version",
-      "Version name for this InfoType.",
+      'version',
+      'Version name for this InfoType.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the information type.",
+      'name',
+      'Name of the information type.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "sensitivityScore",
-      "Optional custom sensitivity for this InfoType. This only applies to data profiling.\nStructure is documented below.",
+      'sensitivityScore',
+      'Optional custom sensitivity for this InfoType. This only applies to data profiling.\nStructure is documented below.',
       () =>
         dataloss_PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore_GetTypes(),
       false,

@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   folder_getOrganizationPolicyListPolicyDeny,
   folder_getOrganizationPolicyListPolicyDeny_GetTypes,
-} from "./folder_getOrganizationPolicyListPolicyDeny";
+} from './folder_getOrganizationPolicyListPolicyDeny';
 import {
   folder_getOrganizationPolicyListPolicyAllow,
   folder_getOrganizationPolicyListPolicyAllow_GetTypes,
-} from "./folder_getOrganizationPolicyListPolicyAllow";
+} from './folder_getOrganizationPolicyListPolicyAllow';
 
 export interface folder_getOrganizationPolicyListPolicy {
   // One or the other must be set.
@@ -32,32 +32,32 @@ export function folder_getOrganizationPolicyListPolicy_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.Array,
-      "denies",
-      "One or the other must be set.",
+      'denies',
+      'One or the other must be set.',
       () => folder_getOrganizationPolicyListPolicyDeny_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "inheritFromParent",
-      "If set to true, the values from the effective Policy of the parent resource are inherited, meaning the values set in this Policy are added to the values inherited up the hierarchy.",
+      'inheritFromParent',
+      'If set to true, the values from the effective Policy of the parent resource are inherited, meaning the values set in this Policy are added to the values inherited up the hierarchy.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "suggestedValue",
-      "The Google Cloud Console will try to default to a configuration that matches the value specified in this field.",
+      'suggestedValue',
+      'The Google Cloud Console will try to default to a configuration that matches the value specified in this field.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "allows",
-      "One or the other must be set.",
+      'allows',
+      'One or the other must be set.',
       () => folder_getOrganizationPolicyListPolicyAllow_GetTypes(),
       true,
       false,

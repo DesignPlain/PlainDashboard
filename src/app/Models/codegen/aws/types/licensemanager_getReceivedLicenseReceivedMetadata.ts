@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface licensemanager_getReceivedLicenseReceivedMetadata {
   // Received status.
@@ -21,24 +21,24 @@ export function licensemanager_getReceivedLicenseReceivedMetadata_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.String,
-      "receivedStatusReason",
-      "Received status reason.",
+      'receivedStatusReason',
+      'Received status reason.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "allowedOperations",
-      "A list of allowed operations.",
+      'allowedOperations',
+      'A list of allowed operations.',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "receivedStatus",
-      "Received status.",
+      'receivedStatus',
+      'Received status.',
       () => [],
       true,
       false,

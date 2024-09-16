@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   monitoring_UptimeCheckConfigSyntheticMonitorCloudFunctionV2,
   monitoring_UptimeCheckConfigSyntheticMonitorCloudFunctionV2_GetTypes,
-} from "./monitoring_UptimeCheckConfigSyntheticMonitorCloudFunctionV2";
+} from './monitoring_UptimeCheckConfigSyntheticMonitorCloudFunctionV2';
 
 export interface monitoring_UptimeCheckConfigSyntheticMonitor {
   /*
@@ -25,7 +25,7 @@ export function monitoring_UptimeCheckConfigSyntheticMonitor_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.Object,
-      "cloudFunctionV2",
+      'cloudFunctionV2',
       'Target a Synthetic Monitor GCFv2 Instance\nStructure is documented below.\n\n\n<a name="nested_cloud_function_v2"></a>The `cloud_function_v2` block supports:',
       () =>
         monitoring_UptimeCheckConfigSyntheticMonitorCloudFunctionV2_GetTypes(),

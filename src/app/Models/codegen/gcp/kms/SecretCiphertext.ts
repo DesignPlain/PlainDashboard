@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface SecretCiphertextArgs {
   /*
@@ -58,7 +58,7 @@ The plaintext to be encrypted.
     return [
       new DynamicUIProps(
         InputType.String,
-        "cryptoKey",
+        'cryptoKey',
         "The full name of the CryptoKey that will be used to encrypt the provided plaintext.\nFormat: `'projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}/cryptoKeys/{{cryptoKey}}'`\n\n\n- - -",
         () => [],
         true,
@@ -66,16 +66,16 @@ The plaintext to be encrypted.
       ),
       new DynamicUIProps(
         InputType.String,
-        "plaintext",
-        "The plaintext to be encrypted.\n**Note**: This property is sensitive and will not be displayed in the plan.",
+        'plaintext',
+        'The plaintext to be encrypted.\n**Note**: This property is sensitive and will not be displayed in the plan.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "additionalAuthenticatedData",
-        "The additional authenticated data used for integrity checks during encryption and decryption.\n**Note**: This property is sensitive and will not be displayed in the plan.",
+        'additionalAuthenticatedData',
+        'The additional authenticated data used for integrity checks during encryption and decryption.\n**Note**: This property is sensitive and will not be displayed in the plan.',
         () => [],
         false,
         true,

@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ssmcontacts_getPlanStageTargetChannelTargetInfo,
   ssmcontacts_getPlanStageTargetChannelTargetInfo_GetTypes,
-} from "./ssmcontacts_getPlanStageTargetChannelTargetInfo";
+} from './ssmcontacts_getPlanStageTargetChannelTargetInfo';
 import {
   ssmcontacts_getPlanStageTargetContactTargetInfo,
   ssmcontacts_getPlanStageTargetContactTargetInfo_GetTypes,
-} from "./ssmcontacts_getPlanStageTargetContactTargetInfo";
+} from './ssmcontacts_getPlanStageTargetContactTargetInfo';
 
 export interface ssmcontacts_getPlanStageTarget {
   //
@@ -26,16 +26,16 @@ export function ssmcontacts_getPlanStageTarget_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "channelTargetInfos",
-      "",
+      'channelTargetInfos',
+      '',
       () => ssmcontacts_getPlanStageTargetChannelTargetInfo_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "contactTargetInfos",
-      "",
+      'contactTargetInfos',
+      '',
       () => ssmcontacts_getPlanStageTargetContactTargetInfo_GetTypes(),
       true,
       false,

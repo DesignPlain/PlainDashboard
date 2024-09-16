@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface CustomerGatewayArgs {
   // The gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN). Valid values are from  `1` to `2147483647`. Conflicts with `bgp_asn_extended`.
@@ -67,15 +67,15 @@ supports at this time is "ipsec.1".
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Tags to apply to the gateway. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Tags to apply to the gateway. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
+        'type',
         'The type of customer gateway. The only type AWS\nsupports at this time is "ipsec.1".',
         () => [],
         true,
@@ -83,7 +83,7 @@ supports at this time is "ipsec.1".
       ),
       new DynamicUIProps(
         InputType.String,
-        "bgpAsn",
+        'bgpAsn',
         "The gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN). Valid values are from  `1` to `2147483647`. Conflicts with `bgp_asn_extended`.",
         () => [],
         false,
@@ -91,7 +91,7 @@ supports at this time is "ipsec.1".
       ),
       new DynamicUIProps(
         InputType.String,
-        "bgpAsnExtended",
+        'bgpAsnExtended',
         "The gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN). Valid values are from  `2147483648` to `4294967295` Conflicts with `bgp_asn`.",
         () => [],
         false,
@@ -99,23 +99,23 @@ supports at this time is "ipsec.1".
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateArn",
-        "The Amazon Resource Name (ARN) for the customer gateway certificate.",
+        'certificateArn',
+        'The Amazon Resource Name (ARN) for the customer gateway certificate.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "deviceName",
-        "A name for the customer gateway device.",
+        'deviceName',
+        'A name for the customer gateway device.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ipAddress",
+        'ipAddress',
         "The IPv4 address for the customer gateway device's outside interface.",
         () => [],
         false,

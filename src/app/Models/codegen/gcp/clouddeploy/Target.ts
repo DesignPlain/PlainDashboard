@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   clouddeploy_TargetExecutionConfig,
   clouddeploy_TargetExecutionConfig_GetTypes,
-} from "../types/clouddeploy_TargetExecutionConfig";
+} from '../types/clouddeploy_TargetExecutionConfig';
 import {
   clouddeploy_TargetGke,
   clouddeploy_TargetGke_GetTypes,
-} from "../types/clouddeploy_TargetGke";
+} from '../types/clouddeploy_TargetGke';
 import {
   clouddeploy_TargetMultiTarget,
   clouddeploy_TargetMultiTarget_GetTypes,
-} from "../types/clouddeploy_TargetMultiTarget";
+} from '../types/clouddeploy_TargetMultiTarget';
 import {
   clouddeploy_TargetRun,
   clouddeploy_TargetRun_GetTypes,
-} from "../types/clouddeploy_TargetRun";
+} from '../types/clouddeploy_TargetRun';
 import {
   clouddeploy_TargetAnthosCluster,
   clouddeploy_TargetAnthosCluster_GetTypes,
-} from "../types/clouddeploy_TargetAnthosCluster";
+} from '../types/clouddeploy_TargetAnthosCluster';
 
 export interface TargetArgs {
   /*
@@ -170,104 +170,104 @@ Please refer to the field `effective_annotations` for all of the annotations pre
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project for the resource",
+        'project',
+        'The project for the resource',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "run",
-        "Information specifying a Cloud Run deployment target.",
+        'run',
+        'Information specifying a Cloud Run deployment target.',
         () => clouddeploy_TargetRun_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the `Target`. Format is [a-z][a-z0-9\\-]{0,62}.\n\n\n\n- - -",
+        'name',
+        'Name of the `Target`. Format is [a-z][a-z0-9\\-]{0,62}.\n\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Optional. Description of the `Target`. Max length is 255 characters.",
+        'description',
+        'Optional. Description of the `Target`. Max length is 255 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "gke",
-        "Information specifying a GKE Cluster.",
+        'gke',
+        'Information specifying a GKE Cluster.',
         () => clouddeploy_TargetGke_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource",
+        'location',
+        'The location for the resource',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "deployParameters",
-        "Optional. The deploy parameters to use for this target.",
+        'deployParameters',
+        'Optional. The deploy parameters to use for this target.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "requireApproval",
-        "Optional. Whether or not the `Target` requires approval.",
+        'requireApproval',
+        'Optional. Whether or not the `Target` requires approval.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
-        "Optional. User annotations. These attributes can only be set and used by the user, and not by Google Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
+        'annotations',
+        'Optional. User annotations. These attributes can only be set and used by the user, and not by Google Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "anthosCluster",
-        "Information specifying an Anthos Cluster.",
+        'anthosCluster',
+        'Information specifying an Anthos Cluster.',
         () => clouddeploy_TargetAnthosCluster_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "executionConfigs",
-        "Configurations for all execution that relates to this `Target`. Each `ExecutionEnvironmentUsage` value may only be used in a single configuration; using the same value multiple times is an error. When one or more configurations are specified, they must include the `RENDER` and `DEPLOY` `ExecutionEnvironmentUsage` values. When no configurations are specified, execution will use the default specified in `DefaultPool`.",
+        'executionConfigs',
+        'Configurations for all execution that relates to this `Target`. Each `ExecutionEnvironmentUsage` value may only be used in a single configuration; using the same value multiple times is an error. When one or more configurations are specified, they must include the `RENDER` and `DEPLOY` `ExecutionEnvironmentUsage` values. When no configurations are specified, execution will use the default specified in `DefaultPool`.',
         () => clouddeploy_TargetExecutionConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "multiTarget",
-        "Information specifying a multiTarget.",
+        'multiTarget',
+        'Information specifying a multiTarget.',
         () => clouddeploy_TargetMultiTarget_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Optional. Labels are attributes that can be set and used by both the user and by Google Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Optional. Labels are attributes that can be set and used by both the user and by Google Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,

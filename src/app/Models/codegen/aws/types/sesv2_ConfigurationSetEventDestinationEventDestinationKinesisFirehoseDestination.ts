@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface sesv2_ConfigurationSetEventDestinationEventDestinationKinesisFirehoseDestination {
   // The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that the Amazon SES API v2 sends email events to.
@@ -18,16 +18,16 @@ export function sesv2_ConfigurationSetEventDestinationEventDestinationKinesisFir
   return [
     new DynamicUIProps(
       InputType.String,
-      "deliveryStreamArn",
-      "The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that the Amazon SES API v2 sends email events to.",
+      'deliveryStreamArn',
+      'The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that the Amazon SES API v2 sends email events to.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "iamRoleArn",
-      "The Amazon Resource Name (ARN) of the IAM role that the Amazon SES API v2 uses to send email events to the Amazon Kinesis Data Firehose stream.",
+      'iamRoleArn',
+      'The Amazon Resource Name (ARN) of the IAM role that the Amazon SES API v2 uses to send email events to the Amazon Kinesis Data Firehose stream.',
       () => [],
       true,
       false,

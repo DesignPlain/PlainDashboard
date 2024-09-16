@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface LocalGatewayRouteArgs {
   // Identifier of EC2 Local Gateway Virtual Interface Group.
@@ -31,24 +31,24 @@ export class LocalGatewayRoute extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "localGatewayVirtualInterfaceGroupId",
-        "Identifier of EC2 Local Gateway Virtual Interface Group.",
+        'localGatewayVirtualInterfaceGroupId',
+        'Identifier of EC2 Local Gateway Virtual Interface Group.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "destinationCidrBlock",
-        "IPv4 CIDR range used for destination matches. Routing decisions are based on the most specific match.",
+        'destinationCidrBlock',
+        'IPv4 CIDR range used for destination matches. Routing decisions are based on the most specific match.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "localGatewayRouteTableId",
-        "Identifier of EC2 Local Gateway Route Table.",
+        'localGatewayRouteTableId',
+        'Identifier of EC2 Local Gateway Route Table.',
         () => [],
         true,
         true,

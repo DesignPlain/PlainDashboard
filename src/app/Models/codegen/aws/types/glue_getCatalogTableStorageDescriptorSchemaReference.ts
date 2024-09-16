@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   glue_getCatalogTableStorageDescriptorSchemaReferenceSchemaId,
   glue_getCatalogTableStorageDescriptorSchemaReferenceSchemaId_GetTypes,
-} from "./glue_getCatalogTableStorageDescriptorSchemaReferenceSchemaId";
+} from './glue_getCatalogTableStorageDescriptorSchemaReferenceSchemaId';
 
 export interface glue_getCatalogTableStorageDescriptorSchemaReference {
   // Configuration block that contains schema identity fields. See `schema_id` below.
@@ -25,8 +25,8 @@ export function glue_getCatalogTableStorageDescriptorSchemaReference_GetTypes():
   return [
     new DynamicUIProps(
       InputType.Array,
-      "schemaIds",
-      "Configuration block that contains schema identity fields. See `schema_id` below.",
+      'schemaIds',
+      'Configuration block that contains schema identity fields. See `schema_id` below.',
       () =>
         glue_getCatalogTableStorageDescriptorSchemaReferenceSchemaId_GetTypes(),
       true,
@@ -34,16 +34,16 @@ export function glue_getCatalogTableStorageDescriptorSchemaReference_GetTypes():
     ),
     new DynamicUIProps(
       InputType.String,
-      "schemaVersionId",
-      "Unique ID assigned to a version of the schema.",
+      'schemaVersionId',
+      'Unique ID assigned to a version of the schema.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "schemaVersionNumber",
-      "Version number of the schema.",
+      'schemaVersionNumber',
+      'Version number of the schema.',
       () => [],
       true,
       false,

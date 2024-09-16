@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkebackup_RestorePlanIamBindingCondition,
   gkebackup_RestorePlanIamBindingCondition_GetTypes,
-} from "../types/gkebackup_RestorePlanIamBindingCondition";
+} from '../types/gkebackup_RestorePlanIamBindingCondition';
 
 export interface RestorePlanIamBindingArgs {
   //
@@ -62,41 +62,41 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.Array,
-        "members",
-        "",
+        'members',
+        '',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The full name of the BackupPlan Resource.",
+        'name',
+        'The full name of the BackupPlan Resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
-      new DynamicUIProps(InputType.String, "role", "", () => [], true, true),
+      new DynamicUIProps(InputType.String, 'role', '', () => [], true, true),
       new DynamicUIProps(
         InputType.Object,
-        "condition",
-        "",
+        'condition',
+        '',
         () => gkebackup_RestorePlanIamBindingCondition_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The region of the Restore Plan.",
+        'location',
+        'The region of the Restore Plan.',
         () => [],
         false,
         true,

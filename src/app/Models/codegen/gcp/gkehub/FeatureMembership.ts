@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkehub_FeatureMembershipMesh,
   gkehub_FeatureMembershipMesh_GetTypes,
-} from "../types/gkehub_FeatureMembershipMesh";
+} from '../types/gkehub_FeatureMembershipMesh';
 import {
   gkehub_FeatureMembershipPolicycontroller,
   gkehub_FeatureMembershipPolicycontroller_GetTypes,
-} from "../types/gkehub_FeatureMembershipPolicycontroller";
+} from '../types/gkehub_FeatureMembershipPolicycontroller';
 import {
   gkehub_FeatureMembershipConfigmanagement,
   gkehub_FeatureMembershipConfigmanagement_GetTypes,
-} from "../types/gkehub_FeatureMembershipConfigmanagement";
+} from '../types/gkehub_FeatureMembershipConfigmanagement';
 
 export interface FeatureMembershipArgs {
   // The location of the membership, for example, "us-central1". Default is "global".
@@ -73,55 +73,55 @@ export class FeatureMembership extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "policycontroller",
-        "Policy Controller-specific spec. Structure is documented below.",
+        'policycontroller',
+        'Policy Controller-specific spec. Structure is documented below.',
         () => gkehub_FeatureMembershipPolicycontroller_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project of the feature",
+        'project',
+        'The project of the feature',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "configmanagement",
-        "Config Management-specific spec. Structure is documented below.",
+        'configmanagement',
+        'Config Management-specific spec. Structure is documented below.',
         () => gkehub_FeatureMembershipConfigmanagement_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "feature",
-        "The name of the feature",
+        'feature',
+        'The name of the feature',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the feature",
+        'location',
+        'The location of the feature',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "membership",
-        "The name of the membership",
+        'membership',
+        'The name of the membership',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "membershipLocation",
+        'membershipLocation',
         'The location of the membership, for example, "us-central1". Default is "global".',
         () => [],
         false,
@@ -129,8 +129,8 @@ export class FeatureMembership extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Object,
-        "mesh",
-        "Service mesh specific spec. Structure is documented below.",
+        'mesh',
+        'Service mesh specific spec. Structure is documented below.',
         () => gkehub_FeatureMembershipMesh_GetTypes(),
         false,
         false,

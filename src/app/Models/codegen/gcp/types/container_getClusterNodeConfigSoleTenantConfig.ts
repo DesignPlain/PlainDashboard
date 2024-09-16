@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   container_getClusterNodeConfigSoleTenantConfigNodeAffinity,
   container_getClusterNodeConfigSoleTenantConfigNodeAffinity_GetTypes,
-} from "./container_getClusterNodeConfigSoleTenantConfigNodeAffinity";
+} from './container_getClusterNodeConfigSoleTenantConfigNodeAffinity';
 
 export interface container_getClusterNodeConfigSoleTenantConfig {
   // .
@@ -19,8 +19,8 @@ export function container_getClusterNodeConfigSoleTenantConfig_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Array,
-      "nodeAffinities",
-      ".",
+      'nodeAffinities',
+      '.',
       () =>
         container_getClusterNodeConfigSoleTenantConfigNodeAffinity_GetTypes(),
       true,

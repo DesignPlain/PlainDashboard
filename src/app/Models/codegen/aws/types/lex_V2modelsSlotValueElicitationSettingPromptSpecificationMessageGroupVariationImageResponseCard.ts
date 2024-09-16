@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCardButton,
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCardButton_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCardButton";
+} from './lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCardButton';
 
 export interface lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCard {
   //
@@ -28,25 +28,25 @@ export function lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessag
   return [
     new DynamicUIProps(
       InputType.String,
-      "imageUrl",
-      "",
+      'imageUrl',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "subtitle",
-      "",
+      'subtitle',
+      '',
       () => [],
       false,
       false,
     ),
-    new DynamicUIProps(InputType.String, "title", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'title', '', () => [], true, false),
     new DynamicUIProps(
       InputType.Array,
-      "buttons",
-      "",
+      'buttons',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCardButton_GetTypes(),
       false,

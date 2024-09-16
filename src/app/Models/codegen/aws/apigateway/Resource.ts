@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ResourceArgs {
   // ID of the parent API resource
@@ -34,24 +34,24 @@ export class Resource extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "parentId",
-        "ID of the parent API resource",
+        'parentId',
+        'ID of the parent API resource',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "pathPart",
-        "Last path segment of this API resource.",
+        'pathPart',
+        'Last path segment of this API resource.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "restApi",
-        "ID of the associated REST API",
+        'restApi',
+        'ID of the associated REST API',
         () => [],
         true,
         true,

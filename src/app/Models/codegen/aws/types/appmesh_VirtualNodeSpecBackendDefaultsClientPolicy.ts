@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTls,
   appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTls_GetTypes,
-} from "./appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTls";
+} from './appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTls';
 
 export interface appmesh_VirtualNodeSpecBackendDefaultsClientPolicy {
   // Transport Layer Security (TLS) client policy.
@@ -19,8 +19,8 @@ export function appmesh_VirtualNodeSpecBackendDefaultsClientPolicy_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.Object,
-      "tls",
-      "Transport Layer Security (TLS) client policy.",
+      'tls',
+      'Transport Layer Security (TLS) client policy.',
       () => appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTls_GetTypes(),
       false,
       false,

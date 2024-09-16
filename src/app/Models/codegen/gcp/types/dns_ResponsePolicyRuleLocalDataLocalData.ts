@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dns_ResponsePolicyRuleLocalDataLocalData {
   // For example, www.example.com.
@@ -30,32 +30,32 @@ export function dns_ResponsePolicyRuleLocalDataLocalData_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "For example, www.example.com.",
+      'name',
+      'For example, www.example.com.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "rrdatas",
-      "As defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1)",
+      'rrdatas',
+      'As defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1)',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "ttl",
-      "Number of seconds that this ResourceRecordSet can be cached by\nresolvers.",
+      'ttl',
+      'Number of seconds that this ResourceRecordSet can be cached by\nresolvers.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "One of valid DNS resource types.\nPossible values are: `A`, `AAAA`, `CAA`, `CNAME`, `DNSKEY`, `DS`, `HTTPS`, `IPSECVPNKEY`, `MX`, `NAPTR`, `NS`, `PTR`, `SOA`, `SPF`, `SRV`, `SSHFP`, `SVCB`, `TLSA`, `TXT`.",
+      'type',
+      'One of valid DNS resource types.\nPossible values are: `A`, `AAAA`, `CAA`, `CNAME`, `DNSKEY`, `DS`, `HTTPS`, `IPSECVPNKEY`, `MX`, `NAPTR`, `NS`, `PTR`, `SOA`, `SPF`, `SRV`, `SSHFP`, `SVCB`, `TLSA`, `TXT`.',
       () => [],
       true,
       false,

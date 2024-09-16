@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface PeeredDnsDomainArgs {
   // Private service connection between service and consumer network, defaults to `servicenetworking.googleapis.com`
@@ -46,40 +46,40 @@ export class PeeredDnsDomain extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "service",
-        "Private service connection between service and consumer network, defaults to `servicenetworking.googleapis.com`",
+        'service',
+        'Private service connection between service and consumer network, defaults to `servicenetworking.googleapis.com`',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dnsSuffix",
-        "The DNS domain suffix of the peered DNS domain. Make sure to suffix with a `.` (dot).",
+        'dnsSuffix',
+        'The DNS domain suffix of the peered DNS domain. Make sure to suffix with a `.` (dot).',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Internal name used for the peered DNS domain.",
+        'name',
+        'Internal name used for the peered DNS domain.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "network",
-        "The network in the consumer project.",
+        'network',
+        'The network in the consumer project.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The producer project number. If not provided, the provider project is used.",
+        'project',
+        'The producer project number. If not provided, the provider project is used.',
         () => [],
         false,
         true,

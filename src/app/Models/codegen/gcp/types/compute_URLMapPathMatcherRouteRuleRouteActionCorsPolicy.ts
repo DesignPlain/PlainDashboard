@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_URLMapPathMatcherRouteRuleRouteActionCorsPolicy {
   /*
@@ -49,64 +49,64 @@ export function compute_URLMapPathMatcherRouteRuleRouteActionCorsPolicy_GetTypes
   return [
     new DynamicUIProps(
       InputType.Number,
-      "maxAge",
-      "Specifies how long results of a preflight request can be cached in seconds.\nThis translates to the Access-Control-Max-Age header.",
+      'maxAge',
+      'Specifies how long results of a preflight request can be cached in seconds.\nThis translates to the Access-Control-Max-Age header.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "allowCredentials",
-      "In response to a preflight request, setting this to true indicates that the actual request can include user credentials.\nThis translates to the Access-Control-Allow-Credentials header.",
+      'allowCredentials',
+      'In response to a preflight request, setting this to true indicates that the actual request can include user credentials.\nThis translates to the Access-Control-Allow-Credentials header.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "allowHeaders",
-      "Specifies the content for the Access-Control-Allow-Headers header.",
+      'allowHeaders',
+      'Specifies the content for the Access-Control-Allow-Headers header.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "allowMethods",
-      "Specifies the content for the Access-Control-Allow-Methods header.",
+      'allowMethods',
+      'Specifies the content for the Access-Control-Allow-Methods header.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "allowOriginRegexes",
-      "Specifies the regular expression patterns that match allowed origins. For regular expression grammar\nplease see en.cppreference.com/w/cpp/regex/ecmascript\nAn origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.",
+      'allowOriginRegexes',
+      'Specifies the regular expression patterns that match allowed origins. For regular expression grammar\nplease see en.cppreference.com/w/cpp/regex/ecmascript\nAn origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "allowOrigins",
-      "Specifies the list of origins that will be allowed to do CORS requests.\nAn origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.",
+      'allowOrigins',
+      'Specifies the list of origins that will be allowed to do CORS requests.\nAn origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "disabled",
-      "If true, specifies the CORS policy is disabled. The default value is false, which indicates that the CORS policy is in effect.",
+      'disabled',
+      'If true, specifies the CORS policy is disabled. The default value is false, which indicates that the CORS policy is in effect.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "exposeHeaders",
-      "Specifies the content for the Access-Control-Expose-Headers header.",
+      'exposeHeaders',
+      'Specifies the content for the Access-Control-Expose-Headers header.',
       () => InputType_String_GetTypes(),
       false,
       false,

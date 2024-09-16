@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   folder_OrganizationPolicyBooleanPolicy,
   folder_OrganizationPolicyBooleanPolicy_GetTypes,
-} from "../types/folder_OrganizationPolicyBooleanPolicy";
+} from '../types/folder_OrganizationPolicyBooleanPolicy';
 import {
   folder_OrganizationPolicyListPolicy,
   folder_OrganizationPolicyListPolicy_GetTypes,
-} from "../types/folder_OrganizationPolicyListPolicy";
+} from '../types/folder_OrganizationPolicyListPolicy';
 import {
   folder_OrganizationPolicyRestorePolicy,
   folder_OrganizationPolicyRestorePolicy_GetTypes,
-} from "../types/folder_OrganizationPolicyRestorePolicy";
+} from '../types/folder_OrganizationPolicyRestorePolicy';
 
 export interface OrganizationPolicyArgs {
   // Version of the Policy. Default version is 0.
@@ -95,39 +95,39 @@ effectively be unset. This is represented in the UI as the constraint being 'Inh
     return [
       new DynamicUIProps(
         InputType.Object,
-        "booleanPolicy",
-        "A boolean policy is a constraint that is either enforced or not. Structure is documented below.",
+        'booleanPolicy',
+        'A boolean policy is a constraint that is either enforced or not. Structure is documented below.',
         () => folder_OrganizationPolicyBooleanPolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "constraint",
-        "The name of the Constraint the Policy is configuring, for example, `serviceuser.services`. Check out the [complete list of available constraints](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-constraints#available_constraints).\n\n- - -",
+        'constraint',
+        'The name of the Constraint the Policy is configuring, for example, `serviceuser.services`. Check out the [complete list of available constraints](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-constraints#available_constraints).\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "folder",
-        "The resource name of the folder to set the policy for. Its format is folders/{folder_id}.",
+        'folder',
+        'The resource name of the folder to set the policy for. Its format is folders/{folder_id}.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "listPolicy",
-        "A policy that can define specific values that are allowed or denied for the given constraint. It\ncan also be used to allow or deny all values. Structure is documented below.",
+        'listPolicy',
+        'A policy that can define specific values that are allowed or denied for the given constraint. It\ncan also be used to allow or deny all values. Structure is documented below.',
         () => folder_OrganizationPolicyListPolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "restorePolicy",
+        'restorePolicy',
         "A restore policy is a constraint to restore the default policy. Structure is documented below.\n\n> **Note:** If none of [`boolean_policy`, `list_policy`, `restore_policy`] are defined the policy for a given constraint will\neffectively be unset. This is represented in the UI as the constraint being 'Inherited'.\n\n- - -",
         () => folder_OrganizationPolicyRestorePolicy_GetTypes(),
         false,
@@ -135,8 +135,8 @@ effectively be unset. This is represented in the UI as the constraint being 'Inh
       ),
       new DynamicUIProps(
         InputType.Number,
-        "version",
-        "Version of the Policy. Default version is 0.",
+        'version',
+        'Version of the Policy. Default version is 0.',
         () => [],
         false,
         false,

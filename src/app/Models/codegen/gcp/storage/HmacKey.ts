@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface HmacKeyArgs {
   /*
@@ -70,15 +70,15 @@ Possible values are: `ACTIVE`, `INACTIVE`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceAccountEmail",
+        'serviceAccountEmail',
         "The email address of the key's associated service account.\n\n\n- - -",
         () => [],
         true,
@@ -86,8 +86,8 @@ Possible values are: `ACTIVE`, `INACTIVE`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "state",
-        "The state of the key. Can be set to one of ACTIVE, INACTIVE.\nDefault value is `ACTIVE`.\nPossible values are: `ACTIVE`, `INACTIVE`.",
+        'state',
+        'The state of the key. Can be set to one of ACTIVE, INACTIVE.\nDefault value is `ACTIVE`.\nPossible values are: `ACTIVE`, `INACTIVE`.',
         () => [],
         false,
         false,

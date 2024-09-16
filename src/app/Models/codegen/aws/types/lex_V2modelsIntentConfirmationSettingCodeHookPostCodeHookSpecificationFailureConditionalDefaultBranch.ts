@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStep,
   lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStep_GetTypes,
-} from "./lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStep";
+} from './lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStep';
 import {
   lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponse,
   lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponse_GetTypes,
-} from "./lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponse";
+} from './lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponse';
 
 export interface lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranch {
   // Configuration block for the next step in the conversation. See `next_step`.
@@ -26,8 +26,8 @@ export function lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecifi
   return [
     new DynamicUIProps(
       InputType.Object,
-      "nextStep",
-      "Configuration block for the next step in the conversation. See `next_step`.",
+      'nextStep',
+      'Configuration block for the next step in the conversation. See `next_step`.',
       () =>
         lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStep_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecifi
     ),
     new DynamicUIProps(
       InputType.Object,
-      "response",
-      "Configuration block for a list of message groups that Amazon Lex uses to respond to the user input. See `response`.",
+      'response',
+      'Configuration block for a list of message groups that Amazon Lex uses to respond to the user input. See `response`.',
       () =>
         lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponse_GetTypes(),
       false,

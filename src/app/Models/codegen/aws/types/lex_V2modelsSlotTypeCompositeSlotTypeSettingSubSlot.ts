@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface lex_V2modelsSlotTypeCompositeSlotTypeSettingSubSlot {
   /*
@@ -22,16 +22,16 @@ export function lex_V2modelsSlotTypeCompositeSlotTypeSettingSubSlot_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the slot type\n\nThe following arguments are optional:",
+      'name',
+      'Name of the slot type\n\nThe following arguments are optional:',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "subSlotId",
-      "",
+      'subSlotId',
+      '',
       () => [],
       true,
       false,

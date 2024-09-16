@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificateauthority_CertificateConfigX509ConfigCaOptions,
   certificateauthority_CertificateConfigX509ConfigCaOptions_GetTypes,
-} from "./certificateauthority_CertificateConfigX509ConfigCaOptions";
+} from './certificateauthority_CertificateConfigX509ConfigCaOptions';
 import {
   certificateauthority_CertificateConfigX509ConfigKeyUsage,
   certificateauthority_CertificateConfigX509ConfigKeyUsage_GetTypes,
-} from "./certificateauthority_CertificateConfigX509ConfigKeyUsage";
+} from './certificateauthority_CertificateConfigX509ConfigKeyUsage';
 import {
   certificateauthority_CertificateConfigX509ConfigNameConstraints,
   certificateauthority_CertificateConfigX509ConfigNameConstraints_GetTypes,
-} from "./certificateauthority_CertificateConfigX509ConfigNameConstraints";
+} from './certificateauthority_CertificateConfigX509ConfigNameConstraints';
 import {
   certificateauthority_CertificateConfigX509ConfigPolicyId,
   certificateauthority_CertificateConfigX509ConfigPolicyId_GetTypes,
-} from "./certificateauthority_CertificateConfigX509ConfigPolicyId";
+} from './certificateauthority_CertificateConfigX509ConfigPolicyId';
 import {
   certificateauthority_CertificateConfigX509ConfigAdditionalExtension,
   certificateauthority_CertificateConfigX509ConfigAdditionalExtension_GetTypes,
-} from "./certificateauthority_CertificateConfigX509ConfigAdditionalExtension";
+} from './certificateauthority_CertificateConfigX509ConfigAdditionalExtension';
 
 export interface certificateauthority_CertificateConfigX509Config {
   /*
@@ -68,7 +68,7 @@ export function certificateauthority_CertificateConfigX509Config_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.Array,
-      "aiaOcspServers",
+      'aiaOcspServers',
       'Describes Online Certificate Status Protocol (OCSP) endpoint addresses that appear in the\n"Authority Information Access" extension in the certificate.',
       () => InputType_String_GetTypes(),
       false,
@@ -76,8 +76,8 @@ export function certificateauthority_CertificateConfigX509Config_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Object,
-      "caOptions",
-      "Describes values that are relevant in a CA certificate.\nStructure is documented below.",
+      'caOptions',
+      'Describes values that are relevant in a CA certificate.\nStructure is documented below.',
       () =>
         certificateauthority_CertificateConfigX509ConfigCaOptions_GetTypes(),
       false,
@@ -85,16 +85,16 @@ export function certificateauthority_CertificateConfigX509Config_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Object,
-      "keyUsage",
-      "Indicates the intended use for keys that correspond to a certificate.\nStructure is documented below.",
+      'keyUsage',
+      'Indicates the intended use for keys that correspond to a certificate.\nStructure is documented below.',
       () => certificateauthority_CertificateConfigX509ConfigKeyUsage_GetTypes(),
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "nameConstraints",
-      "Describes the X.509 name constraints extension.\nStructure is documented below.",
+      'nameConstraints',
+      'Describes the X.509 name constraints extension.\nStructure is documented below.',
       () =>
         certificateauthority_CertificateConfigX509ConfigNameConstraints_GetTypes(),
       false,
@@ -102,16 +102,16 @@ export function certificateauthority_CertificateConfigX509Config_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Array,
-      "policyIds",
-      "Describes the X.509 certificate policy object identifiers, per https://tools.ietf.org/html/rfc5280#section-4.2.1.4.\nStructure is documented below.",
+      'policyIds',
+      'Describes the X.509 certificate policy object identifiers, per https://tools.ietf.org/html/rfc5280#section-4.2.1.4.\nStructure is documented below.',
       () => certificateauthority_CertificateConfigX509ConfigPolicyId_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "additionalExtensions",
-      "Specifies an X.509 extension, which may be used in different parts of X.509 objects like certificates, CSRs, and CRLs.\nStructure is documented below.",
+      'additionalExtensions',
+      'Specifies an X.509 extension, which may be used in different parts of X.509 objects like certificates, CSRs, and CRLs.\nStructure is documented below.',
       () =>
         certificateauthority_CertificateConfigX509ConfigAdditionalExtension_GetTypes(),
       false,

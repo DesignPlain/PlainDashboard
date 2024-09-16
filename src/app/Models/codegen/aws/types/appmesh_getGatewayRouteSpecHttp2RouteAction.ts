@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getGatewayRouteSpecHttp2RouteActionRewrite,
   appmesh_getGatewayRouteSpecHttp2RouteActionRewrite_GetTypes,
-} from "./appmesh_getGatewayRouteSpecHttp2RouteActionRewrite";
+} from './appmesh_getGatewayRouteSpecHttp2RouteActionRewrite';
 import {
   appmesh_getGatewayRouteSpecHttp2RouteActionTarget,
   appmesh_getGatewayRouteSpecHttp2RouteActionTarget_GetTypes,
-} from "./appmesh_getGatewayRouteSpecHttp2RouteActionTarget";
+} from './appmesh_getGatewayRouteSpecHttp2RouteActionTarget';
 
 export interface appmesh_getGatewayRouteSpecHttp2RouteAction {
   //
@@ -26,16 +26,16 @@ export function appmesh_getGatewayRouteSpecHttp2RouteAction_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.Array,
-      "rewrites",
-      "",
+      'rewrites',
+      '',
       () => appmesh_getGatewayRouteSpecHttp2RouteActionRewrite_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "targets",
-      "",
+      'targets',
+      '',
       () => appmesh_getGatewayRouteSpecHttp2RouteActionTarget_GetTypes(),
       true,
       false,

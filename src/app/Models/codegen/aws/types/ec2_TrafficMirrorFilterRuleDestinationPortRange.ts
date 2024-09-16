@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2_TrafficMirrorFilterRuleDestinationPortRange {
   // Ending port of the range
@@ -18,16 +18,16 @@ export function ec2_TrafficMirrorFilterRuleDestinationPortRange_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Number,
-      "toPort",
-      "Ending port of the range",
+      'toPort',
+      'Ending port of the range',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "fromPort",
-      "Starting port of the range",
+      'fromPort',
+      'Starting port of the range',
       () => [],
       false,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_getInstanceGroupManagerAutoHealingPolicy {
   // The health check resource that signals autohealing.
@@ -18,16 +18,16 @@ export function compute_getInstanceGroupManagerAutoHealingPolicy_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.String,
-      "healthCheck",
-      "The health check resource that signals autohealing.",
+      'healthCheck',
+      'The health check resource that signals autohealing.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "initialDelaySec",
-      "The number of seconds that the managed instance group waits before it applies autohealing policies to new instances or recently recreated instances. Between 0 and 3600.",
+      'initialDelaySec',
+      'The number of seconds that the managed instance group waits before it applies autohealing policies to new instances or recently recreated instances. Between 0 and 3600.',
       () => [],
       true,
       false,

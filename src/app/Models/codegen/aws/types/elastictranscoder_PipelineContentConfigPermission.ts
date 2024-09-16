@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface elastictranscoder_PipelineContentConfigPermission {
   // The permission that you want to give to the AWS user that you specified in `content_config_permissions.grantee`. Valid values are `Read`, `ReadAcp`, `WriteAcp` or `FullControl`.
@@ -21,24 +21,24 @@ export function elastictranscoder_PipelineContentConfigPermission_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "accesses",
-      "The permission that you want to give to the AWS user that you specified in `content_config_permissions.grantee`. Valid values are `Read`, `ReadAcp`, `WriteAcp` or `FullControl`.",
+      'accesses',
+      'The permission that you want to give to the AWS user that you specified in `content_config_permissions.grantee`. Valid values are `Read`, `ReadAcp`, `WriteAcp` or `FullControl`.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "grantee",
-      "The AWS user or group that you want to have access to transcoded files and playlists.",
+      'grantee',
+      'The AWS user or group that you want to have access to transcoded files and playlists.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "granteeType",
-      "Specify the type of value that appears in the `content_config_permissions.grantee` object. Valid values are `Canonical`, `Email` or `Group`.",
+      'granteeType',
+      'Specify the type of value that appears in the `content_config_permissions.grantee` object. Valid values are `Canonical`, `Email` or `Group`.',
       () => [],
       false,
       false,

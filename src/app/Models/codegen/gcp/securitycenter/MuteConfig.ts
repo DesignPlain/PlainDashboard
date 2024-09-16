@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface MuteConfigArgs {
   /*
@@ -91,7 +91,7 @@ Resource name of the new mute configs's parent. Its format is
     return [
       new DynamicUIProps(
         InputType.String,
-        "parent",
+        'parent',
         'Resource name of the new mute configs\'s parent. Its format is\n"organizations/[organization_id]", "folders/[folder_id]", or\n"projects/[project_id]".\n\n\n- - -',
         () => [],
         true,
@@ -99,24 +99,24 @@ Resource name of the new mute configs's parent. Its format is
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of the mute config.",
+        'description',
+        'A description of the mute config.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "filter",
-        "An expression that defines the filter to apply across create/update\nevents of findings. While creating a filter string, be mindful of\nthe scope in which the mute configuration is being created. E.g.,\nIf a filter contains project = X but is created under the\nproject = Y scope, it might not match any findings.",
+        'filter',
+        'An expression that defines the filter to apply across create/update\nevents of findings. While creating a filter string, be mindful of\nthe scope in which the mute configuration is being created. E.g.,\nIf a filter contains project = X but is created under the\nproject = Y scope, it might not match any findings.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "muteConfigId",
-        "Unique identifier provided by the client within the parent scope.",
+        'muteConfigId',
+        'Unique identifier provided by the client within the parent scope.',
         () => [],
         true,
         true,

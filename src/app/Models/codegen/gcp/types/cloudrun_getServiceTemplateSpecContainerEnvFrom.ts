@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef,
   cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef_GetTypes,
-} from "./cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef";
+} from './cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef';
 import {
   cloudrun_getServiceTemplateSpecContainerEnvFromSecretRef,
   cloudrun_getServiceTemplateSpecContainerEnvFromSecretRef_GetTypes,
-} from "./cloudrun_getServiceTemplateSpecContainerEnvFromSecretRef";
+} from './cloudrun_getServiceTemplateSpecContainerEnvFromSecretRef';
 
 export interface cloudrun_getServiceTemplateSpecContainerEnvFrom {
   // The ConfigMap to select from.
@@ -29,8 +29,8 @@ export function cloudrun_getServiceTemplateSpecContainerEnvFrom_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Array,
-      "configMapReves",
-      "The ConfigMap to select from.",
+      'configMapReves',
+      'The ConfigMap to select from.',
       () =>
         cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef_GetTypes(),
       true,
@@ -38,16 +38,16 @@ export function cloudrun_getServiceTemplateSpecContainerEnvFrom_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.String,
-      "prefix",
-      "An optional identifier to prepend to each key in the ConfigMap.",
+      'prefix',
+      'An optional identifier to prepend to each key in the ConfigMap.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "secretReves",
-      "The Secret to select from.",
+      'secretReves',
+      'The Secret to select from.',
       () => cloudrun_getServiceTemplateSpecContainerEnvFromSecretRef_GetTypes(),
       true,
       false,

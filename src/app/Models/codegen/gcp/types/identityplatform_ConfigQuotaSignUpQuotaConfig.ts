@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface identityplatform_ConfigQuotaSignUpQuotaConfig {
   // A sign up APIs quota that customers can override temporarily.
@@ -21,7 +21,7 @@ export function identityplatform_ConfigQuotaSignUpQuotaConfig_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.String,
-      "quotaDuration",
+      'quotaDuration',
       'How long this quota will be active for. It is measurred in seconds, e.g., Example: "9.615s".',
       () => [],
       false,
@@ -29,16 +29,16 @@ export function identityplatform_ConfigQuotaSignUpQuotaConfig_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.String,
-      "startTime",
-      "When this quota will take affect.",
+      'startTime',
+      'When this quota will take affect.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "quota",
-      "A sign up APIs quota that customers can override temporarily.",
+      'quota',
+      'A sign up APIs quota that customers can override temporarily.',
       () => [],
       false,
       false,

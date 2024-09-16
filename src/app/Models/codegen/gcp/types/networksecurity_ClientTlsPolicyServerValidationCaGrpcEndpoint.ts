@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface networksecurity_ClientTlsPolicyServerValidationCaGrpcEndpoint {
   // The target URI of the gRPC endpoint. Only UDS path is supported, and should start with "unix:".
@@ -15,7 +15,7 @@ export function networksecurity_ClientTlsPolicyServerValidationCaGrpcEndpoint_Ge
   return [
     new DynamicUIProps(
       InputType.String,
-      "targetUri",
+      'targetUri',
       'The target URI of the gRPC endpoint. Only UDS path is supported, and should start with "unix:".',
       () => [],
       true,

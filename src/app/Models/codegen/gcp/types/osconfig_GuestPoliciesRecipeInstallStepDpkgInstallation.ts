@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface osconfig_GuestPoliciesRecipeInstallStepDpkgInstallation {
   // The id of the relevant artifact in the recipe.
@@ -15,8 +15,8 @@ export function osconfig_GuestPoliciesRecipeInstallStepDpkgInstallation_GetTypes
   return [
     new DynamicUIProps(
       InputType.String,
-      "artifactId",
-      "The id of the relevant artifact in the recipe.",
+      'artifactId',
+      'The id of the relevant artifact in the recipe.',
       () => [],
       true,
       false,

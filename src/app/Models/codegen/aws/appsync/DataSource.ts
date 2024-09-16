@@ -3,37 +3,37 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appsync_DataSourceRelationalDatabaseConfig,
   appsync_DataSourceRelationalDatabaseConfig_GetTypes,
-} from "../types/appsync_DataSourceRelationalDatabaseConfig";
+} from '../types/appsync_DataSourceRelationalDatabaseConfig';
 import {
   appsync_DataSourceHttpConfig,
   appsync_DataSourceHttpConfig_GetTypes,
-} from "../types/appsync_DataSourceHttpConfig";
+} from '../types/appsync_DataSourceHttpConfig';
 import {
   appsync_DataSourceDynamodbConfig,
   appsync_DataSourceDynamodbConfig_GetTypes,
-} from "../types/appsync_DataSourceDynamodbConfig";
+} from '../types/appsync_DataSourceDynamodbConfig';
 import {
   appsync_DataSourceElasticsearchConfig,
   appsync_DataSourceElasticsearchConfig_GetTypes,
-} from "../types/appsync_DataSourceElasticsearchConfig";
+} from '../types/appsync_DataSourceElasticsearchConfig';
 import {
   appsync_DataSourceEventBridgeConfig,
   appsync_DataSourceEventBridgeConfig_GetTypes,
-} from "../types/appsync_DataSourceEventBridgeConfig";
+} from '../types/appsync_DataSourceEventBridgeConfig';
 import {
   appsync_DataSourceLambdaConfig,
   appsync_DataSourceLambdaConfig_GetTypes,
-} from "../types/appsync_DataSourceLambdaConfig";
+} from '../types/appsync_DataSourceLambdaConfig';
 import {
   appsync_DataSourceOpensearchserviceConfig,
   appsync_DataSourceOpensearchserviceConfig_GetTypes,
-} from "../types/appsync_DataSourceOpensearchserviceConfig";
+} from '../types/appsync_DataSourceOpensearchserviceConfig';
 
 export interface DataSourceArgs {
   // Description of the data source.
@@ -116,96 +116,96 @@ export class DataSource extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "dynamodbConfig",
-        "DynamoDB settings. See `dynamodb_config` Block for details.",
+        'dynamodbConfig',
+        'DynamoDB settings. See `dynamodb_config` Block for details.',
         () => appsync_DataSourceDynamodbConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "eventBridgeConfig",
-        "AWS EventBridge settings. See `event_bridge_config` Block for details.",
+        'eventBridgeConfig',
+        'AWS EventBridge settings. See `event_bridge_config` Block for details.',
         () => appsync_DataSourceEventBridgeConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "User-supplied name for the data source.",
+        'name',
+        'User-supplied name for the data source.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "opensearchserviceConfig",
-        "Amazon OpenSearch Service settings. See `opensearchservice_config` Block for details.",
+        'opensearchserviceConfig',
+        'Amazon OpenSearch Service settings. See `opensearchservice_config` Block for details.',
         () => appsync_DataSourceOpensearchserviceConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "apiId",
-        "API ID for the GraphQL API for the data source.",
+        'apiId',
+        'API ID for the GraphQL API for the data source.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the data source.",
+        'description',
+        'Description of the data source.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "lambdaConfig",
-        "AWS Lambda settings. See `lambda_config` Block for details.",
+        'lambdaConfig',
+        'AWS Lambda settings. See `lambda_config` Block for details.',
         () => appsync_DataSourceLambdaConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceRoleArn",
-        "IAM service role ARN for the data source. Required if `type` is specified as `AWS_LAMBDA`, `AMAZON_DYNAMODB`, `AMAZON_ELASTICSEARCH`, `AMAZON_EVENTBRIDGE`, or `AMAZON_OPENSEARCH_SERVICE`.",
+        'serviceRoleArn',
+        'IAM service role ARN for the data source. Required if `type` is specified as `AWS_LAMBDA`, `AMAZON_DYNAMODB`, `AMAZON_ELASTICSEARCH`, `AMAZON_EVENTBRIDGE`, or `AMAZON_OPENSEARCH_SERVICE`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "Type of the Data Source. Valid values: `AWS_LAMBDA`, `AMAZON_DYNAMODB`, `AMAZON_ELASTICSEARCH`, `HTTP`, `NONE`, `RELATIONAL_DATABASE`, `AMAZON_EVENTBRIDGE`, `AMAZON_OPENSEARCH_SERVICE`.",
+        'type',
+        'Type of the Data Source. Valid values: `AWS_LAMBDA`, `AMAZON_DYNAMODB`, `AMAZON_ELASTICSEARCH`, `HTTP`, `NONE`, `RELATIONAL_DATABASE`, `AMAZON_EVENTBRIDGE`, `AMAZON_OPENSEARCH_SERVICE`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "relationalDatabaseConfig",
-        "AWS RDS settings. See `relational_database_config` Block for details.",
+        'relationalDatabaseConfig',
+        'AWS RDS settings. See `relational_database_config` Block for details.',
         () => appsync_DataSourceRelationalDatabaseConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "httpConfig",
-        "HTTP settings. See `http_config` Block for details.",
+        'httpConfig',
+        'HTTP settings. See `http_config` Block for details.',
         () => appsync_DataSourceHttpConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "elasticsearchConfig",
-        "Amazon Elasticsearch settings. See `elasticsearch_config` Block for details.",
+        'elasticsearchConfig',
+        'Amazon Elasticsearch settings. See `elasticsearch_config` Block for details.',
         () => appsync_DataSourceElasticsearchConfig_GetTypes(),
         false,
         false,

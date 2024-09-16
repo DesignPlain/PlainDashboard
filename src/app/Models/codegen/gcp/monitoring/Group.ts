@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface GroupArgs {
   /*
@@ -89,31 +89,31 @@ A unique identifier for this group. The format is
     return [
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "A user-assigned name for this group, used only for display\npurposes.",
+        'displayName',
+        'A user-assigned name for this group, used only for display\npurposes.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "filter",
-        "The filter used to determine which monitored resources\nbelong to this group.\n\n\n- - -",
+        'filter',
+        'The filter used to determine which monitored resources\nbelong to this group.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "isCluster",
-        "If true, the members of this group are considered to be a\ncluster. The system can perform additional analysis on\ngroups that are clusters.",
+        'isCluster',
+        'If true, the members of this group are considered to be a\ncluster. The system can perform additional analysis on\ngroups that are clusters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parentName",
+        'parentName',
         'The name of the group\'s parent, if it has one. The format is\n"projects/{project_id_or_number}/groups/{group_id}". For\ngroups with no parent, parentName is the empty string, "".',
         () => [],
         false,
@@ -121,8 +121,8 @@ A unique identifier for this group. The format is
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

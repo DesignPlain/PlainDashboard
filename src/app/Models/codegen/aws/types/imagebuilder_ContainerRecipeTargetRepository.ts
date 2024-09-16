@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface imagebuilder_ContainerRecipeTargetRepository {
   // The name of the container repository where the output container image is stored. This name is prefixed by the repository location.
@@ -18,16 +18,16 @@ export function imagebuilder_ContainerRecipeTargetRepository_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.String,
-      "repositoryName",
-      "The name of the container repository where the output container image is stored. This name is prefixed by the repository location.",
+      'repositoryName',
+      'The name of the container repository where the output container image is stored. This name is prefixed by the repository location.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "service",
-      "The service in which this image is registered. Valid values: `ECR`.",
+      'service',
+      'The service in which this image is registered. Valid values: `ECR`.',
       () => [],
       true,
       false,

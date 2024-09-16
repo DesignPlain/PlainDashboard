@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudbuild_getTriggerBuildArtifactNpmPackage,
   cloudbuild_getTriggerBuildArtifactNpmPackage_GetTypes,
-} from "./cloudbuild_getTriggerBuildArtifactNpmPackage";
+} from './cloudbuild_getTriggerBuildArtifactNpmPackage';
 import {
   cloudbuild_getTriggerBuildArtifactObject,
   cloudbuild_getTriggerBuildArtifactObject_GetTypes,
-} from "./cloudbuild_getTriggerBuildArtifactObject";
+} from './cloudbuild_getTriggerBuildArtifactObject';
 import {
   cloudbuild_getTriggerBuildArtifactPythonPackage,
   cloudbuild_getTriggerBuildArtifactPythonPackage_GetTypes,
-} from "./cloudbuild_getTriggerBuildArtifactPythonPackage";
+} from './cloudbuild_getTriggerBuildArtifactPythonPackage';
 import {
   cloudbuild_getTriggerBuildArtifactMavenArtifact,
   cloudbuild_getTriggerBuildArtifactMavenArtifact_GetTypes,
-} from "./cloudbuild_getTriggerBuildArtifactMavenArtifact";
+} from './cloudbuild_getTriggerBuildArtifactMavenArtifact';
 
 export interface cloudbuild_getTriggerBuildArtifact {
   /*
@@ -78,7 +78,7 @@ export function cloudbuild_getTriggerBuildArtifact_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.Array,
-      "mavenArtifacts",
+      'mavenArtifacts',
       "A Maven artifact to upload to Artifact Registry upon successful completion of all build steps.\n\nThe location and generation of the uploaded objects will be stored in the Build resource's results field.\n\nIf any objects fail to be pushed, the build is marked FAILURE.",
       () => cloudbuild_getTriggerBuildArtifactMavenArtifact_GetTypes(),
       true,
@@ -86,7 +86,7 @@ export function cloudbuild_getTriggerBuildArtifact_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "npmPackages",
+      'npmPackages',
       "Npm package to upload to Artifact Registry upon successful completion of all build steps.\n\nThe location and generation of the uploaded objects will be stored in the Build resource's results field.\n\nIf any objects fail to be pushed, the build is marked FAILURE.",
       () => cloudbuild_getTriggerBuildArtifactNpmPackage_GetTypes(),
       true,
@@ -94,7 +94,7 @@ export function cloudbuild_getTriggerBuildArtifact_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "objects",
+      'objects',
       "A list of objects to be uploaded to Cloud Storage upon successful completion of all build steps.\n\nFiles in the workspace matching specified paths globs will be uploaded to the\nCloud Storage location using the builder service account's credentials.\n\nThe location and generation of the uploaded objects will be stored in the Build resource's results field.\n\nIf any objects fail to be pushed, the build is marked FAILURE.",
       () => cloudbuild_getTriggerBuildArtifactObject_GetTypes(),
       true,
@@ -102,7 +102,7 @@ export function cloudbuild_getTriggerBuildArtifact_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "pythonPackages",
+      'pythonPackages',
       "Python package to upload to Artifact Registry upon successful completion of all build steps. A package can encapsulate multiple objects to be uploaded to a single repository.\n\nThe location and generation of the uploaded objects will be stored in the Build resource's results field.\n\nIf any objects fail to be pushed, the build is marked FAILURE.",
       () => cloudbuild_getTriggerBuildArtifactPythonPackage_GetTypes(),
       true,
@@ -110,7 +110,7 @@ export function cloudbuild_getTriggerBuildArtifact_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "images",
+      'images',
       "A list of images to be pushed upon the successful completion of all build steps.\n\nThe images will be pushed using the builder service account's credentials.\n\nThe digests of the pushed images will be stored in the Build resource's results field.\n\nIf any of the images fail to be pushed, the build is marked FAILURE.",
       () => InputType_String_GetTypes(),
       true,

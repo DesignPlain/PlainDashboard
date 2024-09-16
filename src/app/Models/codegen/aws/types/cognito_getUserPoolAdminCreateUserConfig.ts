@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cognito_getUserPoolAdminCreateUserConfigInviteMessageTemplate,
   cognito_getUserPoolAdminCreateUserConfigInviteMessageTemplate_GetTypes,
-} from "./cognito_getUserPoolAdminCreateUserConfigInviteMessageTemplate";
+} from './cognito_getUserPoolAdminCreateUserConfigInviteMessageTemplate';
 
 export interface cognito_getUserPoolAdminCreateUserConfig {
   // - Whether only admins can create users.
@@ -28,24 +28,24 @@ export function cognito_getUserPoolAdminCreateUserConfig_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Number,
-      "unusedAccountValidityDays",
-      "- Number of days an unconfirmed user account remains valid.\n* invite_message_template\u00a0- Templates for invitation messages.",
+      'unusedAccountValidityDays',
+      '- Number of days an unconfirmed user account remains valid.\n* invite_message_template\u00a0- Templates for invitation messages.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "allowAdminCreateUserOnly",
-      "- Whether only admins can create users.",
+      'allowAdminCreateUserOnly',
+      '- Whether only admins can create users.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "inviteMessageTemplates",
-      "",
+      'inviteMessageTemplates',
+      '',
       () =>
         cognito_getUserPoolAdminCreateUserConfigInviteMessageTemplate_GetTypes(),
       true,

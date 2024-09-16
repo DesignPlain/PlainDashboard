@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datazone_EnvironmentProfileUserParameter,
   datazone_EnvironmentProfileUserParameter_GetTypes,
-} from "../types/datazone_EnvironmentProfileUserParameter";
+} from '../types/datazone_EnvironmentProfileUserParameter';
 
 export interface EnvironmentProfileArgs {
   // Name of the environment profile.
@@ -82,64 +82,64 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "projectIdentifier",
-        "Project identifier for environment profile.\n\nThe following arguments are optional:",
+        'projectIdentifier',
+        'Project identifier for environment profile.\n\nThe following arguments are optional:',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "userParameters",
-        "Array of user parameters of the environment profile with the following attributes:",
+        'userParameters',
+        'Array of user parameters of the environment profile with the following attributes:',
         () => datazone_EnvironmentProfileUserParameter_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "awsAccountId",
-        "Id of the AWS account being used.",
+        'awsAccountId',
+        'Id of the AWS account being used.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "awsAccountRegion",
-        "Desired region for environment profile.",
-        () => [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "description",
-        "Description of environment profile.",
-        () => [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "domainIdentifier",
-        "Domain Identifier for environment profile.",
+        'awsAccountRegion',
+        'Desired region for environment profile.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "environmentBlueprintIdentifier",
-        "ID of the blueprint which the environment will be created with.",
+        'description',
+        'Description of environment profile.',
+        () => [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'domainIdentifier',
+        'Domain Identifier for environment profile.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the environment profile.",
+        'environmentBlueprintIdentifier',
+        'ID of the blueprint which the environment will be created with.',
+        () => [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'name',
+        'Name of the environment profile.',
         () => [],
         false,
         false,

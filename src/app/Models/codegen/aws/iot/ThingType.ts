@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   iot_ThingTypeProperties,
   iot_ThingTypeProperties_GetTypes,
-} from "../types/iot_ThingTypeProperties";
+} from '../types/iot_ThingTypeProperties';
 
 export interface ThingTypeArgs {
   // The name of the thing type.
@@ -47,32 +47,32 @@ export class ThingType extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "properties",
-        ", Configuration block that can contain the following properties of the thing type:",
+        'properties',
+        ', Configuration block that can contain the following properties of the thing type:',
         () => iot_ThingTypeProperties_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level",
+        'tags',
+        'Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "deprecated",
-        "Whether the thing type is deprecated. If true, no new things could be associated with this type.",
+        'deprecated',
+        'Whether the thing type is deprecated. If true, no new things could be associated with this type.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the thing type.",
+        'name',
+        'The name of the thing type.',
         () => [],
         false,
         true,

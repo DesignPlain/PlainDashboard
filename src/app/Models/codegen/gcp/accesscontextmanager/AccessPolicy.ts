@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface AccessPolicyArgs {
   /*
@@ -62,24 +62,24 @@ Human readable title. Does not affect behavior.
     return [
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The parent of this AccessPolicy in the Cloud Resource Hierarchy.\nFormat: organizations/{organization_id}",
+        'parent',
+        'The parent of this AccessPolicy in the Cloud Resource Hierarchy.\nFormat: organizations/{organization_id}',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "scopes",
-        "Folder or project on which this policy is applicable.\nFormat: folders/{{folder_id}} or projects/{{project_id}}",
+        'scopes',
+        'Folder or project on which this policy is applicable.\nFormat: folders/{{folder_id}} or projects/{{project_id}}',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "title",
-        "Human readable title. Does not affect behavior.\n\n\n- - -",
+        'title',
+        'Human readable title. Does not affect behavior.\n\n\n- - -',
         () => [],
         true,
         false,

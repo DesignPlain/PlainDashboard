@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   elasticsearch_getDomainClusterConfigZoneAwarenessConfig,
   elasticsearch_getDomainClusterConfigZoneAwarenessConfig_GetTypes,
-} from "./elasticsearch_getDomainClusterConfigZoneAwarenessConfig";
+} from './elasticsearch_getDomainClusterConfigZoneAwarenessConfig';
 import {
   elasticsearch_getDomainClusterConfigColdStorageOption,
   elasticsearch_getDomainClusterConfigColdStorageOption_GetTypes,
-} from "./elasticsearch_getDomainClusterConfigColdStorageOption";
+} from './elasticsearch_getDomainClusterConfigColdStorageOption';
 
 export interface elasticsearch_getDomainClusterConfig {
   // Configuration block containing zone awareness settings.
@@ -53,47 +53,47 @@ export function elasticsearch_getDomainClusterConfig_GetTypes(): DynamicUIProps[
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "warmEnabled",
-      "Warm storage is enabled.",
+      'warmEnabled',
+      'Warm storage is enabled.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "zoneAwarenessEnabled",
-      "Indicates whether zone awareness is enabled.",
+      'zoneAwarenessEnabled',
+      'Indicates whether zone awareness is enabled.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "dedicatedMasterType",
-      "Instance type of the dedicated master nodes in the cluster.",
+      'dedicatedMasterType',
+      'Instance type of the dedicated master nodes in the cluster.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "zoneAwarenessConfigs",
-      "Configuration block containing zone awareness settings.",
+      'zoneAwarenessConfigs',
+      'Configuration block containing zone awareness settings.',
       () => elasticsearch_getDomainClusterConfigZoneAwarenessConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "coldStorageOptions",
-      "Configuration block containing cold storage configuration.",
+      'coldStorageOptions',
+      'Configuration block containing cold storage configuration.',
       () => elasticsearch_getDomainClusterConfigColdStorageOption_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "warmType",
+      'warmType',
       "The instance type for the Elasticsearch cluster's warm nodes.",
       () => [],
       true,
@@ -101,40 +101,40 @@ export function elasticsearch_getDomainClusterConfig_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Number,
-      "dedicatedMasterCount",
-      "Number of dedicated master nodes in the cluster.",
+      'dedicatedMasterCount',
+      'Number of dedicated master nodes in the cluster.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "dedicatedMasterEnabled",
-      "Indicates whether dedicated master nodes are enabled for the cluster.",
+      'dedicatedMasterEnabled',
+      'Indicates whether dedicated master nodes are enabled for the cluster.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "warmCount",
-      "The number of warm nodes in the cluster.",
+      'warmCount',
+      'The number of warm nodes in the cluster.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "instanceCount",
-      "Number of instances in the cluster.",
+      'instanceCount',
+      'Number of instances in the cluster.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "instanceType",
-      "Instance type of data nodes in the cluster.",
+      'instanceType',
+      'Instance type of data nodes in the cluster.',
       () => [],
       true,
       false,

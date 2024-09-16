@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dms_EndpointRedshiftSettings {
   // Custom S3 Bucket Object prefix for intermediate storage.
@@ -27,40 +27,40 @@ export function dms_EndpointRedshiftSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "serverSideEncryptionKmsKeyId",
-      "ARN or Id of KMS Key to use when `encryption_mode` is `SSE_KMS`.",
+      'serverSideEncryptionKmsKeyId',
+      'ARN or Id of KMS Key to use when `encryption_mode` is `SSE_KMS`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "serviceAccessRoleArn",
-      "Amazon Resource Name (ARN) of the IAM Role with permissions to read from or write to the S3 Bucket for intermediate storage.",
+      'serviceAccessRoleArn',
+      'Amazon Resource Name (ARN) of the IAM Role with permissions to read from or write to the S3 Bucket for intermediate storage.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "bucketFolder",
-      "Custom S3 Bucket Object prefix for intermediate storage.",
+      'bucketFolder',
+      'Custom S3 Bucket Object prefix for intermediate storage.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "bucketName",
-      "Custom S3 Bucket name for intermediate storage.",
+      'bucketName',
+      'Custom S3 Bucket name for intermediate storage.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "encryptionMode",
-      "The server-side encryption mode that you want to encrypt your intermediate .csv object files copied to S3. Defaults to `SSE_S3`. Valid values are `SSE_S3` and `SSE_KMS`.",
+      'encryptionMode',
+      'The server-side encryption mode that you want to encrypt your intermediate .csv object files copied to S3. Defaults to `SSE_S3`. Valid values are `SSE_S3` and `SSE_KMS`.',
       () => [],
       false,
       false,

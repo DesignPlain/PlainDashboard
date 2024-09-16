@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptions,
   dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptions_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptions";
+} from './dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptions';
 import {
   dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptions,
   dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptions_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptions";
+} from './dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptions';
 import {
   dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfig,
   dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfig_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfig";
+} from './dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfig';
 import {
   dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptions,
   dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptions_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptions";
+} from './dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptions';
 import {
   dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions,
   dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions";
+} from './dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions';
 
 export interface dataloss_PreventionJobTriggerInspectJobStorageConfig {
   /*
@@ -62,8 +62,8 @@ export function dataloss_PreventionJobTriggerInspectJobStorageConfig_GetTypes():
   return [
     new DynamicUIProps(
       InputType.Object,
-      "timespanConfig",
-      "Configuration of the timespan of the items to include in scanning\nStructure is documented below.",
+      'timespanConfig',
+      'Configuration of the timespan of the items to include in scanning\nStructure is documented below.',
       () =>
         dataloss_PreventionJobTriggerInspectJobStorageConfigTimespanConfig_GetTypes(),
       false,
@@ -71,8 +71,8 @@ export function dataloss_PreventionJobTriggerInspectJobStorageConfig_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Object,
-      "bigQueryOptions",
-      "Options defining BigQuery table and row identifiers.\nStructure is documented below.",
+      'bigQueryOptions',
+      'Options defining BigQuery table and row identifiers.\nStructure is documented below.',
       () =>
         dataloss_PreventionJobTriggerInspectJobStorageConfigBigQueryOptions_GetTypes(),
       false,
@@ -80,8 +80,8 @@ export function dataloss_PreventionJobTriggerInspectJobStorageConfig_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Object,
-      "cloudStorageOptions",
-      "Options defining a file or a set of files within a Google Cloud Storage bucket.\nStructure is documented below.",
+      'cloudStorageOptions',
+      'Options defining a file or a set of files within a Google Cloud Storage bucket.\nStructure is documented below.',
       () =>
         dataloss_PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions_GetTypes(),
       false,
@@ -89,8 +89,8 @@ export function dataloss_PreventionJobTriggerInspectJobStorageConfig_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Object,
-      "datastoreOptions",
-      "Options defining a data set within Google Cloud Datastore.\nStructure is documented below.",
+      'datastoreOptions',
+      'Options defining a data set within Google Cloud Datastore.\nStructure is documented below.',
       () =>
         dataloss_PreventionJobTriggerInspectJobStorageConfigDatastoreOptions_GetTypes(),
       false,
@@ -98,8 +98,8 @@ export function dataloss_PreventionJobTriggerInspectJobStorageConfig_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Object,
-      "hybridOptions",
-      "Configuration to control jobs where the content being inspected is outside of Google Cloud Platform.\nStructure is documented below.",
+      'hybridOptions',
+      'Configuration to control jobs where the content being inspected is outside of Google Cloud Platform.\nStructure is documented below.',
       () =>
         dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptions_GetTypes(),
       false,

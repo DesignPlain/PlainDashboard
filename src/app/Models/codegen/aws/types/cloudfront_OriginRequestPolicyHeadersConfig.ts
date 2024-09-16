@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudfront_OriginRequestPolicyHeadersConfigHeaders,
   cloudfront_OriginRequestPolicyHeadersConfigHeaders_GetTypes,
-} from "./cloudfront_OriginRequestPolicyHeadersConfigHeaders";
+} from './cloudfront_OriginRequestPolicyHeadersConfigHeaders';
 
 export interface cloudfront_OriginRequestPolicyHeadersConfig {
   //
@@ -22,16 +22,16 @@ export function cloudfront_OriginRequestPolicyHeadersConfig_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.String,
-      "headerBehavior",
-      "",
+      'headerBehavior',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "headers",
-      "",
+      'headers',
+      '',
       () => cloudfront_OriginRequestPolicyHeadersConfigHeaders_GetTypes(),
       false,
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface AndroidAppArgs {
   /*
@@ -111,7 +111,7 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "deletionPolicy",
+        'deletionPolicy',
         "(Optional) Set to 'ABANDON' to allow the AndroidApp to be untracked from terraform state rather than deleted upon\n'terraform destroy'. This is useful because the AndroidApp may be serving traffic. Set to 'DELETE' to delete the\nAndroidApp. Defaults to 'DELETE'.",
         () => [],
         false,
@@ -119,48 +119,48 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The user-assigned display name of the AndroidApp.\n\n\n- - -",
+        'displayName',
+        'The user-assigned display name of the AndroidApp.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "packageName",
-        "Immutable. The canonical package name of the Android app as would appear in the Google Play\nDeveloper Console.",
+        'packageName',
+        'Immutable. The canonical package name of the Android app as would appear in the Google Play\nDeveloper Console.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "sha1Hashes",
-        "The SHA1 certificate hashes for the AndroidApp.",
+        'sha1Hashes',
+        'The SHA1 certificate hashes for the AndroidApp.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "sha256Hashes",
-        "The SHA256 certificate hashes for the AndroidApp.",
+        'sha256Hashes',
+        'The SHA256 certificate hashes for the AndroidApp.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "apiKeyId",
-        "The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the AndroidApp.\nIf apiKeyId is not set during creation, then Firebase automatically associates an apiKeyId with the AndroidApp.\nThis auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned.",
+        'apiKeyId',
+        'The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the AndroidApp.\nIf apiKeyId is not set during creation, then Firebase automatically associates an apiKeyId with the AndroidApp.\nThis auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned.',
         () => [],
         false,
         false,

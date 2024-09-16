@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   securitycenter_NotificationConfigStreamingConfig,
   securitycenter_NotificationConfigStreamingConfig_GetTypes,
-} from "../types/securitycenter_NotificationConfigStreamingConfig";
+} from '../types/securitycenter_NotificationConfigStreamingConfig';
 
 export interface NotificationConfigArgs {
   /*
@@ -77,7 +77,7 @@ Config lives in.
     return [
       new DynamicUIProps(
         InputType.String,
-        "pubsubTopic",
+        'pubsubTopic',
         'The Pub/Sub topic to send notifications to. Its format is\n"projects/[project_id]/topics/[topic]".',
         () => [],
         true,
@@ -85,32 +85,32 @@ Config lives in.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "streamingConfig",
-        "The config for triggering streaming-based notifications.\nStructure is documented below.",
+        'streamingConfig',
+        'The config for triggering streaming-based notifications.\nStructure is documented below.',
         () => securitycenter_NotificationConfigStreamingConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "configId",
-        "This must be unique within the organization.",
+        'configId',
+        'This must be unique within the organization.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the notification config (max of 1024 characters).",
+        'description',
+        'The description of the notification config (max of 1024 characters).',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "organization",
-        "The organization whose Cloud Security Command Center the Notification\nConfig lives in.",
+        'organization',
+        'The organization whose Cloud Security Command Center the Notification\nConfig lives in.',
         () => [],
         true,
         true,

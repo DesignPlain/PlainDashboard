@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface KeyArgs {
   // Public key data to create a service account key for given service account. The expected format for this field is a base64 encoded X509_PEM and it conflicts with `public_key_type` and `private_key_type`.
@@ -94,23 +94,23 @@ A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "201
     return [
       new DynamicUIProps(
         InputType.String,
-        "publicKeyData",
-        "Public key data to create a service account key for given service account. The expected format for this field is a base64 encoded X509_PEM and it conflicts with `public_key_type` and `private_key_type`.",
+        'publicKeyData',
+        'Public key data to create a service account key for given service account. The expected format for this field is a base64 encoded X509_PEM and it conflicts with `public_key_type` and `private_key_type`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "publicKeyType",
-        "The output format of the public key requested. TYPE_X509_PEM_FILE is the default output format.",
+        'publicKeyType',
+        'The output format of the public key requested. TYPE_X509_PEM_FILE is the default output format.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceAccountId",
+        'serviceAccountId',
         "The Service account id of the Key. This can be a string in the format\n`{ACCOUNT}` or `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. If the `{ACCOUNT}`-only syntax is used, either\nthe **full** email address of the service account or its name can be specified as a value, in which case the project will\nautomatically be inferred from the account. Otherwise, if the `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`\nsyntax is used, the `{ACCOUNT}` specified can be the full email address of the service account or the service account's\nunique id. Substituting `-` as a wildcard for the `{PROJECT_ID}` will infer the project from the account.",
         () => [],
         true,
@@ -118,24 +118,24 @@ A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "201
       ),
       new DynamicUIProps(
         InputType.Map,
-        "keepers",
-        "Arbitrary map of values that, when changed, will trigger a new key to be generated.",
+        'keepers',
+        'Arbitrary map of values that, when changed, will trigger a new key to be generated.',
         () => InputType_Map_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "keyAlgorithm",
-        "The algorithm used to generate the key. KEY_ALG_RSA_2048 is the default algorithm.\nValid values are listed at\n[ServiceAccountPrivateKeyType](https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts.keys#ServiceAccountKeyAlgorithm)\n(only used on create)",
+        'keyAlgorithm',
+        'The algorithm used to generate the key. KEY_ALG_RSA_2048 is the default algorithm.\nValid values are listed at\n[ServiceAccountPrivateKeyType](https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts.keys#ServiceAccountKeyAlgorithm)\n(only used on create)',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "privateKeyType",
-        "The output format of the private key. TYPE_GOOGLE_CREDENTIALS_FILE is the default output format.",
+        'privateKeyType',
+        'The output format of the private key. TYPE_GOOGLE_CREDENTIALS_FILE is the default output format.',
         () => [],
         false,
         true,

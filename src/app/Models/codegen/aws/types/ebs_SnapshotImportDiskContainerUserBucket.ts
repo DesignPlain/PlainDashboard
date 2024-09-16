@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ebs_SnapshotImportDiskContainerUserBucket {
   // The name of the Amazon S3 bucket where the disk image is located.
@@ -18,16 +18,16 @@ export function ebs_SnapshotImportDiskContainerUserBucket_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.String,
-      "s3Bucket",
-      "The name of the Amazon S3 bucket where the disk image is located.",
+      's3Bucket',
+      'The name of the Amazon S3 bucket where the disk image is located.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "s3Key",
-      "The file name of the disk image.",
+      's3Key',
+      'The file name of the disk image.',
       () => [],
       true,
       true,

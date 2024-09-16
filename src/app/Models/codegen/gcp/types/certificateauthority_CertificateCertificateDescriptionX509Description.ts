@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificateauthority_CertificateCertificateDescriptionX509DescriptionAdditionalExtension,
   certificateauthority_CertificateCertificateDescriptionX509DescriptionAdditionalExtension_GetTypes,
-} from "./certificateauthority_CertificateCertificateDescriptionX509DescriptionAdditionalExtension";
+} from './certificateauthority_CertificateCertificateDescriptionX509DescriptionAdditionalExtension';
 import {
   certificateauthority_CertificateCertificateDescriptionX509DescriptionCaOption,
   certificateauthority_CertificateCertificateDescriptionX509DescriptionCaOption_GetTypes,
-} from "./certificateauthority_CertificateCertificateDescriptionX509DescriptionCaOption";
+} from './certificateauthority_CertificateCertificateDescriptionX509DescriptionCaOption';
 import {
   certificateauthority_CertificateCertificateDescriptionX509DescriptionKeyUsage,
   certificateauthority_CertificateCertificateDescriptionX509DescriptionKeyUsage_GetTypes,
-} from "./certificateauthority_CertificateCertificateDescriptionX509DescriptionKeyUsage";
+} from './certificateauthority_CertificateCertificateDescriptionX509DescriptionKeyUsage';
 import {
   certificateauthority_CertificateCertificateDescriptionX509DescriptionNameConstraint,
   certificateauthority_CertificateCertificateDescriptionX509DescriptionNameConstraint_GetTypes,
-} from "./certificateauthority_CertificateCertificateDescriptionX509DescriptionNameConstraint";
+} from './certificateauthority_CertificateCertificateDescriptionX509DescriptionNameConstraint';
 import {
   certificateauthority_CertificateCertificateDescriptionX509DescriptionPolicyId,
   certificateauthority_CertificateCertificateDescriptionX509DescriptionPolicyId_GetTypes,
-} from "./certificateauthority_CertificateCertificateDescriptionX509DescriptionPolicyId";
+} from './certificateauthority_CertificateCertificateDescriptionX509DescriptionPolicyId';
 
 export interface certificateauthority_CertificateCertificateDescriptionX509Description {
   /*
@@ -68,8 +68,8 @@ export function certificateauthority_CertificateCertificateDescriptionX509Descri
   return [
     new DynamicUIProps(
       InputType.Array,
-      "caOptions",
-      "Describes values that are relevant in a CA certificate.\nStructure is documented below.",
+      'caOptions',
+      'Describes values that are relevant in a CA certificate.\nStructure is documented below.',
       () =>
         certificateauthority_CertificateCertificateDescriptionX509DescriptionCaOption_GetTypes(),
       false,
@@ -77,8 +77,8 @@ export function certificateauthority_CertificateCertificateDescriptionX509Descri
     ),
     new DynamicUIProps(
       InputType.Array,
-      "keyUsages",
-      "Indicates the intended use for keys that correspond to a certificate.\nStructure is documented below.",
+      'keyUsages',
+      'Indicates the intended use for keys that correspond to a certificate.\nStructure is documented below.',
       () =>
         certificateauthority_CertificateCertificateDescriptionX509DescriptionKeyUsage_GetTypes(),
       false,
@@ -86,8 +86,8 @@ export function certificateauthority_CertificateCertificateDescriptionX509Descri
     ),
     new DynamicUIProps(
       InputType.Array,
-      "nameConstraints",
-      "Describes the X.509 name constraints extension.\nStructure is documented below.",
+      'nameConstraints',
+      'Describes the X.509 name constraints extension.\nStructure is documented below.',
       () =>
         certificateauthority_CertificateCertificateDescriptionX509DescriptionNameConstraint_GetTypes(),
       false,
@@ -95,8 +95,8 @@ export function certificateauthority_CertificateCertificateDescriptionX509Descri
     ),
     new DynamicUIProps(
       InputType.Array,
-      "policyIds",
-      "Describes the X.509 certificate policy object identifiers, per https://tools.ietf.org/html/rfc5280#section-4.2.1.4.\nStructure is documented below.",
+      'policyIds',
+      'Describes the X.509 certificate policy object identifiers, per https://tools.ietf.org/html/rfc5280#section-4.2.1.4.\nStructure is documented below.',
       () =>
         certificateauthority_CertificateCertificateDescriptionX509DescriptionPolicyId_GetTypes(),
       false,
@@ -104,8 +104,8 @@ export function certificateauthority_CertificateCertificateDescriptionX509Descri
     ),
     new DynamicUIProps(
       InputType.Array,
-      "additionalExtensions",
-      "Specifies an X.509 extension, which may be used in different parts of X.509 objects like certificates, CSRs, and CRLs.\nStructure is documented below.",
+      'additionalExtensions',
+      'Specifies an X.509 extension, which may be used in different parts of X.509 objects like certificates, CSRs, and CRLs.\nStructure is documented below.',
       () =>
         certificateauthority_CertificateCertificateDescriptionX509DescriptionAdditionalExtension_GetTypes(),
       false,
@@ -113,7 +113,7 @@ export function certificateauthority_CertificateCertificateDescriptionX509Descri
     ),
     new DynamicUIProps(
       InputType.Array,
-      "aiaOcspServers",
+      'aiaOcspServers',
       'Describes Online Certificate Status Protocol (OCSP) endpoint addresses that appear in the\n"Authority Information Access" extension in the certificate.',
       () => InputType_String_GetTypes(),
       false,

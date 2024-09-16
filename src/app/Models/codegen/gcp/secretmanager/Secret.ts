@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   secretmanager_SecretTopic,
   secretmanager_SecretTopic_GetTypes,
-} from "../types/secretmanager_SecretTopic";
+} from '../types/secretmanager_SecretTopic';
 import {
   secretmanager_SecretReplication,
   secretmanager_SecretReplication_GetTypes,
-} from "../types/secretmanager_SecretReplication";
+} from '../types/secretmanager_SecretReplication';
 import {
   secretmanager_SecretRotation,
   secretmanager_SecretRotation_GetTypes,
-} from "../types/secretmanager_SecretRotation";
+} from '../types/secretmanager_SecretRotation';
 
 export interface SecretArgs {
   /*
@@ -219,23 +219,23 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "replication",
-        "The replication policy of the secret data attached to the Secret. It cannot be changed\nafter the Secret has been created.\nStructure is documented below.",
+        'replication',
+        'The replication policy of the secret data attached to the Secret. It cannot be changed\nafter the Secret has been created.\nStructure is documented below.',
         () => secretmanager_SecretReplication_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "rotation",
-        "The rotation time and period for a Secret. At `next_rotation_time`, Secret Manager will send a Pub/Sub notification to the topics configured on the Secret. `topics` must be set to configure rotation.\nStructure is documented below.",
+        'rotation',
+        'The rotation time and period for a Secret. At `next_rotation_time`, Secret Manager will send a Pub/Sub notification to the topics configured on the Secret. `topics` must be set to configure rotation.\nStructure is documented below.',
         () => secretmanager_SecretRotation_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "expireTime",
+        'expireTime',
         'Timestamp in UTC when the Secret is scheduled to expire. This is always provided on output, regardless of what was sent on input.\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".\nOnly one of `expire_time` or `ttl` can be provided.',
         () => [],
         false,
@@ -243,7 +243,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "versionAliases",
+        'versionAliases',
         'Mapping from version alias to version name.\nA version alias is a string with a maximum length of 63 characters and can contain\nuppercase and lowercase letters, numerals, and the hyphen (-) and underscore (\'_\')\ncharacters. An alias string must start with a letter and cannot be the string\n\'latest\' or \'NEW\'. No more than 50 aliases can be assigned to a given secret.\nAn object containing a list of "key": value pairs. Example:\n{ "name": "wrench", "mass": "1.3kg", "count": "3" }.',
         () => InputType_Map_GetTypes(),
         false,
@@ -251,7 +251,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
+        'annotations',
         'Custom metadata about the secret.\nAnnotations are distinct from various forms of labels. Annotations exist to allow\nclient tools to store their own state information without requiring a database.\nAnnotation keys must be between 1 and 63 characters long, have a UTF-8 encoding of\nmaximum 128 bytes, begin and end with an alphanumeric character ([a-z0-9A-Z]), and\nmay have dashes (-), underscores (_), dots (.), and alphanumerics in between these\nsymbols.\nThe total size of annotation keys and values must be less than 16KiB.\nAn object containing a list of "key": value pairs. Example:\n{ "name": "wrench", "mass": "1.3kg", "count": "3" }.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
@@ -259,7 +259,7 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         'The labels assigned to this Secret.\nLabel keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes,\nand must conform to the following PCRE regular expression: [\\p{Ll}\\p{Lo}][\\p{Ll}\\p{Lo}\\p{N}_-]{0,62}\nLabel values must be between 0 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes,\nand must conform to the following PCRE regular expression: [\\p{Ll}\\p{Lo}\\p{N}_-]{0,63}\nNo more than 64 labels can be assigned to a given resource.\nAn object containing a list of "key": value pairs. Example:\n{ "name": "wrench", "mass": "1.3kg", "count": "3" }.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
@@ -267,32 +267,32 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "topics",
-        "A list of up to 10 Pub/Sub topics to which messages are published when control plane operations are called on the secret or its versions.\nStructure is documented below.",
+        'topics',
+        'A list of up to 10 Pub/Sub topics to which messages are published when control plane operations are called on the secret or its versions.\nStructure is documented below.',
         () => secretmanager_SecretTopic_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "secretId",
-        "This must be unique within the project.",
+        'secretId',
+        'This must be unique within the project.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ttl",
-        "The TTL for the Secret.\nA duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\".\nOnly one of `ttl` or `expire_time` can be provided.",
+        'ttl',
+        'The TTL for the Secret.\nA duration in seconds with up to nine fractional digits, terminated by \'s\'. Example: "3.5s".\nOnly one of `ttl` or `expire_time` can be provided.',
         () => [],
         false,
         false,

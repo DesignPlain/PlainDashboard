@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificatemanager_CertificateMapGclbTargetIpConfig,
   certificatemanager_CertificateMapGclbTargetIpConfig_GetTypes,
-} from "./certificatemanager_CertificateMapGclbTargetIpConfig";
+} from './certificatemanager_CertificateMapGclbTargetIpConfig';
 
 export interface certificatemanager_CertificateMapGclbTarget {
   /*
@@ -36,24 +36,24 @@ export function certificatemanager_CertificateMapGclbTarget_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.String,
-      "targetHttpsProxy",
-      "Proxy name must be in the format projects/*/locations/*/targetHttpsProxies/*.\nThis field is part of a union field `target_proxy`: Only one of `targetHttpsProxy` or\n`targetSslProxy` may be set.",
+      'targetHttpsProxy',
+      'Proxy name must be in the format projects/*/locations/*/targetHttpsProxies/*.\nThis field is part of a union field `target_proxy`: Only one of `targetHttpsProxy` or\n`targetSslProxy` may be set.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "targetSslProxy",
-      "Proxy name must be in the format projects/*/locations/*/targetSslProxies/*.\nThis field is part of a union field `target_proxy`: Only one of `targetHttpsProxy` or\n`targetSslProxy` may be set.",
+      'targetSslProxy',
+      'Proxy name must be in the format projects/*/locations/*/targetSslProxies/*.\nThis field is part of a union field `target_proxy`: Only one of `targetHttpsProxy` or\n`targetSslProxy` may be set.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ipConfigs",
-      "An IP configuration where this Certificate Map is serving\nStructure is documented below.",
+      'ipConfigs',
+      'An IP configuration where this Certificate Map is serving\nStructure is documented below.',
       () => certificatemanager_CertificateMapGclbTargetIpConfig_GetTypes(),
       false,
       false,

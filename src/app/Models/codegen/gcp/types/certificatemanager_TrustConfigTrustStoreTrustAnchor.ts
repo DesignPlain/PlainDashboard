@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface certificatemanager_TrustConfigTrustStoreTrustAnchor {
   /*
@@ -19,8 +19,8 @@ export function certificatemanager_TrustConfigTrustStoreTrustAnchor_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.String,
-      "pemCertificate",
-      "PEM root certificate of the PKI used for validation.\nEach certificate provided in PEM format may occupy up to 5kB.\n**Note**: This property is sensitive and will not be displayed in the plan.",
+      'pemCertificate',
+      'PEM root certificate of the PKI used for validation.\nEach certificate provided in PEM format may occupy up to 5kB.\n**Note**: This property is sensitive and will not be displayed in the plan.',
       () => [],
       false,
       false,

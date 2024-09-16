@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface PermissionSetArgs {
   // The description of the Permission Set.
@@ -58,48 +58,48 @@ export class PermissionSet extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the Permission Set.",
+        'description',
+        'The description of the Permission Set.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceArn",
-        "The Amazon Resource Name (ARN) of the SSO Instance under which the operation will be executed.",
+        'instanceArn',
+        'The Amazon Resource Name (ARN) of the SSO Instance under which the operation will be executed.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the Permission Set.",
+        'name',
+        'The name of the Permission Set.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "relayState",
-        "The relay state URL used to redirect users within the application during the federation authentication process.",
+        'relayState',
+        'The relay state URL used to redirect users within the application during the federation authentication process.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sessionDuration",
-        "The length of time that the application user sessions are valid in the ISO-8601 standard. Default: `PT1H`.",
+        'sessionDuration',
+        'The length of time that the application user sessions are valid in the ISO-8601 standard. Default: `PT1H`.',
         () => [],
         false,
         false,

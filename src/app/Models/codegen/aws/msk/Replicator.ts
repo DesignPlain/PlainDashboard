@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   msk_ReplicatorKafkaCluster,
   msk_ReplicatorKafkaCluster_GetTypes,
-} from "../types/msk_ReplicatorKafkaCluster";
+} from '../types/msk_ReplicatorKafkaCluster';
 import {
   msk_ReplicatorReplicationInfoList,
   msk_ReplicatorReplicationInfoList_GetTypes,
-} from "../types/msk_ReplicatorReplicationInfoList";
+} from '../types/msk_ReplicatorReplicationInfoList';
 
 export interface ReplicatorArgs {
   // The name of the replicator.
@@ -66,15 +66,15 @@ export class Replicator extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "replicatorName",
-        "The name of the replicator.",
+        'replicatorName',
+        'The name of the replicator.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceExecutionRoleArn",
+        'serviceExecutionRoleArn',
         "The ARN of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters).",
         () => [],
         true,
@@ -82,32 +82,32 @@ export class Replicator extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "",
+        'tags',
+        '',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A summary description of the replicator.",
+        'description',
+        'A summary description of the replicator.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "kafkaClusters",
-        "A list of Kafka clusters which are targets of the replicator.",
+        'kafkaClusters',
+        'A list of Kafka clusters which are targets of the replicator.',
         () => msk_ReplicatorKafkaCluster_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "replicationInfoList",
-        "A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.",
+        'replicationInfoList',
+        'A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.',
         () => msk_ReplicatorReplicationInfoList_GetTypes(),
         true,
         true,

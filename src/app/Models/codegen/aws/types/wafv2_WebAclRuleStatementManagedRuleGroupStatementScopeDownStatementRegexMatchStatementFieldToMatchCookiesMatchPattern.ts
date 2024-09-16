@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAll,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAll_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAll";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAll';
 
 export interface wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPattern {
   // An empty configuration block that is used for inspecting all headers.
@@ -25,8 +25,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownState
   return [
     new DynamicUIProps(
       InputType.Object,
-      "all",
-      "An empty configuration block that is used for inspecting all headers.",
+      'all',
+      'An empty configuration block that is used for inspecting all headers.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAll_GetTypes(),
       false,
@@ -34,16 +34,16 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownState
     ),
     new DynamicUIProps(
       InputType.Array,
-      "excludedCookies",
-      "",
+      'excludedCookies',
+      '',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "includedCookies",
-      "",
+      'includedCookies',
+      '',
       () => InputType_String_GetTypes(),
       false,
       false,

@@ -3,41 +3,41 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appengine_StandardAppVersionVpcAccessConnector,
   appengine_StandardAppVersionVpcAccessConnector_GetTypes,
-} from "../types/appengine_StandardAppVersionVpcAccessConnector";
+} from '../types/appengine_StandardAppVersionVpcAccessConnector';
 import {
   appengine_StandardAppVersionAutomaticScaling,
   appengine_StandardAppVersionAutomaticScaling_GetTypes,
-} from "../types/appengine_StandardAppVersionAutomaticScaling";
+} from '../types/appengine_StandardAppVersionAutomaticScaling';
 import {
   appengine_StandardAppVersionEntrypoint,
   appengine_StandardAppVersionEntrypoint_GetTypes,
-} from "../types/appengine_StandardAppVersionEntrypoint";
+} from '../types/appengine_StandardAppVersionEntrypoint';
 import {
   appengine_StandardAppVersionManualScaling,
   appengine_StandardAppVersionManualScaling_GetTypes,
-} from "../types/appengine_StandardAppVersionManualScaling";
+} from '../types/appengine_StandardAppVersionManualScaling';
 import {
   appengine_StandardAppVersionLibrary,
   appengine_StandardAppVersionLibrary_GetTypes,
-} from "../types/appengine_StandardAppVersionLibrary";
+} from '../types/appengine_StandardAppVersionLibrary';
 import {
   appengine_StandardAppVersionDeployment,
   appengine_StandardAppVersionDeployment_GetTypes,
-} from "../types/appengine_StandardAppVersionDeployment";
+} from '../types/appengine_StandardAppVersionDeployment';
 import {
   appengine_StandardAppVersionBasicScaling,
   appengine_StandardAppVersionBasicScaling_GetTypes,
-} from "../types/appengine_StandardAppVersionBasicScaling";
+} from '../types/appengine_StandardAppVersionBasicScaling';
 import {
   appengine_StandardAppVersionHandler,
   appengine_StandardAppVersionHandler_GetTypes,
-} from "../types/appengine_StandardAppVersionHandler";
+} from '../types/appengine_StandardAppVersionHandler';
 
 export interface StandardAppVersionArgs {
   // Whether multiple requests can be dispatched to this version at once.
@@ -254,23 +254,23 @@ Substitute `<language>` with `python`, `java`, `php`, `ruby`, `go` or `nodejs`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "serviceAccount",
-        "The identity that the deployed version will run as. Admin API will use the App Engine Appspot service account as default if this field is neither provided in app.yaml file nor through CLI flag.",
+        'serviceAccount',
+        'The identity that the deployed version will run as. Admin API will use the App Engine Appspot service account as default if this field is neither provided in app.yaml file nor through CLI flag.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "vpcAccessConnector",
-        "Enables VPC connectivity for standard apps.\nStructure is documented below.",
+        'vpcAccessConnector',
+        'Enables VPC connectivity for standard apps.\nStructure is documented below.',
         () => appengine_StandardAppVersionVpcAccessConnector_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "versionId",
+        'versionId',
         'Relative name of the version within the service. For example, `v1`. Version names can contain only lowercase letters, numbers, or hyphens. Reserved names,"default", "latest", and any name with the prefix "ah-".',
         () => [],
         false,
@@ -278,144 +278,144 @@ Substitute `<language>` with `python`, `java`, `php`, `ruby`, `go` or `nodejs`.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "libraries",
-        "Configuration for third-party Python runtime libraries that are required by the application.\nStructure is documented below.",
+        'libraries',
+        'Configuration for third-party Python runtime libraries that are required by the application.\nStructure is documented below.',
         () => appengine_StandardAppVersionLibrary_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "runtime",
-        "Desired runtime. Example python27.",
+        'runtime',
+        'Desired runtime. Example python27.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "deleteServiceOnDestroy",
-        "If set to `true`, the service will be deleted if it is the last version.",
+        'deleteServiceOnDestroy',
+        'If set to `true`, the service will be deleted if it is the last version.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "appEngineApis",
-        "Allows App Engine second generation runtimes to access the legacy bundled services.",
+        'appEngineApis',
+        'Allows App Engine second generation runtimes to access the legacy bundled services.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceClass",
-        "Instance class that is used to run this version. Valid values are\nAutomaticScaling: F1, F2, F4, F4_1G\nBasicScaling or ManualScaling: B1, B2, B4, B4_1G, B8\nDefaults to F1 for AutomaticScaling and B2 for ManualScaling and BasicScaling. If no scaling is specified, AutomaticScaling is chosen.",
+        'instanceClass',
+        'Instance class that is used to run this version. Valid values are\nAutomaticScaling: F1, F2, F4, F4_1G\nBasicScaling or ManualScaling: B1, B2, B4, B4_1G, B8\nDefaults to F1 for AutomaticScaling and B2 for ManualScaling and BasicScaling. If no scaling is specified, AutomaticScaling is chosen.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "threadsafe",
-        "Whether multiple requests can be dispatched to this version at once.",
+        'threadsafe',
+        'Whether multiple requests can be dispatched to this version at once.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "basicScaling",
-        "Basic scaling creates instances when your application receives requests. Each instance will be shut down when the application becomes idle. Basic scaling is ideal for work that is intermittent or driven by user activity.\nStructure is documented below.",
+        'basicScaling',
+        'Basic scaling creates instances when your application receives requests. Each instance will be shut down when the application becomes idle. Basic scaling is ideal for work that is intermittent or driven by user activity.\nStructure is documented below.',
         () => appengine_StandardAppVersionBasicScaling_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "noopOnDestroy",
-        "If set to `true`, the application version will not be deleted.",
+        'noopOnDestroy',
+        'If set to `true`, the application version will not be deleted.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "service",
-        "AppEngine service resource",
+        'service',
+        'AppEngine service resource',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "manualScaling",
-        "A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time.\nStructure is documented below.",
+        'manualScaling',
+        'A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time.\nStructure is documented below.',
         () => appengine_StandardAppVersionManualScaling_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "envVariables",
-        "Environment variables available to the application.",
+        'envVariables',
+        'Environment variables available to the application.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "inboundServices",
-        "A list of the types of messages that this application is able to receive.\nEach value may be one of: `INBOUND_SERVICE_MAIL`, `INBOUND_SERVICE_MAIL_BOUNCE`, `INBOUND_SERVICE_XMPP_ERROR`, `INBOUND_SERVICE_XMPP_MESSAGE`, `INBOUND_SERVICE_XMPP_SUBSCRIBE`, `INBOUND_SERVICE_XMPP_PRESENCE`, `INBOUND_SERVICE_CHANNEL_PRESENCE`, `INBOUND_SERVICE_WARMUP`.",
+        'inboundServices',
+        'A list of the types of messages that this application is able to receive.\nEach value may be one of: `INBOUND_SERVICE_MAIL`, `INBOUND_SERVICE_MAIL_BOUNCE`, `INBOUND_SERVICE_XMPP_ERROR`, `INBOUND_SERVICE_XMPP_MESSAGE`, `INBOUND_SERVICE_XMPP_SUBSCRIBE`, `INBOUND_SERVICE_XMPP_PRESENCE`, `INBOUND_SERVICE_CHANNEL_PRESENCE`, `INBOUND_SERVICE_WARMUP`.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "handlers",
-        "An ordered list of URL-matching patterns that should be applied to incoming requests.\nThe first matching URL handles the request and other request handlers are not attempted.\nStructure is documented below.",
+        'handlers',
+        'An ordered list of URL-matching patterns that should be applied to incoming requests.\nThe first matching URL handles the request and other request handlers are not attempted.\nStructure is documented below.',
         () => appengine_StandardAppVersionHandler_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "runtimeApiVersion",
-        "The version of the API in the given runtime environment.\nPlease see the app.yaml reference for valid values at `https://cloud.google.com/appengine/docs/standard/<language>/config/appref`\\\nSubstitute `<language>` with `python`, `java`, `php`, `ruby`, `go` or `nodejs`.",
+        'runtimeApiVersion',
+        'The version of the API in the given runtime environment.\nPlease see the app.yaml reference for valid values at `https://cloud.google.com/appengine/docs/standard/<language>/config/appref`\\\nSubstitute `<language>` with `python`, `java`, `php`, `ruby`, `go` or `nodejs`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "deployment",
-        "Code and application artifacts that make up this version.\nStructure is documented below.",
+        'deployment',
+        'Code and application artifacts that make up this version.\nStructure is documented below.',
         () => appengine_StandardAppVersionDeployment_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "automaticScaling",
-        "Automatic scaling is based on request rate, response latencies, and other application metrics.\nStructure is documented below.",
+        'automaticScaling',
+        'Automatic scaling is based on request rate, response latencies, and other application metrics.\nStructure is documented below.',
         () => appengine_StandardAppVersionAutomaticScaling_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "entrypoint",
-        "The entrypoint for the application.\nStructure is documented below.",
+        'entrypoint',
+        'The entrypoint for the application.\nStructure is documented below.',
         () => appengine_StandardAppVersionEntrypoint_GetTypes(),
         true,
         false,

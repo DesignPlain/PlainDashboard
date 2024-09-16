@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   opsworks_MysqlLayerCloudwatchConfigurationLogStream,
   opsworks_MysqlLayerCloudwatchConfigurationLogStream_GetTypes,
-} from "./opsworks_MysqlLayerCloudwatchConfigurationLogStream";
+} from './opsworks_MysqlLayerCloudwatchConfigurationLogStream';
 
 export interface opsworks_MysqlLayerCloudwatchConfiguration {
   //
@@ -22,12 +22,12 @@ export function opsworks_MysqlLayerCloudwatchConfiguration_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Array,
-      "logStreams",
-      "",
+      'logStreams',
+      '',
       () => opsworks_MysqlLayerCloudwatchConfigurationLogStream_GetTypes(),
       false,
       false,
     ),
-    new DynamicUIProps(InputType.Bool, "enabled", "", () => [], false, false),
+    new DynamicUIProps(InputType.Bool, 'enabled', '', () => [], false, false),
   ];
 }

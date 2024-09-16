@@ -17,7 +17,7 @@ export class StackService {
       JSON.stringify(items),
       {
         responseType: 'text',
-      }
+      },
     );
   }
 
@@ -32,7 +32,7 @@ export class StackService {
     file: File,
     projectName: string,
     awsKeyid: string,
-    awsSecretKey: string
+    awsSecretKey: string,
   ) {
     let formParams = new FormData();
     if (file != undefined) {
@@ -51,7 +51,7 @@ export class StackService {
     }
     return this._http.post(
       StackService.HOSTNAME + '/api/uploadProjectConfig',
-      formParams
+      formParams,
     );
   }
 
@@ -65,7 +65,7 @@ export class StackService {
 
     return this._http.post(
       StackService.HOSTNAME + '/api/uploadResourceFile',
-      formParams
+      formParams,
     );
   }
 }

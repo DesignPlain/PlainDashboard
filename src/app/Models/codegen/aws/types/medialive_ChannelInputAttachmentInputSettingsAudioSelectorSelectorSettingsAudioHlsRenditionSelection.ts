@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface medialive_ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettingsAudioHlsRenditionSelection {
   // Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio rendition.
@@ -18,16 +18,16 @@ export function medialive_ChannelInputAttachmentInputSettingsAudioSelectorSelect
   return [
     new DynamicUIProps(
       InputType.String,
-      "groupId",
-      "Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio rendition.",
+      'groupId',
+      'Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio rendition.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition.",
+      'name',
+      'Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition.',
       () => [],
       true,
       false,

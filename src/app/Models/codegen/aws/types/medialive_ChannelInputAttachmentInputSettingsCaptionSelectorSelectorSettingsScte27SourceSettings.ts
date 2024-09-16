@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface medialive_ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsScte27SourceSettings {
   //
@@ -18,12 +18,12 @@ export function medialive_ChannelInputAttachmentInputSettingsCaptionSelectorSele
   return [
     new DynamicUIProps(
       InputType.String,
-      "ocrLanguage",
-      "",
+      'ocrLanguage',
+      '',
       () => [],
       false,
       false,
     ),
-    new DynamicUIProps(InputType.Number, "pid", "", () => [], false, false),
+    new DynamicUIProps(InputType.Number, 'pid', '', () => [], false, false),
   ];
 }
